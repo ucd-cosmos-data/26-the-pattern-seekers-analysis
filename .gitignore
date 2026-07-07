@@ -29,6 +29,7 @@ venv/
 !**/data/raw/.gitkeep
 !**/data/interim/.gitkeep
 !**/data/processed/.gitkeep
+!**/mini-manual-survey/data/raw/mini-manual-survey-results.csv
 
 # Results
 **/results/figures/*
