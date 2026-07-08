@@ -34,6 +34,8 @@ venv/
 # Results
 **/results/figures/*
 !**/results/figures/.gitkeep
+!**/results/figures/boxplot_refreshed_by_sleep_int.png
+!**/results/figures/boxplot_sleep_by_refreshed.png
 
 # Models
 **/models/*
