@@ -1,0 +1,59 @@
+County,Year,Household_Type,Living_Wage_Hourly_USD,Percent_Below_Living_Wage,Number_of_Families
+Alameda,2010.0,MarriedCouple2Children,22.64,16.488479067443798,120100.0
+Alpine,2010.0,MarriedCouple2Children,19.28,4.545454545454546,66.0
+Amador,2010.0,MarriedCouple2Children,20.36,15.794716456795479,2303.0
+Butte,2010.0,MarriedCouple2Children,18.8,20.83555934128336,14088.0
+Calaveras,2010.0,MarriedCouple2Children,18.79,12.107618103733067,3027.0
+Colusa,2010.0,MarriedCouple2Children,18.72,31.878543194530764,1609.0
+Contra Costa,2010.0,MarriedCouple2Children,22.64,14.50681994813146,94084.0
+Del Norte,2010.0,MarriedCouple2Children,18.63,23.642272980501392,1436.0
+El Dorado,2010.0,MarriedCouple2Children,20.17,9.50997392454494,15877.0
+Fresno,2010.0,MarriedCouple2Children,18.71,30.333186516605373,72326.0
+Glenn,2010.0,MarriedCouple2Children,18.02,31.35033962264151,2491.0
+Humboldt,2010.0,MarriedCouple2Children,19.17,23.2176085065249,8276.0
+Imperial,2010.0,MarriedCouple2Children,18.75,31.35836177474403,13185.0
+Inyo,2010.0,MarriedCouple2Children,18.35,17.602198473282442,1310.0
+Kern,2010.0,MarriedCouple2Children,18.41,28.551196862745098,66300.0
+Kings,2010.0,MarriedCouple2Children,18.35,29.607629918894563,13316.0
+Lake,2010.0,MarriedCouple2Children,19.04,31.376822516864387,4299.0
+Lassen,2010.0,MarriedCouple2Children,18.91,8.010909090909092,2068.0
+Los Angeles,2010.0,MarriedCouple2Children,22.95,31.927725683969058,735852.0
+Madera,2010.0,MarriedCouple2Children,18.86,34.478041551246534,11552.0
+Marin,2010.0,MarriedCouple2Children,25.44,13.718311524774158,21918.0
+Mariposa,2010.0,MarriedCouple2Children,19.28,10.842696461824954,1074.0
+Mendocino,2010.0,MarriedCouple2Children,19.66,27.996689466484273,5848.0
+Merced,2010.0,MarriedCouple2Children,18.41,32.02109652091512,22161.0
+Modoc,2010.0,MarriedCouple2Children,18.47,33.34537142857143,560.0
+Mono,2010.0,MarriedCouple2Children,21.07,23.569890790546047,1227.0
+Monterey,2010.0,MarriedCouple2Children,20.78,27.718321136677982,31812.0
+Napa,2010.0,MarriedCouple2Children,22.44,23.297015292670068,11378.0
+Nevada,2010.0,MarriedCouple2Children,20.74,16.589279999999995,7000.0
+Orange,2010.0,MarriedCouple2Children,24.23,22.42218787338352,261293.0
+Placer,2010.0,MarriedCouple2Children,20.17,8.888033775633296,33160.0
+Plumas,2010.0,MarriedCouple2Children,19.06,24.03756104868913,1335.0
+Riverside,2010.0,MarriedCouple2Children,20.67,23.886808483082408,185310.0
+Sacramento,2010.0,MarriedCouple2Children,20.17,20.39380816803647,110357.0
+San Benito,2010.0,MarriedCouple2Children,21.35,16.1615578465063,5238.0
+San Bernardino,2010.0,MarriedCouple2Children,20.67,25.282139250462777,169091.0
+San Diego,2010.0,MarriedCouple2Children,22.25,22.51835781150447,244844.0
+San Francisco,2010.0,MarriedCouple2Children,25.44,21.93140357202952,41601.0
+San Joaquin,2010.0,MarriedCouple2Children,19.5,22.91385852365067,58455.0
+San Luis Obispo,2010.0,MarriedCouple2Children,21.05,17.83899341435991,18677.0
+San Mateo,2010.0,MarriedCouple2Children,25.44,14.723321108471895,63150.0
+Santa Barbara,2010.0,MarriedCouple2Children,21.78,25.368219393248467,31578.0
+Santa Clara,2010.0,MarriedCouple2Children,23.09,14.752308408300348,166740.0
+Santa Cruz,2010.0,MarriedCouple2Children,24.68,24.008988469225645,19513.0
+Shasta,2010.0,MarriedCouple2Children,18.62,21.81194452602382,12258.0
+Sierra,2010.0,MarriedCouple2Children,20.2,13.669945355191256,183.0
+Siskiyou,2010.0,MarriedCouple2Children,18.19,24.939729866377757,2769.0
+Solano,2010.0,MarriedCouple2Children,21.42,18.09917988698517,33093.0
+Sonoma,2010.0,MarriedCouple2Children,22.12,19.47924077439747,37965.0
+Stanislaus,2010.0,MarriedCouple2Children,19.37,26.037021575241674,44171.0
+Sutter,2010.0,MarriedCouple2Children,18.15,22.043683551508256,8785.0
+Tehama,2010.0,MarriedCouple2Children,18.26,30.498093126385815,4510.0
+Trinity,2010.0,MarriedCouple2Children,18.29,32.62631544715447,615.0
+Tulare,2010.0,MarriedCouple2Children,17.48,34.498375307865636,38166.0
+Tuolumne,2010.0,MarriedCouple2Children,19.58,19.355125188536952,3315.0
+Ventura,2010.0,MarriedCouple2Children,23.39,19.924045175827928,73225.0
+Yolo,2010.0,MarriedCouple2Children,20.26,21.55777613344203,15947.0
+Yuba,2010.0,MarriedCouple2Children,18.15,26.53506356281988,6057.0
