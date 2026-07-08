@@ -32,6 +32,7 @@ venv/
 !**/mini-manual-survey/data/raw/mini-manual-survey-results.csv
 !**/mini-manual-survey/data/interim/mini-manual-survey-interim.csv
 !**/CDC-data-analysis/data/raw/CDC-data.csv
+!**/CDC-data-analysis/data/raw/CA-cost-living-data.csv
 # Results
 **/results/figures/*
 !**/results/figures/.gitkeep
