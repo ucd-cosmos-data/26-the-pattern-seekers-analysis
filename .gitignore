@@ -43,6 +43,7 @@ venv/
 !**/results/figures/.gitkeep
 !**/results/figures/boxplot_refreshed_by_sleep_int.png
 !**/results/figures/boxplot_sleep_by_refreshed.png
+!**/results/figures/ca-living-wage-map.html
 
 # Models
 **/models/*
