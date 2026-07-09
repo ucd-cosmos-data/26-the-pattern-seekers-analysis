@@ -33,6 +33,7 @@ venv/
 !**/mini-manual-survey/data/interim/mini-manual-survey-interim.csv
 !**/CDC-data-analysis/data/raw/CDC-data.csv
 !**/CDC-data-analysis/data/raw/CA-living-cost-data.csv
+!**/CDC-data-analysis/data/processed/CA-obesity-living-cost-data.csv
 # Results
 **/results/figures/*
 !**/results/figures/.gitkeep
