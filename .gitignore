@@ -31,11 +31,20 @@ venv/
 !**/data/processed/.gitkeep
 !**/mini-manual-survey/data/raw/mini-manual-survey-results.csv
 !**/mini-manual-survey/data/interim/mini-manual-survey-interim.csv
+!**/CDC-data-analysis/data/raw/CDC-data.csv
+!**/CDC-data-analysis/data/raw/CA-living-cost-data.csv
+!**/CDC-data-analysis/data/processed/ca-obesity-living-cost.csv
+
 # Results
 **/results/figures/*
+!**/results/figures/living_wage_*
+!**/results/figures/obesity_adjprev_*
+!**/results/figures/ca-obesity-prevalence-map.html
 !**/results/figures/.gitkeep
 !**/results/figures/boxplot_refreshed_by_sleep_int.png
 !**/results/figures/boxplot_sleep_by_refreshed.png
+!**/results/figures/ca-living-wage-map.html
+!**/results/figures/correlation_heatmap.svg
 
 # Models
 **/models/*
