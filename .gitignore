@@ -50,3 +50,5 @@ venv/
 # Models
 **/models/*
 !**/models/.gitkeep
+# Markdown
+!**/data/raw/info.md
