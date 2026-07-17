@@ -34,7 +34,7 @@ venv/
 !**/CDC-data-analysis/data/raw/CDC-data.csv
 !**/CDC-data-analysis/data/raw/CA-living-cost-data.csv
 !**/CDC-data-analysis/data/processed/ca-obesity-living-cost.csv
-!**/proj1/data/raw/matches.csv
+!**/World-Cup-S-Bomb/data/raw/matches.csv
 
 # Results
 **/results/figures/*
