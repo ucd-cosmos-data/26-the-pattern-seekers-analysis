@@ -46,6 +46,10 @@ venv/
 !**/results/figures/boxplot_sleep_by_refreshed.png
 !**/results/figures/ca-living-wage-map.html
 !**/results/figures/correlation_heatmap.svg
+!**/results/figures/*.png
+
+# World Cup project
+
 
 # Models
 **/models/*
