@@ -127,7 +127,9 @@ def safe_divide(numerator: pd.Series, denominator: pd.Series) -> pd.Series:
 
 
 def engineer_model_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
-    attack_actions = df["pass_count"] + df["carry_count"] + df["dribble_count"] + df["shot_count"]
+    # Shots are outcomes for downstream effectiveness models, so they must not
+    # affect eligibility or any derived model-input denominator.
+    attack_actions = df["pass_count"] + df["carry_count"] + df["dribble_count"]
     eligible = attack_actions > 0
     model = pd.DataFrame(index=df.index)
 

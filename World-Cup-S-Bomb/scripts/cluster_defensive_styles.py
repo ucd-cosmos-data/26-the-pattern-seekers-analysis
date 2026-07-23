@@ -87,7 +87,9 @@ def safe_divide(numerator: pd.Series, denominator: pd.Series) -> pd.Series:
 
 
 def engineer_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
-    attacking_actions = df["pass_count"] + df["carry_count"] + df["dribble_count"] + df["shot_count"]
+    # Keep shot outcomes fully outside defensive-style engineering, including
+    # feature denominators and eligibility.
+    attacking_actions = df["pass_count"] + df["carry_count"] + df["dribble_count"]
     observed = df["avg_observed_outfield_defenders"]
     features = pd.DataFrame(index=df.index)
     features["back_line_height"] = df["avg_back_line_height"]

@@ -6,10 +6,10 @@ These are observational tournament results, not yet causal coaching recommendati
 
 | Defensive style | Highest-xG attacking style | Possessions | Mean xG | Shot rate | Box-entry rate |
 |---|---|---:|---:|---:|---:|
-| Compact Pressure Block | Patient Build-up | 1,632 | 0.0364 | 27.63% | 57.54% |
-| High-Intensity Press | Short Under Pressure | 622 | 0.0002 | 0.32% | 2.57% |
-| Set-Piece Compact Shape | Short Under Pressure | 404 | 0.0206 | 22.28% | 65.59% |
-| Wide Retreating Block | Patient Build-up | 3,669 | 0.0086 | 9.40% | 30.85% |
+| Compact Pressure Block | Patient Build-up | 1,581 | 0.0361 | 27.58% | 57.94% |
+| High-Intensity Press | Short Under Pressure | 658 | 0.0021 | 1.98% | 3.80% |
+| Set-Piece Compact Shape | Short Under Pressure | 413 | 0.0216 | 22.76% | 66.59% |
+| Wide Retreating Block | Patient Build-up | 3,631 | 0.0086 | 9.36% | 31.12% |
 
 ## Defensive player roles
 
