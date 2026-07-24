@@ -1,4 +1,4 @@
-1. #!/usr/bin/env python3
+#!/usr/bin/env python3
 """Benchmark leakage-safe tactical and player-aware coaching model layouts."""
 
 from __future__ import annotations
@@ -326,6 +326,29 @@ def lineup_features(
                 defending_ids, profiles, priors, positions, DEFENSE_SKILLS, "def"
             )
         )
+        # The attacking lineup's defensive recovery ability describes rest
+        # defense after losing possession; the defending lineup's attacking
+        # ability describes the counter threat immediately after a regain.
+        record.update(
+            aggregate_lineup(
+                attacking_ids,
+                profiles,
+                priors,
+                positions,
+                DEFENSE_SKILLS,
+                "att_recovery",
+            )
+        )
+        record.update(
+            aggregate_lineup(
+                defending_ids,
+                profiles,
+                priors,
+                positions,
+                ATTACK_SKILLS,
+                "opp_counter",
+            )
+        )
         record["matchup_dribble_vs_duel"] = record[
             "att_max_dribble_success"
         ] * (1 - record["def_max_duel_win_rate"])
@@ -339,6 +362,20 @@ def lineup_features(
         record["matchup_progression_vs_interception"] = record[
             "att_mean_progressive_passes_p90"
         ] / (1 + record["def_mean_interceptions_won_p90"])
+        record["matchup_rest_defense_vs_counter"] = (
+            record["att_recovery_mean_recoveries_p90"]
+            + record["att_recovery_mean_pressures_p90"]
+        ) / (
+            1
+            + record["opp_counter_mean_progressive_passes_p90"]
+            + record["opp_counter_mean_progressive_carries_p90"]
+        )
+        record["matchup_turnover_counter_pressure"] = record[
+            "att_mean_turnovers_p90"
+        ] * (
+            record["opp_counter_mean_progressive_passes_p90"]
+            + record["opp_counter_mean_progressive_carries_p90"]
+        )
         records.append(record)
     return pd.DataFrame(records, index=rows.index)
 

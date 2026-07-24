@@ -31,6 +31,7 @@ DEFAULT_OUTPUT = (
     PROJECT_ROOT / "data" / "processed" / "world_cup_recommendation_features.csv"
 )
 DEFAULT_REPORT = PROJECT_ROOT / "results" / "recommendation_feature_validation.md"
+DEFAULT_STYLE_PROFILES = PROJECT_ROOT / "results" / "attacking_style_profiles.csv"
 
 RANDOM_STATE = 42
 N_SPLITS = 5
@@ -99,6 +100,33 @@ def derive_transition_targets(source: pd.DataFrame) -> pd.DataFrame:
         immediate_opponent, data["next_xg_generated"].fillna(0), 0
     )
     data["net_xg_15"] = data["xg_generated"] - data["transition_xg_15"]
+    score_records: list[dict[str, object]] = []
+    for _, match in data.groupby("match_id", sort=False):
+        score: dict[str, int] = {}
+        for index, row in match.sort_values(
+            ["period", "start_time_seconds", "possession"]
+        ).iterrows():
+            team_score = score.get(str(row["team"]), 0)
+            opponent_score = score.get(str(row["opponent"]), 0)
+            difference = team_score - opponent_score
+            score_records.append(
+                {
+                    "index": index,
+                    "team_goals_before": team_score,
+                    "opponent_goals_before": opponent_score,
+                    "score_difference": difference,
+                    "score_state": (
+                        "Leading"
+                        if difference > 0
+                        else "Trailing"
+                        if difference < 0
+                        else "Tied"
+                    ),
+                }
+            )
+            score[str(row["team"])] = team_score + int(row["goal_count"])
+    scores = pd.DataFrame(score_records).set_index("index")
+    data = data.join(scores)
     return data.sort_index()
 
 
@@ -109,11 +137,29 @@ def global_history_prior(source: pd.DataFrame) -> dict[str, float]:
         "team_prior_xg_per_possession": float(source["xg_generated"].mean()),
         "team_prior_shot_rate": float(source["shot"].mean()),
         "team_prior_box_rate": float(source["entered_penalty_area"].mean()),
+        "team_prior_transition_final_third_conceded": float(
+            source["transition_final_third_15"].mean()
+        ),
+        "team_prior_transition_box_conceded": float(
+            source["transition_box_15"].mean()
+        ),
+        "team_prior_transition_shot_conceded": float(
+            source["transition_shot_15"].mean()
+        ),
+        "team_prior_transition_xg_conceded": float(
+            source["transition_xg_15"].mean()
+        ),
         "opponent_prior_matches": float(source["match_id"].nunique()),
         "opponent_prior_possessions": float(len(source)),
         "opponent_prior_xg_allowed": float(source["xg_generated"].mean()),
         "opponent_prior_shot_allowed": float(source["shot"].mean()),
         "opponent_prior_box_allowed": float(source["entered_penalty_area"].mean()),
+        "opponent_prior_counter_final_third": float(
+            source["transition_final_third_15"].mean()
+        ),
+        "opponent_prior_counter_box": float(source["transition_box_15"].mean()),
+        "opponent_prior_counter_shot": float(source["transition_shot_15"].mean()),
+        "opponent_prior_counter_xg": float(source["transition_xg_15"].mean()),
     }
     for style in ATTACK_STYLES:
         prior[f"team_attack_share__{style}"] = float(
@@ -152,6 +198,18 @@ def team_history_features(
                     "team_prior_box_rate": float(
                         attack_history["entered_penalty_area"].mean()
                     ),
+                    "team_prior_transition_final_third_conceded": float(
+                        attack_history["transition_final_third_15"].mean()
+                    ),
+                    "team_prior_transition_box_conceded": float(
+                        attack_history["transition_box_15"].mean()
+                    ),
+                    "team_prior_transition_shot_conceded": float(
+                        attack_history["transition_shot_15"].mean()
+                    ),
+                    "team_prior_transition_xg_conceded": float(
+                        attack_history["transition_xg_15"].mean()
+                    ),
                 }
             )
             for style in ATTACK_STYLES:
@@ -176,6 +234,18 @@ def team_history_features(
                     ),
                     "opponent_prior_box_allowed": float(
                         defense_history["entered_penalty_area"].mean()
+                    ),
+                    "opponent_prior_counter_final_third": float(
+                        defense_history["transition_final_third_15"].mean()
+                    ),
+                    "opponent_prior_counter_box": float(
+                        defense_history["transition_box_15"].mean()
+                    ),
+                    "opponent_prior_counter_shot": float(
+                        defense_history["transition_shot_15"].mean()
+                    ),
+                    "opponent_prior_counter_xg": float(
+                        defense_history["transition_xg_15"].mean()
                     ),
                 }
             )
@@ -273,23 +343,27 @@ def write_validation(
     player_columns: list[str],
 ) -> None:
     unique_possessions = data.drop_duplicates("possession_uid")
-    forbidden_tokens = ("shot", "goal", "xg", "entered_", "transition_", "net_")
     model_input_columns = history_columns + player_columns
-    forbidden = [
-        column
-        for column in model_input_columns
-        if any(token in column.lower() for token in forbidden_tokens)
-        and not column.startswith(
-            (
-                "team_prior_",
-                "opponent_prior_",
-                "att_mean_shots",
-                "att_max_shots",
-                "att_mean_xg",
-                "att_max_xg",
-            )
-        )
-    ]
+    # Names such as ``opp_counter_mean_xg_p90`` are legitimate historical
+    # player-profile inputs. Check exact current-possession outcomes rather than
+    # rejecting safe prior features merely because their names contain "xg".
+    forbidden_current_outcomes = {
+        "shot",
+        "shot_count",
+        "goal",
+        "goal_count",
+        "xg_generated",
+        "entered_final_third",
+        "entered_penalty_area",
+        "transition_final_third_15",
+        "transition_box_15",
+        "transition_shot_15",
+        "transition_xg_15",
+        "net_xg_15",
+    }
+    forbidden = sorted(
+        forbidden_current_outcomes.intersection(model_input_columns)
+    )
     checks = {
         "Possession IDs are unique within every feature fold": all(
             group["possession_uid"].is_unique
@@ -349,6 +423,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--lineups", type=Path, default=DEFAULT_LINEUPS)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
+    parser.add_argument(
+        "--style-profiles", type=Path, default=DEFAULT_STYLE_PROFILES
+    )
     return parser.parse_args()
 
 
@@ -357,6 +434,7 @@ def main() -> None:
     possessions = pd.read_csv(args.possessions, low_memory=False)
     components = pd.read_csv(args.components, low_memory=False)
     lineups = pd.read_csv(args.lineups, low_memory=False)
+    style_profiles = pd.read_csv(args.style_profiles)
     data = derive_transition_targets(possessions)
     data = data[
         data["attacking_style_cluster"].ge(0)
@@ -406,6 +484,10 @@ def main() -> None:
         "play_pattern",
         "start_x",
         "start_y",
+        "team_goals_before",
+        "opponent_goals_before",
+        "score_difference",
+        "score_state",
         "attacking_style",
         "shot",
         "entered_penalty_area",
@@ -421,9 +503,25 @@ def main() -> None:
     )
     model_features = derived.drop(columns=["source_index"]).reset_index(drop=True)
     output = pd.concat([base_repeated, model_features], axis=1)
+    fingerprint_columns = [
+        column for column in style_profiles if column.startswith("z_")
+    ]
+    fingerprints = style_profiles.set_index("style_label")[fingerprint_columns]
+    for column in fingerprint_columns:
+        output[f"candidate_{column}"] = output["attacking_style"].map(
+            fingerprints[column]
+        )
+    candidate_columns = [f"candidate_{column}" for column in fingerprint_columns]
     args.output.parent.mkdir(parents=True, exist_ok=True)
     output.to_csv(args.output, index=False)
-    write_validation(args.report, output, model_features, history_columns, player_columns)
+    validation_columns = history_columns + player_columns + candidate_columns
+    write_validation(
+        args.report,
+        output,
+        output[validation_columns],
+        history_columns + candidate_columns,
+        player_columns,
+    )
     print(
         f"Wrote {output['possession_uid'].nunique():,} possessions across "
         f"{N_SPLITS} fold-specific feature sets to {args.output}"

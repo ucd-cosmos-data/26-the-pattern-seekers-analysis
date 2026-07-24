@@ -53,6 +53,7 @@ venv/
 
 # Models
 **/models/*
+!**/models/*.joblib
 !**/models/.gitkeep
 # Markdown
 !**/data/raw/info.md

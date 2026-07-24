@@ -3,8 +3,8 @@
 - Eligible possessions: 9,685
 - Fold-specific feature rows: 48,425
 - Matches: 64
-- History features: 28
-- Player and matchup features: 64
+- History features: 60
+- Player and matchup features: 126
 - Shot outcomes: 1,207
 - Box-entry outcomes: 3,060
 - 15-second opponent box transitions: 259
