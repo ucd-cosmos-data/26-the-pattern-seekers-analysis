@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+1. #!/usr/bin/env python3
 """Benchmark leakage-safe tactical and player-aware coaching model layouts."""
 
 from __future__ import annotations
