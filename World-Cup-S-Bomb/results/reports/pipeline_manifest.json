@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "model_source": "regularized_empirical_fallback",
+  "model_warning": "XGBoostError: input stream corrupted",
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start",
+  "tracking_proxies": {
+    "tackles": "ground duel wins (duels_won - aerial_wins)",
+    "defensive_recovery_runs": "event recoveries"
+  },
+  "counts": {
+    "player_profiles": 342,
+    "synergy_cells": 116964,
+    "lineup_matchups": 11016,
+    "tactical_scenarios": 29055,
+    "substitution_scenarios": 3608,
+    "team_audits": 32,
+    "starter_report_pairs": 342,
+    "team_report_pairs": 32
+  },
+  "checks": {
+    "physical_profile_rows": true,
+    "synergy_matrix_cells": true,
+    "all_32_teams_in_matchups": true,
+    "three_styles_per_possession": true,
+    "team_audit_rows": true,
+    "starter_report_pairs": true,
+    "team_report_pairs": true,
+    "optimized_lineup_rows": true
+  }
+}

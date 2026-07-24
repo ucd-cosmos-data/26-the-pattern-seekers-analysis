@@ -1,0 +1,353 @@
+team,rank,player_id,player,position_group,optimization_score
+Argentina,1,5503,Lionel Andrés Messi Cuccittini,Attacking Midfield/Wing,2.8333333333333335
+Argentina,2,38718,Enzo Fernandez,Defensive Midfield,2.4166666666666665
+Argentina,3,7797,Rodrigo Javier De Paul,Defensive Midfield,2.291666666666667
+Argentina,4,3090,Nicolás Hernán Otamendi,Center Back,2.25
+Argentina,5,29560,Julián Álvarez,Forward,2.0
+Argentina,6,5507,Nicolás Alejandro Tagliafico,Fullback/Wingback,1.9583333333333335
+Argentina,7,6909,Damián Emiliano Martínez,Goalkeeper,1.9166666666666667
+Argentina,8,29201,Nahuel Molina Lucero,Fullback/Wingback,1.9166666666666665
+Argentina,9,27886,Alexis Mac Allister,Central/Wide Midfield,1.875
+Argentina,10,20572,Cristian Gabriel Romero,Center Back,1.7916666666666665
+Argentina,11,2995,Ángel Fabián Di María Hernández,Central/Wide Midfield,1.75
+Australia,1,22293,Harry Souttar,Center Back,2.6
+Australia,2,33495,Kye Rowles,Center Back,2.5
+Australia,3,5490,Jackson Irvine,Forward,2.45
+Australia,4,3281,Aaron Mooy,Defensive Midfield,2.4
+Australia,5,3240,Mathew Ryan,Goalkeeper,2.3
+Australia,6,5479,Aziz Eraltay Behich,Fullback/Wingback,2.2
+Australia,7,8346,Craig Goodwin,Central/Wide Midfield,2.0
+Australia,8,33477,Riley McGree,Forward,1.9500000000000002
+Australia,9,33492,Mitchell Thomas Duke,Forward,1.9
+Australia,10,5481,Mathew Leckie,Central/Wide Midfield,1.8
+Australia,11,28370,Fran Karačić,Fullback/Wingback,1.75
+Belgium,1,20005,Toby Alderweireld,Center Back,2.375
+Belgium,2,3077,Jan Vertonghen,Center Back,2.325
+Belgium,3,3089,Kevin De Bruyne,Attacking Midfield/Wing,2.325
+Belgium,4,3509,Thibaut Courtois,Goalkeeper,2.275
+Belgium,5,5642,Axel Witsel,Defensive Midfield,2.275
+Belgium,6,6989,Timothy Castagne,Fullback/Wingback,2.075
+Belgium,7,3457,Michy Batshuayi Tunga,Forward,2.0500000000000003
+Belgium,8,6331,Leander Dendoncker,Center Back,2.05
+Belgium,9,3176,Thomas Meunier,Fullback/Wingback,1.95
+Belgium,10,5633,Yannick Ferreira Carrasco,Attacking Midfield/Wing,1.8
+Belgium,11,48347,Amadou Onana,Defensive Midfield,1.65
+Brazil,1,4372,Marcos Aoás Corrêa,Center Back,2.5384615384615383
+Brazil,2,5539,Carlos Henrique Casimiro,Defensive Midfield,2.519230769230769
+Brazil,3,3295,Thiago Emiliano da Silva,Center Back,2.3653846153846154
+Brazil,4,3280,Richarlison de Andrade,Forward,2.230769230769231
+Brazil,5,4320,Neymar da Silva Santos Junior,Attacking Midfield/Wing,2.230769230769231
+Brazil,6,13620,Éder Gabriel Militão,Fullback/Wingback,2.1923076923076925
+Brazil,7,10595,Raphael Dias Belloli,Attacking Midfield/Wing,2.1923076923076925
+Brazil,8,22600,Lucas Tolentino Coelho de Lima,Defensive Midfield,2.0
+Brazil,9,25104,Rodrygo Silva de Goes,Central/Wide Midfield,2.0
+Brazil,10,18395,Vinícius José Paixão de Oliveira Júnior,Central/Wide Midfield,1.9230769230769231
+Brazil,11,5547,Alisson Ramsés Becker,Goalkeeper,1.7692307692307692
+Cameroon,1,3499,Jean-Eric Maxim Choupo-Moting,Forward,2.5454545454545454
+Cameroon,2,7426,Jean-Charles Castelletto,Center Back,2.4772727272727275
+Cameroon,3,7472,Nicolas Alexis Julio N'Koulou Ndoubena,Center Back,2.340909090909091
+Cameroon,4,3141,André-Frank Zambo Anguissa,Defensive Midfield,2.2727272727272725
+Cameroon,5,16346,Ngoran Suiru Fai Collins,Fullback/Wingback,2.25
+Cameroon,6,4935,Bryan Mbeumo,Attacking Midfield/Wing,2.2272727272727275
+Cameroon,7,11174,Vincent Paté Aboubakar,Forward,2.1363636363636362
+Cameroon,8,13454,Nouhou Tolo,Fullback/Wingback,2.0227272727272725
+Cameroon,9,3551,Karl Brillant Toko Ekambi,Attacking Midfield/Wing,2.0
+Cameroon,10,12623,Pierre Kunde Malong,Defensive Midfield,1.8636363636363635
+Cameroon,11,15326,Devis Rogers Epassy Mboka,Goalkeeper,1.8181818181818181
+Canada,1,44703,Alistair Johnston,Fullback/Wingback,2.6842105263157894
+Canada,2,12365,Alphonso Davies,Central/Wide Midfield,2.6315789473684212
+Canada,3,23828,Kamal Miller,Center Back,2.4210526315789473
+Canada,4,23640,Jonathan David,Forward,2.3684210526315788
+Canada,5,24024,Tajon Buchanan,Central/Wide Midfield,2.3157894736842106
+Canada,6,11846,Steven de Sousa Vitoria,Center Back,2.2105263157894735
+Canada,7,15958,Milan Borjan,Goalkeeper,2.0
+Canada,8,31684,Atiba Hutchinson,Defensive Midfield,1.8947368421052633
+Canada,9,9922,David Junior Hoilett,Central/Wide Midfield,1.8421052631578947
+Canada,10,11187,Stephen Antunes Eustáquio,Defensive Midfield,1.5263157894736843
+Canada,11,16120,Richie Laryea,Fullback/Wingback,1.526315789473684
+Costa Rica,1,5839,Yeltsin Ignacio Tejeda Valverde,Central/Wide Midfield,2.772727272727273
+Costa Rica,2,5598,Óscar Esau Duarte Gaitán,Center Back,2.4772727272727275
+Costa Rica,3,5581,Joel Nathaniel Campbell Samuels,Forward,2.409090909090909
+Costa Rica,4,130185,Keysher Fuller Spence,Fullback/Wingback,2.3636363636363633
+Costa Rica,5,5582,Celso Borges Mora,Defensive Midfield,2.2272727272727275
+Costa Rica,6,6328,Kendall Jamaal Waston Manley,Center Back,2.227272727272727
+Costa Rica,7,5597,Keylor Navas Gamboa,Goalkeeper,2.2045454545454546
+Costa Rica,8,5836,Bryan Oviedo,Fullback/Wingback,2.1363636363636362
+Costa Rica,9,5600,Francisco Javier Calvo Quesada,Center Back,2.1363636363636362
+Costa Rica,10,27163,Juan Pablo Vargas Campos,Center Back,1.9090909090909092
+Costa Rica,11,132728,Jewison Bennette,Attacking Midfield/Wing,1.727272727272727
+Croatia,1,5463,Luka Modrić,Central/Wide Midfield,2.4
+Croatia,2,33018,Joško Gvardiol,Center Back,2.375
+Croatia,3,5456,Mateo Kovačić,Central/Wide Midfield,2.1500000000000004
+Croatia,4,5474,Ivan Perišić,Attacking Midfield/Wing,2.1
+Croatia,5,3471,Dejan Lovren,Center Back,2.075
+Croatia,6,5469,Marcelo Brozović,Defensive Midfield,2.05
+Croatia,7,16531,Dominik Livaković,Goalkeeper,2.025
+Croatia,8,5460,Andrej Kramarić,Attacking Midfield/Wing,1.85
+Croatia,9,11603,Mario Pašalić,Attacking Midfield/Wing,1.8
+Croatia,10,3441,Nikola Vlašić,Attacking Midfield/Wing,1.7000000000000002
+Croatia,11,29163,Josip Juranović,Fullback/Wingback,1.6749999999999998
+Denmark,1,3959,Andreas Christensen,Center Back,2.8
+Denmark,2,3043,Christian Dannemann Eriksen,Central/Wide Midfield,2.4
+Denmark,3,8247,Joachim Andersen,Center Back,2.4
+Denmark,4,3570,Pierre-Emile Højbjerg,Central/Wide Midfield,2.1999999999999997
+Denmark,5,27569,Jesper Lindstrøm,Attacking Midfield/Wing,2.05
+Denmark,6,3815,Kasper Schmeichel,Goalkeeper,1.9500000000000002
+Denmark,7,17042,Andreas Skov Olsen,Attacking Midfield/Wing,1.95
+Denmark,8,6302,Kasper Dolberg,Forward,1.95
+Denmark,9,5732,Andreas Evald Cornelius,Forward,1.7999999999999998
+Denmark,10,16554,Joakim Mæhle,Fullback/Wingback,1.6
+Denmark,11,16190,Rasmus Nissen Kristensen,Fullback/Wingback,1.5999999999999999
+Ecuador,1,30111,Felix Eduardo Torres Caicedo,Center Back,2.583333333333333
+Ecuador,2,37726,Moisés Isaac Caicedo Corozo,Defensive Midfield,2.5555555555555554
+Ecuador,3,24085,Pervis Josué Estupiñán Tenorio,Fullback/Wingback,2.5277777777777777
+Ecuador,4,38004,Piero Martín Hincapié Reyna,Center Back,2.3055555555555554
+Ecuador,5,28559,Enner Remberto Valencia Lastra,Attacking Midfield/Wing,2.166666666666667
+Ecuador,6,37737,Angelo Smit Preciado Quiñónez,Fullback/Wingback,1.8888888888888888
+Ecuador,7,37522,Hernán Ismael Galíndez,Goalkeeper,1.75
+Ecuador,8,31152,Gonzalo Jordy Plata Jiménez,Central/Wide Midfield,1.7222222222222223
+Ecuador,9,34396,Michael Steveen Estrada Martínez,Forward,1.722222222222222
+Ecuador,10,23830,Jhegson Sebastián Méndez Carabalí,Defensive Midfield,1.5555555555555556
+Ecuador,11,51969,Jackson Gabriel Porozo Vernaza,Center Back,1.5
+England,1,3244,John Stones,Center Back,2.75
+England,2,3336,Harry Maguire,Center Back,2.35
+England,3,10955,Harry Kane,Forward,2.3
+England,4,30714,Jude Bellingham,Defensive Midfield,2.25
+England,5,3382,Luke Shaw,Fullback/Wingback,2.2
+England,6,3943,Declan Rice,Defensive Midfield,2.0
+England,7,4354,Phil Foden,Attacking Midfield/Wing,1.95
+England,8,3468,Jordan Pickford,Goalkeeper,1.85
+England,9,22084,Bukayo Saka,Attacking Midfield/Wing,1.85
+England,10,3532,Jordan Brian Henderson,Central/Wide Midfield,1.7000000000000002
+England,11,3318,Marcus Rashford,Attacking Midfield/Wing,1.7000000000000002
+France,1,10481,Aurélien Djani Tchouaméni,Defensive Midfield,2.8333333333333335
+France,2,3009,Kylian Mbappé Lottin,Forward,2.75
+France,3,5487,Antoine Griezmann,Attacking Midfield/Wing,2.5
+France,4,3026,Adrien Rabiot,Defensive Midfield,2.375
+France,5,5485,Raphaël Varane,Center Back,2.2916666666666665
+France,6,6704,Theo Bernard François Hernández,Fullback/Wingback,2.2083333333333335
+France,7,3604,Olivier Giroud,Forward,2.0
+France,8,8519,Dayotchanculle Upamecano,Center Back,1.875
+France,9,22097,Randal Kolo Muani,Forward,1.875
+France,10,5477,Ousmane Dembélé,Attacking Midfield/Wing,1.8333333333333335
+France,11,11135,Ibrahima Konaté,Center Back,1.833333333333333
+Germany,1,3167,Antonio Rüdiger,Center Back,2.55
+Germany,2,5579,Joshua Kimmich,Fullback/Wingback,2.5
+Germany,3,39565,Jamal Musiala,Attacking Midfield/Wing,2.4000000000000004
+Germany,4,8400,Serge Gnabry,Attacking Midfield/Wing,2.2
+Germany,5,6322,Niklas Süle,Fullback/Wingback,2.1
+Germany,6,10287,İlkay Gündoğan,Attacking Midfield/Wing,2.1
+Germany,7,5570,Manuel Neuer,Goalkeeper,2.0999999999999996
+Germany,8,6324,Leon Goretzka,Defensive Midfield,1.8
+Germany,9,8966,Kai Havertz,Forward,1.8
+Germany,10,8546,Niclas Füllkrug,Forward,1.7000000000000002
+Germany,11,5562,Thomas Müller,Forward,1.6
+Ghana,1,6383,Thomas Teye Partey,Defensive Midfield,2.625
+Ghana,2,3709,Daniel Amartey,Center Back,2.575
+Ghana,3,30519,Mohamed Salisu,Center Back,2.575
+Ghana,4,17033,Mohammed Kudus,Attacking Midfield/Wing,2.3
+Ghana,5,3347,André Ayew Pelé,Attacking Midfield/Wing,2.15
+Ghana,6,31029,Salis Abdul Samed,Defensive Midfield,2.05
+Ghana,7,6393,Iñaki Williams Arthuer,Forward,1.95
+Ghana,8,8108,Lawrence Ati-Zigi,Goalkeeper,1.925
+Ghana,9,12325,Abdul Rahman Baba,Fullback/Wingback,1.6
+Ghana,10,3450,Jordan Ayew,Attacking Midfield/Wing,1.6
+Ghana,11,45047,Alidu Seidu,Fullback/Wingback,1.5
+Iran,1,5226,Mehdi Taremi,Forward,2.761904761904762
+Iran,2,5220,Morteza Pouraliganji,Center Back,2.6190476190476186
+Iran,3,5228,Seyed Majid Hosseini,Center Back,2.2857142857142856
+Iran,4,5722,Saeid Ezatolahi Afagh,Defensive Midfield,2.2857142857142856
+Iran,5,5230,Ehsan Hajsafi,Fullback/Wingback,2.238095238095238
+Iran,6,5235,Ramin Rezaeian,Fullback/Wingback,2.142857142857143
+Iran,7,124167,Ahmad Nourollahi,Defensive Midfield,2.0476190476190474
+Iran,8,5224,Sardar Azmoun,Forward,1.9047619047619047
+Iran,9,23874,Ali Gholizadeh,Central/Wide Midfield,1.7619047619047619
+Iran,10,5720,Milad Mohammadi,Fullback/Wingback,1.5238095238095237
+Iran,11,124161,Mehdi Torabi,Central/Wide Midfield,1.4285714285714284
+Japan,1,3300,Maya Yoshida,Center Back,2.659090909090909
+Japan,2,9411,Daichi Kamada,Attacking Midfield/Wing,2.181818181818182
+Japan,3,23721,Wataru Endo,Defensive Midfield,2.1363636363636362
+Japan,4,25719,Shūichi Gonda,Goalkeeper,2.0681818181818183
+Japan,5,23527,Junya Ito,Fullback/Wingback,2.0
+Japan,6,37221,Hidemasa Morita,Defensive Midfield,2.0
+Japan,7,8361,Ritsu Doan,Attacking Midfield/Wing,2.0
+Japan,8,29595,Ko Itakura,Center Back,1.9545454545454546
+Japan,9,8949,Takuma Asano,Forward,1.8636363636363638
+Japan,10,37215,Shogo Taniguchi,Center Back,1.8636363636363633
+Japan,11,37208,Ao Tanaka,Defensive Midfield,1.772727272727273
+Mexico,1,5573,Héctor Alfredo Moreno Herrera,Center Back,2.6666666666666665
+Mexico,2,26368,César Jasib Montes Castro,Center Back,2.4761904761904763
+Mexico,3,28825,Luis Gerardo Chávez Magallón,Defensive Midfield,2.4285714285714284
+Mexico,4,5577,Francisco Guillermo Ochoa Magaña,Goalkeeper,2.2857142857142856
+Mexico,5,5571,Hirving Rodrigo Lozano Bahena,Attacking Midfield/Wing,2.238095238095238
+Mexico,6,5576,Jesús Daniel Gallardo Vasconcelos,Fullback/Wingback,2.142857142857143
+Mexico,7,26301,Ernesto Alexis Vega Rojas,Attacking Midfield/Wing,2.142857142857143
+Mexico,8,26400,Henry Josué Martín Mex,Forward,1.9523809523809526
+Mexico,9,5567,Edson Omar Álvarez Velázquez,Defensive Midfield,1.8571428571428572
+Mexico,10,15452,Carlos Uriel Antuna Romero,Attacking Midfield/Wing,1.7142857142857144
+Mexico,11,26406,Jorge Eduardo Sánchez Ramos,Fullback/Wingback,1.6666666666666665
+Morocco,1,5237,Hakim Ziyech,Attacking Midfield/Wing,2.6
+Morocco,2,5245,Achraf Hakimi Mouh,Fullback/Wingback,2.6
+Morocco,3,5234,Sofyan Amrabat,Defensive Midfield,2.2800000000000002
+Morocco,4,5219,Romain Saïss,Center Back,2.2
+Morocco,5,46258,Azzedine Ounahi,Central/Wide Midfield,2.12
+Morocco,6,6301,Youssef En-Nesyri,Forward,2.08
+Morocco,7,6785,Yassine Bounou,Goalkeeper,2.04
+Morocco,8,3625,Sofiane Boufal,Central/Wide Midfield,2.0
+Morocco,9,12149,Nayef Aguerd,Center Back,1.8000000000000003
+Morocco,10,139016,Achraf Dari,Center Back,1.76
+Morocco,11,3634,Abdelhamid Sabiri,Central/Wide Midfield,1.76
+Netherlands,1,3669,Virgil van Dijk,Center Back,2.6190476190476186
+Netherlands,2,8118,Frenkie de Jong,Defensive Midfield,2.428571428571429
+Netherlands,3,3306,Nathan Aké,Center Back,2.2857142857142856
+Netherlands,4,3311,Daley Blind,Fullback/Wingback,2.0952380952380953
+Netherlands,5,8326,Andries Noppert,Goalkeeper,2.095238095238095
+Netherlands,6,7891,Teun Koopmeiners,Defensive Midfield,2.0476190476190474
+Netherlands,7,2988,Memphis Depay,Forward,2.0
+Netherlands,8,8125,Denzel Dumfries,Fullback/Wingback,1.9047619047619047
+Netherlands,9,20750,Cody Mathès Gakpo,Attacking Midfield/Wing,1.9047619047619047
+Netherlands,10,7745,Steven Berghuis,Defensive Midfield,1.9047619047619047
+Netherlands,11,21809,Jurriën David Norman Timber,Center Back,1.7619047619047619
+Poland,1,5668,Robert Lewandowski,Forward,2.595238095238095
+Poland,2,3034,Kamil Glik,Center Back,2.5476190476190474
+Poland,3,44166,Jakub Piotr Kiwior,Center Back,2.380952380952381
+Poland,4,5660,Piotr Zieliński,Central/Wide Midfield,2.380952380952381
+Poland,5,4734,Matty Cash,Fullback/Wingback,2.3095238095238093
+Poland,6,5669,Wojciech Szczęsny,Goalkeeper,2.261904761904762
+Poland,7,11737,Krystian Bielik,Defensive Midfield,1.8571428571428572
+Poland,8,31955,Jakub Kamiński,Central/Wide Midfield,1.857142857142857
+Poland,9,3637,Grzegorz Krychowiak,Defensive Midfield,1.8095238095238098
+Poland,10,5673,Bartosz Bereszyński,Fullback/Wingback,1.8095238095238093
+Poland,11,5665,Arkadiusz Milik,Central/Wide Midfield,1.6666666666666667
+Portugal,1,20016,Kléper Laveran Lima Ferreira,Center Back,2.5833333333333335
+Portugal,2,5204,Bruno Miguel Borges Fernandes,Attacking Midfield/Wing,2.583333333333333
+Portugal,3,12041,João Félix Sequeira,Attacking Midfield/Wing,2.2916666666666665
+Portugal,4,5206,Rúben Santos Gato Alves Dias,Center Back,2.25
+Portugal,5,5207,Cristiano Ronaldo dos Santos Aveiro,Forward,2.1666666666666665
+Portugal,6,32975,Diogo Meireles Costa,Goalkeeper,2.125
+Portugal,7,3193,Bernardo Mota Veiga de Carvalho e Silva,Central/Wide Midfield,2.125
+Portugal,8,5209,Raphaël Adelino José Guerreiro,Fullback/Wingback,2.125
+Portugal,9,9927,Rúben Diogo Da Silva Neves,Defensive Midfield,1.9583333333333335
+Portugal,10,38803,Gonçalo Matias Ramos,Forward,1.875
+Portugal,11,7005,João Pedro Cavaco Cancelo,Fullback/Wingback,1.8333333333333335
+Qatar,1,124494,Abdelkarim Hassan Al Haj Fadlalla,Center Back,2.75
+Qatar,2,124493,Boualem Khoukhi,Center Back,2.7
+Qatar,3,40784,Akram Hassan Afif,Forward,2.55
+Qatar,4,124495,Almoez Ali Zainalabiddin Abdulla,Forward,2.2
+Qatar,5,124506,Pedro Miguel Correia,Center Back,2.05
+Qatar,6,124492,Karim Boudiaf,Defensive Midfield,2.0
+Qatar,7,124899,Ismaeel Mohammad Mohammad,Fullback/Wingback,1.95
+Qatar,8,124900,Homam Alamin Ahmed,Fullback/Wingback,1.9000000000000001
+Qatar,9,124514,Abdulaziz Hatem Mohammed Abdullah,Central/Wide Midfield,1.85
+Qatar,10,124488,Hassan Khalid Al Heidos,Central/Wide Midfield,1.8
+Qatar,11,124901,Mohammed Muntari,Forward,1.6
+Saudi Arabia,1,5187,Salem Mohammed Al Dawsari,Central/Wide Midfield,2.8043478260869565
+Saudi Arabia,2,5713,Mohammed Kanoo,Central/Wide Midfield,2.717391304347826
+Saudi Arabia,3,51710,Saud Abdullah Abdul Hamid,Fullback/Wingback,2.3695652173913047
+Saudi Arabia,4,51099,Firas Tariq Nasser Al Albirakan,Central/Wide Midfield,2.0869565217391304
+Saudi Arabia,5,51094,Abdulelah Al Amri,Center Back,2.0869565217391304
+Saudi Arabia,6,5714,Mohammed Khalil Al Owais,Goalkeeper,2.0217391304347827
+Saudi Arabia,7,56755,Abdulelah Saad Hameed Al-Malki,Defensive Midfield,1.9565217391304348
+Saudi Arabia,8,57620,Sultan Abdullah Salim Al Ghannam,Fullback/Wingback,1.9565217391304346
+Saudi Arabia,9,51469,Saleh Khalid Al Shehri,Forward,1.8695652173913044
+Saudi Arabia,10,5715,Ali Albulayhi,Center Back,1.8695652173913042
+Saudi Arabia,11,5191,Mohammed Al Burayk,Fullback/Wingback,1.8695652173913042
+Senegal,1,2941,Ismaïla Sarr,Attacking Midfield/Wing,2.6
+Senegal,2,3404,Youssouf Sabaly,Fullback/Wingback,2.55
+Senegal,3,5675,Kalidou Koulibaly,Center Back,2.55
+Senegal,4,8553,Abdou Diallo,Center Back,2.2
+Senegal,5,20611,Boulaye Dia,Attacking Midfield/Wing,2.2
+Senegal,6,7379,Edouard Mendy,Goalkeeper,2.0999999999999996
+Senegal,7,3436,Idrissa Gana Gueye,Attacking Midfield/Wing,2.05
+Senegal,8,4506,Nampalys Mendy,Defensive Midfield,1.9
+Senegal,9,20758,Krépin Diatta,Attacking Midfield/Wing,1.7
+Senegal,10,32915,Ismail Jakobs,Fullback/Wingback,1.65
+Senegal,11,88123,Cheikh Ahmadou Bamba Mbacke Dieng,Forward,1.6
+Serbia,1,5603,Nikola Milenković,Center Back,2.6739130434782608
+Serbia,2,4269,Aleksandar Mitrović,Forward,2.5652173913043477
+Serbia,3,27719,Strahinja Pavlović,Center Back,2.4782608695652173
+Serbia,4,3831,Dušan Tadić,Attacking Midfield/Wing,2.3478260869565215
+Serbia,5,20600,Vanja Milinković Savić,Goalkeeper,2.239130434782609
+Serbia,6,5589,Sergej Milinković-Savić,Attacking Midfield/Wing,2.217391304347826
+Serbia,7,6687,Saša Lukić,Defensive Midfield,2.1739130434782608
+Serbia,8,6318,Andrija Živković,Fullback/Wingback,1.9130434782608696
+Serbia,9,18015,Dušan Vlahović,Forward,1.9130434782608696
+Serbia,10,6321,Milos Veljkovic,Center Back,1.7391304347826086
+Serbia,11,5833,Nemanja Radonjić,Fullback/Wingback,1.6956521739130435
+South Korea,1,5604,Young-Gwon Kim,Center Back,2.761904761904762
+South Korea,2,3083,Heung-Min Son,Attacking Midfield/Wing,2.5238095238095237
+South Korea,3,23763,In-Beom Hwang,Defensive Midfield,2.2857142857142856
+South Korea,4,40538,Jin-Su Kim,Fullback/Wingback,2.142857142857143
+South Korea,5,40542,Gue-Sung Cho,Forward,2.142857142857143
+South Korea,6,37641,Seung-Gyu Kim,Goalkeeper,2.0476190476190474
+South Korea,7,40672,Moon-Hwan Kim,Fullback/Wingback,2.0476190476190474
+South Korea,8,43565,Min Jae Kim,Center Back,2.0
+South Korea,9,5618,Woo-Young Jung,Defensive Midfield,1.9523809523809526
+South Korea,10,22740,Kang-In Lee,Central/Wide Midfield,1.8571428571428572
+South Korea,11,5620,Hee-Chan Hwang,Central/Wide Midfield,1.8571428571428572
+Spain,1,6765,Rodrigo Hernández Cascante,Center Back,2.642857142857143
+Spain,2,5203,Sergio Busquets i Burgos,Defensive Midfield,2.5714285714285716
+Spain,3,16532,Daniel Olmo Carvajal,Attacking Midfield/Wing,2.4761904761904763
+Spain,4,11748,Unai Simón Mendibil,Goalkeeper,2.2142857142857144
+Spain,5,30486,Pedro González López,Central/Wide Midfield,2.142857142857143
+Spain,6,4353,Aymeric Laporte,Center Back,2.095238095238095
+Spain,7,6748,Ferrán Torres García,Attacking Midfield/Wing,1.9999999999999998
+Spain,8,5719,Marco Asensio Willemsen,Forward,1.9523809523809526
+Spain,9,3477,Álvaro Borja Morata Martín,Forward,1.9523809523809526
+Spain,10,5211,Jordi Alba Ramos,Fullback/Wingback,1.7619047619047619
+Spain,11,133353,Pablo Martín Páez Gavira,Central/Wide Midfield,1.619047619047619
+Switzerland,1,5549,Manuel Obafemi Akanji,Center Back,2.895833333333333
+Switzerland,2,3500,Granit Xhaka,Defensive Midfield,2.6458333333333335
+Switzerland,3,5545,Breel-Donald Embolo,Forward,2.541666666666667
+Switzerland,4,6983,Remo Freuler,Defensive Midfield,2.5
+Switzerland,5,30401,Ruben Vargas,Attacking Midfield/Wing,2.125
+Switzerland,6,5544,Ricardo Iván Rodríguez Araya,Fullback/Wingback,2.083333333333333
+Switzerland,7,3533,Xherdan Shaqiri,Central/Wide Midfield,2.041666666666667
+Switzerland,8,8814,Nico Elvedi,Center Back,2.0
+Switzerland,9,5550,Yann Sommer,Goalkeeper,1.9166666666666667
+Switzerland,10,16026,Djibril Sow,Attacking Midfield/Wing,1.9166666666666665
+Switzerland,11,7796,Silvan Widmer,Fullback/Wingback,1.875
+Tunisia,1,3767,Ellyes Joris Skhiri,Defensive Midfield,2.595238095238095
+Tunisia,2,32450,Montassar Omar Talbi,Center Back,2.404761904761905
+Tunisia,3,44955,Aïssa Bilal Laïdouni,Defensive Midfield,2.380952380952381
+Tunisia,4,5651,Yassine Meriah,Center Back,2.357142857142857
+Tunisia,5,23910,Youssef Msakni,Attacking Midfield/Wing,2.333333333333333
+Tunisia,6,16352,Issam Jebali,Forward,2.1904761904761907
+Tunisia,7,105943,Aymen Dahmen,Goalkeeper,2.0238095238095237
+Tunisia,8,30681,Ali Abdi,Fullback/Wingback,1.857142857142857
+Tunisia,9,35592,Anis Ben Slimane,Attacking Midfield/Wing,1.8095238095238095
+Tunisia,10,9236,Mohamed Dräger,Fullback/Wingback,1.8095238095238093
+Tunisia,11,5655,Dylan Daniel Mahmoud Bronn,Center Back,1.7619047619047619
+United States,1,18242,Tim Ream,Center Back,2.65
+United States,2,8246,Christian Pulisic,Attacking Midfield/Wing,2.35
+United States,3,12751,Tyler Adams,Defensive Midfield,2.3499999999999996
+United States,4,38792,Yunus Dimoara Musah,Central/Wide Midfield,2.2
+United States,5,12352,Matthew Charles Turner,Goalkeeper,2.15
+United States,6,4614,Antonee Robinson,Fullback/Wingback,2.0
+United States,7,3377,Timothy Weah,Attacking Midfield/Wing,1.9999999999999998
+United States,8,21881,Sergino Dest,Fullback/Wingback,1.9500000000000002
+United States,9,8526,Weston McKennie,Central/Wide Midfield,1.95
+United States,10,12524,Walker Zimmerman,Center Back,1.9
+United States,11,22168,Joshua Sargent,Forward,1.9
+Uruguay,1,5259,José María Giménez de Vargas,Center Back,2.631578947368421
+Uruguay,2,6773,Federico Santiago Valverde Dipetta,Defensive Midfield,2.631578947368421
+Uruguay,3,5260,Rodrigo Bentancur Colmán,Defensive Midfield,2.473684210526316
+Uruguay,4,7104,Mathías Olivera Miramontes,Fullback/Wingback,2.1052631578947367
+Uruguay,5,36710,Sergio Rochet Álvarez,Goalkeeper,2.052631578947368
+Uruguay,6,32478,Darwin Gabriel Núñez Ribeiro,Attacking Midfield/Wing,2.052631578947368
+Uruguay,7,6300,Sebastián Coates Nión,Center Back,1.8421052631578947
+Uruguay,8,5246,Luis Alberto Suárez Díaz,Forward,1.6842105263157894
+Uruguay,9,5258,Giorgian Daniel De Arrascaeta Benedetti,Central/Wide Midfield,1.6315789473684212
+Uruguay,10,4319,Edinson Roberto Cavani Gómez,Forward,1.631578947368421
+Uruguay,11,5264,Guillermo Varela Olivera,Fullback/Wingback,1.5789473684210527
+Wales,1,4767,Chris Mepham,Center Back,2.638888888888889
+Wales,2,3086,Ben Davies,Center Back,2.444444444444444
+Wales,3,11250,Joe Rodon,Center Back,2.4166666666666665
+Wales,4,4934,Ethan Ampadu,Defensive Midfield,2.277777777777778
+Wales,5,6399,Gareth Frank Bale,Forward,2.2222222222222223
+Wales,6,3853,Kieffer Roberto Francisco Moore,Forward,2.1666666666666665
+Wales,7,3517,Aaron Ramsey,Central/Wide Midfield,1.8888888888888888
+Wales,8,34794,Neco Williams,Fullback/Wingback,1.7222222222222223
+Wales,9,3488,Wayne Hennessey,Goalkeeper,1.5555555555555556
+Wales,10,4774,Connor Roberts,Fullback/Wingback,1.5
+Wales,11,9540,Harry Wilson,Central/Wide Midfield,1.4444444444444444
