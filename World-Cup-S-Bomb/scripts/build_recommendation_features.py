@@ -481,7 +481,7 @@ def main() -> None:
         "opponent",
         "period",
         "start_minute",
-        "play_pattern",
+        "first_play_pattern",
         "start_x",
         "start_y",
         "team_goals_before",

@@ -43,7 +43,7 @@ DEFAULT_REPORT = PROJECT_ROOT / "results" / "transition_model_benchmark.md"
 RANDOM_STATE = 42
 CATEGORICAL_FEATURES = [
     "attacking_style",
-    "play_pattern",
+    "first_play_pattern",
     "competition_stage",
     "score_state",
 ]

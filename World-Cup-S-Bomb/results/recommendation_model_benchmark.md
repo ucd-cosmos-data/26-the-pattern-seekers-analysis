@@ -10,14 +10,14 @@
 
 | Target | Layout | Model | Log loss | Brier | ROC-AUC | PR-AUC |
 |---|---|---|---:|---:|---:|---:|
-| shot | Context + History | XGBoost | 0.3338 | 0.1001 | 0.7299 | 0.2802 |
-| box_entry | Context + History | XGBoost | 0.4866 | 0.1645 | 0.7841 | 0.6454 |
-| transition_box_15 | Player-Aware | Soft Vote: All | 0.1233 | 0.0261 | 0.5835 | 0.0369 |
-| transition_shot_15 | Player-Aware | Gradient Boosting | 0.0804 | 0.0150 | 0.5542 | 0.0163 |
+| shot | Context + History | XGBoost | 0.3341 | 0.1001 | 0.7272 | 0.2824 |
+| box_entry | Context + History | Soft Vote: Boosting | 0.4858 | 0.1640 | 0.7857 | 0.6487 |
+| transition_box_15 | Player-Aware | Gradient Boosting | 0.1233 | 0.0261 | 0.5723 | 0.0334 |
+| transition_shot_15 | Player-Aware | Gradient Boosting | 0.0810 | 0.0150 | 0.5413 | 0.0156 |
 
 ## Net-value result
 
-- Context + History: RMSE 0.0686, MAE 0.0237, Spearman 0.2508
-- Player-Aware: RMSE 0.0687, MAE 0.0238, Spearman 0.2534
+- Context + History: RMSE 0.0686, MAE 0.0237, Spearman 0.2482
+- Player-Aware: RMSE 0.0687, MAE 0.0239, Spearman 0.2491
 
 These results measure prediction, not causal treatment effects. Candidate-style simulation must hold all other inputs constant and report uncertainty.

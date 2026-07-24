@@ -49,6 +49,8 @@ venv/
 !**/results/figures/*.png
 
 # World Cup project
+**/World-Cup-S-Bomb/results/reports/starters/
+**/World-Cup-S-Bomb/results/reports/teams/
 
 
 # Models

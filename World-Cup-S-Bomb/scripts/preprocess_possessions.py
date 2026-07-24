@@ -166,6 +166,8 @@ class PossessionAccumulator:
     start_sort_key: tuple[float, int] = (math.inf, 10**9)
     end_sort_key: tuple[float, int] = (-math.inf, -1)
     play_patterns: Counter[str] = field(default_factory=Counter)
+    first_play_pattern: str = ""
+    first_play_pattern_sort_key: tuple[float, int] = (math.inf, 10**9)
     players: set[str] = field(default_factory=set)
     action_times: list[float] = field(default_factory=list)
     attack_ys: list[float] = field(default_factory=list)
@@ -222,6 +224,13 @@ class PossessionAccumulator:
 
         if row["play_pattern"]:
             self.play_patterns[row["play_pattern"]] += 1
+            play_pattern_sort_key = (event_time, event_index)
+            if (
+                event_type not in NON_ANALYTIC_TYPES
+                and play_pattern_sort_key < self.first_play_pattern_sort_key
+            ):
+                self.first_play_pattern_sort_key = play_pattern_sort_key
+                self.first_play_pattern = row["play_pattern"]
 
         if on_attack:
             if row["player"]:
@@ -355,6 +364,8 @@ class PossessionAccumulator:
             "team": self.possession_team,
             "opponent": self.match_info.opponent(self.possession_team),
             "play_pattern": self.play_patterns.most_common(1)[0][0] if self.play_patterns else "Unknown",
+            "first_play_pattern": self.first_play_pattern
+            or (self.play_patterns.most_common(1)[0][0] if self.play_patterns else "Unknown"),
             "start_minute": int(self.start_time_seconds // 60),
             "end_minute": int(self.end_time_seconds // 60),
             "start_time_seconds": round(self.start_time_seconds, 3),
@@ -553,6 +564,7 @@ FEATURE_GROUPS: dict[str, dict[str, str]] = {
         "team": "Team in possession.",
         "opponent": "Opponent derived from match metadata.",
         "play_pattern": "Most frequent StatsBomb play pattern in the possession.",
+        "first_play_pattern": "StatsBomb play pattern on the first non-administrative event.",
     },
     "Timing and structure": {
         "start_minute": "Minute of the first non-administrative event.",

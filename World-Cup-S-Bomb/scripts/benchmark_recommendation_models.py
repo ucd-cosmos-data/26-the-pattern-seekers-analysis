@@ -50,7 +50,7 @@ DEFAULT_REPORT = PROJECT_ROOT / "results" / "recommendation_model_benchmark.md"
 RANDOM_STATE = 42
 CATEGORICAL_FEATURES = [
     "attacking_style",
-    "play_pattern",
+    "first_play_pattern",
     "competition_stage",
 ]
 CONTEXT_FEATURES = ["period", "start_minute", "start_x", "start_y"]

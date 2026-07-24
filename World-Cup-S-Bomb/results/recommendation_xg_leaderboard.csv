@@ -1,183 +1,183 @@
 layout,outcome,model,rows,mae,rmse,spearman,outcome_rank,result_type,classifier,conditional_regressor
-Player-Aware,attacking_xg_given_shot,Random Forest,1207.0,0.09671857807550442,0.14719482264773817,0.0430387522722509,1.0,conditional,,
-Context + History,attacking_xg_given_shot,Random Forest,1207.0,0.09605027714207995,0.14769142313884617,0.048784623013292734,2.0,conditional,,
-Player-Aware,attacking_xg_given_shot,Gradient Boosting,1207.0,0.08522058497252136,0.14799074147044447,0.018659811854397357,3.0,conditional,,
-Context + History,attacking_xg_given_shot,Ridge,1207.0,0.09510717112631559,0.14829292317356177,0.04504696369495984,4.0,conditional,,
-Context + History,attacking_xg_given_shot,Gradient Boosting,1207.0,0.08530481008788308,0.14844970330533097,0.05101071722002217,5.0,conditional,,
-Context + History,attacking_xg_given_shot,XGBoost,1207.0,0.09614546819047999,0.14894199903340893,0.11064681792674116,6.0,conditional,,
-Player-Aware,attacking_xg_given_shot,XGBoost,1207.0,0.09711384276915584,0.14970448943844875,0.06345482103508143,7.0,conditional,,
-Context + History,attacking_xg_given_shot,Histogram Gradient Boosting,1207.0,0.09733630083773734,0.15158132631163812,0.11581900221814127,8.0,conditional,,
-Player-Aware,attacking_xg_given_shot,Histogram Gradient Boosting,1207.0,0.10093383867773228,0.15213050171647863,0.08560528183418817,9.0,conditional,,
-Player-Aware,attacking_xg_given_shot,Ridge,1207.0,0.10641072217749863,0.1621307544190598,0.001130244549697535,10.0,conditional,,
-Context + History,transition_xg_given_shot,Random Forest,145.0,0.13399492481850922,0.1966092126797429,-0.016808376633601005,1.0,conditional,,
-Player-Aware,transition_xg_given_shot,Random Forest,145.0,0.13686763075448014,0.19913097773686025,-0.057565737679105645,2.0,conditional,,
-Context + History,transition_xg_given_shot,Gradient Boosting,145.0,0.12760631197155722,0.2032428377729826,-0.058191623366398985,3.0,conditional,,
-Player-Aware,transition_xg_given_shot,Gradient Boosting,145.0,0.1315447390899492,0.20760384016453926,-0.12801184070261634,4.0,conditional,,
-Context + History,transition_xg_given_shot,Ridge,145.0,0.14640840322705226,0.21323843726668107,-0.00480343338624254,5.0,conditional,,
-Context + History,transition_xg_given_shot,XGBoost,145.0,0.14869363776763123,0.21710029320636628,0.03567168820563067,6.0,conditional,,
-Context + History,transition_xg_given_shot,Histogram Gradient Boosting,145.0,0.1470896828378332,0.2177791027594687,0.005935775734951364,7.0,conditional,,
-Player-Aware,transition_xg_given_shot,XGBoost,145.0,0.16102778403674714,0.22689219354484785,-0.09251586872464919,8.0,conditional,,
-Player-Aware,transition_xg_given_shot,Histogram Gradient Boosting,145.0,0.1663891565714999,0.23354867208448593,-0.08971534019345911,9.0,conditional,,
-Player-Aware,transition_xg_given_shot,Ridge,145.0,0.17506134928874256,0.24862713073394085,-0.129332769733745,10.0,conditional,,
-Context + History,expected_attack_xg,,,0.02283572272795576,0.061974688963883445,0.2615442404440073,,hurdle,Soft Vote: Boosting,XGBoost
-Context + History,expected_attack_xg,,,0.022815299861121532,0.061974745316632114,0.2615442404440073,,hurdle,Soft Vote: Boosting,Random Forest
-Context + History,expected_attack_xg,,,0.022787217944531195,0.06197486109895992,0.2615442404440073,,hurdle,Soft Vote: Boosting,Histogram Gradient Boosting
-Context + History,expected_attack_xg,,,0.022581917053705363,0.061977060674886175,0.2615442404440073,,hurdle,Soft Vote: Boosting,Ridge
-Context + History,expected_attack_xg,,,0.0230632163257547,0.06199006313830096,0.2628310636890389,,hurdle,Soft Vote: All,XGBoost
-Context + History,expected_attack_xg,,,0.02304235482214123,0.06199009045052317,0.2628310636890389,,hurdle,Soft Vote: All,Random Forest
-Context + History,expected_attack_xg,,,0.0230136530986619,0.06199016624706535,0.2628310636890389,,hurdle,Soft Vote: All,Histogram Gradient Boosting
-Context + History,expected_attack_xg,,,0.022803691026482276,0.06199207177007455,0.2628310636890389,,hurdle,Soft Vote: All,Ridge
-Context + History,expected_attack_xg,,,0.022547669127540082,0.06199262217708286,0.263202354323628,,hurdle,XGBoost,Ridge
-Context + History,expected_attack_xg,,,0.02275425257892963,0.0619926628327505,0.263202354323628,,hurdle,XGBoost,Histogram Gradient Boosting
-Context + History,expected_attack_xg,,,0.0227825380732825,0.06199285903223789,0.263202354323628,,hurdle,XGBoost,Random Forest
-Context + History,expected_attack_xg,,,0.022803097045745457,0.0619930303752042,0.263202354323628,,hurdle,XGBoost,XGBoost
-Context + History,expected_attack_xg,,,0.023062391351653347,0.06200997392551571,0.26035809223880646,,hurdle,Gradient Boosting,XGBoost
-Context + History,expected_attack_xg,,,0.023041517321419923,0.06201017703100968,0.26035809223880646,,hurdle,Gradient Boosting,Random Forest
-Context + History,expected_attack_xg,,,0.02301281217606425,0.06201049318175103,0.26035809223880646,,hurdle,Gradient Boosting,Histogram Gradient Boosting
-Context + History,expected_attack_xg,,,0.02280294867309753,0.0620141064290824,0.26035809223880646,,hurdle,Gradient Boosting,Ridge
-Context + History,expected_attack_xg,,,0.023074818632289135,0.06203798663224709,0.26039975693785594,,hurdle,Soft Vote: LR + XGB,XGBoost
-Context + History,expected_attack_xg,,,0.023053883350795387,0.06203805218466727,0.26039975693785594,,hurdle,Soft Vote: LR + XGB,Random Forest
-Context + History,expected_attack_xg,,,0.02302508012205748,0.062038179612063614,0.26039975693785594,,hurdle,Soft Vote: LR + XGB,Histogram Gradient Boosting
-Context + History,expected_attack_xg,,,0.022814531528023325,0.062040428752376864,0.26039975693785594,,hurdle,Soft Vote: LR + XGB,Ridge
-Player-Aware,expected_attack_xg,,,0.022801671104491505,0.062061989292532295,0.26425443048762237,,hurdle,Soft Vote: Boosting,Random Forest
-Player-Aware,expected_attack_xg,,,0.022947614319529124,0.0620623250305533,0.26425443048762237,,hurdle,Soft Vote: Boosting,Histogram Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.02261586556548092,0.06206324958603729,0.26425443048762237,,hurdle,Soft Vote: Boosting,XGBoost
-Player-Aware,expected_attack_xg,,,0.0221220286084086,0.062075892522248294,0.26425443048762237,,hurdle,Soft Vote: Boosting,Ridge
-Player-Aware,expected_attack_xg,,,0.023125513582293887,0.06208168847528871,0.2638530658815745,,hurdle,Soft Vote: All,XGBoost
-Player-Aware,expected_attack_xg,,,0.023321952411838223,0.062083411248601915,0.2638530658815745,,hurdle,Soft Vote: All,Random Forest
-Player-Aware,expected_attack_xg,,,0.023476715986894128,0.06208615599899791,0.2638530658815745,,hurdle,Soft Vote: All,Histogram Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.022603266113600858,0.062086854748900064,0.2638530658815745,,hurdle,Soft Vote: All,Ridge
-Context + History,expected_attack_xg,,,0.022439348530760284,0.062106253509670736,0.25079069643692764,,hurdle,Histogram Gradient Boosting,Ridge
-Context + History,expected_attack_xg,,,0.022642914600270667,0.06211119477320941,0.25079069643692764,,hurdle,Histogram Gradient Boosting,Histogram Gradient Boosting
-Context + History,expected_attack_xg,,,0.02267074084949032,0.06211206748579301,0.25079069643692764,,hurdle,Histogram Gradient Boosting,Random Forest
-Context + History,expected_attack_xg,,,0.022690978504895182,0.062112731691832096,0.25079069643692764,,hurdle,Histogram Gradient Boosting,XGBoost
-Player-Aware,expected_attack_xg,,,0.022658640989448118,0.062113150551975346,0.26326461707843574,,hurdle,XGBoost,XGBoost
-Player-Aware,expected_attack_xg,,,0.02284682228509915,0.062114925000582834,0.26326461707843574,,hurdle,XGBoost,Random Forest
-Player-Aware,expected_attack_xg,,,0.022994866267930982,0.062117694518023236,0.26326461707843574,,hurdle,XGBoost,Histogram Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.022160368100714676,0.06211806843434177,0.26326461707843574,,hurdle,XGBoost,Ridge
-Context + History,expected_attack_xg,,,0.02055405385332034,0.06212371183587979,0.263202354323628,,hurdle,XGBoost,Gradient Boosting
-Context + History,expected_attack_xg,,,0.02058577134894496,0.062125908742865533,0.2615442404440073,,hurdle,Soft Vote: Boosting,Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.022212324894519974,0.06212640653194799,0.25909354875526003,,hurdle,Histogram Gradient Boosting,XGBoost
-Player-Aware,expected_attack_xg,,,0.022391566631322194,0.062128970405528804,0.25909354875526003,,hurdle,Histogram Gradient Boosting,Random Forest
-Player-Aware,expected_attack_xg,,,0.021736003732032726,0.06212931366023085,0.25909354875526003,,hurdle,Histogram Gradient Boosting,Ridge
-Player-Aware,expected_attack_xg,,,0.02321653410765041,0.062132228919419934,0.2581531349450028,,hurdle,Gradient Boosting,Random Forest
-Player-Aware,expected_attack_xg,,,0.022532599094900362,0.062132372839018096,0.25909354875526003,,hurdle,Histogram Gradient Boosting,Histogram Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.023368424267062093,0.06213281454867954,0.2581531349450028,,hurdle,Gradient Boosting,Histogram Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.023023573052299892,0.062133134131572364,0.2581531349450028,,hurdle,Gradient Boosting,XGBoost
-Context + History,expected_attack_xg,,,0.020762760969017385,0.062137924085749176,0.2628310636890389,,hurdle,Soft Vote: All,Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.022511211779535658,0.06214462885076261,0.2581531349450028,,hurdle,Gradient Boosting,Ridge
-Context + History,expected_attack_xg,,,0.020774152619175736,0.06217175508608528,0.26035809223880646,,hurdle,Gradient Boosting,Gradient Boosting
-Context + History,expected_attack_xg,,,0.02078295926586627,0.062186403469329625,0.26039975693785594,,hurdle,Soft Vote: LR + XGB,Gradient Boosting
-Context + History,expected_attack_xg,,,0.02046555965474639,0.06219439657073007,0.25079069643692764,,hurdle,Histogram Gradient Boosting,Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.022676104119262745,0.06221123833185544,0.2524972513460738,,hurdle,Soft Vote: LR + XGB,Ridge
-Player-Aware,expected_attack_xg,,,0.023204193964025052,0.062216805479929874,0.2524972513460738,,hurdle,Soft Vote: LR + XGB,XGBoost
-Player-Aware,expected_attack_xg,,,0.020783912501369437,0.06221931840510374,0.2638530658815745,,hurdle,Soft Vote: All,Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.023403596408402307,0.06222264303156056,0.2524972513460738,,hurdle,Soft Vote: LR + XGB,Random Forest
-Player-Aware,expected_attack_xg,,,0.02356049225551541,0.062228650717134876,0.2524972513460738,,hurdle,Soft Vote: LR + XGB,Histogram Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.02040593221847769,0.06222904116316885,0.26425443048762237,,hurdle,Soft Vote: Boosting,Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.020428983157846848,0.062248365713614896,0.26326461707843574,,hurdle,XGBoost,Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.02009005440205563,0.062253648571223286,0.25909354875526003,,hurdle,Histogram Gradient Boosting,Gradient Boosting
-Context + History,expected_attack_xg,,,0.023276719825695576,0.06225648896245738,0.2453081489433272,,hurdle,Random Forest,Ridge
-Context + History,expected_attack_xg,,,0.02108924736507012,0.06225759974560678,0.2453081489433272,,hurdle,Random Forest,Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.02354036115439809,0.062270888474442794,0.2489141029745563,,hurdle,Random Forest,Ridge
-Context + History,expected_attack_xg,,,0.023503682796513912,0.062271891988285484,0.2453081489433272,,hurdle,Random Forest,Histogram Gradient Boosting
-Context + History,expected_attack_xg,,,0.02353474924528438,0.06227421560453878,0.2453081489433272,,hurdle,Random Forest,Random Forest
-Context + History,expected_attack_xg,,,0.023557329521125648,0.062275937840016574,0.2453081489433272,,hurdle,Random Forest,XGBoost
-Player-Aware,expected_attack_xg,,,0.021515654737094516,0.06227895464196215,0.2489141029745563,,hurdle,Random Forest,Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.020725659498090476,0.062291388105222466,0.2581531349450028,,hurdle,Gradient Boosting,Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.02412263408886193,0.062308519772459124,0.2489141029745563,,hurdle,Random Forest,XGBoost
-Player-Aware,expected_attack_xg,,,0.02083886476858406,0.062308783898608194,0.2524972513460738,,hurdle,Soft Vote: LR + XGB,Gradient Boosting
-Context + History,expected_attack_xg,,,0.02315593930415163,0.062323207086403966,0.23330935338278774,,hurdle,Logistic Regression,Ridge
-Player-Aware,expected_attack_xg,,,0.024341387758171032,0.062327122626345564,0.2489141029745563,,hurdle,Random Forest,Random Forest
-Context + History,expected_attack_xg,,,0.023373129872202563,0.06232897083930767,0.23330935338278774,,hurdle,Logistic Regression,Histogram Gradient Boosting
-Context + History,expected_attack_xg,,,0.023402817679935572,0.06232994241561377,0.23330935338278774,,hurdle,Logistic Regression,Random Forest
-Context + History,expected_attack_xg,,,0.023424404889966274,0.062330676459924794,0.23330935338278774,,hurdle,Logistic Regression,XGBoost
-Player-Aware,expected_attack_xg,,,0.024513424659583723,0.062343428721332465,0.2489141029745563,,hurdle,Random Forest,Histogram Gradient Boosting
-Context + History,expected_attack_xg,,,0.021050435266228656,0.06239402015797702,0.23330935338278774,,hurdle,Logistic Regression,Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.02131121333954483,0.06256822495718901,0.2082796362572593,,hurdle,Logistic Regression,Gradient Boosting
-Player-Aware,expected_attack_xg,,,0.023270477239922177,0.06261142139647304,0.2082796362572593,,hurdle,Logistic Regression,Ridge
-Player-Aware,expected_attack_xg,,,0.023834171738082357,0.06266198487481241,0.2082796362572593,,hurdle,Logistic Regression,XGBoost
-Player-Aware,expected_attack_xg,,,0.0240462976623769,0.06268525074136688,0.2082796362572593,,hurdle,Logistic Regression,Random Forest
-Player-Aware,expected_attack_xg,,,0.02421269231572245,0.06270514483746253,0.2082796362572593,,hurdle,Logistic Regression,Histogram Gradient Boosting
-Context + History,expected_net_xg,,,0.023684718362087166,0.06864831727440292,0.2507900238193827,,hurdle,attack=Soft Vote: Boosting; transition=Soft Vote: LR + XGB,attack=XGBoost; transition=Gradient Boosting
-Player-Aware,expected_net_xg,,,0.02384803089617919,0.06873966699616897,0.2533535229824459,,hurdle,attack=Soft Vote: Boosting; transition=Soft Vote: Boosting,attack=Random Forest; transition=Gradient Boosting
-Context + History,expected_transition_xg,,,0.003804600257437608,0.02882765623839481,0.01001601815257785,,hurdle,Soft Vote: LR + XGB,Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.003449683691395108,0.028829433129772923,0.018496833418273555,,hurdle,Soft Vote: Boosting,Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.0036732748100944284,0.028834341255555174,0.018496833418273555,,hurdle,Soft Vote: Boosting,Ridge
-Context + History,expected_transition_xg,,,0.003897423054310887,0.028836367691751845,0.019977183096109897,,hurdle,Logistic Regression,Gradient Boosting
-Context + History,expected_transition_xg,,,0.003812877436783219,0.02883747572662698,-0.003037139771268872,,hurdle,Soft Vote: All,Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.003949106694018427,0.02883832431868582,0.021417182417313267,,hurdle,Soft Vote: All,Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.0038062765593514705,0.028838790107660654,0.018496833418273555,,hurdle,Soft Vote: Boosting,Random Forest
-Context + History,expected_transition_xg,,,0.004145984981310004,0.02884070090821298,0.01001601815257785,,hurdle,Soft Vote: LR + XGB,Histogram Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.003876313169581684,0.02884159111597488,0.018496833418273555,,hurdle,Soft Vote: Boosting,XGBoost
-Context + History,expected_transition_xg,,,0.004170135548380291,0.028841891304581348,0.01001601815257785,,hurdle,Soft Vote: LR + XGB,Ridge
-Context + History,expected_transition_xg,,,0.0037117774605643296,0.028842293616846357,0.004247429972435055,,hurdle,XGBoost,Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.003942745888272317,0.028844540083306915,0.018496833418273555,,hurdle,Soft Vote: Boosting,Histogram Gradient Boosting
-Context + History,expected_transition_xg,,,0.004231576259696278,0.02884507904553206,0.01001601815257785,,hurdle,Soft Vote: LR + XGB,Random Forest
-Player-Aware,expected_transition_xg,,,0.002885400165939183,0.028845887576472724,0.01840556872540131,,hurdle,Histogram Gradient Boosting,Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.003489999087284722,0.02884635036784457,0.006935048476330045,,hurdle,XGBoost,Gradient Boosting
-Context + History,expected_transition_xg,,,0.0036503995641613747,0.028847204428767214,-0.0029925122177285614,,hurdle,Soft Vote: Boosting,Gradient Boosting
-Context + History,expected_transition_xg,,,0.003886896328634822,0.028848065409038455,-0.0030645994073285163,,hurdle,Gradient Boosting,Gradient Boosting
-Context + History,expected_transition_xg,,,0.004304804314525737,0.02884917697392263,0.01001601815257785,,hurdle,Soft Vote: LR + XGB,XGBoost
-Player-Aware,expected_transition_xg,,,0.003014562785477455,0.028849345193534406,0.01840556872540131,,hurdle,Histogram Gradient Boosting,Ridge
-Player-Aware,expected_transition_xg,,,0.003973651820961421,0.028850899293313213,0.02289926720068354,,hurdle,Gradient Boosting,Gradient Boosting
-Context + History,expected_transition_xg,,,0.004155933138875862,0.0288523044660994,-0.003037139771268872,,hurdle,Soft Vote: All,Histogram Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.003091394344964903,0.028852359527777743,0.01840556872540131,,hurdle,Histogram Gradient Boosting,Random Forest
-Context + History,expected_transition_xg,,,0.004180201915897443,0.02885361844935651,-0.003037139771268872,,hurdle,Soft Vote: All,Ridge
-Player-Aware,expected_transition_xg,,,0.0031318526247639334,0.028854233852529443,0.01840556872540131,,hurdle,Histogram Gradient Boosting,XGBoost
-Player-Aware,expected_transition_xg,,,0.004256272403250265,0.02885523830051963,0.021417182417313267,,hurdle,Soft Vote: All,Ridge
-Context + History,expected_transition_xg,,,0.004257546634192223,0.028856149961597424,0.019977183096109897,,hurdle,Logistic Regression,Histogram Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.003170229032642058,0.028856194677200162,0.01840556872540131,,hurdle,Histogram Gradient Boosting,Histogram Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.0037203366767832096,0.028856622208101396,0.006935048476330045,,hurdle,XGBoost,Ridge
-Context + History,expected_transition_xg,,,0.004241943361497261,0.028857119030113693,-0.003037139771268872,,hurdle,Soft Vote: All,Random Forest
-Context + History,expected_transition_xg,,,0.004283022843469728,0.028857879961132572,0.019977183096109897,,hurdle,Logistic Regression,Ridge
-Context + History,expected_transition_xg,,,0.004034423328427783,0.02885896157024442,0.004247429972435055,,hurdle,XGBoost,Histogram Gradient Boosting
-Context + History,expected_transition_xg,,,0.004057248253290854,0.02886041659078413,0.004247429972435055,,hurdle,XGBoost,Ridge
-Context + History,expected_transition_xg,,,0.004315529846204142,0.02886158685773165,-0.003037139771268872,,hurdle,Soft Vote: All,XGBoost
-Context + History,expected_transition_xg,,,0.003960654601306844,0.028862139000350128,-0.0029925122177285614,,hurdle,Soft Vote: Boosting,Histogram Gradient Boosting
-Context + History,expected_transition_xg,,,0.0043478360801564395,0.028862477911318386,0.019977183096109897,,hurdle,Logistic Regression,Random Forest
-Context + History,expected_transition_xg,,,0.003982602962084337,0.028863436815847385,-0.0029925122177285614,,hurdle,Soft Vote: Boosting,Ridge
-Context + History,expected_transition_xg,,,0.004115316439236117,0.02886428247009737,0.004247429972435055,,hurdle,XGBoost,Random Forest
-Player-Aware,expected_transition_xg,,,0.0038573515211167485,0.02886460386902523,0.006935048476330045,,hurdle,XGBoost,Random Forest
-Context + History,expected_transition_xg,,,0.004038441108429487,0.02886688218472033,-0.0029925122177285614,,hurdle,Soft Vote: Boosting,Random Forest
-Context + History,expected_transition_xg,,,0.004244894796977462,0.02886823983113824,-0.0030645994073285163,,hurdle,Gradient Boosting,Histogram Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.004438987964034916,0.02886825278650374,0.021417182417313267,,hurdle,Soft Vote: All,Random Forest
-Context + History,expected_transition_xg,,,0.00442508367622283,0.028868326703654856,0.019977183096109897,,hurdle,Logistic Regression,XGBoost
-Context + History,expected_transition_xg,,,0.004184524952828643,0.028869197834788446,0.004247429972435055,,hurdle,XGBoost,XGBoost
-Player-Aware,expected_transition_xg,,,0.00392950136352067,0.028869367548585233,0.006935048476330045,,hurdle,XGBoost,XGBoost
-Context + History,expected_transition_xg,,,0.004270220669566891,0.028869972487407605,-0.0030645994073285163,,hurdle,Gradient Boosting,Ridge
-Context + History,expected_transition_xg,,,0.004104991751391755,0.028871257814486864,-0.0029925122177285614,,hurdle,Soft Vote: Boosting,XGBoost
-Player-Aware,expected_transition_xg,,,0.004284924968022622,0.028871757784667863,0.02289926720068354,,hurdle,Gradient Boosting,Ridge
-Player-Aware,expected_transition_xg,,,0.003997938573263376,0.028874243330522926,0.006935048476330045,,hurdle,XGBoost,Histogram Gradient Boosting
-Context + History,expected_transition_xg,,,0.004334651439331583,0.028874562266542433,-0.0030645994073285163,,hurdle,Gradient Boosting,Random Forest
-Player-Aware,expected_transition_xg,,,0.00453520307838607,0.028875990278324187,0.021417182417313267,,hurdle,Soft Vote: All,XGBoost
-Context + History,expected_transition_xg,,,0.004411443192551497,0.028880373334942228,-0.0030645994073285163,,hurdle,Gradient Boosting,XGBoost
-Context + History,expected_transition_xg,,,0.004215765437121086,0.028883791181575035,-0.007778972540317682,,hurdle,Random Forest,Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.004626467227300002,0.028883892815768395,0.021417182417313267,,hurdle,Soft Vote: All,Histogram Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.0044700838119727596,0.028887365620156688,0.02289926720068354,,hurdle,Gradient Boosting,Random Forest
-Player-Aware,expected_transition_xg,,,0.004567585520460449,0.028896542409863446,0.02289926720068354,,hurdle,Gradient Boosting,XGBoost
-Context + History,expected_transition_xg,,,0.0033525249032849724,0.02889797327014526,-0.00812027322669704,,hurdle,Histogram Gradient Boosting,Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.004014780517650525,0.028900504185691865,0.022096488254154056,,hurdle,Soft Vote: LR + XGB,Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.004660070058911518,0.028905856995219793,0.02289926720068354,,hurdle,Gradient Boosting,Histogram Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.004856920447890483,0.028923421917523007,0.0011824875466203868,,hurdle,Random Forest,Gradient Boosting
-Context + History,expected_transition_xg,,,0.0046401552562665505,0.02892632294503955,-0.0077789725412424834,,hurdle,Random Forest,Histogram Gradient Boosting
-Context + History,expected_transition_xg,,,0.003602645678515284,0.028926658946529207,-0.00812027322669704,,hurdle,Histogram Gradient Boosting,Histogram Gradient Boosting
-Context + History,expected_transition_xg,,,0.0036203399633952657,0.028928973313190533,-0.00812027322669704,,hurdle,Histogram Gradient Boosting,Ridge
-Context + History,expected_transition_xg,,,0.004670177849764467,0.02892982783075808,-0.007778972540317682,,hurdle,Random Forest,Ridge
-Context + History,expected_transition_xg,,,0.003665355446720761,0.028935030802069564,-0.00812027322669704,,hurdle,Histogram Gradient Boosting,Random Forest
-Context + History,expected_transition_xg,,,0.004746557402041407,0.028939039409329598,-0.007778972540317682,,hurdle,Random Forest,Random Forest
-Context + History,expected_transition_xg,,,0.0037190071087951247,0.02894256824598806,-0.00812027322669704,,hurdle,Histogram Gradient Boosting,XGBoost
-Player-Aware,expected_transition_xg,,,0.004333177385834131,0.028944051938335564,0.022096488254154056,,hurdle,Soft Vote: LR + XGB,Ridge
-Context + History,expected_transition_xg,,,0.004837590300622612,0.028950570785595837,-0.007778972540317682,,hurdle,Random Forest,XGBoost
-Player-Aware,expected_transition_xg,,,0.004522583549686469,0.028975083973895862,0.022096488254154056,,hurdle,Soft Vote: LR + XGB,Random Forest
-Player-Aware,expected_transition_xg,,,0.005316001792487775,0.028979480881097506,0.0011824875466203868,,hurdle,Random Forest,Ridge
-Player-Aware,expected_transition_xg,,,0.004622321829423598,0.028992957361909256,0.022096488254154056,,hurdle,Soft Vote: LR + XGB,XGBoost
-Player-Aware,expected_transition_xg,,,0.004716927851312503,0.029010885738645766,0.022096488254154056,,hurdle,Soft Vote: LR + XGB,Histogram Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.005589083398939347,0.02901911104198358,0.0011824875466203868,,hurdle,Random Forest,Random Forest
-Player-Aware,expected_transition_xg,,,0.005732921170603562,0.02904185576722615,0.0011824875466203868,,hurdle,Random Forest,XGBoost
-Player-Aware,expected_transition_xg,,,0.0058693743159554295,0.029064622672501268,0.0011824875466203868,,hurdle,Random Forest,Histogram Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.004540736084938348,0.029142593657236922,0.03273249992726934,,hurdle,Logistic Regression,Gradient Boosting
-Player-Aware,expected_transition_xg,,,0.00494716683475154,0.02928648498917898,0.03273249992726934,,hurdle,Logistic Regression,Ridge
-Player-Aware,expected_transition_xg,,,0.00518892957108678,0.029385017822889044,0.03273249992726934,,hurdle,Logistic Regression,Random Forest
-Player-Aware,expected_transition_xg,,,0.005316237990919499,0.029440742956842368,0.03273249992726934,,hurdle,Logistic Regression,XGBoost
-Player-Aware,expected_transition_xg,,,0.005437036737681208,0.029496030785183,0.03273249992726934,,hurdle,Logistic Regression,Histogram Gradient Boosting
+Player-Aware,attacking_xg_given_shot,Random Forest,1207.0,0.0976393624353408,0.14775221473645256,0.031374427341624905,1.0,conditional,,
+Player-Aware,attacking_xg_given_shot,Gradient Boosting,1207.0,0.08549833517274023,0.14812638260766478,0.030899629198553404,2.0,conditional,,
+Context + History,attacking_xg_given_shot,Gradient Boosting,1207.0,0.08598212138898413,0.14832221115152636,0.03446037789150904,3.0,conditional,,
+Context + History,attacking_xg_given_shot,Random Forest,1207.0,0.09678733663836037,0.14842735642106483,0.024697114848823802,4.0,conditional,,
+Context + History,attacking_xg_given_shot,Ridge,1207.0,0.0973585234174724,0.14933151241832224,0.06001047639902006,5.0,conditional,,
+Context + History,attacking_xg_given_shot,XGBoost,1207.0,0.09776824756191028,0.15025975581900936,0.10714052700124448,6.0,conditional,,
+Player-Aware,attacking_xg_given_shot,XGBoost,1207.0,0.0980242262579494,0.1513093028744012,0.05181855771134067,7.0,conditional,,
+Player-Aware,attacking_xg_given_shot,Histogram Gradient Boosting,1207.0,0.10019040530737634,0.15209679032559525,0.0523562053778463,8.0,conditional,,
+Context + History,attacking_xg_given_shot,Histogram Gradient Boosting,1207.0,0.10066989580612859,0.15447204698502556,0.061401877009723625,9.0,conditional,,
+Player-Aware,attacking_xg_given_shot,Ridge,1207.0,0.11113640612815093,0.16605868382478856,0.03611914805732643,10.0,conditional,,
+Context + History,transition_xg_given_shot,Random Forest,145.0,0.13668633940055455,0.19598805488727478,0.009903952133522279,1.0,conditional,,
+Player-Aware,transition_xg_given_shot,Random Forest,145.0,0.1347178956290243,0.197059657216522,-0.040450322783813566,2.0,conditional,,
+Context + History,transition_xg_given_shot,Gradient Boosting,145.0,0.13116637863656583,0.20305738320600078,-0.022988505747126433,3.0,conditional,,
+Player-Aware,transition_xg_given_shot,Gradient Boosting,145.0,0.13477249525998786,0.2061048425955524,-0.05797124268941034,4.0,conditional,,
+Context + History,transition_xg_given_shot,Ridge,145.0,0.149501635686186,0.2083264225378749,0.0805903369709912,5.0,conditional,,
+Context + History,transition_xg_given_shot,XGBoost,145.0,0.15534607970489794,0.21713606051621528,0.06920802070780388,6.0,conditional,,
+Player-Aware,transition_xg_given_shot,XGBoost,145.0,0.15429708108635276,0.21974761896329884,-0.09101922041732129,7.0,conditional,,
+Player-Aware,transition_xg_given_shot,Histogram Gradient Boosting,145.0,0.16208746095966903,0.22497660698794347,-0.0815396429898775,8.0,conditional,,
+Context + History,transition_xg_given_shot,Histogram Gradient Boosting,145.0,0.16363771898104407,0.22511153790273022,-0.041231999936647355,9.0,conditional,,
+Player-Aware,transition_xg_given_shot,Ridge,145.0,0.1673098514347793,0.23645213795924863,-0.01892772692445555,10.0,conditional,,
+Context + History,expected_attack_xg,,,0.022947747359681678,0.061966546158150004,0.25869191231420813,,hurdle,Soft Vote: Boosting,Random Forest
+Context + History,expected_attack_xg,,,0.023069542004029914,0.06196724703257344,0.25869191231420813,,hurdle,Soft Vote: Boosting,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.023086725940413857,0.06196741201478393,0.25869191231420813,,hurdle,Soft Vote: Boosting,XGBoost
+Context + History,expected_attack_xg,,,0.022683702875509,0.06196786726447362,0.25869191231420813,,hurdle,Soft Vote: Boosting,Ridge
+Context + History,expected_attack_xg,,,0.02318329833322083,0.06199062158662351,0.2602556617703384,,hurdle,Soft Vote: All,Random Forest
+Context + History,expected_attack_xg,,,0.022912703295393598,0.061991188094762686,0.2602556617694789,,hurdle,Soft Vote: All,Ridge
+Context + History,expected_attack_xg,,,0.023308397015862396,0.06199167111424404,0.2602556617694789,,hurdle,Soft Vote: All,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.023326036430280375,0.06199188528297308,0.2602556617703384,,hurdle,Soft Vote: All,XGBoost
+Context + History,expected_attack_xg,,,0.022691751573761406,0.061992230929855036,0.2598599793655573,,hurdle,XGBoost,Ridge
+Context + History,expected_attack_xg,,,0.02295797031598264,0.061994356318373585,0.2598599793655573,,hurdle,XGBoost,Random Forest
+Context + History,expected_attack_xg,,,0.023081039687268674,0.0619966919251256,0.2598599793655573,,hurdle,XGBoost,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.02309843787822149,0.06199708966171032,0.2598599793655573,,hurdle,XGBoost,XGBoost
+Context + History,expected_attack_xg,,,0.023238136160226613,0.06200299928545909,0.2581231127442094,,hurdle,Gradient Boosting,XGBoost
+Context + History,expected_attack_xg,,,0.02322078060377771,0.06200302259545258,0.2581231127442094,,hurdle,Gradient Boosting,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.02309780786550454,0.06200363366586966,0.2581231127442094,,hurdle,Gradient Boosting,Random Forest
+Context + History,expected_attack_xg,,,0.022831100704209066,0.06200765650415354,0.2581231127442094,,hurdle,Gradient Boosting,Ridge
+Player-Aware,expected_attack_xg,,,0.022941819737422136,0.06203931013057436,0.2613915308755282,,hurdle,Soft Vote: Boosting,Random Forest
+Player-Aware,expected_attack_xg,,,0.022980616581977625,0.06203942267855143,0.2613915308755282,,hurdle,Soft Vote: Boosting,Histogram Gradient Boosting
+Player-Aware,expected_attack_xg,,,0.022716809486552577,0.06204026576034892,0.2613915308755282,,hurdle,Soft Vote: Boosting,XGBoost
+Player-Aware,expected_attack_xg,,,0.022568454274941425,0.06204240299206801,0.2613915308755282,,hurdle,Soft Vote: Boosting,Ridge
+Context + History,expected_attack_xg,,,0.02295982398150205,0.06207727974886037,0.2577721214860781,,hurdle,Soft Vote: LR + XGB,Ridge
+Context + History,expected_attack_xg,,,0.023231326963976118,0.062077718042946255,0.2577721214860781,,hurdle,Soft Vote: LR + XGB,Random Forest
+Context + History,expected_attack_xg,,,0.023356613691872818,0.06207920347165753,0.2577721214860781,,hurdle,Soft Vote: LR + XGB,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.023374285801694997,0.06207947770603431,0.2577721214860781,,hurdle,Soft Vote: LR + XGB,XGBoost
+Player-Aware,expected_attack_xg,,,0.022127544713372613,0.062079537205262714,0.25569014271861107,,hurdle,Histogram Gradient Boosting,Ridge
+Player-Aware,expected_attack_xg,,,0.022269329511494837,0.0620799838069022,0.25569014271861107,,hurdle,Histogram Gradient Boosting,XGBoost
+Player-Aware,expected_attack_xg,,,0.022484740699422183,0.062083055499841985,0.25569014271861107,,hurdle,Histogram Gradient Boosting,Random Forest
+Player-Aware,expected_attack_xg,,,0.02252197509894677,0.06208387556857739,0.25569014271861107,,hurdle,Histogram Gradient Boosting,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.022573193620490532,0.0620931012103755,0.2489336413823165,,hurdle,Histogram Gradient Boosting,Ridge
+Context + History,expected_attack_xg,,,0.020739989138427124,0.062100748357663466,0.25869191231420813,,hurdle,Soft Vote: Boosting,Gradient Boosting
+Context + History,expected_attack_xg,,,0.022838272902553945,0.06210158736894297,0.2489336413823165,,hurdle,Histogram Gradient Boosting,Random Forest
+Context + History,expected_attack_xg,,,0.020740186363684736,0.0621040692650881,0.2598599793655573,,hurdle,XGBoost,Gradient Boosting
+Player-Aware,expected_attack_xg,,,0.02257149500449979,0.062104849000627946,0.26005171158142437,,hurdle,XGBoost,Ridge
+Player-Aware,expected_attack_xg,,,0.02272039633448786,0.06210512782275717,0.26005171158142437,,hurdle,XGBoost,XGBoost
+Context + History,expected_attack_xg,,,0.022960668466134045,0.06210691087644907,0.2489336413823165,,hurdle,Histogram Gradient Boosting,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.02297792426867574,0.06210773260162099,0.2489336413823165,,hurdle,Histogram Gradient Boosting,XGBoost
+Player-Aware,expected_attack_xg,,,0.022946416472944826,0.06210791148853726,0.26005171158142437,,hurdle,XGBoost,Random Forest
+Player-Aware,expected_attack_xg,,,0.022985399869661523,0.062108677826841666,0.26005171158142437,,hurdle,XGBoost,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.020924868250882144,0.06211859134958114,0.2602556617694789,,hurdle,Soft Vote: All,Gradient Boosting
+Player-Aware,expected_attack_xg,,,0.023473065838535794,0.062120131393365995,0.2570937803145935,,hurdle,Soft Vote: All,Ridge
+Player-Aware,expected_attack_xg,,,0.02363653212883363,0.06212429504933284,0.2570937803145935,,hurdle,Soft Vote: All,XGBoost
+Player-Aware,expected_attack_xg,,,0.023203952829982784,0.06212766909036459,0.25475541169570665,,hurdle,Gradient Boosting,XGBoost
+Player-Aware,expected_attack_xg,,,0.023439474361826612,0.06212801367645675,0.25475541169570665,,hurdle,Gradient Boosting,Random Forest
+Player-Aware,expected_attack_xg,,,0.023480066307701993,0.062128346306115745,0.25475541169570665,,hurdle,Gradient Boosting,Histogram Gradient Boosting
+Player-Aware,expected_attack_xg,,,0.023048999639849476,0.062128926803437276,0.25475541169570665,,hurdle,Gradient Boosting,Ridge
+Player-Aware,expected_attack_xg,,,0.02388448662835408,0.062133171927473134,0.2570937803145935,,hurdle,Soft Vote: All,Random Forest
+Player-Aware,expected_attack_xg,,,0.02392721424721411,0.062135013209958116,0.2570937803145935,,hurdle,Soft Vote: All,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.020872708356273965,0.062154175962760426,0.2581231127442094,,hurdle,Gradient Boosting,Gradient Boosting
+Context + History,expected_attack_xg,,,0.02064154550207336,0.06216337627460311,0.2489336413823165,,hurdle,Histogram Gradient Boosting,Gradient Boosting
+Context + History,expected_attack_xg,,,0.02097172358412765,0.062194725266509314,0.2577721214860781,,hurdle,Soft Vote: LR + XGB,Gradient Boosting
+Context + History,expected_attack_xg,,,0.021252833848995435,0.062207300442625825,0.24534989611981176,,hurdle,Random Forest,Gradient Boosting
+Player-Aware,expected_attack_xg,,,0.0204596629550571,0.06220770583969411,0.2613915308755282,,hurdle,Soft Vote: Boosting,Gradient Boosting
+Context + History,expected_attack_xg,,,0.023372063736127158,0.06221023597723693,0.24535006972931786,,hurdle,Random Forest,Ridge
+Player-Aware,expected_attack_xg,,,0.021140280732742215,0.06221168659766945,0.2570937803145935,,hurdle,Soft Vote: All,Gradient Boosting
+Player-Aware,expected_attack_xg,,,0.02011199180156835,0.062214312331949045,0.25569014271861107,,hurdle,Histogram Gradient Boosting,Gradient Boosting
+Context + History,expected_attack_xg,,,0.023664124032440805,0.06223042285697856,0.24535006972931786,,hurdle,Random Forest,Random Forest
+Player-Aware,expected_attack_xg,,,0.021652119843147754,0.062237491496960874,0.24748504003611652,,hurdle,Random Forest,Gradient Boosting
+Player-Aware,expected_attack_xg,,,0.020457697143492198,0.06224004462090874,0.26005171158142437,,hurdle,XGBoost,Gradient Boosting
+Context + History,expected_attack_xg,,,0.023798882194850917,0.06224127683668864,0.24535006972931786,,hurdle,Random Forest,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.02381787528914326,0.06224288503784372,0.24535006972931786,,hurdle,Random Forest,XGBoost
+Player-Aware,expected_attack_xg,,,0.024162311047968565,0.062263946071720463,0.24748504003611652,,hurdle,Random Forest,Ridge
+Player-Aware,expected_attack_xg,,,0.024338766261621986,0.06227807630183839,0.24748504003611652,,hurdle,Random Forest,XGBoost
+Player-Aware,expected_attack_xg,,,0.02083944513190888,0.062279677646069675,0.25475541169570665,,hurdle,Gradient Boosting,Gradient Boosting
+Player-Aware,expected_attack_xg,,,0.024606279602000014,0.0623024810945775,0.24748504003611652,,hurdle,Random Forest,Random Forest
+Player-Aware,expected_attack_xg,,,0.0246524769995988,0.06230704949512556,0.24748504003611652,,hurdle,Random Forest,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.023298916536044902,0.06239998149673645,0.22909056513758758,,hurdle,Logistic Regression,Ridge
+Context + History,expected_attack_xg,,,0.023578902358316816,0.06241197348459518,0.22909056513758758,,hurdle,Logistic Regression,Random Forest
+Context + History,expected_attack_xg,,,0.023708088139714457,0.06241881473589269,0.22909056513758758,,hurdle,Logistic Regression,Histogram Gradient Boosting
+Context + History,expected_attack_xg,,,0.02372629900667885,0.062419845432896665,0.22909056513758758,,hurdle,Logistic Regression,XGBoost
+Player-Aware,expected_attack_xg,,,0.02160878395804088,0.06242107886855789,0.23426349889860795,,hurdle,Soft Vote: LR + XGB,Gradient Boosting
+Context + History,expected_attack_xg,,,0.021242563354872054,0.06243520806416847,0.22909056513758758,,hurdle,Logistic Regression,Gradient Boosting
+Player-Aware,expected_attack_xg,,,0.02410036602605519,0.06249527964083751,0.23426349889860795,,hurdle,Soft Vote: LR + XGB,Ridge
+Player-Aware,expected_attack_xg,,,0.02427470925093605,0.06251255507857953,0.23426349889860795,,hurdle,Soft Vote: LR + XGB,XGBoost
+Player-Aware,expected_attack_xg,,,0.024538945072132827,0.06254168200767524,0.23426349889860795,,hurdle,Soft Vote: LR + XGB,Random Forest
+Player-Aware,expected_attack_xg,,,0.024584502253487902,0.06254705871844597,0.23426349889860795,,hurdle,Soft Vote: LR + XGB,Histogram Gradient Boosting
+Player-Aware,expected_attack_xg,,,0.02286511186968827,0.0630829003132452,0.18163875148752254,,hurdle,Logistic Regression,Gradient Boosting
+Player-Aware,expected_attack_xg,,,0.025761980987133504,0.06368318139727551,0.18163875148752254,,hurdle,Logistic Regression,Ridge
+Player-Aware,expected_attack_xg,,,0.025965976849982083,0.06374188568765558,0.18163875148752254,,hurdle,Logistic Regression,XGBoost
+Player-Aware,expected_attack_xg,,,0.02627566077930733,0.06383493968003354,0.18163875148752254,,hurdle,Logistic Regression,Random Forest
+Player-Aware,expected_attack_xg,,,0.0263291986049575,0.06385147028196783,0.18163875148752254,,hurdle,Logistic Regression,Histogram Gradient Boosting
+Context + History,expected_net_xg,,,0.02373750541592871,0.06863787165746943,0.248200910767115,,hurdle,attack=Soft Vote: Boosting; transition=Soft Vote: LR + XGB,attack=Random Forest; transition=Gradient Boosting
+Player-Aware,expected_net_xg,,,0.023914137624359216,0.06873871952973794,0.24914153027292396,,hurdle,attack=Soft Vote: Boosting; transition=Soft Vote: Boosting,attack=Random Forest; transition=Gradient Boosting
+Context + History,expected_transition_xg,,,0.003865939046481114,0.028830418867632972,0.004991174271196316,,hurdle,Soft Vote: LR + XGB,Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.0035531705446356612,0.028833572317937244,0.012227624601272843,,hurdle,Soft Vote: Boosting,Gradient Boosting
+Context + History,expected_transition_xg,,,0.003736850927134954,0.02883576024391459,0.005014238708351441,,hurdle,XGBoost,Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.00365820033937916,0.028836399748499764,0.012227624601272843,,hurdle,Soft Vote: Boosting,Ridge
+Context + History,expected_transition_xg,,,0.0038914458247279464,0.028840204758974353,-0.011305079452555995,,hurdle,Soft Vote: All,Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.003576160038516111,0.028840991928095378,0.008442061866844685,,hurdle,XGBoost,Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.003795874110634459,0.028841194909548045,0.012227624601272843,,hurdle,Soft Vote: Boosting,Random Forest
+Player-Aware,expected_transition_xg,,,0.003863036502315286,0.02884398234718619,0.012227624601272843,,hurdle,Soft Vote: Boosting,Histogram Gradient Boosting
+Context + History,expected_transition_xg,,,0.004193476045104051,0.02884413214581602,0.004991174271196316,,hurdle,Soft Vote: LR + XGB,Ridge
+Player-Aware,expected_transition_xg,,,0.0038862288349228776,0.02884501314368724,0.012227624601272843,,hurdle,Soft Vote: Boosting,XGBoost
+Player-Aware,expected_transition_xg,,,0.0036828670720414135,0.028845298700612292,0.008442061866844685,,hurdle,XGBoost,Ridge
+Context + History,expected_transition_xg,,,0.003685974717597127,0.02884545885067145,-0.007187236235651133,,hurdle,Soft Vote: Boosting,Gradient Boosting
+Context + History,expected_transition_xg,,,0.004234076401239528,0.028846283616982726,0.004991174271196316,,hurdle,Soft Vote: LR + XGB,Random Forest
+Context + History,expected_transition_xg,,,0.004040260169654739,0.02884943661649206,0.005014238708351441,,hurdle,XGBoost,Ridge
+Context + History,expected_transition_xg,,,0.004077869732399984,0.028851560788912677,0.005014238708351441,,hurdle,XGBoost,Random Forest
+Player-Aware,expected_transition_xg,,,0.0038227393793307048,0.028852225355450574,0.008442061866844685,,hurdle,XGBoost,Random Forest
+Context + History,expected_transition_xg,,,0.003995027165827274,0.028852801709765504,0.008496273918191292,,hurdle,Logistic Regression,Gradient Boosting
+Context + History,expected_transition_xg,,,0.003972251043441546,0.028853836396148667,-0.010308261392984769,,hurdle,Gradient Boosting,Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.0029437766698254763,0.02885519837009892,0.011669705698562122,,hurdle,Histogram Gradient Boosting,Gradient Boosting
+Context + History,expected_transition_xg,,,0.004223750274667348,0.028855259739299068,-0.011305079452555995,,hurdle,Soft Vote: All,Ridge
+Context + History,expected_transition_xg,,,0.004398397638392571,0.02885600774203841,0.004991174271196316,,hurdle,Soft Vote: LR + XGB,Histogram Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.0038909742987478842,0.028856131699028863,0.008442061866844685,,hurdle,XGBoost,Histogram Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.0030043470673530026,0.028857499575729584,0.011669705698562122,,hurdle,Histogram Gradient Boosting,Ridge
+Player-Aware,expected_transition_xg,,,0.003914536993687278,0.028857560905143416,0.008442061866844685,,hurdle,XGBoost,XGBoost
+Context + History,expected_transition_xg,,,0.004264941587617232,0.02885756669044018,-0.011305079452555995,,hurdle,Soft Vote: All,Random Forest
+Context + History,expected_transition_xg,,,0.004436410147666385,0.02885848929230176,0.004991174271196316,,hurdle,Soft Vote: LR + XGB,XGBoost
+Context + History,expected_transition_xg,,,0.003979874728892542,0.028858636085553252,-0.007187236235651133,,hurdle,Soft Vote: Boosting,Ridge
+Context + History,expected_transition_xg,,,0.004016305560148193,0.028860647689819403,-0.007187236235651133,,hurdle,Soft Vote: Boosting,Random Forest
+Context + History,expected_transition_xg,,,0.004230086374501885,0.02886112329081393,0.005014238708351441,,hurdle,XGBoost,Histogram Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.0030837431575235327,0.028861171629714688,0.011669705698562122,,hurdle,Histogram Gradient Boosting,Random Forest
+Player-Aware,expected_transition_xg,,,0.0031224755264950424,0.02886323285132427,0.011669705698562122,,hurdle,Histogram Gradient Boosting,Histogram Gradient Boosting
+Context + History,expected_transition_xg,,,0.004265298722094779,0.028863555780139497,0.005014238708351441,,hurdle,XGBoost,XGBoost
+Player-Aware,expected_transition_xg,,,0.0031358504817547675,0.02886398572224613,0.011669705698562122,,hurdle,Histogram Gradient Boosting,XGBoost
+Context + History,expected_transition_xg,,,0.004431654595781435,0.0288678956340793,-0.011305079452555995,,hurdle,Soft Vote: All,Histogram Gradient Boosting
+Context + History,expected_transition_xg,,,0.004163751539254061,0.02886964052632131,-0.007187236235651133,,hurdle,Soft Vote: Boosting,Histogram Gradient Boosting
+Context + History,expected_transition_xg,,,0.004470220394571063,0.028870511507766407,-0.011305079452555995,,hurdle,Soft Vote: All,XGBoost
+Context + History,expected_transition_xg,,,0.004197860287126548,0.02887191519851526,-0.007187236235651133,,hurdle,Soft Vote: Boosting,XGBoost
+Context + History,expected_transition_xg,,,0.0043196587315322095,0.02887444778359178,-0.010308261392984769,,hurdle,Gradient Boosting,Ridge
+Player-Aware,expected_transition_xg,,,0.004139574925565397,0.028877096981795202,0.017476834742346552,,hurdle,Gradient Boosting,Gradient Boosting
+Context + History,expected_transition_xg,,,0.004362722189767416,0.02887750890313213,-0.010308261392984769,,hurdle,Gradient Boosting,Random Forest
+Context + History,expected_transition_xg,,,0.004346691920553364,0.028877858420229958,0.008496273918191292,,hurdle,Logistic Regression,Ridge
+Context + History,expected_transition_xg,,,0.004390283070079073,0.028881571739742002,0.008496273918191292,,hurdle,Logistic Regression,Random Forest
+Player-Aware,expected_transition_xg,,,0.004287386878743066,0.028889927839050224,0.017476834742346552,,hurdle,Gradient Boosting,Ridge
+Context + History,expected_transition_xg,,,0.00453701230460496,0.02889103702593288,-0.010308261392984769,,hurdle,Gradient Boosting,Histogram Gradient Boosting
+Context + History,expected_transition_xg,,,0.003348822182214881,0.028894103574633626,-0.008082621899563597,,hurdle,Histogram Gradient Boosting,Gradient Boosting
+Context + History,expected_transition_xg,,,0.0045773309190542035,0.02889442644762563,-0.010308261392984769,,hurdle,Gradient Boosting,XGBoost
+Context + History,expected_transition_xg,,,0.004566708902283258,0.028897966739033436,0.008496273918191292,,hurdle,Logistic Regression,Histogram Gradient Boosting
+Context + History,expected_transition_xg,,,0.004404277805021076,0.02890141182211992,-0.01847343686508321,,hurdle,Random Forest,Gradient Boosting
+Context + History,expected_transition_xg,,,0.004607521573237991,0.028902071178017505,0.008496273918191292,,hurdle,Logistic Regression,XGBoost
+Player-Aware,expected_transition_xg,,,0.00448113979504914,0.02890923154689078,0.017476834742346552,,hurdle,Gradient Boosting,Random Forest
+Player-Aware,expected_transition_xg,,,0.004451094767036458,0.028909622028729244,0.026340689583598045,,hurdle,Soft Vote: All,Gradient Boosting
+Context + History,expected_transition_xg,,,0.0035797052854906787,0.02891865434398953,-0.008082621899563597,,hurdle,Histogram Gradient Boosting,Ridge
+Player-Aware,expected_transition_xg,,,0.004575659681702933,0.028919670197302377,0.017476834742346552,,hurdle,Gradient Boosting,Histogram Gradient Boosting
+Context + History,expected_transition_xg,,,0.0036083247582771798,0.02892212475701845,-0.008082621899563597,,hurdle,Histogram Gradient Boosting,Random Forest
+Player-Aware,expected_transition_xg,,,0.004608299029326587,0.028923430267447713,0.017476834742346552,,hurdle,Gradient Boosting,XGBoost
+Player-Aware,expected_transition_xg,,,0.004621634195735492,0.028932220828045373,0.026340689583598045,,hurdle,Soft Vote: All,Ridge
+Context + History,expected_transition_xg,,,0.003724155938655335,0.0289371314405194,-0.008082621899563597,,hurdle,Histogram Gradient Boosting,Histogram Gradient Boosting
+Context + History,expected_transition_xg,,,0.003750951220230659,0.028940822260856928,-0.008082621899563597,,hurdle,Histogram Gradient Boosting,XGBoost
+Context + History,expected_transition_xg,,,0.004832435266105748,0.028948580005283893,-0.01847343686508321,,hurdle,Random Forest,Ridge
+Player-Aware,expected_transition_xg,,,0.0051429113109384555,0.028953780046374115,0.004099850972408337,,hurdle,Random Forest,Gradient Boosting
+Context + History,expected_transition_xg,,,0.004885508187562512,0.02895531575124391,-0.01847343686892658,,hurdle,Random Forest,Random Forest
+Player-Aware,expected_transition_xg,,,0.004845178441956858,0.02896583024282637,0.026340689583598045,,hurdle,Soft Vote: All,Random Forest
+Player-Aware,expected_transition_xg,,,0.005363923427003277,0.028983176947637287,0.004099850972408337,,hurdle,Random Forest,Ridge
+Player-Aware,expected_transition_xg,,,0.004954231648575811,0.02898386336198989,0.026340689583598045,,hurdle,Soft Vote: All,Histogram Gradient Boosting
+Context + History,expected_transition_xg,,,0.005100309458861737,0.0289845740074059,-0.01847343686508321,,hurdle,Random Forest,Histogram Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.004991889602328418,0.02899033937663349,0.026340689583598045,,hurdle,Soft Vote: All,XGBoost
+Context + History,expected_transition_xg,,,0.005149999538237685,0.028991797733552534,-0.01847343686508321,,hurdle,Random Forest,XGBoost
+Player-Aware,expected_transition_xg,,,0.00565362761604856,0.029026414315942876,0.004099850972408337,,hurdle,Random Forest,Random Forest
+Player-Aware,expected_transition_xg,,,0.005794956106136587,0.02904943730818446,0.004099850972421876,,hurdle,Random Forest,Histogram Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.005843759272120114,0.02905768078318674,0.004099850972421876,,hurdle,Random Forest,XGBoost
+Player-Aware,expected_transition_xg,,,0.005015002488207784,0.029390873949139435,0.030999026621405898,,hurdle,Soft Vote: LR + XGB,Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.005226796328960711,0.029493378995206716,0.030999026621405898,,hurdle,Soft Vote: LR + XGB,Ridge
+Player-Aware,expected_transition_xg,,,0.0055044171398583195,0.0296404484911817,0.030999026621405898,,hurdle,Soft Vote: LR + XGB,Random Forest
+Player-Aware,expected_transition_xg,,,0.005639850908180668,0.029717367612489443,0.030999026621405898,,hurdle,Soft Vote: LR + XGB,Histogram Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.005686618525036219,0.02974471030742276,0.030999026621405898,,hurdle,Soft Vote: LR + XGB,XGBoost
+Player-Aware,expected_transition_xg,,,0.006456146238823591,0.03125183095835155,0.0370272005300601,,hurdle,Logistic Regression,Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.006773450993395747,0.03163424108335964,0.0370272005300601,,hurdle,Logistic Regression,Ridge
+Player-Aware,expected_transition_xg,,,0.007189376229714362,0.032172142672142384,0.0370272005300601,,hurdle,Logistic Regression,Random Forest
+Player-Aware,expected_transition_xg,,,0.007392280046300971,0.03244907512289791,0.0370272005300601,,hurdle,Logistic Regression,Histogram Gradient Boosting
+Player-Aware,expected_transition_xg,,,0.007462346234890405,0.0325468540299096,0.0370272005300601,,hurdle,Logistic Regression,XGBoost
