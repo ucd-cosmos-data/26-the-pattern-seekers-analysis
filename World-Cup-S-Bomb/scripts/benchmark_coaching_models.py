@@ -49,6 +49,7 @@ DEFAULT_FEATURES = (
 )
 DEFAULT_LEADERBOARD = PROJECT_ROOT / "results" / "coaching_model_leaderboard.csv"
 DEFAULT_FOLDS = PROJECT_ROOT / "results" / "coaching_model_fold_metrics.csv"
+DEFAULT_ABLATION = PROJECT_ROOT / "results" / "coaching_feature_ablation.csv"
 DEFAULT_PREDICTIONS = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_coaching_model_oof_predictions.csv"
 )
@@ -133,18 +134,19 @@ DEFENSE_SKILLS = [
     "aerial_win_rate",
 ]
 
-CATEGORICAL_FEATURES = [
-    "attacking_style",
-    "defensive_style",
-    "play_pattern",
+START_CONTEXT_CATEGORICAL_FEATURES = [
+    "first_play_pattern",
     "competition_stage",
 ]
 
-TACTICAL_NUMERIC_FEATURES = [
+START_CONTEXT_NUMERIC_FEATURES = [
     "period",
     "start_minute",
     "start_x",
     "start_y",
+]
+
+SHAPE_NUMERIC_FEATURES = [
     "avg_back_line_height",
     "std_back_line_height",
     "avg_defensive_hull_area",
@@ -161,8 +163,16 @@ TACTICAL_NUMERIC_FEATURES = [
 TARGETS = {
     "shot": "shot",
     "box_entry": "entered_penalty_area",
-    "transition_conceded": "opponent_transition_shot",
 }
+
+ABLATION_MODEL = "Logistic Regression"
+ABLATION_LAYOUT_ORDER = [
+    "Start Context",
+    "Context + Attack Style",
+    "Context + Both Styles",
+    "Tactical + Shape",
+    "Player-Aware",
+]
 
 ENSEMBLES = {
     "Soft Vote: All": [
@@ -473,7 +483,10 @@ def model_definitions() -> dict[str, object]:
     }
 
 
-def preprocessor(numeric_features: list[str]) -> ColumnTransformer:
+def preprocessor(
+    numeric_features: list[str],
+    categorical_features: list[str],
+) -> ColumnTransformer:
     numeric = Pipeline(
         [
             ("imputer", SimpleImputer(strategy="median")),
@@ -492,7 +505,7 @@ def preprocessor(numeric_features: list[str]) -> ColumnTransformer:
     return ColumnTransformer(
         [
             ("numeric", numeric, numeric_features),
-            ("categorical", categorical, CATEGORICAL_FEATURES),
+            ("categorical", categorical, categorical_features),
         ],
         sparse_threshold=0,
     )
@@ -522,28 +535,49 @@ def score_predictions(truth: np.ndarray, probability: np.ndarray) -> dict[str, f
     }
 
 
+def prediction_column_name(layout: str, target: str, model: str) -> str:
+    return (
+        f"{layout}__{target}__{model}"
+        .lower()
+        .replace(" ", "_")
+        .replace(":", "")
+        .replace("+", "plus")
+    )
+
+
 def benchmark(
     data: pd.DataFrame,
     splits: list[tuple[np.ndarray, np.ndarray]],
-    layouts: dict[str, list[str]],
+    layouts: dict[str, dict[str, object]],
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     models = model_definitions()
     prediction_frame = data[["possession_uid", "match_id"]].copy()
     fold_records: list[dict[str, object]] = []
     leaderboard_records: list[dict[str, object]] = []
 
-    for layout_name, numeric_features in layouts.items():
-        feature_columns = CATEGORICAL_FEATURES + numeric_features
+    for layout_name, layout in layouts.items():
+        numeric_features = list(layout["numeric_features"])
+        categorical_features = list(layout["categorical_features"])
+        active_models = {
+            name: models[name] for name in list(layout["model_names"])
+        }
+        feature_columns = categorical_features + numeric_features
         for target_name, target_column in TARGETS.items():
             truth = data[target_column].astype(int).to_numpy()
             model_predictions: dict[str, np.ndarray] = {
-                name: np.full(len(data), np.nan) for name in models
+                name: np.full(len(data), np.nan) for name in active_models
             }
             for fold, (train_index, test_index) in enumerate(splits):
-                for model_name, estimator in models.items():
+                for model_name, estimator in active_models.items():
                     pipeline = Pipeline(
                         [
-                            ("preprocess", preprocessor(numeric_features)),
+                            (
+                                "preprocess",
+                                preprocessor(
+                                    numeric_features,
+                                    categorical_features,
+                                ),
+                            ),
                             ("model", clone(estimator)),
                         ]
                     )
@@ -559,6 +593,7 @@ def benchmark(
                     fold_records.append(
                         {
                             "layout": layout_name,
+                            "timing": layout["timing"],
                             "target": target_name,
                             "model": model_name,
                             "fold": fold,
@@ -573,6 +608,8 @@ def benchmark(
 
             all_predictions = dict(model_predictions)
             for ensemble_name, members in ENSEMBLES.items():
+                if not set(members).issubset(model_predictions):
+                    continue
                 all_predictions[ensemble_name] = np.mean(
                     [model_predictions[name] for name in members], axis=0
                 )
@@ -584,6 +621,7 @@ def benchmark(
                     fold_records.append(
                         {
                             "layout": layout_name,
+                            "timing": layout["timing"],
                             "target": target_name,
                             "model": ensemble_name,
                             "fold": fold,
@@ -608,6 +646,7 @@ def benchmark(
                 leaderboard_records.append(
                     {
                         "layout": layout_name,
+                        "timing": layout["timing"],
                         "target": target_name,
                         "model": model_name,
                         "rows": len(data),
@@ -622,12 +661,10 @@ def benchmark(
                         ),
                     }
                 )
-                safe_name = (
-                    f"{layout_name}__{target_name}__{model_name}"
-                    .lower()
-                    .replace(" ", "_")
-                    .replace(":", "")
-                    .replace("+", "plus")
+                safe_name = prediction_column_name(
+                    layout_name,
+                    target_name,
+                    model_name,
                 )
                 prediction_frame[safe_name] = probability
             prediction_frame[f"truth__{target_name}"] = truth
@@ -642,10 +679,49 @@ def benchmark(
     return leaderboard, pd.DataFrame(fold_records), prediction_frame
 
 
+def build_feature_ablation(leaderboard: pd.DataFrame) -> pd.DataFrame:
+    ablation = leaderboard[
+        leaderboard["model"].eq(ABLATION_MODEL)
+        & leaderboard["layout"].isin(ABLATION_LAYOUT_ORDER)
+    ].copy()
+    layout_order = {
+        layout: position for position, layout in enumerate(ABLATION_LAYOUT_ORDER)
+    }
+    ablation["layout_order"] = ablation["layout"].map(layout_order)
+    ablation = ablation.sort_values(["target", "layout_order"]).reset_index(drop=True)
+    ablation["log_loss_improvement_vs_previous"] = ablation.groupby("target")[
+        "log_loss"
+    ].transform(lambda values: values.shift(1) - values)
+    ablation["brier_improvement_vs_previous"] = ablation.groupby("target")[
+        "brier"
+    ].transform(lambda values: values.shift(1) - values)
+    ablation["pr_auc_gain_vs_previous"] = ablation.groupby("target")[
+        "pr_auc"
+    ].diff()
+    return ablation[
+        [
+            "target",
+            "layout",
+            "timing",
+            "model",
+            "rows",
+            "positive_rate",
+            "log_loss",
+            "log_loss_improvement_vs_previous",
+            "brier",
+            "brier_improvement_vs_previous",
+            "roc_auc",
+            "pr_auc",
+            "pr_auc_gain_vs_previous",
+            "ece",
+        ]
+    ]
+
+
 def fit_selected_models(
     data: pd.DataFrame,
     leaderboard: pd.DataFrame,
-    layouts: dict[str, list[str]],
+    layouts: dict[str, dict[str, object]],
 ) -> dict[str, object]:
     base_models = model_definitions()
     selected: dict[str, object] = {}
@@ -653,14 +729,15 @@ def fit_selected_models(
         winner = leaderboard[leaderboard["target"].eq(target_name)].iloc[0]
         layout = str(winner["layout"])
         model_name = str(winner["model"])
-        numeric = layouts[layout]
-        columns = CATEGORICAL_FEATURES + numeric
+        numeric = list(layouts[layout]["numeric_features"])
+        categorical = list(layouts[layout]["categorical_features"])
+        columns = categorical + numeric
         truth = data[target_column].astype(int)
 
         if model_name in base_models:
             pipeline = Pipeline(
                 [
-                    ("preprocess", preprocessor(numeric)),
+                    ("preprocess", preprocessor(numeric, categorical)),
                     ("model", clone(base_models[model_name])),
                 ]
             )
@@ -672,7 +749,7 @@ def fit_selected_models(
             for member in members:
                 pipeline = Pipeline(
                     [
-                        ("preprocess", preprocessor(numeric)),
+                        ("preprocess", preprocessor(numeric, categorical)),
                         ("model", clone(base_models[member])),
                     ]
                 )
@@ -682,8 +759,9 @@ def fit_selected_models(
         selected[target_name] = {
             "target_column": target_column,
             "layout": layout,
+            "timing": layouts[layout]["timing"],
             "model_name": model_name,
-            "categorical_features": CATEGORICAL_FEATURES,
+            "categorical_features": categorical,
             "numeric_features": numeric,
             "model": fitted,
             "cross_validated_metrics": {
@@ -698,6 +776,7 @@ def write_report(
     path: Path,
     data: pd.DataFrame,
     leaderboard: pd.DataFrame,
+    ablation: pd.DataFrame,
     player_feature_count: int,
 ) -> None:
     lines = [
@@ -712,6 +791,7 @@ def write_report(
         "- Player profiles for every validation match were computed without that match.",
         "- Player and team names were excluded from predictive inputs.",
         "- Shot, goal, xG, box-entry, and transition outcomes were excluded from inputs.",
+        "- The unsupported 13-positive transition target is excluded from this primary benchmark.",
         "- Probabilities are compared primarily by log loss and Brier score; ROC-AUC, PR-AUC, and calibration error are secondary diagnostics.",
         "",
         "## Winners",
@@ -729,11 +809,39 @@ def write_report(
     lines.extend(
         [
             "",
+            "## Fixed-model feature ablation",
+            "",
+            f"Every row below uses {ABLATION_MODEL} on the same match folds so feature-group value is not confounded by changing model families.",
+            "",
+            "| Target | Layout | Timing | Log loss | Improvement | ROC-AUC | PR-AUC | PR-AUC gain |",
+            "|---|---|---|---:|---:|---:|---:|---:|",
+        ]
+    )
+    for row in ablation.itertuples(index=False):
+        log_loss_gain = (
+            "—"
+            if pd.isna(row.log_loss_improvement_vs_previous)
+            else f"{row.log_loss_improvement_vs_previous:+.4f}"
+        )
+        pr_auc_gain = (
+            "—"
+            if pd.isna(row.pr_auc_gain_vs_previous)
+            else f"{row.pr_auc_gain_vs_previous:+.4f}"
+        )
+        lines.append(
+            f"| {row.target} | {row.layout} | {row.timing} | "
+            f"{row.log_loss:.4f} | {log_loss_gain} | {row.roc_auc:.4f} | "
+            f"{row.pr_auc:.4f} | {pr_auc_gain} |"
+        )
+    lines.extend(
+        [
+            "",
             "## Interpretation",
             "",
             "This benchmark selects predictive layouts, not causal treatment effects. "
-            "The next recommendation layer must compare candidate attacking styles under "
-            "the same context and apply uncertainty and risk constraints.",
+            "Only the Start Context layout is available at possession start. Layouts "
+            "containing styles or full-possession shape are retrospective and must not "
+            "be presented as early forecasts.",
             "",
             "Player skill values are empirical-Bayes estimates derived from event data and "
             "shrunk toward position priors. A future player can be processed with the same "
@@ -752,6 +860,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--features-output", type=Path, default=DEFAULT_FEATURES)
     parser.add_argument("--leaderboard-output", type=Path, default=DEFAULT_LEADERBOARD)
     parser.add_argument("--fold-output", type=Path, default=DEFAULT_FOLDS)
+    parser.add_argument("--ablation-output", type=Path, default=DEFAULT_ABLATION)
     parser.add_argument("--predictions-output", type=Path, default=DEFAULT_PREDICTIONS)
     parser.add_argument("--report-output", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--model-output", type=Path, default=DEFAULT_MODEL)
@@ -795,12 +904,49 @@ def main() -> None:
     data = pd.concat([data, player_features], axis=1)
     data["validation_fold"] = fold_ids
     player_columns = player_features.columns.tolist()
+    all_model_names = list(model_definitions())
     layouts = {
-        "Tactical + Shape": TACTICAL_NUMERIC_FEATURES,
-        "Player-Aware": TACTICAL_NUMERIC_FEATURES + player_columns,
+        "Start Context": {
+            "numeric_features": START_CONTEXT_NUMERIC_FEATURES,
+            "categorical_features": START_CONTEXT_CATEGORICAL_FEATURES,
+            "model_names": [ABLATION_MODEL],
+            "timing": "Prospective",
+        },
+        "Context + Attack Style": {
+            "numeric_features": START_CONTEXT_NUMERIC_FEATURES,
+            "categorical_features": START_CONTEXT_CATEGORICAL_FEATURES
+            + ["attacking_style"],
+            "model_names": [ABLATION_MODEL],
+            "timing": "Retrospective",
+        },
+        "Context + Both Styles": {
+            "numeric_features": START_CONTEXT_NUMERIC_FEATURES,
+            "categorical_features": START_CONTEXT_CATEGORICAL_FEATURES
+            + ["attacking_style", "defensive_style"],
+            "model_names": [ABLATION_MODEL],
+            "timing": "Retrospective",
+        },
+        "Tactical + Shape": {
+            "numeric_features": START_CONTEXT_NUMERIC_FEATURES
+            + SHAPE_NUMERIC_FEATURES,
+            "categorical_features": START_CONTEXT_CATEGORICAL_FEATURES
+            + ["attacking_style", "defensive_style"],
+            "model_names": all_model_names,
+            "timing": "Retrospective",
+        },
+        "Player-Aware": {
+            "numeric_features": START_CONTEXT_NUMERIC_FEATURES
+            + SHAPE_NUMERIC_FEATURES
+            + player_columns,
+            "categorical_features": START_CONTEXT_CATEGORICAL_FEATURES
+            + ["attacking_style", "defensive_style"],
+            "model_names": all_model_names,
+            "timing": "Retrospective",
+        },
     }
 
     leaderboard, fold_metrics, predictions = benchmark(data, splits, layouts)
+    ablation = build_feature_ablation(leaderboard)
     full_profiles, full_priors = build_profiles(components)
     positions = (
         components.groupby("player_id")["position_group"]
@@ -818,6 +964,7 @@ def main() -> None:
         args.features_output,
         args.leaderboard_output,
         args.fold_output,
+        args.ablation_output,
         args.predictions_output,
         args.report_output,
         args.model_output,
@@ -832,11 +979,18 @@ def main() -> None:
     ).to_csv(args.features_output, index=False)
     leaderboard.to_csv(args.leaderboard_output, index=False)
     fold_metrics.to_csv(args.fold_output, index=False)
+    ablation.to_csv(args.ablation_output, index=False)
     predictions.to_csv(args.predictions_output, index=False)
-    write_report(args.report_output, data, leaderboard, len(player_columns))
+    write_report(
+        args.report_output,
+        data,
+        leaderboard,
+        ablation,
+        len(player_columns),
+    )
     joblib.dump(
         {
-            "version": 1,
+            "version": 2,
             "purpose": "Possession outcome model architecture benchmark",
             "selected_models": selected,
             "targets": TARGETS,
