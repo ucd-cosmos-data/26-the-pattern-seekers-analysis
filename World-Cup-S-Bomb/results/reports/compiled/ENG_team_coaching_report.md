@@ -32,9 +32,9 @@ Trent Alexander-Arnold for Bukayo Saka (expected Net xG gain 0.00198)
 
 ## Recurrent tactical mistakes
 
-- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.0587 cumulative Net xG)
 - Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.0587 cumulative Net xG)
-- Against Compact Pressure Block: switch from Direct Long Play to Patient Build-up (0.0451 cumulative Net xG)
+- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.0587 cumulative Net xG)
+- Against Set-Piece Compact Shape: switch from Direct Long Play to Patient Build-up (0.0451 cumulative Net xG)
 
 _Counterfactual values are predictive scenario estimates, not causal treatment effects. The corrupted stored coaching bundle was not used; this report uses the documented empirical hurdle fallback._
 

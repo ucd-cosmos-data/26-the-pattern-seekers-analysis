@@ -1,7 +1,7 @@
 {
   "status": "complete",
   "model_source": "regularized_empirical_fallback",
-  "model_warning": "XGBoostError: input stream corrupted",
+  "model_warning": "Stored benchmark loaded but has no stable downstream hurdle interface",
   "cohort_definition": "Top 342 tournament-minute players among players with at least one start",
   "tracking_proxies": {
     "tackles": "ground duel wins (duels_won - aerial_wins)",

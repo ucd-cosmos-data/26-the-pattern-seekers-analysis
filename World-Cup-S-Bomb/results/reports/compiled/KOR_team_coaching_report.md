@@ -34,7 +34,7 @@ Yu-Min Cho for Jae-Sung Lee (expected Net xG gain 0.00230)
 
 - Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.0739 cumulative Net xG)
 - Against Compact Pressure Block: switch from Direct Long Play to Patient Build-up (0.0547 cumulative Net xG)
-- Against Set-Piece Compact Shape: switch from Direct Long Play to Patient Build-up (0.0486 cumulative Net xG)
+- Against Wide Retreating Block: switch from Direct Long Play to Patient Build-up (0.0486 cumulative Net xG)
 
 _Counterfactual values are predictive scenario estimates, not causal treatment effects. The corrupted stored coaching bundle was not used; this report uses the documented empirical hurdle fallback._
 

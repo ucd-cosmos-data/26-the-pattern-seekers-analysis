@@ -33,8 +33,8 @@ Hannibal Mejbri for Ellyes Joris Skhiri (expected Net xG gain 0.00252)
 ## Recurrent tactical mistakes
 
 - Against Wide Retreating Block: switch from Direct Long Play to Short Under Pressure (0.0865 cumulative Net xG)
-- Against Compact Pressure Block: switch from Patient Build-up to Short Under Pressure (0.0486 cumulative Net xG)
 - Against Wide Retreating Block: switch from Patient Build-up to Short Under Pressure (0.0486 cumulative Net xG)
+- Against Compact Pressure Block: switch from Patient Build-up to Short Under Pressure (0.0486 cumulative Net xG)
 
 _Counterfactual values are predictive scenario estimates, not causal treatment effects. The corrupted stored coaching bundle was not used; this report uses the documented empirical hurdle fallback._
 

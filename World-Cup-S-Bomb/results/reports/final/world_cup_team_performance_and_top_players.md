@@ -449,7 +449,7 @@ The scenario evaluator selected **Patient Build-up** most often. Observed expect
 
 Average lineup matchup deltas were **+0.012 aerial**, **-3.654 pressing**, and **+0.987 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 36 possessions with 0.06 cumulative modeled gap (0.0016 per possession).
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 36 possessions with 0.06 cumulative modeled gap (0.0016 per possession).
 
 **Best substitution scenario:** Trent Alexander-Arnold for Bukayo Saka under Patient Build-up produced the largest estimated team gain (+0.0020 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
 
