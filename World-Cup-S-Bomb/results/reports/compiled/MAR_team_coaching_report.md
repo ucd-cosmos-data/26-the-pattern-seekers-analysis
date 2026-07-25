@@ -34,17 +34,18 @@ Morocco: no tactical change cleared the modeled effect floor. Primary review sig
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 128, INSUFFICIENT_MINUTES: 22, GAIN_BELOW_THRESHOLD: 4.
 
-## V4 role-relative player leaders
+## V4 coach-facing player leaders
 
-1. Sofiane Boufal — Progressive Winger; score 60.5, role z +1.05, OBV/90 -0.076
-2. Romain Saïss — Deep Playmaker; score 59.6, role z +0.96, OBV/90 +0.265
-3. Yahia Attiyat allah — Box-to-Box Runner; score 58.1, role z +0.81, OBV/90 +0.033
-4. Achraf Hakimi Mouh — Wide Creator; score 53.7, role z +0.37, OBV/90 -0.013
-5. Yassine Bounou — Goalkeeper; score 52.3, role z +0.23, OBV/90 +0.330
+1. Achraf Hakimi Mouh — Wide Creator; position-impact 60.6 (position rank 3), role score 53.7, OBV/90 -0.013
+2. Romain Saïss — Deep Playmaker; position-impact 59.3 (position rank 8), role score 59.6, OBV/90 +0.265
+3. Yahia Attiyat allah — Box-to-Box Runner; position-impact 57.2 (position rank 7), role score 58.1, OBV/90 +0.033
+4. Hakim Ziyech — Wide Creator; position-impact 57.0 (position rank 4), role score 47.4, OBV/90 -0.048
+5. Yassine Bounou — Goalkeeper; position-impact 52.3 (position rank 7), role score 52.3, OBV/90 +0.330
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

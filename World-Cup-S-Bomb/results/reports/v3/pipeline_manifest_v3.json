@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "status": "complete",
   "model_source": "calibrated_classifier_bundle",
   "model_warning": "",
@@ -34,15 +34,36 @@
     "roc_auc": 0.6893411592543106,
     "unique_probabilities": 8739
   },
+  "player_evaluation_provenance": {
+    "schema_version": 4,
+    "minutes_cutoff": 300.0,
+    "players_before_cutoff": 680,
+    "players_after_cutoff": 142,
+    "players_dropped": 538,
+    "obv_source": "open_event_value_fallback",
+    "native_obv_available": false,
+    "native_obv_column": null,
+    "event_rows": 233529,
+    "events_with_360_context": 203454,
+    "successful_action_points": 81231,
+    "freeze_frame_actor_points": 72016,
+    "heatmap_cells": 9394,
+    "attacking_wingbacks": 6,
+    "fullbacks_reprotected_from_anchor": 0,
+    "density_pressure_cutoff": 0.0205851451808076
+  },
   "fold_assignment_hash": "0c620b0a3ce55bbb67baefce06d31a820e7a18492376673a21b80087c2435e10",
   "counts": {
     "oof_matches": 64,
     "oof_teams": 32,
     "oof_possessions": 9685,
     "tactical_scenarios": 29055,
-    "eligible_substitutions": 1,
-    "suppressed_substitutions": 3607,
-    "team_reports": 32
+    "eligible_substitutions": 0,
+    "suppressed_substitutions": 3608,
+    "team_reports": 32,
+    "eligible_player_evaluations": 142,
+    "player_heatmaps": 142,
+    "compiled_reports": 64
   },
   "checks": {
     "all_64_matches_oof": true,
@@ -52,98 +73,72 @@
     "canonical_target": true,
     "substitution_floor": true,
     "suppression_reason_coverage": true,
-    "team_reports": true
+    "team_reports": true,
+    "minutes_cutoff": true,
+    "fullback_role_safeguard": true,
+    "attacking_wingback_threshold": true,
+    "heatmaps": true,
+    "player_reports": true,
+    "compiled_reports": true,
+    "summary": true,
+    "mbappe_first_forward": true
   },
   "runtime": {
     "schema_version": 1,
-    "pipeline": "run_team_simulation_reports_v3",
+    "pipeline": "run_team_simulation_reports_v4",
     "status": "complete",
-    "elapsed_seconds": 289.558048899984,
-    "peak_memory_mb": 244.99316692352295,
+    "elapsed_seconds": 357.42287069989834,
+    "peak_memory_mb": 291.75200939178467,
     "stages": [
       {
-        "name": "load_v3_inputs",
+        "name": "load_v4_inputs",
         "status": "complete",
-        "elapsed_seconds": 5.065718400059268,
-        "completed": 3,
-        "total": 3,
+        "elapsed_seconds": 14.690194899914786,
+        "completed": 4,
+        "total": 4,
         "unit": "source",
-        "average_units_per_second": 0.5922161010696727,
+        "average_units_per_second": 0.27229046498376974,
         "eta_seconds": 0.0,
-        "peak_memory_mb": 113.48797512054443,
-        "message": "v2 descriptive matchup features"
+        "peak_memory_mb": 142.29846858978271,
+        "message": "validated 360 actor and density context"
       },
       {
         "name": "leave_one_match_out_audit",
         "status": "complete",
-        "elapsed_seconds": 250.6925740999868,
+        "elapsed_seconds": 255.4028625000501,
         "completed": 64,
         "total": 64,
         "unit": "match",
-        "average_units_per_second": 0.255292763376685,
+        "average_units_per_second": 0.2505845054888038,
         "eta_seconds": 0.0,
-        "peak_memory_mb": 171.24756336212158,
+        "peak_memory_mb": 188.72681617736816,
         "message": ""
+      },
+      {
+        "name": "v4_player_spatial_evaluation",
+        "status": "complete",
+        "elapsed_seconds": 60.81852179998532,
+        "completed": 4,
+        "total": 4,
+        "unit": "layer",
+        "average_units_per_second": 0.06576943802012902,
+        "eta_seconds": 0.0,
+        "peak_memory_mb": 253.21007823944092,
+        "message": "events + metadata + 360 + role normalization"
       },
       {
         "name": "reason_coded_substitutions",
         "status": "complete",
-        "elapsed_seconds": 28.76597499998752,
+        "elapsed_seconds": 14.486217300058343,
         "completed": 32,
         "total": 32,
         "unit": "team",
-        "average_units_per_second": 1.1124253566935896,
+        "average_units_per_second": 2.208996271226107,
         "eta_seconds": 0.0,
-        "peak_memory_mb": 244.99316692352295,
+        "peak_memory_mb": 291.75200939178467,
         "message": ""
       }
     ],
-    "previous_runs": [
-      {
-        "schema_version": 1,
-        "pipeline": "run_team_simulation_reports_v3",
-        "status": "complete",
-        "elapsed_seconds": 281.8433259000303,
-        "peak_memory_mb": 244.98051929473877,
-        "stages": [
-          {
-            "name": "load_v3_inputs",
-            "status": "complete",
-            "elapsed_seconds": 5.6375955999828875,
-            "completed": 3,
-            "total": 3,
-            "unit": "source",
-            "average_units_per_second": 0.532141752063434,
-            "eta_seconds": 0.0,
-            "peak_memory_mb": 113.48818302154541,
-            "message": "v2 descriptive matchup features"
-          },
-          {
-            "name": "leave_one_match_out_audit",
-            "status": "complete",
-            "elapsed_seconds": 244.1432617000537,
-            "completed": 64,
-            "total": 64,
-            "unit": "match",
-            "average_units_per_second": 0.2621411688954507,
-            "eta_seconds": 0.0,
-            "peak_memory_mb": 171.2500410079956,
-            "message": ""
-          },
-          {
-            "name": "reason_coded_substitutions",
-            "status": "complete",
-            "elapsed_seconds": 27.740930299973115,
-            "completed": 32,
-            "total": 32,
-            "unit": "team",
-            "average_units_per_second": 1.1535301683819525,
-            "eta_seconds": 0.0,
-            "peak_memory_mb": 244.98051929473877,
-            "message": ""
-          }
-        ]
-      }
-    ]
+    "previous_runs": []
   }
 }

@@ -34,17 +34,18 @@ South Korea: no tactical change cleared the modeled effect floor. Primary review
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 93, INSUFFICIENT_MINUTES: 17.
 
-## V4 role-relative player leaders
+## V4 coach-facing player leaders
 
-1. Young-Gwon Kim — Deep Playmaker; score 75.5, role z +2.55, OBV/90 +0.445
-2. Woo-Young Jung — Ball-Winner; score 66.7, role z +1.67, OBV/90 +0.231
-3. Jin-Su Kim — Attacking Wingback; score 63.8, role z +1.38, OBV/90 +0.000
-4. Heung-Min Son — Target Forward; score 55.4, role z +0.54, OBV/90 -0.348
-5. In-Beom Hwang — Ball-Winner; score 55.3, role z +0.53, OBV/90 +0.173
+1. Young-Gwon Kim — Deep Playmaker; position-impact 75.2 (position rank 2), role score 75.5, OBV/90 +0.445
+2. Woo-Young Jung — Ball-Winner; position-impact 70.6 (position rank 1), role score 66.7, OBV/90 +0.231
+3. In-Beom Hwang — Ball-Winner; position-impact 54.6 (position rank 9), role score 55.3, OBV/90 +0.173
+4. Jin-Su Kim — Attacking Wingback; position-impact 54.5 (position rank 8), role score 63.8, OBV/90 +0.000
+5. Seung-Gyu Kim — Goalkeeper; position-impact 49.7 (position rank 9), role score 49.7, OBV/90 +0.327
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

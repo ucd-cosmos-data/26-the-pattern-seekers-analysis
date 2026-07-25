@@ -34,17 +34,18 @@ Poland: Patient Build-up led the observed baseline by 0.0041 mean EvA. Primary r
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 90, INSUFFICIENT_MINUTES: 20.
 
-## V4 role-relative player leaders
+## V4 coach-facing player leaders
 
-1. Wojciech Szczęsny — Goalkeeper; score 73.0, role z +2.30, OBV/90 +0.599
-2. Piotr Zieliński — Wide Creator; score 57.9, role z +0.79, OBV/90 +0.034
-3. Matty Cash — Wide Creator; score 57.0, role z +0.70, OBV/90 +0.003
-4. Grzegorz Krychowiak — Ball-Winner; score 54.6, role z +0.46, OBV/90 +0.068
-5. Jakub Piotr Kiwior — Deep Playmaker; score 45.0, role z -0.50, OBV/90 +0.332
+1. Wojciech Szczęsny — Goalkeeper; position-impact 73.0 (position rank 1), role score 73.0, OBV/90 +0.599
+2. Piotr Zieliński — Wide Creator; position-impact 58.7 (position rank 3), role score 57.9, OBV/90 +0.034
+3. Robert Lewandowski — Target Forward; position-impact 55.7 (position rank 2), role score 43.2, OBV/90 -0.431
+4. Grzegorz Krychowiak — Ball-Winner; position-impact 53.7 (position rank 10), role score 54.6, OBV/90 +0.068
+5. Matty Cash — Wide Creator; position-impact 44.9 (position rank 19), role score 57.0, OBV/90 +0.003
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

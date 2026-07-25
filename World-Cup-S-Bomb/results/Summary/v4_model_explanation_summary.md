@@ -11,6 +11,7 @@
 - Turnovers receive a location-sensitive penalty. The multiplier is exactly 0.5 when the event is flagged under pressure or the SB360 frame shows close/high-density defensive pressure.
 - Attacking composites weight role-relative OBV 65%, final-third presence 20%, and pressure-adjusted turnover resilience 15%.
 - The final composite is standardized with `groupby('Functional role')`; score 50 is role average and each 10 points represents one within-role population standard deviation.
+- A separate coach-facing `position_impact_score` preserves that role score while ranking within position. For attacking positions, the OBV family contributes 55%, xG 30%, progressive carries 10%, and SB360-informed final-third share 5%.
 
 ### Model structure
 

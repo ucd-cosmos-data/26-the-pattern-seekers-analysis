@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Ecuador: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Patient Build-up to Short Under Pressure). Strongest positive squad synergy: Felix Eduardo Torres Caicedo + Piero Martín Hincapié Reyna (0.652). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Ecuador: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Patient Build-up to Short Under Pressure). Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.5571
 - Mean possession EvA gap: 0.002544
@@ -10,17 +10,17 @@ Ecuador: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. Felix Eduardo Torres Caicedo (Center Back)
-2. Moisés Isaac Caicedo Corozo (Defensive Midfield)
+1. Piero Martín Hincapié Reyna (Center Back)
+2. Felix Eduardo Torres Caicedo (Center Back)
 3. Pervis Josué Estupiñán Tenorio (Fullback/Wingback)
-4. Piero Martín Hincapié Reyna (Center Back)
-5. Enner Remberto Valencia Lastra (Attacking Midfield/Wing)
+4. Moisés Isaac Caicedo Corozo (Defensive Midfield)
+5. Hernán Ismael Galíndez (Goalkeeper)
 6. Angelo Smit Preciado Quiñónez (Fullback/Wingback)
-7. Hernán Ismael Galíndez (Goalkeeper)
-8. Gonzalo Jordy Plata Jiménez (Central/Wide Midfield)
-9. Michael Steveen Estrada Martínez (Forward)
-10. Jhegson Sebastián Méndez Carabalí (Defensive Midfield)
-11. Romario Andrés Ibarra Mina (Central/Wide Midfield)
+7. Gonzalo Jordy Plata Jiménez (Central/Wide Midfield)
+8. Enner Remberto Valencia Lastra (Attacking Midfield/Wing)
+9. Jhegson Sebastián Méndez Carabalí (Defensive Midfield)
+10. Michael Steveen Estrada Martínez (Forward)
+11. Jeremy Leonel Sarmiento Morante (Central/Wide Midfield)
 
 ## Physical matchup deltas
 
@@ -32,7 +32,16 @@ Ecuador: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 68, GAIN_BELOW_THRESHOLD: 7, INSUFFICIENT_MINUTES: 2.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 68, INSUFFICIENT_MINUTES: 9.
+
+## V4 coach-facing player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

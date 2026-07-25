@@ -11,15 +11,15 @@ England: no tactical change cleared the modeled effect floor. Primary review sig
 ## Optimized starting 11
 
 1. John Stones (Center Back)
-2. Harry Maguire (Center Back)
-3. Harry Kane (Forward)
-4. Jude Bellingham (Defensive Midfield)
-5. Luke Shaw (Fullback/Wingback)
-6. Declan Rice (Defensive Midfield)
-7. Phil Foden (Attacking Midfield/Wing)
-8. Jordan Pickford (Goalkeeper)
+2. Luke Shaw (Fullback/Wingback)
+3. Jordan Pickford (Goalkeeper)
+4. Harry Maguire (Center Back)
+5. Declan Rice (Defensive Midfield)
+6. Harry Kane (Forward)
+7. Jude Bellingham (Defensive Midfield)
+8. Jordan Brian Henderson (Central/Wide Midfield)
 9. Bukayo Saka (Attacking Midfield/Wing)
-10. Jordan Brian Henderson (Central/Wide Midfield)
+10. Phil Foden (Attacking Midfield/Wing)
 11. Kyle Walker (Fullback/Wingback)
 
 ## Physical matchup deltas
@@ -32,7 +32,20 @@ England: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 82, GAIN_BELOW_THRESHOLD: 15, INSUFFICIENT_MINUTES: 2.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 82, INSUFFICIENT_MINUTES: 17.
+
+## V4 coach-facing player leaders
+
+1. John Stones — Holding Anchor; position-impact 57.3 (position rank 11), role score 57.6, OBV/90 +0.450
+2. Harry Kane — Target Forward; position-impact 52.8 (position rank 5), role score 52.1, OBV/90 -0.345
+3. Jordan Pickford — Goalkeeper; position-impact 52.4 (position rank 6), role score 52.4, OBV/90 +0.342
+4. Luke Shaw — Box-to-Box Runner; position-impact 50.5 (position rank 15), role score 55.3, OBV/90 +0.014
+5. Harry Maguire — Holding Anchor; position-impact 48.0 (position rank 19), role score 48.3, OBV/90 +0.494
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

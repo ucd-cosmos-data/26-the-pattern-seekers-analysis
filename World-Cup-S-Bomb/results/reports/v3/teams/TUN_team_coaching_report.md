@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Tunisia: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.788. Strongest positive squad synergy: Yassine Meriah + Montassar Omar Talbi (0.659). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Tunisia: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.788. Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.1552
 - Mean possession EvA gap: 0.000626
@@ -10,17 +10,17 @@ Tunisia: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. Ellyes Joris Skhiri (Defensive Midfield)
-2. Montassar Omar Talbi (Center Back)
-3. Aïssa Bilal Laïdouni (Defensive Midfield)
-4. Yassine Meriah (Center Back)
-5. Youssef Msakni (Attacking Midfield/Wing)
-6. Issam Jebali (Forward)
-7. Aymen Dahmen (Goalkeeper)
-8. Ali Abdi (Fullback/Wingback)
-9. Anis Ben Slimane (Attacking Midfield/Wing)
-10. Mohamed Dräger (Fullback/Wingback)
-11. Dylan Daniel Mahmoud Bronn (Center Back)
+1. Montassar Omar Talbi (Center Back)
+2. Ellyes Joris Skhiri (Defensive Midfield)
+3. Yassine Meriah (Center Back)
+4. Aymen Dahmen (Goalkeeper)
+5. Aïssa Bilal Laïdouni (Defensive Midfield)
+6. Ali Abdi (Fullback/Wingback)
+7. Youssef Msakni (Attacking Midfield/Wing)
+8. Dylan Daniel Mahmoud Bronn (Center Back)
+9. Issam Jebali (Forward)
+10. Anis Ben Slimane (Attacking Midfield/Wing)
+11. Wajdi Kechrida (Fullback/Wingback)
 
 ## Physical matchup deltas
 
@@ -32,7 +32,16 @@ Tunisia: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 91, GAIN_BELOW_THRESHOLD: 14, INSUFFICIENT_MINUTES: 5.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 91, INSUFFICIENT_MINUTES: 19.
+
+## V4 coach-facing player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

@@ -10,16 +10,16 @@ Senegal: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. Ismaïla Sarr (Attacking Midfield/Wing)
+1. Kalidou Koulibaly (Center Back)
 2. Youssouf Sabaly (Fullback/Wingback)
-3. Kalidou Koulibaly (Center Back)
-4. Boulaye Dia (Attacking Midfield/Wing)
+3. Edouard Mendy (Goalkeeper)
+4. Ismaïla Sarr (Attacking Midfield/Wing)
 5. Abdou Diallo (Center Back)
-6. Edouard Mendy (Goalkeeper)
-7. Idrissa Gana Gueye (Attacking Midfield/Wing)
-8. Nampalys Mendy (Defensive Midfield)
-9. Krépin Diatta (Attacking Midfield/Wing)
-10. Ismail Jakobs (Fullback/Wingback)
+6. Boulaye Dia (Attacking Midfield/Wing)
+7. Nampalys Mendy (Defensive Midfield)
+8. Ismail Jakobs (Fullback/Wingback)
+9. Idrissa Gana Gueye (Attacking Midfield/Wing)
+10. Krépin Diatta (Attacking Midfield/Wing)
 11. Cheikh Ahmadou Bamba Mbacke Dieng (Forward)
 
 ## Physical matchup deltas
@@ -32,7 +32,20 @@ Senegal: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, GAIN_BELOW_THRESHOLD: 14, INSUFFICIENT_MINUTES: 6.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
+
+## V4 coach-facing player leaders
+
+1. Kalidou Koulibaly — Deep Playmaker; position-impact 64.1 (position rank 3), role score 64.4, OBV/90 +0.321
+2. Abdou Diallo — Deep Playmaker; position-impact 60.5 (position rank 4), role score 60.8, OBV/90 +0.356
+3. Youssouf Sabaly — Attacking Wingback; position-impact 57.7 (position rank 6), role score 62.2, OBV/90 +0.078
+4. Ismaïla Sarr — Target Forward; position-impact 55.9 (position rank 6), role score 63.7, OBV/90 -0.247
+5. Edouard Mendy — Goalkeeper; position-impact 49.0 (position rank 10), role score 49.0, OBV/90 +0.277
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

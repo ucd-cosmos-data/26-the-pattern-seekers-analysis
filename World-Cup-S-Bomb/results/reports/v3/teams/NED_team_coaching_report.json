@@ -1,8 +1,8 @@
 {
   "team": "Netherlands",
   "team_code": "NED",
-  "total_wasted_net_xg": 0.9238966373741383,
-  "mean_eva_gap": 0.0024902874322753053,
+  "total_wasted_net_xg": 0.9238966373741384,
+  "mean_eva_gap": 0.0024902874322753,
   "most_common_optimal_style": "No meaningful change",
   "optimal_starting_11": [
     {
@@ -10,77 +10,77 @@
       "player_id": 3669,
       "player": "Virgil van Dijk",
       "position_group": "Center Back",
-      "optimization_score": 2.6190476190476186
+      "optimization_score": 2.8095238095238093
     },
     {
       "rank": 2,
-      "player_id": 8118,
-      "player": "Frenkie de Jong",
-      "position_group": "Defensive Midfield",
-      "optimization_score": 2.428571428571429
-    },
-    {
-      "rank": 3,
       "player_id": 3306,
       "player": "Nathan Aké",
       "position_group": "Center Back",
-      "optimization_score": 2.2857142857142856
+      "optimization_score": 2.7142857142857144
+    },
+    {
+      "rank": 3,
+      "player_id": 8118,
+      "player": "Frenkie de Jong",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.666666666666667
     },
     {
       "rank": 4,
-      "player_id": 3311,
-      "player": "Daley Blind",
-      "position_group": "Fullback/Wingback",
-      "optimization_score": 2.0952380952380953
-    },
-    {
-      "rank": 5,
       "player_id": 8326,
       "player": "Andries Noppert",
       "position_group": "Goalkeeper",
-      "optimization_score": 2.095238095238095
+      "optimization_score": 2.619047619047618
+    },
+    {
+      "rank": 5,
+      "player_id": 21809,
+      "player": "Jurriën David Norman Timber",
+      "position_group": "Center Back",
+      "optimization_score": 2.4285714285714284
     },
     {
       "rank": 6,
-      "player_id": 7891,
-      "player": "Teun Koopmeiners",
-      "position_group": "Defensive Midfield",
-      "optimization_score": 2.0476190476190474
+      "player_id": 8125,
+      "player": "Denzel Dumfries",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.380952380952381
     },
     {
       "rank": 7,
-      "player_id": 2988,
-      "player": "Memphis Depay",
-      "position_group": "Forward",
-      "optimization_score": 2.0
+      "player_id": 3311,
+      "player": "Daley Blind",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.2857142857142856
     },
     {
       "rank": 8,
       "player_id": 20750,
       "player": "Cody Mathès Gakpo",
       "position_group": "Attacking Midfield/Wing",
-      "optimization_score": 1.9047619047619047
+      "optimization_score": 2.095238095238095
     },
     {
       "rank": 9,
-      "player_id": 8125,
-      "player": "Denzel Dumfries",
-      "position_group": "Fullback/Wingback",
-      "optimization_score": 1.9047619047619047
+      "player_id": 2988,
+      "player": "Memphis Depay",
+      "position_group": "Forward",
+      "optimization_score": 1.809523809523809
     },
     {
       "rank": 10,
-      "player_id": 7745,
-      "player": "Steven Berghuis",
+      "player_id": 7891,
+      "player": "Teun Koopmeiners",
       "position_group": "Defensive Midfield",
-      "optimization_score": 1.9047619047619047
+      "optimization_score": 1.5
     },
     {
       "rank": 11,
       "player_id": 21547,
       "player": "Noa Lang",
       "position_group": "Central/Wide Midfield",
-      "optimization_score": 0.14285714285714285
+      "optimization_score": 0.4047619047619047
     }
   ],
   "physical_matchup_deltas": {
@@ -96,8 +96,8 @@
       "actual_style": "Short Under Pressure",
       "optimal_style": "Patient Build-up",
       "possessions": 29,
-      "wasted_net_xg": 0.22417245198816887,
-      "mean_eva_gap": 0.007730084551316168
+      "wasted_net_xg": 0.2241724519881688,
+      "mean_eva_gap": 0.0077300845513161
     },
     {
       "team": "Netherlands",
@@ -105,8 +105,8 @@
       "actual_style": "Short Under Pressure",
       "optimal_style": "Patient Build-up",
       "possessions": 19,
-      "wasted_net_xg": 0.15159301056427585,
-      "mean_eva_gap": 0.007978579503382939
+      "wasted_net_xg": 0.1515930105642758,
+      "mean_eva_gap": 0.0079785795033829
     },
     {
       "team": "Netherlands",
@@ -114,11 +114,12 @@
       "actual_style": "Direct Long Play",
       "optimal_style": "Patient Build-up",
       "possessions": 15,
-      "wasted_net_xg": 0.13683484838801507,
-      "mean_eva_gap": 0.009122323225867672
+      "wasted_net_xg": 0.136834848388015,
+      "mean_eva_gap": 0.0091223232258676
     }
   ],
   "model_provenance": {
+    "schema_version": 4,
     "model_version": "transition-conceded-v2",
     "target": "transition_conceded",
     "calibration_method": "platt",
@@ -150,12 +151,90 @@
       "roc_auc": 0.6893411592543106,
       "unique_probabilities": 8739
     },
-    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+    "player_evaluation": {
+      "schema_version": 4,
+      "minutes_cutoff": 300.0,
+      "players_before_cutoff": 680,
+      "players_after_cutoff": 142,
+      "players_dropped": 538,
+      "obv_source": "open_event_value_fallback",
+      "native_obv_available": false,
+      "native_obv_column": null,
+      "event_rows": 233529,
+      "events_with_360_context": 203454,
+      "successful_action_points": 81231,
+      "freeze_frame_actor_points": 72016,
+      "heatmap_cells": 9394,
+      "attacking_wingbacks": 6,
+      "fullbacks_reprotected_from_anchor": 0,
+      "density_pressure_cutoff": 0.0205851451808076
+    }
   },
   "top_positive_synergy_pair": "Virgil van Dijk + Andries Noppert (0.840)",
   "substitution_suppression_reason_counts": {
     "POSITIONAL_INCOMPATIBILITY": 92,
-    "GAIN_BELOW_THRESHOLD": 14,
-    "INSUFFICIENT_MINUTES": 4
-  }
+    "INSUFFICIENT_MINUTES": 18
+  },
+  "top_v4_player_evaluations": [
+    {
+      "player_id": 21809,
+      "player": "Jurriën David Norman Timber",
+      "functional_role": "Ball-Winner",
+      "obv_per_90": 0.21765869599719104,
+      "final_third_share": 0.05382619974059663,
+      "role_z_score": 1.0434437816054842,
+      "player_evaluation_score": 60.43443781605484,
+      "position_group": "Center Back",
+      "position_impact_score": 60.144293440757444,
+      "position_rank": 5
+    },
+    {
+      "player_id": 3669,
+      "player": "Virgil van Dijk",
+      "functional_role": "Deep Playmaker",
+      "obv_per_90": 0.375246611916784,
+      "final_third_share": 0.02040816326530612,
+      "role_z_score": 0.8757327381998965,
+      "player_evaluation_score": 58.75732738199896,
+      "position_group": "Center Back",
+      "position_impact_score": 58.468526446367036,
+      "position_rank": 9
+    },
+    {
+      "player_id": 8118,
+      "player": "Frenkie de Jong",
+      "functional_role": "Ball-Winner",
+      "obv_per_90": 0.018252463489062985,
+      "final_third_share": 0.18207440811724915,
+      "role_z_score": 0.5534742891906246,
+      "player_evaluation_score": 55.53474289190625,
+      "position_group": "Defensive Midfield",
+      "position_impact_score": 54.986192597830225,
+      "position_rank": 7
+    },
+    {
+      "player_id": 3311,
+      "player": "Daley Blind",
+      "functional_role": "Box-to-Box Runner",
+      "obv_per_90": -0.05997267292358831,
+      "final_third_share": 0.28837555886736216,
+      "role_z_score": -0.9098087297131978,
+      "player_evaluation_score": 40.90191270286802,
+      "position_group": "Fullback/Wingback",
+      "position_impact_score": 51.37749185995559,
+      "position_rank": 13
+    },
+    {
+      "player_id": 3306,
+      "player": "Nathan Aké",
+      "functional_role": "Holding Anchor",
+      "obv_per_90": 0.31646537060919805,
+      "final_third_share": 0.05291319857312723,
+      "role_z_score": -0.01416725498674466,
+      "player_evaluation_score": 49.858327450132556,
+      "position_group": "Center Back",
+      "position_impact_score": 49.57665500720371,
+      "position_rank": 16
+    }
+  ]
 }

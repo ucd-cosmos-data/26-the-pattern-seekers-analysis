@@ -34,17 +34,18 @@ Brazil: no tactical change cleared the modeled effect floor. Primary review sign
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 140, INSUFFICIENT_MINUTES: 25.
 
-## V4 role-relative player leaders
+## V4 coach-facing player leaders
 
-1. Éder Gabriel Militão — Ball-Winner; score 67.0, role z +1.70, OBV/90 +0.200
-2. Marcos Aoás Corrêa — Holding Anchor; score 60.3, role z +1.03, OBV/90 +0.367
-3. Thiago Emiliano da Silva — Holding Anchor; score 60.0, role z +1.00, OBV/90 +0.436
-4. Carlos Henrique Casimiro — Ball-Winner; score 56.3, role z +0.63, OBV/90 +0.099
-5. Richarlison de Andrade — Target Forward; score 53.3, role z +0.33, OBV/90 -0.369
+1. Éder Gabriel Militão — Ball-Winner; position-impact 69.0 (position rank 2), role score 67.0, OBV/90 +0.200
+2. Marcos Aoás Corrêa — Holding Anchor; position-impact 60.0 (position rank 6), role score 60.3, OBV/90 +0.367
+3. Thiago Emiliano da Silva — Holding Anchor; position-impact 59.8 (position rank 7), role score 60.0, OBV/90 +0.436
+4. Vinícius José Paixão de Oliveira Júnior — Progressive Winger; position-impact 57.8 (position rank 4), role score 45.6, OBV/90 -0.276
+5. Carlos Henrique Casimiro — Ball-Winner; position-impact 56.1 (position rank 4), role score 56.3, OBV/90 +0.099
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

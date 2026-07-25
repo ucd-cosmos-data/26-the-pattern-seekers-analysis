@@ -10,16 +10,16 @@ Poland: Patient Build-up led the observed baseline by 0.0041 mean EvA. Primary r
 
 ## Optimized starting 11
 
-1. Robert Lewandowski (Forward)
-2. Kamil Glik (Center Back)
-3. Jakub Piotr Kiwior (Center Back)
-4. Piotr Zieliński (Central/Wide Midfield)
-5. Matty Cash (Fullback/Wingback)
-6. Wojciech Szczęsny (Goalkeeper)
-7. Krystian Bielik (Defensive Midfield)
-8. Jakub Kamiński (Central/Wide Midfield)
-9. Grzegorz Krychowiak (Defensive Midfield)
-10. Bartosz Bereszyński (Fullback/Wingback)
+1. Matty Cash (Fullback/Wingback)
+2. Wojciech Szczęsny (Goalkeeper)
+3. Kamil Glik (Center Back)
+4. Jakub Piotr Kiwior (Center Back)
+5. Piotr Zieliński (Central/Wide Midfield)
+6. Robert Lewandowski (Forward)
+7. Bartosz Bereszyński (Fullback/Wingback)
+8. Grzegorz Krychowiak (Defensive Midfield)
+9. Przemysław Frankowski (Central/Wide Midfield)
+10. Krystian Bielik (Defensive Midfield)
 11. Kamil Grosicki (Attacking Midfield/Wing)
 
 ## Physical matchup deltas
@@ -32,7 +32,20 @@ Poland: Patient Build-up led the observed baseline by 0.0041 mean EvA. Primary r
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 90, GAIN_BELOW_THRESHOLD: 13, INSUFFICIENT_MINUTES: 7.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 90, INSUFFICIENT_MINUTES: 20.
+
+## V4 coach-facing player leaders
+
+1. Wojciech Szczęsny — Goalkeeper; position-impact 73.0 (position rank 1), role score 73.0, OBV/90 +0.599
+2. Piotr Zieliński — Wide Creator; position-impact 58.7 (position rank 3), role score 57.9, OBV/90 +0.034
+3. Robert Lewandowski — Target Forward; position-impact 55.7 (position rank 2), role score 43.2, OBV/90 -0.431
+4. Grzegorz Krychowiak — Ball-Winner; position-impact 53.7 (position rank 10), role score 54.6, OBV/90 +0.068
+5. Matty Cash — Wide Creator; position-impact 44.9 (position rank 19), role score 57.0, OBV/90 +0.003
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

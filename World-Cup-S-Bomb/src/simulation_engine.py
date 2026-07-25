@@ -738,6 +738,41 @@ def build_v4_player_evaluations(
         .astype(int)
     )
 
+    # Keep the strict functional-role score above for like-for-like scouting,
+    # and add a separate coach-facing position score for selection shortlists.
+    # For attacking positions, the OBV family remains the primary signal
+    # (55% combined), while xG, ball progression, and the SB360-informed
+    # final-third footprint prevent safe low-impact passing from dominating.
+    position_group = profiles["position_group"]
+    attacking_position_score = (
+        0.30 * _role_group_z(profiles["obv_per_90"], position_group)
+        + 0.25 * _role_group_z(
+            profiles["raw_obv_per_90"], position_group
+        )
+        + 0.30 * _role_group_z(profiles["xg_p90"], position_group)
+        + 0.10
+        * _role_group_z(
+            profiles["progressive_carries_p90"], position_group
+        )
+        + 0.05
+        * _role_group_z(profiles["final_third_share"], position_group)
+    )
+    profiles["position_impact_raw"] = profiles["role_z_score"]
+    profiles.loc[attacking, "position_impact_raw"] = (
+        attacking_position_score.loc[attacking]
+    )
+    profiles["position_impact_z"] = _role_group_z(
+        profiles["position_impact_raw"], position_group
+    )
+    profiles["position_impact_score"] = (
+        50 + 10 * profiles["position_impact_z"]
+    )
+    profiles["position_rank"] = (
+        profiles.groupby("position_group")["position_impact_score"]
+        .rank(method="min", ascending=False)
+        .astype(int)
+    )
+
     spatial_points["x_bin"] = (
         np.floor(spatial_points["x"].clip(0, 119.999) / 10)
         .astype(int)
@@ -777,6 +812,7 @@ def build_v4_player_evaluations(
         "final_third_share",
         "role_z_score",
         "player_evaluation_score",
+        "position_impact_score",
     ]
     if not np.isfinite(profiles[finite_columns].to_numpy()).all():
         raise ValueError("V4 player evaluation produced non-finite metrics")

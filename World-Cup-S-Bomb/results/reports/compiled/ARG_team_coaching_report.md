@@ -34,17 +34,18 @@ Argentina: no tactical change cleared the modeled effect floor. Primary review s
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 122, INSUFFICIENT_MINUTES: 18, GAIN_BELOW_THRESHOLD: 3.
 
-## V4 role-relative player leaders
+## V4 coach-facing player leaders
 
-1. Lionel Andrés Messi Cuccittini — Progressive Winger; score 60.2, role z +1.02, OBV/90 -0.039
-2. Enzo Fernandez — Ball-Winner; score 56.1, role z +0.61, OBV/90 +0.159
-3. Ángel Fabián Di María Hernández — Progressive Winger; score 53.6, role z +0.36, OBV/90 -0.179
-4. Julián Álvarez — Target Forward; score 49.5, role z -0.05, OBV/90 -0.408
-5. Rodrigo Javier De Paul — Wide Creator; score 46.2, role z -0.38, OBV/90 -0.093
+1. Lionel Andrés Messi Cuccittini — Progressive Winger; position-impact 77.1 (position rank 1), role score 60.2, OBV/90 -0.039
+2. Ángel Fabián Di María Hernández — Progressive Winger; position-impact 59.6 (position rank 2), role score 53.6, OBV/90 -0.179
+3. Enzo Fernandez — Ball-Winner; position-impact 55.8 (position rank 5), role score 56.1, OBV/90 +0.159
+4. Nicolás Alejandro Tagliafico — Box-to-Box Runner; position-impact 52.6 (position rank 11), role score 32.3, OBV/90 -0.113
+5. Cristian Gabriel Romero — Holding Anchor; position-impact 45.4 (position rank 25), role score 45.7, OBV/90 +0.229
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

@@ -2,85 +2,85 @@
   "team": "Australia",
   "team_code": "AUS",
   "total_wasted_net_xg": 0.8514063436791395,
-  "mean_eva_gap": 0.003188787804041721,
+  "mean_eva_gap": 0.0031887878040417,
   "most_common_optimal_style": "Patient Build-up",
   "optimal_starting_11": [
     {
       "rank": 1,
-      "player_id": 22293,
-      "player": "Harry Souttar",
-      "position_group": "Center Back",
-      "optimization_score": 2.6
-    },
-    {
-      "rank": 2,
-      "player_id": 33495,
-      "player": "Kye Rowles",
-      "position_group": "Center Back",
-      "optimization_score": 2.5
-    },
-    {
-      "rank": 3,
-      "player_id": 5490,
-      "player": "Jackson Irvine",
-      "position_group": "Forward",
-      "optimization_score": 2.45
-    },
-    {
-      "rank": 4,
       "player_id": 3281,
       "player": "Aaron Mooy",
       "position_group": "Defensive Midfield",
-      "optimization_score": 2.4
+      "optimization_score": 2.75
     },
     {
-      "rank": 5,
-      "player_id": 3240,
-      "player": "Mathew Ryan",
-      "position_group": "Goalkeeper",
-      "optimization_score": 2.3
-    },
-    {
-      "rank": 6,
+      "rank": 2,
       "player_id": 5479,
       "player": "Aziz Eraltay Behich",
       "position_group": "Fullback/Wingback",
-      "optimization_score": 2.2
+      "optimization_score": 2.7
+    },
+    {
+      "rank": 3,
+      "player_id": 3240,
+      "player": "Mathew Ryan",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.65
+    },
+    {
+      "rank": 4,
+      "player_id": 33495,
+      "player": "Kye Rowles",
+      "position_group": "Center Back",
+      "optimization_score": 2.65
+    },
+    {
+      "rank": 5,
+      "player_id": 22293,
+      "player": "Harry Souttar",
+      "position_group": "Center Back",
+      "optimization_score": 2.65
+    },
+    {
+      "rank": 6,
+      "player_id": 5490,
+      "player": "Jackson Irvine",
+      "position_group": "Forward",
+      "optimization_score": 2.35
     },
     {
       "rank": 7,
-      "player_id": 8346,
-      "player": "Craig Goodwin",
+      "player_id": 5481,
+      "player": "Mathew Leckie",
       "position_group": "Central/Wide Midfield",
-      "optimization_score": 2.0
+      "optimization_score": 2.1
     },
     {
       "rank": 8,
       "player_id": 33477,
       "player": "Riley McGree",
       "position_group": "Forward",
-      "optimization_score": 1.9500000000000002
+      "optimization_score": 1.6
     },
     {
       "rank": 9,
-      "player_id": 33492,
-      "player": "Mitchell Thomas Duke",
-      "position_group": "Forward",
-      "optimization_score": 1.9
+      "player_id": 8346,
+      "player": "Craig Goodwin",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.5
     },
     {
       "rank": 10,
-      "player_id": 5481,
-      "player": "Mathew Leckie",
-      "position_group": "Central/Wide Midfield",
-      "optimization_score": 1.8
+      "player_id": 33492,
+      "player": "Mitchell Thomas Duke",
+      "position_group": "Forward",
+      "optimization_score": 1.5
     },
     {
       "rank": 11,
-      "player_id": 28370,
-      "player": "Fran Karačić",
+      "player_id": 15957,
+      "player": "Miloš Degenek",
       "position_group": "Fullback/Wingback",
-      "optimization_score": 1.75
+      "optimization_score": 1.4
     }
   ],
   "physical_matchup_deltas": {
@@ -96,8 +96,8 @@
       "actual_style": "Short Under Pressure",
       "optimal_style": "Patient Build-up",
       "possessions": 37,
-      "wasted_net_xg": 0.21828603318414874,
-      "mean_eva_gap": 0.005899622518490507
+      "wasted_net_xg": 0.2182860331841487,
+      "mean_eva_gap": 0.0058996225184905
     },
     {
       "team": "Australia",
@@ -105,8 +105,8 @@
       "actual_style": "Short Under Pressure",
       "optimal_style": "Patient Build-up",
       "possessions": 29,
-      "wasted_net_xg": 0.17073442654133353,
-      "mean_eva_gap": 0.005887394018666673
+      "wasted_net_xg": 0.1707344265413335,
+      "mean_eva_gap": 0.0058873940186666
     },
     {
       "team": "Australia",
@@ -114,11 +114,12 @@
       "actual_style": "Short Under Pressure",
       "optimal_style": "Patient Build-up",
       "possessions": 20,
-      "wasted_net_xg": 0.11765335494999829,
-      "mean_eva_gap": 0.005882667747499915
+      "wasted_net_xg": 0.1176533549499982,
+      "mean_eva_gap": 0.0058826677474999
     }
   ],
   "model_provenance": {
+    "schema_version": 4,
     "model_version": "transition-conceded-v2",
     "target": "transition_conceded",
     "calibration_method": "platt",
@@ -150,12 +151,90 @@
       "roc_auc": 0.6893411592543106,
       "unique_probabilities": 8739
     },
-    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+    "player_evaluation": {
+      "schema_version": 4,
+      "minutes_cutoff": 300.0,
+      "players_before_cutoff": 680,
+      "players_after_cutoff": 142,
+      "players_dropped": 538,
+      "obv_source": "open_event_value_fallback",
+      "native_obv_available": false,
+      "native_obv_column": null,
+      "event_rows": 233529,
+      "events_with_360_context": 203454,
+      "successful_action_points": 81231,
+      "freeze_frame_actor_points": 72016,
+      "heatmap_cells": 9394,
+      "attacking_wingbacks": 6,
+      "fullbacks_reprotected_from_anchor": 0,
+      "density_pressure_cutoff": 0.0205851451808076
+    }
   },
   "top_positive_synergy_pair": "Harry Souttar + Kye Rowles (0.755)",
   "substitution_suppression_reason_counts": {
     "POSITIONAL_INCOMPATIBILITY": 79,
-    "GAIN_BELOW_THRESHOLD": 13,
-    "INSUFFICIENT_MINUTES": 7
-  }
+    "INSUFFICIENT_MINUTES": 20
+  },
+  "top_v4_player_evaluations": [
+    {
+      "player_id": 3240,
+      "player": "Mathew Ryan",
+      "functional_role": "Goalkeeper",
+      "obv_per_90": 0.49812088787691156,
+      "final_third_share": 0.018633540372670808,
+      "role_z_score": 1.123603383440884,
+      "player_evaluation_score": 61.23603383440884,
+      "position_group": "Goalkeeper",
+      "position_impact_score": 61.23603383440884,
+      "position_rank": 2
+    },
+    {
+      "player_id": 5479,
+      "player": "Aziz Eraltay Behich",
+      "functional_role": "Box-to-Box Runner",
+      "obv_per_90": -0.013830624969782436,
+      "final_third_share": 0.2360774818401937,
+      "role_z_score": -0.18992775894868189,
+      "player_evaluation_score": 48.10072241051318,
+      "position_group": "Fullback/Wingback",
+      "position_impact_score": 47.27561355370119,
+      "position_rank": 16
+    },
+    {
+      "player_id": 5490,
+      "player": "Jackson Irvine",
+      "functional_role": "Ball-Winner",
+      "obv_per_90": -0.08001119048548491,
+      "final_third_share": 0.24954792043399637,
+      "role_z_score": -0.7001101482404408,
+      "player_evaluation_score": 42.99889851759559,
+      "position_group": "Forward",
+      "position_impact_score": 46.184057164382686,
+      "position_rank": 9
+    },
+    {
+      "player_id": 22293,
+      "player": "Harry Souttar",
+      "functional_role": "Deep Playmaker",
+      "obv_per_90": 0.2422905721883481,
+      "final_third_share": 0.0323943661971831,
+      "role_z_score": -0.37557727891351705,
+      "player_evaluation_score": 46.24422721086483,
+      "position_group": "Center Back",
+      "position_impact_score": 45.965449822142205,
+      "position_rank": 23
+    },
+    {
+      "player_id": 3281,
+      "player": "Aaron Mooy",
+      "functional_role": "Ball-Winner",
+      "obv_per_90": 0.09370494987253933,
+      "final_third_share": 0.14025695931477516,
+      "role_z_score": -0.26145940976179244,
+      "player_evaluation_score": 47.385405902382075,
+      "position_group": "Defensive Midfield",
+      "position_impact_score": 43.57811209767614,
+      "position_rank": 18
+    }
+  ]
 }

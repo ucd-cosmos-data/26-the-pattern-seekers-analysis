@@ -57,6 +57,23 @@ def _json_value(value: Any) -> Any:
     return value
 
 
+def _clean_text(value: Any) -> str:
+    """Return readable UTF-8 text, repairing common double-decoding."""
+
+    text = "" if pd.isna(value) else str(value)
+    if "Ã" in text or "â" in text:
+        for source_encoding in ("latin-1", "cp1252"):
+            try:
+                repaired = text.encode(source_encoding).decode("utf-8")
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                continue
+            if repaired.count("Ã") + repaired.count("â") < (
+                text.count("Ã") + text.count("â")
+            ):
+                return repaired
+    return text
+
+
 def _write_pair(path: Path, markdown: str, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(markdown.rstrip() + "\n", encoding="utf-8")
@@ -90,13 +107,14 @@ def generate_individual_starter_reports(
     output_root: Path,
     *,
     clear_existing: bool = False,
+    heatmap_relative_root: str = "../../heatmaps",
 ) -> int:
     """Generate one Markdown/JSON pair for every 300-minute V4 player."""
 
     if clear_existing and output_root.exists():
         for existing in output_root.glob("*/*_starter_report.*"):
             existing.unlink()
-    names = profiles.set_index("player_id")["player"].to_dict()
+    names = profiles.set_index("player_id")["player"].map(_clean_text).to_dict()
     count = 0
     for _, player in profiles.sort_values(["team", "player"]).iterrows():
         player_id = int(player["player_id"])
@@ -121,8 +139,8 @@ def generate_individual_starter_reports(
             "team": player["team"],
             "team_code": TEAM_CODES[player["team"]],
             "player_id": player_id,
-            "player": player["player"],
-            "position": player["position"],
+            "player": _clean_text(player["player"]),
+            "position": _clean_text(player["position"]),
             "functional_role": player["functional_role"],
             "physical_scores": {
                 "aerial_dominance_index": player["aerial_dominance_index"],
@@ -136,8 +154,10 @@ def generate_individual_starter_reports(
             "player_evaluation_score": player[
                 "player_evaluation_score"
             ],
+            "position_impact_score": player["position_impact_score"],
+            "position_rank": int(player["position_rank"]),
             "heatmap": (
-                f"../heatmaps/{TEAM_CODES[player['team']]}/"
+                f"{heatmap_relative_root}/{TEAM_CODES[player['team']]}/"
                 f"{player_id}_heatmap.svg"
             ),
             "top_chemistry_partners": partner_records,
@@ -153,18 +173,22 @@ def generate_individual_starter_reports(
             for partner in partner_records
         ) or "- No cohort partner data available"
         tweak_lines = "\n".join(f"- {tweak}" for tweak in tweaks)
-        markdown = f"""# {player['player']} — Starter Report
+        player_name = _clean_text(player["player"])
+        player_position = _clean_text(player["position"])
+        markdown = f"""# {player_name} — Starter Report
 
 - Team: {player['team']} ({TEAM_CODES[player['team']]})
-- Position: {player['position']}
+- Position: {player_position}
 - Functional role: {player['functional_role']}
 - Risk-adjusted OBV per 90: {player['obv_per_90']:.4f}
 - OBV source: `{player['obv_source']}`
 - Final-third spatial share: {100 * player['final_third_share']:.1f}%
 - Role-relative z-score: {player['role_z_score']:+.3f}
 - V4 evaluation score: {player['player_evaluation_score']:.1f}
+- V4 position-impact score: {player['position_impact_score']:.1f}
+- Position rank: {int(player['position_rank'])}
 
-![V4 event and 360 heatmap](../heatmaps/{TEAM_CODES[player['team']]}/{player_id}_heatmap.svg)
+![V4 event and 360 heatmap]({heatmap_relative_root}/{TEAM_CODES[player['team']]}/{player_id}_heatmap.svg)
 
 ## Physical profile
 
@@ -360,7 +384,7 @@ def generate_full_team_coaching_reports(
             existing.unlink()
     model_metadata = model_metadata or {}
     player_names = (
-        profiles.set_index("player_id")["player"].to_dict()
+        profiles.set_index("player_id")["player"].map(_clean_text).to_dict()
         if profiles is not None and not profiles.empty
         else {}
     )
@@ -459,12 +483,15 @@ def generate_full_team_coaching_reports(
                 "final_third_share",
                 "role_z_score",
                 "player_evaluation_score",
+                "position_group",
+                "position_impact_score",
+                "position_rank",
             ]
             top_players = (
                 profiles.loc[
                     profiles["team"].eq(team), available_columns
                 ]
-                .nlargest(5, "player_evaluation_score")
+                .nlargest(5, "position_impact_score")
                 .to_dict("records")
             )
         payload["top_v4_player_evaluations"] = top_players
@@ -477,7 +504,7 @@ def generate_full_team_coaching_reports(
             model_metadata,
         )
         lineup_lines = "\n".join(
-            f"{int(row['rank'])}. {row['player']} "
+            f"{int(row['rank'])}. {_clean_text(row['player'])} "
             f"({row['position_group']})"
             for row in lineup_records
         )
@@ -504,9 +531,10 @@ def generate_full_team_coaching_reports(
             for row in mistake_records
         ) or "- No recurrent pattern identified"
         player_lines = "\n".join(
-            f"{rank}. {row['player']} — {row['functional_role']}; "
-            f"score {float(row['player_evaluation_score']):.1f}, "
-            f"role z {float(row['role_z_score']):+.2f}, "
+            f"{rank}. {_clean_text(row['player'])} — {row['functional_role']}; "
+            f"position-impact {float(row['position_impact_score']):.1f} "
+            f"(position rank {int(row['position_rank'])}), "
+            f"role score {float(row['player_evaluation_score']):.1f}, "
             f"OBV/90 {float(row['obv_per_90']):+.3f}"
             for rank, row in enumerate(top_players, start=1)
         ) or "No player cleared the 300-minute V4 evaluation cutoff."
@@ -536,13 +564,14 @@ def generate_full_team_coaching_reports(
 
 {substitution_text}
 
-## V4 role-relative player leaders
+## V4 coach-facing player leaders
 
 {player_lines}
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

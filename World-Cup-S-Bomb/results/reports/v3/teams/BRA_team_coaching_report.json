@@ -1,8 +1,8 @@
 {
   "team": "Brazil",
   "team_code": "BRA",
-  "total_wasted_net_xg": 1.7461389155891973,
-  "mean_eva_gap": 0.004167395979926485,
+  "total_wasted_net_xg": 1.746138915589197,
+  "mean_eva_gap": 0.0041673959799264,
   "most_common_optimal_style": "No meaningful change",
   "optimal_starting_11": [
     {
@@ -10,77 +10,77 @@
       "player_id": 4372,
       "player": "Marcos Aoás Corrêa",
       "position_group": "Center Back",
-      "optimization_score": 2.5384615384615383
+      "optimization_score": 2.9615384615384617
     },
     {
       "rank": 2,
-      "player_id": 5539,
-      "player": "Carlos Henrique Casimiro",
-      "position_group": "Defensive Midfield",
-      "optimization_score": 2.519230769230769
-    },
-    {
-      "rank": 3,
       "player_id": 3295,
       "player": "Thiago Emiliano da Silva",
       "position_group": "Center Back",
-      "optimization_score": 2.3653846153846154
+      "optimization_score": 2.8269230769230766
+    },
+    {
+      "rank": 3,
+      "player_id": 13620,
+      "player": "Éder Gabriel Militão",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.769230769230769
     },
     {
       "rank": 4,
-      "player_id": 3280,
-      "player": "Richarlison de Andrade",
-      "position_group": "Forward",
-      "optimization_score": 2.230769230769231
+      "player_id": 5539,
+      "player": "Carlos Henrique Casimiro",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.7115384615384617
     },
     {
       "rank": 5,
-      "player_id": 4320,
-      "player": "Neymar da Silva Santos Junior",
-      "position_group": "Attacking Midfield/Wing",
-      "optimization_score": 2.230769230769231
+      "player_id": 5547,
+      "player": "Alisson Ramsés Becker",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.423076923076923
     },
     {
       "rank": 6,
       "player_id": 10595,
       "player": "Raphael Dias Belloli",
       "position_group": "Attacking Midfield/Wing",
-      "optimization_score": 2.1923076923076925
+      "optimization_score": 2.346153846153846
     },
     {
       "rank": 7,
-      "player_id": 13620,
-      "player": "Éder Gabriel Militão",
-      "position_group": "Fullback/Wingback",
-      "optimization_score": 2.1923076923076925
+      "player_id": 3280,
+      "player": "Richarlison de Andrade",
+      "position_group": "Forward",
+      "optimization_score": 2.230769230769231
     },
     {
       "rank": 8,
-      "player_id": 25104,
-      "player": "Rodrygo Silva de Goes",
-      "position_group": "Central/Wide Midfield",
-      "optimization_score": 2.0
+      "player_id": 22600,
+      "player": "Lucas Tolentino Coelho de Lima",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.230769230769231
     },
     {
       "rank": 9,
       "player_id": 18395,
       "player": "Vinícius José Paixão de Oliveira Júnior",
       "position_group": "Central/Wide Midfield",
-      "optimization_score": 1.9230769230769231
+      "optimization_score": 2.1153846153846154
     },
     {
       "rank": 10,
-      "player_id": 5547,
-      "player": "Alisson Ramsés Becker",
-      "position_group": "Goalkeeper",
-      "optimization_score": 1.7692307692307692
-    },
-    {
-      "rank": 11,
       "player_id": 3063,
       "player": "Danilo Luiz da Silva",
       "position_group": "Fullback/Wingback",
-      "optimization_score": 1.6153846153846154
+      "optimization_score": 1.8076923076923077
+    },
+    {
+      "rank": 11,
+      "player_id": 25104,
+      "player": "Rodrygo Silva de Goes",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.4615384615384617
     }
   ],
   "physical_matchup_deltas": {
@@ -96,8 +96,8 @@
       "actual_style": "Short Under Pressure",
       "optimal_style": "Patient Build-up",
       "possessions": 43,
-      "wasted_net_xg": 0.47082338226193876,
-      "mean_eva_gap": 0.010949380982835785
+      "wasted_net_xg": 0.4708233822619387,
+      "mean_eva_gap": 0.0109493809828357
     },
     {
       "team": "Brazil",
@@ -105,8 +105,8 @@
       "actual_style": "Short Under Pressure",
       "optimal_style": "Patient Build-up",
       "possessions": 43,
-      "wasted_net_xg": 0.46542417066909864,
-      "mean_eva_gap": 0.010823817922537178
+      "wasted_net_xg": 0.4654241706690986,
+      "mean_eva_gap": 0.0108238179225371
     },
     {
       "team": "Brazil",
@@ -115,10 +115,11 @@
       "optimal_style": "Patient Build-up",
       "possessions": 35,
       "wasted_net_xg": 0.3857373204890754,
-      "mean_eva_gap": 0.011021066299687868
+      "mean_eva_gap": 0.0110210662996878
     }
   ],
   "model_provenance": {
+    "schema_version": 4,
     "model_version": "transition-conceded-v2",
     "target": "transition_conceded",
     "calibration_method": "platt",
@@ -150,12 +151,90 @@
       "roc_auc": 0.6893411592543106,
       "unique_probabilities": 8739
     },
-    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+    "player_evaluation": {
+      "schema_version": 4,
+      "minutes_cutoff": 300.0,
+      "players_before_cutoff": 680,
+      "players_after_cutoff": 142,
+      "players_dropped": 538,
+      "obv_source": "open_event_value_fallback",
+      "native_obv_available": false,
+      "native_obv_column": null,
+      "event_rows": 233529,
+      "events_with_360_context": 203454,
+      "successful_action_points": 81231,
+      "freeze_frame_actor_points": 72016,
+      "heatmap_cells": 9394,
+      "attacking_wingbacks": 6,
+      "fullbacks_reprotected_from_anchor": 0,
+      "density_pressure_cutoff": 0.0205851451808076
+    }
   },
   "top_positive_synergy_pair": "Thiago Emiliano da Silva + Marcos Aoás Corrêa (0.778)",
   "substitution_suppression_reason_counts": {
     "POSITIONAL_INCOMPATIBILITY": 140,
-    "GAIN_BELOW_THRESHOLD": 24,
-    "INSUFFICIENT_MINUTES": 1
-  }
+    "INSUFFICIENT_MINUTES": 25
+  },
+  "top_v4_player_evaluations": [
+    {
+      "player_id": 13620,
+      "player": "Éder Gabriel Militão",
+      "functional_role": "Ball-Winner",
+      "obv_per_90": 0.20048070319768507,
+      "final_third_share": 0.19903691813804172,
+      "role_z_score": 1.7045406828136627,
+      "player_evaluation_score": 67.04540682813663,
+      "position_group": "Fullback/Wingback",
+      "position_impact_score": 69.0129963938681,
+      "position_rank": 2
+    },
+    {
+      "player_id": 4372,
+      "player": "Marcos Aoás Corrêa",
+      "functional_role": "Holding Anchor",
+      "obv_per_90": 0.36670894203994353,
+      "final_third_share": 0.08146067415730338,
+      "role_z_score": 1.026479413154769,
+      "player_evaluation_score": 60.26479413154769,
+      "position_group": "Center Back",
+      "position_impact_score": 59.974785648347876,
+      "position_rank": 6
+    },
+    {
+      "player_id": 3295,
+      "player": "Thiago Emiliano da Silva",
+      "functional_role": "Holding Anchor",
+      "obv_per_90": 0.43579979912880945,
+      "final_third_share": 0.03429602888086643,
+      "role_z_score": 1.0041166969539248,
+      "player_evaluation_score": 60.04116696953925,
+      "position_group": "Center Back",
+      "position_impact_score": 59.75133762159113,
+      "position_rank": 7
+    },
+    {
+      "player_id": 18395,
+      "player": "Vinícius José Paixão de Oliveira Júnior",
+      "functional_role": "Progressive Winger",
+      "obv_per_90": -0.27614762947334864,
+      "final_third_share": 0.6288492706645057,
+      "role_z_score": -0.44021150569774703,
+      "player_evaluation_score": 45.59788494302253,
+      "position_group": "Central/Wide Midfield",
+      "position_impact_score": 57.77807140723428,
+      "position_rank": 4
+    },
+    {
+      "player_id": 5539,
+      "player": "Carlos Henrique Casimiro",
+      "functional_role": "Ball-Winner",
+      "obv_per_90": 0.0990110277786058,
+      "final_third_share": 0.28789161727349705,
+      "role_z_score": 0.632157750851141,
+      "player_evaluation_score": 56.32157750851141,
+      "position_group": "Defensive Midfield",
+      "position_impact_score": 56.08766535053127,
+      "position_rank": 4
+    }
+  ]
 }

@@ -10,17 +10,17 @@ Ghana: Patient Build-up led the observed baseline by 0.0054 mean EvA. Primary re
 
 ## Optimized starting 11
 
-1. Thomas Teye Partey (Defensive Midfield)
-2. Mohamed Salisu (Center Back)
-3. Daniel Amartey (Center Back)
-4. Mohammed Kudus (Attacking Midfield/Wing)
-5. André Ayew Pelé (Attacking Midfield/Wing)
-6. Salis Abdul Samed (Defensive Midfield)
-7. Iñaki Williams Arthuer (Forward)
-8. Lawrence Ati-Zigi (Goalkeeper)
-9. Abdul Rahman Baba (Fullback/Wingback)
-10. Jordan Ayew (Attacking Midfield/Wing)
-11. Alidu Seidu (Fullback/Wingback)
+1. Daniel Amartey (Center Back)
+2. Thomas Teye Partey (Defensive Midfield)
+3. Lawrence Ati-Zigi (Goalkeeper)
+4. Mohamed Salisu (Center Back)
+5. Salis Abdul Samed (Defensive Midfield)
+6. Iñaki Williams Arthuer (Forward)
+7. Mohammed Kudus (Attacking Midfield/Wing)
+8. Abdul Rahman Baba (Fullback/Wingback)
+9. André Ayew Pelé (Attacking Midfield/Wing)
+10. Alidu Seidu (Fullback/Wingback)
+11. Jordan Ayew (Attacking Midfield/Wing)
 
 ## Physical matchup deltas
 
@@ -32,7 +32,19 @@ Ghana: Patient Build-up led the observed baseline by 0.0054 mean EvA. Primary re
 
 ## Best bench intervention
 
-Kamaldeen Sulemana for Jordan Ayew (expected Net xG gain 0.00534)
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
+
+## V4 coach-facing player leaders
+
+1. Thomas Teye Partey — Ball-Winner; position-impact 55.8 (position rank 6), role score 56.1, OBV/90 +0.157
+2. Daniel Amartey — Deep Playmaker; position-impact 53.9 (position rank 12), role score 54.2, OBV/90 +0.216
+3. Lawrence Ati-Zigi — Goalkeeper; position-impact 47.8 (position rank 12), role score 47.8, OBV/90 +0.309
+4. Mohamed Salisu — Deep Playmaker; position-impact 47.1 (position rank 20), role score 47.4, OBV/90 +0.325
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

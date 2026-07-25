@@ -12,15 +12,15 @@ Argentina: no tactical change cleared the modeled effect floor. Primary review s
 
 1. Lionel Andrés Messi Cuccittini (Attacking Midfield/Wing)
 2. Enzo Fernandez (Defensive Midfield)
-3. Rodrigo Javier De Paul (Defensive Midfield)
-4. Nicolás Hernán Otamendi (Center Back)
-5. Julián Álvarez (Forward)
-6. Nicolás Alejandro Tagliafico (Fullback/Wingback)
-7. Damián Emiliano Martínez (Goalkeeper)
-8. Nahuel Molina Lucero (Fullback/Wingback)
+3. Nicolás Hernán Otamendi (Center Back)
+4. Rodrigo Javier De Paul (Defensive Midfield)
+5. Damián Emiliano Martínez (Goalkeeper)
+6. Cristian Gabriel Romero (Center Back)
+7. Nahuel Molina Lucero (Fullback/Wingback)
+8. Julián Álvarez (Forward)
 9. Alexis Mac Allister (Central/Wide Midfield)
-10. Cristian Gabriel Romero (Center Back)
-11. Ángel Fabián Di María Hernández (Central/Wide Midfield)
+10. Ángel Fabián Di María Hernández (Central/Wide Midfield)
+11. Marcos Javier Acuña (Fullback/Wingback)
 
 ## Physical matchup deltas
 
@@ -32,7 +32,20 @@ Argentina: no tactical change cleared the modeled effect floor. Primary review s
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 122, GAIN_BELOW_THRESHOLD: 15, INSUFFICIENT_MINUTES: 6.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 122, INSUFFICIENT_MINUTES: 18, GAIN_BELOW_THRESHOLD: 3.
+
+## V4 coach-facing player leaders
+
+1. Lionel Andrés Messi Cuccittini — Progressive Winger; position-impact 77.1 (position rank 1), role score 60.2, OBV/90 -0.039
+2. Ángel Fabián Di María Hernández — Progressive Winger; position-impact 59.6 (position rank 2), role score 53.6, OBV/90 -0.179
+3. Enzo Fernandez — Ball-Winner; position-impact 55.8 (position rank 5), role score 56.1, OBV/90 +0.159
+4. Nicolás Alejandro Tagliafico — Box-to-Box Runner; position-impact 52.6 (position rank 11), role score 32.3, OBV/90 -0.113
+5. Cristian Gabriel Romero — Holding Anchor; position-impact 45.4 (position rank 25), role score 45.7, OBV/90 +0.229
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

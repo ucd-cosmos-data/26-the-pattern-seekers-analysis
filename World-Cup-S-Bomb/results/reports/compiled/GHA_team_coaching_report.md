@@ -34,16 +34,17 @@ Ghana: Patient Build-up led the observed baseline by 0.0054 mean EvA. Primary re
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
 
-## V4 role-relative player leaders
+## V4 coach-facing player leaders
 
-1. Thomas Teye Partey — Ball-Winner; score 56.1, role z +0.61, OBV/90 +0.157
-2. Daniel Amartey — Deep Playmaker; score 54.2, role z +0.42, OBV/90 +0.216
-3. Lawrence Ati-Zigi — Goalkeeper; score 47.8, role z -0.22, OBV/90 +0.309
-4. Mohamed Salisu — Deep Playmaker; score 47.4, role z -0.26, OBV/90 +0.325
+1. Thomas Teye Partey — Ball-Winner; position-impact 55.8 (position rank 6), role score 56.1, OBV/90 +0.157
+2. Daniel Amartey — Deep Playmaker; position-impact 53.9 (position rank 12), role score 54.2, OBV/90 +0.216
+3. Lawrence Ati-Zigi — Goalkeeper; position-impact 47.8 (position rank 12), role score 47.8, OBV/90 +0.309
+4. Mohamed Salisu — Deep Playmaker; position-impact 47.1 (position rank 20), role score 47.4, OBV/90 +0.325
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

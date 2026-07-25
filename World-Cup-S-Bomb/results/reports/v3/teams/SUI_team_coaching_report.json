@@ -1,8 +1,8 @@
 {
   "team": "Switzerland",
   "team_code": "SUI",
-  "total_wasted_net_xg": 0.10793468490718046,
-  "mean_eva_gap": 0.00035978228302393486,
+  "total_wasted_net_xg": 0.1079346849071804,
+  "mean_eva_gap": 0.0003597822830239,
   "most_common_optimal_style": "No meaningful change",
   "optimal_starting_11": [
     {
@@ -10,77 +10,77 @@
       "player_id": 5549,
       "player": "Manuel Obafemi Akanji",
       "position_group": "Center Back",
-      "optimization_score": 2.895833333333333
+      "optimization_score": 2.8541666666666665
     },
     {
       "rank": 2,
-      "player_id": 3500,
-      "player": "Granit Xhaka",
-      "position_group": "Defensive Midfield",
-      "optimization_score": 2.6458333333333335
+      "player_id": 5544,
+      "player": "Ricardo Iván Rodríguez Araya",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.833333333333333
     },
     {
       "rank": 3,
-      "player_id": 5545,
-      "player": "Breel-Donald Embolo",
-      "position_group": "Forward",
-      "optimization_score": 2.541666666666667
+      "player_id": 3500,
+      "player": "Granit Xhaka",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.770833333333333
     },
     {
       "rank": 4,
       "player_id": 6983,
       "player": "Remo Freuler",
       "position_group": "Defensive Midfield",
-      "optimization_score": 2.5
+      "optimization_score": 2.6666666666666665
     },
     {
       "rank": 5,
-      "player_id": 30401,
-      "player": "Ruben Vargas",
-      "position_group": "Attacking Midfield/Wing",
-      "optimization_score": 2.125
+      "player_id": 5545,
+      "player": "Breel-Donald Embolo",
+      "position_group": "Forward",
+      "optimization_score": 2.541666666666667
     },
     {
       "rank": 6,
-      "player_id": 5544,
-      "player": "Ricardo Iván Rodríguez Araya",
-      "position_group": "Fullback/Wingback",
-      "optimization_score": 2.083333333333333
-    },
-    {
-      "rank": 7,
-      "player_id": 3533,
-      "player": "Xherdan Shaqiri",
-      "position_group": "Central/Wide Midfield",
-      "optimization_score": 2.041666666666667
-    },
-    {
-      "rank": 8,
-      "player_id": 8814,
-      "player": "Nico Elvedi",
-      "position_group": "Center Back",
-      "optimization_score": 2.0
-    },
-    {
-      "rank": 9,
       "player_id": 5550,
       "player": "Yann Sommer",
       "position_group": "Goalkeeper",
-      "optimization_score": 1.9166666666666667
+      "optimization_score": 2.0
     },
     {
-      "rank": 10,
+      "rank": 7,
       "player_id": 7796,
       "player": "Silvan Widmer",
       "position_group": "Fullback/Wingback",
+      "optimization_score": 1.9166666666666663
+    },
+    {
+      "rank": 8,
+      "player_id": 30401,
+      "player": "Ruben Vargas",
+      "position_group": "Attacking Midfield/Wing",
       "optimization_score": 1.875
+    },
+    {
+      "rank": 9,
+      "player_id": 8814,
+      "player": "Nico Elvedi",
+      "position_group": "Center Back",
+      "optimization_score": 1.625
+    },
+    {
+      "rank": 10,
+      "player_id": 3533,
+      "player": "Xherdan Shaqiri",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.625
     },
     {
       "rank": 11,
       "player_id": 29006,
       "player": "Noah Okafor",
       "position_group": "Central/Wide Midfield",
-      "optimization_score": 1.0
+      "optimization_score": 0.9583333333333336
     }
   ],
   "physical_matchup_deltas": {
@@ -96,8 +96,8 @@
       "actual_style": "Direct Long Play",
       "optimal_style": "Short Under Pressure",
       "possessions": 8,
-      "wasted_net_xg": 0.04912558515231482,
-      "mean_eva_gap": 0.0061406981440393525
+      "wasted_net_xg": 0.0491255851523148,
+      "mean_eva_gap": 0.0061406981440393
     },
     {
       "team": "Switzerland",
@@ -105,8 +105,8 @@
       "actual_style": "Direct Long Play",
       "optimal_style": "Short Under Pressure",
       "possessions": 7,
-      "wasted_net_xg": 0.04083316166643898,
-      "mean_eva_gap": 0.005833308809491283
+      "wasted_net_xg": 0.0408331616664389,
+      "mean_eva_gap": 0.0058333088094912
     },
     {
       "team": "Switzerland",
@@ -114,11 +114,12 @@
       "actual_style": "Direct Long Play",
       "optimal_style": "Short Under Pressure",
       "possessions": 2,
-      "wasted_net_xg": 0.011957606600077587,
-      "mean_eva_gap": 0.005978803300038794
+      "wasted_net_xg": 0.0119576066000775,
+      "mean_eva_gap": 0.0059788033000387
     }
   ],
   "model_provenance": {
+    "schema_version": 4,
     "model_version": "transition-conceded-v2",
     "target": "transition_conceded",
     "calibration_method": "platt",
@@ -150,12 +151,90 @@
       "roc_auc": 0.6893411592543106,
       "unique_probabilities": 8739
     },
-    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+    "player_evaluation": {
+      "schema_version": 4,
+      "minutes_cutoff": 300.0,
+      "players_before_cutoff": 680,
+      "players_after_cutoff": 142,
+      "players_dropped": 538,
+      "obv_source": "open_event_value_fallback",
+      "native_obv_available": false,
+      "native_obv_column": null,
+      "event_rows": 233529,
+      "events_with_360_context": 203454,
+      "successful_action_points": 81231,
+      "freeze_frame_actor_points": 72016,
+      "heatmap_cells": 9394,
+      "attacking_wingbacks": 6,
+      "fullbacks_reprotected_from_anchor": 0,
+      "density_pressure_cutoff": 0.0205851451808076
+    }
   },
   "top_positive_synergy_pair": "Granit Xhaka + Manuel Obafemi Akanji (0.755)",
   "substitution_suppression_reason_counts": {
     "POSITIONAL_INCOMPATIBILITY": 121,
-    "GAIN_BELOW_THRESHOLD": 13,
-    "INSUFFICIENT_MINUTES": 9
-  }
+    "INSUFFICIENT_MINUTES": 22
+  },
+  "top_v4_player_evaluations": [
+    {
+      "player_id": 5545,
+      "player": "Breel-Donald Embolo",
+      "functional_role": "Target Forward",
+      "obv_per_90": -0.33823310557807057,
+      "final_third_share": 0.4643734643734644,
+      "role_z_score": 0.23042857749384785,
+      "player_evaluation_score": 52.30428577493848,
+      "position_group": "Forward",
+      "position_impact_score": 53.433913781377036,
+      "position_rank": 4
+    },
+    {
+      "player_id": 5544,
+      "player": "Ricardo Iván Rodríguez Araya",
+      "functional_role": "Box-to-Box Runner",
+      "obv_per_90": 0.03660466617263522,
+      "final_third_share": 0.20893854748603352,
+      "role_z_score": 0.6538802378432421,
+      "player_evaluation_score": 56.53880237843242,
+      "position_group": "Fullback/Wingback",
+      "position_impact_score": 52.26765924790632,
+      "position_rank": 12
+    },
+    {
+      "player_id": 6983,
+      "player": "Remo Freuler",
+      "functional_role": "Ball-Winner",
+      "obv_per_90": -0.05754332646546739,
+      "final_third_share": 0.254957507082153,
+      "role_z_score": 0.1540733587987365,
+      "player_evaluation_score": 51.54073358798736,
+      "position_group": "Defensive Midfield",
+      "position_impact_score": 49.39506540355139,
+      "position_rank": 13
+    },
+    {
+      "player_id": 5549,
+      "player": "Manuel Obafemi Akanji",
+      "functional_role": "Holding Anchor",
+      "obv_per_90": 0.3602903493769562,
+      "final_third_share": 0.036605657237936774,
+      "role_z_score": -0.03930768712203414,
+      "player_evaluation_score": 49.606923128779655,
+      "position_group": "Center Back",
+      "position_impact_score": 49.32545207183621,
+      "position_rank": 17
+    },
+    {
+      "player_id": 3500,
+      "player": "Granit Xhaka",
+      "functional_role": "Ball-Winner",
+      "obv_per_90": 0.10243886652907958,
+      "final_third_share": 0.16048317515099222,
+      "role_z_score": -0.13594957325147905,
+      "player_evaluation_score": 48.64050426748521,
+      "position_group": "Defensive Midfield",
+      "position_impact_score": 45.33509713868183,
+      "position_rank": 16
+    }
+  ]
 }

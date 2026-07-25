@@ -10,16 +10,16 @@ Portugal: no tactical change cleared the modeled effect floor. Primary review si
 
 ## Optimized starting 11
 
-1. Kléper Laveran Lima Ferreira (Center Back)
-2. Bruno Miguel Borges Fernandes (Attacking Midfield/Wing)
-3. João Félix Sequeira (Attacking Midfield/Wing)
-4. Rúben Santos Gato Alves Dias (Center Back)
-5. Cristiano Ronaldo dos Santos Aveiro (Forward)
-6. Diogo Meireles Costa (Goalkeeper)
-7. Raphaël Adelino José Guerreiro (Fullback/Wingback)
-8. Bernardo Mota Veiga de Carvalho e Silva (Central/Wide Midfield)
-9. Rúben Diogo Da Silva Neves (Defensive Midfield)
-10. João Pedro Cavaco Cancelo (Fullback/Wingback)
+1. Diogo Meireles Costa (Goalkeeper)
+2. Kléper Laveran Lima Ferreira (Center Back)
+3. Rúben Santos Gato Alves Dias (Center Back)
+4. João Pedro Cavaco Cancelo (Fullback/Wingback)
+5. João Félix Sequeira (Attacking Midfield/Wing)
+6. Bruno Miguel Borges Fernandes (Attacking Midfield/Wing)
+7. Bernardo Mota Veiga de Carvalho e Silva (Central/Wide Midfield)
+8. Raphaël Adelino José Guerreiro (Fullback/Wingback)
+9. Cristiano Ronaldo dos Santos Aveiro (Forward)
+10. Rúben Diogo Da Silva Neves (Defensive Midfield)
 11. Otávio Edmilson da Silva Monteiro (Central/Wide Midfield)
 
 ## Physical matchup deltas
@@ -32,7 +32,20 @@ Portugal: no tactical change cleared the modeled effect floor. Primary review si
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 123, GAIN_BELOW_THRESHOLD: 16, INSUFFICIENT_MINUTES: 4.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 123, INSUFFICIENT_MINUTES: 20.
+
+## V4 coach-facing player leaders
+
+1. Raphaël Adelino José Guerreiro — Box-to-Box Runner; position-impact 59.1 (position rank 4), role score 50.1, OBV/90 -0.036
+2. Bruno Miguel Borges Fernandes — Wide Creator; position-impact 57.7 (position rank 3), role score 47.1, OBV/90 -0.070
+3. Kléper Laveran Lima Ferreira — Deep Playmaker; position-impact 53.1 (position rank 13), role score 53.4, OBV/90 +0.388
+4. Rúben Santos Gato Alves Dias — Deep Playmaker; position-impact 51.3 (position rank 14), role score 51.6, OBV/90 +0.282
+5. João Pedro Cavaco Cancelo — Box-to-Box Runner; position-impact 50.9 (position rank 14), role score 56.2, OBV/90 -0.004
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

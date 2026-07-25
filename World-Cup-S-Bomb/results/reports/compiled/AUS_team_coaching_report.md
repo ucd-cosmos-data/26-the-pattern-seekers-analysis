@@ -34,17 +34,18 @@ Australia: Patient Build-up led the observed baseline by 0.0032 mean EvA. Primar
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
 
-## V4 role-relative player leaders
+## V4 coach-facing player leaders
 
-1. Mathew Ryan — Goalkeeper; score 61.2, role z +1.12, OBV/90 +0.498
-2. Aziz Eraltay Behich — Box-to-Box Runner; score 48.1, role z -0.19, OBV/90 -0.014
-3. Aaron Mooy — Ball-Winner; score 47.4, role z -0.26, OBV/90 +0.094
-4. Harry Souttar — Deep Playmaker; score 46.2, role z -0.38, OBV/90 +0.242
-5. Jackson Irvine — Ball-Winner; score 43.0, role z -0.70, OBV/90 -0.080
+1. Mathew Ryan — Goalkeeper; position-impact 61.2 (position rank 2), role score 61.2, OBV/90 +0.498
+2. Aziz Eraltay Behich — Box-to-Box Runner; position-impact 47.3 (position rank 16), role score 48.1, OBV/90 -0.014
+3. Jackson Irvine — Ball-Winner; position-impact 46.2 (position rank 9), role score 43.0, OBV/90 -0.080
+4. Harry Souttar — Deep Playmaker; position-impact 46.0 (position rank 23), role score 46.2, OBV/90 +0.242
+5. Aaron Mooy — Ball-Winner; position-impact 43.6 (position rank 18), role score 47.4, OBV/90 +0.094
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

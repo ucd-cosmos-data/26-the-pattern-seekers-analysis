@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Cameroon: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Direct Long Play to Patient Build-up). Strongest positive squad synergy: André-Frank Zambo Anguissa + Nouhou Tolo (0.627). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Cameroon: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Direct Long Play to Patient Build-up). Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.0510
 - Mean possession EvA gap: 0.000235
@@ -10,15 +10,15 @@ Cameroon: no tactical change cleared the modeled effect floor. Primary review si
 
 ## Optimized starting 11
 
-1. Jean-Eric Maxim Choupo-Moting (Forward)
-2. Jean-Charles Castelletto (Center Back)
-3. Nicolas Alexis Julio N'Koulou Ndoubena (Center Back)
-4. André-Frank Zambo Anguissa (Defensive Midfield)
-5. Ngoran Suiru Fai Collins (Fullback/Wingback)
-6. Bryan Mbeumo (Attacking Midfield/Wing)
-7. Vincent Paté Aboubakar (Forward)
-8. Nouhou Tolo (Fullback/Wingback)
-9. Devis Rogers Epassy Mboka (Goalkeeper)
+1. Ngoran Suiru Fai Collins (Fullback/Wingback)
+2. Nouhou Tolo (Fullback/Wingback)
+3. André-Frank Zambo Anguissa (Defensive Midfield)
+4. Jean-Eric Maxim Choupo-Moting (Forward)
+5. Bryan Mbeumo (Attacking Midfield/Wing)
+6. Jean-Charles Castelletto (Center Back)
+7. Devis Rogers Epassy Mboka (Goalkeeper)
+8. Nicolas Alexis Julio N'Koulou Ndoubena (Center Back)
+9. Karl Brillant Toko Ekambi (Attacking Midfield/Wing)
 10. Martin Hongla Yma II (Central/Wide Midfield)
 11. Nicolas Moumi Ngamaleu (Central/Wide Midfield)
 
@@ -32,7 +32,16 @@ Cameroon: no tactical change cleared the modeled effect floor. Primary review si
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 106, GAIN_BELOW_THRESHOLD: 9, INSUFFICIENT_MINUTES: 6.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 106, INSUFFICIENT_MINUTES: 15.
+
+## V4 coach-facing player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

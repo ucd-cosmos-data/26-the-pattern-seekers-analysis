@@ -2,7 +2,7 @@
   "team": "Uruguay",
   "team_code": "URU",
   "total_wasted_net_xg": 1.1943162077974767,
-  "mean_eva_gap": 0.005529241702766096,
+  "mean_eva_gap": 0.005529241702766,
   "most_common_optimal_style": "No meaningful change",
   "optimal_starting_11": [
     {
@@ -10,77 +10,77 @@
       "player_id": 5259,
       "player": "José María Giménez de Vargas",
       "position_group": "Center Back",
-      "optimization_score": 2.631578947368421
+      "optimization_score": 2.4736842105263155
     },
     {
       "rank": 2,
       "player_id": 6773,
       "player": "Federico Santiago Valverde Dipetta",
       "position_group": "Defensive Midfield",
-      "optimization_score": 2.631578947368421
+      "optimization_score": 2.421052631578948
     },
     {
       "rank": 3,
-      "player_id": 5260,
-      "player": "Rodrigo Bentancur Colmán",
-      "position_group": "Defensive Midfield",
-      "optimization_score": 2.473684210526316
+      "player_id": 36710,
+      "player": "Sergio Rochet Álvarez",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.3684210526315788
     },
     {
       "rank": 4,
       "player_id": 7104,
       "player": "Mathías Olivera Miramontes",
       "position_group": "Fullback/Wingback",
-      "optimization_score": 2.1052631578947367
+      "optimization_score": 2.210526315789473
     },
     {
       "rank": 5,
-      "player_id": 36710,
-      "player": "Sergio Rochet Álvarez",
-      "position_group": "Goalkeeper",
-      "optimization_score": 2.052631578947368
+      "player_id": 5260,
+      "player": "Rodrigo Bentancur Colmán",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.0526315789473686
     },
     {
       "rank": 6,
       "player_id": 32478,
       "player": "Darwin Gabriel Núñez Ribeiro",
       "position_group": "Attacking Midfield/Wing",
-      "optimization_score": 2.052631578947368
+      "optimization_score": 2.0
     },
     {
       "rank": 7,
-      "player_id": 6300,
-      "player": "Sebastián Coates Nión",
-      "position_group": "Center Back",
-      "optimization_score": 1.8421052631578947
-    },
-    {
-      "rank": 8,
-      "player_id": 5246,
-      "player": "Luis Alberto Suárez Díaz",
-      "position_group": "Forward",
-      "optimization_score": 1.6842105263157894
-    },
-    {
-      "rank": 9,
-      "player_id": 5258,
-      "player": "Giorgian Daniel De Arrascaeta Benedetti",
-      "position_group": "Central/Wide Midfield",
-      "optimization_score": 1.6315789473684212
-    },
-    {
-      "rank": 10,
       "player_id": 5264,
       "player": "Guillermo Varela Olivera",
       "position_group": "Fullback/Wingback",
-      "optimization_score": 1.5789473684210527
+      "optimization_score": 1.9473684210526316
     },
     {
-      "rank": 11,
+      "rank": 8,
+      "player_id": 6300,
+      "player": "Sebastián Coates Nión",
+      "position_group": "Center Back",
+      "optimization_score": 1.736842105263158
+    },
+    {
+      "rank": 9,
       "player_id": 5255,
       "player": "Matías Vecino Falero",
       "position_group": "Central/Wide Midfield",
-      "optimization_score": 1.4736842105263157
+      "optimization_score": 1.7368421052631575
+    },
+    {
+      "rank": 10,
+      "player_id": 5246,
+      "player": "Luis Alberto Suárez Díaz",
+      "position_group": "Forward",
+      "optimization_score": 1.3157894736842104
+    },
+    {
+      "rank": 11,
+      "player_id": 5258,
+      "player": "Giorgian Daniel De Arrascaeta Benedetti",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.1578947368421053
     }
   ],
   "physical_matchup_deltas": {
@@ -97,7 +97,7 @@
       "optimal_style": "Patient Build-up",
       "possessions": 38,
       "wasted_net_xg": 0.4159179843261676,
-      "mean_eva_gap": 0.010945210113846516
+      "mean_eva_gap": 0.0109452101138465
     },
     {
       "team": "Uruguay",
@@ -105,8 +105,8 @@
       "actual_style": "Short Under Pressure",
       "optimal_style": "Patient Build-up",
       "possessions": 22,
-      "wasted_net_xg": 0.22205332677760123,
-      "mean_eva_gap": 0.01009333303534551
+      "wasted_net_xg": 0.2220533267776012,
+      "mean_eva_gap": 0.0100933330353455
     },
     {
       "team": "Uruguay",
@@ -114,11 +114,12 @@
       "actual_style": "Direct Long Play",
       "optimal_style": "Patient Build-up",
       "possessions": 11,
-      "wasted_net_xg": 0.13528985235717342,
-      "mean_eva_gap": 0.012299077487015765
+      "wasted_net_xg": 0.1352898523571734,
+      "mean_eva_gap": 0.0122990774870157
     }
   ],
   "model_provenance": {
+    "schema_version": 4,
     "model_version": "transition-conceded-v2",
     "target": "transition_conceded",
     "calibration_method": "platt",
@@ -150,12 +151,29 @@
       "roc_auc": 0.6893411592543106,
       "unique_probabilities": 8739
     },
-    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+    "player_evaluation": {
+      "schema_version": 4,
+      "minutes_cutoff": 300.0,
+      "players_before_cutoff": 680,
+      "players_after_cutoff": 142,
+      "players_dropped": 538,
+      "obv_source": "open_event_value_fallback",
+      "native_obv_available": false,
+      "native_obv_column": null,
+      "event_rows": 233529,
+      "events_with_360_context": 203454,
+      "successful_action_points": 81231,
+      "freeze_frame_actor_points": 72016,
+      "heatmap_cells": 9394,
+      "attacking_wingbacks": 6,
+      "fullbacks_reprotected_from_anchor": 0,
+      "density_pressure_cutoff": 0.0205851451808076
+    }
   },
-  "top_positive_synergy_pair": "José María Giménez de Vargas + Sergio Rochet Álvarez (0.654)",
+  "top_positive_synergy_pair": "not available",
   "substitution_suppression_reason_counts": {
     "POSITIONAL_INCOMPATIBILITY": 80,
-    "GAIN_BELOW_THRESHOLD": 5,
-    "INSUFFICIENT_MINUTES": 3
-  }
+    "INSUFFICIENT_MINUTES": 8
+  },
+  "top_v4_player_evaluations": []
 }

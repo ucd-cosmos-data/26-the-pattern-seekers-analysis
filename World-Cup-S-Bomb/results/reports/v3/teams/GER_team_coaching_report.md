@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Germany: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Antonio Rüdiger + Manuel Neuer (0.657). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Germany: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 1.4111
 - Mean possession EvA gap: 0.005736
@@ -10,14 +10,14 @@ Germany: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. Antonio Rüdiger (Center Back)
-2. Joshua Kimmich (Fullback/Wingback)
-3. Jamal Musiala (Attacking Midfield/Wing)
-4. Serge Gnabry (Attacking Midfield/Wing)
-5. Niklas Süle (Fullback/Wingback)
-6. İlkay Gündoğan (Attacking Midfield/Wing)
-7. Manuel Neuer (Goalkeeper)
-8. Kai Havertz (Forward)
+1. Joshua Kimmich (Fullback/Wingback)
+2. Manuel Neuer (Goalkeeper)
+3. Antonio Rüdiger (Center Back)
+4. Niklas Süle (Fullback/Wingback)
+5. Jamal Musiala (Attacking Midfield/Wing)
+6. Serge Gnabry (Attacking Midfield/Wing)
+7. David Raum (Fullback/Wingback)
+8. Thomas Müller (Forward)
 9. Leon Goretzka (Defensive Midfield)
 10. Nico Schlotterbeck (Center Back)
 11. Mario Götze (Central/Wide Midfield)
@@ -32,7 +32,16 @@ Germany: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 84, GAIN_BELOW_THRESHOLD: 9, INSUFFICIENT_MINUTES: 6.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 84, INSUFFICIENT_MINUTES: 15.
+
+## V4 coach-facing player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

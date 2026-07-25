@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Belgium: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Jan Vertonghen + Thibaut Courtois (0.645). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Belgium: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.8230
 - Mean possession EvA gap: 0.003707
@@ -10,17 +10,17 @@ Belgium: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. Toby Alderweireld (Center Back)
-2. Jan Vertonghen (Center Back)
-3. Kevin De Bruyne (Attacking Midfield/Wing)
-4. Thibaut Courtois (Goalkeeper)
-5. Axel Witsel (Defensive Midfield)
-6. Timothy Castagne (Fullback/Wingback)
-7. Michy Batshuayi Tunga (Forward)
+1. Axel Witsel (Defensive Midfield)
+2. Thibaut Courtois (Goalkeeper)
+3. Toby Alderweireld (Center Back)
+4. Timothy Castagne (Fullback/Wingback)
+5. Jan Vertonghen (Center Back)
+6. Kevin De Bruyne (Attacking Midfield/Wing)
+7. Thomas Meunier (Fullback/Wingback)
 8. Leander Dendoncker (Center Back)
-9. Thomas Meunier (Fullback/Wingback)
-10. Yannick Ferreira Carrasco (Attacking Midfield/Wing)
-11. Amadou Onana (Defensive Midfield)
+9. Michy Batshuayi Tunga (Forward)
+10. Eden Hazard (Attacking Midfield/Wing)
+11. Yannick Ferreira Carrasco (Attacking Midfield/Wing)
 
 ## Physical matchup deltas
 
@@ -32,7 +32,16 @@ Belgium: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 82, GAIN_BELOW_THRESHOLD: 10, INSUFFICIENT_MINUTES: 7.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 82, INSUFFICIENT_MINUTES: 17.
+
+## V4 coach-facing player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

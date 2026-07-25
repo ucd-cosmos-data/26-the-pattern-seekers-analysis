@@ -34,17 +34,18 @@ Switzerland: no tactical change cleared the modeled effect floor. Primary review
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 121, INSUFFICIENT_MINUTES: 22.
 
-## V4 role-relative player leaders
+## V4 coach-facing player leaders
 
-1. Ricardo Iván Rodríguez Araya — Box-to-Box Runner; score 56.5, role z +0.65, OBV/90 +0.037
-2. Breel-Donald Embolo — Target Forward; score 52.3, role z +0.23, OBV/90 -0.338
-3. Remo Freuler — Ball-Winner; score 51.5, role z +0.15, OBV/90 -0.058
-4. Manuel Obafemi Akanji — Holding Anchor; score 49.6, role z -0.04, OBV/90 +0.360
-5. Granit Xhaka — Ball-Winner; score 48.6, role z -0.14, OBV/90 +0.102
+1. Breel-Donald Embolo — Target Forward; position-impact 53.4 (position rank 4), role score 52.3, OBV/90 -0.338
+2. Ricardo Iván Rodríguez Araya — Box-to-Box Runner; position-impact 52.3 (position rank 12), role score 56.5, OBV/90 +0.037
+3. Remo Freuler — Ball-Winner; position-impact 49.4 (position rank 13), role score 51.5, OBV/90 -0.058
+4. Manuel Obafemi Akanji — Holding Anchor; position-impact 49.3 (position rank 17), role score 49.6, OBV/90 +0.360
+5. Granit Xhaka — Ball-Winner; position-impact 45.3 (position rank 16), role score 48.6, OBV/90 +0.102
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

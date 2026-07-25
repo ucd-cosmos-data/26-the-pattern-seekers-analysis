@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Qatar: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Wide Retreating Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Boualem Khoukhi + Abdelkarim Hassan Al Haj Fadlalla (0.649). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Qatar: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Wide Retreating Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.4901
 - Mean possession EvA gap: 0.002122
@@ -10,17 +10,17 @@ Qatar: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Optimized starting 11
 
-1. Abdelkarim Hassan Al Haj Fadlalla (Center Back)
-2. Boualem Khoukhi (Center Back)
+1. Boualem Khoukhi (Center Back)
+2. Abdelkarim Hassan Al Haj Fadlalla (Center Back)
 3. Akram Hassan Afif (Forward)
-4. Almoez Ali Zainalabiddin Abdulla (Forward)
-5. Pedro Miguel Correia (Center Back)
-6. Karim Boudiaf (Defensive Midfield)
-7. Ismaeel Mohammad Mohammad (Fullback/Wingback)
-8. Homam Alamin Ahmed (Fullback/Wingback)
-9. Abdulaziz Hatem Mohammed Abdullah (Central/Wide Midfield)
-10. Hassan Khalid Al Heidos (Central/Wide Midfield)
-11. Meshaal Aissa Barsham (Goalkeeper)
+4. Pedro Miguel Correia (Center Back)
+5. Homam Alamin Ahmed (Fullback/Wingback)
+6. Abdulaziz Hatem Mohammed Abdullah (Central/Wide Midfield)
+7. Karim Boudiaf (Defensive Midfield)
+8. Hassan Khalid Al Heidos (Central/Wide Midfield)
+9. Almoez Ali Zainalabiddin Abdulla (Forward)
+10. Meshaal Aissa Barsham (Goalkeeper)
+11. Ismaeel Mohammad Mohammad (Fullback/Wingback)
 
 ## Physical matchup deltas
 
@@ -32,7 +32,16 @@ Qatar: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 81, INSUFFICIENT_MINUTES: 11, GAIN_BELOW_THRESHOLD: 7.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 81, INSUFFICIENT_MINUTES: 18.
+
+## V4 coach-facing player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

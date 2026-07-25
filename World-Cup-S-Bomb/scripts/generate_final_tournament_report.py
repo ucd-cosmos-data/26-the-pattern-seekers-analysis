@@ -538,10 +538,10 @@ def team_interpretation(row: pd.Series) -> str:
 
 
 def team_player_rows(players: pd.DataFrame, count: int = 5) -> list[list[object]]:
-    """Return Markdown-ready rows for a team's highest role scores."""
+    """Return Markdown-ready rows for a team's V4 position-impact leaders."""
 
     leaders = players.sort_values(
-        ["position_score", "minutes"], ascending=False
+        ["position_impact_score", "minutes"], ascending=False
     ).head(count)
     return [
         [
@@ -550,8 +550,9 @@ def team_player_rows(players: pd.DataFrame, count: int = 5) -> list[list[object]
             row["position_group"],
             row["functional_role"],
             f"{row['minutes']:.0f}",
-            f"{row['position_score']:.1f}",
-            f"{row['net_xg_contribution_p90']:.3f}",
+            f"{row['position_impact_score']:.1f}",
+            f"{row['obv_per_90']:.3f}",
+            f"{100 * row['final_third_share']:.1f}%",
         ]
         for rank, (_, row) in enumerate(leaders.iterrows(), start=1)
     ]
@@ -562,7 +563,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
 
     required = {
         "possessions": project_root / "data/processed/world_cup_defensive_clusters.csv",
-        "profiles": project_root / "data/processed/player_physicality_profiles_v2.csv",
+        "profiles": project_root / "data/processed/player_evaluations.csv",
         "audit": project_root
         / "results/audit/v3/expected_vs_actual_team_summary_oof_v3.csv",
         "mistakes": project_root
@@ -573,10 +574,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
         / "results/simulations/v3/substitution_suppressions_v3.parquet",
         "matchup": project_root / "data/processed/lineup_matchup_features_v2.csv",
         "synergy": project_root / "data/processed/player_synergy_matrix_v2.parquet",
-        "manifest": project_root / "results/reports/v3/pipeline_manifest_v3.json",
-        "events": project_root / "notebooks/all_events.csv",
-        "components": project_root
-        / "data/interim/world_cup_player_match_components.csv",
+        "manifest": project_root / "results/reports/pipeline_manifest.json",
     }
     missing = [str(path) for path in required.values() if not path.exists()]
     if missing:
@@ -586,43 +584,8 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
         )
 
     possessions = pd.read_csv(required["possessions"])
-    raw_profiles = pd.read_csv(required["profiles"])
-    baseline_scores = add_position_scores(
-        raw_profiles, BASELINE_POSITION_WEIGHTS
-    )[["player_id", "position_score"]].rename(
-        columns={"position_score": "objective_baseline_position_score"}
-    )
-    events = pd.read_csv(
-        required["events"],
-        usecols=[
-            "match_id",
-            "team",
-            "type",
-            "player_id",
-            "location",
-            "under_pressure",
-            "pass_outcome",
-            "shot_outcome",
-            "shot_statsbomb_xg",
-            "goalkeeper_type",
-        ],
-        low_memory=False,
-    )
-    components = pd.read_csv(required["components"], low_memory=False)
-    profiles = apply_empirical_bayes_smoothing(raw_profiles)
-    profiles = add_goalkeeper_metrics(profiles, events, components)
-    profiles = add_position_scores(profiles)
-    profiles = profiles.merge(baseline_scores, on="player_id", how="left")
-    profiles["v2_role_score_unblended"] = profiles["position_score"]
-    profiles["position_score"] = (
-        0.30 * profiles["v2_role_score_unblended"]
-        + 0.70 * profiles["objective_baseline_position_score"]
-    )
-    profiles.to_csv(
-        project_root
-        / "data/processed/player_physicality_profiles_smoothed_v3.csv",
-        index=False,
-    )
+    profiles = pd.read_csv(required["profiles"])
+    profiles = profiles.loc[profiles["minutes"].ge(SMOOTHING_MINUTES)].copy()
     audit = pd.read_csv(required["audit"])
     mistakes = pd.read_csv(required["mistakes"])
     substitutions = pd.read_parquet(required["substitutions"])
@@ -658,7 +621,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
         "",
         (
             f"This report consolidates **{len(team_metrics)} national teams**, "
-            f"**{len(profiles)} tournament-role player profiles**, "
+            f"**{len(profiles)} players with at least 300 tournament minutes**, "
             f"**{int(possessions['match_id'].nunique())} matches**, and "
             f"**{len(possessions):,} analyzed possessions** into one coaching reference. "
             "It combines observed possession outcomes with the regularized empirical "
@@ -696,8 +659,10 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             "recovery proxies. Positive values indicate a modeled lineup edge."
         ),
         (
-            "- **Position score (0–100):** a within-position, tournament-only composite of "
-            "role-relevant percentiles. It cannot compare players across position groups."
+            "- **Position-impact score:** a within-position V4 shortlist score. For "
+            "attacking positions, 55% comes from raw and pressure-adjusted OBV, with "
+            "xG, progressive carries, and SB360-informed final-third presence completing "
+            "the score. It cannot compare absolute quality across position groups."
         ),
         "",
         "## Tournament overview",
@@ -922,7 +887,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                     "remain suppressed rather than converted into weak positive claims."
                 ),
                 "",
-                "### Leading tournament-role profiles",
+                "### Leading V4 position-impact profiles",
                 "",
                 markdown_table(
                     [
@@ -931,8 +896,9 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                         "Position group",
                         "Functional role",
                         "Minutes",
-                        "Role score",
-                        "Net xG/90",
+                        "Position impact",
+                        "OBV/90",
+                        "Final-third share",
                     ],
                     team_player_rows(team_players),
                 ),
@@ -963,25 +929,26 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             "# Top tournament-role players by position",
             "",
             (
-                "These leaderboards rank only the analyzed tournament cohort and use "
-                "different weights for different roles. A score of 80 means a strong blend "
-                "of the selected within-position indicators; it does not mean an 80% chance "
-                "of success. Sample size, team tactics, opponent quality, and role assignment "
-                "all affect the component metrics. To meet the preregistered rank-stability "
-                "gate, the published score blends 70% objective baseline rank score with 30% "
-                "smoothed v2 role score; the unblended v2 score is retained in the profile CSV."
+                "These leaderboards use only players with at least 300 tournament minutes. "
+                "The V4 role score remains normalized strictly within functional role. The "
+                "coach-facing position-impact score is a separate within-position ranking. "
+                "For forwards and attacking midfielders/wingers, OBV-family value is the "
+                "primary signal (55%), followed by xG (30%), progressive carries (10%), "
+                "and the event-plus-SB360 final-third footprint (5%)."
             ),
             "",
-            "## Position-score construction",
+            "## Position-impact construction",
             "",
+            (
+                "- **Attacking positions:** pressure-adjusted OBV/90 30%, raw OBV/90 "
+                "25%, xG/90 30%, progressive carries/90 10%, final-third share 5%."
+            ),
+            (
+                "- **Other positions:** the V4 functional-role composite is re-expressed "
+                "within position group for the coach-facing shortlist."
+            ),
         ]
     )
-    for group, weights in POSITION_WEIGHTS.items():
-        weight_text = ", ".join(
-            f"{column.replace('_', ' ')} {100 * weight:.0f}%"
-            for column, weight in weights.items()
-        )
-        lines.append(f"- **{group}:** {weight_text}.")
     lines.extend(
         [
             "",
@@ -998,7 +965,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
 
     for group in POSITION_WEIGHTS:
         group_players = profiles[profiles["position_group"].eq(group)].sort_values(
-            ["position_score", "minutes"], ascending=False
+            ["position_impact_score", "minutes"], ascending=False
         ).head(10)
         lines.extend(
             [
@@ -1012,11 +979,11 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                         "Detailed position",
                         "Role",
                         "Min.",
-                        "Score",
-                        "Net xG/90",
-                        "Aerial",
-                        "Pressing",
-                        "Recovery",
+                        "Position impact",
+                        "Position rank",
+                        "Role score",
+                        "OBV/90",
+                        "Final third",
                     ],
                     [
                         [
@@ -1026,11 +993,11 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                             row["position"],
                             row["functional_role"],
                             f"{row['minutes']:.0f}",
-                            f"{row['position_score']:.1f}",
-                            f"{row['net_xg_contribution_p90']:.3f}",
-                            f"{row['aerial_dominance_index']:.2f}",
-                            f"{row['pressing_intensity_index']:.2f}",
-                            f"{row['speed_recovery_index']:.2f}",
+                            f"{row['position_impact_score']:.1f}",
+                            int(row["position_rank"]),
+                            f"{row['player_evaluation_score']:.1f}",
+                            f"{row['obv_per_90']:.3f}",
+                            f"{100 * row['final_third_share']:.1f}%",
                         ]
                         for rank, (_, row) in enumerate(group_players.iterrows(), start=1)
                     ],
@@ -1063,8 +1030,9 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                 "artifact over the supplied tournament data. It is not a randomized or causal study."
             ),
             (
-                "- The v3 report preserves the schema-checked v2 calibrated classifier and "
-                "adds tournament-wide leave-one-match-out audit coverage. Threshold "
+                "- The final_v3 delivery now consumes the V4 spatial player evaluation while "
+                "preserving the schema-checked calibrated classifier and tournament-wide "
+                "leave-one-match-out audit coverage. Threshold "
                 "abstention still gates transition risk to zero rather than converting it "
                 "into a weak positive recommendation."
             ),
@@ -1078,8 +1046,8 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                 "tackle-related success, and recoveries approximate defensive recovery activity."
             ),
             (
-                "- Player rankings cover the 342-player tournament-minute cohort used by the "
-                "pipeline, not every registered player and not performance outside this competition."
+                "- Player rankings cover the 142 players who cleared the 300-minute cutoff, "
+                "not every registered player and not performance outside this competition."
             ),
             (
                 "- Recommended actions require video confirmation and domain review. Medical "

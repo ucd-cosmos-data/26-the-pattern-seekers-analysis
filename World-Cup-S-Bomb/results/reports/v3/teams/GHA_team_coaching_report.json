@@ -2,85 +2,85 @@
   "team": "Ghana",
   "team_code": "GHA",
   "total_wasted_net_xg": 1.2133252959495957,
-  "mean_eva_gap": 0.005368695999776972,
+  "mean_eva_gap": 0.0053686959997769,
   "most_common_optimal_style": "Patient Build-up",
   "optimal_starting_11": [
     {
       "rank": 1,
-      "player_id": 6383,
-      "player": "Thomas Teye Partey",
-      "position_group": "Defensive Midfield",
-      "optimization_score": 2.625
-    },
-    {
-      "rank": 2,
-      "player_id": 30519,
-      "player": "Mohamed Salisu",
-      "position_group": "Center Back",
-      "optimization_score": 2.575
-    },
-    {
-      "rank": 3,
       "player_id": 3709,
       "player": "Daniel Amartey",
       "position_group": "Center Back",
-      "optimization_score": 2.575
+      "optimization_score": 2.875
     },
     {
-      "rank": 4,
-      "player_id": 17033,
-      "player": "Mohammed Kudus",
-      "position_group": "Attacking Midfield/Wing",
-      "optimization_score": 2.3
-    },
-    {
-      "rank": 5,
-      "player_id": 3347,
-      "player": "André Ayew Pelé",
-      "position_group": "Attacking Midfield/Wing",
-      "optimization_score": 2.15
-    },
-    {
-      "rank": 6,
-      "player_id": 31029,
-      "player": "Salis Abdul Samed",
+      "rank": 2,
+      "player_id": 6383,
+      "player": "Thomas Teye Partey",
       "position_group": "Defensive Midfield",
-      "optimization_score": 2.05
+      "optimization_score": 2.875
     },
     {
-      "rank": 7,
-      "player_id": 6393,
-      "player": "Iñaki Williams Arthuer",
-      "position_group": "Forward",
-      "optimization_score": 1.95
-    },
-    {
-      "rank": 8,
+      "rank": 3,
       "player_id": 8108,
       "player": "Lawrence Ati-Zigi",
       "position_group": "Goalkeeper",
+      "optimization_score": 2.725
+    },
+    {
+      "rank": 4,
+      "player_id": 30519,
+      "player": "Mohamed Salisu",
+      "position_group": "Center Back",
+      "optimization_score": 2.625
+    },
+    {
+      "rank": 5,
+      "player_id": 31029,
+      "player": "Salis Abdul Samed",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 1.975
+    },
+    {
+      "rank": 6,
+      "player_id": 6393,
+      "player": "Iñaki Williams Arthuer",
+      "position_group": "Forward",
       "optimization_score": 1.925
     },
     {
-      "rank": 9,
+      "rank": 7,
+      "player_id": 17033,
+      "player": "Mohammed Kudus",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.875
+    },
+    {
+      "rank": 8,
       "player_id": 12325,
       "player": "Abdul Rahman Baba",
       "position_group": "Fullback/Wingback",
-      "optimization_score": 1.6
+      "optimization_score": 1.725
+    },
+    {
+      "rank": 9,
+      "player_id": 3347,
+      "player": "André Ayew Pelé",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.5750000000000002
     },
     {
       "rank": 10,
-      "player_id": 3450,
-      "player": "Jordan Ayew",
-      "position_group": "Attacking Midfield/Wing",
-      "optimization_score": 1.6
-    },
-    {
-      "rank": 11,
       "player_id": 45047,
       "player": "Alidu Seidu",
       "position_group": "Fullback/Wingback",
-      "optimization_score": 1.5
+      "optimization_score": 1.575
+    },
+    {
+      "rank": 11,
+      "player_id": 3450,
+      "player": "Jordan Ayew",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.425
     }
   ],
   "physical_matchup_deltas": {
@@ -88,15 +88,7 @@
     "mean_delta_pressing": 1.1374462647397288,
     "mean_delta_recovery": 0.026332979543977446
   },
-  "best_substitution": {
-    "starter_player_id": 3450,
-    "starter_player": "Jordan Ayew",
-    "bench_player_id": 35658,
-    "bench_player": "Kamaldeen Sulemana",
-    "expected_net_xg_gain": 0.005344459085162656,
-    "gain_ci_low": 0.005049739898271898,
-    "gain_ci_high": 0.005701914465929713
-  },
+  "best_substitution": null,
   "recurrent_tactical_mistakes": [
     {
       "team": "Ghana",
@@ -105,7 +97,7 @@
       "optimal_style": "Patient Build-up",
       "possessions": 36,
       "wasted_net_xg": 0.3479910121107946,
-      "mean_eva_gap": 0.009666417003077627
+      "mean_eva_gap": 0.0096664170030776
     },
     {
       "team": "Ghana",
@@ -113,8 +105,8 @@
       "actual_style": "Short Under Pressure",
       "optimal_style": "Patient Build-up",
       "possessions": 30,
-      "wasted_net_xg": 0.30994401635082447,
-      "mean_eva_gap": 0.010331467211694149
+      "wasted_net_xg": 0.3099440163508244,
+      "mean_eva_gap": 0.0103314672116941
     },
     {
       "team": "Ghana",
@@ -123,10 +115,11 @@
       "optimal_style": "Patient Build-up",
       "possessions": 19,
       "wasted_net_xg": 0.1861819189259792,
-      "mean_eva_gap": 0.009799048364525222
+      "mean_eva_gap": 0.0097990483645252
     }
   ],
   "model_provenance": {
+    "schema_version": 4,
     "model_version": "transition-conceded-v2",
     "target": "transition_conceded",
     "calibration_method": "platt",
@@ -158,12 +151,78 @@
       "roc_auc": 0.6893411592543106,
       "unique_probabilities": 8739
     },
-    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+    "player_evaluation": {
+      "schema_version": 4,
+      "minutes_cutoff": 300.0,
+      "players_before_cutoff": 680,
+      "players_after_cutoff": 142,
+      "players_dropped": 538,
+      "obv_source": "open_event_value_fallback",
+      "native_obv_available": false,
+      "native_obv_column": null,
+      "event_rows": 233529,
+      "events_with_360_context": 203454,
+      "successful_action_points": 81231,
+      "freeze_frame_actor_points": 72016,
+      "heatmap_cells": 9394,
+      "attacking_wingbacks": 6,
+      "fullbacks_reprotected_from_anchor": 0,
+      "density_pressure_cutoff": 0.0205851451808076
+    }
   },
   "top_positive_synergy_pair": "Thomas Teye Partey + Mohamed Salisu (0.663)",
   "substitution_suppression_reason_counts": {
     "POSITIONAL_INCOMPATIBILITY": 79,
-    "GAIN_BELOW_THRESHOLD": 13,
-    "INSUFFICIENT_MINUTES": 6
-  }
+    "INSUFFICIENT_MINUTES": 20
+  },
+  "top_v4_player_evaluations": [
+    {
+      "player_id": 6383,
+      "player": "Thomas Teye Partey",
+      "functional_role": "Ball-Winner",
+      "obv_per_90": 0.15724478586777893,
+      "final_third_share": 0.1453287197231834,
+      "role_z_score": 0.611045172088957,
+      "player_evaluation_score": 56.11045172088957,
+      "position_group": "Defensive Midfield",
+      "position_impact_score": 55.79211492919705,
+      "position_rank": 6
+    },
+    {
+      "player_id": 3709,
+      "player": "Daniel Amartey",
+      "functional_role": "Deep Playmaker",
+      "obv_per_90": 0.2163003964382055,
+      "final_third_share": 0.037481259370314844,
+      "role_z_score": 0.41569818017236443,
+      "player_evaluation_score": 54.156981801723646,
+      "position_group": "Center Back",
+      "position_impact_score": 53.871865946454875,
+      "position_rank": 12
+    },
+    {
+      "player_id": 8108,
+      "player": "Lawrence Ati-Zigi",
+      "functional_role": "Goalkeeper",
+      "obv_per_90": 0.3094129391600266,
+      "final_third_share": 0.012195121951219513,
+      "role_z_score": -0.21776372567227423,
+      "player_evaluation_score": 47.82236274327726,
+      "position_group": "Goalkeeper",
+      "position_impact_score": 47.82236274327726,
+      "position_rank": 12
+    },
+    {
+      "player_id": 30519,
+      "player": "Mohamed Salisu",
+      "functional_role": "Deep Playmaker",
+      "obv_per_90": 0.32452949509794154,
+      "final_third_share": 0.052969502407704656,
+      "role_z_score": -0.2633526069607903,
+      "player_evaluation_score": 47.3664739303921,
+      "position_group": "Center Back",
+      "position_impact_score": 47.08679757239062,
+      "position_rank": 20
+    }
+  ]
 }

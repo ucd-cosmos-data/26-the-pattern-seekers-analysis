@@ -10,16 +10,16 @@ Japan: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Optimized starting 11
 
-1. Maya Yoshida (Center Back)
-2. Daichi Kamada (Attacking Midfield/Wing)
+1. Shūichi Gonda (Goalkeeper)
+2. Maya Yoshida (Center Back)
 3. Wataru Endo (Defensive Midfield)
-4. Shūichi Gonda (Goalkeeper)
-5. Ritsu Doan (Attacking Midfield/Wing)
-6. Hidemasa Morita (Defensive Midfield)
-7. Junya Ito (Fullback/Wingback)
-8. Ko Itakura (Center Back)
-9. Takuma Asano (Forward)
-10. Kaoru Mitoma (Fullback/Wingback)
+4. Junya Ito (Fullback/Wingback)
+5. Daichi Kamada (Attacking Midfield/Wing)
+6. Ko Itakura (Center Back)
+7. Hidemasa Morita (Defensive Midfield)
+8. Shogo Taniguchi (Center Back)
+9. Yuto Nagatomo (Fullback/Wingback)
+10. Takuma Asano (Forward)
 11. Yuki Soma (Central/Wide Midfield)
 
 ## Physical matchup deltas
@@ -32,7 +32,20 @@ Japan: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 105, GAIN_BELOW_THRESHOLD: 16.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 105, INSUFFICIENT_MINUTES: 16.
+
+## V4 coach-facing player leaders
+
+1. Shūichi Gonda — Goalkeeper; position-impact 56.8 (position rank 4), role score 56.8, OBV/90 +0.329
+2. Wataru Endo — Ball-Winner; position-impact 54.7 (position rank 8), role score 55.4, OBV/90 +0.052
+3. Maya Yoshida — Deep Playmaker; position-impact 46.3 (position rank 21), role score 46.6, OBV/90 +0.246
+4. Daichi Kamada — Ball-Winner; position-impact 42.1 (position rank 14), role score 26.7, OBV/90 -0.265
+5. Junya Ito — Attacking Wingback; position-impact 41.2 (position rank 21), role score 44.9, OBV/90 -0.179
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

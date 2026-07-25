@@ -18,8 +18,10 @@
 - Final-third spatial share: 65.3%
 - Role-relative z-score: +1.373
 - V4 evaluation score: 63.7
+- V4 position-impact score: 55.9
+- Position rank: 6
 
-![V4 event and 360 heatmap](../heatmaps/SEN/2941_heatmap.svg)
+![V4 event and 360 heatmap](../../heatmaps/SEN/2941_heatmap.svg)
 
 ## Physical profile
 
@@ -58,8 +60,10 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 36.2%
 - Role-relative z-score: +1.222
 - V4 evaluation score: 62.2
+- V4 position-impact score: 57.7
+- Position rank: 6
 
-![V4 event and 360 heatmap](../heatmaps/SEN/3404_heatmap.svg)
+![V4 event and 360 heatmap](../../heatmaps/SEN/3404_heatmap.svg)
 
 ## Physical profile
 
@@ -98,8 +102,10 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 3.3%
 - Role-relative z-score: +1.444
 - V4 evaluation score: 64.4
+- V4 position-impact score: 64.1
+- Position rank: 3
 
-![V4 event and 360 heatmap](../heatmaps/SEN/5675_heatmap.svg)
+![V4 event and 360 heatmap](../../heatmaps/SEN/5675_heatmap.svg)
 
 ## Physical profile
 
@@ -139,8 +145,10 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 1.5%
 - Role-relative z-score: -0.098
 - V4 evaluation score: 49.0
+- V4 position-impact score: 49.0
+- Position rank: 10
 
-![V4 event and 360 heatmap](../heatmaps/SEN/7379_heatmap.svg)
+![V4 event and 360 heatmap](../../heatmaps/SEN/7379_heatmap.svg)
 
 ## Physical profile
 
@@ -180,8 +188,10 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 9.0%
 - Role-relative z-score: +1.077
 - V4 evaluation score: 60.8
+- V4 position-impact score: 60.5
+- Position rank: 4
 
-![V4 event and 360 heatmap](../heatmaps/SEN/8553_heatmap.svg)
+![V4 event and 360 heatmap](../../heatmaps/SEN/8553_heatmap.svg)
 
 ## Physical profile
 
@@ -221,8 +231,10 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 69.3%
 - Role-relative z-score: -0.043
 - V4 evaluation score: 49.6
+- V4 position-impact score: 37.5
+- Position rank: 16
 
-![V4 event and 360 heatmap](../heatmaps/SEN/20611_heatmap.svg)
+![V4 event and 360 heatmap](../../heatmaps/SEN/20611_heatmap.svg)
 
 ## Physical profile
 

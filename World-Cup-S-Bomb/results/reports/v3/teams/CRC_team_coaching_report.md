@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Costa Rica: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Keylor Navas Gamboa + Óscar Esau Duarte Gaitán (0.649). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Costa Rica: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.6111
 - Mean possession EvA gap: 0.003150
@@ -10,16 +10,16 @@ Costa Rica: no tactical change cleared the modeled effect floor. Primary review 
 
 ## Optimized starting 11
 
-1. Yeltsin Ignacio Tejeda Valverde (Central/Wide Midfield)
-2. Óscar Esau Duarte Gaitán (Center Back)
-3. Joel Nathaniel Campbell Samuels (Forward)
-4. Keysher Fuller Spence (Fullback/Wingback)
-5. Celso Borges Mora (Defensive Midfield)
-6. Kendall Jamaal Waston Manley (Center Back)
-7. Keylor Navas Gamboa (Goalkeeper)
-8. Bryan Oviedo (Fullback/Wingback)
+1. Óscar Esau Duarte Gaitán (Center Back)
+2. Keylor Navas Gamboa (Goalkeeper)
+3. Yeltsin Ignacio Tejeda Valverde (Central/Wide Midfield)
+4. Joel Nathaniel Campbell Samuels (Forward)
+5. Bryan Oviedo (Fullback/Wingback)
+6. Celso Borges Mora (Defensive Midfield)
+7. Keysher Fuller Spence (Fullback/Wingback)
+8. Kendall Jamaal Waston Manley (Center Back)
 9. Francisco Javier Calvo Quesada (Center Back)
-10. Juan Pablo Vargas Campos (Center Back)
+10. Anthony Daniel Contreras Enríquez (Forward)
 11. Jewison Bennette (Attacking Midfield/Wing)
 
 ## Physical matchup deltas
@@ -32,7 +32,16 @@ Costa Rica: no tactical change cleared the modeled effect floor. Primary review 
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 105, GAIN_BELOW_THRESHOLD: 11, INSUFFICIENT_MINUTES: 5.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 105, INSUFFICIENT_MINUTES: 16.
+
+## V4 coach-facing player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

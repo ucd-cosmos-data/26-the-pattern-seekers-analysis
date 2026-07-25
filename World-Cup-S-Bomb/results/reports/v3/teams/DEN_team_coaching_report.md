@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Denmark: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.172. Strongest positive squad synergy: Kasper Schmeichel + Joachim Andersen (0.650). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Denmark: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.172. Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.6901
 - Mean possession EvA gap: 0.002828
@@ -11,15 +11,15 @@ Denmark: no tactical change cleared the modeled effect floor. Primary review sig
 ## Optimized starting 11
 
 1. Andreas Christensen (Center Back)
-2. Joachim Andersen (Center Back)
-3. Christian Dannemann Eriksen (Central/Wide Midfield)
-4. Pierre-Emile Højbjerg (Central/Wide Midfield)
-5. Jesper Lindstrøm (Attacking Midfield/Wing)
-6. Kasper Schmeichel (Goalkeeper)
-7. Kasper Dolberg (Forward)
-8. Andreas Skov Olsen (Attacking Midfield/Wing)
-9. Joakim Mæhle (Fullback/Wingback)
-10. Rasmus Nissen Kristensen (Fullback/Wingback)
+2. Pierre-Emile Højbjerg (Central/Wide Midfield)
+3. Kasper Schmeichel (Goalkeeper)
+4. Christian Dannemann Eriksen (Central/Wide Midfield)
+5. Joachim Andersen (Center Back)
+6. Joakim Mæhle (Fullback/Wingback)
+7. Rasmus Nissen Kristensen (Fullback/Wingback)
+8. Jesper Lindstrøm (Attacking Midfield/Wing)
+9. Mikkel Damsgaard (Attacking Midfield/Wing)
+10. Kasper Dolberg (Forward)
 11. Thomas Delaney (Defensive Midfield)
 
 ## Physical matchup deltas
@@ -32,7 +32,16 @@ Denmark: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 87, GAIN_BELOW_THRESHOLD: 10, INSUFFICIENT_MINUTES: 2.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 87, INSUFFICIENT_MINUTES: 12.
+
+## V4 coach-facing player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

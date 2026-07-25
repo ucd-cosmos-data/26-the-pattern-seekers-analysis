@@ -34,15 +34,16 @@ Iran: no tactical change cleared the modeled effect floor. Primary review signal
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 96, INSUFFICIENT_MINUTES: 14.
 
-## V4 role-relative player leaders
+## V4 coach-facing player leaders
 
-1. Mehdi Taremi — Target Forward; score 60.7, role z +1.07, OBV/90 -0.233
-2. Morteza Pouraliganji — Deep Playmaker; score 46.5, role z -0.35, OBV/90 +0.133
-3. Seyed Majid Hosseini — Deep Playmaker; score 31.4, role z -1.86, OBV/90 +0.108
+1. Mehdi Taremi — Target Forward; position-impact 54.7 (position rank 3), role score 60.7, OBV/90 -0.233
+2. Morteza Pouraliganji — Deep Playmaker; position-impact 46.3 (position rank 22), role score 46.5, OBV/90 +0.133
+3. Seyed Majid Hosseini — Deep Playmaker; position-impact 31.2 (position rank 37), role score 31.4, OBV/90 +0.108
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Wales: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Set-Piece Compact Shape (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Chris Mepham + Joe Rodon (0.654). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Wales: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Set-Piece Compact Shape (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.4194
 - Mean possession EvA gap: 0.001831
@@ -10,17 +10,17 @@ Wales: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Optimized starting 11
 
-1. Chris Mepham (Center Back)
-2. Ben Davies (Center Back)
-3. Joe Rodon (Center Back)
+1. Joe Rodon (Center Back)
+2. Chris Mepham (Center Back)
+3. Aaron Ramsey (Central/Wide Midfield)
 4. Ethan Ampadu (Defensive Midfield)
-5. Gareth Frank Bale (Forward)
-6. Aaron Ramsey (Central/Wide Midfield)
+5. Ben Davies (Center Back)
+6. Connor Roberts (Fullback/Wingback)
 7. Neco Williams (Fullback/Wingback)
-8. Wayne Hennessey (Goalkeeper)
-9. Connor Roberts (Fullback/Wingback)
-10. Brennan Johnson (Attacking Midfield/Wing)
-11. Harry Wilson (Central/Wide Midfield)
+8. Kieffer Roberto Francisco Moore (Forward)
+9. Wayne Hennessey (Goalkeeper)
+10. Harry Wilson (Central/Wide Midfield)
+11. Daniel James (Attacking Midfield/Wing)
 
 ## Physical matchup deltas
 
@@ -32,7 +32,16 @@ Wales: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 71, INSUFFICIENT_MINUTES: 4, GAIN_BELOW_THRESHOLD: 2.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 71, INSUFFICIENT_MINUTES: 6.
+
+## V4 coach-facing player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

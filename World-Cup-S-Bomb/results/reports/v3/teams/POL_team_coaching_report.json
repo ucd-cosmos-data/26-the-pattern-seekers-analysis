@@ -2,85 +2,85 @@
   "team": "Poland",
   "team_code": "POL",
   "total_wasted_net_xg": 1.1530464253779815,
-  "mean_eva_gap": 0.004132782886659432,
+  "mean_eva_gap": 0.0041327828866594,
   "most_common_optimal_style": "Patient Build-up",
   "optimal_starting_11": [
     {
       "rank": 1,
-      "player_id": 5668,
-      "player": "Robert Lewandowski",
-      "position_group": "Forward",
-      "optimization_score": 2.595238095238095
+      "player_id": 4734,
+      "player": "Matty Cash",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.7857142857142856
     },
     {
       "rank": 2,
-      "player_id": 3034,
-      "player": "Kamil Glik",
-      "position_group": "Center Back",
-      "optimization_score": 2.5476190476190474
+      "player_id": 5669,
+      "player": "Wojciech Szczęsny",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.738095238095238
     },
     {
       "rank": 3,
-      "player_id": 44166,
-      "player": "Jakub Piotr Kiwior",
+      "player_id": 3034,
+      "player": "Kamil Glik",
       "position_group": "Center Back",
-      "optimization_score": 2.380952380952381
+      "optimization_score": 2.595238095238095
     },
     {
       "rank": 4,
+      "player_id": 44166,
+      "player": "Jakub Piotr Kiwior",
+      "position_group": "Center Back",
+      "optimization_score": 2.523809523809524
+    },
+    {
+      "rank": 5,
       "player_id": 5660,
       "player": "Piotr Zieliński",
       "position_group": "Central/Wide Midfield",
       "optimization_score": 2.380952380952381
     },
     {
-      "rank": 5,
-      "player_id": 4734,
-      "player": "Matty Cash",
-      "position_group": "Fullback/Wingback",
-      "optimization_score": 2.3095238095238093
-    },
-    {
       "rank": 6,
-      "player_id": 5669,
-      "player": "Wojciech Szczęsny",
-      "position_group": "Goalkeeper",
-      "optimization_score": 2.261904761904762
+      "player_id": 5668,
+      "player": "Robert Lewandowski",
+      "position_group": "Forward",
+      "optimization_score": 2.3571428571428568
     },
     {
       "rank": 7,
-      "player_id": 11737,
-      "player": "Krystian Bielik",
-      "position_group": "Defensive Midfield",
-      "optimization_score": 1.8571428571428572
-    },
-    {
-      "rank": 8,
-      "player_id": 31955,
-      "player": "Jakub Kamiński",
-      "position_group": "Central/Wide Midfield",
-      "optimization_score": 1.857142857142857
-    },
-    {
-      "rank": 9,
-      "player_id": 3637,
-      "player": "Grzegorz Krychowiak",
-      "position_group": "Defensive Midfield",
-      "optimization_score": 1.8095238095238098
-    },
-    {
-      "rank": 10,
       "player_id": 5673,
       "player": "Bartosz Bereszyński",
       "position_group": "Fullback/Wingback",
-      "optimization_score": 1.8095238095238093
+      "optimization_score": 2.333333333333333
+    },
+    {
+      "rank": 8,
+      "player_id": 3637,
+      "player": "Grzegorz Krychowiak",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.2857142857142856
+    },
+    {
+      "rank": 9,
+      "player_id": 7979,
+      "player": "Przemysław Frankowski",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.5238095238095235
+    },
+    {
+      "rank": 10,
+      "player_id": 11737,
+      "player": "Krystian Bielik",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 1.4761904761904765
     },
     {
       "rank": 11,
       "player_id": 5667,
       "player": "Kamil Grosicki",
       "position_group": "Attacking Midfield/Wing",
-      "optimization_score": 1.0
+      "optimization_score": 0.4285714285714285
     }
   ],
   "physical_matchup_deltas": {
@@ -97,7 +97,7 @@
       "optimal_style": "Patient Build-up",
       "possessions": 32,
       "wasted_net_xg": 0.2162323441258215,
-      "mean_eva_gap": 0.006757260753931922
+      "mean_eva_gap": 0.0067572607539319
     },
     {
       "team": "Poland",
@@ -105,8 +105,8 @@
       "actual_style": "Short Under Pressure",
       "optimal_style": "Patient Build-up",
       "possessions": 27,
-      "wasted_net_xg": 0.20528037387841758,
-      "mean_eva_gap": 0.007602976810311762
+      "wasted_net_xg": 0.2052803738784175,
+      "mean_eva_gap": 0.0076029768103117
     },
     {
       "team": "Poland",
@@ -114,11 +114,12 @@
       "actual_style": "Short Under Pressure",
       "optimal_style": "Patient Build-up",
       "possessions": 25,
-      "wasted_net_xg": 0.18310473094837432,
-      "mean_eva_gap": 0.007324189237934973
+      "wasted_net_xg": 0.1831047309483743,
+      "mean_eva_gap": 0.0073241892379349
     }
   ],
   "model_provenance": {
+    "schema_version": 4,
     "model_version": "transition-conceded-v2",
     "target": "transition_conceded",
     "calibration_method": "platt",
@@ -150,12 +151,90 @@
       "roc_auc": 0.6893411592543106,
       "unique_probabilities": 8739
     },
-    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+    "player_evaluation": {
+      "schema_version": 4,
+      "minutes_cutoff": 300.0,
+      "players_before_cutoff": 680,
+      "players_after_cutoff": 142,
+      "players_dropped": 538,
+      "obv_source": "open_event_value_fallback",
+      "native_obv_available": false,
+      "native_obv_column": null,
+      "event_rows": 233529,
+      "events_with_360_context": 203454,
+      "successful_action_points": 81231,
+      "freeze_frame_actor_points": 72016,
+      "heatmap_cells": 9394,
+      "attacking_wingbacks": 6,
+      "fullbacks_reprotected_from_anchor": 0,
+      "density_pressure_cutoff": 0.0205851451808076
+    }
   },
   "top_positive_synergy_pair": "Kamil Glik + Matty Cash (0.756)",
   "substitution_suppression_reason_counts": {
     "POSITIONAL_INCOMPATIBILITY": 90,
-    "GAIN_BELOW_THRESHOLD": 13,
-    "INSUFFICIENT_MINUTES": 7
-  }
+    "INSUFFICIENT_MINUTES": 20
+  },
+  "top_v4_player_evaluations": [
+    {
+      "player_id": 5669,
+      "player": "Wojciech Szczęsny",
+      "functional_role": "Goalkeeper",
+      "obv_per_90": 0.5992156208378768,
+      "final_third_share": 0.02610966057441253,
+      "role_z_score": 2.2959408375578017,
+      "player_evaluation_score": 72.95940837557802,
+      "position_group": "Goalkeeper",
+      "position_impact_score": 72.95940837557802,
+      "position_rank": 1
+    },
+    {
+      "player_id": 5660,
+      "player": "Piotr Zieliński",
+      "functional_role": "Wide Creator",
+      "obv_per_90": 0.033684278761916354,
+      "final_third_share": 0.258160237388724,
+      "role_z_score": 0.7879750104624638,
+      "player_evaluation_score": 57.879750104624634,
+      "position_group": "Central/Wide Midfield",
+      "position_impact_score": 58.65901929806376,
+      "position_rank": 3
+    },
+    {
+      "player_id": 5668,
+      "player": "Robert Lewandowski",
+      "functional_role": "Target Forward",
+      "obv_per_90": -0.43129844585622185,
+      "final_third_share": 0.5238938053097345,
+      "role_z_score": -0.6841042931796868,
+      "player_evaluation_score": 43.15895706820313,
+      "position_group": "Forward",
+      "position_impact_score": 55.65523707112064,
+      "position_rank": 2
+    },
+    {
+      "player_id": 3637,
+      "player": "Grzegorz Krychowiak",
+      "functional_role": "Ball-Winner",
+      "obv_per_90": 0.0682122591327912,
+      "final_third_share": 0.1645101663585952,
+      "role_z_score": 0.45992437112111323,
+      "player_evaluation_score": 54.59924371121113,
+      "position_group": "Defensive Midfield",
+      "position_impact_score": 53.676607538957704,
+      "position_rank": 10
+    },
+    {
+      "player_id": 4734,
+      "player": "Matty Cash",
+      "functional_role": "Wide Creator",
+      "obv_per_90": 0.0028057690023091946,
+      "final_third_share": 0.2721417069243156,
+      "role_z_score": 0.6992839910465926,
+      "player_evaluation_score": 56.992839910465925,
+      "position_group": "Fullback/Wingback",
+      "position_impact_score": 44.93466883869815,
+      "position_rank": 19
+    }
+  ]
 }

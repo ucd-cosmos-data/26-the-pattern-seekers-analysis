@@ -11,16 +11,16 @@ Spain: no tactical change cleared the modeled effect floor. Primary review signa
 ## Optimized starting 11
 
 1. Rodrigo Hernández Cascante (Center Back)
-2. Sergio Busquets i Burgos (Defensive Midfield)
-3. Daniel Olmo Carvajal (Attacking Midfield/Wing)
-4. Unai Simón Mendibil (Goalkeeper)
-5. Pedro González López (Central/Wide Midfield)
-6. Aymeric Laporte (Center Back)
-7. Ferrán Torres García (Attacking Midfield/Wing)
-8. Marco Asensio Willemsen (Forward)
-9. Jordi Alba Ramos (Fullback/Wingback)
-10. Pablo Martín Páez Gavira (Central/Wide Midfield)
-11. César Azpilicueta Tanco (Fullback/Wingback)
+2. Unai Simón Mendibil (Goalkeeper)
+3. Sergio Busquets i Burgos (Defensive Midfield)
+4. Pedro González López (Central/Wide Midfield)
+5. Aymeric Laporte (Center Back)
+6. Daniel Olmo Carvajal (Attacking Midfield/Wing)
+7. Pablo Martín Páez Gavira (Central/Wide Midfield)
+8. Jordi Alba Ramos (Fullback/Wingback)
+9. Marco Asensio Willemsen (Forward)
+10. Ferrán Torres García (Attacking Midfield/Wing)
+11. Daniel Carvajal Ramos (Fullback/Wingback)
 
 ## Physical matchup deltas
 
@@ -32,7 +32,20 @@ Spain: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 95, GAIN_BELOW_THRESHOLD: 13, INSUFFICIENT_MINUTES: 2.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 95, INSUFFICIENT_MINUTES: 15.
+
+## V4 coach-facing player leaders
+
+1. Rodrigo Hernández Cascante — Holding Anchor; position-impact 75.8 (position rank 1), role score 76.1, OBV/90 +0.667
+2. Aymeric Laporte — Holding Anchor; position-impact 57.6 (position rank 10), role score 57.9, OBV/90 +0.641
+3. Pedro González López — Ball-Winner; position-impact 51.8 (position rank 6), role score 55.0, OBV/90 +0.083
+4. Sergio Busquets i Burgos — Ball-Winner; position-impact 49.2 (position rank 14), role score 51.4, OBV/90 +0.010
+5. Daniel Olmo Carvajal — Progressive Winger; position-impact 44.6 (position rank 12), role score 29.9, OBV/90 -0.397
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

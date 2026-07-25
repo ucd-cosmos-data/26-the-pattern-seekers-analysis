@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Canada: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -1.282. Strongest positive squad synergy: Steven de Sousa Vitoria + Kamal Miller (0.647). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Canada: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -1.282. Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.3081
 - Mean possession EvA gap: 0.001284
@@ -10,17 +10,17 @@ Canada: no tactical change cleared the modeled effect floor. Primary review sign
 
 ## Optimized starting 11
 
-1. Alistair Johnston (Fullback/Wingback)
-2. Alphonso Davies (Central/Wide Midfield)
-3. Kamal Miller (Center Back)
-4. Jonathan David (Forward)
-5. Tajon Buchanan (Central/Wide Midfield)
-6. Steven de Sousa Vitoria (Center Back)
-7. Milan Borjan (Goalkeeper)
+1. Kamal Miller (Center Back)
+2. Steven de Sousa Vitoria (Center Back)
+3. Alistair Johnston (Fullback/Wingback)
+4. Milan Borjan (Goalkeeper)
+5. Alphonso Davies (Central/Wide Midfield)
+6. Tajon Buchanan (Central/Wide Midfield)
+7. Jonathan David (Forward)
 8. Atiba Hutchinson (Defensive Midfield)
 9. David Junior Hoilett (Central/Wide Midfield)
-10. Stephen Antunes Eustáquio (Defensive Midfield)
-11. Richie Laryea (Fullback/Wingback)
+10. Richie Laryea (Fullback/Wingback)
+11. Jonathan Osorio (Defensive Midfield)
 
 ## Physical matchup deltas
 
@@ -32,7 +32,16 @@ Canada: no tactical change cleared the modeled effect floor. Primary review sign
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 74, INSUFFICIENT_MINUTES: 8, GAIN_BELOW_THRESHOLD: 6.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 74, INSUFFICIENT_MINUTES: 14.
+
+## V4 coach-facing player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

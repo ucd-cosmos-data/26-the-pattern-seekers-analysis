@@ -34,17 +34,18 @@ Croatia: no tactical change cleared the modeled effect floor. Primary review sig
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 84, INSUFFICIENT_MINUTES: 15.
 
-## V4 role-relative player leaders
+## V4 coach-facing player leaders
 
-1. Borna Sosa — Box-to-Box Runner; score 71.9, role z +2.19, OBV/90 +0.071
-2. Luka Modrić — Ball-Winner; score 59.9, role z +0.99, OBV/90 +0.181
-3. Josip Juranović — Wide Creator; score 59.2, role z +0.92, OBV/90 +0.037
-4. Dominik Livaković — Goalkeeper; score 58.3, role z +0.83, OBV/90 +0.243
-5. Mateo Kovačić — Ball-Winner; score 55.5, role z +0.55, OBV/90 +0.081
+1. Luka Modrić — Ball-Winner; position-impact 69.2 (position rank 1), role score 59.9, OBV/90 +0.181
+2. Dominik Livaković — Goalkeeper; position-impact 58.3 (position rank 3), role score 58.3, OBV/90 +0.243
+3. Borna Sosa — Box-to-Box Runner; position-impact 58.2 (position rank 5), role score 71.9, OBV/90 +0.071
+4. Josip Juranović — Wide Creator; position-impact 53.2 (position rank 10), role score 59.2, OBV/90 +0.037
+5. Mateo Kovačić — Ball-Winner; position-impact 52.8 (position rank 5), role score 55.5, OBV/90 +0.081
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

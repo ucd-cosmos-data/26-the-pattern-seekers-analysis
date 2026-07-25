@@ -516,6 +516,21 @@ def run_v4_validation(
         path.read_text(encoding="utf-8") for path in compiled_files
     )
     heatmaps = list((report_root / "heatmaps").glob("*/*_heatmap.svg"))
+    final_v3_path = (
+        report_root
+        / "final_v3/world_cup_team_performance_and_top_players_v3.md"
+    )
+    final_v3_text = (
+        final_v3_path.read_text(encoding="utf-8")
+        if final_v3_path.exists()
+        else ""
+    )
+    starter_reports = list(
+        (report_root / "starters").glob("*/*_starter_report.md")
+    )
+    v3_teams = list(
+        (report_root / "v3/teams").glob("*_team_coaching_report.md")
+    )
 
     required_metrics = [
         "minutes",
@@ -523,6 +538,8 @@ def run_v4_validation(
         "final_third_share",
         "role_z_score",
         "player_evaluation_score",
+        "position_impact_score",
+        "position_rank",
     ]
     no_metric_nan = not profiles[required_metrics].isna().any().any()
     no_report_nan = re.search(
@@ -643,6 +660,11 @@ def run_v4_validation(
             and float(mbappe.iloc[0]["obv_per_90"])
             > float(giroud.iloc[0]["obv_per_90"])
         ),
+        "mbappe_first_forward": bool(
+            len(mbappe) == 1
+            and mbappe.iloc[0]["position_group"] == "Forward"
+            and int(mbappe.iloc[0]["position_rank"]) == 1
+        ),
         "pressure_discount_exact": bool(pressure_discount_exact),
         "role_relative_normalization": role_normalization,
         "sb360_spatial_coverage": bool(
@@ -666,7 +688,28 @@ def run_v4_validation(
         "compiled_reports_in_place": bool(
             len(compiled_files) == 64
             and not any("_v4" in path.name.lower() for path in compiled_files)
-            and "V4 role-relative player leaders" in compiled_text
+            and "V4 coach-facing player leaders" in compiled_text
+        ),
+        "final_v3_delivery_refreshed": bool(
+            len(starter_reports) == len(profiles)
+            and len(v3_teams) == 32
+            and "142 players with at least 300 tournament minutes"
+            in final_v3_text
+            and re.search(
+                r"\| 1 \| Kylian Mbappé Lottin \| France .*"
+                r"\| Progressive Winger \|",
+                final_v3_text,
+            )
+            is not None
+            and re.search(
+                r"Achraf Hakimi Mouh .* Wide Creator", final_v3_text
+            )
+            is not None
+            and re.search(
+                r"Sergino Dest .* Wide Creator", final_v3_text
+            )
+            is not None
+            and "smoothed v2 role score" not in final_v3_text
         ),
         "heatmaps_complete": len(heatmaps) == len(profiles),
         "summary_complete": bool(
@@ -701,6 +744,10 @@ def run_v4_validation(
             ),
             "obv_source": provenance["obv_source"],
             "mbappe_obv_per_90": float(mbappe.iloc[0]["obv_per_90"]),
+            "mbappe_forward_rank": int(mbappe.iloc[0]["position_rank"]),
+            "mbappe_position_impact_score": float(
+                mbappe.iloc[0]["position_impact_score"]
+            ),
             "giroud_obv_per_90": float(giroud.iloc[0]["obv_per_90"]),
             "hakimi_role": str(
                 protected_wide_players[
@@ -748,6 +795,8 @@ def run_v4_validation(
                     )
                 )
             ),
+            "starter_reports": len(starter_reports),
+            "v3_team_reports": len(v3_teams),
             "nan_tokens": len(
                 re.findall(
                     r"(?i)(?<![A-Za-z])nan(?![A-Za-z])",

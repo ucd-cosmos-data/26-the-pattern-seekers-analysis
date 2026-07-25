@@ -10,17 +10,17 @@ Australia: Patient Build-up led the observed baseline by 0.0032 mean EvA. Primar
 
 ## Optimized starting 11
 
-1. Harry Souttar (Center Back)
-2. Kye Rowles (Center Back)
-3. Jackson Irvine (Forward)
-4. Aaron Mooy (Defensive Midfield)
-5. Mathew Ryan (Goalkeeper)
-6. Aziz Eraltay Behich (Fullback/Wingback)
-7. Craig Goodwin (Central/Wide Midfield)
+1. Aaron Mooy (Defensive Midfield)
+2. Aziz Eraltay Behich (Fullback/Wingback)
+3. Mathew Ryan (Goalkeeper)
+4. Kye Rowles (Center Back)
+5. Harry Souttar (Center Back)
+6. Jackson Irvine (Forward)
+7. Mathew Leckie (Central/Wide Midfield)
 8. Riley McGree (Forward)
-9. Mitchell Thomas Duke (Forward)
-10. Mathew Leckie (Central/Wide Midfield)
-11. Fran Karačić (Fullback/Wingback)
+9. Craig Goodwin (Central/Wide Midfield)
+10. Mitchell Thomas Duke (Forward)
+11. Miloš Degenek (Fullback/Wingback)
 
 ## Physical matchup deltas
 
@@ -32,7 +32,20 @@ Australia: Patient Build-up led the observed baseline by 0.0032 mean EvA. Primar
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, GAIN_BELOW_THRESHOLD: 13, INSUFFICIENT_MINUTES: 7.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
+
+## V4 coach-facing player leaders
+
+1. Mathew Ryan — Goalkeeper; position-impact 61.2 (position rank 2), role score 61.2, OBV/90 +0.498
+2. Aziz Eraltay Behich — Box-to-Box Runner; position-impact 47.3 (position rank 16), role score 48.1, OBV/90 -0.014
+3. Jackson Irvine — Ball-Winner; position-impact 46.2 (position rank 9), role score 43.0, OBV/90 -0.080
+4. Harry Souttar — Deep Playmaker; position-impact 46.0 (position rank 23), role score 46.2, OBV/90 +0.242
+5. Aaron Mooy — Ball-Winner; position-impact 43.6 (position rank 18), role score 47.4, OBV/90 +0.094
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 

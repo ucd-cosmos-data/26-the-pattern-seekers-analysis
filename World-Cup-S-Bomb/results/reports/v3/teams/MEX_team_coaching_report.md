@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Mexico: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Wide Retreating Block (Direct Long Play to Patient Build-up). Strongest positive squad synergy: Héctor Alfredo Moreno Herrera + César Jasib Montes Castro (0.656). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Mexico: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Wide Retreating Block (Direct Long Play to Patient Build-up). Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.2085
 - Mean possession EvA gap: 0.000876
@@ -12,13 +12,13 @@ Mexico: no tactical change cleared the modeled effect floor. Primary review sign
 
 1. Héctor Alfredo Moreno Herrera (Center Back)
 2. César Jasib Montes Castro (Center Back)
-3. Luis Gerardo Chávez Magallón (Defensive Midfield)
-4. Francisco Guillermo Ochoa Magaña (Goalkeeper)
-5. Hirving Rodrigo Lozano Bahena (Attacking Midfield/Wing)
-6. Ernesto Alexis Vega Rojas (Attacking Midfield/Wing)
-7. Jesús Daniel Gallardo Vasconcelos (Fullback/Wingback)
-8. Henry Josué Martín Mex (Forward)
-9. Jorge Eduardo Sánchez Ramos (Fullback/Wingback)
+3. Jesús Daniel Gallardo Vasconcelos (Fullback/Wingback)
+4. Luis Gerardo Chávez Magallón (Defensive Midfield)
+5. Francisco Guillermo Ochoa Magaña (Goalkeeper)
+6. Hirving Rodrigo Lozano Bahena (Attacking Midfield/Wing)
+7. Edson Omar Álvarez Velázquez (Defensive Midfield)
+8. Jorge Eduardo Sánchez Ramos (Fullback/Wingback)
+9. Henry Josué Martín Mex (Forward)
 10. Carlos Alberto Rodríguez Gómez (Central/Wide Midfield)
 11. José Andrés Guardado Hernández (Central/Wide Midfield)
 
@@ -32,7 +32,16 @@ Mexico: no tactical change cleared the modeled effect floor. Primary review sign
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 95, GAIN_BELOW_THRESHOLD: 12, INSUFFICIENT_MINUTES: 3.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 95, INSUFFICIENT_MINUTES: 15.
+
+## V4 coach-facing player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. The role score
+stays normalized within functional role. The position-impact score is a
+separate within-position shortlist; attacking positions use 55% OBV-family
+value plus xG, progressive carries, and the SB360-informed final-third share._
 
 ## Recurrent tactical mistakes
 
