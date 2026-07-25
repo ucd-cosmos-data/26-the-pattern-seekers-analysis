@@ -1,0 +1,92 @@
+{
+  "fixture": "Argentina vs France",
+  "match_id": 3869685,
+  "status": "held-out retrospective pre-match demonstration",
+  "selected_transition_penalty": 0.0,
+  "box_entry_value": 0.03939913560654106,
+  "recommendations": [
+    {
+      "team": "Argentina",
+      "recommended_style": "Patient Build-up",
+      "runner_up": "Direct Long Play",
+      "clear_model_winner": true,
+      "score_margin": 0.015903673370359434,
+      "model_family_votes": 5,
+      "score_margin_lower_bound": 0.015903673370359434,
+      "style_scores": [
+        {
+          "attacking_style": "Patient Build-up",
+          "expected_xg": 0.020345719869331667,
+          "box_probability": 0.44156023707716163,
+          "transition_probability": 0.022488574681303202,
+          "score": 0.03774281152839118
+        },
+        {
+          "attacking_style": "Direct Long Play",
+          "expected_xg": 0.010819371784936293,
+          "box_probability": 0.2796956380755203,
+          "transition_probability": 0.02131662123708324,
+          "score": 0.021839138158031745
+        },
+        {
+          "attacking_style": "Short Under Pressure",
+          "expected_xg": 0.008366806927926174,
+          "box_probability": 0.15463953428259974,
+          "transition_probability": 0.027705737389397314,
+          "score": 0.014459470909258677
+        }
+      ],
+      "coaching_specifics": {
+        "tempo": "controlled",
+        "passing": "shorter combinations",
+        "width": "use the full width",
+        "carrying": "encourage progressive carries"
+      },
+      "explanation": "Model advantage across held-out pre-match scenarios."
+    },
+    {
+      "team": "France",
+      "recommended_style": "Patient Build-up",
+      "runner_up": "Direct Long Play",
+      "clear_model_winner": true,
+      "score_margin": 0.011330203576798953,
+      "model_family_votes": 5,
+      "score_margin_lower_bound": 0.011330203576798956,
+      "style_scores": [
+        {
+          "attacking_style": "Patient Build-up",
+          "expected_xg": 0.017582711189645286,
+          "box_probability": 0.39866798816803556,
+          "transition_probability": 0.02077081453370292,
+          "score": 0.03328988531746462
+        },
+        {
+          "attacking_style": "Direct Long Play",
+          "expected_xg": 0.009522742376030095,
+          "box_probability": 0.3156652848640361,
+          "transition_probability": 0.019807478720018205,
+          "score": 0.02195968174066567
+        },
+        {
+          "attacking_style": "Short Under Pressure",
+          "expected_xg": 0.007533522656500271,
+          "box_probability": 0.15201395931799483,
+          "transition_probability": 0.025313390736588053,
+          "score": 0.013522741253757164
+        }
+      ],
+      "coaching_specifics": {
+        "tempo": "controlled",
+        "passing": "shorter combinations",
+        "width": "use the full width",
+        "carrying": "encourage progressive carries"
+      },
+      "explanation": "Model advantage across held-out pre-match scenarios."
+    }
+  ],
+  "limitations": [
+    "Observational policy evaluation is not proof of causal effectiveness.",
+    "Transition risk remains low-confidence and receives constrained influence.",
+    "The demonstration uses prior-only fold features and starting-lineup context."
+  ]
+}
