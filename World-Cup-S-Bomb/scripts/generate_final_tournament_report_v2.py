@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import argparse
 import ast
-import json
 import sys
 from pathlib import Path
 from typing import Iterable
@@ -21,10 +20,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.report_generators import (  # noqa: E402
-    TEAM_CODES,
-    build_dynamic_team_summary,
-)
+from src.report_generators import TEAM_CODES  # noqa: E402
 
 
 POSITION_WEIGHTS: dict[str, dict[str, float]] = {
@@ -126,8 +122,8 @@ def parse_args() -> argparse.Namespace:
         "--output",
         type=Path,
         default=Path(
-            "results/reports/final_v3/"
-            "world_cup_team_performance_and_top_players_v3.md"
+            "results/reports/final_v2/"
+            "world_cup_team_performance_and_top_players_v2.md"
         ),
         help="Output path, relative to project root unless absolute.",
     )
@@ -564,16 +560,12 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
         "possessions": project_root / "data/processed/world_cup_defensive_clusters.csv",
         "profiles": project_root / "data/processed/player_physicality_profiles_v2.csv",
         "audit": project_root
-        / "results/audit/v3/expected_vs_actual_team_summary_oof_v3.csv",
+        / "results/audit/v2/expected_vs_actual_team_summary_v2.csv",
         "mistakes": project_root
-        / "results/audit/v3/recurrent_tactical_mistakes_oof_v3.csv",
+        / "results/audit/v2/recurrent_tactical_mistakes_v2.csv",
         "substitutions": project_root
-        / "results/simulations/v3/substitution_optimization_v3.parquet",
-        "suppressions": project_root
-        / "results/simulations/v3/substitution_suppressions_v3.parquet",
+        / "results/simulations/v2/substitution_optimization_v2.parquet",
         "matchup": project_root / "data/processed/lineup_matchup_features_v2.csv",
-        "synergy": project_root / "data/processed/player_synergy_matrix_v2.parquet",
-        "manifest": project_root / "results/reports/v3/pipeline_manifest_v3.json",
         "events": project_root / "notebooks/all_events.csv",
         "components": project_root
         / "data/interim/world_cup_player_match_components.csv",
@@ -620,13 +612,12 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
     )
     profiles.to_csv(
         project_root
-        / "data/processed/player_physicality_profiles_smoothed_v3.csv",
+        / "data/processed/player_physicality_profiles_smoothed_v2.csv",
         index=False,
     )
     audit = pd.read_csv(required["audit"])
     mistakes = pd.read_csv(required["mistakes"])
     substitutions = pd.read_parquet(required["substitutions"])
-    suppressions = pd.read_parquet(required["suppressions"])
     if substitutions.empty:
         substitutions = pd.DataFrame(
             columns=[
@@ -640,8 +631,6 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             ]
         )
     matchup = pd.read_csv(required["matchup"])
-    synergy = pd.read_parquet(required["synergy"])
-    manifest = json.loads(required["manifest"].read_text(encoding="utf-8"))
 
     if set(TEAM_CODES) - set(possessions["team"].dropna().unique()):
         absent = sorted(set(TEAM_CODES) - set(possessions["team"].dropna().unique()))
@@ -761,59 +750,10 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             "expected_net_xg_gain", ascending=False
         )
         team_players = profiles[profiles["team"].eq(team)]
-        team_ids = set(team_players["player_id"].astype(int))
-        team_pairs = synergy[
-            synergy["row_player_id"].isin(team_ids)
-            & synergy["column_player_id"].isin(team_ids)
-            & synergy["row_player_id"].lt(synergy["column_player_id"])
-        ]
-        if team_pairs.empty:
-            synergy_pair = "Insufficient shared-minutes data"
-        else:
-            pair = team_pairs.nlargest(1, "synergy_score").iloc[0]
-            name_lookup = team_players.set_index("player_id")["player"].to_dict()
-            synergy_pair = (
-                f"{clean_text(name_lookup.get(int(pair['row_player_id']), 'Unknown'))} + "
-                f"{clean_text(name_lookup.get(int(pair['column_player_id']), 'Unknown'))} "
-                f"({float(pair['synergy_score']):.3f})"
-            )
-        team_suppressions = suppressions[suppressions["team"].eq(team)]
-        suppression_counts = (
-            team_suppressions["reason_code"].value_counts().to_dict()
-            if not team_suppressions.empty
-            else {}
-        )
-        model_metadata = {
-            "model_version": manifest["model_version"],
-            "target": manifest["target"],
-            "calibration_method": manifest["calibration_method"],
-            "threshold": manifest["threshold"],
-            "threshold_status": manifest["threshold_status"],
-            "holdout_metrics": manifest["locked_v2_holdout_metrics"],
-        }
-        dynamic_summary = build_dynamic_team_summary(
-            team,
-            row,
-            {
-                "mean_delta_aerial": row["delta_aerial"],
-                "mean_delta_pressing": row["delta_pressing"],
-                "mean_delta_recovery": row["delta_recovery"],
-            },
-            team_mistakes.to_dict("records"),
-            synergy_pair,
-            model_metadata,
-        )
-        tactical_reason = clean_text(
-            audit.loc[audit["team"].eq(team), "tactical_reason_code"].iloc[0]
-        )
 
         lines.extend(
             [
                 f"## {team} ({TEAM_CODES[team]})",
-                "",
-                f"**Dynamic tactical summary:** {dynamic_summary}",
-                "",
-                "### Tier 1 — Observed Tournament Evidence",
                 "",
                 team_interpretation(row),
                 "",
@@ -831,14 +771,15 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                     ],
                 ),
                 "",
-                "### Tier 2 — Model-Supported Scenario Audits",
+                "### Tactical and matchup read",
                 "",
                 (
-                    f"The 64-match leave-one-match-out audit selected "
-                    f"**{row['recommended_style']}** most often. OOF actual expected Net xG "
-                    f"was {row['actual_expected_net_xg']:.2f}; the OOF scenario ceiling was "
-                    f"{row['optimal_expected_net_xg']:.2f}. The cumulative review gap was "
-                    f"{row['wasted_net_xg']:.2f}, averaging {row['mean_eva_gap']:.4f} per possession."
+                    f"The scenario evaluator selected **{row['recommended_style']}** most "
+                    f"often. Observed expected net xG was {row['actual_expected_net_xg']:.2f}; "
+                    f"the possession-level scenario ceiling summed to "
+                    f"{row['optimal_expected_net_xg']:.2f}, producing "
+                    f"{row['wasted_net_xg']:.2f} modeled cumulative net xG of review "
+                    f"opportunity and a {row['mean_eva_gap']:.4f} mean EvA gap."
                 ),
                 "",
                 (
@@ -847,8 +788,6 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                     f"**{row['delta_recovery']:+.3f} recovery**. These are relative proxies, "
                     "so the signs are more useful for matchup planning than the raw magnitudes."
                 ),
-                "",
-                f"**Top positive player synergy:** {synergy_pair}.",
                 "",
             ]
         )
@@ -879,25 +818,8 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                         f"for {clean_text(sub['starter_player'])} under "
                         f"{clean_text(sub['optimal_style'])} produced the largest estimated "
                         f"team gain ({sub['expected_net_xg_gain']:+.4f} expected net xG). "
-                        f"The match-bootstrap 95% interval was "
-                        f"[{sub['gain_ci_low']:+.4f}, {sub['gain_ci_high']:+.4f}]. "
                         "Treat this as a video and training-ground hypothesis; the simulation "
                         "does not encode fatigue, injury, match state, or all role constraints."
-                    ),
-                    "",
-                ]
-            )
-        else:
-            reason_text = ", ".join(
-                f"{reason}: {count}"
-                for reason, count in suppression_counts.items()
-            ) or "CLASSIFIER_ABSTAINED"
-            lines.extend(
-                [
-                    (
-                        "> **No validated substitution:** No bench substitution met the "
-                        "+0.0050 Net xG floor and strictly positive confidence interval "
-                        f"requirement. Reason codes: {reason_text}."
                     ),
                     "",
                 ]
@@ -905,23 +827,6 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
 
         lines.extend(
             [
-                "### Tier 3 — Exploratory and Suppressed Decisions",
-                "",
-                (
-                    f"**Tactical decision reason code:** `{tactical_reason}`. "
-                    + (
-                        "The best alternative failed to exceed +0.0050 Net xG."
-                        if tactical_reason == "GAIN_BELOW_THRESHOLD"
-                        else "The style change cleared the tactical effect floor."
-                    )
-                ),
-                "",
-                (
-                    "**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability "
-                    "threshold achieved the required 0.30 precision, so transition warnings "
-                    "remain suppressed rather than converted into weak positive claims."
-                ),
-                "",
                 "### Leading tournament-role profiles",
                 "",
                 markdown_table(
@@ -942,17 +847,6 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                     "signals, then inspect the flagged possessions on video. Test the modeled "
                     "style or personnel change in a comparable game-state segment before "
                     "adopting it as a match plan."
-                ),
-                "",
-                "> **Model provenance**  ",
-                f"> Model: `{manifest['model_version']}`  ",
-                f"> Target: `{manifest['target']}`  ",
-                f"> Calibration: `{manifest['calibration_method']}`  ",
-                f"> Threshold status: `{manifest['threshold_status']}`  ",
-                (
-                    f"> OOF audit: {manifest['tournament_oof_metrics']['matches']} matches, "
-                    f"{manifest['tournament_oof_metrics']['teams']} teams; each evaluated "
-                    "match was excluded from model fitting and calibration."
                 ),
                 "",
             ]
@@ -1063,10 +957,9 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                 "artifact over the supplied tournament data. It is not a randomized or causal study."
             ),
             (
-                "- The v3 report preserves the schema-checked v2 calibrated classifier and "
-                "adds tournament-wide leave-one-match-out audit coverage. Threshold "
-                "abstention still gates transition risk to zero rather than converting it "
-                "into a weak positive recommendation."
+                "- The v2 scenario pipeline requires a schema-checked calibrated classifier "
+                "bundle. If threshold validation abstains, transition risk is gated to zero "
+                "rather than converted into a weak positive recommendation."
             ),
             (
                 "- Rare transition events create high variance. Aggregate patterns and "

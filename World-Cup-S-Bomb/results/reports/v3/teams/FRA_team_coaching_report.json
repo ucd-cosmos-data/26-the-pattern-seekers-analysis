@@ -1,0 +1,161 @@
+{
+  "team": "France",
+  "team_code": "FRA",
+  "total_wasted_net_xg": 1.646751793939321,
+  "mean_eva_gap": 0.003107078856489285,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 10481,
+      "player": "Aurélien Djani Tchouaméni",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.8333333333333335
+    },
+    {
+      "rank": 2,
+      "player_id": 3009,
+      "player": "Kylian Mbappé Lottin",
+      "position_group": "Forward",
+      "optimization_score": 2.75
+    },
+    {
+      "rank": 3,
+      "player_id": 5487,
+      "player": "Antoine Griezmann",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 2.5
+    },
+    {
+      "rank": 4,
+      "player_id": 3026,
+      "player": "Adrien Rabiot",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.375
+    },
+    {
+      "rank": 5,
+      "player_id": 5485,
+      "player": "Raphaël Varane",
+      "position_group": "Center Back",
+      "optimization_score": 2.2916666666666665
+    },
+    {
+      "rank": 6,
+      "player_id": 6704,
+      "player": "Theo Bernard François Hernández",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.2083333333333335
+    },
+    {
+      "rank": 7,
+      "player_id": 8519,
+      "player": "Dayotchanculle Upamecano",
+      "position_group": "Center Back",
+      "optimization_score": 1.875
+    },
+    {
+      "rank": 8,
+      "player_id": 3099,
+      "player": "Hugo Lloris",
+      "position_group": "Goalkeeper",
+      "optimization_score": 1.7916666666666665
+    },
+    {
+      "rank": 9,
+      "player_id": 4445,
+      "player": "Jules Koundé",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.6666666666666665
+    },
+    {
+      "rank": 10,
+      "player_id": 2972,
+      "player": "Marcus Thuram",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.2083333333333333
+    },
+    {
+      "rank": 11,
+      "player_id": 7153,
+      "player": "Jordan Veretout",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 0.45833333333333337
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": 0.10549515342401192,
+    "mean_delta_pressing": 1.0667387587178505,
+    "mean_delta_recovery": -0.6523262918685792
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "France",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 53,
+      "wasted_net_xg": 0.36249484119329484,
+      "mean_eva_gap": 0.006839525305533865
+    },
+    {
+      "team": "France",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Patient Build-up",
+      "possessions": 26,
+      "wasted_net_xg": 0.30603622518460527,
+      "mean_eva_gap": 0.01177062404556174
+    },
+    {
+      "team": "France",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 41,
+      "wasted_net_xg": 0.28399348062864777,
+      "mean_eva_gap": 0.006926670259235311
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "Raphaël Varane + Aurélien Djani Tchouaméni (0.842)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 122,
+    "GAIN_BELOW_THRESHOLD": 17,
+    "INSUFFICIENT_MINUTES": 4
+  }
+}

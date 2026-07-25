@@ -1,0 +1,161 @@
+{
+  "team": "Belgium",
+  "team_code": "BEL",
+  "total_wasted_net_xg": 0.8229762039823777,
+  "mean_eva_gap": 0.0037071000179386385,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 20005,
+      "player": "Toby Alderweireld",
+      "position_group": "Center Back",
+      "optimization_score": 2.375
+    },
+    {
+      "rank": 2,
+      "player_id": 3077,
+      "player": "Jan Vertonghen",
+      "position_group": "Center Back",
+      "optimization_score": 2.325
+    },
+    {
+      "rank": 3,
+      "player_id": 3089,
+      "player": "Kevin De Bruyne",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 2.325
+    },
+    {
+      "rank": 4,
+      "player_id": 3509,
+      "player": "Thibaut Courtois",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.275
+    },
+    {
+      "rank": 5,
+      "player_id": 5642,
+      "player": "Axel Witsel",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.275
+    },
+    {
+      "rank": 6,
+      "player_id": 6989,
+      "player": "Timothy Castagne",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.075
+    },
+    {
+      "rank": 7,
+      "player_id": 3457,
+      "player": "Michy Batshuayi Tunga",
+      "position_group": "Forward",
+      "optimization_score": 2.0500000000000003
+    },
+    {
+      "rank": 8,
+      "player_id": 6331,
+      "player": "Leander Dendoncker",
+      "position_group": "Center Back",
+      "optimization_score": 2.05
+    },
+    {
+      "rank": 9,
+      "player_id": 3176,
+      "player": "Thomas Meunier",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.95
+    },
+    {
+      "rank": 10,
+      "player_id": 5633,
+      "player": "Yannick Ferreira Carrasco",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.8
+    },
+    {
+      "rank": 11,
+      "player_id": 48347,
+      "player": "Amadou Onana",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 1.65
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": -0.007553136785009029,
+    "mean_delta_pressing": 0.22626031396718305,
+    "mean_delta_recovery": -0.8559984836871077
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "Belgium",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 15,
+      "wasted_net_xg": 0.1954841365934835,
+      "mean_eva_gap": 0.013032275772898899
+    },
+    {
+      "team": "Belgium",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Patient Build-up",
+      "possessions": 12,
+      "wasted_net_xg": 0.18962217250946273,
+      "mean_eva_gap": 0.015801847709121894
+    },
+    {
+      "team": "Belgium",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 12,
+      "wasted_net_xg": 0.14433371769611444,
+      "mean_eva_gap": 0.012027809808009536
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "Jan Vertonghen + Thibaut Courtois (0.645)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 82,
+    "GAIN_BELOW_THRESHOLD": 10,
+    "INSUFFICIENT_MINUTES": 7
+  }
+}

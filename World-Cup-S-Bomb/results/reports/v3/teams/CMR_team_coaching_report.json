@@ -1,0 +1,161 @@
+{
+  "team": "Cameroon",
+  "team_code": "CMR",
+  "total_wasted_net_xg": 0.05097643945355048,
+  "mean_eva_gap": 0.0002349144675278824,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 3499,
+      "player": "Jean-Eric Maxim Choupo-Moting",
+      "position_group": "Forward",
+      "optimization_score": 2.5454545454545454
+    },
+    {
+      "rank": 2,
+      "player_id": 7426,
+      "player": "Jean-Charles Castelletto",
+      "position_group": "Center Back",
+      "optimization_score": 2.4772727272727275
+    },
+    {
+      "rank": 3,
+      "player_id": 7472,
+      "player": "Nicolas Alexis Julio N'Koulou Ndoubena",
+      "position_group": "Center Back",
+      "optimization_score": 2.340909090909091
+    },
+    {
+      "rank": 4,
+      "player_id": 3141,
+      "player": "André-Frank Zambo Anguissa",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.2727272727272725
+    },
+    {
+      "rank": 5,
+      "player_id": 16346,
+      "player": "Ngoran Suiru Fai Collins",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.25
+    },
+    {
+      "rank": 6,
+      "player_id": 4935,
+      "player": "Bryan Mbeumo",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 2.2272727272727275
+    },
+    {
+      "rank": 7,
+      "player_id": 11174,
+      "player": "Vincent Paté Aboubakar",
+      "position_group": "Forward",
+      "optimization_score": 2.1363636363636362
+    },
+    {
+      "rank": 8,
+      "player_id": 13454,
+      "player": "Nouhou Tolo",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.0227272727272725
+    },
+    {
+      "rank": 9,
+      "player_id": 15326,
+      "player": "Devis Rogers Epassy Mboka",
+      "position_group": "Goalkeeper",
+      "optimization_score": 1.8181818181818181
+    },
+    {
+      "rank": 10,
+      "player_id": 30016,
+      "player": "Martin Hongla Yma II",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.6363636363636362
+    },
+    {
+      "rank": 11,
+      "player_id": 16015,
+      "player": "Nicolas Moumi Ngamaleu",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 0.8636363636363636
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": 0.07754793665077686,
+    "mean_delta_pressing": 4.205876612308427,
+    "mean_delta_recovery": -0.11148522012925784
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "Cameroon",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Patient Build-up",
+      "possessions": 5,
+      "wasted_net_xg": 0.03641174246682177,
+      "mean_eva_gap": 0.007282348493364355
+    },
+    {
+      "team": "Cameroon",
+      "defensive_style": "Set-Piece Compact Shape",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Patient Build-up",
+      "possessions": 2,
+      "wasted_net_xg": 0.01456469698672871,
+      "mean_eva_gap": 0.007282348493364355
+    },
+    {
+      "team": "Cameroon",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "No meaningful change",
+      "possessions": 3,
+      "wasted_net_xg": 0.0,
+      "mean_eva_gap": 0.0
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "André-Frank Zambo Anguissa + Nouhou Tolo (0.627)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 106,
+    "GAIN_BELOW_THRESHOLD": 9,
+    "INSUFFICIENT_MINUTES": 6
+  }
+}

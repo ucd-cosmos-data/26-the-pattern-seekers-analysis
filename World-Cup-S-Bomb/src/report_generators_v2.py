@@ -194,7 +194,7 @@ def generate_individual_starter_report(
     )
 
 
-def build_dynamic_team_summary(
+def _dynamic_team_summary(
     team: str,
     team_row: pd.Series,
     deltas: dict[str, float],
@@ -204,12 +204,7 @@ def build_dynamic_team_summary(
 ) -> str:
     """Build a team-specific tactical and model-provenance paragraph."""
 
-    style = str(
-        team_row.get(
-            "most_common_optimal_style",
-            team_row.get("recommended_style", "No meaningful change"),
-        )
-    )
+    style = str(team_row["most_common_optimal_style"])
     style_text = (
         "no tactical change cleared the modeled effect floor"
         if style == "No meaningful change"
@@ -249,7 +244,6 @@ def generate_full_team_coaching_reports(
     model_metadata: dict[str, Any] | None = None,
     synergy: pd.DataFrame | None = None,
     profiles: pd.DataFrame | None = None,
-    suppression_reasons: pd.DataFrame | None = None,
 ) -> int:
     """Generate one Markdown/JSON coaching report for all 32 teams."""
 
@@ -267,16 +261,6 @@ def generate_full_team_coaching_reports(
             "rank"
         )
         team_subs = substitutions[substitutions["team"].eq(team)]
-        team_suppressions = (
-            suppression_reasons[suppression_reasons["team"].eq(team)]
-            if suppression_reasons is not None and not suppression_reasons.empty
-            else pd.DataFrame()
-        )
-        reason_counts = (
-            team_suppressions["reason_code"].value_counts().to_dict()
-            if not team_suppressions.empty
-            else {}
-        )
         best_sub = (
             team_subs.nlargest(1, "expected_net_xg_gain").iloc[0]
             if not team_subs.empty
@@ -343,9 +327,8 @@ def generate_full_team_coaching_reports(
             "recurrent_tactical_mistakes": mistake_records,
             "model_provenance": model_metadata,
             "top_positive_synergy_pair": synergy_pair,
-            "substitution_suppression_reason_counts": reason_counts,
         }
-        dynamic_summary = build_dynamic_team_summary(
+        dynamic_summary = _dynamic_team_summary(
             team,
             team_row,
             deltas,
@@ -366,14 +349,7 @@ def generate_full_team_coaching_reports(
                 f"{substitution_record['expected_net_xg_gain']:.5f})"
             )
         else:
-            reason_text = ", ".join(
-                f"{reason}: {count}" for reason, count in reason_counts.items()
-            ) or "CLASSIFIER_ABSTAINED"
-            substitution_text = (
-                "> **No validated intervention:** No bench substitution met the "
-                "+0.0050 Net xG floor and strictly positive confidence interval "
-                f"requirement. Reason codes: {reason_text}."
-            )
+            substitution_text = "No eligible bench substitution"
         mistake_lines = "\n".join(
             f"- Against {row['defensive_style']}: switch from "
             f"{row['actual_style']} to {row['optimal_style']} "

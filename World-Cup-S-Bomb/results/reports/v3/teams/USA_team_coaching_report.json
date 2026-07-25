@@ -1,0 +1,161 @@
+{
+  "team": "United States",
+  "team_code": "USA",
+  "total_wasted_net_xg": 0.33044524879777476,
+  "mean_eva_gap": 0.0011014841626592491,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 18242,
+      "player": "Tim Ream",
+      "position_group": "Center Back",
+      "optimization_score": 2.65
+    },
+    {
+      "rank": 2,
+      "player_id": 8246,
+      "player": "Christian Pulisic",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 2.35
+    },
+    {
+      "rank": 3,
+      "player_id": 12751,
+      "player": "Tyler Adams",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.3499999999999996
+    },
+    {
+      "rank": 4,
+      "player_id": 38792,
+      "player": "Yunus Dimoara Musah",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 2.2
+    },
+    {
+      "rank": 5,
+      "player_id": 12352,
+      "player": "Matthew Charles Turner",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.15
+    },
+    {
+      "rank": 6,
+      "player_id": 4614,
+      "player": "Antonee Robinson",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.0
+    },
+    {
+      "rank": 7,
+      "player_id": 3377,
+      "player": "Timothy Weah",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.9999999999999998
+    },
+    {
+      "rank": 8,
+      "player_id": 21881,
+      "player": "Sergino Dest",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.9500000000000002
+    },
+    {
+      "rank": 9,
+      "player_id": 8526,
+      "player": "Weston McKennie",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.95
+    },
+    {
+      "rank": 10,
+      "player_id": 12524,
+      "player": "Walker Zimmerman",
+      "position_group": "Center Back",
+      "optimization_score": 1.9
+    },
+    {
+      "rank": 11,
+      "player_id": 22168,
+      "player": "Joshua Sargent",
+      "position_group": "Forward",
+      "optimization_score": 1.9
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": -0.06820256477426553,
+    "mean_delta_pressing": -0.9253244980330559,
+    "mean_delta_recovery": 0.49594157423584895
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "United States",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 10,
+      "wasted_net_xg": 0.08361164837087787,
+      "mean_eva_gap": 0.008361164837087787
+    },
+    {
+      "team": "United States",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Patient Build-up",
+      "possessions": 9,
+      "wasted_net_xg": 0.07154863988805904,
+      "mean_eva_gap": 0.007949848876451004
+    },
+    {
+      "team": "United States",
+      "defensive_style": "Set-Piece Compact Shape",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Patient Build-up",
+      "possessions": 7,
+      "wasted_net_xg": 0.051439456827426865,
+      "mean_eva_gap": 0.007348493832489552
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "Matthew Charles Turner + Tim Ream (0.756)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 84,
+    "GAIN_BELOW_THRESHOLD": 11,
+    "INSUFFICIENT_MINUTES": 4
+  }
+}

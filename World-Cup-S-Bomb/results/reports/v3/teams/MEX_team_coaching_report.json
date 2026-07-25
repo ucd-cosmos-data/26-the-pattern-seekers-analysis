@@ -1,0 +1,161 @@
+{
+  "team": "Mexico",
+  "team_code": "MEX",
+  "total_wasted_net_xg": 0.20853485378369485,
+  "mean_eva_gap": 0.0008761968646373733,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 5573,
+      "player": "Héctor Alfredo Moreno Herrera",
+      "position_group": "Center Back",
+      "optimization_score": 2.6666666666666665
+    },
+    {
+      "rank": 2,
+      "player_id": 26368,
+      "player": "César Jasib Montes Castro",
+      "position_group": "Center Back",
+      "optimization_score": 2.4761904761904763
+    },
+    {
+      "rank": 3,
+      "player_id": 28825,
+      "player": "Luis Gerardo Chávez Magallón",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.4285714285714284
+    },
+    {
+      "rank": 4,
+      "player_id": 5577,
+      "player": "Francisco Guillermo Ochoa Magaña",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.2857142857142856
+    },
+    {
+      "rank": 5,
+      "player_id": 5571,
+      "player": "Hirving Rodrigo Lozano Bahena",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 2.238095238095238
+    },
+    {
+      "rank": 6,
+      "player_id": 26301,
+      "player": "Ernesto Alexis Vega Rojas",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 2.142857142857143
+    },
+    {
+      "rank": 7,
+      "player_id": 5576,
+      "player": "Jesús Daniel Gallardo Vasconcelos",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.142857142857143
+    },
+    {
+      "rank": 8,
+      "player_id": 26400,
+      "player": "Henry Josué Martín Mex",
+      "position_group": "Forward",
+      "optimization_score": 1.9523809523809526
+    },
+    {
+      "rank": 9,
+      "player_id": 26406,
+      "player": "Jorge Eduardo Sánchez Ramos",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.6666666666666665
+    },
+    {
+      "rank": 10,
+      "player_id": 26297,
+      "player": "Carlos Alberto Rodríguez Gómez",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 0.8095238095238095
+    },
+    {
+      "rank": 11,
+      "player_id": 5563,
+      "player": "José Andrés Guardado Hernández",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 0.38095238095238093
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": 0.07113191716540354,
+    "mean_delta_pressing": 1.26594791538006,
+    "mean_delta_recovery": -0.7142993915085425
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "Mexico",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Patient Build-up",
+      "possessions": 6,
+      "wasted_net_xg": 0.052274484006746134,
+      "mean_eva_gap": 0.008712414001124356
+    },
+    {
+      "team": "Mexico",
+      "defensive_style": "High-Intensity Press",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 7,
+      "wasted_net_xg": 0.04640518225878168,
+      "mean_eva_gap": 0.006629311751254525
+    },
+    {
+      "team": "Mexico",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 6,
+      "wasted_net_xg": 0.03977587050752716,
+      "mean_eva_gap": 0.006629311751254526
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "Héctor Alfredo Moreno Herrera + César Jasib Montes Castro (0.656)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 95,
+    "GAIN_BELOW_THRESHOLD": 12,
+    "INSUFFICIENT_MINUTES": 3
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "team": "Ghana",
+  "team_code": "GHA",
+  "total_wasted_net_xg": 1.2133252959495957,
+  "mean_eva_gap": 0.005368695999776972,
+  "most_common_optimal_style": "Patient Build-up",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 6383,
+      "player": "Thomas Teye Partey",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.625
+    },
+    {
+      "rank": 2,
+      "player_id": 30519,
+      "player": "Mohamed Salisu",
+      "position_group": "Center Back",
+      "optimization_score": 2.575
+    },
+    {
+      "rank": 3,
+      "player_id": 3709,
+      "player": "Daniel Amartey",
+      "position_group": "Center Back",
+      "optimization_score": 2.575
+    },
+    {
+      "rank": 4,
+      "player_id": 17033,
+      "player": "Mohammed Kudus",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 2.3
+    },
+    {
+      "rank": 5,
+      "player_id": 3347,
+      "player": "André Ayew Pelé",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 2.15
+    },
+    {
+      "rank": 6,
+      "player_id": 31029,
+      "player": "Salis Abdul Samed",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.05
+    },
+    {
+      "rank": 7,
+      "player_id": 6393,
+      "player": "Iñaki Williams Arthuer",
+      "position_group": "Forward",
+      "optimization_score": 1.95
+    },
+    {
+      "rank": 8,
+      "player_id": 8108,
+      "player": "Lawrence Ati-Zigi",
+      "position_group": "Goalkeeper",
+      "optimization_score": 1.925
+    },
+    {
+      "rank": 9,
+      "player_id": 12325,
+      "player": "Abdul Rahman Baba",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.6
+    },
+    {
+      "rank": 10,
+      "player_id": 3450,
+      "player": "Jordan Ayew",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.6
+    },
+    {
+      "rank": 11,
+      "player_id": 45047,
+      "player": "Alidu Seidu",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.5
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": -0.1560022105733747,
+    "mean_delta_pressing": 1.1374462647397288,
+    "mean_delta_recovery": 0.026332979543977446
+  },
+  "best_substitution": {
+    "starter_player_id": 3450,
+    "starter_player": "Jordan Ayew",
+    "bench_player_id": 35658,
+    "bench_player": "Kamaldeen Sulemana",
+    "expected_net_xg_gain": 0.005344459085162656,
+    "gain_ci_low": 0.005049739898271898,
+    "gain_ci_high": 0.005701914465929713
+  },
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "Ghana",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 36,
+      "wasted_net_xg": 0.3479910121107946,
+      "mean_eva_gap": 0.009666417003077627
+    },
+    {
+      "team": "Ghana",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 30,
+      "wasted_net_xg": 0.30994401635082447,
+      "mean_eva_gap": 0.010331467211694149
+    },
+    {
+      "team": "Ghana",
+      "defensive_style": "High-Intensity Press",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 19,
+      "wasted_net_xg": 0.1861819189259792,
+      "mean_eva_gap": 0.009799048364525222
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "Thomas Teye Partey + Mohamed Salisu (0.663)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 79,
+    "GAIN_BELOW_THRESHOLD": 13,
+    "INSUFFICIENT_MINUTES": 6
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "team": "South Korea",
+  "team_code": "KOR",
+  "total_wasted_net_xg": 0.3593182939099778,
+  "mean_eva_gap": 0.001340739902649171,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 5604,
+      "player": "Young-Gwon Kim",
+      "position_group": "Center Back",
+      "optimization_score": 2.761904761904762
+    },
+    {
+      "rank": 2,
+      "player_id": 3083,
+      "player": "Heung-Min Son",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 2.5238095238095237
+    },
+    {
+      "rank": 3,
+      "player_id": 23763,
+      "player": "In-Beom Hwang",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.2857142857142856
+    },
+    {
+      "rank": 4,
+      "player_id": 40542,
+      "player": "Gue-Sung Cho",
+      "position_group": "Forward",
+      "optimization_score": 2.142857142857143
+    },
+    {
+      "rank": 5,
+      "player_id": 40538,
+      "player": "Jin-Su Kim",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.142857142857143
+    },
+    {
+      "rank": 6,
+      "player_id": 40672,
+      "player": "Moon-Hwan Kim",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.0476190476190474
+    },
+    {
+      "rank": 7,
+      "player_id": 37641,
+      "player": "Seung-Gyu Kim",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.0476190476190474
+    },
+    {
+      "rank": 8,
+      "player_id": 43565,
+      "player": "Min Jae Kim",
+      "position_group": "Center Back",
+      "optimization_score": 2.0
+    },
+    {
+      "rank": 9,
+      "player_id": 5618,
+      "player": "Woo-Young Jung",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 1.9523809523809526
+    },
+    {
+      "rank": 10,
+      "player_id": 22740,
+      "player": "Kang-In Lee",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.8571428571428572
+    },
+    {
+      "rank": 11,
+      "player_id": 5620,
+      "player": "Hee-Chan Hwang",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.8571428571428572
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": 0.11773867862290494,
+    "mean_delta_pressing": 6.170181395830352,
+    "mean_delta_recovery": 0.1945527742115142
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "South Korea",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 14,
+      "wasted_net_xg": 0.10809356112794975,
+      "mean_eva_gap": 0.007720968651996411
+    },
+    {
+      "team": "South Korea",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 7,
+      "wasted_net_xg": 0.054046780563974876,
+      "mean_eva_gap": 0.007720968651996411
+    },
+    {
+      "team": "South Korea",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Patient Build-up",
+      "possessions": 5,
+      "wasted_net_xg": 0.03558888293935855,
+      "mean_eva_gap": 0.007117776587871711
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "Young-Gwon Kim + Seung-Gyu Kim (0.730)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 93,
+    "GAIN_BELOW_THRESHOLD": 14,
+    "INSUFFICIENT_MINUTES": 3
+  }
+}

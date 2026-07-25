@@ -1,0 +1,161 @@
+{
+  "team": "Serbia",
+  "team_code": "SRB",
+  "total_wasted_net_xg": 0.8066274809050185,
+  "mean_eva_gap": 0.003522390746310124,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 5603,
+      "player": "Nikola Milenković",
+      "position_group": "Center Back",
+      "optimization_score": 2.6739130434782608
+    },
+    {
+      "rank": 2,
+      "player_id": 4269,
+      "player": "Aleksandar Mitrović",
+      "position_group": "Forward",
+      "optimization_score": 2.5652173913043477
+    },
+    {
+      "rank": 3,
+      "player_id": 27719,
+      "player": "Strahinja Pavlović",
+      "position_group": "Center Back",
+      "optimization_score": 2.4782608695652173
+    },
+    {
+      "rank": 4,
+      "player_id": 3831,
+      "player": "Dušan Tadić",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 2.3478260869565215
+    },
+    {
+      "rank": 5,
+      "player_id": 20600,
+      "player": "Vanja Milinković Savić",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.239130434782609
+    },
+    {
+      "rank": 6,
+      "player_id": 5589,
+      "player": "Sergej Milinković-Savić",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 2.217391304347826
+    },
+    {
+      "rank": 7,
+      "player_id": 6687,
+      "player": "Saša Lukić",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.1739130434782608
+    },
+    {
+      "rank": 8,
+      "player_id": 6318,
+      "player": "Andrija Živković",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.9130434782608696
+    },
+    {
+      "rank": 9,
+      "player_id": 18015,
+      "player": "Dušan Vlahović",
+      "position_group": "Forward",
+      "optimization_score": 1.9130434782608696
+    },
+    {
+      "rank": 10,
+      "player_id": 5833,
+      "player": "Nemanja Radonjić",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.6956521739130435
+    },
+    {
+      "rank": 11,
+      "player_id": 3512,
+      "player": "Marko Grujić",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.0869565217391304
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": 0.054851809996689024,
+    "mean_delta_pressing": -2.400324016603268,
+    "mean_delta_recovery": -0.2865195925261985
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "Serbia",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 35,
+      "wasted_net_xg": 0.23556038849329328,
+      "mean_eva_gap": 0.0067302968140940935
+    },
+    {
+      "team": "Serbia",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 25,
+      "wasted_net_xg": 0.16857536941122409,
+      "mean_eva_gap": 0.006743014776448964
+    },
+    {
+      "team": "Serbia",
+      "defensive_style": "High-Intensity Press",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 22,
+      "wasted_net_xg": 0.14818881800963613,
+      "mean_eva_gap": 0.006735855364074369
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "Nikola Milenković + Saša Lukić (0.615)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 112,
+    "INSUFFICIENT_MINUTES": 12,
+    "GAIN_BELOW_THRESHOLD": 8
+  }
+}

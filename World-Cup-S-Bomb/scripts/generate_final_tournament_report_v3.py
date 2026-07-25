@@ -21,7 +21,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.report_generators import (  # noqa: E402
+from src.report_generators_v3 import (  # noqa: E402
     TEAM_CODES,
     build_dynamic_team_summary,
 )

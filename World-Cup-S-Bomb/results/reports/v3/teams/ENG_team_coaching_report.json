@@ -1,0 +1,161 @@
+{
+  "team": "England",
+  "team_code": "ENG",
+  "total_wasted_net_xg": 1.040439357531874,
+  "mean_eva_gap": 0.002882103483467795,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 3244,
+      "player": "John Stones",
+      "position_group": "Center Back",
+      "optimization_score": 2.75
+    },
+    {
+      "rank": 2,
+      "player_id": 3336,
+      "player": "Harry Maguire",
+      "position_group": "Center Back",
+      "optimization_score": 2.35
+    },
+    {
+      "rank": 3,
+      "player_id": 10955,
+      "player": "Harry Kane",
+      "position_group": "Forward",
+      "optimization_score": 2.3
+    },
+    {
+      "rank": 4,
+      "player_id": 30714,
+      "player": "Jude Bellingham",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.25
+    },
+    {
+      "rank": 5,
+      "player_id": 3382,
+      "player": "Luke Shaw",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.2
+    },
+    {
+      "rank": 6,
+      "player_id": 3943,
+      "player": "Declan Rice",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.0
+    },
+    {
+      "rank": 7,
+      "player_id": 4354,
+      "player": "Phil Foden",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.95
+    },
+    {
+      "rank": 8,
+      "player_id": 3468,
+      "player": "Jordan Pickford",
+      "position_group": "Goalkeeper",
+      "optimization_score": 1.85
+    },
+    {
+      "rank": 9,
+      "player_id": 22084,
+      "player": "Bukayo Saka",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.85
+    },
+    {
+      "rank": 10,
+      "player_id": 3532,
+      "player": "Jordan Brian Henderson",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.7000000000000002
+    },
+    {
+      "rank": 11,
+      "player_id": 3205,
+      "player": "Kyle Walker",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.2
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": 0.01174357753080306,
+    "mean_delta_pressing": -3.654261740388565,
+    "mean_delta_recovery": 0.9873529784133344
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "England",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 36,
+      "wasted_net_xg": 0.29884799934753353,
+      "mean_eva_gap": 0.008301333315209264
+    },
+    {
+      "team": "England",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 36,
+      "wasted_net_xg": 0.28307720642288114,
+      "mean_eva_gap": 0.00786325573396892
+    },
+    {
+      "team": "England",
+      "defensive_style": "High-Intensity Press",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 21,
+      "wasted_net_xg": 0.1793571685974504,
+      "mean_eva_gap": 0.008540817552259543
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "John Stones + Jordan Pickford (0.815)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 82,
+    "GAIN_BELOW_THRESHOLD": 15,
+    "INSUFFICIENT_MINUTES": 2
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": 3,
+  "status": "complete",
+  "model_source": "calibrated_classifier_bundle",
+  "model_warning": "",
+  "model_version": "transition-conceded-v2",
+  "target": "transition_conceded",
+  "calibration_method": "platt",
+  "threshold": null,
+  "threshold_status": "no validated threshold",
+  "locked_v2_holdout_metrics": {
+    "rows": 1349,
+    "positives": 2,
+    "positive_rate": 0.0014825796886582653,
+    "unique_probabilities": 1252,
+    "probability_variance": 7.235968115450994e-07,
+    "predicted_positives": 0,
+    "predicted_positive_rate": 0.0,
+    "precision": null,
+    "recall": null,
+    "f0_5": null,
+    "brier": 0.001477846004288718,
+    "pr_auc": 0.016655274550011392,
+    "roc_auc": 0.7420193021529324,
+    "asymmetric_cost": 2.0
+  },
+  "tournament_oof_metrics": {
+    "rows": 9685,
+    "matches": 64,
+    "teams": 32,
+    "positives": 13,
+    "brier": 0.001339058576741854,
+    "pr_auc": 0.0059580383921070375,
+    "roc_auc": 0.6893411592543106,
+    "unique_probabilities": 8739
+  },
+  "fold_assignment_hash": "0c620b0a3ce55bbb67baefce06d31a820e7a18492376673a21b80087c2435e10",
+  "counts": {
+    "oof_matches": 64,
+    "oof_teams": 32,
+    "oof_possessions": 9685,
+    "tactical_scenarios": 29055,
+    "eligible_substitutions": 1,
+    "suppressed_substitutions": 3607,
+    "team_reports": 32
+  },
+  "checks": {
+    "all_64_matches_oof": true,
+    "all_32_teams_audited": true,
+    "heldout_excluded_every_fold": true,
+    "development_uses_63_matches": true,
+    "canonical_target": true,
+    "substitution_floor": true,
+    "suppression_reason_coverage": true,
+    "team_reports": true
+  },
+  "runtime": {
+    "schema_version": 1,
+    "pipeline": "run_team_simulation_reports_v3",
+    "status": "complete",
+    "elapsed_seconds": 289.558048899984,
+    "peak_memory_mb": 244.99316692352295,
+    "stages": [
+      {
+        "name": "load_v3_inputs",
+        "status": "complete",
+        "elapsed_seconds": 5.065718400059268,
+        "completed": 3,
+        "total": 3,
+        "unit": "source",
+        "average_units_per_second": 0.5922161010696727,
+        "eta_seconds": 0.0,
+        "peak_memory_mb": 113.48797512054443,
+        "message": "v2 descriptive matchup features"
+      },
+      {
+        "name": "leave_one_match_out_audit",
+        "status": "complete",
+        "elapsed_seconds": 250.6925740999868,
+        "completed": 64,
+        "total": 64,
+        "unit": "match",
+        "average_units_per_second": 0.255292763376685,
+        "eta_seconds": 0.0,
+        "peak_memory_mb": 171.24756336212158,
+        "message": ""
+      },
+      {
+        "name": "reason_coded_substitutions",
+        "status": "complete",
+        "elapsed_seconds": 28.76597499998752,
+        "completed": 32,
+        "total": 32,
+        "unit": "team",
+        "average_units_per_second": 1.1124253566935896,
+        "eta_seconds": 0.0,
+        "peak_memory_mb": 244.99316692352295,
+        "message": ""
+      }
+    ],
+    "previous_runs": [
+      {
+        "schema_version": 1,
+        "pipeline": "run_team_simulation_reports_v3",
+        "status": "complete",
+        "elapsed_seconds": 281.8433259000303,
+        "peak_memory_mb": 244.98051929473877,
+        "stages": [
+          {
+            "name": "load_v3_inputs",
+            "status": "complete",
+            "elapsed_seconds": 5.6375955999828875,
+            "completed": 3,
+            "total": 3,
+            "unit": "source",
+            "average_units_per_second": 0.532141752063434,
+            "eta_seconds": 0.0,
+            "peak_memory_mb": 113.48818302154541,
+            "message": "v2 descriptive matchup features"
+          },
+          {
+            "name": "leave_one_match_out_audit",
+            "status": "complete",
+            "elapsed_seconds": 244.1432617000537,
+            "completed": 64,
+            "total": 64,
+            "unit": "match",
+            "average_units_per_second": 0.2621411688954507,
+            "eta_seconds": 0.0,
+            "peak_memory_mb": 171.2500410079956,
+            "message": ""
+          },
+          {
+            "name": "reason_coded_substitutions",
+            "status": "complete",
+            "elapsed_seconds": 27.740930299973115,
+            "completed": 32,
+            "total": 32,
+            "unit": "team",
+            "average_units_per_second": 1.1535301683819525,
+            "eta_seconds": 0.0,
+            "peak_memory_mb": 244.98051929473877,
+            "message": ""
+          }
+        ]
+      }
+    ]
+  }
+}

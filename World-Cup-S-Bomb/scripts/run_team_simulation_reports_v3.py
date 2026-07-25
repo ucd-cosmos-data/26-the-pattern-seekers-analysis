@@ -20,11 +20,11 @@ from tqdm import tqdm
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.report_generators import (  # noqa: E402
+from src.report_generators_v3 import (  # noqa: E402
     generate_full_team_coaching_reports,
     generate_individual_starter_reports,
 )
-from src.simulation_engine import (  # noqa: E402
+from src.simulation_engine_v3 import (  # noqa: E402
     EmpiricalHurdleModel,
     build_lineup_matchup_features,
     calculate_expected_vs_actual_deltas,
@@ -36,7 +36,7 @@ from src.simulation_engine import (  # noqa: E402
     simulate_starter_replacement_impact,
     simulate_tactical_style_outcomes,
 )
-from track_pipeline_eta import PipelineTimer  # noqa: E402
+from track_pipeline_eta_v3 import PipelineTimer  # noqa: E402
 from benchmark_coaching_models_v2 import (  # noqa: E402
     V2_CATEGORICAL_FEATURES,
     V2_NUMERIC_FEATURES,

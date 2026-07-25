@@ -1,0 +1,1513 @@
+#!/usr/bin/env python3
+"""Benchmark leakage-safe tactical and player-aware coaching model layouts."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import time
+from pathlib import Path
+
+os.environ.setdefault("LOKY_MAX_CPU_COUNT", "1")
+
+import joblib
+import numpy as np
+import pandas as pd
+from sklearn.base import clone
+from sklearn.compose import ColumnTransformer
+from sklearn.ensemble import (
+    GradientBoostingClassifier,
+    HistGradientBoostingClassifier,
+    RandomForestClassifier,
+)
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (
+    average_precision_score,
+    brier_score_loss,
+    fbeta_score,
+    log_loss,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+)
+from sklearn.model_selection import StratifiedGroupKFold
+from sklearn.isotonic import IsotonicRegression
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from xgboost import XGBClassifier
+
+from track_pipeline_eta import PipelineTimer
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_POSSESSIONS = (
+    PROJECT_ROOT / "data" / "processed" / "world_cup_defensive_clusters.csv"
+)
+DEFAULT_COMPONENTS = (
+    PROJECT_ROOT / "data" / "interim" / "world_cup_player_match_components.csv"
+)
+DEFAULT_LINEUPS = (
+    PROJECT_ROOT / "data" / "interim" / "world_cup_possession_lineups.csv"
+)
+DEFAULT_FEATURES = (
+    PROJECT_ROOT / "data" / "interim" / "world_cup_player_aware_model_features.csv"
+)
+DEFAULT_LEADERBOARD = PROJECT_ROOT / "results" / "coaching_model_leaderboard.csv"
+DEFAULT_FOLDS = PROJECT_ROOT / "results" / "coaching_model_fold_metrics.csv"
+DEFAULT_ABLATION = PROJECT_ROOT / "results" / "coaching_feature_ablation.csv"
+DEFAULT_PREDICTIONS = (
+    PROJECT_ROOT / "data" / "interim" / "world_cup_coaching_model_oof_predictions.csv"
+)
+DEFAULT_REPORT = PROJECT_ROOT / "results" / "coaching_model_benchmark.md"
+DEFAULT_MODEL = PROJECT_ROOT / "models" / "coaching_model_benchmark.joblib"
+DEFAULT_RECOMMENDATIONS = (
+    PROJECT_ROOT / "data" / "processed" / "world_cup_recommendation_features.csv"
+)
+DEFAULT_V2_MODEL = PROJECT_ROOT / "models" / "coaching_model_benchmark_v2.joblib"
+DEFAULT_V2_METRICS = PROJECT_ROOT / "results" / "coaching_model_validation_v2.json"
+DEFAULT_V2_PREDICTIONS = (
+    PROJECT_ROOT / "data" / "interim" / "world_cup_coaching_model_predictions_v2.csv"
+)
+CANONICAL_TARGET = "transition_conceded"
+TARGET_SOURCE_COLUMN = "opponent_transition_shot"
+MIN_PRECISION = 0.30
+
+RANDOM_STATE = 42
+N_SPLITS = 5
+PRIOR_MINUTES = 270.0
+PRIOR_ATTEMPTS = 30.0
+
+RATE_SKILLS = {
+    "progressive_passes_p90": "progressive_passes",
+    "final_third_passes_p90": "final_third_passes",
+    "box_passes_p90": "box_passes",
+    "key_passes_p90": "key_passes",
+    "crosses_p90": "crosses",
+    "switches_p90": "switches",
+    "through_balls_p90": "through_balls",
+    "progressive_carries_p90": "progressive_carries",
+    "shots_p90": "shots",
+    "xg_p90": "xg_sum",
+    "turnovers_p90": "turnovers",
+    "pressures_p90": "pressures",
+    "counterpressures_p90": "counterpressures",
+    "interceptions_won_p90": "interceptions_won",
+    "recoveries_p90": "recoveries",
+    "blocks_p90": "blocks",
+    "clearances_p90": "clearances",
+    "dribbled_past_p90": "dribbled_past",
+    "fouls_p90": "fouls",
+}
+
+RATIO_SKILLS = {
+    "pass_completion": ("completed_passes", "passes"),
+    "dribble_success": ("successful_dribbles", "dribbles"),
+    "pressure_retention": (
+        "successful_under_pressure_actions",
+        "under_pressure_actions",
+    ),
+    "duel_win_rate": ("duels_won", "duels"),
+    "interception_win_rate": ("interceptions_won", "interceptions"),
+    "aerial_win_rate": ("aerial_wins", "aerial_events"),
+}
+
+MEAN_SKILLS = {
+    "pass_progression_per_pass": ("pass_progression_sum", "passes"),
+    "carry_progression_per_carry": ("carry_progression_sum", "carries"),
+}
+
+ATTACK_SKILLS = [
+    "pass_completion",
+    "progressive_passes_p90",
+    "final_third_passes_p90",
+    "box_passes_p90",
+    "key_passes_p90",
+    "crosses_p90",
+    "switches_p90",
+    "through_balls_p90",
+    "progressive_carries_p90",
+    "dribble_success",
+    "shots_p90",
+    "xg_p90",
+    "pressure_retention",
+    "turnovers_p90",
+    "pass_progression_per_pass",
+    "carry_progression_per_carry",
+    "aerial_win_rate",
+]
+
+DEFENSE_SKILLS = [
+    "pressures_p90",
+    "counterpressures_p90",
+    "duel_win_rate",
+    "interceptions_won_p90",
+    "interception_win_rate",
+    "recoveries_p90",
+    "blocks_p90",
+    "clearances_p90",
+    "dribbled_past_p90",
+    "fouls_p90",
+    "aerial_win_rate",
+]
+
+START_CONTEXT_CATEGORICAL_FEATURES = [
+    "first_play_pattern",
+    "competition_stage",
+]
+
+START_CONTEXT_NUMERIC_FEATURES = [
+    "period",
+    "start_minute",
+    "start_x",
+    "start_y",
+]
+
+SHAPE_NUMERIC_FEATURES = [
+    "avg_back_line_height",
+    "std_back_line_height",
+    "avg_defensive_hull_area",
+    "avg_defensive_width",
+    "avg_defensive_depth",
+    "avg_defenders_behind_ball",
+    "avg_central_defenders",
+    "avg_defenders_within_5",
+    "avg_defenders_within_10",
+    "avg_nearest_defender_distance",
+    "avg_mean_defender_distance",
+]
+
+TARGETS = {
+    "shot": "shot",
+    "box_entry": "entered_penalty_area",
+}
+
+ABLATION_MODEL = "Logistic Regression"
+ABLATION_LAYOUT_ORDER = [
+    "Start Context",
+    "Context + Attack Style",
+    "Context + Both Styles",
+    "Tactical + Shape",
+    "Player-Aware",
+]
+
+ENSEMBLES = {
+    "Soft Vote: All": [
+        "Logistic Regression",
+        "Random Forest",
+        "Gradient Boosting",
+        "Histogram Gradient Boosting",
+        "XGBoost",
+    ],
+    "Soft Vote: Boosting": [
+        "Gradient Boosting",
+        "Histogram Gradient Boosting",
+        "XGBoost",
+    ],
+    "Soft Vote: LR + XGB": ["Logistic Regression", "XGBoost"],
+}
+
+
+def mode_or_unknown(series: pd.Series) -> str:
+    clean = series.dropna().astype(str)
+    return clean.mode().iloc[0] if not clean.empty else "Unknown"
+
+
+def aggregate_components(components: pd.DataFrame) -> pd.DataFrame:
+    sum_columns = sorted(
+        set(RATE_SKILLS.values())
+        | {item for pair in RATIO_SKILLS.values() for item in pair}
+        | {item for pair in MEAN_SKILLS.values() for item in pair}
+        | {"minutes"}
+    )
+    aggregated = components.groupby("player_id")[sum_columns].sum()
+    positions = components.groupby("player_id")["position_group"].agg(mode_or_unknown)
+    aggregated["position_group"] = positions
+    return aggregated
+
+
+def prior_table(aggregated: pd.DataFrame) -> pd.DataFrame:
+    groups = []
+    labeled = aggregated.copy()
+    for position, group in labeled.groupby("position_group"):
+        totals = group.drop(columns=["position_group"]).sum()
+        totals["position_group"] = position
+        groups.append(totals)
+    global_totals = labeled.drop(columns=["position_group"]).sum()
+    global_totals["position_group"] = "__GLOBAL__"
+    groups.append(global_totals)
+    totals_table = pd.DataFrame(groups).set_index("position_group")
+    priors = pd.DataFrame(index=totals_table.index)
+    minutes = totals_table["minutes"].replace(0, np.nan)
+    for skill, numerator in RATE_SKILLS.items():
+        priors[skill] = 90 * totals_table[numerator] / minutes
+    for skill, (numerator, denominator) in RATIO_SKILLS.items():
+        priors[skill] = totals_table[numerator] / totals_table[denominator].replace(
+            0, np.nan
+        )
+    for skill, (numerator, denominator) in MEAN_SKILLS.items():
+        priors[skill] = totals_table[numerator] / totals_table[denominator].replace(
+            0, np.nan
+        )
+    global_values = priors.loc["__GLOBAL__"]
+    return priors.fillna(global_values)
+
+
+def build_profiles(
+    components: pd.DataFrame,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    aggregated = aggregate_components(components)
+    priors = prior_table(aggregated)
+    profiles = pd.DataFrame(index=aggregated.index)
+    profiles["position_group"] = aggregated["position_group"]
+    profiles["profile_minutes"] = aggregated["minutes"]
+
+    for skill, numerator in RATE_SKILLS.items():
+        prior = aggregated["position_group"].map(priors[skill]).astype(float)
+        profiles[skill] = (
+            aggregated[numerator] + prior * PRIOR_MINUTES / 90
+        ) / (aggregated["minutes"] + PRIOR_MINUTES) * 90
+    for skill, (numerator, denominator) in RATIO_SKILLS.items():
+        prior = aggregated["position_group"].map(priors[skill]).astype(float)
+        profiles[skill] = (
+            aggregated[numerator] + prior * PRIOR_ATTEMPTS
+        ) / (aggregated[denominator] + PRIOR_ATTEMPTS)
+    for skill, (numerator, denominator) in MEAN_SKILLS.items():
+        prior = aggregated["position_group"].map(priors[skill]).astype(float)
+        profiles[skill] = (
+            aggregated[numerator] + prior * PRIOR_ATTEMPTS
+        ) / (aggregated[denominator] + PRIOR_ATTEMPTS)
+    return profiles, priors
+
+
+def parse_player_ids(value: object) -> list[int]:
+    if isinstance(value, list):
+        return [int(item) for item in value]
+    return [int(item) for item in json.loads(str(value))]
+
+
+def player_vector(
+    player_id: int,
+    profiles: pd.DataFrame,
+    priors: pd.DataFrame,
+    positions: dict[int, str],
+) -> pd.Series:
+    if player_id in profiles.index:
+        return profiles.loc[player_id]
+    position = positions.get(player_id, "__GLOBAL__")
+    if position not in priors.index:
+        position = "__GLOBAL__"
+    fallback = priors.loc[position].copy()
+    fallback["position_group"] = position
+    fallback["profile_minutes"] = 0.0
+    return fallback
+
+
+def aggregate_lineup(
+    player_ids: list[int],
+    profiles: pd.DataFrame,
+    priors: pd.DataFrame,
+    positions: dict[int, str],
+    skills: list[str],
+    prefix: str,
+) -> dict[str, float]:
+    vectors = pd.DataFrame(
+        [player_vector(player_id, profiles, priors, positions) for player_id in player_ids]
+    )
+    if vectors.empty:
+        fallback = priors.loc["__GLOBAL__"]
+        vectors = pd.DataFrame([fallback])
+        vectors["profile_minutes"] = 0.0
+        vectors["position_group"] = "__GLOBAL__"
+    outfield = vectors[~vectors["position_group"].eq("Goalkeeper")]
+    if outfield.empty:
+        outfield = vectors
+    output: dict[str, float] = {}
+    for skill in skills:
+        output[f"{prefix}_mean_{skill}"] = float(outfield[skill].mean())
+        output[f"{prefix}_max_{skill}"] = float(outfield[skill].max())
+    output[f"{prefix}_mean_profile_minutes"] = float(
+        outfield["profile_minutes"].mean()
+    )
+    output[f"{prefix}_known_player_share"] = float(
+        outfield["profile_minutes"].gt(0).mean()
+    )
+    return output
+
+
+def lineup_features(
+    rows: pd.DataFrame,
+    profiles: pd.DataFrame,
+    priors: pd.DataFrame,
+    positions: dict[int, str],
+) -> pd.DataFrame:
+    records: list[dict[str, float]] = []
+    for row in rows.itertuples(index=False):
+        attacking_ids = parse_player_ids(row.attacking_player_ids)
+        defending_ids = parse_player_ids(row.defending_player_ids)
+        record = aggregate_lineup(
+            attacking_ids, profiles, priors, positions, ATTACK_SKILLS, "att"
+        )
+        record.update(
+            aggregate_lineup(
+                defending_ids, profiles, priors, positions, DEFENSE_SKILLS, "def"
+            )
+        )
+        # The attacking lineup's defensive recovery ability describes rest
+        # defense after losing possession; the defending lineup's attacking
+        # ability describes the counter threat immediately after a regain.
+        record.update(
+            aggregate_lineup(
+                attacking_ids,
+                profiles,
+                priors,
+                positions,
+                DEFENSE_SKILLS,
+                "att_recovery",
+            )
+        )
+        record.update(
+            aggregate_lineup(
+                defending_ids,
+                profiles,
+                priors,
+                positions,
+                ATTACK_SKILLS,
+                "opp_counter",
+            )
+        )
+        record["matchup_dribble_vs_duel"] = record[
+            "att_max_dribble_success"
+        ] * (1 - record["def_max_duel_win_rate"])
+        record["matchup_pressure_resistance"] = record[
+            "att_mean_pressure_retention"
+        ] / (1 + record["def_mean_pressures_p90"])
+        record["matchup_aerial_edge"] = (
+            record["att_max_aerial_win_rate"]
+            - record["def_max_aerial_win_rate"]
+        )
+        record["matchup_progression_vs_interception"] = record[
+            "att_mean_progressive_passes_p90"
+        ] / (1 + record["def_mean_interceptions_won_p90"])
+        record["matchup_rest_defense_vs_counter"] = (
+            record["att_recovery_mean_recoveries_p90"]
+            + record["att_recovery_mean_pressures_p90"]
+        ) / (
+            1
+            + record["opp_counter_mean_progressive_passes_p90"]
+            + record["opp_counter_mean_progressive_carries_p90"]
+        )
+        record["matchup_turnover_counter_pressure"] = record[
+            "att_mean_turnovers_p90"
+        ] * (
+            record["opp_counter_mean_progressive_passes_p90"]
+            + record["opp_counter_mean_progressive_carries_p90"]
+        )
+        records.append(record)
+    return pd.DataFrame(records, index=rows.index)
+
+
+def cross_fitted_player_features(
+    data: pd.DataFrame,
+    components: pd.DataFrame,
+    splits: list[tuple[np.ndarray, np.ndarray]],
+) -> tuple[pd.DataFrame, np.ndarray]:
+    positions = (
+        components.groupby("player_id")["position_group"]
+        .agg(mode_or_unknown)
+        .to_dict()
+    )
+    output: pd.DataFrame | None = None
+    fold_ids = np.full(len(data), -1, dtype=int)
+    for fold, (train_index, test_index) in enumerate(splits):
+        train_matches = set(data.iloc[train_index]["match_id"])
+        test_matches = set(data.iloc[test_index]["match_id"])
+        fold_ids[test_index] = fold
+
+        for match_id in sorted(train_matches):
+            profile_source = components[
+                components["match_id"].isin(train_matches)
+                & components["match_id"].ne(match_id)
+            ]
+            profiles, priors = build_profiles(profile_source)
+            row_index = data.index[
+                data["match_id"].eq(match_id)
+                & data.index.isin(data.index[train_index])
+            ]
+            features = lineup_features(
+                data.loc[row_index], profiles, priors, positions
+            )
+            if output is None:
+                output = pd.DataFrame(
+                    np.nan, index=data.index, columns=features.columns
+                )
+            output.loc[row_index, features.columns] = features
+
+        profile_source = components[components["match_id"].isin(train_matches)]
+        profiles, priors = build_profiles(profile_source)
+        row_index = data.index[data["match_id"].isin(test_matches)]
+        features = lineup_features(data.loc[row_index], profiles, priors, positions)
+        if output is None:
+            output = pd.DataFrame(np.nan, index=data.index, columns=features.columns)
+        output.loc[row_index, features.columns] = features
+
+    if output is None or output.isna().any().any():
+        raise RuntimeError("Cross-fitted player features are incomplete")
+    return output, fold_ids
+
+
+def model_definitions() -> dict[str, object]:
+    return {
+        "Logistic Regression": LogisticRegression(
+            C=1.0, max_iter=2_000, solver="lbfgs", random_state=RANDOM_STATE
+        ),
+        "Random Forest": RandomForestClassifier(
+            n_estimators=350,
+            min_samples_leaf=8,
+            max_features=0.7,
+            n_jobs=2,
+            random_state=RANDOM_STATE,
+        ),
+        "Gradient Boosting": GradientBoostingClassifier(
+            n_estimators=250,
+            learning_rate=0.035,
+            max_depth=2,
+            min_samples_leaf=10,
+            subsample=0.85,
+            random_state=RANDOM_STATE,
+        ),
+        "Histogram Gradient Boosting": HistGradientBoostingClassifier(
+            learning_rate=0.05,
+            max_iter=250,
+            max_leaf_nodes=15,
+            min_samples_leaf=15,
+            l2_regularization=1.0,
+            random_state=RANDOM_STATE,
+        ),
+        "XGBoost": XGBClassifier(
+            n_estimators=400,
+            learning_rate=0.035,
+            max_depth=3,
+            min_child_weight=8,
+            subsample=0.85,
+            colsample_bytree=0.8,
+            reg_lambda=2.0,
+            objective="binary:logistic",
+            eval_metric="logloss",
+            n_jobs=2,
+            random_state=RANDOM_STATE,
+        ),
+    }
+
+
+def preprocessor(
+    numeric_features: list[str],
+    categorical_features: list[str],
+) -> ColumnTransformer:
+    numeric = Pipeline(
+        [
+            ("imputer", SimpleImputer(strategy="median")),
+            ("scale", StandardScaler()),
+        ]
+    )
+    categorical = Pipeline(
+        [
+            ("imputer", SimpleImputer(strategy="most_frequent")),
+            (
+                "one_hot",
+                OneHotEncoder(handle_unknown="ignore", sparse_output=False),
+            ),
+        ]
+    )
+    return ColumnTransformer(
+        [
+            ("numeric", numeric, numeric_features),
+            ("categorical", categorical, categorical_features),
+        ],
+        sparse_threshold=0,
+    )
+
+
+def expected_calibration_error(
+    truth: np.ndarray, probability: np.ndarray, bins: int = 10
+) -> float:
+    edges = np.linspace(0, 1, bins + 1)
+    assignments = np.clip(np.digitize(probability, edges) - 1, 0, bins - 1)
+    error = 0.0
+    for bin_id in range(bins):
+        mask = assignments == bin_id
+        if mask.any():
+            error += mask.mean() * abs(truth[mask].mean() - probability[mask].mean())
+    return float(error)
+
+
+def score_predictions(truth: np.ndarray, probability: np.ndarray) -> dict[str, float]:
+    clipped = np.clip(probability, 1e-6, 1 - 1e-6)
+    return {
+        "log_loss": float(log_loss(truth, clipped, labels=[0, 1])),
+        "brier": float(brier_score_loss(truth, clipped)),
+        "roc_auc": float(roc_auc_score(truth, clipped)),
+        "pr_auc": float(average_precision_score(truth, clipped)),
+        "ece": expected_calibration_error(truth, clipped),
+    }
+
+
+def prediction_column_name(layout: str, target: str, model: str) -> str:
+    return (
+        f"{layout}__{target}__{model}"
+        .lower()
+        .replace(" ", "_")
+        .replace(":", "")
+        .replace("+", "plus")
+    )
+
+
+def benchmark(
+    data: pd.DataFrame,
+    splits: list[tuple[np.ndarray, np.ndarray]],
+    layouts: dict[str, dict[str, object]],
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    models = model_definitions()
+    prediction_frame = data[["possession_uid", "match_id"]].copy()
+    fold_records: list[dict[str, object]] = []
+    leaderboard_records: list[dict[str, object]] = []
+
+    for layout_name, layout in layouts.items():
+        numeric_features = list(layout["numeric_features"])
+        categorical_features = list(layout["categorical_features"])
+        active_models = {
+            name: models[name] for name in list(layout["model_names"])
+        }
+        feature_columns = categorical_features + numeric_features
+        for target_name, target_column in TARGETS.items():
+            truth = data[target_column].astype(int).to_numpy()
+            model_predictions: dict[str, np.ndarray] = {
+                name: np.full(len(data), np.nan) for name in active_models
+            }
+            for fold, (train_index, test_index) in enumerate(splits):
+                for model_name, estimator in active_models.items():
+                    pipeline = Pipeline(
+                        [
+                            (
+                                "preprocess",
+                                preprocessor(
+                                    numeric_features,
+                                    categorical_features,
+                                ),
+                            ),
+                            ("model", clone(estimator)),
+                        ]
+                    )
+                    pipeline.fit(
+                        data.iloc[train_index][feature_columns],
+                        truth[train_index],
+                    )
+                    probability = pipeline.predict_proba(
+                        data.iloc[test_index][feature_columns]
+                    )[:, 1]
+                    model_predictions[model_name][test_index] = probability
+                    metrics = score_predictions(truth[test_index], probability)
+                    fold_records.append(
+                        {
+                            "layout": layout_name,
+                            "timing": layout["timing"],
+                            "target": target_name,
+                            "model": model_name,
+                            "fold": fold,
+                            "test_matches": len(
+                                set(data.iloc[test_index]["match_id"])
+                            ),
+                            "test_rows": len(test_index),
+                            "positive_rate": truth[test_index].mean(),
+                            **metrics,
+                        }
+                    )
+
+            all_predictions = dict(model_predictions)
+            for ensemble_name, members in ENSEMBLES.items():
+                if not set(members).issubset(model_predictions):
+                    continue
+                all_predictions[ensemble_name] = np.mean(
+                    [model_predictions[name] for name in members], axis=0
+                )
+                for fold, (_, test_index) in enumerate(splits):
+                    metrics = score_predictions(
+                        truth[test_index],
+                        all_predictions[ensemble_name][test_index],
+                    )
+                    fold_records.append(
+                        {
+                            "layout": layout_name,
+                            "timing": layout["timing"],
+                            "target": target_name,
+                            "model": ensemble_name,
+                            "fold": fold,
+                            "test_matches": len(
+                                set(data.iloc[test_index]["match_id"])
+                            ),
+                            "test_rows": len(test_index),
+                            "positive_rate": truth[test_index].mean(),
+                            **metrics,
+                        }
+                    )
+
+            for model_name, probability in all_predictions.items():
+                metrics = score_predictions(truth, probability)
+                fold_subset = [
+                    record
+                    for record in fold_records
+                    if record["layout"] == layout_name
+                    and record["target"] == target_name
+                    and record["model"] == model_name
+                ]
+                leaderboard_records.append(
+                    {
+                        "layout": layout_name,
+                        "timing": layout["timing"],
+                        "target": target_name,
+                        "model": model_name,
+                        "rows": len(data),
+                        "matches": data["match_id"].nunique(),
+                        "positive_rate": truth.mean(),
+                        **metrics,
+                        "fold_log_loss_std": float(
+                            np.std([record["log_loss"] for record in fold_subset])
+                        ),
+                        "fold_brier_std": float(
+                            np.std([record["brier"] for record in fold_subset])
+                        ),
+                    }
+                )
+                safe_name = prediction_column_name(
+                    layout_name,
+                    target_name,
+                    model_name,
+                )
+                prediction_frame[safe_name] = probability
+            prediction_frame[f"truth__{target_name}"] = truth
+
+    leaderboard = pd.DataFrame(leaderboard_records)
+    leaderboard["target_rank"] = leaderboard.groupby("target")["log_loss"].rank(
+        method="min"
+    )
+    leaderboard = leaderboard.sort_values(
+        ["target", "log_loss", "brier", "model"]
+    )
+    return leaderboard, pd.DataFrame(fold_records), prediction_frame
+
+
+def build_feature_ablation(leaderboard: pd.DataFrame) -> pd.DataFrame:
+    ablation = leaderboard[
+        leaderboard["model"].eq(ABLATION_MODEL)
+        & leaderboard["layout"].isin(ABLATION_LAYOUT_ORDER)
+    ].copy()
+    layout_order = {
+        layout: position for position, layout in enumerate(ABLATION_LAYOUT_ORDER)
+    }
+    ablation["layout_order"] = ablation["layout"].map(layout_order)
+    ablation = ablation.sort_values(["target", "layout_order"]).reset_index(drop=True)
+    ablation["log_loss_improvement_vs_previous"] = ablation.groupby("target")[
+        "log_loss"
+    ].transform(lambda values: values.shift(1) - values)
+    ablation["brier_improvement_vs_previous"] = ablation.groupby("target")[
+        "brier"
+    ].transform(lambda values: values.shift(1) - values)
+    ablation["pr_auc_gain_vs_previous"] = ablation.groupby("target")[
+        "pr_auc"
+    ].diff()
+    return ablation[
+        [
+            "target",
+            "layout",
+            "timing",
+            "model",
+            "rows",
+            "positive_rate",
+            "log_loss",
+            "log_loss_improvement_vs_previous",
+            "brier",
+            "brier_improvement_vs_previous",
+            "roc_auc",
+            "pr_auc",
+            "pr_auc_gain_vs_previous",
+            "ece",
+        ]
+    ]
+
+
+def fit_selected_models(
+    data: pd.DataFrame,
+    leaderboard: pd.DataFrame,
+    layouts: dict[str, dict[str, object]],
+) -> dict[str, object]:
+    base_models = model_definitions()
+    selected: dict[str, object] = {}
+    for target_name, target_column in TARGETS.items():
+        winner = leaderboard[leaderboard["target"].eq(target_name)].iloc[0]
+        layout = str(winner["layout"])
+        model_name = str(winner["model"])
+        numeric = list(layouts[layout]["numeric_features"])
+        categorical = list(layouts[layout]["categorical_features"])
+        columns = categorical + numeric
+        truth = data[target_column].astype(int)
+
+        if model_name in base_models:
+            pipeline = Pipeline(
+                [
+                    ("preprocess", preprocessor(numeric, categorical)),
+                    ("model", clone(base_models[model_name])),
+                ]
+            )
+            pipeline.fit(data[columns], truth)
+            fitted: object = pipeline
+        else:
+            members = ENSEMBLES[model_name]
+            pipelines = []
+            for member in members:
+                pipeline = Pipeline(
+                    [
+                        ("preprocess", preprocessor(numeric, categorical)),
+                        ("model", clone(base_models[member])),
+                    ]
+                )
+                pipeline.fit(data[columns], truth)
+                pipelines.append((member, pipeline))
+            fitted = {"kind": "equal_weight_ensemble", "members": pipelines}
+        selected[target_name] = {
+            "target_column": target_column,
+            "layout": layout,
+            "timing": layouts[layout]["timing"],
+            "model_name": model_name,
+            "categorical_features": categorical,
+            "numeric_features": numeric,
+            "model": fitted,
+            "cross_validated_metrics": {
+                key: float(winner[key])
+                for key in ["log_loss", "brier", "roc_auc", "pr_auc", "ece"]
+            },
+        }
+    return selected
+
+
+def write_report(
+    path: Path,
+    data: pd.DataFrame,
+    leaderboard: pd.DataFrame,
+    ablation: pd.DataFrame,
+    player_feature_count: int,
+) -> None:
+    lines = [
+        "# Coaching Model Architecture Benchmark",
+        "",
+        "## Design",
+        "",
+        f"- Eligible possessions: {len(data):,}",
+        f"- Matches: {data['match_id'].nunique()}",
+        f"- Cross-validation: {N_SPLITS}-fold stratified group CV by match",
+        f"- Derived lineup features: {player_feature_count}",
+        "- Player profiles for every validation match were computed without that match.",
+        "- Player and team names were excluded from predictive inputs.",
+        "- Shot, goal, xG, box-entry, and transition outcomes were excluded from inputs.",
+        "- The unsupported 13-positive transition target is excluded from this primary benchmark.",
+        "- Probabilities are compared primarily by log loss and Brier score; ROC-AUC, PR-AUC, and calibration error are secondary diagnostics.",
+        "",
+        "## Winners",
+        "",
+        "| Target | Layout | Model | Log loss | Brier | ROC-AUC | PR-AUC | ECE |",
+        "|---|---|---|---:|---:|---:|---:|---:|",
+    ]
+    for target in TARGETS:
+        row = leaderboard[leaderboard["target"].eq(target)].iloc[0]
+        lines.append(
+            f"| {target} | {row['layout']} | {row['model']} | "
+            f"{row['log_loss']:.4f} | {row['brier']:.4f} | "
+            f"{row['roc_auc']:.4f} | {row['pr_auc']:.4f} | {row['ece']:.4f} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Fixed-model feature ablation",
+            "",
+            f"Every row below uses {ABLATION_MODEL} on the same match folds so feature-group value is not confounded by changing model families.",
+            "",
+            "| Target | Layout | Timing | Log loss | Improvement | ROC-AUC | PR-AUC | PR-AUC gain |",
+            "|---|---|---|---:|---:|---:|---:|---:|",
+        ]
+    )
+    for row in ablation.itertuples(index=False):
+        log_loss_gain = (
+            "—"
+            if pd.isna(row.log_loss_improvement_vs_previous)
+            else f"{row.log_loss_improvement_vs_previous:+.4f}"
+        )
+        pr_auc_gain = (
+            "—"
+            if pd.isna(row.pr_auc_gain_vs_previous)
+            else f"{row.pr_auc_gain_vs_previous:+.4f}"
+        )
+        lines.append(
+            f"| {row.target} | {row.layout} | {row.timing} | "
+            f"{row.log_loss:.4f} | {log_loss_gain} | {row.roc_auc:.4f} | "
+            f"{row.pr_auc:.4f} | {pr_auc_gain} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Interpretation",
+            "",
+            "This benchmark selects predictive layouts, not causal treatment effects. "
+            "Only the Start Context layout is available at possession start. Layouts "
+            "containing styles or full-possession shape are retrospective and must not "
+            "be presented as early forecasts.",
+            "",
+            "Player skill values are empirical-Bayes estimates derived from event data and "
+            "shrunk toward position priors. A future player can be processed with the same "
+            "component schema without retraining on their identity.",
+        ]
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+V2_CATEGORICAL_FEATURES = [
+    "play_pattern",
+    "competition_stage",
+    "score_state",
+    "attacking_style",
+    "team",
+    "opponent",
+]
+V2_NUMERIC_FEATURES = [
+    "period",
+    "start_minute",
+    "start_x",
+    "start_y",
+    "score_difference",
+    "team_prior_xg_per_possession",
+    "team_prior_transition_shot_conceded",
+    "opponent_prior_counter_shot",
+    "matchup_rest_defense_vs_counter",
+    "matchup_turnover_counter_pressure",
+]
+
+
+def _allocate_match_splits(
+    frame: pd.DataFrame,
+    *,
+    target: str = CANONICAL_TARGET,
+    random_state: int = RANDOM_STATE,
+) -> dict[str, list[int]]:
+    """Allocate positive and negative matches into four disjoint partitions."""
+
+    stats = frame.groupby("match_id")[target].sum().sort_index()
+    rng = np.random.default_rng(random_state)
+    positive = stats[stats.gt(0)].index.to_numpy(copy=True)
+    negative = stats[stats.eq(0)].index.to_numpy(copy=True)
+    rng.shuffle(positive)
+    rng.shuffle(negative)
+    names = ("train", "calibration", "threshold", "test")
+    fractions = np.array([0.55, 0.15, 0.15, 0.15])
+    result: dict[str, list[int]] = {name: [] for name in names}
+
+    for values in (positive, negative):
+        counts = np.floor(len(values) * fractions).astype(int)
+        if len(values) >= 4:
+            counts = np.maximum(counts, 1)
+        while counts.sum() < len(values):
+            counts[int(np.argmax(fractions - counts / max(len(values), 1)))] += 1
+        while counts.sum() > len(values):
+            removable = np.where(counts > (1 if len(values) >= 4 else 0))[0]
+            counts[int(removable[np.argmax(counts[removable])])] -= 1
+        cursor = 0
+        for name, count in zip(names, counts, strict=True):
+            result[name].extend(int(value) for value in values[cursor : cursor + count])
+            cursor += count
+
+    for name in names:
+        result[name] = sorted(result[name])
+    sets = [set(result[name]) for name in names]
+    if any(sets[left] & sets[right] for left in range(4) for right in range(left + 1, 4)):
+        raise RuntimeError("Four-way match split is not disjoint")
+    if set.union(*sets) != set(int(value) for value in stats.index):
+        raise RuntimeError("Four-way match split does not cover every match")
+    return result
+
+
+def _calibration_features(probability: np.ndarray, method: str) -> np.ndarray:
+    clipped = np.clip(np.asarray(probability, dtype=float), 1e-6, 1 - 1e-6)
+    if method == "platt":
+        return np.log(clipped / (1 - clipped)).reshape(-1, 1)
+    if method == "beta":
+        return np.column_stack([np.log(clipped), -np.log1p(-clipped)])
+    raise ValueError(f"Unsupported parametric calibration method: {method}")
+
+
+def fit_calibrator(
+    probability: np.ndarray,
+    truth: np.ndarray,
+    method: str,
+) -> dict[str, object]:
+    """Fit isotonic, Platt, or beta calibration on a dedicated partition."""
+
+    if np.unique(truth).size < 2:
+        raise ValueError(f"{method} calibration requires both target classes")
+    if method == "isotonic":
+        model: object = IsotonicRegression(out_of_bounds="clip", y_min=0, y_max=1)
+        model.fit(probability, truth)
+    else:
+        model = LogisticRegression(C=1.0, max_iter=2_000, random_state=RANDOM_STATE)
+        model.fit(_calibration_features(probability, method), truth)
+    return {"method": method, "model": model}
+
+
+def apply_calibrator(calibrator: dict[str, object], probability: np.ndarray) -> np.ndarray:
+    """Apply a serialized calibrator dictionary."""
+
+    method = str(calibrator["method"])
+    model = calibrator["model"]
+    if method == "isotonic":
+        calibrated = model.predict(probability)
+    else:
+        calibrated = model.predict_proba(_calibration_features(probability, method))[:, 1]
+    return np.clip(np.asarray(calibrated, dtype=float), 0, 1)
+
+
+def predict_bundle_probability(bundle: dict[str, object], frame: pd.DataFrame) -> np.ndarray:
+    """Generate calibrated probabilities from a v2 serialized bundle."""
+
+    features = list(bundle["feature_names"])
+    missing = sorted(set(features) - set(frame.columns))
+    if missing:
+        raise ValueError(f"Prediction frame is missing bundle features: {missing}")
+    raw = bundle["model"].predict_proba(frame[features])[:, 1]
+    return apply_calibrator(bundle["calibrator"], raw)
+
+
+def optimize_precision_threshold(
+    truth: np.ndarray,
+    probability: np.ndarray,
+    *,
+    minimum_precision: float = MIN_PRECISION,
+) -> dict[str, object]:
+    """Maximize F-0.5 over 0.01–0.50 subject to a precision floor."""
+
+    candidates: list[dict[str, float]] = []
+    for threshold in np.linspace(0.01, 0.50, 100):
+        predicted = probability >= threshold
+        if not predicted.any():
+            continue
+        precision = precision_score(truth, predicted, zero_division=0)
+        if precision < minimum_precision:
+            continue
+        candidates.append(
+            {
+                "threshold": float(threshold),
+                "precision": float(precision),
+                "recall": float(recall_score(truth, predicted, zero_division=0)),
+                "f0_5": float(fbeta_score(truth, predicted, beta=0.5, zero_division=0)),
+                "predicted_positive_rate": float(predicted.mean()),
+            }
+        )
+    if not candidates:
+        return {
+            "status": "no validated threshold",
+            "threshold": None,
+            "precision": None,
+            "recall": None,
+            "f0_5": None,
+            "predicted_positive_rate": 0.0,
+        }
+    return max(candidates, key=lambda row: (row["f0_5"], row["precision"]))
+
+
+def _classification_metrics(
+    truth: np.ndarray,
+    probability: np.ndarray,
+    threshold: float | None,
+) -> dict[str, object]:
+    clipped = np.clip(probability, 1e-6, 1 - 1e-6)
+    predicted = (
+        np.zeros(len(probability), dtype=bool)
+        if threshold is None
+        else probability >= threshold
+    )
+    return {
+        "rows": int(len(truth)),
+        "positives": int(truth.sum()),
+        "positive_rate": float(truth.mean()),
+        "unique_probabilities": int(np.unique(np.round(probability, 12)).size),
+        "probability_variance": float(np.var(probability)),
+        "predicted_positives": int(predicted.sum()),
+        "predicted_positive_rate": float(predicted.mean()),
+        "precision": (
+            None
+            if threshold is None
+            else float(precision_score(truth, predicted, zero_division=0))
+        ),
+        "recall": (
+            None
+            if threshold is None
+            else float(recall_score(truth, predicted, zero_division=0))
+        ),
+        "f0_5": (
+            None
+            if threshold is None
+            else float(fbeta_score(truth, predicted, beta=0.5, zero_division=0))
+        ),
+        "brier": float(brier_score_loss(truth, clipped)),
+        "pr_auc": float(average_precision_score(truth, clipped)),
+        "roc_auc": (
+            float(roc_auc_score(truth, clipped))
+            if np.unique(truth).size == 2
+            else None
+        ),
+        "asymmetric_cost": float(
+            10 * np.sum(predicted & (truth == 0))
+            + np.sum((~predicted) & (truth == 1))
+        ),
+    }
+
+
+def _rare_model_definitions(scale_pos_weight: float) -> dict[str, object]:
+    """Return bounded, explicitly cost-sensitive rare-event candidates."""
+
+    return {
+        "Logistic Regression": LogisticRegression(
+            C=0.5,
+            class_weight="balanced",
+            max_iter=2_000,
+            solver="lbfgs",
+            random_state=RANDOM_STATE,
+        ),
+        "Random Forest": RandomForestClassifier(
+            n_estimators=220,
+            min_samples_leaf=6,
+            max_features=0.7,
+            class_weight="balanced_subsample",
+            n_jobs=2,
+            random_state=RANDOM_STATE,
+        ),
+        "Histogram Gradient Boosting": HistGradientBoostingClassifier(
+            learning_rate=0.04,
+            max_iter=180,
+            max_leaf_nodes=15,
+            min_samples_leaf=20,
+            l2_regularization=2.0,
+            class_weight="balanced",
+            random_state=RANDOM_STATE,
+        ),
+        "XGBoost": XGBClassifier(
+            n_estimators=240,
+            learning_rate=0.035,
+            max_depth=3,
+            min_child_weight=5,
+            subsample=0.85,
+            colsample_bytree=0.8,
+            reg_lambda=3.0,
+            scale_pos_weight=scale_pos_weight,
+            objective="binary:logistic",
+            eval_metric="logloss",
+            n_jobs=2,
+            random_state=RANDOM_STATE,
+        ),
+    }
+
+
+def run_v2_training(args: argparse.Namespace) -> dict[str, object]:
+    """Train and safely serialize the canonical rare-transition model."""
+
+    timer = PipelineTimer(pipeline="benchmark_coaching_models_v2")
+    with timer.stage("load_and_split_data", total=4, unit="partition") as update:
+        recommendation_rows = pd.read_csv(DEFAULT_RECOMMENDATIONS, low_memory=False)
+        target_rows = pd.read_csv(
+            args.possessions,
+            usecols=["possession_uid", "match_id", TARGET_SOURCE_COLUMN],
+            low_memory=False,
+        ).drop_duplicates("possession_uid")
+        canonical = (
+            recommendation_rows[recommendation_rows["is_test_fold"].astype(bool)]
+            .drop_duplicates("possession_uid")
+            .merge(
+                target_rows[["possession_uid", TARGET_SOURCE_COLUMN]],
+                on="possession_uid",
+                how="inner",
+                validate="one_to_one",
+            )
+        )
+        canonical[CANONICAL_TARGET] = canonical[TARGET_SOURCE_COLUMN].astype(int)
+        split_matches = _allocate_match_splits(canonical)
+        update(1, "allocated disjoint matches")
+
+        training_source = (
+            recommendation_rows[~recommendation_rows["is_test_fold"].astype(bool)]
+            .sort_values(["possession_uid", "validation_fold"])
+            .drop_duplicates("possession_uid")
+            .merge(
+                target_rows[["possession_uid", TARGET_SOURCE_COLUMN]],
+                on="possession_uid",
+                how="inner",
+                validate="one_to_one",
+            )
+        )
+        training_source[CANONICAL_TARGET] = training_source[TARGET_SOURCE_COLUMN].astype(int)
+        partitions = {
+            "train": training_source[
+                training_source["match_id"].isin(split_matches["train"])
+            ].copy()
+        }
+        for name in ("calibration", "threshold", "test"):
+            partitions[name] = canonical[
+                canonical["match_id"].isin(split_matches[name])
+            ].copy()
+        update(4, "materialized train/calibration/threshold/test")
+
+    feature_names = V2_CATEGORICAL_FEATURES + V2_NUMERIC_FEATURES
+    train_truth = partitions["train"][CANONICAL_TARGET].to_numpy(dtype=int)
+    scale_pos_weight = float(
+        max(np.sum(train_truth == 0) / max(np.sum(train_truth == 1), 1), 1.0)
+    )
+    candidates = _rare_model_definitions(scale_pos_weight)
+    candidate_records: list[dict[str, object]] = []
+    fitted_candidates: dict[str, Pipeline] = {}
+    calibration_truth = partitions["calibration"][CANONICAL_TARGET].to_numpy(dtype=int)
+    with timer.stage("fit_cost_sensitive_models", total=len(candidates), unit="model") as update:
+        for index, (name, estimator) in enumerate(candidates.items(), start=1):
+            pipeline = Pipeline(
+                [
+                    ("preprocess", preprocessor(V2_NUMERIC_FEATURES, V2_CATEGORICAL_FEATURES)),
+                    ("model", estimator),
+                ]
+            )
+            started = time.perf_counter()
+            pipeline.fit(partitions["train"][feature_names], train_truth)
+            probability = pipeline.predict_proba(
+                partitions["calibration"][feature_names]
+            )[:, 1]
+            fitted_candidates[name] = pipeline
+            candidate_records.append(
+                {
+                    "model": name,
+                    "calibration_pr_auc": float(
+                        average_precision_score(calibration_truth, probability)
+                    ),
+                    "calibration_brier": float(
+                        brier_score_loss(calibration_truth, probability)
+                    ),
+                    "fit_seconds": time.perf_counter() - started,
+                }
+            )
+            update(index, name)
+
+    selected_record = max(
+        candidate_records,
+        key=lambda row: (row["calibration_pr_auc"], -row["calibration_brier"]),
+    )
+    selected_name = str(selected_record["model"])
+    selected_model = fitted_candidates[selected_name]
+    raw_calibration = selected_model.predict_proba(
+        partitions["calibration"][feature_names]
+    )[:, 1]
+    raw_threshold = selected_model.predict_proba(
+        partitions["threshold"][feature_names]
+    )[:, 1]
+    threshold_truth = partitions["threshold"][CANONICAL_TARGET].to_numpy(dtype=int)
+    calibration_candidates: list[tuple[float, str, dict[str, object]]] = []
+    with timer.stage("fit_probability_calibrators", total=3, unit="calibrator") as update:
+        for index, method in enumerate(("platt", "beta", "isotonic"), start=1):
+            calibrator = fit_calibrator(raw_calibration, calibration_truth, method)
+            probability = apply_calibrator(calibrator, raw_threshold)
+            calibration_candidates.append(
+                (float(brier_score_loss(threshold_truth, probability)), method, calibrator)
+            )
+            update(index, method)
+    _, calibration_method, calibrator = min(calibration_candidates, key=lambda item: item[0])
+    threshold_probability = apply_calibrator(calibrator, raw_threshold)
+    threshold_result = optimize_precision_threshold(threshold_truth, threshold_probability)
+    candidate_threshold = threshold_result["threshold"]
+
+    test_truth = partitions["test"][CANONICAL_TARGET].to_numpy(dtype=int)
+    raw_test = selected_model.predict_proba(partitions["test"][feature_names])[:, 1]
+    test_probability = apply_calibrator(calibrator, raw_test)
+    test_metrics = _classification_metrics(test_truth, test_probability, candidate_threshold)
+    validated = (
+        candidate_threshold is not None
+        and test_metrics["precision"] is not None
+        and float(test_metrics["precision"]) >= MIN_PRECISION
+    )
+    deployed_threshold = float(candidate_threshold) if validated else None
+    deployment_status = "validated" if validated else "no validated threshold"
+    test_metrics = _classification_metrics(test_truth, test_probability, deployed_threshold)
+
+    split_hash = hashlib.sha256(
+        json.dumps(split_matches, sort_keys=True).encode("utf-8")
+    ).hexdigest()
+    schema_hash = hashlib.sha256(
+        json.dumps(feature_names, sort_keys=False).encode("utf-8")
+    ).hexdigest()
+    replay_frame = partitions["test"][feature_names].head(25).copy()
+    bundle: dict[str, object] = {
+        "schema_version": "3.0-v2",
+        "model_version": "transition-conceded-v2",
+        "target": CANONICAL_TARGET,
+        "target_source_column": TARGET_SOURCE_COLUMN,
+        "feature_names": feature_names,
+        "categorical_features": V2_CATEGORICAL_FEATURES,
+        "numeric_features": V2_NUMERIC_FEATURES,
+        "feature_schema_hash": schema_hash,
+        "fold_assignment_hash": split_hash,
+        "split_matches": split_matches,
+        "model_name": selected_name,
+        "model": selected_model,
+        "scalar_transformers": selected_model.named_steps["preprocess"],
+        "feature_defaults": {
+            column: (
+                float(pd.to_numeric(partitions["train"][column], errors="coerce").median())
+                if column in V2_NUMERIC_FEATURES
+                else str(partitions["train"][column].dropna().mode().iloc[0])
+            )
+            for column in feature_names
+        },
+        "calibrator": calibrator,
+        "calibration_method": calibration_method,
+        "candidate_threshold": candidate_threshold,
+        "threshold": deployed_threshold,
+        "threshold_status": deployment_status,
+        "minimum_precision": MIN_PRECISION,
+        "dataset_size": int(sum(len(frame) for frame in partitions.values())),
+        "positive_count": int(sum(frame[CANONICAL_TARGET].sum() for frame in partitions.values())),
+        "partition_counts": {
+            name: {
+                "rows": int(len(frame)),
+                "matches": int(frame["match_id"].nunique()),
+                "positives": int(frame[CANONICAL_TARGET].sum()),
+            }
+            for name, frame in partitions.items()
+        },
+        "candidate_models": candidate_records,
+        "threshold_selection": threshold_result,
+        "holdout_metrics": test_metrics,
+        "runtime_metadata": timer.summary(),
+        "replay_sample": replay_frame.to_dict("records"),
+        "replay_probabilities": test_probability[: len(replay_frame)].tolist(),
+    }
+
+    args.model_output.parent.mkdir(parents=True, exist_ok=True)
+    args.predictions_output.parent.mkdir(parents=True, exist_ok=True)
+    args.metrics_output.parent.mkdir(parents=True, exist_ok=True)
+    joblib.dump(bundle, args.model_output)
+    reloaded = joblib.load(args.model_output)
+    replay = predict_bundle_probability(reloaded, pd.DataFrame(reloaded["replay_sample"]))
+    artifact_replay_equal = bool(
+        np.allclose(replay, np.asarray(reloaded["replay_probabilities"]), atol=1e-12)
+    )
+    if not artifact_replay_equal:
+        raise RuntimeError("Serialized artifact failed exact probability replay")
+
+    prediction_output = partitions["test"][
+        ["possession_uid", "match_id", CANONICAL_TARGET]
+    ].copy()
+    prediction_output["fold"] = "test"
+    prediction_output["calibrated_probability"] = test_probability
+    prediction_output["threshold"] = (
+        np.nan if deployed_threshold is None else deployed_threshold
+    )
+    prediction_output["predicted_positive"] = (
+        False if deployed_threshold is None else test_probability >= deployed_threshold
+    )
+    prediction_output.to_csv(args.predictions_output, index=False)
+    validation = {
+        "schema_version": 1,
+        "target": CANONICAL_TARGET,
+        "model": selected_name,
+        "calibration_method": calibration_method,
+        "threshold_status": deployment_status,
+        "candidate_threshold": candidate_threshold,
+        "deployed_threshold": deployed_threshold,
+        "splits": bundle["partition_counts"],
+        "fold_assignment_hash": split_hash,
+        "holdout_metrics": test_metrics,
+        "artifact_replay_equal": artifact_replay_equal,
+        "candidate_models": candidate_records,
+    }
+    args.metrics_output.write_text(json.dumps(validation, indent=2) + "\n", encoding="utf-8")
+    return validation
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--possessions", type=Path, default=DEFAULT_POSSESSIONS)
+    parser.add_argument("--components", type=Path, default=DEFAULT_COMPONENTS)
+    parser.add_argument("--lineups", type=Path, default=DEFAULT_LINEUPS)
+    parser.add_argument("--features-output", type=Path, default=DEFAULT_FEATURES)
+    parser.add_argument("--leaderboard-output", type=Path, default=DEFAULT_LEADERBOARD)
+    parser.add_argument("--fold-output", type=Path, default=DEFAULT_FOLDS)
+    parser.add_argument("--ablation-output", type=Path, default=DEFAULT_ABLATION)
+    parser.add_argument("--predictions-output", type=Path, default=DEFAULT_V2_PREDICTIONS)
+    parser.add_argument("--report-output", type=Path, default=DEFAULT_REPORT)
+    parser.add_argument("--model-output", type=Path, default=DEFAULT_V2_MODEL)
+    parser.add_argument("--metrics-output", type=Path, default=DEFAULT_V2_METRICS)
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    validation = run_v2_training(args)
+    print(json.dumps(validation, indent=2))
+    print(f"Wrote calibrated v2 bundle to {args.model_output}")
+    print(f"Wrote untouched-test predictions to {args.predictions_output}")
+    return
+
+    # Preserved original benchmark path below for diff traceability. The v2
+    # entrypoint returns above after the leakage-safe rare-event workflow.
+    possessions = pd.read_csv(args.possessions, low_memory=False)
+    components = pd.read_csv(args.components, low_memory=False)
+    lineups = pd.read_csv(args.lineups, low_memory=False)
+    data = possessions[
+        possessions["attacking_style_cluster"].ge(0)
+        & possessions["defensive_style_cluster"].ge(0)
+        & possessions["period"].le(4)
+    ].copy()
+    data = data.merge(
+        lineups[
+            [
+                "possession_uid",
+                "attacking_player_ids",
+                "defending_player_ids",
+            ]
+        ],
+        on="possession_uid",
+        how="left",
+        validate="one_to_one",
+    ).reset_index(drop=True)
+    if data[["attacking_player_ids", "defending_player_ids"]].isna().any().any():
+        raise RuntimeError("Missing lineup lists after possession merge")
+
+    splitter = StratifiedGroupKFold(
+        n_splits=N_SPLITS, shuffle=True, random_state=RANDOM_STATE
+    )
+    splits = list(
+        splitter.split(data, data["shot"].astype(int), groups=data["match_id"])
+    )
+    player_features, fold_ids = cross_fitted_player_features(
+        data, components, splits
+    )
+    data = pd.concat([data, player_features], axis=1)
+    data["validation_fold"] = fold_ids
+    player_columns = player_features.columns.tolist()
+    all_model_names = list(model_definitions())
+    layouts = {
+        "Start Context": {
+            "numeric_features": START_CONTEXT_NUMERIC_FEATURES,
+            "categorical_features": START_CONTEXT_CATEGORICAL_FEATURES,
+            "model_names": [ABLATION_MODEL],
+            "timing": "Prospective",
+        },
+        "Context + Attack Style": {
+            "numeric_features": START_CONTEXT_NUMERIC_FEATURES,
+            "categorical_features": START_CONTEXT_CATEGORICAL_FEATURES
+            + ["attacking_style"],
+            "model_names": [ABLATION_MODEL],
+            "timing": "Retrospective",
+        },
+        "Context + Both Styles": {
+            "numeric_features": START_CONTEXT_NUMERIC_FEATURES,
+            "categorical_features": START_CONTEXT_CATEGORICAL_FEATURES
+            + ["attacking_style", "defensive_style"],
+            "model_names": [ABLATION_MODEL],
+            "timing": "Retrospective",
+        },
+        "Tactical + Shape": {
+            "numeric_features": START_CONTEXT_NUMERIC_FEATURES
+            + SHAPE_NUMERIC_FEATURES,
+            "categorical_features": START_CONTEXT_CATEGORICAL_FEATURES
+            + ["attacking_style", "defensive_style"],
+            "model_names": all_model_names,
+            "timing": "Retrospective",
+        },
+        "Player-Aware": {
+            "numeric_features": START_CONTEXT_NUMERIC_FEATURES
+            + SHAPE_NUMERIC_FEATURES
+            + player_columns,
+            "categorical_features": START_CONTEXT_CATEGORICAL_FEATURES
+            + ["attacking_style", "defensive_style"],
+            "model_names": all_model_names,
+            "timing": "Retrospective",
+        },
+    }
+
+    leaderboard, fold_metrics, predictions = benchmark(data, splits, layouts)
+    ablation = build_feature_ablation(leaderboard)
+    full_profiles, full_priors = build_profiles(components)
+    positions = (
+        components.groupby("player_id")["position_group"]
+        .agg(mode_or_unknown)
+        .to_dict()
+    )
+    full_player_features = lineup_features(
+        data, full_profiles, full_priors, positions
+    )
+    final_data = data.drop(columns=player_columns).copy()
+    final_data = pd.concat([final_data, full_player_features], axis=1)
+    selected = fit_selected_models(final_data, leaderboard, layouts)
+
+    for path in [
+        args.features_output,
+        args.leaderboard_output,
+        args.fold_output,
+        args.ablation_output,
+        args.predictions_output,
+        args.report_output,
+        args.model_output,
+    ]:
+        path.parent.mkdir(parents=True, exist_ok=True)
+    pd.concat(
+        [
+            data[["possession_uid", "match_id", "validation_fold"]],
+            player_features,
+        ],
+        axis=1,
+    ).to_csv(args.features_output, index=False)
+    leaderboard.to_csv(args.leaderboard_output, index=False)
+    fold_metrics.to_csv(args.fold_output, index=False)
+    ablation.to_csv(args.ablation_output, index=False)
+    predictions.to_csv(args.predictions_output, index=False)
+    write_report(
+        args.report_output,
+        data,
+        leaderboard,
+        ablation,
+        len(player_columns),
+    )
+    joblib.dump(
+        {
+            "version": 2,
+            "purpose": "Possession outcome model architecture benchmark",
+            "selected_models": selected,
+            "targets": TARGETS,
+            "layouts": layouts,
+            "player_skill_schema": {
+                "rate_skills": RATE_SKILLS,
+                "ratio_skills": RATIO_SKILLS,
+                "mean_skills": MEAN_SKILLS,
+                "prior_minutes": PRIOR_MINUTES,
+                "prior_attempts": PRIOR_ATTEMPTS,
+            },
+            "identity_features_used": False,
+            "validation": f"{N_SPLITS}-fold StratifiedGroupKFold by match",
+        },
+        args.model_output,
+    )
+    print(
+        leaderboard.groupby("target", sort=False).head(1)[
+            ["target", "layout", "model", "log_loss", "brier", "roc_auc", "pr_auc"]
+        ].to_string(index=False)
+    )
+    print(f"Wrote leaderboard to {args.leaderboard_output}")
+    print(f"Wrote model bundle to {args.model_output}")
+    print(f"Wrote report to {args.report_output}")
+
+
+if __name__ == "__main__":
+    main()

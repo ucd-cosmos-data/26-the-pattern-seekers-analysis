@@ -1,0 +1,161 @@
+{
+  "team": "Poland",
+  "team_code": "POL",
+  "total_wasted_net_xg": 1.1530464253779815,
+  "mean_eva_gap": 0.004132782886659432,
+  "most_common_optimal_style": "Patient Build-up",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 5668,
+      "player": "Robert Lewandowski",
+      "position_group": "Forward",
+      "optimization_score": 2.595238095238095
+    },
+    {
+      "rank": 2,
+      "player_id": 3034,
+      "player": "Kamil Glik",
+      "position_group": "Center Back",
+      "optimization_score": 2.5476190476190474
+    },
+    {
+      "rank": 3,
+      "player_id": 44166,
+      "player": "Jakub Piotr Kiwior",
+      "position_group": "Center Back",
+      "optimization_score": 2.380952380952381
+    },
+    {
+      "rank": 4,
+      "player_id": 5660,
+      "player": "Piotr Zieliński",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 2.380952380952381
+    },
+    {
+      "rank": 5,
+      "player_id": 4734,
+      "player": "Matty Cash",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.3095238095238093
+    },
+    {
+      "rank": 6,
+      "player_id": 5669,
+      "player": "Wojciech Szczęsny",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.261904761904762
+    },
+    {
+      "rank": 7,
+      "player_id": 11737,
+      "player": "Krystian Bielik",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 1.8571428571428572
+    },
+    {
+      "rank": 8,
+      "player_id": 31955,
+      "player": "Jakub Kamiński",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.857142857142857
+    },
+    {
+      "rank": 9,
+      "player_id": 3637,
+      "player": "Grzegorz Krychowiak",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 1.8095238095238098
+    },
+    {
+      "rank": 10,
+      "player_id": 5673,
+      "player": "Bartosz Bereszyński",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.8095238095238093
+    },
+    {
+      "rank": 11,
+      "player_id": 5667,
+      "player": "Kamil Grosicki",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.0
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": 0.05371858681344797,
+    "mean_delta_pressing": 1.1480384131016306,
+    "mean_delta_recovery": -0.41277703597719034
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "Poland",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 32,
+      "wasted_net_xg": 0.2162323441258215,
+      "mean_eva_gap": 0.006757260753931922
+    },
+    {
+      "team": "Poland",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 27,
+      "wasted_net_xg": 0.20528037387841758,
+      "mean_eva_gap": 0.007602976810311762
+    },
+    {
+      "team": "Poland",
+      "defensive_style": "High-Intensity Press",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 25,
+      "wasted_net_xg": 0.18310473094837432,
+      "mean_eva_gap": 0.007324189237934973
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "Kamil Glik + Matty Cash (0.756)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 90,
+    "GAIN_BELOW_THRESHOLD": 13,
+    "INSUFFICIENT_MINUTES": 7
+  }
+}

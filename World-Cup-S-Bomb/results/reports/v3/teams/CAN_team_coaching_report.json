@@ -1,0 +1,161 @@
+{
+  "team": "Canada",
+  "team_code": "CAN",
+  "total_wasted_net_xg": 0.3080510081625849,
+  "mean_eva_gap": 0.0012835458673441037,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 44703,
+      "player": "Alistair Johnston",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.6842105263157894
+    },
+    {
+      "rank": 2,
+      "player_id": 12365,
+      "player": "Alphonso Davies",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 2.6315789473684212
+    },
+    {
+      "rank": 3,
+      "player_id": 23828,
+      "player": "Kamal Miller",
+      "position_group": "Center Back",
+      "optimization_score": 2.4210526315789473
+    },
+    {
+      "rank": 4,
+      "player_id": 23640,
+      "player": "Jonathan David",
+      "position_group": "Forward",
+      "optimization_score": 2.3684210526315788
+    },
+    {
+      "rank": 5,
+      "player_id": 24024,
+      "player": "Tajon Buchanan",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 2.3157894736842106
+    },
+    {
+      "rank": 6,
+      "player_id": 11846,
+      "player": "Steven de Sousa Vitoria",
+      "position_group": "Center Back",
+      "optimization_score": 2.2105263157894735
+    },
+    {
+      "rank": 7,
+      "player_id": 15958,
+      "player": "Milan Borjan",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.0
+    },
+    {
+      "rank": 8,
+      "player_id": 31684,
+      "player": "Atiba Hutchinson",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 1.8947368421052633
+    },
+    {
+      "rank": 9,
+      "player_id": 9922,
+      "player": "David Junior Hoilett",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.8421052631578947
+    },
+    {
+      "rank": 10,
+      "player_id": 11187,
+      "player": "Stephen Antunes Eustáquio",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 1.5263157894736843
+    },
+    {
+      "rank": 11,
+      "player_id": 16120,
+      "player": "Richie Laryea",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.526315789473684
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": -0.02732457537032948,
+    "mean_delta_pressing": -1.2815588548278736,
+    "mean_delta_recovery": 0.7819119395664498
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "Canada",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 10,
+      "wasted_net_xg": 0.08552843208071345,
+      "mean_eva_gap": 0.008552843208071346
+    },
+    {
+      "team": "Canada",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 7,
+      "wasted_net_xg": 0.059869902456499424,
+      "mean_eva_gap": 0.008552843208071346
+    },
+    {
+      "team": "Canada",
+      "defensive_style": "High-Intensity Press",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 6,
+      "wasted_net_xg": 0.051317059248428075,
+      "mean_eva_gap": 0.008552843208071346
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "Steven de Sousa Vitoria + Kamal Miller (0.647)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 74,
+    "INSUFFICIENT_MINUTES": 8,
+    "GAIN_BELOW_THRESHOLD": 6
+  }
+}

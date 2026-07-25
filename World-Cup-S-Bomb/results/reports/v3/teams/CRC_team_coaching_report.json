@@ -1,0 +1,161 @@
+{
+  "team": "Costa Rica",
+  "team_code": "CRC",
+  "total_wasted_net_xg": 0.6111150505006211,
+  "mean_eva_gap": 0.0031500775799001087,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 5839,
+      "player": "Yeltsin Ignacio Tejeda Valverde",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 2.772727272727273
+    },
+    {
+      "rank": 2,
+      "player_id": 5598,
+      "player": "Óscar Esau Duarte Gaitán",
+      "position_group": "Center Back",
+      "optimization_score": 2.4772727272727275
+    },
+    {
+      "rank": 3,
+      "player_id": 5581,
+      "player": "Joel Nathaniel Campbell Samuels",
+      "position_group": "Forward",
+      "optimization_score": 2.409090909090909
+    },
+    {
+      "rank": 4,
+      "player_id": 130185,
+      "player": "Keysher Fuller Spence",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.3636363636363633
+    },
+    {
+      "rank": 5,
+      "player_id": 5582,
+      "player": "Celso Borges Mora",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.2272727272727275
+    },
+    {
+      "rank": 6,
+      "player_id": 6328,
+      "player": "Kendall Jamaal Waston Manley",
+      "position_group": "Center Back",
+      "optimization_score": 2.227272727272727
+    },
+    {
+      "rank": 7,
+      "player_id": 5597,
+      "player": "Keylor Navas Gamboa",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.2045454545454546
+    },
+    {
+      "rank": 8,
+      "player_id": 5836,
+      "player": "Bryan Oviedo",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.1363636363636362
+    },
+    {
+      "rank": 9,
+      "player_id": 5600,
+      "player": "Francisco Javier Calvo Quesada",
+      "position_group": "Center Back",
+      "optimization_score": 2.1363636363636362
+    },
+    {
+      "rank": 10,
+      "player_id": 27163,
+      "player": "Juan Pablo Vargas Campos",
+      "position_group": "Center Back",
+      "optimization_score": 1.9090909090909092
+    },
+    {
+      "rank": 11,
+      "player_id": 132728,
+      "player": "Jewison Bennette",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.727272727272727
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": 0.10059627109537979,
+    "mean_delta_pressing": 0.962242917294527,
+    "mean_delta_recovery": -0.47086835009262723
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "Costa Rica",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 17,
+      "wasted_net_xg": 0.14921516554759212,
+      "mean_eva_gap": 0.008777362679270125
+    },
+    {
+      "team": "Costa Rica",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 16,
+      "wasted_net_xg": 0.14557034651437298,
+      "mean_eva_gap": 0.009098146657148311
+    },
+    {
+      "team": "Costa Rica",
+      "defensive_style": "High-Intensity Press",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 14,
+      "wasted_net_xg": 0.12764006918173143,
+      "mean_eva_gap": 0.009117147798695102
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "Keylor Navas Gamboa + Óscar Esau Duarte Gaitán (0.649)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 105,
+    "GAIN_BELOW_THRESHOLD": 11,
+    "INSUFFICIENT_MINUTES": 5
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "target": "transition_conceded",
+  "model": "Logistic Regression",
+  "calibration_method": "platt",
+  "threshold_status": "no validated threshold",
+  "candidate_threshold": null,
+  "deployed_threshold": null,
+  "splits": {
+    "train": {
+      "rows": 5423,
+      "matches": 35,
+      "positives": 7
+    },
+    "calibration": {
+      "rows": 1469,
+      "matches": 10,
+      "positives": 2
+    },
+    "threshold": {
+      "rows": 1444,
+      "matches": 10,
+      "positives": 2
+    },
+    "test": {
+      "rows": 1349,
+      "matches": 9,
+      "positives": 2
+    }
+  },
+  "fold_assignment_hash": "0c620b0a3ce55bbb67baefce06d31a820e7a18492376673a21b80087c2435e10",
+  "holdout_metrics": {
+    "rows": 1349,
+    "positives": 2,
+    "positive_rate": 0.0014825796886582653,
+    "unique_probabilities": 1252,
+    "probability_variance": 7.235968115450994e-07,
+    "predicted_positives": 0,
+    "predicted_positive_rate": 0.0,
+    "precision": null,
+    "recall": null,
+    "f0_5": null,
+    "brier": 0.001477846004288718,
+    "pr_auc": 0.016655274550011392,
+    "roc_auc": 0.7420193021529324,
+    "asymmetric_cost": 2.0
+  },
+  "artifact_replay_equal": true,
+  "candidate_models": [
+    {
+      "model": "Logistic Regression",
+      "calibration_pr_auc": 0.004674474580251262,
+      "calibration_brier": 0.022281870812644163,
+      "fit_seconds": 0.4019168000668287
+    },
+    {
+      "model": "Random Forest",
+      "calibration_pr_auc": 0.003039225760047266,
+      "calibration_brier": 0.0017341522293986133,
+      "fit_seconds": 2.7003171000396833
+    },
+    {
+      "model": "Histogram Gradient Boosting",
+      "calibration_pr_auc": 0.004497593805405797,
+      "calibration_brier": 0.0015068235823662258,
+      "fit_seconds": 2.584434099961072
+    },
+    {
+      "model": "XGBoost",
+      "calibration_pr_auc": 0.004153726708074535,
+      "calibration_brier": 0.004238883964717388,
+      "fit_seconds": 0.5141085999784991
+    }
+  ]
+}

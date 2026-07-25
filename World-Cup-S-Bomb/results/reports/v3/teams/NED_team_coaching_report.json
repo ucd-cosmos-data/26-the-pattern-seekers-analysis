@@ -1,0 +1,161 @@
+{
+  "team": "Netherlands",
+  "team_code": "NED",
+  "total_wasted_net_xg": 0.9238966373741383,
+  "mean_eva_gap": 0.0024902874322753053,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 3669,
+      "player": "Virgil van Dijk",
+      "position_group": "Center Back",
+      "optimization_score": 2.6190476190476186
+    },
+    {
+      "rank": 2,
+      "player_id": 8118,
+      "player": "Frenkie de Jong",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.428571428571429
+    },
+    {
+      "rank": 3,
+      "player_id": 3306,
+      "player": "Nathan Aké",
+      "position_group": "Center Back",
+      "optimization_score": 2.2857142857142856
+    },
+    {
+      "rank": 4,
+      "player_id": 3311,
+      "player": "Daley Blind",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.0952380952380953
+    },
+    {
+      "rank": 5,
+      "player_id": 8326,
+      "player": "Andries Noppert",
+      "position_group": "Goalkeeper",
+      "optimization_score": 2.095238095238095
+    },
+    {
+      "rank": 6,
+      "player_id": 7891,
+      "player": "Teun Koopmeiners",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.0476190476190474
+    },
+    {
+      "rank": 7,
+      "player_id": 2988,
+      "player": "Memphis Depay",
+      "position_group": "Forward",
+      "optimization_score": 2.0
+    },
+    {
+      "rank": 8,
+      "player_id": 20750,
+      "player": "Cody Mathès Gakpo",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.9047619047619047
+    },
+    {
+      "rank": 9,
+      "player_id": 8125,
+      "player": "Denzel Dumfries",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.9047619047619047
+    },
+    {
+      "rank": 10,
+      "player_id": 7745,
+      "player": "Steven Berghuis",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 1.9047619047619047
+    },
+    {
+      "rank": 11,
+      "player_id": 21547,
+      "player": "Noa Lang",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 0.14285714285714285
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": 0.023511781538916282,
+    "mean_delta_pressing": 0.7385249965303327,
+    "mean_delta_recovery": 0.056976363768287325
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "Netherlands",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 29,
+      "wasted_net_xg": 0.22417245198816887,
+      "mean_eva_gap": 0.007730084551316168
+    },
+    {
+      "team": "Netherlands",
+      "defensive_style": "Wide Retreating Block",
+      "actual_style": "Short Under Pressure",
+      "optimal_style": "Patient Build-up",
+      "possessions": 19,
+      "wasted_net_xg": 0.15159301056427585,
+      "mean_eva_gap": 0.007978579503382939
+    },
+    {
+      "team": "Netherlands",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Patient Build-up",
+      "possessions": 15,
+      "wasted_net_xg": 0.13683484838801507,
+      "mean_eva_gap": 0.009122323225867672
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "oof_metrics": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "oof_provenance": "64-match leave-one-match-out; held-out match excluded"
+  },
+  "top_positive_synergy_pair": "Virgil van Dijk + Andries Noppert (0.840)",
+  "substitution_suppression_reason_counts": {
+    "POSITIONAL_INCOMPATIBILITY": 92,
+    "GAIN_BELOW_THRESHOLD": 14,
+    "INSUFFICIENT_MINUTES": 4
+  }
+}

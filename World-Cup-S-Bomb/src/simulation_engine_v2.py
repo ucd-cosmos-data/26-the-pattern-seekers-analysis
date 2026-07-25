@@ -22,10 +22,6 @@ ATTACKING_STYLES = (
 )
 CANONICAL_TRANSITION_TARGET = "transition_conceded"
 MIN_SUBSTITUTION_NET_XG_GAIN = 0.0050
-REASON_GAIN_BELOW_THRESHOLD = "GAIN_BELOW_THRESHOLD"
-REASON_CI_OVERLAPS_ZERO = "CONFIDENCE_INTERVAL_OVERLAPS_ZERO"
-REASON_CLASSIFIER_ABSTAINED = "CLASSIFIER_ABSTAINED"
-REASON_POSITIONAL_INCOMPATIBILITY = "POSITIONAL_INCOMPATIBILITY"
 ROLE_PROTOTYPES: dict[str, dict[str, float]] = {
     "Target Forward": {"aerial_dominance_index": 2, "shots_p90": 2},
     "Ball-Winner": {"pressing_intensity_index": 3, "duel_win_rate": 1},
@@ -990,7 +986,7 @@ def simulate_starter_replacement_impact(
     profiles_df: pd.DataFrame,
     synergy_df: pd.DataFrame,
     hurdle_model: EmpiricalHurdleModel,
-) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Evaluate every starter/bench swap and derive optimized elevens."""
 
     totals = aggregate_player_components(components_df).sort_values(
@@ -1004,7 +1000,6 @@ def simulate_starter_replacement_impact(
     }
     profile_lookup = profiles_df.set_index("player_id")
     records = []
-    suppression_records = []
     optimized_rows = []
     for team, squad in totals.groupby("team", sort=True):
         squad = squad.sort_values("minutes", ascending=False)
@@ -1030,31 +1025,7 @@ def simulate_starter_replacement_impact(
                     profile_lookup.loc[substitute, "position_group"]
                 )
                 substitute_minutes = float(profile_lookup.loc[substitute, "minutes"])
-                if starter_position != substitute_position:
-                    suppression_records.append(
-                        {
-                            "team": team,
-                            "starter_player_id": starter,
-                            "bench_player_id": substitute,
-                            "reason_code": REASON_POSITIONAL_INCOMPATIBILITY,
-                            "expected_net_xg_gain": np.nan,
-                            "gain_ci_low": np.nan,
-                            "gain_ci_high": np.nan,
-                        }
-                    )
-                    continue
-                if substitute_minutes < 45:
-                    suppression_records.append(
-                        {
-                            "team": team,
-                            "starter_player_id": starter,
-                            "bench_player_id": substitute,
-                            "reason_code": "INSUFFICIENT_MINUTES",
-                            "expected_net_xg_gain": np.nan,
-                            "gain_ci_low": np.nan,
-                            "gain_ci_high": np.nan,
-                        }
-                    )
+                if starter_position != substitute_position or substitute_minutes < 45:
                     continue
                 candidate = [
                     substitute if player == starter else player
@@ -1077,17 +1048,6 @@ def simulate_starter_replacement_impact(
                 )
                 gain = value - baseline_value
                 if gain <= MIN_SUBSTITUTION_NET_XG_GAIN:
-                    suppression_records.append(
-                        {
-                            "team": team,
-                            "starter_player_id": starter,
-                            "bench_player_id": substitute,
-                            "reason_code": REASON_GAIN_BELOW_THRESHOLD,
-                            "expected_net_xg_gain": gain,
-                            "gain_ci_low": np.nan,
-                            "gain_ci_high": np.nan,
-                        }
-                    )
                     continue
                 interval_low, interval_high = _match_bootstrap_substitution_interval(
                     components_df,
@@ -1097,17 +1057,6 @@ def simulate_starter_replacement_impact(
                     gain,
                 )
                 if interval_low <= 0:
-                    suppression_records.append(
-                        {
-                            "team": team,
-                            "starter_player_id": starter,
-                            "bench_player_id": substitute,
-                            "reason_code": REASON_CI_OVERLAPS_ZERO,
-                            "expected_net_xg_gain": gain,
-                            "gain_ci_low": interval_low,
-                            "gain_ci_high": interval_high,
-                        }
-                    )
                     continue
                 team_records.append(
                     {
@@ -1178,11 +1127,7 @@ def simulate_starter_replacement_impact(
                     "optimization_score": float(row.optimization_score),
                 }
             )
-    return (
-        pd.DataFrame(records),
-        pd.DataFrame(optimized_rows),
-        pd.DataFrame(suppression_records),
-    )
+    return pd.DataFrame(records), pd.DataFrame(optimized_rows)
 
 
 def calculate_expected_vs_actual_deltas(
@@ -1222,9 +1167,6 @@ def calculate_expected_vs_actual_deltas(
     ]
     detail["eva_gap"] = np.where(meaningful, detail["raw_eva_gap"], 0.0)
     detail["recommendation_is_meaningful"] = meaningful
-    detail["tactical_reason_code"] = np.where(
-        meaningful, "SUPPORTED_CHANGE", REASON_GAIN_BELOW_THRESHOLD
-    )
     summary = (
         detail.groupby("team", as_index=False)
         .agg(
