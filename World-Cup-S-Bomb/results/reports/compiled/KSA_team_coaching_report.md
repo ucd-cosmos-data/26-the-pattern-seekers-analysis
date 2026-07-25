@@ -1,22 +1,26 @@
 # Saudi Arabia — Team Coaching Report
 
-- Total wasted Net xG: 0.7693
-- Mean possession EvA gap: 0.003681
-- Most common optimal style: Patient Build-up
+## Model-grounded summary
+
+Saudi Arabia: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -0.540. Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+- Total wasted Net xG: 0.3206
+- Mean possession EvA gap: 0.001534
+- Most common optimal style: No meaningful change
 
 ## Optimized starting 11
 
-1. Salem Mohammed Al Dawsari (Central/Wide Midfield)
-2. Mohammed Kanoo (Central/Wide Midfield)
-3. Saud Abdullah Abdul Hamid (Fullback/Wingback)
-4. Firas Tariq Nasser Al Albirakan (Central/Wide Midfield)
-5. Abdulelah Al Amri (Center Back)
-6. Mohammed Khalil Al Owais (Goalkeeper)
-7. Abdulelah Saad Hameed Al-Malki (Defensive Midfield)
-8. Sultan Abdullah Salim Al Ghannam (Fullback/Wingback)
-9. Saleh Khalid Al Shehri (Forward)
-10. Ali Albulayhi (Center Back)
-11. Mohammed Al Burayk (Fullback/Wingback)
+1. Mohammed Kanoo (Central/Wide Midfield)
+2. Saud Abdullah Abdul Hamid (Fullback/Wingback)
+3. Salem Mohammed Al Dawsari (Central/Wide Midfield)
+4. Mohammed Khalil Al Owais (Goalkeeper)
+5. Firas Tariq Nasser Al Albirakan (Central/Wide Midfield)
+6. Ali Albulayhi (Center Back)
+7. Abdulelah Al Amri (Center Back)
+8. Saleh Khalid Al Shehri (Forward)
+9. Abdulelah Saad Hameed Al-Malki (Defensive Midfield)
+10. Sultan Abdullah Salim Al Ghannam (Fullback/Wingback)
+11. Nawaf Shaker Al Abid (Attacking Midfield/Wing)
 
 ## Physical matchup deltas
 
@@ -28,21 +32,20 @@
 
 ## Best bench intervention
 
-Haitham Mohammed Asiri for Sultan Abdullah Salim Al Ghannam (expected Net xG gain 0.00176)
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 118, INSUFFICIENT_MINUTES: 14.
+
+## V4 role-relative player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 
-- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.2002 cumulative Net xG)
-- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.1386 cumulative Net xG)
-- Against High-Intensity Press: switch from Short Under Pressure to Patient Build-up (0.1309 cumulative Net xG)
+- Against Wide Retreating Block: switch from Direct Long Play to Patient Build-up (0.1140 cumulative Net xG)
+- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.0558 cumulative Net xG)
+- Against Compact Pressure Block: switch from Direct Long Play to Patient Build-up (0.0500 cumulative Net xG)
 
-_Counterfactual values are predictive scenario estimates, not causal treatment effects. The corrupted stored coaching bundle was not used; this report uses the documented empirical hurdle fallback._
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+_Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._

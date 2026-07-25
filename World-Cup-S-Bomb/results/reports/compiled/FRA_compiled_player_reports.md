@@ -1,16 +1,8 @@
-# FRA — Complete Player Report Collection
+# FRA — V4 Player Evaluation Collection
 
-- Included player reports: 15
-- Compilation policy: complete source reports, no omitted sections.
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+- Included 300+ minute players: 12
+- Rankings are role-relative; cross-role score comparisons are invalid.
+- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
@@ -21,7 +13,13 @@ against video, training data, medical context, and opponent-specific scouting.
 - Team: France (FRA)
 - Position: Left Center Forward
 - Functional role: Progressive Winger
-- Net xG contribution per 90: 0.7283
+- Risk-adjusted OBV per 90: -0.1567
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 62.8%
+- Role-relative z-score: +0.510
+- V4 evaluation score: 55.1
+
+![V4 event and 360 heatmap](../heatmaps/FRA/3009_heatmap.svg)
 
 ## Physical profile
 
@@ -40,10 +38,11 @@ against video, training data, medical context, and opponent-specific scouting.
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -53,8 +52,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: France (FRA)
 - Position: Left Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.1585
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: -0.0667
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 31.3%
+- Role-relative z-score: +0.068
+- V4 evaluation score: 50.7
+
+![V4 event and 360 heatmap](../heatmaps/FRA/3026_heatmap.svg)
 
 ## Physical profile
 
@@ -76,7 +81,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -86,8 +93,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: France (FRA)
 - Position: Goalkeeper
-- Functional role: Deep Playmaker
-- Net xG contribution per 90: 0.0280
+- Functional role: Goalkeeper
+- Risk-adjusted OBV per 90: 0.4308
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 1.1%
+- Role-relative z-score: +0.308
+- V4 evaluation score: 53.1
+
+![V4 event and 360 heatmap](../heatmaps/FRA/3099_heatmap.svg)
 
 ## Physical profile
 
@@ -109,7 +122,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -120,7 +135,13 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Team: France (FRA)
 - Position: Center Forward
 - Functional role: Target Forward
-- Net xG contribution per 90: 0.6335
+- Risk-adjusted OBV per 90: -0.2563
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 41.8%
+- Role-relative z-score: +0.920
+- V4 evaluation score: 59.2
+
+![V4 event and 360 heatmap](../heatmaps/FRA/3604_heatmap.svg)
 
 ## Physical profile
 
@@ -141,7 +162,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -151,8 +174,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: France (FRA)
 - Position: Right Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0736
+- Functional role: Wide Creator
+- Risk-adjusted OBV per 90: 0.0142
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 18.0%
+- Role-relative z-score: +0.537
+- V4 evaluation score: 55.4
+
+![V4 event and 360 heatmap](../heatmaps/FRA/4445_heatmap.svg)
 
 ## Physical profile
 
@@ -172,9 +201,11 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Use a compact pressing trigger rather than sustained solo pressure.
 - Target this player on direct restarts and back-post deliveries.
-- Pair with a faster recovery defender after aggressive rotations.
+- Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -185,7 +216,13 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Team: France (FRA)
 - Position: Right Wing
 - Functional role: Progressive Winger
-- Net xG contribution per 90: 0.1190
+- Risk-adjusted OBV per 90: -0.1233
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 57.3%
+- Role-relative z-score: +1.134
+- V4 evaluation score: 61.3
+
+![V4 event and 360 heatmap](../heatmaps/FRA/5477_heatmap.svg)
 
 ## Physical profile
 
@@ -206,7 +243,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -216,8 +255,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: France (FRA)
 - Position: Right Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.1020
+- Functional role: Holding Anchor
+- Risk-adjusted OBV per 90: 0.2007
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 4.2%
+- Role-relative z-score: -1.577
+- V4 evaluation score: 34.2
+
+![V4 event and 360 heatmap](../heatmaps/FRA/5485_heatmap.svg)
 
 ## Physical profile
 
@@ -238,7 +283,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Use a compact pressing trigger rather than sustained solo pressure.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -249,7 +296,13 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Team: France (FRA)
 - Position: Center Attacking Midfield
 - Functional role: Wide Creator
-- Net xG contribution per 90: 0.1490
+- Risk-adjusted OBV per 90: -0.1280
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 36.5%
+- Role-relative z-score: -0.745
+- V4 evaluation score: 42.5
+
+![V4 event and 360 heatmap](../heatmaps/FRA/5487_heatmap.svg)
 
 ## Physical profile
 
@@ -271,7 +324,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -282,7 +337,13 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Team: France (FRA)
 - Position: Left Back
 - Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.1184
+- Risk-adjusted OBV per 90: -0.0192
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 29.2%
+- Role-relative z-score: +0.377
+- V4 evaluation score: 53.8
+
+![V4 event and 360 heatmap](../heatmaps/FRA/6704_heatmap.svg)
 
 ## Physical profile
 
@@ -301,53 +362,29 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 10: 8217_starter_report.md -->
-
-# Kingsley Coman — Starter Report
-
-- Team: France (FRA)
-- Position: Right Wing
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.3841
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.143 |
-| Pressing intensity per 90 | 19.26 |
-| Recovery index per 90 | 3.50 |
-
-## Top chemistry partners
-
-- Aurélien Djani Tchouaméni — synergy 0.418, 161 shared minutes
-- Raphaël Varane — synergy 0.374, 150 shared minutes
-- Youssouf Fofana — synergy 0.359, 141 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 11: 8519_starter_report.md -->
+<!-- PLAYER_REPORT 10: 8519_starter_report.md -->
 
 # Dayotchanculle Upamecano — Starter Report
 
 - Team: France (FRA)
 - Position: Left Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.0802
+- Functional role: Holding Anchor
+- Risk-adjusted OBV per 90: 0.3507
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 3.3%
+- Role-relative z-score: -0.873
+- V4 evaluation score: 41.3
+
+![V4 event and 360 heatmap](../heatmaps/FRA/8519_heatmap.svg)
 
 ## Physical profile
 
@@ -366,21 +403,28 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Pair with a faster recovery defender after aggressive rotations.
+- Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 12: 10481_starter_report.md -->
+<!-- PLAYER_REPORT 11: 10481_starter_report.md -->
 
 # Aurélien Djani Tchouaméni — Starter Report
 
 - Team: France (FRA)
 - Position: Right Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.2271
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.1572
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 14.6%
+- Role-relative z-score: +0.882
+- V4 evaluation score: 58.8
+
+![V4 event and 360 heatmap](../heatmaps/FRA/10481_heatmap.svg)
 
 ## Physical profile
 
@@ -398,22 +442,30 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 ## Tactical recommendations
 
-- Lead the first pressing trigger and protect the inside passing lane.
+- Use a compact pressing trigger rather than sustained solo pressure.
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 13: 11135_starter_report.md -->
+<!-- PLAYER_REPORT 12: 11135_starter_report.md -->
 
 # Ibrahima Konaté — Starter Report
 
 - Team: France (FRA)
 - Position: Left Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.1333
+- Functional role: Holding Anchor
+- Risk-adjusted OBV per 90: 0.3083
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 3.2%
+- Role-relative z-score: -0.392
+- V4 evaluation score: 46.1
+
+![V4 event and 360 heatmap](../heatmaps/FRA/11135_heatmap.svg)
 
 ## Physical profile
 
@@ -435,68 +487,6 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 14: 11990_starter_report.md -->
-
-# Youssouf Fofana — Starter Report
-
-- Team: France (FRA)
-- Position: Left Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.0945
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.500 |
-| Pressing intensity per 90 | 25.59 |
-| Recovery index per 90 | 3.86 |
-
-## Top chemistry partners
-
-- Raphaël Varane — synergy 0.527, 209 shared minutes
-- Ibrahima Konaté — synergy 0.524, 206 shared minutes
-- Aurélien Djani Tchouaméni — synergy 0.517, 202 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 15: 22097_starter_report.md -->
-
-# Randal Kolo Muani — Starter Report
-
-- Team: France (FRA)
-- Position: Center Forward
-- Functional role: Target Forward
-- Net xG contribution per 90: 0.8904
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.533 |
-| Pressing intensity per 90 | 22.93 |
-| Recovery index per 90 | 2.20 |
-
-## Top chemistry partners
-
-- Aurélien Djani Tchouaméni — synergy 0.466, 204 shared minutes
-- Ibrahima Konaté — synergy 0.359, 132 shared minutes
-- Raphaël Varane — synergy 0.356, 152 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._

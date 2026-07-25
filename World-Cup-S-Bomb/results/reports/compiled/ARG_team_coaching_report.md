@@ -1,22 +1,26 @@
 # Argentina — Team Coaching Report
 
-- Total wasted Net xG: 3.1008
-- Mean possession EvA gap: 0.005478
-- Most common optimal style: Patient Build-up
+## Model-grounded summary
+
+Argentina: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.135. Strongest positive squad synergy: Nicolás Hernán Otamendi + Damián Emiliano Martínez (0.927). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+- Total wasted Net xG: 2.9806
+- Mean possession EvA gap: 0.005266
+- Most common optimal style: No meaningful change
 
 ## Optimized starting 11
 
 1. Lionel Andrés Messi Cuccittini (Attacking Midfield/Wing)
 2. Enzo Fernandez (Defensive Midfield)
-3. Rodrigo Javier De Paul (Defensive Midfield)
-4. Nicolás Hernán Otamendi (Center Back)
-5. Julián Álvarez (Forward)
-6. Nicolás Alejandro Tagliafico (Fullback/Wingback)
-7. Damián Emiliano Martínez (Goalkeeper)
-8. Nahuel Molina Lucero (Fullback/Wingback)
+3. Nicolás Hernán Otamendi (Center Back)
+4. Rodrigo Javier De Paul (Defensive Midfield)
+5. Damián Emiliano Martínez (Goalkeeper)
+6. Cristian Gabriel Romero (Center Back)
+7. Nahuel Molina Lucero (Fullback/Wingback)
+8. Julián Álvarez (Forward)
 9. Alexis Mac Allister (Central/Wide Midfield)
-10. Cristian Gabriel Romero (Center Back)
-11. Ángel Fabián Di María Hernández (Central/Wide Midfield)
+10. Ángel Fabián Di María Hernández (Central/Wide Midfield)
+11. Marcos Javier Acuña (Fullback/Wingback)
 
 ## Physical matchup deltas
 
@@ -28,21 +32,24 @@
 
 ## Best bench intervention
 
-Thiago Ezequiel Almada for Julián Álvarez (expected Net xG gain 0.00293)
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 122, INSUFFICIENT_MINUTES: 18, GAIN_BELOW_THRESHOLD: 3.
+
+## V4 role-relative player leaders
+
+1. Lionel Andrés Messi Cuccittini — Progressive Winger; score 60.2, role z +1.02, OBV/90 -0.039
+2. Enzo Fernandez — Ball-Winner; score 56.1, role z +0.61, OBV/90 +0.159
+3. Ángel Fabián Di María Hernández — Progressive Winger; score 53.6, role z +0.36, OBV/90 -0.179
+4. Julián Álvarez — Target Forward; score 49.5, role z -0.05, OBV/90 -0.408
+5. Rodrigo Javier De Paul — Wide Creator; score 46.2, role z -0.38, OBV/90 -0.093
+
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 
-- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (1.0465 cumulative Net xG)
-- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.8372 cumulative Net xG)
-- Against High-Intensity Press: switch from Short Under Pressure to Patient Build-up (0.4448 cumulative Net xG)
+- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.9990 cumulative Net xG)
+- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.7842 cumulative Net xG)
+- Against High-Intensity Press: switch from Short Under Pressure to Patient Build-up (0.4272 cumulative Net xG)
 
-_Counterfactual values are predictive scenario estimates, not causal treatment effects. The corrupted stored coaching bundle was not used; this report uses the documented empirical hurdle fallback._
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+_Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._

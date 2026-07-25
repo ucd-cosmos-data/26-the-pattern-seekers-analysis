@@ -1,21 +1,25 @@
 # Costa Rica — Team Coaching Report
 
-- Total wasted Net xG: 0.9269
-- Mean possession EvA gap: 0.004778
-- Most common optimal style: Patient Build-up
+## Model-grounded summary
+
+Costa Rica: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+- Total wasted Net xG: 0.6111
+- Mean possession EvA gap: 0.003150
+- Most common optimal style: No meaningful change
 
 ## Optimized starting 11
 
-1. Yeltsin Ignacio Tejeda Valverde (Central/Wide Midfield)
-2. Óscar Esau Duarte Gaitán (Center Back)
-3. Joel Nathaniel Campbell Samuels (Forward)
-4. Keysher Fuller Spence (Fullback/Wingback)
-5. Celso Borges Mora (Defensive Midfield)
-6. Kendall Jamaal Waston Manley (Center Back)
-7. Keylor Navas Gamboa (Goalkeeper)
-8. Bryan Oviedo (Fullback/Wingback)
+1. Óscar Esau Duarte Gaitán (Center Back)
+2. Keylor Navas Gamboa (Goalkeeper)
+3. Yeltsin Ignacio Tejeda Valverde (Central/Wide Midfield)
+4. Joel Nathaniel Campbell Samuels (Forward)
+5. Bryan Oviedo (Fullback/Wingback)
+6. Celso Borges Mora (Defensive Midfield)
+7. Keysher Fuller Spence (Fullback/Wingback)
+8. Kendall Jamaal Waston Manley (Center Back)
 9. Francisco Javier Calvo Quesada (Center Back)
-10. Juan Pablo Vargas Campos (Center Back)
+10. Anthony Daniel Contreras Enríquez (Forward)
 11. Jewison Bennette (Attacking Midfield/Wing)
 
 ## Physical matchup deltas
@@ -28,21 +32,20 @@
 
 ## Best bench intervention
 
-Daniel Alonso Chacón Salas for Jewison Bennette (expected Net xG gain 0.00074)
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 105, INSUFFICIENT_MINUTES: 16.
+
+## V4 role-relative player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 
-- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.3187 cumulative Net xG)
-- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.2156 cumulative Net xG)
-- Against High-Intensity Press: switch from Short Under Pressure to Patient Build-up (0.1969 cumulative Net xG)
+- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.1492 cumulative Net xG)
+- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.1456 cumulative Net xG)
+- Against High-Intensity Press: switch from Short Under Pressure to Patient Build-up (0.1276 cumulative Net xG)
 
-_Counterfactual values are predictive scenario estimates, not causal treatment effects. The corrupted stored coaching bundle was not used; this report uses the documented empirical hurdle fallback._
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+_Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._

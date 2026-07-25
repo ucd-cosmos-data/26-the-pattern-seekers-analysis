@@ -1,60 +1,25 @@
-# CRO — Complete Player Report Collection
+# CRO — V4 Player Evaluation Collection
 
-- Included player reports: 15
-- Compilation policy: complete source reports, no omitted sections.
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+- Included 300+ minute players: 10
+- Rankings are role-relative; cross-role score comparisons are invalid.
+- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
-<!-- PLAYER_REPORT 1: 3441_starter_report.md -->
-
-# Nikola Vlašić — Starter Report
-
-- Team: Croatia (CRO)
-- Position: Right Wing
-- Functional role: Target Forward
-- Net xG contribution per 90: 0.8782
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.333 |
-| Pressing intensity per 90 | 13.50 |
-| Recovery index per 90 | 3.18 |
-
-## Top chemistry partners
-
-- Dejan Lovren — synergy 0.487, 192 shared minutes
-- Joško Gvardiol — synergy 0.478, 227 shared minutes
-- Mateo Kovačić — synergy 0.455, 177 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 2: 3471_starter_report.md -->
+<!-- PLAYER_REPORT 1: 3471_starter_report.md -->
 
 # Dejan Lovren — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Right Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.1430
+- Functional role: Holding Anchor
+- Risk-adjusted OBV per 90: 0.3132
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 3.3%
+- Role-relative z-score: -0.592
+- V4 evaluation score: 44.1
+
+![V4 event and 360 heatmap](../heatmaps/CRO/3471_heatmap.svg)
 
 ## Physical profile
 
@@ -76,18 +41,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 3: 5456_starter_report.md -->
+<!-- PLAYER_REPORT 2: 5456_starter_report.md -->
 
 # Mateo Kovačić — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Left Center Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.1213
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.0810
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 20.7%
+- Role-relative z-score: +0.554
+- V4 evaluation score: 55.5
+
+![V4 event and 360 heatmap](../heatmaps/CRO/5456_heatmap.svg)
 
 ## Physical profile
 
@@ -109,18 +82,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 4: 5460_starter_report.md -->
+<!-- PLAYER_REPORT 3: 5460_starter_report.md -->
 
 # Andrej Kramarić — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Right Wing
 - Functional role: Target Forward
-- Net xG contribution per 90: 0.2177
+- Risk-adjusted OBV per 90: -0.4364
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 48.4%
+- Role-relative z-score: -0.378
+- V4 evaluation score: 46.2
+
+![V4 event and 360 heatmap](../heatmaps/CRO/5460_heatmap.svg)
 
 ## Physical profile
 
@@ -139,21 +120,28 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
-- Avoid isolating this player in high-volume aerial matchups.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 5: 5463_starter_report.md -->
+<!-- PLAYER_REPORT 4: 5463_starter_report.md -->
 
 # Luka Modrić — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Right Center Midfield
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.2411
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.1814
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 21.7%
+- Role-relative z-score: +0.990
+- V4 evaluation score: 59.9
+
+![V4 event and 360 heatmap](../heatmaps/CRO/5463_heatmap.svg)
 
 ## Physical profile
 
@@ -174,18 +162,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 6: 5469_starter_report.md -->
+<!-- PLAYER_REPORT 5: 5469_starter_report.md -->
 
 # Marcelo Brozović — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Center Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.2876
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.0412
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 15.1%
+- Role-relative z-score: +0.190
+- V4 evaluation score: 51.9
+
+![V4 event and 360 heatmap](../heatmaps/CRO/5469_heatmap.svg)
 
 ## Physical profile
 
@@ -207,18 +203,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 7: 5474_starter_report.md -->
+<!-- PLAYER_REPORT 6: 5474_starter_report.md -->
 
 # Ivan Perišić — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Left Wing
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.1218
+- Functional role: Progressive Winger
+- Risk-adjusted OBV per 90: -0.3027
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 49.5%
+- Role-relative z-score: -1.378
+- V4 evaluation score: 36.2
+
+![V4 event and 360 heatmap](../heatmaps/CRO/5474_heatmap.svg)
 
 ## Physical profile
 
@@ -237,84 +241,28 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 8: 7693_starter_report.md -->
-
-# Bruno Petković — Starter Report
-
-- Team: Croatia (CRO)
-- Position: Center Forward
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.0394
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.462 |
-| Pressing intensity per 90 | 10.68 |
-| Recovery index per 90 | 3.20 |
-
-## Top chemistry partners
-
-- Luka Modrić — synergy 0.527, 228 shared minutes
-- Joško Gvardiol — synergy 0.472, 253 shared minutes
-- Dejan Lovren — synergy 0.464, 224 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 9: 11603_starter_report.md -->
-
-# Mario Pašalić — Starter Report
-
-- Team: Croatia (CRO)
-- Position: Right Wing
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.3126
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.438 |
-| Pressing intensity per 90 | 17.62 |
-| Recovery index per 90 | 3.09 |
-
-## Top chemistry partners
-
-- Luka Modrić — synergy 0.578, 258 shared minutes
-- Dominik Livaković — synergy 0.544, 291 shared minutes
-- Mateo Kovačić — synergy 0.537, 238 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 10: 12625_starter_report.md -->
+<!-- PLAYER_REPORT 7: 12625_starter_report.md -->
 
 # Borna Sosa — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Left Back
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0610
+- Functional role: Box-to-Box Runner
+- Risk-adjusted OBV per 90: 0.0706
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 31.1%
+- Role-relative z-score: +2.189
+- V4 evaluation score: 71.9
+
+![V4 event and 360 heatmap](../heatmaps/CRO/12625_heatmap.svg)
 
 ## Physical profile
 
@@ -332,55 +280,29 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 ## Tactical recommendations
 
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
+- Use a compact pressing trigger rather than sustained solo pressure.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 11: 16527_starter_report.md -->
-
-# Mislav Oršić — Starter Report
-
-- Team: Croatia (CRO)
-- Position: Left Wing
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.5499
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.000 |
-| Pressing intensity per 90 | 14.89 |
-| Recovery index per 90 | 1.92 |
-
-## Top chemistry partners
-
-- Dominik Livaković — synergy 0.459, 187 shared minutes
-- Joško Gvardiol — synergy 0.424, 187 shared minutes
-- Mateo Kovačić — synergy 0.400, 145 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 12: 16531_starter_report.md -->
+<!-- PLAYER_REPORT 8: 16531_starter_report.md -->
 
 # Dominik Livaković — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Goalkeeper
-- Functional role: Deep Playmaker
-- Net xG contribution per 90: 0.0366
+- Functional role: Goalkeeper
+- Risk-adjusted OBV per 90: 0.2431
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 0.8%
+- Role-relative z-score: +0.830
+- V4 evaluation score: 58.3
+
+![V4 event and 360 heatmap](../heatmaps/CRO/16531_heatmap.svg)
 
 ## Physical profile
 
@@ -402,51 +324,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 13: 22041_starter_report.md -->
-
-# Marko Livaja — Starter Report
-
-- Team: Croatia (CRO)
-- Position: Center Forward
-- Functional role: Target Forward
-- Net xG contribution per 90: 0.6290
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.308 |
-| Pressing intensity per 90 | 17.26 |
-| Recovery index per 90 | 2.47 |
-
-## Top chemistry partners
-
-- Mateo Kovačić — synergy 0.462, 222 shared minutes
-- Joško Gvardiol — synergy 0.411, 256 shared minutes
-- Dejan Lovren — synergy 0.403, 189 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 14: 29163_starter_report.md -->
+<!-- PLAYER_REPORT 9: 29163_starter_report.md -->
 
 # Josip Juranović — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Right Back
 - Functional role: Wide Creator
-- Net xG contribution per 90: 0.0584
+- Risk-adjusted OBV per 90: 0.0373
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 27.8%
+- Role-relative z-score: +0.920
+- V4 evaluation score: 59.2
+
+![V4 event and 360 heatmap](../heatmaps/CRO/29163_heatmap.svg)
 
 ## Physical profile
 
@@ -467,18 +364,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Use a compact pressing trigger rather than sustained solo pressure.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 15: 33018_starter_report.md -->
+<!-- PLAYER_REPORT 10: 33018_starter_report.md -->
 
 # Joško Gvardiol — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Left Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.1173
+- Functional role: Holding Anchor
+- Risk-adjusted OBV per 90: 0.3642
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 3.7%
+- Role-relative z-score: -0.157
+- V4 evaluation score: 48.4
+
+![V4 event and 360 heatmap](../heatmaps/CRO/33018_heatmap.svg)
 
 ## Physical profile
 
@@ -499,4 +404,6 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._

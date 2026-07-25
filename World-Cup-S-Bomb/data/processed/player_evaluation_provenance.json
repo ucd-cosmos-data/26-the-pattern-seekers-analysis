@@ -1,0 +1,18 @@
+{
+  "schema_version": 4,
+  "minutes_cutoff": 300.0,
+  "players_before_cutoff": 680,
+  "players_after_cutoff": 142,
+  "players_dropped": 538,
+  "obv_source": "open_event_value_fallback",
+  "native_obv_available": false,
+  "native_obv_column": null,
+  "event_rows": 233529,
+  "events_with_360_context": 203454,
+  "successful_action_points": 81231,
+  "freeze_frame_actor_points": 72016,
+  "heatmap_cells": 9394,
+  "attacking_wingbacks": 6,
+  "fullbacks_reprotected_from_anchor": 0,
+  "density_pressure_cutoff": 0.0205851451808076
+}

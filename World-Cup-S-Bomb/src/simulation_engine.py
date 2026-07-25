@@ -22,6 +22,9 @@ ATTACKING_STYLES = (
 )
 CANONICAL_TRANSITION_TARGET = "transition_conceded"
 MIN_SUBSTITUTION_NET_XG_GAIN = 0.0050
+V4_MIN_PLAYER_MINUTES = 300.0
+V4_FINAL_THIRD_X = 80.0
+V4_ATTACKING_WINGBACK_SHARE = 0.35
 REASON_GAIN_BELOW_THRESHOLD = "GAIN_BELOW_THRESHOLD"
 REASON_CI_OVERLAPS_ZERO = "CONFIDENCE_INTERVAL_OVERLAPS_ZERO"
 REASON_CLASSIFIER_ABSTAINED = "CLASSIFIER_ABSTAINED"
@@ -48,6 +51,19 @@ ROLE_PROTOTYPES: dict[str, dict[str, float]] = {
         "pass_completion": 1,
         "turnovers_p90": -1,
     },
+}
+
+OBV_COLUMN_PRIORITY = (
+    "obv_total_net",
+    "obv_for_net",
+    "obv",
+    "on_ball_value",
+)
+ATTACKING_POSITION_GROUPS = {
+    "Forward",
+    "Attacking Midfield/Wing",
+    "Central/Wide Midfield",
+    "Fullback/Wingback",
 }
 
 
@@ -329,6 +345,480 @@ def cluster_player_playstyles(
     enriched["playstyle_cluster"] = enriched["playstyle_cluster"].astype(int)
     enriched.attrs["spatial_features"] = spatial_features
     return enriched
+
+
+def _truthy(series: pd.Series) -> pd.Series:
+    """Return a null-safe boolean mask for StatsBomb CSV boolean fields."""
+
+    return series.fillna(False).astype(str).str.lower().isin(
+        {"true", "1", "yes"}
+    )
+
+
+def _coordinate_axis(series: pd.Series, axis: int) -> pd.Series:
+    """Extract one coordinate axis from serialized StatsBomb locations."""
+
+    return series.map(_coordinate).map(
+        lambda value: np.nan if value is None else float(value[axis])
+    )
+
+
+def _successful_on_ball_mask(events: pd.DataFrame) -> pd.Series:
+    """Identify completed on-ball actions used for spatial role footprints."""
+
+    event_type = events["type"].fillna("")
+    pass_success = event_type.eq("Pass") & events["pass_outcome"].isna()
+    carry_success = event_type.eq("Carry")
+    dribble_success = event_type.eq("Dribble") & events[
+        "dribble_outcome"
+    ].fillna("").eq("Complete")
+    shot_action = event_type.eq("Shot")
+    receipt_success = event_type.str.startswith("Ball Receipt") & events[
+        "ball_receipt_outcome"
+    ].isna()
+    return (
+        pass_success
+        | carry_success
+        | dribble_success
+        | shot_action
+        | receipt_success
+    )
+
+
+def _turnover_mask(events: pd.DataFrame) -> pd.Series:
+    """Identify incomplete or possession-losing on-ball events."""
+
+    event_type = events["type"].fillna("")
+    incomplete_pass = event_type.eq("Pass") & events["pass_outcome"].notna()
+    failed_dribble = event_type.eq("Dribble") & ~events[
+        "dribble_outcome"
+    ].fillna("").eq("Complete")
+    failed_receipt = event_type.str.startswith("Ball Receipt") & events[
+        "ball_receipt_outcome"
+    ].notna()
+    explicit_loss = event_type.isin({"Dispossessed", "Miscontrol"})
+    return incomplete_pass | failed_dribble | failed_receipt | explicit_loss
+
+
+def _event_value_surface(x: pd.Series, y: pd.Series) -> pd.Series:
+    """Transparent open-data pitch-value surface used only without native OBV."""
+
+    normalized_x = x.fillna(0).clip(0, 120) / 120
+    centrality = 1 - (y.fillna(40).clip(0, 80) - 40).abs() / 40
+    return normalized_x.pow(2) * (0.8 + 0.2 * centrality.clip(0, 1))
+
+
+def _role_group_z(values: pd.Series, roles: pd.Series) -> pd.Series:
+    """Compute finite population z-scores strictly within functional roles."""
+
+    means = values.groupby(roles).transform("mean")
+    standard_deviations = values.groupby(roles).transform(
+        lambda group: group.std(ddof=0)
+    )
+    return (
+        (values - means)
+        .div(standard_deviations.replace(0, np.nan))
+        .replace([np.inf, -np.inf], np.nan)
+        .fillna(0.0)
+    )
+
+
+def build_v4_player_evaluations(
+    components_df: pd.DataFrame,
+    events_df: pd.DataFrame,
+    frame_actors_df: pd.DataFrame,
+    frame_metrics_df: pd.DataFrame,
+    *,
+    min_minutes: float = V4_MIN_PLAYER_MINUTES,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, dict[str, object]]:
+    """Build V4 rankings and spatial heatmap cells from three StatsBomb layers.
+
+    Standard events provide the on-ball action start/end coordinates and
+    outcomes. Player metadata/components provide tournament minutes and
+    positional groups. StatsBomb 360 freeze frames provide event-time actor
+    locations and local defensive density. Licensed StatsBomb OBV is used when
+    present; otherwise a transparent pitch-value delta is retained with an
+    explicit provenance label.
+    """
+
+    required_event_columns = {
+        "id",
+        "match_id",
+        "player_id",
+        "type",
+        "location",
+        "pass_end_location",
+        "carry_end_location",
+        "pass_outcome",
+        "dribble_outcome",
+        "ball_receipt_outcome",
+        "under_pressure",
+        "shot_statsbomb_xg",
+    }
+    missing = sorted(required_event_columns - set(events_df.columns))
+    if missing:
+        raise ValueError(f"V4 event schema is missing columns: {missing}")
+
+    events = events_df[events_df["player_id"].notna()].copy()
+    events["player_id"] = events["player_id"].astype(int)
+    events["start_x"] = _coordinate_axis(events["location"], 0)
+    events["start_y"] = _coordinate_axis(events["location"], 1)
+    pass_end_x = _coordinate_axis(events["pass_end_location"], 0)
+    pass_end_y = _coordinate_axis(events["pass_end_location"], 1)
+    carry_end_x = _coordinate_axis(events["carry_end_location"], 0)
+    carry_end_y = _coordinate_axis(events["carry_end_location"], 1)
+    events["end_x"] = pass_end_x.combine_first(carry_end_x).combine_first(
+        events["start_x"]
+    )
+    events["end_y"] = pass_end_y.combine_first(carry_end_y).combine_first(
+        events["start_y"]
+    )
+    events["successful_on_ball"] = _successful_on_ball_mask(events)
+    events["turnover"] = _turnover_mask(events)
+
+    frame_metrics = frame_metrics_df.drop_duplicates(
+        ["match_id", "event_uuid"]
+    ).rename(columns={"event_uuid": "id"})
+    events = events.merge(
+        frame_metrics[
+            [
+                "match_id",
+                "id",
+                "defensive_density",
+                "nearest_defender_distance",
+                "defenders_within_5",
+            ]
+        ],
+        on=["match_id", "id"],
+        how="left",
+        validate="many_to_one",
+    )
+    density_cutoff = float(
+        events["defensive_density"].dropna().quantile(0.75)
+    )
+    if not np.isfinite(density_cutoff):
+        density_cutoff = float("inf")
+    events["event_under_pressure"] = _truthy(events["under_pressure"])
+    events["freeze_frame_pressure"] = (
+        events["nearest_defender_distance"].le(3.0)
+        | events["defenders_within_5"].fillna(0).ge(2)
+        | events["defensive_density"].ge(density_cutoff)
+    )
+    events["pressure_augmented"] = (
+        events["event_under_pressure"] | events["freeze_frame_pressure"]
+    )
+
+    native_obv_column = next(
+        (
+            column
+            for column in OBV_COLUMN_PRIORITY
+            if column in events.columns
+            and pd.to_numeric(events[column], errors="coerce").notna().any()
+        ),
+        None,
+    )
+    if native_obv_column is not None:
+        events["raw_on_ball_value"] = pd.to_numeric(
+            events[native_obv_column], errors="coerce"
+        ).fillna(0.0)
+        obv_source = f"statsbomb_native:{native_obv_column}"
+    else:
+        start_value = _event_value_surface(
+            events["start_x"], events["start_y"]
+        )
+        end_value = _event_value_surface(events["end_x"], events["end_y"])
+        events["raw_on_ball_value"] = 0.10 * (end_value - start_value)
+        shot_xg = pd.to_numeric(
+            events["shot_statsbomb_xg"], errors="coerce"
+        ).fillna(0.0)
+        events.loc[events["type"].eq("Shot"), "raw_on_ball_value"] += (
+            0.12 * shot_xg
+        )
+        events.loc[
+            events["type"].eq("Dribble")
+            & events["dribble_outcome"].fillna("").eq("Complete"),
+            "raw_on_ball_value",
+        ] += 0.01 * start_value
+        obv_source = "open_event_value_fallback"
+
+    events["standard_turnover_penalty"] = np.where(
+        events["turnover"],
+        0.010 + 0.030 * events["start_x"].fillna(0).clip(0, 120) / 120,
+        0.0,
+    )
+    events["turnover_penalty_multiplier"] = np.where(
+        events["turnover"] & events["pressure_augmented"], 0.5, 1.0
+    )
+    events["applied_turnover_penalty"] = (
+        events["standard_turnover_penalty"]
+        * events["turnover_penalty_multiplier"]
+    )
+    events["risk_adjusted_on_ball_value"] = (
+        events["raw_on_ball_value"] - events["applied_turnover_penalty"]
+    )
+
+    base_profiles = derive_physicality_metrics(components_df)
+    profiles = base_profiles.loc[
+        base_profiles["minutes"].ge(min_minutes)
+    ].copy()
+    if profiles.empty:
+        raise ValueError("No players satisfy the V4 minutes cutoff")
+    profiles = cluster_player_playstyles(profiles, events)
+    eligible_ids = set(profiles["player_id"].astype(int))
+
+    successful = events.loc[
+        events["successful_on_ball"] & events["player_id"].isin(eligible_ids),
+        ["match_id", "id", "player_id", "end_x", "end_y"],
+    ].dropna(subset=["end_x", "end_y"])
+    action_points = successful.rename(
+        columns={"end_x": "x", "end_y": "y"}
+    )
+    action_points["spatial_source"] = "standard_event_endpoint"
+
+    actors = frame_actors_df.copy()
+    actors = actors[_truthy(actors["actor"])]
+    actors = actors.rename(columns={"event_uuid": "id"})
+    actor_points = actors.merge(
+        events[
+            ["match_id", "id", "player_id", "successful_on_ball"]
+        ].drop_duplicates(["match_id", "id"]),
+        on=["match_id", "id"],
+        how="inner",
+        validate="many_to_one",
+    )
+    actor_points = actor_points.loc[
+        actor_points["successful_on_ball"]
+        & actor_points["player_id"].isin(eligible_ids),
+        ["match_id", "id", "player_id", "x", "y"],
+    ].dropna(subset=["x", "y"])
+    actor_points["spatial_source"] = "statsbomb_360_actor_snapshot"
+    spatial_points = pd.concat(
+        [action_points, actor_points], ignore_index=True
+    )
+    spatial_points["final_third"] = spatial_points["x"].gt(
+        V4_FINAL_THIRD_X
+    )
+
+    spatial_summary = (
+        spatial_points.groupby("player_id", as_index=False)
+        .agg(
+            spatial_point_count=("x", "size"),
+            final_third_share=("final_third", "mean"),
+            average_spatial_x=("x", "mean"),
+            average_spatial_y=("y", "mean"),
+        )
+    )
+    action_summary = (
+        action_points.assign(final_third=action_points["x"].gt(V4_FINAL_THIRD_X))
+        .groupby("player_id", as_index=False)
+        .agg(
+            successful_action_points=("x", "size"),
+            successful_action_final_third_share=("final_third", "mean"),
+        )
+    )
+    actor_summary = (
+        actor_points.assign(final_third=actor_points["x"].gt(V4_FINAL_THIRD_X))
+        .groupby("player_id", as_index=False)
+        .agg(
+            freeze_frame_actor_points=("x", "size"),
+            freeze_frame_final_third_share=("final_third", "mean"),
+        )
+    )
+
+    player_values = (
+        events[events["player_id"].isin(eligible_ids)]
+        .groupby("player_id", as_index=False)
+        .agg(
+            total_on_ball_value=("risk_adjusted_on_ball_value", "sum"),
+            raw_on_ball_value=("raw_on_ball_value", "sum"),
+            event_turnovers=("turnover", "sum"),
+            pressured_turnovers=(
+                "pressure_augmented",
+                lambda values: int(
+                    (
+                        values
+                        & events.loc[values.index, "turnover"]
+                    ).sum()
+                ),
+            ),
+            standard_turnover_penalty=("standard_turnover_penalty", "sum"),
+            applied_turnover_penalty=("applied_turnover_penalty", "sum"),
+            events_with_360_context=("nearest_defender_distance", "count"),
+        )
+    )
+    profiles = (
+        profiles.merge(spatial_summary, on="player_id", how="left")
+        .merge(action_summary, on="player_id", how="left")
+        .merge(actor_summary, on="player_id", how="left")
+        .merge(player_values, on="player_id", how="left")
+    )
+    numeric_defaults = [
+        "spatial_point_count",
+        "final_third_share",
+        "average_spatial_x",
+        "average_spatial_y",
+        "successful_action_points",
+        "successful_action_final_third_share",
+        "freeze_frame_actor_points",
+        "freeze_frame_final_third_share",
+        "total_on_ball_value",
+        "raw_on_ball_value",
+        "event_turnovers",
+        "pressured_turnovers",
+        "standard_turnover_penalty",
+        "applied_turnover_penalty",
+        "events_with_360_context",
+    ]
+    profiles[numeric_defaults] = profiles[numeric_defaults].fillna(0.0)
+    profiles["obv_per_90"] = (
+        90 * profiles["total_on_ball_value"] / profiles["minutes"]
+    )
+    profiles["raw_obv_per_90"] = (
+        90 * profiles["raw_on_ball_value"] / profiles["minutes"]
+    )
+    profiles["pressure_adjusted_turnover_penalty_per_90"] = (
+        90 * profiles["applied_turnover_penalty"] / profiles["minutes"]
+    )
+    profiles["turnover_penalty_discount"] = (
+        profiles["standard_turnover_penalty"]
+        - profiles["applied_turnover_penalty"]
+    )
+    profiles["obv_source"] = obv_source
+
+    fullback = profiles["position_group"].eq("Fullback/Wingback")
+    attacking_wingback = fullback & profiles["final_third_share"].gt(
+        V4_ATTACKING_WINGBACK_SHARE
+    )
+    profiles.loc[attacking_wingback, "functional_role"] = (
+        "Attacking Wingback"
+    )
+    invalid_anchor = fullback & profiles["functional_role"].eq(
+        "Holding Anchor"
+    )
+    profiles.loc[invalid_anchor, "functional_role"] = "Two-Way Fullback"
+    profiles["Functional role"] = profiles["functional_role"]
+
+    role = profiles["Functional role"]
+    profiles["role_obv_z"] = _role_group_z(profiles["obv_per_90"], role)
+    profiles["role_final_third_z"] = _role_group_z(
+        profiles["final_third_share"], role
+    )
+    profiles["role_turnover_resilience_z"] = _role_group_z(
+        -profiles["pressure_adjusted_turnover_penalty_per_90"], role
+    )
+    profiles["role_pressing_z"] = _role_group_z(
+        profiles["pressing_intensity_index"], role
+    )
+    profiles["role_aerial_z"] = _role_group_z(
+        profiles["aerial_dominance_index"], role
+    )
+    attacking = profiles["position_group"].isin(ATTACKING_POSITION_GROUPS)
+    profiles["raw_composite_score"] = (
+        0.35 * profiles["role_obv_z"]
+        + 0.15 * profiles["role_final_third_z"]
+        + 0.20 * profiles["role_turnover_resilience_z"]
+        + 0.15 * profiles["role_pressing_z"]
+        + 0.15 * profiles["role_aerial_z"]
+    )
+    profiles.loc[attacking, "raw_composite_score"] = (
+        0.65 * profiles.loc[attacking, "role_obv_z"]
+        + 0.20 * profiles.loc[attacking, "role_final_third_z"]
+        + 0.15
+        * profiles.loc[attacking, "role_turnover_resilience_z"]
+    )
+    profiles["role_z_score"] = _role_group_z(
+        profiles["raw_composite_score"], role
+    )
+    profiles["player_evaluation_score"] = (
+        50 + 10 * profiles["role_z_score"]
+    )
+    profiles["role_rank"] = (
+        profiles.groupby("Functional role")["player_evaluation_score"]
+        .rank(method="min", ascending=False)
+        .astype(int)
+    )
+
+    spatial_points["x_bin"] = (
+        np.floor(spatial_points["x"].clip(0, 119.999) / 10)
+        .astype(int)
+        .clip(0, 11)
+    )
+    spatial_points["y_bin"] = (
+        np.floor(spatial_points["y"].clip(0, 79.999) / 10)
+        .astype(int)
+        .clip(0, 7)
+    )
+    heatmap_cells = (
+        spatial_points.groupby(
+            ["player_id", "x_bin", "y_bin"], as_index=False
+        )
+        .agg(
+            point_count=("x", "size"),
+            standard_event_points=(
+                "spatial_source",
+                lambda values: int(
+                    values.eq("standard_event_endpoint").sum()
+                ),
+            ),
+            freeze_frame_points=(
+                "spatial_source",
+                lambda values: int(
+                    values.eq("statsbomb_360_actor_snapshot").sum()
+                ),
+            ),
+        )
+    )
+    heatmap_cells["density"] = heatmap_cells["point_count"].div(
+        heatmap_cells.groupby("player_id")["point_count"].transform("sum")
+    )
+
+    finite_columns = [
+        "obv_per_90",
+        "final_third_share",
+        "role_z_score",
+        "player_evaluation_score",
+    ]
+    if not np.isfinite(profiles[finite_columns].to_numpy()).all():
+        raise ValueError("V4 player evaluation produced non-finite metrics")
+    if (
+        profiles.loc[
+            profiles["position_group"].eq("Fullback/Wingback"),
+            "functional_role",
+        ]
+        .eq("Holding Anchor")
+        .any()
+    ):
+        raise RuntimeError("V4 fullback safeguard failed")
+
+    provenance: dict[str, object] = {
+        "schema_version": 4,
+        "minutes_cutoff": float(min_minutes),
+        "players_before_cutoff": int(len(base_profiles)),
+        "players_after_cutoff": int(len(profiles)),
+        "players_dropped": int(len(base_profiles) - len(profiles)),
+        "obv_source": obv_source,
+        "native_obv_available": native_obv_column is not None,
+        "native_obv_column": native_obv_column,
+        "event_rows": int(len(events)),
+        "events_with_360_context": int(
+            events["nearest_defender_distance"].notna().sum()
+        ),
+        "successful_action_points": int(len(action_points)),
+        "freeze_frame_actor_points": int(len(actor_points)),
+        "heatmap_cells": int(len(heatmap_cells)),
+        "attacking_wingbacks": int(attacking_wingback.sum()),
+        "fullbacks_reprotected_from_anchor": int(invalid_anchor.sum()),
+        "density_pressure_cutoff": density_cutoff,
+    }
+    return (
+        profiles.sort_values(
+            ["Functional role", "player_evaluation_score"],
+            ascending=[True, False],
+        ).reset_index(drop=True),
+        heatmap_cells,
+        events,
+        provenance,
+    )
 
 
 def compute_player_synergy_matrix(
@@ -1043,7 +1533,7 @@ def simulate_starter_replacement_impact(
                         }
                     )
                     continue
-                if substitute_minutes < 45:
+                if substitute_minutes < V4_MIN_PLAYER_MINUTES:
                     suppression_records.append(
                         {
                             "team": team,
@@ -1156,8 +1646,13 @@ def simulate_starter_replacement_impact(
             centrality.append(float(np.mean(scores) if scores else 0))
         squad = squad.copy()
         squad["chemistry_centrality"] = centrality
+        value_column = (
+            "player_evaluation_score"
+            if "player_evaluation_score" in profile_lookup
+            else "net_xg_contribution_p90"
+        )
         squad["player_value"] = squad["player_id"].map(
-            profile_lookup["net_xg_contribution_p90"]
+            profile_lookup[value_column]
         ).fillna(0)
         squad["optimization_score"] = (
             squad["player_value"].rank(pct=True)

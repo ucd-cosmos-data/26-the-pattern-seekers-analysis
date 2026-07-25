@@ -1,16 +1,8 @@
-# SEN — Complete Player Report Collection
+# SEN — V4 Player Evaluation Collection
 
-- Included player reports: 10
-- Compilation policy: complete source reports, no omitted sections.
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+- Included 300+ minute players: 6
+- Rankings are role-relative; cross-role score comparisons are invalid.
+- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
@@ -20,8 +12,14 @@ against video, training data, medical context, and opponent-specific scouting.
 
 - Team: Senegal (SEN)
 - Position: Left Wing
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.4808
+- Functional role: Target Forward
+- Risk-adjusted OBV per 90: -0.2472
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 65.3%
+- Role-relative z-score: +1.373
+- V4 evaluation score: 63.7
+
+![V4 event and 360 heatmap](../heatmaps/SEN/2941_heatmap.svg)
 
 ## Physical profile
 
@@ -34,15 +32,17 @@ against video, training data, medical context, and opponent-specific scouting.
 ## Top chemistry partners
 
 - Youssouf Sabaly — synergy 0.628, 365 shared minutes
-- Nampalys Mendy — synergy 0.579, 291 shared minutes
 - Kalidou Koulibaly — synergy 0.542, 365 shared minutes
+- Edouard Mendy — synergy 0.452, 365 shared minutes
 
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -52,8 +52,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Senegal (SEN)
 - Position: Right Back
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.0801
+- Functional role: Attacking Wingback
+- Risk-adjusted OBV per 90: 0.0780
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 36.2%
+- Role-relative z-score: +1.222
+- V4 evaluation score: 62.2
+
+![V4 event and 360 heatmap](../heatmaps/SEN/3404_heatmap.svg)
 
 ## Physical profile
 
@@ -74,84 +80,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 3: 3436_starter_report.md -->
-
-# Idrissa Gana Gueye — Starter Report
-
-- Team: Senegal (SEN)
-- Position: Center Attacking Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.1202
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.286 |
-| Pressing intensity per 90 | 21.80 |
-| Recovery index per 90 | 5.53 |
-
-## Top chemistry partners
-
-- Kalidou Koulibaly — synergy 0.601, 293 shared minutes
-- Youssouf Sabaly — synergy 0.554, 293 shared minutes
-- Ismail Jakobs — synergy 0.534, 213 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 4: 4506_starter_report.md -->
-
-# Nampalys Mendy — Starter Report
-
-- Team: Senegal (SEN)
-- Position: Left Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.0710
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.000 |
-| Pressing intensity per 90 | 12.84 |
-| Recovery index per 90 | 5.20 |
-
-## Top chemistry partners
-
-- Youssouf Sabaly — synergy 0.639, 294 shared minutes
-- Kalidou Koulibaly — synergy 0.624, 294 shared minutes
-- Abdou Diallo — synergy 0.604, 256 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 5: 5675_starter_report.md -->
+<!-- PLAYER_REPORT 3: 5675_starter_report.md -->
 
 # Kalidou Koulibaly — Starter Report
 
 - Team: Senegal (SEN)
 - Position: Right Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.1118
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.3210
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 3.3%
+- Role-relative z-score: +1.444
+- V4 evaluation score: 64.4
+
+![V4 event and 360 heatmap](../heatmaps/SEN/5675_heatmap.svg)
 
 ## Physical profile
 
@@ -173,18 +121,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 6: 7379_starter_report.md -->
+<!-- PLAYER_REPORT 4: 7379_starter_report.md -->
 
 # Edouard Mendy — Starter Report
 
 - Team: Senegal (SEN)
 - Position: Goalkeeper
-- Functional role: Deep Playmaker
-- Net xG contribution per 90: 0.0295
+- Functional role: Goalkeeper
+- Risk-adjusted OBV per 90: 0.2767
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 1.5%
+- Role-relative z-score: -0.098
+- V4 evaluation score: 49.0
+
+![V4 event and 360 heatmap](../heatmaps/SEN/7379_heatmap.svg)
 
 ## Physical profile
 
@@ -206,18 +162,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 7: 8553_starter_report.md -->
+<!-- PLAYER_REPORT 5: 8553_starter_report.md -->
 
 # Abdou Diallo — Starter Report
 
 - Team: Senegal (SEN)
 - Position: Left Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.0758
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.3564
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 9.0%
+- Role-relative z-score: +1.077
+- V4 evaluation score: 60.8
+
+![V4 event and 360 heatmap](../heatmaps/SEN/8553_heatmap.svg)
 
 ## Physical profile
 
@@ -236,20 +200,29 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 8: 20611_starter_report.md -->
+<!-- PLAYER_REPORT 6: 20611_starter_report.md -->
 
 # Boulaye Dia — Starter Report
 
 - Team: Senegal (SEN)
 - Position: Center Attacking Midfield
 - Functional role: Target Forward
-- Net xG contribution per 90: 0.1795
+- Risk-adjusted OBV per 90: -0.4585
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 69.3%
+- Role-relative z-score: -0.043
+- V4 evaluation score: 49.6
+
+![V4 event and 360 heatmap](../heatmaps/SEN/20611_heatmap.svg)
 
 ## Physical profile
 
@@ -262,77 +235,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Top chemistry partners
 
 - Youssouf Sabaly — synergy 0.554, 330 shared minutes
-- Nampalys Mendy — synergy 0.530, 237 shared minutes
-- Idrissa Gana Gueye — synergy 0.487, 259 shared minutes
+- Abdou Diallo — synergy 0.482, 323 shared minutes
+- Ismaïla Sarr — synergy 0.447, 308 shared minutes
 
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 9: 20758_starter_report.md -->
-
-# Krépin Diatta — Starter Report
-
-- Team: Senegal (SEN)
-- Position: Right Wing
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.0989
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.600 |
-| Pressing intensity per 90 | 21.27 |
-| Recovery index per 90 | 4.95 |
-
-## Top chemistry partners
-
-- Nampalys Mendy — synergy 0.443, 182 shared minutes
-- Youssouf Sabaly — synergy 0.428, 182 shared minutes
-- Abdou Diallo — synergy 0.418, 170 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 10: 32915_starter_report.md -->
-
-# Ismail Jakobs — Starter Report
-
-- Team: Senegal (SEN)
-- Position: Left Back
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0472
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.786 |
-| Pressing intensity per 90 | 9.41 |
-| Recovery index per 90 | 3.04 |
-
-## Top chemistry partners
-
-- Edouard Mendy — synergy 0.616, 296 shared minutes
-- Youssouf Sabaly — synergy 0.611, 296 shared minutes
-- Abdou Diallo — synergy 0.582, 258 shared minutes
-
-## Tactical recommendations
-
-- Use a compact pressing trigger rather than sustained solo pressure.
-- Target this player on direct restarts and back-post deliveries.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._

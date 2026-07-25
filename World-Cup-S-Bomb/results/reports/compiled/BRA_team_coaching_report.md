@@ -1,22 +1,26 @@
 # Brazil — Team Coaching Report
 
-- Total wasted Net xG: 1.9311
-- Mean possession EvA gap: 0.004609
-- Most common optimal style: Patient Build-up
+## Model-grounded summary
+
+Brazil: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -6.128. Strongest positive squad synergy: Thiago Emiliano da Silva + Marcos Aoás Corrêa (0.778). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+- Total wasted Net xG: 1.7461
+- Mean possession EvA gap: 0.004167
+- Most common optimal style: No meaningful change
 
 ## Optimized starting 11
 
 1. Marcos Aoás Corrêa (Center Back)
-2. Carlos Henrique Casimiro (Defensive Midfield)
-3. Thiago Emiliano da Silva (Center Back)
-4. Richarlison de Andrade (Forward)
-5. Neymar da Silva Santos Junior (Attacking Midfield/Wing)
-6. Éder Gabriel Militão (Fullback/Wingback)
-7. Raphael Dias Belloli (Attacking Midfield/Wing)
+2. Thiago Emiliano da Silva (Center Back)
+3. Éder Gabriel Militão (Fullback/Wingback)
+4. Carlos Henrique Casimiro (Defensive Midfield)
+5. Alisson Ramsés Becker (Goalkeeper)
+6. Raphael Dias Belloli (Attacking Midfield/Wing)
+7. Richarlison de Andrade (Forward)
 8. Lucas Tolentino Coelho de Lima (Defensive Midfield)
-9. Rodrygo Silva de Goes (Central/Wide Midfield)
-10. Vinícius José Paixão de Oliveira Júnior (Central/Wide Midfield)
-11. Alisson Ramsés Becker (Goalkeeper)
+9. Vinícius José Paixão de Oliveira Júnior (Central/Wide Midfield)
+10. Danilo Luiz da Silva (Fullback/Wingback)
+11. Rodrygo Silva de Goes (Central/Wide Midfield)
 
 ## Physical matchup deltas
 
@@ -28,21 +32,24 @@
 
 ## Best bench intervention
 
-Weverton Pereira da Silva for Lucas Tolentino Coelho de Lima (expected Net xG gain 0.00225)
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 140, INSUFFICIENT_MINUTES: 25.
+
+## V4 role-relative player leaders
+
+1. Éder Gabriel Militão — Ball-Winner; score 67.0, role z +1.70, OBV/90 +0.200
+2. Marcos Aoás Corrêa — Holding Anchor; score 60.3, role z +1.03, OBV/90 +0.367
+3. Thiago Emiliano da Silva — Holding Anchor; score 60.0, role z +1.00, OBV/90 +0.436
+4. Carlos Henrique Casimiro — Ball-Winner; score 56.3, role z +0.63, OBV/90 +0.099
+5. Richarlison de Andrade — Target Forward; score 53.3, role z +0.33, OBV/90 -0.369
+
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 
-- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.5139 cumulative Net xG)
-- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.5139 cumulative Net xG)
-- Against High-Intensity Press: switch from Short Under Pressure to Patient Build-up (0.4183 cumulative Net xG)
+- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.4708 cumulative Net xG)
+- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.4654 cumulative Net xG)
+- Against High-Intensity Press: switch from Short Under Pressure to Patient Build-up (0.3857 cumulative Net xG)
 
-_Counterfactual values are predictive scenario estimates, not causal treatment effects. The corrupted stored coaching bundle was not used; this report uses the documented empirical hurdle fallback._
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+_Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._

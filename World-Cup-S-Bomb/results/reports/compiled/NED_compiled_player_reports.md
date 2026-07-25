@@ -1,16 +1,8 @@
-# NED — Complete Player Report Collection
+# NED — V4 Player Evaluation Collection
 
-- Included player reports: 14
-- Compilation policy: complete source reports, no omitted sections.
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+- Included 300+ minute players: 9
+- Rankings are role-relative; cross-role score comparisons are invalid.
+- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
@@ -21,7 +13,13 @@ against video, training data, medical context, and opponent-specific scouting.
 - Team: Netherlands (NED)
 - Position: Left Center Forward
 - Functional role: Target Forward
-- Net xG contribution per 90: 0.3390
+- Risk-adjusted OBV per 90: -0.6638
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 48.1%
+- Role-relative z-score: -2.768
+- V4 evaluation score: 22.3
+
+![V4 event and 360 heatmap](../heatmaps/NED/2988_heatmap.svg)
 
 ## Physical profile
 
@@ -40,10 +38,11 @@ against video, training data, medical context, and opponent-specific scouting.
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -53,8 +52,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Netherlands (NED)
 - Position: Left Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.0864
+- Functional role: Holding Anchor
+- Risk-adjusted OBV per 90: 0.3165
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 5.3%
+- Role-relative z-score: -0.014
+- V4 evaluation score: 49.9
+
+![V4 event and 360 heatmap](../heatmaps/NED/3306_heatmap.svg)
 
 ## Physical profile
 
@@ -72,10 +77,12 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 ## Tactical recommendations
 
-- Lead the first pressing trigger and protect the inside passing lane.
+- Use a compact pressing trigger rather than sustained solo pressure.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -86,7 +93,13 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Team: Netherlands (NED)
 - Position: Left Wing Back
 - Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.1505
+- Risk-adjusted OBV per 90: -0.0600
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 28.8%
+- Role-relative z-score: -0.910
+- V4 evaluation score: 40.9
+
+![V4 event and 360 heatmap](../heatmaps/NED/3311_heatmap.svg)
 
 ## Physical profile
 
@@ -105,9 +118,11 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Pair with a faster recovery defender after aggressive rotations.
+- Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -117,8 +132,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Netherlands (NED)
 - Position: Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.2582
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.3752
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 2.0%
+- Role-relative z-score: +0.876
+- V4 evaluation score: 58.8
+
+![V4 event and 360 heatmap](../heatmaps/NED/3669_heatmap.svg)
 
 ## Physical profile
 
@@ -140,148 +161,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 5: 4318_starter_report.md -->
-
-# Davy Klaassen — Starter Report
-
-- Team: Netherlands (NED)
-- Position: Center Attacking Midfield
-- Functional role: Target Forward
-- Net xG contribution per 90: 0.2051
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.400 |
-| Pressing intensity per 90 | 10.28 |
-| Recovery index per 90 | 2.68 |
-
-## Top chemistry partners
-
-- Nathan Aké — synergy 0.509, 201 shared minutes
-- Andries Noppert — synergy 0.475, 201 shared minutes
-- Virgil van Dijk — synergy 0.474, 201 shared minutes
-
-## Tactical recommendations
-
-- Use a compact pressing trigger rather than sustained solo pressure.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 6: 6994_starter_report.md -->
-
-# Marten de Roon — Starter Report
-
-- Team: Netherlands (NED)
-- Position: Right Defensive Midfield
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0133
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.625 |
-| Pressing intensity per 90 | 23.90 |
-| Recovery index per 90 | 1.38 |
-
-## Top chemistry partners
-
-- Virgil van Dijk — synergy 0.506, 196 shared minutes
-- Nathan Aké — synergy 0.496, 196 shared minutes
-- Daley Blind — synergy 0.490, 196 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Target this player on direct restarts and back-post deliveries.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 7: 7745_starter_report.md -->
-
-# Steven Berghuis — Starter Report
-
-- Team: Netherlands (NED)
-- Position: Right Defensive Midfield
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.4690
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.250 |
-| Pressing intensity per 90 | 13.15 |
-| Recovery index per 90 | 3.82 |
-
-## Top chemistry partners
-
-- Nathan Aké — synergy 0.532, 212 shared minutes
-- Virgil van Dijk — synergy 0.508, 212 shared minutes
-- Andries Noppert — synergy 0.505, 212 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 8: 7891_starter_report.md -->
-
-# Teun Koopmeiners — Starter Report
-
-- Team: Netherlands (NED)
-- Position: Right Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.3601
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.500 |
-| Pressing intensity per 90 | 21.94 |
-| Recovery index per 90 | 3.72 |
-
-## Top chemistry partners
-
-- Nathan Aké — synergy 0.573, 239 shared minutes
-- Frenkie de Jong — synergy 0.567, 232 shared minutes
-- Virgil van Dijk — synergy 0.553, 242 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 9: 8118_starter_report.md -->
+<!-- PLAYER_REPORT 5: 8118_starter_report.md -->
 
 # Frenkie de Jong — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Left Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.1939
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.0183
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 18.2%
+- Role-relative z-score: +0.553
+- V4 evaluation score: 55.5
+
+![V4 event and 360 heatmap](../heatmaps/NED/8118_heatmap.svg)
 
 ## Physical profile
 
@@ -303,18 +202,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 10: 8125_starter_report.md -->
+<!-- PLAYER_REPORT 6: 8125_starter_report.md -->
 
 # Denzel Dumfries — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Right Wing Back
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0536
+- Functional role: Attacking Wingback
+- Risk-adjusted OBV per 90: -0.2666
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 45.0%
+- Role-relative z-score: -1.141
+- V4 evaluation score: 38.6
+
+![V4 event and 360 heatmap](../heatmaps/NED/8125_heatmap.svg)
 
 ## Physical profile
 
@@ -335,51 +242,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 11: 8259_starter_report.md -->
-
-# Steven Bergwijn — Starter Report
-
-- Team: Netherlands (NED)
-- Position: Left Center Forward
-- Functional role: Target Forward
-- Net xG contribution per 90: 0.1420
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.000 |
-| Pressing intensity per 90 | 8.62 |
-| Recovery index per 90 | 1.64 |
-
-## Top chemistry partners
-
-- Nathan Aké — synergy 0.526, 216 shared minutes
-- Frenkie de Jong — synergy 0.525, 219 shared minutes
-- Daley Blind — synergy 0.480, 219 shared minutes
-
-## Tactical recommendations
-
-- Use a compact pressing trigger rather than sustained solo pressure.
-- Avoid isolating this player in high-volume aerial matchups.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 12: 8326_starter_report.md -->
+<!-- PLAYER_REPORT 7: 8326_starter_report.md -->
 
 # Andries Noppert — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Goalkeeper
-- Functional role: Deep Playmaker
-- Net xG contribution per 90: 0.0691
+- Functional role: Goalkeeper
+- Risk-adjusted OBV per 90: 0.2617
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 0.3%
+- Role-relative z-score: -0.868
+- V4 evaluation score: 41.3
+
+![V4 event and 360 heatmap](../heatmaps/NED/8326_heatmap.svg)
 
 ## Physical profile
 
@@ -401,18 +283,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 13: 20750_starter_report.md -->
+<!-- PLAYER_REPORT 8: 20750_starter_report.md -->
 
 # Cody Mathès Gakpo — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Center Attacking Midfield
 - Functional role: Wide Creator
-- Net xG contribution per 90: 0.1385
+- Risk-adjusted OBV per 90: -0.3005
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 57.2%
+- Role-relative z-score: -2.260
+- V4 evaluation score: 27.4
+
+![V4 event and 360 heatmap](../heatmaps/NED/20750_heatmap.svg)
 
 ## Physical profile
 
@@ -433,18 +323,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 14: 21809_starter_report.md -->
+<!-- PLAYER_REPORT 9: 21809_starter_report.md -->
 
 # Jurriën David Norman Timber — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Right Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.0725
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.2177
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 5.4%
+- Role-relative z-score: +1.043
+- V4 evaluation score: 60.4
+
+![V4 event and 360 heatmap](../heatmaps/NED/21809_heatmap.svg)
 
 ## Physical profile
 
@@ -465,4 +363,6 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._

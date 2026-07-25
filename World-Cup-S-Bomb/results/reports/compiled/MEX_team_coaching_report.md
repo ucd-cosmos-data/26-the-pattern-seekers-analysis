@@ -1,22 +1,26 @@
 # Mexico — Team Coaching Report
 
-- Total wasted Net xG: 0.4393
-- Mean possession EvA gap: 0.001846
-- Most common optimal style: Patient Build-up
+## Model-grounded summary
+
+Mexico: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Wide Retreating Block (Direct Long Play to Patient Build-up). Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+- Total wasted Net xG: 0.2085
+- Mean possession EvA gap: 0.000876
+- Most common optimal style: No meaningful change
 
 ## Optimized starting 11
 
 1. Héctor Alfredo Moreno Herrera (Center Back)
 2. César Jasib Montes Castro (Center Back)
-3. Luis Gerardo Chávez Magallón (Defensive Midfield)
-4. Francisco Guillermo Ochoa Magaña (Goalkeeper)
-5. Hirving Rodrigo Lozano Bahena (Attacking Midfield/Wing)
-6. Jesús Daniel Gallardo Vasconcelos (Fullback/Wingback)
-7. Ernesto Alexis Vega Rojas (Attacking Midfield/Wing)
-8. Henry Josué Martín Mex (Forward)
-9. Edson Omar Álvarez Velázquez (Defensive Midfield)
-10. Carlos Uriel Antuna Romero (Attacking Midfield/Wing)
-11. Jorge Eduardo Sánchez Ramos (Fullback/Wingback)
+3. Jesús Daniel Gallardo Vasconcelos (Fullback/Wingback)
+4. Luis Gerardo Chávez Magallón (Defensive Midfield)
+5. Francisco Guillermo Ochoa Magaña (Goalkeeper)
+6. Hirving Rodrigo Lozano Bahena (Attacking Midfield/Wing)
+7. Edson Omar Álvarez Velázquez (Defensive Midfield)
+8. Jorge Eduardo Sánchez Ramos (Fullback/Wingback)
+9. Henry Josué Martín Mex (Forward)
+10. Carlos Alberto Rodríguez Gómez (Central/Wide Midfield)
+11. José Andrés Guardado Hernández (Central/Wide Midfield)
 
 ## Physical matchup deltas
 
@@ -28,21 +32,20 @@
 
 ## Best bench intervention
 
-Rogelio Gabriel Funes Mori for Ernesto Alexis Vega Rojas (expected Net xG gain 0.00023)
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 95, INSUFFICIENT_MINUTES: 15.
+
+## V4 role-relative player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 
-- Against Wide Retreating Block: switch from Direct Long Play to Patient Build-up (0.1153 cumulative Net xG)
-- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.0783 cumulative Net xG)
-- Against Compact Pressure Block: switch from Direct Long Play to Patient Build-up (0.0615 cumulative Net xG)
+- Against Wide Retreating Block: switch from Direct Long Play to Patient Build-up (0.0523 cumulative Net xG)
+- Against High-Intensity Press: switch from Short Under Pressure to Patient Build-up (0.0464 cumulative Net xG)
+- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.0398 cumulative Net xG)
 
-_Counterfactual values are predictive scenario estimates, not causal treatment effects. The corrupted stored coaching bundle was not used; this report uses the documented empirical hurdle fallback._
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+_Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._

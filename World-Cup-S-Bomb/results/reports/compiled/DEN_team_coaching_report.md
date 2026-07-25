@@ -1,22 +1,26 @@
 # Denmark — Team Coaching Report
 
-- Total wasted Net xG: 0.6183
-- Mean possession EvA gap: 0.002534
-- Most common optimal style: Patient Build-up
+## Model-grounded summary
+
+Denmark: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.172. Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+- Total wasted Net xG: 0.6901
+- Mean possession EvA gap: 0.002828
+- Most common optimal style: No meaningful change
 
 ## Optimized starting 11
 
 1. Andreas Christensen (Center Back)
-2. Christian Dannemann Eriksen (Central/Wide Midfield)
-3. Joachim Andersen (Center Back)
-4. Pierre-Emile Højbjerg (Central/Wide Midfield)
-5. Jesper Lindstrøm (Attacking Midfield/Wing)
-6. Kasper Schmeichel (Goalkeeper)
-7. Andreas Skov Olsen (Attacking Midfield/Wing)
-8. Kasper Dolberg (Forward)
-9. Andreas Evald Cornelius (Forward)
-10. Joakim Mæhle (Fullback/Wingback)
-11. Rasmus Nissen Kristensen (Fullback/Wingback)
+2. Pierre-Emile Højbjerg (Central/Wide Midfield)
+3. Kasper Schmeichel (Goalkeeper)
+4. Christian Dannemann Eriksen (Central/Wide Midfield)
+5. Joachim Andersen (Center Back)
+6. Joakim Mæhle (Fullback/Wingback)
+7. Rasmus Nissen Kristensen (Fullback/Wingback)
+8. Jesper Lindstrøm (Attacking Midfield/Wing)
+9. Mikkel Damsgaard (Attacking Midfield/Wing)
+10. Kasper Dolberg (Forward)
+11. Thomas Delaney (Defensive Midfield)
 
 ## Physical matchup deltas
 
@@ -28,21 +32,20 @@
 
 ## Best bench intervention
 
-Mathias Jensen for Kasper Dolberg (expected Net xG gain 0.00098)
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 87, INSUFFICIENT_MINUTES: 12.
+
+## V4 role-relative player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 
-- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.1990 cumulative Net xG)
-- Against Set-Piece Compact Shape: switch from Short Under Pressure to Patient Build-up (0.0968 cumulative Net xG)
-- Against Compact Pressure Block: switch from Direct Long Play to Patient Build-up (0.0940 cumulative Net xG)
+- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.2472 cumulative Net xG)
+- Against Set-Piece Compact Shape: switch from Short Under Pressure to Patient Build-up (0.1203 cumulative Net xG)
+- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.1136 cumulative Net xG)
 
-_Counterfactual values are predictive scenario estimates, not causal treatment effects. The corrupted stored coaching bundle was not used; this report uses the documented empirical hurdle fallback._
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+_Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._

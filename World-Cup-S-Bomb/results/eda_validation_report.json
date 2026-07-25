@@ -1,0 +1,142 @@
+{
+  "schema_version": 4,
+  "status": "PASS",
+  "staging": false,
+  "gates": {
+    "zero_nans": true,
+    "complete_oof_team_coverage": true,
+    "all_64_matches_leakage_safe": true,
+    "minutes_cutoff": true,
+    "fullback_spatial_roles": true,
+    "mbappe_risk_value_above_giroud": true,
+    "pressure_discount_exact": true,
+    "role_relative_normalization": true,
+    "sb360_spatial_coverage": true,
+    "obv_provenance_explicit": true,
+    "compiled_reports_in_place": true,
+    "heatmaps_complete": true,
+    "summary_complete": true,
+    "counterfactual_safety": true,
+    "locked_classifier_preserved": true
+  },
+  "player_metrics": {
+    "players_before_cutoff": 680,
+    "eligible_players": 142,
+    "players_dropped": 538,
+    "minimum_minutes": 301.20000000000005,
+    "functional_roles": {
+      "Ball-Winner": 32,
+      "Deep Playmaker": 20,
+      "Target Forward": 17,
+      "Goalkeeper": 16,
+      "Holding Anchor": 16,
+      "Box-to-Box Runner": 13,
+      "Wide Creator": 12,
+      "Progressive Winger": 10,
+      "Attacking Wingback": 6
+    },
+    "attacking_wingbacks": 6,
+    "obv_source": "open_event_value_fallback",
+    "mbappe_obv_per_90": -0.1566866314744191,
+    "giroud_obv_per_90": -0.2562683698662789,
+    "hakimi_role": "Wide Creator",
+    "dest_role": "Wide Creator",
+    "role_z_statistics": [
+      {
+        "Functional role": "Attacking Wingback",
+        "count": 6,
+        "mean": 3.700743415417188e-17,
+        "population_std": 1.0
+      },
+      {
+        "Functional role": "Ball-Winner",
+        "count": 32,
+        "mean": 2.7755575615628914e-17,
+        "population_std": 0.9999999999999999
+      },
+      {
+        "Functional role": "Box-to-Box Runner",
+        "count": 13,
+        "mean": 0.0,
+        "population_std": 0.9999999999999999
+      },
+      {
+        "Functional role": "Deep Playmaker",
+        "count": 20,
+        "mean": 2.2204460492503132e-17,
+        "population_std": 1.0000000000000002
+      },
+      {
+        "Functional role": "Goalkeeper",
+        "count": 16,
+        "mean": -1.3877787807814457e-17,
+        "population_std": 1.0
+      },
+      {
+        "Functional role": "Holding Anchor",
+        "count": 16,
+        "mean": 2.7755575615628914e-17,
+        "population_std": 0.9999999999999999
+      },
+      {
+        "Functional role": "Progressive Winger",
+        "count": 10,
+        "mean": 0.0,
+        "population_std": 1.0
+      },
+      {
+        "Functional role": "Target Forward",
+        "count": 17,
+        "mean": 0.0,
+        "population_std": 1.0
+      },
+      {
+        "Functional role": "Wide Creator",
+        "count": 12,
+        "mean": 0.0,
+        "population_std": 0.9999999999999999
+      }
+    ]
+  },
+  "spatial_metrics": {
+    "sb360_matches": 64,
+    "successful_action_points": 81231,
+    "freeze_frame_actor_points": 72016,
+    "events_with_360_context": 203454,
+    "heatmaps": 142
+  },
+  "model_metrics": {
+    "rows": 9685,
+    "matches": 64,
+    "teams": 32,
+    "positives": 13,
+    "brier": 0.001339058576741854,
+    "pr_auc": 0.0059580383921070375,
+    "roc_auc": 0.6893411592543106,
+    "unique_probabilities": 8739
+  },
+  "report_metrics": {
+    "compiled_files": 64,
+    "team_reports": 32,
+    "player_packets": 32,
+    "nan_tokens": 0
+  },
+  "counterfactuals": {
+    "eligible_substitutions": 0,
+    "suppressed_substitutions": 3608
+  },
+  "artifact_regression": {
+    "missing_bundle_keys": [],
+    "schema_compatible": true,
+    "probability_bounds": true,
+    "replay_exact": true,
+    "match_splits_disjoint": true,
+    "partition_match_counts": {
+      "train": 35,
+      "calibration": 10,
+      "threshold": 10,
+      "test": 9
+    },
+    "passed": true
+  }
+}

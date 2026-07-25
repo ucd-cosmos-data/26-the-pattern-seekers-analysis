@@ -1,16 +1,8 @@
-# POR — Complete Player Report Collection
+# POR — V4 Player Evaluation Collection
 
-- Included player reports: 13
-- Compilation policy: complete source reports, no omitted sections.
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+- Included 300+ minute players: 9
+- Rankings are role-relative; cross-role score comparisons are invalid.
+- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
@@ -20,8 +12,14 @@ against video, training data, medical context, and opponent-specific scouting.
 
 - Team: Portugal (POR)
 - Position: Right Center Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.0917
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: -0.0699
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 29.8%
+- Role-relative z-score: -0.870
+- V4 evaluation score: 41.3
+
+![V4 event and 360 heatmap](../heatmaps/POR/3193_heatmap.svg)
 
 ## Physical profile
 
@@ -43,7 +41,9 @@ against video, training data, medical context, and opponent-specific scouting.
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -53,8 +53,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Portugal (POR)
 - Position: Center Attacking Midfield
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.3028
+- Functional role: Wide Creator
+- Risk-adjusted OBV per 90: -0.0704
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 38.6%
+- Role-relative z-score: -0.288
+- V4 evaluation score: 47.1
+
+![V4 event and 360 heatmap](../heatmaps/POR/5204_heatmap.svg)
 
 ## Physical profile
 
@@ -73,10 +79,11 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -86,8 +93,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Portugal (POR)
 - Position: Left Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.0847
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.2823
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 1.7%
+- Role-relative z-score: +0.159
+- V4 evaluation score: 51.6
+
+![V4 event and 360 heatmap](../heatmaps/POR/5206_heatmap.svg)
 
 ## Physical profile
 
@@ -109,7 +122,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -120,7 +135,13 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Team: Portugal (POR)
 - Position: Center Forward
 - Functional role: Target Forward
-- Net xG contribution per 90: 0.5868
+- Risk-adjusted OBV per 90: -0.4083
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 50.5%
+- Role-relative z-score: -0.247
+- V4 evaluation score: 47.5
+
+![V4 event and 360 heatmap](../heatmaps/POR/5207_heatmap.svg)
 
 ## Physical profile
 
@@ -133,15 +154,17 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Top chemistry partners
 
 - Bruno Miguel Borges Fernandes — synergy 0.563, 230 shared minutes
-- Rúben Diogo Da Silva Neves — synergy 0.504, 224 shared minutes
 - João Pedro Cavaco Cancelo — synergy 0.490, 281 shared minutes
+- Bernardo Mota Veiga de Carvalho e Silva — synergy 0.457, 224 shared minutes
 
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -151,8 +174,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Portugal (POR)
 - Position: Left Back
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.1902
+- Functional role: Box-to-Box Runner
+- Risk-adjusted OBV per 90: -0.0360
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 33.7%
+- Role-relative z-score: +0.011
+- V4 evaluation score: 50.1
+
+![V4 event and 360 heatmap](../heatmaps/POR/5209_heatmap.svg)
 
 ## Physical profile
 
@@ -174,51 +203,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 6: 5214_starter_report.md -->
-
-# William Silva de Carvalho — Starter Report
-
-- Team: Portugal (POR)
-- Position: Center Defensive Midfield
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0806
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.714 |
-| Pressing intensity per 90 | 15.24 |
-| Recovery index per 90 | 1.90 |
-
-## Top chemistry partners
-
-- Diogo Meireles Costa — synergy 0.561, 236 shared minutes
-- Rúben Santos Gato Alves Dias — synergy 0.548, 220 shared minutes
-- Bruno Miguel Borges Fernandes — synergy 0.537, 213 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Target this player on direct restarts and back-post deliveries.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 7: 7005_starter_report.md -->
+<!-- PLAYER_REPORT 6: 7005_starter_report.md -->
 
 # João Pedro Cavaco Cancelo — Starter Report
 
 - Team: Portugal (POR)
 - Position: Right Back
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0530
+- Functional role: Box-to-Box Runner
+- Risk-adjusted OBV per 90: -0.0042
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 33.9%
+- Role-relative z-score: +0.617
+- V4 evaluation score: 56.2
+
+![V4 event and 360 heatmap](../heatmaps/POR/7005_heatmap.svg)
 
 ## Physical profile
 
@@ -240,83 +244,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 8: 9927_starter_report.md -->
-
-# Rúben Diogo Da Silva Neves — Starter Report
-
-- Team: Portugal (POR)
-- Position: Center Defensive Midfield
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.1180
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.500 |
-| Pressing intensity per 90 | 12.78 |
-| Recovery index per 90 | 3.60 |
-
-## Top chemistry partners
-
-- Diogo Meireles Costa — synergy 0.622, 275 shared minutes
-- Rúben Santos Gato Alves Dias — synergy 0.536, 210 shared minutes
-- Kléper Laveran Lima Ferreira — synergy 0.516, 198 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 9: 11184_starter_report.md -->
-
-# Otávio Edmilson da Silva Monteiro — Starter Report
-
-- Team: Portugal (POR)
-- Position: Left Center Midfield
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0896
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.833 |
-| Pressing intensity per 90 | 20.98 |
-| Recovery index per 90 | 3.65 |
-
-## Top chemistry partners
-
-- Rúben Santos Gato Alves Dias — synergy 0.510, 197 shared minutes
-- Bernardo Mota Veiga de Carvalho e Silva — synergy 0.497, 197 shared minutes
-- Diogo Meireles Costa — synergy 0.485, 197 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Target this player on direct restarts and back-post deliveries.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 10: 12041_starter_report.md -->
+<!-- PLAYER_REPORT 7: 12041_starter_report.md -->
 
 # João Félix Sequeira — Starter Report
 
 - Team: Portugal (POR)
 - Position: Left Wing
 - Functional role: Target Forward
-- Net xG contribution per 90: 0.1932
+- Risk-adjusted OBV per 90: -0.2163
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 47.7%
+- Role-relative z-score: +1.410
+- V4 evaluation score: 64.1
+
+![V4 event and 360 heatmap](../heatmaps/POR/12041_heatmap.svg)
 
 ## Physical profile
 
@@ -337,50 +284,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Use a compact pressing trigger rather than sustained solo pressure.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 11: 16028_starter_report.md -->
-
-# José Diogo Dalot Teixeira — Starter Report
-
-- Team: Portugal (POR)
-- Position: Right Back
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0609
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.600 |
-| Pressing intensity per 90 | 9.34 |
-| Recovery index per 90 | 2.00 |
-
-## Top chemistry partners
-
-- Diogo Meireles Costa — synergy 0.604, 270 shared minutes
-- Kléper Laveran Lima Ferreira — synergy 0.603, 270 shared minutes
-- Rúben Santos Gato Alves Dias — synergy 0.448, 173 shared minutes
-
-## Tactical recommendations
-
-- Use a compact pressing trigger rather than sustained solo pressure.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 12: 20016_starter_report.md -->
+<!-- PLAYER_REPORT 8: 20016_starter_report.md -->
 
 # Kléper Laveran Lima Ferreira — Starter Report
 
 - Team: Portugal (POR)
 - Position: Right Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.1424
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.3878
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 4.1%
+- Role-relative z-score: +0.336
+- V4 evaluation score: 53.4
+
+![V4 event and 360 heatmap](../heatmaps/POR/20016_heatmap.svg)
 
 ## Physical profile
 
@@ -402,18 +325,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 13: 32975_starter_report.md -->
+<!-- PLAYER_REPORT 9: 32975_starter_report.md -->
 
 # Diogo Meireles Costa — Starter Report
 
 - Team: Portugal (POR)
 - Position: Goalkeeper
-- Functional role: Deep Playmaker
-- Net xG contribution per 90: 0.0370
+- Functional role: Goalkeeper
+- Risk-adjusted OBV per 90: 0.2946
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 0.8%
+- Role-relative z-score: +0.057
+- V4 evaluation score: 50.6
+
+![V4 event and 360 heatmap](../heatmaps/POR/32975_heatmap.svg)
 
 ## Physical profile
 
@@ -433,6 +364,8 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Use a compact pressing trigger rather than sustained solo pressure.
 - Avoid isolating this player in high-volume aerial matchups.
-- Pair with a faster recovery defender after aggressive rotations.
+- Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._

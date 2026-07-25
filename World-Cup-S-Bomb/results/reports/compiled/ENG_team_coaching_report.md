@@ -1,22 +1,26 @@
 # England — Team Coaching Report
 
-- Total wasted Net xG: 0.3011
-- Mean possession EvA gap: 0.000834
-- Most common optimal style: Patient Build-up
+## Model-grounded summary
+
+England: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -3.654. Strongest positive squad synergy: John Stones + Jordan Pickford (0.815). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+- Total wasted Net xG: 1.0404
+- Mean possession EvA gap: 0.002882
+- Most common optimal style: No meaningful change
 
 ## Optimized starting 11
 
 1. John Stones (Center Back)
-2. Harry Maguire (Center Back)
-3. Harry Kane (Forward)
-4. Jude Bellingham (Defensive Midfield)
-5. Luke Shaw (Fullback/Wingback)
-6. Declan Rice (Defensive Midfield)
-7. Phil Foden (Attacking Midfield/Wing)
-8. Jordan Pickford (Goalkeeper)
+2. Luke Shaw (Fullback/Wingback)
+3. Jordan Pickford (Goalkeeper)
+4. Harry Maguire (Center Back)
+5. Declan Rice (Defensive Midfield)
+6. Harry Kane (Forward)
+7. Jude Bellingham (Defensive Midfield)
+8. Jordan Brian Henderson (Central/Wide Midfield)
 9. Bukayo Saka (Attacking Midfield/Wing)
-10. Jordan Brian Henderson (Central/Wide Midfield)
-11. Marcus Rashford (Attacking Midfield/Wing)
+10. Phil Foden (Attacking Midfield/Wing)
+11. Kyle Walker (Fullback/Wingback)
 
 ## Physical matchup deltas
 
@@ -28,21 +32,24 @@
 
 ## Best bench intervention
 
-Trent Alexander-Arnold for Bukayo Saka (expected Net xG gain 0.00198)
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 82, INSUFFICIENT_MINUTES: 17.
+
+## V4 role-relative player leaders
+
+1. John Stones — Holding Anchor; score 57.6, role z +0.76, OBV/90 +0.450
+2. Luke Shaw — Box-to-Box Runner; score 55.3, role z +0.53, OBV/90 +0.014
+3. Jordan Pickford — Goalkeeper; score 52.4, role z +0.24, OBV/90 +0.342
+4. Harry Kane — Target Forward; score 52.1, role z +0.21, OBV/90 -0.345
+5. Harry Maguire — Holding Anchor; score 48.3, role z -0.17, OBV/90 +0.494
+
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 
-- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.0587 cumulative Net xG)
-- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.0587 cumulative Net xG)
-- Against Set-Piece Compact Shape: switch from Direct Long Play to Patient Build-up (0.0451 cumulative Net xG)
+- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.2988 cumulative Net xG)
+- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.2831 cumulative Net xG)
+- Against High-Intensity Press: switch from Short Under Pressure to Patient Build-up (0.1794 cumulative Net xG)
 
-_Counterfactual values are predictive scenario estimates, not causal treatment effects. The corrupted stored coaching bundle was not used; this report uses the documented empirical hurdle fallback._
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+_Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._

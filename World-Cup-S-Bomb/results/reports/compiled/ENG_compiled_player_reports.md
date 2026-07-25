@@ -1,59 +1,25 @@
-# ENG — Complete Player Report Collection
+# ENG — V4 Player Evaluation Collection
 
-- Included player reports: 13
-- Compilation policy: complete source reports, no omitted sections.
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+- Included 300+ minute players: 7
+- Rankings are role-relative; cross-role score comparisons are invalid.
+- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
-<!-- PLAYER_REPORT 1: 3205_starter_report.md -->
-
-# Kyle Walker — Starter Report
-
-- Team: England (ENG)
-- Position: Right Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0558
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.556 |
-| Pressing intensity per 90 | 8.59 |
-| Recovery index per 90 | 2.86 |
-
-## Top chemistry partners
-
-- Declan Rice — synergy 0.585, 252 shared minutes
-- Jordan Pickford — synergy 0.584, 252 shared minutes
-- Harry Maguire — synergy 0.566, 252 shared minutes
-
-## Tactical recommendations
-
-- Use a compact pressing trigger rather than sustained solo pressure.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 2: 3244_starter_report.md -->
+<!-- PLAYER_REPORT 1: 3244_starter_report.md -->
 
 # John Stones — Starter Report
 
 - Team: England (ENG)
 - Position: Right Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.2516
+- Functional role: Holding Anchor
+- Risk-adjusted OBV per 90: 0.4504
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 2.9%
+- Role-relative z-score: +0.760
+- V4 evaluation score: 57.6
+
+![V4 event and 360 heatmap](../heatmaps/ENG/3244_heatmap.svg)
 
 ## Physical profile
 
@@ -75,51 +41,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 3: 3308_starter_report.md -->
-
-# Kieran Trippier — Starter Report
-
-- Team: England (ENG)
-- Position: Right Back
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0587
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.800 |
-| Pressing intensity per 90 | 11.90 |
-| Recovery index per 90 | 3.17 |
-
-## Top chemistry partners
-
-- John Stones — synergy 0.558, 227 shared minutes
-- Jordan Pickford — synergy 0.553, 227 shared minutes
-- Declan Rice — synergy 0.514, 198 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Target this player on direct restarts and back-post deliveries.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 4: 3336_starter_report.md -->
+<!-- PLAYER_REPORT 2: 3336_starter_report.md -->
 
 # Harry Maguire — Starter Report
 
 - Team: England (ENG)
 - Position: Left Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.2067
+- Functional role: Holding Anchor
+- Risk-adjusted OBV per 90: 0.4937
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 5.0%
+- Role-relative z-score: -0.173
+- V4 evaluation score: 48.3
+
+![V4 event and 360 heatmap](../heatmaps/ENG/3336_heatmap.svg)
 
 ## Physical profile
 
@@ -141,18 +82,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 5: 3382_starter_report.md -->
+<!-- PLAYER_REPORT 3: 3382_starter_report.md -->
 
 # Luke Shaw — Starter Report
 
 - Team: England (ENG)
 - Position: Left Back
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0877
+- Functional role: Box-to-Box Runner
+- Risk-adjusted OBV per 90: 0.0141
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 24.9%
+- Role-relative z-score: +0.527
+- V4 evaluation score: 55.3
+
+![V4 event and 360 heatmap](../heatmaps/ENG/3382_heatmap.svg)
 
 ## Physical profile
 
@@ -171,20 +120,28 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
-- Pair with a faster recovery defender after aggressive rotations.
+- Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 6: 3468_starter_report.md -->
+<!-- PLAYER_REPORT 4: 3468_starter_report.md -->
 
 # Jordan Pickford — Starter Report
 
 - Team: England (ENG)
 - Position: Goalkeeper
-- Functional role: Deep Playmaker
-- Net xG contribution per 90: 0.0294
+- Functional role: Goalkeeper
+- Risk-adjusted OBV per 90: 0.3418
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 1.0%
+- Role-relative z-score: +0.244
+- V4 evaluation score: 52.4
+
+![V4 event and 360 heatmap](../heatmaps/ENG/3468_heatmap.svg)
 
 ## Physical profile
 
@@ -206,50 +163,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 7: 3532_starter_report.md -->
-
-# Jordan Brian Henderson — Starter Report
-
-- Team: England (ENG)
-- Position: Right Center Midfield
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0880
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.400 |
-| Pressing intensity per 90 | 11.88 |
-| Recovery index per 90 | 1.93 |
-
-## Top chemistry partners
-
-- John Stones — synergy 0.618, 275 shared minutes
-- Jordan Pickford — synergy 0.617, 280 shared minutes
-- Harry Maguire — synergy 0.586, 280 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 8: 3943_starter_report.md -->
+<!-- PLAYER_REPORT 5: 3943_starter_report.md -->
 
 # Declan Rice — Starter Report
 
 - Team: England (ENG)
 - Position: Left Defensive Midfield
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0619
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.0201
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 10.4%
+- Role-relative z-score: -0.204
+- V4 evaluation score: 48.0
+
+![V4 event and 360 heatmap](../heatmaps/ENG/3943_heatmap.svg)
 
 ## Physical profile
 
@@ -270,84 +203,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Use a compact pressing trigger rather than sustained solo pressure.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 9: 4354_starter_report.md -->
-
-# Phil Foden — Starter Report
-
-- Team: England (ENG)
-- Position: Right Wing
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.4404
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.300 |
-| Pressing intensity per 90 | 10.78 |
-| Recovery index per 90 | 2.29 |
-
-## Top chemistry partners
-
-- John Stones — synergy 0.618, 276 shared minutes
-- Jude Bellingham — synergy 0.542, 276 shared minutes
-- Declan Rice — synergy 0.529, 239 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 10: 7843_starter_report.md -->
-
-# Mason Mount — Starter Report
-
-- Team: England (ENG)
-- Position: Center Attacking Midfield
-- Functional role: Target Forward
-- Net xG contribution per 90: 0.1066
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.143 |
-| Pressing intensity per 90 | 19.32 |
-| Recovery index per 90 | 2.63 |
-
-## Top chemistry partners
-
-- Declan Rice — synergy 0.477, 205 shared minutes
-- Luke Shaw — synergy 0.477, 205 shared minutes
-- Harry Maguire — synergy 0.460, 205 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 11: 10955_starter_report.md -->
+<!-- PLAYER_REPORT 6: 10955_starter_report.md -->
 
 # Harry Kane — Starter Report
 
 - Team: England (ENG)
 - Position: Center Forward
 - Functional role: Target Forward
-- Net xG contribution per 90: 0.5167
+- Risk-adjusted OBV per 90: -0.3445
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 53.8%
+- Role-relative z-score: +0.213
+- V4 evaluation score: 52.1
+
+![V4 event and 360 heatmap](../heatmaps/ENG/10955_heatmap.svg)
 
 ## Physical profile
 
@@ -366,53 +241,28 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 12: 22084_starter_report.md -->
-
-# Bukayo Saka — Starter Report
-
-- Team: England (ENG)
-- Position: Right Wing
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.2096
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.333 |
-| Pressing intensity per 90 | 17.30 |
-| Recovery index per 90 | 2.78 |
-
-## Top chemistry partners
-
-- John Stones — synergy 0.625, 291 shared minutes
-- Declan Rice — synergy 0.599, 291 shared minutes
-- Harry Maguire — synergy 0.580, 291 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 13: 30714_starter_report.md -->
+<!-- PLAYER_REPORT 7: 30714_starter_report.md -->
 
 # Jude Bellingham — Starter Report
 
 - Team: England (ENG)
 - Position: Right Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.2162
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: -0.1882
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 26.1%
+- Role-relative z-score: -1.516
+- V4 evaluation score: 34.8
+
+![V4 event and 360 heatmap](../heatmaps/ENG/30714_heatmap.svg)
 
 ## Physical profile
 
@@ -433,4 +283,6 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._

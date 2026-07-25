@@ -21,11 +21,14 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.report_generators import (  # noqa: E402
+    compile_v4_report_packets,
     generate_full_team_coaching_reports,
     generate_individual_starter_reports,
+    generate_player_heatmap_svgs,
 )
 from src.simulation_engine import (  # noqa: E402
     EmpiricalHurdleModel,
+    build_v4_player_evaluations,
     build_lineup_matchup_features,
     calculate_expected_vs_actual_deltas,
     compute_player_synergy_matrix,
@@ -50,12 +53,36 @@ COMPONENTS = PROJECT_ROOT / "data/interim/world_cup_player_match_components.csv"
 INTERVALS = PROJECT_ROOT / "data/interim/world_cup_lineup_intervals.csv"
 LINEUPS = PROJECT_ROOT / "data/interim/world_cup_possession_lineups.csv"
 EVENTS = PROJECT_ROOT / "notebooks/all_events.csv"
+FRAMES_360 = PROJECT_ROOT / "data/interim/world_cup_360_frames.csv"
+FRAME_METRICS_360 = (
+    PROJECT_ROOT / "data/interim/world_cup_360_frame_metrics.csv"
+)
 RECOMMENDATIONS = (
     PROJECT_ROOT / "data/processed/world_cup_recommendation_features.csv"
 )
 DEFENSIVE = PROJECT_ROOT / "data/processed/world_cup_defensive_clusters.csv"
 STORED_HURDLE = PROJECT_ROOT / "models/coaching_model_benchmark.joblib"
 V2_HURDLE = PROJECT_ROOT / "models/coaching_model_benchmark_v2.joblib"
+V4_EVENT_COLUMNS = {
+    "id",
+    "match_id",
+    "team",
+    "type",
+    "player_id",
+    "pass_recipient_id",
+    "pass_outcome",
+    "dribble_outcome",
+    "ball_receipt_outcome",
+    "location",
+    "pass_end_location",
+    "carry_end_location",
+    "under_pressure",
+    "shot_statsbomb_xg",
+    "obv_total_net",
+    "obv_for_net",
+    "obv",
+    "on_ball_value",
+}
 
 
 def _load_inputs() -> dict[str, pd.DataFrame]:
@@ -74,22 +101,60 @@ def _load_inputs() -> dict[str, pd.DataFrame]:
         ],
         low_memory=False,
     )
-    events = pd.read_csv(
-        EVENTS,
-        usecols=[
+    available_event_columns = set(
+        pd.read_csv(EVENTS, nrows=0).columns
+    )
+    event_columns = sorted(V4_EVENT_COLUMNS & available_event_columns)
+    events = pd.read_csv(EVENTS, usecols=event_columns, low_memory=False)
+    missing_required = sorted(
+        {
+            "id",
             "match_id",
             "team",
             "type",
             "player_id",
             "pass_recipient_id",
             "pass_outcome",
+            "dribble_outcome",
+            "ball_receipt_outcome",
             "location",
             "pass_end_location",
+            "carry_end_location",
             "under_pressure",
+            "shot_statsbomb_xg",
+        }
+        - set(events.columns)
+    )
+    if missing_required:
+        raise ValueError(
+            f"StatsBomb event export lacks V4 fields: {missing_required}"
+        )
+    actor_chunks = []
+    for chunk in pd.read_csv(
+        FRAMES_360,
+        usecols=[
+            "match_id",
+            "event_uuid",
+            "actor",
+            "x",
+            "y",
+        ],
+        chunksize=250_000,
+    ):
+        actor = chunk["actor"].astype(str).str.lower().isin(["true", "1"])
+        actor_chunks.append(chunk.loc[actor])
+    frame_actors = pd.concat(actor_chunks, ignore_index=True)
+    frame_metrics = pd.read_csv(
+        FRAME_METRICS_360,
+        usecols=[
+            "match_id",
+            "event_uuid",
+            "defensive_density",
+            "nearest_defender_distance",
+            "defenders_within_5",
         ],
         low_memory=False,
     )
-    events = events[events["type"].eq("Pass")]
     return {
         "components": components,
         "intervals": intervals,
@@ -97,6 +162,8 @@ def _load_inputs() -> dict[str, pd.DataFrame]:
         "recommendations": recommendations,
         "defensive": defensive,
         "events": events,
+        "frame_actors": frame_actors,
+        "frame_metrics": frame_metrics,
     }
 
 
@@ -535,17 +602,177 @@ def _calibration_matches_for_fold(
     return sorted(selected)
 
 
+def _write_v4_model_summary(
+    path: Path,
+    *,
+    provenance: dict[str, object],
+    profiles: pd.DataFrame,
+    oof_metrics: dict[str, object],
+    compiled_checks: dict[str, int],
+) -> None:
+    """Write the required V4 model and spatial-data explanation."""
+
+    source = str(provenance["obv_source"])
+    obv_boundary = (
+        "Licensed StatsBomb OBV was present and used directly."
+        if bool(provenance["native_obv_available"])
+        else (
+            "The supplied open event export has no licensed StatsBomb OBV "
+            "column. This build therefore uses the documented open-event "
+            "pitch-value fallback and does not represent it as proprietary OBV."
+        )
+    )
+    top_rows = profiles.nlargest(10, "player_evaluation_score")
+    top_table = "\n".join(
+        f"| {index} | {row.player} | {row.functional_role} | "
+        f"{row.minutes:.0f} | {row.obv_per_90:+.4f} | "
+        f"{100 * row.final_third_share:.1f}% | {row.role_z_score:+.2f} |"
+        for index, row in enumerate(top_rows.itertuples(index=False), start=1)
+    )
+    lines = [
+        "# V4 Model Explanations",
+        "",
+        "## V4 Model Explanations",
+        "",
+        "### Player-ranking metrics",
+        "",
+        "- Players below 300 tournament minutes are excluded before ranking.",
+        (
+            "- `obv_per_90` is the primary attacking-role signal. Source for "
+            f"this run: `{source}`. {obv_boundary}"
+        ),
+        (
+            "- Successful pass/carry endpoints and other completed on-ball "
+            "actions are mapped on the StatsBomb 120x80 coordinate system."
+        ),
+        (
+            "- `final_third_share` is the proportion of successful event "
+            "endpoints plus matching SB360 actor snapshots with X > 80."
+        ),
+        (
+            "- Turnovers receive a location-sensitive penalty. The multiplier "
+            "is exactly 0.5 when the event is flagged under pressure or the "
+            "SB360 frame shows close/high-density defensive pressure."
+        ),
+        (
+            "- Attacking composites weight role-relative OBV 65%, final-third "
+            "presence 20%, and pressure-adjusted turnover resilience 15%."
+        ),
+        (
+            "- The final composite is standardized with "
+            "`groupby('Functional role')`; score 50 is role average and each "
+            "10 points represents one within-role population standard deviation."
+        ),
+        "",
+        "### Model structure",
+        "",
+        (
+            "The V3 leakage-safe 64-match leave-one-match-out transition "
+            "classifier, Platt calibration, abstention threshold policy, and "
+            "counterfactual confidence gates remain intact. V4 changes the "
+            "player-evaluation layer and uses the role-relative score when "
+            "ranking eligible lineup candidates."
+        ),
+        "",
+        (
+            f"OOF evaluation: {oof_metrics['matches']} matches, "
+            f"{oof_metrics['teams']} teams, Brier "
+            f"{float(oof_metrics['brier']):.6f}, PR-AUC "
+            f"{float(oof_metrics['pr_auc']):.6f}, ROC-AUC "
+            f"{float(oof_metrics['roc_auc']):.6f}."
+        ),
+        "",
+        "### StatsBomb source distinctions and heatmap mapping",
+        "",
+        (
+            "1. **Standard match events:** event UUID, player identity, action "
+            "type/outcome, `location`, `pass_end_location`, "
+            "`carry_end_location`, shot xG, and `under_pressure` define the "
+            "on-ball action path and value."
+        ),
+        (
+            "2. **Player metadata and tournament components:** player/team "
+            "identity, position group, squad context, and aggregated minutes "
+            "define eligibility and the initial functional-role cohort."
+        ),
+        (
+            "3. **StatsBomb 360:** the matching event UUID links actor "
+            "freeze-frame coordinates and defender density/distance to the "
+            "event. These snapshots refine pressure and spatial density."
+        ),
+        "",
+        (
+            "**Important spatial boundary:** StatsBomb 360 contains event-time "
+            "freeze-frame snapshots, not continuous optical tracking. V4 "
+            "heatmaps therefore visualize observed successful endpoints and "
+            "visible actor snapshots; they do not interpolate unobserved runs."
+        ),
+        "",
+        "### Spatial and role safeguards",
+        "",
+        (
+            "- Fullbacks above 35% combined final-third spatial share are "
+            "reclassified as `Attacking Wingback`."
+        ),
+        (
+            "- No fullback/wingback may retain the `Holding Anchor` label; "
+            "below-threshold cases are protected as `Two-Way Fullback`."
+        ),
+        (
+            f"- Eligible players: {provenance['players_after_cutoff']} of "
+            f"{provenance['players_before_cutoff']} "
+            f"({provenance['players_dropped']} removed by the cutoff)."
+        ),
+        (
+            f"- Spatial inputs: {provenance['successful_action_points']:,} "
+            "successful action endpoints and "
+            f"{provenance['freeze_frame_actor_points']:,} linked SB360 actor "
+            "snapshots."
+        ),
+        (
+            f"- Reports: {compiled_checks['markdown_files']} unversioned "
+            "compiled files, including "
+            f"{compiled_checks['compiled_player_sections']} player sections."
+        ),
+        "",
+        "### Top role-relative evaluations",
+        "",
+        "| Rank | Player | Functional role | Minutes | OBV/90 | Final third | Role z |",
+        "|---:|---|---|---:|---:|---:|---:|",
+        top_table,
+        "",
+        "These rankings support scouting and video prioritization. They are not "
+        "causal estimates, transfer values, or direct comparisons across roles.",
+        "",
+    ]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
 def run_pipeline(
     project_root: Path = PROJECT_ROOT,
     *,
     model_path: Path = V2_HURDLE,
+    staging: bool = True,
 ) -> dict[str, object]:
-    """Build full 64-match OOF audits while preserving locked v2 metrics."""
+    """Build V4 OOF audits and player reports in staging or final paths."""
 
-    timer = PipelineTimer(pipeline="run_team_simulation_reports_v3")
-    with timer.stage("load_v3_inputs", total=3, unit="source") as update:
+    artifact_root = (
+        project_root / "results/v4_staging"
+        if staging
+        else project_root / "results"
+    )
+    timer = PipelineTimer(
+        log_path=(
+            artifact_root / "pipeline_execution_eta.json"
+            if staging
+            else project_root / "logs/pipeline_execution_eta.json"
+        ),
+        pipeline="run_team_simulation_reports_v4",
+    )
+    with timer.stage("load_v4_inputs", total=4, unit="source") as update:
         data = _load_inputs()
-        update(1, "raw tables")
+        update(1, "events, player metadata, and 360 tables")
         bundle, model_source, model_warning = load_model_bundle(model_path)
         assert bundle is not None
         update(2, "locked v2 classifier")
@@ -553,6 +780,7 @@ def run_pipeline(
             project_root / "data/processed/lineup_matchup_features_v2.csv"
         )
         update(3, "v2 descriptive matchup features")
+        update(4, "validated 360 actor and density context")
 
     raw = data["recommendations"]
     defensive = data["defensive"].drop_duplicates("possession_uid")
@@ -663,14 +891,14 @@ def run_pipeline(
         )
 
     tactical = pd.concat(tactical_folds, ignore_index=True)
-    simulation_dir = project_root / "results/simulations/v3"
+    simulation_dir = artifact_root / "simulations"
     simulation_dir.mkdir(parents=True, exist_ok=True)
     tactical.to_parquet(
-        simulation_dir / "tactical_style_simulations_oof_v3.parquet",
+        simulation_dir / "tactical_style_simulations_oof.parquet",
         index=False,
     )
     pd.DataFrame(leakage_records).to_csv(
-        simulation_dir / "oof_fold_integrity_v3.csv", index=False
+        simulation_dir / "oof_fold_integrity.csv", index=False
     )
 
     actual_probabilities = tactical[
@@ -715,25 +943,89 @@ def run_pipeline(
         dominant_reason, on="team", how="left", validate="one_to_one"
     )
     recurrent = identify_recurrent_tactical_mistakes(eva_detail, defensive)
-    audit_dir = project_root / "results/audit/v3"
+    audit_dir = artifact_root / "audit"
     audit_dir.mkdir(parents=True, exist_ok=True)
     team_summary.to_csv(
-        audit_dir / "expected_vs_actual_team_summary_oof_v3.csv", index=False
+        audit_dir / "expected_vs_actual_team_summary_oof.csv", index=False
     )
     eva_detail.to_parquet(
-        audit_dir / "expected_vs_actual_possessions_oof_v3.parquet", index=False
+        audit_dir / "expected_vs_actual_possessions_oof.parquet", index=False
     )
     recurrent.to_csv(
-        audit_dir / "recurrent_tactical_mistakes_oof_v3.csv", index=False
+        audit_dir / "recurrent_tactical_mistakes_oof.csv", index=False
     )
 
     components = data["components"]
     intervals = data["intervals"]
-    cohort_profiles = pd.read_csv(
-        project_root / "data/processed/player_physicality_profiles_v2.csv"
+    with timer.stage(
+        "v4_player_spatial_evaluation", total=4, unit="layer"
+    ) as update:
+        (
+            v4_profiles,
+            heatmap_cells,
+            event_value_audit,
+            player_provenance,
+        ) = build_v4_player_evaluations(
+            components,
+            data["events"],
+            data["frame_actors"],
+            data["frame_metrics"],
+        )
+        update(4, "events + metadata + 360 + role normalization")
+    player_output_dir = (
+        artifact_root / "player"
+        if staging
+        else project_root / "data/processed"
     )
-    cohort_ids = cohort_profiles["player_id"].astype(int).tolist()
+    player_output_dir.mkdir(parents=True, exist_ok=True)
+    v4_profiles.to_csv(
+        player_output_dir / "player_evaluations.csv", index=False
+    )
+    heatmap_cells.to_csv(
+        player_output_dir / "player_heatmap_cells.csv", index=False
+    )
+    event_value_audit[
+        [
+            "match_id",
+            "id",
+            "player_id",
+            "type",
+            "turnover",
+            "event_under_pressure",
+            "freeze_frame_pressure",
+            "pressure_augmented",
+            "standard_turnover_penalty",
+            "turnover_penalty_multiplier",
+            "applied_turnover_penalty",
+            "raw_on_ball_value",
+            "risk_adjusted_on_ball_value",
+        ]
+    ].to_parquet(
+        player_output_dir / "player_event_value_audit.parquet",
+        index=False,
+    )
+    (player_output_dir / "player_evaluation_provenance.json").write_text(
+        json.dumps(player_provenance, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    cohort_ids = v4_profiles["player_id"].astype(int).tolist()
     all_profiles = derive_physicality_metrics(components)
+    new_profile_columns = [
+        "player_id",
+        "player_evaluation_score",
+        "role_z_score",
+        "obv_per_90",
+        "final_third_share",
+    ]
+    simulation_profiles = all_profiles.merge(
+        v4_profiles[new_profile_columns],
+        on="player_id",
+        how="left",
+        validate="one_to_one",
+    )
+    simulation_profiles["player_evaluation_score"] = simulation_profiles[
+        "player_evaluation_score"
+    ].fillna(0.0)
     full_synergy = compute_player_synergy_matrix(
         components,
         data["events"],
@@ -751,46 +1043,9 @@ def run_pipeline(
     with timer.stage("reason_coded_substitutions", total=32, unit="team") as update:
         substitutions, optimized, suppressions = (
             simulate_starter_replacement_impact(
-                components, all_profiles, full_synergy, full_hurdle
+                components, simulation_profiles, full_synergy, full_hurdle
             )
         )
-        locked_v2_substitutions = pd.read_parquet(
-            project_root
-            / "results/simulations/v2/substitution_optimization_v2.parquet"
-        )
-        locked_v2_substitutions = locked_v2_substitutions[
-            locked_v2_substitutions["expected_net_xg_gain"].gt(0.005)
-            & locked_v2_substitutions["gain_ci_low"].gt(0)
-        ]
-        if not locked_v2_substitutions.empty:
-            substitutions = (
-                pd.concat(
-                    [substitutions, locked_v2_substitutions],
-                    ignore_index=True,
-                )
-                .sort_values("expected_net_xg_gain", ascending=False)
-                .drop_duplicates(
-                    ["team", "starter_player_id", "bench_player_id"],
-                    keep="first",
-                )
-            )
-            eligible_pairs = set(
-                zip(
-                    substitutions["starter_player_id"].astype(int),
-                    substitutions["bench_player_id"].astype(int),
-                    strict=True,
-                )
-            )
-            suppressions = suppressions[
-                ~suppressions.apply(
-                    lambda row: (
-                        int(row["starter_player_id"]),
-                        int(row["bench_player_id"]),
-                    )
-                    in eligible_pairs,
-                    axis=1,
-                )
-            ].copy()
         update(32)
     if substitutions.empty:
         substitutions = pd.DataFrame(
@@ -813,16 +1068,17 @@ def run_pipeline(
             ]
         )
     substitutions.to_parquet(
-        simulation_dir / "substitution_optimization_v3.parquet", index=False
+        simulation_dir / "substitution_optimization.parquet", index=False
     )
     suppressions.to_parquet(
-        simulation_dir / "substitution_suppressions_v3.parquet", index=False
+        simulation_dir / "substitution_suppressions.parquet", index=False
     )
     optimized.to_csv(
-        simulation_dir / "optimized_starting_lineups_v3.csv", index=False
+        simulation_dir / "optimized_starting_lineups.csv", index=False
     )
 
     metadata = {
+        "schema_version": 4,
         "model_version": bundle["model_version"],
         "target": bundle["target"],
         "calibration_method": bundle["calibration_method"],
@@ -831,8 +1087,21 @@ def run_pipeline(
         "holdout_metrics": bundle["holdout_metrics"],
         "oof_metrics": oof_metrics,
         "oof_provenance": "64-match leave-one-match-out; held-out match excluded",
+        "player_evaluation": player_provenance,
     }
-    reports_root = project_root / "results/reports/v3"
+    reports_root = artifact_root / "reports"
+    heatmap_count = generate_player_heatmap_svgs(
+        v4_profiles,
+        heatmap_cells,
+        reports_root / "heatmaps",
+        clear_existing=True,
+    )
+    player_report_count = generate_individual_starter_reports(
+        v4_profiles,
+        cohort_synergy,
+        reports_root / "starters",
+        clear_existing=True,
+    )
     team_count = generate_full_team_coaching_reports(
         team_summary,
         optimized,
@@ -842,8 +1111,27 @@ def run_pipeline(
         reports_root / "teams",
         model_metadata=metadata,
         synergy=cohort_synergy,
-        profiles=cohort_profiles,
+        profiles=v4_profiles,
         suppression_reasons=suppressions,
+        clear_existing=True,
+    )
+    compiled_checks = compile_v4_report_packets(
+        reports_root / "teams",
+        reports_root / "starters",
+        reports_root / "compiled",
+    )
+    summary_path = (
+        artifact_root / "Summary/v4_model_explanation_summary.md"
+        if staging
+        else project_root
+        / "results/Summary/v4_model_explanation_summary.md"
+    )
+    _write_v4_model_summary(
+        summary_path,
+        provenance=player_provenance,
+        profiles=v4_profiles,
+        oof_metrics=oof_metrics,
+        compiled_checks=compiled_checks,
     )
     checks = {
         "all_64_matches_oof": len(leakage_records) == 64,
@@ -864,14 +1152,36 @@ def run_pipeline(
         "suppression_reason_coverage": not suppressions.empty
         and bool(suppressions["reason_code"].notna().all()),
         "team_reports": team_count == 32,
+        "minutes_cutoff": bool(v4_profiles["minutes"].ge(300).all()),
+        "fullback_role_safeguard": not bool(
+            v4_profiles.loc[
+                v4_profiles["position_group"].eq("Fullback/Wingback"),
+                "functional_role",
+            ]
+            .eq("Holding Anchor")
+            .any()
+        ),
+        "attacking_wingback_threshold": bool(
+            v4_profiles.loc[
+                v4_profiles["position_group"].eq("Fullback/Wingback")
+                & v4_profiles["final_third_share"].gt(0.35),
+                "functional_role",
+            ]
+            .eq("Attacking Wingback")
+            .all()
+        ),
+        "heatmaps": heatmap_count == len(v4_profiles),
+        "player_reports": player_report_count == len(v4_profiles),
+        "compiled_reports": compiled_checks["markdown_files"] == 64,
+        "summary": summary_path.is_file(),
     }
     if not all(checks.values()):
         raise RuntimeError(
-            "V3 pipeline checks failed: "
+            "V4 pipeline checks failed: "
             + ", ".join(name for name, passed in checks.items() if not passed)
         )
     manifest = {
-        "schema_version": 3,
+        "schema_version": 4,
         "status": "complete",
         "model_source": model_source,
         "model_warning": model_warning,
@@ -882,6 +1192,7 @@ def run_pipeline(
         "threshold_status": bundle["threshold_status"],
         "locked_v2_holdout_metrics": bundle["holdout_metrics"],
         "tournament_oof_metrics": oof_metrics,
+        "player_evaluation_provenance": player_provenance,
         "fold_assignment_hash": bundle["fold_assignment_hash"],
         "counts": {
             "oof_matches": 64,
@@ -891,11 +1202,14 @@ def run_pipeline(
             "eligible_substitutions": len(substitutions),
             "suppressed_substitutions": len(suppressions),
             "team_reports": team_count,
+            "eligible_player_evaluations": len(v4_profiles),
+            "player_heatmaps": heatmap_count,
+            "compiled_reports": compiled_checks["markdown_files"],
         },
         "checks": checks,
         "runtime": timer.summary(),
     }
-    manifest_path = reports_root / "pipeline_manifest_v3.json"
+    manifest_path = reports_root / "pipeline_manifest.json"
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     return manifest
@@ -908,6 +1222,11 @@ def parse_args() -> argparse.Namespace:
         choices=["DEBUG", "INFO", "WARNING"],
         default="INFO",
     )
+    parser.add_argument(
+        "--staging",
+        action="store_true",
+        help="Write to the isolated V4 staging paths instead of production.",
+    )
     return parser.parse_args()
 
 
@@ -919,7 +1238,7 @@ def main() -> None:
         datefmt="%H:%M:%S",
     )
     for _ in tqdm(range(1), desc="World Cup reporting pipeline", unit="run"):
-        manifest = run_pipeline()
+        manifest = run_pipeline(staging=args.staging)
     print(json.dumps(manifest, indent=2))
 
 

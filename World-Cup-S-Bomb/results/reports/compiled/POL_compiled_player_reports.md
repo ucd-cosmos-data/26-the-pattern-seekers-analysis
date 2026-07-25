@@ -1,16 +1,8 @@
-# POL — Complete Player Report Collection
+# POL — V4 Player Evaluation Collection
 
-- Included player reports: 11
-- Compilation policy: complete source reports, no omitted sections.
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+- Included 300+ minute players: 8
+- Rankings are role-relative; cross-role score comparisons are invalid.
+- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
@@ -20,8 +12,14 @@ against video, training data, medical context, and opponent-specific scouting.
 
 - Team: Poland (POL)
 - Position: Right Center Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0565
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.0811
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 3.5%
+- Role-relative z-score: -1.451
+- V4 evaluation score: 35.5
+
+![V4 event and 360 heatmap](../heatmaps/POL/3034_heatmap.svg)
 
 ## Physical profile
 
@@ -43,7 +41,9 @@ against video, training data, medical context, and opponent-specific scouting.
 - Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -53,8 +53,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Poland (POL)
 - Position: Center Defensive Midfield
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0292
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.0682
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 16.5%
+- Role-relative z-score: +0.460
+- V4 evaluation score: 54.6
+
+![V4 event and 360 heatmap](../heatmaps/POL/3637_heatmap.svg)
 
 ## Physical profile
 
@@ -76,7 +82,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -86,8 +94,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Poland (POL)
 - Position: Right Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0313
+- Functional role: Wide Creator
+- Risk-adjusted OBV per 90: 0.0028
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 27.2%
+- Role-relative z-score: +0.699
+- V4 evaluation score: 57.0
+
+![V4 event and 360 heatmap](../heatmaps/POL/4734_heatmap.svg)
 
 ## Physical profile
 
@@ -108,7 +122,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Use a compact pressing trigger rather than sustained solo pressure.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -118,8 +134,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Poland (POL)
 - Position: Right Center Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.2082
+- Functional role: Wide Creator
+- Risk-adjusted OBV per 90: 0.0337
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 25.8%
+- Role-relative z-score: +0.788
+- V4 evaluation score: 57.9
+
+![V4 event and 360 heatmap](../heatmaps/POL/5660_heatmap.svg)
 
 ## Physical profile
 
@@ -140,7 +162,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -151,7 +175,13 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Team: Poland (POL)
 - Position: Center Forward
 - Functional role: Target Forward
-- Net xG contribution per 90: 0.7329
+- Risk-adjusted OBV per 90: -0.4313
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 52.4%
+- Role-relative z-score: -0.684
+- V4 evaluation score: 43.2
+
+![V4 event and 360 heatmap](../heatmaps/POL/5668_heatmap.svg)
 
 ## Physical profile
 
@@ -170,9 +200,11 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
-- Pair with a faster recovery defender after aggressive rotations.
+- Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -182,8 +214,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Poland (POL)
 - Position: Goalkeeper
-- Functional role: Deep Playmaker
-- Net xG contribution per 90: 0.0395
+- Functional role: Goalkeeper
+- Risk-adjusted OBV per 90: 0.5992
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 2.6%
+- Role-relative z-score: +2.296
+- V4 evaluation score: 73.0
+
+![V4 event and 360 heatmap](../heatmaps/POL/5669_heatmap.svg)
 
 ## Physical profile
 
@@ -205,7 +243,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -215,8 +255,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Poland (POL)
 - Position: Left Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0111
+- Functional role: Box-to-Box Runner
+- Risk-adjusted OBV per 90: -0.0665
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 28.2%
+- Role-relative z-score: -0.834
+- V4 evaluation score: 41.7
+
+![V4 event and 360 heatmap](../heatmaps/POL/5673_heatmap.svg)
 
 ## Physical profile
 
@@ -234,120 +280,30 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 ## Tactical recommendations
 
-- Lead the first pressing trigger and protect the inside passing lane.
+- Use a compact pressing trigger rather than sustained solo pressure.
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 8: 7979_starter_report.md -->
-
-# Przemysław Frankowski — Starter Report
-
-- Team: Poland (POL)
-- Position: Left Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.0250
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.333 |
-| Pressing intensity per 90 | 15.56 |
-| Recovery index per 90 | 3.89 |
-
-## Top chemistry partners
-
-- Kamil Glik — synergy 0.560, 255 shared minutes
-- Bartosz Bereszyński — synergy 0.529, 255 shared minutes
-- Jakub Piotr Kiwior — synergy 0.505, 255 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 9: 11737_starter_report.md -->
-
-# Krystian Bielik — Starter Report
-
-- Team: Poland (POL)
-- Position: Right Defensive Midfield
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0884
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.583 |
-| Pressing intensity per 90 | 16.87 |
-| Recovery index per 90 | 2.25 |
-
-## Top chemistry partners
-
-- Bartosz Bereszyński — synergy 0.573, 240 shared minutes
-- Kamil Glik — synergy 0.571, 240 shared minutes
-- Wojciech Szczęsny — synergy 0.563, 240 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 10: 31955_starter_report.md -->
-
-# Jakub Kamiński — Starter Report
-
-- Team: Poland (POL)
-- Position: Right Midfield
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.0946
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.200 |
-| Pressing intensity per 90 | 13.13 |
-| Recovery index per 90 | 5.68 |
-
-## Top chemistry partners
-
-- Bartosz Bereszyński — synergy 0.540, 230 shared minutes
-- Matty Cash — synergy 0.516, 254 shared minutes
-- Kamil Glik — synergy 0.452, 254 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 11: 44166_starter_report.md -->
+<!-- PLAYER_REPORT 8: 44166_starter_report.md -->
 
 # Jakub Piotr Kiwior — Starter Report
 
 - Team: Poland (POL)
 - Position: Left Center Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0794
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.3322
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 2.3%
+- Role-relative z-score: -0.502
+- V4 evaluation score: 45.0
+
+![V4 event and 360 heatmap](../heatmaps/POL/44166_heatmap.svg)
 
 ## Physical profile
 
@@ -366,6 +322,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._

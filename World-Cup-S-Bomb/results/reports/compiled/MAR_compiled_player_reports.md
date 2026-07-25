@@ -1,16 +1,8 @@
-# MAR — Complete Player Report Collection
+# MAR — V4 Player Evaluation Collection
 
-- Included player reports: 15
-- Compilation policy: complete source reports, no omitted sections.
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+- Included 300+ minute players: 13
+- Rankings are role-relative; cross-role score comparisons are invalid.
+- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
@@ -20,8 +12,14 @@ against video, training data, medical context, and opponent-specific scouting.
 
 - Team: Morocco (MAR)
 - Position: Left Midfield
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.0966
+- Functional role: Progressive Winger
+- Risk-adjusted OBV per 90: -0.0758
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 43.6%
+- Role-relative z-score: +1.050
+- V4 evaluation score: 60.5
+
+![V4 event and 360 heatmap](../heatmaps/MAR/3625_heatmap.svg)
 
 ## Physical profile
 
@@ -40,54 +38,28 @@ against video, training data, medical context, and opponent-specific scouting.
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 2: 3634_starter_report.md -->
-
-# Abdelhamid Sabiri — Starter Report
-
-- Team: Morocco (MAR)
-- Position: Left Center Midfield
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.4436
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.750 |
-| Pressing intensity per 90 | 15.75 |
-| Recovery index per 90 | 0.93 |
-
-## Top chemistry partners
-
-- Sofyan Amrabat — synergy 0.485, 194 shared minutes
-- Yassine Bounou — synergy 0.440, 166 shared minutes
-- Achraf Hakimi Mouh — synergy 0.407, 166 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Target this player on direct restarts and back-post deliveries.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 3: 5219_starter_report.md -->
+<!-- PLAYER_REPORT 2: 5219_starter_report.md -->
 
 # Romain Saïss — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Left Center Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.1482
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.2650
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 2.2%
+- Role-relative z-score: +0.956
+- V4 evaluation score: 59.6
+
+![V4 event and 360 heatmap](../heatmaps/MAR/5219_heatmap.svg)
 
 ## Physical profile
 
@@ -109,18 +81,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 4: 5234_starter_report.md -->
+<!-- PLAYER_REPORT 3: 5234_starter_report.md -->
 
 # Sofyan Amrabat — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Center Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.0528
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.1107
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 6.5%
+- Role-relative z-score: +0.210
+- V4 evaluation score: 52.1
+
+![V4 event and 360 heatmap](../heatmaps/MAR/5234_heatmap.svg)
 
 ## Physical profile
 
@@ -139,21 +119,28 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 5: 5237_starter_report.md -->
+<!-- PLAYER_REPORT 4: 5237_starter_report.md -->
 
 # Hakim Ziyech — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Right Wing
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.1748
+- Functional role: Wide Creator
+- Risk-adjusted OBV per 90: -0.0479
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 32.4%
+- Role-relative z-score: -0.259
+- V4 evaluation score: 47.4
+
+![V4 event and 360 heatmap](../heatmaps/MAR/5237_heatmap.svg)
 
 ## Physical profile
 
@@ -172,21 +159,28 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 6: 5245_starter_report.md -->
+<!-- PLAYER_REPORT 5: 5245_starter_report.md -->
 
 # Achraf Hakimi Mouh — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Right Back
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.1709
+- Functional role: Wide Creator
+- Risk-adjusted OBV per 90: -0.0128
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 28.0%
+- Role-relative z-score: +0.367
+- V4 evaluation score: 53.7
+
+![V4 event and 360 heatmap](../heatmaps/MAR/5245_heatmap.svg)
 
 ## Physical profile
 
@@ -205,20 +199,29 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 7: 6301_starter_report.md -->
+<!-- PLAYER_REPORT 6: 6301_starter_report.md -->
 
 # Youssef En-Nesyri — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Center Forward
 - Functional role: Target Forward
-- Net xG contribution per 90: 0.1628
+- Risk-adjusted OBV per 90: -0.3739
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 29.1%
+- Role-relative z-score: -0.390
+- V4 evaluation score: 46.1
+
+![V4 event and 360 heatmap](../heatmaps/MAR/6301_heatmap.svg)
 
 ## Physical profile
 
@@ -239,18 +242,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 8: 6785_starter_report.md -->
+<!-- PLAYER_REPORT 7: 6785_starter_report.md -->
 
 # Yassine Bounou — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Goalkeeper
-- Functional role: Deep Playmaker
-- Net xG contribution per 90: 0.0409
+- Functional role: Goalkeeper
+- Risk-adjusted OBV per 90: 0.3304
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 0.6%
+- Role-relative z-score: +0.230
+- V4 evaluation score: 52.3
+
+![V4 event and 360 heatmap](../heatmaps/MAR/6785_heatmap.svg)
 
 ## Physical profile
 
@@ -272,18 +283,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 9: 7459_starter_report.md -->
+<!-- PLAYER_REPORT 8: 7459_starter_report.md -->
 
 # Jawad El Yamiq — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Right Center Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0649
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.1416
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 1.4%
+- Role-relative z-score: +0.004
+- V4 evaluation score: 50.0
+
+![V4 event and 360 heatmap](../heatmaps/MAR/7459_heatmap.svg)
 
 ## Physical profile
 
@@ -305,18 +324,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 10: 12149_starter_report.md -->
+<!-- PLAYER_REPORT 9: 12149_starter_report.md -->
 
 # Nayef Aguerd — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Right Center Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.1110
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.2030
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 1.4%
+- Role-relative z-score: -0.721
+- V4 evaluation score: 42.8
+
+![V4 event and 360 heatmap](../heatmaps/MAR/12149_heatmap.svg)
 
 ## Physical profile
 
@@ -338,18 +365,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 11: 15890_starter_report.md -->
+<!-- PLAYER_REPORT 10: 15890_starter_report.md -->
 
 # Noussair Mazraoui — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Left Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0631
+- Functional role: Box-to-Box Runner
+- Risk-adjusted OBV per 90: -0.0214
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 18.3%
+- Role-relative z-score: -0.225
+- V4 evaluation score: 47.8
+
+![V4 event and 360 heatmap](../heatmaps/MAR/15890_heatmap.svg)
 
 ## Physical profile
 
@@ -370,18 +405,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 12: 23774_starter_report.md -->
+<!-- PLAYER_REPORT 11: 23774_starter_report.md -->
 
 # Selim Amallah — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Left Center Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.0365
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: -0.1722
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 19.6%
+- Role-relative z-score: -1.858
+- V4 evaluation score: 31.4
+
+![V4 event and 360 heatmap](../heatmaps/MAR/23774_heatmap.svg)
 
 ## Physical profile
 
@@ -403,18 +446,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 13: 31295_starter_report.md -->
+<!-- PLAYER_REPORT 12: 31295_starter_report.md -->
 
 # Yahia Attiyat allah — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Left Back
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.1233
+- Functional role: Box-to-Box Runner
+- Risk-adjusted OBV per 90: 0.0328
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 20.9%
+- Role-relative z-score: +0.810
+- V4 evaluation score: 58.1
+
+![V4 event and 360 heatmap](../heatmaps/MAR/31295_heatmap.svg)
 
 ## Physical profile
 
@@ -433,21 +484,28 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 14: 46258_starter_report.md -->
+<!-- PLAYER_REPORT 13: 46258_starter_report.md -->
 
 # Azzedine Ounahi — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Right Center Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.0733
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: -0.1046
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 22.4%
+- Role-relative z-score: -1.406
+- V4 evaluation score: 35.9
+
+![V4 event and 360 heatmap](../heatmaps/MAR/46258_heatmap.svg)
 
 ## Physical profile
 
@@ -466,39 +524,8 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 15: 139016_starter_report.md -->
-
-# Achraf Dari — Starter Report
-
-- Team: Morocco (MAR)
-- Position: Right Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.2653
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.600 |
-| Pressing intensity per 90 | 8.98 |
-| Recovery index per 90 | 3.59 |
-
-## Top chemistry partners
-
-- Sofyan Amrabat — synergy 0.517, 200 shared minutes
-- Jawad El Yamiq — synergy 0.516, 200 shared minutes
-- Yassine Bounou — synergy 0.496, 200 shared minutes
-
-## Tactical recommendations
-
-- Use a compact pressing trigger rather than sustained solo pressure.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._

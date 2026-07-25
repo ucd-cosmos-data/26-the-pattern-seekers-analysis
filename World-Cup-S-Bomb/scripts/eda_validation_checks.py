@@ -459,16 +459,338 @@ def run_validation(project_root: Path = PROJECT_ROOT) -> dict[str, Any]:
     }
 
 
+def run_v4_validation(
+    project_root: Path = PROJECT_ROOT,
+    *,
+    staging: bool,
+) -> dict[str, Any]:
+    """Validate V4 rankings, spatial joins, reports, and locked V3 safeguards."""
+
+    artifact_root = (
+        project_root / "results/v4_staging"
+        if staging
+        else project_root / "results"
+    )
+    player_root = (
+        artifact_root / "player"
+        if staging
+        else project_root / "data/processed"
+    )
+    report_root = artifact_root / "reports"
+    profiles = pd.read_csv(player_root / "player_evaluations.csv")
+    heatmap_cells = pd.read_csv(
+        player_root / "player_heatmap_cells.csv"
+    )
+    event_values = pd.read_parquet(
+        player_root / "player_event_value_audit.parquet"
+    )
+    provenance = json.loads(
+        (
+            player_root / "player_evaluation_provenance.json"
+        ).read_text(encoding="utf-8")
+    )
+    manifest = json.loads(
+        (report_root / "pipeline_manifest.json").read_text(encoding="utf-8")
+    )
+    integrity = pd.read_csv(
+        artifact_root / "simulations/oof_fold_integrity.csv"
+    )
+    audit = pd.read_csv(
+        artifact_root / "audit/expected_vs_actual_team_summary_oof.csv"
+    )
+    substitutions = pd.read_parquet(
+        artifact_root / "simulations/substitution_optimization.parquet"
+    )
+    suppressions = pd.read_parquet(
+        artifact_root / "simulations/substitution_suppressions.parquet"
+    )
+    summary_path = (
+        artifact_root / "Summary/v4_model_explanation_summary.md"
+        if staging
+        else project_root
+        / "results/Summary/v4_model_explanation_summary.md"
+    )
+    summary = summary_path.read_text(encoding="utf-8")
+    compiled_files = sorted((report_root / "compiled").glob("*.md"))
+    compiled_text = "\n".join(
+        path.read_text(encoding="utf-8") for path in compiled_files
+    )
+    heatmaps = list((report_root / "heatmaps").glob("*/*_heatmap.svg"))
+
+    required_metrics = [
+        "minutes",
+        "obv_per_90",
+        "final_third_share",
+        "role_z_score",
+        "player_evaluation_score",
+    ]
+    no_metric_nan = not profiles[required_metrics].isna().any().any()
+    no_report_nan = re.search(
+        r"(?i)(?<![A-Za-z])nan(?![A-Za-z])", compiled_text
+    ) is None
+    under_300 = profiles["minutes"].lt(300)
+    fullbacks = profiles["position_group"].eq("Fullback/Wingback")
+    high_fullbacks = fullbacks & profiles["final_third_share"].gt(0.35)
+    target_players = profiles[
+        profiles["player"].str.contains(
+            "Hakimi|Dest|Mbapp|Giroud|Kolo", case=False, na=False
+        )
+    ]
+    protected_wide_players = target_players[
+        target_players["player"].str.contains(
+            "Hakimi|Dest", case=False, na=False
+        )
+    ]
+    mbappe = profiles[
+        profiles["player"].str.contains("Mbapp", case=False, na=False)
+    ]
+    giroud = profiles[
+        profiles["player"].str.contains("Giroud", case=False, na=False)
+    ]
+    kolo = profiles[
+        profiles["player"].str.contains("Kolo", case=False, na=False)
+    ]
+
+    pressured_turnovers = event_values[
+        event_values["turnover"]
+        & event_values["pressure_augmented"]
+    ]
+    unpressured_turnovers = event_values[
+        event_values["turnover"]
+        & ~event_values["pressure_augmented"]
+    ]
+    pressure_discount_exact = (
+        not pressured_turnovers.empty
+        and np.allclose(
+            pressured_turnovers["applied_turnover_penalty"],
+            0.5 * pressured_turnovers["standard_turnover_penalty"],
+            rtol=0,
+            atol=1e-12,
+        )
+        and np.allclose(
+            unpressured_turnovers["applied_turnover_penalty"],
+            unpressured_turnovers["standard_turnover_penalty"],
+            rtol=0,
+            atol=1e-12,
+        )
+    )
+    role_stats = (
+        profiles.groupby("Functional role")["role_z_score"]
+        .agg(["count", "mean", lambda values: values.std(ddof=0)])
+        .rename(columns={"<lambda_0>": "population_std"})
+    )
+    multi_member_roles = role_stats["count"].gt(1)
+    role_normalization = bool(
+        role_stats["mean"].abs().le(1e-9).all()
+        and np.allclose(
+            role_stats.loc[multi_member_roles, "population_std"],
+            1.0,
+            rtol=0,
+            atol=1e-8,
+        )
+    )
+    frame_matches = int(
+        pd.read_csv(
+            project_root
+            / "data/interim/world_cup_360_frame_metrics.csv",
+            usecols=["match_id"],
+        )["match_id"].nunique()
+    )
+    bundle = joblib.load(
+        project_root / "models/coaching_model_benchmark_v2.joblib"
+    )
+    artifact = artifact_regression_test(
+        project_root / "models/coaching_model_benchmark_v2.joblib",
+        project_root
+        / "data/processed/world_cup_recommendation_features.csv",
+    )
+    substitution_safety = substitutions.empty or bool(
+        substitutions["expected_net_xg_gain"].gt(0.005).all()
+        and substitutions["gain_ci_low"].gt(0).all()
+    )
+    gates = {
+        "zero_nans": bool(no_metric_nan and no_report_nan),
+        "complete_oof_team_coverage": bool(
+            len(audit) == 32
+            and manifest["counts"]["oof_teams"] == 32
+            and manifest["counts"]["oof_matches"] == 64
+        ),
+        "all_64_matches_leakage_safe": bool(
+            len(integrity) == 64
+            and integrity["heldout_excluded"].astype(bool).all()
+            and integrity["development_matches"].eq(63).all()
+        ),
+        "minutes_cutoff": bool(
+            not under_300.any()
+            and kolo.empty
+            and profiles["minutes"].min() >= 300
+        ),
+        "fullback_spatial_roles": bool(
+            len(protected_wide_players) == 2
+            and not protected_wide_players["functional_role"]
+            .eq("Holding Anchor")
+            .any()
+            and not profiles.loc[fullbacks, "functional_role"]
+            .eq("Holding Anchor")
+            .any()
+            and profiles.loc[
+                high_fullbacks, "functional_role"
+            ].eq("Attacking Wingback").all()
+        ),
+        "mbappe_risk_value_above_giroud": bool(
+            len(mbappe) == 1
+            and len(giroud) == 1
+            and float(mbappe.iloc[0]["obv_per_90"])
+            > float(giroud.iloc[0]["obv_per_90"])
+        ),
+        "pressure_discount_exact": bool(pressure_discount_exact),
+        "role_relative_normalization": role_normalization,
+        "sb360_spatial_coverage": bool(
+            frame_matches == 64
+            and provenance["freeze_frame_actor_points"] > 0
+            and provenance["events_with_360_context"]
+            / provenance["event_rows"]
+            >= 0.80
+            and heatmap_cells["player_id"].nunique() == len(profiles)
+        ),
+        "obv_provenance_explicit": bool(
+            provenance["obv_source"]
+            in {
+                "open_event_value_fallback",
+                "statsbomb_native:obv_total_net",
+                "statsbomb_native:obv_for_net",
+                "statsbomb_native:obv",
+                "statsbomb_native:on_ball_value",
+            }
+        ),
+        "compiled_reports_in_place": bool(
+            len(compiled_files) == 64
+            and not any("_v4" in path.name.lower() for path in compiled_files)
+            and "V4 role-relative player leaders" in compiled_text
+        ),
+        "heatmaps_complete": len(heatmaps) == len(profiles),
+        "summary_complete": bool(
+            "## V4 Model Explanations" in summary
+            and "StatsBomb 360" in summary
+            and "freeze-frame snapshots, not continuous" in summary
+        ),
+        "counterfactual_safety": bool(
+            substitution_safety
+            and not suppressions.empty
+            and suppressions["reason_code"].notna().all()
+        ),
+        "locked_classifier_preserved": bool(
+            manifest["locked_v2_holdout_metrics"]
+            == bundle["holdout_metrics"]
+            and artifact["passed"]
+        ),
+    }
+    return {
+        "schema_version": 4,
+        "status": "PASS" if all(gates.values()) else "FAIL",
+        "staging": staging,
+        "gates": gates,
+        "player_metrics": {
+            "players_before_cutoff": provenance["players_before_cutoff"],
+            "eligible_players": len(profiles),
+            "players_dropped": provenance["players_dropped"],
+            "minimum_minutes": float(profiles["minutes"].min()),
+            "functional_roles": profiles["Functional role"].value_counts().to_dict(),
+            "attacking_wingbacks": int(
+                profiles["functional_role"].eq("Attacking Wingback").sum()
+            ),
+            "obv_source": provenance["obv_source"],
+            "mbappe_obv_per_90": float(mbappe.iloc[0]["obv_per_90"]),
+            "giroud_obv_per_90": float(giroud.iloc[0]["obv_per_90"]),
+            "hakimi_role": str(
+                protected_wide_players[
+                    protected_wide_players["player"].str.contains(
+                        "Hakimi", case=False
+                    )
+                ].iloc[0]["functional_role"]
+            ),
+            "dest_role": str(
+                protected_wide_players[
+                    protected_wide_players["player"].str.contains(
+                        "Dest", case=False
+                    )
+                ].iloc[0]["functional_role"]
+            ),
+            "role_z_statistics": role_stats.reset_index().to_dict("records"),
+        },
+        "spatial_metrics": {
+            "sb360_matches": frame_matches,
+            "successful_action_points": provenance[
+                "successful_action_points"
+            ],
+            "freeze_frame_actor_points": provenance[
+                "freeze_frame_actor_points"
+            ],
+            "events_with_360_context": provenance[
+                "events_with_360_context"
+            ],
+            "heatmaps": len(heatmaps),
+        },
+        "model_metrics": manifest["tournament_oof_metrics"],
+        "report_metrics": {
+            "compiled_files": len(compiled_files),
+            "team_reports": len(
+                list(
+                    (report_root / "compiled").glob(
+                        "*_team_coaching_report.md"
+                    )
+                )
+            ),
+            "player_packets": len(
+                list(
+                    (report_root / "compiled").glob(
+                        "*_compiled_player_reports.md"
+                    )
+                )
+            ),
+            "nan_tokens": len(
+                re.findall(
+                    r"(?i)(?<![A-Za-z])nan(?![A-Za-z])",
+                    compiled_text,
+                )
+            ),
+        },
+        "counterfactuals": {
+            "eligible_substitutions": int(len(substitutions)),
+            "suppressed_substitutions": int(len(suppressions)),
+        },
+        "artifact_regression": artifact,
+    }
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    default_staging = Path(__file__).stem.endswith("_v4")
+    parser.add_argument(
+        "--staging",
+        dest="staging",
+        action="store_true",
+        default=default_staging,
+    )
+    parser.add_argument(
+        "--final",
+        dest="staging",
+        action="store_false",
+        help="Validate the unversioned production artifacts.",
+    )
+    parser.add_argument("--output", type=Path)
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    report = run_validation()
-    args.output.parent.mkdir(parents=True, exist_ok=True)
+    report = run_v4_validation(staging=args.staging)
+    output = args.output or (
+        PROJECT_ROOT / "results/v4_staging/eda_validation_report.json"
+        if args.staging
+        else PROJECT_ROOT / "results/eda_validation_report.json"
+    )
+    output.parent.mkdir(parents=True, exist_ok=True)
     serialized = json.dumps(
         report,
         indent=2,
@@ -476,9 +798,9 @@ def main() -> None:
             value.item() if isinstance(value, np.generic) else str(value)
         ),
     )
-    args.output.write_text(serialized + "\n", encoding="utf-8")
+    output.write_text(serialized + "\n", encoding="utf-8")
     print(serialized)
-    print(f"Wrote full validation report to {args.output}")
+    print(f"Wrote full validation report to {output}")
     if report["status"] != "PASS":
         raise SystemExit(1)
 

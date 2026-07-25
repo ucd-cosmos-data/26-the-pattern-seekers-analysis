@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import html
 import json
 from pathlib import Path
 from typing import Any
@@ -87,9 +88,14 @@ def generate_individual_starter_reports(
     profiles: pd.DataFrame,
     synergy: pd.DataFrame,
     output_root: Path,
+    *,
+    clear_existing: bool = False,
 ) -> int:
-    """Generate one Markdown/JSON pair for every starter-cohort player."""
+    """Generate one Markdown/JSON pair for every 300-minute V4 player."""
 
+    if clear_existing and output_root.exists():
+        for existing in output_root.glob("*/*_starter_report.*"):
+            existing.unlink()
     names = profiles.set_index("player_id")["player"].to_dict()
     count = 0
     for _, player in profiles.sort_values(["team", "player"]).iterrows():
@@ -123,14 +129,22 @@ def generate_individual_starter_reports(
                 "pressing_intensity_index": player["pressing_intensity_index"],
                 "speed_recovery_index": player["speed_recovery_index"],
             },
-            "net_xg_contribution_per_90": player[
-                "net_xg_contribution_p90"
+            "obv_per_90": player["obv_per_90"],
+            "obv_source": player["obv_source"],
+            "final_third_share": player["final_third_share"],
+            "role_z_score": player["role_z_score"],
+            "player_evaluation_score": player[
+                "player_evaluation_score"
             ],
+            "heatmap": (
+                f"../heatmaps/{TEAM_CODES[player['team']]}/"
+                f"{player_id}_heatmap.svg"
+            ),
             "top_chemistry_partners": partner_records,
             "recommended_tactical_tweaks": tweaks,
             "cohort_definition": (
-                "Top 342 tournament-minute players among players with at "
-                "least one start"
+                "Tournament players with at least 300 minutes; evaluation "
+                "is normalized only against the same functional role"
             ),
         }
         partner_lines = "\n".join(
@@ -144,7 +158,13 @@ def generate_individual_starter_reports(
 - Team: {player['team']} ({TEAM_CODES[player['team']]})
 - Position: {player['position']}
 - Functional role: {player['functional_role']}
-- Net xG contribution per 90: {player['net_xg_contribution_p90']:.4f}
+- Risk-adjusted OBV per 90: {player['obv_per_90']:.4f}
+- OBV source: `{player['obv_source']}`
+- Final-third spatial share: {100 * player['final_third_share']:.1f}%
+- Role-relative z-score: {player['role_z_score']:+.3f}
+- V4 evaluation score: {player['player_evaluation_score']:.1f}
+
+![V4 event and 360 heatmap](../heatmaps/{TEAM_CODES[player['team']]}/{player_id}_heatmap.svg)
 
 ## Physical profile
 
@@ -162,7 +182,9 @@ def generate_individual_starter_reports(
 
 {tweak_lines}
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 """
         path = (
             output_root
@@ -170,6 +192,84 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
             / f"{player_id}_starter_report.md"
         )
         _write_pair(path, markdown, payload)
+        count += 1
+    return count
+
+
+def generate_player_heatmap_svgs(
+    profiles: pd.DataFrame,
+    heatmap_cells: pd.DataFrame,
+    output_root: Path,
+    *,
+    clear_existing: bool = False,
+) -> int:
+    """Write deterministic SVG pitch-density heatmaps for V4-ranked players."""
+
+    if clear_existing and output_root.exists():
+        for existing in output_root.glob("*/*_heatmap.svg"):
+            existing.unlink()
+    count = 0
+    for player in profiles.itertuples(index=False):
+        player_id = int(player.player_id)
+        cells = heatmap_cells[
+            heatmap_cells["player_id"].eq(player_id)
+        ].copy()
+        if cells.empty:
+            raise ValueError(f"No V4 heatmap cells for player {player_id}")
+        maximum = float(cells["density"].max())
+        cell_lookup = {
+            (int(row.x_bin), int(row.y_bin)): float(row.density)
+            for row in cells.itertuples(index=False)
+        }
+        rectangles: list[str] = []
+        for x_bin in range(12):
+            for y_bin in range(8):
+                density = cell_lookup.get((x_bin, y_bin), 0.0)
+                intensity = 0 if maximum <= 0 else density / maximum
+                red = int(245 - 210 * intensity)
+                green = int(248 - 115 * intensity)
+                blue = int(255 - 45 * intensity)
+                rectangles.append(
+                    f'<rect x="{20 + 50 * x_bin}" y="{60 + 50 * y_bin}" '
+                    f'width="50" height="50" '
+                    f'fill="rgb({red},{green},{blue})" stroke="#ffffff" '
+                    'stroke-width="0.5"/>'
+                )
+        title = html.escape(str(player.player))
+        role = html.escape(str(player.functional_role))
+        svg = "\n".join(
+            [
+                '<svg xmlns="http://www.w3.org/2000/svg" width="640" '
+                'height="500" viewBox="0 0 640 500" role="img">',
+                f"<title>{title} V4 spatial heatmap</title>",
+                '<rect width="640" height="500" fill="#f7fafc"/>',
+                f'<text x="20" y="28" font-family="Arial" font-size="18" '
+                f'font-weight="700">{title}</text>',
+                f'<text x="20" y="49" font-family="Arial" font-size="12">'
+                f"{role} · {float(player.minutes):.0f} minutes · "
+                f"{100 * float(player.final_third_share):.1f}% final third"
+                "</text>",
+                *rectangles,
+                '<rect x="20" y="60" width="600" height="400" fill="none" '
+                'stroke="#1f2937" stroke-width="2"/>',
+                '<line x1="320" y1="60" x2="320" y2="460" '
+                'stroke="#1f2937" stroke-width="1"/>',
+                '<rect x="520" y="160" width="100" height="200" fill="none" '
+                'stroke="#1f2937"/>',
+                '<text x="20" y="482" font-family="Arial" font-size="11">'
+                "Successful event endpoints + StatsBomb 360 actor snapshots; "
+                "attacking direction left-to-right"
+                "</text>",
+                "</svg>",
+            ]
+        )
+        path = (
+            output_root
+            / TEAM_CODES[str(player.team)]
+            / f"{player_id}_heatmap.svg"
+        )
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(svg + "\n", encoding="utf-8")
         count += 1
     return count
 
@@ -250,10 +350,14 @@ def generate_full_team_coaching_reports(
     synergy: pd.DataFrame | None = None,
     profiles: pd.DataFrame | None = None,
     suppression_reasons: pd.DataFrame | None = None,
+    clear_existing: bool = False,
 ) -> int:
     """Generate one Markdown/JSON coaching report for all 32 teams."""
 
     count = 0
+    if clear_existing and output_root.exists():
+        for existing in output_root.glob("*_team_coaching_report.*"):
+            existing.unlink()
     model_metadata = model_metadata or {}
     player_names = (
         profiles.set_index("player_id")["player"].to_dict()
@@ -345,6 +449,25 @@ def generate_full_team_coaching_reports(
             "top_positive_synergy_pair": synergy_pair,
             "substitution_suppression_reason_counts": reason_counts,
         }
+        top_players: list[dict[str, Any]] = []
+        if profiles is not None and not profiles.empty:
+            available_columns = [
+                "player_id",
+                "player",
+                "functional_role",
+                "obv_per_90",
+                "final_third_share",
+                "role_z_score",
+                "player_evaluation_score",
+            ]
+            top_players = (
+                profiles.loc[
+                    profiles["team"].eq(team), available_columns
+                ]
+                .nlargest(5, "player_evaluation_score")
+                .to_dict("records")
+            )
+        payload["top_v4_player_evaluations"] = top_players
         dynamic_summary = build_dynamic_team_summary(
             team,
             team_row,
@@ -380,6 +503,13 @@ def generate_full_team_coaching_reports(
             f"({row['wasted_net_xg']:.4f} cumulative Net xG)"
             for row in mistake_records
         ) or "- No recurrent pattern identified"
+        player_lines = "\n".join(
+            f"{rank}. {row['player']} — {row['functional_role']}; "
+            f"score {float(row['player_evaluation_score']):.1f}, "
+            f"role z {float(row['role_z_score']):+.2f}, "
+            f"OBV/90 {float(row['obv_per_90']):+.3f}"
+            for rank, row in enumerate(top_players, start=1)
+        ) or "No player cleared the 300-minute V4 evaluation cutoff."
         markdown = f"""# {team} — Team Coaching Report
 
 ## Model-grounded summary
@@ -406,6 +536,14 @@ def generate_full_team_coaching_reports(
 
 {substitution_text}
 
+## V4 role-relative player leaders
+
+{player_lines}
+
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
+
 ## Recurrent tactical mistakes
 
 {mistake_lines}
@@ -419,6 +557,76 @@ _Counterfactual values are predictive scenario estimates, not causal treatment e
         )
         count += 1
     return count
+
+
+def compile_v4_report_packets(
+    team_reports: Path,
+    player_reports: Path,
+    output_root: Path,
+) -> dict[str, int]:
+    """Overwrite the 64 unversioned compiled coaching delivery packets."""
+
+    team_sources = sorted(team_reports.glob("*_team_coaching_report.md"))
+    if len(team_sources) != 32:
+        raise ValueError(f"Expected 32 team reports, found {len(team_sources)}")
+    output_root.mkdir(parents=True, exist_ok=True)
+    for existing in output_root.glob("*.md"):
+        existing.unlink()
+
+    player_sections = 0
+    for team_source in team_sources:
+        code = team_source.name[:3]
+        team_text = team_source.read_text(encoding="utf-8").strip()
+        (output_root / team_source.name).write_text(
+            team_text + "\n", encoding="utf-8"
+        )
+        player_sources = sorted(
+            (player_reports / code).glob("*_starter_report.md"),
+            key=lambda path: int(path.name.split("_", maxsplit=1)[0]),
+        )
+        sections = [
+            f"# {code} — V4 Player Evaluation Collection",
+            "",
+            f"- Included 300+ minute players: {len(player_sources)}",
+            "- Rankings are role-relative; cross-role score comparisons are invalid.",
+            "- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.",
+            "",
+        ]
+        for position, player_source in enumerate(player_sources, start=1):
+            sections.extend(
+                [
+                    "---",
+                    "",
+                    f"<!-- PLAYER_REPORT {position}: {player_source.name} -->",
+                    "",
+                    player_source.read_text(encoding="utf-8").strip(),
+                    "",
+                ]
+            )
+        (output_root / f"{code}_compiled_player_reports.md").write_text(
+            "\n".join(sections).rstrip() + "\n",
+            encoding="utf-8",
+        )
+        player_sections += len(player_sources)
+
+    compiled = list(output_root.glob("*.md"))
+    checks = {
+        "markdown_files": len(compiled),
+        "team_reports": len(
+            list(output_root.glob("*_team_coaching_report.md"))
+        ),
+        "compiled_player_reports": len(
+            list(output_root.glob("*_compiled_player_reports.md"))
+        ),
+        "compiled_player_sections": player_sections,
+    }
+    if (
+        checks["markdown_files"] != 64
+        or checks["team_reports"] != 32
+        or checks["compiled_player_reports"] != 32
+    ):
+        raise RuntimeError(f"V4 compiled-report validation failed: {checks}")
+    return checks
 
 
 def generate_full_team_coaching_report(

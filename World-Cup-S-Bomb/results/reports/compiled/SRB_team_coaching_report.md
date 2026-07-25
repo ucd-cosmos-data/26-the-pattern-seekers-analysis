@@ -1,22 +1,26 @@
 # Serbia — Team Coaching Report
 
-- Total wasted Net xG: 0.6751
-- Mean possession EvA gap: 0.002948
-- Most common optimal style: Patient Build-up
+## Model-grounded summary
+
+Serbia: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.400. Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+- Total wasted Net xG: 0.8066
+- Mean possession EvA gap: 0.003522
+- Most common optimal style: No meaningful change
 
 ## Optimized starting 11
 
 1. Nikola Milenković (Center Back)
-2. Aleksandar Mitrović (Forward)
-3. Strahinja Pavlović (Center Back)
+2. Vanja Milinković Savić (Goalkeeper)
+3. Saša Lukić (Defensive Midfield)
 4. Dušan Tadić (Attacking Midfield/Wing)
-5. Vanja Milinković Savić (Goalkeeper)
-6. Sergej Milinković-Savić (Attacking Midfield/Wing)
-7. Saša Lukić (Defensive Midfield)
-8. Andrija Živković (Fullback/Wingback)
-9. Dušan Vlahović (Forward)
-10. Milos Veljkovic (Center Back)
-11. Nemanja Radonjić (Fullback/Wingback)
+5. Strahinja Pavlović (Center Back)
+6. Aleksandar Mitrović (Forward)
+7. Milos Veljkovic (Center Back)
+8. Sergej Milinković-Savić (Attacking Midfield/Wing)
+9. Andrija Živković (Fullback/Wingback)
+10. Filip Kostić (Fullback/Wingback)
+11. Marko Grujić (Central/Wide Midfield)
 
 ## Physical matchup deltas
 
@@ -28,21 +32,20 @@
 
 ## Best bench intervention
 
-Srđan Babić for Saša Lukić (expected Net xG gain 0.00159)
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 112, INSUFFICIENT_MINUTES: 20.
+
+## V4 role-relative player leaders
+
+No player cleared the 300-minute V4 evaluation cutoff.
+
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 
-- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.2093 cumulative Net xG)
-- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.1495 cumulative Net xG)
-- Against High-Intensity Press: switch from Short Under Pressure to Patient Build-up (0.1315 cumulative Net xG)
+- Against Wide Retreating Block: switch from Short Under Pressure to Patient Build-up (0.2356 cumulative Net xG)
+- Against Compact Pressure Block: switch from Short Under Pressure to Patient Build-up (0.1686 cumulative Net xG)
+- Against High-Intensity Press: switch from Short Under Pressure to Patient Build-up (0.1482 cumulative Net xG)
 
-_Counterfactual values are predictive scenario estimates, not causal treatment effects. The corrupted stored coaching bundle was not used; this report uses the documented empirical hurdle fallback._
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+_Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._

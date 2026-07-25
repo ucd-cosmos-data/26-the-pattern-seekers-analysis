@@ -1,16 +1,8 @@
-# AUS — Complete Player Report Collection
+# AUS — V4 Player Evaluation Collection
 
-- Included player reports: 11
-- Compilation policy: complete source reports, no omitted sections.
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+- Included 300+ minute players: 7
+- Rankings are role-relative; cross-role score comparisons are invalid.
+- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
@@ -20,8 +12,14 @@ against video, training data, medical context, and opponent-specific scouting.
 
 - Team: Australia (AUS)
 - Position: Goalkeeper
-- Functional role: Deep Playmaker
-- Net xG contribution per 90: 0.0421
+- Functional role: Goalkeeper
+- Risk-adjusted OBV per 90: 0.4981
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 1.9%
+- Role-relative z-score: +1.124
+- V4 evaluation score: 61.2
+
+![V4 event and 360 heatmap](../heatmaps/AUS/3240_heatmap.svg)
 
 ## Physical profile
 
@@ -43,7 +41,9 @@ against video, training data, medical context, and opponent-specific scouting.
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -53,8 +53,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Australia (AUS)
 - Position: Left Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.0410
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.0937
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 14.0%
+- Role-relative z-score: -0.261
+- V4 evaluation score: 47.4
+
+![V4 event and 360 heatmap](../heatmaps/AUS/3281_heatmap.svg)
 
 ## Physical profile
 
@@ -75,7 +81,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -85,8 +93,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Australia (AUS)
 - Position: Left Back
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0363
+- Functional role: Box-to-Box Runner
+- Risk-adjusted OBV per 90: -0.0138
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 23.6%
+- Role-relative z-score: -0.190
+- V4 evaluation score: 48.1
+
+![V4 event and 360 heatmap](../heatmaps/AUS/5479_heatmap.svg)
 
 ## Physical profile
 
@@ -108,7 +122,9 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -118,8 +134,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Australia (AUS)
 - Position: Right Midfield
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.0347
+- Functional role: Target Forward
+- Risk-adjusted OBV per 90: -0.5198
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 48.5%
+- Role-relative z-score: -1.466
+- V4 evaluation score: 35.3
+
+![V4 event and 360 heatmap](../heatmaps/AUS/5481_heatmap.svg)
 
 ## Physical profile
 
@@ -138,9 +160,12 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -150,8 +175,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: Australia (AUS)
 - Position: Left Center Forward
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.1036
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: -0.0800
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 25.0%
+- Role-relative z-score: -0.700
+- V4 evaluation score: 43.0
+
+![V4 event and 360 heatmap](../heatmaps/AUS/5490_heatmap.svg)
 
 ## Physical profile
 
@@ -170,84 +201,29 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 6: 8346_starter_report.md -->
-
-# Craig Goodwin — Starter Report
-
-- Team: Australia (AUS)
-- Position: Left Midfield
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0995
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.375 |
-| Pressing intensity per 90 | 8.94 |
-| Recovery index per 90 | 2.23 |
-
-## Top chemistry partners
-
-- Kye Rowles — synergy 0.515, 242 shared minutes
-- Aziz Eraltay Behich — synergy 0.513, 242 shared minutes
-- Mathew Ryan — synergy 0.498, 242 shared minutes
-
-## Tactical recommendations
-
-- Use a compact pressing trigger rather than sustained solo pressure.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 7: 15957_starter_report.md -->
-
-# Miloš Degenek — Starter Report
-
-- Team: Australia (AUS)
-- Position: Right Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0276
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.429 |
-| Pressing intensity per 90 | 8.89 |
-| Recovery index per 90 | 2.67 |
-
-## Top chemistry partners
-
-- Mathew Ryan — synergy 0.514, 202 shared minutes
-- Aaron Mooy — synergy 0.511, 202 shared minutes
-- Harry Souttar — synergy 0.508, 202 shared minutes
-
-## Tactical recommendations
-
-- Use a compact pressing trigger rather than sustained solo pressure.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 8: 22293_starter_report.md -->
+<!-- PLAYER_REPORT 6: 22293_starter_report.md -->
 
 # Harry Souttar — Starter Report
 
 - Team: Australia (AUS)
 - Position: Right Center Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0698
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.2423
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 3.2%
+- Role-relative z-score: -0.376
+- V4 evaluation score: 46.2
+
+![V4 event and 360 heatmap](../heatmaps/AUS/22293_heatmap.svg)
 
 ## Physical profile
 
@@ -269,82 +245,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 9: 33477_starter_report.md -->
-
-# Riley McGree — Starter Report
-
-- Team: Australia (AUS)
-- Position: Right Center Forward
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.0459
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.400 |
-| Pressing intensity per 90 | 19.24 |
-| Recovery index per 90 | 3.38 |
-
-## Top chemistry partners
-
-- Jackson Irvine — synergy 0.565, 267 shared minutes
-- Kye Rowles — synergy 0.557, 267 shared minutes
-- Aaron Mooy — synergy 0.510, 267 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 10: 33492_starter_report.md -->
-
-# Mitchell Thomas Duke — Starter Report
-
-- Team: Australia (AUS)
-- Position: Left Center Forward
-- Functional role: Target Forward
-- Net xG contribution per 90: 0.0687
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.484 |
-| Pressing intensity per 90 | 20.16 |
-| Recovery index per 90 | 3.31 |
-
-## Top chemistry partners
-
-- Aaron Mooy — synergy 0.549, 272 shared minutes
-- Jackson Irvine — synergy 0.501, 272 shared minutes
-- Mathew Leckie — synergy 0.431, 272 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 11: 33495_starter_report.md -->
+<!-- PLAYER_REPORT 7: 33495_starter_report.md -->
 
 # Kye Rowles — Starter Report
 
 - Team: Australia (AUS)
 - Position: Left Center Back
-- Functional role: Holding Anchor
-- Net xG contribution per 90: 0.0416
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.1064
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 1.2%
+- Role-relative z-score: -0.998
+- V4 evaluation score: 40.0
+
+![V4 event and 360 heatmap](../heatmaps/AUS/33495_heatmap.svg)
 
 ## Physical profile
 
@@ -366,4 +286,6 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._

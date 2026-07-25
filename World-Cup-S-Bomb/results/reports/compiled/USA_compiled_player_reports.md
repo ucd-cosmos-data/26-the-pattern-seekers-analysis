@@ -1,16 +1,8 @@
-# USA — Complete Player Report Collection
+# USA — V4 Player Evaluation Collection
 
-- Included player reports: 10
-- Compilation policy: complete source reports, no omitted sections.
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+- Included 300+ minute players: 9
+- Rankings are role-relative; cross-role score comparisons are invalid.
+- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
@@ -20,8 +12,14 @@ against video, training data, medical context, and opponent-specific scouting.
 
 - Team: United States (USA)
 - Position: Right Wing
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.1552
+- Functional role: Target Forward
+- Risk-adjusted OBV per 90: -0.4198
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 57.1%
+- Role-relative z-score: -0.063
+- V4 evaluation score: 49.4
+
+![V4 event and 360 heatmap](../heatmaps/USA/3377_heatmap.svg)
 
 ## Physical profile
 
@@ -40,10 +38,11 @@ against video, training data, medical context, and opponent-specific scouting.
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -53,8 +52,14 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Team: United States (USA)
 - Position: Left Back
-- Functional role: Wide Creator
-- Net xG contribution per 90: 0.0422
+- Functional role: Box-to-Box Runner
+- Risk-adjusted OBV per 90: -0.0658
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 34.3%
+- Role-relative z-score: -1.255
+- V4 evaluation score: 37.4
+
+![V4 event and 360 heatmap](../heatmaps/USA/4614_heatmap.svg)
 
 ## Physical profile
 
@@ -73,10 +78,11 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
@@ -87,7 +93,13 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Team: United States (USA)
 - Position: Left Wing
 - Functional role: Progressive Winger
-- Net xG contribution per 90: 0.3495
+- Risk-adjusted OBV per 90: -0.1710
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 51.7%
+- Role-relative z-score: -0.267
+- V4 evaluation score: 47.3
+
+![V4 event and 360 heatmap](../heatmaps/USA/8246_heatmap.svg)
 
 ## Physical profile
 
@@ -108,51 +120,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 4: 8526_starter_report.md -->
-
-# Weston McKennie — Starter Report
-
-- Team: United States (USA)
-- Position: Right Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.1887
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.625 |
-| Pressing intensity per 90 | 13.49 |
-| Recovery index per 90 | 4.94 |
-
-## Top chemistry partners
-
-- Tyler Adams — synergy 0.617, 274 shared minutes
-- Tim Ream — synergy 0.587, 274 shared minutes
-- Yunus Dimoara Musah — synergy 0.568, 274 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Target this player on direct restarts and back-post deliveries.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 5: 12352_starter_report.md -->
+<!-- PLAYER_REPORT 4: 12352_starter_report.md -->
 
 # Matthew Charles Turner — Starter Report
 
 - Team: United States (USA)
 - Position: Goalkeeper
-- Functional role: Deep Playmaker
-- Net xG contribution per 90: 0.0393
+- Functional role: Goalkeeper
+- Risk-adjusted OBV per 90: 0.3255
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 0.7%
+- Role-relative z-score: -0.206
+- V4 evaluation score: 47.9
+
+![V4 event and 360 heatmap](../heatmaps/USA/12352_heatmap.svg)
 
 ## Physical profile
 
@@ -174,18 +161,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 6: 12524_starter_report.md -->
+<!-- PLAYER_REPORT 5: 12524_starter_report.md -->
 
 # Walker Zimmerman — Starter Report
 
 - Team: United States (USA)
 - Position: Right Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.0922
+- Functional role: Deep Playmaker
+- Risk-adjusted OBV per 90: 0.2705
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 2.4%
+- Role-relative z-score: -0.442
+- V4 evaluation score: 45.6
+
+![V4 event and 360 heatmap](../heatmaps/USA/12524_heatmap.svg)
 
 ## Physical profile
 
@@ -206,18 +201,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Use a compact pressing trigger rather than sustained solo pressure.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 7: 12751_starter_report.md -->
+<!-- PLAYER_REPORT 6: 12751_starter_report.md -->
 
 # Tyler Adams — Starter Report
 
 - Team: United States (USA)
 - Position: Center Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.0676
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.0495
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 14.9%
+- Role-relative z-score: +0.887
+- V4 evaluation score: 58.9
+
+![V4 event and 360 heatmap](../heatmaps/USA/12751_heatmap.svg)
 
 ## Physical profile
 
@@ -236,20 +239,29 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 8: 18242_starter_report.md -->
+<!-- PLAYER_REPORT 7: 18242_starter_report.md -->
 
 # Tim Ream — Starter Report
 
 - Team: United States (USA)
 - Position: Left Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.1650
+- Functional role: Holding Anchor
+- Risk-adjusted OBV per 90: 0.3357
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 2.3%
+- Role-relative z-score: -1.089
+- V4 evaluation score: 39.1
+
+![V4 event and 360 heatmap](../heatmaps/USA/18242_heatmap.svg)
 
 ## Physical profile
 
@@ -270,18 +282,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Use a compact pressing trigger rather than sustained solo pressure.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 9: 21881_starter_report.md -->
+<!-- PLAYER_REPORT 8: 21881_starter_report.md -->
 
 # Sergino Dest — Starter Report
 
 - Team: United States (USA)
 - Position: Right Back
-- Functional role: Ball-Winner
-- Net xG contribution per 90: 0.1337
+- Functional role: Wide Creator
+- Risk-adjusted OBV per 90: 0.0997
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 31.7%
+- Role-relative z-score: +1.627
+- V4 evaluation score: 66.3
+
+![V4 event and 360 heatmap](../heatmaps/USA/21881_heatmap.svg)
 
 ## Physical profile
 
@@ -300,21 +320,28 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 10: 38792_starter_report.md -->
+<!-- PLAYER_REPORT 9: 38792_starter_report.md -->
 
 # Yunus Dimoara Musah — Starter Report
 
 - Team: United States (USA)
 - Position: Right Center Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.1005
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: -0.0580
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 32.8%
+- Role-relative z-score: -0.499
+- V4 evaluation score: 45.0
+
+![V4 event and 360 heatmap](../heatmaps/USA/38792_heatmap.svg)
 
 ## Physical profile
 
@@ -333,7 +360,8 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._

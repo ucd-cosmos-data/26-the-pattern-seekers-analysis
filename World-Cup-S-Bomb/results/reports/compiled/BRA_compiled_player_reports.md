@@ -1,60 +1,25 @@
-# BRA — Complete Player Report Collection
+# BRA — V4 Player Evaluation Collection
 
-- Included player reports: 14
-- Compilation policy: complete source reports, no omitted sections.
-
-## Coaching-use boundary
-
-Use this report to prioritize video review, frame tactical questions, and compare
-scenario sensitivities. Do not use it as a standalone selection mandate or a
-causal estimate. The stored coaching bundle was corrupted, so simulations use a
-regularized empirical hurdle fallback; tracking-derived tackles and recovery
-runs are represented by documented event-data proxies. Confirm recommendations
-against video, training data, medical context, and opponent-specific scouting.
+- Included 300+ minute players: 9
+- Rankings are role-relative; cross-role score comparisons are invalid.
+- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
-<!-- PLAYER_REPORT 1: 3063_starter_report.md -->
-
-# Danilo Luiz da Silva — Starter Report
-
-- Team: Brazil (BRA)
-- Position: Left Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.0706
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.750 |
-| Pressing intensity per 90 | 4.64 |
-| Recovery index per 90 | 2.78 |
-
-## Top chemistry partners
-
-- Marcos Aoás Corrêa — synergy 0.656, 291 shared minutes
-- Thiago Emiliano da Silva — synergy 0.649, 291 shared minutes
-- Carlos Henrique Casimiro — synergy 0.644, 291 shared minutes
-
-## Tactical recommendations
-
-- Use a compact pressing trigger rather than sustained solo pressure.
-- Target this player on direct restarts and back-post deliveries.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 2: 3280_starter_report.md -->
+<!-- PLAYER_REPORT 1: 3280_starter_report.md -->
 
 # Richarlison de Andrade — Starter Report
 
 - Team: Brazil (BRA)
 - Position: Center Forward
 - Functional role: Target Forward
-- Net xG contribution per 90: 0.4575
+- Risk-adjusted OBV per 90: -0.3694
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 59.7%
+- Role-relative z-score: +0.331
+- V4 evaluation score: 53.3
+
+![V4 event and 360 heatmap](../heatmaps/BRA/3280_heatmap.svg)
 
 ## Physical profile
 
@@ -73,21 +38,28 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 3: 3295_starter_report.md -->
+<!-- PLAYER_REPORT 2: 3295_starter_report.md -->
 
 # Thiago Emiliano da Silva — Starter Report
 
 - Team: Brazil (BRA)
 - Position: Right Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.1699
+- Functional role: Holding Anchor
+- Risk-adjusted OBV per 90: 0.4358
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 3.4%
+- Role-relative z-score: +1.004
+- V4 evaluation score: 60.0
+
+![V4 event and 360 heatmap](../heatmaps/BRA/3295_heatmap.svg)
 
 ## Physical profile
 
@@ -106,53 +78,29 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
 - Pair with a faster recovery defender after aggressive rotations.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 4: 4320_starter_report.md -->
-
-# Neymar da Silva Santos Junior — Starter Report
-
-- Team: Brazil (BRA)
-- Position: Center Attacking Midfield
-- Functional role: Progressive Winger
-- Net xG contribution per 90: 0.7310
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.200 |
-| Pressing intensity per 90 | 7.67 |
-| Recovery index per 90 | 4.16 |
-
-## Top chemistry partners
-
-- Thiago Emiliano da Silva — synergy 0.636, 281 shared minutes
-- Carlos Henrique Casimiro — synergy 0.621, 281 shared minutes
-- Danilo Luiz da Silva — synergy 0.591, 273 shared minutes
-
-## Tactical recommendations
-
-- Use a compact pressing trigger rather than sustained solo pressure.
-- Avoid isolating this player in high-volume aerial matchups.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 5: 4372_starter_report.md -->
+<!-- PLAYER_REPORT 3: 4372_starter_report.md -->
 
 # Marcos Aoás Corrêa — Starter Report
 
 - Team: Brazil (BRA)
 - Position: Left Center Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.2794
+- Functional role: Holding Anchor
+- Risk-adjusted OBV per 90: 0.3667
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 8.1%
+- Role-relative z-score: +1.026
+- V4 evaluation score: 60.3
+
+![V4 event and 360 heatmap](../heatmaps/BRA/4372_heatmap.svg)
 
 ## Physical profile
 
@@ -171,20 +119,28 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Use a compact pressing trigger rather than sustained solo pressure.
-- Pair with a faster recovery defender after aggressive rotations.
+- Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 6: 5539_starter_report.md -->
+<!-- PLAYER_REPORT 4: 5539_starter_report.md -->
 
 # Carlos Henrique Casimiro — Starter Report
 
 - Team: Brazil (BRA)
 - Position: Left Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.3015
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.0990
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 28.8%
+- Role-relative z-score: +0.632
+- V4 evaluation score: 56.3
+
+![V4 event and 360 heatmap](../heatmaps/BRA/5539_heatmap.svg)
 
 ## Physical profile
 
@@ -198,25 +154,33 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Thiago Emiliano da Silva — synergy 0.771, 409 shared minutes
 - Marcos Aoás Corrêa — synergy 0.749, 409 shared minutes
-- Danilo Luiz da Silva — synergy 0.644, 291 shared minutes
+- Alisson Ramsés Becker — synergy 0.634, 395 shared minutes
 
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 7: 5547_starter_report.md -->
+<!-- PLAYER_REPORT 5: 5547_starter_report.md -->
 
 # Alisson Ramsés Becker — Starter Report
 
 - Team: Brazil (BRA)
 - Position: Goalkeeper
-- Functional role: Deep Playmaker
-- Net xG contribution per 90: 0.0219
+- Functional role: Goalkeeper
+- Risk-adjusted OBV per 90: 0.1058
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 0.3%
+- Role-relative z-score: -1.880
+- V4 evaluation score: 31.2
+
+![V4 event and 360 heatmap](../heatmaps/BRA/5547_heatmap.svg)
 
 ## Physical profile
 
@@ -230,7 +194,7 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 
 - Marcos Aoás Corrêa — synergy 0.759, 395 shared minutes
 - Thiago Emiliano da Silva — synergy 0.757, 395 shared minutes
-- Danilo Luiz da Silva — synergy 0.640, 291 shared minutes
+- Carlos Henrique Casimiro — synergy 0.634, 395 shared minutes
 
 ## Tactical recommendations
 
@@ -238,51 +202,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 8: 6945_starter_report.md -->
-
-# Alex Sandro Lobo Silva — Starter Report
-
-- Team: Brazil (BRA)
-- Position: Left Back
-- Functional role: Sweeper CB
-- Net xG contribution per 90: 0.1014
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.833 |
-| Pressing intensity per 90 | 11.73 |
-| Recovery index per 90 | 5.41 |
-
-## Top chemistry partners
-
-- Marcos Aoás Corrêa — synergy 0.515, 200 shared minutes
-- Thiago Emiliano da Silva — synergy 0.511, 200 shared minutes
-- Carlos Henrique Casimiro — synergy 0.501, 200 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Target this player on direct restarts and back-post deliveries.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 9: 10595_starter_report.md -->
+<!-- PLAYER_REPORT 6: 10595_starter_report.md -->
 
 # Raphael Dias Belloli — Starter Report
 
 - Team: Brazil (BRA)
 - Position: Right Wing
 - Functional role: Progressive Winger
-- Net xG contribution per 90: 0.2941
+- Risk-adjusted OBV per 90: -0.1979
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 56.9%
+- Role-relative z-score: +0.023
+- V4 evaluation score: 50.2
+
+![V4 event and 360 heatmap](../heatmaps/BRA/10595_heatmap.svg)
 
 ## Physical profile
 
@@ -304,18 +243,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 10: 13620_starter_report.md -->
+<!-- PLAYER_REPORT 7: 13620_starter_report.md -->
 
 # Éder Gabriel Militão — Starter Report
 
 - Team: Brazil (BRA)
 - Position: Right Back
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.1398
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: 0.2005
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 19.9%
+- Role-relative z-score: +1.705
+- V4 evaluation score: 67.0
+
+![V4 event and 360 heatmap](../heatmaps/BRA/13620_heatmap.svg)
 
 ## Physical profile
 
@@ -336,18 +283,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 11: 18395_starter_report.md -->
+<!-- PLAYER_REPORT 8: 18395_starter_report.md -->
 
 # Vinícius José Paixão de Oliveira Júnior — Starter Report
 
 - Team: Brazil (BRA)
 - Position: Left Midfield
 - Functional role: Progressive Winger
-- Net xG contribution per 90: 0.2802
+- Risk-adjusted OBV per 90: -0.2761
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 62.9%
+- Role-relative z-score: -0.440
+- V4 evaluation score: 45.6
+
+![V4 event and 360 heatmap](../heatmaps/BRA/18395_heatmap.svg)
 
 ## Physical profile
 
@@ -369,18 +324,26 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 - Avoid isolating this player in high-volume aerial matchups.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
 
 ---
 
-<!-- PLAYER_REPORT 12: 22600_starter_report.md -->
+<!-- PLAYER_REPORT 9: 22600_starter_report.md -->
 
 # Lucas Tolentino Coelho de Lima — Starter Report
 
 - Team: Brazil (BRA)
 - Position: Right Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Net xG contribution per 90: 0.2488
+- Functional role: Ball-Winner
+- Risk-adjusted OBV per 90: -0.2322
+- OBV source: `open_event_value_fallback`
+- Final-third spatial share: 33.1%
+- Role-relative z-score: -1.498
+- V4 evaluation score: 35.0
+
+![V4 event and 360 heatmap](../heatmaps/BRA/22600_heatmap.svg)
 
 ## Physical profile
 
@@ -399,71 +362,8 @@ _The recovery index uses event recoveries as the available proxy for tracking-de
 ## Tactical recommendations
 
 - Lead the first pressing trigger and protect the inside passing lane.
-- Pair with a faster recovery defender after aggressive rotations.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 13: 25104_starter_report.md -->
-
-# Rodrygo Silva de Goes — Starter Report
-
-- Team: Brazil (BRA)
-- Position: Left Midfield
-- Functional role: Progressive Winger
-- Net xG contribution per 90: 0.6161
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.600 |
-| Pressing intensity per 90 | 18.51 |
-| Recovery index per 90 | 4.06 |
-
-## Top chemistry partners
-
-- Marcos Aoás Corrêa — synergy 0.399, 145 shared minutes
-- Thiago Emiliano da Silva — synergy 0.395, 145 shared minutes
-- Carlos Henrique Casimiro — synergy 0.377, 145 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
 - Use recovery capacity to support higher attacking positions.
 
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
-
----
-
-<!-- PLAYER_REPORT 14: 25363_starter_report.md -->
-
-# Antony Matheus dos Santos — Starter Report
-
-- Team: Brazil (BRA)
-- Position: Right Wing
-- Functional role: Progressive Winger
-- Net xG contribution per 90: 0.1089
-
-## Physical profile
-
-| Metric | Score |
-|---|---:|
-| Aerial dominance | 0.250 |
-| Pressing intensity per 90 | 13.51 |
-| Recovery index per 90 | 5.31 |
-
-## Top chemistry partners
-
-- Éder Gabriel Militão — synergy 0.415, 151 shared minutes
-- Marcos Aoás Corrêa — synergy 0.372, 132 shared minutes
-- Rodrygo Silva de Goes — synergy 0.363, 154 shared minutes
-
-## Tactical recommendations
-
-- Lead the first pressing trigger and protect the inside passing lane.
-- Avoid isolating this player in high-volume aerial matchups.
-- Use recovery capacity to support higher attacking positions.
-
-_The recovery index uses event recoveries as the available proxy for tracking-derived recovery runs._
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Scores exclude players below 300 tournament minutes._
