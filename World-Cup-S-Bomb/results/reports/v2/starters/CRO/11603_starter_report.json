@@ -1,0 +1,42 @@
+{
+  "team": "Croatia",
+  "team_code": "CRO",
+  "player_id": 11603,
+  "player": "Mario Pašalić",
+  "position": "Right Wing",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.4375,
+    "pressing_intensity_index": 17.61877504293074,
+    "speed_recovery_index": 3.0910131654264457
+  },
+  "net_xg_contribution_per_90": 0.3125656285861477,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5463,
+      "player": "Luka Modrić",
+      "synergy_score": 0.5783706695007178,
+      "shared_minutes": 257.91666666666663,
+      "joint_pass_completion_rate": 0.9400077720065461
+    },
+    {
+      "player_id": 16531,
+      "player": "Dominik Livaković",
+      "synergy_score": 0.5440415948433407,
+      "shared_minutes": 291.16666666666663,
+      "joint_pass_completion_rate": 0.8244815773646086
+    },
+    {
+      "player_id": 5456,
+      "player": "Mateo Kovačić",
+      "synergy_score": 0.5369139253953823,
+      "shared_minutes": 237.85000000000002,
+      "joint_pass_completion_rate": 0.9168596945411304
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

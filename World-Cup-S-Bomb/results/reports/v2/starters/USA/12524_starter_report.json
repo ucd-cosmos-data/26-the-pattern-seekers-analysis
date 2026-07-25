@@ -1,0 +1,42 @@
+{
+  "team": "United States",
+  "team_code": "USA",
+  "player_id": 12524,
+  "player": "Walker Zimmerman",
+  "position": "Right Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5294117647058824,
+    "pressing_intensity_index": 6.385723500322511,
+    "speed_recovery_index": 1.741560954633412
+  },
+  "net_xg_contribution_per_90": 0.09222747774672113,
+  "top_chemistry_partners": [
+    {
+      "player_id": 18242,
+      "player": "Tim Ream",
+      "synergy_score": 0.6801058381617723,
+      "shared_minutes": 310.06666666666666,
+      "joint_pass_completion_rate": 0.9959745430297325
+    },
+    {
+      "player_id": 12352,
+      "player": "Matthew Charles Turner",
+      "synergy_score": 0.6740584738260097,
+      "shared_minutes": 310.06666666666666,
+      "joint_pass_completion_rate": 0.987118537695144
+    },
+    {
+      "player_id": 12751,
+      "player": "Tyler Adams",
+      "synergy_score": 0.6612809976540146,
+      "shared_minutes": 310.06666666666666,
+      "joint_pass_completion_rate": 0.9684066839256296
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

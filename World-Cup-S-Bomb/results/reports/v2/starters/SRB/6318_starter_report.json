@@ -1,0 +1,42 @@
+{
+  "team": "Serbia",
+  "team_code": "SRB",
+  "player_id": 6318,
+  "player": "Andrija Živković",
+  "position": "Right Wing Back",
+  "functional_role": "Holding Anchor",
+  "physical_scores": {
+    "aerial_dominance_index": 0.4,
+    "pressing_intensity_index": 12.30648330058939,
+    "speed_recovery_index": 3.819253438113949
+  },
+  "net_xg_contribution_per_90": 0.061533128581532426,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5603,
+      "player": "Nikola Milenković",
+      "synergy_score": 0.49773130106936947,
+      "shared_minutes": 212.08333333333334,
+      "joint_pass_completion_rate": 0.9147698618162258
+    },
+    {
+      "player_id": 6687,
+      "player": "Saša Lukić",
+      "synergy_score": 0.48127594480517844,
+      "shared_minutes": 212.08333333333334,
+      "joint_pass_completion_rate": 0.884526909557467
+    },
+    {
+      "player_id": 20600,
+      "player": "Vanja Milinković Savić",
+      "synergy_score": 0.4659686840612572,
+      "shared_minutes": 212.08333333333334,
+      "joint_pass_completion_rate": 0.8563940178437707
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

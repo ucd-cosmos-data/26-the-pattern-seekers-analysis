@@ -1,0 +1,42 @@
+{
+  "team": "Brazil",
+  "team_code": "BRA",
+  "player_id": 4372,
+  "player": "Marcos Aoás Corrêa",
+  "position": "Left Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5333333333333333,
+    "pressing_intensity_index": 4.747078861580161,
+    "speed_recovery_index": 2.5713343833559206
+  },
+  "net_xg_contribution_per_90": 0.279413425735321,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3295,
+      "player": "Thiago Emiliano da Silva",
+      "synergy_score": 0.777773886470676,
+      "shared_minutes": 409.0666666666667,
+      "joint_pass_completion_rate": 0.9968835171843091
+    },
+    {
+      "player_id": 5547,
+      "player": "Alisson Ramsés Becker",
+      "synergy_score": 0.7589591510909441,
+      "shared_minutes": 394.98333333333335,
+      "joint_pass_completion_rate": 0.9876666850272655
+    },
+    {
+      "player_id": 5539,
+      "player": "Carlos Henrique Casimiro",
+      "synergy_score": 0.748757427721766,
+      "shared_minutes": 409.0666666666667,
+      "joint_pass_completion_rate": 0.9596927218168981
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

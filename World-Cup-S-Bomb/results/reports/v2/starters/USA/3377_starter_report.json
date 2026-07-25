@@ -1,0 +1,43 @@
+{
+  "team": "United States",
+  "team_code": "USA",
+  "player_id": 3377,
+  "player": "Timothy Weah",
+  "position": "Right Wing",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.2,
+    "pressing_intensity_index": 7.361191212709065,
+    "speed_recovery_index": 3.6805956063545326
+  },
+  "net_xg_contribution_per_90": 0.1551931478215278,
+  "top_chemistry_partners": [
+    {
+      "player_id": 12751,
+      "player": "Tyler Adams",
+      "synergy_score": 0.6232552332375071,
+      "shared_minutes": 317.8833333333333,
+      "joint_pass_completion_rate": 0.9007820844723645
+    },
+    {
+      "player_id": 21881,
+      "player": "Sergino Dest",
+      "synergy_score": 0.5924392533724296,
+      "shared_minutes": 299.45,
+      "joint_pass_completion_rate": 0.8840585702200199
+    },
+    {
+      "player_id": 38792,
+      "player": "Yunus Dimoara Musah",
+      "synergy_score": 0.5657248654587348,
+      "shared_minutes": 304.5833333333333,
+      "joint_pass_completion_rate": 0.8364405070100528
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

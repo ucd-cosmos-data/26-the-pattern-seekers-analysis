@@ -1,0 +1,43 @@
+{
+  "team": "Portugal",
+  "team_code": "POR",
+  "player_id": 5209,
+  "player": "Raphaël Adelino José Guerreiro",
+  "position": "Left Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6666666666666666,
+    "pressing_intensity_index": 8.299939616841412,
+    "speed_recovery_index": 2.3714113190975463
+  },
+  "net_xg_contribution_per_90": 0.1901660875665587,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5206,
+      "player": "Rúben Santos Gato Alves Dias",
+      "synergy_score": 0.6662921046149526,
+      "shared_minutes": 303.6166666666667,
+      "joint_pass_completion_rate": 0.9868257771882155
+    },
+    {
+      "player_id": 3193,
+      "player": "Bernardo Mota Veiga de Carvalho e Silva",
+      "synergy_score": 0.6201879945812809,
+      "shared_minutes": 277.53333333333336,
+      "joint_pass_completion_rate": 0.9656594390495974
+    },
+    {
+      "player_id": 32975,
+      "player": "Diogo Meireles Costa",
+      "synergy_score": 0.5863063304357491,
+      "shared_minutes": 303.6166666666667,
+      "joint_pass_completion_rate": 0.8683611830234564
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "England",
+  "team_code": "ENG",
+  "player_id": 3468,
+  "player": "Jordan Pickford",
+  "position": "Goalkeeper",
+  "functional_role": "Goalkeeper",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 0.0,
+    "speed_recovery_index": 2.9609321453050037
+  },
+  "net_xg_contribution_per_90": 0.029424263193968472,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3244,
+      "player": "John Stones",
+      "synergy_score": 0.8154485923572893,
+      "shared_minutes": 464.8833333333333,
+      "joint_pass_completion_rate": 0.9929309048327009
+    },
+    {
+      "player_id": 3336,
+      "player": "Harry Maguire",
+      "synergy_score": 0.8057119986198896,
+      "shared_minutes": 453.71666666666664,
+      "joint_pass_completion_rate": 0.9901751558691776
+    },
+    {
+      "player_id": 3943,
+      "player": "Declan Rice",
+      "synergy_score": 0.7814344389615578,
+      "shared_minutes": 449.54999999999995,
+      "joint_pass_completion_rate": 0.9637708872675923
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "United States",
+  "team_code": "USA",
+  "player_id": 38792,
+  "player": "Yunus Dimoara Musah",
+  "position": "Right Center Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.25,
+    "pressing_intensity_index": 19.239904988123516,
+    "speed_recovery_index": 4.43997807418235
+  },
+  "net_xg_contribution_per_90": 0.10051215679700347,
+  "top_chemistry_partners": [
+    {
+      "player_id": 18242,
+      "player": "Tim Ream",
+      "synergy_score": 0.6944817956877505,
+      "shared_minutes": 364.8666666666667,
+      "joint_pass_completion_rate": 0.937081321860524
+    },
+    {
+      "player_id": 12751,
+      "player": "Tyler Adams",
+      "synergy_score": 0.69105624017289,
+      "shared_minutes": 364.8666666666667,
+      "joint_pass_completion_rate": 0.9324591357788958
+    },
+    {
+      "player_id": 8246,
+      "player": "Christian Pulisic",
+      "synergy_score": 0.6460633194857809,
+      "shared_minutes": 309.98333333333335,
+      "joint_pass_completion_rate": 0.9462569624225309
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

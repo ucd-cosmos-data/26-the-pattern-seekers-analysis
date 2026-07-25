@@ -1,0 +1,43 @@
+{
+  "team": "United States",
+  "team_code": "USA",
+  "player_id": 4614,
+  "player": "Antonee Robinson",
+  "position": "Left Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.25,
+    "pressing_intensity_index": 14.445978598550225,
+    "speed_recovery_index": 7.222989299275112
+  },
+  "net_xg_contribution_per_90": 0.04217293752157404,
+  "top_chemistry_partners": [
+    {
+      "player_id": 12352,
+      "player": "Matthew Charles Turner",
+      "synergy_score": 0.7348956826894453,
+      "shared_minutes": 386.26666666666665,
+      "joint_pass_completion_rate": 0.9659020115459692
+    },
+    {
+      "player_id": 18242,
+      "player": "Tim Ream",
+      "synergy_score": 0.7276247480115746,
+      "shared_minutes": 386.26666666666665,
+      "joint_pass_completion_rate": 0.9563455389790424
+    },
+    {
+      "player_id": 12751,
+      "player": "Tyler Adams",
+      "synergy_score": 0.7046389598166093,
+      "shared_minutes": 386.26666666666665,
+      "joint_pass_completion_rate": 0.926134422520669
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

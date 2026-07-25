@@ -1,0 +1,42 @@
+{
+  "team": "Iran",
+  "team_code": "IRN",
+  "player_id": 5226,
+  "player": "Mehdi Taremi",
+  "position": "Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.3888888888888889,
+    "pressing_intensity_index": 19.469026548672566,
+    "speed_recovery_index": 3.5398230088495573
+  },
+  "net_xg_contribution_per_90": 0.4466500648967551,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5220,
+      "player": "Morteza Pouraliganji",
+      "synergy_score": 0.5850536931218417,
+      "shared_minutes": 305.1,
+      "joint_pass_completion_rate": 0.8642281155937619
+    },
+    {
+      "player_id": 5722,
+      "player": "Saeid Ezatolahi Afagh",
+      "synergy_score": 0.5728545930239264,
+      "shared_minutes": 240.14999999999998,
+      "joint_pass_completion_rate": 0.9723968664895941
+    },
+    {
+      "player_id": 5228,
+      "player": "Seyed Majid Hosseini",
+      "synergy_score": 0.5255095746877504,
+      "shared_minutes": 305.1,
+      "joint_pass_completion_rate": 0.7762708872675923
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

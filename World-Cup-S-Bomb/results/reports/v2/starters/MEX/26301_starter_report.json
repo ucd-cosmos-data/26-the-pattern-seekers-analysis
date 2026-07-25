@@ -1,0 +1,43 @@
+{
+  "team": "Mexico",
+  "team_code": "MEX",
+  "player_id": 26301,
+  "player": "Ernesto Alexis Vega Rojas",
+  "position": "Left Wing",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.14285714285714285,
+    "pressing_intensity_index": 15.296137339055795,
+    "speed_recovery_index": 7.416309012875537
+  },
+  "net_xg_contribution_per_90": 0.32724883314849784,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5573,
+      "player": "Héctor Alfredo Moreno Herrera",
+      "synergy_score": 0.47760538446168216,
+      "shared_minutes": 194.16666666666666,
+      "joint_pass_completion_rate": 0.9313188780991947
+    },
+    {
+      "player_id": 26368,
+      "player": "César Jasib Montes Castro",
+      "synergy_score": 0.43918189973530664,
+      "shared_minutes": 194.16666666666666,
+      "joint_pass_completion_rate": 0.8563940178437707
+    },
+    {
+      "player_id": 28825,
+      "player": "Luis Gerardo Chávez Magallón",
+      "synergy_score": 0.4330117399288538,
+      "shared_minutes": 194.16666666666666,
+      "joint_pass_completion_rate": 0.8443623563600642
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Serbia",
+  "team_code": "SRB",
+  "player_id": 3831,
+  "player": "Dušan Tadić",
+  "position": "Right Attacking Midfield",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 13.28740157480315,
+    "speed_recovery_index": 2.65748031496063
+  },
+  "net_xg_contribution_per_90": 0.07961958679872047,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5603,
+      "player": "Nikola Milenković",
+      "synergy_score": 0.5591202890199888,
+      "shared_minutes": 270.93333333333334,
+      "joint_pass_completion_rate": 0.8827424634673399
+    },
+    {
+      "player_id": 6321,
+      "player": "Milos Veljkovic",
+      "synergy_score": 0.5384985211102423,
+      "shared_minutes": 228.9,
+      "joint_pass_completion_rate": 0.9420334196281477
+    },
+    {
+      "player_id": 6687,
+      "player": "Saša Lukić",
+      "synergy_score": 0.5032148453250066,
+      "shared_minutes": 238.93333333333334,
+      "joint_pass_completion_rate": 0.8568854436337962
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

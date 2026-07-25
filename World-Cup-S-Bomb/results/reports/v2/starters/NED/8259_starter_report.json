@@ -1,0 +1,43 @@
+{
+  "team": "Netherlands",
+  "team_code": "NED",
+  "player_id": 8259,
+  "player": "Steven Bergwijn",
+  "position": "Left Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 8.62029646522235,
+    "speed_recovery_index": 1.6419612314709235
+  },
+  "net_xg_contribution_per_90": 0.1420041797035348,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3306,
+      "player": "Nathan Aké",
+      "synergy_score": 0.5261167921443551,
+      "shared_minutes": 216.0,
+      "joint_pass_completion_rate": 0.9554103227908828
+    },
+    {
+      "player_id": 8118,
+      "player": "Frenkie de Jong",
+      "synergy_score": 0.5246768911770373,
+      "shared_minutes": 219.25,
+      "joint_pass_completion_rate": 0.9435833641529099
+    },
+    {
+      "player_id": 3311,
+      "player": "Daley Blind",
+      "synergy_score": 0.4803750679765589,
+      "shared_minutes": 219.25,
+      "joint_pass_completion_rate": 0.8639105901532068
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

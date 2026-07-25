@@ -1,0 +1,43 @@
+{
+  "team": "Ghana",
+  "team_code": "GHA",
+  "player_id": 6393,
+  "player": "Iñaki Williams Arthuer",
+  "position": "Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.2,
+    "pressing_intensity_index": 10.557829779434226,
+    "speed_recovery_index": 3.2993218060731957
+  },
+  "net_xg_contribution_per_90": 0.040920500873709284,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3709,
+      "player": "Daniel Amartey",
+      "synergy_score": 0.5445753177465241,
+      "shared_minutes": 272.78333333333336,
+      "joint_pass_completion_rate": 0.8563940178437707
+    },
+    {
+      "player_id": 6383,
+      "player": "Thomas Teye Partey",
+      "synergy_score": 0.4491527452949003,
+      "shared_minutes": 272.78333333333336,
+      "joint_pass_completion_rate": 0.7063333787516567
+    },
+    {
+      "player_id": 17033,
+      "player": "Mohammed Kudus",
+      "synergy_score": 0.4013942511673278,
+      "shared_minutes": 229.55,
+      "joint_pass_completion_rate": 0.700924281649158
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

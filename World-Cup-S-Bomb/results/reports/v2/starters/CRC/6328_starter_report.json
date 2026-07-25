@@ -1,0 +1,42 @@
+{
+  "team": "Costa Rica",
+  "team_code": "CRC",
+  "player_id": 6328,
+  "player": "Kendall Jamaal Waston Manley",
+  "position": "Right Center Back",
+  "functional_role": "Deep Playmaker",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5555555555555556,
+    "pressing_intensity_index": 9.019843656043296,
+    "speed_recovery_index": 0.3607937462417318
+  },
+  "net_xg_contribution_per_90": 0.061073722188815384,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5598,
+      "player": "Óscar Esau Duarte Gaitán",
+      "synergy_score": 0.5909741399818749,
+      "shared_minutes": 249.45,
+      "joint_pass_completion_rate": 0.9800115240097061
+    },
+    {
+      "player_id": 5839,
+      "player": "Yeltsin Ignacio Tejeda Valverde",
+      "synergy_score": 0.565455928540667,
+      "shared_minutes": 241.95,
+      "joint_pass_completion_rate": 0.9554103227908828
+    },
+    {
+      "player_id": 130185,
+      "player": "Keysher Fuller Spence",
+      "synergy_score": 0.5416733941904671,
+      "shared_minutes": 222.91666666666666,
+      "joint_pass_completion_rate": 0.9637708872675923
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

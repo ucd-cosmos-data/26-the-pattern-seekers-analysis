@@ -1,0 +1,43 @@
+{
+  "team": "Costa Rica",
+  "team_code": "CRC",
+  "player_id": 5836,
+  "player": "Bryan Oviedo",
+  "position": "Left Wing Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6666666666666666,
+    "pressing_intensity_index": 10.337161911819193,
+    "speed_recovery_index": 2.0007410151908114
+  },
+  "net_xg_contribution_per_90": 0.016672841793256763,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5839,
+      "player": "Yeltsin Ignacio Tejeda Valverde",
+      "synergy_score": 0.6042530608742755,
+      "shared_minutes": 269.9,
+      "joint_pass_completion_rate": 0.9561203943411523
+    },
+    {
+      "player_id": 5597,
+      "player": "Keylor Navas Gamboa",
+      "synergy_score": 0.5861918223571141,
+      "shared_minutes": 269.9,
+      "joint_pass_completion_rate": 0.9275417745351847
+    },
+    {
+      "player_id": 5582,
+      "player": "Celso Borges Mora",
+      "synergy_score": 0.5571812086980383,
+      "shared_minutes": 252.5,
+      "joint_pass_completion_rate": 0.9171905994687826
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

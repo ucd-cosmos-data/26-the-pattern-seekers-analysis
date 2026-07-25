@@ -1,0 +1,43 @@
+{
+  "team": "Germany",
+  "team_code": "GER",
+  "player_id": 5562,
+  "player": "Thomas Müller",
+  "position": "Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.2,
+    "pressing_intensity_index": 23.200859291084857,
+    "speed_recovery_index": 0.44617037098240114
+  },
+  "net_xg_contribution_per_90": 0.15796613530529624,
+  "top_chemistry_partners": [
+    {
+      "player_id": 6322,
+      "player": "Niklas Süle",
+      "synergy_score": 0.4777760992296399,
+      "shared_minutes": 201.71666666666664,
+      "joint_pass_completion_rate": 0.9078690784386242
+    },
+    {
+      "player_id": 8400,
+      "player": "Serge Gnabry",
+      "synergy_score": 0.42147407392328906,
+      "shared_minutes": 201.71666666666664,
+      "joint_pass_completion_rate": 0.800884095490499
+    },
+    {
+      "player_id": 39565,
+      "player": "Jamal Musiala",
+      "synergy_score": 0.4175069160647214,
+      "shared_minutes": 201.71666666666664,
+      "joint_pass_completion_rate": 0.793345710973388
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Morocco",
+  "team_code": "MAR",
+  "player_id": 5219,
+  "player": "Romain Saïss",
+  "position": "Left Center Back",
+  "functional_role": "Deep Playmaker",
+  "physical_scores": {
+    "aerial_dominance_index": 0.8,
+    "pressing_intensity_index": 7.59597900298487,
+    "speed_recovery_index": 2.223213366727279
+  },
+  "net_xg_contribution_per_90": 0.14820532418430712,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5234,
+      "player": "Sofyan Amrabat",
+      "synergy_score": 0.8235736210835768,
+      "shared_minutes": 485.7833333333333,
+      "joint_pass_completion_rate": 0.9868257771882155
+    },
+    {
+      "player_id": 5245,
+      "player": "Achraf Hakimi Mouh",
+      "synergy_score": 0.7805204737109948,
+      "shared_minutes": 448.2,
+      "joint_pass_completion_rate": 0.9637708872675923
+    },
+    {
+      "player_id": 6785,
+      "player": "Yassine Bounou",
+      "synergy_score": 0.7519396564503652,
+      "shared_minutes": 390.55,
+      "joint_pass_completion_rate": 0.9834381198937566
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

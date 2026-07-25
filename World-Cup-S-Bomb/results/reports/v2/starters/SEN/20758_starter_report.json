@@ -1,0 +1,42 @@
+{
+  "team": "Senegal",
+  "team_code": "SEN",
+  "player_id": 20758,
+  "player": "Krépin Diatta",
+  "position": "Right Wing",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6,
+    "pressing_intensity_index": 21.273476866697205,
+    "speed_recovery_index": 4.947320201557489
+  },
+  "net_xg_contribution_per_90": 0.09894352617498853,
+  "top_chemistry_partners": [
+    {
+      "player_id": 4506,
+      "player": "Nampalys Mendy",
+      "synergy_score": 0.44337794200654906,
+      "shared_minutes": 181.91666666666669,
+      "joint_pass_completion_rate": 0.9044568220844992
+    },
+    {
+      "player_id": 3404,
+      "player": "Youssouf Sabaly",
+      "synergy_score": 0.42785296265191736,
+      "shared_minutes": 181.91666666666669,
+      "joint_pass_completion_rate": 0.8727870610078188
+    },
+    {
+      "player_id": 8553,
+      "player": "Abdou Diallo",
+      "synergy_score": 0.4182437731274338,
+      "shared_minutes": 170.13333333333333,
+      "joint_pass_completion_rate": 0.8946889464187652
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

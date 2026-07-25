@@ -1,0 +1,42 @@
+{
+  "team": "England",
+  "team_code": "ENG",
+  "player_id": 3532,
+  "player": "Jordan Brian Henderson",
+  "position": "Right Center Midfield",
+  "functional_role": "Holding Anchor",
+  "physical_scores": {
+    "aerial_dominance_index": 0.4,
+    "pressing_intensity_index": 11.882954680623289,
+    "speed_recovery_index": 1.9269656238848578
+  },
+  "net_xg_contribution_per_90": 0.08798235801118116,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3244,
+      "player": "John Stones",
+      "synergy_score": 0.61750816788135,
+      "shared_minutes": 275.25,
+      "joint_pass_completion_rate": 0.9660570288984405
+    },
+    {
+      "player_id": 3468,
+      "player": "Jordan Pickford",
+      "synergy_score": 0.6170065857252726,
+      "shared_minutes": 280.23333333333335,
+      "joint_pass_completion_rate": 0.9554103227908828
+    },
+    {
+      "player_id": 3336,
+      "player": "Harry Maguire",
+      "synergy_score": 0.5863043207829893,
+      "shared_minutes": 280.23333333333335,
+      "joint_pass_completion_rate": 0.9078690784386242
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

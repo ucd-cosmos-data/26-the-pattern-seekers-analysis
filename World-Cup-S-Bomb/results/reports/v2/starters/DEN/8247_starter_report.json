@@ -1,0 +1,43 @@
+{
+  "team": "Denmark",
+  "team_code": "DEN",
+  "player_id": 8247,
+  "player": "Joachim Andersen",
+  "position": "Right Center Back",
+  "functional_role": "Deep Playmaker",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6666666666666666,
+    "pressing_intensity_index": 8.975240715268225,
+    "speed_recovery_index": 4.023383768913343
+  },
+  "net_xg_contribution_per_90": 0.13458568431911966,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3815,
+      "player": "Kasper Schmeichel",
+      "synergy_score": 0.6500740961508286,
+      "shared_minutes": 290.8,
+      "joint_pass_completion_rate": 0.9858618096654019
+    },
+    {
+      "player_id": 3959,
+      "player": "Andreas Christensen",
+      "synergy_score": 0.6433493835481779,
+      "shared_minutes": 290.8,
+      "joint_pass_completion_rate": 0.9756635301535989
+    },
+    {
+      "player_id": 3570,
+      "player": "Pierre-Emile Højbjerg",
+      "synergy_score": 0.640107392981971,
+      "shared_minutes": 290.8,
+      "joint_pass_completion_rate": 0.9707469295607681
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

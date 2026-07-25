@@ -1,0 +1,43 @@
+{
+  "team": "Brazil",
+  "team_code": "BRA",
+  "player_id": 25363,
+  "player": "Antony Matheus dos Santos",
+  "position": "Right Wing",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.25,
+    "pressing_intensity_index": 13.514479799785482,
+    "speed_recovery_index": 5.309259921344297
+  },
+  "net_xg_contribution_per_90": 0.10886082409724702,
+  "top_chemistry_partners": [
+    {
+      "player_id": 13620,
+      "player": "Éder Gabriel Militão",
+      "synergy_score": 0.4151908079596034,
+      "shared_minutes": 151.45000000000005,
+      "joint_pass_completion_rate": 0.9670902957558641
+    },
+    {
+      "player_id": 4372,
+      "player": "Marcos Aoás Corrêa",
+      "synergy_score": 0.3724401442406972,
+      "shared_minutes": 132.3166666666667,
+      "joint_pass_completion_rate": 0.9613556130854318
+    },
+    {
+      "player_id": 25104,
+      "player": "Rodrygo Silva de Goes",
+      "synergy_score": 0.36303237931242066,
+      "shared_minutes": 153.68333333333334,
+      "joint_pass_completion_rate": 0.8364405070100528
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

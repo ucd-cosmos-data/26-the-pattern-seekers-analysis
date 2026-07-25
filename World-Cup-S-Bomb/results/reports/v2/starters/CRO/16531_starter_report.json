@@ -1,0 +1,43 @@
+{
+  "team": "Croatia",
+  "team_code": "CRO",
+  "player_id": 16531,
+  "player": "Dominik Livaković",
+  "position": "Goalkeeper",
+  "functional_role": "Goalkeeper",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 0.24990165906934772,
+    "speed_recovery_index": 4.123377374644237
+  },
+  "net_xg_contribution_per_90": 0.03661059305365944,
+  "top_chemistry_partners": [
+    {
+      "player_id": 33018,
+      "player": "Joško Gvardiol",
+      "synergy_score": 0.9245957489641835,
+      "shared_minutes": 720.2833333333333,
+      "joint_pass_completion_rate": 0.993559268847572
+    },
+    {
+      "player_id": 3471,
+      "player": "Dejan Lovren",
+      "synergy_score": 0.8958765853696105,
+      "shared_minutes": 624.1333333333333,
+      "joint_pass_completion_rate": 0.9944262903488603
+    },
+    {
+      "player_id": 29163,
+      "player": "Josip Juranović",
+      "synergy_score": 0.8800091399705201,
+      "shared_minutes": 624.1333333333333,
+      "joint_pass_completion_rate": 0.976813367851259
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

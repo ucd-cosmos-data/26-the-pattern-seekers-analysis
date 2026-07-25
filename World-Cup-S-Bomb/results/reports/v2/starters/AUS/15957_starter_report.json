@@ -1,0 +1,42 @@
+{
+  "team": "Australia",
+  "team_code": "AUS",
+  "player_id": 15957,
+  "player": "Miloš Degenek",
+  "position": "Right Back",
+  "functional_role": "Deep Playmaker",
+  "physical_scores": {
+    "aerial_dominance_index": 0.42857142857142855,
+    "pressing_intensity_index": 8.891816235797794,
+    "speed_recovery_index": 2.667544870739338
+  },
+  "net_xg_contribution_per_90": 0.027564630330973162,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3240,
+      "player": "Mathew Ryan",
+      "synergy_score": 0.5136175514441413,
+      "shared_minutes": 202.43333333333334,
+      "joint_pass_completion_rate": 0.9736515543764308
+    },
+    {
+      "player_id": 3281,
+      "player": "Aaron Mooy",
+      "synergy_score": 0.5114229333866085,
+      "shared_minutes": 202.43333333333334,
+      "joint_pass_completion_rate": 0.9694912734884987
+    },
+    {
+      "player_id": 22293,
+      "player": "Harry Souttar",
+      "synergy_score": 0.5076763170349109,
+      "shared_minutes": 202.43333333333334,
+      "joint_pass_completion_rate": 0.9623889094352733
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

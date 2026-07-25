@@ -1,0 +1,43 @@
+{
+  "team": "Argentina",
+  "team_code": "ARG",
+  "player_id": 7797,
+  "player": "Rodrigo Javier De Paul",
+  "position": "Right Defensive Midfield",
+  "functional_role": "Holding Anchor",
+  "physical_scores": {
+    "aerial_dominance_index": 0.3333333333333333,
+    "pressing_intensity_index": 18.007562230858102,
+    "speed_recovery_index": 4.820922172040752
+  },
+  "net_xg_contribution_per_90": 0.13754410144417603,
+  "top_chemistry_partners": [
+    {
+      "player_id": 6909,
+      "player": "Damián Emiliano Martínez",
+      "synergy_score": 0.8522700883973368,
+      "shared_minutes": 634.7333333333333,
+      "joint_pass_completion_rate": 0.9420334196281477
+    },
+    {
+      "player_id": 3090,
+      "player": "Nicolás Hernán Otamendi",
+      "synergy_score": 0.8440280531126169,
+      "shared_minutes": 634.7333333333333,
+      "joint_pass_completion_rate": 0.9329233114715174
+    },
+    {
+      "player_id": 20572,
+      "player": "Cristian Gabriel Romero",
+      "synergy_score": 0.8378663805802503,
+      "shared_minutes": 520.3333333333333,
+      "joint_pass_completion_rate": 0.9806040165133947
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

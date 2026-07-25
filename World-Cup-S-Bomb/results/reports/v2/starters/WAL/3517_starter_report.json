@@ -1,0 +1,43 @@
+{
+  "team": "Wales",
+  "team_code": "WAL",
+  "player_id": 3517,
+  "player": "Aaron Ramsey",
+  "position": "Right Center Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.25,
+    "pressing_intensity_index": 18.231356986317596,
+    "speed_recovery_index": 4.158028786353136
+  },
+  "net_xg_contribution_per_90": 0.010990447953562757,
+  "top_chemistry_partners": [
+    {
+      "player_id": 4767,
+      "player": "Chris Mepham",
+      "synergy_score": 0.5805145844412436,
+      "shared_minutes": 281.3833333333333,
+      "joint_pass_completion_rate": 0.8968133678512591
+    },
+    {
+      "player_id": 4934,
+      "player": "Ethan Ampadu",
+      "synergy_score": 0.558121752989206,
+      "shared_minutes": 265.56666666666666,
+      "joint_pass_completion_rate": 0.8915252786751963
+    },
+    {
+      "player_id": 11250,
+      "player": "Joe Rodon",
+      "synergy_score": 0.5516805526626009,
+      "shared_minutes": 281.3833333333333,
+      "joint_pass_completion_rate": 0.8522688450413379
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

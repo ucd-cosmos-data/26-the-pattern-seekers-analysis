@@ -1,0 +1,42 @@
+{
+  "team": "Japan",
+  "team_code": "JPN",
+  "player_id": 9411,
+  "player": "Daichi Kamada",
+  "position": "Center Attacking Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6,
+    "pressing_intensity_index": 20.550585676864525,
+    "speed_recovery_index": 1.601344338456976
+  },
+  "net_xg_contribution_per_90": 0.130587428952701,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3300,
+      "player": "Maya Yoshida",
+      "synergy_score": 0.6474871355511745,
+      "shared_minutes": 337.2166666666667,
+      "joint_pass_completion_rate": 0.9078690784386242
+    },
+    {
+      "player_id": 23721,
+      "player": "Wataru Endo",
+      "synergy_score": 0.5916615490950108,
+      "shared_minutes": 268.4,
+      "joint_pass_completion_rate": 0.939243622933903
+    },
+    {
+      "player_id": 29595,
+      "player": "Ko Itakura",
+      "synergy_score": 0.5526168371635916,
+      "shared_minutes": 263.31666666666666,
+      "joint_pass_completion_rate": 0.8871667283058198
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

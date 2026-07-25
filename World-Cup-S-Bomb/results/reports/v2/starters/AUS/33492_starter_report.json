@@ -1,0 +1,42 @@
+{
+  "team": "Australia",
+  "team_code": "AUS",
+  "player_id": 33492,
+  "player": "Mitchell Thomas Duke",
+  "position": "Left Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.4838709677419355,
+    "pressing_intensity_index": 20.16405484818805,
+    "speed_recovery_index": 3.3055827619980414
+  },
+  "net_xg_contribution_per_90": 0.06866757116797256,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3281,
+      "player": "Aaron Mooy",
+      "synergy_score": 0.5489542439408425,
+      "shared_minutes": 272.26666666666665,
+      "joint_pass_completion_rate": 0.8642281155937619
+    },
+    {
+      "player_id": 5490,
+      "player": "Jackson Irvine",
+      "synergy_score": 0.5014436840311735,
+      "shared_minutes": 272.26666666666665,
+      "joint_pass_completion_rate": 0.7894314233106751
+    },
+    {
+      "player_id": 5481,
+      "player": "Mathew Leckie",
+      "synergy_score": 0.4308805181055231,
+      "shared_minutes": 272.26666666666665,
+      "joint_pass_completion_rate": 0.6783426165633744
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

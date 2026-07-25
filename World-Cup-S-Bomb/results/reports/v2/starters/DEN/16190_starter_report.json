@@ -1,0 +1,42 @@
+{
+  "team": "Denmark",
+  "team_code": "DEN",
+  "player_id": 16190,
+  "player": "Rasmus Nissen Kristensen",
+  "position": "Right Wing Back",
+  "functional_role": "Holding Anchor",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5,
+    "pressing_intensity_index": 10.375008894897888,
+    "speed_recovery_index": 1.1527787660997653
+  },
+  "net_xg_contribution_per_90": 0.05418060200668898,
+  "top_chemistry_partners": [
+    {
+      "player_id": 8247,
+      "player": "Joachim Andersen",
+      "synergy_score": 0.550142464604688,
+      "shared_minutes": 234.21666666666664,
+      "joint_pass_completion_rate": 0.9485430808570952
+    },
+    {
+      "player_id": 3815,
+      "player": "Kasper Schmeichel",
+      "synergy_score": 0.5426314079894734,
+      "shared_minutes": 234.21666666666664,
+      "joint_pass_completion_rate": 0.9355926884757196
+    },
+    {
+      "player_id": 3043,
+      "player": "Christian Dannemann Eriksen",
+      "synergy_score": 0.5280828256731366,
+      "shared_minutes": 234.21666666666664,
+      "joint_pass_completion_rate": 0.910508354907037
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

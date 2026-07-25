@@ -1,0 +1,42 @@
+{
+  "team": "Saudi Arabia",
+  "team_code": "KSA",
+  "player_id": 5715,
+  "player": "Ali Albulayhi",
+  "position": "Left Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5,
+    "pressing_intensity_index": 7.216712386579449,
+    "speed_recovery_index": 2.6587887740029545
+  },
+  "net_xg_contribution_per_90": 0.03152563832032075,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5713,
+      "player": "Mohammed Kanoo",
+      "synergy_score": 0.5630516582876612,
+      "shared_minutes": 236.94999999999996,
+      "joint_pass_completion_rate": 0.9637708872675923
+    },
+    {
+      "player_id": 51710,
+      "player": "Saud Abdullah Abdul Hamid",
+      "synergy_score": 0.5630516582876612,
+      "shared_minutes": 236.94999999999996,
+      "joint_pass_completion_rate": 0.9637708872675923
+    },
+    {
+      "player_id": 5714,
+      "player": "Mohammed Khalil Al Owais",
+      "synergy_score": 0.548722405309812,
+      "shared_minutes": 236.94999999999996,
+      "joint_pass_completion_rate": 0.939243622933903
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,42 @@
+{
+  "team": "Wales",
+  "team_code": "WAL",
+  "player_id": 11250,
+  "player": "Joe Rodon",
+  "position": "Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5384615384615384,
+    "pressing_intensity_index": 7.886311295849015,
+    "speed_recovery_index": 1.5165983261248106
+  },
+  "net_xg_contribution_per_90": 0.05156434308824356,
+  "top_chemistry_partners": [
+    {
+      "player_id": 4767,
+      "player": "Chris Mepham",
+      "synergy_score": 0.653775860161892,
+      "shared_minutes": 296.71666666666664,
+      "joint_pass_completion_rate": 0.980497953040512
+    },
+    {
+      "player_id": 3086,
+      "player": "Ben Davies",
+      "synergy_score": 0.6151963740177409,
+      "shared_minutes": 261.3333333333333,
+      "joint_pass_completion_rate": 0.992059372551801
+    },
+    {
+      "player_id": 4934,
+      "player": "Ethan Ampadu",
+      "synergy_score": 0.6139339282881265,
+      "shared_minutes": 265.56666666666666,
+      "joint_pass_completion_rate": 0.9806778065427159
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

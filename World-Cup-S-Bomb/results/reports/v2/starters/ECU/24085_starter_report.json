@@ -1,0 +1,42 @@
+{
+  "team": "Ecuador",
+  "team_code": "ECU",
+  "player_id": 24085,
+  "player": "Pervis Josué Estupiñán Tenorio",
+  "position": "Left Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5714285714285714,
+    "pressing_intensity_index": 12.795468993816101,
+    "speed_recovery_index": 5.305438363289603
+  },
+  "net_xg_contribution_per_90": 0.13016196139397795,
+  "top_chemistry_partners": [
+    {
+      "player_id": 38004,
+      "player": "Piero Martín Hincapié Reyna",
+      "synergy_score": 0.6197132093146894,
+      "shared_minutes": 288.3833333333333,
+      "joint_pass_completion_rate": 0.9442033419628147
+    },
+    {
+      "player_id": 37522,
+      "player": "Hernán Ismael Galíndez",
+      "synergy_score": 0.6140617405371149,
+      "shared_minutes": 288.3833333333333,
+      "joint_pass_completion_rate": 0.9355926884757196
+    },
+    {
+      "player_id": 37726,
+      "player": "Moisés Isaac Caicedo Corozo",
+      "synergy_score": 0.5989652630759082,
+      "shared_minutes": 282.9666666666667,
+      "joint_pass_completion_rate": 0.9223785456996861
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

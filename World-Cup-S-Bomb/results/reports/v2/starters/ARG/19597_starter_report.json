@@ -1,0 +1,42 @@
+{
+  "team": "Argentina",
+  "team_code": "ARG",
+  "player_id": 19597,
+  "player": "Marcos Javier Acuña",
+  "position": "Left Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5555555555555556,
+    "pressing_intensity_index": 12.453352341817268,
+    "speed_recovery_index": 4.075642584594743
+  },
+  "net_xg_contribution_per_90": 0.05006747405761249,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3090,
+      "player": "Nicolás Hernán Otamendi",
+      "synergy_score": 0.7417618186456649,
+      "shared_minutes": 397.4833333333333,
+      "joint_pass_completion_rate": 0.9626135390765431
+    },
+    {
+      "player_id": 5503,
+      "player": "Lionel Andrés Messi Cuccittini",
+      "synergy_score": 0.7064476678026193,
+      "shared_minutes": 397.4833333333333,
+      "joint_pass_completion_rate": 0.916784974073596
+    },
+    {
+      "player_id": 38718,
+      "player": "Enzo Fernandez",
+      "synergy_score": 0.6684689973296224,
+      "shared_minutes": 340.71666666666664,
+      "joint_pass_completion_rate": 0.9324591357788958
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,42 @@
+{
+  "team": "Morocco",
+  "team_code": "MAR",
+  "player_id": 139016,
+  "player": "Achraf Dari",
+  "position": "Right Center Back",
+  "functional_role": "Deep Playmaker",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6,
+    "pressing_intensity_index": 8.979795460214516,
+    "speed_recovery_index": 3.5919181840858068
+  },
+  "net_xg_contribution_per_90": 0.2652804440009977,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5234,
+      "player": "Sofyan Amrabat",
+      "synergy_score": 0.5168008298610838,
+      "shared_minutes": 200.45,
+      "joint_pass_completion_rate": 0.9861984332447972
+    },
+    {
+      "player_id": 7459,
+      "player": "Jawad El Yamiq",
+      "synergy_score": 0.5164392058251884,
+      "shared_minutes": 200.45,
+      "joint_pass_completion_rate": 0.985508354907037
+    },
+    {
+      "player_id": 6785,
+      "player": "Yassine Bounou",
+      "synergy_score": 0.49644006055462164,
+      "shared_minutes": 200.45,
+      "joint_pass_completion_rate": 0.9473444732093825
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Switzerland",
+  "team_code": "SUI",
+  "player_id": 5545,
+  "player": "Breel-Donald Embolo",
+  "position": "Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.2222222222222222,
+    "pressing_intensity_index": 13.08496138119037,
+    "speed_recovery_index": 1.0904134484325307
+  },
+  "net_xg_contribution_per_90": 0.6564824892321673,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5549,
+      "player": "Manuel Obafemi Akanji",
+      "synergy_score": 0.6469259123137311,
+      "shared_minutes": 330.15,
+      "joint_pass_completion_rate": 0.9168596945411304
+    },
+    {
+      "player_id": 3500,
+      "player": "Granit Xhaka",
+      "synergy_score": 0.612041666944098,
+      "shared_minutes": 330.15,
+      "joint_pass_completion_rate": 0.8674197850474621
+    },
+    {
+      "player_id": 16026,
+      "player": "Djibril Sow",
+      "synergy_score": 0.5348483368062706,
+      "shared_minutes": 267.43333333333334,
+      "joint_pass_completion_rate": 0.8508472581783949
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

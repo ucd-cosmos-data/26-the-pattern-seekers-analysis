@@ -1,0 +1,43 @@
+{
+  "team": "Uruguay",
+  "team_code": "URU",
+  "player_id": 5260,
+  "player": "Rodrigo Bentancur Colmán",
+  "position": "Left Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.7272727272727273,
+    "pressing_intensity_index": 19.424460431654676,
+    "speed_recovery_index": 6.604316546762591
+  },
+  "net_xg_contribution_per_90": 0.30339892113669065,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5259,
+      "player": "José María Giménez de Vargas",
+      "synergy_score": 0.5557814508950804,
+      "shared_minutes": 231.66666666666666,
+      "joint_pass_completion_rate": 0.9648963154729218
+    },
+    {
+      "player_id": 36710,
+      "player": "Sergio Rochet Álvarez",
+      "synergy_score": 0.5537420020148737,
+      "shared_minutes": 231.66666666666666,
+      "joint_pass_completion_rate": 0.9613556130854318
+    },
+    {
+      "player_id": 6773,
+      "player": "Federico Santiago Valverde Dipetta",
+      "synergy_score": 0.5070940249017915,
+      "shared_minutes": 231.66666666666666,
+      "joint_pass_completion_rate": 0.8803697126596632
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

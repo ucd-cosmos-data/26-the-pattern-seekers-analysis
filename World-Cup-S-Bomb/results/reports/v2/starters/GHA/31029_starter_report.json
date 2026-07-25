@@ -1,0 +1,43 @@
+{
+  "team": "Ghana",
+  "team_code": "GHA",
+  "player_id": 31029,
+  "player": "Salis Abdul Samed",
+  "position": "Left Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 18.34308360067937,
+    "speed_recovery_index": 4.7556142668428
+  },
+  "net_xg_contribution_per_90": 0.04948439411209661,
+  "top_chemistry_partners": [
+    {
+      "player_id": 6383,
+      "player": "Thomas Teye Partey",
+      "synergy_score": 0.619845797000537,
+      "shared_minutes": 264.95000000000005,
+      "joint_pass_completion_rate": 0.9914755028864922
+    },
+    {
+      "player_id": 30519,
+      "player": "Mohamed Salisu",
+      "synergy_score": 0.6171219308498632,
+      "shared_minutes": 264.95000000000005,
+      "joint_pass_completion_rate": 0.987118537695144
+    },
+    {
+      "player_id": 3709,
+      "player": "Daniel Amartey",
+      "synergy_score": 0.6061834132745523,
+      "shared_minutes": 264.95000000000005,
+      "joint_pass_completion_rate": 0.9696218114669516
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

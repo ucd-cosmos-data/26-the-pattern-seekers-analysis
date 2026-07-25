@@ -1,0 +1,42 @@
+{
+  "team": "Ecuador",
+  "team_code": "ECU",
+  "player_id": 23830,
+  "player": "Jhegson Sebastián Méndez Carabalí",
+  "position": "Right Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5,
+    "pressing_intensity_index": 14.102898929224342,
+    "speed_recovery_index": 6.111256202663881
+  },
+  "net_xg_contribution_per_90": 0.05735178897884566,
+  "top_chemistry_partners": [
+    {
+      "player_id": 30111,
+      "player": "Felix Eduardo Torres Caicedo",
+      "synergy_score": 0.5028242884806321,
+      "shared_minutes": 191.45,
+      "joint_pass_completion_rate": 0.9900057620048531
+    },
+    {
+      "player_id": 38004,
+      "player": "Piero Martín Hincapié Reyna",
+      "synergy_score": 0.4856933621400725,
+      "shared_minutes": 191.45,
+      "joint_pass_completion_rate": 0.9562768507844319
+    },
+    {
+      "player_id": 37737,
+      "player": "Angelo Smit Preciado Quiñónez",
+      "synergy_score": 0.4730171986882966,
+      "shared_minutes": 191.45,
+      "joint_pass_completion_rate": 0.9313188780991947
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

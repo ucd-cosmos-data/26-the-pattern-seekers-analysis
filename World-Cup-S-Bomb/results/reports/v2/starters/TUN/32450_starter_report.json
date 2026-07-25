@@ -1,0 +1,42 @@
+{
+  "team": "Tunisia",
+  "team_code": "TUN",
+  "player_id": 32450,
+  "player": "Montassar Omar Talbi",
+  "position": "Left Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5714285714285714,
+    "pressing_intensity_index": 8.49724626278521,
+    "speed_recovery_index": 3.945150050578847
+  },
+  "net_xg_contribution_per_90": 0.054673651062155784,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5651,
+      "player": "Yassine Meriah",
+      "synergy_score": 0.6590177421436217,
+      "shared_minutes": 296.56666666666666,
+      "joint_pass_completion_rate": 0.9886340038486565
+    },
+    {
+      "player_id": 3767,
+      "player": "Ellyes Joris Skhiri",
+      "synergy_score": 0.654519190709821,
+      "shared_minutes": 296.56666666666666,
+      "joint_pass_completion_rate": 0.9818854436337962
+    },
+    {
+      "player_id": 105943,
+      "player": "Aymen Dahmen",
+      "synergy_score": 0.6490305274771934,
+      "shared_minutes": 296.56666666666666,
+      "joint_pass_completion_rate": 0.9736515543764308
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

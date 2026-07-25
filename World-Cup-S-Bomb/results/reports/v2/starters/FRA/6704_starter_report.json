@@ -1,0 +1,42 @@
+{
+  "team": "France",
+  "team_code": "FRA",
+  "player_id": 6704,
+  "player": "Theo Bernard François Hernández",
+  "position": "Left Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6,
+    "pressing_intensity_index": 12.634457611668186,
+    "speed_recovery_index": 3.9380127620783956
+  },
+  "net_xg_contribution_per_90": 0.1183552808751139,
+  "top_chemistry_partners": [
+    {
+      "player_id": 10481,
+      "player": "Aurélien Djani Tchouaméni",
+      "synergy_score": 0.8161435820760072,
+      "shared_minutes": 493.83333333333337,
+      "joint_pass_completion_rate": 0.972261658024532
+    },
+    {
+      "player_id": 8519,
+      "player": "Dayotchanculle Upamecano",
+      "synergy_score": 0.8094488335231033,
+      "shared_minutes": 452.53333333333336,
+      "joint_pass_completion_rate": 0.9957688627465802
+    },
+    {
+      "player_id": 3099,
+      "player": "Hugo Lloris",
+      "synergy_score": 0.8002335708399714,
+      "shared_minutes": 548.5,
+      "joint_pass_completion_rate": 0.9210167098140738
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

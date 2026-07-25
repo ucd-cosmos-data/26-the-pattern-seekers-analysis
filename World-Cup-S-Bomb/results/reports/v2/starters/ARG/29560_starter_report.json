@@ -1,0 +1,43 @@
+{
+  "team": "Argentina",
+  "team_code": "ARG",
+  "player_id": 29560,
+  "player": "Julián Álvarez",
+  "position": "Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.25,
+    "pressing_intensity_index": 22.257333241739367,
+    "speed_recovery_index": 2.5966888782029263
+  },
+  "net_xg_contribution_per_90": 0.35450876341966064,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3090,
+      "player": "Nicolás Hernán Otamendi",
+      "synergy_score": 0.7328613617326603,
+      "shared_minutes": 485.2333333333333,
+      "joint_pass_completion_rate": 0.8784872458678059
+    },
+    {
+      "player_id": 38718,
+      "player": "Enzo Fernandez",
+      "synergy_score": 0.6818701603607747,
+      "shared_minutes": 485.0833333333333,
+      "joint_pass_completion_rate": 0.8174539190698187
+    },
+    {
+      "player_id": 7797,
+      "player": "Rodrigo Javier De Paul",
+      "synergy_score": 0.6682212567273194,
+      "shared_minutes": 469.75,
+      "joint_pass_completion_rate": 0.810508354907037
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

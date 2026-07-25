@@ -1,0 +1,43 @@
+{
+  "team": "France",
+  "team_code": "FRA",
+  "player_id": 10481,
+  "player": "Aurélien Djani Tchouaméni",
+  "position": "Right Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.75,
+    "pressing_intensity_index": 10.736667253919915,
+    "speed_recovery_index": 4.892658495457177
+  },
+  "net_xg_contribution_per_90": 0.22708691337679007,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5485,
+      "player": "Raphaël Varane",
+      "synergy_score": 0.8420793311766981,
+      "shared_minutes": 511.0,
+      "joint_pass_completion_rate": 0.9914755028864922
+    },
+    {
+      "player_id": 3099,
+      "player": "Hugo Lloris",
+      "synergy_score": 0.8403304230135302,
+      "shared_minutes": 559.5333333333333,
+      "joint_pass_completion_rate": 0.9613556130854318
+    },
+    {
+      "player_id": 5487,
+      "player": "Antoine Griezmann",
+      "synergy_score": 0.8341675011460986,
+      "shared_minutes": 531.3833333333333,
+      "joint_pass_completion_rate": 0.9696509905444879
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

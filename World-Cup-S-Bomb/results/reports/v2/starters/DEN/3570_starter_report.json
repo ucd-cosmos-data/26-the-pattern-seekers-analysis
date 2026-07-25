@@ -1,0 +1,43 @@
+{
+  "team": "Denmark",
+  "team_code": "DEN",
+  "player_id": 3570,
+  "player": "Pierre-Emile Højbjerg",
+  "position": "Right Center Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 11.451169188445666,
+    "speed_recovery_index": 5.570839064649244
+  },
+  "net_xg_contribution_per_90": 0.07887770900962861,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3959,
+      "player": "Andreas Christensen",
+      "synergy_score": 0.6463764415648134,
+      "shared_minutes": 290.8,
+      "joint_pass_completion_rate": 0.9802541774535184
+    },
+    {
+      "player_id": 8247,
+      "player": "Joachim Andersen",
+      "synergy_score": 0.640107392981971,
+      "shared_minutes": 290.8,
+      "joint_pass_completion_rate": 0.9707469295607681
+    },
+    {
+      "player_id": 3043,
+      "player": "Christian Dannemann Eriksen",
+      "synergy_score": 0.6185884373790977,
+      "shared_minutes": 290.8,
+      "joint_pass_completion_rate": 0.9381126242740739
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

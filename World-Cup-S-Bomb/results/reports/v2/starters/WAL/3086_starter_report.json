@@ -1,0 +1,43 @@
+{
+  "team": "Wales",
+  "team_code": "WAL",
+  "player_id": 3086,
+  "player": "Ben Davies",
+  "position": "Left Center Back",
+  "functional_role": "Deep Playmaker",
+  "physical_scores": {
+    "aerial_dominance_index": 0.7333333333333333,
+    "pressing_intensity_index": 9.298469387755103,
+    "speed_recovery_index": 6.198979591836735
+  },
+  "net_xg_contribution_per_90": 0.1760526545280612,
+  "top_chemistry_partners": [
+    {
+      "player_id": 11250,
+      "player": "Joe Rodon",
+      "synergy_score": 0.6151963740177409,
+      "shared_minutes": 261.3333333333333,
+      "joint_pass_completion_rate": 0.992059372551801
+    },
+    {
+      "player_id": 4767,
+      "player": "Chris Mepham",
+      "synergy_score": 0.5976541038121431,
+      "shared_minutes": 261.3333333333333,
+      "joint_pass_completion_rate": 0.9637708872675923
+    },
+    {
+      "player_id": 4934,
+      "player": "Ethan Ampadu",
+      "synergy_score": 0.5515629987247846,
+      "shared_minutes": 230.18333333333334,
+      "joint_pass_completion_rate": 0.9614715657629629
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

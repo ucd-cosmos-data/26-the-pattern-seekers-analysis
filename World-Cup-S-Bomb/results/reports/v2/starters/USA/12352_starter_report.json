@@ -1,0 +1,43 @@
+{
+  "team": "United States",
+  "team_code": "USA",
+  "player_id": 12352,
+  "player": "Matthew Charles Turner",
+  "position": "Goalkeeper",
+  "functional_role": "Goalkeeper",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 0.0,
+    "speed_recovery_index": 3.9110429447852764
+  },
+  "net_xg_contribution_per_90": 0.039340490797546014,
+  "top_chemistry_partners": [
+    {
+      "player_id": 18242,
+      "player": "Tim Ream",
+      "synergy_score": 0.7562980881074217,
+      "shared_minutes": 391.2,
+      "joint_pass_completion_rate": 0.9884066839256296
+    },
+    {
+      "player_id": 4614,
+      "player": "Antonee Robinson",
+      "synergy_score": 0.7348956826894453,
+      "shared_minutes": 386.26666666666665,
+      "joint_pass_completion_rate": 0.9659020115459692
+    },
+    {
+      "player_id": 12751,
+      "player": "Tyler Adams",
+      "synergy_score": 0.7334873430625553,
+      "shared_minutes": 391.2,
+      "joint_pass_completion_rate": 0.9585952997343912
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

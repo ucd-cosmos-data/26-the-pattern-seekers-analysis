@@ -1,0 +1,43 @@
+{
+  "team": "Qatar",
+  "team_code": "QAT",
+  "player_id": 124488,
+  "player": "Hassan Khalid Al Heidos",
+  "position": "Left Center Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 22.81387006775608,
+    "speed_recovery_index": 4.734954165005979
+  },
+  "net_xg_contribution_per_90": 0.038186474276604224,
+  "top_chemistry_partners": [
+    {
+      "player_id": 124493,
+      "player": "Boualem Khoukhi",
+      "synergy_score": 0.498466106959272,
+      "shared_minutes": 209.08333333333331,
+      "joint_pass_completion_rate": 0.9247778188705466
+    },
+    {
+      "player_id": 40784,
+      "player": "Akram Hassan Afif",
+      "synergy_score": 0.4772994046175411,
+      "shared_minutes": 209.08333333333331,
+      "joint_pass_completion_rate": 0.885508354907037
+    },
+    {
+      "player_id": 124900,
+      "player": "Homam Alamin Ahmed",
+      "synergy_score": 0.47279888095166206,
+      "shared_minutes": 209.08333333333331,
+      "joint_pass_completion_rate": 0.8771587712514989
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

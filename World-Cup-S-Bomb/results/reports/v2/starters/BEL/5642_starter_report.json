@@ -1,0 +1,43 @@
+{
+  "team": "Belgium",
+  "team_code": "BEL",
+  "player_id": 5642,
+  "player": "Axel Witsel",
+  "position": "Left Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6666666666666666,
+    "pressing_intensity_index": 14.563789868667918,
+    "speed_recovery_index": 2.8494371482176364
+  },
+  "net_xg_contribution_per_90": 0.055830084568480313,
+  "top_chemistry_partners": [
+    {
+      "player_id": 20005,
+      "player": "Toby Alderweireld",
+      "synergy_score": 0.6433525729999341,
+      "shared_minutes": 284.26666666666665,
+      "joint_pass_completion_rate": 0.9881700856383976
+    },
+    {
+      "player_id": 3089,
+      "player": "Kevin De Bruyne",
+      "synergy_score": 0.6380409048042649,
+      "shared_minutes": 284.26666666666665,
+      "joint_pass_completion_rate": 0.9800115240097061
+    },
+    {
+      "player_id": 3077,
+      "player": "Jan Vertonghen",
+      "synergy_score": 0.6326893397910481,
+      "shared_minutes": 284.26666666666665,
+      "joint_pass_completion_rate": 0.971791682076455
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Uruguay",
+  "team_code": "URU",
+  "player_id": 5259,
+  "player": "José María Giménez de Vargas",
+  "position": "Right Center Back",
+  "functional_role": "Deep Playmaker",
+  "physical_scores": {
+    "aerial_dominance_index": 0.8461538461538461,
+    "pressing_intensity_index": 9.35979871400615,
+    "speed_recovery_index": 1.8115739446463515
+  },
+  "net_xg_contribution_per_90": 0.1042766995471065,
+  "top_chemistry_partners": [
+    {
+      "player_id": 36710,
+      "player": "Sergio Rochet Álvarez",
+      "synergy_score": 0.6541105577694537,
+      "shared_minutes": 298.08333333333337,
+      "joint_pass_completion_rate": 0.9785308961585732
+    },
+    {
+      "player_id": 6773,
+      "player": "Federico Santiago Valverde Dipetta",
+      "synergy_score": 0.6346499100875839,
+      "shared_minutes": 298.08333333333337,
+      "joint_pass_completion_rate": 0.9494183175741466
+    },
+    {
+      "player_id": 7104,
+      "player": "Mathías Olivera Miramontes",
+      "synergy_score": 0.5893885353067736,
+      "shared_minutes": 263.6333333333333,
+      "joint_pass_completion_rate": 0.9455287653890164
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

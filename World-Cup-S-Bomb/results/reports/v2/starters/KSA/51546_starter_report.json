@@ -1,0 +1,43 @@
+{
+  "team": "Saudi Arabia",
+  "team_code": "KSA",
+  "player_id": 51546,
+  "player": "Hassan Mohammed Al-Tambakti",
+  "position": "Right Center Back",
+  "functional_role": "Deep Playmaker",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 12.508272667107878,
+    "speed_recovery_index": 1.7868960953011253
+  },
+  "net_xg_contribution_per_90": 0.02278292521508935,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5714,
+      "player": "Mohammed Khalil Al Owais",
+      "synergy_score": 0.507892682850158,
+      "shared_minutes": 201.46666666666664,
+      "joint_pass_completion_rate": 0.9659020115459692
+    },
+    {
+      "player_id": 5187,
+      "player": "Salem Mohammed Al Dawsari",
+      "synergy_score": 0.4877220201356327,
+      "shared_minutes": 201.46666666666664,
+      "joint_pass_completion_rate": 0.9275417745351847
+    },
+    {
+      "player_id": 5713,
+      "player": "Mohammed Kanoo",
+      "synergy_score": 0.4796764226918159,
+      "shared_minutes": 201.46666666666664,
+      "joint_pass_completion_rate": 0.9122407886823043
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

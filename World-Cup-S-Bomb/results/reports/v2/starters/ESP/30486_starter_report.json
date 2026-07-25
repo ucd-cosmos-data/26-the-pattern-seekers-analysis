@@ -1,0 +1,42 @@
+{
+  "team": "Spain",
+  "team_code": "ESP",
+  "player_id": 30486,
+  "player": "Pedro González López",
+  "position": "Left Center Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6,
+    "pressing_intensity_index": 14.742212674543502,
+    "speed_recovery_index": 6.283566058002148
+  },
+  "net_xg_contribution_per_90": 0.10875402792696025,
+  "top_chemistry_partners": [
+    {
+      "player_id": 6765,
+      "player": "Rodrigo Hernández Cascante",
+      "synergy_score": 0.7453626641065515,
+      "shared_minutes": 372.4,
+      "joint_pass_completion_rate": 0.9961611536177581
+    },
+    {
+      "player_id": 5203,
+      "player": "Sergio Busquets i Burgos",
+      "synergy_score": 0.7181402894138949,
+      "shared_minutes": 372.4,
+      "joint_pass_completion_rate": 0.959779035913275
+    },
+    {
+      "player_id": 16532,
+      "player": "Daniel Olmo Carvajal",
+      "synergy_score": 0.6492372173589113,
+      "shared_minutes": 346.7,
+      "joint_pass_completion_rate": 0.8978611213843033
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

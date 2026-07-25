@@ -1,0 +1,43 @@
+{
+  "team": "Ecuador",
+  "team_code": "ECU",
+  "player_id": 34396,
+  "player": "Michael Steveen Estrada Martínez",
+  "position": "Left Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.32142857142857145,
+    "pressing_intensity_index": 14.347922355893424,
+    "speed_recovery_index": 1.5942135950992693
+  },
+  "net_xg_contribution_per_90": 0.099389864403277,
+  "top_chemistry_partners": [
+    {
+      "player_id": 38004,
+      "player": "Piero Martín Hincapié Reyna",
+      "synergy_score": 0.45425790169647934,
+      "shared_minutes": 225.81666666666666,
+      "joint_pass_completion_rate": 0.801564168944729
+    },
+    {
+      "player_id": 37726,
+      "player": "Moisés Isaac Caicedo Corozo",
+      "synergy_score": 0.45401166920843355,
+      "shared_minutes": 225.81666666666666,
+      "joint_pass_completion_rate": 0.8011296775711931
+    },
+    {
+      "player_id": 30111,
+      "player": "Felix Eduardo Torres Caicedo",
+      "synergy_score": 0.4473821008722006,
+      "shared_minutes": 225.81666666666666,
+      "joint_pass_completion_rate": 0.7894314233106751
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

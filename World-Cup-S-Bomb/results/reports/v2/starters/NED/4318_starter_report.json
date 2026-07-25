@@ -1,0 +1,42 @@
+{
+  "team": "Netherlands",
+  "team_code": "NED",
+  "player_id": 4318,
+  "player": "Davy Klaassen",
+  "position": "Center Attacking Midfield",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.4,
+    "pressing_intensity_index": 10.279755007449097,
+    "speed_recovery_index": 2.6816752193345472
+  },
+  "net_xg_contribution_per_90": 0.20505670468465487,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3306,
+      "player": "Nathan Aké",
+      "synergy_score": 0.5087187677103855,
+      "shared_minutes": 201.36666666666667,
+      "joint_pass_completion_rate": 0.9677963442378599
+    },
+    {
+      "player_id": 8326,
+      "player": "Andries Noppert",
+      "synergy_score": 0.47486328939074646,
+      "shared_minutes": 201.36666666666667,
+      "joint_pass_completion_rate": 0.9033890327135796
+    },
+    {
+      "player_id": 3669,
+      "player": "Virgil van Dijk",
+      "synergy_score": 0.4737498936360202,
+      "shared_minutes": 201.36666666666667,
+      "joint_pass_completion_rate": 0.9012708872675923
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Serbia",
+  "team_code": "SRB",
+  "player_id": 27719,
+  "player": "Strahinja Pavlović",
+  "position": "Left Center Back",
+  "functional_role": "Deep Playmaker",
+  "physical_scores": {
+    "aerial_dominance_index": 1.0,
+    "pressing_intensity_index": 12.457979038955903,
+    "speed_recovery_index": 5.339133873838244
+  },
+  "net_xg_contribution_per_90": 0.12702364900138424,
+  "top_chemistry_partners": [
+    {
+      "player_id": 20600,
+      "player": "Vanja Milinković Savić",
+      "synergy_score": 0.5984700668331965,
+      "shared_minutes": 252.85,
+      "joint_pass_completion_rate": 0.9843333566562562
+    },
+    {
+      "player_id": 5603,
+      "player": "Nikola Milenković",
+      "synergy_score": 0.5786258049240666,
+      "shared_minutes": 252.85,
+      "joint_pass_completion_rate": 0.9516945163567897
+    },
+    {
+      "player_id": 6321,
+      "player": "Milos Veljkovic",
+      "synergy_score": 0.5243914829272226,
+      "shared_minutes": 206.58333333333331,
+      "joint_pass_completion_rate": 0.9806778065427159
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

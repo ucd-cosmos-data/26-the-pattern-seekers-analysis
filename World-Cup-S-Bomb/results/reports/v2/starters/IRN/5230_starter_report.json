@@ -1,0 +1,43 @@
+{
+  "team": "Iran",
+  "team_code": "IRN",
+  "player_id": 5230,
+  "player": "Ehsan Hajsafi",
+  "position": "Left Wing Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 1.0,
+    "pressing_intensity_index": 13.683648973059483,
+    "speed_recovery_index": 2.5206721792477995
+  },
+  "net_xg_contribution_per_90": 0.053709461923179526,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5228,
+      "player": "Seyed Majid Hosseini",
+      "synergy_score": 0.5745738957740045,
+      "shared_minutes": 249.9333333333333,
+      "joint_pass_completion_rate": 0.9516945163567897
+    },
+    {
+      "player_id": 5220,
+      "player": "Morteza Pouraliganji",
+      "synergy_score": 0.5438361392477329,
+      "shared_minutes": 249.9333333333333,
+      "joint_pass_completion_rate": 0.9007820844723645
+    },
+    {
+      "player_id": 124167,
+      "player": "Ahmad Nourollahi",
+      "synergy_score": 0.4940021241146549,
+      "shared_minutes": 223.1,
+      "joint_pass_completion_rate": 0.8784872458678059
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

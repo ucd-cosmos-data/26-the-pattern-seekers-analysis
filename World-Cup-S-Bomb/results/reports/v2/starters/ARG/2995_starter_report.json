@@ -1,0 +1,43 @@
+{
+  "team": "Argentina",
+  "team_code": "ARG",
+  "player_id": 2995,
+  "player": "Ángel Fabián Di María Hernández",
+  "position": "Right Midfield",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 10.924599486029853,
+    "speed_recovery_index": 2.9525944556837445
+  },
+  "net_xg_contribution_per_90": 0.23202533632237957,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3090,
+      "player": "Nicolás Hernán Otamendi",
+      "synergy_score": 0.6397708404748551,
+      "shared_minutes": 304.8166666666666,
+      "joint_pass_completion_rate": 0.9455287653890164
+    },
+    {
+      "player_id": 5503,
+      "player": "Lionel Andrés Messi Cuccittini",
+      "synergy_score": 0.5977258735057411,
+      "shared_minutes": 304.8166666666666,
+      "joint_pass_completion_rate": 0.883389756865869
+    },
+    {
+      "player_id": 7797,
+      "player": "Rodrigo Javier De Paul",
+      "synergy_score": 0.571898395622806,
+      "shared_minutes": 294.7833333333333,
+      "joint_pass_completion_rate": 0.8607938710037036
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Brazil",
+  "team_code": "BRA",
+  "player_id": 6945,
+  "player": "Alex Sandro Lobo Silva",
+  "position": "Left Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.8333333333333334,
+    "pressing_intensity_index": 11.727363848980955,
+    "speed_recovery_index": 5.412629468760441
+  },
+  "net_xg_contribution_per_90": 0.1014054069662546,
+  "top_chemistry_partners": [
+    {
+      "player_id": 4372,
+      "player": "Marcos Aoás Corrêa",
+      "synergy_score": 0.515204487715719,
+      "shared_minutes": 199.5333333333333,
+      "joint_pass_completion_rate": 0.9861984332447972
+    },
+    {
+      "player_id": 3295,
+      "player": "Thiago Emiliano da Silva",
+      "synergy_score": 0.5112627291150086,
+      "shared_minutes": 199.5333333333333,
+      "joint_pass_completion_rate": 0.9786531648146145
+    },
+    {
+      "player_id": 5539,
+      "player": "Carlos Henrique Casimiro",
+      "synergy_score": 0.5012546146601029,
+      "shared_minutes": 199.5333333333333,
+      "joint_pass_completion_rate": 0.959495748622602
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

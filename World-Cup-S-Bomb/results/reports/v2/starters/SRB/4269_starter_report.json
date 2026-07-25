@@ -1,0 +1,43 @@
+{
+  "team": "Serbia",
+  "team_code": "SRB",
+  "player_id": 4269,
+  "player": "Aleksandar Mitrović",
+  "position": "Left Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.2222222222222222,
+    "pressing_intensity_index": 7.730390694900089,
+    "speed_recovery_index": 2.254697286012526
+  },
+  "net_xg_contribution_per_90": 0.4852888729853862,
+  "top_chemistry_partners": [
+    {
+      "player_id": 6687,
+      "player": "Saša Lukić",
+      "synergy_score": 0.5477997799742949,
+      "shared_minutes": 261.65000000000003,
+      "joint_pass_completion_rate": 0.8827424634673399
+    },
+    {
+      "player_id": 27719,
+      "player": "Strahinja Pavlović",
+      "synergy_score": 0.47480774137837367,
+      "shared_minutes": 238.61666666666667,
+      "joint_pass_completion_rate": 0.8091805915117282
+    },
+    {
+      "player_id": 5603,
+      "player": "Nikola Milenković",
+      "synergy_score": 0.4176030812377066,
+      "shared_minutes": 279.4166666666667,
+      "joint_pass_completion_rate": 0.6477180150985752
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

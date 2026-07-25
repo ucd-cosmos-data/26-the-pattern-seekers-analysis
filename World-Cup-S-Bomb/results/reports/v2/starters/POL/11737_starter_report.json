@@ -1,0 +1,42 @@
+{
+  "team": "Poland",
+  "team_code": "POL",
+  "player_id": 11737,
+  "player": "Krystian Bielik",
+  "position": "Right Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5833333333333334,
+    "pressing_intensity_index": 16.873828206374558,
+    "speed_recovery_index": 2.249843760849941
+  },
+  "net_xg_contribution_per_90": 0.08842968642455386,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5673,
+      "player": "Bartosz Bereszyński",
+      "synergy_score": 0.5733961415876804,
+      "shared_minutes": 240.01666666666665,
+      "joint_pass_completion_rate": 0.9736515543764308
+    },
+    {
+      "player_id": 3034,
+      "player": "Kamil Glik",
+      "synergy_score": 0.5709460977312938,
+      "shared_minutes": 240.01666666666665,
+      "joint_pass_completion_rate": 0.9694912734884987
+    },
+    {
+      "player_id": 5669,
+      "player": "Wojciech Szczęsny",
+      "synergy_score": 0.5626536416019856,
+      "shared_minutes": 240.01666666666665,
+      "joint_pass_completion_rate": 0.9554103227908828
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Brazil",
+  "team_code": "BRA",
+  "player_id": 10595,
+  "player": "Raphael Dias Belloli",
+  "position": "Right Wing",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 15.524285065819338,
+    "speed_recovery_index": 4.357694053563323
+  },
+  "net_xg_contribution_per_90": 0.29412546373127557,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3295,
+      "player": "Thiago Emiliano da Silva",
+      "synergy_score": 0.6051863894817913,
+      "shared_minutes": 309.03333333333336,
+      "joint_pass_completion_rate": 0.8878406172296295
+    },
+    {
+      "player_id": 4372,
+      "player": "Marcos Aoás Corrêa",
+      "synergy_score": 0.5418001455060372,
+      "shared_minutes": 330.45,
+      "joint_pass_completion_rate": 0.7675139248450615
+    },
+    {
+      "player_id": 22600,
+      "player": "Lucas Tolentino Coelho de Lima",
+      "synergy_score": 0.5362844445330637,
+      "shared_minutes": 268.95,
+      "joint_pass_completion_rate": 0.8503177218168981
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

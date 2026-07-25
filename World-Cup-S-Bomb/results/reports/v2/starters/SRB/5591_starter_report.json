@@ -1,0 +1,43 @@
+{
+  "team": "Serbia",
+  "team_code": "SRB",
+  "player_id": 5591,
+  "player": "Filip Kostić",
+  "position": "Left Wing Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 1.0,
+    "pressing_intensity_index": 14.593322290994681,
+    "speed_recovery_index": 5.178275651643275
+  },
+  "net_xg_contribution_per_90": 0.02448340228402058,
+  "top_chemistry_partners": [
+    {
+      "player_id": 20600,
+      "player": "Vanja Milinković Savić",
+      "synergy_score": 0.45839233406023494,
+      "shared_minutes": 191.18333333333334,
+      "joint_pass_completion_rate": 0.9033890327135796
+    },
+    {
+      "player_id": 6687,
+      "player": "Saša Lukić",
+      "synergy_score": 0.39416605684145795,
+      "shared_minutes": 191.18333333333334,
+      "joint_pass_completion_rate": 0.7768133678512591
+    },
+    {
+      "player_id": 27719,
+      "player": "Strahinja Pavlović",
+      "synergy_score": 0.386237449336598,
+      "shared_minutes": 155.71666666666664,
+      "joint_pass_completion_rate": 0.8812837063038613
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

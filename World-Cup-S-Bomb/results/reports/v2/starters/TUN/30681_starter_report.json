@@ -1,0 +1,43 @@
+{
+  "team": "Tunisia",
+  "team_code": "TUN",
+  "player_id": 30681,
+  "player": "Ali Abdi",
+  "position": "Left Wing Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.65,
+    "pressing_intensity_index": 13.902324855671711,
+    "speed_recovery_index": 5.476673427991886
+  },
+  "net_xg_contribution_per_90": 0.021485411140583555,
+  "top_chemistry_partners": [
+    {
+      "player_id": 32450,
+      "player": "Montassar Omar Talbi",
+      "synergy_score": 0.5270872692894208,
+      "shared_minutes": 213.63333333333333,
+      "joint_pass_completion_rate": 0.9640985044609427
+    },
+    {
+      "player_id": 3767,
+      "player": "Ellyes Joris Skhiri",
+      "synergy_score": 0.4768202481050273,
+      "shared_minutes": 213.63333333333333,
+      "joint_pass_completion_rate": 0.8721547927243385
+    },
+    {
+      "player_id": 105943,
+      "player": "Aymen Dahmen",
+      "synergy_score": 0.4585687608513974,
+      "shared_minutes": 213.63333333333333,
+      "joint_pass_completion_rate": 0.8387708872675923
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

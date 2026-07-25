@@ -1,0 +1,42 @@
+{
+  "team": "United States",
+  "team_code": "USA",
+  "player_id": 12751,
+  "player": "Tyler Adams",
+  "position": "Center Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6,
+    "pressing_intensity_index": 20.47546012269939,
+    "speed_recovery_index": 6.211656441717792
+  },
+  "net_xg_contribution_per_90": 0.06759407231595094,
+  "top_chemistry_partners": [
+    {
+      "player_id": 12352,
+      "player": "Matthew Charles Turner",
+      "synergy_score": 0.7334873430625553,
+      "shared_minutes": 391.2,
+      "joint_pass_completion_rate": 0.9585952997343912
+    },
+    {
+      "player_id": 18242,
+      "player": "Tim Ream",
+      "synergy_score": 0.7230297170185055,
+      "shared_minutes": 391.2,
+      "joint_pass_completion_rate": 0.9449282184043305
+    },
+    {
+      "player_id": 4614,
+      "player": "Antonee Robinson",
+      "synergy_score": 0.7046389598166093,
+      "shared_minutes": 386.26666666666665,
+      "joint_pass_completion_rate": 0.926134422520669
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,42 @@
+{
+  "team": "Cameroon",
+  "team_code": "CMR",
+  "player_id": 3141,
+  "player": "André-Frank Zambo Anguissa",
+  "position": "Left Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5714285714285714,
+    "pressing_intensity_index": 20.495210554852704,
+    "speed_recovery_index": 3.253208024579794
+  },
+  "net_xg_contribution_per_90": 0.05704542757997469,
+  "top_chemistry_partners": [
+    {
+      "player_id": 13454,
+      "player": "Nouhou Tolo",
+      "synergy_score": 0.6267780563418331,
+      "shared_minutes": 276.65,
+      "joint_pass_completion_rate": 0.9777051613954414
+    },
+    {
+      "player_id": 16346,
+      "player": "Ngoran Suiru Fai Collins",
+      "synergy_score": 0.6103834302818841,
+      "shared_minutes": 276.65,
+      "joint_pass_completion_rate": 0.9521313392812569
+    },
+    {
+      "player_id": 4935,
+      "player": "Bryan Mbeumo",
+      "synergy_score": 0.5520012004644722,
+      "shared_minutes": 224.2,
+      "joint_pass_completion_rate": 0.9785308961585732
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Argentina",
+  "team_code": "ARG",
+  "player_id": 27886,
+  "player": "Alexis Mac Allister",
+  "position": "Left Center Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.3125,
+    "pressing_intensity_index": 12.383452521046438,
+    "speed_recovery_index": 4.399384448266497
+  },
+  "net_xg_contribution_per_90": 0.124459948710057,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3090,
+      "player": "Nicolás Hernán Otamendi",
+      "synergy_score": 0.8481674202944212,
+      "shared_minutes": 552.35,
+      "joint_pass_completion_rate": 0.9741038392833029
+    },
+    {
+      "player_id": 38718,
+      "player": "Enzo Fernandez",
+      "synergy_score": 0.7866929567026133,
+      "shared_minutes": 491.2,
+      "joint_pass_completion_rate": 0.9389377892837529
+    },
+    {
+      "player_id": 29201,
+      "player": "Nahuel Molina Lucero",
+      "synergy_score": 0.7838940893531355,
+      "shared_minutes": 448.3666666666667,
+      "joint_pass_completion_rate": 0.9677963442378599
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

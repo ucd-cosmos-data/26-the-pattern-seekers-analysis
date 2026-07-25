@@ -1,0 +1,43 @@
+{
+  "team": "Croatia",
+  "team_code": "CRO",
+  "player_id": 5460,
+  "player": "Andrej Kramarić",
+  "position": "Right Wing",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.2,
+    "pressing_intensity_index": 7.148331359297708,
+    "speed_recovery_index": 2.2573677976729605
+  },
+  "net_xg_contribution_per_90": 0.2176962638542465,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5456,
+      "player": "Mateo Kovačić",
+      "synergy_score": 0.7442412849895698,
+      "shared_minutes": 478.43333333333334,
+      "joint_pass_completion_rate": 0.8966728554866941
+    },
+    {
+      "player_id": 29163,
+      "player": "Josip Juranović",
+      "synergy_score": 0.7084590296430316,
+      "shared_minutes": 417.3666666666667,
+      "joint_pass_completion_rate": 0.9003631106478835
+    },
+    {
+      "player_id": 33018,
+      "player": "Joško Gvardiol",
+      "synergy_score": 0.7062058953628463,
+      "shared_minutes": 478.43333333333334,
+      "joint_pass_completion_rate": 0.8508472581783949
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

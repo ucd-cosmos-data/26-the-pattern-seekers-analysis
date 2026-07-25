@@ -1,0 +1,42 @@
+{
+  "team": "Senegal",
+  "team_code": "SEN",
+  "player_id": 2941,
+  "player": "Ismaïla Sarr",
+  "position": "Left Wing",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5,
+    "pressing_intensity_index": 13.307776560788609,
+    "speed_recovery_index": 3.9430449069003286
+  },
+  "net_xg_contribution_per_90": 0.48075333984118296,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3404,
+      "player": "Youssouf Sabaly",
+      "synergy_score": 0.6282474374408153,
+      "shared_minutes": 365.2,
+      "joint_pass_completion_rate": 0.8473444732093826
+    },
+    {
+      "player_id": 4506,
+      "player": "Nampalys Mendy",
+      "synergy_score": 0.5790036354546426,
+      "shared_minutes": 291.35,
+      "joint_pass_completion_rate": 0.8771587712514989
+    },
+    {
+      "player_id": 5675,
+      "player": "Kalidou Koulibaly",
+      "synergy_score": 0.5416953218299921,
+      "shared_minutes": 365.2,
+      "joint_pass_completion_rate": 0.7306078938989105
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

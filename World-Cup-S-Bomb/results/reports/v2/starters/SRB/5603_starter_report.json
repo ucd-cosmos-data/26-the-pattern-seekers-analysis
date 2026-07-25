@@ -1,0 +1,43 @@
+{
+  "team": "Serbia",
+  "team_code": "SRB",
+  "player_id": 5603,
+  "player": "Nikola Milenković",
+  "position": "Right Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.8571428571428571,
+    "pressing_intensity_index": 10.42056870423974,
+    "speed_recovery_index": 1.8389238889834836
+  },
+  "net_xg_contribution_per_90": 0.08831863419036266,
+  "top_chemistry_partners": [
+    {
+      "player_id": 6687,
+      "player": "Saša Lukić",
+      "synergy_score": 0.6146687347090085,
+      "shared_minutes": 261.65000000000003,
+      "joint_pass_completion_rate": 0.9904972819062537
+    },
+    {
+      "player_id": 20600,
+      "player": "Vanja Milinković Savić",
+      "synergy_score": 0.5910572965817199,
+      "shared_minutes": 293.65000000000003,
+      "joint_pass_completion_rate": 0.8915252786751963
+    },
+    {
+      "player_id": 27719,
+      "player": "Strahinja Pavlović",
+      "synergy_score": 0.5786258049240666,
+      "shared_minutes": 252.85,
+      "joint_pass_completion_rate": 0.9516945163567897
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

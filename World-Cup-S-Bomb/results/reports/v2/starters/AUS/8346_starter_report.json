@@ -1,0 +1,42 @@
+{
+  "team": "Australia",
+  "team_code": "AUS",
+  "player_id": 8346,
+  "player": "Craig Goodwin",
+  "position": "Left Midfield",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.375,
+    "pressing_intensity_index": 8.936698386429459,
+    "speed_recovery_index": 2.2341745966073647
+  },
+  "net_xg_contribution_per_90": 0.09945335945386842,
+  "top_chemistry_partners": [
+    {
+      "player_id": 33495,
+      "player": "Kye Rowles",
+      "synergy_score": 0.5151785656953607,
+      "shared_minutes": 241.7,
+      "joint_pass_completion_rate": 0.8710167098140739
+    },
+    {
+      "player_id": 5479,
+      "player": "Aziz Eraltay Behich",
+      "synergy_score": 0.5128166545890267,
+      "shared_minutes": 241.7,
+      "joint_pass_completion_rate": 0.8670234069523066
+    },
+    {
+      "player_id": 3240,
+      "player": "Mathew Ryan",
+      "synergy_score": 0.4980358752063285,
+      "shared_minutes": 241.7,
+      "joint_pass_completion_rate": 0.8420334196281477
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

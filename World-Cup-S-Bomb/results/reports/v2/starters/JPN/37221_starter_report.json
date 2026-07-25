@@ -1,0 +1,42 @@
+{
+  "team": "Japan",
+  "team_code": "JPN",
+  "player_id": 37221,
+  "player": "Hidemasa Morita",
+  "position": "Left Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5,
+    "pressing_intensity_index": 17.796894201765166,
+    "speed_recovery_index": 5.731203217517596
+  },
+  "net_xg_contribution_per_90": 0.10062619653669982,
+  "top_chemistry_partners": [
+    {
+      "player_id": 25719,
+      "player": "Shūichi Gonda",
+      "synergy_score": 0.6203488081891556,
+      "shared_minutes": 298.3666666666667,
+      "joint_pass_completion_rate": 0.9275417745351847
+    },
+    {
+      "player_id": 3300,
+      "player": "Maya Yoshida",
+      "synergy_score": 0.6180652929220585,
+      "shared_minutes": 298.3666666666667,
+      "joint_pass_completion_rate": 0.92412747636122
+    },
+    {
+      "player_id": 23527,
+      "player": "Junya Ito",
+      "synergy_score": 0.5510919439764926,
+      "shared_minutes": 232.18333333333334,
+      "joint_pass_completion_rate": 0.9554103227908828
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

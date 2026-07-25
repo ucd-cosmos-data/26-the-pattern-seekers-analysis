@@ -1,0 +1,42 @@
+{
+  "team": "England",
+  "team_code": "ENG",
+  "player_id": 30714,
+  "player": "Jude Bellingham",
+  "position": "Right Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.4444444444444444,
+    "pressing_intensity_index": 15.075831887119898,
+    "speed_recovery_index": 6.11182373802158
+  },
+  "net_xg_contribution_per_90": 0.21620706329133027,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3244,
+      "player": "John Stones",
+      "synergy_score": 0.7950404940451236,
+      "shared_minutes": 438.34999999999997,
+      "joint_pass_completion_rate": 0.990338903271358
+    },
+    {
+      "player_id": 3468,
+      "player": "Jordan Pickford",
+      "synergy_score": 0.7719339252007164,
+      "shared_minutes": 441.76666666666665,
+      "joint_pass_completion_rate": 0.9585952997343912
+    },
+    {
+      "player_id": 3382,
+      "player": "Luke Shaw",
+      "synergy_score": 0.7485805970532158,
+      "shared_minutes": 412.59999999999997,
+      "joint_pass_completion_rate": 0.9559647518873219
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

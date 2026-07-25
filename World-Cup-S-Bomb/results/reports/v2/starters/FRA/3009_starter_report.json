@@ -1,0 +1,43 @@
+{
+  "team": "France",
+  "team_code": "FRA",
+  "player_id": 3009,
+  "player": "Kylian Mbappé Lottin",
+  "position": "Left Center Forward",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.25,
+    "pressing_intensity_index": 5.226960110041265,
+    "speed_recovery_index": 3.988995873452544
+  },
+  "net_xg_contribution_per_90": 0.7283014961485557,
+  "top_chemistry_partners": [
+    {
+      "player_id": 10481,
+      "player": "Aurélien Djani Tchouaméni",
+      "synergy_score": 0.7729381108167792,
+      "shared_minutes": 599.6333333333333,
+      "joint_pass_completion_rate": 0.8670234069523066
+    },
+    {
+      "player_id": 6704,
+      "player": "Theo Bernard François Hernández",
+      "synergy_score": 0.7674124954380291,
+      "shared_minutes": 548.5,
+      "joint_pass_completion_rate": 0.8832417901146583
+    },
+    {
+      "player_id": 3026,
+      "player": "Adrien Rabiot",
+      "synergy_score": 0.7211723519028451,
+      "shared_minutes": 529.25,
+      "joint_pass_completion_rate": 0.8393848886214584
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Iran",
+  "team_code": "IRN",
+  "player_id": 125823,
+  "player": "Seyed Hossein Hosseini",
+  "position": "Goalkeeper",
+  "functional_role": "Goalkeeper",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 0.0,
+    "speed_recovery_index": 4.838276140130813
+  },
+  "net_xg_contribution_per_90": 0.016450138876444764,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5220,
+      "player": "Morteza Pouraliganji",
+      "synergy_score": 0.482707096567219,
+      "shared_minutes": 186.01666666666665,
+      "joint_pass_completion_rate": 0.9694912734884987
+    },
+    {
+      "player_id": 5228,
+      "player": "Seyed Majid Hosseini",
+      "synergy_score": 0.4716596690445806,
+      "shared_minutes": 186.01666666666665,
+      "joint_pass_completion_rate": 0.9473031087528615
+    },
+    {
+      "player_id": 5720,
+      "player": "Milad Mohammadi",
+      "synergy_score": 0.3768756550466308,
+      "shared_minutes": 145.76666666666668,
+      "joint_pass_completion_rate": 0.9033890327135796
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

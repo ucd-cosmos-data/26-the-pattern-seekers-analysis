@@ -1,0 +1,42 @@
+{
+  "team": "France",
+  "team_code": "FRA",
+  "player_id": 3604,
+  "player": "Olivier Giroud",
+  "position": "Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5581395348837209,
+    "pressing_intensity_index": 12.690218438186232,
+    "speed_recovery_index": 0.6241091035173557
+  },
+  "net_xg_contribution_per_90": 0.6334614350194553,
+  "top_chemistry_partners": [
+    {
+      "player_id": 10481,
+      "player": "Aurélien Djani Tchouaméni",
+      "synergy_score": 0.6845997657776061,
+      "shared_minutes": 410.04999999999995,
+      "joint_pass_completion_rate": 0.8765632481476371
+    },
+    {
+      "player_id": 6704,
+      "player": "Theo Bernard François Hernández",
+      "synergy_score": 0.6621118482726445,
+      "shared_minutes": 420.5833333333333,
+      "joint_pass_completion_rate": 0.8387708872675923
+    },
+    {
+      "player_id": 3026,
+      "player": "Adrien Rabiot",
+      "synergy_score": 0.6535700640490484,
+      "shared_minutes": 367.8666666666666,
+      "joint_pass_completion_rate": 0.8784872458678059
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

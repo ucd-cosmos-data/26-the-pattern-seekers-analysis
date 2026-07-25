@@ -1,0 +1,43 @@
+{
+  "team": "Ecuador",
+  "team_code": "ECU",
+  "player_id": 37726,
+  "player": "Moisés Isaac Caicedo Corozo",
+  "position": "Left Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.8,
+    "pressing_intensity_index": 14.948757215219695,
+    "speed_recovery_index": 4.770879962304158
+  },
+  "net_xg_contribution_per_90": 0.2322863685121922,
+  "top_chemistry_partners": [
+    {
+      "player_id": 38004,
+      "player": "Piero Martín Hincapié Reyna",
+      "synergy_score": 0.624946806285448,
+      "shared_minutes": 282.9666666666667,
+      "joint_pass_completion_rate": 0.9623889094352733
+    },
+    {
+      "player_id": 30111,
+      "player": "Felix Eduardo Torres Caicedo",
+      "synergy_score": 0.6099169438901292,
+      "shared_minutes": 282.9666666666667,
+      "joint_pass_completion_rate": 0.939243622933903
+    },
+    {
+      "player_id": 24085,
+      "player": "Pervis Josué Estupiñán Tenorio",
+      "synergy_score": 0.5989652630759082,
+      "shared_minutes": 282.9666666666667,
+      "joint_pass_completion_rate": 0.9223785456996861
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

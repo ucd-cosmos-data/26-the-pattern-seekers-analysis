@@ -1,0 +1,42 @@
+{
+  "team": "Argentina",
+  "team_code": "ARG",
+  "player_id": 27768,
+  "player": "Lisandro Martínez",
+  "position": "Left Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5,
+    "pressing_intensity_index": 6.98681263996019,
+    "speed_recovery_index": 1.6123413784523515
+  },
+  "net_xg_contribution_per_90": 0.13505005513809407,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3090,
+      "player": "Nicolás Hernán Otamendi",
+      "synergy_score": 0.7053198484590447,
+      "shared_minutes": 334.91666666666663,
+      "joint_pass_completion_rate": 0.9923728183721247
+    },
+    {
+      "player_id": 6909,
+      "player": "Damián Emiliano Martínez",
+      "synergy_score": 0.6878523456303476,
+      "shared_minutes": 334.91666666666663,
+      "joint_pass_completion_rate": 0.9677963442378599
+    },
+    {
+      "player_id": 5503,
+      "player": "Lionel Andrés Messi Cuccittini",
+      "synergy_score": 0.676408119639132,
+      "shared_minutes": 334.91666666666663,
+      "joint_pass_completion_rate": 0.9516945163567897
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

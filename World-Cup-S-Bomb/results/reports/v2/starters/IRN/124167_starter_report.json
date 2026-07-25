@@ -1,0 +1,43 @@
+{
+  "team": "Iran",
+  "team_code": "IRN",
+  "player_id": 124167,
+  "player": "Ahmad Nourollahi",
+  "position": "Left Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 1.0,
+    "pressing_intensity_index": 16.421895861148197,
+    "speed_recovery_index": 6.408544726301736
+  },
+  "net_xg_contribution_per_90": 0.04262754937249667,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5228,
+      "player": "Seyed Majid Hosseini",
+      "synergy_score": 0.53514918028808,
+      "shared_minutes": 224.7,
+      "joint_pass_completion_rate": 0.9473031087528615
+    },
+    {
+      "player_id": 5220,
+      "player": "Morteza Pouraliganji",
+      "synergy_score": 0.5103413003409013,
+      "shared_minutes": 224.7,
+      "joint_pass_completion_rate": 0.9033890327135796
+    },
+    {
+      "player_id": 5230,
+      "player": "Ehsan Hajsafi",
+      "synergy_score": 0.4940021241146549,
+      "shared_minutes": 223.1,
+      "joint_pass_completion_rate": 0.8784872458678059
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

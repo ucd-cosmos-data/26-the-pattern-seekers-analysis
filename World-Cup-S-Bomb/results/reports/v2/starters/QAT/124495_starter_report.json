@@ -1,0 +1,43 @@
+{
+  "team": "Qatar",
+  "team_code": "QAT",
+  "player_id": 124495,
+  "player": "Almoez Ali Zainalabiddin Abdulla",
+  "position": "Right Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.15384615384615385,
+    "pressing_intensity_index": 16.335350043215215,
+    "speed_recovery_index": 2.3336214347450306
+  },
+  "net_xg_contribution_per_90": 0.18272895557476232,
+  "top_chemistry_partners": [
+    {
+      "player_id": 124900,
+      "player": "Homam Alamin Ahmed",
+      "synergy_score": 0.45802912441403115,
+      "shared_minutes": 217.5,
+      "joint_pass_completion_rate": 0.8280222797520984
+    },
+    {
+      "player_id": 124494,
+      "player": "Abdelkarim Hassan Al Haj Fadlalla",
+      "synergy_score": 0.3698196071566897,
+      "shared_minutes": 231.39999999999998,
+      "joint_pass_completion_rate": 0.6425139248450615
+    },
+    {
+      "player_id": 40784,
+      "player": "Akram Hassan Afif",
+      "synergy_score": 0.3581012521891261,
+      "shared_minutes": 231.39999999999998,
+      "joint_pass_completion_rate": 0.6221547927243385
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,42 @@
+{
+  "team": "France",
+  "team_code": "FRA",
+  "player_id": 11990,
+  "player": "Youssouf Fofana",
+  "position": "Left Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5,
+    "pressing_intensity_index": 25.585772700720455,
+    "speed_recovery_index": 3.8553904069578766
+  },
+  "net_xg_contribution_per_90": 0.09449252860388134,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5485,
+      "player": "Raphaël Varane",
+      "synergy_score": 0.5265759010496546,
+      "shared_minutes": 209.43333333333334,
+      "joint_pass_completion_rate": 0.9758472581783949
+    },
+    {
+      "player_id": 11135,
+      "player": "Ibrahima Konaté",
+      "synergy_score": 0.5238512769057379,
+      "shared_minutes": 205.88333333333333,
+      "joint_pass_completion_rate": 0.9818854436337962
+    },
+    {
+      "player_id": 10481,
+      "player": "Aurélien Djani Tchouaméni",
+      "synergy_score": 0.5174166383111712,
+      "shared_minutes": 202.11666666666665,
+      "joint_pass_completion_rate": 0.9818854436337962
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

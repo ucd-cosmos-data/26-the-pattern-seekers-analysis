@@ -1,0 +1,43 @@
+{
+  "team": "Mexico",
+  "team_code": "MEX",
+  "player_id": 26406,
+  "player": "Jorge Eduardo Sánchez Ramos",
+  "position": "Right Back",
+  "functional_role": "Holding Anchor",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6666666666666666,
+    "pressing_intensity_index": 9.830693610049153,
+    "speed_recovery_index": 2.457673402512288
+  },
+  "net_xg_contribution_per_90": 0.04029194487165483,
+  "top_chemistry_partners": [
+    {
+      "player_id": 26368,
+      "player": "César Jasib Montes Castro",
+      "synergy_score": 0.4853076357185472,
+      "shared_minutes": 183.10000000000002,
+      "joint_pass_completion_rate": 0.985508354907037
+    },
+    {
+      "player_id": 28825,
+      "player": "Luis Gerardo Chávez Magallón",
+      "synergy_score": 0.45708500961759924,
+      "shared_minutes": 183.10000000000002,
+      "joint_pass_completion_rate": 0.9281970089218853
+    },
+    {
+      "player_id": 5573,
+      "player": "Héctor Alfredo Moreno Herrera",
+      "synergy_score": 0.4516649697743658,
+      "shared_minutes": 183.10000000000002,
+      "joint_pass_completion_rate": 0.9171905994687826
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

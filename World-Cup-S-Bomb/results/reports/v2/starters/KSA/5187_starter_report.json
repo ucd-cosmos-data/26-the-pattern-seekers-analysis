@@ -1,0 +1,42 @@
+{
+  "team": "Saudi Arabia",
+  "team_code": "KSA",
+  "player_id": 5187,
+  "player": "Salem Mohammed Al Dawsari",
+  "position": "Left Midfield",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5,
+    "pressing_intensity_index": 12.96265282197287,
+    "speed_recovery_index": 4.5218556355719315
+  },
+  "net_xg_contribution_per_90": 0.5112878280020098,
+  "top_chemistry_partners": [
+    {
+      "player_id": 51710,
+      "player": "Saud Abdullah Abdul Hamid",
+      "synergy_score": 0.5822206895550122,
+      "shared_minutes": 298.54999999999995,
+      "joint_pass_completion_rate": 0.8702403301460809
+    },
+    {
+      "player_id": 5713,
+      "player": "Mohammed Kanoo",
+      "synergy_score": 0.5319787757947392,
+      "shared_minutes": 298.54999999999995,
+      "joint_pass_completion_rate": 0.795144167467067
+    },
+    {
+      "player_id": 5715,
+      "player": "Ali Albulayhi",
+      "synergy_score": 0.500565221449504,
+      "shared_minutes": 236.94999999999996,
+      "joint_pass_completion_rate": 0.8568133678512591
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

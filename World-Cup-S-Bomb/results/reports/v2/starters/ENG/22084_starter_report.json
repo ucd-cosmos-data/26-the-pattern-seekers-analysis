@@ -1,0 +1,43 @@
+{
+  "team": "England",
+  "team_code": "ENG",
+  "player_id": 22084,
+  "player": "Bukayo Saka",
+  "position": "Right Wing",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.3333333333333333,
+    "pressing_intensity_index": 17.300760913095715,
+    "speed_recovery_index": 2.7804794324618114
+  },
+  "net_xg_contribution_per_90": 0.20960349625264602,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3244,
+      "player": "John Stones",
+      "synergy_score": 0.6252927506119728,
+      "shared_minutes": 291.31666666666666,
+      "joint_pass_completion_rate": 0.9473444732093825
+    },
+    {
+      "player_id": 3943,
+      "player": "Declan Rice",
+      "synergy_score": 0.5987152668903252,
+      "shared_minutes": 291.31666666666666,
+      "joint_pass_completion_rate": 0.9070784821342045
+    },
+    {
+      "player_id": 3336,
+      "player": "Harry Maguire",
+      "synergy_score": 0.5798436808157824,
+      "shared_minutes": 291.31666666666666,
+      "joint_pass_completion_rate": 0.8784872458678059
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

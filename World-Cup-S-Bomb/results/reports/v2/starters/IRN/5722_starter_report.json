@@ -1,0 +1,43 @@
+{
+  "team": "Iran",
+  "team_code": "IRN",
+  "player_id": 5722,
+  "player": "Saeid Ezatolahi Afagh",
+  "position": "Left Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6153846153846154,
+    "pressing_intensity_index": 14.615865084322298,
+    "speed_recovery_index": 2.9981261711430354
+  },
+  "net_xg_contribution_per_90": 0.0626918903310431,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5228,
+      "player": "Seyed Majid Hosseini",
+      "synergy_score": 0.5735937497854867,
+      "shared_minutes": 240.14999999999998,
+      "joint_pass_completion_rate": 0.9736515543764308
+    },
+    {
+      "player_id": 5226,
+      "player": "Mehdi Taremi",
+      "synergy_score": 0.5728545930239264,
+      "shared_minutes": 240.14999999999998,
+      "joint_pass_completion_rate": 0.9723968664895941
+    },
+    {
+      "player_id": 23874,
+      "player": "Ali Gholizadeh",
+      "synergy_score": 0.5176607135917455,
+      "shared_minutes": 210.73333333333332,
+      "joint_pass_completion_rate": 0.9554103227908828
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

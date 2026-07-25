@@ -1,0 +1,43 @@
+{
+  "team": "Croatia",
+  "team_code": "CRO",
+  "player_id": 16527,
+  "player": "Mislav Oršić",
+  "position": "Left Wing",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 14.894563573271643,
+    "speed_recovery_index": 1.9218791707447282
+  },
+  "net_xg_contribution_per_90": 0.5499317904119584,
+  "top_chemistry_partners": [
+    {
+      "player_id": 16531,
+      "player": "Dominik Livaković",
+      "synergy_score": 0.45887873935662804,
+      "shared_minutes": 187.31666666666666,
+      "joint_pass_completion_rate": 0.9171905994687826
+    },
+    {
+      "player_id": 33018,
+      "player": "Joško Gvardiol",
+      "synergy_score": 0.4243896127846627,
+      "shared_minutes": 187.31666666666666,
+      "joint_pass_completion_rate": 0.8482549527224398
+    },
+    {
+      "player_id": 5456,
+      "player": "Mateo Kovačić",
+      "synergy_score": 0.4000195921589277,
+      "shared_minutes": 145.26666666666665,
+      "joint_pass_completion_rate": 0.9613556130854318
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

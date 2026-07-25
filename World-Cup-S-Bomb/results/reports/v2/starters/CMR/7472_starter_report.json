@@ -1,0 +1,42 @@
+{
+  "team": "Cameroon",
+  "team_code": "CMR",
+  "player_id": 7472,
+  "player": "Nicolas Alexis Julio N'Koulou Ndoubena",
+  "position": "Left Center Back",
+  "functional_role": "Deep Playmaker",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5,
+    "pressing_intensity_index": 9.35307872174591,
+    "speed_recovery_index": 5.14419329696025
+  },
+  "net_xg_contribution_per_90": 0.21628272766952458,
+  "top_chemistry_partners": [
+    {
+      "player_id": 13454,
+      "player": "Nouhou Tolo",
+      "synergy_score": 0.5021435085782536,
+      "shared_minutes": 192.45,
+      "joint_pass_completion_rate": 0.9851367742636277
+    },
+    {
+      "player_id": 7426,
+      "player": "Jean-Charles Castelletto",
+      "synergy_score": 0.4956497280639708,
+      "shared_minutes": 192.45,
+      "joint_pass_completion_rate": 0.9723968664895941
+    },
+    {
+      "player_id": 16346,
+      "player": "Ngoran Suiru Fai Collins",
+      "synergy_score": 0.4727862091699336,
+      "shared_minutes": 192.45,
+      "joint_pass_completion_rate": 0.9275417745351847
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

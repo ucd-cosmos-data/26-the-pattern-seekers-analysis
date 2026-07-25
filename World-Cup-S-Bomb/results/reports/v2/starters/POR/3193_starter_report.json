@@ -1,0 +1,43 @@
+{
+  "team": "Portugal",
+  "team_code": "POR",
+  "player_id": 3193,
+  "player": "Bernardo Mota Veiga de Carvalho e Silva",
+  "position": "Right Center Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.125,
+    "pressing_intensity_index": 14.603506935357235,
+    "speed_recovery_index": 4.9463491232661605
+  },
+  "net_xg_contribution_per_90": 0.09169050431824129,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5206,
+      "player": "Rúben Santos Gato Alves Dias",
+      "synergy_score": 0.7353405499362462,
+      "shared_minutes": 366.3333333333333,
+      "joint_pass_completion_rate": 0.990338903271358
+    },
+    {
+      "player_id": 5204,
+      "player": "Bruno Miguel Borges Fernandes",
+      "synergy_score": 0.655246619810314,
+      "shared_minutes": 366.3333333333333,
+      "joint_pass_completion_rate": 0.8824703314559106
+    },
+    {
+      "player_id": 20016,
+      "player": "Kléper Laveran Lima Ferreira",
+      "synergy_score": 0.6231467369966056,
+      "shared_minutes": 294.5833333333333,
+      "joint_pass_completion_rate": 0.9382816240738187
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

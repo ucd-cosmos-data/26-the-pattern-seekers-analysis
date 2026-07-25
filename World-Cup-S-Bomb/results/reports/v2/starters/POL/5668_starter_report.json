@@ -1,0 +1,42 @@
+{
+  "team": "Poland",
+  "team_code": "POL",
+  "player_id": 5668,
+  "player": "Robert Lewandowski",
+  "position": "Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.4473684210526316,
+    "pressing_intensity_index": 9.698524695317511,
+    "speed_recovery_index": 2.7710070558050033
+  },
+  "net_xg_contribution_per_90": 0.7329123853239256,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3034,
+      "player": "Kamil Glik",
+      "synergy_score": 0.6432330436008825,
+      "shared_minutes": 389.75,
+      "joint_pass_completion_rate": 0.8420334196281477
+    },
+    {
+      "player_id": 4734,
+      "player": "Matty Cash",
+      "synergy_score": 0.630706557404647,
+      "shared_minutes": 389.75,
+      "joint_pass_completion_rate": 0.8256354436337962
+    },
+    {
+      "player_id": 5673,
+      "player": "Bartosz Bereszyński",
+      "synergy_score": 0.582718758564936,
+      "shared_minutes": 365.73333333333335,
+      "joint_pass_completion_rate": 0.7853974690877491
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

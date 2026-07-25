@@ -1,0 +1,42 @@
+{
+  "team": "Costa Rica",
+  "team_code": "CRC",
+  "player_id": 5581,
+  "player": "Joel Nathaniel Campbell Samuels",
+  "position": "Center Forward",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.4444444444444444,
+    "pressing_intensity_index": 14.157072837113875,
+    "speed_recovery_index": 4.6164367947110465
+  },
+  "net_xg_contribution_per_90": 0.020401119673999775,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5839,
+      "player": "Yeltsin Ignacio Tejeda Valverde",
+      "synergy_score": 0.5939245783741438,
+      "shared_minutes": 284.9333333333333,
+      "joint_pass_completion_rate": 0.9110460067683268
+    },
+    {
+      "player_id": 5582,
+      "player": "Celso Borges Mora",
+      "synergy_score": 0.5784347529489913,
+      "shared_minutes": 260.04999999999995,
+      "joint_pass_completion_rate": 0.935508354907037
+    },
+    {
+      "player_id": 5598,
+      "player": "Óscar Esau Duarte Gaitán",
+      "synergy_score": 0.5569638414385584,
+      "shared_minutes": 292.4333333333333,
+      "joint_pass_completion_rate": 0.8420334196281477
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

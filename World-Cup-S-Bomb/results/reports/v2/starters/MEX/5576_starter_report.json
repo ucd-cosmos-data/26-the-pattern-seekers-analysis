@@ -1,0 +1,43 @@
+{
+  "team": "Mexico",
+  "team_code": "MEX",
+  "player_id": 5576,
+  "player": "Jesús Daniel Gallardo Vasconcelos",
+  "position": "Left Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 1.0,
+    "pressing_intensity_index": 19.142367066895368,
+    "speed_recovery_index": 4.013722126929674
+  },
+  "net_xg_contribution_per_90": 0.036216389022298456,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5573,
+      "player": "Héctor Alfredo Moreno Herrera",
+      "synergy_score": 0.6531908792214215,
+      "shared_minutes": 291.5,
+      "joint_pass_completion_rate": 0.9892654480792866
+    },
+    {
+      "player_id": 5577,
+      "player": "Francisco Guillermo Ochoa Magaña",
+      "synergy_score": 0.6411416265003455,
+      "shared_minutes": 291.5,
+      "joint_pass_completion_rate": 0.9710167098140738
+    },
+    {
+      "player_id": 26368,
+      "player": "César Jasib Montes Castro",
+      "synergy_score": 0.6347626103538934,
+      "shared_minutes": 291.5,
+      "joint_pass_completion_rate": 0.9613556130854318
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,342 @@
+{
+  "team": "England",
+  "team_code": "ENG",
+  "total_wasted_net_xg": 0.10666116072185754,
+  "mean_eva_gap": 0.0007158467162540774,
+  "most_common_optimal_style": "No meaningful change",
+  "optimal_starting_11": [
+    {
+      "rank": 1,
+      "player_id": 3244,
+      "player": "John Stones",
+      "position_group": "Center Back",
+      "optimization_score": 2.75
+    },
+    {
+      "rank": 2,
+      "player_id": 3336,
+      "player": "Harry Maguire",
+      "position_group": "Center Back",
+      "optimization_score": 2.35
+    },
+    {
+      "rank": 3,
+      "player_id": 10955,
+      "player": "Harry Kane",
+      "position_group": "Forward",
+      "optimization_score": 2.3
+    },
+    {
+      "rank": 4,
+      "player_id": 30714,
+      "player": "Jude Bellingham",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.25
+    },
+    {
+      "rank": 5,
+      "player_id": 3382,
+      "player": "Luke Shaw",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 2.2
+    },
+    {
+      "rank": 6,
+      "player_id": 3943,
+      "player": "Declan Rice",
+      "position_group": "Defensive Midfield",
+      "optimization_score": 2.0
+    },
+    {
+      "rank": 7,
+      "player_id": 4354,
+      "player": "Phil Foden",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.95
+    },
+    {
+      "rank": 8,
+      "player_id": 3468,
+      "player": "Jordan Pickford",
+      "position_group": "Goalkeeper",
+      "optimization_score": 1.85
+    },
+    {
+      "rank": 9,
+      "player_id": 22084,
+      "player": "Bukayo Saka",
+      "position_group": "Attacking Midfield/Wing",
+      "optimization_score": 1.85
+    },
+    {
+      "rank": 10,
+      "player_id": 3532,
+      "player": "Jordan Brian Henderson",
+      "position_group": "Central/Wide Midfield",
+      "optimization_score": 1.7000000000000002
+    },
+    {
+      "rank": 11,
+      "player_id": 3205,
+      "player": "Kyle Walker",
+      "position_group": "Fullback/Wingback",
+      "optimization_score": 1.2
+    }
+  ],
+  "physical_matchup_deltas": {
+    "mean_delta_aerial": 0.01174357753080306,
+    "mean_delta_pressing": -3.654261740388565,
+    "mean_delta_recovery": 0.9873529784133344
+  },
+  "best_substitution": null,
+  "recurrent_tactical_mistakes": [
+    {
+      "team": "England",
+      "defensive_style": "Compact Pressure Block",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Short Under Pressure",
+      "possessions": 4,
+      "wasted_net_xg": 0.05333058036092876,
+      "mean_eva_gap": 0.01333264509023219
+    },
+    {
+      "team": "England",
+      "defensive_style": "Set-Piece Compact Shape",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Short Under Pressure",
+      "possessions": 2,
+      "wasted_net_xg": 0.026665290180464384,
+      "mean_eva_gap": 0.013332645090232192
+    },
+    {
+      "team": "England",
+      "defensive_style": "High-Intensity Press",
+      "actual_style": "Direct Long Play",
+      "optimal_style": "Short Under Pressure",
+      "possessions": 1,
+      "wasted_net_xg": 0.013332645090232194,
+      "mean_eva_gap": 0.013332645090232194
+    }
+  ],
+  "model_provenance": {
+    "model_version": "transition-conceded-v2",
+    "target": "transition_conceded",
+    "calibration_method": "platt",
+    "threshold": null,
+    "threshold_status": "no validated threshold",
+    "holdout_metrics": {
+      "rows": 1349,
+      "positives": 2,
+      "positive_rate": 0.0014825796886582653,
+      "unique_probabilities": 1252,
+      "probability_variance": 7.235968115450994e-07,
+      "predicted_positives": 0,
+      "predicted_positive_rate": 0.0,
+      "precision": null,
+      "recall": null,
+      "f0_5": null,
+      "brier": 0.001477846004288718,
+      "pr_auc": 0.016655274550011392,
+      "roc_auc": 0.7420193021529324,
+      "asymmetric_cost": 2.0
+    },
+    "runtime": {
+      "schema_version": 1,
+      "pipeline": "run_team_simulation_reports_v2",
+      "status": "complete",
+      "elapsed_seconds": 52.35614990000613,
+      "peak_memory_mb": 214.26307487487793,
+      "stages": [
+        {
+          "name": "load_inputs_and_model",
+          "status": "complete",
+          "elapsed_seconds": 4.36230679997243,
+          "completed": 2,
+          "total": 2,
+          "unit": "source",
+          "average_units_per_second": 0.4584730262467189,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 113.47099113464355,
+          "message": "calibrated_classifier_bundle"
+        },
+        {
+          "name": "player_profiles",
+          "status": "complete",
+          "elapsed_seconds": 6.452393000014126,
+          "completed": 342,
+          "total": 342,
+          "unit": "player",
+          "average_units_per_second": 53.003591070669636,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 146.33236408233643,
+          "message": ""
+        },
+        {
+          "name": "player_synergy",
+          "status": "complete",
+          "elapsed_seconds": 0.36296149995177984,
+          "completed": 116964,
+          "total": 116964,
+          "unit": "pair",
+          "average_units_per_second": 322249.05400583503,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 153.66157627105713,
+          "message": ""
+        },
+        {
+          "name": "calibrated_tactical_scenarios",
+          "status": "complete",
+          "elapsed_seconds": 5.8337897000601515,
+          "completed": 1349,
+          "total": 1349,
+          "unit": "possession",
+          "average_units_per_second": 231.23905203269337,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 214.26307487487793,
+          "message": ""
+        },
+        {
+          "name": "constrained_substitutions",
+          "status": "complete",
+          "elapsed_seconds": 28.036284600035287,
+          "completed": 32,
+          "total": 32,
+          "unit": "team",
+          "average_units_per_second": 1.141378055491694,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 214.26307487487793,
+          "message": ""
+        }
+      ],
+      "previous_runs": [
+        {
+          "schema_version": 1,
+          "pipeline": "run_team_simulation_reports_v2",
+          "status": "complete",
+          "elapsed_seconds": 57.21769029996358,
+          "peak_memory_mb": 214.25759983062744,
+          "stages": [
+            {
+              "name": "load_inputs_and_model",
+              "status": "complete",
+              "elapsed_seconds": 4.7423248999984935,
+              "completed": 2,
+              "total": 2,
+              "unit": "source",
+              "average_units_per_second": 0.4217340739350514,
+              "eta_seconds": 0.0,
+              "peak_memory_mb": 113.46806526184082,
+              "message": "calibrated_classifier_bundle"
+            },
+            {
+              "name": "player_profiles",
+              "status": "complete",
+              "elapsed_seconds": 6.967033899971284,
+              "completed": 342,
+              "total": 342,
+              "unit": "player",
+              "average_units_per_second": 49.0883215024129,
+              "eta_seconds": 0.0,
+              "peak_memory_mb": 146.32600021362305,
+              "message": ""
+            },
+            {
+              "name": "player_synergy",
+              "status": "complete",
+              "elapsed_seconds": 0.6773775999899954,
+              "completed": 116964,
+              "total": 116964,
+              "unit": "pair",
+              "average_units_per_second": 172671.78601968463,
+              "eta_seconds": 0.0,
+              "peak_memory_mb": 153.65494346618652,
+              "message": ""
+            },
+            {
+              "name": "calibrated_tactical_scenarios",
+              "status": "complete",
+              "elapsed_seconds": 5.943568799993955,
+              "completed": 1349,
+              "total": 1349,
+              "unit": "possession",
+              "average_units_per_second": 226.9680128883798,
+              "eta_seconds": 0.0,
+              "peak_memory_mb": 214.25759983062744,
+              "message": ""
+            },
+            {
+              "name": "constrained_substitutions",
+              "status": "complete",
+              "elapsed_seconds": 27.588380399974994,
+              "completed": 32,
+              "total": 32,
+              "unit": "team",
+              "average_units_per_second": 1.159908611381515,
+              "eta_seconds": 0.0,
+              "peak_memory_mb": 214.25759983062744,
+              "message": ""
+            },
+            {
+              "name": "dynamic_reports",
+              "status": "complete",
+              "elapsed_seconds": 3.716225099982694,
+              "completed": 356,
+              "total": 374,
+              "unit": "report",
+              "average_units_per_second": 95.79613463179555,
+              "eta_seconds": 0.18789902190923732,
+              "peak_memory_mb": 214.25759983062744,
+              "message": ""
+            }
+          ]
+        },
+        {
+          "schema_version": 1,
+          "pipeline": "benchmark_coaching_models_v2",
+          "status": "complete",
+          "elapsed_seconds": 9.270211299997754,
+          "peak_memory_mb": 210.49470043182373,
+          "stages": [
+            {
+              "name": "load_and_split_data",
+              "status": "complete",
+              "elapsed_seconds": 2.9196289000101388,
+              "completed": 4,
+              "total": 4,
+              "unit": "partition",
+              "average_units_per_second": 1.3700371303990413,
+              "eta_seconds": 0.0,
+              "peak_memory_mb": 210.49470043182373,
+              "message": "materialized train/calibration/threshold/test"
+            },
+            {
+              "name": "fit_cost_sensitive_models",
+              "status": "complete",
+              "elapsed_seconds": 6.209700700012036,
+              "completed": 4,
+              "total": 4,
+              "unit": "model",
+              "average_units_per_second": 0.6441534291648303,
+              "eta_seconds": 0.0,
+              "peak_memory_mb": 210.49470043182373,
+              "message": "XGBoost"
+            },
+            {
+              "name": "fit_probability_calibrators",
+              "status": "complete",
+              "elapsed_seconds": 0.03899689996615052,
+              "completed": 3,
+              "total": 3,
+              "unit": "calibrator",
+              "average_units_per_second": 76.92919187432881,
+              "eta_seconds": 0.0,
+              "peak_memory_mb": 210.49470043182373,
+              "message": "isotonic"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "top_positive_synergy_pair": "John Stones + Jordan Pickford (0.815)"
+}

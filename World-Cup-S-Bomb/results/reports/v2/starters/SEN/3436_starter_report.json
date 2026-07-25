@@ -1,0 +1,43 @@
+{
+  "team": "Senegal",
+  "team_code": "SEN",
+  "player_id": 3436,
+  "player": "Idrissa Gana Gueye",
+  "position": "Center Attacking Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.2857142857142857,
+    "pressing_intensity_index": 21.802672732442424,
+    "speed_recovery_index": 5.527438157520614
+  },
+  "net_xg_contribution_per_90": 0.12019050629513793,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5675,
+      "player": "Kalidou Koulibaly",
+      "synergy_score": 0.6012499497223451,
+      "shared_minutes": 293.0833333333333,
+      "joint_pass_completion_rate": 0.9078690784386242
+    },
+    {
+      "player_id": 3404,
+      "player": "Youssouf Sabaly",
+      "synergy_score": 0.5539453041516118,
+      "shared_minutes": 293.0833333333333,
+      "joint_pass_completion_rate": 0.8364405070100528
+    },
+    {
+      "player_id": 32915,
+      "player": "Ismail Jakobs",
+      "synergy_score": 0.5340562556749058,
+      "shared_minutes": 212.58333333333334,
+      "joint_pass_completion_rate": 0.9800115240097061
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

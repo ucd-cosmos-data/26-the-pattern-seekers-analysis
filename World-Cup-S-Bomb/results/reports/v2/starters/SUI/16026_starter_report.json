@@ -1,0 +1,43 @@
+{
+  "team": "Switzerland",
+  "team_code": "SUI",
+  "player_id": 16026,
+  "player": "Djibril Sow",
+  "position": "Center Attacking Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.25,
+    "pressing_intensity_index": 14.807428642652374,
+    "speed_recovery_index": 3.365324691511903
+  },
+  "net_xg_contribution_per_90": 0.09334742206157298,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3500,
+      "player": "Granit Xhaka",
+      "synergy_score": 0.6160418672438986,
+      "shared_minutes": 267.43333333333334,
+      "joint_pass_completion_rate": 0.9800115240097061
+    },
+    {
+      "player_id": 5549,
+      "player": "Manuel Obafemi Akanji",
+      "synergy_score": 0.5904148891042991,
+      "shared_minutes": 267.43333333333334,
+      "joint_pass_completion_rate": 0.939243622933903
+    },
+    {
+      "player_id": 6983,
+      "player": "Remo Freuler",
+      "synergy_score": 0.5606717763370949,
+      "shared_minutes": 267.1333333333333,
+      "joint_pass_completion_rate": 0.8925139248450615
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

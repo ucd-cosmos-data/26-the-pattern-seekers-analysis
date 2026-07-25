@@ -1,0 +1,43 @@
+{
+  "team": "Spain",
+  "team_code": "ESP",
+  "player_id": 11748,
+  "player": "Unai Simón Mendibil",
+  "position": "Goalkeeper",
+  "functional_role": "Goalkeeper",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 0.0,
+    "speed_recovery_index": 2.6090107500905906
+  },
+  "net_xg_contribution_per_90": 0.058920159439545844,
+  "top_chemistry_partners": [
+    {
+      "player_id": 6765,
+      "player": "Rodrigo Hernández Cascante",
+      "synergy_score": 0.7788595749232213,
+      "shared_minutes": 413.95,
+      "joint_pass_completion_rate": 0.9932596999567613
+    },
+    {
+      "player_id": 5203,
+      "player": "Sergio Busquets i Burgos",
+      "synergy_score": 0.7254123656979169,
+      "shared_minutes": 379.2833333333333,
+      "joint_pass_completion_rate": 0.9613556130854318
+    },
+    {
+      "player_id": 4353,
+      "player": "Aymeric Laporte",
+      "synergy_score": 0.6856180422585557,
+      "shared_minutes": 316.93333333333334,
+      "joint_pass_completion_rate": 0.9924718726789802
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

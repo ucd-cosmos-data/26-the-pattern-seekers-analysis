@@ -1,0 +1,42 @@
+{
+  "team": "Canada",
+  "team_code": "CAN",
+  "player_id": 23640,
+  "player": "Jonathan David",
+  "position": "Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6,
+    "pressing_intensity_index": 12.498966685955194,
+    "speed_recovery_index": 4.017525006199884
+  },
+  "net_xg_contribution_per_90": 0.3588156507398529,
+  "top_chemistry_partners": [
+    {
+      "player_id": 11846,
+      "player": "Steven de Sousa Vitoria",
+      "synergy_score": 0.49836244836642074,
+      "shared_minutes": 201.61666666666667,
+      "joint_pass_completion_rate": 0.9473031087528615
+    },
+    {
+      "player_id": 23828,
+      "player": "Kamal Miller",
+      "synergy_score": 0.4955901412241168,
+      "shared_minutes": 201.61666666666667,
+      "joint_pass_completion_rate": 0.9420334196281477
+    },
+    {
+      "player_id": 44703,
+      "player": "Alistair Johnston",
+      "synergy_score": 0.48651221953027485,
+      "shared_minutes": 201.61666666666667,
+      "joint_pass_completion_rate": 0.9247778188705466
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

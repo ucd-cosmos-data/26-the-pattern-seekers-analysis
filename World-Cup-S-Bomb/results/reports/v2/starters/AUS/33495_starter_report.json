@@ -1,0 +1,43 @@
+{
+  "team": "Australia",
+  "team_code": "AUS",
+  "player_id": 33495,
+  "player": "Kye Rowles",
+  "position": "Left Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6666666666666666,
+    "pressing_intensity_index": 9.30432909756623,
+    "speed_recovery_index": 0.6978246823174672
+  },
+  "net_xg_contribution_per_90": 0.041636872711608874,
+  "top_chemistry_partners": [
+    {
+      "player_id": 22293,
+      "player": "Harry Souttar",
+      "synergy_score": 0.7551085976010644,
+      "shared_minutes": 386.91666666666663,
+      "joint_pass_completion_rate": 0.9917190599468781
+    },
+    {
+      "player_id": 3240,
+      "player": "Mathew Ryan",
+      "synergy_score": 0.7542950205433395,
+      "shared_minutes": 386.91666666666663,
+      "joint_pass_completion_rate": 0.9906505515529271
+    },
+    {
+      "player_id": 3281,
+      "player": "Aaron Mooy",
+      "synergy_score": 0.7524063595164777,
+      "shared_minutes": 386.91666666666663,
+      "joint_pass_completion_rate": 0.9881700856383976
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

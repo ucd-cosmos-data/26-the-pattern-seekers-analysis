@@ -1,0 +1,42 @@
+{
+  "team": "Croatia",
+  "team_code": "CRO",
+  "player_id": 5474,
+  "player": "Ivan Perišić",
+  "position": "Left Wing",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5,
+    "pressing_intensity_index": 14.283287631342668,
+    "speed_recovery_index": 2.7518260574146427
+  },
+  "net_xg_contribution_per_90": 0.12181812764250527,
+  "top_chemistry_partners": [
+    {
+      "player_id": 33018,
+      "player": "Joško Gvardiol",
+      "synergy_score": 0.8372258201951611,
+      "shared_minutes": 686.8166666666666,
+      "joint_pass_completion_rate": 0.9086157527261316
+    },
+    {
+      "player_id": 5456,
+      "player": "Mateo Kovačić",
+      "synergy_score": 0.8361618007887226,
+      "shared_minutes": 649.55,
+      "joint_pass_completion_rate": 0.9190597565686931
+    },
+    {
+      "player_id": 16531,
+      "player": "Dominik Livaković",
+      "synergy_score": 0.7780208126752002,
+      "shared_minutes": 686.8166666666666,
+      "joint_pass_completion_rate": 0.8443623563600642
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

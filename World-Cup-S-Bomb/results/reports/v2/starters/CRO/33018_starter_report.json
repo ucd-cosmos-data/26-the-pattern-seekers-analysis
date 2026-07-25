@@ -1,0 +1,42 @@
+{
+  "team": "Croatia",
+  "team_code": "CRO",
+  "player_id": 33018,
+  "player": "Joško Gvardiol",
+  "position": "Left Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.4666666666666667,
+    "pressing_intensity_index": 11.870328805794017,
+    "speed_recovery_index": 4.373279033713585
+  },
+  "net_xg_contribution_per_90": 0.11734196351435776,
+  "top_chemistry_partners": [
+    {
+      "player_id": 16531,
+      "player": "Dominik Livaković",
+      "synergy_score": 0.9245957489641835,
+      "shared_minutes": 720.2833333333333,
+      "joint_pass_completion_rate": 0.993559268847572
+    },
+    {
+      "player_id": 3471,
+      "player": "Dejan Lovren",
+      "synergy_score": 0.8897247770248736,
+      "shared_minutes": 624.1333333333333,
+      "joint_pass_completion_rate": 0.9875977605590456
+    },
+    {
+      "player_id": 5463,
+      "player": "Luka Modrić",
+      "synergy_score": 0.8860699711129296,
+      "shared_minutes": 672.6666666666666,
+      "joint_pass_completion_rate": 0.9660570288984405
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

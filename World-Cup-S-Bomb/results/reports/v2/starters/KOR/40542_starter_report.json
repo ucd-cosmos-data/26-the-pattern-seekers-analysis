@@ -1,0 +1,42 @@
+{
+  "team": "South Korea",
+  "team_code": "KOR",
+  "player_id": 40542,
+  "player": "Gue-Sung Cho",
+  "position": "Center Forward",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.5555555555555556,
+    "pressing_intensity_index": 17.853740543569625,
+    "speed_recovery_index": 1.8156346315494536
+  },
+  "net_xg_contribution_per_90": 0.21109446993555617,
+  "top_chemistry_partners": [
+    {
+      "player_id": 40538,
+      "player": "Jin-Su Kim",
+      "synergy_score": 0.48660360551937293,
+      "shared_minutes": 262.90000000000003,
+      "joint_pass_completion_rate": 0.7819206760134036
+    },
+    {
+      "player_id": 23763,
+      "player": "In-Beom Hwang",
+      "synergy_score": 0.4778580275528103,
+      "shared_minutes": 282.33333333333337,
+      "joint_pass_completion_rate": 0.7368133678512591
+    },
+    {
+      "player_id": 5604,
+      "player": "Young-Gwon Kim",
+      "synergy_score": 0.46553258397761194,
+      "shared_minutes": 285.1666666666667,
+      "joint_pass_completion_rate": 0.7137708872675923
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

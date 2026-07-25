@@ -1,0 +1,43 @@
+{
+  "team": "Spain",
+  "team_code": "ESP",
+  "player_id": 5719,
+  "player": "Marco Asensio Willemsen",
+  "position": "Center Forward",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.3333333333333333,
+    "pressing_intensity_index": 10.634407089604727,
+    "speed_recovery_index": 1.899001266000844
+  },
+  "net_xg_contribution_per_90": 0.24124560350260238,
+  "top_chemistry_partners": [
+    {
+      "player_id": 6765,
+      "player": "Rodrigo Hernández Cascante",
+      "synergy_score": 0.5423776741625669,
+      "shared_minutes": 236.9666666666667,
+      "joint_pass_completion_rate": 0.9283426165633745
+    },
+    {
+      "player_id": 11748,
+      "player": "Unai Simón Mendibil",
+      "synergy_score": 0.5277987175047602,
+      "shared_minutes": 236.9666666666667,
+      "joint_pass_completion_rate": 0.9033890327135796
+    },
+    {
+      "player_id": 30486,
+      "player": "Pedro González López",
+      "synergy_score": 0.5172861335884319,
+      "shared_minutes": 225.05,
+      "joint_pass_completion_rate": 0.9147698618162258
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

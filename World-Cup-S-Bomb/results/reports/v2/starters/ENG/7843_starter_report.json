@@ -1,0 +1,43 @@
+{
+  "team": "England",
+  "team_code": "ENG",
+  "player_id": 7843,
+  "player": "Mason Mount",
+  "position": "Center Attacking Midfield",
+  "functional_role": "Target Forward",
+  "physical_scores": {
+    "aerial_dominance_index": 0.14285714285714285,
+    "pressing_intensity_index": 19.317073170731707,
+    "speed_recovery_index": 2.6341463414634148
+  },
+  "net_xg_contribution_per_90": 0.10660948375609756,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3943,
+      "player": "Declan Rice",
+      "synergy_score": 0.47709307561453534,
+      "shared_minutes": 205.0,
+      "joint_pass_completion_rate": 0.8968133678512591
+    },
+    {
+      "player_id": 3382,
+      "player": "Luke Shaw",
+      "synergy_score": 0.4766160526525321,
+      "shared_minutes": 205.0,
+      "joint_pass_completion_rate": 0.8959166862791246
+    },
+    {
+      "player_id": 3336,
+      "player": "Harry Maguire",
+      "synergy_score": 0.45975814420461103,
+      "shared_minutes": 205.0,
+      "joint_pass_completion_rate": 0.8642281155937619
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

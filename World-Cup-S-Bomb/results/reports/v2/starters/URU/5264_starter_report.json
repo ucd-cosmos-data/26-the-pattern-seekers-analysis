@@ -1,0 +1,43 @@
+{
+  "team": "Uruguay",
+  "team_code": "URU",
+  "player_id": 5264,
+  "player": "Guillermo Varela Olivera",
+  "position": "Right Back",
+  "functional_role": "Holding Anchor",
+  "physical_scores": {
+    "aerial_dominance_index": 0.75,
+    "pressing_intensity_index": 8.115162540536264,
+    "speed_recovery_index": 0.8542276358459225
+  },
+  "net_xg_contribution_per_90": 0.02519971525745471,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5259,
+      "player": "José María Giménez de Vargas",
+      "synergy_score": 0.5313234123042804,
+      "shared_minutes": 210.7166666666667,
+      "joint_pass_completion_rate": 0.9806778065427159
+    },
+    {
+      "player_id": 6773,
+      "player": "Federico Santiago Valverde Dipetta",
+      "synergy_score": 0.5192696454519856,
+      "shared_minutes": 210.7166666666667,
+      "joint_pass_completion_rate": 0.9584298472705652
+    },
+    {
+      "player_id": 36710,
+      "player": "Sergio Rochet Álvarez",
+      "synergy_score": 0.5025347340511428,
+      "shared_minutes": 210.7166666666667,
+      "joint_pass_completion_rate": 0.9275417745351847
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Iran",
+  "team_code": "IRN",
+  "player_id": 23874,
+  "player": "Ali Gholizadeh",
+  "position": "Right Midfield",
+  "functional_role": "Holding Anchor",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 14.52072129073078,
+    "speed_recovery_index": 5.97912053147738
+  },
+  "net_xg_contribution_per_90": 0.037936123220499836,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5722,
+      "player": "Saeid Ezatolahi Afagh",
+      "synergy_score": 0.5176607135917455,
+      "shared_minutes": 210.73333333333332,
+      "joint_pass_completion_rate": 0.9554103227908828
+    },
+    {
+      "player_id": 5228,
+      "player": "Seyed Majid Hosseini",
+      "synergy_score": 0.5025609682439361,
+      "shared_minutes": 210.73333333333332,
+      "joint_pass_completion_rate": 0.9275417745351847
+    },
+    {
+      "player_id": 5220,
+      "player": "Morteza Pouraliganji",
+      "synergy_score": 0.4790053655013535,
+      "shared_minutes": 210.73333333333332,
+      "joint_pass_completion_rate": 0.8840668392562956
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Brazil",
+  "team_code": "BRA",
+  "player_id": 18395,
+  "player": "Vinícius José Paixão de Oliveira Júnior",
+  "position": "Left Midfield",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 12.035879315031258,
+    "speed_recovery_index": 4.403370481108997
+  },
+  "net_xg_contribution_per_90": 0.28020893646099476,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3295,
+      "player": "Thiago Emiliano da Silva",
+      "synergy_score": 0.6251277192656997,
+      "shared_minutes": 306.58333333333337,
+      "joint_pass_completion_rate": 0.9210167098140738
+    },
+    {
+      "player_id": 5547,
+      "player": "Alisson Ramsés Becker",
+      "synergy_score": 0.6000484909924041,
+      "shared_minutes": 306.58333333333337,
+      "joint_pass_completion_rate": 0.8840668392562956
+    },
+    {
+      "player_id": 4372,
+      "player": "Marcos Aoás Corrêa",
+      "synergy_score": 0.5620089991061146,
+      "shared_minutes": 306.58333333333337,
+      "joint_pass_completion_rate": 0.8280222797520984
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

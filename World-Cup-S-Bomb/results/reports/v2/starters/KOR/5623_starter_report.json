@@ -1,0 +1,42 @@
+{
+  "team": "South Korea",
+  "team_code": "KOR",
+  "player_id": 5623,
+  "player": "Jae-Sung Lee",
+  "position": "Center Attacking Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.375,
+    "pressing_intensity_index": 29.22582163306926,
+    "speed_recovery_index": 2.964938426543258
+  },
+  "net_xg_contribution_per_90": 0.039134314205035686,
+  "top_chemistry_partners": [
+    {
+      "player_id": 40672,
+      "player": "Moon-Hwan Kim",
+      "synergy_score": 0.5338910564664464,
+      "shared_minutes": 212.48333333333335,
+      "joint_pass_completion_rate": 0.9800115240097061
+    },
+    {
+      "player_id": 5604,
+      "player": "Young-Gwon Kim",
+      "synergy_score": 0.48622408060767364,
+      "shared_minutes": 212.48333333333335,
+      "joint_pass_completion_rate": 0.8925139248450615
+    },
+    {
+      "player_id": 5618,
+      "player": "Woo-Young Jung",
+      "synergy_score": 0.48428663137002564,
+      "shared_minutes": 184.01666666666668,
+      "joint_pass_completion_rate": 0.9800115240097061
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

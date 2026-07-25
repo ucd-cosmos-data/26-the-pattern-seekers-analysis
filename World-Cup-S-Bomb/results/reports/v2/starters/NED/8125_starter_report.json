@@ -1,0 +1,42 @@
+{
+  "team": "Netherlands",
+  "team_code": "NED",
+  "player_id": 8125,
+  "player": "Denzel Dumfries",
+  "position": "Right Wing Back",
+  "functional_role": "Holding Anchor",
+  "physical_scores": {
+    "aerial_dominance_index": 0.47619047619047616,
+    "pressing_intensity_index": 13.071211278662785,
+    "speed_recovery_index": 1.766379902521998
+  },
+  "net_xg_contribution_per_90": 0.05357769424618102,
+  "top_chemistry_partners": [
+    {
+      "player_id": 8326,
+      "player": "Andries Noppert",
+      "synergy_score": 0.7902140656990068,
+      "shared_minutes": 509.51666666666665,
+      "joint_pass_completion_rate": 0.9313188780991947
+    },
+    {
+      "player_id": 21809,
+      "player": "Jurriën David Norman Timber",
+      "synergy_score": 0.7592832122371803,
+      "shared_minutes": 409.40000000000003,
+      "joint_pass_completion_rate": 0.9728456231187523
+    },
+    {
+      "player_id": 3306,
+      "player": "Nathan Aké",
+      "synergy_score": 0.6794756042213215,
+      "shared_minutes": 506.26666666666665,
+      "joint_pass_completion_rate": 0.8025417745351847
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

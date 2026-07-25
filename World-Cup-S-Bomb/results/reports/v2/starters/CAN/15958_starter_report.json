@@ -1,0 +1,43 @@
+{
+  "team": "Canada",
+  "team_code": "CAN",
+  "player_id": 15958,
+  "player": "Milan Borjan",
+  "position": "Goalkeeper",
+  "functional_role": "Goalkeeper",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 0.0,
+    "speed_recovery_index": 6.000701836472102
+  },
+  "net_xg_contribution_per_90": 0.05116387881623581,
+  "top_chemistry_partners": [
+    {
+      "player_id": 23828,
+      "player": "Kamal Miller",
+      "synergy_score": 0.641744000348492,
+      "shared_minutes": 284.9666666666667,
+      "joint_pass_completion_rate": 0.9843333566562562
+    },
+    {
+      "player_id": 11846,
+      "player": "Steven de Sousa Vitoria",
+      "synergy_score": 0.6411603435849164,
+      "shared_minutes": 284.9666666666667,
+      "joint_pass_completion_rate": 0.9834381198937566
+    },
+    {
+      "player_id": 44703,
+      "player": "Alistair Johnston",
+      "synergy_score": 0.6309625629102193,
+      "shared_minutes": 284.9666666666667,
+      "joint_pass_completion_rate": 0.9677963442378599
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

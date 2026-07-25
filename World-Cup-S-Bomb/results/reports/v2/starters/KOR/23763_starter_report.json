@@ -1,0 +1,42 @@
+{
+  "team": "South Korea",
+  "team_code": "KOR",
+  "player_id": 23763,
+  "player": "In-Beom Hwang",
+  "position": "Left Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.4444444444444444,
+    "pressing_intensity_index": 13.495626417364743,
+    "speed_recovery_index": 6.497894200953395
+  },
+  "net_xg_contribution_per_90": 0.10065444975239501,
+  "top_chemistry_partners": [
+    {
+      "player_id": 40672,
+      "player": "Moon-Hwan Kim",
+      "synergy_score": 0.675836838066761,
+      "shared_minutes": 360.1166666666667,
+      "joint_pass_completion_rate": 0.9176123282204508
+    },
+    {
+      "player_id": 5618,
+      "player": "Woo-Young Jung",
+      "synergy_score": 0.6748638760737551,
+      "shared_minutes": 317.91666666666663,
+      "joint_pass_completion_rate": 0.9753177218168981
+    },
+    {
+      "player_id": 40538,
+      "player": "Jin-Su Kim",
+      "synergy_score": 0.6624638264361709,
+      "shared_minutes": 340.68333333333334,
+      "joint_pass_completion_rate": 0.92412747636122
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

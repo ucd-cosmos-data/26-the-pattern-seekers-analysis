@@ -1,0 +1,43 @@
+{
+  "team": "Denmark",
+  "team_code": "DEN",
+  "player_id": 3815,
+  "player": "Kasper Schmeichel",
+  "position": "Goalkeeper",
+  "functional_role": "Goalkeeper",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 0.0,
+    "speed_recovery_index": 4.642365887207703
+  },
+  "net_xg_contribution_per_90": 0.043019257221458045,
+  "top_chemistry_partners": [
+    {
+      "player_id": 8247,
+      "player": "Joachim Andersen",
+      "synergy_score": 0.6500740961508286,
+      "shared_minutes": 290.8,
+      "joint_pass_completion_rate": 0.9858618096654019
+    },
+    {
+      "player_id": 3959,
+      "player": "Andreas Christensen",
+      "synergy_score": 0.6490662391685538,
+      "shared_minutes": 290.8,
+      "joint_pass_completion_rate": 0.9843333566562562
+    },
+    {
+      "player_id": 3570,
+      "player": "Pierre-Emile Højbjerg",
+      "synergy_score": 0.5849948779679697,
+      "shared_minutes": 290.8,
+      "joint_pass_completion_rate": 0.8871667283058198
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

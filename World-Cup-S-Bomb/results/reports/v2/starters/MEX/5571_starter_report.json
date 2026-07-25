@@ -1,0 +1,43 @@
+{
+  "team": "Mexico",
+  "team_code": "MEX",
+  "player_id": 5571,
+  "player": "Hirving Rodrigo Lozano Bahena",
+  "position": "Right Wing",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.06666666666666667,
+    "pressing_intensity_index": 17.17064654903672,
+    "speed_recovery_index": 5.386869505580148
+  },
+  "net_xg_contribution_per_90": 0.1233612241511316,
+  "top_chemistry_partners": [
+    {
+      "player_id": 28825,
+      "player": "Luis Gerardo Chávez Magallón",
+      "synergy_score": 0.4747877769260094,
+      "shared_minutes": 267.31666666666666,
+      "joint_pass_completion_rate": 0.7554946514929509
+    },
+    {
+      "player_id": 5577,
+      "player": "Francisco Guillermo Ochoa Magaña",
+      "synergy_score": 0.455397973328215,
+      "shared_minutes": 267.31666666666666,
+      "joint_pass_completion_rate": 0.7246410920216521
+    },
+    {
+      "player_id": 5573,
+      "player": "Héctor Alfredo Moreno Herrera",
+      "synergy_score": 0.453120243939045,
+      "shared_minutes": 267.31666666666666,
+      "joint_pass_completion_rate": 0.7210167098140738
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

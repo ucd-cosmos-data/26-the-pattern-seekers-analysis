@@ -1,0 +1,43 @@
+{
+  "team": "Iran",
+  "team_code": "IRN",
+  "player_id": 5235,
+  "player": "Ramin Rezaeian",
+  "position": "Right Back",
+  "functional_role": "Holding Anchor",
+  "physical_scores": {
+    "aerial_dominance_index": 0.14285714285714285,
+    "pressing_intensity_index": 17.82031185545747,
+    "speed_recovery_index": 2.6730467783186205
+  },
+  "net_xg_contribution_per_90": 0.16188773158980285,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5228,
+      "player": "Seyed Majid Hosseini",
+      "synergy_score": 0.46785829076393276,
+      "shared_minutes": 202.01666666666668,
+      "joint_pass_completion_rate": 0.8881354436337962
+    },
+    {
+      "player_id": 5220,
+      "player": "Morteza Pouraliganji",
+      "synergy_score": 0.4627757446859611,
+      "shared_minutes": 202.01666666666668,
+      "joint_pass_completion_rate": 0.8784872458678059
+    },
+    {
+      "player_id": 5226,
+      "player": "Mehdi Taremi",
+      "synergy_score": 0.4512907257180092,
+      "shared_minutes": 202.01666666666668,
+      "joint_pass_completion_rate": 0.8566852331267487
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Ghana",
+  "team_code": "GHA",
+  "player_id": 12325,
+  "player": "Abdul Rahman Baba",
+  "position": "Left Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.3333333333333333,
+    "pressing_intensity_index": 12.2143358552375,
+    "speed_recovery_index": 2.1059199750409485
+  },
+  "net_xg_contribution_per_90": 0.026955775680524145,
+  "top_chemistry_partners": [
+    {
+      "player_id": 30519,
+      "player": "Mohamed Salisu",
+      "synergy_score": 0.4762548733624731,
+      "shared_minutes": 213.68333333333337,
+      "joint_pass_completion_rate": 0.8709869450251271
+    },
+    {
+      "player_id": 3709,
+      "player": "Daniel Amartey",
+      "synergy_score": 0.46827547398520203,
+      "shared_minutes": 213.68333333333337,
+      "joint_pass_completion_rate": 0.8563940178437707
+    },
+    {
+      "player_id": 8108,
+      "player": "Lawrence Ati-Zigi",
+      "synergy_score": 0.46827547398520203,
+      "shared_minutes": 213.68333333333337,
+      "joint_pass_completion_rate": 0.8563940178437707
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

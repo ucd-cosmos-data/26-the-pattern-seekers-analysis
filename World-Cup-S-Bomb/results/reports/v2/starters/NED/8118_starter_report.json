@@ -1,0 +1,43 @@
+{
+  "team": "Netherlands",
+  "team_code": "NED",
+  "player_id": 8118,
+  "player": "Frenkie de Jong",
+  "position": "Left Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.8571428571428571,
+    "pressing_intensity_index": 14.956452097307036,
+    "speed_recovery_index": 3.6039643607968763
+  },
+  "net_xg_contribution_per_90": 0.19389210159175094,
+  "top_chemistry_partners": [
+    {
+      "player_id": 8326,
+      "player": "Andries Noppert",
+      "synergy_score": 0.830207971584418,
+      "shared_minutes": 499.45000000000005,
+      "joint_pass_completion_rate": 0.9851367742636277
+    },
+    {
+      "player_id": 3669,
+      "player": "Virgil van Dijk",
+      "synergy_score": 0.8200881781936527,
+      "shared_minutes": 499.45000000000005,
+      "joint_pass_completion_rate": 0.9731284812112654
+    },
+    {
+      "player_id": 3306,
+      "player": "Nathan Aké",
+      "synergy_score": 0.8197704337216858,
+      "shared_minutes": 496.20000000000005,
+      "joint_pass_completion_rate": 0.9749547009347715
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

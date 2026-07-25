@@ -1,0 +1,43 @@
+{
+  "team": "Iran",
+  "team_code": "IRN",
+  "player_id": 5220,
+  "player": "Morteza Pouraliganji",
+  "position": "Right Center Back",
+  "functional_role": "Deep Playmaker",
+  "physical_scores": {
+    "aerial_dominance_index": 0.75,
+    "pressing_intensity_index": 10.619469026548671,
+    "speed_recovery_index": 2.359882005899705
+  },
+  "net_xg_contribution_per_90": 0.12502592625368733,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5228,
+      "player": "Seyed Majid Hosseini",
+      "synergy_score": 0.6686174995031364,
+      "shared_minutes": 305.1,
+      "joint_pass_completion_rate": 0.9876666850272655
+    },
+    {
+      "player_id": 5226,
+      "player": "Mehdi Taremi",
+      "synergy_score": 0.5850536931218417,
+      "shared_minutes": 305.1,
+      "joint_pass_completion_rate": 0.8642281155937619
+    },
+    {
+      "player_id": 5230,
+      "player": "Ehsan Hajsafi",
+      "synergy_score": 0.5438361392477329,
+      "shared_minutes": 249.9333333333333,
+      "joint_pass_completion_rate": 0.9007820844723645
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

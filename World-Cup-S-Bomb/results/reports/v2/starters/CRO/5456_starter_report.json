@@ -1,0 +1,43 @@
+{
+  "team": "Croatia",
+  "team_code": "CRO",
+  "player_id": 5456,
+  "player": "Mateo Kovačić",
+  "position": "Left Center Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.75,
+    "pressing_intensity_index": 21.187331709193483,
+    "speed_recovery_index": 3.8774201820746246
+  },
+  "net_xg_contribution_per_90": 0.12132821920759071,
+  "top_chemistry_partners": [
+    {
+      "player_id": 33018,
+      "player": "Joško Gvardiol",
+      "synergy_score": 0.8813516207909184,
+      "shared_minutes": 649.9166666666667,
+      "joint_pass_completion_rate": 0.9685994227743989
+    },
+    {
+      "player_id": 5463,
+      "player": "Luka Modrić",
+      "synergy_score": 0.8786496836901323,
+      "shared_minutes": 635.2,
+      "joint_pass_completion_rate": 0.9710147733941866
+    },
+    {
+      "player_id": 3471,
+      "player": "Dejan Lovren",
+      "synergy_score": 0.8468116716009353,
+      "shared_minutes": 553.7666666666667,
+      "joint_pass_completion_rate": 0.971791682076455
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

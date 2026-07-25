@@ -1,0 +1,43 @@
+{
+  "team": "Switzerland",
+  "team_code": "SUI",
+  "player_id": 7796,
+  "player": "Silvan Widmer",
+  "position": "Right Back",
+  "functional_role": "Holding Anchor",
+  "physical_scores": {
+    "aerial_dominance_index": 0.75,
+    "pressing_intensity_index": 14.688664183076106,
+    "speed_recovery_index": 1.596593932943055
+  },
+  "net_xg_contribution_per_90": 0.054978482171367755,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5549,
+      "player": "Manuel Obafemi Akanji",
+      "synergy_score": 0.6408308656757551,
+      "shared_minutes": 281.84999999999997,
+      "joint_pass_completion_rate": 0.9890629093638015
+    },
+    {
+      "player_id": 6983,
+      "player": "Remo Freuler",
+      "synergy_score": 0.6246559984822522,
+      "shared_minutes": 281.84999999999997,
+      "joint_pass_completion_rate": 0.9640985044609427
+    },
+    {
+      "player_id": 3500,
+      "player": "Granit Xhaka",
+      "synergy_score": 0.5940007485995098,
+      "shared_minutes": 281.84999999999997,
+      "joint_pass_completion_rate": 0.916784974073596
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

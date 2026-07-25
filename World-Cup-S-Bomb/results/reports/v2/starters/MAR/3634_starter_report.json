@@ -1,0 +1,43 @@
+{
+  "team": "Morocco",
+  "team_code": "MAR",
+  "player_id": 3634,
+  "player": "Abdelhamid Sabiri",
+  "position": "Left Center Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.75,
+    "pressing_intensity_index": 15.746140651801031,
+    "speed_recovery_index": 0.9262435677530018
+  },
+  "net_xg_contribution_per_90": 0.4436169463636364,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5234,
+      "player": "Sofyan Amrabat",
+      "synergy_score": 0.4851768526537441,
+      "shared_minutes": 194.33333333333331,
+      "joint_pass_completion_rate": 0.9455287653890164
+    },
+    {
+      "player_id": 6785,
+      "player": "Yassine Bounou",
+      "synergy_score": 0.4397312911619732,
+      "shared_minutes": 165.73333333333335,
+      "joint_pass_completion_rate": 0.9585952997343912
+    },
+    {
+      "player_id": 5245,
+      "player": "Achraf Hakimi Mouh",
+      "synergy_score": 0.40696524489735675,
+      "shared_minutes": 165.73333333333335,
+      "joint_pass_completion_rate": 0.8871667283058198
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Wales",
+  "team_code": "WAL",
+  "player_id": 4934,
+  "player": "Ethan Ampadu",
+  "position": "Center Defensive Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.3333333333333333,
+    "pressing_intensity_index": 10.166938621814987,
+    "speed_recovery_index": 4.405673402786494
+  },
+  "net_xg_contribution_per_90": 0.06228137615162546,
+  "top_chemistry_partners": [
+    {
+      "player_id": 11250,
+      "player": "Joe Rodon",
+      "synergy_score": 0.6139339282881265,
+      "shared_minutes": 265.56666666666666,
+      "joint_pass_completion_rate": 0.9806778065427159
+    },
+    {
+      "player_id": 4767,
+      "player": "Chris Mepham",
+      "synergy_score": 0.5909226243243145,
+      "shared_minutes": 265.56666666666666,
+      "joint_pass_completion_rate": 0.9439203086148148
+    },
+    {
+      "player_id": 3517,
+      "player": "Aaron Ramsey",
+      "synergy_score": 0.558121752989206,
+      "shared_minutes": 265.56666666666666,
+      "joint_pass_completion_rate": 0.8915252786751963
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

@@ -1,0 +1,43 @@
+{
+  "team": "Portugal",
+  "team_code": "POR",
+  "player_id": 5206,
+  "player": "Rúben Santos Gato Alves Dias",
+  "position": "Left Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.7333333333333333,
+    "pressing_intensity_index": 4.586961138245912,
+    "speed_recovery_index": 2.981524739859843
+  },
+  "net_xg_contribution_per_90": 0.08474469416011894,
+  "top_chemistry_partners": [
+    {
+      "player_id": 32975,
+      "player": "Diogo Meireles Costa",
+      "synergy_score": 0.7446108310340869,
+      "shared_minutes": 392.41666666666663,
+      "joint_pass_completion_rate": 0.971791682076455
+    },
+    {
+      "player_id": 3193,
+      "player": "Bernardo Mota Veiga de Carvalho e Silva",
+      "synergy_score": 0.7353405499362462,
+      "shared_minutes": 366.3333333333333,
+      "joint_pass_completion_rate": 0.990338903271358
+    },
+    {
+      "player_id": 5204,
+      "player": "Bruno Miguel Borges Fernandes",
+      "synergy_score": 0.7152242871265213,
+      "shared_minutes": 384.95,
+      "joint_pass_completion_rate": 0.9414938591215362
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

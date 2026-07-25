@@ -1,0 +1,42 @@
+{
+  "team": "England",
+  "team_code": "ENG",
+  "player_id": 3382,
+  "player": "Luke Shaw",
+  "position": "Left Back",
+  "functional_role": "Wide Creator",
+  "physical_scores": {
+    "aerial_dominance_index": 0.42857142857142855,
+    "pressing_intensity_index": 6.693401385344514,
+    "speed_recovery_index": 2.7561064527889174
+  },
+  "net_xg_contribution_per_90": 0.08768246535180461,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3244,
+      "player": "John Stones",
+      "synergy_score": 0.7727503695355693,
+      "shared_minutes": 435.71666666666664,
+      "joint_pass_completion_rate": 0.9648963154729218
+    },
+    {
+      "player_id": 3943,
+      "player": "Declan Rice",
+      "synergy_score": 0.7717226492077501,
+      "shared_minutes": 449.54999999999995,
+      "joint_pass_completion_rate": 0.951792991539805
+    },
+    {
+      "player_id": 3336,
+      "player": "Harry Maguire",
+      "synergy_score": 0.7645722332645093,
+      "shared_minutes": 424.54999999999995,
+      "joint_pass_completion_rate": 0.9648146213704892
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

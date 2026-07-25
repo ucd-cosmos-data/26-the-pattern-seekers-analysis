@@ -1,0 +1,43 @@
+{
+  "team": "Argentina",
+  "team_code": "ARG",
+  "player_id": 29201,
+  "player": "Nahuel Molina Lucero",
+  "position": "Right Wing Back",
+  "functional_role": "Holding Anchor",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 12.878787878787879,
+    "speed_recovery_index": 2.5757575757575757
+  },
+  "net_xg_contribution_per_90": 0.11232113136363636,
+  "top_chemistry_partners": [
+    {
+      "player_id": 20572,
+      "player": "Cristian Gabriel Romero",
+      "synergy_score": 0.8349151735697935,
+      "shared_minutes": 514.6,
+      "joint_pass_completion_rate": 0.9807357828814813
+    },
+    {
+      "player_id": 3090,
+      "player": "Nicolás Hernán Otamendi",
+      "synergy_score": 0.8272014177147688,
+      "shared_minutes": 594.0,
+      "joint_pass_completion_rate": 0.9302793026022022
+    },
+    {
+      "player_id": 38718,
+      "player": "Enzo Fernandez",
+      "synergy_score": 0.7958125865374773,
+      "shared_minutes": 517.9833333333333,
+      "joint_pass_completion_rate": 0.932775110798572
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

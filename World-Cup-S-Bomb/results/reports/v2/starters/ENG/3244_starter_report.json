@@ -1,0 +1,43 @@
+{
+  "team": "England",
+  "team_code": "ENG",
+  "player_id": 3244,
+  "player": "John Stones",
+  "position": "Right Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.7333333333333333,
+    "pressing_intensity_index": 3.0975513569712834,
+    "speed_recovery_index": 1.935969598107052
+  },
+  "net_xg_contribution_per_90": 0.2515635119707454,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3468,
+      "player": "Jordan Pickford",
+      "synergy_score": 0.8154485923572893,
+      "shared_minutes": 464.8833333333333,
+      "joint_pass_completion_rate": 0.9929309048327009
+    },
+    {
+      "player_id": 3336,
+      "player": "Harry Maguire",
+      "synergy_score": 0.7962276806877523,
+      "shared_minutes": 432.26666666666665,
+      "joint_pass_completion_rate": 0.997400601777047
+    },
+    {
+      "player_id": 30714,
+      "player": "Jude Bellingham",
+      "synergy_score": 0.7950404940451236,
+      "shared_minutes": 438.34999999999997,
+      "joint_pass_completion_rate": 0.990338903271358
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

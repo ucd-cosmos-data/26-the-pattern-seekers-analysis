@@ -1,0 +1,43 @@
+{
+  "team": "Poland",
+  "team_code": "POL",
+  "player_id": 3034,
+  "player": "Kamil Glik",
+  "position": "Right Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.7,
+    "pressing_intensity_index": 4.3874278383579215,
+    "speed_recovery_index": 1.6164207825529184
+  },
+  "net_xg_contribution_per_90": 0.05648979302116741,
+  "top_chemistry_partners": [
+    {
+      "player_id": 4734,
+      "player": "Matty Cash",
+      "synergy_score": 0.7557042395992319,
+      "shared_minutes": 389.75,
+      "joint_pass_completion_rate": 0.9892654480792866
+    },
+    {
+      "player_id": 44166,
+      "player": "Jakub Piotr Kiwior",
+      "synergy_score": 0.7479795333338468,
+      "shared_minutes": 376.7,
+      "joint_pass_completion_rate": 0.9943721766629269
+    },
+    {
+      "player_id": 5669,
+      "player": "Wojciech Szczęsny",
+      "synergy_score": 0.7428182557127974,
+      "shared_minutes": 389.75,
+      "joint_pass_completion_rate": 0.9723968664895941
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

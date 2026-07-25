@@ -1,0 +1,43 @@
+{
+  "team": "Morocco",
+  "team_code": "MAR",
+  "player_id": 46258,
+  "player": "Azzedine Ounahi",
+  "position": "Right Center Midfield",
+  "functional_role": "Ball-Winner",
+  "physical_scores": {
+    "aerial_dominance_index": 0.2857142857142857,
+    "pressing_intensity_index": 16.03733559609673,
+    "speed_recovery_index": 4.7348324140857025
+  },
+  "net_xg_contribution_per_90": 0.07326778635553671,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5245,
+      "player": "Achraf Hakimi Mouh",
+      "synergy_score": 0.7835694139631078,
+      "shared_minutes": 578.2666666666667,
+      "joint_pass_completion_rate": 0.8878487245867805
+    },
+    {
+      "player_id": 5237,
+      "player": "Hakim Ziyech",
+      "synergy_score": 0.7797532217438464,
+      "shared_minutes": 571.6,
+      "joint_pass_completion_rate": 0.8864738646694262
+    },
+    {
+      "player_id": 5234,
+      "player": "Sofyan Amrabat",
+      "synergy_score": 0.7768488561536809,
+      "shared_minutes": 589.25,
+      "joint_pass_completion_rate": 0.8755887557958633
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

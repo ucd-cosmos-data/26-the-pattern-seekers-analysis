@@ -1,0 +1,43 @@
+{
+  "team": "Spain",
+  "team_code": "ESP",
+  "player_id": 6748,
+  "player": "Ferrán Torres García",
+  "position": "Right Wing",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.25,
+    "pressing_intensity_index": 12.75465013286094,
+    "speed_recovery_index": 3.188662533215235
+  },
+  "net_xg_contribution_per_90": 0.39149287134632427,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5203,
+      "player": "Sergio Busquets i Burgos",
+      "synergy_score": 0.5473646773712671,
+      "shared_minutes": 225.8,
+      "joint_pass_completion_rate": 0.9659020115459692
+    },
+    {
+      "player_id": 11748,
+      "player": "Unai Simón Mendibil",
+      "synergy_score": 0.5301887603057925,
+      "shared_minutes": 225.8,
+      "joint_pass_completion_rate": 0.9355926884757196
+    },
+    {
+      "player_id": 30486,
+      "player": "Pedro González López",
+      "synergy_score": 0.4784896638052748,
+      "shared_minutes": 225.8,
+      "joint_pass_completion_rate": 0.8443623563600642
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

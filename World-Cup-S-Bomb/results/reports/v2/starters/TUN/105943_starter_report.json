@@ -1,0 +1,43 @@
+{
+  "team": "Tunisia",
+  "team_code": "TUN",
+  "player_id": 105943,
+  "player": "Aymen Dahmen",
+  "position": "Goalkeeper",
+  "functional_role": "Goalkeeper",
+  "physical_scores": {
+    "aerial_dominance_index": 0.0,
+    "pressing_intensity_index": 0.0,
+    "speed_recovery_index": 2.1243115656963023
+  },
+  "net_xg_contribution_per_90": 0.013656288636619083,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5651,
+      "player": "Yassine Meriah",
+      "synergy_score": 0.6558608639444634,
+      "shared_minutes": 296.56666666666666,
+      "joint_pass_completion_rate": 0.98389817211893
+    },
+    {
+      "player_id": 32450,
+      "player": "Montassar Omar Talbi",
+      "synergy_score": 0.6490305274771934,
+      "shared_minutes": 296.56666666666666,
+      "joint_pass_completion_rate": 0.9736515543764308
+    },
+    {
+      "player_id": 3767,
+      "player": "Ellyes Joris Skhiri",
+      "synergy_score": 0.6113939795963184,
+      "shared_minutes": 296.56666666666666,
+      "joint_pass_completion_rate": 0.9171905994687826
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

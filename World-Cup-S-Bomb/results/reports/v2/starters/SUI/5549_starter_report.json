@@ -1,0 +1,43 @@
+{
+  "team": "Switzerland",
+  "team_code": "SUI",
+  "player_id": 5549,
+  "player": "Manuel Obafemi Akanji",
+  "position": "Left Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.7333333333333333,
+    "pressing_intensity_index": 6.984263849967665,
+    "speed_recovery_index": 2.0952791549902994
+  },
+  "net_xg_contribution_per_90": 0.3028072831558525,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3500,
+      "player": "Granit Xhaka",
+      "synergy_score": 0.7553138935448591,
+      "shared_minutes": 386.58333333333337,
+      "joint_pass_completion_rate": 0.9923728183721247
+    },
+    {
+      "player_id": 5544,
+      "player": "Ricardo Iván Rodríguez Araya",
+      "synergy_score": 0.7013019251841992,
+      "shared_minutes": 380.23333333333335,
+      "joint_pass_completion_rate": 0.9283426165633745
+    },
+    {
+      "player_id": 5550,
+      "player": "Yann Sommer",
+      "synergy_score": 0.6476368310782089,
+      "shared_minutes": 286.28333333333336,
+      "joint_pass_completion_rate": 0.9907989554965314
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Pair with a faster recovery defender after aggressive rotations."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

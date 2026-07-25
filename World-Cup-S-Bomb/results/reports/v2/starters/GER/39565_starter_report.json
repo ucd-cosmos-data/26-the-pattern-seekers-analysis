@@ -1,0 +1,43 @@
+{
+  "team": "Germany",
+  "team_code": "GER",
+  "player_id": 39565,
+  "player": "Jamal Musiala",
+  "position": "Center Attacking Midfield",
+  "functional_role": "Progressive Winger",
+  "physical_scores": {
+    "aerial_dominance_index": 0.2,
+    "pressing_intensity_index": 14.120651909511068,
+    "speed_recovery_index": 5.910970566772075
+  },
+  "net_xg_contribution_per_90": 0.43528259149841886,
+  "top_chemistry_partners": [
+    {
+      "player_id": 3167,
+      "player": "Antonio Rüdiger",
+      "synergy_score": 0.5938274871720878,
+      "shared_minutes": 274.06666666666666,
+      "joint_pass_completion_rate": 0.9313188780991947
+    },
+    {
+      "player_id": 5579,
+      "player": "Joshua Kimmich",
+      "synergy_score": 0.5819500303638291,
+      "shared_minutes": 274.06666666666666,
+      "joint_pass_completion_rate": 0.9126910779580849
+    },
+    {
+      "player_id": 6322,
+      "player": "Niklas Süle",
+      "synergy_score": 0.5668134703030008,
+      "shared_minutes": 267.65,
+      "joint_pass_completion_rate": 0.9012708872675923
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Lead the first pressing trigger and protect the inside passing lane.",
+    "Avoid isolating this player in high-volume aerial matchups.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}

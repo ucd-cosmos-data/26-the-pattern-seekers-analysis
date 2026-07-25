@@ -1,0 +1,43 @@
+{
+  "team": "Germany",
+  "team_code": "GER",
+  "player_id": 3167,
+  "player": "Antonio Rüdiger",
+  "position": "Left Center Back",
+  "functional_role": "Sweeper CB",
+  "physical_scores": {
+    "aerial_dominance_index": 0.6666666666666666,
+    "pressing_intensity_index": 4.285714285714286,
+    "speed_recovery_index": 4.591836734693878
+  },
+  "net_xg_contribution_per_90": 0.29225990286734693,
+  "top_chemistry_partners": [
+    {
+      "player_id": 5570,
+      "player": "Manuel Neuer",
+      "synergy_score": 0.6565426545913458,
+      "shared_minutes": 294.0,
+      "joint_pass_completion_rate": 0.9896488249335978
+    },
+    {
+      "player_id": 6322,
+      "player": "Niklas Süle",
+      "synergy_score": 0.6520400160554496,
+      "shared_minutes": 287.5833333333333,
+      "joint_pass_completion_rate": 0.9950028810024265
+    },
+    {
+      "player_id": 5579,
+      "player": "Joshua Kimmich",
+      "synergy_score": 0.6177109031232603,
+      "shared_minutes": 294.0,
+      "joint_pass_completion_rate": 0.9311152369911293
+    }
+  ],
+  "recommended_tactical_tweaks": [
+    "Use a compact pressing trigger rather than sustained solo pressure.",
+    "Target this player on direct restarts and back-post deliveries.",
+    "Use recovery capacity to support higher attacking positions."
+  ],
+  "cohort_definition": "Top 342 tournament-minute players among players with at least one start"
+}
