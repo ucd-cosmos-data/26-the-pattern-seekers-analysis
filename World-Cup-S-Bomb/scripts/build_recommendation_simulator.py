@@ -353,6 +353,7 @@ def fit_propensity(
     return pd.DataFrame(
         {
             "possession_uid": test["possession_uid"].to_numpy(),
+            "raw_propensity": observed,
             "propensity": np.clip(observed, MIN_PROPENSITY, 1.0),
         }
     )
