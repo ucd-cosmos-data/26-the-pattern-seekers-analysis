@@ -34,18 +34,17 @@ England: no tactical change cleared the modeled effect floor. Primary review sig
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 82, INSUFFICIENT_MINUTES: 17.
 
-## V4 coach-facing player leaders
+## V4 role-relative player leaders
 
-1. John Stones — Holding Anchor; position-impact 57.3 (position rank 11), role score 57.6, OBV/90 +0.450
-2. Harry Kane — Target Forward; position-impact 52.8 (position rank 5), role score 52.1, OBV/90 -0.345
-3. Jordan Pickford — Goalkeeper; position-impact 52.4 (position rank 6), role score 52.4, OBV/90 +0.342
-4. Luke Shaw — Box-to-Box Runner; position-impact 50.5 (position rank 15), role score 55.3, OBV/90 +0.014
-5. Harry Maguire — Holding Anchor; position-impact 48.0 (position rank 19), role score 48.3, OBV/90 +0.494
+1. John Stones — Holding Anchor; score 57.6, role z +0.76, OBV/90 +0.450
+2. Luke Shaw — Box-to-Box Runner; score 55.3, role z +0.53, OBV/90 +0.014
+3. Jordan Pickford — Goalkeeper; score 52.4, role z +0.24, OBV/90 +0.342
+4. Harry Kane — Target Forward; score 52.1, role z +0.21, OBV/90 -0.345
+5. Harry Maguire — Holding Anchor; score 48.3, role z -0.17, OBV/90 +0.494
 
-_Only players with at least 300 tournament minutes are ranked. The role score
-stays normalized within functional role. The position-impact score is a
-separate within-position shortlist; attacking positions use 55% OBV-family
-value plus xG, progressive carries, and the SB360-informed final-third share._
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 

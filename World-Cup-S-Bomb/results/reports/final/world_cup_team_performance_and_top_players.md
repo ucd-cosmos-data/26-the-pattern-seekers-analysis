@@ -2,7 +2,7 @@
 
 ## Executive summary
 
-This report consolidates **32 national teams**, **342 tournament-role player profiles**, **64 matches**, and **11,016 analyzed possessions** into one coaching reference. It combines observed possession outcomes with the regularized empirical hurdle-pipeline scenario audit. The strongest use is opponent preparation, video-review prioritization, and formation of testable tactical hypotheses.
+This report consolidates **32 national teams**, **142 tournament-role player profiles**, **64 matches**, and **11,016 analyzed possessions** into one coaching reference. It combines observed possession outcomes with the regularized empirical hurdle-pipeline scenario audit. The strongest use is opponent preparation, video-review prioritization, and formation of testable tactical hypotheses.
 
 **Important boundary:** observed goals, xG, shots, box entries, and transition exposure describe this tournament sample. Expected net xG, EvA gaps, optimal styles, and substitution gains are model-generated scenarios. They are not causal claims, guarantees, transfer valuations, or replacements for scouting, medical, training, and match-context evidence.
 
@@ -15,50 +15,101 @@ This report consolidates **32 national teams**, **342 tournament-role player pro
 - **Mean EvA gap:** average difference between the best modeled tactic and the observed tactic. It identifies review candidates, not proven coaching errors.
 - **Wasted net xG:** cumulative modeled EvA gap across possessions. It scales with possession volume, so compare it alongside the mean gap.
 - **Physical matchup deltas:** lineup-minus-opponent aerial, pressing, and recovery proxies. Positive values indicate a modeled lineup edge.
-- **Position score (0–100):** a within-position, tournament-only composite of role-relevant percentiles. It cannot compare players across position groups.
+- **V4 evaluation score:** a role-relative tournament score centered at 50; 10 points equal one within-role population standard deviation. It is not an absolute or cross-role quality measure.
+
+## V4 validation and final metrics
+
+**Validation status: PASS.** The leakage-safe OOF audit covers **64 matches**, **32 teams**, and **9,685 possessions**.
+
+| Team/model validation metric | V4 final value |
+| --- | --- |
+| OOF positives | 13 |
+| OOF Brier score | 0.001339 |
+| OOF PR-AUC | 0.005958 |
+| OOF ROC-AUC | 0.689341 |
+| OOF unique probabilities | 8739 |
+| Locked holdout Brier score | 0.001478 |
+| Locked holdout PR-AUC | 0.016655 |
+| Locked holdout ROC-AUC | 0.742019 |
+
+| Player/report validation metric | V4 final value |
+| --- | --- |
+| Players before cutoff | 680 |
+| Eligible players (300+ minutes) | 142 |
+| Players excluded | 538 |
+| Successful action endpoints | 81,231 |
+| Linked SB360 actor snapshots | 72,016 |
+| Events with SB360 context | 203,454 |
+| Player heatmaps | 142 |
+| Team reports | 32 |
+| Compiled report files | 64 |
+| Eligible substitutions | 0 |
+| Suppressed substitutions | 3608 |
+
+All V4 acceptance gates passed, including missing-value-free output, complete OOF team coverage, held-out-match exclusion, the 300-minute cutoff, fullback spatial-role safeguards, exact pressure discounting, within-role normalization, SB360 coverage, counterfactual safety, compiled-report completeness, and locked-classifier replay.
+**Spatial boundary:** StatsBomb 360 contains event-time freeze-frame snapshots, not continuous optical tracking. Heatmaps show observed successful endpoints and visible actor snapshots; they do not interpolate unobserved runs.
+
+### V4 top role-relative player evaluations
+
+| Rank | Player | Functional role | Minutes | OBV/90 | Final third | Role z |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | Rodrigo Hernández Cascante | Holding Anchor | 414 | +0.6666 | 6.9% | +2.61 |
+| 2 | Young-Gwon Kim | Deep Playmaker | 373 | +0.4447 | 3.8% | +2.55 |
+| 3 | Wojciech Szczęsny | Goalkeeper | 390 | +0.5992 | 2.6% | +2.30 |
+| 4 | Borna Sosa | Box-to-Box Runner | 440 | +0.0706 | 31.1% | +2.19 |
+| 5 | Éder Gabriel Militão | Ball-Winner | 364 | +0.2005 | 19.9% | +1.70 |
+| 6 | Woo-Young Jung | Ball-Winner | 318 | +0.2307 | 17.3% | +1.67 |
+| 7 | Sergino Dest | Wide Creator | 308 | +0.0997 | 31.7% | +1.63 |
+| 8 | Kalidou Koulibaly | Deep Playmaker | 387 | +0.3210 | 3.3% | +1.44 |
+| 9 | João Félix Sequeira | Target Forward | 340 | -0.2163 | 47.7% | +1.41 |
+| 10 | Jin-Su Kim | Attacking Wingback | 341 | +0.0005 | 46.0% | +1.38 |
 
 ## Tournament overview
 
 | Team | Matches | Poss. | Goals | xG | Shot % | Box entry % | Transition xG conceded | Mean EvA gap | Modeled style |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Argentina | 7 | 639 | 14 | 13.48 | 13.9 | 28.5 | 0.00 | 0.0055 | Patient Build-up |
-| France | 7 | 616 | 16 | 11.75 | 14.1 | 30.8 | 0.02 | 0.0034 | Patient Build-up |
-| Brazil | 5 | 470 | 8 | 10.50 | 18.1 | 37.7 | 0.01 | 0.0046 | Patient Build-up |
-| England | 5 | 403 | 13 | 8.74 | 14.6 | 36.2 | 0.00 | 0.0008 | Patient Build-up |
-| Germany | 3 | 277 | 6 | 8.23 | 20.6 | 45.1 | 0.00 | 0.0069 | Patient Build-up |
-| Portugal | 5 | 456 | 12 | 7.31 | 14.0 | 34.9 | 0.42 | 0.0021 | Patient Build-up |
-| Croatia | 7 | 696 | 8 | 6.84 | 9.5 | 31.2 | 0.00 | 0.0029 | Patient Build-up |
-| Switzerland | 4 | 339 | 5 | 6.09 | 9.4 | 26.0 | 0.00 | 0.0027 | Patient Build-up |
-| Morocco | 7 | 552 | 5 | 5.13 | 9.6 | 21.9 | 0.04 | 0.0035 | Patient Build-up |
-| Netherlands | 5 | 427 | 10 | 4.99 | 8.7 | 31.1 | 0.02 | 0.0025 | Patient Build-up |
-| Spain | 4 | 372 | 9 | 4.75 | 12.1 | 32.5 | 0.00 | 0.0023 | Patient Build-up |
-| Senegal | 4 | 333 | 5 | 4.27 | 13.8 | 30.0 | 0.00 | 0.0041 | Patient Build-up |
-| Japan | 4 | 326 | 5 | 4.25 | 10.4 | 28.2 | 0.03 | 0.0083 | Patient Build-up |
-| Poland | 4 | 313 | 2 | 4.18 | 8.6 | 23.6 | 0.26 | 0.0021 | Patient Build-up |
-| United States | 4 | 333 | 3 | 3.94 | 12.6 | 34.8 | 0.00 | 0.0017 | Patient Build-up |
-| Canada | 3 | 272 | 2 | 3.93 | 11.8 | 30.1 | 0.04 | 0.0013 | Patient Build-up |
-| Iran | 3 | 234 | 4 | 3.83 | 11.1 | 29.5 | 0.00 | 0.0049 | Patient Build-up |
-| Ecuador | 3 | 253 | 4 | 3.81 | 9.9 | 31.6 | 0.00 | 0.0057 | Short Under Pressure |
-| Belgium | 3 | 242 | 1 | 3.68 | 12.8 | 33.9 | 0.00 | 0.0044 | Patient Build-up |
-| South Korea | 4 | 314 | 5 | 3.58 | 13.4 | 30.6 | 0.00 | 0.0012 | Patient Build-up |
-| Ghana | 3 | 260 | 5 | 3.35 | 9.2 | 26.2 | 0.00 | 0.0058 | Patient Build-up |
-| Uruguay | 3 | 248 | 2 | 3.27 | 12.9 | 32.3 | 0.00 | 0.0069 | Patient Build-up |
-| Saudi Arabia | 3 | 255 | 3 | 3.20 | 9.8 | 30.2 | 0.48 | 0.0037 | Patient Build-up |
-| Denmark | 3 | 270 | 1 | 3.19 | 11.1 | 36.7 | 0.00 | 0.0025 | Patient Build-up |
-| Serbia | 3 | 264 | 5 | 3.08 | 11.0 | 29.9 | 0.14 | 0.0029 | Patient Build-up |
-| Mexico | 3 | 263 | 2 | 3.06 | 13.7 | 34.6 | 0.00 | 0.0018 | Patient Build-up |
-| Cameroon | 3 | 247 | 4 | 2.93 | 9.7 | 30.0 | 0.00 | 0.0023 | Patient Build-up |
-| Tunisia | 3 | 283 | 1 | 2.41 | 10.2 | 30.4 | 0.00 | 0.0010 | Short Under Pressure |
-| Wales | 3 | 259 | 1 | 2.22 | 8.1 | 23.9 | 0.00 | 0.0019 | Patient Build-up |
-| Australia | 4 | 311 | 4 | 1.56 | 8.0 | 26.0 | 0.28 | 0.0043 | Patient Build-up |
-| Qatar | 3 | 255 | 1 | 1.39 | 7.5 | 20.8 | 0.00 | 0.0038 | Patient Build-up |
-| Costa Rica | 3 | 234 | 3 | 1.23 | 3.8 | 14.5 | 0.00 | 0.0048 | Patient Build-up |
+| Argentina | 7 | 639 | 14 | 13.48 | 13.9 | 28.5 | 0.00 | 0.0053 | No meaningful change |
+| France | 7 | 616 | 16 | 11.75 | 14.1 | 30.8 | 0.02 | 0.0031 | No meaningful change |
+| Brazil | 5 | 470 | 8 | 10.50 | 18.1 | 37.7 | 0.01 | 0.0042 | No meaningful change |
+| England | 5 | 403 | 13 | 8.74 | 14.6 | 36.2 | 0.00 | 0.0029 | No meaningful change |
+| Germany | 3 | 277 | 6 | 8.23 | 20.6 | 45.1 | 0.00 | 0.0057 | No meaningful change |
+| Portugal | 5 | 456 | 12 | 7.31 | 14.0 | 34.9 | 0.42 | 0.0018 | No meaningful change |
+| Croatia | 7 | 696 | 8 | 6.84 | 9.5 | 31.2 | 0.00 | 0.0016 | No meaningful change |
+| Switzerland | 4 | 339 | 5 | 6.09 | 9.4 | 26.0 | 0.00 | 0.0004 | No meaningful change |
+| Morocco | 7 | 552 | 5 | 5.13 | 9.6 | 21.9 | 0.04 | 0.0031 | No meaningful change |
+| Netherlands | 5 | 427 | 10 | 4.99 | 8.7 | 31.1 | 0.02 | 0.0025 | No meaningful change |
+| Spain | 4 | 372 | 9 | 4.75 | 12.1 | 32.5 | 0.00 | 0.0024 | No meaningful change |
+| Senegal | 4 | 333 | 5 | 4.27 | 13.8 | 30.0 | 0.00 | 0.0043 | No meaningful change |
+| Japan | 4 | 326 | 5 | 4.25 | 10.4 | 28.2 | 0.03 | 0.0054 | No meaningful change |
+| Poland | 4 | 313 | 2 | 4.18 | 8.6 | 23.6 | 0.26 | 0.0041 | Patient Build-up |
+| United States | 4 | 333 | 3 | 3.94 | 12.6 | 34.8 | 0.00 | 0.0011 | No meaningful change |
+| Canada | 3 | 272 | 2 | 3.93 | 11.8 | 30.1 | 0.04 | 0.0013 | No meaningful change |
+| Iran | 3 | 234 | 4 | 3.83 | 11.1 | 29.5 | 0.00 | 0.0036 | No meaningful change |
+| Ecuador | 3 | 253 | 4 | 3.81 | 9.9 | 31.6 | 0.00 | 0.0025 | No meaningful change |
+| Belgium | 3 | 242 | 1 | 3.68 | 12.8 | 33.9 | 0.00 | 0.0037 | No meaningful change |
+| South Korea | 4 | 314 | 5 | 3.58 | 13.4 | 30.6 | 0.00 | 0.0013 | No meaningful change |
+| Ghana | 3 | 260 | 5 | 3.35 | 9.2 | 26.2 | 0.00 | 0.0054 | Patient Build-up |
+| Uruguay | 3 | 248 | 2 | 3.27 | 12.9 | 32.3 | 0.00 | 0.0055 | No meaningful change |
+| Saudi Arabia | 3 | 255 | 3 | 3.20 | 9.8 | 30.2 | 0.48 | 0.0015 | No meaningful change |
+| Denmark | 3 | 270 | 1 | 3.19 | 11.1 | 36.7 | 0.00 | 0.0028 | No meaningful change |
+| Serbia | 3 | 264 | 5 | 3.08 | 11.0 | 29.9 | 0.14 | 0.0035 | No meaningful change |
+| Mexico | 3 | 263 | 2 | 3.06 | 13.7 | 34.6 | 0.00 | 0.0009 | No meaningful change |
+| Cameroon | 3 | 247 | 4 | 2.93 | 9.7 | 30.0 | 0.00 | 0.0002 | No meaningful change |
+| Tunisia | 3 | 283 | 1 | 2.41 | 10.2 | 30.4 | 0.00 | 0.0006 | No meaningful change |
+| Wales | 3 | 259 | 1 | 2.22 | 8.1 | 23.9 | 0.00 | 0.0018 | No meaningful change |
+| Australia | 4 | 311 | 4 | 1.56 | 8.0 | 26.0 | 0.28 | 0.0032 | Patient Build-up |
+| Qatar | 3 | 255 | 1 | 1.39 | 7.5 | 20.8 | 0.00 | 0.0021 | No meaningful change |
+| Costa Rica | 3 | 234 | 3 | 1.23 | 3.8 | 14.5 | 0.00 | 0.0032 | No meaningful change |
 
 The table is sorted by observed xG rather than a synthetic overall rank. That preserves the distinction between attack volume, transition control, and model-estimated tactical opportunity.
 
 # Team-by-team performance
 
 ## Argentina (ARG)
+
+**Dynamic tactical summary:** Argentina: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.135. Strongest positive squad synergy: Nicolás Hernán Otamendi + Damián Emiliano Martínez (0.927). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Argentina's total xG was among the tournament leaders, while its possession-to-shot rate was among the tournament leaders. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -73,31 +124,50 @@ Across the analyzed possessions, Argentina's total xG was among the tournament l
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 8.87; the possession-level scenario ceiling summed to 11.98, producing 3.10 modeled cumulative net xG of review opportunity and a 0.0055 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 8.46; the OOF scenario ceiling was 11.44. The cumulative review gap was 2.98, averaging 0.0053 per possession.
 
 Average lineup matchup deltas were **-0.043 aerial**, **-2.135 pressing**, and **+0.730 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 80 possessions with 1.05 cumulative modeled gap (0.0131 per possession).
+**Top positive player synergy:** Nicolás Hernán Otamendi + Damián Emiliano Martínez (0.927).
 
-**Best substitution scenario:** Thiago Ezequiel Almada for Julián Álvarez under Patient Build-up produced the largest estimated team gain (+0.0029 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 80 possessions with 1.00 cumulative modeled gap (0.0125 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 122, INSUFFICIENT_MINUTES: 18, GAIN_BELOW_THRESHOLD: 3.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Lautaro Javier Martínez | Forward | Target Forward | 273 | 84.1 | 0.943 |
-| 2 | Lionel Andrés Messi Cuccittini | Attacking Midfield/Wing | Progressive Winger | 734 | 80.4 | 1.004 |
-| 3 | Leandro Daniel Paredes | Defensive Midfield | Sweeper CB | 235 | 78.2 | 0.716 |
-| 4 | Damián Emiliano Martínez | Goalkeeper | Deep Playmaker | 734 | 65.6 | 0.016 |
-| 5 | Rodrigo Javier De Paul | Defensive Midfield | Wide Creator | 635 | 64.8 | 0.138 |
+| 1 | Lionel Andrés Messi Cuccittini | Attacking Midfield/Wing | Progressive Winger | 734 | 60.2 | 1.004 |
+| 2 | Enzo Fernandez | Defensive Midfield | Ball-Winner | 601 | 56.1 | 0.222 |
+| 3 | Ángel Fabián Di María Hernández | Central/Wide Midfield | Progressive Winger | 305 | 53.6 | 0.232 |
+| 4 | Julián Álvarez | Forward | Target Forward | 485 | 49.5 | 0.355 |
+| 5 | Rodrigo Javier De Paul | Defensive Midfield | Wide Creator | 635 | 46.2 | 0.138 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Australia (AUS)
 
-Across the analyzed possessions, Australia's total xG was among the lower values in this tournament sample, while its possession-to-shot rate was among the lower values in this tournament sample. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Australia: Patient Build-up led the observed baseline by 0.0032 mean EvA. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Harry Souttar + Kye Rowles (0.755). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Australia's total xG was among the lower values in this tournament sample, while its possession-to-shot rate was among the lower values in this tournament sample. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -110,29 +180,48 @@ Across the analyzed possessions, Australia's total xG was among the lower values
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 1.49; the possession-level scenario ceiling summed to 2.64, producing 1.15 modeled cumulative net xG of review opportunity and a 0.0043 mean EvA gap.
+The 64-match leave-one-match-out audit selected **Patient Build-up** most often. OOF actual expected Net xG was 1.75; the OOF scenario ceiling was 2.60. The cumulative review gap was 0.85, averaging 0.0032 per possession.
 
 Average lineup matchup deltas were **+0.083 aerial**, **+3.342 pressing**, and **-0.799 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 37 possessions with 0.33 cumulative modeled gap (0.0089 per possession).
+**Top positive player synergy:** Harry Souttar + Kye Rowles (0.755).
 
-**Best substitution scenario:** Jamie MacLaren for Mitchell Thomas Duke under Patient Build-up produced the largest estimated team gain (+0.0006 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 37 possessions with 0.22 cumulative modeled gap (0.0059 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `SUPPORTED_CHANGE`. The style change cleared the tactical effect floor.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Harry Souttar | Center Back | Holding Anchor | 387 | 57.3 | 0.070 |
-| 2 | Mathew Ryan | Goalkeeper | Deep Playmaker | 387 | 55.6 | 0.042 |
-| 3 | Aaron Mooy | Defensive Midfield | Box-to-Box Runner | 387 | 44.1 | 0.041 |
-| 4 | Jackson Irvine | Forward | Holding Anchor | 374 | 43.9 | 0.104 |
-| 5 | Mitchell Thomas Duke | Forward | Target Forward | 272 | 43.3 | 0.069 |
+| 1 | Mathew Ryan | Goalkeeper | Goalkeeper | 387 | 61.2 | 0.042 |
+| 2 | Aziz Eraltay Behich | Fullback/Wingback | Box-to-Box Runner | 387 | 48.1 | 0.036 |
+| 3 | Aaron Mooy | Defensive Midfield | Ball-Winner | 387 | 47.4 | 0.041 |
+| 4 | Harry Souttar | Center Back | Deep Playmaker | 387 | 46.2 | 0.070 |
+| 5 | Jackson Irvine | Forward | Ball-Winner | 374 | 43.0 | 0.104 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Belgium (BEL)
+
+**Dynamic tactical summary:** Belgium: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Belgium's total xG was near the tournament median, while its possession-to-shot rate was above the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -147,29 +236,43 @@ Across the analyzed possessions, Belgium's total xG was near the tournament medi
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 2.79; the possession-level scenario ceiling summed to 3.76, producing 0.97 modeled cumulative net xG of review opportunity and a 0.0044 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 2.69; the OOF scenario ceiling was 3.51. The cumulative review gap was 0.82, averaging 0.0037 per possession.
 
 Average lineup matchup deltas were **-0.008 aerial**, **+0.226 pressing**, and **-0.856 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 23 possessions with 0.24 cumulative modeled gap (0.0105 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Dries Mertens for Eden Hazard under Patient Build-up produced the largest estimated team gain (+0.0018 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 15 possessions with 0.20 cumulative modeled gap (0.0130 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 82, INSUFFICIENT_MINUTES: 17.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Thomas Meunier | Fullback/Wingback | Wide Creator | 217 | 53.8 | 0.087 |
-| 2 | Kevin De Bruyne | Attacking Midfield/Wing | Progressive Winger | 284 | 51.1 | 0.125 |
-| 3 | Jan Vertonghen | Center Back | Sweeper CB | 284 | 47.3 | 0.108 |
-| 4 | Thibaut Courtois | Goalkeeper | Deep Playmaker | 284 | 41.6 | 0.064 |
-| 5 | Timothy Castagne | Fullback/Wingback | Holding Anchor | 284 | 38.5 | 0.050 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Brazil (BRA)
+
+**Dynamic tactical summary:** Brazil: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -6.128. Strongest positive squad synergy: Thiago Emiliano da Silva + Marcos Aoás Corrêa (0.778). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Brazil's total xG was among the tournament leaders, while its possession-to-shot rate was among the tournament leaders. Its suppression of immediate opponent transition xG was below the tournament median (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -184,31 +287,50 @@ Across the analyzed possessions, Brazil's total xG was among the tournament lead
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 7.83; the possession-level scenario ceiling summed to 9.76, producing 1.93 modeled cumulative net xG of review opportunity and a 0.0046 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 7.02; the OOF scenario ceiling was 8.77. The cumulative review gap was 1.75, averaging 0.0042 per possession.
 
 Average lineup matchup deltas were **-0.126 aerial**, **-6.128 pressing**, and **+0.692 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 43 possessions with 0.51 cumulative modeled gap (0.0120 per possession).
+**Top positive player synergy:** Thiago Emiliano da Silva + Marcos Aoás Corrêa (0.778).
 
-**Best substitution scenario:** Weverton Pereira da Silva for Lucas Tolentino Coelho de Lima under Patient Build-up produced the largest estimated team gain (+0.0023 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 43 possessions with 0.47 cumulative modeled gap (0.0109 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 140, INSUFFICIENT_MINUTES: 25.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Raphael Dias Belloli | Attacking Midfield/Wing | Progressive Winger | 330 | 73.9 | 0.294 |
-| 2 | Éder Gabriel Militão | Fullback/Wingback | Box-to-Box Runner | 364 | 73.5 | 0.140 |
-| 3 | Neymar da Silva Santos Junior | Attacking Midfield/Wing | Progressive Winger | 281 | 69.5 | 0.731 |
-| 4 | Alex Sandro Lobo Silva | Fullback/Wingback | Sweeper CB | 200 | 68.2 | 0.101 |
-| 5 | Alisson Ramsés Becker | Goalkeeper | Deep Playmaker | 395 | 65.0 | 0.022 |
+| 1 | Éder Gabriel Militão | Fullback/Wingback | Ball-Winner | 364 | 67.0 | 0.140 |
+| 2 | Marcos Aoás Corrêa | Center Back | Holding Anchor | 455 | 60.3 | 0.279 |
+| 3 | Thiago Emiliano da Silva | Center Back | Holding Anchor | 409 | 60.0 | 0.170 |
+| 4 | Carlos Henrique Casimiro | Defensive Midfield | Ball-Winner | 409 | 56.3 | 0.301 |
+| 5 | Richarlison de Andrade | Forward | Target Forward | 328 | 53.3 | 0.458 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Cameroon (CMR)
 
-Across the analyzed possessions, Cameroon's total xG was among the lower values in this tournament sample, while its possession-to-shot rate was below the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Cameroon: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Direct Long Play to Patient Build-up). Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Cameroon's total xG was among the lower values in this tournament sample, while its possession-to-shot rate was below the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -221,29 +343,43 @@ Across the analyzed possessions, Cameroon's total xG was among the lower values 
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 2.33; the possession-level scenario ceiling summed to 2.84, producing 0.51 modeled cumulative net xG of review opportunity and a 0.0023 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 1.93; the OOF scenario ceiling was 1.98. The cumulative review gap was 0.05, averaging 0.0002 per possession.
 
 Average lineup matchup deltas were **+0.078 aerial**, **+4.206 pressing**, and **-0.111 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 27 possessions with 0.12 cumulative modeled gap (0.0044 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Christopher Wooh for André-Frank Zambo Anguissa under Patient Build-up produced the largest estimated team gain (+0.0019 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Direct Long Play were most often improved in the model by Patient Build-up. This pattern covered 5 possessions with 0.04 cumulative modeled gap (0.0073 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 106, INSUFFICIENT_MINUTES: 15.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Jean-Charles Castelletto | Center Back | Sweeper CB | 192 | 81.6 | 0.478 |
-| 2 | Nicolas Alexis Julio N'Koulou Ndoubena | Center Back | Holding Anchor | 192 | 57.1 | 0.216 |
-| 3 | Ngoran Suiru Fai Collins | Fullback/Wingback | Wide Creator | 293 | 51.9 | 0.043 |
-| 4 | André-Frank Zambo Anguissa | Defensive Midfield | Box-to-Box Runner | 277 | 47.6 | 0.057 |
-| 5 | Jean-Eric Maxim Choupo-Moting | Forward | Target Forward | 270 | 44.9 | 0.186 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Canada (CAN)
+
+**Dynamic tactical summary:** Canada: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -1.282. Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Canada's total xG was near the tournament median, while its possession-to-shot rate was near the tournament median. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -258,31 +394,45 @@ Across the analyzed possessions, Canada's total xG was near the tournament media
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 2.71; the possession-level scenario ceiling summed to 3.02, producing 0.31 modeled cumulative net xG of review opportunity and a 0.0013 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 2.86; the OOF scenario ceiling was 3.17. The cumulative review gap was 0.31, averaging 0.0013 per possession.
 
 Average lineup matchup deltas were **-0.027 aerial**, **-1.282 pressing**, and **+0.782 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 31 possessions with 0.07 cumulative modeled gap (0.0021 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** David Wallace Wotherspoon for Alphonso Davies under Patient Build-up produced the largest estimated team gain (+0.0028 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 10 possessions with 0.09 cumulative modeled gap (0.0086 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 74, INSUFFICIENT_MINUTES: 14.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Alistair Johnston | Fullback/Wingback | Box-to-Box Runner | 285 | 74.8 | 0.283 |
-| 2 | Jonathan David | Forward | Target Forward | 202 | 64.2 | 0.359 |
-| 3 | Alphonso Davies | Central/Wide Midfield | Progressive Winger | 285 | 63.6 | 0.307 |
-| 4 | Steven de Sousa Vitoria | Center Back | Holding Anchor | 285 | 59.0 | 0.057 |
-| 5 | Tajon Buchanan | Central/Wide Midfield | Progressive Winger | 270 | 56.9 | 0.278 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Costa Rica (CRC)
 
-Across the analyzed possessions, Costa Rica's total xG was among the lower values in this tournament sample, while its possession-to-shot rate was among the lower values in this tournament sample. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Costa Rica: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Costa Rica's total xG was among the lower values in this tournament sample, while its possession-to-shot rate was among the lower values in this tournament sample. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -295,31 +445,45 @@ Across the analyzed possessions, Costa Rica's total xG was among the lower value
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 1.30; the possession-level scenario ceiling summed to 2.23, producing 0.93 modeled cumulative net xG of review opportunity and a 0.0048 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 1.59; the OOF scenario ceiling was 2.20. The cumulative review gap was 0.61, averaging 0.0032 per possession.
 
 Average lineup matchup deltas were **+0.101 aerial**, **+0.962 pressing**, and **-0.471 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 34 possessions with 0.32 cumulative modeled gap (0.0094 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Daniel Alonso Chacón Salas for Jewison Bennette under Patient Build-up produced the largest estimated team gain (+0.0007 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 17 possessions with 0.15 cumulative modeled gap (0.0088 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 105, INSUFFICIENT_MINUTES: 16.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Francisco Javier Calvo Quesada | Center Back | Box-to-Box Runner | 194 | 59.8 | 0.070 |
-| 2 | Keylor Navas Gamboa | Goalkeeper | Deep Playmaker | 294 | 46.9 | 0.009 |
-| 3 | Yeltsin Ignacio Tejeda Valverde | Central/Wide Midfield | Holding Anchor | 287 | 46.4 | 0.187 |
-| 4 | Óscar Esau Duarte Gaitán | Center Back | Holding Anchor | 294 | 45.7 | 0.015 |
-| 5 | Keysher Fuller Spence | Fullback/Wingback | Holding Anchor | 268 | 45.5 | 0.116 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Croatia (CRO)
 
-Across the analyzed possessions, Croatia's total xG was among the tournament leaders, while its possession-to-shot rate was below the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Croatia: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.690. Strongest positive squad synergy: Dominik Livaković + Joško Gvardiol (0.925). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Croatia's total xG was among the tournament leaders, while its possession-to-shot rate was below the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -332,29 +496,48 @@ Across the analyzed possessions, Croatia's total xG was among the tournament lea
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 6.57; the possession-level scenario ceiling summed to 8.35, producing 1.78 modeled cumulative net xG of review opportunity and a 0.0029 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 6.35; the OOF scenario ceiling was 7.33. The cumulative review gap was 0.98, averaging 0.0016 per possession.
 
 Average lineup matchup deltas were **+0.041 aerial**, **-2.690 pressing**, and **+0.290 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 72 possessions with 0.48 cumulative modeled gap (0.0066 per possession).
+**Top positive player synergy:** Dominik Livaković + Joško Gvardiol (0.925).
 
-**Best substitution scenario:** Nikola Vlašić for Mateo Kovačić under Patient Build-up produced the largest estimated team gain (-0.0000 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 34 possessions with 0.21 cumulative modeled gap (0.0061 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 84, INSUFFICIENT_MINUTES: 15.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Luka Modrić | Central/Wide Midfield | Wide Creator | 673 | 81.4 | 0.241 |
-| 2 | Marcelo Brozović | Defensive Midfield | Box-to-Box Runner | 570 | 78.4 | 0.288 |
-| 3 | Dominik Livaković | Goalkeeper | Deep Playmaker | 720 | 73.4 | 0.037 |
-| 4 | Mateo Kovačić | Central/Wide Midfield | Box-to-Box Runner | 650 | 71.8 | 0.121 |
-| 5 | Marko Livaja | Forward | Target Forward | 256 | 67.7 | 0.629 |
+| 1 | Borna Sosa | Fullback/Wingback | Box-to-Box Runner | 440 | 71.9 | 0.061 |
+| 2 | Luka Modrić | Central/Wide Midfield | Ball-Winner | 673 | 59.9 | 0.241 |
+| 3 | Josip Juranović | Fullback/Wingback | Wide Creator | 624 | 59.2 | 0.058 |
+| 4 | Dominik Livaković | Goalkeeper | Goalkeeper | 720 | 58.3 | 0.037 |
+| 5 | Mateo Kovačić | Central/Wide Midfield | Ball-Winner | 650 | 55.5 | 0.121 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Denmark (DEN)
+
+**Dynamic tactical summary:** Denmark: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.172. Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Denmark's total xG was below the tournament median, while its possession-to-shot rate was near the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -369,31 +552,45 @@ Across the analyzed possessions, Denmark's total xG was below the tournament med
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 2.61; the possession-level scenario ceiling summed to 3.23, producing 0.62 modeled cumulative net xG of review opportunity and a 0.0025 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 2.62; the OOF scenario ceiling was 3.31. The cumulative review gap was 0.69, averaging 0.0028 per possession.
 
 Average lineup matchup deltas were **-0.157 aerial**, **-2.172 pressing**, and **-0.546 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 37 possessions with 0.20 cumulative modeled gap (0.0054 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Mathias Jensen for Kasper Dolberg under Patient Build-up produced the largest estimated team gain (+0.0010 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 37 possessions with 0.25 cumulative modeled gap (0.0067 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 87, INSUFFICIENT_MINUTES: 12.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Joachim Andersen | Center Back | Sweeper CB | 291 | 66.7 | 0.135 |
-| 2 | Christian Dannemann Eriksen | Central/Wide Midfield | Ball-Winner | 291 | 65.5 | 0.131 |
-| 3 | Pierre-Emile Højbjerg | Central/Wide Midfield | Box-to-Box Runner | 291 | 50.9 | 0.079 |
-| 4 | Kasper Schmeichel | Goalkeeper | Deep Playmaker | 291 | 48.8 | 0.043 |
-| 5 | Andreas Christensen | Center Back | Sweeper CB | 291 | 48.6 | 0.255 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Ecuador (ECU)
 
-Across the analyzed possessions, Ecuador's total xG was near the tournament median, while its possession-to-shot rate was near the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Ecuador: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Patient Build-up to Short Under Pressure). Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Ecuador's total xG was near the tournament median, while its possession-to-shot rate was near the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -406,31 +603,45 @@ Across the analyzed possessions, Ecuador's total xG was near the tournament medi
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Short Under Pressure** most often. Observed expected net xG was 2.63; the possession-level scenario ceiling summed to 3.87, producing 1.24 modeled cumulative net xG of review opportunity and a 0.0057 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 2.51; the OOF scenario ceiling was 3.07. The cumulative review gap was 0.56, averaging 0.0025 per possession.
 
 Average lineup matchup deltas were **-0.004 aerial**, **+1.896 pressing**, and **+0.400 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Patient Build-up were most often improved in the model by Short Under Pressure. This pattern covered 63 possessions with 0.48 cumulative modeled gap (0.0077 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Djorkaeff Neicer Reasco González for Gonzalo Jordy Plata Jiménez under Short Under Pressure produced the largest estimated team gain (+0.0021 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Patient Build-up were most often improved in the model by Short Under Pressure. This pattern covered 22 possessions with 0.15 cumulative modeled gap (0.0070 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 68, INSUFFICIENT_MINUTES: 9.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Pervis Josué Estupiñán Tenorio | Fullback/Wingback | Wide Creator | 288 | 68.9 | 0.130 |
-| 2 | Angelo Smit Preciado Quiñónez | Fullback/Wingback | Wide Creator | 276 | 61.4 | 0.055 |
-| 3 | Enner Remberto Valencia Lastra | Attacking Midfield/Wing | Target Forward | 262 | 57.0 | 0.665 |
-| 4 | Moisés Isaac Caicedo Corozo | Defensive Midfield | Box-to-Box Runner | 283 | 56.7 | 0.232 |
-| 5 | Piero Martín Hincapié Reyna | Center Back | Holding Anchor | 288 | 55.8 | 0.055 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## England (ENG)
 
-Across the analyzed possessions, England's total xG was among the tournament leaders, while its possession-to-shot rate was among the tournament leaders. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** England: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -3.654. Strongest positive squad synergy: John Stones + Jordan Pickford (0.815). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, England's total xG was among the tournament leaders, while its possession-to-shot rate was among the tournament leaders. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -443,29 +654,48 @@ Across the analyzed possessions, England's total xG was among the tournament lea
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 5.60; the possession-level scenario ceiling summed to 5.90, producing 0.30 modeled cumulative net xG of review opportunity and a 0.0008 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 4.78; the OOF scenario ceiling was 5.82. The cumulative review gap was 1.04, averaging 0.0029 per possession.
 
 Average lineup matchup deltas were **+0.012 aerial**, **-3.654 pressing**, and **+0.987 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 36 possessions with 0.06 cumulative modeled gap (0.0016 per possession).
+**Top positive player synergy:** John Stones + Jordan Pickford (0.815).
 
-**Best substitution scenario:** Trent Alexander-Arnold for Bukayo Saka under Patient Build-up produced the largest estimated team gain (+0.0020 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 36 possessions with 0.30 cumulative modeled gap (0.0083 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 82, INSUFFICIENT_MINUTES: 17.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Harry Kane | Forward | Target Forward | 422 | 68.7 | 0.517 |
-| 2 | Jordan Pickford | Goalkeeper | Deep Playmaker | 486 | 64.1 | 0.029 |
-| 3 | Harry Maguire | Center Back | Sweeper CB | 454 | 62.3 | 0.207 |
-| 4 | Jude Bellingham | Defensive Midfield | Box-to-Box Runner | 442 | 60.2 | 0.216 |
-| 5 | Bukayo Saka | Attacking Midfield/Wing | Ball-Winner | 291 | 59.4 | 0.210 |
+| 1 | John Stones | Center Back | Holding Anchor | 465 | 57.6 | 0.252 |
+| 2 | Luke Shaw | Fullback/Wingback | Box-to-Box Runner | 457 | 55.3 | 0.088 |
+| 3 | Jordan Pickford | Goalkeeper | Goalkeeper | 486 | 52.4 | 0.029 |
+| 4 | Harry Kane | Forward | Target Forward | 422 | 52.1 | 0.517 |
+| 5 | Harry Maguire | Center Back | Holding Anchor | 454 | 48.3 | 0.207 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## France (FRA)
+
+**Dynamic tactical summary:** France: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Wide Retreating Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Raphaël Varane + Aurélien Djani Tchouaméni (0.842). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, France's total xG was among the tournament leaders, while its possession-to-shot rate was among the tournament leaders. Its suppression of immediate opponent transition xG was below the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -480,29 +710,48 @@ Across the analyzed possessions, France's total xG was among the tournament lead
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 7.69; the possession-level scenario ceiling summed to 9.50, producing 1.81 modeled cumulative net xG of review opportunity and a 0.0034 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 7.61; the OOF scenario ceiling was 9.26. The cumulative review gap was 1.65, averaging 0.0031 per possession.
 
 Average lineup matchup deltas were **+0.105 aerial**, **+1.067 pressing**, and **-0.652 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 60 possessions with 0.37 cumulative modeled gap (0.0061 per possession).
+**Top positive player synergy:** Raphaël Varane + Aurélien Djani Tchouaméni (0.842).
 
-**Best substitution scenario:** Ibrahima Konaté for Antoine Griezmann under Patient Build-up produced the largest estimated team gain (-0.0001 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 53 possessions with 0.36 cumulative modeled gap (0.0068 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 122, INSUFFICIENT_MINUTES: 19, GAIN_BELOW_THRESHOLD: 2.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Olivier Giroud | Forward | Target Forward | 433 | 82.7 | 0.633 |
-| 2 | Randal Kolo Muani | Forward | Target Forward | 204 | 79.9 | 0.890 |
-| 3 | Kylian Mbappé Lottin | Forward | Progressive Winger | 654 | 75.1 | 0.728 |
-| 4 | Theo Bernard François Hernández | Fullback/Wingback | Box-to-Box Runner | 548 | 71.2 | 0.118 |
-| 5 | Antoine Griezmann | Attacking Midfield/Wing | Wide Creator | 586 | 66.4 | 0.149 |
+| 1 | Ousmane Dembélé | Attacking Midfield/Wing | Progressive Winger | 448 | 61.3 | 0.119 |
+| 2 | Olivier Giroud | Forward | Target Forward | 433 | 59.2 | 0.633 |
+| 3 | Aurélien Djani Tchouaméni | Defensive Midfield | Ball-Winner | 662 | 58.8 | 0.227 |
+| 4 | Jules Koundé | Fullback/Wingback | Wide Creator | 514 | 55.4 | 0.074 |
+| 5 | Kylian Mbappé Lottin | Forward | Progressive Winger | 654 | 55.1 | 0.728 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Germany (GER)
+
+**Dynamic tactical summary:** Germany: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Germany's total xG was among the tournament leaders, while its possession-to-shot rate was among the tournament leaders. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -517,29 +766,43 @@ Across the analyzed possessions, Germany's total xG was among the tournament lea
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 5.20; the possession-level scenario ceiling summed to 6.89, producing 1.69 modeled cumulative net xG of review opportunity and a 0.0069 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 4.82; the OOF scenario ceiling was 6.23. The cumulative review gap was 1.41, averaging 0.0057 per possession.
 
 Average lineup matchup deltas were **-0.032 aerial**, **+0.154 pressing**, and **-0.075 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 32 possessions with 0.55 cumulative modeled gap (0.0172 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Youssoufa Moukoko for Thomas Müller under Patient Build-up produced the largest estimated team gain (+0.0006 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 32 possessions with 0.43 cumulative modeled gap (0.0133 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 84, INSUFFICIENT_MINUTES: 15.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Joshua Kimmich | Fullback/Wingback | Wide Creator | 294 | 79.2 | 0.202 |
-| 2 | Jamal Musiala | Attacking Midfield/Wing | Progressive Winger | 274 | 78.5 | 0.435 |
-| 3 | Niklas Süle | Fullback/Wingback | Sweeper CB | 288 | 63.5 | 0.140 |
-| 4 | David Raum | Fullback/Wingback | Wide Creator | 250 | 61.3 | 0.060 |
-| 5 | İlkay Gündoğan | Attacking Midfield/Wing | Box-to-Box Runner | 190 | 61.0 | 0.620 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Ghana (GHA)
+
+**Dynamic tactical summary:** Ghana: Patient Build-up led the observed baseline by 0.0054 mean EvA. Primary review signal: transition review against Wide Retreating Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Thomas Teye Partey + Mohamed Salisu (0.663). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Ghana's total xG was below the tournament median, while its possession-to-shot rate was below the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -554,29 +817,47 @@ Across the analyzed possessions, Ghana's total xG was below the tournament media
 | Most frequent attacking style | Short Under Pressure |
 | Most frequent defensive style | Compact Pressure Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 1.77; the possession-level scenario ceiling summed to 3.09, producing 1.31 modeled cumulative net xG of review opportunity and a 0.0058 mean EvA gap.
+The 64-match leave-one-match-out audit selected **Patient Build-up** most often. OOF actual expected Net xG was 2.27; the OOF scenario ceiling was 3.48. The cumulative review gap was 1.21, averaging 0.0054 per possession.
 
 Average lineup matchup deltas were **-0.156 aerial**, **+1.137 pressing**, and **+0.026 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 36 possessions with 0.41 cumulative modeled gap (0.0114 per possession).
+**Top positive player synergy:** Thomas Teye Partey + Mohamed Salisu (0.663).
 
-**Best substitution scenario:** Kamaldeen Sulemana for Jordan Ayew under Patient Build-up produced the largest estimated team gain (+0.0021 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 36 possessions with 0.35 cumulative modeled gap (0.0097 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `SUPPORTED_CHANGE`. The style change cleared the tactical effect floor.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Mohammed Kudus | Attacking Midfield/Wing | Progressive Winger | 255 | 59.8 | 0.243 |
-| 2 | Thomas Teye Partey | Defensive Midfield | Box-to-Box Runner | 301 | 52.7 | 0.126 |
-| 3 | Mohamed Salisu | Center Back | Sweeper CB | 301 | 50.1 | 0.169 |
-| 4 | Lawrence Ati-Zigi | Goalkeeper | Deep Playmaker | 301 | 46.3 | 0.016 |
-| 5 | Daniel Amartey | Center Back | Sweeper CB | 301 | 46.0 | 0.076 |
+| 1 | Thomas Teye Partey | Defensive Midfield | Ball-Winner | 301 | 56.1 | 0.126 |
+| 2 | Daniel Amartey | Center Back | Deep Playmaker | 301 | 54.2 | 0.076 |
+| 3 | Lawrence Ati-Zigi | Goalkeeper | Goalkeeper | 301 | 47.8 | 0.016 |
+| 4 | Mohamed Salisu | Center Back | Deep Playmaker | 301 | 47.4 | 0.169 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Iran (IRN)
+
+**Dynamic tactical summary:** Iran: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Morteza Pouraliganji + Seyed Majid Hosseini (0.669). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Iran's total xG was near the tournament median, while its possession-to-shot rate was near the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -591,29 +872,46 @@ Across the analyzed possessions, Iran's total xG was near the tournament median,
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 2.03; the possession-level scenario ceiling summed to 2.99, producing 0.96 modeled cumulative net xG of review opportunity and a 0.0049 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 1.90; the OOF scenario ceiling was 2.60. The cumulative review gap was 0.69, averaging 0.0036 per possession.
 
 Average lineup matchup deltas were **+0.058 aerial**, **+1.725 pressing**, and **-1.059 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 31 possessions with 0.28 cumulative modeled gap (0.0091 per possession).
+**Top positive player synergy:** Morteza Pouraliganji + Seyed Majid Hosseini (0.669).
 
-**Best substitution scenario:** Saman Ghoddos for Milad Mohammadi under Patient Build-up produced the largest estimated team gain (+0.0014 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 20 possessions with 0.18 cumulative modeled gap (0.0088 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 96, INSUFFICIENT_MINUTES: 14.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Morteza Pouraliganji | Center Back | Holding Anchor | 305 | 68.5 | 0.125 |
-| 2 | Ramin Rezaeian | Fullback/Wingback | Wide Creator | 202 | 62.9 | 0.162 |
-| 3 | Mehdi Taremi | Forward | Ball-Winner | 305 | 62.0 | 0.447 |
-| 4 | Ehsan Hajsafi | Fullback/Wingback | Wide Creator | 250 | 49.5 | 0.054 |
-| 5 | Seyed Majid Hosseini | Center Back | Box-to-Box Runner | 305 | 47.8 | 0.027 |
+| 1 | Mehdi Taremi | Forward | Target Forward | 305 | 60.7 | 0.447 |
+| 2 | Morteza Pouraliganji | Center Back | Deep Playmaker | 305 | 46.5 | 0.125 |
+| 3 | Seyed Majid Hosseini | Center Back | Deep Playmaker | 305 | 31.4 | 0.027 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Japan (JPN)
+
+**Dynamic tactical summary:** Japan: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Maya Yoshida + Shūichi Gonda (0.773). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Japan's total xG was above the tournament median, while its possession-to-shot rate was near the tournament median. Its suppression of immediate opponent transition xG was below the tournament median (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -628,29 +926,48 @@ Across the analyzed possessions, Japan's total xG was above the tournament media
 | Most frequent attacking style | Short Under Pressure |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 3.45; the possession-level scenario ceiling summed to 5.75, producing 2.30 modeled cumulative net xG of review opportunity and a 0.0083 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 3.12; the OOF scenario ceiling was 4.62. The cumulative review gap was 1.50, averaging 0.0054 per possession.
 
 Average lineup matchup deltas were **-0.029 aerial**, **+10.178 pressing**, and **-0.086 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 47 possessions with 0.69 cumulative modeled gap (0.0146 per possession).
+**Top positive player synergy:** Maya Yoshida + Shūichi Gonda (0.773).
 
-**Best substitution scenario:** Ao Tanaka for Ritsu Doan under Patient Build-up produced the largest estimated team gain (+0.0003 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 38 possessions with 0.42 cumulative modeled gap (0.0111 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 105, INSUFFICIENT_MINUTES: 16.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Wataru Endo | Defensive Midfield | Box-to-Box Runner | 326 | 64.0 | 0.095 |
-| 2 | Hidemasa Morita | Defensive Midfield | Box-to-Box Runner | 298 | 58.8 | 0.101 |
-| 3 | Shūichi Gonda | Goalkeeper | Deep Playmaker | 413 | 54.1 | 0.015 |
-| 4 | Maya Yoshida | Center Back | Holding Anchor | 413 | 52.2 | 0.223 |
-| 5 | Yuto Nagatomo | Fullback/Wingback | Wide Creator | 210 | 50.9 | 0.036 |
+| 1 | Shūichi Gonda | Goalkeeper | Goalkeeper | 413 | 56.8 | 0.015 |
+| 2 | Wataru Endo | Defensive Midfield | Ball-Winner | 326 | 55.4 | 0.095 |
+| 3 | Maya Yoshida | Center Back | Deep Playmaker | 413 | 46.6 | 0.223 |
+| 4 | Junya Ito | Fullback/Wingback | Attacking Wingback | 346 | 44.9 | 0.043 |
+| 5 | Daichi Kamada | Attacking Midfield/Wing | Ball-Winner | 337 | 26.7 | 0.131 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Mexico (MEX)
+
+**Dynamic tactical summary:** Mexico: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Wide Retreating Block (Direct Long Play to Patient Build-up). Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Mexico's total xG was below the tournament median, while its possession-to-shot rate was above the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -665,29 +982,43 @@ Across the analyzed possessions, Mexico's total xG was below the tournament medi
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 2.51; the possession-level scenario ceiling summed to 2.95, producing 0.44 modeled cumulative net xG of review opportunity and a 0.0018 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 1.93; the OOF scenario ceiling was 2.14. The cumulative review gap was 0.21, averaging 0.0009 per possession.
 
 Average lineup matchup deltas were **+0.071 aerial**, **+1.266 pressing**, and **-0.714 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Direct Long Play were most often improved in the model by Patient Build-up. This pattern covered 15 possessions with 0.12 cumulative modeled gap (0.0077 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Rogelio Gabriel Funes Mori for Ernesto Alexis Vega Rojas under Patient Build-up produced the largest estimated team gain (+0.0002 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Direct Long Play were most often improved in the model by Patient Build-up. This pattern covered 6 possessions with 0.05 cumulative modeled gap (0.0087 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 95, INSUFFICIENT_MINUTES: 15.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Hirving Rodrigo Lozano Bahena | Attacking Midfield/Wing | Progressive Winger | 267 | 61.3 | 0.123 |
-| 2 | Jesús Daniel Gallardo Vasconcelos | Fullback/Wingback | Wide Creator | 292 | 59.1 | 0.036 |
-| 3 | Ernesto Alexis Vega Rojas | Attacking Midfield/Wing | Ball-Winner | 194 | 56.5 | 0.327 |
-| 4 | Francisco Guillermo Ochoa Magaña | Goalkeeper | Deep Playmaker | 292 | 51.2 | 0.055 |
-| 5 | Luis Gerardo Chávez Magallón | Defensive Midfield | Ball-Winner | 292 | 40.9 | 0.109 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Morocco (MAR)
+
+**Dynamic tactical summary:** Morocco: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Wide Retreating Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Sofyan Amrabat + Yassine Bounou (0.877). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Morocco's total xG was above the tournament median, while its possession-to-shot rate was below the tournament median. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -702,29 +1033,48 @@ Across the analyzed possessions, Morocco's total xG was above the tournament med
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 4.27; the possession-level scenario ceiling summed to 5.93, producing 1.66 modeled cumulative net xG of review opportunity and a 0.0035 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 4.34; the OOF scenario ceiling was 5.82. The cumulative review gap was 1.48, averaging 0.0031 per possession.
 
 Average lineup matchup deltas were **-0.018 aerial**, **+4.404 pressing**, and **-0.129 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 61 possessions with 0.44 cumulative modeled gap (0.0073 per possession).
+**Top positive player synergy:** Sofyan Amrabat + Yassine Bounou (0.877).
 
-**Best substitution scenario:** Ilias Chair for Selim Amallah under Patient Build-up produced the largest estimated team gain (+0.0015 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 55 possessions with 0.37 cumulative modeled gap (0.0068 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 128, INSUFFICIENT_MINUTES: 22, GAIN_BELOW_THRESHOLD: 4.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Achraf Hakimi Mouh | Fullback/Wingback | Box-to-Box Runner | 661 | 79.0 | 0.171 |
-| 2 | Romain Saïss | Center Back | Holding Anchor | 486 | 71.4 | 0.148 |
-| 3 | Yassine Bounou | Goalkeeper | Deep Playmaker | 603 | 68.4 | 0.041 |
-| 4 | Achraf Dari | Center Back | Sweeper CB | 200 | 60.2 | 0.265 |
-| 5 | Hakim Ziyech | Attacking Midfield/Wing | Ball-Winner | 663 | 58.7 | 0.175 |
+| 1 | Sofiane Boufal | Central/Wide Midfield | Progressive Winger | 477 | 60.5 | 0.097 |
+| 2 | Romain Saïss | Center Back | Deep Playmaker | 486 | 59.6 | 0.148 |
+| 3 | Yahia Attiyat allah | Fullback/Wingback | Box-to-Box Runner | 350 | 58.1 | 0.123 |
+| 4 | Achraf Hakimi Mouh | Fullback/Wingback | Wide Creator | 661 | 53.7 | 0.171 |
+| 5 | Yassine Bounou | Goalkeeper | Goalkeeper | 603 | 52.3 | 0.041 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Netherlands (NED)
+
+**Dynamic tactical summary:** Netherlands: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Virgil van Dijk + Andries Noppert (0.840). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Netherlands's total xG was above the tournament median, while its possession-to-shot rate was among the lower values in this tournament sample. Its suppression of immediate opponent transition xG was below the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -739,31 +1089,50 @@ Across the analyzed possessions, Netherlands's total xG was above the tournament
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 4.09; the possession-level scenario ceiling summed to 5.03, producing 0.94 modeled cumulative net xG of review opportunity and a 0.0025 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 4.46; the OOF scenario ceiling was 5.38. The cumulative review gap was 0.92, averaging 0.0025 per possession.
 
 Average lineup matchup deltas were **+0.024 aerial**, **+0.739 pressing**, and **+0.057 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 41 possessions with 0.23 cumulative modeled gap (0.0056 per possession).
+**Top positive player synergy:** Virgil van Dijk + Andries Noppert (0.840).
 
-**Best substitution scenario:** Kenneth Taylor for Teun Koopmeiners under Patient Build-up produced the largest estimated team gain (+0.0015 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 29 possessions with 0.22 cumulative modeled gap (0.0077 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 92, INSUFFICIENT_MINUTES: 18.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Andries Noppert | Goalkeeper | Deep Playmaker | 510 | 70.0 | 0.069 |
-| 2 | Daley Blind | Fullback/Wingback | Box-to-Box Runner | 452 | 68.9 | 0.151 |
-| 3 | Frenkie de Jong | Defensive Midfield | Box-to-Box Runner | 499 | 63.4 | 0.194 |
-| 4 | Teun Koopmeiners | Defensive Midfield | Box-to-Box Runner | 242 | 57.6 | 0.360 |
-| 5 | Memphis Depay | Forward | Target Forward | 316 | 54.9 | 0.339 |
+| 1 | Jurriën David Norman Timber | Center Back | Ball-Winner | 409 | 60.4 | 0.073 |
+| 2 | Virgil van Dijk | Center Back | Deep Playmaker | 510 | 58.8 | 0.258 |
+| 3 | Frenkie de Jong | Defensive Midfield | Ball-Winner | 499 | 55.5 | 0.194 |
+| 4 | Nathan Aké | Center Back | Holding Anchor | 506 | 49.9 | 0.086 |
+| 5 | Andries Noppert | Goalkeeper | Goalkeeper | 510 | 41.3 | 0.069 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Poland (POL)
 
-Across the analyzed possessions, Poland's total xG was near the tournament median, while its possession-to-shot rate was among the lower values in this tournament sample. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Poland: Patient Build-up led the observed baseline by 0.0041 mean EvA. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Kamil Glik + Matty Cash (0.756). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Poland's total xG was near the tournament median, while its possession-to-shot rate was among the lower values in this tournament sample. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -776,31 +1145,50 @@ Across the analyzed possessions, Poland's total xG was near the tournament media
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 2.78; the possession-level scenario ceiling summed to 3.37, producing 0.59 modeled cumulative net xG of review opportunity and a 0.0021 mean EvA gap.
+The 64-match leave-one-match-out audit selected **Patient Build-up** most often. OOF actual expected Net xG was 2.57; the OOF scenario ceiling was 3.72. The cumulative review gap was 1.15, averaging 0.0041 per possession.
 
 Average lineup matchup deltas were **+0.054 aerial**, **+1.148 pressing**, and **-0.413 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Direct Long Play were most often improved in the model by Patient Build-up. This pattern covered 22 possessions with 0.15 cumulative modeled gap (0.0069 per possession).
+**Top positive player synergy:** Kamil Glik + Matty Cash (0.756).
 
-**Best substitution scenario:** Michał Skóraś for Przemysław Frankowski under Patient Build-up produced the largest estimated team gain (+0.0014 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 32 possessions with 0.22 cumulative modeled gap (0.0068 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 90, INSUFFICIENT_MINUTES: 20.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `SUPPORTED_CHANGE`. The style change cleared the tactical effect floor.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Robert Lewandowski | Forward | Target Forward | 390 | 77.6 | 0.733 |
-| 2 | Piotr Zieliński | Central/Wide Midfield | Box-to-Box Runner | 344 | 62.8 | 0.208 |
-| 3 | Wojciech Szczęsny | Goalkeeper | Deep Playmaker | 390 | 56.6 | 0.039 |
-| 4 | Jakub Piotr Kiwior | Center Back | Holding Anchor | 377 | 40.1 | 0.079 |
-| 5 | Jakub Kamiński | Central/Wide Midfield | Ball-Winner | 254 | 39.6 | 0.095 |
+| 1 | Wojciech Szczęsny | Goalkeeper | Goalkeeper | 390 | 73.0 | 0.039 |
+| 2 | Piotr Zieliński | Central/Wide Midfield | Wide Creator | 344 | 57.9 | 0.208 |
+| 3 | Matty Cash | Fullback/Wingback | Wide Creator | 390 | 57.0 | 0.031 |
+| 4 | Grzegorz Krychowiak | Defensive Midfield | Ball-Winner | 348 | 54.6 | 0.029 |
+| 5 | Jakub Piotr Kiwior | Center Back | Deep Playmaker | 377 | 45.0 | 0.079 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Portugal (POR)
 
-Across the analyzed possessions, Portugal's total xG was among the tournament leaders, while its possession-to-shot rate was among the tournament leaders. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Portugal: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -4.222. Strongest positive squad synergy: Kléper Laveran Lima Ferreira + Diogo Meireles Costa (0.754). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Portugal's total xG was among the tournament leaders, while its possession-to-shot rate was among the tournament leaders. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -813,29 +1201,48 @@ Across the analyzed possessions, Portugal's total xG was among the tournament le
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 4.59; the possession-level scenario ceiling summed to 5.46, producing 0.87 modeled cumulative net xG of review opportunity and a 0.0021 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 4.72; the OOF scenario ceiling was 5.47. The cumulative review gap was 0.75, averaging 0.0018 per possession.
 
 Average lineup matchup deltas were **+0.006 aerial**, **-4.222 pressing**, and **-0.010 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 50 possessions with 0.22 cumulative modeled gap (0.0043 per possession).
+**Top positive player synergy:** Kléper Laveran Lima Ferreira + Diogo Meireles Costa (0.754).
 
-**Best substitution scenario:** Nuno Mendes for Bruno Miguel Borges Fernandes under Patient Build-up produced the largest estimated team gain (+0.0014 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 33 possessions with 0.18 cumulative modeled gap (0.0055 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 123, INSUFFICIENT_MINUTES: 20.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Cristiano Ronaldo dos Santos Aveiro | Forward | Target Forward | 303 | 70.4 | 0.587 |
-| 2 | Bruno Miguel Borges Fernandes | Attacking Midfield/Wing | Ball-Winner | 385 | 64.5 | 0.303 |
-| 3 | Bernardo Mota Veiga de Carvalho e Silva | Central/Wide Midfield | Box-to-Box Runner | 382 | 62.4 | 0.092 |
-| 4 | Kléper Laveran Lima Ferreira | Center Back | Sweeper CB | 389 | 61.3 | 0.142 |
-| 5 | Diogo Meireles Costa | Goalkeeper | Deep Playmaker | 489 | 60.0 | 0.037 |
+| 1 | João Félix Sequeira | Attacking Midfield/Wing | Target Forward | 340 | 64.1 | 0.193 |
+| 2 | João Pedro Cavaco Cancelo | Fullback/Wingback | Box-to-Box Runner | 345 | 56.2 | 0.053 |
+| 3 | Kléper Laveran Lima Ferreira | Center Back | Deep Playmaker | 389 | 53.4 | 0.142 |
+| 4 | Rúben Santos Gato Alves Dias | Center Back | Deep Playmaker | 392 | 51.6 | 0.085 |
+| 5 | Diogo Meireles Costa | Goalkeeper | Goalkeeper | 489 | 50.6 | 0.037 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Qatar (QAT)
+
+**Dynamic tactical summary:** Qatar: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Wide Retreating Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Qatar's total xG was among the lower values in this tournament sample, while its possession-to-shot rate was among the lower values in this tournament sample. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -850,31 +1257,45 @@ Across the analyzed possessions, Qatar's total xG was among the lower values in 
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 1.59; the possession-level scenario ceiling summed to 2.48, producing 0.89 modeled cumulative net xG of review opportunity and a 0.0038 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 1.80; the OOF scenario ceiling was 2.29. The cumulative review gap was 0.49, averaging 0.0021 per possession.
 
 Average lineup matchup deltas were **+0.005 aerial**, **+2.608 pressing**, and **-0.286 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 39 possessions with 0.36 cumulative modeled gap (0.0092 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Bassam Hisham Al Rawi for Hassan Khalid Al Heidos under Patient Build-up produced the largest estimated team gain (+0.0011 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 25 possessions with 0.18 cumulative modeled gap (0.0073 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 81, INSUFFICIENT_MINUTES: 18.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Pedro Miguel Correia | Center Back | Wide Creator | 274 | 56.1 | 0.022 |
-| 2 | Abdelkarim Hassan Al Haj Fadlalla | Center Back | Sweeper CB | 287 | 51.4 | 0.155 |
-| 3 | Hassan Khalid Al Heidos | Central/Wide Midfield | Ball-Winner | 209 | 49.6 | 0.038 |
-| 4 | Boualem Khoukhi | Center Back | Sweeper CB | 287 | 47.5 | 0.073 |
-| 5 | Karim Boudiaf | Defensive Midfield | Holding Anchor | 196 | 35.8 | 0.048 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Saudi Arabia (KSA)
 
-Across the analyzed possessions, Saudi Arabia's total xG was below the tournament median, while its possession-to-shot rate was below the tournament median. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Saudi Arabia: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -0.540. Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Saudi Arabia's total xG was below the tournament median, while its possession-to-shot rate was below the tournament median. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -887,31 +1308,45 @@ Across the analyzed possessions, Saudi Arabia's total xG was below the tournamen
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 1.99; the possession-level scenario ceiling summed to 2.76, producing 0.77 modeled cumulative net xG of review opportunity and a 0.0037 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 2.09; the OOF scenario ceiling was 2.41. The cumulative review gap was 0.32, averaging 0.0015 per possession.
 
 Average lineup matchup deltas were **-0.117 aerial**, **-0.540 pressing**, and **+0.714 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 26 possessions with 0.20 cumulative modeled gap (0.0077 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Haitham Mohammed Asiri for Sultan Abdullah Salim Al Ghannam under Patient Build-up produced the largest estimated team gain (+0.0018 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Direct Long Play were most often improved in the model by Patient Build-up. This pattern covered 18 possessions with 0.11 cumulative modeled gap (0.0063 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 118, INSUFFICIENT_MINUTES: 14.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Abdulelah Al Amri | Center Back | Sweeper CB | 211 | 66.9 | 0.083 |
-| 2 | Salem Mohammed Al Dawsari | Central/Wide Midfield | Ball-Winner | 299 | 64.1 | 0.511 |
-| 3 | Mohammed Kanoo | Central/Wide Midfield | Box-to-Box Runner | 299 | 55.9 | 0.133 |
-| 4 | Saud Abdullah Abdul Hamid | Fullback/Wingback | Wide Creator | 299 | 47.0 | 0.043 |
-| 5 | Abdulelah Saad Hameed Al-Malki | Defensive Midfield | Box-to-Box Runner | 189 | 46.6 | 0.087 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Senegal (SEN)
 
-Across the analyzed possessions, Senegal's total xG was above the tournament median, while its possession-to-shot rate was among the tournament leaders. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Senegal: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -1.491. Strongest positive squad synergy: Kalidou Koulibaly + Edouard Mendy (0.753). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Senegal's total xG was above the tournament median, while its possession-to-shot rate was among the tournament leaders. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -924,31 +1359,50 @@ Across the analyzed possessions, Senegal's total xG was above the tournament med
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 2.84; the possession-level scenario ceiling summed to 4.03, producing 1.19 modeled cumulative net xG of review opportunity and a 0.0041 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 2.77; the OOF scenario ceiling was 4.00. The cumulative review gap was 1.24, averaging 0.0043 per possession.
 
 Average lineup matchup deltas were **+0.016 aerial**, **-1.491 pressing**, and **-0.488 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 35 possessions with 0.32 cumulative modeled gap (0.0091 per possession).
+**Top positive player synergy:** Kalidou Koulibaly + Edouard Mendy (0.753).
 
-**Best substitution scenario:** Fodé Ballo Touré for Krépin Diatta under Patient Build-up produced the largest estimated team gain (+0.0006 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 35 possessions with 0.33 cumulative modeled gap (0.0093 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Kalidou Koulibaly | Center Back | Sweeper CB | 387 | 80.2 | 0.112 |
-| 2 | Ismaïla Sarr | Attacking Midfield/Wing | Ball-Winner | 365 | 69.4 | 0.481 |
-| 3 | Youssouf Sabaly | Fullback/Wingback | Box-to-Box Runner | 387 | 66.9 | 0.080 |
-| 4 | Edouard Mendy | Goalkeeper | Deep Playmaker | 387 | 53.4 | 0.030 |
-| 5 | Krépin Diatta | Attacking Midfield/Wing | Ball-Winner | 182 | 51.8 | 0.099 |
+| 1 | Kalidou Koulibaly | Center Back | Deep Playmaker | 387 | 64.4 | 0.112 |
+| 2 | Ismaïla Sarr | Attacking Midfield/Wing | Target Forward | 365 | 63.7 | 0.481 |
+| 3 | Youssouf Sabaly | Fullback/Wingback | Attacking Wingback | 387 | 62.2 | 0.080 |
+| 4 | Abdou Diallo | Center Back | Deep Playmaker | 349 | 60.8 | 0.076 |
+| 5 | Boulaye Dia | Attacking Midfield/Wing | Target Forward | 330 | 49.6 | 0.179 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Serbia (SRB)
 
-Across the analyzed possessions, Serbia's total xG was below the tournament median, while its possession-to-shot rate was near the tournament median. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Serbia: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.400. Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Serbia's total xG was below the tournament median, while its possession-to-shot rate was near the tournament median. Its suppression of immediate opponent transition xG was among the lower values in this tournament sample (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -961,29 +1415,43 @@ Across the analyzed possessions, Serbia's total xG was below the tournament medi
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 2.21; the possession-level scenario ceiling summed to 2.88, producing 0.68 modeled cumulative net xG of review opportunity and a 0.0029 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 2.31; the OOF scenario ceiling was 3.12. The cumulative review gap was 0.81, averaging 0.0035 per possession.
 
 Average lineup matchup deltas were **+0.055 aerial**, **-2.400 pressing**, and **-0.287 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 35 possessions with 0.21 cumulative modeled gap (0.0060 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Srđan Babić for Saša Lukić under Patient Build-up produced the largest estimated team gain (+0.0016 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 35 possessions with 0.24 cumulative modeled gap (0.0067 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 112, INSUFFICIENT_MINUTES: 20.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Strahinja Pavlović | Center Back | Sweeper CB | 253 | 80.0 | 0.127 |
-| 2 | Aleksandar Mitrović | Forward | Target Forward | 279 | 58.6 | 0.485 |
-| 3 | Filip Kostić | Fullback/Wingback | Wide Creator | 191 | 54.1 | 0.024 |
-| 4 | Nikola Milenković | Center Back | Holding Anchor | 294 | 53.0 | 0.088 |
-| 5 | Vanja Milinković Savić | Goalkeeper | Deep Playmaker | 294 | 50.0 | 0.047 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## South Korea (KOR)
+
+**Dynamic tactical summary:** South Korea: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Young-Gwon Kim + Seung-Gyu Kim (0.730). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, South Korea's total xG was near the tournament median, while its possession-to-shot rate was above the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -998,31 +1466,50 @@ Across the analyzed possessions, South Korea's total xG was near the tournament 
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 3.08; the possession-level scenario ceiling summed to 3.40, producing 0.32 modeled cumulative net xG of review opportunity and a 0.0012 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 2.95; the OOF scenario ceiling was 3.31. The cumulative review gap was 0.36, averaging 0.0013 per possession.
 
 Average lineup matchup deltas were **+0.118 aerial**, **+6.170 pressing**, and **+0.195 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 46 possessions with 0.07 cumulative modeled gap (0.0016 per possession).
+**Top positive player synergy:** Young-Gwon Kim + Seung-Gyu Kim (0.730).
 
-**Best substitution scenario:** Yu-Min Cho for Jae-Sung Lee under Patient Build-up produced the largest estimated team gain (+0.0023 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 14 possessions with 0.11 cumulative modeled gap (0.0077 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 93, INSUFFICIENT_MINUTES: 17.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Young-Gwon Kim | Center Back | Sweeper CB | 373 | 63.4 | 0.249 |
-| 2 | Min Jae Kim | Center Back | Sweeper CB | 283 | 60.4 | 0.118 |
-| 3 | Woo-Young Jung | Defensive Midfield | Holding Anchor | 318 | 60.0 | 0.066 |
-| 4 | In-Beom Hwang | Defensive Midfield | Box-to-Box Runner | 360 | 58.5 | 0.101 |
-| 5 | Gue-Sung Cho | Forward | Target Forward | 297 | 57.9 | 0.211 |
+| 1 | Young-Gwon Kim | Center Back | Deep Playmaker | 373 | 75.5 | 0.249 |
+| 2 | Woo-Young Jung | Defensive Midfield | Ball-Winner | 318 | 66.7 | 0.066 |
+| 3 | Jin-Su Kim | Fullback/Wingback | Attacking Wingback | 341 | 63.8 | 0.107 |
+| 4 | Heung-Min Son | Attacking Midfield/Wing | Target Forward | 390 | 55.4 | 0.119 |
+| 5 | In-Beom Hwang | Defensive Midfield | Ball-Winner | 360 | 55.3 | 0.101 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Spain (ESP)
 
-Across the analyzed possessions, Spain's total xG was above the tournament median, while its possession-to-shot rate was above the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Spain: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -12.554. Strongest positive squad synergy: Rodrigo Hernández Cascante + Unai Simón Mendibil (0.779). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Spain's total xG was above the tournament median, while its possession-to-shot rate was above the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -1035,31 +1522,50 @@ Across the analyzed possessions, Spain's total xG was above the tournament media
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Compact Pressure Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 3.84; the possession-level scenario ceiling summed to 4.64, producing 0.80 modeled cumulative net xG of review opportunity and a 0.0023 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 4.28; the OOF scenario ceiling was 5.12. The cumulative review gap was 0.84, averaging 0.0024 per possession.
 
 Average lineup matchup deltas were **-0.046 aerial**, **-12.554 pressing**, and **+0.142 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 43 possessions with 0.34 cumulative modeled gap (0.0080 per possession).
+**Top positive player synergy:** Rodrigo Hernández Cascante + Unai Simón Mendibil (0.779).
 
-**Best substitution scenario:** Jorge Resurrección Merodio for Pablo Martín Páez Gavira under Patient Build-up produced the largest estimated team gain (+0.0011 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 36 possessions with 0.33 cumulative modeled gap (0.0091 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 95, INSUFFICIENT_MINUTES: 15.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Pedro González López | Central/Wide Midfield | Box-to-Box Runner | 372 | 73.5 | 0.109 |
-| 2 | Álvaro Borja Morata Martín | Forward | Target Forward | 201 | 70.4 | 0.507 |
-| 3 | Jordi Alba Ramos | Fullback/Wingback | Wide Creator | 271 | 69.7 | 0.104 |
-| 4 | Unai Simón Mendibil | Goalkeeper | Deep Playmaker | 414 | 63.1 | 0.059 |
-| 5 | Rodrigo Hernández Cascante | Center Back | Sweeper CB | 414 | 61.2 | 0.199 |
+| 1 | Rodrigo Hernández Cascante | Center Back | Holding Anchor | 414 | 76.1 | 0.199 |
+| 2 | Aymeric Laporte | Center Back | Holding Anchor | 317 | 57.9 | 0.167 |
+| 3 | Pedro González López | Central/Wide Midfield | Ball-Winner | 372 | 55.0 | 0.109 |
+| 4 | Sergio Busquets i Burgos | Defensive Midfield | Ball-Winner | 379 | 51.4 | 0.275 |
+| 5 | Unai Simón Mendibil | Goalkeeper | Goalkeeper | 414 | 31.8 | 0.059 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Switzerland (SUI)
 
-Across the analyzed possessions, Switzerland's total xG was above the tournament median, while its possession-to-shot rate was below the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a moderate modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
+**Dynamic tactical summary:** Switzerland: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Direct Long Play to Short Under Pressure). Strongest positive squad synergy: Granit Xhaka + Manuel Obafemi Akanji (0.755). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
+
+Across the analyzed possessions, Switzerland's total xG was above the tournament median, while its possession-to-shot rate was below the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
 | Observed tournament indicator | Value |
 | --- | --- |
@@ -1072,29 +1578,48 @@ Across the analyzed possessions, Switzerland's total xG was above the tournament
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 4.36; the possession-level scenario ceiling summed to 5.18, producing 0.82 modeled cumulative net xG of review opportunity and a 0.0027 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 2.83; the OOF scenario ceiling was 2.94. The cumulative review gap was 0.11, averaging 0.0004 per possession.
 
 Average lineup matchup deltas were **-0.030 aerial**, **+2.987 pressing**, and **-0.646 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 37 possessions with 0.19 cumulative modeled gap (0.0052 per possession).
+**Top positive player synergy:** Granit Xhaka + Manuel Obafemi Akanji (0.755).
 
-**Best substitution scenario:** Haris Seferović for Remo Freuler under Patient Build-up produced the largest estimated team gain (+0.0011 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Direct Long Play were most often improved in the model by Short Under Pressure. This pattern covered 8 possessions with 0.05 cumulative modeled gap (0.0061 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 121, INSUFFICIENT_MINUTES: 22.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Breel-Donald Embolo | Forward | Target Forward | 330 | 66.8 | 0.656 |
-| 2 | Manuel Obafemi Akanji | Center Back | Sweeper CB | 387 | 61.8 | 0.303 |
-| 3 | Silvan Widmer | Fullback/Wingback | Wide Creator | 282 | 55.2 | 0.055 |
-| 4 | Remo Freuler | Defensive Midfield | Holding Anchor | 346 | 46.8 | 0.158 |
-| 5 | Ruben Vargas | Attacking Midfield/Wing | Ball-Winner | 287 | 45.8 | 0.126 |
+| 1 | Ricardo Iván Rodríguez Araya | Fullback/Wingback | Box-to-Box Runner | 380 | 56.5 | 0.033 |
+| 2 | Breel-Donald Embolo | Forward | Target Forward | 330 | 52.3 | 0.656 |
+| 3 | Remo Freuler | Defensive Midfield | Ball-Winner | 346 | 51.5 | 0.158 |
+| 4 | Manuel Obafemi Akanji | Center Back | Holding Anchor | 387 | 49.6 | 0.303 |
+| 5 | Granit Xhaka | Defensive Midfield | Ball-Winner | 387 | 48.6 | 0.132 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Tunisia (TUN)
+
+**Dynamic tactical summary:** Tunisia: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.788. Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Tunisia's total xG was among the lower values in this tournament sample, while its possession-to-shot rate was near the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -1109,29 +1634,43 @@ Across the analyzed possessions, Tunisia's total xG was among the lower values i
 | Most frequent attacking style | Short Under Pressure |
 | Most frequent defensive style | Compact Pressure Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Short Under Pressure** most often. Observed expected net xG was 2.75; the possession-level scenario ceiling summed to 3.00, producing 0.25 modeled cumulative net xG of review opportunity and a 0.0010 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 2.70; the OOF scenario ceiling was 2.85. The cumulative review gap was 0.16, averaging 0.0006 per possession.
 
 Average lineup matchup deltas were **-0.059 aerial**, **-2.788 pressing**, and **+1.194 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Direct Long Play were most often improved in the model by Short Under Pressure. This pattern covered 15 possessions with 0.09 cumulative modeled gap (0.0058 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Hannibal Mejbri for Ellyes Joris Skhiri under Short Under Pressure produced the largest estimated team gain (+0.0025 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Wide Retreating Block, possessions labeled Direct Long Play were most often improved in the model by Patient Build-up. This pattern covered 15 possessions with 0.09 cumulative modeled gap (0.0059 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 91, INSUFFICIENT_MINUTES: 19.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Ellyes Joris Skhiri | Defensive Midfield | Box-to-Box Runner | 297 | 67.2 | 0.084 |
-| 2 | Yassine Meriah | Center Back | Holding Anchor | 297 | 54.0 | 0.056 |
-| 3 | Ali Abdi | Fullback/Wingback | Wide Creator | 214 | 52.7 | 0.021 |
-| 4 | Aïssa Bilal Laïdouni | Defensive Midfield | Box-to-Box Runner | 257 | 50.8 | 0.085 |
-| 5 | Montassar Omar Talbi | Center Back | Sweeper CB | 297 | 47.2 | 0.055 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## United States (USA)
+
+**Dynamic tactical summary:** United States: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -0.925. Strongest positive squad synergy: Matthew Charles Turner + Tim Ream (0.756). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, United States's total xG was near the tournament median, while its possession-to-shot rate was above the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -1146,29 +1685,48 @@ Across the analyzed possessions, United States's total xG was near the tournamen
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 3.60; the possession-level scenario ceiling summed to 4.11, producing 0.51 modeled cumulative net xG of review opportunity and a 0.0017 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 3.58; the OOF scenario ceiling was 3.91. The cumulative review gap was 0.33, averaging 0.0011 per possession.
 
 Average lineup matchup deltas were **-0.068 aerial**, **-0.925 pressing**, and **+0.496 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 36 possessions with 0.13 cumulative modeled gap (0.0037 per possession).
+**Top positive player synergy:** Matthew Charles Turner + Tim Ream (0.756).
 
-**Best substitution scenario:** Kellyn Kai Perry-Acosta for Tyler Adams under Patient Build-up produced the largest estimated team gain (-0.0001 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 10 possessions with 0.08 cumulative modeled gap (0.0084 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 84, INSUFFICIENT_MINUTES: 15.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Christian Pulisic | Attacking Midfield/Wing | Progressive Winger | 336 | 74.1 | 0.350 |
-| 2 | Tyler Adams | Defensive Midfield | Box-to-Box Runner | 391 | 73.0 | 0.068 |
-| 3 | Yunus Dimoara Musah | Central/Wide Midfield | Box-to-Box Runner | 365 | 66.8 | 0.101 |
-| 4 | Weston McKennie | Central/Wide Midfield | Box-to-Box Runner | 274 | 65.4 | 0.189 |
-| 5 | Sergino Dest | Fullback/Wingback | Ball-Winner | 308 | 64.6 | 0.134 |
+| 1 | Sergino Dest | Fullback/Wingback | Wide Creator | 308 | 66.3 | 0.134 |
+| 2 | Tyler Adams | Defensive Midfield | Ball-Winner | 391 | 58.9 | 0.068 |
+| 3 | Timothy Weah | Attacking Midfield/Wing | Target Forward | 318 | 49.4 | 0.155 |
+| 4 | Matthew Charles Turner | Goalkeeper | Goalkeeper | 391 | 47.9 | 0.039 |
+| 5 | Christian Pulisic | Attacking Midfield/Wing | Progressive Winger | 336 | 47.3 | 0.350 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Uruguay (URU)
+
+**Dynamic tactical summary:** Uruguay: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -0.252. Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Uruguay's total xG was below the tournament median, while its possession-to-shot rate was above the tournament median. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates a relatively large modeled opportunity for tactical tightening. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -1183,29 +1741,43 @@ Across the analyzed possessions, Uruguay's total xG was below the tournament med
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 2.82; the possession-level scenario ceiling summed to 4.30, producing 1.48 modeled cumulative net xG of review opportunity and a 0.0069 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 2.65; the OOF scenario ceiling was 3.85. The cumulative review gap was 1.19, averaging 0.0055 per possession.
 
 Average lineup matchup deltas were **+0.090 aerial**, **-0.252 pressing**, and **-0.035 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 38 possessions with 0.54 cumulative modeled gap (0.0142 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Edinson Roberto Cavani Gómez for Facundo Pellistri Rebollo under Patient Build-up produced the largest estimated team gain (+0.0000 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 38 possessions with 0.42 cumulative modeled gap (0.0109 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 80, INSUFFICIENT_MINUTES: 8.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Rodrigo Bentancur Colmán | Defensive Midfield | Box-to-Box Runner | 232 | 76.0 | 0.303 |
-| 2 | Mathías Olivera Miramontes | Fullback/Wingback | Wide Creator | 264 | 64.6 | 0.072 |
-| 3 | José María Giménez de Vargas | Center Back | Holding Anchor | 298 | 64.3 | 0.104 |
-| 4 | Sebastián Coates Nión | Center Back | Sweeper CB | 200 | 58.0 | 0.096 |
-| 5 | Federico Santiago Valverde Dipetta | Defensive Midfield | Box-to-Box Runner | 298 | 55.7 | 0.113 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 ## Wales (WAL)
+
+**Dynamic tactical summary:** Wales: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Set-Piece Compact Shape (Short Under Pressure to Patient Build-up). Strongest positive squad synergy: Insufficient shared-minutes data. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+
+### Tier 1 — Observed Tournament Evidence
 
 Across the analyzed possessions, Wales's total xG was among the lower values in this tournament sample, while its possession-to-shot rate was among the lower values in this tournament sample. Its suppression of immediate opponent transition xG was above the tournament median (lower transition exposure is better). The audit indicates one of the smaller modeled tactic gaps in the sample. These are tournament-sample tendencies, not causal estimates of what would have happened under a different lineup or tactic.
 
@@ -1220,58 +1792,68 @@ Across the analyzed possessions, Wales's total xG was among the lower values in 
 | Most frequent attacking style | Patient Build-up |
 | Most frequent defensive style | Wide Retreating Block |
 
-### Tactical and matchup read
+### Tier 2 — Model-Supported Scenario Audits
 
-The scenario evaluator selected **Patient Build-up** most often. Observed expected net xG was 1.09; the possession-level scenario ceiling summed to 1.53, producing 0.44 modeled cumulative net xG of review opportunity and a 0.0019 mean EvA gap.
+The 64-match leave-one-match-out audit selected **No meaningful change** most often. OOF actual expected Net xG was 1.95; the OOF scenario ceiling was 2.37. The cumulative review gap was 0.42, averaging 0.0018 per possession.
 
 Average lineup matchup deltas were **-0.031 aerial**, **+1.564 pressing**, and **-0.189 recovery**. These are relative proxies, so the signs are more useful for matchup planning than the raw magnitudes.
 
-**Highest-volume review pattern:** against Compact Pressure Block, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 31 possessions with 0.12 cumulative modeled gap (0.0040 per possession).
+**Top positive player synergy:** Insufficient shared-minutes data.
 
-**Best substitution scenario:** Daniel James for Harry Wilson under Patient Build-up produced the largest estimated team gain (-0.0000 expected net xG). Treat this as a video and training-ground hypothesis; the simulation does not encode fatigue, injury, match state, or all role constraints.
+**Highest-volume review pattern:** against Set-Piece Compact Shape, possessions labeled Short Under Pressure were most often improved in the model by Patient Build-up. This pattern covered 11 possessions with 0.08 cumulative modeled gap (0.0076 per possession).
+
+> **No validated substitution:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 71, INSUFFICIENT_MINUTES: 6.
+
+### Tier 3 — Exploratory and Suppressed Decisions
+
+**Tactical decision reason code:** `GAIN_BELOW_THRESHOLD`. The best alternative failed to exceed +0.0050 Net xG.
+
+**Rare-event reason code:** `CLASSIFIER_ABSTAINED`. No probability threshold achieved the required 0.30 precision, so transition warnings remain suppressed rather than converted into weak positive claims.
 
 ### Leading tournament-role profiles
 
-| Rank | Player | Position group | Functional role | Minutes | Role score | Net xG/90 |
+| Rank | Player | Position group | Functional role | Minutes | V4 role score | Net xG/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Ben Davies | Center Back | Box-to-Box Runner | 261 | 74.9 | 0.176 |
-| 2 | Chris Mepham | Center Back | Sweeper CB | 297 | 59.0 | 0.070 |
-| 3 | Neco Williams | Fullback/Wingback | Box-to-Box Runner | 216 | 58.5 | 0.056 |
-| 4 | Kieffer Roberto Francisco Moore | Forward | Target Forward | 252 | 55.8 | 0.240 |
-| 5 | Wayne Hennessey | Goalkeeper | Deep Playmaker | 203 | 45.3 | 0.048 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
+> **Model provenance**
+> Model: `transition-conceded-v2`
+> Target: `transition_conceded`
+> Calibration: `platt`
+> Threshold status: `no validated threshold`
+> OOF audit: 64 matches, 32 teams; each evaluated match was excluded from model fitting and calibration.
+
 # Top tournament-role players by position
 
-These leaderboards rank only the analyzed tournament cohort and use different weights for different roles. A score of 80 means a strong blend of the selected within-position indicators; it does not mean an 80% chance of success. Sample size, team tactics, opponent quality, and role assignment all affect the component metrics.
+These leaderboards contain only players with at least 300 tournament minutes. V4 scores are standardized within functional role: 50 is role average and each 10 points is one population standard deviation. Grouping the display by broad position aids navigation but does not make scores directly comparable across roles.
 
-## Position-score construction
+## V4 role-score construction
 
-- **Goalkeeper:** minutes 40%, pass completion 30%, pass progression per pass 20%, speed recovery index 10%.
-- **Center Back:** aerial dominance index 25%, pressing intensity index 15%, speed recovery index 20%, net xg contribution p90 15%, pass progression per pass 15%, minutes 10%.
-- **Fullback/Wingback:** aerial dominance index 10%, pressing intensity index 20%, speed recovery index 20%, net xg contribution p90 20%, progressive passes p90 15%, key passes p90 5%, minutes 10%.
-- **Defensive Midfield:** aerial dominance index 10%, pressing intensity index 20%, speed recovery index 20%, net xg contribution p90 20%, progressive passes p90 15%, pass completion 5%, minutes 10%.
-- **Central/Wide Midfield:** pressing intensity index 20%, speed recovery index 15%, net xg contribution p90 25%, progressive passes p90 20%, key passes p90 10%, minutes 10%.
-- **Attacking Midfield/Wing:** pressing intensity index 15%, speed recovery index 10%, net xg contribution p90 30%, progressive carries p90 15%, key passes p90 15%, xg p90 5%, minutes 10%.
-- **Forward:** aerial dominance index 15%, pressing intensity index 10%, net xg contribution p90 30%, shots p90 15%, xg p90 20%, minutes 10%.
+- Risk-adjusted OBV per 90: 65%.
+- Final-third spatial presence: 20%.
+- Pressure-adjusted turnover resilience: 15%.
+- Pressured turnover penalties are exactly half the standard location-sensitive penalty.
+- Successful event endpoints and SB360 actor snapshots use the StatsBomb 120x80 pitch.
+- Fullbacks above 35% combined final-third share are classified as Attacking Wingbacks.
 
-**Goalkeeper warning:** the source features do not provide a complete post-shot shot-stopping evaluation. The goalkeeper list therefore reflects minutes, distribution, progression, and a recovery proxy—not overall goalkeeping quality. Do not use it to make goalkeeper selection decisions without save-quality, cross-claim, sweeping, and error data.
+
+**Goalkeeper warning:** the source features do not provide a complete provider post-shot-xG model. The report uses on-target StatsBomb shot xG as an explicitly labeled proxy, then adds goals prevented, claims, sweeping location, and pressured distribution. It remains unsuitable as a standalone goalkeeper selection model.
 
 ## Goalkeeper
 
 | Rank | Player | Team | Detailed position | Role | Min. | Score | Net xG/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Dominik Livaković | Croatia | Goalkeeper | Deep Playmaker | 720 | 73.4 | 0.037 | 0.00 | 0.25 | 4.12 |
-| 2 | Andries Noppert | Netherlands | Goalkeeper | Deep Playmaker | 510 | 70.0 | 0.069 | 0.00 | 0.00 | 4.59 |
-| 3 | Yassine Bounou | Morocco | Goalkeeper | Deep Playmaker | 603 | 68.4 | 0.041 | 0.00 | 0.15 | 3.73 |
-| 4 | Damián Emiliano Martínez | Argentina | Goalkeeper | Deep Playmaker | 734 | 65.6 | 0.016 | 0.00 | 0.00 | 3.68 |
-| 5 | Alisson Ramsés Becker | Brazil | Goalkeeper | Deep Playmaker | 395 | 65.0 | 0.022 | 0.00 | 0.00 | 5.01 |
-| 6 | Jordan Pickford | England | Goalkeeper | Deep Playmaker | 486 | 64.1 | 0.029 | 0.00 | 0.00 | 2.96 |
-| 7 | Unai Simón Mendibil | Spain | Goalkeeper | Deep Playmaker | 414 | 63.1 | 0.059 | 0.00 | 0.00 | 2.61 |
-| 8 | Hugo Lloris | France | Goalkeeper | Deep Playmaker | 614 | 61.3 | 0.028 | 0.00 | 0.00 | 2.34 |
-| 9 | Matthew Charles Turner | United States | Goalkeeper | Deep Playmaker | 391 | 60.9 | 0.039 | 0.00 | 0.00 | 3.91 |
-| 10 | Diogo Meireles Costa | Portugal | Goalkeeper | Deep Playmaker | 489 | 60.0 | 0.037 | 0.00 | 0.18 | 2.76 |
+| 1 | Wojciech Szczęsny | Poland | Goalkeeper | Goalkeeper | 390 | 73.0 | 0.039 | 0.00 | 0.00 | 4.16 |
+| 2 | Mathew Ryan | Australia | Goalkeeper | Goalkeeper | 387 | 61.2 | 0.042 | 0.00 | 0.00 | 4.65 |
+| 3 | Dominik Livaković | Croatia | Goalkeeper | Goalkeeper | 720 | 58.3 | 0.037 | 0.00 | 0.25 | 4.12 |
+| 4 | Shūichi Gonda | Japan | Goalkeeper | Goalkeeper | 413 | 56.8 | 0.015 | 0.00 | 0.22 | 3.05 |
+| 5 | Hugo Lloris | France | Goalkeeper | Goalkeeper | 614 | 53.1 | 0.028 | 0.00 | 0.00 | 2.34 |
+| 6 | Jordan Pickford | England | Goalkeeper | Goalkeeper | 486 | 52.4 | 0.029 | 0.00 | 0.00 | 2.96 |
+| 7 | Yassine Bounou | Morocco | Goalkeeper | Goalkeeper | 603 | 52.3 | 0.041 | 0.00 | 0.15 | 3.73 |
+| 8 | Diogo Meireles Costa | Portugal | Goalkeeper | Goalkeeper | 489 | 50.6 | 0.037 | 0.00 | 0.18 | 2.76 |
+| 9 | Seung-Gyu Kim | South Korea | Goalkeeper | Goalkeeper | 390 | 49.7 | 0.030 | 0.00 | 0.00 | 3.46 |
+| 10 | Edouard Mendy | Senegal | Goalkeeper | Goalkeeper | 387 | 49.0 | 0.030 | 0.00 | 0.00 | 3.72 |
 
 The goalkeeper ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1279,16 +1861,16 @@ The goalkeeper ordering is a role-fit shortlist for this tournament sample. Revi
 
 | Rank | Player | Team | Detailed position | Role | Min. | Score | Net xG/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Jean-Charles Castelletto | Cameroon | Right Center Back | Sweeper CB | 192 | 81.6 | 0.478 | 1.00 | 12.16 | 3.74 |
-| 2 | Kalidou Koulibaly | Senegal | Right Center Back | Sweeper CB | 387 | 80.2 | 0.112 | 0.80 | 9.30 | 4.65 |
-| 3 | Strahinja Pavlović | Serbia | Left Center Back | Sweeper CB | 253 | 80.0 | 0.127 | 1.00 | 12.46 | 5.34 |
-| 4 | Ben Davies | Wales | Left Center Back | Box-to-Box Runner | 261 | 74.9 | 0.176 | 0.73 | 9.30 | 6.20 |
-| 5 | Romain Saïss | Morocco | Left Center Back | Holding Anchor | 486 | 71.4 | 0.148 | 0.80 | 7.60 | 2.22 |
-| 6 | Morteza Pouraliganji | Iran | Right Center Back | Holding Anchor | 305 | 68.5 | 0.125 | 0.75 | 10.62 | 2.36 |
-| 7 | Abdulelah Al Amri | Saudi Arabia | Right Center Back | Sweeper CB | 211 | 66.9 | 0.083 | 0.71 | 8.54 | 5.98 |
-| 8 | Joachim Andersen | Denmark | Right Center Back | Sweeper CB | 291 | 66.7 | 0.135 | 0.67 | 8.98 | 4.02 |
-| 9 | Ibrahima Konaté | France | Left Center Back | Sweeper CB | 331 | 65.1 | 0.133 | 0.90 | 6.80 | 3.54 |
-| 10 | José María Giménez de Vargas | Uruguay | Right Center Back | Holding Anchor | 298 | 64.3 | 0.104 | 0.85 | 9.36 | 1.81 |
+| 1 | Rodrigo Hernández Cascante | Spain | Right Center Back | Holding Anchor | 414 | 76.1 | 0.199 | 0.75 | 5.00 | 4.35 |
+| 2 | Young-Gwon Kim | South Korea | Left Center Back | Deep Playmaker | 373 | 75.5 | 0.249 | 0.78 | 5.06 | 1.93 |
+| 3 | Kalidou Koulibaly | Senegal | Right Center Back | Deep Playmaker | 387 | 64.4 | 0.112 | 0.80 | 9.30 | 4.65 |
+| 4 | Abdou Diallo | Senegal | Left Center Back | Deep Playmaker | 349 | 60.8 | 0.076 | 0.58 | 6.71 | 0.77 |
+| 5 | Jurriën David Norman Timber | Netherlands | Right Center Back | Ball-Winner | 409 | 60.4 | 0.073 | 0.53 | 17.37 | 3.30 |
+| 6 | Marcos Aoás Corrêa | Brazil | Left Center Back | Holding Anchor | 455 | 60.3 | 0.279 | 0.53 | 4.75 | 2.57 |
+| 7 | Thiago Emiliano da Silva | Brazil | Right Center Back | Holding Anchor | 409 | 60.0 | 0.170 | 0.58 | 6.60 | 2.20 |
+| 8 | Romain Saïss | Morocco | Left Center Back | Deep Playmaker | 486 | 59.6 | 0.148 | 0.80 | 7.60 | 2.22 |
+| 9 | Virgil van Dijk | Netherlands | Center Back | Deep Playmaker | 510 | 58.8 | 0.258 | 0.64 | 6.01 | 1.41 |
+| 10 | Aymeric Laporte | Spain | Left Center Back | Holding Anchor | 317 | 57.9 | 0.167 | 0.67 | 4.26 | 1.14 |
 
 The center back ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1296,16 +1878,16 @@ The center back ordering is a role-fit shortlist for this tournament sample. Rev
 
 | Rank | Player | Team | Detailed position | Role | Min. | Score | Net xG/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Joshua Kimmich | Germany | Right Back | Wide Creator | 294 | 79.2 | 0.202 | 0.71 | 12.86 | 4.90 |
-| 2 | Achraf Hakimi Mouh | Morocco | Right Back | Box-to-Box Runner | 661 | 79.0 | 0.171 | 0.57 | 16.21 | 4.90 |
-| 3 | Alistair Johnston | Canada | Right Back | Box-to-Box Runner | 285 | 74.8 | 0.283 | 0.73 | 12.63 | 4.42 |
-| 4 | Éder Gabriel Militão | Brazil | Right Back | Box-to-Box Runner | 364 | 73.5 | 0.140 | 0.40 | 13.86 | 4.95 |
-| 5 | Theo Bernard François Hernández | France | Left Back | Box-to-Box Runner | 548 | 71.2 | 0.118 | 0.60 | 12.63 | 3.94 |
-| 6 | Jordi Alba Ramos | Spain | Left Back | Wide Creator | 271 | 69.7 | 0.104 | 0.25 | 13.63 | 4.99 |
-| 7 | Daley Blind | Netherlands | Left Wing Back | Box-to-Box Runner | 452 | 68.9 | 0.151 | 0.43 | 17.70 | 2.59 |
-| 8 | Pervis Josué Estupiñán Tenorio | Ecuador | Left Back | Wide Creator | 288 | 68.9 | 0.130 | 0.57 | 12.80 | 5.31 |
-| 9 | Alex Sandro Lobo Silva | Brazil | Left Back | Sweeper CB | 200 | 68.2 | 0.101 | 0.83 | 11.73 | 5.41 |
-| 10 | Youssouf Sabaly | Senegal | Right Back | Box-to-Box Runner | 387 | 66.9 | 0.080 | 0.43 | 11.85 | 6.04 |
+| 1 | Borna Sosa | Croatia | Left Back | Box-to-Box Runner | 440 | 71.9 | 0.061 | 0.27 | 10.63 | 2.45 |
+| 2 | Éder Gabriel Militão | Brazil | Right Back | Ball-Winner | 364 | 67.0 | 0.140 | 0.40 | 13.86 | 4.95 |
+| 3 | Sergino Dest | United States | Right Back | Wide Creator | 308 | 66.3 | 0.134 | 0.29 | 13.46 | 4.39 |
+| 4 | Jin-Su Kim | South Korea | Left Back | Attacking Wingback | 341 | 63.8 | 0.107 | 0.56 | 7.66 | 3.17 |
+| 5 | Youssouf Sabaly | Senegal | Right Back | Attacking Wingback | 387 | 62.2 | 0.080 | 0.43 | 11.85 | 6.04 |
+| 6 | Josip Juranović | Croatia | Right Back | Wide Creator | 624 | 59.2 | 0.058 | 0.40 | 8.51 | 4.47 |
+| 7 | Yahia Attiyat allah | Morocco | Left Back | Box-to-Box Runner | 350 | 58.1 | 0.123 | 0.20 | 11.31 | 5.14 |
+| 8 | Matty Cash | Poland | Right Back | Wide Creator | 390 | 57.0 | 0.031 | 0.50 | 10.16 | 1.39 |
+| 9 | Ricardo Iván Rodríguez Araya | Switzerland | Left Back | Box-to-Box Runner | 380 | 56.5 | 0.033 | 0.83 | 6.39 | 2.60 |
+| 10 | João Pedro Cavaco Cancelo | Portugal | Right Back | Box-to-Box Runner | 345 | 56.2 | 0.053 | 0.93 | 6.01 | 5.75 |
 
 The fullback/wingback ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1313,16 +1895,16 @@ The fullback/wingback ordering is a role-fit shortlist for this tournament sampl
 
 | Rank | Player | Team | Detailed position | Role | Min. | Score | Net xG/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Marcelo Brozović | Croatia | Center Defensive Midfield | Box-to-Box Runner | 570 | 78.4 | 0.288 | 0.62 | 16.74 | 5.05 |
-| 2 | Leandro Daniel Paredes | Argentina | Right Defensive Midfield | Sweeper CB | 235 | 78.2 | 0.716 | 1.00 | 20.27 | 3.82 |
-| 3 | Rodrigo Bentancur Colmán | Uruguay | Left Defensive Midfield | Box-to-Box Runner | 232 | 76.0 | 0.303 | 0.73 | 19.42 | 6.60 |
-| 4 | Tyler Adams | United States | Center Defensive Midfield | Box-to-Box Runner | 391 | 73.0 | 0.068 | 0.60 | 20.48 | 6.21 |
-| 5 | Ellyes Joris Skhiri | Tunisia | Right Defensive Midfield | Box-to-Box Runner | 297 | 67.2 | 0.084 | 0.67 | 19.42 | 6.37 |
-| 6 | Aurélien Djani Tchouaméni | France | Right Defensive Midfield | Box-to-Box Runner | 662 | 65.4 | 0.227 | 0.75 | 10.74 | 4.89 |
-| 7 | Rodrigo Javier De Paul | Argentina | Right Defensive Midfield | Wide Creator | 635 | 64.8 | 0.138 | 0.33 | 18.01 | 4.82 |
-| 8 | Wataru Endo | Japan | Right Defensive Midfield | Box-to-Box Runner | 326 | 64.0 | 0.095 | 0.53 | 20.43 | 6.35 |
-| 9 | Frenkie de Jong | Netherlands | Left Defensive Midfield | Box-to-Box Runner | 499 | 63.4 | 0.194 | 0.86 | 14.96 | 3.60 |
-| 10 | Enzo Fernandez | Argentina | Center Defensive Midfield | Box-to-Box Runner | 601 | 62.8 | 0.222 | 0.42 | 17.52 | 3.74 |
+| 1 | Woo-Young Jung | South Korea | Left Defensive Midfield | Ball-Winner | 318 | 66.7 | 0.066 | 0.82 | 15.00 | 4.25 |
+| 2 | Tyler Adams | United States | Center Defensive Midfield | Ball-Winner | 391 | 58.9 | 0.068 | 0.60 | 20.48 | 6.21 |
+| 3 | Aurélien Djani Tchouaméni | France | Right Defensive Midfield | Ball-Winner | 662 | 58.8 | 0.227 | 0.75 | 10.74 | 4.89 |
+| 4 | Carlos Henrique Casimiro | Brazil | Left Defensive Midfield | Ball-Winner | 409 | 56.3 | 0.301 | 0.50 | 13.20 | 3.30 |
+| 5 | Enzo Fernandez | Argentina | Center Defensive Midfield | Ball-Winner | 601 | 56.1 | 0.222 | 0.42 | 17.52 | 3.74 |
+| 6 | Thomas Teye Partey | Ghana | Right Defensive Midfield | Ball-Winner | 301 | 56.1 | 0.126 | 0.69 | 12.85 | 3.59 |
+| 7 | Frenkie de Jong | Netherlands | Left Defensive Midfield | Ball-Winner | 499 | 55.5 | 0.194 | 0.86 | 14.96 | 3.60 |
+| 8 | Wataru Endo | Japan | Right Defensive Midfield | Ball-Winner | 326 | 55.4 | 0.095 | 0.53 | 20.43 | 6.35 |
+| 9 | In-Beom Hwang | South Korea | Left Defensive Midfield | Ball-Winner | 360 | 55.3 | 0.101 | 0.44 | 13.50 | 6.50 |
+| 10 | Grzegorz Krychowiak | Poland | Center Defensive Midfield | Ball-Winner | 348 | 54.6 | 0.029 | 0.75 | 14.49 | 4.40 |
 
 The defensive midfield ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1330,16 +1912,16 @@ The defensive midfield ordering is a role-fit shortlist for this tournament samp
 
 | Rank | Player | Team | Detailed position | Role | Min. | Score | Net xG/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Luka Modrić | Croatia | Right Center Midfield | Wide Creator | 673 | 81.4 | 0.241 | 0.50 | 17.93 | 4.95 |
-| 2 | Pedro González López | Spain | Left Center Midfield | Box-to-Box Runner | 372 | 73.5 | 0.109 | 0.60 | 14.74 | 6.28 |
-| 3 | Mateo Kovačić | Croatia | Left Center Midfield | Box-to-Box Runner | 650 | 71.8 | 0.121 | 0.75 | 21.19 | 3.88 |
-| 4 | Yunus Dimoara Musah | United States | Right Center Midfield | Box-to-Box Runner | 365 | 66.8 | 0.101 | 0.25 | 19.24 | 4.44 |
-| 5 | Christian Dannemann Eriksen | Denmark | Left Center Midfield | Ball-Winner | 291 | 65.5 | 0.131 | 0.25 | 10.83 | 4.95 |
-| 6 | Weston McKennie | United States | Right Midfield | Box-to-Box Runner | 274 | 65.4 | 0.189 | 0.62 | 13.49 | 4.94 |
-| 7 | Rodrygo Silva de Goes | Brazil | Left Midfield | Progressive Winger | 199 | 64.5 | 0.616 | 0.60 | 18.51 | 4.06 |
-| 8 | Salem Mohammed Al Dawsari | Saudi Arabia | Left Midfield | Ball-Winner | 299 | 64.1 | 0.511 | 0.50 | 12.96 | 4.52 |
-| 9 | Alphonso Davies | Canada | Left Midfield | Progressive Winger | 285 | 63.6 | 0.307 | 0.56 | 16.74 | 5.68 |
-| 10 | Piotr Zieliński | Poland | Right Center Midfield | Box-to-Box Runner | 344 | 62.8 | 0.208 | 0.50 | 13.33 | 3.92 |
+| 1 | Sofiane Boufal | Morocco | Left Midfield | Progressive Winger | 477 | 60.5 | 0.097 | 0.25 | 18.50 | 3.21 |
+| 2 | Luka Modrić | Croatia | Right Center Midfield | Ball-Winner | 673 | 59.9 | 0.241 | 0.50 | 17.93 | 4.95 |
+| 3 | Piotr Zieliński | Poland | Right Center Midfield | Wide Creator | 344 | 57.9 | 0.208 | 0.50 | 13.33 | 3.92 |
+| 4 | Mateo Kovačić | Croatia | Left Center Midfield | Ball-Winner | 650 | 55.5 | 0.121 | 0.75 | 21.19 | 3.88 |
+| 5 | Pedro González López | Spain | Left Center Midfield | Ball-Winner | 372 | 55.0 | 0.109 | 0.60 | 14.74 | 6.28 |
+| 6 | Ángel Fabián Di María Hernández | Argentina | Right Midfield | Progressive Winger | 305 | 53.6 | 0.232 | 0.00 | 10.92 | 2.95 |
+| 7 | Vinícius José Paixão de Oliveira Júnior | Brazil | Left Midfield | Progressive Winger | 307 | 45.6 | 0.280 | 0.00 | 12.04 | 4.40 |
+| 8 | Yunus Dimoara Musah | United States | Right Center Midfield | Ball-Winner | 365 | 45.0 | 0.101 | 0.25 | 19.24 | 4.44 |
+| 9 | Bernardo Mota Veiga de Carvalho e Silva | Portugal | Right Center Midfield | Ball-Winner | 382 | 41.3 | 0.092 | 0.12 | 14.60 | 4.95 |
+| 10 | Azzedine Ounahi | Morocco | Right Center Midfield | Ball-Winner | 589 | 35.9 | 0.073 | 0.29 | 16.04 | 4.73 |
 
 The central/wide midfield ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1347,16 +1929,16 @@ The central/wide midfield ordering is a role-fit shortlist for this tournament s
 
 | Rank | Player | Team | Detailed position | Role | Min. | Score | Net xG/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Lionel Andrés Messi Cuccittini | Argentina | Right Wing | Progressive Winger | 734 | 80.4 | 1.004 | 0.33 | 10.91 | 3.68 |
-| 2 | Jamal Musiala | Germany | Center Attacking Midfield | Progressive Winger | 274 | 78.5 | 0.435 | 0.20 | 14.12 | 5.91 |
-| 3 | Christian Pulisic | United States | Left Wing | Progressive Winger | 336 | 74.1 | 0.350 | 0.40 | 11.77 | 4.55 |
-| 4 | Raphael Dias Belloli | Brazil | Right Wing | Progressive Winger | 330 | 73.9 | 0.294 | 0.00 | 15.52 | 4.36 |
-| 5 | Neymar da Silva Santos Junior | Brazil | Center Attacking Midfield | Progressive Winger | 281 | 69.5 | 0.731 | 0.20 | 7.67 | 4.16 |
-| 6 | Ismaïla Sarr | Senegal | Left Wing | Ball-Winner | 365 | 69.4 | 0.481 | 0.50 | 13.31 | 3.94 |
-| 7 | Antoine Griezmann | France | Center Attacking Midfield | Wide Creator | 586 | 66.4 | 0.149 | 0.64 | 20.89 | 3.84 |
-| 8 | Bruno Miguel Borges Fernandes | Portugal | Center Attacking Midfield | Ball-Winner | 385 | 64.5 | 0.303 | 0.21 | 15.20 | 3.27 |
-| 9 | Ousmane Dembélé | France | Right Wing | Progressive Winger | 448 | 62.2 | 0.119 | 0.50 | 18.88 | 4.22 |
-| 10 | Mislav Oršić | Croatia | Left Wing | Ball-Winner | 187 | 62.2 | 0.550 | 0.00 | 14.89 | 1.92 |
+| 1 | João Félix Sequeira | Portugal | Left Wing | Target Forward | 340 | 64.1 | 0.193 | 0.50 | 8.99 | 2.38 |
+| 2 | Ismaïla Sarr | Senegal | Left Wing | Target Forward | 365 | 63.7 | 0.481 | 0.50 | 13.31 | 3.94 |
+| 3 | Ousmane Dembélé | France | Right Wing | Progressive Winger | 448 | 61.3 | 0.119 | 0.50 | 18.88 | 4.22 |
+| 4 | Lionel Andrés Messi Cuccittini | Argentina | Right Wing | Progressive Winger | 734 | 60.2 | 1.004 | 0.33 | 10.91 | 3.68 |
+| 5 | Heung-Min Son | South Korea | Left Wing | Target Forward | 390 | 55.4 | 0.119 | 0.17 | 8.78 | 3.23 |
+| 6 | Raphael Dias Belloli | Brazil | Right Wing | Progressive Winger | 330 | 50.2 | 0.294 | 0.00 | 15.52 | 4.36 |
+| 7 | Boulaye Dia | Senegal | Center Attacking Midfield | Target Forward | 330 | 49.6 | 0.179 | 0.36 | 8.73 | 2.18 |
+| 8 | Timothy Weah | United States | Right Wing | Target Forward | 318 | 49.4 | 0.155 | 0.20 | 7.36 | 3.68 |
+| 9 | Hakim Ziyech | Morocco | Right Wing | Wide Creator | 663 | 47.4 | 0.175 | 0.33 | 20.64 | 3.26 |
+| 10 | Christian Pulisic | United States | Left Wing | Progressive Winger | 336 | 47.3 | 0.350 | 0.40 | 11.77 | 4.55 |
 
 The attacking midfield/wing ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1364,16 +1946,16 @@ The attacking midfield/wing ordering is a role-fit shortlist for this tournament
 
 | Rank | Player | Team | Detailed position | Role | Min. | Score | Net xG/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Lautaro Javier Martínez | Argentina | Left Center Forward | Target Forward | 273 | 84.1 | 0.943 | 0.55 | 6.92 | 1.65 |
-| 2 | Olivier Giroud | France | Center Forward | Target Forward | 433 | 82.7 | 0.633 | 0.56 | 12.69 | 0.62 |
-| 3 | Randal Kolo Muani | France | Center Forward | Target Forward | 204 | 79.9 | 0.890 | 0.53 | 22.93 | 2.20 |
-| 4 | Robert Lewandowski | Poland | Center Forward | Target Forward | 390 | 77.6 | 0.733 | 0.45 | 9.70 | 2.77 |
-| 5 | Kylian Mbappé Lottin | France | Left Center Forward | Progressive Winger | 654 | 75.1 | 0.728 | 0.25 | 5.23 | 3.99 |
-| 6 | Álvaro Borja Morata Martín | Spain | Center Forward | Target Forward | 201 | 70.4 | 0.507 | 0.67 | 11.65 | 0.90 |
-| 7 | Cristiano Ronaldo dos Santos Aveiro | Portugal | Center Forward | Target Forward | 303 | 70.4 | 0.587 | 0.50 | 6.24 | 1.49 |
-| 8 | Harry Kane | England | Center Forward | Target Forward | 422 | 68.7 | 0.517 | 0.48 | 6.62 | 2.56 |
-| 9 | Marko Livaja | Croatia | Center Forward | Target Forward | 256 | 67.7 | 0.629 | 0.31 | 17.26 | 2.47 |
-| 10 | Breel-Donald Embolo | Switzerland | Center Forward | Target Forward | 330 | 66.8 | 0.656 | 0.22 | 13.08 | 1.09 |
+| 1 | Mehdi Taremi | Iran | Center Forward | Target Forward | 305 | 60.7 | 0.447 | 0.39 | 19.47 | 3.54 |
+| 2 | Olivier Giroud | France | Center Forward | Target Forward | 433 | 59.2 | 0.633 | 0.56 | 12.69 | 0.62 |
+| 3 | Kylian Mbappé Lottin | France | Left Center Forward | Progressive Winger | 654 | 55.1 | 0.728 | 0.25 | 5.23 | 3.99 |
+| 4 | Richarlison de Andrade | Brazil | Center Forward | Target Forward | 328 | 53.3 | 0.458 | 0.23 | 16.45 | 4.39 |
+| 5 | Breel-Donald Embolo | Switzerland | Center Forward | Target Forward | 330 | 52.3 | 0.656 | 0.22 | 13.08 | 1.09 |
+| 6 | Harry Kane | England | Center Forward | Target Forward | 422 | 52.1 | 0.517 | 0.48 | 6.62 | 2.56 |
+| 7 | Julián Álvarez | Argentina | Center Forward | Target Forward | 485 | 49.5 | 0.355 | 0.25 | 22.26 | 2.60 |
+| 8 | Cristiano Ronaldo dos Santos Aveiro | Portugal | Center Forward | Target Forward | 303 | 47.5 | 0.587 | 0.50 | 6.24 | 1.49 |
+| 9 | Youssef En-Nesyri | Morocco | Center Forward | Target Forward | 554 | 46.1 | 0.163 | 0.54 | 18.36 | 1.95 |
+| 10 | Robert Lewandowski | Poland | Center Forward | Target Forward | 390 | 43.2 | 0.733 | 0.45 | 9.70 | 2.77 |
 
 The forward ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1388,10 +1970,10 @@ The forward ordering is a role-fit shortlist for this tournament sample. Review 
 # Limitations and validity
 
 - The analysis is valid as an exploratory and predictive decision-support artifact over the supplied tournament data. It is not a randomized or causal study.
-- The underlying serialized coaching benchmark was unavailable, so the downstream scenario pipeline used the documented regularized empirical hurdle fallback. Results should be revalidated when a healthy calibrated model bundle is available.
+- V4 preserves the schema-checked calibrated transition classifier and 64-match leave-one-match-out audit while replacing the player layer with 300-minute eligibility, SB360 spatial context, and role-relative scoring. Threshold abstention still prevents weak transition warnings.
 - Rare transition events create high variance. Aggregate patterns and precision-aware decisions are safer than interpreting individual possessions as certain events.
 - Player physicality uses event-derived proxies: ground-duel wins approximate tackle-related success, and recoveries approximate defensive recovery activity.
-- Player rankings cover the 342-player tournament-minute cohort used by the pipeline, not every registered player and not performance outside this competition.
+- Player rankings cover 142 eligible 300+ minute players from 680 observed players; they do not measure performance outside this competition.
 - Recommended actions require video confirmation and domain review. Medical status, fatigue, tactical instructions, score state, and opposition substitutions can materially change the correct decision.
 
 ---

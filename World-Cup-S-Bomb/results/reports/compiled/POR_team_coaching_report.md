@@ -34,18 +34,17 @@ Portugal: no tactical change cleared the modeled effect floor. Primary review si
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 123, INSUFFICIENT_MINUTES: 20.
 
-## V4 coach-facing player leaders
+## V4 role-relative player leaders
 
-1. Raphaël Adelino José Guerreiro — Box-to-Box Runner; position-impact 59.1 (position rank 4), role score 50.1, OBV/90 -0.036
-2. Bruno Miguel Borges Fernandes — Wide Creator; position-impact 57.7 (position rank 3), role score 47.1, OBV/90 -0.070
-3. Kléper Laveran Lima Ferreira — Deep Playmaker; position-impact 53.1 (position rank 13), role score 53.4, OBV/90 +0.388
-4. Rúben Santos Gato Alves Dias — Deep Playmaker; position-impact 51.3 (position rank 14), role score 51.6, OBV/90 +0.282
-5. João Pedro Cavaco Cancelo — Box-to-Box Runner; position-impact 50.9 (position rank 14), role score 56.2, OBV/90 -0.004
+1. João Félix Sequeira — Target Forward; score 64.1, role z +1.41, OBV/90 -0.216
+2. João Pedro Cavaco Cancelo — Box-to-Box Runner; score 56.2, role z +0.62, OBV/90 -0.004
+3. Kléper Laveran Lima Ferreira — Deep Playmaker; score 53.4, role z +0.34, OBV/90 +0.388
+4. Rúben Santos Gato Alves Dias — Deep Playmaker; score 51.6, role z +0.16, OBV/90 +0.282
+5. Diogo Meireles Costa — Goalkeeper; score 50.6, role z +0.06, OBV/90 +0.295
 
-_Only players with at least 300 tournament minutes are ranked. The role score
-stays normalized within functional role. The position-impact score is a
-separate within-position shortlist; attacking positions use 55% OBV-family
-value plus xG, progressive carries, and the SB360-informed final-third share._
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 

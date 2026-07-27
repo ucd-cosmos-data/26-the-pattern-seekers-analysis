@@ -663,12 +663,6 @@ def _write_v4_model_summary(
             "`groupby('Functional role')`; score 50 is role average and each "
             "10 points represents one within-role population standard deviation."
         ),
-        (
-            "- A separate coach-facing `position_impact_score` preserves that "
-            "role score while ranking within position. For attacking positions, "
-            "the OBV family contributes 55%, xG 30%, progressive carries 10%, "
-            "and SB360-informed final-third share 5%."
-        ),
         "",
         "### Model structure",
         "",
@@ -1218,6 +1212,17 @@ def run_pipeline(
     manifest_path = reports_root / "pipeline_manifest.json"
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    if not staging:
+        from generate_final_tournament_report import generate_report
+
+        final_report = (
+            project_root
+            / "results/reports/final/world_cup_team_performance_and_top_players.md"
+        )
+        generate_report(project_root, final_report)
+        summary_path.unlink(missing_ok=True)
+        if summary_path.parent.exists() and not any(summary_path.parent.iterdir()):
+            summary_path.parent.rmdir()
     return manifest
 
 

@@ -34,18 +34,17 @@ Spain: no tactical change cleared the modeled effect floor. Primary review signa
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 95, INSUFFICIENT_MINUTES: 15.
 
-## V4 coach-facing player leaders
+## V4 role-relative player leaders
 
-1. Rodrigo Hernández Cascante — Holding Anchor; position-impact 75.8 (position rank 1), role score 76.1, OBV/90 +0.667
-2. Aymeric Laporte — Holding Anchor; position-impact 57.6 (position rank 10), role score 57.9, OBV/90 +0.641
-3. Pedro González López — Ball-Winner; position-impact 51.8 (position rank 6), role score 55.0, OBV/90 +0.083
-4. Sergio Busquets i Burgos — Ball-Winner; position-impact 49.2 (position rank 14), role score 51.4, OBV/90 +0.010
-5. Daniel Olmo Carvajal — Progressive Winger; position-impact 44.6 (position rank 12), role score 29.9, OBV/90 -0.397
+1. Rodrigo Hernández Cascante — Holding Anchor; score 76.1, role z +2.61, OBV/90 +0.667
+2. Aymeric Laporte — Holding Anchor; score 57.9, role z +0.79, OBV/90 +0.641
+3. Pedro González López — Ball-Winner; score 55.0, role z +0.50, OBV/90 +0.083
+4. Sergio Busquets i Burgos — Ball-Winner; score 51.4, role z +0.14, OBV/90 +0.010
+5. Unai Simón Mendibil — Goalkeeper; score 31.8, role z -1.82, OBV/90 +0.108
 
-_Only players with at least 300 tournament minutes are ranked. The role score
-stays normalized within functional role. The position-impact score is a
-separate within-position shortlist; attacking positions use 55% OBV-family
-value plus xG, progressive carries, and the SB360-informed final-third share._
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 

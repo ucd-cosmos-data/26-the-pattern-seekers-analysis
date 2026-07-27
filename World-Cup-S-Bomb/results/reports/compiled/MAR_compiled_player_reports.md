@@ -18,10 +18,8 @@
 - Final-third spatial share: 43.6%
 - Role-relative z-score: +1.050
 - V4 evaluation score: 60.5
-- V4 position-impact score: 50.5
-- Position rank: 7
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/3625_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/3625_heatmap.svg)
 
 ## Physical profile
 
@@ -60,10 +58,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 2.2%
 - Role-relative z-score: +0.956
 - V4 evaluation score: 59.6
-- V4 position-impact score: 59.3
-- Position rank: 8
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/5219_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/5219_heatmap.svg)
 
 ## Physical profile
 
@@ -103,10 +99,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 6.5%
 - Role-relative z-score: +0.210
 - V4 evaluation score: 52.1
-- V4 position-impact score: 50.2
-- Position rank: 11
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/5234_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/5234_heatmap.svg)
 
 ## Physical profile
 
@@ -145,10 +139,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 32.4%
 - Role-relative z-score: -0.259
 - V4 evaluation score: 47.4
-- V4 position-impact score: 57.0
-- Position rank: 4
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/5237_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/5237_heatmap.svg)
 
 ## Physical profile
 
@@ -187,10 +179,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 28.0%
 - Role-relative z-score: +0.367
 - V4 evaluation score: 53.7
-- V4 position-impact score: 60.6
-- Position rank: 3
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/5245_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/5245_heatmap.svg)
 
 ## Physical profile
 
@@ -230,10 +220,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 29.1%
 - Role-relative z-score: -0.390
 - V4 evaluation score: 46.1
-- V4 position-impact score: 34.9
-- Position rank: 12
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/6301_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/6301_heatmap.svg)
 
 ## Physical profile
 
@@ -272,10 +260,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 0.6%
 - Role-relative z-score: +0.230
 - V4 evaluation score: 52.3
-- V4 position-impact score: 52.3
-- Position rank: 7
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/6785_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/6785_heatmap.svg)
 
 ## Physical profile
 
@@ -315,10 +301,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 1.4%
 - Role-relative z-score: +0.004
 - V4 evaluation score: 50.0
-- V4 position-impact score: 49.8
-- Position rank: 15
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/7459_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/7459_heatmap.svg)
 
 ## Physical profile
 
@@ -358,10 +342,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 1.4%
 - Role-relative z-score: -0.721
 - V4 evaluation score: 42.8
-- V4 position-impact score: 42.5
-- Position rank: 30
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/12149_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/12149_heatmap.svg)
 
 ## Physical profile
 
@@ -401,10 +383,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 18.3%
 - Role-relative z-score: -0.225
 - V4 evaluation score: 47.8
-- V4 position-impact score: 38.8
-- Position rank: 22
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/15890_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/15890_heatmap.svg)
 
 ## Physical profile
 
@@ -443,10 +423,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 19.6%
 - Role-relative z-score: -1.858
 - V4 evaluation score: 31.4
-- V4 position-impact score: 35.2
-- Position rank: 12
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/23774_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/23774_heatmap.svg)
 
 ## Physical profile
 
@@ -486,10 +464,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 20.9%
 - Role-relative z-score: +0.810
 - V4 evaluation score: 58.1
-- V4 position-impact score: 57.2
-- Position rank: 7
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/31295_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/31295_heatmap.svg)
 
 ## Physical profile
 
@@ -528,10 +504,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 22.4%
 - Role-relative z-score: -1.406
 - V4 evaluation score: 35.9
-- V4 position-impact score: 44.1
-- Position rank: 10
 
-![V4 event and 360 heatmap](../../heatmaps/MAR/46258_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/MAR/46258_heatmap.svg)
 
 ## Physical profile
 

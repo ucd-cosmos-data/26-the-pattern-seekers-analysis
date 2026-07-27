@@ -34,18 +34,17 @@ Senegal: no tactical change cleared the modeled effect floor. Primary review sig
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
 
-## V4 coach-facing player leaders
+## V4 role-relative player leaders
 
-1. Kalidou Koulibaly — Deep Playmaker; position-impact 64.1 (position rank 3), role score 64.4, OBV/90 +0.321
-2. Abdou Diallo — Deep Playmaker; position-impact 60.5 (position rank 4), role score 60.8, OBV/90 +0.356
-3. Youssouf Sabaly — Attacking Wingback; position-impact 57.7 (position rank 6), role score 62.2, OBV/90 +0.078
-4. Ismaïla Sarr — Target Forward; position-impact 55.9 (position rank 6), role score 63.7, OBV/90 -0.247
-5. Edouard Mendy — Goalkeeper; position-impact 49.0 (position rank 10), role score 49.0, OBV/90 +0.277
+1. Kalidou Koulibaly — Deep Playmaker; score 64.4, role z +1.44, OBV/90 +0.321
+2. Ismaïla Sarr — Target Forward; score 63.7, role z +1.37, OBV/90 -0.247
+3. Youssouf Sabaly — Attacking Wingback; score 62.2, role z +1.22, OBV/90 +0.078
+4. Abdou Diallo — Deep Playmaker; score 60.8, role z +1.08, OBV/90 +0.356
+5. Boulaye Dia — Target Forward; score 49.6, role z -0.04, OBV/90 -0.459
 
-_Only players with at least 300 tournament minutes are ranked. The role score
-stays normalized within functional role. The position-impact score is a
-separate within-position shortlist; attacking positions use 55% OBV-family
-value plus xG, progressive carries, and the SB360-informed final-third share._
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 

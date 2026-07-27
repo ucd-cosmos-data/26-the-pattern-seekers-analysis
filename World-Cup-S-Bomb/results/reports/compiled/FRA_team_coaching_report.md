@@ -34,18 +34,17 @@ France: no tactical change cleared the modeled effect floor. Primary review sign
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 122, INSUFFICIENT_MINUTES: 19, GAIN_BELOW_THRESHOLD: 2.
 
-## V4 coach-facing player leaders
+## V4 role-relative player leaders
 
-1. Kylian Mbappé Lottin — Progressive Winger; position-impact 74.9 (position rank 1), role score 55.1, OBV/90 -0.157
-2. Aurélien Djani Tchouaméni — Ball-Winner; position-impact 59.6 (position rank 3), role score 58.8, OBV/90 +0.157
-3. Hugo Lloris — Goalkeeper; position-impact 53.1 (position rank 5), role score 53.1, OBV/90 +0.431
-4. Ousmane Dembélé — Progressive Winger; position-impact 53.0 (position rank 7), role score 61.3, OBV/90 -0.123
-5. Olivier Giroud — Target Forward; position-impact 52.7 (position rank 6), role score 59.2, OBV/90 -0.256
+1. Ousmane Dembélé — Progressive Winger; score 61.3, role z +1.13, OBV/90 -0.123
+2. Olivier Giroud — Target Forward; score 59.2, role z +0.92, OBV/90 -0.256
+3. Aurélien Djani Tchouaméni — Ball-Winner; score 58.8, role z +0.88, OBV/90 +0.157
+4. Jules Koundé — Wide Creator; score 55.4, role z +0.54, OBV/90 +0.014
+5. Kylian Mbappé Lottin — Progressive Winger; score 55.1, role z +0.51, OBV/90 -0.157
 
-_Only players with at least 300 tournament minutes are ranked. The role score
-stays normalized within functional role. The position-impact score is a
-separate within-position shortlist; attacking positions use 55% OBV-family
-value plus xG, progressive carries, and the SB360-informed final-third share._
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 

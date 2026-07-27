@@ -15,7 +15,7 @@ from tqdm.auto import tqdm
 
 T = TypeVar("T")
 DEFAULT_LOG = (
-    Path(__file__).resolve().parents[1] / "logs" / "pipeline_execution_eta_v3.json"
+    Path(__file__).resolve().parents[1] / "logs" / "pipeline_execution_eta.json"
 )
 
 
@@ -38,7 +38,7 @@ class StageRuntime:
 class PipelineTimer:
     """Track bounded stages and atomically persist their runtime summaries."""
 
-    def __init__(self, log_path: Path = DEFAULT_LOG, pipeline: str = "v2") -> None:
+    def __init__(self, log_path: Path = DEFAULT_LOG, pipeline: str = "production") -> None:
         self.log_path = Path(log_path)
         self.pipeline = pipeline
         self.started_at = time.perf_counter()

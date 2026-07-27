@@ -18,10 +18,8 @@
 - Final-third spatial share: 1.9%
 - Role-relative z-score: +1.124
 - V4 evaluation score: 61.2
-- V4 position-impact score: 61.2
-- Position rank: 2
 
-![V4 event and 360 heatmap](../../heatmaps/AUS/3240_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/AUS/3240_heatmap.svg)
 
 ## Physical profile
 
@@ -61,10 +59,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 14.0%
 - Role-relative z-score: -0.261
 - V4 evaluation score: 47.4
-- V4 position-impact score: 43.6
-- Position rank: 18
 
-![V4 event and 360 heatmap](../../heatmaps/AUS/3281_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/AUS/3281_heatmap.svg)
 
 ## Physical profile
 
@@ -103,10 +99,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 23.6%
 - Role-relative z-score: -0.190
 - V4 evaluation score: 48.1
-- V4 position-impact score: 47.3
-- Position rank: 16
 
-![V4 event and 360 heatmap](../../heatmaps/AUS/5479_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/AUS/5479_heatmap.svg)
 
 ## Physical profile
 
@@ -146,10 +140,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 48.5%
 - Role-relative z-score: -1.466
 - V4 evaluation score: 35.3
-- V4 position-impact score: 31.7
-- Position rank: 13
 
-![V4 event and 360 heatmap](../../heatmaps/AUS/5481_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/AUS/5481_heatmap.svg)
 
 ## Physical profile
 
@@ -189,10 +181,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 25.0%
 - Role-relative z-score: -0.700
 - V4 evaluation score: 43.0
-- V4 position-impact score: 46.2
-- Position rank: 9
 
-![V4 event and 360 heatmap](../../heatmaps/AUS/5490_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/AUS/5490_heatmap.svg)
 
 ## Physical profile
 
@@ -232,10 +222,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 3.2%
 - Role-relative z-score: -0.376
 - V4 evaluation score: 46.2
-- V4 position-impact score: 46.0
-- Position rank: 23
 
-![V4 event and 360 heatmap](../../heatmaps/AUS/22293_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/AUS/22293_heatmap.svg)
 
 ## Physical profile
 
@@ -275,10 +263,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 1.2%
 - Role-relative z-score: -0.998
 - V4 evaluation score: 40.0
-- V4 position-impact score: 39.7
-- Position rank: 33
 
-![V4 event and 360 heatmap](../../heatmaps/AUS/33495_heatmap.svg)
+![V4 event and 360 heatmap](../heatmaps/AUS/33495_heatmap.svg)
 
 ## Physical profile
 

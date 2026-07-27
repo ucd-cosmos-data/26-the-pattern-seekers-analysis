@@ -34,18 +34,17 @@ Netherlands: no tactical change cleared the modeled effect floor. Primary review
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 92, INSUFFICIENT_MINUTES: 18.
 
-## V4 coach-facing player leaders
+## V4 role-relative player leaders
 
-1. Jurriën David Norman Timber — Ball-Winner; position-impact 60.1 (position rank 5), role score 60.4, OBV/90 +0.218
-2. Virgil van Dijk — Deep Playmaker; position-impact 58.5 (position rank 9), role score 58.8, OBV/90 +0.375
-3. Frenkie de Jong — Ball-Winner; position-impact 55.0 (position rank 7), role score 55.5, OBV/90 +0.018
-4. Daley Blind — Box-to-Box Runner; position-impact 51.4 (position rank 13), role score 40.9, OBV/90 -0.060
-5. Nathan Aké — Holding Anchor; position-impact 49.6 (position rank 16), role score 49.9, OBV/90 +0.316
+1. Jurriën David Norman Timber — Ball-Winner; score 60.4, role z +1.04, OBV/90 +0.218
+2. Virgil van Dijk — Deep Playmaker; score 58.8, role z +0.88, OBV/90 +0.375
+3. Frenkie de Jong — Ball-Winner; score 55.5, role z +0.55, OBV/90 +0.018
+4. Nathan Aké — Holding Anchor; score 49.9, role z -0.01, OBV/90 +0.316
+5. Andries Noppert — Goalkeeper; score 41.3, role z -0.87, OBV/90 +0.262
 
-_Only players with at least 300 tournament minutes are ranked. The role score
-stays normalized within functional role. The position-impact score is a
-separate within-position shortlist; attacking positions use 55% OBV-family
-value plus xG, progressive carries, and the SB360-informed final-third share._
+_Only players with at least 300 tournament minutes are ranked. Scores are
+standardized within functional role and are not cross-position absolute
+quality estimates._
 
 ## Recurrent tactical mistakes
 

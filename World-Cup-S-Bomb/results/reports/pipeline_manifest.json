@@ -80,8 +80,7 @@
     "heatmaps": true,
     "player_reports": true,
     "compiled_reports": true,
-    "summary": true,
-    "mbappe_first_forward": true
+    "summary": true
   },
   "runtime": {
     "schema_version": 1,
