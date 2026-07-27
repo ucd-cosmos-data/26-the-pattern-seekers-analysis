@@ -1,7 +1,7 @@
 # SEN — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 6
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -13,11 +13,14 @@
 - Team: Senegal (SEN)
 - Position: Left Wing
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.2472
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 65.3%
-- Role-relative z-score: +1.373
-- V4 evaluation score: 63.7
+- VAEP offense per 90: 1.4195
+- VAEP defense per 90: -0.0066
+- VAEP total per 90: 1.4128
+- VAEP per touch: 0.01541
+- Spatial xT per 90: 0.0856
+- Final-third spatial share: 56.0%
+- Unified final player rating: 0.7282
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/2941_heatmap.svg)
 
@@ -52,12 +55,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Senegal (SEN)
 - Position: Right Back
-- Functional role: Attacking Wingback
-- Risk-adjusted OBV per 90: 0.0780
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 36.2%
-- Role-relative z-score: +1.222
-- V4 evaluation score: 62.2
+- Functional role: Box-to-Box Runner
+- VAEP offense per 90: 0.1162
+- VAEP defense per 90: -0.0095
+- VAEP total per 90: 0.1067
+- VAEP per touch: 0.00078
+- Spatial xT per 90: 0.0678
+- Final-third spatial share: 34.9%
+- Unified final player rating: 0.0671
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/3404_heatmap.svg)
 
@@ -92,12 +98,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Senegal (SEN)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.3210
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 3.3%
-- Role-relative z-score: +1.444
-- V4 evaluation score: 64.4
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.2386
+- VAEP defense per 90: -0.1167
+- VAEP total per 90: 0.1219
+- VAEP per touch: 0.00108
+- Spatial xT per 90: 0.0038
+- Final-third spatial share: 4.3%
+- Unified final player rating: 0.0620
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/5675_heatmap.svg)
 
@@ -134,11 +143,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Senegal (SEN)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.2767
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 1.5%
-- Role-relative z-score: -0.098
-- V4 evaluation score: 49.0
+- VAEP offense per 90: -0.0190
+- VAEP defense per 90: -0.2899
+- VAEP total per 90: -0.3089
+- VAEP per touch: -0.00580
+- Spatial xT per 90: 0.0042
+- Final-third spatial share: 1.7%
+- Unified final player rating: -0.1553
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/7379_heatmap.svg)
 
@@ -174,12 +186,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Senegal (SEN)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.3564
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 9.0%
-- Role-relative z-score: +1.077
-- V4 evaluation score: 60.8
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0274
+- VAEP defense per 90: -0.0465
+- VAEP total per 90: -0.0192
+- VAEP per touch: -0.00016
+- Spatial xT per 90: 0.0235
+- Final-third spatial share: 9.7%
+- Unified final player rating: -0.0049
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/8553_heatmap.svg)
 
@@ -216,11 +231,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Senegal (SEN)
 - Position: Center Attacking Midfield
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.4585
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 69.3%
-- Role-relative z-score: -0.043
-- V4 evaluation score: 49.6
+- VAEP offense per 90: 0.4361
+- VAEP defense per 90: 0.0421
+- VAEP total per 90: 0.4781
+- VAEP per touch: 0.00716
+- Spatial xT per 90: 0.0070
+- Final-third spatial share: 57.7%
+- Unified final player rating: 0.2426
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/20611_heatmap.svg)
 

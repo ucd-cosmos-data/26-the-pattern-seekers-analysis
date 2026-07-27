@@ -1,7 +1,7 @@
 # AUS — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 7
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -13,11 +13,14 @@
 - Team: Australia (AUS)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.4981
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 1.9%
-- Role-relative z-score: +1.124
-- V4 evaluation score: 61.2
+- VAEP offense per 90: -0.0204
+- VAEP defense per 90: -0.3052
+- VAEP total per 90: -0.3256
+- VAEP per touch: -0.00427
+- Spatial xT per 90: 0.0013
+- Final-third spatial share: 2.3%
+- Unified final player rating: -0.1638
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/3240_heatmap.svg)
 
@@ -53,12 +56,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Australia (AUS)
 - Position: Left Defensive Midfield
-- Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.0937
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 14.0%
-- Role-relative z-score: -0.261
-- V4 evaluation score: 47.4
+- Functional role: Box-to-Box Runner
+- VAEP offense per 90: 0.1181
+- VAEP defense per 90: -0.0349
+- VAEP total per 90: 0.0833
+- VAEP per touch: 0.00065
+- Spatial xT per 90: 0.0248
+- Final-third spatial share: 15.8%
+- Unified final player rating: 0.0468
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/3281_heatmap.svg)
 
@@ -93,12 +99,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Australia (AUS)
 - Position: Left Back
-- Functional role: Box-to-Box Runner
-- Risk-adjusted OBV per 90: -0.0138
-- OBV source: `open_event_value_fallback`
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.1055
+- VAEP defense per 90: -0.0206
+- VAEP total per 90: 0.0849
+- VAEP per touch: 0.00069
+- Spatial xT per 90: 0.0391
 - Final-third spatial share: 23.6%
-- Role-relative z-score: -0.190
-- V4 evaluation score: 48.1
+- Unified final player rating: 0.0505
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/5479_heatmap.svg)
 
@@ -135,11 +144,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Australia (AUS)
 - Position: Right Midfield
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.5198
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 48.5%
-- Role-relative z-score: -1.466
-- V4 evaluation score: 35.3
+- VAEP offense per 90: 0.4059
+- VAEP defense per 90: -0.0102
+- VAEP total per 90: 0.3957
+- VAEP per touch: 0.00378
+- Spatial xT per 90: 0.0154
+- Final-third spatial share: 40.8%
+- Unified final player rating: 0.2020
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/5481_heatmap.svg)
 
@@ -176,11 +188,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Australia (AUS)
 - Position: Left Center Forward
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: -0.0800
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 25.0%
-- Role-relative z-score: -0.700
-- V4 evaluation score: 43.0
+- VAEP offense per 90: 0.3813
+- VAEP defense per 90: -0.0432
+- VAEP total per 90: 0.3380
+- VAEP per touch: 0.00418
+- Spatial xT per 90: 0.0202
+- Final-third spatial share: 22.3%
+- Unified final player rating: 0.1743
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/5490_heatmap.svg)
 
@@ -216,12 +231,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Australia (AUS)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.2423
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 3.2%
-- Role-relative z-score: -0.376
-- V4 evaluation score: 46.2
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0232
+- VAEP defense per 90: -0.1494
+- VAEP total per 90: -0.1262
+- VAEP per touch: -0.00133
+- Spatial xT per 90: 0.0029
+- Final-third spatial share: 4.0%
+- Unified final player rating: -0.0629
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/22293_heatmap.svg)
 
@@ -257,12 +275,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Australia (AUS)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.1064
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 1.2%
-- Role-relative z-score: -0.998
-- V4 evaluation score: 40.0
+- Functional role: Sweeper CB
+- VAEP offense per 90: -0.0150
+- VAEP defense per 90: -0.1276
+- VAEP total per 90: -0.1427
+- VAEP per touch: -0.00131
+- Spatial xT per 90: 0.0001
+- Final-third spatial share: 2.5%
+- Unified final player rating: -0.0717
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/33495_heatmap.svg)
 

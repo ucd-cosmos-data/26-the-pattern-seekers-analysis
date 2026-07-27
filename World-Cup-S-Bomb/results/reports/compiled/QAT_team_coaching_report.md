@@ -15,9 +15,9 @@ Qatar: no tactical change cleared the modeled effect floor. Primary review signa
 3. Akram Hassan Afif (Forward)
 4. Pedro Miguel Correia (Center Back)
 5. Homam Alamin Ahmed (Fullback/Wingback)
-6. Abdulaziz Hatem Mohammed Abdullah (Central/Wide Midfield)
-7. Karim Boudiaf (Defensive Midfield)
-8. Hassan Khalid Al Heidos (Central/Wide Midfield)
+6. Karim Boudiaf (Defensive Midfield)
+7. Hassan Khalid Al Heidos (Central/Wide Midfield)
+8. Abdulaziz Hatem Mohammed Abdullah (Central/Wide Midfield)
 9. Almoez Ali Zainalabiddin Abdulla (Forward)
 10. Meshaal Aissa Barsham (Goalkeeper)
 11. Ismaeel Mohammad Mohammad (Fullback/Wingback)
@@ -34,13 +34,13 @@ Qatar: no tactical change cleared the modeled effect floor. Primary review signa
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 81, INSUFFICIENT_MINUTES: 18.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
 No player cleared the 300-minute V4 evaluation cutoff.
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

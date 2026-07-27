@@ -95,10 +95,7 @@ RATIO_SKILLS = {
     "aerial_win_rate": ("aerial_wins", "aerial_events"),
 }
 
-MEAN_SKILLS = {
-    "pass_progression_per_pass": ("pass_progression_sum", "passes"),
-    "carry_progression_per_carry": ("carry_progression_sum", "carries"),
-}
+MEAN_SKILLS: dict[str, tuple[str, str]] = {}
 
 ATTACK_SKILLS = [
     "pass_completion",
@@ -115,8 +112,6 @@ ATTACK_SKILLS = [
     "xg_p90",
     "pressure_retention",
     "turnovers_p90",
-    "pass_progression_per_pass",
-    "carry_progression_per_carry",
     "aerial_win_rate",
 ]
 

@@ -1,7 +1,7 @@
 # IRN — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 3
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -12,12 +12,15 @@
 
 - Team: Iran (IRN)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.1328
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 5.0%
-- Role-relative z-score: -0.346
-- V4 evaluation score: 46.5
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.1456
+- VAEP defense per 90: -0.1166
+- VAEP total per 90: 0.0290
+- VAEP per touch: 0.00033
+- Spatial xT per 90: 0.0060
+- Final-third spatial share: 5.4%
+- Unified final player rating: 0.0158
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/IRN/5220_heatmap.svg)
 
@@ -54,11 +57,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Iran (IRN)
 - Position: Center Forward
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.2328
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 44.3%
-- Role-relative z-score: +1.068
-- V4 evaluation score: 60.7
+- VAEP offense per 90: 0.7553
+- VAEP defense per 90: 0.0572
+- VAEP total per 90: 0.8125
+- VAEP per touch: 0.00924
+- Spatial xT per 90: 0.0441
+- Final-third spatial share: 40.8%
+- Unified final player rating: 0.4178
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/IRN/5226_heatmap.svg)
 
@@ -93,12 +99,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Iran (IRN)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.1083
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 1.4%
-- Role-relative z-score: -1.856
-- V4 evaluation score: 31.4
+- Functional role: Sweeper CB
+- VAEP offense per 90: -0.0124
+- VAEP defense per 90: -0.0763
+- VAEP total per 90: -0.0887
+- VAEP per touch: -0.00121
+- Spatial xT per 90: 0.0072
+- Final-third spatial share: 3.9%
+- Unified final player rating: -0.0433
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/IRN/5228_heatmap.svg)
 

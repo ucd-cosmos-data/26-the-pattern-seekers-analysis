@@ -2,35 +2,35 @@
 <title>Dominik Livaković V4 spatial heatmap</title>
 <rect width="640" height="500" fill="#f7fafc"/>
 <text x="20" y="28" font-family="Arial" font-size="18" font-weight="700">Dominik Livaković</text>
-<text x="20" y="49" font-family="Arial" font-size="12">Goalkeeper · 720 minutes · 0.8% final third</text>
+<text x="20" y="49" font-family="Arial" font-size="12">Goalkeeper · 720 minutes · 1.0% final third</text>
 <rect x="20" y="60" width="50" height="50" fill="rgb(244,247,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="110" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="20" y="160" width="50" height="50" fill="rgb(208,227,247)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="20" y="210" width="50" height="50" fill="rgb(151,196,234)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="20" y="160" width="50" height="50" fill="rgb(210,228,247)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="20" y="210" width="50" height="50" fill="rgb(141,191,232)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="260" width="50" height="50" fill="rgb(35,133,210)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="20" y="310" width="50" height="50" fill="rgb(221,235,250)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="20" y="310" width="50" height="50" fill="rgb(219,233,249)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="360" width="50" height="50" fill="rgb(244,247,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="410" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="70" y="60" width="50" height="50" fill="rgb(244,247,254)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="70" y="110" width="50" height="50" fill="rgb(240,245,253)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="70" y="110" width="50" height="50" fill="rgb(239,244,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="70" y="160" width="50" height="50" fill="rgb(216,232,248)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="70" y="210" width="50" height="50" fill="rgb(170,207,239)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="70" y="260" width="50" height="50" fill="rgb(154,198,235)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="70" y="210" width="50" height="50" fill="rgb(174,209,239)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="70" y="260" width="50" height="50" fill="rgb(155,198,235)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="70" y="310" width="50" height="50" fill="rgb(218,233,249)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="70" y="360" width="50" height="50" fill="rgb(240,245,253)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="70" y="360" width="50" height="50" fill="rgb(239,244,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="70" y="410" width="50" height="50" fill="rgb(242,246,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="60" width="50" height="50" fill="rgb(241,245,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="110" width="50" height="50" fill="rgb(242,246,254)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="120" y="160" width="50" height="50" fill="rgb(234,242,252)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="120" y="210" width="50" height="50" fill="rgb(234,242,252)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="120" y="260" width="50" height="50" fill="rgb(229,239,251)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="120" y="160" width="50" height="50" fill="rgb(236,243,253)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="120" y="210" width="50" height="50" fill="rgb(234,241,252)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="120" y="260" width="50" height="50" fill="rgb(231,240,252)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="310" width="50" height="50" fill="rgb(231,240,252)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="120" y="360" width="50" height="50" fill="rgb(240,245,253)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="120" y="360" width="50" height="50" fill="rgb(239,244,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="410" width="50" height="50" fill="rgb(242,246,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="60" width="50" height="50" fill="rgb(240,245,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="110" width="50" height="50" fill="rgb(240,245,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="160" width="50" height="50" fill="rgb(241,245,254)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="170" y="210" width="50" height="50" fill="rgb(236,243,253)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="170" y="210" width="50" height="50" fill="rgb(237,243,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="260" width="50" height="50" fill="rgb(244,247,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="310" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="360" width="50" height="50" fill="rgb(240,245,253)" stroke="#ffffff" stroke-width="0.5"/>
@@ -95,7 +95,7 @@
 <rect x="570" y="110" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="570" y="160" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="570" y="210" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="570" y="260" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="570" y="260" width="50" height="50" fill="rgb(244,247,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="570" y="310" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="570" y="360" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="570" y="410" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>

@@ -10,13 +10,13 @@ France: no tactical change cleared the modeled effect floor. Primary review sign
 
 ## Optimized starting 11
 
-1. Aurélien Djani Tchouaméni (Defensive Midfield)
-2. Kylian Mbappé Lottin (Forward)
-3. Antoine Griezmann (Attacking Midfield/Wing)
-4. Theo Bernard François Hernández (Fullback/Wingback)
-5. Hugo Lloris (Goalkeeper)
-6. Adrien Rabiot (Defensive Midfield)
-7. Raphaël Varane (Center Back)
+1. Kylian Mbappé Lottin (Forward)
+2. Antoine Griezmann (Attacking Midfield/Wing)
+3. Adrien Rabiot (Defensive Midfield)
+4. Raphaël Varane (Center Back)
+5. Theo Bernard François Hernández (Fullback/Wingback)
+6. Hugo Lloris (Goalkeeper)
+7. Aurélien Djani Tchouaméni (Defensive Midfield)
 8. Jules Koundé (Fullback/Wingback)
 9. Dayotchanculle Upamecano (Center Back)
 10. Marcus Thuram (Central/Wide Midfield)
@@ -34,17 +34,17 @@ France: no tactical change cleared the modeled effect floor. Primary review sign
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 122, INSUFFICIENT_MINUTES: 19, GAIN_BELOW_THRESHOLD: 2.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Ousmane Dembélé — Progressive Winger; score 61.3, role z +1.13, OBV/90 -0.123
-2. Olivier Giroud — Target Forward; score 59.2, role z +0.92, OBV/90 -0.256
-3. Aurélien Djani Tchouaméni — Ball-Winner; score 58.8, role z +0.88, OBV/90 +0.157
-4. Jules Koundé — Wide Creator; score 55.4, role z +0.54, OBV/90 +0.014
-5. Kylian Mbappé Lottin — Progressive Winger; score 55.1, role z +0.51, OBV/90 -0.157
+1. Kylian Mbappé Lottin — Progressive Winger; rating 0.9724, VAEP/90 +1.889, xT/90 +0.120
+2. Olivier Giroud — Target Forward; rating 0.9323, VAEP/90 +1.841, xT/90 +0.009
+3. Adrien Rabiot — Ball-Winner; rating 0.2725, VAEP/90 +0.539, xT/90 +0.010
+4. Antoine Griezmann — Ball-Winner; rating 0.2600, VAEP/90 +0.471, xT/90 +0.118
+5. Ousmane Dembélé — Progressive Winger; rating 0.2269, VAEP/90 +0.410, xT/90 +0.104
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

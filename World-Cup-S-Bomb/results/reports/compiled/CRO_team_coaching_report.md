@@ -13,13 +13,13 @@ Croatia: no tactical change cleared the modeled effect floor. Primary review sig
 1. Dominik Livaković (Goalkeeper)
 2. Joško Gvardiol (Center Back)
 3. Luka Modrić (Central/Wide Midfield)
-4. Mateo Kovačić (Central/Wide Midfield)
-5. Josip Juranović (Fullback/Wingback)
-6. Ivan Perišić (Attacking Midfield/Wing)
-7. Dejan Lovren (Center Back)
-8. Borna Sosa (Fullback/Wingback)
-9. Marcelo Brozović (Defensive Midfield)
-10. Andrej Kramarić (Attacking Midfield/Wing)
+4. Ivan Perišić (Attacking Midfield/Wing)
+5. Mateo Kovačić (Central/Wide Midfield)
+6. Andrej Kramarić (Attacking Midfield/Wing)
+7. Marcelo Brozović (Defensive Midfield)
+8. Josip Juranović (Fullback/Wingback)
+9. Borna Sosa (Fullback/Wingback)
+10. Dejan Lovren (Center Back)
 11. Bruno Petković (Forward)
 
 ## Physical matchup deltas
@@ -34,17 +34,17 @@ Croatia: no tactical change cleared the modeled effect floor. Primary review sig
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 84, INSUFFICIENT_MINUTES: 15.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Borna Sosa — Box-to-Box Runner; score 71.9, role z +2.19, OBV/90 +0.071
-2. Luka Modrić — Ball-Winner; score 59.9, role z +0.99, OBV/90 +0.181
-3. Josip Juranović — Wide Creator; score 59.2, role z +0.92, OBV/90 +0.037
-4. Dominik Livaković — Goalkeeper; score 58.3, role z +0.83, OBV/90 +0.243
-5. Mateo Kovačić — Ball-Winner; score 55.5, role z +0.55, OBV/90 +0.081
+1. Andrej Kramarić — Target Forward; rating 0.4057, VAEP/90 +0.803, xT/90 +0.010
+2. Ivan Perišić — Wide Creator; rating 0.2118, VAEP/90 +0.399, xT/90 +0.057
+3. Dominik Livaković — Goalkeeper; rating 0.1243, VAEP/90 +0.246, xT/90 +0.001
+4. Luka Modrić — Ball-Winner; rating 0.1177, VAEP/90 +0.205, xT/90 +0.075
+5. Marcelo Brozović — Ball-Winner; rating 0.1124, VAEP/90 +0.220, xT/90 +0.012
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

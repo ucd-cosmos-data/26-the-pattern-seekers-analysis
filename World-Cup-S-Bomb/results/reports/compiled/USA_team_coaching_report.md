@@ -10,16 +10,16 @@ United States: no tactical change cleared the modeled effect floor. Primary revi
 
 ## Optimized starting 11
 
-1. Tyler Adams (Defensive Midfield)
-2. Matthew Charles Turner (Goalkeeper)
-3. Tim Ream (Center Back)
-4. Yunus Dimoara Musah (Central/Wide Midfield)
+1. Tim Ream (Center Back)
+2. Antonee Robinson (Fullback/Wingback)
+3. Christian Pulisic (Attacking Midfield/Wing)
+4. Timothy Weah (Attacking Midfield/Wing)
 5. Sergino Dest (Fullback/Wingback)
-6. Antonee Robinson (Fullback/Wingback)
-7. Christian Pulisic (Attacking Midfield/Wing)
-8. Timothy Weah (Attacking Midfield/Wing)
-9. Walker Zimmerman (Center Back)
-10. Weston McKennie (Central/Wide Midfield)
+6. Tyler Adams (Defensive Midfield)
+7. Matthew Charles Turner (Goalkeeper)
+8. Yunus Dimoara Musah (Central/Wide Midfield)
+9. Weston McKennie (Central/Wide Midfield)
+10. Walker Zimmerman (Center Back)
 11. Joshua Sargent (Forward)
 
 ## Physical matchup deltas
@@ -34,17 +34,17 @@ United States: no tactical change cleared the modeled effect floor. Primary revi
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 84, INSUFFICIENT_MINUTES: 15.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Sergino Dest — Wide Creator; score 66.3, role z +1.63, OBV/90 +0.100
-2. Tyler Adams — Ball-Winner; score 58.9, role z +0.89, OBV/90 +0.050
-3. Timothy Weah — Target Forward; score 49.4, role z -0.06, OBV/90 -0.420
-4. Matthew Charles Turner — Goalkeeper; score 47.9, role z -0.21, OBV/90 +0.325
-5. Christian Pulisic — Progressive Winger; score 47.3, role z -0.27, OBV/90 -0.171
+1. Christian Pulisic — Progressive Winger; rating 0.4065, VAEP/90 +0.770, xT/90 +0.098
+2. Timothy Weah — Progressive Winger; rating 0.3572, VAEP/90 +0.703, xT/90 +0.018
+3. Sergino Dest — Box-to-Box Runner; rating 0.0421, VAEP/90 +0.051, xT/90 +0.083
+4. Tim Ream — Deep Playmaker; rating 0.0417, VAEP/90 +0.084, xT/90 -0.003
+5. Antonee Robinson — Wide Creator; rating 0.0141, VAEP/90 +0.004, xT/90 +0.060
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

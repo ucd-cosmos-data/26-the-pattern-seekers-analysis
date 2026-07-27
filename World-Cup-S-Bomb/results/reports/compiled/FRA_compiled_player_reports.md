@@ -1,7 +1,7 @@
 # FRA — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 12
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -13,11 +13,14 @@
 - Team: France (FRA)
 - Position: Left Center Forward
 - Functional role: Progressive Winger
-- Risk-adjusted OBV per 90: -0.1567
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 62.8%
-- Role-relative z-score: +0.510
-- V4 evaluation score: 55.1
+- VAEP offense per 90: 1.8760
+- VAEP defense per 90: 0.0127
+- VAEP total per 90: 1.8888
+- VAEP per touch: 0.01357
+- Spatial xT per 90: 0.1198
+- Final-third spatial share: 59.0%
+- Unified final player rating: 0.9724
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3009_heatmap.svg)
 
@@ -53,11 +56,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Left Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: -0.0667
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 31.3%
-- Role-relative z-score: +0.068
-- V4 evaluation score: 50.7
+- VAEP offense per 90: 0.5712
+- VAEP defense per 90: -0.0324
+- VAEP total per 90: 0.5388
+- VAEP per touch: 0.00395
+- Spatial xT per 90: 0.0095
+- Final-third spatial share: 29.6%
+- Unified final player rating: 0.2725
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3026_heatmap.svg)
 
@@ -94,11 +100,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.4308
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 1.1%
-- Role-relative z-score: +0.308
-- V4 evaluation score: 53.1
+- VAEP offense per 90: -0.0159
+- VAEP defense per 90: 0.1190
+- VAEP total per 90: 0.1031
+- VAEP per touch: 0.00214
+- Spatial xT per 90: 0.0047
+- Final-third spatial share: 1.3%
+- Unified final player rating: 0.0531
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3099_heatmap.svg)
 
@@ -135,11 +144,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Center Forward
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.2563
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 41.8%
-- Role-relative z-score: +0.920
-- V4 evaluation score: 59.2
+- VAEP offense per 90: 1.7446
+- VAEP defense per 90: 0.0965
+- VAEP total per 90: 1.8411
+- VAEP per touch: 0.03315
+- Spatial xT per 90: 0.0090
+- Final-third spatial share: 37.3%
+- Unified final player rating: 0.9323
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3604_heatmap.svg)
 
@@ -174,12 +186,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: France (FRA)
 - Position: Right Back
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: 0.0142
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 18.0%
-- Role-relative z-score: +0.537
-- V4 evaluation score: 55.4
+- Functional role: Box-to-Box Runner
+- VAEP offense per 90: 0.0645
+- VAEP defense per 90: -0.0531
+- VAEP total per 90: 0.0114
+- VAEP per touch: 0.00009
+- Spatial xT per 90: 0.0154
+- Final-third spatial share: 18.4%
+- Unified final player rating: 0.0088
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/4445_heatmap.svg)
 
@@ -216,11 +231,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Right Wing
 - Functional role: Progressive Winger
-- Risk-adjusted OBV per 90: -0.1233
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 57.3%
-- Role-relative z-score: +1.134
-- V4 evaluation score: 61.3
+- VAEP offense per 90: 0.4151
+- VAEP defense per 90: -0.0049
+- VAEP total per 90: 0.4103
+- VAEP per touch: 0.00319
+- Spatial xT per 90: 0.1039
+- Final-third spatial share: 53.5%
+- Unified final player rating: 0.2269
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/5477_heatmap.svg)
 
@@ -255,12 +273,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: France (FRA)
 - Position: Right Center Back
-- Functional role: Holding Anchor
-- Risk-adjusted OBV per 90: 0.2007
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 4.2%
-- Role-relative z-score: -1.577
-- V4 evaluation score: 34.2
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0421
+- VAEP defense per 90: -0.0163
+- VAEP total per 90: 0.0258
+- VAEP per touch: 0.00021
+- Spatial xT per 90: 0.0064
+- Final-third spatial share: 4.9%
+- Unified final player rating: 0.0142
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/5485_heatmap.svg)
 
@@ -295,12 +316,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: France (FRA)
 - Position: Center Attacking Midfield
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: -0.1280
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 36.5%
-- Role-relative z-score: -0.745
-- V4 evaluation score: 42.5
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.4858
+- VAEP defense per 90: -0.0152
+- VAEP total per 90: 0.4706
+- VAEP per touch: 0.00353
+- Spatial xT per 90: 0.1182
+- Final-third spatial share: 35.3%
+- Unified final player rating: 0.2600
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/5487_heatmap.svg)
 
@@ -336,12 +360,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: France (FRA)
 - Position: Left Back
-- Functional role: Box-to-Box Runner
-- Risk-adjusted OBV per 90: -0.0192
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 29.2%
-- Role-relative z-score: +0.377
-- V4 evaluation score: 53.8
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.2293
+- VAEP defense per 90: -0.0390
+- VAEP total per 90: 0.1903
+- VAEP per touch: 0.00134
+- Spatial xT per 90: 0.0505
+- Final-third spatial share: 27.8%
+- Unified final player rating: 0.1057
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/6704_heatmap.svg)
 
@@ -377,12 +404,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: France (FRA)
 - Position: Left Center Back
-- Functional role: Holding Anchor
-- Risk-adjusted OBV per 90: 0.3507
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 3.3%
-- Role-relative z-score: -0.873
-- V4 evaluation score: 41.3
+- Functional role: Deep Playmaker
+- VAEP offense per 90: -0.0043
+- VAEP defense per 90: -0.2125
+- VAEP total per 90: -0.2169
+- VAEP per touch: -0.00135
+- Spatial xT per 90: 0.0137
+- Final-third spatial share: 3.9%
+- Unified final player rating: -0.1061
+- Team rank: #12
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/8519_heatmap.svg)
 
@@ -418,11 +448,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Right Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.1572
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 14.6%
-- Role-relative z-score: +0.882
-- V4 evaluation score: 58.8
+- VAEP offense per 90: 0.0362
+- VAEP defense per 90: -0.0662
+- VAEP total per 90: -0.0299
+- VAEP per touch: -0.00017
+- Spatial xT per 90: 0.0271
+- Final-third spatial share: 15.0%
+- Unified final player rating: -0.0096
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/10481_heatmap.svg)
 
@@ -458,12 +491,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: France (FRA)
 - Position: Left Center Back
-- Functional role: Holding Anchor
-- Risk-adjusted OBV per 90: 0.3083
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 3.2%
-- Role-relative z-score: -0.392
-- V4 evaluation score: 46.1
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0760
+- VAEP defense per 90: -0.1043
+- VAEP total per 90: -0.0283
+- VAEP per touch: -0.00016
+- Spatial xT per 90: 0.0182
+- Final-third spatial share: 3.6%
+- Unified final player rating: -0.0106
+- Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/11135_heatmap.svg)
 

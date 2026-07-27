@@ -10,16 +10,16 @@ Poland: Patient Build-up led the observed baseline by 0.0041 mean EvA. Primary r
 
 ## Optimized starting 11
 
-1. Matty Cash (Fullback/Wingback)
-2. Wojciech Szczęsny (Goalkeeper)
-3. Kamil Glik (Center Back)
-4. Jakub Piotr Kiwior (Center Back)
-5. Piotr Zieliński (Central/Wide Midfield)
-6. Robert Lewandowski (Forward)
+1. Kamil Glik (Center Back)
+2. Robert Lewandowski (Forward)
+3. Piotr Zieliński (Central/Wide Midfield)
+4. Matty Cash (Fullback/Wingback)
+5. Jakub Piotr Kiwior (Center Back)
+6. Wojciech Szczęsny (Goalkeeper)
 7. Bartosz Bereszyński (Fullback/Wingback)
-8. Grzegorz Krychowiak (Defensive Midfield)
-9. Przemysław Frankowski (Central/Wide Midfield)
-10. Krystian Bielik (Defensive Midfield)
+8. Przemysław Frankowski (Central/Wide Midfield)
+9. Krystian Bielik (Defensive Midfield)
+10. Jakub Kamiński (Central/Wide Midfield)
 11. Kamil Grosicki (Attacking Midfield/Wing)
 
 ## Physical matchup deltas
@@ -34,17 +34,17 @@ Poland: Patient Build-up led the observed baseline by 0.0041 mean EvA. Primary r
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 90, INSUFFICIENT_MINUTES: 20.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Wojciech Szczęsny — Goalkeeper; score 73.0, role z +2.30, OBV/90 +0.599
-2. Piotr Zieliński — Wide Creator; score 57.9, role z +0.79, OBV/90 +0.034
-3. Matty Cash — Wide Creator; score 57.0, role z +0.70, OBV/90 +0.003
-4. Grzegorz Krychowiak — Ball-Winner; score 54.6, role z +0.46, OBV/90 +0.068
-5. Jakub Piotr Kiwior — Deep Playmaker; score 45.0, role z -0.50, OBV/90 +0.332
+1. Robert Lewandowski — Target Forward; rating 0.5522, VAEP/90 +1.092, xT/90 +0.014
+2. Piotr Zieliński — Ball-Winner; rating 0.1873, VAEP/90 +0.349, xT/90 +0.060
+3. Kamil Glik — Sweeper CB; rating 0.0603, VAEP/90 +0.119, xT/90 +0.003
+4. Grzegorz Krychowiak — Ball-Winner; rating -0.0128, VAEP/90 -0.031, xT/90 +0.015
+5. Matty Cash — Box-to-Box Runner; rating -0.0231, VAEP/90 -0.058, xT/90 +0.030
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

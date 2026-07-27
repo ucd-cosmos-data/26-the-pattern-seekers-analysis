@@ -1,7 +1,7 @@
 # MAR — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 13
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -13,11 +13,14 @@
 - Team: Morocco (MAR)
 - Position: Left Midfield
 - Functional role: Progressive Winger
-- Risk-adjusted OBV per 90: -0.0758
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 43.6%
-- Role-relative z-score: +1.050
-- V4 evaluation score: 60.5
+- VAEP offense per 90: 0.1109
+- VAEP defense per 90: -0.0737
+- VAEP total per 90: 0.0372
+- VAEP per touch: 0.00037
+- Spatial xT per 90: 0.0642
+- Final-third spatial share: 38.3%
+- Unified final player rating: 0.0316
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/3625_heatmap.svg)
 
@@ -52,12 +55,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Morocco (MAR)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.2650
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 2.2%
-- Role-relative z-score: +0.956
-- V4 evaluation score: 59.6
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.1343
+- VAEP defense per 90: -0.0721
+- VAEP total per 90: 0.0622
+- VAEP per touch: 0.00073
+- Spatial xT per 90: 0.0069
+- Final-third spatial share: 3.2%
+- Unified final player rating: 0.0327
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5219_heatmap.svg)
 
@@ -94,11 +100,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Center Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.1107
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 6.5%
-- Role-relative z-score: +0.210
-- V4 evaluation score: 52.1
+- VAEP offense per 90: -0.0048
+- VAEP defense per 90: -0.0754
+- VAEP total per 90: -0.0802
+- VAEP per touch: -0.00075
+- Spatial xT per 90: 0.0114
+- Final-third spatial share: 7.5%
+- Unified final player rating: -0.0380
+- Team rank: #13
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5234_heatmap.svg)
 
@@ -133,12 +142,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Morocco (MAR)
 - Position: Right Wing
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: -0.0479
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 32.4%
-- Role-relative z-score: -0.259
-- V4 evaluation score: 47.4
+- Functional role: Box-to-Box Runner
+- VAEP offense per 90: 0.0794
+- VAEP defense per 90: -0.0147
+- VAEP total per 90: 0.0648
+- VAEP per touch: 0.00049
+- Spatial xT per 90: 0.0540
+- Final-third spatial share: 32.3%
+- Unified final player rating: 0.0433
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5237_heatmap.svg)
 
@@ -173,12 +185,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Morocco (MAR)
 - Position: Right Back
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: -0.0128
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 28.0%
-- Role-relative z-score: +0.367
-- V4 evaluation score: 53.7
+- Functional role: Box-to-Box Runner
+- VAEP offense per 90: 0.1799
+- VAEP defense per 90: -0.0548
+- VAEP total per 90: 0.1251
+- VAEP per touch: 0.00092
+- Spatial xT per 90: 0.0477
+- Final-third spatial share: 26.6%
+- Unified final player rating: 0.0724
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5245_heatmap.svg)
 
@@ -215,11 +230,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Center Forward
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.3739
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 29.1%
-- Role-relative z-score: -0.390
-- V4 evaluation score: 46.1
+- VAEP offense per 90: 0.7719
+- VAEP defense per 90: 0.0302
+- VAEP total per 90: 0.8021
+- VAEP per touch: 0.01608
+- Spatial xT per 90: 0.0050
+- Final-third spatial share: 26.1%
+- Unified final player rating: 0.4069
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/6301_heatmap.svg)
 
@@ -255,11 +273,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.3304
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 0.6%
-- Role-relative z-score: +0.230
-- V4 evaluation score: 52.3
+- VAEP offense per 90: -0.0199
+- VAEP defense per 90: 0.0854
+- VAEP total per 90: 0.0656
+- VAEP per touch: 0.00105
+- Spatial xT per 90: 0.0018
+- Final-third spatial share: 0.8%
+- Unified final player rating: 0.0335
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/6785_heatmap.svg)
 
@@ -295,12 +316,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Morocco (MAR)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.1416
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 1.4%
-- Role-relative z-score: +0.004
-- V4 evaluation score: 50.0
+- Functional role: Sweeper CB
+- VAEP offense per 90: -0.0009
+- VAEP defense per 90: -0.0026
+- VAEP total per 90: -0.0036
+- VAEP per touch: -0.00003
+- Spatial xT per 90: 0.0010
+- Final-third spatial share: 2.4%
+- Unified final player rating: -0.0016
+- Team rank: #12
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/7459_heatmap.svg)
 
@@ -336,12 +360,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Morocco (MAR)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.2030
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 1.4%
-- Role-relative z-score: -0.721
-- V4 evaluation score: 42.8
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.2829
+- VAEP defense per 90: -0.1199
+- VAEP total per 90: 0.1631
+- VAEP per touch: 0.00170
+- Spatial xT per 90: 0.0030
+- Final-third spatial share: 2.0%
+- Unified final player rating: 0.0826
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/12149_heatmap.svg)
 
@@ -377,12 +404,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Morocco (MAR)
 - Position: Left Back
-- Functional role: Box-to-Box Runner
-- Risk-adjusted OBV per 90: -0.0214
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 18.3%
-- Role-relative z-score: -0.225
-- V4 evaluation score: 47.8
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.0248
+- VAEP defense per 90: -0.0003
+- VAEP total per 90: 0.0245
+- VAEP per touch: 0.00033
+- Spatial xT per 90: 0.0188
+- Final-third spatial share: 17.3%
+- Unified final player rating: 0.0161
+- Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/15890_heatmap.svg)
 
@@ -418,11 +448,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Left Center Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: -0.1722
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 19.6%
-- Role-relative z-score: -1.858
-- V4 evaluation score: 31.4
+- VAEP offense per 90: 0.3090
+- VAEP defense per 90: -0.0155
+- VAEP total per 90: 0.2935
+- VAEP per touch: 0.00428
+- Spatial xT per 90: 0.0076
+- Final-third spatial share: 18.8%
+- Unified final player rating: 0.1495
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/23774_heatmap.svg)
 
@@ -458,12 +491,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Morocco (MAR)
 - Position: Left Back
-- Functional role: Box-to-Box Runner
-- Risk-adjusted OBV per 90: 0.0328
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 20.9%
-- Role-relative z-score: +0.810
-- V4 evaluation score: 58.1
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.1113
+- VAEP defense per 90: -0.0357
+- VAEP total per 90: 0.0756
+- VAEP per touch: 0.00086
+- Spatial xT per 90: 0.0363
+- Final-third spatial share: 19.7%
+- Unified final player rating: 0.0453
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/31295_heatmap.svg)
 
@@ -499,11 +535,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Right Center Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: -0.1046
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 22.4%
-- Role-relative z-score: -1.406
-- V4 evaluation score: 35.9
+- VAEP offense per 90: 0.1381
+- VAEP defense per 90: -0.0068
+- VAEP total per 90: 0.1313
+- VAEP per touch: 0.00101
+- Spatial xT per 90: 0.0269
+- Final-third spatial share: 22.9%
+- Unified final player rating: 0.0713
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/46258_heatmap.svg)
 

@@ -10,15 +10,15 @@ Senegal: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. Kalidou Koulibaly (Center Back)
-2. Youssouf Sabaly (Fullback/Wingback)
-3. Edouard Mendy (Goalkeeper)
-4. Ismaïla Sarr (Attacking Midfield/Wing)
-5. Abdou Diallo (Center Back)
-6. Boulaye Dia (Attacking Midfield/Wing)
-7. Nampalys Mendy (Defensive Midfield)
-8. Ismail Jakobs (Fullback/Wingback)
-9. Idrissa Gana Gueye (Attacking Midfield/Wing)
+1. Youssouf Sabaly (Fullback/Wingback)
+2. Kalidou Koulibaly (Center Back)
+3. Ismaïla Sarr (Attacking Midfield/Wing)
+4. Boulaye Dia (Attacking Midfield/Wing)
+5. Edouard Mendy (Goalkeeper)
+6. Nampalys Mendy (Defensive Midfield)
+7. Ismail Jakobs (Fullback/Wingback)
+8. Idrissa Gana Gueye (Attacking Midfield/Wing)
+9. Abdou Diallo (Center Back)
 10. Krépin Diatta (Attacking Midfield/Wing)
 11. Cheikh Ahmadou Bamba Mbacke Dieng (Forward)
 
@@ -34,17 +34,17 @@ Senegal: no tactical change cleared the modeled effect floor. Primary review sig
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Kalidou Koulibaly — Deep Playmaker; score 64.4, role z +1.44, OBV/90 +0.321
-2. Ismaïla Sarr — Target Forward; score 63.7, role z +1.37, OBV/90 -0.247
-3. Youssouf Sabaly — Attacking Wingback; score 62.2, role z +1.22, OBV/90 +0.078
-4. Abdou Diallo — Deep Playmaker; score 60.8, role z +1.08, OBV/90 +0.356
-5. Boulaye Dia — Target Forward; score 49.6, role z -0.04, OBV/90 -0.459
+1. Ismaïla Sarr — Target Forward; rating 0.7282, VAEP/90 +1.413, xT/90 +0.086
+2. Boulaye Dia — Target Forward; rating 0.2426, VAEP/90 +0.478, xT/90 +0.007
+3. Youssouf Sabaly — Box-to-Box Runner; rating 0.0671, VAEP/90 +0.107, xT/90 +0.068
+4. Kalidou Koulibaly — Sweeper CB; rating 0.0620, VAEP/90 +0.122, xT/90 +0.004
+5. Abdou Diallo — Sweeper CB; rating -0.0049, VAEP/90 -0.019, xT/90 +0.024
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

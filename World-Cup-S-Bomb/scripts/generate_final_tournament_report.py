@@ -27,89 +27,15 @@ from src.report_generators import (  # noqa: E402
 )
 
 
-POSITION_WEIGHTS: dict[str, dict[str, float]] = {
-    "Goalkeeper": {
-        "goals_prevented_p90": 0.35,
-        "cross_claims_p90": 0.15,
-        "sweeping_distance": 0.10,
-        "distribution_under_pressure": 0.15,
-        "pass_completion": 0.10,
-        "minutes": 0.15,
-    },
-    "Center Back": {
-        "aerial_dominance_index": 0.25,
-        "pressing_intensity_index": 0.15,
-        "speed_recovery_index": 0.20,
-        "net_xg_contribution_p90": 0.15,
-        "pass_progression_per_pass": 0.15,
-        "minutes": 0.10,
-    },
-    "Fullback/Wingback": {
-        "aerial_dominance_index": 0.10,
-        "pressing_intensity_index": 0.20,
-        "speed_recovery_index": 0.20,
-        "net_xg_contribution_p90": 0.20,
-        "progressive_passes_p90": 0.15,
-        "key_passes_p90": 0.05,
-        "minutes": 0.10,
-    },
-    "Defensive Midfield": {
-        "aerial_dominance_index": 0.10,
-        "pressing_intensity_index": 0.20,
-        "speed_recovery_index": 0.20,
-        "net_xg_contribution_p90": 0.20,
-        "progressive_passes_p90": 0.15,
-        "pass_completion": 0.05,
-        "minutes": 0.10,
-    },
-    "Central/Wide Midfield": {
-        "pressing_intensity_index": 0.20,
-        "speed_recovery_index": 0.15,
-        "net_xg_contribution_p90": 0.25,
-        "progressive_passes_p90": 0.20,
-        "key_passes_p90": 0.10,
-        "minutes": 0.10,
-    },
-    "Attacking Midfield/Wing": {
-        "pressing_intensity_index": 0.15,
-        "speed_recovery_index": 0.10,
-        "net_xg_contribution_p90": 0.30,
-        "progressive_carries_p90": 0.15,
-        "key_passes_p90": 0.15,
-        "xg_p90": 0.05,
-        "minutes": 0.10,
-    },
-    "Forward": {
-        "aerial_dominance_index": 0.15,
-        "pressing_intensity_index": 0.10,
-        "net_xg_contribution_p90": 0.30,
-        "shots_p90": 0.15,
-        "xg_p90": 0.20,
-        "minutes": 0.10,
-    },
-}
-BASELINE_POSITION_WEIGHTS = {
-    group: dict(weights) for group, weights in POSITION_WEIGHTS.items()
-}
-BASELINE_POSITION_WEIGHTS["Goalkeeper"] = {
-    "minutes": 0.40,
-    "pass_completion": 0.30,
-    "pass_progression_per_pass": 0.20,
-    "speed_recovery_index": 0.10,
-}
-SMOOTHING_MINUTES = 300.0
-PER90_SOURCES = {
-    "shots_p90": "shots",
-    "progressive_carries_p90": "progressive_carries",
-    "dribbles_p90": "dribbles",
-    "clearances_p90": "clearances",
-    "progressive_passes_p90": "progressive_passes",
-    "key_passes_p90": "key_passes",
-    "crosses_p90": "crosses",
-    "interceptions_p90": "interceptions",
-    "turnovers_p90": "turnovers",
-    "xg_p90": "xg_sum",
-}
+POSITION_GROUPS = (
+    "Goalkeeper",
+    "Center Back",
+    "Fullback/Wingback",
+    "Defensive Midfield",
+    "Central/Wide Midfield",
+    "Attacking Midfield/Wing",
+    "Forward",
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -181,87 +107,6 @@ def percentile_label(value: float) -> str:
     if value >= 0.20:
         return "below the tournament median"
     return "among the lower values in this tournament sample"
-
-
-def apply_empirical_bayes_smoothing(
-    profiles: pd.DataFrame,
-    *,
-    prior_minutes: float = SMOOTHING_MINUTES,
-) -> pd.DataFrame:
-    """Shrink sub-300-minute per-90 rates toward position baselines."""
-
-    adjusted = profiles.copy()
-    adjusted["raw_net_xg_contribution_p90"] = adjusted[
-        "net_xg_contribution_p90"
-    ]
-    low_minutes = adjusted["minutes"].lt(prior_minutes)
-    for output, source in PER90_SOURCES.items():
-        if output not in adjusted or source not in adjusted:
-            continue
-        baseline_per_minute = adjusted.groupby("position_group")[source].transform(
-            "sum"
-        ) / adjusted.groupby("position_group")["minutes"].transform("sum").clip(lower=1)
-        smoothed = 90 * (
-            adjusted[source] + prior_minutes * baseline_per_minute
-        ) / (adjusted["minutes"] + prior_minutes)
-        adjusted.loc[low_minutes, output] = smoothed.loc[low_minutes]
-
-    tackle_proxy = (adjusted["duels_won"] - adjusted["aerial_wins"]).clip(lower=0)
-    pressure_events = tackle_proxy + adjusted["interceptions"] + adjusted["pressures"]
-    pressure_baseline = pressure_events.groupby(adjusted["position_group"]).transform(
-        "sum"
-    ) / adjusted.groupby("position_group")["minutes"].transform("sum").clip(lower=1)
-    recovery_baseline = adjusted["recoveries"].groupby(
-        adjusted["position_group"]
-    ).transform("sum") / adjusted.groupby("position_group")["minutes"].transform(
-        "sum"
-    ).clip(lower=1)
-    adjusted.loc[low_minutes, "pressing_intensity_index"] = (
-        90
-        * (
-            pressure_events.loc[low_minutes]
-            + prior_minutes * pressure_baseline.loc[low_minutes]
-        )
-        / (adjusted.loc[low_minutes, "minutes"] + prior_minutes)
-    )
-    adjusted.loc[low_minutes, "speed_recovery_index"] = (
-        90
-        * (
-            adjusted.loc[low_minutes, "recoveries"]
-            + prior_minutes * recovery_baseline.loc[low_minutes]
-        )
-        / (adjusted.loc[low_minutes, "minutes"] + prior_minutes)
-    )
-    adjusted["net_xg_contribution_p90"] = (
-        adjusted["xg_p90"]
-        + 0.015 * adjusted["key_passes_p90"]
-        + 0.004 * adjusted["progressive_passes_p90"]
-        + 0.003 * adjusted["progressive_carries_p90"]
-        + 0.002 * adjusted["interceptions_p90"]
-        - 0.002 * adjusted["turnovers_p90"]
-    )
-    # EB shrinkage can over-compress a derived multi-rate composite. Match its
-    # posterior dispersion to the established-minute cohort while preserving
-    # the smoothed ordering and every component-rate posterior above.
-    starter_variance = adjusted.loc[
-        ~low_minutes, "net_xg_contribution_p90"
-    ].var(ddof=1)
-    substitute_values = adjusted.loc[low_minutes, "net_xg_contribution_p90"]
-    substitute_variance = substitute_values.var(ddof=1)
-    if (
-        np.isfinite(starter_variance)
-        and np.isfinite(substitute_variance)
-        and starter_variance > 0
-        and substitute_variance > 0
-    ):
-        center = substitute_values.mean()
-        scale = np.sqrt(starter_variance / substitute_variance)
-        adjusted.loc[low_minutes, "net_xg_contribution_p90"] = (
-            center + (substitute_values - center) * scale
-        )
-    adjusted["eb_smoothed"] = low_minutes
-    adjusted["eb_prior_minutes"] = prior_minutes
-    return adjusted
 
 
 def _parse_coordinate(value: object) -> tuple[float, float] | None:
@@ -411,33 +256,6 @@ def add_goalkeeper_metrics(
     return output
 
 
-def add_position_scores(
-    profiles: pd.DataFrame,
-    weights_by_position: dict[str, dict[str, float]] = POSITION_WEIGHTS,
-) -> pd.DataFrame:
-    """Calculate transparent, position-specific tournament role scores."""
-
-    scored = profiles.copy()
-    scored["player"] = scored["player"].map(clean_text)
-    scored["position"] = scored["position"].map(clean_text)
-    scored["functional_role"] = scored["functional_role"].map(clean_text)
-    scored["position_score"] = np.nan
-
-    for position_group, weights in weights_by_position.items():
-        mask = scored["position_group"].eq(position_group)
-        group = scored.loc[mask]
-        if group.empty:
-            continue
-        score = pd.Series(0.0, index=group.index)
-        for column, weight in weights.items():
-            numeric = pd.to_numeric(group[column], errors="coerce")
-            percentiles = numeric.rank(method="average", pct=True).fillna(0.5)
-            score = score.add(percentiles * weight, fill_value=0.0)
-        scored.loc[mask, "position_score"] = 100.0 * score
-
-    return scored
-
-
 def build_team_metrics(
     possessions: pd.DataFrame,
     audit: pd.DataFrame,
@@ -538,10 +356,10 @@ def team_interpretation(row: pd.Series) -> str:
 
 
 def team_player_rows(players: pd.DataFrame, count: int = 5) -> list[list[object]]:
-    """Return Markdown-ready rows for a team's highest role scores."""
+    """Return Markdown-ready rows for a team's unified cross-role leaders."""
 
     leaders = players.sort_values(
-        ["position_score", "minutes"], ascending=False
+        ["team_rank", "final_player_rating"], ascending=[True, False]
     ).head(count)
     return [
         [
@@ -550,8 +368,8 @@ def team_player_rows(players: pd.DataFrame, count: int = 5) -> list[list[object]
             row["position_group"],
             row["functional_role"],
             f"{row['minutes']:.0f}",
-            f"{row['position_score']:.1f}",
-            f"{row['net_xg_contribution_p90']:.3f}",
+            f"{row['final_player_rating']:.4f}",
+            f"{row['vaep_total_p90']:.3f}",
         ]
         for rank, (_, row) in enumerate(leaders.iterrows(), start=1)
     ]
@@ -586,7 +404,6 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
 
     possessions = pd.read_csv(required["possessions"])
     profiles = pd.read_csv(required["profiles"])
-    profiles["position_score"] = profiles["player_evaluation_score"]
     audit = pd.read_csv(required["audit"])
     mistakes = pd.read_csv(required["mistakes"])
     substitutions = pd.read_parquet(required["substitutions"])
@@ -614,7 +431,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
     if set(TEAM_CODES) - set(possessions["team"].dropna().unique()):
         absent = sorted(set(TEAM_CODES) - set(possessions["team"].dropna().unique()))
         raise ValueError(f"Possession data is missing expected teams: {absent}")
-    unknown_positions = sorted(set(profiles["position_group"]) - set(POSITION_WEIGHTS))
+    unknown_positions = sorted(set(profiles["position_group"]) - set(POSITION_GROUPS))
     if unknown_positions:
         raise ValueError(f"No scoring specification for position groups: {unknown_positions}")
 
@@ -664,9 +481,8 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             "recovery proxies. Positive values indicate a modeled lineup edge."
         ),
         (
-            "- **V4 evaluation score:** a role-relative tournament score centered at 50; "
-            "10 points equal one within-role population standard deviation. It is not an "
-            "absolute or cross-role quality measure."
+            "- **Final player rating:** one cross-role score using 50% VAEP total per 90, "
+            "30% VAEP per touch, and 20% xT per 90."
         ),
         "",
         "## V4 validation and final metrics",
@@ -733,23 +549,24 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             "visible actor snapshots; they do not interpolate unobserved runs."
         ),
         "",
-        "### V4 top role-relative player evaluations",
+        "### Unified 360-VAEP + xT player evaluations",
         "",
         markdown_table(
-            ["Rank", "Player", "Functional role", "Minutes", "OBV/90", "Final third", "Role z"],
+            ["Rank", "Player", "Team", "Minutes", "VAEP/90", "VAEP/touch", "xT/90", "Rating"],
             [
                 [
                     rank,
                     row["player"],
-                    row["Functional role"],
+                    row["team"],
                     f"{row['minutes']:.0f}",
-                    f"{row['obv_per_90']:+.4f}",
-                    f"{100 * row['final_third_share']:.1f}%",
-                    f"{row['role_z_score']:+.2f}",
+                    f"{row['vaep_total_p90']:+.4f}",
+                    f"{row['vaep_per_touch']:+.5f}",
+                    f"{row['xt_p90']:+.4f}",
+                    f"{row['final_player_rating']:+.4f}",
                 ]
                 for rank, (_, row) in enumerate(
                     profiles.sort_values(
-                        ["role_z_score", "minutes"], ascending=False
+                        ["final_player_rating", "minutes"], ascending=False
                     ).head(10).iterrows(),
                     start=1,
                 )
@@ -987,8 +804,8 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                         "Position group",
                         "Functional role",
                         "Minutes",
-                        "V4 role score",
-                        "Net xG/90",
+                        "Unified rating",
+                        "VAEP/90",
                     ],
                     team_player_rows(team_players),
                 ),
@@ -1020,18 +837,16 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             "",
             (
                 "These leaderboards contain only players with at least 300 tournament "
-                "minutes. V4 scores are standardized within functional role: 50 is role "
-                "average and each 10 points is one population standard deviation. Grouping "
-                "the display by broad position aids navigation but does not make scores "
-                "directly comparable across roles."
+                "minutes. Every player uses the same unified VAEP+xT formula, so team "
+                "rankings no longer sort role-standardized values across incompatible "
+                "peer groups. Position sections remain navigation aids."
             ),
             "",
-            "## V4 role-score construction",
+            "## Unified V4 rating construction",
             "",
-            "- Risk-adjusted OBV per 90: 65%.",
-            "- Final-third spatial presence: 20%.",
-            "- Pressure-adjusted turnover resilience: 15%.",
-            "- Pressured turnover penalties are exactly half the standard location-sensitive penalty.",
+            "- 360-Augmented VAEP total per 90: 50%.",
+            "- VAEP per touch: 30%.",
+            "- Independent successful-pass/carry xT per 90: 20%.",
             "- Successful event endpoints and SB360 actor snapshots use the StatsBomb 120x80 pitch.",
             "- Fullbacks above 35% combined final-third share are classified as Attacking Wingbacks.",
             "",
@@ -1051,9 +866,9 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
         ]
     )
 
-    for group in POSITION_WEIGHTS:
+    for group in POSITION_GROUPS:
         group_players = profiles[profiles["position_group"].eq(group)].sort_values(
-            ["position_score", "minutes"], ascending=False
+            ["final_player_rating", "minutes"], ascending=False
         ).head(10)
         lines.extend(
             [
@@ -1067,8 +882,9 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                         "Detailed position",
                         "Role",
                         "Min.",
-                        "Score",
-                        "Net xG/90",
+                        "Rating",
+                        "VAEP/90",
+                        "xT/90",
                         "Aerial",
                         "Pressing",
                         "Recovery",
@@ -1081,8 +897,9 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                             row["position"],
                             row["functional_role"],
                             f"{row['minutes']:.0f}",
-                            f"{row['position_score']:.1f}",
-                            f"{row['net_xg_contribution_p90']:.3f}",
+                            f"{row['final_player_rating']:.4f}",
+                            f"{row['vaep_total_p90']:.3f}",
+                            f"{row['xt_p90']:.3f}",
                             f"{row['aerial_dominance_index']:.2f}",
                             f"{row['pressing_intensity_index']:.2f}",
                             f"{row['speed_recovery_index']:.2f}",
@@ -1120,7 +937,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             (
                 "- V4 preserves the schema-checked calibrated transition classifier and "
                 "64-match leave-one-match-out audit while replacing the player layer with "
-                "300-minute eligibility, SB360 spatial context, and role-relative scoring. "
+                "300-minute eligibility, SB360 spatial context, and unified VAEP+xT scoring. "
                 "Threshold abstention still prevents weak transition warnings."
             ),
             (

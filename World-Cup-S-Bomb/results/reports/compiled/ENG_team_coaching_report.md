@@ -11,16 +11,16 @@ England: no tactical change cleared the modeled effect floor. Primary review sig
 ## Optimized starting 11
 
 1. John Stones (Center Back)
-2. Luke Shaw (Fullback/Wingback)
-3. Jordan Pickford (Goalkeeper)
-4. Harry Maguire (Center Back)
-5. Declan Rice (Defensive Midfield)
+2. Harry Maguire (Center Back)
+3. Luke Shaw (Fullback/Wingback)
+4. Declan Rice (Defensive Midfield)
+5. Jude Bellingham (Defensive Midfield)
 6. Harry Kane (Forward)
-7. Jude Bellingham (Defensive Midfield)
+7. Jordan Pickford (Goalkeeper)
 8. Jordan Brian Henderson (Central/Wide Midfield)
 9. Bukayo Saka (Attacking Midfield/Wing)
-10. Phil Foden (Attacking Midfield/Wing)
-11. Kyle Walker (Fullback/Wingback)
+10. Kyle Walker (Fullback/Wingback)
+11. Phil Foden (Attacking Midfield/Wing)
 
 ## Physical matchup deltas
 
@@ -34,17 +34,17 @@ England: no tactical change cleared the modeled effect floor. Primary review sig
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 82, INSUFFICIENT_MINUTES: 17.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. John Stones — Holding Anchor; score 57.6, role z +0.76, OBV/90 +0.450
-2. Luke Shaw — Box-to-Box Runner; score 55.3, role z +0.53, OBV/90 +0.014
-3. Jordan Pickford — Goalkeeper; score 52.4, role z +0.24, OBV/90 +0.342
-4. Harry Kane — Target Forward; score 52.1, role z +0.21, OBV/90 -0.345
-5. Harry Maguire — Holding Anchor; score 48.3, role z -0.17, OBV/90 +0.494
+1. Harry Kane — Target Forward; rating 0.4987, VAEP/90 +0.975, xT/90 +0.040
+2. Jude Bellingham — Ball-Winner; rating 0.1819, VAEP/90 +0.350, xT/90 +0.030
+3. Harry Maguire — Deep Playmaker; rating 0.1652, VAEP/90 +0.321, xT/90 +0.022
+4. John Stones — Deep Playmaker; rating 0.0835, VAEP/90 +0.165, xT/90 +0.004
+5. Luke Shaw — Wide Creator; rating 0.0792, VAEP/90 +0.128, xT/90 +0.075
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

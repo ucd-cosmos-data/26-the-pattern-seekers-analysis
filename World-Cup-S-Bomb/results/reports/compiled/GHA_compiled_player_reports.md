@@ -1,7 +1,7 @@
 # GHA — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 4
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -12,12 +12,15 @@
 
 - Team: Ghana (GHA)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.2163
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 3.7%
-- Role-relative z-score: +0.416
-- V4 evaluation score: 54.2
+- Functional role: Sweeper CB
+- VAEP offense per 90: -0.0061
+- VAEP defense per 90: -0.1854
+- VAEP total per 90: -0.1915
+- VAEP per touch: -0.00173
+- Spatial xT per 90: 0.0063
+- Final-third spatial share: 5.2%
+- Unified final player rating: -0.0950
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/GHA/3709_heatmap.svg)
 
@@ -53,11 +56,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Ghana (GHA)
 - Position: Right Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.1572
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 14.5%
-- Role-relative z-score: +0.611
-- V4 evaluation score: 56.1
+- VAEP offense per 90: 0.0902
+- VAEP defense per 90: -0.0324
+- VAEP total per 90: 0.0578
+- VAEP per touch: 0.00039
+- Spatial xT per 90: 0.0330
+- Final-third spatial share: 15.1%
+- Unified final player rating: 0.0356
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/GHA/6383_heatmap.svg)
 
@@ -94,11 +100,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Ghana (GHA)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.3094
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 1.2%
-- Role-relative z-score: -0.218
-- V4 evaluation score: 47.8
+- VAEP offense per 90: -0.0103
+- VAEP defense per 90: -0.4132
+- VAEP total per 90: -0.4235
+- VAEP per touch: -0.01143
+- Spatial xT per 90: 0.0035
+- Final-third spatial share: 1.1%
+- Unified final player rating: -0.2145
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/GHA/8108_heatmap.svg)
 
@@ -134,12 +143,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Ghana (GHA)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.3245
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 5.3%
-- Role-relative z-score: -0.263
-- V4 evaluation score: 47.4
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.2756
+- VAEP defense per 90: -0.0910
+- VAEP total per 90: 0.1846
+- VAEP per touch: 0.00166
+- Spatial xT per 90: 0.0098
+- Final-third spatial share: 6.4%
+- Unified final player rating: 0.0947
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/GHA/30519_heatmap.svg)
 

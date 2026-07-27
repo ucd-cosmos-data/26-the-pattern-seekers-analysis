@@ -10,8 +10,13 @@ import sys
 from pathlib import Path
 
 import joblib
+import matplotlib
 import numpy as np
 import pandas as pd
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.calibration import calibration_curve
 from sklearn.base import clone
 from sklearn.metrics import average_precision_score, brier_score_loss, roc_auc_score
 from tqdm import tqdm
@@ -65,23 +70,32 @@ STORED_HURDLE = PROJECT_ROOT / "models/coaching_model_benchmark.joblib"
 V2_HURDLE = PROJECT_ROOT / "models/coaching_model_benchmark_v2.joblib"
 V4_EVENT_COLUMNS = {
     "id",
+    "index",
     "match_id",
+    "period",
+    "minute",
+    "second",
     "team",
+    "team_id",
     "type",
+    "player",
     "player_id",
+    "position",
+    "play_pattern",
     "pass_recipient_id",
     "pass_outcome",
+    "pass_body_part",
+    "pass_assisted_shot_id",
     "dribble_outcome",
     "ball_receipt_outcome",
     "location",
     "pass_end_location",
     "carry_end_location",
+    "shot_end_location",
+    "shot_outcome",
+    "shot_body_part",
     "under_pressure",
     "shot_statsbomb_xg",
-    "obv_total_net",
-    "obv_for_net",
-    "obv",
-    "on_ball_value",
 }
 
 
@@ -109,10 +123,18 @@ def _load_inputs() -> dict[str, pd.DataFrame]:
     missing_required = sorted(
         {
             "id",
+            "index",
             "match_id",
+            "period",
+            "minute",
+            "second",
             "team",
+            "team_id",
             "type",
+            "player",
             "player_id",
+            "position",
+            "play_pattern",
             "pass_recipient_id",
             "pass_outcome",
             "dribble_outcome",
@@ -152,6 +174,7 @@ def _load_inputs() -> dict[str, pd.DataFrame]:
             "defensive_density",
             "nearest_defender_distance",
             "defenders_within_5",
+            "defenders_behind_ball",
         ],
         low_memory=False,
     )
@@ -610,143 +633,139 @@ def _write_v4_model_summary(
     oof_metrics: dict[str, object],
     compiled_checks: dict[str, int],
 ) -> None:
-    """Write the required V4 model and spatial-data explanation."""
+    """Refresh the generated validation section without erasing the audit guide."""
 
-    source = str(provenance["obv_source"])
-    obv_boundary = (
-        "Licensed StatsBomb OBV was present and used directly."
-        if bool(provenance["native_obv_available"])
-        else (
-            "The supplied open event export has no licensed StatsBomb OBV "
-            "column. This build therefore uses the documented open-event "
-            "pitch-value fallback and does not represent it as proprietary OBV."
-        )
+    marker = "## Latest generated VAEP/xT validation"
+    existing = path.read_text(encoding="utf-8") if path.exists() else (
+        "# V4 Model Explanations\n\n"
+        "## V4 Model Explanations\n\n"
+        "This pipeline applies 360-Augmented VAEP and xT concurrently without "
+        "feeding xT into the VAEP feature matrix.\n"
     )
-    top_rows = profiles.nlargest(10, "player_evaluation_score")
+    existing = existing.split(marker, maxsplit=1)[0].rstrip()
+    top_rows = profiles.sort_values(
+        ["final_player_rating", "minutes"], ascending=False
+    ).head(10)
     top_table = "\n".join(
-        f"| {index} | {row.player} | {row.functional_role} | "
-        f"{row.minutes:.0f} | {row.obv_per_90:+.4f} | "
-        f"{100 * row.final_third_share:.1f}% | {row.role_z_score:+.2f} |"
+        f"| {index} | {row.player} | {row.team} | {row.minutes:.0f} | "
+        f"{row.vaep_total_p90:+.4f} | {row.vaep_per_touch:+.5f} | "
+        f"{row.xt_p90:+.4f} | {row.final_player_rating:+.4f} |"
         for index, row in enumerate(top_rows.itertuples(index=False), start=1)
     )
     lines = [
-        "# V4 Model Explanations",
+        existing,
         "",
-        "## V4 Model Explanations",
+        marker,
         "",
-        "### Player-ranking metrics",
-        "",
-        "- Players below 300 tournament minutes are excluded before ranking.",
+        f"- Selected model: `{provenance['vaep_selected_model']}`.",
+        f"- Calibration: `{provenance['vaep_calibration_method']}`.",
         (
-            "- `obv_per_90` is the primary attacking-role signal. Source for "
-            f"this run: `{source}`. {obv_boundary}"
+            f"- VAEP holdout: Brier "
+            f"{provenance['vaep_holdout_metrics']['brier_score']:.6f}, "
+            f"ROC-AUC {provenance['vaep_holdout_metrics']['roc_auc']:.6f}, "
+            f"PR-AUC {provenance['vaep_holdout_metrics']['pr_auc']:.6f}."
         ),
         (
-            "- Successful pass/carry endpoints and other completed on-ball "
-            "actions are mapped on the StatsBomb 120x80 coordinate system."
-        ),
-        (
-            "- `final_third_share` is the proportion of successful event "
-            "endpoints plus matching SB360 actor snapshots with X > 80."
-        ),
-        (
-            "- Turnovers receive a location-sensitive penalty. The multiplier "
-            "is exactly 0.5 when the event is flagged under pressure or the "
-            "SB360 frame shows close/high-density defensive pressure."
-        ),
-        (
-            "- Attacking composites weight role-relative OBV 65%, final-third "
-            "presence 20%, and pressure-adjusted turnover resilience 15%."
-        ),
-        (
-            "- The final composite is standardized with "
-            "`groupby('Functional role')`; score 50 is role average and each "
-            "10 points represents one within-role population standard deviation."
-        ),
-        "",
-        "### Model structure",
-        "",
-        (
-            "The V3 leakage-safe 64-match leave-one-match-out transition "
-            "classifier, Platt calibration, abstention threshold policy, and "
-            "counterfactual confidence gates remain intact. V4 changes the "
-            "player-evaluation layer and uses the role-relative score when "
-            "ranking eligible lineup candidates."
-        ),
-        "",
-        (
-            f"OOF evaluation: {oof_metrics['matches']} matches, "
-            f"{oof_metrics['teams']} teams, Brier "
-            f"{float(oof_metrics['brier']):.6f}, PR-AUC "
-            f"{float(oof_metrics['pr_auc']):.6f}, ROC-AUC "
-            f"{float(oof_metrics['roc_auc']):.6f}."
-        ),
-        "",
-        "### StatsBomb source distinctions and heatmap mapping",
-        "",
-        (
-            "1. **Standard match events:** event UUID, player identity, action "
-            "type/outcome, `location`, `pass_end_location`, "
-            "`carry_end_location`, shot xG, and `under_pressure` define the "
-            "on-ball action path and value."
-        ),
-        (
-            "2. **Player metadata and tournament components:** player/team "
-            "identity, position group, squad context, and aggregated minutes "
-            "define eligibility and the initial functional-role cohort."
-        ),
-        (
-            "3. **StatsBomb 360:** the matching event UUID links actor "
-            "freeze-frame coordinates and defender density/distance to the "
-            "event. These snapshots refine pressure and spatial density."
-        ),
-        "",
-        (
-            "**Important spatial boundary:** StatsBomb 360 contains event-time "
-            "freeze-frame snapshots, not continuous optical tracking. V4 "
-            "heatmaps therefore visualize observed successful endpoints and "
-            "visible actor snapshots; they do not interpolate unobserved runs."
-        ),
-        "",
-        "### Spatial and role safeguards",
-        "",
-        (
-            "- Fullbacks above 35% combined final-third spatial share are "
-            "reclassified as `Attacking Wingback`."
-        ),
-        (
-            "- No fullback/wingback may retain the `Holding Anchor` label; "
-            "below-threshold cases are protected as `Two-Way Fullback`."
+            f"- StatsBomb 360 join coverage: "
+            f"{100 * provenance['360_join_rate']:.1f}%."
         ),
         (
             f"- Eligible players: {provenance['players_after_cutoff']} of "
-            f"{provenance['players_before_cutoff']} "
-            f"({provenance['players_dropped']} removed by the cutoff)."
+            f"{provenance['players_before_cutoff']}; "
+            f"{provenance['players_dropped']} excluded below 300 minutes."
         ),
         (
-            f"- Spatial inputs: {provenance['successful_action_points']:,} "
-            "successful action endpoints and "
-            f"{provenance['freeze_frame_actor_points']:,} linked SB360 actor "
-            "snapshots."
+            f"- Legacy transition OOF: Brier {float(oof_metrics['brier']):.6f}, "
+            f"ROC-AUC {float(oof_metrics['roc_auc']):.6f}, "
+            f"PR-AUC {float(oof_metrics['pr_auc']):.6f}."
         ),
         (
-            f"- Reports: {compiled_checks['markdown_files']} unversioned "
-            "compiled files, including "
-            f"{compiled_checks['compiled_player_sections']} player sections."
+            f"- Reports: {compiled_checks['markdown_files']} compiled Markdown "
+            f"files and {compiled_checks['compiled_player_sections']} player sections."
         ),
         "",
-        "### Top role-relative evaluations",
+        "### Unified tournament leaders",
         "",
-        "| Rank | Player | Functional role | Minutes | OBV/90 | Final third | Role z |",
-        "|---:|---|---|---:|---:|---:|---:|",
+        "| Rank | Player | Team | Minutes | VAEP/90 | VAEP/touch | xT/90 | Final rating |",
+        "|---:|---|---|---:|---:|---:|---:|---:|",
         top_table,
         "",
-        "These rankings support scouting and video prioritization. They are not "
-        "causal estimates, transfer values, or direct comparisons across roles.",
+        "The team ranking uses the same cross-role formula for every eligible "
+        "player: `0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`.",
         "",
     ]
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def _write_vaep_xt_diagnostics(
+    profiles: pd.DataFrame,
+    model_bundle: dict[str, object],
+    figure_root: Path,
+) -> dict[str, str]:
+    """Write the required headless-safe VAEP/xT and calibration figures."""
+
+    figure_root.mkdir(parents=True, exist_ok=True)
+    sns.set_theme(style="whitegrid")
+
+    scatter_path = figure_root / "vaep_vs_xt_scatter.png"
+    figure, axis = plt.subplots(figsize=(10, 7))
+    sns.scatterplot(
+        data=profiles,
+        x="xt_p90",
+        y="vaep_total_p90",
+        hue="position_group",
+        size="minutes",
+        sizes=(25, 180),
+        alpha=0.75,
+        ax=axis,
+    )
+    axis.set_title("360-Augmented VAEP vs. spatial xT")
+    axis.set_xlabel("xT per 90")
+    axis.set_ylabel("VAEP total per 90")
+    axis.legend(bbox_to_anchor=(1.02, 1), loc="upper left", fontsize=8)
+    figure.tight_layout()
+    figure.savefig(scatter_path, dpi=180)
+    plt.close(figure)
+
+    calibration_path = figure_root / "calibrated_brier_curve.png"
+    truth = np.asarray(model_bundle["test_truth"], dtype=int)
+    probability = np.asarray(model_bundle["test_probability"], dtype=float)
+    observed, predicted = calibration_curve(
+        truth, probability, n_bins=10, strategy="quantile"
+    )
+    figure, axis = plt.subplots(figsize=(7, 7))
+    axis.plot([0, 1], [0, 1], linestyle="--", color="black", label="Perfect")
+    axis.plot(predicted, observed, marker="o", label="Selected calibrated VAEP")
+    axis.set_title("Calibrated event-probability reliability")
+    axis.set_xlabel("Mean predicted probability")
+    axis.set_ylabel("Observed event rate")
+    axis.legend()
+    figure.tight_layout()
+    figure.savefig(calibration_path, dpi=180)
+    plt.close(figure)
+
+    france_path = figure_root / "france_team_rankings.png"
+    france = profiles[profiles["team"].eq("France")].sort_values("team_rank")
+    figure, axis = plt.subplots(figsize=(10, 7))
+    sns.barplot(
+        data=france,
+        x="final_player_rating",
+        y="player",
+        color="#1f77b4",
+        ax=axis,
+    )
+    axis.set_title("France unified VAEP + xT player rankings")
+    axis.set_xlabel("Final player rating")
+    axis.set_ylabel("")
+    figure.tight_layout()
+    figure.savefig(france_path, dpi=180)
+    plt.close(figure)
+    return {
+        "vaep_vs_xt_scatter": str(scatter_path),
+        "calibrated_brier_curve": str(calibration_path),
+        "france_team_rankings": str(france_path),
+    }
 
 
 def run_pipeline(
@@ -754,6 +773,7 @@ def run_pipeline(
     *,
     model_path: Path = V2_HURDLE,
     staging: bool = True,
+    reuse_validated_oof: bool = False,
 ) -> dict[str, object]:
     """Build V4 OOF audits and player reports in staging or final paths."""
 
@@ -801,105 +821,108 @@ def run_pipeline(
         matchup_join, on="possession_uid", validate="one_to_one"
     )
     all_matches = sorted(int(value) for value in canonical["match_id"].unique())
-    tactical_folds: list[pd.DataFrame] = []
-    leakage_records: list[dict[str, object]] = []
-
-    for held_out_match in timer.progress(
-        all_matches,
-        name="leave_one_match_out_audit",
-        total=len(all_matches),
-        unit="match",
-    ):
-        calibration_matches = _calibration_matches_for_fold(
-            canonical, held_out_match
-        )
-        model_train = canonical[
-            ~canonical["match_id"].isin(calibration_matches + [held_out_match])
-        ].copy()
-        calibration = canonical[
-            canonical["match_id"].isin(calibration_matches)
-        ].copy()
-        evaluation = canonical[
-            canonical["match_id"].eq(held_out_match)
-        ].copy()
-        if held_out_match in set(model_train["match_id"]) | set(
-            calibration["match_id"]
-        ):
-            raise RuntimeError(f"OOF leakage detected for match {held_out_match}")
-
-        fold_model = clone(bundle["model"])
-        fold_model.fit(
-            model_train[feature_names],
-            model_train["transition_conceded"].astype(int),
-        )
-        raw_calibration = fold_model.predict_proba(
-            calibration[feature_names]
-        )[:, 1]
-        fold_calibrator = fit_calibrator(
-            raw_calibration,
-            calibration["transition_conceded"].to_numpy(dtype=int),
-            "platt",
-        )
-        fold_bundle = dict(bundle)
-        fold_bundle.update(
-            {
-                "model": fold_model,
-                "calibrator": fold_calibrator,
-                "calibration_method": "platt",
-                "threshold": bundle["threshold"],
-                "feature_defaults": {
-                    column: (
-                        float(
-                            pd.to_numeric(
-                                model_train[column], errors="coerce"
-                            ).median()
-                        )
-                        if column in V2_NUMERIC_FEATURES
-                        else str(model_train[column].dropna().mode().iloc[0])
-                    )
-                    for column in feature_names
-                },
-            }
-        )
-        hurdle = (
-            EmpiricalHurdleModel()
-            .fit(model_train)
-            .attach_transition_bundle(fold_bundle)
-        )
-        hurdle.fit_physical_adjustments(model_train)
-        evaluation["actual_style"] = evaluation["attacking_style"]
-        fold_tactical = simulate_tactical_style_outcomes(evaluation, hurdle)
-        fold_tactical["oof_fold_match_id"] = held_out_match
-        fold_tactical["oof_model_train_matches"] = int(
-            model_train["match_id"].nunique()
-        )
-        fold_tactical["oof_calibration_matches"] = len(calibration_matches)
-        fold_tactical["oof_development_match_count"] = (
-            int(model_train["match_id"].nunique()) + len(calibration_matches)
-        )
-        tactical_folds.append(fold_tactical)
-        leakage_records.append(
-            {
-                "held_out_match": held_out_match,
-                "evaluation_rows": len(evaluation),
-                "model_train_matches": int(model_train["match_id"].nunique()),
-                "calibration_matches": len(calibration_matches),
-                "development_matches": int(model_train["match_id"].nunique())
-                + len(calibration_matches),
-                "heldout_excluded": True,
-            }
-        )
-
-    tactical = pd.concat(tactical_folds, ignore_index=True)
     simulation_dir = artifact_root / "simulations"
     simulation_dir.mkdir(parents=True, exist_ok=True)
-    tactical.to_parquet(
-        simulation_dir / "tactical_style_simulations_oof.parquet",
-        index=False,
-    )
-    pd.DataFrame(leakage_records).to_csv(
-        simulation_dir / "oof_fold_integrity.csv", index=False
-    )
+    tactical_path = simulation_dir / "tactical_style_simulations_oof.parquet"
+    integrity_path = simulation_dir / "oof_fold_integrity.csv"
+    if reuse_validated_oof:
+        if not tactical_path.exists() or not integrity_path.exists():
+            raise FileNotFoundError(
+                "--reuse-validated-oof requires existing tactical and integrity artifacts"
+            )
+        tactical = pd.read_parquet(tactical_path)
+        leakage_records = pd.read_csv(integrity_path).to_dict("records")
+    else:
+        tactical_folds: list[pd.DataFrame] = []
+        leakage_records: list[dict[str, object]] = []
+        for held_out_match in timer.progress(
+            all_matches,
+            name="leave_one_match_out_audit",
+            total=len(all_matches),
+            unit="match",
+        ):
+            calibration_matches = _calibration_matches_for_fold(
+                canonical, held_out_match
+            )
+            model_train = canonical[
+                ~canonical["match_id"].isin(calibration_matches + [held_out_match])
+            ].copy()
+            calibration = canonical[
+                canonical["match_id"].isin(calibration_matches)
+            ].copy()
+            evaluation = canonical[
+                canonical["match_id"].eq(held_out_match)
+            ].copy()
+            if held_out_match in set(model_train["match_id"]) | set(
+                calibration["match_id"]
+            ):
+                raise RuntimeError(f"OOF leakage detected for match {held_out_match}")
+
+            fold_model = clone(bundle["model"])
+            fold_model.fit(
+                model_train[feature_names],
+                model_train["transition_conceded"].astype(int),
+            )
+            raw_calibration = fold_model.predict_proba(
+                calibration[feature_names]
+            )[:, 1]
+            fold_calibrator = fit_calibrator(
+                raw_calibration,
+                calibration["transition_conceded"].to_numpy(dtype=int),
+                "platt",
+            )
+            fold_bundle = dict(bundle)
+            fold_bundle.update(
+                {
+                    "model": fold_model,
+                    "calibrator": fold_calibrator,
+                    "calibration_method": "platt",
+                    "threshold": bundle["threshold"],
+                    "feature_defaults": {
+                        column: (
+                            float(
+                                pd.to_numeric(
+                                    model_train[column], errors="coerce"
+                                ).median()
+                            )
+                            if column in V2_NUMERIC_FEATURES
+                            else str(model_train[column].dropna().mode().iloc[0])
+                        )
+                        for column in feature_names
+                    },
+                }
+            )
+            hurdle = (
+                EmpiricalHurdleModel()
+                .fit(model_train)
+                .attach_transition_bundle(fold_bundle)
+            )
+            hurdle.fit_physical_adjustments(model_train)
+            evaluation["actual_style"] = evaluation["attacking_style"]
+            fold_tactical = simulate_tactical_style_outcomes(evaluation, hurdle)
+            fold_tactical["oof_fold_match_id"] = held_out_match
+            fold_tactical["oof_model_train_matches"] = int(
+                model_train["match_id"].nunique()
+            )
+            fold_tactical["oof_calibration_matches"] = len(calibration_matches)
+            fold_tactical["oof_development_match_count"] = (
+                int(model_train["match_id"].nunique()) + len(calibration_matches)
+            )
+            tactical_folds.append(fold_tactical)
+            leakage_records.append(
+                {
+                    "held_out_match": held_out_match,
+                    "evaluation_rows": len(evaluation),
+                    "model_train_matches": int(model_train["match_id"].nunique()),
+                    "calibration_matches": len(calibration_matches),
+                    "development_matches": int(model_train["match_id"].nunique())
+                    + len(calibration_matches),
+                    "heldout_excluded": True,
+                }
+            )
+        tactical = pd.concat(tactical_folds, ignore_index=True)
+        tactical.to_parquet(tactical_path, index=False)
+        pd.DataFrame(leakage_records).to_csv(integrity_path, index=False)
 
     actual_probabilities = tactical[
         tactical["simulated_style"].eq(tactical["actual_style"])
@@ -965,13 +988,14 @@ def run_pipeline(
             heatmap_cells,
             event_value_audit,
             player_provenance,
+            vaep_model_bundle,
         ) = build_v4_player_evaluations(
             components,
             data["events"],
             data["frame_actors"],
             data["frame_metrics"],
         )
-        update(4, "events + metadata + 360 + role normalization")
+        update(4, "SPADL + xT + calibrated 360-VAEP + unified rankings")
     player_output_dir = (
         artifact_root / "player"
         if staging
@@ -984,21 +1008,26 @@ def run_pipeline(
     heatmap_cells.to_csv(
         player_output_dir / "player_heatmap_cells.csv", index=False
     )
+    event_value_audit.to_parquet(
+        player_output_dir / "world_cup_spadl_actions.parquet", index=False
+    )
     event_value_audit[
         [
-            "match_id",
-            "id",
+            "game_id",
+            "original_event_id",
             "player_id",
-            "type",
-            "turnover",
-            "event_under_pressure",
-            "freeze_frame_pressure",
-            "pressure_augmented",
-            "standard_turnover_penalty",
-            "turnover_penalty_multiplier",
-            "applied_turnover_penalty",
-            "raw_on_ball_value",
-            "risk_adjusted_on_ball_value",
+            "type_name",
+            "result_name",
+            "scores",
+            "concedes",
+            "p_scores",
+            "p_concedes",
+            "vaep_value",
+            "xt_value",
+            "defenders_within_5",
+            "nearest_defender_distance",
+            "defensive_density",
+            "defenders_behind_ball",
         ]
     ].to_parquet(
         player_output_dir / "player_event_value_audit.parquet",
@@ -1008,13 +1037,74 @@ def run_pipeline(
         json.dumps(player_provenance, indent=2) + "\n",
         encoding="utf-8",
     )
+    reports_root = artifact_root / "reports"
+    reports_root.mkdir(parents=True, exist_ok=True)
+    validation_columns = [
+        "model_name",
+        "algorithm_type",
+        "brier_score",
+        "roc_auc",
+        "pr_auc",
+        "calibration_error",
+        "latency_sec",
+        "rank_brier",
+        "rank_roc_auc",
+        "rank_overall",
+    ]
+    final_validation = pd.DataFrame(
+        vaep_model_bundle["validation_records"]
+    )[validation_columns]
+    final_validation.to_csv(
+        reports_root / "final_validation.csv", index=False
+    )
+    model_output = (
+        artifact_root / "models/vaep_360_xt.joblib"
+        if staging
+        else project_root / "models/vaep_360_xt.joblib"
+    )
+    model_output.parent.mkdir(parents=True, exist_ok=True)
+    joblib.dump(vaep_model_bundle, model_output)
+    leaderboard = (
+        v4_profiles[
+            [
+                "player",
+                "team",
+                "position",
+                "minutes",
+                "vaep_off_p90",
+                "vaep_def_p90",
+                "vaep_per_touch",
+                "xt_p90",
+                "final_player_rating",
+                "team_rank",
+            ]
+        ]
+        .rename(columns={"player": "player_name"})
+        .sort_values(["team", "team_rank", "player_name"])
+    )
+    leaderboard.to_csv(
+        player_output_dir / "player_leaderboard.csv", index=False
+    )
+    leaderboard.to_csv(
+        reports_root / "player_leaderboard.csv", index=False
+    )
+    leaderboard.to_csv(
+        reports_root / "team_player_leaderboards.csv", index=False
+    )
+    figure_paths = _write_vaep_xt_diagnostics(
+        v4_profiles,
+        vaep_model_bundle,
+        artifact_root / "figures",
+    )
     cohort_ids = v4_profiles["player_id"].astype(int).tolist()
     all_profiles = derive_physicality_metrics(components)
     new_profile_columns = [
         "player_id",
         "player_evaluation_score",
-        "role_z_score",
-        "obv_per_90",
+        "final_player_rating",
+        "vaep_total_p90",
+        "vaep_per_touch",
+        "xt_p90",
         "final_third_share",
     ]
     simulation_profiles = all_profiles.merge(
@@ -1089,7 +1179,6 @@ def run_pipeline(
         "oof_provenance": "64-match leave-one-match-out; held-out match excluded",
         "player_evaluation": player_provenance,
     }
-    reports_root = artifact_root / "reports"
     heatmap_count = generate_player_heatmap_svgs(
         v4_profiles,
         heatmap_cells,
@@ -1174,6 +1263,24 @@ def run_pipeline(
         "player_reports": player_report_count == len(v4_profiles),
         "compiled_reports": compiled_checks["markdown_files"] == 64,
         "summary": summary_path.is_file(),
+        "final_validation": (
+            reports_root / "final_validation.csv"
+        ).is_file(),
+        "diagnostic_figures": all(Path(path).is_file() for path in figure_paths.values()),
+        "mbappe_france_top_two": bool(
+            v4_profiles.loc[
+                v4_profiles["player"].str.contains("Mbapp", case=False, na=False)
+                & v4_profiles["team"].eq("France"),
+                "team_rank",
+            ].le(2).all()
+        ),
+        "messi_argentina_first": bool(
+            v4_profiles.loc[
+                v4_profiles["player"].str.contains("Messi", case=False, na=False)
+                & v4_profiles["team"].eq("Argentina"),
+                "team_rank",
+            ].eq(1).all()
+        ),
     }
     if not all(checks.values()):
         raise RuntimeError(
@@ -1193,6 +1300,14 @@ def run_pipeline(
         "locked_v2_holdout_metrics": bundle["holdout_metrics"],
         "tournament_oof_metrics": oof_metrics,
         "player_evaluation_provenance": player_provenance,
+        "vaep_xt_model": {
+            "artifact": str(model_output),
+            "selected_model": vaep_model_bundle["selected_model_name"],
+            "selected_algorithm": vaep_model_bundle["selected_algorithm"],
+            "calibration_method": vaep_model_bundle["calibration_method"],
+            "validation": final_validation.iloc[0].to_dict(),
+            "diagnostic_figures": figure_paths,
+        },
         "fold_assignment_hash": bundle["fold_assignment_hash"],
         "counts": {
             "oof_matches": 64,
@@ -1235,6 +1350,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Write to the isolated V4 staging paths instead of production.",
     )
+    parser.add_argument(
+        "--reuse-validated-oof",
+        action="store_true",
+        help="Reuse existing leakage-audited 64-match tactical OOF artifacts.",
+    )
     return parser.parse_args()
 
 
@@ -1246,7 +1366,10 @@ def main() -> None:
         datefmt="%H:%M:%S",
     )
     for _ in tqdm(range(1), desc="World Cup reporting pipeline", unit="run"):
-        manifest = run_pipeline(staging=args.staging)
+        manifest = run_pipeline(
+            staging=args.staging,
+            reuse_validated_oof=args.reuse_validated_oof,
+        )
     print(json.dumps(manifest, indent=2))
 
 

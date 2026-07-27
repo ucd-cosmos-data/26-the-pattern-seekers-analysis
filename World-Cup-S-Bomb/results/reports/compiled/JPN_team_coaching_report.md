@@ -11,11 +11,11 @@ Japan: no tactical change cleared the modeled effect floor. Primary review signa
 ## Optimized starting 11
 
 1. Shūichi Gonda (Goalkeeper)
-2. Maya Yoshida (Center Back)
+2. Junya Ito (Fullback/Wingback)
 3. Wataru Endo (Defensive Midfield)
-4. Junya Ito (Fullback/Wingback)
-5. Daichi Kamada (Attacking Midfield/Wing)
-6. Ko Itakura (Center Back)
+4. Daichi Kamada (Attacking Midfield/Wing)
+5. Ko Itakura (Center Back)
+6. Maya Yoshida (Center Back)
 7. Hidemasa Morita (Defensive Midfield)
 8. Shogo Taniguchi (Center Back)
 9. Yuto Nagatomo (Fullback/Wingback)
@@ -34,17 +34,17 @@ Japan: no tactical change cleared the modeled effect floor. Primary review signa
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 105, INSUFFICIENT_MINUTES: 16.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Shūichi Gonda — Goalkeeper; score 56.8, role z +0.68, OBV/90 +0.329
-2. Wataru Endo — Ball-Winner; score 55.4, role z +0.54, OBV/90 +0.052
-3. Maya Yoshida — Deep Playmaker; score 46.6, role z -0.34, OBV/90 +0.246
-4. Junya Ito — Attacking Wingback; score 44.9, role z -0.51, OBV/90 -0.179
-5. Daichi Kamada — Ball-Winner; score 26.7, role z -2.33, OBV/90 -0.265
+1. Daichi Kamada — Target Forward; rating 0.1870, VAEP/90 +0.362, xT/90 +0.025
+2. Junya Ito — Attacking Wingback; rating 0.0914, VAEP/90 +0.160, xT/90 +0.053
+3. Shūichi Gonda — Goalkeeper; rating 0.0673, VAEP/90 +0.131, xT/90 +0.004
+4. Wataru Endo — Ball-Winner; rating 0.0176, VAEP/90 +0.021, xT/90 +0.035
+5. Maya Yoshida — Sweeper CB; rating -0.0786, VAEP/90 -0.158, xT/90 +0.003
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

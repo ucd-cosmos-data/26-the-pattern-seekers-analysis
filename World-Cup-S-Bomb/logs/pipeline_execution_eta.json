@@ -2,57 +2,136 @@
   "schema_version": 1,
   "pipeline": "run_team_simulation_reports_v4",
   "status": "complete",
-  "elapsed_seconds": 351.3052956999745,
-  "peak_memory_mb": 291.75200939178467,
+  "elapsed_seconds": 247.16215010010637,
+  "peak_memory_mb": 819.839768409729,
   "stages": [
     {
       "name": "load_v4_inputs",
       "status": "complete",
-      "elapsed_seconds": 14.690194899914786,
+      "elapsed_seconds": 29.90886460011825,
       "completed": 4,
       "total": 4,
       "unit": "source",
-      "average_units_per_second": 0.27229046498376974,
+      "average_units_per_second": 0.13373961377270688,
       "eta_seconds": 0.0,
-      "peak_memory_mb": 142.29846858978271,
+      "peak_memory_mb": 296.9533414840698,
       "message": "validated 360 actor and density context"
-    },
-    {
-      "name": "leave_one_match_out_audit",
-      "status": "complete",
-      "elapsed_seconds": 255.4028625000501,
-      "completed": 64,
-      "total": 64,
-      "unit": "match",
-      "average_units_per_second": 0.2505845054888038,
-      "eta_seconds": 0.0,
-      "peak_memory_mb": 188.72681617736816,
-      "message": ""
     },
     {
       "name": "v4_player_spatial_evaluation",
       "status": "complete",
-      "elapsed_seconds": 60.81852179998532,
+      "elapsed_seconds": 185.37275099987164,
       "completed": 4,
       "total": 4,
       "unit": "layer",
-      "average_units_per_second": 0.06576943802012902,
+      "average_units_per_second": 0.02157814445987679,
       "eta_seconds": 0.0,
-      "peak_memory_mb": 253.21007823944092,
-      "message": "events + metadata + 360 + role normalization"
+      "peak_memory_mb": 819.839768409729,
+      "message": "SPADL + xT + calibrated 360-VAEP + unified rankings"
     },
     {
       "name": "reason_coded_substitutions",
       "status": "complete",
-      "elapsed_seconds": 14.486217300058343,
+      "elapsed_seconds": 17.594353599939495,
       "completed": 32,
       "total": 32,
       "unit": "team",
-      "average_units_per_second": 2.208996271226107,
+      "average_units_per_second": 1.8187653111683537,
       "eta_seconds": 0.0,
-      "peak_memory_mb": 291.75200939178467,
+      "peak_memory_mb": 819.839768409729,
       "message": ""
     }
   ],
-  "previous_runs": []
+  "previous_runs": [
+    {
+      "schema_version": 1,
+      "pipeline": "run_team_simulation_reports_v4",
+      "status": "complete",
+      "elapsed_seconds": 351.3052956999745,
+      "peak_memory_mb": 291.75200939178467,
+      "stages": [
+        {
+          "name": "load_v4_inputs",
+          "status": "complete",
+          "elapsed_seconds": 14.690194899914786,
+          "completed": 4,
+          "total": 4,
+          "unit": "source",
+          "average_units_per_second": 0.27229046498376974,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 142.29846858978271,
+          "message": "validated 360 actor and density context"
+        },
+        {
+          "name": "leave_one_match_out_audit",
+          "status": "complete",
+          "elapsed_seconds": 255.4028625000501,
+          "completed": 64,
+          "total": 64,
+          "unit": "match",
+          "average_units_per_second": 0.2505845054888038,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 188.72681617736816,
+          "message": ""
+        },
+        {
+          "name": "v4_player_spatial_evaluation",
+          "status": "complete",
+          "elapsed_seconds": 60.81852179998532,
+          "completed": 4,
+          "total": 4,
+          "unit": "layer",
+          "average_units_per_second": 0.06576943802012902,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 253.21007823944092,
+          "message": "events + metadata + 360 + role normalization"
+        },
+        {
+          "name": "reason_coded_substitutions",
+          "status": "complete",
+          "elapsed_seconds": 14.486217300058343,
+          "completed": 32,
+          "total": 32,
+          "unit": "team",
+          "average_units_per_second": 2.208996271226107,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 291.75200939178467,
+          "message": ""
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "pipeline": "run_team_simulation_reports_v4",
+      "status": "complete",
+      "elapsed_seconds": 426.72981070005335,
+      "peak_memory_mb": 305.29499912261963,
+      "stages": [
+        {
+          "name": "load_v4_inputs",
+          "status": "complete",
+          "elapsed_seconds": 29.7265721000731,
+          "completed": 4,
+          "total": 4,
+          "unit": "source",
+          "average_units_per_second": 0.13455974629480283,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 296.9518213272095,
+          "message": "validated 360 actor and density context"
+        },
+        {
+          "name": "leave_one_match_out_audit",
+          "status": "complete",
+          "elapsed_seconds": 396.73488720017485,
+          "completed": 64,
+          "total": 64,
+          "unit": "match",
+          "average_units_per_second": 0.16131679382082784,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 305.29499912261963,
+          "message": ""
+        }
+      ]
+    }
+  ]
 }

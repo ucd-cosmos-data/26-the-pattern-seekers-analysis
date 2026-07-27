@@ -10,13 +10,13 @@ Ghana: Patient Build-up led the observed baseline by 0.0054 mean EvA. Primary re
 
 ## Optimized starting 11
 
-1. Daniel Amartey (Center Back)
-2. Thomas Teye Partey (Defensive Midfield)
-3. Lawrence Ati-Zigi (Goalkeeper)
-4. Mohamed Salisu (Center Back)
-5. Salis Abdul Samed (Defensive Midfield)
-6. Iñaki Williams Arthuer (Forward)
-7. Mohammed Kudus (Attacking Midfield/Wing)
+1. Thomas Teye Partey (Defensive Midfield)
+2. Mohamed Salisu (Center Back)
+3. Salis Abdul Samed (Defensive Midfield)
+4. Daniel Amartey (Center Back)
+5. Iñaki Williams Arthuer (Forward)
+6. Mohammed Kudus (Attacking Midfield/Wing)
+7. Lawrence Ati-Zigi (Goalkeeper)
 8. Abdul Rahman Baba (Fullback/Wingback)
 9. André Ayew Pelé (Attacking Midfield/Wing)
 10. Alidu Seidu (Fullback/Wingback)
@@ -34,16 +34,16 @@ Ghana: Patient Build-up led the observed baseline by 0.0054 mean EvA. Primary re
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Thomas Teye Partey — Ball-Winner; score 56.1, role z +0.61, OBV/90 +0.157
-2. Daniel Amartey — Deep Playmaker; score 54.2, role z +0.42, OBV/90 +0.216
-3. Lawrence Ati-Zigi — Goalkeeper; score 47.8, role z -0.22, OBV/90 +0.309
-4. Mohamed Salisu — Deep Playmaker; score 47.4, role z -0.26, OBV/90 +0.325
+1. Mohamed Salisu — Sweeper CB; rating 0.0947, VAEP/90 +0.185, xT/90 +0.010
+2. Thomas Teye Partey — Ball-Winner; rating 0.0356, VAEP/90 +0.058, xT/90 +0.033
+3. Daniel Amartey — Sweeper CB; rating -0.0950, VAEP/90 -0.191, xT/90 +0.006
+4. Lawrence Ati-Zigi — Goalkeeper; rating -0.2145, VAEP/90 -0.424, xT/90 +0.003
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

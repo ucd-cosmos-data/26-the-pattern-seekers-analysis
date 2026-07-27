@@ -1,7 +1,7 @@
 # POR — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 9
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -13,11 +13,14 @@
 - Team: Portugal (POR)
 - Position: Right Center Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: -0.0699
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 29.8%
-- Role-relative z-score: -0.870
-- V4 evaluation score: 41.3
+- VAEP offense per 90: 0.0904
+- VAEP defense per 90: -0.0101
+- VAEP total per 90: 0.0803
+- VAEP per touch: 0.00042
+- Spatial xT per 90: 0.0381
+- Final-third spatial share: 31.2%
+- Unified final player rating: 0.0479
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/POR/3193_heatmap.svg)
 
@@ -53,12 +56,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Portugal (POR)
 - Position: Center Attacking Midfield
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: -0.0704
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 38.6%
-- Role-relative z-score: -0.288
-- V4 evaluation score: 47.1
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.8435
+- VAEP defense per 90: -0.0011
+- VAEP total per 90: 0.8423
+- VAEP per touch: 0.00536
+- Spatial xT per 90: 0.1115
+- Final-third spatial share: 37.5%
+- Unified final player rating: 0.4451
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/POR/5204_heatmap.svg)
 
@@ -93,12 +99,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Portugal (POR)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.2823
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 1.7%
-- Role-relative z-score: +0.159
-- V4 evaluation score: 51.6
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0517
+- VAEP defense per 90: -0.0351
+- VAEP total per 90: 0.0166
+- VAEP per touch: 0.00010
+- Spatial xT per 90: 0.0058
+- Final-third spatial share: 2.3%
+- Unified final player rating: 0.0095
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/POR/5206_heatmap.svg)
 
@@ -135,11 +144,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Center Forward
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.4083
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 50.5%
-- Role-relative z-score: -0.247
-- V4 evaluation score: 47.5
+- VAEP offense per 90: 0.4829
+- VAEP defense per 90: 0.0167
+- VAEP total per 90: 0.4997
+- VAEP per touch: 0.00525
+- Spatial xT per 90: 0.0144
+- Final-third spatial share: 47.2%
+- Unified final player rating: 0.2543
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/POR/5207_heatmap.svg)
 
@@ -174,12 +186,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Portugal (POR)
 - Position: Left Back
-- Functional role: Box-to-Box Runner
-- Risk-adjusted OBV per 90: -0.0360
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 33.7%
-- Role-relative z-score: +0.011
-- V4 evaluation score: 50.1
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.6222
+- VAEP defense per 90: -0.0107
+- VAEP total per 90: 0.6116
+- VAEP per touch: 0.00440
+- Spatial xT per 90: 0.0603
+- Final-third spatial share: 33.8%
+- Unified final player rating: 0.3192
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/POR/5209_heatmap.svg)
 
@@ -216,11 +231,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Right Back
 - Functional role: Box-to-Box Runner
-- Risk-adjusted OBV per 90: -0.0042
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 33.9%
-- Role-relative z-score: +0.617
-- V4 evaluation score: 56.2
+- VAEP offense per 90: 0.0432
+- VAEP defense per 90: -0.0194
+- VAEP total per 90: 0.0238
+- VAEP per touch: 0.00012
+- Spatial xT per 90: 0.0579
+- Final-third spatial share: 33.3%
+- Unified final player rating: 0.0235
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/POR/7005_heatmap.svg)
 
@@ -257,11 +275,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Left Wing
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.2163
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 47.7%
-- Role-relative z-score: +1.410
-- V4 evaluation score: 64.1
+- VAEP offense per 90: 0.4910
+- VAEP defense per 90: 0.0135
+- VAEP total per 90: 0.5045
+- VAEP per touch: 0.00439
+- Spatial xT per 90: 0.0447
+- Final-third spatial share: 46.7%
+- Unified final player rating: 0.2625
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/POR/12041_heatmap.svg)
 
@@ -296,12 +317,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Portugal (POR)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.3878
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 4.1%
-- Role-relative z-score: +0.336
-- V4 evaluation score: 53.4
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.3202
+- VAEP defense per 90: -0.0828
+- VAEP total per 90: 0.2374
+- VAEP per touch: 0.00131
+- Spatial xT per 90: 0.0144
+- Final-third spatial share: 5.0%
+- Unified final player rating: 0.1220
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/POR/20016_heatmap.svg)
 
@@ -338,11 +362,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.2946
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 0.8%
-- Role-relative z-score: +0.057
-- V4 evaluation score: 50.6
+- VAEP offense per 90: -0.0241
+- VAEP defense per 90: -0.1989
+- VAEP total per 90: -0.2230
+- VAEP per touch: -0.00363
+- Spatial xT per 90: 0.0010
+- Final-third spatial share: 1.2%
+- Unified final player rating: -0.1124
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/POR/32975_heatmap.svg)
 

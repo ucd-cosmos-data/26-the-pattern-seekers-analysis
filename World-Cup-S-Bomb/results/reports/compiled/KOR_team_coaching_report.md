@@ -13,12 +13,12 @@ South Korea: no tactical change cleared the modeled effect floor. Primary review
 1. Young-Gwon Kim (Center Back)
 2. Moon-Hwan Kim (Fullback/Wingback)
 3. Heung-Min Son (Attacking Midfield/Wing)
-4. Seung-Gyu Kim (Goalkeeper)
-5. In-Beom Hwang (Defensive Midfield)
-6. Woo-Young Jung (Defensive Midfield)
-7. Jin-Su Kim (Fullback/Wingback)
-8. Min Jae Kim (Center Back)
-9. Gue-Sung Cho (Forward)
+4. In-Beom Hwang (Defensive Midfield)
+5. Jin-Su Kim (Fullback/Wingback)
+6. Seung-Gyu Kim (Goalkeeper)
+7. Min Jae Kim (Center Back)
+8. Gue-Sung Cho (Forward)
+9. Jae-Sung Lee (Attacking Midfield/Wing)
 10. Kang-In Lee (Central/Wide Midfield)
 11. Hee-Chan Hwang (Central/Wide Midfield)
 
@@ -34,17 +34,17 @@ South Korea: no tactical change cleared the modeled effect floor. Primary review
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 93, INSUFFICIENT_MINUTES: 17.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Young-Gwon Kim — Deep Playmaker; score 75.5, role z +2.55, OBV/90 +0.445
-2. Woo-Young Jung — Ball-Winner; score 66.7, role z +1.67, OBV/90 +0.231
-3. Jin-Su Kim — Attacking Wingback; score 63.8, role z +1.38, OBV/90 +0.000
-4. Heung-Min Son — Target Forward; score 55.4, role z +0.54, OBV/90 -0.348
-5. In-Beom Hwang — Ball-Winner; score 55.3, role z +0.53, OBV/90 +0.173
+1. Jin-Su Kim — Attacking Wingback; rating 0.1948, VAEP/90 +0.371, xT/90 +0.041
+2. Young-Gwon Kim — Sweeper CB; rating 0.1568, VAEP/90 +0.306, xT/90 +0.017
+3. Heung-Min Son — Target Forward; rating 0.1513, VAEP/90 +0.272, xT/90 +0.073
+4. In-Beom Hwang — Box-to-Box Runner; rating 0.0187, VAEP/90 +0.021, xT/90 +0.042
+5. Moon-Hwan Kim — Attacking Wingback; rating 0.0030, VAEP/90 -0.008, xT/90 +0.035
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

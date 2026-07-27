@@ -1,7 +1,7 @@
 # NED — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 9
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -13,11 +13,14 @@
 - Team: Netherlands (NED)
 - Position: Left Center Forward
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.6638
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 48.1%
-- Role-relative z-score: -2.768
-- V4 evaluation score: 22.3
+- VAEP offense per 90: 0.5925
+- VAEP defense per 90: 0.1982
+- VAEP total per 90: 0.7907
+- VAEP per touch: 0.00565
+- Spatial xT per 90: 0.0481
+- Final-third spatial share: 43.2%
+- Unified final player rating: 0.4067
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/NED/2988_heatmap.svg)
 
@@ -52,12 +55,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Netherlands (NED)
 - Position: Left Center Back
-- Functional role: Holding Anchor
-- Risk-adjusted OBV per 90: 0.3165
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 5.3%
-- Role-relative z-score: -0.014
-- V4 evaluation score: 49.9
+- Functional role: Deep Playmaker
+- VAEP offense per 90: -0.0031
+- VAEP defense per 90: -0.1066
+- VAEP total per 90: -0.1097
+- VAEP per touch: -0.00066
+- Spatial xT per 90: 0.0086
+- Final-third spatial share: 6.5%
+- Unified final player rating: -0.0533
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/NED/3306_heatmap.svg)
 
@@ -92,12 +98,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Netherlands (NED)
 - Position: Left Wing Back
-- Functional role: Box-to-Box Runner
-- Risk-adjusted OBV per 90: -0.0600
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 28.8%
-- Role-relative z-score: -0.910
-- V4 evaluation score: 40.9
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.3217
+- VAEP defense per 90: -0.0813
+- VAEP total per 90: 0.2404
+- VAEP per touch: 0.00154
+- Spatial xT per 90: 0.0397
+- Final-third spatial share: 28.9%
+- Unified final player rating: 0.1286
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/NED/3311_heatmap.svg)
 
@@ -132,12 +141,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Netherlands (NED)
 - Position: Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.3752
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 2.0%
-- Role-relative z-score: +0.876
-- V4 evaluation score: 58.8
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0449
+- VAEP defense per 90: -0.0718
+- VAEP total per 90: -0.0269
+- VAEP per touch: -0.00017
+- Spatial xT per 90: 0.0136
+- Final-third spatial share: 2.8%
+- Unified final player rating: -0.0108
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/NED/3669_heatmap.svg)
 
@@ -174,11 +186,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Netherlands (NED)
 - Position: Left Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.0183
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 18.2%
-- Role-relative z-score: +0.553
-- V4 evaluation score: 55.5
+- VAEP offense per 90: 0.2859
+- VAEP defense per 90: 0.0193
+- VAEP total per 90: 0.3052
+- VAEP per touch: 0.00173
+- Spatial xT per 90: 0.0205
+- Final-third spatial share: 19.4%
+- Unified final player rating: 0.1572
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/NED/8118_heatmap.svg)
 
@@ -215,11 +230,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Netherlands (NED)
 - Position: Right Wing Back
 - Functional role: Attacking Wingback
-- Risk-adjusted OBV per 90: -0.2666
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 45.0%
-- Role-relative z-score: -1.141
-- V4 evaluation score: 38.6
+- VAEP offense per 90: 0.2789
+- VAEP defense per 90: -0.0083
+- VAEP total per 90: 0.2707
+- VAEP per touch: 0.00248
+- Spatial xT per 90: 0.0445
+- Final-third spatial share: 41.2%
+- Unified final player rating: 0.1450
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/NED/8125_heatmap.svg)
 
@@ -255,11 +273,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Netherlands (NED)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.2617
-- OBV source: `open_event_value_fallback`
+- VAEP offense per 90: -0.0167
+- VAEP defense per 90: 0.3855
+- VAEP total per 90: 0.3689
+- VAEP per touch: 0.00545
+- Spatial xT per 90: 0.0005
 - Final-third spatial share: 0.3%
-- Role-relative z-score: -0.868
-- V4 evaluation score: 41.3
+- Unified final player rating: 0.1862
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/NED/8326_heatmap.svg)
 
@@ -295,12 +316,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Netherlands (NED)
 - Position: Center Attacking Midfield
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: -0.3005
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 57.2%
-- Role-relative z-score: -2.260
-- V4 evaluation score: 27.4
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.6167
+- VAEP defense per 90: -0.0109
+- VAEP total per 90: 0.6057
+- VAEP per touch: 0.00603
+- Spatial xT per 90: 0.0796
+- Final-third spatial share: 51.2%
+- Unified final player rating: 0.3206
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/NED/20750_heatmap.svg)
 
@@ -335,12 +359,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Netherlands (NED)
 - Position: Right Center Back
-- Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.2177
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 5.4%
-- Role-relative z-score: +1.043
-- V4 evaluation score: 60.4
+- Functional role: Deep Playmaker
+- VAEP offense per 90: -0.0069
+- VAEP defense per 90: -0.0610
+- VAEP total per 90: -0.0678
+- VAEP per touch: -0.00036
+- Spatial xT per 90: 0.0114
+- Final-third spatial share: 6.0%
+- Unified final player rating: -0.0318
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/NED/21809_heatmap.svg)
 

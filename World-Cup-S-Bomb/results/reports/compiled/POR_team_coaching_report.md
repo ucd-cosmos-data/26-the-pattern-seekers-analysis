@@ -10,15 +10,15 @@ Portugal: no tactical change cleared the modeled effect floor. Primary review si
 
 ## Optimized starting 11
 
-1. Diogo Meireles Costa (Goalkeeper)
-2. Kléper Laveran Lima Ferreira (Center Back)
+1. Kléper Laveran Lima Ferreira (Center Back)
+2. Bruno Miguel Borges Fernandes (Attacking Midfield/Wing)
 3. Rúben Santos Gato Alves Dias (Center Back)
-4. João Pedro Cavaco Cancelo (Fullback/Wingback)
-5. João Félix Sequeira (Attacking Midfield/Wing)
-6. Bruno Miguel Borges Fernandes (Attacking Midfield/Wing)
-7. Bernardo Mota Veiga de Carvalho e Silva (Central/Wide Midfield)
-8. Raphaël Adelino José Guerreiro (Fullback/Wingback)
-9. Cristiano Ronaldo dos Santos Aveiro (Forward)
+4. Bernardo Mota Veiga de Carvalho e Silva (Central/Wide Midfield)
+5. João Pedro Cavaco Cancelo (Fullback/Wingback)
+6. João Félix Sequeira (Attacking Midfield/Wing)
+7. Raphaël Adelino José Guerreiro (Fullback/Wingback)
+8. Cristiano Ronaldo dos Santos Aveiro (Forward)
+9. Diogo Meireles Costa (Goalkeeper)
 10. Rúben Diogo Da Silva Neves (Defensive Midfield)
 11. Otávio Edmilson da Silva Monteiro (Central/Wide Midfield)
 
@@ -34,17 +34,17 @@ Portugal: no tactical change cleared the modeled effect floor. Primary review si
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 123, INSUFFICIENT_MINUTES: 20.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. João Félix Sequeira — Target Forward; score 64.1, role z +1.41, OBV/90 -0.216
-2. João Pedro Cavaco Cancelo — Box-to-Box Runner; score 56.2, role z +0.62, OBV/90 -0.004
-3. Kléper Laveran Lima Ferreira — Deep Playmaker; score 53.4, role z +0.34, OBV/90 +0.388
-4. Rúben Santos Gato Alves Dias — Deep Playmaker; score 51.6, role z +0.16, OBV/90 +0.282
-5. Diogo Meireles Costa — Goalkeeper; score 50.6, role z +0.06, OBV/90 +0.295
+1. Bruno Miguel Borges Fernandes — Progressive Winger; rating 0.4451, VAEP/90 +0.842, xT/90 +0.112
+2. Raphaël Adelino José Guerreiro — Wide Creator; rating 0.3192, VAEP/90 +0.612, xT/90 +0.060
+3. João Félix Sequeira — Target Forward; rating 0.2625, VAEP/90 +0.505, xT/90 +0.045
+4. Cristiano Ronaldo dos Santos Aveiro — Target Forward; rating 0.2543, VAEP/90 +0.500, xT/90 +0.014
+5. Kléper Laveran Lima Ferreira — Sweeper CB; rating 0.1220, VAEP/90 +0.237, xT/90 +0.014
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

@@ -1,7 +1,7 @@
 # JPN — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 5
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -12,12 +12,15 @@
 
 - Team: Japan (JPN)
 - Position: Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.2458
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 1.9%
-- Role-relative z-score: -0.338
-- V4 evaluation score: 46.6
+- Functional role: Sweeper CB
+- VAEP offense per 90: -0.0806
+- VAEP defense per 90: -0.0771
+- VAEP total per 90: -0.1576
+- VAEP per touch: -0.00124
+- Spatial xT per 90: 0.0030
+- Final-third spatial share: 3.0%
+- Unified final player rating: -0.0786
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/JPN/3300_heatmap.svg)
 
@@ -53,12 +56,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Japan (JPN)
 - Position: Center Attacking Midfield
-- Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: -0.2655
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 38.7%
-- Role-relative z-score: -2.335
-- V4 evaluation score: 26.7
+- Functional role: Target Forward
+- VAEP offense per 90: 0.3173
+- VAEP defense per 90: 0.0444
+- VAEP total per 90: 0.3617
+- VAEP per touch: 0.00380
+- Spatial xT per 90: 0.0250
+- Final-third spatial share: 36.1%
+- Unified final player rating: 0.1870
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/JPN/9411_heatmap.svg)
 
@@ -95,11 +101,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Japan (JPN)
 - Position: Right Wing Back
 - Functional role: Attacking Wingback
-- Risk-adjusted OBV per 90: -0.1791
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 42.5%
-- Role-relative z-score: -0.509
-- V4 evaluation score: 44.9
+- VAEP offense per 90: 0.1923
+- VAEP defense per 90: -0.0318
+- VAEP total per 90: 0.1605
+- VAEP per touch: 0.00208
+- Spatial xT per 90: 0.0526
+- Final-third spatial share: 35.8%
+- Unified final player rating: 0.0914
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/JPN/23527_heatmap.svg)
 
@@ -135,11 +144,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Japan (JPN)
 - Position: Right Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.0517
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 22.6%
-- Role-relative z-score: +0.535
-- V4 evaluation score: 55.4
+- VAEP offense per 90: 0.0831
+- VAEP defense per 90: -0.0621
+- VAEP total per 90: 0.0211
+- VAEP per touch: 0.00015
+- Spatial xT per 90: 0.0353
+- Final-third spatial share: 22.5%
+- Unified final player rating: 0.0176
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/JPN/23721_heatmap.svg)
 
@@ -175,11 +187,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Japan (JPN)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.3287
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 1.3%
-- Role-relative z-score: +0.676
-- V4 evaluation score: 56.8
+- VAEP offense per 90: -0.0188
+- VAEP defense per 90: 0.1500
+- VAEP total per 90: 0.1312
+- VAEP per touch: 0.00284
+- Spatial xT per 90: 0.0041
+- Final-third spatial share: 1.6%
+- Unified final player rating: 0.0673
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/JPN/25719_heatmap.svg)
 

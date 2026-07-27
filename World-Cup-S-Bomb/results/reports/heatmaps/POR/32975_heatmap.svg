@@ -2,35 +2,35 @@
 <title>Diogo Meireles Costa V4 spatial heatmap</title>
 <rect width="640" height="500" fill="#f7fafc"/>
 <text x="20" y="28" font-family="Arial" font-size="18" font-weight="700">Diogo Meireles Costa</text>
-<text x="20" y="49" font-family="Arial" font-size="12">Goalkeeper · 489 minutes · 0.8% final third</text>
+<text x="20" y="49" font-family="Arial" font-size="12">Goalkeeper · 489 minutes · 1.2% final third</text>
 <rect x="20" y="60" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="110" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="20" y="160" width="50" height="50" fill="rgb(236,243,253)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="20" y="210" width="50" height="50" fill="rgb(103,170,224)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="20" y="160" width="50" height="50" fill="rgb(231,240,252)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="20" y="210" width="50" height="50" fill="rgb(110,174,226)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="260" width="50" height="50" fill="rgb(35,133,210)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="20" y="310" width="50" height="50" fill="rgb(206,227,246)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="20" y="310" width="50" height="50" fill="rgb(208,227,247)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="360" width="50" height="50" fill="rgb(243,247,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="410" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="70" y="60" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="70" y="110" width="50" height="50" fill="rgb(235,242,252)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="70" y="160" width="50" height="50" fill="rgb(221,235,250)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="70" y="210" width="50" height="50" fill="rgb(175,209,240)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="70" y="260" width="50" height="50" fill="rgb(100,168,223)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="70" y="310" width="50" height="50" fill="rgb(220,234,249)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="70" y="110" width="50" height="50" fill="rgb(233,241,252)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="70" y="160" width="50" height="50" fill="rgb(220,234,249)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="70" y="210" width="50" height="50" fill="rgb(176,210,240)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="70" y="260" width="50" height="50" fill="rgb(110,174,226)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="70" y="310" width="50" height="50" fill="rgb(221,235,250)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="70" y="360" width="50" height="50" fill="rgb(241,246,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="70" y="410" width="50" height="50" fill="rgb(243,247,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="60" width="50" height="50" fill="rgb(240,245,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="110" width="50" height="50" fill="rgb(235,242,252)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="160" width="50" height="50" fill="rgb(221,235,250)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="120" y="210" width="50" height="50" fill="rgb(231,240,252)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="120" y="210" width="50" height="50" fill="rgb(230,239,251)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="260" width="50" height="50" fill="rgb(235,242,252)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="310" width="50" height="50" fill="rgb(218,233,249)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="360" width="50" height="50" fill="rgb(238,244,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="410" width="50" height="50" fill="rgb(240,245,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="60" width="50" height="50" fill="rgb(241,246,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="110" width="50" height="50" fill="rgb(243,247,254)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="170" y="160" width="50" height="50" fill="rgb(238,244,253)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="170" y="210" width="50" height="50" fill="rgb(230,239,251)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="170" y="160" width="50" height="50" fill="rgb(236,243,253)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="170" y="210" width="50" height="50" fill="rgb(231,240,252)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="260" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="310" width="50" height="50" fill="rgb(241,246,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="360" width="50" height="50" fill="rgb(238,244,253)" stroke="#ffffff" stroke-width="0.5"/>
@@ -83,10 +83,10 @@
 <rect x="470" y="310" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="470" y="360" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="470" y="410" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="520" y="60" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="520" y="60" width="50" height="50" fill="rgb(243,247,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="520" y="110" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="520" y="160" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="520" y="210" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="520" y="210" width="50" height="50" fill="rgb(243,247,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="520" y="260" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="520" y="310" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="520" y="360" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>

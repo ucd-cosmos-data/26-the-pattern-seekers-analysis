@@ -11,11 +11,11 @@ Iran: no tactical change cleared the modeled effect floor. Primary review signal
 ## Optimized starting 11
 
 1. Morteza Pouraliganji (Center Back)
-2. Seyed Majid Hosseini (Center Back)
-3. Mehdi Taremi (Forward)
-4. Saeid Ezatolahi Afagh (Defensive Midfield)
-5. Ehsan Hajsafi (Fullback/Wingback)
-6. Ahmad Nourollahi (Defensive Midfield)
+2. Mehdi Taremi (Forward)
+3. Saeid Ezatolahi Afagh (Defensive Midfield)
+4. Ehsan Hajsafi (Fullback/Wingback)
+5. Ahmad Nourollahi (Defensive Midfield)
+6. Seyed Majid Hosseini (Center Back)
 7. Milad Mohammadi (Fullback/Wingback)
 8. Ali Gholizadeh (Central/Wide Midfield)
 9. Seyed Hossein Hosseini (Goalkeeper)
@@ -34,15 +34,15 @@ Iran: no tactical change cleared the modeled effect floor. Primary review signal
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 96, INSUFFICIENT_MINUTES: 14.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Mehdi Taremi — Target Forward; score 60.7, role z +1.07, OBV/90 -0.233
-2. Morteza Pouraliganji — Deep Playmaker; score 46.5, role z -0.35, OBV/90 +0.133
-3. Seyed Majid Hosseini — Deep Playmaker; score 31.4, role z -1.86, OBV/90 +0.108
+1. Mehdi Taremi — Target Forward; rating 0.4178, VAEP/90 +0.812, xT/90 +0.044
+2. Morteza Pouraliganji — Sweeper CB; rating 0.0158, VAEP/90 +0.029, xT/90 +0.006
+3. Seyed Majid Hosseini — Sweeper CB; rating -0.0433, VAEP/90 -0.089, xT/90 +0.007
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

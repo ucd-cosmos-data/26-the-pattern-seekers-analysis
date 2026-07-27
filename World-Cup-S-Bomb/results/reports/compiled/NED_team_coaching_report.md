@@ -10,16 +10,16 @@ Netherlands: no tactical change cleared the modeled effect floor. Primary review
 
 ## Optimized starting 11
 
-1. Virgil van Dijk (Center Back)
-2. Nathan Aké (Center Back)
-3. Frenkie de Jong (Defensive Midfield)
-4. Andries Noppert (Goalkeeper)
-5. Jurriën David Norman Timber (Center Back)
-6. Denzel Dumfries (Fullback/Wingback)
-7. Daley Blind (Fullback/Wingback)
-8. Cody Mathès Gakpo (Attacking Midfield/Wing)
-9. Memphis Depay (Forward)
-10. Teun Koopmeiners (Defensive Midfield)
+1. Andries Noppert (Goalkeeper)
+2. Frenkie de Jong (Defensive Midfield)
+3. Denzel Dumfries (Fullback/Wingback)
+4. Cody Mathès Gakpo (Attacking Midfield/Wing)
+5. Daley Blind (Fullback/Wingback)
+6. Memphis Depay (Forward)
+7. Virgil van Dijk (Center Back)
+8. Nathan Aké (Center Back)
+9. Teun Koopmeiners (Defensive Midfield)
+10. Jurriën David Norman Timber (Center Back)
 11. Noa Lang (Central/Wide Midfield)
 
 ## Physical matchup deltas
@@ -34,17 +34,17 @@ Netherlands: no tactical change cleared the modeled effect floor. Primary review
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 92, INSUFFICIENT_MINUTES: 18.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Jurriën David Norman Timber — Ball-Winner; score 60.4, role z +1.04, OBV/90 +0.218
-2. Virgil van Dijk — Deep Playmaker; score 58.8, role z +0.88, OBV/90 +0.375
-3. Frenkie de Jong — Ball-Winner; score 55.5, role z +0.55, OBV/90 +0.018
-4. Nathan Aké — Holding Anchor; score 49.9, role z -0.01, OBV/90 +0.316
-5. Andries Noppert — Goalkeeper; score 41.3, role z -0.87, OBV/90 +0.262
+1. Memphis Depay — Target Forward; rating 0.4067, VAEP/90 +0.791, xT/90 +0.048
+2. Cody Mathès Gakpo — Progressive Winger; rating 0.3206, VAEP/90 +0.606, xT/90 +0.080
+3. Andries Noppert — Goalkeeper; rating 0.1862, VAEP/90 +0.369, xT/90 +0.001
+4. Frenkie de Jong — Ball-Winner; rating 0.1572, VAEP/90 +0.305, xT/90 +0.020
+5. Denzel Dumfries — Attacking Wingback; rating 0.1450, VAEP/90 +0.271, xT/90 +0.045
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

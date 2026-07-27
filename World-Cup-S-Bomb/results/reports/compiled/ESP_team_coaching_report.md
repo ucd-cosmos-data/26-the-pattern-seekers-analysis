@@ -10,13 +10,13 @@ Spain: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Optimized starting 11
 
-1. Rodrigo Hernández Cascante (Center Back)
-2. Unai Simón Mendibil (Goalkeeper)
-3. Sergio Busquets i Burgos (Defensive Midfield)
+1. Unai Simón Mendibil (Goalkeeper)
+2. Rodrigo Hernández Cascante (Center Back)
+3. Daniel Olmo Carvajal (Attacking Midfield/Wing)
 4. Pedro González López (Central/Wide Midfield)
 5. Aymeric Laporte (Center Back)
-6. Daniel Olmo Carvajal (Attacking Midfield/Wing)
-7. Pablo Martín Páez Gavira (Central/Wide Midfield)
+6. Pablo Martín Páez Gavira (Central/Wide Midfield)
+7. Sergio Busquets i Burgos (Defensive Midfield)
 8. Jordi Alba Ramos (Fullback/Wingback)
 9. Marco Asensio Willemsen (Forward)
 10. Ferrán Torres García (Attacking Midfield/Wing)
@@ -34,17 +34,17 @@ Spain: no tactical change cleared the modeled effect floor. Primary review signa
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 95, INSUFFICIENT_MINUTES: 15.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Rodrigo Hernández Cascante — Holding Anchor; score 76.1, role z +2.61, OBV/90 +0.667
-2. Aymeric Laporte — Holding Anchor; score 57.9, role z +0.79, OBV/90 +0.641
-3. Pedro González López — Ball-Winner; score 55.0, role z +0.50, OBV/90 +0.083
-4. Sergio Busquets i Burgos — Ball-Winner; score 51.4, role z +0.14, OBV/90 +0.010
-5. Unai Simón Mendibil — Goalkeeper; score 31.8, role z -1.82, OBV/90 +0.108
+1. Daniel Olmo Carvajal — Progressive Winger; rating 0.3061, VAEP/90 +0.584, xT/90 +0.066
+2. Unai Simón Mendibil — Goalkeeper; rating 0.1929, VAEP/90 +0.383, xT/90 +0.000
+3. Pedro González López — Ball-Winner; rating 0.0307, VAEP/90 +0.028, xT/90 +0.084
+4. Aymeric Laporte — Deep Playmaker; rating 0.0090, VAEP/90 +0.013, xT/90 +0.013
+5. Rodrigo Hernández Cascante — Deep Playmaker; rating 0.0010, VAEP/90 -0.011, xT/90 +0.033
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

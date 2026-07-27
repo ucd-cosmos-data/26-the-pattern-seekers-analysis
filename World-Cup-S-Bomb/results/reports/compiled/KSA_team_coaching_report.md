@@ -34,13 +34,13 @@ Saudi Arabia: no tactical change cleared the modeled effect floor. Primary revie
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 118, INSUFFICIENT_MINUTES: 14.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
 No player cleared the 300-minute V4 evaluation cutoff.
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

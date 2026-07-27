@@ -1,7 +1,7 @@
 # KOR — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 7
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -13,11 +13,14 @@
 - Team: South Korea (KOR)
 - Position: Left Wing
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.3476
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 64.1%
-- Role-relative z-score: +0.539
-- V4 evaluation score: 55.4
+- VAEP offense per 90: 0.2728
+- VAEP defense per 90: -0.0010
+- VAEP total per 90: 0.2719
+- VAEP per touch: 0.00268
+- Spatial xT per 90: 0.0729
+- Final-third spatial share: 57.5%
+- Unified final player rating: 0.1513
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/3083_heatmap.svg)
 
@@ -53,12 +56,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: South Korea (KOR)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.4447
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 3.8%
-- Role-relative z-score: +2.554
-- V4 evaluation score: 75.5
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.2585
+- VAEP defense per 90: 0.0471
+- VAEP total per 90: 0.3056
+- VAEP per touch: 0.00229
+- Spatial xT per 90: 0.0167
+- Final-third spatial share: 5.3%
+- Unified final player rating: 0.1568
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/5604_heatmap.svg)
 
@@ -95,11 +101,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: South Korea (KOR)
 - Position: Left Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.2307
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 17.3%
-- Role-relative z-score: +1.671
-- V4 evaluation score: 66.7
+- VAEP offense per 90: -0.0004
+- VAEP defense per 90: -0.1213
+- VAEP total per 90: -0.1216
+- VAEP per touch: -0.00079
+- Spatial xT per 90: 0.0318
+- Final-third spatial share: 18.3%
+- Unified final player rating: -0.0547
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/5618_heatmap.svg)
 
@@ -135,12 +144,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: South Korea (KOR)
 - Position: Left Defensive Midfield
-- Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.1728
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 34.6%
-- Role-relative z-score: +0.528
-- V4 evaluation score: 55.3
+- Functional role: Box-to-Box Runner
+- VAEP offense per 90: 0.0631
+- VAEP defense per 90: -0.0425
+- VAEP total per 90: 0.0205
+- VAEP per touch: 0.00012
+- Spatial xT per 90: 0.0421
+- Final-third spatial share: 35.7%
+- Unified final player rating: 0.0187
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/23763_heatmap.svg)
 
@@ -176,11 +188,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: South Korea (KOR)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.3271
-- OBV source: `open_event_value_fallback`
+- VAEP offense per 90: -0.0143
+- VAEP defense per 90: -0.2190
+- VAEP total per 90: -0.2333
+- VAEP per touch: -0.00392
+- Spatial xT per 90: 0.0012
 - Final-third spatial share: 1.2%
-- Role-relative z-score: -0.028
-- V4 evaluation score: 49.7
+- Unified final player rating: -0.1176
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/37641_heatmap.svg)
 
@@ -217,11 +232,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: South Korea (KOR)
 - Position: Left Back
 - Functional role: Attacking Wingback
-- Risk-adjusted OBV per 90: 0.0005
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 46.0%
-- Role-relative z-score: +1.380
-- V4 evaluation score: 63.8
+- VAEP offense per 90: 0.3819
+- VAEP defense per 90: -0.0112
+- VAEP total per 90: 0.3707
+- VAEP per touch: 0.00404
+- Spatial xT per 90: 0.0413
+- Final-third spatial share: 42.5%
+- Unified final player rating: 0.1948
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/40538_heatmap.svg)
 
@@ -257,11 +275,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: South Korea (KOR)
 - Position: Right Back
 - Functional role: Attacking Wingback
-- Risk-adjusted OBV per 90: -0.1179
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 40.4%
-- Role-relative z-score: +0.066
-- V4 evaluation score: 50.7
+- VAEP offense per 90: 0.0483
+- VAEP defense per 90: -0.0564
+- VAEP total per 90: -0.0081
+- VAEP per touch: -0.00006
+- Spatial xT per 90: 0.0352
+- Final-third spatial share: 39.5%
+- Unified final player rating: 0.0030
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/40672_heatmap.svg)
 

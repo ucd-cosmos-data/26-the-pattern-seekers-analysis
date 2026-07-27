@@ -1,7 +1,7 @@
 # ESP — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 6
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -12,12 +12,15 @@
 
 - Team: Spain (ESP)
 - Position: Left Center Back
-- Functional role: Holding Anchor
-- Risk-adjusted OBV per 90: 0.6411
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 2.1%
-- Role-relative z-score: +0.787
-- V4 evaluation score: 57.9
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0363
+- VAEP defense per 90: -0.0237
+- VAEP total per 90: 0.0126
+- VAEP per touch: 0.00004
+- Spatial xT per 90: 0.0134
+- Final-third spatial share: 2.6%
+- Unified final player rating: 0.0090
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/4353_heatmap.svg)
 
@@ -54,11 +57,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Spain (ESP)
 - Position: Center Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.0105
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 22.1%
-- Role-relative z-score: +0.139
-- V4 evaluation score: 51.4
+- VAEP offense per 90: -0.0608
+- VAEP defense per 90: -0.0198
+- VAEP total per 90: -0.0806
+- VAEP per touch: -0.00047
+- Spatial xT per 90: 0.0300
+- Final-third spatial share: 22.0%
+- Unified final player rating: -0.0344
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/5203_heatmap.svg)
 
@@ -94,12 +100,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Spain (ESP)
 - Position: Right Center Back
-- Functional role: Holding Anchor
-- Risk-adjusted OBV per 90: 0.6666
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 6.9%
-- Role-relative z-score: +2.614
-- V4 evaluation score: 76.1
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0622
+- VAEP defense per 90: -0.0734
+- VAEP total per 90: -0.0112
+- VAEP per touch: -0.00003
+- Spatial xT per 90: 0.0328
+- Final-third spatial share: 7.4%
+- Unified final player rating: 0.0010
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/6765_heatmap.svg)
 
@@ -136,11 +145,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Spain (ESP)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.1077
-- OBV source: `open_event_value_fallback`
+- VAEP offense per 90: -0.0302
+- VAEP defense per 90: 0.4132
+- VAEP total per 90: 0.3830
+- VAEP per touch: 0.00460
+- Spatial xT per 90: 0.0003
 - Final-third spatial share: 0.0%
-- Role-relative z-score: -1.816
-- V4 evaluation score: 31.8
+- Unified final player rating: 0.1929
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/11748_heatmap.svg)
 
@@ -177,11 +189,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Spain (ESP)
 - Position: Left Wing
 - Functional role: Progressive Winger
-- Risk-adjusted OBV per 90: -0.3974
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 54.3%
-- Role-relative z-score: -2.006
-- V4 evaluation score: 29.9
+- VAEP offense per 90: 0.5481
+- VAEP defense per 90: 0.0354
+- VAEP total per 90: 0.5835
+- VAEP per touch: 0.00363
+- Spatial xT per 90: 0.0665
+- Final-third spatial share: 51.0%
+- Unified final player rating: 0.3061
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/16532_heatmap.svg)
 
@@ -218,11 +233,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Spain (ESP)
 - Position: Left Center Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.0827
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 28.3%
-- Role-relative z-score: +0.500
-- V4 evaluation score: 55.0
+- VAEP offense per 90: 0.0308
+- VAEP defense per 90: -0.0031
+- VAEP total per 90: 0.0277
+- VAEP per touch: 0.00009
+- Spatial xT per 90: 0.0843
+- Final-third spatial share: 28.9%
+- Unified final player rating: 0.0307
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/30486_heatmap.svg)
 

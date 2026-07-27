@@ -129,13 +129,14 @@ def generate_individual_starter_reports(
                 "pressing_intensity_index": player["pressing_intensity_index"],
                 "speed_recovery_index": player["speed_recovery_index"],
             },
-            "obv_per_90": player["obv_per_90"],
-            "obv_source": player["obv_source"],
+            "vaep_off_p90": player["vaep_off_p90"],
+            "vaep_def_p90": player["vaep_def_p90"],
+            "vaep_total_p90": player["vaep_total_p90"],
+            "vaep_per_touch": player["vaep_per_touch"],
+            "xt_p90": player["xt_p90"],
+            "final_player_rating": player["final_player_rating"],
+            "team_rank": int(player["team_rank"]),
             "final_third_share": player["final_third_share"],
-            "role_z_score": player["role_z_score"],
-            "player_evaluation_score": player[
-                "player_evaluation_score"
-            ],
             "heatmap": (
                 f"../heatmaps/{TEAM_CODES[player['team']]}/"
                 f"{player_id}_heatmap.svg"
@@ -144,7 +145,7 @@ def generate_individual_starter_reports(
             "recommended_tactical_tweaks": tweaks,
             "cohort_definition": (
                 "Tournament players with at least 300 minutes; evaluation "
-                "is normalized only against the same functional role"
+                "uses one unified cross-role 360-VAEP plus xT rating"
             ),
         }
         partner_lines = "\n".join(
@@ -158,11 +159,14 @@ def generate_individual_starter_reports(
 - Team: {player['team']} ({TEAM_CODES[player['team']]})
 - Position: {player['position']}
 - Functional role: {player['functional_role']}
-- Risk-adjusted OBV per 90: {player['obv_per_90']:.4f}
-- OBV source: `{player['obv_source']}`
+- VAEP offense per 90: {player['vaep_off_p90']:.4f}
+- VAEP defense per 90: {player['vaep_def_p90']:.4f}
+- VAEP total per 90: {player['vaep_total_p90']:.4f}
+- VAEP per touch: {player['vaep_per_touch']:.5f}
+- Spatial xT per 90: {player['xt_p90']:.4f}
 - Final-third spatial share: {100 * player['final_third_share']:.1f}%
-- Role-relative z-score: {player['role_z_score']:+.3f}
-- V4 evaluation score: {player['player_evaluation_score']:.1f}
+- Unified final player rating: {player['final_player_rating']:.4f}
+- Team rank: #{int(player['team_rank'])}
 
 ![V4 event and 360 heatmap](../heatmaps/{TEAM_CODES[player['team']]}/{player_id}_heatmap.svg)
 
@@ -455,16 +459,19 @@ def generate_full_team_coaching_reports(
                 "player_id",
                 "player",
                 "functional_role",
-                "obv_per_90",
+                "vaep_total_p90",
+                "vaep_per_touch",
+                "xt_p90",
+                "final_player_rating",
+                "team_rank",
                 "final_third_share",
-                "role_z_score",
-                "player_evaluation_score",
             ]
             top_players = (
                 profiles.loc[
                     profiles["team"].eq(team), available_columns
                 ]
-                .nlargest(5, "player_evaluation_score")
+                .sort_values(["team_rank", "final_player_rating"])
+                .head(5)
                 .to_dict("records")
             )
         payload["top_v4_player_evaluations"] = top_players
@@ -505,9 +512,9 @@ def generate_full_team_coaching_reports(
         ) or "- No recurrent pattern identified"
         player_lines = "\n".join(
             f"{rank}. {row['player']} — {row['functional_role']}; "
-            f"score {float(row['player_evaluation_score']):.1f}, "
-            f"role z {float(row['role_z_score']):+.2f}, "
-            f"OBV/90 {float(row['obv_per_90']):+.3f}"
+            f"rating {float(row['final_player_rating']):.4f}, "
+            f"VAEP/90 {float(row['vaep_total_p90']):+.3f}, "
+            f"xT/90 {float(row['xt_p90']):+.3f}"
             for rank, row in enumerate(top_players, start=1)
         ) or "No player cleared the 300-minute V4 evaluation cutoff."
         markdown = f"""# {team} — Team Coaching Report
@@ -536,13 +543,13 @@ def generate_full_team_coaching_reports(
 
 {substitution_text}
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
 {player_lines}
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 
@@ -588,7 +595,7 @@ def compile_v4_report_packets(
             f"# {code} — V4 Player Evaluation Collection",
             "",
             f"- Included 300+ minute players: {len(player_sources)}",
-            "- Rankings are role-relative; cross-role score comparisons are invalid.",
+            "- Rankings use one cross-role 360-VAEP plus xT formula.",
             "- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.",
             "",
         ]

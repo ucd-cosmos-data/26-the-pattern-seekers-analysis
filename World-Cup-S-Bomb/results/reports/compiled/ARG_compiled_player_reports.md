@@ -1,7 +1,7 @@
 # ARG — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 13
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -13,11 +13,14 @@
 - Team: Argentina (ARG)
 - Position: Right Midfield
 - Functional role: Progressive Winger
-- Risk-adjusted OBV per 90: -0.1791
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 62.9%
-- Role-relative z-score: +0.357
-- V4 evaluation score: 53.6
+- VAEP offense per 90: 0.8505
+- VAEP defense per 90: 0.0730
+- VAEP total per 90: 0.9235
+- VAEP per touch: 0.00525
+- Spatial xT per 90: 0.1913
+- Final-third spatial share: 61.5%
+- Unified final player rating: 0.5016
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/2995_heatmap.svg)
 
@@ -53,12 +56,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Argentina (ARG)
 - Position: Left Center Back
-- Functional role: Holding Anchor
-- Risk-adjusted OBV per 90: 0.2393
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 2.3%
-- Role-relative z-score: -0.854
-- V4 evaluation score: 41.5
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0381
+- VAEP defense per 90: -0.1691
+- VAEP total per 90: -0.1310
+- VAEP per touch: -0.00072
+- Spatial xT per 90: 0.0009
+- Final-third spatial share: 3.2%
+- Unified final player rating: -0.0655
+- Team rank: #12
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/3090_heatmap.svg)
 
@@ -95,11 +101,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Right Wing
 - Functional role: Progressive Winger
-- Risk-adjusted OBV per 90: -0.0386
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 46.6%
-- Role-relative z-score: +1.018
-- V4 evaluation score: 60.2
+- VAEP offense per 90: 1.5992
+- VAEP defense per 90: 0.0753
+- VAEP total per 90: 1.6745
+- VAEP per touch: 0.01003
+- Spatial xT per 90: 0.1316
+- Final-third spatial share: 45.2%
+- Unified final player rating: 0.8666
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/5503_heatmap.svg)
 
@@ -134,12 +143,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Argentina (ARG)
 - Position: Left Back
-- Functional role: Box-to-Box Runner
-- Risk-adjusted OBV per 90: -0.1133
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 29.8%
-- Role-relative z-score: -1.772
-- V4 evaluation score: 32.3
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.1252
+- VAEP defense per 90: 0.0239
+- VAEP total per 90: 0.1491
+- VAEP per touch: 0.00144
+- Spatial xT per 90: 0.0180
+- Final-third spatial share: 27.6%
+- Unified final player rating: 0.0786
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/5507_heatmap.svg)
 
@@ -176,11 +188,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.2930
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 0.9%
-- Role-relative z-score: -0.650
-- V4 evaluation score: 43.5
+- VAEP offense per 90: 0.0021
+- VAEP defense per 90: 0.5895
+- VAEP total per 90: 0.5916
+- VAEP per touch: 0.01304
+- Spatial xT per 90: 0.0009
+- Final-third spatial share: 1.1%
+- Unified final player rating: 0.2999
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/6909_heatmap.svg)
 
@@ -216,12 +231,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Argentina (ARG)
 - Position: Right Defensive Midfield
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: -0.0929
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 27.3%
-- Role-relative z-score: -0.377
-- V4 evaluation score: 46.2
+- Functional role: Box-to-Box Runner
+- VAEP offense per 90: 0.1083
+- VAEP defense per 90: 0.0344
+- VAEP total per 90: 0.1427
+- VAEP per touch: 0.00063
+- Spatial xT per 90: 0.0493
+- Final-third spatial share: 27.7%
+- Unified final player rating: 0.0814
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/7797_heatmap.svg)
 
@@ -257,11 +275,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Left Back
 - Functional role: Attacking Wingback
-- Risk-adjusted OBV per 90: -0.2183
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 38.0%
-- Role-relative z-score: -1.019
-- V4 evaluation score: 39.8
+- VAEP offense per 90: 0.0700
+- VAEP defense per 90: -0.0149
+- VAEP total per 90: 0.0551
+- VAEP per touch: 0.00041
+- Spatial xT per 90: 0.0557
+- Final-third spatial share: 36.0%
+- Unified final player rating: 0.0388
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/19597_heatmap.svg)
 
@@ -296,12 +317,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Argentina (ARG)
 - Position: Right Center Back
-- Functional role: Holding Anchor
-- Risk-adjusted OBV per 90: 0.2293
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 3.8%
-- Role-relative z-score: -0.430
-- V4 evaluation score: 45.7
+- Functional role: Deep Playmaker
+- VAEP offense per 90: -0.0046
+- VAEP defense per 90: -0.1589
+- VAEP total per 90: -0.1635
+- VAEP per touch: -0.00109
+- Spatial xT per 90: 0.0026
+- Final-third spatial share: 4.7%
+- Unified final player rating: -0.0815
+- Team rank: #13
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/20572_heatmap.svg)
 
@@ -337,12 +361,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Argentina (ARG)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.1746
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 6.8%
-- Role-relative z-score: -0.527
-- V4 evaluation score: 44.7
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0452
+- VAEP defense per 90: -0.0125
+- VAEP total per 90: 0.0327
+- VAEP per touch: 0.00031
+- Spatial xT per 90: 0.0095
+- Final-third spatial share: 8.0%
+- Unified final player rating: 0.0183
+- Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/27768_heatmap.svg)
 
@@ -378,11 +405,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Left Center Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: -0.2342
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 41.3%
-- Role-relative z-score: -1.645
-- V4 evaluation score: 33.6
+- VAEP offense per 90: 0.2051
+- VAEP defense per 90: 0.0199
+- VAEP total per 90: 0.2250
+- VAEP per touch: 0.00161
+- Spatial xT per 90: 0.0059
+- Final-third spatial share: 38.9%
+- Unified final player rating: 0.1142
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/27886_heatmap.svg)
 
@@ -417,12 +447,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Argentina (ARG)
 - Position: Right Wing Back
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: -0.1352
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 25.0%
-- Role-relative z-score: -1.008
-- V4 evaluation score: 39.9
+- Functional role: Box-to-Box Runner
+- VAEP offense per 90: 0.2136
+- VAEP defense per 90: -0.0213
+- VAEP total per 90: 0.1923
+- VAEP per touch: 0.00142
+- Spatial xT per 90: 0.0191
+- Final-third spatial share: 24.9%
+- Unified final player rating: 0.1004
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/29201_heatmap.svg)
 
@@ -459,11 +492,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Center Forward
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.4078
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 58.4%
-- Role-relative z-score: -0.045
-- V4 evaluation score: 49.5
+- VAEP offense per 90: 1.0936
+- VAEP defense per 90: 0.0819
+- VAEP total per 90: 1.1755
+- VAEP per touch: 0.01384
+- Spatial xT per 90: 0.0408
+- Final-third spatial share: 49.0%
+- Unified final player rating: 0.6000
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/29560_heatmap.svg)
 
@@ -499,11 +535,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Center Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.1594
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 16.4%
-- Role-relative z-score: +0.615
-- V4 evaluation score: 56.1
+- VAEP offense per 90: 0.2853
+- VAEP defense per 90: -0.0650
+- VAEP total per 90: 0.2203
+- VAEP per touch: 0.00112
+- Spatial xT per 90: 0.0453
+- Final-third spatial share: 16.1%
+- Unified final player rating: 0.1195
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/38718_heatmap.svg)
 

@@ -1,7 +1,7 @@
 # POL — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 8
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -12,12 +12,15 @@
 
 - Team: Poland (POL)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.0811
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 3.5%
-- Role-relative z-score: -1.451
-- V4 evaluation score: 35.5
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.2279
+- VAEP defense per 90: -0.1094
+- VAEP total per 90: 0.1185
+- VAEP per touch: 0.00152
+- Spatial xT per 90: 0.0027
+- Final-third spatial share: 3.3%
+- Unified final player rating: 0.0603
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/POL/3034_heatmap.svg)
 
@@ -54,11 +57,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Poland (POL)
 - Position: Center Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.0682
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 16.5%
-- Role-relative z-score: +0.460
-- V4 evaluation score: 54.6
+- VAEP offense per 90: 0.0029
+- VAEP defense per 90: -0.0341
+- VAEP total per 90: -0.0312
+- VAEP per touch: -0.00037
+- Spatial xT per 90: 0.0147
+- Final-third spatial share: 16.7%
+- Unified final player rating: -0.0128
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/POL/3637_heatmap.svg)
 
@@ -94,12 +100,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Poland (POL)
 - Position: Right Back
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: 0.0028
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 27.2%
-- Role-relative z-score: +0.699
-- V4 evaluation score: 57.0
+- Functional role: Box-to-Box Runner
+- VAEP offense per 90: 0.0564
+- VAEP defense per 90: -0.1141
+- VAEP total per 90: -0.0577
+- VAEP per touch: -0.00065
+- Spatial xT per 90: 0.0297
+- Final-third spatial share: 26.5%
+- Unified final player rating: -0.0231
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/POL/4734_heatmap.svg)
 
@@ -134,12 +143,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Poland (POL)
 - Position: Right Center Midfield
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: 0.0337
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 25.8%
-- Role-relative z-score: +0.788
-- V4 evaluation score: 57.9
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.3456
+- VAEP defense per 90: 0.0031
+- VAEP total per 90: 0.3487
+- VAEP per touch: 0.00331
+- Spatial xT per 90: 0.0598
+- Final-third spatial share: 24.8%
+- Unified final player rating: 0.1873
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5660_heatmap.svg)
 
@@ -175,11 +187,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Poland (POL)
 - Position: Center Forward
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.4313
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 52.4%
-- Role-relative z-score: -0.684
-- V4 evaluation score: 43.2
+- VAEP offense per 90: 1.0578
+- VAEP defense per 90: 0.0344
+- VAEP total per 90: 1.0922
+- VAEP per touch: 0.01121
+- Spatial xT per 90: 0.0138
+- Final-third spatial share: 43.8%
+- Unified final player rating: 0.5522
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5668_heatmap.svg)
 
@@ -215,11 +230,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Poland (POL)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.5992
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 2.6%
-- Role-relative z-score: +2.296
-- V4 evaluation score: 73.0
+- VAEP offense per 90: -0.0227
+- VAEP defense per 90: -0.3846
+- VAEP total per 90: -0.4072
+- VAEP per touch: -0.00656
+- Spatial xT per 90: 0.0019
+- Final-third spatial share: 2.9%
+- Unified final player rating: -0.2052
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5669_heatmap.svg)
 
@@ -255,12 +273,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Poland (POL)
 - Position: Left Back
-- Functional role: Box-to-Box Runner
-- Risk-adjusted OBV per 90: -0.0665
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 28.2%
-- Role-relative z-score: -0.834
-- V4 evaluation score: 41.7
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.0048
+- VAEP defense per 90: -0.0648
+- VAEP total per 90: -0.0601
+- VAEP per touch: -0.00069
+- Spatial xT per 90: 0.0312
+- Final-third spatial share: 25.8%
+- Unified final player rating: -0.0240
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5673_heatmap.svg)
 
@@ -296,12 +317,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Poland (POL)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.3322
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 2.3%
-- Role-relative z-score: -0.502
-- V4 evaluation score: 45.0
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0210
+- VAEP defense per 90: -0.2885
+- VAEP total per 90: -0.2675
+- VAEP per touch: -0.00217
+- Spatial xT per 90: 0.0130
+- Final-third spatial share: 3.2%
+- Unified final player rating: -0.1318
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/POL/44166_heatmap.svg)
 

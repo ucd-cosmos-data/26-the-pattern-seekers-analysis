@@ -35,7 +35,7 @@ ORIGINAL_FILES = [
 def calculate_variance_ratio(
     frame: pd.DataFrame,
     *,
-    value_column: str = "net_xg_contribution_p90",
+    value_column: str = "vaep_total_p90",
     minute_cutoff: float = 300.0,
 ) -> float:
     """Calculate substitute-to-starter variance for a player value."""
@@ -519,10 +519,14 @@ def run_v4_validation(
 
     required_metrics = [
         "minutes",
-        "obv_per_90",
+        "vaep_off_p90",
+        "vaep_def_p90",
+        "vaep_total_p90",
+        "vaep_per_touch",
+        "xt_p90",
+        "final_player_rating",
+        "team_rank",
         "final_third_share",
-        "role_z_score",
-        "player_evaluation_score",
     ]
     no_metric_nan = not profiles[required_metrics].isna().any().any()
     no_report_nan = re.search(
@@ -551,44 +555,18 @@ def run_v4_validation(
         profiles["player"].str.contains("Kolo", case=False, na=False)
     ]
 
-    pressured_turnovers = event_values[
-        event_values["turnover"]
-        & event_values["pressure_augmented"]
-    ]
-    unpressured_turnovers = event_values[
-        event_values["turnover"]
-        & ~event_values["pressure_augmented"]
-    ]
-    pressure_discount_exact = (
-        not pressured_turnovers.empty
-        and np.allclose(
-            pressured_turnovers["applied_turnover_penalty"],
-            0.5 * pressured_turnovers["standard_turnover_penalty"],
-            rtol=0,
-            atol=1e-12,
-        )
-        and np.allclose(
-            unpressured_turnovers["applied_turnover_penalty"],
-            unpressured_turnovers["standard_turnover_penalty"],
-            rtol=0,
-            atol=1e-12,
-        )
-    )
-    role_stats = (
-        profiles.groupby("Functional role")["role_z_score"]
-        .agg(["count", "mean", lambda values: values.std(ddof=0)])
-        .rename(columns={"<lambda_0>": "population_std"})
-    )
-    multi_member_roles = role_stats["count"].gt(1)
-    role_normalization = bool(
-        role_stats["mean"].abs().le(1e-9).all()
-        and np.allclose(
-            role_stats.loc[multi_member_roles, "population_std"],
-            1.0,
-            rtol=0,
-            atol=1e-8,
-        )
-    )
+    required_event_value_columns = {
+        "original_event_id",
+        "p_scores",
+        "p_concedes",
+        "vaep_value",
+        "xt_value",
+        "defenders_within_5",
+        "nearest_defender_distance",
+        "defensive_density",
+        "defenders_behind_ball",
+    }
+    event_value_schema = required_event_value_columns.issubset(event_values.columns)
     frame_matches = int(
         pd.read_csv(
             project_root
@@ -604,6 +582,27 @@ def run_v4_validation(
         project_root
         / "data/processed/world_cup_recommendation_features.csv",
     )
+    vaep_bundle_path = project_root / "models/vaep_360_xt.joblib"
+    vaep_bundle = joblib.load(vaep_bundle_path)
+    final_validation = pd.read_csv(report_root / "final_validation.csv")
+    selected_validation = final_validation.sort_values("rank_overall").iloc[0]
+    vaep_artifact = {
+        "schema_compatible": {
+            "schema_version",
+            "selected_model_name",
+            "score_model",
+            "concede_model",
+            "feature_names",
+            "xt_grid",
+            "test_truth",
+            "test_probability",
+        }.issubset(vaep_bundle),
+        "probability_bounds": bool(
+            np.asarray(vaep_bundle["test_probability"]).min() >= 0
+            and np.asarray(vaep_bundle["test_probability"]).max() <= 1
+        ),
+        "xt_shape": list(np.asarray(vaep_bundle["xt_grid"]).shape) == [12, 16],
+    }
     substitution_safety = substitutions.empty or bool(
         substitutions["expected_net_xg_gain"].gt(0.005).all()
         and substitutions["gain_ci_low"].gt(0).all()
@@ -637,14 +636,32 @@ def run_v4_validation(
                 high_fullbacks, "functional_role"
             ].eq("Attacking Wingback").all()
         ),
-        "mbappe_risk_value_above_giroud": bool(
-            len(mbappe) == 1
-            and len(giroud) == 1
-            and float(mbappe.iloc[0]["obv_per_90"])
-            > float(giroud.iloc[0]["obv_per_90"])
+        "mbappe_france_top_two": bool(
+            len(mbappe) == 1 and int(mbappe.iloc[0]["team_rank"]) <= 2
         ),
-        "pressure_discount_exact": bool(pressure_discount_exact),
-        "role_relative_normalization": role_normalization,
+        "messi_argentina_first": bool(
+            len(
+                profiles[
+                    profiles["player"].str.contains(
+                        "Messi", case=False, na=False
+                    )
+                    & profiles["team"].eq("Argentina")
+                    & profiles["team_rank"].eq(1)
+                ]
+            )
+            == 1
+        ),
+        "unified_rating_formula": bool(
+            np.allclose(
+                profiles["final_player_rating"],
+                0.50 * profiles["vaep_total_p90"]
+                + 0.30 * profiles["vaep_per_touch"]
+                + 0.20 * profiles["xt_p90"],
+                rtol=0,
+                atol=1e-12,
+            )
+        ),
+        "event_value_schema": bool(event_value_schema),
         "sb360_spatial_coverage": bool(
             frame_matches == 64
             and provenance["freeze_frame_actor_points"] > 0
@@ -653,25 +670,28 @@ def run_v4_validation(
             >= 0.80
             and heatmap_cells["player_id"].nunique() == len(profiles)
         ),
-        "obv_provenance_explicit": bool(
-            provenance["obv_source"]
-            in {
-                "open_event_value_fallback",
-                "statsbomb_native:obv_total_net",
-                "statsbomb_native:obv_for_net",
-                "statsbomb_native:obv",
-                "statsbomb_native:on_ball_value",
-            }
+        "vaep_xt_provenance_explicit": bool(
+            provenance["valuation_system"]
+            == "360-Augmented VAEP and xT (applied concurrently)"
+            and provenance["original_event_id_preserved"]
+            and provenance["xt_not_in_vaep_features"]
         ),
+        "vaep_metric_targets": bool(
+            float(selected_validation["brier_score"]) < 0.12
+            and float(selected_validation["roc_auc"]) > 0.82
+        ),
+        "vaep_artifact": bool(all(vaep_artifact.values())),
         "compiled_reports_in_place": bool(
             len(compiled_files) == 64
             and not any("_v4" in path.name.lower() for path in compiled_files)
-            and "V4 role-relative player leaders" in compiled_text
+            and "Unified 360-VAEP + xT player leaders" in compiled_text
         ),
         "heatmaps_complete": len(heatmaps) == len(profiles),
         "summary_complete": bool(
             "## V4 Model Explanations" in summary
             and "StatsBomb 360" in summary
+            and "360-Augmented VAEP and xT" in summary
+            and "final_validation.csv" in summary
             and "freeze-frame snapshots, not continuous" in summary
             and "## Known limitations" in summary
         ),
@@ -700,9 +720,14 @@ def run_v4_validation(
             "attacking_wingbacks": int(
                 profiles["functional_role"].eq("Attacking Wingback").sum()
             ),
-            "obv_source": provenance["obv_source"],
-            "mbappe_obv_per_90": float(mbappe.iloc[0]["obv_per_90"]),
-            "giroud_obv_per_90": float(giroud.iloc[0]["obv_per_90"]),
+            "valuation_system": provenance["valuation_system"],
+            "mbappe_team_rank": int(mbappe.iloc[0]["team_rank"]),
+            "mbappe_final_player_rating": float(
+                mbappe.iloc[0]["final_player_rating"]
+            ),
+            "giroud_final_player_rating": float(
+                giroud.iloc[0]["final_player_rating"]
+            ),
             "hakimi_role": str(
                 protected_wide_players[
                     protected_wide_players["player"].str.contains(
@@ -717,7 +742,16 @@ def run_v4_validation(
                     )
                 ].iloc[0]["functional_role"]
             ),
-            "role_z_statistics": role_stats.reset_index().to_dict("records"),
+            "france_top_three": profiles[
+                profiles["team"].eq("France")
+            ].nsmallest(3, "team_rank")[
+                ["player", "team_rank", "final_player_rating"]
+            ].to_dict("records"),
+            "argentina_top_three": profiles[
+                profiles["team"].eq("Argentina")
+            ].nsmallest(3, "team_rank")[
+                ["player", "team_rank", "final_player_rating"]
+            ].to_dict("records"),
         },
         "spatial_metrics": {
             "sb360_matches": frame_matches,
@@ -732,7 +766,10 @@ def run_v4_validation(
             ],
             "heatmaps": len(heatmaps),
         },
-        "model_metrics": manifest["tournament_oof_metrics"],
+        "model_metrics": {
+            "legacy_transition": manifest["tournament_oof_metrics"],
+            "vaep_selected": selected_validation.to_dict(),
+        },
         "report_metrics": {
             "compiled_files": len(compiled_files),
             "team_reports": len(
@@ -760,7 +797,10 @@ def run_v4_validation(
             "eligible_substitutions": int(len(substitutions)),
             "suppressed_substitutions": int(len(suppressions)),
         },
-        "artifact_regression": artifact,
+        "artifact_regression": {
+            "legacy_transition": artifact,
+            "vaep_xt": vaep_artifact,
+        },
     }
 
 

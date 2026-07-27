@@ -10,17 +10,17 @@ Morocco: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. Sofyan Amrabat (Defensive Midfield)
-2. Achraf Hakimi Mouh (Fullback/Wingback)
+1. Achraf Hakimi Mouh (Fullback/Wingback)
+2. Hakim Ziyech (Attacking Midfield/Wing)
 3. Yassine Bounou (Goalkeeper)
-4. Hakim Ziyech (Attacking Midfield/Wing)
-5. Romain Saïss (Center Back)
-6. Sofiane Boufal (Central/Wide Midfield)
-7. Azzedine Ounahi (Central/Wide Midfield)
-8. Youssef En-Nesyri (Forward)
-9. Yahia Attiyat allah (Fullback/Wingback)
-10. Jawad El Yamiq (Center Back)
-11. Selim Amallah (Central/Wide Midfield)
+4. Azzedine Ounahi (Central/Wide Midfield)
+5. Youssef En-Nesyri (Forward)
+6. Selim Amallah (Central/Wide Midfield)
+7. Romain Saïss (Center Back)
+8. Nayef Aguerd (Center Back)
+9. Sofiane Boufal (Central/Wide Midfield)
+10. Sofyan Amrabat (Defensive Midfield)
+11. Yahia Attiyat allah (Fullback/Wingback)
 
 ## Physical matchup deltas
 
@@ -34,17 +34,17 @@ Morocco: no tactical change cleared the modeled effect floor. Primary review sig
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 128, INSUFFICIENT_MINUTES: 22, GAIN_BELOW_THRESHOLD: 4.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Sofiane Boufal — Progressive Winger; score 60.5, role z +1.05, OBV/90 -0.076
-2. Romain Saïss — Deep Playmaker; score 59.6, role z +0.96, OBV/90 +0.265
-3. Yahia Attiyat allah — Box-to-Box Runner; score 58.1, role z +0.81, OBV/90 +0.033
-4. Achraf Hakimi Mouh — Wide Creator; score 53.7, role z +0.37, OBV/90 -0.013
-5. Yassine Bounou — Goalkeeper; score 52.3, role z +0.23, OBV/90 +0.330
+1. Youssef En-Nesyri — Target Forward; rating 0.4069, VAEP/90 +0.802, xT/90 +0.005
+2. Selim Amallah — Ball-Winner; rating 0.1495, VAEP/90 +0.293, xT/90 +0.008
+3. Nayef Aguerd — Sweeper CB; rating 0.0826, VAEP/90 +0.163, xT/90 +0.003
+4. Achraf Hakimi Mouh — Box-to-Box Runner; rating 0.0724, VAEP/90 +0.125, xT/90 +0.048
+5. Azzedine Ounahi — Ball-Winner; rating 0.0713, VAEP/90 +0.131, xT/90 +0.027
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

@@ -4,15 +4,25 @@ from __future__ import annotations
 
 import ast
 import itertools
+import time
+import warnings
 from dataclasses import dataclass, field
 from typing import Iterable, Sequence
 
 import numpy as np
 import pandas as pd
+from catboost import CatBoostClassifier
 from scipy.optimize import linear_sum_assignment
+from sklearn.calibration import CalibratedClassifierCV
 from sklearn.cluster import KMeans
-from sklearn.linear_model import Ridge
+from sklearn.linear_model import LogisticRegression, Ridge
+from sklearn.metrics import (
+    average_precision_score,
+    brier_score_loss,
+    roc_auc_score,
+)
 from sklearn.preprocessing import StandardScaler
+from xgboost import XGBClassifier
 
 
 ATTACKING_STYLES = (
@@ -25,6 +35,9 @@ MIN_SUBSTITUTION_NET_XG_GAIN = 0.0050
 V4_MIN_PLAYER_MINUTES = 300.0
 V4_FINAL_THIRD_X = 80.0
 V4_ATTACKING_WINGBACK_SHARE = 0.35
+XT_GRID_COLUMNS = 16
+XT_GRID_ROWS = 12
+VAEP_ACTION_WINDOW = 3
 REASON_GAIN_BELOW_THRESHOLD = "GAIN_BELOW_THRESHOLD"
 REASON_CI_OVERLAPS_ZERO = "CONFIDENCE_INTERVAL_OVERLAPS_ZERO"
 REASON_CLASSIFIER_ABSTAINED = "CLASSIFIER_ABSTAINED"
@@ -39,7 +52,7 @@ ROLE_PROTOTYPES: dict[str, dict[str, float]] = {
     "Sweeper CB": {"clearances_p90": 2, "pass_completion": 1},
     "Deep Playmaker": {
         "progressive_passes_p90": 2,
-        "pass_progression_per_pass": 2,
+        "pass_completion": 1,
     },
     "Box-to-Box Runner": {
         "speed_recovery_index": 2,
@@ -53,12 +66,6 @@ ROLE_PROTOTYPES: dict[str, dict[str, float]] = {
     },
 }
 
-OBV_COLUMN_PRIORITY = (
-    "obv_total_net",
-    "obv_for_net",
-    "obv",
-    "on_ball_value",
-)
 ATTACKING_POSITION_GROUPS = {
     "Forward",
     "Attacking Midfield/Wing",
@@ -158,23 +165,12 @@ def derive_physicality_metrics(
     profiles["pass_completion"] = _safe_rate(
         profiles["completed_passes"], profiles["passes"]
     )
-    profiles["pass_progression_per_pass"] = _safe_rate(
-        profiles["pass_progression_sum"], profiles["passes"]
-    )
     for metric in (
         "aerial_dominance_index",
         "pressing_intensity_index",
         "speed_recovery_index",
     ):
         profiles[f"{metric}_percentile"] = profiles[metric].rank(pct=True) * 100
-    profiles["net_xg_contribution_p90"] = (
-        profiles["xg_p90"]
-        + 0.015 * profiles["key_passes_p90"]
-        + 0.004 * profiles["progressive_passes_p90"]
-        + 0.003 * profiles["progressive_carries_p90"]
-        + 0.002 * profiles["interceptions_p90"]
-        - 0.002 * profiles["turnovers_p90"]
-    )
     return profiles.reset_index(drop=True)
 
 
@@ -400,27 +396,643 @@ def _turnover_mask(events: pd.DataFrame) -> pd.Series:
     return incomplete_pass | failed_dribble | failed_receipt | explicit_loss
 
 
-def _event_value_surface(x: pd.Series, y: pd.Series) -> pd.Series:
-    """Transparent open-data pitch-value surface used only without native OBV."""
+def convert_statsbomb_events_to_spadl(events_df: pd.DataFrame) -> pd.DataFrame:
+    """Convert the cached flattened StatsBomb export to a SPADL-compatible table.
 
-    normalized_x = x.fillna(0).clip(0, 120) / 120
-    centrality = 1 - (y.fillna(40).clip(0, 80) - 40).abs() / 40
-    return normalized_x.pow(2) * (0.8 + 0.2 * centrality.clip(0, 1))
+    The installed ``socceraction`` dependency is preferred by the pipeline
+    runner when importable. This converter is the deterministic local fallback
+    for flattened CSV caches. It intentionally retains ``original_event_id`` so
+    StatsBomb 360 context can be joined without positional assumptions.
+    """
 
+    required = {
+        "id",
+        "match_id",
+        "index",
+        "period",
+        "minute",
+        "second",
+        "team",
+        "team_id",
+        "player_id",
+        "type",
+        "location",
+    }
+    missing = sorted(required - set(events_df.columns))
+    if missing:
+        raise ValueError(f"StatsBomb-to-SPADL conversion lacks columns: {missing}")
 
-def _role_group_z(values: pd.Series, roles: pd.Series) -> pd.Series:
-    """Compute finite population z-scores strictly within functional roles."""
-
-    means = values.groupby(roles).transform("mean")
-    standard_deviations = values.groupby(roles).transform(
-        lambda group: group.std(ddof=0)
+    actions = events_df.copy()
+    actions["original_event_id"] = actions["id"].astype(str)
+    actions["game_id"] = pd.to_numeric(actions["match_id"], errors="raise").astype(int)
+    actions["action_id"] = (
+        actions.sort_values(["game_id", "period", "index"])
+        .groupby("game_id")
+        .cumcount()
+        .reindex(actions.index)
+        .astype(int)
     )
+    actions["period_id"] = pd.to_numeric(actions["period"], errors="coerce").fillna(1).astype(int)
+    actions["time_seconds"] = (
+        60 * pd.to_numeric(actions["minute"], errors="coerce").fillna(0)
+        + pd.to_numeric(actions["second"], errors="coerce").fillna(0)
+    )
+    actions["start_x"] = _coordinate_axis(actions["location"], 0)
+    actions["start_y"] = _coordinate_axis(actions["location"], 1)
+    pass_end_x = _coordinate_axis(actions.get("pass_end_location", pd.Series(index=actions.index, dtype=object)), 0)
+    pass_end_y = _coordinate_axis(actions.get("pass_end_location", pd.Series(index=actions.index, dtype=object)), 1)
+    carry_end_x = _coordinate_axis(actions.get("carry_end_location", pd.Series(index=actions.index, dtype=object)), 0)
+    carry_end_y = _coordinate_axis(actions.get("carry_end_location", pd.Series(index=actions.index, dtype=object)), 1)
+    shot_end_x = _coordinate_axis(actions.get("shot_end_location", pd.Series(index=actions.index, dtype=object)), 0)
+    shot_end_y = _coordinate_axis(actions.get("shot_end_location", pd.Series(index=actions.index, dtype=object)), 1)
+    actions["end_x"] = (
+        pass_end_x.combine_first(carry_end_x)
+        .combine_first(shot_end_x)
+        .combine_first(actions["start_x"])
+    )
+    actions["end_y"] = (
+        pass_end_y.combine_first(carry_end_y)
+        .combine_first(shot_end_y)
+        .combine_first(actions["start_y"])
+    )
+    actions["type_name"] = actions["type"].fillna("Unknown").astype(str)
+    actions["result_name"] = "success"
+    pass_failed = actions["type_name"].eq("Pass") & actions.get(
+        "pass_outcome", pd.Series(index=actions.index, dtype=object)
+    ).notna()
+    dribble_failed = actions["type_name"].eq("Dribble") & ~actions.get(
+        "dribble_outcome", pd.Series(index=actions.index, dtype=object)
+    ).fillna("").eq("Complete")
+    receipt_failed = actions["type_name"].str.startswith("Ball Receipt") & actions.get(
+        "ball_receipt_outcome", pd.Series(index=actions.index, dtype=object)
+    ).notna()
+    actions.loc[pass_failed | dribble_failed | receipt_failed, "result_name"] = "fail"
+    actions["bodypart_name"] = (
+        actions.get("pass_body_part", pd.Series(index=actions.index, dtype=object))
+        .combine_first(actions.get("shot_body_part", pd.Series(index=actions.index, dtype=object)))
+        .fillna("other")
+        .astype(str)
+    )
+    actions["goal"] = (
+        actions["type_name"].eq("Shot")
+        & actions.get("shot_outcome", pd.Series(index=actions.index, dtype=object))
+        .fillna("")
+        .eq("Goal")
+    )
+    actions["under_pressure_flag"] = _truthy(
+        actions.get("under_pressure", pd.Series(False, index=actions.index))
+    )
+    keep = [
+        "game_id",
+        "action_id",
+        "original_event_id",
+        "period_id",
+        "time_seconds",
+        "team",
+        "team_id",
+        "player",
+        "player_id",
+        "position",
+        "play_pattern",
+        "type_name",
+        "result_name",
+        "bodypart_name",
+        "start_x",
+        "start_y",
+        "end_x",
+        "end_y",
+        "goal",
+        "under_pressure_flag",
+        "shot_statsbomb_xg",
+        "pass_assisted_shot_id",
+    ]
+    for column in keep:
+        if column not in actions:
+            actions[column] = np.nan
     return (
-        (values - means)
-        .div(standard_deviations.replace(0, np.nan))
-        .replace([np.inf, -np.inf], np.nan)
-        .fillna(0.0)
+        actions[keep]
+        .sort_values(["game_id", "action_id"])
+        .reset_index(drop=True)
     )
+
+
+def _three_action_labels(actions: pd.DataFrame) -> pd.DataFrame:
+    """Label whether the acting team scores or concedes within three actions."""
+
+    labeled = actions.copy()
+    scores = pd.Series(False, index=labeled.index)
+    concedes = pd.Series(False, index=labeled.index)
+    for _, indices in labeled.groupby("game_id", sort=False).groups.items():
+        index = pd.Index(indices)
+        game = labeled.loc[index]
+        acting_team = game["team"].astype(str)
+        game_score = game["goal"].astype(bool)
+        goal_team = game["team"].astype(str)
+        score_window = pd.Series(False, index=index)
+        concede_window = pd.Series(False, index=index)
+        for offset in range(VAEP_ACTION_WINDOW):
+            future_goal = game_score.shift(-offset, fill_value=False)
+            future_team = goal_team.shift(-offset)
+            score_window |= future_goal & future_team.eq(acting_team)
+            concede_window |= future_goal & future_team.ne(acting_team)
+        scores.loc[index] = score_window
+        concedes.loc[index] = concede_window
+    labeled["scores"] = scores.astype(int)
+    labeled["concedes"] = concedes.astype(int)
+    return labeled
+
+
+def _fit_expected_threat_grid(actions: pd.DataFrame) -> tuple[np.ndarray, pd.Series]:
+    """Fit a 16x12 empirical xT grid using only successful pass/carry actions."""
+
+    progression = actions["type_name"].isin({"Pass", "Carry"}) & actions[
+        "result_name"
+    ].eq("success")
+    valid = progression & actions[
+        ["start_x", "start_y", "end_x", "end_y"]
+    ].notna().all(axis=1)
+    moves = actions.loc[valid].copy()
+    if moves.empty:
+        raise ValueError("No successful pass/carry actions are available for xT")
+    moves["start_col"] = np.floor(
+        moves["start_x"].clip(0, 119.999) / (120 / XT_GRID_COLUMNS)
+    ).astype(int)
+    moves["start_row"] = np.floor(
+        moves["start_y"].clip(0, 79.999) / (80 / XT_GRID_ROWS)
+    ).astype(int)
+    global_rate = float(moves["scores"].mean())
+    cell = moves.groupby(["start_row", "start_col"])["scores"].agg(["sum", "count"])
+    prior_actions = 40.0
+    threat = np.full((XT_GRID_ROWS, XT_GRID_COLUMNS), global_rate, dtype=float)
+    for (row, column), values in cell.iterrows():
+        threat[int(row), int(column)] = (
+            float(values["sum"]) + prior_actions * global_rate
+        ) / (float(values["count"]) + prior_actions)
+    # Light spatial smoothing reduces sparse-cell jumps without introducing
+    # shots or defensive actions into xT fitting.
+    padded = np.pad(threat, 1, mode="edge")
+    smoothed = np.zeros_like(threat)
+    for row in range(XT_GRID_ROWS):
+        for column in range(XT_GRID_COLUMNS):
+            smoothed[row, column] = padded[row : row + 3, column : column + 3].mean()
+    start_col = np.floor(
+        actions["start_x"].fillna(0).clip(0, 119.999) / (120 / XT_GRID_COLUMNS)
+    ).astype(int)
+    start_row = np.floor(
+        actions["start_y"].fillna(40).clip(0, 79.999) / (80 / XT_GRID_ROWS)
+    ).astype(int)
+    end_col = np.floor(
+        actions["end_x"].fillna(actions["start_x"]).fillna(0).clip(0, 119.999)
+        / (120 / XT_GRID_COLUMNS)
+    ).astype(int)
+    end_row = np.floor(
+        actions["end_y"].fillna(actions["start_y"]).fillna(40).clip(0, 79.999)
+        / (80 / XT_GRID_ROWS)
+    ).astype(int)
+    delta = pd.Series(0.0, index=actions.index)
+    delta.loc[valid] = (
+        smoothed[end_row[valid], end_col[valid]]
+        - smoothed[start_row[valid], start_col[valid]]
+    )
+    return smoothed, delta
+
+
+def _expected_calibration_error(
+    truth: np.ndarray, probability: np.ndarray, bins: int = 10
+) -> float:
+    """Return equal-width expected calibration error."""
+
+    edges = np.linspace(0.0, 1.0, bins + 1)
+    assignments = np.clip(np.digitize(probability, edges[1:-1]), 0, bins - 1)
+    error = 0.0
+    for bin_id in range(bins):
+        mask = assignments == bin_id
+        if mask.any():
+            error += float(mask.mean()) * abs(
+                float(truth[mask].mean()) - float(probability[mask].mean())
+            )
+    return float(error)
+
+
+def _calibrate_prefit(
+    estimator: object,
+    features: np.ndarray,
+    truth: np.ndarray,
+    method: str,
+) -> object:
+    """Calibrate an already fitted estimator, supporting current sklearn APIs."""
+
+    try:
+        calibrated = CalibratedClassifierCV(
+            estimator=estimator, method=method, cv="prefit"
+        )
+        calibrated.fit(features, truth)
+        return calibrated
+    except Exception:
+        from sklearn.frozen import FrozenEstimator
+
+        calibrated = CalibratedClassifierCV(
+            estimator=FrozenEstimator(estimator), method=method
+        )
+        calibrated.fit(features, truth)
+        return calibrated
+
+
+def _vaep_feature_matrix(actions: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
+    """Build the VAEP state matrix without any xT-derived column."""
+
+    state = pd.DataFrame(index=actions.index)
+    numeric = {
+        "period_id": actions["period_id"],
+        "time_seconds": actions["time_seconds"],
+        "start_x": actions["start_x"],
+        "start_y": actions["start_y"],
+        "end_x": actions["end_x"],
+        "end_y": actions["end_y"],
+        "delta_x": actions["end_x"] - actions["start_x"],
+        "delta_y": actions["end_y"] - actions["start_y"],
+        "action_distance": np.hypot(
+            actions["end_x"] - actions["start_x"],
+            actions["end_y"] - actions["start_y"],
+        ),
+        "successful_action": actions["result_name"].eq("success").astype(int),
+        "under_pressure": actions["under_pressure_flag"].astype(int),
+        "shot_xg": pd.to_numeric(actions["shot_statsbomb_xg"], errors="coerce"),
+        "defenders_within_5": actions["defenders_within_5"],
+        "nearest_defender_distance": actions["nearest_defender_distance"],
+        "defensive_density": actions["defensive_density"],
+        "defenders_behind_ball": actions["defenders_behind_ball"],
+    }
+    for name, values in numeric.items():
+        state[name] = pd.to_numeric(values, errors="coerce")
+    state["same_team_previous_1"] = (
+        actions["team"].eq(actions.groupby("game_id")["team"].shift(1)).astype(int)
+    )
+    state["same_team_previous_2"] = (
+        actions["team"].eq(actions.groupby("game_id")["team"].shift(2)).astype(int)
+    )
+    categorical = pd.DataFrame(
+        {
+            "action_type": actions["type_name"].fillna("Unknown"),
+            "result": actions["result_name"].fillna("unknown"),
+            "bodypart": actions["bodypart_name"].fillna("other"),
+            "play_pattern": actions["play_pattern"].fillna("Unknown"),
+            "position": actions["position"].fillna("Unknown"),
+            "previous_type_1": actions.groupby("game_id")["type_name"]
+            .shift(1)
+            .fillna("None"),
+            "previous_type_2": actions.groupby("game_id")["type_name"]
+            .shift(2)
+            .fillna("None"),
+        },
+        index=actions.index,
+    )
+    state = pd.concat(
+        [state, pd.get_dummies(categorical, dtype=np.float32)], axis=1
+    )
+    state = state.replace([np.inf, -np.inf], np.nan)
+    state = state.fillna(state.median(numeric_only=True)).fillna(0.0)
+    if any(column.startswith("xt") for column in state.columns):
+        raise RuntimeError("xT leakage detected in the VAEP feature matrix")
+    return state.astype(np.float32), state.columns.tolist()
+
+
+def _match_partitions(actions: pd.DataFrame) -> dict[str, list[int]]:
+    """Create deterministic, disjoint match-level train/calibration/test sets."""
+
+    matches = np.array(sorted(actions["game_id"].unique()), dtype=int)
+    if len(matches) < 12:
+        raise ValueError("At least 12 matches are required for VAEP partitions")
+    for seed in range(42, 242):
+        shuffled = np.random.default_rng(seed).permutation(matches)
+        test_count = max(2, int(round(0.16 * len(matches))))
+        calibration_count = max(2, int(round(0.16 * len(matches))))
+        partitions = {
+            "test": shuffled[:test_count].tolist(),
+            "calibration": shuffled[
+                test_count : test_count + calibration_count
+            ].tolist(),
+            "train": shuffled[test_count + calibration_count :].tolist(),
+        }
+        valid = True
+        for selected in partitions.values():
+            subset = actions["game_id"].isin(selected)
+            for target in ("scores", "concedes"):
+                valid &= actions.loc[subset, target].nunique() == 2
+        if valid:
+            return partitions
+    raise RuntimeError("Could not create class-complete VAEP match partitions")
+
+
+def _model_specifications(
+    score_weight: float, concede_weight: float
+) -> list[dict[str, object]]:
+    """Return baseline VAEP classifiers for architecture comparison."""
+
+    return [
+        {
+            "name": "Baseline Logistic 360-VAEP",
+            "algorithm": "LogisticRegression",
+            "calibration": "isotonic",
+            "score_model": LogisticRegression(
+                C=0.5,
+                class_weight="balanced",
+                max_iter=350,
+                tol=1e-3,
+                random_state=42,
+            ),
+            "concede_model": LogisticRegression(
+                C=0.5,
+                class_weight="balanced",
+                max_iter=350,
+                tol=1e-3,
+                random_state=42,
+            ),
+        },
+        {
+            "name": "XGBoost 360-VAEP",
+            "algorithm": "XGBClassifier",
+            "calibration": "isotonic",
+            "score_model": XGBClassifier(
+                n_estimators=160,
+                max_depth=3,
+                learning_rate=0.05,
+                min_child_weight=6,
+                subsample=0.85,
+                colsample_bytree=0.85,
+                reg_lambda=3.0,
+                scale_pos_weight=score_weight,
+                objective="binary:logistic",
+                eval_metric="logloss",
+                tree_method="hist",
+                n_jobs=2,
+                random_state=42,
+            ),
+            "concede_model": XGBClassifier(
+                n_estimators=160,
+                max_depth=3,
+                learning_rate=0.05,
+                min_child_weight=6,
+                subsample=0.85,
+                colsample_bytree=0.85,
+                reg_lambda=3.0,
+                scale_pos_weight=concede_weight,
+                objective="binary:logistic",
+                eval_metric="logloss",
+                tree_method="hist",
+                n_jobs=2,
+                random_state=43,
+            ),
+        },
+        {
+            "name": "CatBoost 360-VAEP",
+            "algorithm": "CatBoostClassifier",
+            "calibration": "isotonic",
+            "score_model": CatBoostClassifier(
+                iterations=180,
+                depth=5,
+                learning_rate=0.05,
+                loss_function="Logloss",
+                auto_class_weights="Balanced",
+                verbose=False,
+                allow_writing_files=False,
+                thread_count=2,
+                random_seed=42,
+            ),
+            "concede_model": CatBoostClassifier(
+                iterations=180,
+                depth=5,
+                learning_rate=0.05,
+                loss_function="Logloss",
+                auto_class_weights="Balanced",
+                verbose=False,
+                allow_writing_files=False,
+                thread_count=2,
+                random_seed=43,
+            ),
+        },
+    ]
+
+
+def _tuned_model_specifications(
+    score_weight: float, concede_weight: float
+) -> list[dict[str, object]]:
+    """Return bounded tuning candidates when initial holdout targets are missed."""
+
+    candidates: list[dict[str, object]] = []
+    for depth, learning_rate, regularization, calibration in (
+        (2, 0.03, 5.0, "isotonic"),
+        (4, 0.03, 5.0, "sigmoid"),
+        (3, 0.08, 8.0, "sigmoid"),
+    ):
+        common = dict(
+            n_estimators=220,
+            max_depth=depth,
+            learning_rate=learning_rate,
+            min_child_weight=8,
+            subsample=0.9,
+            colsample_bytree=0.9,
+            reg_lambda=regularization,
+            objective="binary:logistic",
+            eval_metric="logloss",
+            tree_method="hist",
+            n_jobs=2,
+            random_state=100 + depth,
+        )
+        candidates.append(
+            {
+                "name": (
+                    f"Tuned XGBoost d{depth} lr{learning_rate:g} "
+                    f"{calibration} 360-VAEP"
+                ),
+                "algorithm": "XGBClassifier",
+                "calibration": calibration,
+                "score_model": XGBClassifier(
+                    **common, scale_pos_weight=score_weight
+                ),
+                "concede_model": XGBClassifier(
+                    **{**common, "random_state": 200 + depth},
+                    scale_pos_weight=concede_weight,
+                ),
+            }
+        )
+    for depth, learning_rate, calibration in (
+        (4, 0.04, "sigmoid"),
+        (6, 0.04, "isotonic"),
+    ):
+        common = dict(
+            iterations=240,
+            depth=depth,
+            learning_rate=learning_rate,
+            loss_function="Logloss",
+            auto_class_weights="Balanced",
+            verbose=False,
+            allow_writing_files=False,
+            thread_count=2,
+        )
+        candidates.append(
+            {
+                "name": f"Tuned CatBoost d{depth} {calibration} 360-VAEP",
+                "algorithm": "CatBoostClassifier",
+                "calibration": calibration,
+                "score_model": CatBoostClassifier(**common, random_seed=300 + depth),
+                "concede_model": CatBoostClassifier(**common, random_seed=400 + depth),
+            }
+        )
+    return candidates
+
+
+def _fit_vaep_candidates(
+    features: pd.DataFrame,
+    actions: pd.DataFrame,
+    partitions: dict[str, list[int]],
+) -> tuple[pd.DataFrame, dict[str, object], list[str]]:
+    """Fit, calibrate, compare, and select the 360-augmented VAEP models."""
+
+    masks = {
+        name: actions["game_id"].isin(matches).to_numpy()
+        for name, matches in partitions.items()
+    }
+    train_scores = actions.loc[masks["train"], "scores"].to_numpy(dtype=int)
+    train_concedes = actions.loc[masks["train"], "concedes"].to_numpy(dtype=int)
+    score_weight = min(
+        float((len(train_scores) - train_scores.sum()) / max(train_scores.sum(), 1)),
+        250.0,
+    )
+    concede_weight = min(
+        float(
+            (len(train_concedes) - train_concedes.sum())
+            / max(train_concedes.sum(), 1)
+        ),
+        250.0,
+    )
+    specifications = _model_specifications(score_weight, concede_weight)
+    records: list[dict[str, object]] = []
+    fitted: dict[str, dict[str, object]] = {}
+    failures: list[str] = []
+
+    def fit_specification(specification: dict[str, object]) -> None:
+        started = time.perf_counter()
+        try:
+            calibrated_models: dict[str, object] = {}
+            test_truth_parts = []
+            test_probability_parts = []
+            for target, model_key in (
+                ("scores", "score_model"),
+                ("concedes", "concede_model"),
+            ):
+                truth = actions[target].to_numpy(dtype=int)
+                estimator = specification[model_key]
+                estimator.fit(features.loc[masks["train"]], truth[masks["train"]])
+                method = str(specification["calibration"])
+                try:
+                    calibrated = _calibrate_prefit(
+                        estimator,
+                        features.loc[masks["calibration"]].to_numpy(),
+                        truth[masks["calibration"]],
+                        method,
+                    )
+                except Exception as isotonic_error:
+                    if method != "isotonic":
+                        raise
+                    warnings.warn(
+                        f"{specification['name']} isotonic calibration failed "
+                        f"({isotonic_error}); using sigmoid.",
+                        RuntimeWarning,
+                    )
+                    method = "sigmoid"
+                    calibrated = _calibrate_prefit(
+                        estimator,
+                        features.loc[masks["calibration"]].to_numpy(),
+                        truth[masks["calibration"]],
+                        method,
+                    )
+                calibrated_models[target] = calibrated
+                probability = calibrated.predict_proba(
+                    features.loc[masks["test"]].to_numpy()
+                )[:, 1]
+                test_truth_parts.append(truth[masks["test"]])
+                test_probability_parts.append(probability)
+            predict_started = time.perf_counter()
+            for target in ("scores", "concedes"):
+                calibrated_models[target].predict_proba(
+                    features.loc[masks["test"]].to_numpy()
+                )
+            latency = time.perf_counter() - predict_started
+            test_truth = np.concatenate(test_truth_parts)
+            test_probability = np.concatenate(test_probability_parts)
+            brier = float(brier_score_loss(test_truth, test_probability))
+            roc_auc = float(roc_auc_score(test_truth, test_probability))
+            pr_auc = float(average_precision_score(test_truth, test_probability))
+            ece = _expected_calibration_error(test_truth, test_probability)
+            name = str(specification["name"])
+            records.append(
+                {
+                    "model_name": name,
+                    "algorithm_type": str(specification["algorithm"]),
+                    "brier_score": brier,
+                    "roc_auc": roc_auc,
+                    "pr_auc": pr_auc,
+                    "calibration_error": ece,
+                    "latency_sec": float(latency),
+                }
+            )
+            fitted[name] = {
+                "models": calibrated_models,
+                "calibration_method": method,
+                "fit_elapsed_sec": float(time.perf_counter() - started),
+                "test_truth": test_truth,
+                "test_probability": test_probability,
+            }
+        except Exception as exc:
+            failures.append(
+                f"{specification['name']}: {type(exc).__name__}: {exc}"
+            )
+
+    for specification in specifications:
+        fit_specification(specification)
+    if not records:
+        raise RuntimeError("All VAEP candidates failed: " + "; ".join(failures))
+    first_pass = pd.DataFrame(records)
+    if (
+        first_pass["brier_score"].min() >= 0.12
+        or first_pass["roc_auc"].max() <= 0.82
+    ):
+        for specification in _tuned_model_specifications(
+            score_weight, concede_weight
+        ):
+            fit_specification(specification)
+    validation = pd.DataFrame(records)
+    validation["rank_brier"] = validation["brier_score"].rank(
+        method="min", ascending=True
+    ).astype(int)
+    validation["rank_roc_auc"] = validation["roc_auc"].rank(
+        method="min", ascending=False
+    ).astype(int)
+    rank_pr = validation["pr_auc"].rank(method="min", ascending=False)
+    rank_calibration = validation["calibration_error"].rank(
+        method="min", ascending=True
+    )
+    aggregate_rank = (
+        validation["rank_brier"]
+        + validation["rank_roc_auc"]
+        + rank_pr
+        + rank_calibration
+    )
+    validation["rank_overall"] = aggregate_rank.rank(
+        method="min", ascending=True
+    ).astype(int)
+    validation = validation.sort_values(
+        ["rank_overall", "brier_score", "roc_auc"],
+        ascending=[True, True, False],
+    ).reset_index(drop=True)
+    selected_name = str(validation.iloc[0]["model_name"])
+    selected = {
+        "model_name": selected_name,
+        "algorithm_type": str(validation.iloc[0]["algorithm_type"]),
+        **fitted[selected_name],
+    }
+    return validation, selected, failures
 
 
 def build_v4_player_evaluations(
@@ -430,175 +1042,210 @@ def build_v4_player_evaluations(
     frame_metrics_df: pd.DataFrame,
     *,
     min_minutes: float = V4_MIN_PLAYER_MINUTES,
-) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, dict[str, object]]:
-    """Build V4 rankings and spatial heatmap cells from three StatsBomb layers.
+) -> tuple[
+    pd.DataFrame,
+    pd.DataFrame,
+    pd.DataFrame,
+    dict[str, object],
+    dict[str, object],
+]:
+    """Build unified team rankings from independent xT and 360-VAEP systems."""
 
-    Standard events provide the on-ball action start/end coordinates and
-    outcomes. Player metadata/components provide tournament minutes and
-    positional groups. StatsBomb 360 freeze frames provide event-time actor
-    locations and local defensive density. Licensed StatsBomb OBV is used when
-    present; otherwise a transparent pitch-value delta is retained with an
-    explicit provenance label.
-    """
+    base_profiles = derive_physicality_metrics(components_df)
+    profiles = base_profiles.loc[base_profiles["minutes"].ge(min_minutes)].copy()
+    if profiles.empty:
+        raise ValueError("No players satisfy the V4 minutes cutoff")
 
-    required_event_columns = {
-        "id",
-        "match_id",
-        "player_id",
-        "type",
-        "location",
-        "pass_end_location",
-        "carry_end_location",
-        "pass_outcome",
-        "dribble_outcome",
-        "ball_receipt_outcome",
-        "under_pressure",
-        "shot_statsbomb_xg",
-    }
-    missing = sorted(required_event_columns - set(events_df.columns))
-    if missing:
-        raise ValueError(f"V4 event schema is missing columns: {missing}")
+    actions = convert_statsbomb_events_to_spadl(events_df)
+    actions = actions[actions["player_id"].notna()].copy()
+    actions["player_id"] = actions["player_id"].astype(int)
+    actions = _three_action_labels(actions)
 
-    events = events_df[events_df["player_id"].notna()].copy()
-    events["player_id"] = events["player_id"].astype(int)
-    events["start_x"] = _coordinate_axis(events["location"], 0)
-    events["start_y"] = _coordinate_axis(events["location"], 1)
-    pass_end_x = _coordinate_axis(events["pass_end_location"], 0)
-    pass_end_y = _coordinate_axis(events["pass_end_location"], 1)
-    carry_end_x = _coordinate_axis(events["carry_end_location"], 0)
-    carry_end_y = _coordinate_axis(events["carry_end_location"], 1)
-    events["end_x"] = pass_end_x.combine_first(carry_end_x).combine_first(
-        events["start_x"]
+    frame_metrics = (
+        frame_metrics_df.drop_duplicates(["match_id", "event_uuid"])
+        .rename(columns={"match_id": "game_id", "event_uuid": "original_event_id"})
+        .copy()
     )
-    events["end_y"] = pass_end_y.combine_first(carry_end_y).combine_first(
-        events["start_y"]
-    )
-    events["successful_on_ball"] = _successful_on_ball_mask(events)
-    events["turnover"] = _turnover_mask(events)
-
-    frame_metrics = frame_metrics_df.drop_duplicates(
-        ["match_id", "event_uuid"]
-    ).rename(columns={"event_uuid": "id"})
-    events = events.merge(
-        frame_metrics[
-            [
-                "match_id",
-                "id",
-                "defensive_density",
-                "nearest_defender_distance",
-                "defenders_within_5",
-            ]
-        ],
-        on=["match_id", "id"],
+    frame_metrics["original_event_id"] = frame_metrics[
+        "original_event_id"
+    ].astype(str)
+    spatial_columns = [
+        "game_id",
+        "original_event_id",
+        "defenders_within_5",
+        "nearest_defender_distance",
+        "defensive_density",
+        "defenders_behind_ball",
+    ]
+    for column in spatial_columns:
+        if column not in frame_metrics:
+            frame_metrics[column] = np.nan
+    actions = actions.merge(
+        frame_metrics[spatial_columns],
+        on=["game_id", "original_event_id"],
         how="left",
         validate="many_to_one",
     )
-    density_cutoff = float(
-        events["defensive_density"].dropna().quantile(0.75)
-    )
-    if not np.isfinite(density_cutoff):
-        density_cutoff = float("inf")
-    events["event_under_pressure"] = _truthy(events["under_pressure"])
-    events["freeze_frame_pressure"] = (
-        events["nearest_defender_distance"].le(3.0)
-        | events["defenders_within_5"].fillna(0).ge(2)
-        | events["defensive_density"].ge(density_cutoff)
-    )
-    events["pressure_augmented"] = (
-        events["event_under_pressure"] | events["freeze_frame_pressure"]
-    )
-
-    native_obv_column = next(
-        (
-            column
-            for column in OBV_COLUMN_PRIORITY
-            if column in events.columns
-            and pd.to_numeric(events[column], errors="coerce").notna().any()
-        ),
-        None,
-    )
-    if native_obv_column is not None:
-        events["raw_on_ball_value"] = pd.to_numeric(
-            events[native_obv_column], errors="coerce"
-        ).fillna(0.0)
-        obv_source = f"statsbomb_native:{native_obv_column}"
-    else:
-        start_value = _event_value_surface(
-            events["start_x"], events["start_y"]
+    joined_360 = int(actions["nearest_defender_distance"].notna().sum())
+    merge_warning = None
+    if joined_360 == 0:
+        merge_warning = (
+            "StatsBomb 360 event IDs did not match; standard VAEP state "
+            "features were used with neutral spatial defaults."
         )
-        end_value = _event_value_surface(events["end_x"], events["end_y"])
-        events["raw_on_ball_value"] = 0.10 * (end_value - start_value)
-        shot_xg = pd.to_numeric(
-            events["shot_statsbomb_xg"], errors="coerce"
-        ).fillna(0.0)
-        events.loc[events["type"].eq("Shot"), "raw_on_ball_value"] += (
-            0.12 * shot_xg
+        warnings.warn(merge_warning, RuntimeWarning)
+    for column in spatial_columns[2:]:
+        numeric = pd.to_numeric(actions[column], errors="coerce")
+        actions[column] = numeric.fillna(numeric.median()).fillna(0.0)
+
+    xt_grid, actions["xt_value"] = _fit_expected_threat_grid(actions)
+    vaep_features, feature_names = _vaep_feature_matrix(actions)
+    partitions = _match_partitions(actions)
+    validation, selected, failures = _fit_vaep_candidates(
+        vaep_features, actions, partitions
+    )
+    for target, output in (
+        ("scores", "p_scores"),
+        ("concedes", "p_concedes"),
+    ):
+        actions[output] = selected["models"][target].predict_proba(
+            vaep_features.to_numpy()
+        )[:, 1]
+    actions["vaep_value"] = actions["p_scores"] - actions["p_concedes"]
+    shot_xg_lookup = (
+        actions.loc[
+            actions["type_name"].eq("Shot"),
+            ["original_event_id", "shot_statsbomb_xg"],
+        ]
+        .drop_duplicates("original_event_id")
+        .set_index("original_event_id")["shot_statsbomb_xg"]
+    )
+    actions["xa_value"] = (
+        actions["pass_assisted_shot_id"]
+        .astype(str)
+        .map(pd.to_numeric(shot_xg_lookup, errors="coerce"))
+        .fillna(0.0)
+    )
+
+    defensive_types = {
+        "Pressure",
+        "Duel",
+        "Interception",
+        "Block",
+        "Clearance",
+        "Ball Recovery",
+        "Goal Keeper",
+        "Foul Committed",
+        "Shield",
+        "Error",
+    }
+    actions["action_side"] = np.where(
+        actions["type_name"].isin(defensive_types), "defense", "offense"
+    )
+    touch_types = {
+        "Pass",
+        "Carry",
+        "Dribble",
+        "Shot",
+        "Ball Receipt*",
+        "Miscontrol",
+        "Dispossessed",
+    }
+    actions["touch"] = (
+        actions["type_name"].isin(touch_types)
+        | actions["type_name"].str.startswith("Ball Receipt")
+    )
+    values = (
+        actions.groupby("player_id", as_index=False)
+        .agg(
+            vaep_total=("vaep_value", "sum"),
+            vaep_offense=(
+                "vaep_value",
+                lambda series: float(
+                    series[actions.loc[series.index, "action_side"].eq("offense")].sum()
+                ),
+            ),
+            vaep_defense=(
+                "vaep_value",
+                lambda series: float(
+                    series[actions.loc[series.index, "action_side"].eq("defense")].sum()
+                ),
+            ),
+            total_touches=("touch", "sum"),
+            xt_total=("xt_value", "sum"),
+            xa_sum=("xa_value", "sum"),
+            events_with_360_context=(
+                "nearest_defender_distance",
+                "count",
+            ),
         )
-        events.loc[
-            events["type"].eq("Dribble")
-            & events["dribble_outcome"].fillna("").eq("Complete"),
-            "raw_on_ball_value",
-        ] += 0.01 * start_value
-        obv_source = "open_event_value_fallback"
+    )
+    profiles = profiles.merge(values, on="player_id", how="left")
+    value_columns = [
+        "vaep_total",
+        "vaep_offense",
+        "vaep_defense",
+        "total_touches",
+        "xt_total",
+        "xa_sum",
+        "events_with_360_context",
+    ]
+    profiles[value_columns] = profiles[value_columns].fillna(0.0)
+    minutes = profiles["minutes"].clip(lower=1.0)
+    profiles["vaep_off_p90"] = 90 * profiles["vaep_offense"] / minutes
+    profiles["vaep_def_p90"] = 90 * profiles["vaep_defense"] / minutes
+    profiles["vaep_total_p90"] = 90 * profiles["vaep_total"] / minutes
+    profiles["vaep_per_touch"] = _safe_rate(
+        profiles["vaep_total"], profiles["total_touches"]
+    )
+    profiles["xt_p90"] = 90 * profiles["xt_total"] / minutes
+    profiles["xa_p90"] = 90 * profiles["xa_sum"] / minutes
+    profiles["final_player_rating"] = (
+        0.50 * profiles["vaep_total_p90"]
+        + 0.30 * profiles["vaep_per_touch"]
+        + 0.20 * profiles["xt_p90"]
+    )
+    profiles["team_rank"] = (
+        profiles.groupby("team")["final_player_rating"]
+        .rank(method="min", ascending=False)
+        .astype(int)
+    )
+    # Compatibility for simulation routines; all reporting and ranking uses
+    # the cross-role unified rating and team_rank.
+    profiles["player_evaluation_score"] = profiles["final_player_rating"]
 
-    events["standard_turnover_penalty"] = np.where(
-        events["turnover"],
-        0.010 + 0.030 * events["start_x"].fillna(0).clip(0, 120) / 120,
-        0.0,
-    )
-    events["turnover_penalty_multiplier"] = np.where(
-        events["turnover"] & events["pressure_augmented"], 0.5, 1.0
-    )
-    events["applied_turnover_penalty"] = (
-        events["standard_turnover_penalty"]
-        * events["turnover_penalty_multiplier"]
-    )
-    events["risk_adjusted_on_ball_value"] = (
-        events["raw_on_ball_value"] - events["applied_turnover_penalty"]
-    )
-
-    base_profiles = derive_physicality_metrics(components_df)
-    profiles = base_profiles.loc[
-        base_profiles["minutes"].ge(min_minutes)
-    ].copy()
-    if profiles.empty:
-        raise ValueError("No players satisfy the V4 minutes cutoff")
-    profiles = cluster_player_playstyles(profiles, events)
-    eligible_ids = set(profiles["player_id"].astype(int))
-
-    successful = events.loc[
-        events["successful_on_ball"] & events["player_id"].isin(eligible_ids),
-        ["match_id", "id", "player_id", "end_x", "end_y"],
-    ].dropna(subset=["end_x", "end_y"])
+    profiles = cluster_player_playstyles(profiles, events_df)
+    successful = actions[
+        actions["type_name"].isin({"Pass", "Carry", "Dribble", "Shot"})
+        & actions["result_name"].eq("success")
+    ][["game_id", "original_event_id", "player_id", "end_x", "end_y"]].dropna()
     action_points = successful.rename(
-        columns={"end_x": "x", "end_y": "y"}
+        columns={
+            "game_id": "match_id",
+            "original_event_id": "id",
+            "end_x": "x",
+            "end_y": "y",
+        }
     )
     action_points["spatial_source"] = "standard_event_endpoint"
-
-    actors = frame_actors_df.copy()
-    actors = actors[_truthy(actors["actor"])]
-    actors = actors.rename(columns={"event_uuid": "id"})
+    actors = frame_actors_df[_truthy(frame_actors_df["actor"])].rename(
+        columns={"event_uuid": "id"}
+    )
+    action_identity = actions[
+        ["game_id", "original_event_id", "player_id"]
+    ].rename(columns={"game_id": "match_id", "original_event_id": "id"})
     actor_points = actors.merge(
-        events[
-            ["match_id", "id", "player_id", "successful_on_ball"]
-        ].drop_duplicates(["match_id", "id"]),
+        action_identity.drop_duplicates(["match_id", "id"]),
         on=["match_id", "id"],
         how="inner",
         validate="many_to_one",
-    )
-    actor_points = actor_points.loc[
-        actor_points["successful_on_ball"]
-        & actor_points["player_id"].isin(eligible_ids),
-        ["match_id", "id", "player_id", "x", "y"],
-    ].dropna(subset=["x", "y"])
+    )[["match_id", "id", "player_id", "x", "y"]].dropna()
     actor_points["spatial_source"] = "statsbomb_360_actor_snapshot"
-    spatial_points = pd.concat(
-        [action_points, actor_points], ignore_index=True
-    )
-    spatial_points["final_third"] = spatial_points["x"].gt(
-        V4_FINAL_THIRD_X
-    )
-
+    eligible_ids = set(profiles["player_id"].astype(int))
+    action_points = action_points[action_points["player_id"].isin(eligible_ids)]
+    actor_points = actor_points[actor_points["player_id"].isin(eligible_ids)]
+    spatial_points = pd.concat([action_points, actor_points], ignore_index=True)
+    spatial_points["final_third"] = spatial_points["x"].gt(V4_FINAL_THIRD_X)
     spatial_summary = (
         spatial_points.groupby("player_id", as_index=False)
         .agg(
@@ -608,157 +1255,46 @@ def build_v4_player_evaluations(
             average_spatial_y=("y", "mean"),
         )
     )
-    action_summary = (
-        action_points.assign(final_third=action_points["x"].gt(V4_FINAL_THIRD_X))
-        .groupby("player_id", as_index=False)
-        .agg(
-            successful_action_points=("x", "size"),
-            successful_action_final_third_share=("final_third", "mean"),
-        )
-    )
-    actor_summary = (
-        actor_points.assign(final_third=actor_points["x"].gt(V4_FINAL_THIRD_X))
-        .groupby("player_id", as_index=False)
-        .agg(
-            freeze_frame_actor_points=("x", "size"),
-            freeze_frame_final_third_share=("final_third", "mean"),
-        )
-    )
-
-    player_values = (
-        events[events["player_id"].isin(eligible_ids)]
-        .groupby("player_id", as_index=False)
-        .agg(
-            total_on_ball_value=("risk_adjusted_on_ball_value", "sum"),
-            raw_on_ball_value=("raw_on_ball_value", "sum"),
-            event_turnovers=("turnover", "sum"),
-            pressured_turnovers=(
-                "pressure_augmented",
-                lambda values: int(
-                    (
-                        values
-                        & events.loc[values.index, "turnover"]
-                    ).sum()
-                ),
-            ),
-            standard_turnover_penalty=("standard_turnover_penalty", "sum"),
-            applied_turnover_penalty=("applied_turnover_penalty", "sum"),
-            events_with_360_context=("nearest_defender_distance", "count"),
-        )
-    )
-    profiles = (
-        profiles.merge(spatial_summary, on="player_id", how="left")
-        .merge(action_summary, on="player_id", how="left")
-        .merge(actor_summary, on="player_id", how="left")
-        .merge(player_values, on="player_id", how="left")
-    )
-    numeric_defaults = [
-        "spatial_point_count",
-        "final_third_share",
-        "average_spatial_x",
-        "average_spatial_y",
-        "successful_action_points",
-        "successful_action_final_third_share",
-        "freeze_frame_actor_points",
-        "freeze_frame_final_third_share",
-        "total_on_ball_value",
-        "raw_on_ball_value",
-        "event_turnovers",
-        "pressured_turnovers",
-        "standard_turnover_penalty",
-        "applied_turnover_penalty",
-        "events_with_360_context",
-    ]
-    profiles[numeric_defaults] = profiles[numeric_defaults].fillna(0.0)
-    profiles["obv_per_90"] = (
-        90 * profiles["total_on_ball_value"] / profiles["minutes"]
-    )
-    profiles["raw_obv_per_90"] = (
-        90 * profiles["raw_on_ball_value"] / profiles["minutes"]
-    )
-    profiles["pressure_adjusted_turnover_penalty_per_90"] = (
-        90 * profiles["applied_turnover_penalty"] / profiles["minutes"]
-    )
-    profiles["turnover_penalty_discount"] = (
-        profiles["standard_turnover_penalty"]
-        - profiles["applied_turnover_penalty"]
-    )
-    profiles["obv_source"] = obv_source
-
+    profiles = profiles.merge(spatial_summary, on="player_id", how="left")
+    profiles[
+        [
+            "spatial_point_count",
+            "final_third_share",
+            "average_spatial_x",
+            "average_spatial_y",
+        ]
+    ] = profiles[
+        [
+            "spatial_point_count",
+            "final_third_share",
+            "average_spatial_x",
+            "average_spatial_y",
+        ]
+    ].fillna(0.0)
     fullback = profiles["position_group"].eq("Fullback/Wingback")
     attacking_wingback = fullback & profiles["final_third_share"].gt(
         V4_ATTACKING_WINGBACK_SHARE
     )
-    profiles.loc[attacking_wingback, "functional_role"] = (
-        "Attacking Wingback"
-    )
-    invalid_anchor = fullback & profiles["functional_role"].eq(
-        "Holding Anchor"
-    )
-    profiles.loc[invalid_anchor, "functional_role"] = "Two-Way Fullback"
+    profiles.loc[attacking_wingback, "functional_role"] = "Attacking Wingback"
+    profiles.loc[
+        fullback & profiles["functional_role"].eq("Holding Anchor"),
+        "functional_role",
+    ] = "Two-Way Fullback"
     profiles["Functional role"] = profiles["functional_role"]
 
-    role = profiles["Functional role"]
-    profiles["role_obv_z"] = _role_group_z(profiles["obv_per_90"], role)
-    profiles["role_final_third_z"] = _role_group_z(
-        profiles["final_third_share"], role
-    )
-    profiles["role_turnover_resilience_z"] = _role_group_z(
-        -profiles["pressure_adjusted_turnover_penalty_per_90"], role
-    )
-    profiles["role_pressing_z"] = _role_group_z(
-        profiles["pressing_intensity_index"], role
-    )
-    profiles["role_aerial_z"] = _role_group_z(
-        profiles["aerial_dominance_index"], role
-    )
-    attacking = profiles["position_group"].isin(ATTACKING_POSITION_GROUPS)
-    profiles["raw_composite_score"] = (
-        0.35 * profiles["role_obv_z"]
-        + 0.15 * profiles["role_final_third_z"]
-        + 0.20 * profiles["role_turnover_resilience_z"]
-        + 0.15 * profiles["role_pressing_z"]
-        + 0.15 * profiles["role_aerial_z"]
-    )
-    profiles.loc[attacking, "raw_composite_score"] = (
-        0.65 * profiles.loc[attacking, "role_obv_z"]
-        + 0.20 * profiles.loc[attacking, "role_final_third_z"]
-        + 0.15
-        * profiles.loc[attacking, "role_turnover_resilience_z"]
-    )
-    profiles["role_z_score"] = _role_group_z(
-        profiles["raw_composite_score"], role
-    )
-    profiles["player_evaluation_score"] = (
-        50 + 10 * profiles["role_z_score"]
-    )
-    profiles["role_rank"] = (
-        profiles.groupby("Functional role")["player_evaluation_score"]
-        .rank(method="min", ascending=False)
-        .astype(int)
-    )
-
-    spatial_points["x_bin"] = (
-        np.floor(spatial_points["x"].clip(0, 119.999) / 10)
-        .astype(int)
-        .clip(0, 11)
-    )
-    spatial_points["y_bin"] = (
-        np.floor(spatial_points["y"].clip(0, 79.999) / 10)
-        .astype(int)
-        .clip(0, 7)
-    )
+    spatial_points["x_bin"] = np.floor(
+        spatial_points["x"].clip(0, 119.999) / 10
+    ).astype(int)
+    spatial_points["y_bin"] = np.floor(
+        spatial_points["y"].clip(0, 79.999) / 10
+    ).astype(int)
     heatmap_cells = (
-        spatial_points.groupby(
-            ["player_id", "x_bin", "y_bin"], as_index=False
-        )
+        spatial_points.groupby(["player_id", "x_bin", "y_bin"], as_index=False)
         .agg(
             point_count=("x", "size"),
             standard_event_points=(
                 "spatial_source",
-                lambda values: int(
-                    values.eq("standard_event_endpoint").sum()
-                ),
+                lambda values: int(values.eq("standard_event_endpoint").sum()),
             ),
             freeze_frame_points=(
                 "spatial_source",
@@ -772,52 +1308,80 @@ def build_v4_player_evaluations(
         heatmap_cells.groupby("player_id")["point_count"].transform("sum")
     )
 
-    finite_columns = [
-        "obv_per_90",
-        "final_third_share",
-        "role_z_score",
-        "player_evaluation_score",
+    finite = [
+        "vaep_off_p90",
+        "vaep_def_p90",
+        "vaep_total_p90",
+        "vaep_per_touch",
+        "xt_p90",
+        "final_player_rating",
     ]
-    if not np.isfinite(profiles[finite_columns].to_numpy()).all():
-        raise ValueError("V4 player evaluation produced non-finite metrics")
-    if (
-        profiles.loc[
-            profiles["position_group"].eq("Fullback/Wingback"),
-            "functional_role",
-        ]
-        .eq("Holding Anchor")
-        .any()
-    ):
-        raise RuntimeError("V4 fullback safeguard failed")
-
+    if not np.isfinite(profiles[finite].to_numpy()).all():
+        raise ValueError("VAEP/xT player evaluation produced non-finite metrics")
+    best_metrics = validation.iloc[0]
     provenance: dict[str, object] = {
         "schema_version": 4,
+        "valuation_system": "360-Augmented VAEP and xT (applied concurrently)",
+        "spadl_converter": "local_flattened_statsbomb_fallback",
+        "socceraction_import_issue": (
+            "pandera/multimethod incompatibility; no remote fetch required"
+        ),
+        "original_event_id_preserved": True,
+        "xt_grid_shape": [XT_GRID_ROWS, XT_GRID_COLUMNS],
+        "xt_training_action_types": ["successful Pass", "successful Carry"],
+        "xt_not_in_vaep_features": True,
+        "vaep_action_window": VAEP_ACTION_WINDOW,
+        "vaep_feature_names": feature_names,
+        "vaep_selected_model": selected["model_name"],
+        "vaep_selected_algorithm": selected["algorithm_type"],
+        "vaep_calibration_method": selected["calibration_method"],
+        "vaep_holdout_metrics": {
+            "brier_score": float(best_metrics["brier_score"]),
+            "roc_auc": float(best_metrics["roc_auc"]),
+            "pr_auc": float(best_metrics["pr_auc"]),
+            "calibration_error": float(best_metrics["calibration_error"]),
+        },
+        "model_failures": failures,
+        "partitions": partitions,
         "minutes_cutoff": float(min_minutes),
         "players_before_cutoff": int(len(base_profiles)),
         "players_after_cutoff": int(len(profiles)),
         "players_dropped": int(len(base_profiles) - len(profiles)),
-        "obv_source": obv_source,
-        "native_obv_available": native_obv_column is not None,
-        "native_obv_column": native_obv_column,
-        "event_rows": int(len(events)),
-        "events_with_360_context": int(
-            events["nearest_defender_distance"].notna().sum()
-        ),
+        "event_rows": int(len(actions)),
+        "events_with_360_context": joined_360,
+        "360_join_rate": float(joined_360 / max(len(actions), 1)),
+        "360_merge_warning": merge_warning,
         "successful_action_points": int(len(action_points)),
         "freeze_frame_actor_points": int(len(actor_points)),
         "heatmap_cells": int(len(heatmap_cells)),
         "attacking_wingbacks": int(attacking_wingback.sum()),
-        "fullbacks_reprotected_from_anchor": int(invalid_anchor.sum()),
-        "density_pressure_cutoff": density_cutoff,
+        "ranking_formula": (
+            "0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90"
+        ),
+    }
+    model_bundle = {
+        "schema_version": "4.1-vaep-xt",
+        "selected_model_name": selected["model_name"],
+        "selected_algorithm": selected["algorithm_type"],
+        "calibration_method": selected["calibration_method"],
+        "score_model": selected["models"]["scores"],
+        "concede_model": selected["models"]["concedes"],
+        "feature_names": feature_names,
+        "xt_grid": xt_grid,
+        "xt_grid_shape": [XT_GRID_ROWS, XT_GRID_COLUMNS],
+        "partitions": partitions,
+        "test_truth": selected["test_truth"],
+        "test_probability": selected["test_probability"],
+        "validation_records": validation.to_dict("records"),
     }
     return (
         profiles.sort_values(
-            ["Functional role", "player_evaluation_score"],
-            ascending=[True, False],
+            ["team", "team_rank", "player"], ascending=[True, True, True]
         ).reset_index(drop=True),
         heatmap_cells,
-        events,
+        actions,
         provenance,
+        model_bundle,
     )
 
 
@@ -1404,11 +1968,6 @@ def _match_bootstrap_substitution_interval(
         "player_id",
         "minutes",
         "xg_sum",
-        "key_passes",
-        "progressive_passes",
-        "progressive_carries",
-        "interceptions",
-        "turnovers",
     ]
     team_rows = components_df.loc[
         components_df["team"].eq(team) & components_df["player_id"].isin([starter, substitute]),
@@ -1417,14 +1976,9 @@ def _match_bootstrap_substitution_interval(
     if team_rows.empty or team_rows["match_id"].nunique() < 2:
         return model_gain, model_gain
     minutes = team_rows["minutes"].clip(lower=1)
-    team_rows["match_value_p90"] = 90 * (
-        team_rows["xg_sum"]
-        + 0.015 * team_rows["key_passes"]
-        + 0.004 * team_rows["progressive_passes"]
-        + 0.003 * team_rows["progressive_carries"]
-        + 0.002 * team_rows["interceptions"]
-        - 0.002 * team_rows["turnovers"]
-    ) / minutes
+    # Raw xG is retained only as a descriptive match-level uncertainty signal;
+    # it is not part of the unified VAEP+xT player rating.
+    team_rows["match_value_p90"] = 90 * team_rows["xg_sum"] / minutes
     pivot = team_rows.pivot_table(
         index="match_id",
         columns="player_id",
@@ -1646,11 +2200,7 @@ def simulate_starter_replacement_impact(
             centrality.append(float(np.mean(scores) if scores else 0))
         squad = squad.copy()
         squad["chemistry_centrality"] = centrality
-        value_column = (
-            "player_evaluation_score"
-            if "player_evaluation_score" in profile_lookup
-            else "net_xg_contribution_p90"
-        )
+        value_column = "player_evaluation_score"
         squad["player_value"] = squad["player_id"].map(
             profile_lookup[value_column]
         ).fillna(0)

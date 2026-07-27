@@ -1,7 +1,7 @@
 # USA — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 9
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -12,12 +12,15 @@
 
 - Team: United States (USA)
 - Position: Right Wing
-- Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.4198
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 57.1%
-- Role-relative z-score: -0.063
-- V4 evaluation score: 49.4
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.6266
+- VAEP defense per 90: 0.0767
+- VAEP total per 90: 0.7034
+- VAEP per touch: 0.00662
+- Spatial xT per 90: 0.0179
+- Final-third spatial share: 52.7%
+- Unified final player rating: 0.3572
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/USA/3377_heatmap.svg)
 
@@ -52,12 +55,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: United States (USA)
 - Position: Left Back
-- Functional role: Box-to-Box Runner
-- Risk-adjusted OBV per 90: -0.0658
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 34.3%
-- Role-relative z-score: -1.255
-- V4 evaluation score: 37.4
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.0835
+- VAEP defense per 90: -0.0793
+- VAEP total per 90: 0.0042
+- VAEP per touch: 0.00003
+- Spatial xT per 90: 0.0603
+- Final-third spatial share: 32.7%
+- Unified final player rating: 0.0141
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/USA/4614_heatmap.svg)
 
@@ -93,11 +99,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: United States (USA)
 - Position: Left Wing
 - Functional role: Progressive Winger
-- Risk-adjusted OBV per 90: -0.1710
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 51.7%
-- Role-relative z-score: -0.267
-- V4 evaluation score: 47.3
+- VAEP offense per 90: 0.7191
+- VAEP defense per 90: 0.0514
+- VAEP total per 90: 0.7705
+- VAEP per touch: 0.00574
+- Spatial xT per 90: 0.0979
+- Final-third spatial share: 50.9%
+- Unified final player rating: 0.4065
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/USA/8246_heatmap.svg)
 
@@ -133,11 +142,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: United States (USA)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.3255
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 0.7%
-- Role-relative z-score: -0.206
-- V4 evaluation score: 47.9
+- VAEP offense per 90: -0.0862
+- VAEP defense per 90: -0.1689
+- VAEP total per 90: -0.2550
+- VAEP per touch: -0.00412
+- Spatial xT per 90: 0.0011
+- Final-third spatial share: 1.6%
+- Unified final player rating: -0.1285
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/USA/12352_heatmap.svg)
 
@@ -174,11 +186,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: United States (USA)
 - Position: Right Center Back
 - Functional role: Deep Playmaker
-- Risk-adjusted OBV per 90: 0.2705
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 2.4%
-- Role-relative z-score: -0.442
-- V4 evaluation score: 45.6
+- VAEP offense per 90: 0.0490
+- VAEP defense per 90: -0.2811
+- VAEP total per 90: -0.2320
+- VAEP per touch: -0.00130
+- Spatial xT per 90: 0.0019
+- Final-third spatial share: 3.2%
+- Unified final player rating: -0.1160
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/USA/12524_heatmap.svg)
 
@@ -214,11 +229,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: United States (USA)
 - Position: Center Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.0495
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 14.9%
-- Role-relative z-score: +0.887
-- V4 evaluation score: 58.9
+- VAEP offense per 90: 0.0077
+- VAEP defense per 90: -0.0844
+- VAEP total per 90: -0.0767
+- VAEP per touch: -0.00049
+- Spatial xT per 90: 0.0235
+- Final-third spatial share: 15.7%
+- Unified final player rating: -0.0338
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/USA/12751_heatmap.svg)
 
@@ -254,12 +272,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: United States (USA)
 - Position: Left Center Back
-- Functional role: Holding Anchor
-- Risk-adjusted OBV per 90: 0.3357
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 2.3%
-- Role-relative z-score: -1.089
-- V4 evaluation score: 39.1
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0733
+- VAEP defense per 90: 0.0110
+- VAEP total per 90: 0.0844
+- VAEP per touch: 0.00052
+- Spatial xT per 90: -0.0031
+- Final-third spatial share: 3.2%
+- Unified final player rating: 0.0417
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/USA/18242_heatmap.svg)
 
@@ -294,12 +315,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: United States (USA)
 - Position: Right Back
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: 0.0997
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 31.7%
-- Role-relative z-score: +1.627
-- V4 evaluation score: 66.3
+- Functional role: Box-to-Box Runner
+- VAEP offense per 90: 0.0860
+- VAEP defense per 90: -0.0350
+- VAEP total per 90: 0.0509
+- VAEP per touch: 0.00029
+- Spatial xT per 90: 0.0828
+- Final-third spatial share: 31.2%
+- Unified final player rating: 0.0421
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/USA/21881_heatmap.svg)
 
@@ -335,11 +359,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: United States (USA)
 - Position: Right Center Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: -0.0580
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 32.8%
-- Role-relative z-score: -0.499
-- V4 evaluation score: 45.0
+- VAEP offense per 90: 0.0583
+- VAEP defense per 90: -0.0949
+- VAEP total per 90: -0.0366
+- VAEP per touch: -0.00027
+- Spatial xT per 90: 0.0377
+- Final-third spatial share: 31.3%
+- Unified final player rating: -0.0109
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/USA/38792_heatmap.svg)
 

@@ -1,7 +1,7 @@
 # CRO — V4 Player Evaluation Collection
 
 - Included 300+ minute players: 10
-- Rankings are role-relative; cross-role score comparisons are invalid.
+- Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -12,12 +12,15 @@
 
 - Team: Croatia (CRO)
 - Position: Right Center Back
-- Functional role: Holding Anchor
-- Risk-adjusted OBV per 90: 0.3132
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 3.3%
-- Role-relative z-score: -0.592
-- V4 evaluation score: 44.1
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0202
+- VAEP defense per 90: -0.1798
+- VAEP total per 90: -0.1596
+- VAEP per touch: -0.00092
+- Spatial xT per 90: 0.0087
+- Final-third spatial share: 3.9%
+- Unified final player rating: -0.0783
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/3471_heatmap.svg)
 
@@ -54,11 +57,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Croatia (CRO)
 - Position: Left Center Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.0810
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 20.7%
-- Role-relative z-score: +0.554
-- V4 evaluation score: 55.5
+- VAEP offense per 90: 0.1759
+- VAEP defense per 90: 0.0022
+- VAEP total per 90: 0.1780
+- VAEP per touch: 0.00097
+- Spatial xT per 90: 0.0486
+- Final-third spatial share: 21.7%
+- Unified final player rating: 0.0990
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/5456_heatmap.svg)
 
@@ -95,11 +101,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Croatia (CRO)
 - Position: Right Wing
 - Functional role: Target Forward
-- Risk-adjusted OBV per 90: -0.4364
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 48.4%
-- Role-relative z-score: -0.378
-- V4 evaluation score: 46.2
+- VAEP offense per 90: 0.7579
+- VAEP defense per 90: 0.0452
+- VAEP total per 90: 0.8031
+- VAEP per touch: 0.00708
+- Spatial xT per 90: 0.0098
+- Final-third spatial share: 46.1%
+- Unified final player rating: 0.4057
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/5460_heatmap.svg)
 
@@ -135,11 +144,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Croatia (CRO)
 - Position: Right Center Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.1814
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 21.7%
-- Role-relative z-score: +0.990
-- V4 evaluation score: 59.9
+- VAEP offense per 90: 0.2242
+- VAEP defense per 90: -0.0192
+- VAEP total per 90: 0.2050
+- VAEP per touch: 0.00100
+- Spatial xT per 90: 0.0745
+- Final-third spatial share: 23.2%
+- Unified final player rating: 0.1177
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/5463_heatmap.svg)
 
@@ -175,11 +187,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Croatia (CRO)
 - Position: Center Defensive Midfield
 - Functional role: Ball-Winner
-- Risk-adjusted OBV per 90: 0.0412
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 15.1%
-- Role-relative z-score: +0.190
-- V4 evaluation score: 51.9
+- VAEP offense per 90: 0.2708
+- VAEP defense per 90: -0.0512
+- VAEP total per 90: 0.2196
+- VAEP per touch: 0.00095
+- Spatial xT per 90: 0.0116
+- Final-third spatial share: 15.9%
+- Unified final player rating: 0.1124
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/5469_heatmap.svg)
 
@@ -215,12 +230,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Croatia (CRO)
 - Position: Left Wing
-- Functional role: Progressive Winger
-- Risk-adjusted OBV per 90: -0.3027
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 49.5%
-- Role-relative z-score: -1.378
-- V4 evaluation score: 36.2
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.4209
+- VAEP defense per 90: -0.0223
+- VAEP total per 90: 0.3987
+- VAEP per touch: 0.00334
+- Spatial xT per 90: 0.0574
+- Final-third spatial share: 46.4%
+- Unified final player rating: 0.2118
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/5474_heatmap.svg)
 
@@ -255,12 +273,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Croatia (CRO)
 - Position: Left Back
-- Functional role: Box-to-Box Runner
-- Risk-adjusted OBV per 90: 0.0706
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 31.1%
-- Role-relative z-score: +2.189
-- V4 evaluation score: 71.9
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.1533
+- VAEP defense per 90: -0.0464
+- VAEP total per 90: 0.1070
+- VAEP per touch: 0.00071
+- Spatial xT per 90: 0.0487
+- Final-third spatial share: 31.2%
+- Unified final player rating: 0.0634
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/12625_heatmap.svg)
 
@@ -296,11 +317,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Croatia (CRO)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- Risk-adjusted OBV per 90: 0.2431
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 0.8%
-- Role-relative z-score: +0.830
-- V4 evaluation score: 58.3
+- VAEP offense per 90: -0.0253
+- VAEP defense per 90: 0.2710
+- VAEP total per 90: 0.2458
+- VAEP per touch: 0.00425
+- Spatial xT per 90: 0.0007
+- Final-third spatial share: 1.0%
+- Unified final player rating: 0.1243
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/16531_heatmap.svg)
 
@@ -336,12 +360,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Croatia (CRO)
 - Position: Right Back
-- Functional role: Wide Creator
-- Risk-adjusted OBV per 90: 0.0373
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 27.8%
-- Role-relative z-score: +0.920
-- V4 evaluation score: 59.2
+- Functional role: Box-to-Box Runner
+- VAEP offense per 90: 0.0515
+- VAEP defense per 90: -0.0534
+- VAEP total per 90: -0.0018
+- VAEP per touch: -0.00001
+- Spatial xT per 90: 0.0676
+- Final-third spatial share: 27.1%
+- Unified final player rating: 0.0126
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/29163_heatmap.svg)
 
@@ -376,12 +403,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Croatia (CRO)
 - Position: Left Center Back
-- Functional role: Holding Anchor
-- Risk-adjusted OBV per 90: 0.3642
-- OBV source: `open_event_value_fallback`
-- Final-third spatial share: 3.7%
-- Role-relative z-score: -0.157
-- V4 evaluation score: 48.4
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.1372
+- VAEP defense per 90: -0.1056
+- VAEP total per 90: 0.0316
+- VAEP per touch: 0.00019
+- Spatial xT per 90: 0.0115
+- Final-third spatial share: 4.9%
+- Unified final player rating: 0.0181
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/33018_heatmap.svg)
 

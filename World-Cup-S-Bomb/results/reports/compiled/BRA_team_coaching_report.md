@@ -11,9 +11,9 @@ Brazil: no tactical change cleared the modeled effect floor. Primary review sign
 ## Optimized starting 11
 
 1. Marcos Aoás Corrêa (Center Back)
-2. Thiago Emiliano da Silva (Center Back)
-3. Éder Gabriel Militão (Fullback/Wingback)
-4. Carlos Henrique Casimiro (Defensive Midfield)
+2. Carlos Henrique Casimiro (Defensive Midfield)
+3. Thiago Emiliano da Silva (Center Back)
+4. Éder Gabriel Militão (Fullback/Wingback)
 5. Alisson Ramsés Becker (Goalkeeper)
 6. Raphael Dias Belloli (Attacking Midfield/Wing)
 7. Richarlison de Andrade (Forward)
@@ -34,17 +34,17 @@ Brazil: no tactical change cleared the modeled effect floor. Primary review sign
 
 > **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 140, INSUFFICIENT_MINUTES: 25.
 
-## V4 role-relative player leaders
+## Unified 360-VAEP + xT player leaders
 
-1. Éder Gabriel Militão — Ball-Winner; score 67.0, role z +1.70, OBV/90 +0.200
-2. Marcos Aoás Corrêa — Holding Anchor; score 60.3, role z +1.03, OBV/90 +0.367
-3. Thiago Emiliano da Silva — Holding Anchor; score 60.0, role z +1.00, OBV/90 +0.436
-4. Carlos Henrique Casimiro — Ball-Winner; score 56.3, role z +0.63, OBV/90 +0.099
-5. Richarlison de Andrade — Target Forward; score 53.3, role z +0.33, OBV/90 -0.369
+1. Richarlison de Andrade — Target Forward; rating 0.7000, VAEP/90 +1.383, xT/90 +0.014
+2. Raphael Dias Belloli — Progressive Winger; rating 0.3370, VAEP/90 +0.600, xT/90 +0.179
+3. Vinícius José Paixão de Oliveira Júnior — Progressive Winger; rating 0.3234, VAEP/90 +0.598, xT/90 +0.115
+4. Carlos Henrique Casimiro — Ball-Winner; rating 0.2241, VAEP/90 +0.432, xT/90 +0.035
+5. Lucas Tolentino Coelho de Lima — Ball-Winner; rating 0.2206, VAEP/90 +0.426, xT/90 +0.033
 
-_Only players with at least 300 tournament minutes are ranked. Scores are
-standardized within functional role and are not cross-position absolute
-quality estimates._
+_Only players with at least 300 tournament minutes are ranked. Every player
+uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
+and 20% spatial xT per 90._
 
 ## Recurrent tactical mistakes
 

@@ -86,25 +86,21 @@ this larger layer enter the final serialized transition classifier directly.
 | `progressive_passes_p90` | Progressive passes per 90 | Increases measured ball advancement and opponent counter capacity when calculated for the defending lineup after a regain. |
 | `final_third_passes_p90` | Final-third passes per 90 | Represents sustained territorial penetration. |
 | `box_passes_p90` | Passes into the penalty area per 90 | Represents direct creation near goal. |
-| `key_passes_p90` | Key passes per 90 | Adds creative contribution; contributes positively to the displayed Net xG proxy. |
+| `key_passes_p90` | Key passes per 90 | Descriptive chance-creation supplement; it is not assigned an arbitrary rating weight. |
 | `crosses_p90` | Crosses per 90 | Captures wide creation and helps identify `Wide Creator` roles. |
 | `switches_p90` | Switches of play per 90 | Represents ability to move a defense laterally. |
 | `through_balls_p90` | Through balls per 90 | Represents line-breaking chance creation. |
 | `progressive_carries_p90` | Progressive carries per 90 | Rewards ball progression, helps identify Progressive Wingers, and increases modeled opponent counter threat when measured on the opponent. |
 | `dribble_success` | Successful dribbles / dribbles | Measures ability to beat defenders; combined with defensive duel ability in `matchup_dribble_vs_duel`. |
 | `shots_p90` | Shots per 90 | Measures shooting volume and helps identify Target Forwards. |
-| `xg_p90` | StatsBomb shot xG per 90 | Measures shot quality and is the largest positive term in the displayed Net xG proxy. |
+| `xg_p90` | StatsBomb shot xG per 90 | Descriptive shot-quality supplement; VAEP learns action value from calibrated scoring and conceding probabilities. |
 | `pressure_retention` | Successful under-pressure actions / under-pressure actions | Measures resistance to defensive pressure; combined with opponent pressure volume in `matchup_pressure_resistance`. |
 | `turnovers_p90` | Turnovers per 90 | Negative possession-security signal; directly increases `matchup_turnover_counter_pressure`. |
-| `pass_progression_per_pass` | Total pass progression / passes | Measures forward distance gained per pass and helps identify Deep Playmakers. |
-| `carry_progression_per_carry` | Total carry progression / carries | Measures forward distance gained per carry. |
 | `aerial_win_rate` | Aerial wins / aerial events | Measures direct-play and target ability; compared with opponent aerial strength in `matchup_aerial_edge`. |
 
-The displayed descriptive Net xG proxy is:
-
-`xg_p90 + 0.015×key_passes_p90 + 0.004×progressive_passes_p90 + 0.003×progressive_carries_p90 + 0.002×interceptions_p90 - 0.002×turnovers_p90`.
-
-It is a report diagnostic, not the rare-event classifier target.
+The previous hand-weighted Net xG proxy has been removed. Raw xG, xA,
+minutes, and defensive intervention counts remain descriptive supplements and
+do not receive arbitrary linear weights in the unified player rating.
 
 ### Defensive player and lineup variables
 
@@ -178,7 +174,7 @@ probability is still retained for evaluation and calibration diagnostics.
 
 | Variable | Side | Influence |
 |---|---|---|
-| `start_x`, `start_y`, `end_x`, `end_y` | Offense | Define on-ball movement and the open-event value change. |
+| `start_x`, `start_y`, `end_x`, `end_y` | Offense | Define the action state and independent xT cell transition. |
 | `pass_start_x`, `pass_start_y` | Offense | Describe average passing origin for spatial role clustering. |
 | `pass_receipt_x`, `pass_receipt_y` | Offense | Describe average receipt location for spatial role clustering. |
 | `line_breaking_pass_rate` | Offense | Share of passes gaining at least 15 X units or entering the final third. |
@@ -186,25 +182,26 @@ probability is still retained for evaluation and calibration diagnostics.
 | `pressure_state_rate` | Defense/context | Share of passes attempted under event pressure. |
 | `distribution_under_pressure` | Both | Completion rate on pressured passes. |
 | `under_pressure` / `event_under_pressure` | Defense/context | Event-provider pressure flag. |
-| `nearest_defender_distance` | Defense | SB360 distance context; distance ≤3 contributes to freeze-frame pressure. |
-| `defenders_within_5` | Defense | SB360 local pressure count; at least two contributes to freeze-frame pressure. |
-| `defensive_density` | Defense | SB360 local density; top-quartile density contributes to freeze-frame pressure. |
-| `pressure_augmented` | Defense/context | OR of event pressure and SB360-derived pressure. |
-| `raw_on_ball_value` | Offense | Native OBV when available; otherwise the documented pitch-value fallback. |
-| `standard_turnover_penalty` | Both | Location-sensitive cost: `0.010 + 0.030×start_x/120` for turnovers. |
-| `turnover_penalty_multiplier` | Defense/context | Equals 0.5 for pressured turnovers and 1.0 otherwise. |
-| `risk_adjusted_on_ball_value` | Offense | Raw on-ball value minus the applied turnover penalty. |
-| `obv_per_90` | Offense | Risk-adjusted on-ball value per 90 and the primary attacking-role score input. |
-| `pressure_adjusted_turnover_penalty_per_90` | Both | Turnover-cost burden after the 50% pressure discount. Lower burden improves turnover-resilience score. |
-| `aerial_dominance_index` | Defense/direct play | Role-relative aerial component. |
-| `pressing_intensity_index` | Defense | Role-relative pressing component. |
+| `nearest_defender_distance` | Defense | SB360 distance from the ball to the nearest visible defender; a direct VAEP state feature. |
+| `defenders_within_5` | Defense | SB360 count of nearby visible defenders; a direct VAEP state feature. |
+| `defensive_density` | Defense | SB360 local defensive density; a direct VAEP state feature. |
+| `defenders_behind_ball` | Defense | SB360 count of visible defenders goal-side of the ball; a direct VAEP state feature. |
+| `p_scores` | Both | Calibrated probability that the acting team scores within three actions. |
+| `p_concedes` | Both | Calibrated probability that the acting team concedes within three actions. |
+| `vaep_value` | Both | Per-action net value: `p_scores - p_concedes`. |
+| `vaep_off_p90` | Offense | Offensive-action VAEP accumulated per 90 minutes. |
+| `vaep_def_p90` | Defense | Defensive-action VAEP accumulated per 90 minutes. |
+| `vaep_total_p90` | Both | All-action VAEP accumulated per 90 minutes. |
+| `vaep_per_touch` | Both | Total VAEP divided by touches; preserves high-leverage, lower-volume contribution. |
+| `xt_value` | Offense | Independent 16x12 xT endpoint value minus start-cell value for successful passes and carries only. |
+| `xt_p90` | Offense | Successful-pass/carry xT accumulated per 90; it is never fed into VAEP. |
+| `final_player_rating` | Both | `0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`. |
+| `team_rank` | Both | Descending final rating within each national team. |
+| `aerial_dominance_index` | Defense/direct play | Descriptive aerial intervention supplement. |
+| `pressing_intensity_index` | Defense | Descriptive pressing intervention supplement. |
 
-For attacking position groups, the V4 role composite uses 65%
-`role_obv_z`, 20% `role_final_third_z`, and 15%
-`role_turnover_resilience_z`. For other positions it uses 35% `role_obv_z`,
-15% `role_final_third_z`, 20% `role_turnover_resilience_z`, 15%
-`role_pressing_z`, and 15% `role_aerial_z`. The resulting composite is
-standardized only within `Functional role`.
+The previous within-role composite and cross-role sorting have been removed.
+All eligible players use the same final-rating formula.
 
 ### Supporting attacking-style clustering variables
 
@@ -366,8 +363,7 @@ statistics already defined above:
   `pass_completion`, `progressive_passes_p90`, `final_third_passes_p90`,
   `box_passes_p90`, `key_passes_p90`, `crosses_p90`, `switches_p90`,
   `through_balls_p90`, `progressive_carries_p90`, `dribble_success`,
-  `shots_p90`, `xg_p90`, `pressure_retention`, `turnovers_p90`,
-  `pass_progression_per_pass`, `carry_progression_per_carry`, and
+  `shots_p90`, `xg_p90`, `pressure_retention`, `turnovers_p90`, and
   `aerial_win_rate`.
 - The exact suffixes for `att_recovery_` and `def_` are `pressures_p90`,
   `counterpressures_p90`, `duel_win_rate`, `interceptions_won_p90`,
@@ -437,6 +433,32 @@ collapsed to a single prediction. The very low PR-AUC nevertheless shows that
 individual positive-event identification remains difficult at this event
 rate.
 
+## 360-Augmented VAEP model validation
+
+The architecture audit is stored in
+`results/reports/model_audit_trail.json`. It records the previous active
+balanced Logistic Regression/Platt transition model, legacy benchmark
+estimators, serialized artifacts, feature schema, and the removed heuristic
+player-value path.
+
+The VAEP comparison evaluates Logistic Regression, XGBoost, and CatBoost
+scores/concedes classifiers on disjoint match-level train, calibration, and
+test partitions. Each model is calibrated with
+`CalibratedClassifierCV(method="isotonic", cv="prefit")`; the implementation
+uses scikit-learn's `FrozenEstimator` equivalent when required by the installed
+API and falls back to sigmoid calibration if isotonic cannot fit.
+
+| Selected VAEP model metric | Holdout value |
+|---|---:|
+| Model | XGBoost 360-VAEP |
+| Brier score | 0.001098 |
+| ROC-AUC | 0.991243 |
+| PR-AUC | 0.467538 |
+| Expected calibration error | 0.000347 |
+
+All evaluated iterations and ranks are exported to
+`results/reports/final_validation.csv`.
+
 ## Hurdle and counterfactual layer
 
 The hurdle evaluator estimates expected transition cost from the calibrated
@@ -464,19 +486,16 @@ Players with fewer than 300 tournament minutes are excluded before ranking.
 The current cohort contains 142 of 680 observed players; 538 were removed by
 the sample-size cutoff.
 
-For attacking roles, the primary value signal is risk-adjusted OBV per 90.
-Turnovers receive a location-sensitive penalty, and a turnover under event or
-SB360-derived pressure receives exactly 50% of the normal penalty. This avoids
-penalizing difficult high-block possessions as heavily as unpressured losses.
+Player value now comes from 360-Augmented VAEP and xT applied concurrently.
+VAEP models the calibrated probability of scoring and conceding within a
+three-action window over all action types. xT is fitted independently on a
+16x12 grid using only successful passes and carries. No xT output enters the
+VAEP feature matrix.
 
-The supplied open-data export does not contain licensed StatsBomb proprietary
-OBV. The production artifact therefore uses the explicitly labeled
-`open_event_value_fallback`. It must not be described as native proprietary
-OBV.
-
-The role composite is standardized with
-`groupby("Functional role")`. A score of 50 is the role mean and 10 score
-points represent one population standard deviation within that role.
+The team leaderboard anomaly is fixed with one cross-role formula:
+`0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`. This removes the
+invalid practice of sorting functional-role z-scores against one another.
+Kylian Mbappé is now first for France and Lionel Messi is first for Argentina.
 
 ## Standard event, metadata, and StatsBomb 360 distinctions
 
@@ -511,6 +530,8 @@ above the 35% combined final-third spatial threshold are classified as
 | Compiled report files | 64 |
 | Final tournament report | `results/reports/final/world_cup_team_performance_and_top_players.md` |
 | Pipeline manifest | `results/reports/pipeline_manifest.json` |
+| Model architecture audit | `results/reports/model_audit_trail.json` |
+| Model comparison | `results/reports/final_validation.csv` |
 | Full validation output | `results/MIscellaneous/eda_validation_report.json` |
 
 ## Known limitations
@@ -522,15 +543,11 @@ above the 35% combined final-third spatial threshold are classified as
   model.
 - ROC-AUC is moderate, but PR-AUC is low. For this rare-event problem, PR-AUC,
   calibration, and decision utility are more informative than accuracy.
-- Player scores are normalized within functional role and are not valid
-  cross-role measures of absolute quality.
-- The consolidated team leaderboard currently sorts role-relative scores
-  across different roles. This can produce misleading team-wide ordering, such
-  as Mbappé appearing fifth for France despite leading France in displayed Net
-  xG/90. That ordering is a report-layer limitation and should be corrected
-  before treating the list as an overall player rank.
-- Open-event value is a documented fallback rather than licensed StatsBomb
-  OBV.
+- VAEP and xT are predictive tournament-sample values, not causal estimates
+  or permanent measures of player quality.
+- The unified formula makes within-team cross-role ordering consistent, but
+  its fixed 50/30/20 policy weights remain a declared decision rule that
+  should be sensitivity-tested on future tournaments.
 - Counterfactual results are predictive scenarios, not causal estimates of
   what would have happened under another tactic or lineup.
 
@@ -539,5 +556,33 @@ above the 35% combined final-third spatial threshold are classified as
 The pipeline is valid for exploratory, probability-aware coaching support and
 video-review prioritization over the supplied tournament data. Its leakage
 controls, calibration split, artifact replay, spatial provenance, minute
-cutoff, and counterfactual suppression rules are defensible. It is not yet
-strong enough for autonomous rare-event alerts or cross-role player ranking.
+cutoff, and counterfactual suppression rules are defensible. The unified
+player ranking is suitable for coaching review prioritization, not autonomous
+selection or transfer decisions.
+
+## Latest generated VAEP/xT validation
+
+- Selected model: `XGBoost 360-VAEP`.
+- Calibration: `isotonic`.
+- VAEP holdout: Brier 0.001098, ROC-AUC 0.991243, PR-AUC 0.467538.
+- StatsBomb 360 join coverage: 87.1%.
+- Eligible players: 142 of 680; 538 excluded below 300 minutes.
+- Legacy transition OOF: Brier 0.001339, ROC-AUC 0.689341, PR-AUC 0.005958.
+- Reports: 64 compiled Markdown files and 142 player sections.
+
+### Unified tournament leaders
+
+| Rank | Player | Team | Minutes | VAEP/90 | VAEP/touch | xT/90 | Final rating |
+|---:|---|---|---:|---:|---:|---:|---:|
+| 1 | Kylian Mbappé Lottin | France | 654 | +1.8888 | +0.01357 | +0.1198 | +0.9724 |
+| 2 | Olivier Giroud | France | 433 | +1.8411 | +0.03315 | +0.0090 | +0.9323 |
+| 3 | Lionel Andrés Messi Cuccittini | Argentina | 734 | +1.6745 | +0.01003 | +0.1316 | +0.8666 |
+| 4 | Ismaïla Sarr | Senegal | 365 | +1.4128 | +0.01541 | +0.0856 | +0.7282 |
+| 5 | Richarlison de Andrade | Brazil | 328 | +1.3828 | +0.01940 | +0.0140 | +0.7000 |
+| 6 | Julián Álvarez | Argentina | 485 | +1.1755 | +0.01384 | +0.0408 | +0.6000 |
+| 7 | Robert Lewandowski | Poland | 390 | +1.0922 | +0.01121 | +0.0138 | +0.5522 |
+| 8 | Breel-Donald Embolo | Switzerland | 330 | +1.0347 | +0.01295 | +0.0046 | +0.5222 |
+| 9 | Ángel Fabián Di María Hernández | Argentina | 305 | +0.9235 | +0.00525 | +0.1913 | +0.5016 |
+| 10 | Harry Kane | England | 422 | +0.9747 | +0.01092 | +0.0402 | +0.4987 |
+
+The team ranking uses the same cross-role formula for every eligible player: `0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`.
