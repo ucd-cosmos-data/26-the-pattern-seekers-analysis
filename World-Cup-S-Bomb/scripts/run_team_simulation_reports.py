@@ -1220,9 +1220,6 @@ def run_pipeline(
             / "results/reports/final/world_cup_team_performance_and_top_players.md"
         )
         generate_report(project_root, final_report)
-        summary_path.unlink(missing_ok=True)
-        if summary_path.parent.exists() and not any(summary_path.parent.iterdir()):
-            summary_path.parent.rmdir()
     return manifest
 
 

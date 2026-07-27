@@ -508,7 +508,7 @@ def run_v4_validation(
         artifact_root / "Summary/v4_model_explanation_summary.md"
         if staging
         else project_root
-        / "results/reports/final/world_cup_team_performance_and_top_players.md"
+        / "results/Summary/v4_model_explanation_summary.md"
     )
     summary = summary_path.read_text(encoding="utf-8")
     compiled_files = sorted((report_root / "compiled").glob("*.md"))
@@ -670,9 +670,10 @@ def run_v4_validation(
         ),
         "heatmaps_complete": len(heatmaps) == len(profiles),
         "summary_complete": bool(
-            "## V4 validation and final metrics" in summary
+            "## V4 Model Explanations" in summary
             and "StatsBomb 360" in summary
             and "freeze-frame snapshots, not continuous" in summary
+            and "## Known limitations" in summary
         ),
         "counterfactual_safety": bool(
             substitution_safety
