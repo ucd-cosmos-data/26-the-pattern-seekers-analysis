@@ -24,6 +24,8 @@ if str(PROJECT_ROOT) not in sys.path:
 from src.report_generators import (  # noqa: E402
     TEAM_CODES,
     build_dynamic_team_summary,
+    load_prospective_validation,
+    prospective_validation_markdown,
 )
 
 
@@ -968,6 +970,11 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             ),
         ]
     )
+    prospective = load_prospective_validation(
+        project_root / "results/reports/prospective_model_validation.csv"
+    )
+    if prospective is not None:
+        lines.extend(["", prospective_validation_markdown(prospective)])
 
     destination = output_path if output_path.is_absolute() else project_root / output_path
     destination.parent.mkdir(parents=True, exist_ok=True)

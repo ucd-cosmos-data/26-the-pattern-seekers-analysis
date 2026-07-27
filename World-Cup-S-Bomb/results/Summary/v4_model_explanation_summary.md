@@ -602,3 +602,16 @@ All new architectures use identical match-level development folds. The final tes
 | 10 | Raphael Dias Belloli | Brazil | 330 | +0.4774 | +0.00346 | +0.1698 | +0.2420 |
 
 The base rating remains `0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`; the final hierarchy applies the V4 role-relative minutes reliability adjustment `minutes/(minutes+300)` to stabilize the 300-minute edge.
+
+<!-- PROSPECTIVE_VALIDATION_START -->
+## Prospective possession-model validation
+
+**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
+
+| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
+| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
+
+_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
+<!-- PROSPECTIVE_VALIDATION_END -->

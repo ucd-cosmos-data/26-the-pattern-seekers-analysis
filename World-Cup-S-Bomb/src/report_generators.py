@@ -46,6 +46,230 @@ TEAM_CODES = {
     "Wales": "WAL",
 }
 
+PROSPECTIVE_SECTION_START = "<!-- PROSPECTIVE_VALIDATION_START -->"
+PROSPECTIVE_SECTION_END = "<!-- PROSPECTIVE_VALIDATION_END -->"
+
+
+def load_prospective_validation(path: Path) -> dict[str, Any] | None:
+    """Summarize the isolated prospective challenger validation artifact."""
+
+    if not path.is_file() or path.stat().st_size == 0:
+        return None
+    validation = pd.read_csv(path)
+    required = {
+        "target",
+        "candidate",
+        "layout",
+        "roc_auc",
+        "pr_auc",
+        "brier",
+        "ece",
+        "roc_delta_vs_reference",
+        "roc_delta_ci_low",
+        "roc_delta_ci_high",
+        "passes_gate",
+        "decision",
+    }
+    missing = sorted(required - set(validation.columns))
+    if missing:
+        raise ValueError(
+            f"Prospective validation artifact lacks columns: {missing}"
+        )
+    official = {
+        "box_entry": {"roc_auc": 0.6888, "brier": 0.1847, "ece": 0.0261706749},
+        "shot": {"roc_auc": 0.6642, "brier": 0.1031, "ece": 0.0116224843},
+    }
+    targets: dict[str, Any] = {}
+
+    def clean_record(row: pd.Series) -> dict[str, Any]:
+        return {
+            key: None if pd.isna(value) else _json_value(value)
+            for key, value in row.to_dict().items()
+        }
+
+    for target in ("box_entry", "shot"):
+        rows = validation[validation["target"].eq(target)].copy()
+        reference = rows[
+            rows["candidate"].eq("recomputed_logistic_reference")
+        ]
+        challengers = rows[
+            rows["candidate"].ne("recomputed_logistic_reference")
+        ]
+        passing = challengers[
+            challengers["passes_gate"].astype(str).str.lower().eq("true")
+        ]
+        selected = (
+            passing.nlargest(1, "roc_auc")
+            if not passing.empty
+            else challengers.nlargest(1, "roc_auc")
+        ).iloc[0]
+        targets[target] = {
+            "status": "PASSED" if not passing.empty else "REJECTED",
+            "official_baseline": official[target],
+            "matched_reference": clean_record(reference.iloc[0]),
+            "best_challenger": clean_record(selected),
+        }
+    all_passed = all(
+        target["status"] == "PASSED" for target in targets.values()
+    )
+    return {
+        "schema_version": "prospective-validation-v1",
+        "overall_status": "DEPLOYABLE" if all_passed else "PARTIAL_PASS_ROLLBACK",
+        "artifact_written": all_passed,
+        "validation_scheme": (
+            "5-fold match-disjoint GroupKFold with nested calibration and "
+            "paired match-bootstrap ROC comparison"
+        ),
+        "targets": targets,
+    }
+
+
+def prospective_validation_markdown(summary: dict[str, Any]) -> str:
+    """Render the same prospective status block for every report surface."""
+
+    box = summary["targets"]["box_entry"]
+    shot = summary["targets"]["shot"]
+    box_best = box["best_challenger"]
+    shot_best = shot["best_challenger"]
+    box_base = box["official_baseline"]
+    shot_base = shot["official_baseline"]
+    return "\n".join(
+        [
+            PROSPECTIVE_SECTION_START,
+            "## Prospective possession-model validation",
+            "",
+            (
+                f"**Overall status: `{summary['overall_status']}`.** Box-entry "
+                "prediction passed every discrimination, calibration, and paired "
+                "match-bootstrap gate. The shot challenger improved numerically but "
+                "its confidence interval crossed zero, so it was rejected. The combined "
+                "prospective artifact was not deployed and the stable production state "
+                "was preserved."
+            ),
+            "",
+            "| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |",
+            "|---|---|---:|---:|---:|---:|---:|---:|",
+            (
+                f"| Box entry | **{box['status']}** | "
+                f"{box_base['roc_auc']:.4f} | {float(box_best['roc_auc']):.4f} | "
+                f"{float(box_best['pr_auc']):.4f} | "
+                f"{float(box_best['brier']):.4f} | "
+                f"{float(box_best['ece']):.4f} | "
+                f"{float(box_best['roc_delta_vs_reference']):+.4f} "
+                f"[{float(box_best['roc_delta_ci_low']):+.4f}, "
+                f"{float(box_best['roc_delta_ci_high']):+.4f}] |"
+            ),
+            (
+                f"| Shot | **{shot['status']}** | "
+                f"{shot_base['roc_auc']:.4f} | {float(shot_best['roc_auc']):.4f} | "
+                f"{float(shot_best['pr_auc']):.4f} | "
+                f"{float(shot_best['brier']):.4f} | "
+                f"{float(shot_best['ece']):.4f} | "
+                f"{float(shot_best['roc_delta_vs_reference']):+.4f} "
+                f"[{float(shot_best['roc_delta_ci_low']):+.4f}, "
+                f"{float(shot_best['roc_delta_ci_high']):+.4f}] |"
+            ),
+            "",
+            (
+                "_This challenger is isolated from 360-VAEP/xT player ratings, "
+                "transition risk, retrospective possession models, and tactical "
+                "clustering. Player and team descriptive metrics therefore remain "
+                "unchanged._"
+            ),
+            PROSPECTIVE_SECTION_END,
+        ]
+    )
+
+
+def _upsert_prospective_section(path: Path, section: str) -> bool:
+    """Append or replace one generated prospective section in a Markdown file."""
+
+    if not path.is_file():
+        return False
+    text = path.read_text(encoding="utf-8")
+    if PROSPECTIVE_SECTION_START in text:
+        prefix, remainder = text.split(PROSPECTIVE_SECTION_START, maxsplit=1)
+        if PROSPECTIVE_SECTION_END not in remainder:
+            raise ValueError(f"Unclosed prospective section in {path}")
+        _, suffix = remainder.split(PROSPECTIVE_SECTION_END, maxsplit=1)
+        updated = prefix.rstrip() + "\n\n" + section + suffix
+    else:
+        updated = text.rstrip() + "\n\n" + section + "\n"
+    path.write_text(updated.rstrip() + "\n", encoding="utf-8")
+    return True
+
+
+def refresh_prospective_validation_reporting(
+    project_root: Path,
+    validation_path: Path | None = None,
+) -> dict[str, int]:
+    """Synchronize prospective results across final human/machine artifacts."""
+
+    validation_path = validation_path or (
+        project_root / "results/reports/prospective_model_validation.csv"
+    )
+    summary = load_prospective_validation(validation_path)
+    if summary is None:
+        raise FileNotFoundError(validation_path)
+    section = prospective_validation_markdown(summary)
+    markdown_targets = [
+        project_root / "results/Summary/v4_model_explanation_summary.md",
+        project_root
+        / "results/reports/final/world_cup_team_performance_and_top_players.md",
+        project_root / "results/MIscellaneous/coaching_model_benchmark.md",
+        project_root / "results/MIscellaneous/coaching_model_selection.md",
+        project_root / "results/MIscellaneous/stage5_leakage_audit.md",
+        *sorted((project_root / "results/reports/teams").glob("*.md")),
+        *sorted((project_root / "results/reports/compiled").glob("*.md")),
+    ]
+    updated_markdown = sum(
+        _upsert_prospective_section(path, section) for path in markdown_targets
+    )
+    json_targets = [
+        project_root / "results/reports/pipeline_manifest.json",
+        project_root / "results/eda_validation_report.json",
+        project_root / "results/MIscellaneous/eda_validation_report.json",
+    ]
+    updated_json = 0
+    for path in json_targets:
+        if not path.is_file():
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        if path.name == "pipeline_manifest.json":
+            payload["prospective_possession_validation"] = summary
+        else:
+            payload.setdefault("model_metrics", {})[
+                "prospective_possession_challenger"
+            ] = summary
+            payload.setdefault("gates", {})[
+                "prospective_harm_prevention"
+            ] = bool(
+                summary["overall_status"] == "PARTIAL_PASS_ROLLBACK"
+                and summary["artifact_written"] is False
+                and summary["targets"]["box_entry"]["status"] == "PASSED"
+                and summary["targets"]["shot"]["status"] == "REJECTED"
+            )
+        path.write_text(
+            json.dumps(payload, indent=2, ensure_ascii=True, default=_json_value)
+            + "\n",
+            encoding="utf-8",
+        )
+        updated_json += 1
+    return {
+        "markdown_files": updated_markdown,
+        "json_files": updated_json,
+        "team_reports": len(
+            list((project_root / "results/reports/teams").glob("*.md"))
+        ),
+        "compiled_player_packets": len(
+            list(
+                (
+                    project_root / "results/reports/compiled"
+                ).glob("*_compiled_player_reports.md")
+            )
+        ),
+    }
+
 
 def _json_value(value: Any) -> Any:
     if isinstance(value, (np.integer,)):

@@ -30,6 +30,7 @@ from src.report_generators import (  # noqa: E402
     generate_full_team_coaching_reports,
     generate_individual_starter_reports,
     generate_player_heatmap_svgs,
+    refresh_prospective_validation_reporting,
 )
 from src.simulation_engine import (  # noqa: E402
     EmpiricalHurdleModel,
@@ -1368,6 +1369,14 @@ def run_pipeline(
             / "results/reports/final/world_cup_team_performance_and_top_players.md"
         )
         generate_report(project_root, final_report)
+        prospective_validation = (
+            project_root
+            / "results/reports/prospective_model_validation.csv"
+        )
+        if prospective_validation.is_file():
+            refresh_prospective_validation_reporting(
+                project_root, prospective_validation
+            )
     return manifest
 
 

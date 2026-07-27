@@ -771,5 +771,101 @@
         ]
       }
     ]
+  },
+  "prospective_possession_validation": {
+    "schema_version": "prospective-validation-v1",
+    "overall_status": "PARTIAL_PASS_ROLLBACK",
+    "artifact_written": false,
+    "validation_scheme": "5-fold match-disjoint GroupKFold with nested calibration and paired match-bootstrap ROC comparison",
+    "targets": {
+      "box_entry": {
+        "status": "PASSED",
+        "official_baseline": {
+          "roc_auc": 0.6888,
+          "brier": 0.1847,
+          "ece": 0.0261706749
+        },
+        "matched_reference": {
+          "target": "box_entry",
+          "candidate": "recomputed_logistic_reference",
+          "layout": "stable_start_context",
+          "depth": null,
+          "calibration": "sigmoid",
+          "log_loss": 0.5356352092157832,
+          "brier": 0.1767050209481445,
+          "roc_auc": 0.7112844288731424,
+          "pr_auc": 0.5935358504868073,
+          "ece": 0.0376716370588288,
+          "roc_delta_vs_reference": 0.0,
+          "roc_delta_ci_low": 0.0,
+          "roc_delta_ci_high": 0.0,
+          "passes_gate": false,
+          "decision": "REFERENCE_ONLY",
+          "latency_sec": null
+        },
+        "best_challenger": {
+          "target": "box_entry",
+          "candidate": "CatBoost_depth_4_sigmoid",
+          "layout": "full_pre_possession",
+          "depth": 4.0,
+          "calibration": "sigmoid",
+          "log_loss": 0.5238435165069272,
+          "brier": 0.1722151439715535,
+          "roc_auc": 0.7267613647278355,
+          "pr_auc": 0.6130728781767449,
+          "ece": 0.030852084359785,
+          "roc_delta_vs_reference": 0.0154769358546931,
+          "roc_delta_ci_low": 0.010595605996758,
+          "roc_delta_ci_high": 0.0205143948308022,
+          "passes_gate": true,
+          "decision": "ACCEPTED",
+          "latency_sec": 12.734654100146145
+        }
+      },
+      "shot": {
+        "status": "REJECTED",
+        "official_baseline": {
+          "roc_auc": 0.6642,
+          "brier": 0.1031,
+          "ece": 0.0116224843
+        },
+        "matched_reference": {
+          "target": "shot",
+          "candidate": "recomputed_logistic_reference",
+          "layout": "stable_start_context",
+          "depth": null,
+          "calibration": "sigmoid",
+          "log_loss": 0.3364686211180248,
+          "brier": 0.096981068366143,
+          "roc_auc": 0.6803402247041186,
+          "pr_auc": 0.2374200735411597,
+          "ece": 0.0113744193341681,
+          "roc_delta_vs_reference": 0.0,
+          "roc_delta_ci_low": 0.0,
+          "roc_delta_ci_high": 0.0,
+          "passes_gate": false,
+          "decision": "REFERENCE_ONLY",
+          "latency_sec": null
+        },
+        "best_challenger": {
+          "target": "shot",
+          "candidate": "CatBoost_depth_3_sigmoid",
+          "layout": "full_pre_possession",
+          "depth": 3.0,
+          "calibration": "sigmoid",
+          "log_loss": 0.3338363895475074,
+          "brier": 0.0959890989689569,
+          "roc_auc": 0.6841179348838223,
+          "pr_auc": 0.2685909537414403,
+          "ece": 0.0118180403586993,
+          "roc_delta_vs_reference": 0.0037777101797037,
+          "roc_delta_ci_low": -0.0029512365404924,
+          "roc_delta_ci_high": 0.011992910717733,
+          "passes_gate": false,
+          "decision": "REJECTED: significant paired delta",
+          "latency_sec": 10.71873229998164
+        }
+      }
+    }
   }
 }

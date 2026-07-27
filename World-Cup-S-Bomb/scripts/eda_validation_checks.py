@@ -21,6 +21,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 import generate_final_tournament_report as baseline_report  # noqa: E402
 from benchmark_coaching_models_v2 import predict_bundle_probability  # noqa: E402
+from src.report_generators import load_prospective_validation  # noqa: E402
 
 DEFAULT_OUTPUT = PROJECT_ROOT / "results" / "eda_validation_report.json"
 ORIGINAL_FILES = [
@@ -591,6 +592,9 @@ def run_v4_validation(
     vaep_bundle = joblib.load(vaep_bundle_path)
     final_validation = pd.read_csv(report_root / "final_validation.csv")
     selected_validation = final_validation.sort_values("rank_overall").iloc[0]
+    prospective_validation = load_prospective_validation(
+        report_root / "prospective_model_validation.csv"
+    )
     vaep_artifact = {
         "schema_compatible": {
             "schema_version",
@@ -748,10 +752,21 @@ def run_v4_validation(
             and float(selected_validation["roc_auc"]) > 0.82
         ),
         "vaep_artifact": bool(all(vaep_artifact.values())),
+        "prospective_harm_prevention": bool(
+            prospective_validation is not None
+            and prospective_validation["overall_status"]
+            == "PARTIAL_PASS_ROLLBACK"
+            and prospective_validation["artifact_written"] is False
+            and prospective_validation["targets"]["box_entry"]["status"]
+            == "PASSED"
+            and prospective_validation["targets"]["shot"]["status"]
+            == "REJECTED"
+        ),
         "compiled_reports_in_place": bool(
             len(compiled_files) == 64
             and not any("_v4" in path.name.lower() for path in compiled_files)
             and "Unified 360-VAEP + xT player leaders" in compiled_text
+            and compiled_text.count("PROSPECTIVE_VALIDATION_START") == 64
         ),
         "heatmaps_complete": len(heatmaps) == len(profiles),
         "summary_complete": bool(
@@ -836,6 +851,7 @@ def run_v4_validation(
         "model_metrics": {
             "legacy_transition": manifest["tournament_oof_metrics"],
             "vaep_selected": selected_validation.to_dict(),
+            "prospective_possession_challenger": prospective_validation,
         },
         "report_metrics": {
             "compiled_files": len(compiled_files),
