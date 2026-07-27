@@ -47,6 +47,7 @@ venv/
 !**/results/figures/ca-living-wage-map.html
 !**/results/figures/correlation_heatmap.svg
 !**/results/figures/*.png
+!**/results/figures/*.pptx
 
 # World Cup project
 **/World-Cup-S-Bomb/results/reports/starters/
