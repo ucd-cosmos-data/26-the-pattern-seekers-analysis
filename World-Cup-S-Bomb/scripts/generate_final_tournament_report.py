@@ -26,8 +26,10 @@ from src.report_generators import (  # noqa: E402
     build_dynamic_team_summary,
     load_player_role_validation,
     load_prospective_validation,
+    load_role_aware_validation,
     player_role_validation_markdown,
     prospective_validation_markdown,
+    role_aware_validation_markdown,
 )
 
 
@@ -983,6 +985,12 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
     )
     if player_role is not None:
         lines.extend(["", player_role_validation_markdown(player_role)])
+    role_aware = load_role_aware_validation(
+        project_root
+        / "results/reports/role_aware_valuation_validation.json"
+    )
+    if role_aware is not None:
+        lines.extend(["", role_aware_validation_markdown(role_aware)])
 
     destination = output_path if output_path.is_absolute() else project_root / output_path
     destination.parent.mkdir(parents=True, exist_ok=True)

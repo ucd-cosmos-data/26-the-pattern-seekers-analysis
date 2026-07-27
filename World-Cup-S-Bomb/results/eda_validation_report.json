@@ -25,7 +25,8 @@
     "summary_complete": true,
     "counterfactual_safety": true,
     "locked_classifier_preserved": true,
-    "prospective_harm_prevention": true
+    "prospective_harm_prevention": true,
+    "role_aware_challenger_rollback": true
   },
   "player_metrics": {
     "players_before_cutoff": 680,
@@ -526,5 +527,217 @@
       "learned_valuation": "REJECTED",
       "incumbent_rankings_retained": true
     }
+  },
+  "role_aware_valuation_challenger": {
+    "schema_version": "role-aware-valuation-v1",
+    "decision": "REJECTED_RETAIN_INCUMBENT",
+    "production_promoted": false,
+    "rating_weights": {
+      "vaep_90": 0.4,
+      "vaep_per_touch": 0.15,
+      "xt_90": 0.15,
+      "role_adjusted_value": 0.15,
+      "completeness_score": 0.1,
+      "off_ball_score": 0.05
+    },
+    "spearman_rank_correlation": 0.9854188364826664,
+    "gates": {
+      "foundational_artifacts_unchanged": true,
+      "foundational_metrics_unchanged": true,
+      "eligible_players_unchanged": true,
+      "legacy_schema_preserved": true,
+      "finite_new_ratings": true,
+      "spearman_between_0_75_and_0_90": false,
+      "messi_global_top_two": true,
+      "mbappe_global_top_two": true,
+      "messi_team_first": true,
+      "mbappe_team_first": true,
+      "griezmann_improves": true,
+      "griezmann_hybrid_vector": true,
+      "defensive_midfield_not_systematically_harmed": true
+    },
+    "incumbent_hashes": {
+      "player_evaluations": "320e8926481c0ebbc51afb0ce62746c3f9beb1eca4d00e99de8e83f2d07d1f15",
+      "vaep_model": "238b896bda106d4500c227d51c3b77f98f49d3f84c58b2dda9cce4b484f907dd",
+      "provenance": "d7db3ee84bf3aa53575f48052028df24352e04946dedcf8f8d6a5aea0025067a"
+    },
+    "incumbent_vaep_oof_metrics": {
+      "brier_score": 0.0011229884375387423,
+      "roc_auc": 0.9489939112180352,
+      "pr_auc": 0.08482679311270283,
+      "calibration_error": 0.0003364911402715651
+    },
+    "incumbent_vaep_test_metrics": {
+      "brier_score": 0.0014939932570411018,
+      "roc_auc": 0.9672434467867409,
+      "pr_auc": 0.14985714923238974,
+      "calibration_error": 0.0006291630592211712
+    },
+    "benchmarks": {
+      "messi": {
+        "old_global_rank": 1,
+        "new_global_rank": 1,
+        "new_team_rank": 1
+      },
+      "mbappe": {
+        "old_global_rank": 2,
+        "new_global_rank": 2,
+        "new_team_rank": 1
+      },
+      "griezmann": {
+        "old_global_rank": 21,
+        "new_global_rank": 6,
+        "rating_diff": 0.6017022759997701,
+        "creation_score": 0.7987089201877935,
+        "pressing_score": 0.7112676056338029,
+        "completeness_score": 0.8620275481176624
+      }
+    },
+    "largest_positive_shifts": [
+      {
+        "player": "Antoine Griezmann",
+        "team": "France",
+        "rating_diff": 0.6017022759997701,
+        "old_global_rank": 21,
+        "new_global_rank": 6
+      },
+      {
+        "player": "Sofiane Boufal",
+        "team": "Morocco",
+        "rating_diff": 0.5892273470870982,
+        "old_global_rank": 35,
+        "new_global_rank": 25
+      },
+      {
+        "player": "Cody Math\u00e8s Gakpo",
+        "team": "Netherlands",
+        "rating_diff": 0.5880452402088159,
+        "old_global_rank": 24,
+        "new_global_rank": 11
+      },
+      {
+        "player": "Bruno Miguel Borges Fernandes",
+        "team": "Portugal",
+        "rating_diff": 0.5862427518028988,
+        "old_global_rank": 27,
+        "new_global_rank": 18
+      },
+      {
+        "player": "Mateo Kova\u010di\u0107",
+        "team": "Croatia",
+        "rating_diff": 0.585709537841621,
+        "old_global_rank": 34,
+        "new_global_rank": 26
+      },
+      {
+        "player": "Ousmane Demb\u00e9l\u00e9",
+        "team": "France",
+        "rating_diff": 0.5843979750755476,
+        "old_global_rank": 20,
+        "new_global_rank": 9
+      },
+      {
+        "player": "Luka Modri\u0107",
+        "team": "Croatia",
+        "rating_diff": 0.5777791486517487,
+        "old_global_rank": 51,
+        "new_global_rank": 39
+      },
+      {
+        "player": "Isma\u00efla Sarr",
+        "team": "Senegal",
+        "rating_diff": 0.5765836853673347,
+        "old_global_rank": 14,
+        "new_global_rank": 7
+      },
+      {
+        "player": "Ivan Peri\u0161i\u0107",
+        "team": "Croatia",
+        "rating_diff": 0.5718784066441371,
+        "old_global_rank": 17,
+        "new_global_rank": 10
+      },
+      {
+        "player": "Theo Bernard Fran\u00e7ois Hern\u00e1ndez",
+        "team": "France",
+        "rating_diff": 0.5708428032496251,
+        "old_global_rank": 52,
+        "new_global_rank": 44
+      }
+    ],
+    "largest_negative_shifts": [
+      {
+        "player": "Seung-Gyu Kim",
+        "team": "South Korea",
+        "rating_diff": 0.23462178109029497,
+        "old_global_rank": 139,
+        "new_global_rank": 140
+      },
+      {
+        "player": "Mathew Ryan",
+        "team": "Australia",
+        "rating_diff": 0.23389132853406253,
+        "old_global_rank": 136,
+        "new_global_rank": 134
+      },
+      {
+        "player": "Dominik Livakovi\u0107",
+        "team": "Croatia",
+        "rating_diff": 0.23387259673772567,
+        "old_global_rank": 142,
+        "new_global_rank": 142
+      },
+      {
+        "player": "Wojciech Szcz\u0119sny",
+        "team": "Poland",
+        "rating_diff": 0.2338544960200547,
+        "old_global_rank": 141,
+        "new_global_rank": 141
+      },
+      {
+        "player": "Jordan Pickford",
+        "team": "England",
+        "rating_diff": 0.23300357591017307,
+        "old_global_rank": 132,
+        "new_global_rank": 132
+      },
+      {
+        "player": "Lawrence Ati-Zigi",
+        "team": "Ghana",
+        "rating_diff": 0.23291466948245962,
+        "old_global_rank": 133,
+        "new_global_rank": 133
+      },
+      {
+        "player": "Diogo Meireles Costa",
+        "team": "Portugal",
+        "rating_diff": 0.23174098706795748,
+        "old_global_rank": 129,
+        "new_global_rank": 131
+      },
+      {
+        "player": "Matthew Charles Turner",
+        "team": "United States",
+        "rating_diff": 0.22799350186659834,
+        "old_global_rank": 134,
+        "new_global_rank": 135
+      },
+      {
+        "player": "Unai Sim\u00f3n Mendibil",
+        "team": "Spain",
+        "rating_diff": 0.2241314321825173,
+        "old_global_rank": 135,
+        "new_global_rank": 137
+      },
+      {
+        "player": "Alisson Rams\u00e9s Becker",
+        "team": "Brazil",
+        "rating_diff": 0.21674350042521592,
+        "old_global_rank": 130,
+        "new_global_rank": 138
+      }
+    ],
+    "comparison_csv": "results\\reports\\role_aware_rating_comparison.csv",
+    "rollback_reason": "At least one mandatory ranking, benchmark, integrity, or metric-preservation gate failed."
   }
 }

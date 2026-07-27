@@ -12,6 +12,10 @@ from src.probabilistic_player_roles import (
     PlayerRoleFeatureTransformer,
     build_spatial_features,
 )
+from src.simulation_engine import (
+    calculate_completeness_score,
+    calculate_final_player_rating,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -75,3 +79,35 @@ def test_rejected_challengers_do_not_replace_incumbent_rankings() -> None:
     ].iloc[0]
     assert int(mbappe["team_rank"]) == 1
     assert int(messi["team_rank"]) == 1
+
+
+def test_completeness_handles_zero_and_single_dimension_players() -> None:
+    vectors = pd.DataFrame(
+        {
+            "progression_score": [0.0, 1.0, 0.5],
+            "creation_score": [0.0, 0.0, 0.5],
+            "finishing_score": [0.0, 0.0, 0.5],
+            "pressing_score": [0.0, 0.0, 0.5],
+            "defensive_score": [0.0, 0.0, 0.5],
+            "ball_security_score": [0.0, 0.0, 0.5],
+        }
+    )
+    score = calculate_completeness_score(vectors)
+    assert score.iloc[0] == 0.0
+    assert score.iloc[1] == 0.0
+    assert np.isclose(score.iloc[2], 1.0)
+
+
+def test_rating_rejects_invalid_weights() -> None:
+    with np.testing.assert_raises(ValueError):
+        calculate_final_player_rating(
+            pd.DataFrame(),
+            weights={
+                "vaep_90": 1.0,
+                "vaep_per_touch": 1.0,
+                "xt_90": 1.0,
+                "role_adjusted_value": 1.0,
+                "completeness_score": 1.0,
+                "off_ball_score": 1.0,
+            },
+        )

@@ -10,6 +10,7 @@ from dataclasses import dataclass, field
 from typing import Iterable, Sequence
 
 import numpy as np
+import networkx as nx
 import pandas as pd
 from catboost import CatBoostClassifier
 from scipy.optimize import linear_sum_assignment
@@ -37,6 +38,14 @@ MIN_SUBSTITUTION_NET_XG_GAIN = 0.0050
 V4_MIN_PLAYER_MINUTES = 300.0
 V4_FINAL_THIRD_X = 80.0
 V4_ATTACKING_WINGBACK_SHARE = 0.35
+ROLE_AWARE_RATING_WEIGHTS = {
+    "vaep_90": 0.40,
+    "vaep_per_touch": 0.15,
+    "xt_90": 0.15,
+    "role_adjusted_value": 0.15,
+    "completeness_score": 0.10,
+    "off_ball_score": 0.05,
+}
 XT_GRID_COLUMNS = 16
 XT_GRID_ROWS = 12
 VAEP_ACTION_WINDOW = 3
@@ -345,6 +354,336 @@ def cluster_player_playstyles(
     enriched["playstyle_cluster"] = enriched["playstyle_cluster"].astype(int)
     enriched.attrs["spatial_features"] = spatial_features
     return enriched
+
+
+def _cohort_percentile(series: pd.Series, *, higher_is_better: bool = True) -> pd.Series:
+    """Return bounded cohort-relative values while preserving tied observations."""
+
+    numeric = pd.to_numeric(series, errors="coerce")
+    median = numeric.median()
+    numeric = numeric.fillna(0.0 if pd.isna(median) else median)
+    lower, upper = numeric.quantile([0.01, 0.99])
+    clipped = numeric.clip(lower=lower, upper=upper)
+    return clipped.rank(
+        pct=True, method="average", ascending=higher_is_better
+    ).clip(0.0, 1.0)
+
+
+def derive_passing_network_metrics(events_df: pd.DataFrame) -> pd.DataFrame:
+    """Aggregate passing-network topology and build-up involvement by player."""
+
+    required = {
+        "match_id", "team", "type", "player_id", "pass_recipient_id",
+        "pass_outcome", "possession", "location", "pass_end_location",
+    }
+    missing = required.difference(events_df.columns)
+    if missing:
+        raise ValueError(f"Passing-network inputs missing: {sorted(missing)}")
+    passes = events_df.loc[
+        events_df["type"].eq("Pass")
+        & events_df["pass_outcome"].isna()
+        & events_df["player_id"].notna()
+        & events_df["pass_recipient_id"].notna()
+    ].copy()
+    passes["player_id"] = passes["player_id"].astype(int)
+    passes["pass_recipient_id"] = passes["pass_recipient_id"].astype(int)
+    records: list[dict[str, float | int]] = []
+    for (_, _), group in passes.groupby(["match_id", "team"], sort=False):
+        graph = nx.DiGraph()
+        for (source, target), count in group.groupby(
+            ["player_id", "pass_recipient_id"]
+        ).size().items():
+            graph.add_edge(
+                int(source), int(target), weight=float(count),
+                distance=1.0 / float(count),
+            )
+        if not graph:
+            continue
+        pagerank = nx.pagerank(graph, weight="weight")
+        betweenness = nx.betweenness_centrality(
+            graph, weight="distance", normalized=True
+        )
+        closeness = nx.closeness_centrality(graph, distance="distance")
+        try:
+            eigenvector = nx.eigenvector_centrality(
+                graph, weight="weight", max_iter=1000
+            )
+        except nx.PowerIterationFailedConvergence:
+            eigenvector = {node: 0.0 for node in graph}
+        for player in graph:
+            weights = np.asarray(
+                [edge["weight"] for edge in graph[player].values()], dtype=float
+            )
+            probabilities = weights / max(weights.sum(), 1.0)
+            entropy = float(
+                -(probabilities * np.log(np.clip(probabilities, 1e-12, 1))).sum()
+            )
+            normalized_entropy = entropy / max(np.log(max(len(weights), 2)), 1e-12)
+            records.append(
+                {
+                    "player_id": int(player),
+                    "network_pagerank": float(pagerank.get(player, 0.0)),
+                    "network_betweenness": float(betweenness.get(player, 0.0)),
+                    "network_eigenvector": float(eigenvector.get(player, 0.0)),
+                    "network_closeness": float(closeness.get(player, 0.0)),
+                    "network_entropy": normalized_entropy,
+                }
+            )
+    network = pd.DataFrame(records)
+    if network.empty:
+        return pd.DataFrame(columns=["player_id"])
+    network = network.groupby("player_id", as_index=False).mean(numeric_only=True)
+
+    ordered = events_df.sort_values(["match_id", "index"]).copy()
+    locations = ordered["location"].map(_coordinate)
+    pass_ends = ordered["pass_end_location"].map(_coordinate)
+    ordered["_event_x"] = locations.map(
+        lambda value: np.nan if value is None else value[0]
+    )
+    ordered["_pass_end_x"] = pass_ends.map(
+        lambda value: np.nan if value is None else value[0]
+    )
+    ordered["_furthest_x"] = ordered[["_event_x", "_pass_end_x"]].max(axis=1)
+    build_records: list[dict[str, float | int]] = []
+    for (_, team, _), chain in ordered.groupby(
+        ["match_id", "team", "possession"], sort=False
+    ):
+        entry = np.flatnonzero(chain["_furthest_x"].to_numpy() >= 80.0)
+        if not len(entry):
+            continue
+        contributors = chain.iloc[: entry[0] + 1]["player_id"].dropna().astype(int).unique()
+        for player in contributors:
+            build_records.append({"player_id": int(player), "build_up_chain": 1.0})
+    build = pd.DataFrame(build_records)
+    if not build.empty:
+        totals = (
+            ordered.groupby("player_id", as_index=False)["possession"]
+            .nunique()
+            .rename(columns={"possession": "observed_possession_chains"})
+        )
+        involvement = (
+            build.groupby("player_id", as_index=False)["build_up_chain"].sum()
+            .merge(totals, on="player_id", how="left")
+        )
+        involvement["build_up_involvement_ratio"] = (
+            involvement["build_up_chain"]
+            / involvement["observed_possession_chains"].clip(lower=1)
+        )
+        network = network.merge(
+            involvement[["player_id", "build_up_involvement_ratio"]],
+            on="player_id", how="left",
+        )
+    return network.fillna(0.0)
+
+
+def derive_role_vector(profiles_df: pd.DataFrame) -> pd.DataFrame:
+    """Create seven continuous tactical dimensions for eligible players."""
+
+    profiles = profiles_df.copy()
+    minutes = profiles["minutes"].clip(lower=1.0)
+    derived = pd.DataFrame(index=profiles.index)
+    derived["counterpressures_p90"] = 90 * profiles["counterpressures"] / minutes
+    derived["recoveries_p90"] = 90 * profiles["recoveries"] / minutes
+    derived["blocks_p90"] = 90 * profiles["blocks"] / minutes
+    derived["aerial_wins_p90"] = 90 * profiles["aerial_wins"] / minutes
+    derived["goals_p90"] = 90 * profiles["goals"] / minutes
+    derived["press_resistance"] = _safe_rate(
+        profiles["successful_under_pressure_actions"],
+        profiles["under_pressure_actions"],
+    )
+
+    def mean_percentiles(columns: list[tuple[pd.Series, bool]]) -> pd.Series:
+        return pd.concat(
+            [
+                _cohort_percentile(series, higher_is_better=higher)
+                for series, higher in columns
+            ],
+            axis=1,
+        ).mean(axis=1)
+
+    vectors = pd.DataFrame({"player_id": profiles["player_id"].astype(int)})
+    vectors["progression_score"] = mean_percentiles(
+        [
+            (profiles["progressive_carries_p90"], True),
+            (profiles["progressive_passes_p90"], True),
+            (profiles["line_breaking_pass_rate"], True),
+            (profiles["xt_p90"], True),
+            (90 * profiles["carry_progression_sum"] / minutes, True),
+            (90 * profiles["pass_progression_sum"] / minutes, True),
+            (profiles.get("build_up_involvement_ratio", pd.Series(0, index=profiles.index)), True),
+        ]
+    )
+    vectors["creation_score"] = mean_percentiles(
+        [
+            (profiles["key_passes_p90"], True),
+            (profiles["xa_p90"], True),
+            (profiles["xt_p90"], True),
+            (profiles["line_breaking_pass_rate"], True),
+            (90 * profiles["box_passes"] / minutes, True),
+            (profiles.get("network_betweenness", pd.Series(0, index=profiles.index)), True),
+        ]
+    )
+    vectors["finishing_score"] = mean_percentiles(
+        [
+            (profiles["shots_p90"], True),
+            (profiles["xg_p90"], True),
+            (derived["goals_p90"], True),
+        ]
+    )
+    vectors["pressing_score"] = mean_percentiles(
+        [
+            (profiles["pressing_intensity_index"], True),
+            (derived["counterpressures_p90"], True),
+            (derived["recoveries_p90"], True),
+            (profiles["pressure_state_rate"], True),
+        ]
+    )
+    vectors["defensive_score"] = mean_percentiles(
+        [
+            (profiles["interceptions_p90"], True),
+            (derived["blocks_p90"], True),
+            (profiles["clearances_p90"], True),
+            (profiles["vaep_def_p90"], True),
+            (profiles["duel_win_rate"], True),
+        ]
+    )
+    vectors["ball_security_score"] = mean_percentiles(
+        [
+            (profiles["pass_completion"], True),
+            (profiles["distribution_under_pressure"], True),
+            (derived["press_resistance"], True),
+            (profiles["turnovers_p90"], False),
+            (profiles.get("network_entropy", pd.Series(0, index=profiles.index)), True),
+        ]
+    )
+    vectors["aerial_score"] = mean_percentiles(
+        [
+            (profiles["aerial_dominance_index"], True),
+            (derived["aerial_wins_p90"], True),
+        ]
+    )
+    return vectors
+
+
+def calculate_completeness_score(role_vectors: pd.DataFrame) -> pd.Series:
+    """Measure balanced contribution across six non-aerial dimensions."""
+
+    columns = [
+        "progression_score", "creation_score", "finishing_score",
+        "pressing_score", "defensive_score", "ball_security_score",
+    ]
+    values = role_vectors[columns].fillna(0.0).to_numpy(dtype=float)
+    active = values > 0
+    counts = active.sum(axis=1)
+    means = np.divide(
+        values.sum(axis=1), counts,
+        out=np.zeros(len(values), dtype=float), where=counts > 0,
+    )
+    centered = np.where(active, values - means[:, None], 0.0)
+    variance = np.divide(
+        np.square(centered).sum(axis=1), counts,
+        out=np.zeros(len(values), dtype=float), where=counts > 0,
+    )
+    variation = np.sqrt(variance) / (means + 1e-9)
+    return pd.Series(
+        np.where(counts <= 1, 0.0, 1.0 - np.minimum(1.0, variation)),
+        index=role_vectors.index,
+        name="completeness_score",
+    ).clip(0.0, 1.0)
+
+
+def calculate_off_ball_score(profiles_df: pd.DataFrame) -> pd.Series:
+    """Combine visible attacking occupation and defensive off-ball activity."""
+
+    profiles = profiles_df
+    minutes = profiles["minutes"].clip(lower=1.0)
+    candidates = [
+        (profiles["final_third_share"], True),
+        (profiles["pass_receipt_x"], True),
+        (profiles["average_spatial_x"], True),
+        (profiles["pressing_intensity_index"], True),
+        (90 * profiles["counterpressures"] / minutes, True),
+        (profiles.get("mean_nearest_defender_distance", pd.Series(np.nan, index=profiles.index)), True),
+        (profiles.get("build_up_involvement_ratio", pd.Series(0, index=profiles.index)), True),
+    ]
+    score = pd.concat(
+        [_cohort_percentile(series, higher_is_better=higher) for series, higher in candidates],
+        axis=1,
+    ).mean(axis=1)
+    coverage = profiles.get(
+        "role_has_360_rate",
+        pd.Series(0.0, index=profiles.index),
+    ).clip(0.0, 1.0)
+    # Missing SB360 reduces reliance on spatial geometry without treating
+    # missing coordinates as a neutral on-pitch location.
+    return (score * (0.85 + 0.15 * coverage)).clip(0.0, 1.0).rename("off_ball_score")
+
+
+def calculate_role_adjusted_value(role_vectors: pd.DataFrame) -> pd.Series:
+    """Continuously weight contributions by tactical profile, never role name."""
+
+    columns = [
+        "progression_score", "creation_score", "finishing_score",
+        "pressing_score", "defensive_score", "ball_security_score",
+        "aerial_score",
+    ]
+    values = role_vectors[columns].fillna(0.0).to_numpy(dtype=float)
+    weights = 0.25 + values
+    weights /= weights.sum(axis=1, keepdims=True)
+    return pd.Series(
+        np.sum(weights * values, axis=1),
+        index=role_vectors.index,
+        name="role_adjusted_value",
+    ).clip(0.0, 1.0)
+
+
+def calculate_final_player_rating(
+    profiles_df: pd.DataFrame,
+    *,
+    weights: dict[str, float] | None = None,
+) -> pd.DataFrame:
+    """Apply configured role-aware valuation and broad-position shrinkage."""
+
+    weights = weights or ROLE_AWARE_RATING_WEIGHTS
+    if set(weights) != set(ROLE_AWARE_RATING_WEIGHTS):
+        raise ValueError("Role-aware rating weights have an invalid schema")
+    if any(not np.isfinite(value) or value < 0 for value in weights.values()):
+        raise ValueError("Role-aware rating weights must be finite and nonnegative")
+    if not np.isclose(sum(weights.values()), 1.0):
+        raise ValueError("Role-aware rating weights must sum to one")
+    output = profiles_df.copy()
+    components = pd.DataFrame(
+        {
+            "vaep_90": _cohort_percentile(output["vaep_total_p90"]),
+            "vaep_per_touch": _cohort_percentile(output["vaep_per_touch"]),
+            "xt_90": _cohort_percentile(output["xt_p90"]),
+            "role_adjusted_value": output["role_adjusted_value"],
+            "completeness_score": output["completeness_score"],
+            "off_ball_score": output["off_ball_score"],
+        },
+        index=output.index,
+    )
+    output["legacy_raw_final_player_rating"] = output["raw_final_player_rating"]
+    output["legacy_final_player_rating"] = output["final_player_rating"]
+    output["legacy_team_rank"] = output["team_rank"]
+    output["raw_final_player_rating"] = sum(
+        weights[column] * components[column] for column in weights
+    )
+    minutes = output["minutes"].clip(lower=1.0)
+    output["rating_minutes_reliability"] = minutes / (minutes + 300.0)
+    position_prior = output.groupby("position_group")[
+        "raw_final_player_rating"
+    ].transform("mean")
+    output["final_player_rating"] = (
+        output["rating_minutes_reliability"] * output["raw_final_player_rating"]
+        + (1.0 - output["rating_minutes_reliability"]) * position_prior
+    )
+    output["team_rank"] = (
+        output.groupby("team")["final_player_rating"]
+        .rank(method="min", ascending=False).astype(int)
+    )
+    output["player_evaluation_score"] = output["final_player_rating"]
+    return output
 
 
 def _truthy(series: pd.Series) -> pd.Series:
@@ -1282,6 +1621,18 @@ def build_v4_player_evaluations(
         how="left",
         validate="many_to_one",
     )
+    actions["role_has_360"] = actions[
+        "nearest_defender_distance"
+    ].notna().astype(float)
+    for column in spatial_columns[2:]:
+        actions[f"role_{column}"] = pd.to_numeric(
+            actions[column], errors="coerce"
+        )
+    actions["role_defenders_within_3"] = np.where(
+        actions["role_has_360"].eq(1),
+        actions["role_nearest_defender_distance"].le(3.0).astype(float),
+        np.nan,
+    )
     joined_360 = int(actions["nearest_defender_distance"].notna().sum())
     merge_warning = None
     if joined_360 == 0:
@@ -1381,6 +1732,16 @@ def build_v4_player_evaluations(
                 "nearest_defender_distance",
                 "count",
             ),
+            role_has_360_rate=("role_has_360", "mean"),
+            mean_defenders_within_3=("role_defenders_within_3", "mean"),
+            mean_defenders_within_5=("role_defenders_within_5", "mean"),
+            mean_nearest_defender_distance=(
+                "role_nearest_defender_distance", "mean"
+            ),
+            mean_defensive_density=("role_defensive_density", "mean"),
+            mean_defenders_behind_ball=(
+                "role_defenders_behind_ball", "mean"
+            ),
         )
     )
     profiles = profiles.merge(values, on="player_id", how="left")
@@ -1392,6 +1753,12 @@ def build_v4_player_evaluations(
         "xt_total",
         "xa_sum",
         "events_with_360_context",
+        "role_has_360_rate",
+        "mean_defenders_within_3",
+        "mean_defenders_within_5",
+        "mean_nearest_defender_distance",
+        "mean_defensive_density",
+        "mean_defenders_behind_ball",
     ]
     profiles[value_columns] = profiles[value_columns].fillna(0.0)
     minutes = profiles["minutes"].clip(lower=1.0)

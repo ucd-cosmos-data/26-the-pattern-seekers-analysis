@@ -32,6 +32,7 @@ from src.report_generators import (  # noqa: E402
     generate_player_heatmap_svgs,
     refresh_player_role_validation_reporting,
     refresh_prospective_validation_reporting,
+    refresh_role_aware_validation_reporting,
 )
 from src.simulation_engine import (  # noqa: E402
     EmpiricalHurdleModel,
@@ -83,6 +84,7 @@ V4_EVENT_COLUMNS = {
     "player",
     "player_id",
     "position",
+    "possession",
     "play_pattern",
     "pass_recipient_id",
     "pass_outcome",
@@ -1385,6 +1387,14 @@ def run_pipeline(
         if player_role_validation.is_file():
             refresh_player_role_validation_reporting(
                 project_root, player_role_validation
+            )
+        role_aware_validation = (
+            project_root
+            / "results/reports/role_aware_valuation_validation.json"
+        )
+        if role_aware_validation.is_file():
+            refresh_role_aware_validation_reporting(
+                project_root, role_aware_validation
             )
     return manifest
 

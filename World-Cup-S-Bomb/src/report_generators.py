@@ -50,6 +50,8 @@ PROSPECTIVE_SECTION_START = "<!-- PROSPECTIVE_VALIDATION_START -->"
 PROSPECTIVE_SECTION_END = "<!-- PROSPECTIVE_VALIDATION_END -->"
 PLAYER_ROLE_SECTION_START = "<!-- PLAYER_ROLE_VALIDATION_START -->"
 PLAYER_ROLE_SECTION_END = "<!-- PLAYER_ROLE_VALIDATION_END -->"
+ROLE_AWARE_SECTION_START = "<!-- ROLE_AWARE_VALUATION_START -->"
+ROLE_AWARE_SECTION_END = "<!-- ROLE_AWARE_VALUATION_END -->"
 
 
 def load_prospective_validation(path: Path) -> dict[str, Any] | None:
@@ -495,6 +497,129 @@ def refresh_player_role_validation_reporting(
         "leaderboard_csv_files": len(csv_targets),
         "figures": 2,
     }
+
+
+def load_role_aware_validation(path: Path) -> dict[str, Any] | None:
+    """Load the continuous role-aware rating A/B decision."""
+
+    if not path.is_file() or path.stat().st_size == 0:
+        return None
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    required = {
+        "decision", "production_promoted", "spearman_rank_correlation",
+        "gates", "benchmarks", "incumbent_vaep_oof_metrics",
+    }
+    missing = sorted(required - set(payload))
+    if missing:
+        raise ValueError(f"Role-aware validation lacks keys: {missing}")
+    return payload
+
+
+def role_aware_validation_markdown(summary: dict[str, Any]) -> str:
+    """Render the role-aware challenger result without implying promotion."""
+
+    metrics = summary["incumbent_vaep_oof_metrics"]
+    griezmann = summary["benchmarks"]["griezmann"]
+    messi = summary["benchmarks"]["messi"]
+    mbappe = summary["benchmarks"]["mbappe"]
+    return "\n".join(
+        [
+            ROLE_AWARE_SECTION_START,
+            "## Continuous role-aware valuation A/B test",
+            "",
+            (
+                f"**Decision: `{summary['decision']}`.** The challenger was not "
+                "promoted. Its Spearman correlation with the incumbent ranking was "
+                f"{float(summary['spearman_rank_correlation']):.4f}, above the "
+                "predeclared 0.90 ceiling, so it did not change the overall ordering "
+                "enough to qualify as the intended systemic correction."
+            ),
+            "",
+            "| Benchmark | Incumbent | Challenger diagnostic |",
+            "|---|---:|---:|",
+            (
+                f"| Messi global rank | {int(messi['old_global_rank'])} | "
+                f"{int(messi['new_global_rank'])} |"
+            ),
+            (
+                f"| Mbappé global rank | {int(mbappe['old_global_rank'])} | "
+                f"{int(mbappe['new_global_rank'])} |"
+            ),
+            (
+                f"| Griezmann global rank | {int(griezmann['old_global_rank'])} | "
+                f"{int(griezmann['new_global_rank'])} |"
+            ),
+            "",
+            (
+                "The diagnostic Griezmann movement came from creation "
+                f"({float(griezmann['creation_score']):.3f}), pressing "
+                f"({float(griezmann['pressing_score']):.3f}), and completeness "
+                f"({float(griezmann['completeness_score']):.3f}), with no player-name "
+                "rule. Nevertheless, all published player/team rankings retain the "
+                "incumbent 360-VAEP+xT rating."
+            ),
+            "",
+            (
+                "Foundational model performance remains unchanged: OOF ROC-AUC "
+                f"{float(metrics['roc_auc']):.6f}, PR-AUC "
+                f"{float(metrics['pr_auc']):.6f}, Brier "
+                f"{float(metrics['brier_score']):.6f}, ECE "
+                f"{float(metrics['calibration_error']):.6f}."
+            ),
+            ROLE_AWARE_SECTION_END,
+        ]
+    )
+
+
+def refresh_role_aware_validation_reporting(
+    project_root: Path,
+    validation_path: Path | None = None,
+) -> dict[str, int]:
+    """Propagate the challenger rejection across human and machine reports."""
+
+    validation_path = validation_path or (
+        project_root / "results/reports/role_aware_valuation_validation.json"
+    )
+    summary = load_role_aware_validation(validation_path)
+    if summary is None:
+        raise FileNotFoundError(validation_path)
+    section = role_aware_validation_markdown(summary)
+    targets = [
+        project_root / "results/Summary/v4_model_explanation_summary.md",
+        project_root
+        / "results/reports/final/world_cup_team_performance_and_top_players.md",
+        *sorted((project_root / "results/reports/teams").glob("*.md")),
+        *sorted((project_root / "results/reports/compiled").glob("*.md")),
+    ]
+    markdown_files = sum(
+        _upsert_generated_section(
+            path, section, ROLE_AWARE_SECTION_START, ROLE_AWARE_SECTION_END
+        )
+        for path in targets
+    )
+    json_files = 0
+    for path in (
+        project_root / "results/reports/pipeline_manifest.json",
+        project_root / "results/eda_validation_report.json",
+        project_root / "results/MIscellaneous/eda_validation_report.json",
+    ):
+        if not path.is_file():
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        payload["role_aware_valuation_challenger"] = summary
+        payload.setdefault("gates", {})[
+            "role_aware_challenger_rollback"
+        ] = bool(
+            summary["decision"] == "REJECTED_RETAIN_INCUMBENT"
+            and summary["production_promoted"] is False
+        )
+        path.write_text(
+            json.dumps(payload, indent=2, ensure_ascii=True, default=_json_value)
+            + "\n",
+            encoding="utf-8",
+        )
+        json_files += 1
+    return {"markdown_files": markdown_files, "json_files": json_files}
 
 
 def _json_value(value: Any) -> Any:
