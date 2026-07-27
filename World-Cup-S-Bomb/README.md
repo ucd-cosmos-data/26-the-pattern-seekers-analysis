@@ -217,9 +217,16 @@ to assess generalization.
 - The modeled population contains 9,685 possessions with sufficient attacking
   and 360 coverage, or 87.92% of tournament possessions in periods 1–4.
 - Style clustering is fitted tournament-wide before outcome-model validation,
-  making the Stage 5 benchmark transductive.
-- The selected architecture and reported performance use the same
-  cross-validation exercise, so winner-selection optimism remains for Stage 5.
+  making the production Stage 5 benchmark transductive. `scripts/validate_nested_coaching_models.py`
+  now provides an unbiased companion estimate with fold-local clustering (clusters
+  refit on each outer training split only).
+- The production benchmark selects the architecture and reports performance on the
+  same cross-validation, so winner-selection optimism remains there; the nested
+  script removes it by choosing the model in an inner loop and scoring the untouched
+  outer fold once.
+- Model selection is keyed on average precision (PR-AUC), the imbalance-aware
+  metric, with precision/recall reported at an operating threshold (see
+  `results/coaching_model_selection.md` and `results/coaching_model_operating_points.csv`).
 - Full-possession defensive shape includes the shot frame for 1,175 of 1,207
   shot-positive modeled possessions.
 
@@ -239,7 +246,10 @@ analysis:
 2. Measure attacking tactical flexibility across teams.
 3. Refit attacking and defensive style clusters inside validation folds and
    use nested cross-validation to remove the remaining Stage 5 transductive and
-   winner-selection limitations.
+   winner-selection limitations. **Addressed** by
+   `scripts/validate_nested_coaching_models.py` (fold-local clustering + nested
+   CV, PR-AUC selection); the production benchmark keeps the fast single-CV path
+   and the nested script is the unbiased release-time check.
 4. Validate VAEP calibration and player-ranking stability on another
    competition or season.
 5. Add continuous integration for compilation, lightweight leakage-contract
