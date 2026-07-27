@@ -13,13 +13,13 @@
 - Team: Senegal (SEN)
 - Position: Left Wing
 - Functional role: Target Forward
-- VAEP offense per 90: 1.4195
-- VAEP defense per 90: -0.0066
-- VAEP total per 90: 1.4128
-- VAEP per touch: 0.01541
-- Spatial xT per 90: 0.0856
+- VAEP offense per 90: 0.4347
+- VAEP defense per 90: 0.0013
+- VAEP total per 90: 0.4360
+- VAEP per touch: 0.00476
+- Spatial xT per 90: 0.0903
 - Final-third spatial share: 56.0%
-- Unified final player rating: 0.7282
+- Unified final player rating: 0.2237
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/2941_heatmap.svg)
@@ -56,13 +56,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Senegal (SEN)
 - Position: Right Back
 - Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.1162
-- VAEP defense per 90: -0.0095
-- VAEP total per 90: 0.1067
-- VAEP per touch: 0.00078
-- Spatial xT per 90: 0.0678
+- VAEP offense per 90: 0.1418
+- VAEP defense per 90: -0.0271
+- VAEP total per 90: 0.1148
+- VAEP per touch: 0.00083
+- Spatial xT per 90: 0.0776
 - Final-third spatial share: 34.9%
-- Unified final player rating: 0.0671
+- Unified final player rating: 0.0749
 - Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/3404_heatmap.svg)
@@ -99,13 +99,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Senegal (SEN)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.2386
-- VAEP defense per 90: -0.1167
-- VAEP total per 90: 0.1219
-- VAEP per touch: 0.00108
-- Spatial xT per 90: 0.0038
+- VAEP offense per 90: 0.0369
+- VAEP defense per 90: 0.0076
+- VAEP total per 90: 0.0445
+- VAEP per touch: 0.00039
+- Spatial xT per 90: 0.0112
 - Final-third spatial share: 4.3%
-- Unified final player rating: 0.0620
+- Unified final player rating: 0.0102
 - Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/5675_heatmap.svg)
@@ -143,13 +143,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Senegal (SEN)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0190
-- VAEP defense per 90: -0.2899
-- VAEP total per 90: -0.3089
-- VAEP per touch: -0.00580
-- Spatial xT per 90: 0.0042
+- VAEP offense per 90: -0.0119
+- VAEP defense per 90: -0.0923
+- VAEP total per 90: -0.1041
+- VAEP per touch: -0.00196
+- Spatial xT per 90: 0.0055
 - Final-third spatial share: 1.7%
-- Unified final player rating: -0.1553
+- Unified final player rating: -0.0516
 - Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/7379_heatmap.svg)
@@ -187,13 +187,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Senegal (SEN)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0274
-- VAEP defense per 90: -0.0465
-- VAEP total per 90: -0.0192
-- VAEP per touch: -0.00016
-- Spatial xT per 90: 0.0235
+- VAEP offense per 90: 0.0119
+- VAEP defense per 90: -0.0556
+- VAEP total per 90: -0.0436
+- VAEP per touch: -0.00036
+- Spatial xT per 90: 0.0357
 - Final-third spatial share: 9.7%
-- Unified final player rating: -0.0049
+- Unified final player rating: -0.0118
 - Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/8553_heatmap.svg)
@@ -231,13 +231,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Senegal (SEN)
 - Position: Center Attacking Midfield
 - Functional role: Target Forward
-- VAEP offense per 90: 0.4361
-- VAEP defense per 90: 0.0421
-- VAEP total per 90: 0.4781
-- VAEP per touch: 0.00716
-- Spatial xT per 90: 0.0070
+- VAEP offense per 90: 0.2600
+- VAEP defense per 90: -0.0040
+- VAEP total per 90: 0.2559
+- VAEP per touch: 0.00383
+- Spatial xT per 90: -0.0076
 - Final-third spatial share: 57.7%
-- Unified final player rating: 0.2426
+- Unified final player rating: 0.1654
 - Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/20611_heatmap.svg)

@@ -10,16 +10,16 @@ Switzerland: no tactical change cleared the modeled effect floor. Primary review
 
 ## Optimized starting 11
 
-1. Manuel Obafemi Akanji (Center Back)
-2. Granit Xhaka (Defensive Midfield)
-3. Remo Freuler (Defensive Midfield)
-4. Breel-Donald Embolo (Forward)
-5. Yann Sommer (Goalkeeper)
-6. Silvan Widmer (Fullback/Wingback)
-7. Ruben Vargas (Attacking Midfield/Wing)
-8. Ricardo Iván Rodríguez Araya (Fullback/Wingback)
-9. Xherdan Shaqiri (Central/Wide Midfield)
-10. Nico Elvedi (Center Back)
+1. Granit Xhaka (Defensive Midfield)
+2. Manuel Obafemi Akanji (Center Back)
+3. Ricardo Iván Rodríguez Araya (Fullback/Wingback)
+4. Remo Freuler (Defensive Midfield)
+5. Breel-Donald Embolo (Forward)
+6. Yann Sommer (Goalkeeper)
+7. Silvan Widmer (Fullback/Wingback)
+8. Ruben Vargas (Attacking Midfield/Wing)
+9. Nico Elvedi (Center Back)
+10. Xherdan Shaqiri (Central/Wide Midfield)
 11. Noah Okafor (Central/Wide Midfield)
 
 ## Physical matchup deltas
@@ -36,11 +36,11 @@ Switzerland: no tactical change cleared the modeled effect floor. Primary review
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Breel-Donald Embolo — Target Forward; rating 0.5222, VAEP/90 +1.035, xT/90 +0.005
-2. Remo Freuler — Ball-Winner; rating 0.1064, VAEP/90 +0.206, xT/90 +0.013
-3. Manuel Obafemi Akanji — Deep Playmaker; rating 0.0867, VAEP/90 +0.170, xT/90 +0.008
-4. Granit Xhaka — Ball-Winner; rating 0.0104, VAEP/90 +0.007, xT/90 +0.034
-5. Ricardo Iván Rodríguez Araya — Wide Creator; rating -0.0292, VAEP/90 -0.072, xT/90 +0.036
+1. Breel-Donald Embolo — Target Forward; rating 0.1938, VAEP/90 +0.312, xT/90 +0.011
+2. Ricardo Iván Rodríguez Araya — Wide Creator; rating 0.0457, VAEP/90 +0.024, xT/90 +0.044
+3. Granit Xhaka — Ball-Winner; rating 0.0345, VAEP/90 +0.056, xT/90 +0.049
+4. Remo Freuler — Ball-Winner; rating 0.0287, VAEP/90 +0.047, xT/90 +0.020
+5. Manuel Obafemi Akanji — Deep Playmaker; rating 0.0063, VAEP/90 +0.031, xT/90 +0.011
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

@@ -13,14 +13,14 @@
 - Team: Poland (POL)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.2279
-- VAEP defense per 90: -0.1094
-- VAEP total per 90: 0.1185
-- VAEP per touch: 0.00152
-- Spatial xT per 90: 0.0027
+- VAEP offense per 90: 0.0879
+- VAEP defense per 90: -0.0650
+- VAEP total per 90: 0.0229
+- VAEP per touch: 0.00029
+- Spatial xT per 90: 0.0043
 - Final-third spatial share: 3.3%
-- Unified final player rating: 0.0603
-- Team rank: #3
+- Unified final player rating: 0.0034
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/POL/3034_heatmap.svg)
 
@@ -57,13 +57,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Poland (POL)
 - Position: Center Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.0029
-- VAEP defense per 90: -0.0341
-- VAEP total per 90: -0.0312
-- VAEP per touch: -0.00037
-- Spatial xT per 90: 0.0147
+- VAEP offense per 90: 0.0211
+- VAEP defense per 90: -0.0095
+- VAEP total per 90: 0.0115
+- VAEP per touch: 0.00014
+- Spatial xT per 90: 0.0252
 - Final-third spatial share: 16.7%
-- Unified final player rating: -0.0128
+- Unified final player rating: 0.0197
 - Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/POL/3637_heatmap.svg)
@@ -101,13 +101,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Poland (POL)
 - Position: Right Back
 - Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.0564
-- VAEP defense per 90: -0.1141
-- VAEP total per 90: -0.0577
-- VAEP per touch: -0.00065
-- Spatial xT per 90: 0.0297
+- VAEP offense per 90: 0.0728
+- VAEP defense per 90: -0.1625
+- VAEP total per 90: -0.0897
+- VAEP per touch: -0.00101
+- Spatial xT per 90: 0.0384
 - Final-third spatial share: 26.5%
-- Unified final player rating: -0.0231
+- Unified final player rating: 0.0124
 - Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/POL/4734_heatmap.svg)
@@ -144,13 +144,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Poland (POL)
 - Position: Right Center Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.3456
-- VAEP defense per 90: 0.0031
-- VAEP total per 90: 0.3487
-- VAEP per touch: 0.00331
-- Spatial xT per 90: 0.0598
+- VAEP offense per 90: 0.0993
+- VAEP defense per 90: -0.0101
+- VAEP total per 90: 0.0893
+- VAEP per touch: 0.00085
+- Spatial xT per 90: 0.0591
 - Final-third spatial share: 24.8%
-- Unified final player rating: 0.1873
+- Unified final player rating: 0.0952
 - Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5660_heatmap.svg)
@@ -187,13 +187,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Poland (POL)
 - Position: Center Forward
 - Functional role: Target Forward
-- VAEP offense per 90: 1.0578
-- VAEP defense per 90: 0.0344
-- VAEP total per 90: 1.0922
-- VAEP per touch: 0.01121
-- Spatial xT per 90: 0.0138
+- VAEP offense per 90: 0.3901
+- VAEP defense per 90: 0.0199
+- VAEP total per 90: 0.4101
+- VAEP per touch: 0.00421
+- Spatial xT per 90: 0.0192
 - Final-third spatial share: 43.8%
-- Unified final player rating: 0.5522
+- Unified final player rating: 0.2195
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5668_heatmap.svg)
@@ -230,13 +230,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Poland (POL)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0227
-- VAEP defense per 90: -0.3846
-- VAEP total per 90: -0.4072
-- VAEP per touch: -0.00656
-- Spatial xT per 90: 0.0019
+- VAEP offense per 90: -0.0251
+- VAEP defense per 90: -0.1804
+- VAEP total per 90: -0.2055
+- VAEP per touch: -0.00331
+- Spatial xT per 90: 0.0047
 - Final-third spatial share: 2.9%
-- Unified final player rating: -0.2052
+- Unified final player rating: -0.0806
 - Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5669_heatmap.svg)
@@ -274,14 +274,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Poland (POL)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.0048
-- VAEP defense per 90: -0.0648
-- VAEP total per 90: -0.0601
-- VAEP per touch: -0.00069
-- Spatial xT per 90: 0.0312
+- VAEP offense per 90: 0.0967
+- VAEP defense per 90: -0.0184
+- VAEP total per 90: 0.0783
+- VAEP per touch: 0.00090
+- Spatial xT per 90: 0.0401
 - Final-third spatial share: 25.8%
-- Unified final player rating: -0.0240
-- Team rank: #6
+- Unified final player rating: 0.0608
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5673_heatmap.svg)
 
@@ -318,13 +318,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Poland (POL)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0210
-- VAEP defense per 90: -0.2885
-- VAEP total per 90: -0.2675
-- VAEP per touch: -0.00217
-- Spatial xT per 90: 0.0130
+- VAEP offense per 90: 0.0567
+- VAEP defense per 90: -0.0589
+- VAEP total per 90: -0.0022
+- VAEP per touch: -0.00002
+- Spatial xT per 90: 0.0210
 - Final-third spatial share: 3.2%
-- Unified final player rating: -0.1318
+- Unified final player rating: -0.0020
 - Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/POL/44166_heatmap.svg)

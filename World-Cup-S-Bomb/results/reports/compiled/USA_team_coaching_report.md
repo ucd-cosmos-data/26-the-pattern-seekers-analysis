@@ -10,14 +10,14 @@ United States: no tactical change cleared the modeled effect floor. Primary revi
 
 ## Optimized starting 11
 
-1. Tim Ream (Center Back)
-2. Antonee Robinson (Fullback/Wingback)
-3. Christian Pulisic (Attacking Midfield/Wing)
-4. Timothy Weah (Attacking Midfield/Wing)
-5. Sergino Dest (Fullback/Wingback)
-6. Tyler Adams (Defensive Midfield)
-7. Matthew Charles Turner (Goalkeeper)
-8. Yunus Dimoara Musah (Central/Wide Midfield)
+1. Tyler Adams (Defensive Midfield)
+2. Yunus Dimoara Musah (Central/Wide Midfield)
+3. Antonee Robinson (Fullback/Wingback)
+4. Christian Pulisic (Attacking Midfield/Wing)
+5. Timothy Weah (Attacking Midfield/Wing)
+6. Sergino Dest (Fullback/Wingback)
+7. Tim Ream (Center Back)
+8. Matthew Charles Turner (Goalkeeper)
 9. Weston McKennie (Central/Wide Midfield)
 10. Walker Zimmerman (Center Back)
 11. Joshua Sargent (Forward)
@@ -36,11 +36,11 @@ United States: no tactical change cleared the modeled effect floor. Primary revi
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Christian Pulisic — Progressive Winger; rating 0.4065, VAEP/90 +0.770, xT/90 +0.098
-2. Timothy Weah — Progressive Winger; rating 0.3572, VAEP/90 +0.703, xT/90 +0.018
-3. Sergino Dest — Box-to-Box Runner; rating 0.0421, VAEP/90 +0.051, xT/90 +0.083
-4. Tim Ream — Deep Playmaker; rating 0.0417, VAEP/90 +0.084, xT/90 -0.003
-5. Antonee Robinson — Wide Creator; rating 0.0141, VAEP/90 +0.004, xT/90 +0.060
+1. Christian Pulisic — Progressive Winger; rating 0.2496, VAEP/90 +0.527, xT/90 +0.114
+2. Timothy Weah — Progressive Winger; rating 0.2230, VAEP/90 +0.466, xT/90 +0.018
+3. Yunus Dimoara Musah — Ball-Winner; rating 0.1005, VAEP/90 +0.118, xT/90 +0.046
+4. Antonee Robinson — Wide Creator; rating 0.0958, VAEP/90 +0.186, xT/90 +0.085
+5. Sergino Dest — Box-to-Box Runner; rating 0.0741, VAEP/90 +0.103, xT/90 +0.098
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

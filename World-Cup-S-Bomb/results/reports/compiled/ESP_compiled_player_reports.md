@@ -13,13 +13,13 @@
 - Team: Spain (ESP)
 - Position: Left Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0363
-- VAEP defense per 90: -0.0237
-- VAEP total per 90: 0.0126
-- VAEP per touch: 0.00004
-- Spatial xT per 90: 0.0134
+- VAEP offense per 90: 0.0530
+- VAEP defense per 90: -0.0126
+- VAEP total per 90: 0.0404
+- VAEP per touch: 0.00012
+- Spatial xT per 90: 0.0249
 - Final-third spatial share: 2.6%
-- Unified final player rating: 0.0090
+- Unified final player rating: 0.0089
 - Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/4353_heatmap.svg)
@@ -57,14 +57,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Spain (ESP)
 - Position: Center Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: -0.0608
-- VAEP defense per 90: -0.0198
-- VAEP total per 90: -0.0806
-- VAEP per touch: -0.00047
-- Spatial xT per 90: 0.0300
+- VAEP offense per 90: -0.0391
+- VAEP defense per 90: -0.0154
+- VAEP total per 90: -0.0546
+- VAEP per touch: -0.00032
+- Spatial xT per 90: 0.0464
 - Final-third spatial share: 22.0%
-- Unified final player rating: -0.0344
-- Team rank: #6
+- Unified final player rating: 0.0032
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/5203_heatmap.svg)
 
@@ -101,14 +101,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Spain (ESP)
 - Position: Right Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0622
-- VAEP defense per 90: -0.0734
-- VAEP total per 90: -0.0112
-- VAEP per touch: -0.00003
-- Spatial xT per 90: 0.0328
+- VAEP offense per 90: 0.1100
+- VAEP defense per 90: -0.0672
+- VAEP total per 90: 0.0428
+- VAEP per touch: 0.00011
+- Spatial xT per 90: 0.0496
 - Final-third spatial share: 7.4%
-- Unified final player rating: 0.0010
-- Team rank: #5
+- Unified final player rating: 0.0147
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/6765_heatmap.svg)
 
@@ -145,14 +145,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Spain (ESP)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0302
-- VAEP defense per 90: 0.4132
-- VAEP total per 90: 0.3830
-- VAEP per touch: 0.00460
-- Spatial xT per 90: 0.0003
+- VAEP offense per 90: -0.0114
+- VAEP defense per 90: -0.1136
+- VAEP total per 90: -0.1250
+- VAEP per touch: -0.00150
+- Spatial xT per 90: 0.0007
 - Final-third spatial share: 0.0%
-- Unified final player rating: 0.1929
-- Team rank: #2
+- Unified final player rating: -0.0582
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/11748_heatmap.svg)
 
@@ -189,13 +189,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Spain (ESP)
 - Position: Left Wing
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.5481
+- VAEP offense per 90: 0.5193
 - VAEP defense per 90: 0.0354
-- VAEP total per 90: 0.5835
-- VAEP per touch: 0.00363
-- Spatial xT per 90: 0.0665
+- VAEP total per 90: 0.5547
+- VAEP per touch: 0.00345
+- Spatial xT per 90: 0.0722
 - Final-third spatial share: 51.0%
-- Unified final player rating: 0.3061
+- Unified final player rating: 0.2554
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/16532_heatmap.svg)
@@ -233,14 +233,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Spain (ESP)
 - Position: Left Center Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.0308
-- VAEP defense per 90: -0.0031
-- VAEP total per 90: 0.0277
-- VAEP per touch: 0.00009
-- Spatial xT per 90: 0.0843
+- VAEP offense per 90: 0.1799
+- VAEP defense per 90: -0.0004
+- VAEP total per 90: 0.1796
+- VAEP per touch: 0.00059
+- Spatial xT per 90: 0.1051
 - Final-third spatial share: 28.9%
-- Unified final player rating: 0.0307
-- Team rank: #3
+- Unified final player rating: 0.1236
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/30486_heatmap.svg)
 

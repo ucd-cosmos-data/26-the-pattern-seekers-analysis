@@ -10,12 +10,12 @@ Ghana: Patient Build-up led the observed baseline by 0.0054 mean EvA. Primary re
 
 ## Optimized starting 11
 
-1. Thomas Teye Partey (Defensive Midfield)
-2. Mohamed Salisu (Center Back)
-3. Salis Abdul Samed (Defensive Midfield)
-4. Daniel Amartey (Center Back)
-5. Iñaki Williams Arthuer (Forward)
-6. Mohammed Kudus (Attacking Midfield/Wing)
+1. Mohamed Salisu (Center Back)
+2. Salis Abdul Samed (Defensive Midfield)
+3. Iñaki Williams Arthuer (Forward)
+4. Mohammed Kudus (Attacking Midfield/Wing)
+5. Thomas Teye Partey (Defensive Midfield)
+6. Daniel Amartey (Center Back)
 7. Lawrence Ati-Zigi (Goalkeeper)
 8. Abdul Rahman Baba (Fullback/Wingback)
 9. André Ayew Pelé (Attacking Midfield/Wing)
@@ -36,10 +36,10 @@ Ghana: Patient Build-up led the observed baseline by 0.0054 mean EvA. Primary re
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Mohamed Salisu — Sweeper CB; rating 0.0947, VAEP/90 +0.185, xT/90 +0.010
-2. Thomas Teye Partey — Ball-Winner; rating 0.0356, VAEP/90 +0.058, xT/90 +0.033
-3. Daniel Amartey — Sweeper CB; rating -0.0950, VAEP/90 -0.191, xT/90 +0.006
-4. Lawrence Ati-Zigi — Goalkeeper; rating -0.2145, VAEP/90 -0.424, xT/90 +0.003
+1. Mohamed Salisu — Sweeper CB; rating 0.0010, VAEP/90 +0.013, xT/90 +0.019
+2. Thomas Teye Partey — Ball-Winner; rating -0.0002, VAEP/90 -0.078, xT/90 +0.044
+3. Lawrence Ati-Zigi — Goalkeeper; rating -0.0554, VAEP/90 -0.119, xT/90 +0.007
+4. Daniel Amartey — Sweeper CB; rating -0.0630, VAEP/90 -0.238, xT/90 +0.012
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

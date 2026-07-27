@@ -13,13 +13,13 @@
 - Team: Brazil (BRA)
 - Position: Center Forward
 - Functional role: Target Forward
-- VAEP offense per 90: 1.2497
-- VAEP defense per 90: 0.1331
-- VAEP total per 90: 1.3828
-- VAEP per touch: 0.01940
-- Spatial xT per 90: 0.0140
+- VAEP offense per 90: 0.6164
+- VAEP defense per 90: 0.0916
+- VAEP total per 90: 0.7080
+- VAEP per touch: 0.00993
+- Spatial xT per 90: 0.0119
 - Final-third spatial share: 51.6%
-- Unified final player rating: 0.7000
+- Unified final player rating: 0.2984
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/BRA/3280_heatmap.svg)
@@ -56,14 +56,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Brazil (BRA)
 - Position: Right Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0731
-- VAEP defense per 90: -0.0329
-- VAEP total per 90: 0.0402
-- VAEP per touch: 0.00020
-- Spatial xT per 90: 0.0233
+- VAEP offense per 90: 0.0426
+- VAEP defense per 90: -0.0270
+- VAEP total per 90: 0.0156
+- VAEP per touch: 0.00008
+- Spatial xT per 90: 0.0281
 - Final-third spatial share: 3.9%
-- Unified final player rating: 0.0248
-- Team rank: #9
+- Unified final player rating: 0.0042
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/BRA/3295_heatmap.svg)
 
@@ -100,13 +100,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Brazil (BRA)
 - Position: Left Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0762
-- VAEP defense per 90: -0.0249
-- VAEP total per 90: 0.0513
-- VAEP per touch: 0.00027
-- Spatial xT per 90: 0.0244
+- VAEP offense per 90: -0.0146
+- VAEP defense per 90: -0.0094
+- VAEP total per 90: -0.0240
+- VAEP per touch: -0.00013
+- Spatial xT per 90: 0.0340
 - Final-third spatial share: 8.9%
-- Unified final player rating: 0.0306
+- Unified final player rating: -0.0065
 - Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/BRA/4372_heatmap.svg)
@@ -143,14 +143,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Brazil (BRA)
 - Position: Left Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.4746
-- VAEP defense per 90: -0.0423
-- VAEP total per 90: 0.4323
-- VAEP per touch: 0.00295
-- Spatial xT per 90: 0.0353
+- VAEP offense per 90: 0.0173
+- VAEP defense per 90: -0.0321
+- VAEP total per 90: -0.0149
+- VAEP per touch: -0.00010
+- Spatial xT per 90: 0.0460
 - Final-third spatial share: 28.0%
-- Unified final player rating: 0.2241
-- Team rank: #4
+- Unified final player rating: 0.0137
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/BRA/5539_heatmap.svg)
 
@@ -186,14 +186,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Brazil (BRA)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0160
-- VAEP defense per 90: 0.4358
-- VAEP total per 90: 0.4198
-- VAEP per touch: 0.00985
-- Spatial xT per 90: 0.0009
+- VAEP offense per 90: 0.0007
+- VAEP defense per 90: -0.1100
+- VAEP total per 90: -0.1093
+- VAEP per touch: -0.00257
+- Spatial xT per 90: 0.0013
 - Final-third spatial share: 0.3%
-- Unified final player rating: 0.2130
-- Team rank: #6
+- Unified final player rating: -0.0537
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/BRA/5547_heatmap.svg)
 
@@ -230,13 +230,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Brazil (BRA)
 - Position: Right Wing
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.6036
-- VAEP defense per 90: -0.0040
-- VAEP total per 90: 0.5996
-- VAEP per touch: 0.00434
-- Spatial xT per 90: 0.1793
+- VAEP offense per 90: 0.4714
+- VAEP defense per 90: 0.0060
+- VAEP total per 90: 0.4774
+- VAEP per touch: 0.00346
+- Spatial xT per 90: 0.1698
 - Final-third spatial share: 53.6%
-- Unified final player rating: 0.3370
+- Unified final player rating: 0.2420
 - Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/BRA/10595_heatmap.svg)
@@ -274,14 +274,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Brazil (BRA)
 - Position: Right Back
 - Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.1202
-- VAEP defense per 90: -0.0253
-- VAEP total per 90: 0.0949
-- VAEP per touch: 0.00052
-- Spatial xT per 90: 0.0164
+- VAEP offense per 90: 0.1158
+- VAEP defense per 90: -0.0481
+- VAEP total per 90: 0.0677
+- VAEP per touch: 0.00037
+- Spatial xT per 90: 0.0324
 - Final-third spatial share: 21.4%
-- Unified final player rating: 0.0509
-- Team rank: #7
+- Unified final player rating: 0.0570
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/BRA/13620_heatmap.svg)
 
@@ -317,13 +317,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Brazil (BRA)
 - Position: Left Midfield
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.6542
-- VAEP defense per 90: -0.0564
-- VAEP total per 90: 0.5978
-- VAEP per touch: 0.00487
-- Spatial xT per 90: 0.1152
+- VAEP offense per 90: 0.5537
+- VAEP defense per 90: 0.0298
+- VAEP total per 90: 0.5835
+- VAEP per touch: 0.00476
+- Spatial xT per 90: 0.1238
 - Final-third spatial share: 58.2%
-- Unified final player rating: 0.3234
+- Unified final player rating: 0.2296
 - Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/BRA/18395_heatmap.svg)
@@ -361,14 +361,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Brazil (BRA)
 - Position: Right Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.3949
-- VAEP defense per 90: 0.0315
-- VAEP total per 90: 0.4264
-- VAEP per touch: 0.00265
-- Spatial xT per 90: 0.0332
+- VAEP offense per 90: 0.1381
+- VAEP defense per 90: 0.0167
+- VAEP total per 90: 0.1547
+- VAEP per touch: 0.00096
+- Spatial xT per 90: 0.0425
 - Final-third spatial share: 32.0%
-- Unified final player rating: 0.2206
-- Team rank: #5
+- Unified final player rating: 0.0589
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/BRA/22600_heatmap.svg)
 

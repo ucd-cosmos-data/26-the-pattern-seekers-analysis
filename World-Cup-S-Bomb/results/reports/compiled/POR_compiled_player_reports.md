@@ -13,14 +13,14 @@
 - Team: Portugal (POR)
 - Position: Right Center Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.0904
-- VAEP defense per 90: -0.0101
-- VAEP total per 90: 0.0803
-- VAEP per touch: 0.00042
-- Spatial xT per 90: 0.0381
+- VAEP offense per 90: 0.2385
+- VAEP defense per 90: 0.0121
+- VAEP total per 90: 0.2506
+- VAEP per touch: 0.00130
+- Spatial xT per 90: 0.0584
 - Final-third spatial share: 31.2%
-- Unified final player rating: 0.0479
-- Team rank: #6
+- Unified final player rating: 0.1382
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/POR/3193_heatmap.svg)
 
@@ -57,14 +57,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Center Attacking Midfield
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.8435
-- VAEP defense per 90: -0.0011
-- VAEP total per 90: 0.8423
-- VAEP per touch: 0.00536
-- Spatial xT per 90: 0.1115
+- VAEP offense per 90: 0.2295
+- VAEP defense per 90: -0.0094
+- VAEP total per 90: 0.2201
+- VAEP per touch: 0.00140
+- Spatial xT per 90: 0.1281
 - Final-third spatial share: 37.5%
-- Unified final player rating: 0.4451
-- Team rank: #1
+- Unified final player rating: 0.1671
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/POR/5204_heatmap.svg)
 
@@ -100,13 +100,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0517
-- VAEP defense per 90: -0.0351
-- VAEP total per 90: 0.0166
-- VAEP per touch: 0.00010
-- Spatial xT per 90: 0.0058
+- VAEP offense per 90: 0.0279
+- VAEP defense per 90: -0.0143
+- VAEP total per 90: 0.0136
+- VAEP per touch: 0.00008
+- Spatial xT per 90: 0.0095
 - Final-third spatial share: 2.3%
-- Unified final player rating: 0.0095
+- Unified final player rating: 0.0013
 - Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/POR/5206_heatmap.svg)
@@ -144,14 +144,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Center Forward
 - Functional role: Target Forward
-- VAEP offense per 90: 0.4829
-- VAEP defense per 90: 0.0167
-- VAEP total per 90: 0.4997
-- VAEP per touch: 0.00525
-- Spatial xT per 90: 0.0144
+- VAEP offense per 90: 0.5598
+- VAEP defense per 90: 0.1056
+- VAEP total per 90: 0.6654
+- VAEP per touch: 0.00700
+- Spatial xT per 90: 0.0091
 - Final-third spatial share: 47.2%
-- Unified final player rating: 0.2543
-- Team rank: #4
+- Unified final player rating: 0.2844
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/POR/5207_heatmap.svg)
 
@@ -187,14 +187,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.6222
-- VAEP defense per 90: -0.0107
-- VAEP total per 90: 0.6116
-- VAEP per touch: 0.00440
-- Spatial xT per 90: 0.0603
+- VAEP offense per 90: 0.2532
+- VAEP defense per 90: 0.0135
+- VAEP total per 90: 0.2667
+- VAEP per touch: 0.00192
+- Spatial xT per 90: 0.0764
 - Final-third spatial share: 33.8%
-- Unified final player rating: 0.3192
-- Team rank: #2
+- Unified final player rating: 0.1134
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/POR/5209_heatmap.svg)
 
@@ -231,14 +231,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Right Back
 - Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.0432
-- VAEP defense per 90: -0.0194
-- VAEP total per 90: 0.0238
-- VAEP per touch: 0.00012
-- Spatial xT per 90: 0.0579
+- VAEP offense per 90: 0.2238
+- VAEP defense per 90: -0.0029
+- VAEP total per 90: 0.2209
+- VAEP per touch: 0.00115
+- Spatial xT per 90: 0.0678
 - Final-third spatial share: 33.3%
-- Unified final player rating: 0.0235
-- Team rank: #7
+- Unified final player rating: 0.1023
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/POR/7005_heatmap.svg)
 
@@ -275,14 +275,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Left Wing
 - Functional role: Target Forward
-- VAEP offense per 90: 0.4910
-- VAEP defense per 90: 0.0135
-- VAEP total per 90: 0.5045
-- VAEP per touch: 0.00439
-- Spatial xT per 90: 0.0447
+- VAEP offense per 90: 0.3980
+- VAEP defense per 90: 0.0072
+- VAEP total per 90: 0.4051
+- VAEP per touch: 0.00353
+- Spatial xT per 90: 0.0463
 - Final-third spatial share: 46.7%
-- Unified final player rating: 0.2625
-- Team rank: #3
+- Unified final player rating: 0.2101
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/POR/12041_heatmap.svg)
 
@@ -318,14 +318,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.3202
-- VAEP defense per 90: -0.0828
-- VAEP total per 90: 0.2374
-- VAEP per touch: 0.00131
-- Spatial xT per 90: 0.0144
+- VAEP offense per 90: 0.1107
+- VAEP defense per 90: -0.0429
+- VAEP total per 90: 0.0678
+- VAEP per touch: 0.00038
+- Spatial xT per 90: 0.0235
 - Final-third spatial share: 5.0%
-- Unified final player rating: 0.1220
-- Team rank: #5
+- Unified final player rating: 0.0182
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/POR/20016_heatmap.svg)
 
@@ -362,13 +362,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Portugal (POR)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0241
-- VAEP defense per 90: -0.1989
-- VAEP total per 90: -0.2230
-- VAEP per touch: -0.00363
-- Spatial xT per 90: 0.0010
+- VAEP offense per 90: -0.0135
+- VAEP defense per 90: -0.0931
+- VAEP total per 90: -0.1066
+- VAEP per touch: -0.00174
+- Spatial xT per 90: 0.0017
 - Final-third spatial share: 1.2%
-- Unified final player rating: -0.1124
+- Unified final player rating: -0.0528
 - Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/POR/32975_heatmap.svg)

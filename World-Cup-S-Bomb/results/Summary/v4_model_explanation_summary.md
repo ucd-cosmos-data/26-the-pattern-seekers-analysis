@@ -487,15 +487,19 @@ The current cohort contains 142 of 680 observed players; 538 were removed by
 the sample-size cutoff.
 
 Player value now comes from 360-Augmented VAEP and xT applied concurrently.
-VAEP models the calibrated probability of scoring and conceding within a
-three-action window over all action types. xT is fitted independently on a
-16x12 grid using only successful passes and carries. No xT output enters the
-VAEP feature matrix.
+VAEP models the calibrated probability of scoring and conceding strictly over
+the next three actions (offsets 1–3) using pre-action state only. Current
+results, endpoints, completion flags, and shot xG are excluded. xT is fitted
+independently on a 16x12 grid using only successful passes and carries, with
+match-level cross-fitting so each action is scored by a grid that excluded its
+match. No xT output enters the VAEP feature matrix.
 
-The team leaderboard anomaly is fixed with one cross-role formula:
-`0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`. This removes the
-invalid practice of sorting functional-role z-scores against one another.
-Kylian Mbappé is now first for France and Lionel Messi is first for Argentina.
+The base team leaderboard formula remains
+`0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`. The final V4
+hierarchy applies role-relative minutes reliability,
+`minutes/(minutes+300)`, to stabilize estimates at the cutoff without using
+role z-scores as cross-role values. Kylian Mbappé is first for France and
+Lionel Messi is first for Argentina.
 
 ## Standard event, metadata, and StatsBomb 360 distinctions
 
@@ -564,25 +568,37 @@ selection or transfer decisions.
 
 - Selected model: `XGBoost 360-VAEP`.
 - Calibration: `isotonic`.
-- VAEP holdout: Brier 0.001098, ROC-AUC 0.991243, PR-AUC 0.467538.
+- Selected-architecture development OOF: Brier 0.001123, ROC-AUC 0.948994, PR-AUC 0.084827.
+- Final untouched test pass: Brier 0.001494, ROC-AUC 0.967243, PR-AUC 0.149857.
 - StatsBomb 360 join coverage: 87.1%.
 - Eligible players: 142 of 680; 538 excluded below 300 minutes.
 - Legacy transition OOF: Brier 0.001339, ROC-AUC 0.689341, PR-AUC 0.005958.
 - Reports: 64 compiled Markdown files and 142 player sections.
 
+### Leak-free model comparison
+
+| Model | Evaluation scope | ROC-AUC | PR-AUC | Brier | Selected |
+|---|---|---:|---:|---:|---|
+| XGBoost 360-VAEP | development_match_oof | 0.948994 | 0.084827 | 0.001123 | yes |
+| CatBoost 360-VAEP | development_match_oof | 0.944479 | 0.093186 | 0.001129 | no |
+| Baseline Logistic 360-VAEP | development_match_oof | 0.931034 | 0.020959 | 0.001167 | no |
+| Legacy transition classifier | legacy_transition_tournament_oof | 0.689341 | 0.005958 | 0.001339 | no |
+
+All new architectures use identical match-level development folds. The final test partition was opened once, after OOF model selection. The legacy row predicts a different transition target and is included as a reporting baseline, not as a VAEP selection candidate.
+
 ### Unified tournament leaders
 
 | Rank | Player | Team | Minutes | VAEP/90 | VAEP/touch | xT/90 | Final rating |
 |---:|---|---|---:|---:|---:|---:|---:|
-| 1 | Kylian Mbappé Lottin | France | 654 | +1.8888 | +0.01357 | +0.1198 | +0.9724 |
-| 2 | Olivier Giroud | France | 433 | +1.8411 | +0.03315 | +0.0090 | +0.9323 |
-| 3 | Lionel Andrés Messi Cuccittini | Argentina | 734 | +1.6745 | +0.01003 | +0.1316 | +0.8666 |
-| 4 | Ismaïla Sarr | Senegal | 365 | +1.4128 | +0.01541 | +0.0856 | +0.7282 |
-| 5 | Richarlison de Andrade | Brazil | 328 | +1.3828 | +0.01940 | +0.0140 | +0.7000 |
-| 6 | Julián Álvarez | Argentina | 485 | +1.1755 | +0.01384 | +0.0408 | +0.6000 |
-| 7 | Robert Lewandowski | Poland | 390 | +1.0922 | +0.01121 | +0.0138 | +0.5522 |
-| 8 | Breel-Donald Embolo | Switzerland | 330 | +1.0347 | +0.01295 | +0.0046 | +0.5222 |
-| 9 | Ángel Fabián Di María Hernández | Argentina | 305 | +0.9235 | +0.00525 | +0.1913 | +0.5016 |
-| 10 | Harry Kane | England | 422 | +0.9747 | +0.01092 | +0.0402 | +0.4987 |
+| 1 | Lionel Andrés Messi Cuccittini | Argentina | 734 | +0.6941 | +0.00416 | +0.1579 | +0.3297 |
+| 2 | Kylian Mbappé Lottin | France | 654 | +0.6431 | +0.00462 | +0.1343 | +0.3127 |
+| 3 | Richarlison de Andrade | Brazil | 328 | +0.7080 | +0.00993 | +0.0119 | +0.2984 |
+| 4 | Julián Álvarez | Argentina | 485 | +0.6361 | +0.00749 | +0.0323 | +0.2905 |
+| 5 | Ángel Fabián Di María Hernández | Argentina | 305 | +0.7859 | +0.00447 | +0.1997 | +0.2879 |
+| 6 | Cristiano Ronaldo dos Santos Aveiro | Portugal | 303 | +0.6654 | +0.00700 | +0.0091 | +0.2844 |
+| 7 | Memphis Depay | Netherlands | 316 | +0.5892 | +0.00421 | +0.0469 | +0.2694 |
+| 8 | Daniel Olmo Carvajal | Spain | 388 | +0.5547 | +0.00345 | +0.0722 | +0.2554 |
+| 9 | Christian Pulisic | United States | 336 | +0.5271 | +0.00392 | +0.1139 | +0.2496 |
+| 10 | Raphael Dias Belloli | Brazil | 330 | +0.4774 | +0.00346 | +0.1698 | +0.2420 |
 
-The team ranking uses the same cross-role formula for every eligible player: `0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`.
+The base rating remains `0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`; the final hierarchy applies the V4 role-relative minutes reliability adjustment `minutes/(minutes+300)` to stabilize the 300-minute edge.

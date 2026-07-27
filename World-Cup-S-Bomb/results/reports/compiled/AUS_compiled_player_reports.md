@@ -13,13 +13,13 @@
 - Team: Australia (AUS)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0204
-- VAEP defense per 90: -0.3052
-- VAEP total per 90: -0.3256
-- VAEP per touch: -0.00427
-- Spatial xT per 90: 0.0013
+- VAEP offense per 90: -0.0162
+- VAEP defense per 90: -0.1269
+- VAEP total per 90: -0.1431
+- VAEP per touch: -0.00188
+- Spatial xT per 90: 0.0019
 - Final-third spatial share: 2.3%
-- Unified final player rating: -0.1638
+- Unified final player rating: -0.0630
 - Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/3240_heatmap.svg)
@@ -57,13 +57,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Australia (AUS)
 - Position: Left Defensive Midfield
 - Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.1181
-- VAEP defense per 90: -0.0349
-- VAEP total per 90: 0.0833
-- VAEP per touch: 0.00065
-- Spatial xT per 90: 0.0248
+- VAEP offense per 90: 0.0047
+- VAEP defense per 90: -0.0199
+- VAEP total per 90: -0.0151
+- VAEP per touch: -0.00012
+- Spatial xT per 90: 0.0294
 - Final-third spatial share: 15.8%
-- Unified final player rating: 0.0468
+- Unified final player rating: 0.0121
 - Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/3281_heatmap.svg)
@@ -100,13 +100,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Australia (AUS)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.1055
-- VAEP defense per 90: -0.0206
-- VAEP total per 90: 0.0849
-- VAEP per touch: 0.00069
-- Spatial xT per 90: 0.0391
+- VAEP offense per 90: 0.1466
+- VAEP defense per 90: -0.0025
+- VAEP total per 90: 0.1441
+- VAEP per touch: 0.00118
+- Spatial xT per 90: 0.0435
 - Final-third spatial share: 23.6%
-- Unified final player rating: 0.0505
+- Unified final player rating: 0.0793
 - Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/5479_heatmap.svg)
@@ -144,13 +144,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Australia (AUS)
 - Position: Right Midfield
 - Functional role: Target Forward
-- VAEP offense per 90: 0.4059
-- VAEP defense per 90: -0.0102
-- VAEP total per 90: 0.3957
-- VAEP per touch: 0.00378
-- Spatial xT per 90: 0.0154
+- VAEP offense per 90: 0.2321
+- VAEP defense per 90: 0.0271
+- VAEP total per 90: 0.2592
+- VAEP per touch: 0.00248
+- Spatial xT per 90: 0.0211
 - Final-third spatial share: 40.8%
-- Unified final player rating: 0.2020
+- Unified final player rating: 0.1368
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/5481_heatmap.svg)
@@ -188,13 +188,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Australia (AUS)
 - Position: Left Center Forward
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.3813
-- VAEP defense per 90: -0.0432
-- VAEP total per 90: 0.3380
-- VAEP per touch: 0.00418
-- Spatial xT per 90: 0.0202
+- VAEP offense per 90: 0.0685
+- VAEP defense per 90: -0.0597
+- VAEP total per 90: 0.0089
+- VAEP per touch: 0.00011
+- Spatial xT per 90: 0.0285
 - Final-third spatial share: 22.3%
-- Unified final player rating: 0.1743
+- Unified final player rating: 0.1088
 - Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/5490_heatmap.svg)
@@ -232,14 +232,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Australia (AUS)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0232
-- VAEP defense per 90: -0.1494
-- VAEP total per 90: -0.1262
-- VAEP per touch: -0.00133
-- Spatial xT per 90: 0.0029
+- VAEP offense per 90: 0.0133
+- VAEP defense per 90: -0.1957
+- VAEP total per 90: -0.1824
+- VAEP per touch: -0.00193
+- Spatial xT per 90: 0.0056
 - Final-third spatial share: 4.0%
-- Unified final player rating: -0.0629
-- Team rank: #5
+- Unified final player rating: -0.0547
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/22293_heatmap.svg)
 
@@ -276,14 +276,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Australia (AUS)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: -0.0150
-- VAEP defense per 90: -0.1276
-- VAEP total per 90: -0.1427
-- VAEP per touch: -0.00131
-- Spatial xT per 90: 0.0001
+- VAEP offense per 90: -0.0067
+- VAEP defense per 90: -0.1035
+- VAEP total per 90: -0.1102
+- VAEP per touch: -0.00101
+- Spatial xT per 90: 0.0020
 - Final-third spatial share: 2.5%
-- Unified final player rating: -0.0717
-- Team rank: #6
+- Unified final player rating: -0.0346
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/33495_heatmap.svg)
 

@@ -15,10 +15,10 @@ France: no tactical change cleared the modeled effect floor. Primary review sign
 3. Adrien Rabiot (Defensive Midfield)
 4. Raphaël Varane (Center Back)
 5. Theo Bernard François Hernández (Fullback/Wingback)
-6. Hugo Lloris (Goalkeeper)
-7. Aurélien Djani Tchouaméni (Defensive Midfield)
-8. Jules Koundé (Fullback/Wingback)
-9. Dayotchanculle Upamecano (Center Back)
+6. Aurélien Djani Tchouaméni (Defensive Midfield)
+7. Jules Koundé (Fullback/Wingback)
+8. Ibrahima Konaté (Center Back)
+9. Hugo Lloris (Goalkeeper)
 10. Marcus Thuram (Central/Wide Midfield)
 11. Jordan Veretout (Central/Wide Midfield)
 
@@ -36,11 +36,11 @@ France: no tactical change cleared the modeled effect floor. Primary review sign
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Kylian Mbappé Lottin — Progressive Winger; rating 0.9724, VAEP/90 +1.889, xT/90 +0.120
-2. Olivier Giroud — Target Forward; rating 0.9323, VAEP/90 +1.841, xT/90 +0.009
-3. Adrien Rabiot — Ball-Winner; rating 0.2725, VAEP/90 +0.539, xT/90 +0.010
-4. Antoine Griezmann — Ball-Winner; rating 0.2600, VAEP/90 +0.471, xT/90 +0.118
-5. Ousmane Dembélé — Progressive Winger; rating 0.2269, VAEP/90 +0.410, xT/90 +0.104
+1. Kylian Mbappé Lottin — Progressive Winger; rating 0.3127, VAEP/90 +0.643, xT/90 +0.134
+2. Olivier Giroud — Target Forward; rating 0.2377, VAEP/90 +0.476, xT/90 +0.008
+3. Ousmane Dembélé — Progressive Winger; rating 0.2020, VAEP/90 +0.351, xT/90 +0.112
+4. Antoine Griezmann — Ball-Winner; rating 0.1995, VAEP/90 +0.343, xT/90 +0.117
+5. Adrien Rabiot — Ball-Winner; rating 0.0915, VAEP/90 +0.246, xT/90 +0.013
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

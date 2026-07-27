@@ -13,14 +13,14 @@
 - Team: Switzerland (SUI)
 - Position: Left Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.0777
-- VAEP defense per 90: -0.0706
-- VAEP total per 90: 0.0071
-- VAEP per touch: 0.00005
-- Spatial xT per 90: 0.0342
+- VAEP offense per 90: 0.0694
+- VAEP defense per 90: -0.0131
+- VAEP total per 90: 0.0563
+- VAEP per touch: 0.00037
+- Spatial xT per 90: 0.0487
 - Final-third spatial share: 16.6%
-- Unified final player rating: 0.0104
-- Team rank: #4
+- Unified final player rating: 0.0345
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/SUI/3500_heatmap.svg)
 
@@ -57,14 +57,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Switzerland (SUI)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.0392
-- VAEP defense per 90: -0.1115
-- VAEP total per 90: -0.0723
-- VAEP per touch: -0.00055
-- Spatial xT per 90: 0.0357
+- VAEP offense per 90: 0.0841
+- VAEP defense per 90: -0.0600
+- VAEP total per 90: 0.0240
+- VAEP per touch: 0.00018
+- Spatial xT per 90: 0.0444
 - Final-third spatial share: 20.6%
-- Unified final player rating: -0.0292
-- Team rank: #5
+- Unified final player rating: 0.0457
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/SUI/5544_heatmap.svg)
 
@@ -101,13 +101,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Switzerland (SUI)
 - Position: Center Forward
 - Functional role: Target Forward
-- VAEP offense per 90: 0.9805
-- VAEP defense per 90: 0.0542
-- VAEP total per 90: 1.0347
-- VAEP per touch: 0.01295
-- Spatial xT per 90: 0.0046
+- VAEP offense per 90: 0.2954
+- VAEP defense per 90: 0.0167
+- VAEP total per 90: 0.3120
+- VAEP per touch: 0.00391
+- Spatial xT per 90: 0.0111
 - Final-third spatial share: 43.6%
-- Unified final player rating: 0.5222
+- Unified final player rating: 0.1938
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/SUI/5545_heatmap.svg)
@@ -144,14 +144,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Switzerland (SUI)
 - Position: Left Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: 0.2779
-- VAEP defense per 90: -0.1083
-- VAEP total per 90: 0.1696
-- VAEP per touch: 0.00109
-- Spatial xT per 90: 0.0076
+- VAEP offense per 90: 0.0570
+- VAEP defense per 90: -0.0262
+- VAEP total per 90: 0.0309
+- VAEP per touch: 0.00020
+- Spatial xT per 90: 0.0106
 - Final-third spatial share: 5.2%
-- Unified final player rating: 0.0867
-- Team rank: #3
+- Unified final player rating: 0.0063
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/SUI/5549_heatmap.svg)
 
@@ -188,14 +188,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Switzerland (SUI)
 - Position: Right Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.2893
-- VAEP defense per 90: -0.0829
-- VAEP total per 90: 0.2064
-- VAEP per touch: 0.00191
-- Spatial xT per 90: 0.0132
+- VAEP offense per 90: 0.0760
+- VAEP defense per 90: -0.0291
+- VAEP total per 90: 0.0468
+- VAEP per touch: 0.00043
+- Spatial xT per 90: 0.0204
 - Final-third spatial share: 24.4%
-- Unified final player rating: 0.1064
-- Team rank: #2
+- Unified final player rating: 0.0287
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/SUI/6983_heatmap.svg)
 

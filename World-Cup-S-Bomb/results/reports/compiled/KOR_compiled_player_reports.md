@@ -13,14 +13,14 @@
 - Team: South Korea (KOR)
 - Position: Left Wing
 - Functional role: Target Forward
-- VAEP offense per 90: 0.2728
-- VAEP defense per 90: -0.0010
-- VAEP total per 90: 0.2719
-- VAEP per touch: 0.00268
-- Spatial xT per 90: 0.0729
+- VAEP offense per 90: 0.3793
+- VAEP defense per 90: 0.0053
+- VAEP total per 90: 0.3846
+- VAEP per touch: 0.00379
+- Spatial xT per 90: 0.0781
 - Final-third spatial share: 57.5%
-- Unified final player rating: 0.1513
-- Team rank: #3
+- Unified final player rating: 0.2082
+- Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/3083_heatmap.svg)
 
@@ -57,14 +57,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: South Korea (KOR)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.2585
-- VAEP defense per 90: 0.0471
-- VAEP total per 90: 0.3056
-- VAEP per touch: 0.00229
-- Spatial xT per 90: 0.0167
+- VAEP offense per 90: 0.0455
+- VAEP defense per 90: 0.0067
+- VAEP total per 90: 0.0522
+- VAEP per touch: 0.00039
+- Spatial xT per 90: 0.0231
 - Final-third spatial share: 5.3%
-- Unified final player rating: 0.1568
-- Team rank: #2
+- Unified final player rating: 0.0134
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/5604_heatmap.svg)
 
@@ -101,14 +101,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: South Korea (KOR)
 - Position: Left Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: -0.0004
-- VAEP defense per 90: -0.1213
-- VAEP total per 90: -0.1216
-- VAEP per touch: -0.00079
-- Spatial xT per 90: 0.0318
+- VAEP offense per 90: 0.0163
+- VAEP defense per 90: -0.0150
+- VAEP total per 90: 0.0013
+- VAEP per touch: 0.00001
+- Spatial xT per 90: 0.0498
 - Final-third spatial share: 18.3%
-- Unified final player rating: -0.0547
-- Team rank: #6
+- Unified final player rating: 0.0200
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/5618_heatmap.svg)
 
@@ -145,13 +145,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: South Korea (KOR)
 - Position: Left Defensive Midfield
 - Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.0631
-- VAEP defense per 90: -0.0425
-- VAEP total per 90: 0.0205
-- VAEP per touch: 0.00012
-- Spatial xT per 90: 0.0421
+- VAEP offense per 90: 0.1148
+- VAEP defense per 90: -0.0088
+- VAEP total per 90: 0.1061
+- VAEP per touch: 0.00062
+- Spatial xT per 90: 0.0614
 - Final-third spatial share: 35.7%
-- Unified final player rating: 0.0187
+- Unified final player rating: 0.0494
 - Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/23763_heatmap.svg)
@@ -188,13 +188,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: South Korea (KOR)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0143
-- VAEP defense per 90: -0.2190
-- VAEP total per 90: -0.2333
-- VAEP per touch: -0.00392
-- Spatial xT per 90: 0.0012
+- VAEP offense per 90: -0.0085
+- VAEP defense per 90: -0.1830
+- VAEP total per 90: -0.1915
+- VAEP per touch: -0.00321
+- Spatial xT per 90: 0.0035
 - Final-third spatial share: 1.2%
-- Unified final player rating: -0.1176
+- Unified final player rating: -0.0768
 - Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/37641_heatmap.svg)
@@ -232,14 +232,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: South Korea (KOR)
 - Position: Left Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.3819
-- VAEP defense per 90: -0.0112
-- VAEP total per 90: 0.3707
-- VAEP per touch: 0.00404
-- Spatial xT per 90: 0.0413
+- VAEP offense per 90: 0.2138
+- VAEP defense per 90: 0.0024
+- VAEP total per 90: 0.2162
+- VAEP per touch: 0.00236
+- Spatial xT per 90: 0.0414
 - Final-third spatial share: 42.5%
-- Unified final player rating: 0.1948
-- Team rank: #1
+- Unified final player rating: 0.0983
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/40538_heatmap.svg)
 
@@ -275,14 +275,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: South Korea (KOR)
 - Position: Right Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.0483
-- VAEP defense per 90: -0.0564
-- VAEP total per 90: -0.0081
-- VAEP per touch: -0.00006
-- Spatial xT per 90: 0.0352
+- VAEP offense per 90: 0.1685
+- VAEP defense per 90: -0.0285
+- VAEP total per 90: 0.1400
+- VAEP per touch: 0.00101
+- Spatial xT per 90: 0.0459
 - Final-third spatial share: 39.5%
-- Unified final player rating: 0.0030
-- Team rank: #5
+- Unified final player rating: 0.0784
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/40672_heatmap.svg)
 

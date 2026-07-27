@@ -10,13 +10,13 @@ Japan: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Optimized starting 11
 
-1. Shūichi Gonda (Goalkeeper)
-2. Junya Ito (Fullback/Wingback)
-3. Wataru Endo (Defensive Midfield)
-4. Daichi Kamada (Attacking Midfield/Wing)
-5. Ko Itakura (Center Back)
-6. Maya Yoshida (Center Back)
-7. Hidemasa Morita (Defensive Midfield)
+1. Junya Ito (Fullback/Wingback)
+2. Wataru Endo (Defensive Midfield)
+3. Daichi Kamada (Attacking Midfield/Wing)
+4. Ko Itakura (Center Back)
+5. Maya Yoshida (Center Back)
+6. Hidemasa Morita (Defensive Midfield)
+7. Shūichi Gonda (Goalkeeper)
 8. Shogo Taniguchi (Center Back)
 9. Yuto Nagatomo (Fullback/Wingback)
 10. Takuma Asano (Forward)
@@ -36,11 +36,11 @@ Japan: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Daichi Kamada — Target Forward; rating 0.1870, VAEP/90 +0.362, xT/90 +0.025
-2. Junya Ito — Attacking Wingback; rating 0.0914, VAEP/90 +0.160, xT/90 +0.053
-3. Shūichi Gonda — Goalkeeper; rating 0.0673, VAEP/90 +0.131, xT/90 +0.004
-4. Wataru Endo — Ball-Winner; rating 0.0176, VAEP/90 +0.021, xT/90 +0.035
-5. Maya Yoshida — Sweeper CB; rating -0.0786, VAEP/90 -0.158, xT/90 +0.003
+1. Daichi Kamada — Target Forward; rating 0.1462, VAEP/90 +0.174, xT/90 +0.023
+2. Junya Ito — Attacking Wingback; rating 0.0744, VAEP/90 +0.121, xT/90 +0.054
+3. Wataru Endo — Ball-Winner; rating 0.0148, VAEP/90 -0.014, xT/90 +0.038
+4. Maya Yoshida — Sweeper CB; rating -0.0403, VAEP/90 -0.129, xT/90 +0.006
+5. Shūichi Gonda — Goalkeeper; rating -0.0686, VAEP/90 -0.162, xT/90 +0.007
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

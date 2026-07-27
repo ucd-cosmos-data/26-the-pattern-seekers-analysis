@@ -13,14 +13,14 @@
 - Team: Japan (JPN)
 - Position: Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: -0.0806
-- VAEP defense per 90: -0.0771
-- VAEP total per 90: -0.1576
-- VAEP per touch: -0.00124
-- Spatial xT per 90: 0.0030
+- VAEP offense per 90: -0.0968
+- VAEP defense per 90: -0.0324
+- VAEP total per 90: -0.1292
+- VAEP per touch: -0.00102
+- Spatial xT per 90: 0.0063
 - Final-third spatial share: 3.0%
-- Unified final player rating: -0.0786
-- Team rank: #5
+- Unified final player rating: -0.0403
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/JPN/3300_heatmap.svg)
 
@@ -57,13 +57,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Japan (JPN)
 - Position: Center Attacking Midfield
 - Functional role: Target Forward
-- VAEP offense per 90: 0.3173
-- VAEP defense per 90: 0.0444
-- VAEP total per 90: 0.3617
-- VAEP per touch: 0.00380
-- Spatial xT per 90: 0.0250
+- VAEP offense per 90: 0.1657
+- VAEP defense per 90: 0.0081
+- VAEP total per 90: 0.1739
+- VAEP per touch: 0.00183
+- Spatial xT per 90: 0.0228
 - Final-third spatial share: 36.1%
-- Unified final player rating: 0.1870
+- Unified final player rating: 0.1462
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/JPN/9411_heatmap.svg)
@@ -101,13 +101,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Japan (JPN)
 - Position: Right Wing Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.1923
-- VAEP defense per 90: -0.0318
-- VAEP total per 90: 0.1605
-- VAEP per touch: 0.00208
-- Spatial xT per 90: 0.0526
+- VAEP offense per 90: 0.1686
+- VAEP defense per 90: -0.0473
+- VAEP total per 90: 0.1214
+- VAEP per touch: 0.00157
+- Spatial xT per 90: 0.0544
 - Final-third spatial share: 35.8%
-- Unified final player rating: 0.0914
+- Unified final player rating: 0.0744
 - Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/JPN/23527_heatmap.svg)
@@ -144,14 +144,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Japan (JPN)
 - Position: Right Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.0831
-- VAEP defense per 90: -0.0621
-- VAEP total per 90: 0.0211
-- VAEP per touch: 0.00015
-- Spatial xT per 90: 0.0353
+- VAEP offense per 90: 0.0271
+- VAEP defense per 90: -0.0406
+- VAEP total per 90: -0.0135
+- VAEP per touch: -0.00010
+- Spatial xT per 90: 0.0382
 - Final-third spatial share: 22.5%
-- Unified final player rating: 0.0176
-- Team rank: #4
+- Unified final player rating: 0.0148
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/JPN/23721_heatmap.svg)
 
@@ -187,14 +187,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Japan (JPN)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0188
-- VAEP defense per 90: 0.1500
-- VAEP total per 90: 0.1312
-- VAEP per touch: 0.00284
-- Spatial xT per 90: 0.0041
+- VAEP offense per 90: 0.0068
+- VAEP defense per 90: -0.1690
+- VAEP total per 90: -0.1622
+- VAEP per touch: -0.00351
+- Spatial xT per 90: 0.0065
 - Final-third spatial share: 1.6%
-- Unified final player rating: 0.0673
-- Team rank: #3
+- Unified final player rating: -0.0686
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/JPN/25719_heatmap.svg)
 

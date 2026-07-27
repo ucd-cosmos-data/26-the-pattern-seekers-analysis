@@ -13,14 +13,14 @@
 - Team: England (ENG)
 - Position: Right Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: 0.1971
-- VAEP defense per 90: -0.0320
-- VAEP total per 90: 0.1651
-- VAEP per touch: 0.00068
-- Spatial xT per 90: 0.0036
+- VAEP offense per 90: 0.0774
+- VAEP defense per 90: -0.0250
+- VAEP total per 90: 0.0524
+- VAEP per touch: 0.00022
+- Spatial xT per 90: 0.0105
 - Final-third spatial share: 3.6%
-- Unified final player rating: 0.0835
-- Team rank: #4
+- Unified final player rating: 0.0140
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/3244_heatmap.svg)
 
@@ -57,14 +57,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: England (ENG)
 - Position: Left Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: 0.3457
-- VAEP defense per 90: -0.0251
-- VAEP total per 90: 0.3206
-- VAEP per touch: 0.00147
-- Spatial xT per 90: 0.0222
+- VAEP offense per 90: 0.1483
+- VAEP defense per 90: 0.0019
+- VAEP total per 90: 0.1502
+- VAEP per touch: 0.00069
+- Spatial xT per 90: 0.0346
 - Final-third spatial share: 5.8%
-- Unified final player rating: 0.1652
-- Team rank: #3
+- Unified final player rating: 0.0462
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/3336_heatmap.svg)
 
@@ -101,14 +101,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: England (ENG)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.1392
-- VAEP defense per 90: -0.0110
-- VAEP total per 90: 0.1282
-- VAEP per touch: 0.00063
-- Spatial xT per 90: 0.0748
+- VAEP offense per 90: 0.2711
+- VAEP defense per 90: -0.0019
+- VAEP total per 90: 0.2692
+- VAEP per touch: 0.00132
+- Spatial xT per 90: 0.0849
 - Final-third spatial share: 26.0%
-- Unified final player rating: 0.0792
-- Team rank: #5
+- Unified final player rating: 0.1223
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/3382_heatmap.svg)
 
@@ -144,13 +144,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: England (ENG)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0281
-- VAEP defense per 90: -0.1312
-- VAEP total per 90: -0.1593
-- VAEP per touch: -0.00234
-- Spatial xT per 90: 0.0009
+- VAEP offense per 90: -0.0155
+- VAEP defense per 90: -0.0994
+- VAEP total per 90: -0.1150
+- VAEP per touch: -0.00169
+- Spatial xT per 90: 0.0031
 - Final-third spatial share: 1.0%
-- Unified final player rating: -0.0801
+- Unified final player rating: -0.0552
 - Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/3468_heatmap.svg)
@@ -188,14 +188,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: England (ENG)
 - Position: Left Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.0261
-- VAEP defense per 90: -0.0269
-- VAEP total per 90: -0.0008
-- VAEP per touch: -0.00000
-- Spatial xT per 90: 0.0117
+- VAEP offense per 90: 0.0722
+- VAEP defense per 90: -0.0291
+- VAEP total per 90: 0.0431
+- VAEP per touch: 0.00025
+- Spatial xT per 90: 0.0222
 - Final-third spatial share: 11.2%
-- Unified final player rating: 0.0019
-- Team rank: #6
+- Unified final player rating: 0.0276
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/3943_heatmap.svg)
 
@@ -231,13 +231,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: England (ENG)
 - Position: Center Forward
 - Functional role: Target Forward
-- VAEP offense per 90: 0.9885
-- VAEP defense per 90: -0.0138
-- VAEP total per 90: 0.9747
-- VAEP per touch: 0.01092
-- Spatial xT per 90: 0.0402
+- VAEP offense per 90: 0.2705
+- VAEP defense per 90: 0.0045
+- VAEP total per 90: 0.2750
+- VAEP per touch: 0.00308
+- Spatial xT per 90: 0.0474
 - Final-third spatial share: 47.1%
-- Unified final player rating: 0.4987
+- Unified final player rating: 0.1828
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/10955_heatmap.svg)
@@ -274,14 +274,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: England (ENG)
 - Position: Right Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.3475
-- VAEP defense per 90: 0.0029
-- VAEP total per 90: 0.3504
-- VAEP per touch: 0.00213
-- Spatial xT per 90: 0.0305
+- VAEP offense per 90: 0.2709
+- VAEP defense per 90: 0.0294
+- VAEP total per 90: 0.3003
+- VAEP per touch: 0.00183
+- Spatial xT per 90: 0.0420
 - Final-third spatial share: 26.4%
-- Unified final player rating: 0.1819
-- Team rank: #2
+- Unified final player rating: 0.1069
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/30714_heatmap.svg)
 

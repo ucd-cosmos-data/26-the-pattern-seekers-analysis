@@ -13,14 +13,14 @@
 - Team: Ghana (GHA)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: -0.0061
-- VAEP defense per 90: -0.1854
-- VAEP total per 90: -0.1915
-- VAEP per touch: -0.00173
-- Spatial xT per 90: 0.0063
+- VAEP offense per 90: -0.0048
+- VAEP defense per 90: -0.2336
+- VAEP total per 90: -0.2384
+- VAEP per touch: -0.00216
+- Spatial xT per 90: 0.0118
 - Final-third spatial share: 5.2%
-- Unified final player rating: -0.0950
-- Team rank: #3
+- Unified final player rating: -0.0630
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/GHA/3709_heatmap.svg)
 
@@ -56,13 +56,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Ghana (GHA)
 - Position: Right Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.0902
-- VAEP defense per 90: -0.0324
-- VAEP total per 90: 0.0578
-- VAEP per touch: 0.00039
-- Spatial xT per 90: 0.0330
+- VAEP offense per 90: 0.0190
+- VAEP defense per 90: -0.0970
+- VAEP total per 90: -0.0780
+- VAEP per touch: -0.00053
+- Spatial xT per 90: 0.0443
 - Final-third spatial share: 15.1%
-- Unified final player rating: 0.0356
+- Unified final player rating: -0.0002
 - Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/GHA/6383_heatmap.svg)
@@ -100,14 +100,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Ghana (GHA)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0103
-- VAEP defense per 90: -0.4132
-- VAEP total per 90: -0.4235
-- VAEP per touch: -0.01143
-- Spatial xT per 90: 0.0035
+- VAEP offense per 90: -0.0025
+- VAEP defense per 90: -0.1165
+- VAEP total per 90: -0.1189
+- VAEP per touch: -0.00321
+- Spatial xT per 90: 0.0066
 - Final-third spatial share: 1.1%
-- Unified final player rating: -0.2145
-- Team rank: #4
+- Unified final player rating: -0.0554
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/GHA/8108_heatmap.svg)
 
@@ -144,13 +144,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Ghana (GHA)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.2756
-- VAEP defense per 90: -0.0910
-- VAEP total per 90: 0.1846
-- VAEP per touch: 0.00166
-- Spatial xT per 90: 0.0098
+- VAEP offense per 90: 0.0587
+- VAEP defense per 90: -0.0456
+- VAEP total per 90: 0.0131
+- VAEP per touch: 0.00012
+- Spatial xT per 90: 0.0187
 - Final-third spatial share: 6.4%
-- Unified final player rating: 0.0947
+- Unified final player rating: 0.0010
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/GHA/30519_heatmap.svg)

@@ -10,17 +10,17 @@ Morocco: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. Achraf Hakimi Mouh (Fullback/Wingback)
-2. Hakim Ziyech (Attacking Midfield/Wing)
-3. Yassine Bounou (Goalkeeper)
-4. Azzedine Ounahi (Central/Wide Midfield)
+1. Hakim Ziyech (Attacking Midfield/Wing)
+2. Achraf Hakimi Mouh (Fullback/Wingback)
+3. Azzedine Ounahi (Central/Wide Midfield)
+4. Sofiane Boufal (Central/Wide Midfield)
 5. Youssef En-Nesyri (Forward)
-6. Selim Amallah (Central/Wide Midfield)
-7. Romain Saïss (Center Back)
-8. Nayef Aguerd (Center Back)
-9. Sofiane Boufal (Central/Wide Midfield)
-10. Sofyan Amrabat (Defensive Midfield)
-11. Yahia Attiyat allah (Fullback/Wingback)
+6. Sofyan Amrabat (Defensive Midfield)
+7. Selim Amallah (Central/Wide Midfield)
+8. Yahia Attiyat allah (Fullback/Wingback)
+9. Yassine Bounou (Goalkeeper)
+10. Romain Saïss (Center Back)
+11. Achraf Dari (Center Back)
 
 ## Physical matchup deltas
 
@@ -36,11 +36,11 @@ Morocco: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Youssef En-Nesyri — Target Forward; rating 0.4069, VAEP/90 +0.802, xT/90 +0.005
-2. Selim Amallah — Ball-Winner; rating 0.1495, VAEP/90 +0.293, xT/90 +0.008
-3. Nayef Aguerd — Sweeper CB; rating 0.0826, VAEP/90 +0.163, xT/90 +0.003
-4. Achraf Hakimi Mouh — Box-to-Box Runner; rating 0.0724, VAEP/90 +0.125, xT/90 +0.048
-5. Azzedine Ounahi — Ball-Winner; rating 0.0713, VAEP/90 +0.131, xT/90 +0.027
+1. Youssef En-Nesyri — Target Forward; rating 0.1563, VAEP/90 +0.228, xT/90 -0.000
+2. Sofiane Boufal — Progressive Winger; rating 0.1268, VAEP/90 +0.205, xT/90 +0.079
+3. Hakim Ziyech — Box-to-Box Runner; rating 0.1034, VAEP/90 +0.084, xT/90 +0.071
+4. Azzedine Ounahi — Ball-Winner; rating 0.0974, VAEP/90 +0.137, xT/90 +0.036
+5. Yahia Attiyat allah — Wide Creator; rating 0.0839, VAEP/90 +0.165, xT/90 +0.033
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

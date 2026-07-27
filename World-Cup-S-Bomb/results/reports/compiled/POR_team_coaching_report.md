@@ -11,11 +11,11 @@ Portugal: no tactical change cleared the modeled effect floor. Primary review si
 ## Optimized starting 11
 
 1. Kléper Laveran Lima Ferreira (Center Back)
-2. Bruno Miguel Borges Fernandes (Attacking Midfield/Wing)
-3. Rúben Santos Gato Alves Dias (Center Back)
+2. Rúben Santos Gato Alves Dias (Center Back)
+3. Bruno Miguel Borges Fernandes (Attacking Midfield/Wing)
 4. Bernardo Mota Veiga de Carvalho e Silva (Central/Wide Midfield)
-5. João Pedro Cavaco Cancelo (Fullback/Wingback)
-6. João Félix Sequeira (Attacking Midfield/Wing)
+5. João Félix Sequeira (Attacking Midfield/Wing)
+6. João Pedro Cavaco Cancelo (Fullback/Wingback)
 7. Raphaël Adelino José Guerreiro (Fullback/Wingback)
 8. Cristiano Ronaldo dos Santos Aveiro (Forward)
 9. Diogo Meireles Costa (Goalkeeper)
@@ -36,11 +36,11 @@ Portugal: no tactical change cleared the modeled effect floor. Primary review si
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Bruno Miguel Borges Fernandes — Progressive Winger; rating 0.4451, VAEP/90 +0.842, xT/90 +0.112
-2. Raphaël Adelino José Guerreiro — Wide Creator; rating 0.3192, VAEP/90 +0.612, xT/90 +0.060
-3. João Félix Sequeira — Target Forward; rating 0.2625, VAEP/90 +0.505, xT/90 +0.045
-4. Cristiano Ronaldo dos Santos Aveiro — Target Forward; rating 0.2543, VAEP/90 +0.500, xT/90 +0.014
-5. Kléper Laveran Lima Ferreira — Sweeper CB; rating 0.1220, VAEP/90 +0.237, xT/90 +0.014
+1. Cristiano Ronaldo dos Santos Aveiro — Target Forward; rating 0.2844, VAEP/90 +0.665, xT/90 +0.009
+2. João Félix Sequeira — Target Forward; rating 0.2101, VAEP/90 +0.405, xT/90 +0.046
+3. Bruno Miguel Borges Fernandes — Progressive Winger; rating 0.1671, VAEP/90 +0.220, xT/90 +0.128
+4. Bernardo Mota Veiga de Carvalho e Silva — Ball-Winner; rating 0.1382, VAEP/90 +0.251, xT/90 +0.058
+5. Raphaël Adelino José Guerreiro — Wide Creator; rating 0.1134, VAEP/90 +0.267, xT/90 +0.076
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

@@ -10,12 +10,12 @@ England: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. John Stones (Center Back)
-2. Harry Maguire (Center Back)
-3. Luke Shaw (Fullback/Wingback)
+1. Luke Shaw (Fullback/Wingback)
+2. John Stones (Center Back)
+3. Harry Maguire (Center Back)
 4. Declan Rice (Defensive Midfield)
-5. Jude Bellingham (Defensive Midfield)
-6. Harry Kane (Forward)
+5. Harry Kane (Forward)
+6. Jude Bellingham (Defensive Midfield)
 7. Jordan Pickford (Goalkeeper)
 8. Jordan Brian Henderson (Central/Wide Midfield)
 9. Bukayo Saka (Attacking Midfield/Wing)
@@ -36,11 +36,11 @@ England: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Harry Kane — Target Forward; rating 0.4987, VAEP/90 +0.975, xT/90 +0.040
-2. Jude Bellingham — Ball-Winner; rating 0.1819, VAEP/90 +0.350, xT/90 +0.030
-3. Harry Maguire — Deep Playmaker; rating 0.1652, VAEP/90 +0.321, xT/90 +0.022
-4. John Stones — Deep Playmaker; rating 0.0835, VAEP/90 +0.165, xT/90 +0.004
-5. Luke Shaw — Wide Creator; rating 0.0792, VAEP/90 +0.128, xT/90 +0.075
+1. Harry Kane — Target Forward; rating 0.1828, VAEP/90 +0.275, xT/90 +0.047
+2. Luke Shaw — Wide Creator; rating 0.1223, VAEP/90 +0.269, xT/90 +0.085
+3. Jude Bellingham — Ball-Winner; rating 0.1069, VAEP/90 +0.300, xT/90 +0.042
+4. Harry Maguire — Deep Playmaker; rating 0.0462, VAEP/90 +0.150, xT/90 +0.035
+5. Declan Rice — Ball-Winner; rating 0.0276, VAEP/90 +0.043, xT/90 +0.022
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

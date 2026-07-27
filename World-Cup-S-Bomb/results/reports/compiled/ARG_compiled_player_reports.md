@@ -13,13 +13,13 @@
 - Team: Argentina (ARG)
 - Position: Right Midfield
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.8505
-- VAEP defense per 90: 0.0730
-- VAEP total per 90: 0.9235
-- VAEP per touch: 0.00525
-- Spatial xT per 90: 0.1913
+- VAEP offense per 90: 0.7666
+- VAEP defense per 90: 0.0193
+- VAEP total per 90: 0.7859
+- VAEP per touch: 0.00447
+- Spatial xT per 90: 0.1997
 - Final-third spatial share: 61.5%
-- Unified final player rating: 0.5016
+- Unified final player rating: 0.2879
 - Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/2995_heatmap.svg)
@@ -57,13 +57,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Left Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0381
-- VAEP defense per 90: -0.1691
-- VAEP total per 90: -0.1310
-- VAEP per touch: -0.00072
-- Spatial xT per 90: 0.0009
+- VAEP offense per 90: 0.0271
+- VAEP defense per 90: -0.0438
+- VAEP total per 90: -0.0166
+- VAEP per touch: -0.00009
+- Spatial xT per 90: 0.0040
 - Final-third spatial share: 3.2%
-- Unified final player rating: -0.0655
+- Unified final player rating: -0.0078
 - Team rank: #12
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/3090_heatmap.svg)
@@ -101,13 +101,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Right Wing
 - Functional role: Progressive Winger
-- VAEP offense per 90: 1.5992
-- VAEP defense per 90: 0.0753
-- VAEP total per 90: 1.6745
-- VAEP per touch: 0.01003
-- Spatial xT per 90: 0.1316
+- VAEP offense per 90: 0.6499
+- VAEP defense per 90: 0.0442
+- VAEP total per 90: 0.6941
+- VAEP per touch: 0.00416
+- Spatial xT per 90: 0.1579
 - Final-third spatial share: 45.2%
-- Unified final player rating: 0.8666
+- Unified final player rating: 0.3297
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/5503_heatmap.svg)
@@ -144,14 +144,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.1252
-- VAEP defense per 90: 0.0239
-- VAEP total per 90: 0.1491
-- VAEP per touch: 0.00144
-- Spatial xT per 90: 0.0180
+- VAEP offense per 90: 0.2089
+- VAEP defense per 90: 0.0235
+- VAEP total per 90: 0.2323
+- VAEP per touch: 0.00224
+- Spatial xT per 90: 0.0210
 - Final-third spatial share: 27.6%
-- Unified final player rating: 0.0786
-- Team rank: #9
+- Unified final player rating: 0.1020
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/5507_heatmap.svg)
 
@@ -188,14 +188,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: 0.0021
-- VAEP defense per 90: 0.5895
-- VAEP total per 90: 0.5916
-- VAEP per touch: 0.01304
-- Spatial xT per 90: 0.0009
+- VAEP offense per 90: 0.0326
+- VAEP defense per 90: 0.2239
+- VAEP total per 90: 0.2565
+- VAEP per touch: 0.00565
+- Spatial xT per 90: 0.0025
 - Final-third spatial share: 1.1%
-- Unified final player rating: 0.2999
-- Team rank: #4
+- Unified final player rating: 0.0776
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/6909_heatmap.svg)
 
@@ -232,14 +232,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Right Defensive Midfield
 - Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.1083
-- VAEP defense per 90: 0.0344
-- VAEP total per 90: 0.1427
-- VAEP per touch: 0.00063
-- Spatial xT per 90: 0.0493
+- VAEP offense per 90: 0.2109
+- VAEP defense per 90: 0.0159
+- VAEP total per 90: 0.2268
+- VAEP per touch: 0.00100
+- Spatial xT per 90: 0.0524
 - Final-third spatial share: 27.7%
-- Unified final player rating: 0.0814
-- Team rank: #8
+- Unified final player rating: 0.0940
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/7797_heatmap.svg)
 
@@ -275,14 +275,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Left Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.0700
-- VAEP defense per 90: -0.0149
-- VAEP total per 90: 0.0551
-- VAEP per touch: 0.00041
-- Spatial xT per 90: 0.0557
+- VAEP offense per 90: 0.4390
+- VAEP defense per 90: 0.0074
+- VAEP total per 90: 0.4464
+- VAEP per touch: 0.00332
+- Spatial xT per 90: 0.0682
 - Final-third spatial share: 36.0%
-- Unified final player rating: 0.0388
-- Team rank: #10
+- Unified final player rating: 0.1687
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/19597_heatmap.svg)
 
@@ -318,13 +318,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Right Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: -0.0046
-- VAEP defense per 90: -0.1589
-- VAEP total per 90: -0.1635
-- VAEP per touch: -0.00109
-- Spatial xT per 90: 0.0026
+- VAEP offense per 90: 0.0176
+- VAEP defense per 90: -0.1230
+- VAEP total per 90: -0.1054
+- VAEP per touch: -0.00070
+- Spatial xT per 90: 0.0054
 - Final-third spatial share: 4.7%
-- Unified final player rating: -0.0815
+- Unified final player rating: -0.0369
 - Team rank: #13
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/20572_heatmap.svg)
@@ -362,13 +362,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0452
-- VAEP defense per 90: -0.0125
-- VAEP total per 90: 0.0327
-- VAEP per touch: 0.00031
-- Spatial xT per 90: 0.0095
+- VAEP offense per 90: 0.0259
+- VAEP defense per 90: -0.0385
+- VAEP total per 90: -0.0126
+- VAEP per touch: -0.00012
+- Spatial xT per 90: 0.0136
 - Final-third spatial share: 8.0%
-- Unified final player rating: 0.0183
+- Unified final player rating: -0.0058
 - Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/27768_heatmap.svg)
@@ -405,14 +405,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Left Center Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.2051
-- VAEP defense per 90: 0.0199
-- VAEP total per 90: 0.2250
-- VAEP per touch: 0.00161
-- Spatial xT per 90: 0.0059
+- VAEP offense per 90: 0.2799
+- VAEP defense per 90: 0.0039
+- VAEP total per 90: 0.2838
+- VAEP per touch: 0.00203
+- Spatial xT per 90: 0.0067
 - Final-third spatial share: 38.9%
-- Unified final player rating: 0.1142
-- Team rank: #6
+- Unified final player rating: 0.1423
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/27886_heatmap.svg)
 
@@ -448,14 +448,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Right Wing Back
 - Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.2136
-- VAEP defense per 90: -0.0213
-- VAEP total per 90: 0.1923
-- VAEP per touch: 0.00142
-- Spatial xT per 90: 0.0191
+- VAEP offense per 90: 0.1627
+- VAEP defense per 90: -0.0486
+- VAEP total per 90: 0.1141
+- VAEP per touch: 0.00084
+- Spatial xT per 90: 0.0220
 - Final-third spatial share: 24.9%
-- Unified final player rating: 0.1004
-- Team rank: #7
+- Unified final player rating: 0.0668
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/29201_heatmap.svg)
 
@@ -492,13 +492,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Center Forward
 - Functional role: Target Forward
-- VAEP offense per 90: 1.0936
-- VAEP defense per 90: 0.0819
-- VAEP total per 90: 1.1755
-- VAEP per touch: 0.01384
-- Spatial xT per 90: 0.0408
+- VAEP offense per 90: 0.6055
+- VAEP defense per 90: 0.0306
+- VAEP total per 90: 0.6361
+- VAEP per touch: 0.00749
+- Spatial xT per 90: 0.0323
 - Final-third spatial share: 49.0%
-- Unified final player rating: 0.6000
+- Unified final player rating: 0.2905
 - Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/29560_heatmap.svg)
@@ -535,14 +535,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Center Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.2853
-- VAEP defense per 90: -0.0650
-- VAEP total per 90: 0.2203
-- VAEP per touch: 0.00112
-- Spatial xT per 90: 0.0453
+- VAEP offense per 90: 0.0715
+- VAEP defense per 90: -0.0628
+- VAEP total per 90: 0.0088
+- VAEP per touch: 0.00004
+- Spatial xT per 90: 0.0597
 - Final-third spatial share: 16.1%
-- Unified final player rating: 0.1195
-- Team rank: #5
+- Unified final player rating: 0.0209
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/38718_heatmap.svg)
 

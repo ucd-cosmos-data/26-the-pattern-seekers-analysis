@@ -13,14 +13,14 @@
 - Team: Morocco (MAR)
 - Position: Left Midfield
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.1109
-- VAEP defense per 90: -0.0737
-- VAEP total per 90: 0.0372
-- VAEP per touch: 0.00037
-- Spatial xT per 90: 0.0642
+- VAEP offense per 90: 0.1924
+- VAEP defense per 90: 0.0126
+- VAEP total per 90: 0.2049
+- VAEP per touch: 0.00204
+- Spatial xT per 90: 0.0793
 - Final-third spatial share: 38.3%
-- Unified final player rating: 0.0316
-- Team rank: #10
+- Unified final player rating: 0.1268
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/3625_heatmap.svg)
 
@@ -56,14 +56,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.1343
-- VAEP defense per 90: -0.0721
-- VAEP total per 90: 0.0622
-- VAEP per touch: 0.00073
-- Spatial xT per 90: 0.0069
+- VAEP offense per 90: 0.0638
+- VAEP defense per 90: -0.1049
+- VAEP total per 90: -0.0411
+- VAEP per touch: -0.00048
+- Spatial xT per 90: 0.0112
 - Final-third spatial share: 3.2%
-- Unified final player rating: 0.0327
-- Team rank: #9
+- Unified final player rating: -0.0146
+- Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5219_heatmap.svg)
 
@@ -100,14 +100,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Center Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: -0.0048
-- VAEP defense per 90: -0.0754
-- VAEP total per 90: -0.0802
-- VAEP per touch: -0.00075
-- Spatial xT per 90: 0.0114
+- VAEP offense per 90: 0.0046
+- VAEP defense per 90: -0.0446
+- VAEP total per 90: -0.0400
+- VAEP per touch: -0.00037
+- Spatial xT per 90: 0.0165
 - Final-third spatial share: 7.5%
-- Unified final player rating: -0.0380
-- Team rank: #13
+- Unified final player rating: -0.0027
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5234_heatmap.svg)
 
@@ -143,14 +143,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Right Wing
 - Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.0794
+- VAEP offense per 90: 0.0988
 - VAEP defense per 90: -0.0147
-- VAEP total per 90: 0.0648
-- VAEP per touch: 0.00049
-- Spatial xT per 90: 0.0540
+- VAEP total per 90: 0.0840
+- VAEP per touch: 0.00064
+- Spatial xT per 90: 0.0715
 - Final-third spatial share: 32.3%
-- Unified final player rating: 0.0433
-- Team rank: #7
+- Unified final player rating: 0.1034
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5237_heatmap.svg)
 
@@ -186,14 +186,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Right Back
 - Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.1799
-- VAEP defense per 90: -0.0548
-- VAEP total per 90: 0.1251
-- VAEP per touch: 0.00092
-- Spatial xT per 90: 0.0477
+- VAEP offense per 90: 0.0486
+- VAEP defense per 90: -0.0877
+- VAEP total per 90: -0.0392
+- VAEP per touch: -0.00029
+- Spatial xT per 90: 0.0545
 - Final-third spatial share: 26.6%
-- Unified final player rating: 0.0724
-- Team rank: #4
+- Unified final player rating: 0.0180
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5245_heatmap.svg)
 
@@ -230,13 +230,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Center Forward
 - Functional role: Target Forward
-- VAEP offense per 90: 0.7719
-- VAEP defense per 90: 0.0302
-- VAEP total per 90: 0.8021
-- VAEP per touch: 0.01608
-- Spatial xT per 90: 0.0050
+- VAEP offense per 90: 0.2222
+- VAEP defense per 90: 0.0060
+- VAEP total per 90: 0.2282
+- VAEP per touch: 0.00457
+- Spatial xT per 90: -0.0001
 - Final-third spatial share: 26.1%
-- Unified final player rating: 0.4069
+- Unified final player rating: 0.1563
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/6301_heatmap.svg)
@@ -273,14 +273,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0199
-- VAEP defense per 90: 0.0854
-- VAEP total per 90: 0.0656
-- VAEP per touch: 0.00105
-- Spatial xT per 90: 0.0018
+- VAEP offense per 90: -0.0144
+- VAEP defense per 90: -0.1723
+- VAEP total per 90: -0.1867
+- VAEP per touch: -0.00299
+- Spatial xT per 90: 0.0033
 - Final-third spatial share: 0.8%
-- Unified final player rating: 0.0335
-- Team rank: #8
+- Unified final player rating: -0.0797
+- Team rank: #13
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/6785_heatmap.svg)
 
@@ -317,14 +317,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: -0.0009
-- VAEP defense per 90: -0.0026
-- VAEP total per 90: -0.0036
-- VAEP per touch: -0.00003
-- Spatial xT per 90: 0.0010
+- VAEP offense per 90: 0.0024
+- VAEP defense per 90: -0.0152
+- VAEP total per 90: -0.0128
+- VAEP per touch: -0.00012
+- Spatial xT per 90: 0.0022
 - Final-third spatial share: 2.4%
-- Unified final player rating: -0.0016
-- Team rank: #12
+- Unified final player rating: -0.0071
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/7459_heatmap.svg)
 
@@ -361,14 +361,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.2829
-- VAEP defense per 90: -0.1199
-- VAEP total per 90: 0.1631
-- VAEP per touch: 0.00170
-- Spatial xT per 90: 0.0030
+- VAEP offense per 90: 0.0224
+- VAEP defense per 90: -0.0817
+- VAEP total per 90: -0.0593
+- VAEP per touch: -0.00062
+- Spatial xT per 90: 0.0064
 - Final-third spatial share: 2.0%
-- Unified final player rating: 0.0826
-- Team rank: #3
+- Unified final player rating: -0.0195
+- Team rank: #12
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/12149_heatmap.svg)
 
@@ -405,14 +405,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.0248
-- VAEP defense per 90: -0.0003
-- VAEP total per 90: 0.0245
-- VAEP per touch: 0.00033
-- Spatial xT per 90: 0.0188
+- VAEP offense per 90: 0.0499
+- VAEP defense per 90: -0.0041
+- VAEP total per 90: 0.0458
+- VAEP per touch: 0.00062
+- Spatial xT per 90: 0.0181
 - Final-third spatial share: 17.3%
-- Unified final player rating: 0.0161
-- Team rank: #11
+- Unified final player rating: 0.0490
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/15890_heatmap.svg)
 
@@ -448,14 +448,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Left Center Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.3090
-- VAEP defense per 90: -0.0155
-- VAEP total per 90: 0.2935
-- VAEP per touch: 0.00428
-- Spatial xT per 90: 0.0076
+- VAEP offense per 90: 0.0696
+- VAEP defense per 90: -0.0246
+- VAEP total per 90: 0.0450
+- VAEP per touch: 0.00066
+- Spatial xT per 90: 0.0064
 - Final-third spatial share: 18.8%
-- Unified final player rating: 0.1495
-- Team rank: #2
+- Unified final player rating: 0.0718
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/23774_heatmap.svg)
 
@@ -492,14 +492,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.1113
-- VAEP defense per 90: -0.0357
-- VAEP total per 90: 0.0756
-- VAEP per touch: 0.00086
-- Spatial xT per 90: 0.0363
+- VAEP offense per 90: 0.1737
+- VAEP defense per 90: -0.0087
+- VAEP total per 90: 0.1651
+- VAEP per touch: 0.00187
+- Spatial xT per 90: 0.0328
 - Final-third spatial share: 19.7%
-- Unified final player rating: 0.0453
-- Team rank: #6
+- Unified final player rating: 0.0839
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/31295_heatmap.svg)
 
@@ -535,14 +535,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Morocco (MAR)
 - Position: Right Center Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.1381
-- VAEP defense per 90: -0.0068
-- VAEP total per 90: 0.1313
-- VAEP per touch: 0.00101
-- Spatial xT per 90: 0.0269
+- VAEP offense per 90: 0.1370
+- VAEP defense per 90: 0.0000
+- VAEP total per 90: 0.1370
+- VAEP per touch: 0.00106
+- Spatial xT per 90: 0.0363
 - Final-third spatial share: 22.9%
-- Unified final player rating: 0.0713
-- Team rank: #5
+- Unified final player rating: 0.0974
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/46258_heatmap.svg)
 

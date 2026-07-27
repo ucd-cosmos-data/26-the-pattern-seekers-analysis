@@ -36,11 +36,11 @@ Senegal: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Ismaïla Sarr — Target Forward; rating 0.7282, VAEP/90 +1.413, xT/90 +0.086
-2. Boulaye Dia — Target Forward; rating 0.2426, VAEP/90 +0.478, xT/90 +0.007
-3. Youssouf Sabaly — Box-to-Box Runner; rating 0.0671, VAEP/90 +0.107, xT/90 +0.068
-4. Kalidou Koulibaly — Sweeper CB; rating 0.0620, VAEP/90 +0.122, xT/90 +0.004
-5. Abdou Diallo — Sweeper CB; rating -0.0049, VAEP/90 -0.019, xT/90 +0.024
+1. Ismaïla Sarr — Target Forward; rating 0.2237, VAEP/90 +0.436, xT/90 +0.090
+2. Boulaye Dia — Target Forward; rating 0.1654, VAEP/90 +0.256, xT/90 -0.008
+3. Youssouf Sabaly — Box-to-Box Runner; rating 0.0749, VAEP/90 +0.115, xT/90 +0.078
+4. Kalidou Koulibaly — Sweeper CB; rating 0.0102, VAEP/90 +0.044, xT/90 +0.011
+5. Abdou Diallo — Sweeper CB; rating -0.0118, VAEP/90 -0.044, xT/90 +0.036
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

@@ -13,13 +13,13 @@
 - Team: Netherlands (NED)
 - Position: Left Center Forward
 - Functional role: Target Forward
-- VAEP offense per 90: 0.5925
-- VAEP defense per 90: 0.1982
-- VAEP total per 90: 0.7907
-- VAEP per touch: 0.00565
-- Spatial xT per 90: 0.0481
+- VAEP offense per 90: 0.4395
+- VAEP defense per 90: 0.1497
+- VAEP total per 90: 0.5892
+- VAEP per touch: 0.00421
+- Spatial xT per 90: 0.0469
 - Final-third spatial share: 43.2%
-- Unified final player rating: 0.4067
+- Unified final player rating: 0.2694
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/NED/2988_heatmap.svg)
@@ -56,14 +56,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Netherlands (NED)
 - Position: Left Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: -0.0031
-- VAEP defense per 90: -0.1066
-- VAEP total per 90: -0.1097
-- VAEP per touch: -0.00066
-- Spatial xT per 90: 0.0086
+- VAEP offense per 90: 0.0085
+- VAEP defense per 90: -0.0540
+- VAEP total per 90: -0.0455
+- VAEP per touch: -0.00028
+- Spatial xT per 90: 0.0173
 - Final-third spatial share: 6.5%
-- Unified final player rating: -0.0533
-- Team rank: #9
+- Unified final player rating: -0.0153
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/NED/3306_heatmap.svg)
 
@@ -99,14 +99,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Netherlands (NED)
 - Position: Left Wing Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.3217
-- VAEP defense per 90: -0.0813
-- VAEP total per 90: 0.2404
-- VAEP per touch: 0.00154
-- Spatial xT per 90: 0.0397
+- VAEP offense per 90: 0.1585
+- VAEP defense per 90: -0.0185
+- VAEP total per 90: 0.1400
+- VAEP per touch: 0.00090
+- Spatial xT per 90: 0.0512
 - Final-third spatial share: 28.9%
-- Unified final player rating: 0.1286
-- Team rank: #6
+- Unified final player rating: 0.0791
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/NED/3311_heatmap.svg)
 
@@ -142,14 +142,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Netherlands (NED)
 - Position: Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0449
-- VAEP defense per 90: -0.0718
-- VAEP total per 90: -0.0269
-- VAEP per touch: -0.00017
-- Spatial xT per 90: 0.0136
+- VAEP offense per 90: 0.0155
+- VAEP defense per 90: -0.1148
+- VAEP total per 90: -0.0993
+- VAEP per touch: -0.00064
+- Spatial xT per 90: 0.0151
 - Final-third spatial share: 2.8%
-- Unified final player rating: -0.0108
-- Team rank: #7
+- Unified final player rating: -0.0325
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/NED/3669_heatmap.svg)
 
@@ -186,14 +186,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Netherlands (NED)
 - Position: Left Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.2859
-- VAEP defense per 90: 0.0193
-- VAEP total per 90: 0.3052
-- VAEP per touch: 0.00173
-- Spatial xT per 90: 0.0205
+- VAEP offense per 90: 0.0675
+- VAEP defense per 90: -0.0075
+- VAEP total per 90: 0.0600
+- VAEP per touch: 0.00034
+- Spatial xT per 90: 0.0281
 - Final-third spatial share: 19.4%
-- Unified final player rating: 0.1572
-- Team rank: #4
+- Unified final player rating: 0.0336
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/NED/8118_heatmap.svg)
 
@@ -230,14 +230,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Netherlands (NED)
 - Position: Right Wing Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.2789
-- VAEP defense per 90: -0.0083
-- VAEP total per 90: 0.2707
-- VAEP per touch: 0.00248
-- Spatial xT per 90: 0.0445
+- VAEP offense per 90: 0.1615
+- VAEP defense per 90: -0.0254
+- VAEP total per 90: 0.1361
+- VAEP per touch: 0.00125
+- Spatial xT per 90: 0.0503
 - Final-third spatial share: 41.2%
-- Unified final player rating: 0.1450
-- Team rank: #5
+- Unified final player rating: 0.0780
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/NED/8125_heatmap.svg)
 
@@ -273,14 +273,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Netherlands (NED)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0167
-- VAEP defense per 90: 0.3855
-- VAEP total per 90: 0.3689
-- VAEP per touch: 0.00545
-- Spatial xT per 90: 0.0005
+- VAEP offense per 90: -0.0053
+- VAEP defense per 90: 0.0595
+- VAEP total per 90: 0.0542
+- VAEP per touch: 0.00080
+- Spatial xT per 90: 0.0014
 - Final-third spatial share: 0.3%
-- Unified final player rating: 0.1862
-- Team rank: #3
+- Unified final player rating: -0.0018
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/NED/8326_heatmap.svg)
 
@@ -317,13 +317,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Netherlands (NED)
 - Position: Center Attacking Midfield
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.6167
-- VAEP defense per 90: -0.0109
-- VAEP total per 90: 0.6057
-- VAEP per touch: 0.00603
-- Spatial xT per 90: 0.0796
+- VAEP offense per 90: 0.3177
+- VAEP defense per 90: 0.0067
+- VAEP total per 90: 0.3243
+- VAEP per touch: 0.00323
+- Spatial xT per 90: 0.0748
 - Final-third spatial share: 51.2%
-- Unified final player rating: 0.3206
+- Unified final player rating: 0.1895
 - Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/NED/20750_heatmap.svg)
@@ -360,13 +360,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Netherlands (NED)
 - Position: Right Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: -0.0069
-- VAEP defense per 90: -0.0610
-- VAEP total per 90: -0.0678
-- VAEP per touch: -0.00036
-- Spatial xT per 90: 0.0114
+- VAEP offense per 90: 0.0053
+- VAEP defense per 90: -0.0646
+- VAEP total per 90: -0.0593
+- VAEP per touch: -0.00032
+- Spatial xT per 90: 0.0190
 - Final-third spatial share: 6.0%
-- Unified final player rating: -0.0318
+- Unified final player rating: -0.0185
 - Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/NED/21809_heatmap.svg)

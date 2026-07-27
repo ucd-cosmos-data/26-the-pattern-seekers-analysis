@@ -1,0 +1,152 @@
+{
+  "schema_version": 4,
+  "status": "PASS",
+  "staging": false,
+  "gates": {
+    "zero_nans": true,
+    "complete_oof_team_coverage": true,
+    "all_64_matches_leakage_safe": true,
+    "minutes_cutoff": true,
+    "fullback_spatial_roles": true,
+    "mbappe_france_top_two": true,
+    "messi_argentina_first": true,
+    "unified_rating_formula": true,
+    "all_player_actions_cross_fitted": true,
+    "legacy_unshrunk_formula_removed": true,
+    "pre_action_feature_contract": true,
+    "legacy_base_formula_reconstructs_raw": true,
+    "event_value_schema": true,
+    "sb360_spatial_coverage": true,
+    "vaep_xt_provenance_explicit": true,
+    "vaep_metric_targets": true,
+    "vaep_artifact": true,
+    "compiled_reports_in_place": true,
+    "heatmaps_complete": true,
+    "summary_complete": true,
+    "counterfactual_safety": true,
+    "locked_classifier_preserved": true
+  },
+  "player_metrics": {
+    "players_before_cutoff": 680,
+    "eligible_players": 142,
+    "players_dropped": 538,
+    "minimum_minutes": 301.20000000000005,
+    "functional_roles": {
+      "Ball-Winner": 29,
+      "Sweeper CB": 19,
+      "Deep Playmaker": 18,
+      "Target Forward": 17,
+      "Goalkeeper": 16,
+      "Wide Creator": 13,
+      "Box-to-Box Runner": 13,
+      "Progressive Winger": 12,
+      "Attacking Wingback": 5
+    },
+    "attacking_wingbacks": 5,
+    "valuation_system": "360-Augmented VAEP and xT (applied concurrently)",
+    "mbappe_team_rank": 1,
+    "mbappe_final_player_rating": 0.3126841904685295,
+    "giroud_final_player_rating": 0.2376888115274914,
+    "hakimi_role": "Box-to-Box Runner",
+    "dest_role": "Box-to-Box Runner",
+    "france_top_three": [
+      {
+        "player": "Kylian Mbapp\u00e9 Lottin",
+        "team_rank": 1,
+        "final_player_rating": 0.3126841904685295
+      },
+      {
+        "player": "Olivier Giroud",
+        "team_rank": 2,
+        "final_player_rating": 0.2376888115274914
+      },
+      {
+        "player": "Ousmane Demb\u00e9l\u00e9",
+        "team_rank": 3,
+        "final_player_rating": 0.2019578807881487
+      }
+    ],
+    "argentina_top_three": [
+      {
+        "player": "Lionel Andr\u00e9s Messi Cuccittini",
+        "team_rank": 1,
+        "final_player_rating": 0.3297362539418146
+      },
+      {
+        "player": "Juli\u00e1n \u00c1lvarez",
+        "team_rank": 2,
+        "final_player_rating": 0.2904569708819181
+      },
+      {
+        "player": "\u00c1ngel Fabi\u00e1n Di Mar\u00eda Hern\u00e1ndez",
+        "team_rank": 3,
+        "final_player_rating": 0.2879459741767765
+      }
+    ]
+  },
+  "spatial_metrics": {
+    "sb360_matches": 64,
+    "successful_action_points": 54286,
+    "freeze_frame_actor_points": 93757,
+    "events_with_360_context": 203454,
+    "heatmaps": 142
+  },
+  "model_metrics": {
+    "legacy_transition": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "vaep_selected": {
+      "model_name": "XGBoost 360-VAEP",
+      "algorithm_type": "XGBClassifier",
+      "brier_score": 0.0011229884375387,
+      "roc_auc": 0.9489939112180352,
+      "pr_auc": 0.0848267931127028,
+      "calibration_error": 0.0003364911402715,
+      "latency_sec": 0.3089459579932736,
+      "rank_brier": 1.0,
+      "rank_roc_auc": 1.0,
+      "rank_overall": 1.0,
+      "evaluation_scope": "development_match_oof",
+      "rows": 391942,
+      "selected": true
+    }
+  },
+  "report_metrics": {
+    "compiled_files": 64,
+    "team_reports": 32,
+    "player_packets": 32,
+    "nan_tokens": 0
+  },
+  "counterfactuals": {
+    "eligible_substitutions": 0,
+    "suppressed_substitutions": 3608
+  },
+  "artifact_regression": {
+    "legacy_transition": {
+      "missing_bundle_keys": [],
+      "schema_compatible": true,
+      "probability_bounds": true,
+      "replay_exact": true,
+      "match_splits_disjoint": true,
+      "partition_match_counts": {
+        "train": 35,
+        "calibration": 10,
+        "threshold": 10,
+        "test": 9
+      },
+      "passed": true
+    },
+    "vaep_xt": {
+      "schema_compatible": true,
+      "probability_bounds": true,
+      "xt_shape": true
+    }
+  }
+}

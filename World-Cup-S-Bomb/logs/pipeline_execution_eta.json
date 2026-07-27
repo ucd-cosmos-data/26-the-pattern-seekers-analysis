@@ -2,43 +2,43 @@
   "schema_version": 1,
   "pipeline": "run_team_simulation_reports_v4",
   "status": "complete",
-  "elapsed_seconds": 247.16215010010637,
-  "peak_memory_mb": 819.839768409729,
+  "elapsed_seconds": 105.0160230420006,
+  "peak_memory_mb": 411.70355701446533,
   "stages": [
     {
       "name": "load_v4_inputs",
       "status": "complete",
-      "elapsed_seconds": 29.90886460011825,
+      "elapsed_seconds": 12.804017000002204,
       "completed": 4,
       "total": 4,
       "unit": "source",
-      "average_units_per_second": 0.13373961377270688,
+      "average_units_per_second": 0.31240195947875665,
       "eta_seconds": 0.0,
-      "peak_memory_mb": 296.9533414840698,
+      "peak_memory_mb": 165.78239345550537,
       "message": "validated 360 actor and density context"
     },
     {
       "name": "v4_player_spatial_evaluation",
       "status": "complete",
-      "elapsed_seconds": 185.37275099987164,
+      "elapsed_seconds": 80.07291229198745,
       "completed": 4,
       "total": 4,
       "unit": "layer",
-      "average_units_per_second": 0.02157814445987679,
+      "average_units_per_second": 0.04995447131251979,
       "eta_seconds": 0.0,
-      "peak_memory_mb": 819.839768409729,
+      "peak_memory_mb": 411.70355701446533,
       "message": "SPADL + xT + calibrated 360-VAEP + unified rankings"
     },
     {
       "name": "reason_coded_substitutions",
       "status": "complete",
-      "elapsed_seconds": 17.594353599939495,
+      "elapsed_seconds": 7.562402291994658,
       "completed": 32,
       "total": 32,
       "unit": "team",
-      "average_units_per_second": 1.8187653111683537,
+      "average_units_per_second": 4.231459629418853,
       "eta_seconds": 0.0,
-      "peak_memory_mb": 819.839768409729,
+      "peak_memory_mb": 411.70355701446533,
       "message": ""
     }
   ],
@@ -129,6 +129,129 @@
           "average_units_per_second": 0.16131679382082784,
           "eta_seconds": 0.0,
           "peak_memory_mb": 305.29499912261963,
+          "message": ""
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "pipeline": "run_team_simulation_reports_v4",
+      "status": "complete",
+      "elapsed_seconds": 247.16215010010637,
+      "peak_memory_mb": 819.839768409729,
+      "stages": [
+        {
+          "name": "load_v4_inputs",
+          "status": "complete",
+          "elapsed_seconds": 29.90886460011825,
+          "completed": 4,
+          "total": 4,
+          "unit": "source",
+          "average_units_per_second": 0.13373961377270688,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 296.9533414840698,
+          "message": "validated 360 actor and density context"
+        },
+        {
+          "name": "v4_player_spatial_evaluation",
+          "status": "complete",
+          "elapsed_seconds": 185.37275099987164,
+          "completed": 4,
+          "total": 4,
+          "unit": "layer",
+          "average_units_per_second": 0.02157814445987679,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 819.839768409729,
+          "message": "SPADL + xT + calibrated 360-VAEP + unified rankings"
+        },
+        {
+          "name": "reason_coded_substitutions",
+          "status": "complete",
+          "elapsed_seconds": 17.594353599939495,
+          "completed": 32,
+          "total": 32,
+          "unit": "team",
+          "average_units_per_second": 1.8187653111683537,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 819.839768409729,
+          "message": ""
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "pipeline": "run_team_simulation_reports_v4",
+      "status": "complete",
+      "elapsed_seconds": 87.13162504200591,
+      "peak_memory_mb": 412.094202041626,
+      "stages": [
+        {
+          "name": "load_v4_inputs",
+          "status": "complete",
+          "elapsed_seconds": 15.080218167000567,
+          "completed": 4,
+          "total": 4,
+          "unit": "source",
+          "average_units_per_second": 0.26524815196328116,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 165.7826681137085,
+          "message": "validated 360 actor and density context"
+        },
+        {
+          "name": "v4_player_spatial_evaluation",
+          "status": "complete",
+          "elapsed_seconds": 71.31757075000496,
+          "completed": 4,
+          "total": 4,
+          "unit": "layer",
+          "average_units_per_second": 0.056087159979432165,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 412.094202041626,
+          "message": "SPADL + xT + calibrated 360-VAEP + unified rankings"
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "pipeline": "run_team_simulation_reports_v4",
+      "status": "complete",
+      "elapsed_seconds": 82.24275425000815,
+      "peak_memory_mb": 411.70402336120605,
+      "stages": [
+        {
+          "name": "load_v4_inputs",
+          "status": "complete",
+          "elapsed_seconds": 13.080647415990825,
+          "completed": 4,
+          "total": 4,
+          "unit": "source",
+          "average_units_per_second": 0.30579526171694543,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 165.78796482086182,
+          "message": "validated 360 actor and density context"
+        },
+        {
+          "name": "v4_player_spatial_evaluation",
+          "status": "complete",
+          "elapsed_seconds": 57.38973629199609,
+          "completed": 4,
+          "total": 4,
+          "unit": "layer",
+          "average_units_per_second": 0.06969887402249422,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 411.70402336120605,
+          "message": "SPADL + xT + calibrated 360-VAEP + unified rankings"
+        },
+        {
+          "name": "reason_coded_substitutions",
+          "status": "complete",
+          "elapsed_seconds": 7.621012624993455,
+          "completed": 32,
+          "total": 32,
+          "unit": "team",
+          "average_units_per_second": 4.1989170697676785,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 411.70402336120605,
           "message": ""
         }
       ]

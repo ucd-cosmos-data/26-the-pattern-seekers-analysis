@@ -10,14 +10,14 @@ Netherlands: no tactical change cleared the modeled effect floor. Primary review
 
 ## Optimized starting 11
 
-1. Andries Noppert (Goalkeeper)
-2. Frenkie de Jong (Defensive Midfield)
-3. Denzel Dumfries (Fullback/Wingback)
+1. Frenkie de Jong (Defensive Midfield)
+2. Denzel Dumfries (Fullback/Wingback)
+3. Daley Blind (Fullback/Wingback)
 4. Cody Mathès Gakpo (Attacking Midfield/Wing)
-5. Daley Blind (Fullback/Wingback)
-6. Memphis Depay (Forward)
-7. Virgil van Dijk (Center Back)
-8. Nathan Aké (Center Back)
+5. Memphis Depay (Forward)
+6. Nathan Aké (Center Back)
+7. Andries Noppert (Goalkeeper)
+8. Virgil van Dijk (Center Back)
 9. Teun Koopmeiners (Defensive Midfield)
 10. Jurriën David Norman Timber (Center Back)
 11. Noa Lang (Central/Wide Midfield)
@@ -36,11 +36,11 @@ Netherlands: no tactical change cleared the modeled effect floor. Primary review
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Memphis Depay — Target Forward; rating 0.4067, VAEP/90 +0.791, xT/90 +0.048
-2. Cody Mathès Gakpo — Progressive Winger; rating 0.3206, VAEP/90 +0.606, xT/90 +0.080
-3. Andries Noppert — Goalkeeper; rating 0.1862, VAEP/90 +0.369, xT/90 +0.001
-4. Frenkie de Jong — Ball-Winner; rating 0.1572, VAEP/90 +0.305, xT/90 +0.020
-5. Denzel Dumfries — Attacking Wingback; rating 0.1450, VAEP/90 +0.271, xT/90 +0.045
+1. Memphis Depay — Target Forward; rating 0.2694, VAEP/90 +0.589, xT/90 +0.047
+2. Cody Mathès Gakpo — Progressive Winger; rating 0.1895, VAEP/90 +0.324, xT/90 +0.075
+3. Daley Blind — Wide Creator; rating 0.0791, VAEP/90 +0.140, xT/90 +0.051
+4. Denzel Dumfries — Attacking Wingback; rating 0.0780, VAEP/90 +0.136, xT/90 +0.050
+5. Frenkie de Jong — Ball-Winner; rating 0.0336, VAEP/90 +0.060, xT/90 +0.028
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

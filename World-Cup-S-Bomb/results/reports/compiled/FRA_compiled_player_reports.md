@@ -13,13 +13,13 @@
 - Team: France (FRA)
 - Position: Left Center Forward
 - Functional role: Progressive Winger
-- VAEP offense per 90: 1.8760
-- VAEP defense per 90: 0.0127
-- VAEP total per 90: 1.8888
-- VAEP per touch: 0.01357
-- Spatial xT per 90: 0.1198
+- VAEP offense per 90: 0.6218
+- VAEP defense per 90: 0.0213
+- VAEP total per 90: 0.6431
+- VAEP per touch: 0.00462
+- Spatial xT per 90: 0.1343
 - Final-third spatial share: 59.0%
-- Unified final player rating: 0.9724
+- Unified final player rating: 0.3127
 - Team rank: #1
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3009_heatmap.svg)
@@ -56,14 +56,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Left Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.5712
-- VAEP defense per 90: -0.0324
-- VAEP total per 90: 0.5388
-- VAEP per touch: 0.00395
-- Spatial xT per 90: 0.0095
+- VAEP offense per 90: 0.2675
+- VAEP defense per 90: -0.0211
+- VAEP total per 90: 0.2465
+- VAEP per touch: 0.00181
+- Spatial xT per 90: 0.0126
 - Final-third spatial share: 29.6%
-- Unified final player rating: 0.2725
-- Team rank: #3
+- Unified final player rating: 0.0915
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3026_heatmap.svg)
 
@@ -100,14 +100,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0159
-- VAEP defense per 90: 0.1190
-- VAEP total per 90: 0.1031
-- VAEP per touch: 0.00214
-- Spatial xT per 90: 0.0047
+- VAEP offense per 90: -0.0125
+- VAEP defense per 90: -0.0520
+- VAEP total per 90: -0.0645
+- VAEP per touch: -0.00134
+- Spatial xT per 90: 0.0061
 - Final-third spatial share: 1.3%
-- Unified final player rating: 0.0531
-- Team rank: #7
+- Unified final player rating: -0.0381
+- Team rank: #12
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3099_heatmap.svg)
 
@@ -144,13 +144,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Center Forward
 - Functional role: Target Forward
-- VAEP offense per 90: 1.7446
-- VAEP defense per 90: 0.0965
-- VAEP total per 90: 1.8411
-- VAEP per touch: 0.03315
-- Spatial xT per 90: 0.0090
+- VAEP offense per 90: 0.4138
+- VAEP defense per 90: 0.0617
+- VAEP total per 90: 0.4755
+- VAEP per touch: 0.00856
+- Spatial xT per 90: 0.0075
 - Final-third spatial share: 37.3%
-- Unified final player rating: 0.9323
+- Unified final player rating: 0.2377
 - Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3604_heatmap.svg)
@@ -187,14 +187,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Right Back
 - Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.0645
-- VAEP defense per 90: -0.0531
-- VAEP total per 90: 0.0114
-- VAEP per touch: 0.00009
-- Spatial xT per 90: 0.0154
+- VAEP offense per 90: 0.0959
+- VAEP defense per 90: -0.0719
+- VAEP total per 90: 0.0239
+- VAEP per touch: 0.00018
+- Spatial xT per 90: 0.0185
 - Final-third spatial share: 18.4%
-- Unified final player rating: 0.0088
-- Team rank: #9
+- Unified final player rating: 0.0383
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/4445_heatmap.svg)
 
@@ -231,14 +231,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Right Wing
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.4151
-- VAEP defense per 90: -0.0049
-- VAEP total per 90: 0.4103
-- VAEP per touch: 0.00319
-- Spatial xT per 90: 0.1039
+- VAEP offense per 90: 0.3396
+- VAEP defense per 90: 0.0111
+- VAEP total per 90: 0.3506
+- VAEP per touch: 0.00273
+- Spatial xT per 90: 0.1122
 - Final-third spatial share: 53.5%
-- Unified final player rating: 0.2269
-- Team rank: #5
+- Unified final player rating: 0.2020
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/5477_heatmap.svg)
 
@@ -274,14 +274,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Right Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0421
-- VAEP defense per 90: -0.0163
-- VAEP total per 90: 0.0258
-- VAEP per touch: 0.00021
-- Spatial xT per 90: 0.0064
+- VAEP offense per 90: 0.0325
+- VAEP defense per 90: -0.0224
+- VAEP total per 90: 0.0101
+- VAEP per touch: 0.00008
+- Spatial xT per 90: 0.0120
 - Final-third spatial share: 4.9%
-- Unified final player rating: 0.0142
-- Team rank: #8
+- Unified final player rating: 0.0019
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/5485_heatmap.svg)
 
@@ -317,13 +317,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Center Attacking Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.4858
-- VAEP defense per 90: -0.0152
-- VAEP total per 90: 0.4706
-- VAEP per touch: 0.00353
-- Spatial xT per 90: 0.1182
+- VAEP offense per 90: 0.3541
+- VAEP defense per 90: -0.0109
+- VAEP total per 90: 0.3432
+- VAEP per touch: 0.00257
+- Spatial xT per 90: 0.1166
 - Final-third spatial share: 35.3%
-- Unified final player rating: 0.2600
+- Unified final player rating: 0.1995
 - Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/5487_heatmap.svg)
@@ -361,13 +361,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.2293
-- VAEP defense per 90: -0.0390
-- VAEP total per 90: 0.1903
-- VAEP per touch: 0.00134
-- Spatial xT per 90: 0.0505
+- VAEP offense per 90: 0.1691
+- VAEP defense per 90: -0.0098
+- VAEP total per 90: 0.1593
+- VAEP per touch: 0.00112
+- Spatial xT per 90: 0.0466
 - Final-third spatial share: 27.8%
-- Unified final player rating: 0.1057
+- Unified final player rating: 0.0850
 - Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/6704_heatmap.svg)
@@ -405,14 +405,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Left Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: -0.0043
-- VAEP defense per 90: -0.2125
-- VAEP total per 90: -0.2169
-- VAEP per touch: -0.00135
-- Spatial xT per 90: 0.0137
+- VAEP offense per 90: 0.0018
+- VAEP defense per 90: -0.0660
+- VAEP total per 90: -0.0642
+- VAEP per touch: -0.00040
+- Spatial xT per 90: 0.0197
 - Final-third spatial share: 3.9%
-- Unified final player rating: -0.1061
-- Team rank: #12
+- Unified final player rating: -0.0210
+- Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/8519_heatmap.svg)
 
@@ -448,13 +448,13 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Right Defensive Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.0362
-- VAEP defense per 90: -0.0662
-- VAEP total per 90: -0.0299
-- VAEP per touch: -0.00017
-- Spatial xT per 90: 0.0271
+- VAEP offense per 90: -0.0238
+- VAEP defense per 90: -0.0199
+- VAEP total per 90: -0.0437
+- VAEP per touch: -0.00025
+- Spatial xT per 90: 0.0375
 - Final-third spatial share: 15.0%
-- Unified final player rating: -0.0096
+- Unified final player rating: -0.0006
 - Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/10481_heatmap.svg)
@@ -492,14 +492,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: France (FRA)
 - Position: Left Center Back
 - Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0760
-- VAEP defense per 90: -0.1043
-- VAEP total per 90: -0.0283
-- VAEP per touch: -0.00016
-- Spatial xT per 90: 0.0182
+- VAEP offense per 90: 0.0587
+- VAEP defense per 90: -0.0353
+- VAEP total per 90: 0.0233
+- VAEP per touch: 0.00014
+- Spatial xT per 90: 0.0290
 - Final-third spatial share: 3.6%
-- Unified final player rating: -0.0106
-- Team rank: #11
+- Unified final player rating: 0.0052
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/11135_heatmap.svg)
 

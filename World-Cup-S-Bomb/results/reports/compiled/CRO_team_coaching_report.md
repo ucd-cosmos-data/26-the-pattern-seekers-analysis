@@ -10,14 +10,14 @@ Croatia: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. Dominik Livaković (Goalkeeper)
-2. Joško Gvardiol (Center Back)
+1. Mateo Kovačić (Central/Wide Midfield)
+2. Ivan Perišić (Attacking Midfield/Wing)
 3. Luka Modrić (Central/Wide Midfield)
-4. Ivan Perišić (Attacking Midfield/Wing)
-5. Mateo Kovačić (Central/Wide Midfield)
-6. Andrej Kramarić (Attacking Midfield/Wing)
+4. Josip Juranović (Fullback/Wingback)
+5. Andrej Kramarić (Attacking Midfield/Wing)
+6. Joško Gvardiol (Center Back)
 7. Marcelo Brozović (Defensive Midfield)
-8. Josip Juranović (Fullback/Wingback)
+8. Dominik Livaković (Goalkeeper)
 9. Borna Sosa (Fullback/Wingback)
 10. Dejan Lovren (Center Back)
 11. Bruno Petković (Forward)
@@ -36,11 +36,11 @@ Croatia: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Andrej Kramarić — Target Forward; rating 0.4057, VAEP/90 +0.803, xT/90 +0.010
-2. Ivan Perišić — Wide Creator; rating 0.2118, VAEP/90 +0.399, xT/90 +0.057
-3. Dominik Livaković — Goalkeeper; rating 0.1243, VAEP/90 +0.246, xT/90 +0.001
-4. Luka Modrić — Ball-Winner; rating 0.1177, VAEP/90 +0.205, xT/90 +0.075
-5. Marcelo Brozović — Ball-Winner; rating 0.1124, VAEP/90 +0.220, xT/90 +0.012
+1. Ivan Perišić — Wide Creator; rating 0.2144, VAEP/90 +0.407, xT/90 +0.065
+2. Andrej Kramarić — Target Forward; rating 0.1937, VAEP/90 +0.365, xT/90 +0.010
+3. Mateo Kovačić — Ball-Winner; rating 0.1302, VAEP/90 +0.225, xT/90 +0.065
+4. Luka Modrić — Ball-Winner; rating 0.0858, VAEP/90 +0.087, xT/90 +0.092
+5. Borna Sosa — Wide Creator; rating 0.0781, VAEP/90 +0.130, xT/90 +0.068
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

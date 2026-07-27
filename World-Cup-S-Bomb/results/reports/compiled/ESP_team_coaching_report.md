@@ -10,13 +10,13 @@ Spain: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Optimized starting 11
 
-1. Unai Simón Mendibil (Goalkeeper)
-2. Rodrigo Hernández Cascante (Center Back)
-3. Daniel Olmo Carvajal (Attacking Midfield/Wing)
-4. Pedro González López (Central/Wide Midfield)
+1. Rodrigo Hernández Cascante (Center Back)
+2. Daniel Olmo Carvajal (Attacking Midfield/Wing)
+3. Pedro González López (Central/Wide Midfield)
+4. Sergio Busquets i Burgos (Defensive Midfield)
 5. Aymeric Laporte (Center Back)
-6. Pablo Martín Páez Gavira (Central/Wide Midfield)
-7. Sergio Busquets i Burgos (Defensive Midfield)
+6. Unai Simón Mendibil (Goalkeeper)
+7. Pablo Martín Páez Gavira (Central/Wide Midfield)
 8. Jordi Alba Ramos (Fullback/Wingback)
 9. Marco Asensio Willemsen (Forward)
 10. Ferrán Torres García (Attacking Midfield/Wing)
@@ -36,11 +36,11 @@ Spain: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Daniel Olmo Carvajal — Progressive Winger; rating 0.3061, VAEP/90 +0.584, xT/90 +0.066
-2. Unai Simón Mendibil — Goalkeeper; rating 0.1929, VAEP/90 +0.383, xT/90 +0.000
-3. Pedro González López — Ball-Winner; rating 0.0307, VAEP/90 +0.028, xT/90 +0.084
-4. Aymeric Laporte — Deep Playmaker; rating 0.0090, VAEP/90 +0.013, xT/90 +0.013
-5. Rodrigo Hernández Cascante — Deep Playmaker; rating 0.0010, VAEP/90 -0.011, xT/90 +0.033
+1. Daniel Olmo Carvajal — Progressive Winger; rating 0.2554, VAEP/90 +0.555, xT/90 +0.072
+2. Pedro González López — Ball-Winner; rating 0.1236, VAEP/90 +0.180, xT/90 +0.105
+3. Rodrigo Hernández Cascante — Deep Playmaker; rating 0.0147, VAEP/90 +0.043, xT/90 +0.050
+4. Aymeric Laporte — Deep Playmaker; rating 0.0089, VAEP/90 +0.040, xT/90 +0.025
+5. Sergio Busquets i Burgos — Ball-Winner; rating 0.0032, VAEP/90 -0.055, xT/90 +0.046
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

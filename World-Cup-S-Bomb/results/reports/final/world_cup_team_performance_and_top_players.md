@@ -53,16 +53,16 @@ All V4 acceptance gates passed, including missing-value-free output, complete OO
 
 | Rank | Player | Team | Minutes | VAEP/90 | VAEP/touch | xT/90 | Rating |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Kylian Mbappé Lottin | France | 654 | +1.8888 | +0.01357 | +0.1198 | +0.9724 |
-| 2 | Olivier Giroud | France | 433 | +1.8411 | +0.03315 | +0.0090 | +0.9323 |
-| 3 | Lionel Andrés Messi Cuccittini | Argentina | 734 | +1.6745 | +0.01003 | +0.1316 | +0.8666 |
-| 4 | Ismaïla Sarr | Senegal | 365 | +1.4128 | +0.01541 | +0.0856 | +0.7282 |
-| 5 | Richarlison de Andrade | Brazil | 328 | +1.3828 | +0.01940 | +0.0140 | +0.7000 |
-| 6 | Julián Álvarez | Argentina | 485 | +1.1755 | +0.01384 | +0.0408 | +0.6000 |
-| 7 | Robert Lewandowski | Poland | 390 | +1.0922 | +0.01121 | +0.0138 | +0.5522 |
-| 8 | Breel-Donald Embolo | Switzerland | 330 | +1.0347 | +0.01295 | +0.0046 | +0.5222 |
-| 9 | Ángel Fabián Di María Hernández | Argentina | 305 | +0.9235 | +0.00525 | +0.1913 | +0.5016 |
-| 10 | Harry Kane | England | 422 | +0.9747 | +0.01092 | +0.0402 | +0.4987 |
+| 1 | Lionel Andrés Messi Cuccittini | Argentina | 734 | +0.6941 | +0.00416 | +0.1579 | +0.3297 |
+| 2 | Kylian Mbappé Lottin | France | 654 | +0.6431 | +0.00462 | +0.1343 | +0.3127 |
+| 3 | Richarlison de Andrade | Brazil | 328 | +0.7080 | +0.00993 | +0.0119 | +0.2984 |
+| 4 | Julián Álvarez | Argentina | 485 | +0.6361 | +0.00749 | +0.0323 | +0.2905 |
+| 5 | Ángel Fabián Di María Hernández | Argentina | 305 | +0.7859 | +0.00447 | +0.1997 | +0.2879 |
+| 6 | Cristiano Ronaldo dos Santos Aveiro | Portugal | 303 | +0.6654 | +0.00700 | +0.0091 | +0.2844 |
+| 7 | Memphis Depay | Netherlands | 316 | +0.5892 | +0.00421 | +0.0469 | +0.2694 |
+| 8 | Daniel Olmo Carvajal | Spain | 388 | +0.5547 | +0.00345 | +0.0722 | +0.2554 |
+| 9 | Christian Pulisic | United States | 336 | +0.5271 | +0.00392 | +0.1139 | +0.2496 |
+| 10 | Raphael Dias Belloli | Brazil | 330 | +0.4774 | +0.00346 | +0.1698 | +0.2420 |
 
 ## Tournament overview
 
@@ -146,11 +146,11 @@ Average lineup matchup deltas were **-0.043 aerial**, **-2.135 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Lionel Andrés Messi Cuccittini | Attacking Midfield/Wing | Progressive Winger | 734 | 0.8666 | 1.674 |
-| 2 | Julián Álvarez | Forward | Target Forward | 485 | 0.6000 | 1.175 |
-| 3 | Ángel Fabián Di María Hernández | Central/Wide Midfield | Progressive Winger | 305 | 0.5016 | 0.924 |
-| 4 | Damián Emiliano Martínez | Goalkeeper | Goalkeeper | 734 | 0.2999 | 0.592 |
-| 5 | Enzo Fernandez | Defensive Midfield | Ball-Winner | 601 | 0.1195 | 0.220 |
+| 1 | Lionel Andrés Messi Cuccittini | Attacking Midfield/Wing | Progressive Winger | 734 | 0.3297 | 0.694 |
+| 2 | Julián Álvarez | Forward | Target Forward | 485 | 0.2905 | 0.636 |
+| 3 | Ángel Fabián Di María Hernández | Central/Wide Midfield | Progressive Winger | 305 | 0.2879 | 0.786 |
+| 4 | Marcos Javier Acuña | Fullback/Wingback | Attacking Wingback | 397 | 0.1687 | 0.446 |
+| 5 | Alexis Mac Allister | Central/Wide Midfield | Ball-Winner | 552 | 0.1423 | 0.284 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -202,11 +202,11 @@ Average lineup matchup deltas were **+0.083 aerial**, **+3.342 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Mathew Leckie | Central/Wide Midfield | Target Forward | 342 | 0.2020 | 0.396 |
-| 2 | Jackson Irvine | Forward | Ball-Winner | 374 | 0.1743 | 0.338 |
-| 3 | Aziz Eraltay Behich | Fullback/Wingback | Wide Creator | 387 | 0.0505 | 0.085 |
-| 4 | Aaron Mooy | Defensive Midfield | Box-to-Box Runner | 387 | 0.0468 | 0.083 |
-| 5 | Harry Souttar | Center Back | Sweeper CB | 387 | -0.0629 | -0.126 |
+| 1 | Mathew Leckie | Central/Wide Midfield | Target Forward | 342 | 0.1368 | 0.259 |
+| 2 | Jackson Irvine | Forward | Ball-Winner | 374 | 0.1088 | 0.009 |
+| 3 | Aziz Eraltay Behich | Fullback/Wingback | Wide Creator | 387 | 0.0793 | 0.144 |
+| 4 | Aaron Mooy | Defensive Midfield | Box-to-Box Runner | 387 | 0.0121 | -0.015 |
+| 5 | Kye Rowles | Center Back | Sweeper CB | 387 | -0.0346 | -0.110 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -309,11 +309,11 @@ Average lineup matchup deltas were **-0.126 aerial**, **-6.128 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Richarlison de Andrade | Forward | Target Forward | 328 | 0.7000 | 1.383 |
-| 2 | Raphael Dias Belloli | Attacking Midfield/Wing | Progressive Winger | 330 | 0.3370 | 0.600 |
-| 3 | Vinícius José Paixão de Oliveira Júnior | Central/Wide Midfield | Progressive Winger | 307 | 0.3234 | 0.598 |
-| 4 | Carlos Henrique Casimiro | Defensive Midfield | Ball-Winner | 409 | 0.2241 | 0.432 |
-| 5 | Lucas Tolentino Coelho de Lima | Defensive Midfield | Ball-Winner | 319 | 0.2206 | 0.426 |
+| 1 | Richarlison de Andrade | Forward | Target Forward | 328 | 0.2984 | 0.708 |
+| 2 | Raphael Dias Belloli | Attacking Midfield/Wing | Progressive Winger | 330 | 0.2420 | 0.477 |
+| 3 | Vinícius José Paixão de Oliveira Júnior | Central/Wide Midfield | Progressive Winger | 307 | 0.2296 | 0.584 |
+| 4 | Lucas Tolentino Coelho de Lima | Defensive Midfield | Ball-Winner | 319 | 0.0589 | 0.155 |
+| 5 | Éder Gabriel Militão | Fullback/Wingback | Box-to-Box Runner | 364 | 0.0570 | 0.068 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -518,11 +518,11 @@ Average lineup matchup deltas were **+0.041 aerial**, **-2.690 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Andrej Kramarić | Attacking Midfield/Wing | Target Forward | 478 | 0.4057 | 0.803 |
-| 2 | Ivan Perišić | Attacking Midfield/Wing | Wide Creator | 687 | 0.2118 | 0.399 |
-| 3 | Dominik Livaković | Goalkeeper | Goalkeeper | 720 | 0.1243 | 0.246 |
-| 4 | Luka Modrić | Central/Wide Midfield | Ball-Winner | 673 | 0.1177 | 0.205 |
-| 5 | Marcelo Brozović | Defensive Midfield | Ball-Winner | 570 | 0.1124 | 0.220 |
+| 1 | Ivan Perišić | Attacking Midfield/Wing | Wide Creator | 687 | 0.2144 | 0.407 |
+| 2 | Andrej Kramarić | Attacking Midfield/Wing | Target Forward | 478 | 0.1937 | 0.365 |
+| 3 | Mateo Kovačić | Central/Wide Midfield | Ball-Winner | 650 | 0.1302 | 0.225 |
+| 4 | Luka Modrić | Central/Wide Midfield | Ball-Winner | 673 | 0.0858 | 0.087 |
+| 5 | Borna Sosa | Fullback/Wingback | Wide Creator | 440 | 0.0781 | 0.130 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -676,11 +676,11 @@ Average lineup matchup deltas were **+0.012 aerial**, **-3.654 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Harry Kane | Forward | Target Forward | 422 | 0.4987 | 0.975 |
-| 2 | Jude Bellingham | Defensive Midfield | Ball-Winner | 442 | 0.1819 | 0.350 |
-| 3 | Harry Maguire | Center Back | Deep Playmaker | 454 | 0.1652 | 0.321 |
-| 4 | John Stones | Center Back | Deep Playmaker | 465 | 0.0835 | 0.165 |
-| 5 | Luke Shaw | Fullback/Wingback | Wide Creator | 457 | 0.0792 | 0.128 |
+| 1 | Harry Kane | Forward | Target Forward | 422 | 0.1828 | 0.275 |
+| 2 | Luke Shaw | Fullback/Wingback | Wide Creator | 457 | 0.1223 | 0.269 |
+| 3 | Jude Bellingham | Defensive Midfield | Ball-Winner | 442 | 0.1069 | 0.300 |
+| 4 | Harry Maguire | Center Back | Deep Playmaker | 454 | 0.0462 | 0.150 |
+| 5 | Declan Rice | Defensive Midfield | Ball-Winner | 450 | 0.0276 | 0.043 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -732,11 +732,11 @@ Average lineup matchup deltas were **+0.105 aerial**, **+1.067 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Kylian Mbappé Lottin | Forward | Progressive Winger | 654 | 0.9724 | 1.889 |
-| 2 | Olivier Giroud | Forward | Target Forward | 433 | 0.9323 | 1.841 |
-| 3 | Adrien Rabiot | Defensive Midfield | Ball-Winner | 529 | 0.2725 | 0.539 |
-| 4 | Antoine Griezmann | Attacking Midfield/Wing | Ball-Winner | 586 | 0.2600 | 0.471 |
-| 5 | Ousmane Dembélé | Attacking Midfield/Wing | Progressive Winger | 448 | 0.2269 | 0.410 |
+| 1 | Kylian Mbappé Lottin | Forward | Progressive Winger | 654 | 0.3127 | 0.643 |
+| 2 | Olivier Giroud | Forward | Target Forward | 433 | 0.2377 | 0.476 |
+| 3 | Ousmane Dembélé | Attacking Midfield/Wing | Progressive Winger | 448 | 0.2020 | 0.351 |
+| 4 | Antoine Griezmann | Attacking Midfield/Wing | Ball-Winner | 586 | 0.1995 | 0.343 |
+| 5 | Adrien Rabiot | Defensive Midfield | Ball-Winner | 529 | 0.0915 | 0.246 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -839,10 +839,10 @@ Average lineup matchup deltas were **-0.156 aerial**, **+1.137 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Mohamed Salisu | Center Back | Sweeper CB | 301 | 0.0947 | 0.185 |
-| 2 | Thomas Teye Partey | Defensive Midfield | Ball-Winner | 301 | 0.0356 | 0.058 |
-| 3 | Daniel Amartey | Center Back | Sweeper CB | 301 | -0.0950 | -0.191 |
-| 4 | Lawrence Ati-Zigi | Goalkeeper | Goalkeeper | 301 | -0.2145 | -0.424 |
+| 1 | Mohamed Salisu | Center Back | Sweeper CB | 301 | 0.0010 | 0.013 |
+| 2 | Thomas Teye Partey | Defensive Midfield | Ball-Winner | 301 | -0.0002 | -0.078 |
+| 3 | Lawrence Ati-Zigi | Goalkeeper | Goalkeeper | 301 | -0.0554 | -0.119 |
+| 4 | Daniel Amartey | Center Back | Sweeper CB | 301 | -0.0630 | -0.238 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -894,9 +894,9 @@ Average lineup matchup deltas were **+0.058 aerial**, **+1.725 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Mehdi Taremi | Forward | Target Forward | 305 | 0.4178 | 0.812 |
-| 2 | Morteza Pouraliganji | Center Back | Sweeper CB | 305 | 0.0158 | 0.029 |
-| 3 | Seyed Majid Hosseini | Center Back | Sweeper CB | 305 | -0.0433 | -0.089 |
+| 1 | Mehdi Taremi | Forward | Target Forward | 305 | 0.2247 | 0.412 |
+| 2 | Morteza Pouraliganji | Center Back | Sweeper CB | 305 | 0.0105 | 0.054 |
+| 3 | Seyed Majid Hosseini | Center Back | Sweeper CB | 305 | -0.0246 | -0.084 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -948,11 +948,11 @@ Average lineup matchup deltas were **-0.029 aerial**, **+10.178 pressing**, and 
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Daichi Kamada | Attacking Midfield/Wing | Target Forward | 337 | 0.1870 | 0.362 |
-| 2 | Junya Ito | Fullback/Wingback | Attacking Wingback | 346 | 0.0914 | 0.160 |
-| 3 | Shūichi Gonda | Goalkeeper | Goalkeeper | 413 | 0.0673 | 0.131 |
-| 4 | Wataru Endo | Defensive Midfield | Ball-Winner | 326 | 0.0176 | 0.021 |
-| 5 | Maya Yoshida | Center Back | Sweeper CB | 413 | -0.0786 | -0.158 |
+| 1 | Daichi Kamada | Attacking Midfield/Wing | Target Forward | 337 | 0.1462 | 0.174 |
+| 2 | Junya Ito | Fullback/Wingback | Attacking Wingback | 346 | 0.0744 | 0.121 |
+| 3 | Wataru Endo | Defensive Midfield | Ball-Winner | 326 | 0.0148 | -0.014 |
+| 4 | Maya Yoshida | Center Back | Sweeper CB | 413 | -0.0403 | -0.129 |
+| 5 | Shūichi Gonda | Goalkeeper | Goalkeeper | 413 | -0.0686 | -0.162 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -1055,11 +1055,11 @@ Average lineup matchup deltas were **-0.018 aerial**, **+4.404 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Youssef En-Nesyri | Forward | Target Forward | 554 | 0.4069 | 0.802 |
-| 2 | Selim Amallah | Central/Wide Midfield | Ball-Winner | 424 | 0.1495 | 0.293 |
-| 3 | Nayef Aguerd | Center Back | Sweeper CB | 369 | 0.0826 | 0.163 |
-| 4 | Achraf Hakimi Mouh | Fullback/Wingback | Box-to-Box Runner | 661 | 0.0724 | 0.125 |
-| 5 | Azzedine Ounahi | Central/Wide Midfield | Ball-Winner | 589 | 0.0713 | 0.131 |
+| 1 | Youssef En-Nesyri | Forward | Target Forward | 554 | 0.1563 | 0.228 |
+| 2 | Sofiane Boufal | Central/Wide Midfield | Progressive Winger | 477 | 0.1268 | 0.205 |
+| 3 | Hakim Ziyech | Attacking Midfield/Wing | Box-to-Box Runner | 663 | 0.1034 | 0.084 |
+| 4 | Azzedine Ounahi | Central/Wide Midfield | Ball-Winner | 589 | 0.0974 | 0.137 |
+| 5 | Yahia Attiyat allah | Fullback/Wingback | Wide Creator | 350 | 0.0839 | 0.165 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -1111,11 +1111,11 @@ Average lineup matchup deltas were **+0.024 aerial**, **+0.739 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Memphis Depay | Forward | Target Forward | 316 | 0.4067 | 0.791 |
-| 2 | Cody Mathès Gakpo | Attacking Midfield/Wing | Progressive Winger | 460 | 0.3206 | 0.606 |
-| 3 | Andries Noppert | Goalkeeper | Goalkeeper | 510 | 0.1862 | 0.369 |
-| 4 | Frenkie de Jong | Defensive Midfield | Ball-Winner | 499 | 0.1572 | 0.305 |
-| 5 | Denzel Dumfries | Fullback/Wingback | Attacking Wingback | 510 | 0.1450 | 0.271 |
+| 1 | Memphis Depay | Forward | Target Forward | 316 | 0.2694 | 0.589 |
+| 2 | Cody Mathès Gakpo | Attacking Midfield/Wing | Progressive Winger | 460 | 0.1895 | 0.324 |
+| 3 | Daley Blind | Fullback/Wingback | Wide Creator | 452 | 0.0791 | 0.140 |
+| 4 | Denzel Dumfries | Fullback/Wingback | Attacking Wingback | 510 | 0.0780 | 0.136 |
+| 5 | Frenkie de Jong | Defensive Midfield | Ball-Winner | 499 | 0.0336 | 0.060 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -1167,11 +1167,11 @@ Average lineup matchup deltas were **+0.054 aerial**, **+1.148 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Robert Lewandowski | Forward | Target Forward | 390 | 0.5522 | 1.092 |
-| 2 | Piotr Zieliński | Central/Wide Midfield | Ball-Winner | 344 | 0.1873 | 0.349 |
-| 3 | Kamil Glik | Center Back | Sweeper CB | 390 | 0.0603 | 0.119 |
-| 4 | Grzegorz Krychowiak | Defensive Midfield | Ball-Winner | 348 | -0.0128 | -0.031 |
-| 5 | Matty Cash | Fullback/Wingback | Box-to-Box Runner | 390 | -0.0231 | -0.058 |
+| 1 | Robert Lewandowski | Forward | Target Forward | 390 | 0.2195 | 0.410 |
+| 2 | Piotr Zieliński | Central/Wide Midfield | Ball-Winner | 344 | 0.0952 | 0.089 |
+| 3 | Bartosz Bereszyński | Fullback/Wingback | Wide Creator | 366 | 0.0608 | 0.078 |
+| 4 | Grzegorz Krychowiak | Defensive Midfield | Ball-Winner | 348 | 0.0197 | 0.012 |
+| 5 | Matty Cash | Fullback/Wingback | Box-to-Box Runner | 390 | 0.0124 | -0.090 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -1223,11 +1223,11 @@ Average lineup matchup deltas were **+0.006 aerial**, **-4.222 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Bruno Miguel Borges Fernandes | Attacking Midfield/Wing | Progressive Winger | 385 | 0.4451 | 0.842 |
-| 2 | Raphaël Adelino José Guerreiro | Fullback/Wingback | Wide Creator | 304 | 0.3192 | 0.612 |
-| 3 | João Félix Sequeira | Attacking Midfield/Wing | Target Forward | 340 | 0.2625 | 0.505 |
-| 4 | Cristiano Ronaldo dos Santos Aveiro | Forward | Target Forward | 303 | 0.2543 | 0.500 |
-| 5 | Kléper Laveran Lima Ferreira | Center Back | Sweeper CB | 389 | 0.1220 | 0.237 |
+| 1 | Cristiano Ronaldo dos Santos Aveiro | Forward | Target Forward | 303 | 0.2844 | 0.665 |
+| 2 | João Félix Sequeira | Attacking Midfield/Wing | Target Forward | 340 | 0.2101 | 0.405 |
+| 3 | Bruno Miguel Borges Fernandes | Attacking Midfield/Wing | Progressive Winger | 385 | 0.1671 | 0.220 |
+| 4 | Bernardo Mota Veiga de Carvalho e Silva | Central/Wide Midfield | Ball-Winner | 382 | 0.1382 | 0.251 |
+| 5 | Raphaël Adelino José Guerreiro | Fullback/Wingback | Wide Creator | 304 | 0.1134 | 0.267 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -1381,11 +1381,11 @@ Average lineup matchup deltas were **+0.016 aerial**, **-1.491 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Ismaïla Sarr | Attacking Midfield/Wing | Target Forward | 365 | 0.7282 | 1.413 |
-| 2 | Boulaye Dia | Attacking Midfield/Wing | Target Forward | 330 | 0.2426 | 0.478 |
-| 3 | Youssouf Sabaly | Fullback/Wingback | Box-to-Box Runner | 387 | 0.0671 | 0.107 |
-| 4 | Kalidou Koulibaly | Center Back | Sweeper CB | 387 | 0.0620 | 0.122 |
-| 5 | Abdou Diallo | Center Back | Sweeper CB | 349 | -0.0049 | -0.019 |
+| 1 | Ismaïla Sarr | Attacking Midfield/Wing | Target Forward | 365 | 0.2237 | 0.436 |
+| 2 | Boulaye Dia | Attacking Midfield/Wing | Target Forward | 330 | 0.1654 | 0.256 |
+| 3 | Youssouf Sabaly | Fullback/Wingback | Box-to-Box Runner | 387 | 0.0749 | 0.115 |
+| 4 | Kalidou Koulibaly | Center Back | Sweeper CB | 387 | 0.0102 | 0.044 |
+| 5 | Abdou Diallo | Center Back | Sweeper CB | 349 | -0.0118 | -0.044 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -1488,11 +1488,11 @@ Average lineup matchup deltas were **+0.118 aerial**, **+6.170 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Jin-Su Kim | Fullback/Wingback | Attacking Wingback | 341 | 0.1948 | 0.371 |
-| 2 | Young-Gwon Kim | Center Back | Sweeper CB | 373 | 0.1568 | 0.306 |
-| 3 | Heung-Min Son | Attacking Midfield/Wing | Target Forward | 390 | 0.1513 | 0.272 |
-| 4 | In-Beom Hwang | Defensive Midfield | Box-to-Box Runner | 360 | 0.0187 | 0.021 |
-| 5 | Moon-Hwan Kim | Fullback/Wingback | Attacking Wingback | 390 | 0.0030 | -0.008 |
+| 1 | Heung-Min Son | Attacking Midfield/Wing | Target Forward | 390 | 0.2082 | 0.385 |
+| 2 | Jin-Su Kim | Fullback/Wingback | Attacking Wingback | 341 | 0.0983 | 0.216 |
+| 3 | Moon-Hwan Kim | Fullback/Wingback | Attacking Wingback | 390 | 0.0784 | 0.140 |
+| 4 | In-Beom Hwang | Defensive Midfield | Box-to-Box Runner | 360 | 0.0494 | 0.106 |
+| 5 | Woo-Young Jung | Defensive Midfield | Ball-Winner | 318 | 0.0200 | 0.001 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -1544,11 +1544,11 @@ Average lineup matchup deltas were **-0.046 aerial**, **-12.554 pressing**, and 
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Daniel Olmo Carvajal | Attacking Midfield/Wing | Progressive Winger | 388 | 0.3061 | 0.584 |
-| 2 | Unai Simón Mendibil | Goalkeeper | Goalkeeper | 414 | 0.1929 | 0.383 |
-| 3 | Pedro González López | Central/Wide Midfield | Ball-Winner | 372 | 0.0307 | 0.028 |
-| 4 | Aymeric Laporte | Center Back | Deep Playmaker | 317 | 0.0090 | 0.013 |
-| 5 | Rodrigo Hernández Cascante | Center Back | Deep Playmaker | 414 | 0.0010 | -0.011 |
+| 1 | Daniel Olmo Carvajal | Attacking Midfield/Wing | Progressive Winger | 388 | 0.2554 | 0.555 |
+| 2 | Pedro González López | Central/Wide Midfield | Ball-Winner | 372 | 0.1236 | 0.180 |
+| 3 | Rodrigo Hernández Cascante | Center Back | Deep Playmaker | 414 | 0.0147 | 0.043 |
+| 4 | Aymeric Laporte | Center Back | Deep Playmaker | 317 | 0.0089 | 0.040 |
+| 5 | Sergio Busquets i Burgos | Defensive Midfield | Ball-Winner | 379 | 0.0032 | -0.055 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -1600,11 +1600,11 @@ Average lineup matchup deltas were **-0.030 aerial**, **+2.987 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Breel-Donald Embolo | Forward | Target Forward | 330 | 0.5222 | 1.035 |
-| 2 | Remo Freuler | Defensive Midfield | Ball-Winner | 346 | 0.1064 | 0.206 |
-| 3 | Manuel Obafemi Akanji | Center Back | Deep Playmaker | 387 | 0.0867 | 0.170 |
-| 4 | Granit Xhaka | Defensive Midfield | Ball-Winner | 387 | 0.0104 | 0.007 |
-| 5 | Ricardo Iván Rodríguez Araya | Fullback/Wingback | Wide Creator | 380 | -0.0292 | -0.072 |
+| 1 | Breel-Donald Embolo | Forward | Target Forward | 330 | 0.1938 | 0.312 |
+| 2 | Ricardo Iván Rodríguez Araya | Fullback/Wingback | Wide Creator | 380 | 0.0457 | 0.024 |
+| 3 | Granit Xhaka | Defensive Midfield | Ball-Winner | 387 | 0.0345 | 0.056 |
+| 4 | Remo Freuler | Defensive Midfield | Ball-Winner | 346 | 0.0287 | 0.047 |
+| 5 | Manuel Obafemi Akanji | Center Back | Deep Playmaker | 387 | 0.0063 | 0.031 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -1707,11 +1707,11 @@ Average lineup matchup deltas were **-0.068 aerial**, **-0.925 pressing**, and *
 
 | Rank | Player | Position group | Functional role | Minutes | Unified rating | VAEP/90 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Christian Pulisic | Attacking Midfield/Wing | Progressive Winger | 336 | 0.4065 | 0.770 |
-| 2 | Timothy Weah | Attacking Midfield/Wing | Progressive Winger | 318 | 0.3572 | 0.703 |
-| 3 | Sergino Dest | Fullback/Wingback | Box-to-Box Runner | 308 | 0.0421 | 0.051 |
-| 4 | Tim Ream | Center Back | Deep Playmaker | 391 | 0.0417 | 0.084 |
-| 5 | Antonee Robinson | Fullback/Wingback | Wide Creator | 386 | 0.0141 | 0.004 |
+| 1 | Christian Pulisic | Attacking Midfield/Wing | Progressive Winger | 336 | 0.2496 | 0.527 |
+| 2 | Timothy Weah | Attacking Midfield/Wing | Progressive Winger | 318 | 0.2230 | 0.466 |
+| 3 | Yunus Dimoara Musah | Central/Wide Midfield | Ball-Winner | 365 | 0.1005 | 0.118 |
+| 4 | Antonee Robinson | Fullback/Wingback | Wide Creator | 386 | 0.0958 | 0.186 |
+| 5 | Sergino Dest | Fullback/Wingback | Box-to-Box Runner | 308 | 0.0741 | 0.103 |
 
 Coaching interpretation: begin with the observed style and matchup signals, then inspect the flagged possessions on video. Test the modeled style or personnel change in a comparable game-state segment before adopting it as a match plan.
 
@@ -1843,16 +1843,16 @@ These leaderboards contain only players with at least 300 tournament minutes. Ev
 
 | Rank | Player | Team | Detailed position | Role | Min. | Rating | VAEP/90 | xT/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Damián Emiliano Martínez | Argentina | Goalkeeper | Goalkeeper | 734 | 0.2999 | 0.592 | 0.001 | 0.00 | 0.00 | 3.68 |
-| 2 | Alisson Ramsés Becker | Brazil | Goalkeeper | Goalkeeper | 395 | 0.2130 | 0.420 | 0.001 | 0.00 | 0.00 | 5.01 |
-| 3 | Unai Simón Mendibil | Spain | Goalkeeper | Goalkeeper | 414 | 0.1929 | 0.383 | 0.000 | 0.00 | 0.00 | 2.61 |
-| 4 | Andries Noppert | Netherlands | Goalkeeper | Goalkeeper | 510 | 0.1862 | 0.369 | 0.001 | 0.00 | 0.00 | 4.59 |
-| 5 | Dominik Livaković | Croatia | Goalkeeper | Goalkeeper | 720 | 0.1243 | 0.246 | 0.001 | 0.00 | 0.25 | 4.12 |
-| 6 | Shūichi Gonda | Japan | Goalkeeper | Goalkeeper | 413 | 0.0673 | 0.131 | 0.004 | 0.00 | 0.22 | 3.05 |
-| 7 | Hugo Lloris | France | Goalkeeper | Goalkeeper | 614 | 0.0531 | 0.103 | 0.005 | 0.00 | 0.00 | 2.34 |
-| 8 | Yassine Bounou | Morocco | Goalkeeper | Goalkeeper | 603 | 0.0335 | 0.066 | 0.002 | 0.00 | 0.15 | 3.73 |
-| 9 | Jordan Pickford | England | Goalkeeper | Goalkeeper | 486 | -0.0801 | -0.159 | 0.001 | 0.00 | 0.00 | 2.96 |
-| 10 | Diogo Meireles Costa | Portugal | Goalkeeper | Goalkeeper | 489 | -0.1124 | -0.223 | 0.001 | 0.00 | 0.18 | 2.76 |
+| 1 | Damián Emiliano Martínez | Argentina | Goalkeeper | Goalkeeper | 734 | 0.0776 | 0.256 | 0.002 | 0.00 | 0.00 | 3.68 |
+| 2 | Andries Noppert | Netherlands | Goalkeeper | Goalkeeper | 510 | -0.0018 | 0.054 | 0.001 | 0.00 | 0.00 | 4.59 |
+| 3 | Hugo Lloris | France | Goalkeeper | Goalkeeper | 614 | -0.0381 | -0.065 | 0.006 | 0.00 | 0.00 | 2.34 |
+| 4 | Edouard Mendy | Senegal | Goalkeeper | Goalkeeper | 387 | -0.0516 | -0.104 | 0.005 | 0.00 | 0.00 | 3.72 |
+| 5 | Diogo Meireles Costa | Portugal | Goalkeeper | Goalkeeper | 489 | -0.0528 | -0.107 | 0.002 | 0.00 | 0.18 | 2.76 |
+| 6 | Alisson Ramsés Becker | Brazil | Goalkeeper | Goalkeeper | 395 | -0.0537 | -0.109 | 0.001 | 0.00 | 0.00 | 5.01 |
+| 7 | Jordan Pickford | England | Goalkeeper | Goalkeeper | 486 | -0.0552 | -0.115 | 0.003 | 0.00 | 0.00 | 2.96 |
+| 8 | Lawrence Ati-Zigi | Ghana | Goalkeeper | Goalkeeper | 301 | -0.0554 | -0.119 | 0.007 | 0.00 | 0.00 | 2.39 |
+| 9 | Matthew Charles Turner | United States | Goalkeeper | Goalkeeper | 391 | -0.0581 | -0.126 | 0.003 | 0.00 | 0.00 | 3.91 |
+| 10 | Unai Simón Mendibil | Spain | Goalkeeper | Goalkeeper | 414 | -0.0582 | -0.125 | 0.001 | 0.00 | 0.00 | 2.61 |
 
 The goalkeeper ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1860,16 +1860,16 @@ The goalkeeper ordering is a role-fit shortlist for this tournament sample. Revi
 
 | Rank | Player | Team | Detailed position | Role | Min. | Rating | VAEP/90 | xT/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Harry Maguire | England | Left Center Back | Deep Playmaker | 454 | 0.1652 | 0.321 | 0.022 | 0.76 | 4.36 | 2.98 |
-| 2 | Young-Gwon Kim | South Korea | Left Center Back | Sweeper CB | 373 | 0.1568 | 0.306 | 0.017 | 0.78 | 5.06 | 1.93 |
-| 3 | Kléper Laveran Lima Ferreira | Portugal | Right Center Back | Sweeper CB | 389 | 0.1220 | 0.237 | 0.014 | 0.65 | 4.86 | 4.16 |
-| 4 | Mohamed Salisu | Ghana | Left Center Back | Sweeper CB | 301 | 0.0947 | 0.185 | 0.010 | 0.53 | 6.87 | 2.09 |
-| 5 | Manuel Obafemi Akanji | Switzerland | Left Center Back | Deep Playmaker | 387 | 0.0867 | 0.170 | 0.008 | 0.73 | 6.98 | 2.10 |
-| 6 | John Stones | England | Right Center Back | Deep Playmaker | 465 | 0.0835 | 0.165 | 0.004 | 0.73 | 3.10 | 1.94 |
-| 7 | Nayef Aguerd | Morocco | Right Center Back | Sweeper CB | 369 | 0.0826 | 0.163 | 0.003 | 0.75 | 4.88 | 1.46 |
-| 8 | Kalidou Koulibaly | Senegal | Right Center Back | Sweeper CB | 387 | 0.0620 | 0.122 | 0.004 | 0.80 | 9.30 | 4.65 |
-| 9 | Kamil Glik | Poland | Right Center Back | Sweeper CB | 390 | 0.0603 | 0.119 | 0.003 | 0.70 | 4.39 | 1.62 |
-| 10 | Tim Ream | United States | Left Center Back | Deep Playmaker | 391 | 0.0417 | 0.084 | -0.003 | 0.44 | 9.20 | 3.45 |
+| 1 | Harry Maguire | England | Left Center Back | Deep Playmaker | 454 | 0.0462 | 0.150 | 0.035 | 0.76 | 4.36 | 2.98 |
+| 2 | Kléper Laveran Lima Ferreira | Portugal | Right Center Back | Sweeper CB | 389 | 0.0182 | 0.068 | 0.024 | 0.65 | 4.86 | 4.16 |
+| 3 | Rodrigo Hernández Cascante | Spain | Right Center Back | Deep Playmaker | 414 | 0.0147 | 0.043 | 0.050 | 0.75 | 5.00 | 4.35 |
+| 4 | John Stones | England | Right Center Back | Deep Playmaker | 465 | 0.0140 | 0.052 | 0.010 | 0.73 | 3.10 | 1.94 |
+| 5 | Young-Gwon Kim | South Korea | Left Center Back | Sweeper CB | 373 | 0.0134 | 0.052 | 0.023 | 0.78 | 5.06 | 1.93 |
+| 6 | Morteza Pouraliganji | Iran | Right Center Back | Sweeper CB | 305 | 0.0105 | 0.054 | 0.009 | 0.75 | 10.62 | 2.36 |
+| 7 | Kalidou Koulibaly | Senegal | Right Center Back | Sweeper CB | 387 | 0.0102 | 0.044 | 0.011 | 0.80 | 9.30 | 4.65 |
+| 8 | Aymeric Laporte | Spain | Left Center Back | Deep Playmaker | 317 | 0.0089 | 0.040 | 0.025 | 0.67 | 4.26 | 1.14 |
+| 9 | Manuel Obafemi Akanji | Switzerland | Left Center Back | Deep Playmaker | 387 | 0.0063 | 0.031 | 0.011 | 0.73 | 6.98 | 2.10 |
+| 10 | Ibrahima Konaté | France | Left Center Back | Deep Playmaker | 331 | 0.0052 | 0.023 | 0.029 | 0.90 | 6.80 | 3.54 |
 
 The center back ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1877,16 +1877,16 @@ The center back ordering is a role-fit shortlist for this tournament sample. Rev
 
 | Rank | Player | Team | Detailed position | Role | Min. | Rating | VAEP/90 | xT/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Raphaël Adelino José Guerreiro | Portugal | Left Back | Wide Creator | 304 | 0.3192 | 0.612 | 0.060 | 0.67 | 8.30 | 2.37 |
-| 2 | Jin-Su Kim | South Korea | Left Back | Attacking Wingback | 341 | 0.1948 | 0.371 | 0.041 | 0.56 | 7.66 | 3.17 |
-| 3 | Denzel Dumfries | Netherlands | Right Wing Back | Attacking Wingback | 510 | 0.1450 | 0.271 | 0.045 | 0.48 | 13.07 | 1.77 |
-| 4 | Daley Blind | Netherlands | Left Wing Back | Wide Creator | 452 | 0.1286 | 0.240 | 0.040 | 0.43 | 17.70 | 2.59 |
-| 5 | Theo Bernard François Hernández | France | Left Back | Wide Creator | 548 | 0.1057 | 0.190 | 0.051 | 0.60 | 12.63 | 3.94 |
-| 6 | Nahuel Molina Lucero | Argentina | Right Wing Back | Box-to-Box Runner | 594 | 0.1004 | 0.192 | 0.019 | 0.00 | 12.88 | 2.58 |
-| 7 | Junya Ito | Japan | Right Wing Back | Attacking Wingback | 346 | 0.0914 | 0.160 | 0.053 | 0.36 | 13.25 | 3.64 |
-| 8 | Luke Shaw | England | Left Back | Wide Creator | 457 | 0.0792 | 0.128 | 0.075 | 0.43 | 6.69 | 2.76 |
-| 9 | Nicolás Alejandro Tagliafico | Argentina | Left Back | Wide Creator | 393 | 0.0786 | 0.149 | 0.018 | 0.89 | 13.73 | 2.97 |
-| 10 | Achraf Hakimi Mouh | Morocco | Right Back | Box-to-Box Runner | 661 | 0.0724 | 0.125 | 0.048 | 0.57 | 16.21 | 4.90 |
+| 1 | Marcos Javier Acuña | Argentina | Left Back | Attacking Wingback | 397 | 0.1687 | 0.446 | 0.068 | 0.56 | 12.45 | 4.08 |
+| 2 | Luke Shaw | England | Left Back | Wide Creator | 457 | 0.1223 | 0.269 | 0.085 | 0.43 | 6.69 | 2.76 |
+| 3 | Raphaël Adelino José Guerreiro | Portugal | Left Back | Wide Creator | 304 | 0.1134 | 0.267 | 0.076 | 0.67 | 8.30 | 2.37 |
+| 4 | João Pedro Cavaco Cancelo | Portugal | Right Back | Box-to-Box Runner | 345 | 0.1023 | 0.221 | 0.068 | 0.93 | 6.01 | 5.75 |
+| 5 | Nicolás Alejandro Tagliafico | Argentina | Left Back | Wide Creator | 393 | 0.1020 | 0.232 | 0.021 | 0.89 | 13.73 | 2.97 |
+| 6 | Jin-Su Kim | South Korea | Left Back | Attacking Wingback | 341 | 0.0983 | 0.216 | 0.041 | 0.56 | 7.66 | 3.17 |
+| 7 | Antonee Robinson | United States | Left Back | Wide Creator | 386 | 0.0958 | 0.186 | 0.085 | 0.25 | 14.45 | 7.22 |
+| 8 | Theo Bernard François Hernández | France | Left Back | Wide Creator | 548 | 0.0850 | 0.159 | 0.047 | 0.60 | 12.63 | 3.94 |
+| 9 | Yahia Attiyat allah | Morocco | Left Back | Wide Creator | 350 | 0.0839 | 0.165 | 0.033 | 0.20 | 11.31 | 5.14 |
+| 10 | Aziz Eraltay Behich | Australia | Left Back | Wide Creator | 387 | 0.0793 | 0.144 | 0.044 | 0.75 | 9.07 | 3.49 |
 
 The fullback/wingback ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1894,16 +1894,16 @@ The fullback/wingback ordering is a role-fit shortlist for this tournament sampl
 
 | Rank | Player | Team | Detailed position | Role | Min. | Rating | VAEP/90 | xT/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Adrien Rabiot | France | Left Defensive Midfield | Ball-Winner | 529 | 0.2725 | 0.539 | 0.010 | 0.67 | 15.98 | 3.57 |
-| 2 | Carlos Henrique Casimiro | Brazil | Left Defensive Midfield | Ball-Winner | 409 | 0.2241 | 0.432 | 0.035 | 0.50 | 13.20 | 3.30 |
-| 3 | Lucas Tolentino Coelho de Lima | Brazil | Right Defensive Midfield | Ball-Winner | 319 | 0.2206 | 0.426 | 0.033 | 0.50 | 17.79 | 2.54 |
-| 4 | Jude Bellingham | England | Right Defensive Midfield | Ball-Winner | 442 | 0.1819 | 0.350 | 0.030 | 0.44 | 15.08 | 6.11 |
-| 5 | Frenkie de Jong | Netherlands | Left Defensive Midfield | Ball-Winner | 499 | 0.1572 | 0.305 | 0.020 | 0.86 | 14.96 | 3.60 |
-| 6 | Enzo Fernandez | Argentina | Center Defensive Midfield | Ball-Winner | 601 | 0.1195 | 0.220 | 0.045 | 0.42 | 17.52 | 3.74 |
-| 7 | Marcelo Brozović | Croatia | Center Defensive Midfield | Ball-Winner | 570 | 0.1124 | 0.220 | 0.012 | 0.62 | 16.74 | 5.05 |
-| 8 | Remo Freuler | Switzerland | Right Defensive Midfield | Ball-Winner | 346 | 0.1064 | 0.206 | 0.013 | 0.62 | 17.17 | 3.12 |
-| 9 | Rodrigo Javier De Paul | Argentina | Right Defensive Midfield | Box-to-Box Runner | 635 | 0.0814 | 0.143 | 0.049 | 0.33 | 18.01 | 4.82 |
-| 10 | Aaron Mooy | Australia | Left Defensive Midfield | Box-to-Box Runner | 387 | 0.0468 | 0.083 | 0.025 | 0.56 | 10.93 | 6.75 |
+| 1 | Jude Bellingham | England | Right Defensive Midfield | Ball-Winner | 442 | 0.1069 | 0.300 | 0.042 | 0.44 | 15.08 | 6.11 |
+| 2 | Rodrigo Javier De Paul | Argentina | Right Defensive Midfield | Box-to-Box Runner | 635 | 0.0940 | 0.227 | 0.052 | 0.33 | 18.01 | 4.82 |
+| 3 | Adrien Rabiot | France | Left Defensive Midfield | Ball-Winner | 529 | 0.0915 | 0.246 | 0.013 | 0.67 | 15.98 | 3.57 |
+| 4 | Lucas Tolentino Coelho de Lima | Brazil | Right Defensive Midfield | Ball-Winner | 319 | 0.0589 | 0.155 | 0.043 | 0.50 | 17.79 | 2.54 |
+| 5 | In-Beom Hwang | South Korea | Left Defensive Midfield | Box-to-Box Runner | 360 | 0.0494 | 0.106 | 0.061 | 0.44 | 13.50 | 6.50 |
+| 6 | Granit Xhaka | Switzerland | Left Defensive Midfield | Ball-Winner | 387 | 0.0345 | 0.056 | 0.049 | 0.58 | 7.92 | 2.10 |
+| 7 | Frenkie de Jong | Netherlands | Left Defensive Midfield | Ball-Winner | 499 | 0.0336 | 0.060 | 0.028 | 0.86 | 14.96 | 3.60 |
+| 8 | Remo Freuler | Switzerland | Right Defensive Midfield | Ball-Winner | 346 | 0.0287 | 0.047 | 0.020 | 0.62 | 17.17 | 3.12 |
+| 9 | Declan Rice | England | Left Defensive Midfield | Ball-Winner | 450 | 0.0276 | 0.043 | 0.022 | 0.56 | 10.01 | 3.80 |
+| 10 | Enzo Fernandez | Argentina | Center Defensive Midfield | Ball-Winner | 601 | 0.0209 | 0.009 | 0.060 | 0.42 | 17.52 | 3.74 |
 
 The defensive midfield ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1911,16 +1911,16 @@ The defensive midfield ordering is a role-fit shortlist for this tournament samp
 
 | Rank | Player | Team | Detailed position | Role | Min. | Rating | VAEP/90 | xT/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Ángel Fabián Di María Hernández | Argentina | Right Midfield | Progressive Winger | 305 | 0.5016 | 0.924 | 0.191 | 0.00 | 10.92 | 2.95 |
-| 2 | Vinícius José Paixão de Oliveira Júnior | Brazil | Left Midfield | Progressive Winger | 307 | 0.3234 | 0.598 | 0.115 | 0.00 | 12.04 | 4.40 |
-| 3 | Mathew Leckie | Australia | Right Midfield | Target Forward | 342 | 0.2020 | 0.396 | 0.015 | 0.57 | 18.44 | 4.22 |
-| 4 | Piotr Zieliński | Poland | Right Center Midfield | Ball-Winner | 344 | 0.1873 | 0.349 | 0.060 | 0.50 | 13.33 | 3.92 |
-| 5 | Selim Amallah | Morocco | Left Center Midfield | Ball-Winner | 424 | 0.1495 | 0.293 | 0.008 | 0.00 | 26.34 | 2.97 |
-| 6 | Luka Modrić | Croatia | Right Center Midfield | Ball-Winner | 673 | 0.1177 | 0.205 | 0.075 | 0.50 | 17.93 | 4.95 |
-| 7 | Alexis Mac Allister | Argentina | Left Center Midfield | Ball-Winner | 552 | 0.1142 | 0.225 | 0.006 | 0.31 | 12.38 | 4.40 |
-| 8 | Mateo Kovačić | Croatia | Left Center Midfield | Ball-Winner | 650 | 0.0990 | 0.178 | 0.049 | 0.75 | 21.19 | 3.88 |
-| 9 | Azzedine Ounahi | Morocco | Right Center Midfield | Ball-Winner | 589 | 0.0713 | 0.131 | 0.027 | 0.29 | 16.04 | 4.73 |
-| 10 | Bernardo Mota Veiga de Carvalho e Silva | Portugal | Right Center Midfield | Ball-Winner | 382 | 0.0479 | 0.080 | 0.038 | 0.12 | 14.60 | 4.95 |
+| 1 | Ángel Fabián Di María Hernández | Argentina | Right Midfield | Progressive Winger | 305 | 0.2879 | 0.786 | 0.200 | 0.00 | 10.92 | 2.95 |
+| 2 | Vinícius José Paixão de Oliveira Júnior | Brazil | Left Midfield | Progressive Winger | 307 | 0.2296 | 0.584 | 0.124 | 0.00 | 12.04 | 4.40 |
+| 3 | Alexis Mac Allister | Argentina | Left Center Midfield | Ball-Winner | 552 | 0.1423 | 0.284 | 0.007 | 0.31 | 12.38 | 4.40 |
+| 4 | Bernardo Mota Veiga de Carvalho e Silva | Portugal | Right Center Midfield | Ball-Winner | 382 | 0.1382 | 0.251 | 0.058 | 0.12 | 14.60 | 4.95 |
+| 5 | Mathew Leckie | Australia | Right Midfield | Target Forward | 342 | 0.1368 | 0.259 | 0.021 | 0.57 | 18.44 | 4.22 |
+| 6 | Mateo Kovačić | Croatia | Left Center Midfield | Ball-Winner | 650 | 0.1302 | 0.225 | 0.065 | 0.75 | 21.19 | 3.88 |
+| 7 | Sofiane Boufal | Morocco | Left Midfield | Progressive Winger | 477 | 0.1268 | 0.205 | 0.079 | 0.25 | 18.50 | 3.21 |
+| 8 | Pedro González López | Spain | Left Center Midfield | Ball-Winner | 372 | 0.1236 | 0.180 | 0.105 | 0.60 | 14.74 | 6.28 |
+| 9 | Yunus Dimoara Musah | United States | Right Center Midfield | Ball-Winner | 365 | 0.1005 | 0.118 | 0.046 | 0.25 | 19.24 | 4.44 |
+| 10 | Azzedine Ounahi | Morocco | Right Center Midfield | Ball-Winner | 589 | 0.0974 | 0.137 | 0.036 | 0.29 | 16.04 | 4.73 |
 
 The central/wide midfield ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1928,16 +1928,16 @@ The central/wide midfield ordering is a role-fit shortlist for this tournament s
 
 | Rank | Player | Team | Detailed position | Role | Min. | Rating | VAEP/90 | xT/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Lionel Andrés Messi Cuccittini | Argentina | Right Wing | Progressive Winger | 734 | 0.8666 | 1.674 | 0.132 | 0.33 | 10.91 | 3.68 |
-| 2 | Ismaïla Sarr | Senegal | Left Wing | Target Forward | 365 | 0.7282 | 1.413 | 0.086 | 0.50 | 13.31 | 3.94 |
-| 3 | Bruno Miguel Borges Fernandes | Portugal | Center Attacking Midfield | Progressive Winger | 385 | 0.4451 | 0.842 | 0.112 | 0.21 | 15.20 | 3.27 |
-| 4 | Christian Pulisic | United States | Left Wing | Progressive Winger | 336 | 0.4065 | 0.770 | 0.098 | 0.40 | 11.77 | 4.55 |
-| 5 | Andrej Kramarić | Croatia | Right Wing | Target Forward | 478 | 0.4057 | 0.803 | 0.010 | 0.20 | 7.15 | 2.26 |
-| 6 | Timothy Weah | United States | Right Wing | Progressive Winger | 318 | 0.3572 | 0.703 | 0.018 | 0.20 | 7.36 | 3.68 |
-| 7 | Raphael Dias Belloli | Brazil | Right Wing | Progressive Winger | 330 | 0.3370 | 0.600 | 0.179 | 0.00 | 15.52 | 4.36 |
-| 8 | Cody Mathès Gakpo | Netherlands | Center Attacking Midfield | Progressive Winger | 460 | 0.3206 | 0.606 | 0.080 | 0.50 | 11.93 | 3.72 |
-| 9 | Daniel Olmo Carvajal | Spain | Left Wing | Progressive Winger | 388 | 0.3061 | 0.584 | 0.066 | 0.17 | 12.05 | 3.94 |
-| 10 | João Félix Sequeira | Portugal | Left Wing | Target Forward | 340 | 0.2625 | 0.505 | 0.045 | 0.50 | 8.99 | 2.38 |
+| 1 | Lionel Andrés Messi Cuccittini | Argentina | Right Wing | Progressive Winger | 734 | 0.3297 | 0.694 | 0.158 | 0.33 | 10.91 | 3.68 |
+| 2 | Daniel Olmo Carvajal | Spain | Left Wing | Progressive Winger | 388 | 0.2554 | 0.555 | 0.072 | 0.17 | 12.05 | 3.94 |
+| 3 | Christian Pulisic | United States | Left Wing | Progressive Winger | 336 | 0.2496 | 0.527 | 0.114 | 0.40 | 11.77 | 4.55 |
+| 4 | Raphael Dias Belloli | Brazil | Right Wing | Progressive Winger | 330 | 0.2420 | 0.477 | 0.170 | 0.00 | 15.52 | 4.36 |
+| 5 | Ismaïla Sarr | Senegal | Left Wing | Target Forward | 365 | 0.2237 | 0.436 | 0.090 | 0.50 | 13.31 | 3.94 |
+| 6 | Timothy Weah | United States | Right Wing | Progressive Winger | 318 | 0.2230 | 0.466 | 0.018 | 0.20 | 7.36 | 3.68 |
+| 7 | Ivan Perišić | Croatia | Left Wing | Wide Creator | 687 | 0.2144 | 0.407 | 0.065 | 0.50 | 14.28 | 2.75 |
+| 8 | João Félix Sequeira | Portugal | Left Wing | Target Forward | 340 | 0.2101 | 0.405 | 0.046 | 0.50 | 8.99 | 2.38 |
+| 9 | Heung-Min Son | South Korea | Left Wing | Target Forward | 390 | 0.2082 | 0.385 | 0.078 | 0.17 | 8.78 | 3.23 |
+| 10 | Ousmane Dembélé | France | Right Wing | Progressive Winger | 448 | 0.2020 | 0.351 | 0.112 | 0.50 | 18.88 | 4.22 |
 
 The attacking midfield/wing ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
@@ -1945,16 +1945,16 @@ The attacking midfield/wing ordering is a role-fit shortlist for this tournament
 
 | Rank | Player | Team | Detailed position | Role | Min. | Rating | VAEP/90 | xT/90 | Aerial | Pressing | Recovery |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Kylian Mbappé Lottin | France | Left Center Forward | Progressive Winger | 654 | 0.9724 | 1.889 | 0.120 | 0.25 | 5.23 | 3.99 |
-| 2 | Olivier Giroud | France | Center Forward | Target Forward | 433 | 0.9323 | 1.841 | 0.009 | 0.56 | 12.69 | 0.62 |
-| 3 | Richarlison de Andrade | Brazil | Center Forward | Target Forward | 328 | 0.7000 | 1.383 | 0.014 | 0.23 | 16.45 | 4.39 |
-| 4 | Julián Álvarez | Argentina | Center Forward | Target Forward | 485 | 0.6000 | 1.175 | 0.041 | 0.25 | 22.26 | 2.60 |
-| 5 | Robert Lewandowski | Poland | Center Forward | Target Forward | 390 | 0.5522 | 1.092 | 0.014 | 0.45 | 9.70 | 2.77 |
-| 6 | Breel-Donald Embolo | Switzerland | Center Forward | Target Forward | 330 | 0.5222 | 1.035 | 0.005 | 0.22 | 13.08 | 1.09 |
-| 7 | Harry Kane | England | Center Forward | Target Forward | 422 | 0.4987 | 0.975 | 0.040 | 0.48 | 6.62 | 2.56 |
-| 8 | Mehdi Taremi | Iran | Center Forward | Target Forward | 305 | 0.4178 | 0.812 | 0.044 | 0.39 | 19.47 | 3.54 |
-| 9 | Youssef En-Nesyri | Morocco | Center Forward | Target Forward | 554 | 0.4069 | 0.802 | 0.005 | 0.54 | 18.36 | 1.95 |
-| 10 | Memphis Depay | Netherlands | Left Center Forward | Target Forward | 316 | 0.4067 | 0.791 | 0.048 | 0.20 | 13.12 | 2.00 |
+| 1 | Kylian Mbappé Lottin | France | Left Center Forward | Progressive Winger | 654 | 0.3127 | 0.643 | 0.134 | 0.25 | 5.23 | 3.99 |
+| 2 | Richarlison de Andrade | Brazil | Center Forward | Target Forward | 328 | 0.2984 | 0.708 | 0.012 | 0.23 | 16.45 | 4.39 |
+| 3 | Julián Álvarez | Argentina | Center Forward | Target Forward | 485 | 0.2905 | 0.636 | 0.032 | 0.25 | 22.26 | 2.60 |
+| 4 | Cristiano Ronaldo dos Santos Aveiro | Portugal | Center Forward | Target Forward | 303 | 0.2844 | 0.665 | 0.009 | 0.50 | 6.24 | 1.49 |
+| 5 | Memphis Depay | Netherlands | Left Center Forward | Target Forward | 316 | 0.2694 | 0.589 | 0.047 | 0.20 | 13.12 | 2.00 |
+| 6 | Olivier Giroud | France | Center Forward | Target Forward | 433 | 0.2377 | 0.476 | 0.008 | 0.56 | 12.69 | 0.62 |
+| 7 | Mehdi Taremi | Iran | Center Forward | Target Forward | 305 | 0.2247 | 0.412 | 0.053 | 0.39 | 19.47 | 3.54 |
+| 8 | Robert Lewandowski | Poland | Center Forward | Target Forward | 390 | 0.2195 | 0.410 | 0.019 | 0.45 | 9.70 | 2.77 |
+| 9 | Breel-Donald Embolo | Switzerland | Center Forward | Target Forward | 330 | 0.1938 | 0.312 | 0.011 | 0.22 | 13.08 | 1.09 |
+| 10 | Harry Kane | England | Center Forward | Target Forward | 422 | 0.1828 | 0.275 | 0.047 | 0.48 | 6.62 | 2.56 |
 
 The forward ordering is a role-fit shortlist for this tournament sample. Review component columns, minutes, opponent context, and the player's team section before treating a small score difference as meaningful.
 
