@@ -652,6 +652,14 @@ def _write_v4_model_summary(
         f"{row.xt_p90:+.4f} | {row.final_player_rating:+.4f} |"
         for index, row in enumerate(top_rows.itertuples(index=False), start=1)
     )
+    comparison_rows = provenance["vaep_model_comparison"]
+    comparison_table = "\n".join(
+        f"| {row['model_name']} | {row['evaluation_scope']} | "
+        f"{float(row['roc_auc']):.6f} | {float(row['pr_auc']):.6f} | "
+        f"{float(row['brier_score']):.6f} | "
+        f"{'yes' if bool(row['selected']) else 'no'} |"
+        for row in comparison_rows
+    )
     lines = [
         existing,
         "",
@@ -660,10 +668,16 @@ def _write_v4_model_summary(
         f"- Selected model: `{provenance['vaep_selected_model']}`.",
         f"- Calibration: `{provenance['vaep_calibration_method']}`.",
         (
-            f"- VAEP holdout: Brier "
-            f"{provenance['vaep_holdout_metrics']['brier_score']:.6f}, "
-            f"ROC-AUC {provenance['vaep_holdout_metrics']['roc_auc']:.6f}, "
-            f"PR-AUC {provenance['vaep_holdout_metrics']['pr_auc']:.6f}."
+            f"- Selected-architecture development OOF: Brier "
+            f"{provenance['vaep_oof_metrics']['brier_score']:.6f}, "
+            f"ROC-AUC {provenance['vaep_oof_metrics']['roc_auc']:.6f}, "
+            f"PR-AUC {provenance['vaep_oof_metrics']['pr_auc']:.6f}."
+        ),
+        (
+            f"- Final untouched test pass: Brier "
+            f"{provenance['vaep_final_test_metrics']['brier_score']:.6f}, "
+            f"ROC-AUC {provenance['vaep_final_test_metrics']['roc_auc']:.6f}, "
+            f"PR-AUC {provenance['vaep_final_test_metrics']['pr_auc']:.6f}."
         ),
         (
             f"- StatsBomb 360 join coverage: "
@@ -684,14 +698,27 @@ def _write_v4_model_summary(
             f"files and {compiled_checks['compiled_player_sections']} player sections."
         ),
         "",
+        "### Leak-free model comparison",
+        "",
+        "| Model | Evaluation scope | ROC-AUC | PR-AUC | Brier | Selected |",
+        "|---|---|---:|---:|---:|---|",
+        comparison_table,
+        "",
+        "All new architectures use identical match-level development folds. "
+        "The final test partition was opened once, after OOF model selection. "
+        "The legacy row predicts a different transition target and is included "
+        "as a reporting baseline, not as a VAEP selection candidate.",
+        "",
         "### Unified tournament leaders",
         "",
         "| Rank | Player | Team | Minutes | VAEP/90 | VAEP/touch | xT/90 | Final rating |",
         "|---:|---|---|---:|---:|---:|---:|---:|",
         top_table,
         "",
-        "The team ranking uses the same cross-role formula for every eligible "
-        "player: `0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`.",
+        "The base rating remains "
+        "`0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`; "
+        "the final hierarchy applies the V4 role-relative minutes reliability "
+        "adjustment `minutes/(minutes+300)` to stabilize the 300-minute edge.",
         "",
     ]
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -994,6 +1021,7 @@ def run_pipeline(
             data["events"],
             data["frame_actors"],
             data["frame_metrics"],
+            legacy_validation_metrics=oof_metrics,
         )
         update(4, "SPADL + xT + calibrated 360-VAEP + unified rankings")
     player_output_dir = (
@@ -1022,8 +1050,10 @@ def run_pipeline(
             "concedes",
             "p_scores",
             "p_concedes",
+            "vaep_scoring_partition",
             "vaep_value",
             "xt_value",
+            "xt_scoring_partition",
             "defenders_within_5",
             "nearest_defender_distance",
             "defensive_density",
@@ -1050,6 +1080,9 @@ def run_pipeline(
         "rank_brier",
         "rank_roc_auc",
         "rank_overall",
+        "evaluation_scope",
+        "rows",
+        "selected",
     ]
     final_validation = pd.DataFrame(
         vaep_model_bundle["validation_records"]

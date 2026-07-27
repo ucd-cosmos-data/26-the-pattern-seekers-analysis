@@ -13,14 +13,16 @@ import numpy as np
 import pandas as pd
 from catboost import CatBoostClassifier
 from scipy.optimize import linear_sum_assignment
-from sklearn.calibration import CalibratedClassifierCV
+from sklearn.base import clone
 from sklearn.cluster import KMeans
+from sklearn.isotonic import IsotonicRegression
 from sklearn.linear_model import LogisticRegression, Ridge
 from sklearn.metrics import (
     average_precision_score,
     brier_score_loss,
     roc_auc_score,
 )
+from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
 
@@ -38,6 +40,8 @@ V4_ATTACKING_WINGBACK_SHARE = 0.35
 XT_GRID_COLUMNS = 16
 XT_GRID_ROWS = 12
 VAEP_ACTION_WINDOW = 3
+VAEP_CV_FOLDS = 5
+VAEP_TEST_MATCH_FRACTION = 0.16
 REASON_GAIN_BELOW_THRESHOLD = "GAIN_BELOW_THRESHOLD"
 REASON_CI_OVERLAPS_ZERO = "CONFIDENCE_INTERVAL_OVERLAPS_ZERO"
 REASON_CLASSIFIER_ABSTAINED = "CLASSIFIER_ABSTAINED"
@@ -517,7 +521,7 @@ def convert_statsbomb_events_to_spadl(events_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _three_action_labels(actions: pd.DataFrame) -> pd.DataFrame:
-    """Label whether the acting team scores or concedes within three actions."""
+    """Label goals strictly after the current action, never at offset zero."""
 
     labeled = actions.copy()
     scores = pd.Series(False, index=labeled.index)
@@ -530,7 +534,7 @@ def _three_action_labels(actions: pd.DataFrame) -> pd.DataFrame:
         goal_team = game["team"].astype(str)
         score_window = pd.Series(False, index=index)
         concede_window = pd.Series(False, index=index)
-        for offset in range(VAEP_ACTION_WINDOW):
+        for offset in range(1, VAEP_ACTION_WINDOW + 1):
             future_goal = game_score.shift(-offset, fill_value=False)
             future_team = goal_team.shift(-offset)
             score_window |= future_goal & future_team.eq(acting_team)
@@ -542,16 +546,22 @@ def _three_action_labels(actions: pd.DataFrame) -> pd.DataFrame:
     return labeled
 
 
-def _fit_expected_threat_grid(actions: pd.DataFrame) -> tuple[np.ndarray, pd.Series]:
-    """Fit a 16x12 empirical xT grid using only successful pass/carry actions."""
+def _fit_expected_threat_grid(
+    training_actions: pd.DataFrame,
+    scoring_actions: pd.DataFrame | None = None,
+) -> tuple[np.ndarray, pd.Series]:
+    """Fit xT on one match partition and score a disjoint partition."""
 
-    progression = actions["type_name"].isin({"Pass", "Carry"}) & actions[
+    scoring_actions = (
+        training_actions if scoring_actions is None else scoring_actions
+    )
+    progression = training_actions["type_name"].isin({"Pass", "Carry"}) & training_actions[
         "result_name"
     ].eq("success")
-    valid = progression & actions[
+    valid = progression & training_actions[
         ["start_x", "start_y", "end_x", "end_y"]
     ].notna().all(axis=1)
-    moves = actions.loc[valid].copy()
+    moves = training_actions.loc[valid].copy()
     if moves.empty:
         raise ValueError("No successful pass/carry actions are available for xT")
     moves["start_col"] = np.floor(
@@ -575,24 +585,38 @@ def _fit_expected_threat_grid(actions: pd.DataFrame) -> tuple[np.ndarray, pd.Ser
     for row in range(XT_GRID_ROWS):
         for column in range(XT_GRID_COLUMNS):
             smoothed[row, column] = padded[row : row + 3, column : column + 3].mean()
+    scoring_progression = scoring_actions["type_name"].isin(
+        {"Pass", "Carry"}
+    ) & scoring_actions["result_name"].eq("success")
+    scoring_valid = scoring_progression & scoring_actions[
+        ["start_x", "start_y", "end_x", "end_y"]
+    ].notna().all(axis=1)
     start_col = np.floor(
-        actions["start_x"].fillna(0).clip(0, 119.999) / (120 / XT_GRID_COLUMNS)
+        scoring_actions["start_x"].fillna(0).clip(0, 119.999)
+        / (120 / XT_GRID_COLUMNS)
     ).astype(int)
     start_row = np.floor(
-        actions["start_y"].fillna(40).clip(0, 79.999) / (80 / XT_GRID_ROWS)
+        scoring_actions["start_y"].fillna(40).clip(0, 79.999)
+        / (80 / XT_GRID_ROWS)
     ).astype(int)
     end_col = np.floor(
-        actions["end_x"].fillna(actions["start_x"]).fillna(0).clip(0, 119.999)
+        scoring_actions["end_x"]
+        .fillna(scoring_actions["start_x"])
+        .fillna(0)
+        .clip(0, 119.999)
         / (120 / XT_GRID_COLUMNS)
     ).astype(int)
     end_row = np.floor(
-        actions["end_y"].fillna(actions["start_y"]).fillna(40).clip(0, 79.999)
+        scoring_actions["end_y"]
+        .fillna(scoring_actions["start_y"])
+        .fillna(40)
+        .clip(0, 79.999)
         / (80 / XT_GRID_ROWS)
     ).astype(int)
-    delta = pd.Series(0.0, index=actions.index)
-    delta.loc[valid] = (
-        smoothed[end_row[valid], end_col[valid]]
-        - smoothed[start_row[valid], start_col[valid]]
+    delta = pd.Series(0.0, index=scoring_actions.index)
+    delta.loc[scoring_valid] = (
+        smoothed[end_row[scoring_valid], end_col[scoring_valid]]
+        - smoothed[start_row[scoring_valid], start_col[scoring_valid]]
     )
     return smoothed, delta
 
@@ -614,32 +638,56 @@ def _expected_calibration_error(
     return float(error)
 
 
+@dataclass
+class _PrefitProbabilityCalibrator:
+    """Small sklearn-agnostic wrapper for a fitted binary classifier."""
+
+    estimator: object
+    calibrator: object
+    method: str
+
+    def predict_proba(self, features: np.ndarray) -> np.ndarray:
+        raw = self.estimator.predict_proba(features)[:, 1]
+        if self.method == "isotonic":
+            calibrated = self.calibrator.predict(raw)
+        else:
+            calibrated = self.calibrator.predict_proba(
+                raw.reshape(-1, 1)
+            )[:, 1]
+        calibrated = np.clip(calibrated, 0.0, 1.0)
+        return np.column_stack([1.0 - calibrated, calibrated])
+
+
 def _calibrate_prefit(
     estimator: object,
     features: np.ndarray,
     truth: np.ndarray,
     method: str,
 ) -> object:
-    """Calibrate an already fitted estimator, supporting current sklearn APIs."""
+    """Calibrate probabilities without refitting or sklearn estimator tags."""
 
-    try:
-        calibrated = CalibratedClassifierCV(
-            estimator=estimator, method=method, cv="prefit"
+    raw = estimator.predict_proba(features)[:, 1]
+    if method == "isotonic":
+        calibrator = IsotonicRegression(
+            out_of_bounds="clip", y_min=0.0, y_max=1.0
         )
-        calibrated.fit(features, truth)
-        return calibrated
-    except Exception:
-        from sklearn.frozen import FrozenEstimator
-
-        calibrated = CalibratedClassifierCV(
-            estimator=FrozenEstimator(estimator), method=method
+        calibrator.fit(raw, truth)
+    elif method == "sigmoid":
+        calibrator = LogisticRegression(
+            C=1e6, solver="lbfgs", max_iter=500, random_state=42
         )
-        calibrated.fit(features, truth)
-        return calibrated
+        calibrator.fit(raw.reshape(-1, 1), truth)
+    else:
+        raise ValueError(f"Unknown probability calibration method: {method}")
+    return _PrefitProbabilityCalibrator(estimator, calibrator, method)
 
 
 def _vaep_feature_matrix(actions: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
-    """Build the VAEP state matrix without any xT-derived column."""
+    """Build a deterministic pre-action state matrix.
+
+    Current-action results, endpoints, completion flags, and shot xG belong to
+    the post-action audit table and are deliberately excluded here.
+    """
 
     state = pd.DataFrame(index=actions.index)
     numeric = {
@@ -647,17 +695,7 @@ def _vaep_feature_matrix(actions: pd.DataFrame) -> tuple[pd.DataFrame, list[str]
         "time_seconds": actions["time_seconds"],
         "start_x": actions["start_x"],
         "start_y": actions["start_y"],
-        "end_x": actions["end_x"],
-        "end_y": actions["end_y"],
-        "delta_x": actions["end_x"] - actions["start_x"],
-        "delta_y": actions["end_y"] - actions["start_y"],
-        "action_distance": np.hypot(
-            actions["end_x"] - actions["start_x"],
-            actions["end_y"] - actions["start_y"],
-        ),
-        "successful_action": actions["result_name"].eq("success").astype(int),
         "under_pressure": actions["under_pressure_flag"].astype(int),
-        "shot_xg": pd.to_numeric(actions["shot_statsbomb_xg"], errors="coerce"),
         "defenders_within_5": actions["defenders_within_5"],
         "nearest_defender_distance": actions["nearest_defender_distance"],
         "defensive_density": actions["defensive_density"],
@@ -674,8 +712,6 @@ def _vaep_feature_matrix(actions: pd.DataFrame) -> tuple[pd.DataFrame, list[str]
     categorical = pd.DataFrame(
         {
             "action_type": actions["type_name"].fillna("Unknown"),
-            "result": actions["result_name"].fillna("unknown"),
-            "bodypart": actions["bodypart_name"].fillna("other"),
             "play_pattern": actions["play_pattern"].fillna("Unknown"),
             "position": actions["position"].fillna("Unknown"),
             "previous_type_1": actions.groupby("game_id")["type_name"]
@@ -687,41 +723,123 @@ def _vaep_feature_matrix(actions: pd.DataFrame) -> tuple[pd.DataFrame, list[str]
         },
         index=actions.index,
     )
-    state = pd.concat(
-        [state, pd.get_dummies(categorical, dtype=np.float32)], axis=1
-    )
+    # Fixed-width hashing avoids learning a category vocabulary from the
+    # untouched test partition.
+    for column in categorical:
+        buckets = (
+            pd.util.hash_pandas_object(
+                categorical[column].astype(str), index=False
+            ).to_numpy(dtype=np.uint64)
+            % 16
+        )
+        for bucket in range(16):
+            state[f"{column}_hash_{bucket:02d}"] = (
+                buckets == bucket
+            ).astype(np.float32)
     state = state.replace([np.inf, -np.inf], np.nan)
-    state = state.fillna(state.median(numeric_only=True)).fillna(0.0)
-    if any(column.startswith("xt") for column in state.columns):
-        raise RuntimeError("xT leakage detected in the VAEP feature matrix")
+    state = state.fillna(
+        {
+            "period_id": 1.0,
+            "time_seconds": 0.0,
+            "start_x": 0.0,
+            "start_y": 40.0,
+        }
+    ).fillna(0.0)
+    prohibited = {
+        "end_x",
+        "end_y",
+        "delta_x",
+        "delta_y",
+        "action_distance",
+        "successful_action",
+        "shot_xg",
+        "result",
+        "goal",
+        "xt_value",
+    }
+    leaked = sorted(prohibited.intersection(state.columns))
+    if leaked or any(column.startswith("xt") for column in state.columns):
+        raise RuntimeError(f"Post-action leakage in VAEP features: {leaked}")
     return state.astype(np.float32), state.columns.tolist()
 
 
 def _match_partitions(actions: pd.DataFrame) -> dict[str, list[int]]:
-    """Create deterministic, disjoint match-level train/calibration/test sets."""
+    """Create a deterministic test split without inspecting any target values."""
 
     matches = np.array(sorted(actions["game_id"].unique()), dtype=int)
     if len(matches) < 12:
         raise ValueError("At least 12 matches are required for VAEP partitions")
-    for seed in range(42, 242):
-        shuffled = np.random.default_rng(seed).permutation(matches)
-        test_count = max(2, int(round(0.16 * len(matches))))
-        calibration_count = max(2, int(round(0.16 * len(matches))))
-        partitions = {
-            "test": shuffled[:test_count].tolist(),
-            "calibration": shuffled[
-                test_count : test_count + calibration_count
-            ].tolist(),
-            "train": shuffled[test_count + calibration_count :].tolist(),
-        }
-        valid = True
-        for selected in partitions.values():
-            subset = actions["game_id"].isin(selected)
-            for target in ("scores", "concedes"):
-                valid &= actions.loc[subset, target].nunique() == 2
-        if valid:
-            return partitions
-    raise RuntimeError("Could not create class-complete VAEP match partitions")
+    shuffled = np.random.default_rng(42).permutation(matches)
+    test_count = max(2, int(round(VAEP_TEST_MATCH_FRACTION * len(matches))))
+    return {
+        "development": shuffled[test_count:].tolist(),
+        "test": shuffled[:test_count].tolist(),
+    }
+
+
+def _development_match_folds(
+    development_matches: Sequence[int],
+    folds: int = VAEP_CV_FOLDS,
+) -> list[list[int]]:
+    """Return identical deterministic match folds for every architecture."""
+
+    shuffled = np.random.default_rng(314159).permutation(
+        np.asarray(development_matches, dtype=int)
+    )
+    return [
+        part.astype(int).tolist()
+        for part in np.array_split(shuffled, min(folds, len(shuffled)))
+        if len(part)
+    ]
+
+
+def _fit_calibration_split(
+    training_matches: Sequence[int],
+) -> tuple[list[int], list[int]]:
+    """Split an outer-training match set without consulting labels."""
+
+    shuffled = np.random.default_rng(271828).permutation(
+        np.asarray(training_matches, dtype=int)
+    )
+    calibration_count = max(2, int(round(0.20 * len(shuffled))))
+    return (
+        shuffled[calibration_count:].astype(int).tolist(),
+        shuffled[:calibration_count].astype(int).tolist(),
+    )
+
+
+def _cross_fit_expected_threat(
+    actions: pd.DataFrame,
+    partitions: dict[str, list[int]],
+) -> tuple[np.ndarray, pd.Series, pd.Series]:
+    """Score xT with grids that never saw the action's match."""
+
+    development_matches = list(partitions["development"])
+    test_matches = list(partitions["test"])
+    folds = _development_match_folds(development_matches)
+    values = pd.Series(np.nan, index=actions.index, dtype=float)
+    sources = pd.Series("", index=actions.index, dtype=object)
+    for fold_id, validation_matches in enumerate(folds):
+        training_matches = sorted(
+            set(development_matches) - set(validation_matches)
+        )
+        training = actions[actions["game_id"].isin(training_matches)]
+        validation_mask = actions["game_id"].isin(validation_matches)
+        _, fold_values = _fit_expected_threat_grid(
+            training, actions.loc[validation_mask]
+        )
+        values.loc[validation_mask] = fold_values
+        sources.loc[validation_mask] = f"development_oof_fold_{fold_id}"
+    development = actions[actions["game_id"].isin(development_matches)]
+    final_grid, test_values = _fit_expected_threat_grid(
+        development, actions[actions["game_id"].isin(test_matches)]
+    )
+    test_mask = actions["game_id"].isin(test_matches)
+    values.loc[test_mask] = test_values
+    sources.loc[test_mask] = "untouched_test"
+    if values.isna().any() or sources.eq("").any():
+        raise RuntimeError("Cross-fitted xT coverage is incomplete")
+    return final_grid, values, sources
 
 
 def _model_specifications(
@@ -734,19 +852,25 @@ def _model_specifications(
             "name": "Baseline Logistic 360-VAEP",
             "algorithm": "LogisticRegression",
             "calibration": "isotonic",
-            "score_model": LogisticRegression(
-                C=0.5,
-                class_weight="balanced",
-                max_iter=350,
-                tol=1e-3,
-                random_state=42,
+            "score_model": make_pipeline(
+                StandardScaler(),
+                LogisticRegression(
+                    C=0.5,
+                    class_weight="balanced",
+                    max_iter=500,
+                    tol=1e-4,
+                    random_state=42,
+                ),
             ),
-            "concede_model": LogisticRegression(
-                C=0.5,
-                class_weight="balanced",
-                max_iter=350,
-                tol=1e-3,
-                random_state=42,
+            "concede_model": make_pipeline(
+                StandardScaler(),
+                LogisticRegression(
+                    C=0.5,
+                    class_weight="balanced",
+                    max_iter=500,
+                    tol=1e-4,
+                    random_state=42,
+                ),
             ),
         },
         {
@@ -887,14 +1011,16 @@ def _fit_vaep_candidates(
     actions: pd.DataFrame,
     partitions: dict[str, list[int]],
 ) -> tuple[pd.DataFrame, dict[str, object], list[str]]:
-    """Fit, calibrate, compare, and select the 360-augmented VAEP models."""
+    """Compare candidates by development OOF metrics, then touch test once."""
 
-    masks = {
-        name: actions["game_id"].isin(matches).to_numpy()
-        for name, matches in partitions.items()
-    }
-    train_scores = actions.loc[masks["train"], "scores"].to_numpy(dtype=int)
-    train_concedes = actions.loc[masks["train"], "concedes"].to_numpy(dtype=int)
+    development_matches = list(partitions["development"])
+    test_matches = list(partitions["test"])
+    development_mask = actions["game_id"].isin(development_matches).to_numpy()
+    test_mask = actions["game_id"].isin(test_matches).to_numpy()
+    train_scores = actions.loc[development_mask, "scores"].to_numpy(dtype=int)
+    train_concedes = actions.loc[
+        development_mask, "concedes"
+    ].to_numpy(dtype=int)
     score_weight = min(
         float((len(train_scores) - train_scores.sum()) / max(train_scores.sum(), 1)),
         250.0,
@@ -908,63 +1034,79 @@ def _fit_vaep_candidates(
     )
     specifications = _model_specifications(score_weight, concede_weight)
     records: list[dict[str, object]] = []
-    fitted: dict[str, dict[str, object]] = {}
+    candidate_oof: dict[str, dict[str, np.ndarray]] = {}
     failures: list[str] = []
+    folds = _development_match_folds(development_matches)
+    partitions["cv_validation_folds"] = folds
 
     def fit_specification(specification: dict[str, object]) -> None:
         started = time.perf_counter()
         try:
-            calibrated_models: dict[str, object] = {}
-            test_truth_parts = []
-            test_probability_parts = []
+            oof_by_target: dict[str, np.ndarray] = {
+                "scores": np.full(len(actions), np.nan),
+                "concedes": np.full(len(actions), np.nan),
+            }
+            latency = 0.0
             for target, model_key in (
                 ("scores", "score_model"),
                 ("concedes", "concede_model"),
             ):
                 truth = actions[target].to_numpy(dtype=int)
-                estimator = specification[model_key]
-                estimator.fit(features.loc[masks["train"]], truth[masks["train"]])
-                method = str(specification["calibration"])
-                try:
+                for validation_matches in folds:
+                    outer_train_matches = sorted(
+                        set(development_matches) - set(validation_matches)
+                    )
+                    fit_matches, calibration_matches = _fit_calibration_split(
+                        outer_train_matches
+                    )
+                    fit_mask = actions["game_id"].isin(fit_matches).to_numpy()
+                    calibration_mask = actions["game_id"].isin(
+                        calibration_matches
+                    ).to_numpy()
+                    validation_mask = actions["game_id"].isin(
+                        validation_matches
+                    ).to_numpy()
+                    estimator = clone(specification[model_key])
+                    estimator.fit(
+                        features.loc[fit_mask].to_numpy(), truth[fit_mask]
+                    )
+                    method = str(specification["calibration"])
                     calibrated = _calibrate_prefit(
                         estimator,
-                        features.loc[masks["calibration"]].to_numpy(),
-                        truth[masks["calibration"]],
+                        features.loc[calibration_mask].to_numpy(),
+                        truth[calibration_mask],
                         method,
                     )
-                except Exception as isotonic_error:
-                    if method != "isotonic":
-                        raise
-                    warnings.warn(
-                        f"{specification['name']} isotonic calibration failed "
-                        f"({isotonic_error}); using sigmoid.",
-                        RuntimeWarning,
+                    predict_started = time.perf_counter()
+                    oof_by_target[target][validation_mask] = (
+                        calibrated.predict_proba(
+                            features.loc[validation_mask].to_numpy()
+                        )[:, 1]
                     )
-                    method = "sigmoid"
-                    calibrated = _calibrate_prefit(
-                        estimator,
-                        features.loc[masks["calibration"]].to_numpy(),
-                        truth[masks["calibration"]],
-                        method,
-                    )
-                calibrated_models[target] = calibrated
-                probability = calibrated.predict_proba(
-                    features.loc[masks["test"]].to_numpy()
-                )[:, 1]
-                test_truth_parts.append(truth[masks["test"]])
-                test_probability_parts.append(probability)
-            predict_started = time.perf_counter()
-            for target in ("scores", "concedes"):
-                calibrated_models[target].predict_proba(
-                    features.loc[masks["test"]].to_numpy()
-                )
-            latency = time.perf_counter() - predict_started
-            test_truth = np.concatenate(test_truth_parts)
-            test_probability = np.concatenate(test_probability_parts)
-            brier = float(brier_score_loss(test_truth, test_probability))
-            roc_auc = float(roc_auc_score(test_truth, test_probability))
-            pr_auc = float(average_precision_score(test_truth, test_probability))
-            ece = _expected_calibration_error(test_truth, test_probability)
+                    latency += time.perf_counter() - predict_started
+            if any(
+                np.isnan(probability[development_mask]).any()
+                for probability in oof_by_target.values()
+            ):
+                raise RuntimeError("OOF prediction coverage is incomplete")
+            oof_truth = np.concatenate(
+                [
+                    actions.loc[development_mask, target].to_numpy(dtype=int)
+                    for target in ("scores", "concedes")
+                ]
+            )
+            oof_probability = np.concatenate(
+                [
+                    oof_by_target[target][development_mask]
+                    for target in ("scores", "concedes")
+                ]
+            )
+            brier = float(brier_score_loss(oof_truth, oof_probability))
+            roc_auc = float(roc_auc_score(oof_truth, oof_probability))
+            pr_auc = float(
+                average_precision_score(oof_truth, oof_probability)
+            )
+            ece = _expected_calibration_error(oof_truth, oof_probability)
             name = str(specification["name"])
             records.append(
                 {
@@ -975,15 +1117,12 @@ def _fit_vaep_candidates(
                     "pr_auc": pr_auc,
                     "calibration_error": ece,
                     "latency_sec": float(latency),
+                    "evaluation_scope": "development_match_oof",
+                    "rows": int(len(oof_truth)),
+                    "selected": False,
                 }
             )
-            fitted[name] = {
-                "models": calibrated_models,
-                "calibration_method": method,
-                "fit_elapsed_sec": float(time.perf_counter() - started),
-                "test_truth": test_truth,
-                "test_probability": test_probability,
-            }
+            candidate_oof[name] = oof_by_target
         except Exception as exc:
             failures.append(
                 f"{specification['name']}: {type(exc).__name__}: {exc}"
@@ -993,15 +1132,6 @@ def _fit_vaep_candidates(
         fit_specification(specification)
     if not records:
         raise RuntimeError("All VAEP candidates failed: " + "; ".join(failures))
-    first_pass = pd.DataFrame(records)
-    if (
-        first_pass["brier_score"].min() >= 0.12
-        or first_pass["roc_auc"].max() <= 0.82
-    ):
-        for specification in _tuned_model_specifications(
-            score_weight, concede_weight
-        ):
-            fit_specification(specification)
     validation = pd.DataFrame(records)
     validation["rank_brier"] = validation["brier_score"].rank(
         method="min", ascending=True
@@ -1027,10 +1157,75 @@ def _fit_vaep_candidates(
         ascending=[True, True, False],
     ).reset_index(drop=True)
     selected_name = str(validation.iloc[0]["model_name"])
+    validation.loc[
+        validation["model_name"].eq(selected_name), "selected"
+    ] = True
+    selected_specification = next(
+        specification
+        for specification in specifications
+        if specification["name"] == selected_name
+    )
+    final_fit_matches, final_calibration_matches = _fit_calibration_split(
+        development_matches
+    )
+    partitions["final_fit"] = final_fit_matches
+    partitions["final_calibration"] = final_calibration_matches
+    final_models: dict[str, object] = {}
+    scored_probabilities = candidate_oof[selected_name]
+    test_truth_parts: list[np.ndarray] = []
+    test_probability_parts: list[np.ndarray] = []
+    for target, model_key in (
+        ("scores", "score_model"),
+        ("concedes", "concede_model"),
+    ):
+        truth = actions[target].to_numpy(dtype=int)
+        fit_mask = actions["game_id"].isin(final_fit_matches).to_numpy()
+        calibration_mask = actions["game_id"].isin(
+            final_calibration_matches
+        ).to_numpy()
+        estimator = clone(selected_specification[model_key])
+        estimator.fit(features.loc[fit_mask].to_numpy(), truth[fit_mask])
+        calibrated = _calibrate_prefit(
+            estimator,
+            features.loc[calibration_mask].to_numpy(),
+            truth[calibration_mask],
+            str(selected_specification["calibration"]),
+        )
+        final_models[target] = calibrated
+        scored_probabilities[target][test_mask] = calibrated.predict_proba(
+            features.loc[test_mask].to_numpy()
+        )[:, 1]
+        test_truth_parts.append(truth[test_mask])
+        test_probability_parts.append(scored_probabilities[target][test_mask])
+    test_truth = np.concatenate(test_truth_parts)
+    test_probability = np.concatenate(test_probability_parts)
+    if np.isnan(
+        np.column_stack(
+            [
+                scored_probabilities["scores"],
+                scored_probabilities["concedes"],
+            ]
+        )
+    ).any():
+        raise RuntimeError("Some player actions lack OOF or held-out predictions")
+    test_metrics = {
+        "brier_score": float(brier_score_loss(test_truth, test_probability)),
+        "roc_auc": float(roc_auc_score(test_truth, test_probability)),
+        "pr_auc": float(average_precision_score(test_truth, test_probability)),
+        "calibration_error": _expected_calibration_error(
+            test_truth, test_probability
+        ),
+    }
     selected = {
         "model_name": selected_name,
         "algorithm_type": str(validation.iloc[0]["algorithm_type"]),
-        **fitted[selected_name],
+        "models": final_models,
+        "calibration_method": str(selected_specification["calibration"]),
+        "fit_elapsed_sec": np.nan,
+        "test_truth": test_truth,
+        "test_probability": test_probability,
+        "test_metrics": test_metrics,
+        "action_probabilities": scored_probabilities,
     }
     return validation, selected, failures
 
@@ -1042,6 +1237,7 @@ def build_v4_player_evaluations(
     frame_metrics_df: pd.DataFrame,
     *,
     min_minutes: float = V4_MIN_PLAYER_MINUTES,
+    legacy_validation_metrics: dict[str, object] | None = None,
 ) -> tuple[
     pd.DataFrame,
     pd.DataFrame,
@@ -1096,11 +1292,15 @@ def build_v4_player_evaluations(
         warnings.warn(merge_warning, RuntimeWarning)
     for column in spatial_columns[2:]:
         numeric = pd.to_numeric(actions[column], errors="coerce")
-        actions[column] = numeric.fillna(numeric.median()).fillna(0.0)
+        # Zero is the documented neutral/missing 360 context. No statistic is
+        # learned from the held-out matches.
+        actions[column] = numeric.fillna(0.0)
 
-    xt_grid, actions["xt_value"] = _fit_expected_threat_grid(actions)
-    vaep_features, feature_names = _vaep_feature_matrix(actions)
     partitions = _match_partitions(actions)
+    xt_grid, actions["xt_value"], actions["xt_scoring_partition"] = (
+        _cross_fit_expected_threat(actions, partitions)
+    )
+    vaep_features, feature_names = _vaep_feature_matrix(actions)
     validation, selected, failures = _fit_vaep_candidates(
         vaep_features, actions, partitions
     )
@@ -1108,9 +1308,12 @@ def build_v4_player_evaluations(
         ("scores", "p_scores"),
         ("concedes", "p_concedes"),
     ):
-        actions[output] = selected["models"][target].predict_proba(
-            vaep_features.to_numpy()
-        )[:, 1]
+        actions[output] = selected["action_probabilities"][target]
+    actions["vaep_scoring_partition"] = np.where(
+        actions["game_id"].isin(partitions["test"]),
+        "untouched_test",
+        "development_oof",
+    )
     actions["vaep_value"] = actions["p_scores"] - actions["p_concedes"]
     shot_xg_lookup = (
         actions.loc[
@@ -1200,10 +1403,22 @@ def build_v4_player_evaluations(
     )
     profiles["xt_p90"] = 90 * profiles["xt_total"] / minutes
     profiles["xa_p90"] = 90 * profiles["xa_sum"] / minutes
-    profiles["final_player_rating"] = (
+    profiles["raw_final_player_rating"] = (
         0.50 * profiles["vaep_total_p90"]
         + 0.30 * profiles["vaep_per_touch"]
         + 0.20 * profiles["xt_p90"]
+    )
+    # Preserve the established role-relative hierarchy while protecting the
+    # 300-minute boundary from volatile per-90 estimates. This is an
+    # evaluation-only empirical-Bayes shrinkage, never a model input.
+    role_prior = profiles.groupby("position_group")[
+        "raw_final_player_rating"
+    ].transform("mean")
+    profiles["rating_minutes_reliability"] = minutes / (minutes + 300.0)
+    profiles["final_player_rating"] = (
+        profiles["rating_minutes_reliability"]
+        * profiles["raw_final_player_rating"]
+        + (1.0 - profiles["rating_minutes_reliability"]) * role_prior
     )
     profiles["team_rank"] = (
         profiles.groupby("team")["final_player_rating"]
@@ -1318,7 +1533,43 @@ def build_v4_player_evaluations(
     ]
     if not np.isfinite(profiles[finite].to_numpy()).all():
         raise ValueError("VAEP/xT player evaluation produced non-finite metrics")
-    best_metrics = validation.iloc[0]
+    best_metrics = validation.loc[validation["selected"]].iloc[0]
+    if legacy_validation_metrics is not None:
+        validation = pd.concat(
+            [
+                validation,
+                pd.DataFrame(
+                    [
+                        {
+                            "model_name": "Legacy transition classifier",
+                            "algorithm_type": "LegacyTransitionClassifier",
+                            "brier_score": float(
+                                legacy_validation_metrics["brier"]
+                            ),
+                            "roc_auc": float(
+                                legacy_validation_metrics["roc_auc"]
+                            ),
+                            "pr_auc": float(
+                                legacy_validation_metrics["pr_auc"]
+                            ),
+                            "calibration_error": np.nan,
+                            "latency_sec": np.nan,
+                            "evaluation_scope": (
+                                "legacy_transition_tournament_oof"
+                            ),
+                            "rows": int(
+                                legacy_validation_metrics.get("rows", 0)
+                            ),
+                            "selected": False,
+                            "rank_brier": np.nan,
+                            "rank_roc_auc": np.nan,
+                            "rank_overall": np.nan,
+                        }
+                    ]
+                ),
+            ],
+            ignore_index=True,
+        )
     provenance: dict[str, object] = {
         "schema_version": 4,
         "valuation_system": "360-Augmented VAEP and xT (applied concurrently)",
@@ -1335,12 +1586,30 @@ def build_v4_player_evaluations(
         "vaep_selected_model": selected["model_name"],
         "vaep_selected_algorithm": selected["algorithm_type"],
         "vaep_calibration_method": selected["calibration_method"],
-        "vaep_holdout_metrics": {
+        "vaep_oof_metrics": {
             "brier_score": float(best_metrics["brier_score"]),
             "roc_auc": float(best_metrics["roc_auc"]),
             "pr_auc": float(best_metrics["pr_auc"]),
             "calibration_error": float(best_metrics["calibration_error"]),
         },
+        "vaep_final_test_metrics": selected["test_metrics"],
+        # Compatibility alias retained for downstream consumers; its contents
+        # now refer only to the single final untouched-test evaluation.
+        "vaep_holdout_metrics": selected["test_metrics"],
+        "candidate_selection_scope": "development_match_oof_only",
+        "test_used_for_model_selection": False,
+        "action_scoring_policy": "development OOF plus final untouched test",
+        "target_window_offsets": list(range(1, VAEP_ACTION_WINDOW + 1)),
+        "pre_action_features_only": True,
+        "post_action_fields_excluded": [
+            "result_name",
+            "end_x",
+            "end_y",
+            "shot_statsbomb_xg",
+            "goal",
+        ],
+        "xt_cross_fitted_by_match": True,
+        "vaep_model_comparison": validation.to_dict("records"),
         "model_failures": failures,
         "partitions": partitions,
         "minutes_cutoff": float(min_minutes),
@@ -1356,7 +1625,9 @@ def build_v4_player_evaluations(
         "heatmap_cells": int(len(heatmap_cells)),
         "attacking_wingbacks": int(attacking_wingback.sum()),
         "ranking_formula": (
-            "0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90"
+            "role-relative minutes shrinkage of "
+            "(0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90), "
+            "reliability=minutes/(minutes+300)"
         ),
     }
     model_bundle = {

@@ -111,7 +111,10 @@ def artifact_regression_test(
     }
     missing = sorted(required - set(bundle))
     features = pd.read_csv(features_path, nrows=50, low_memory=False)
-    schema_compatible = not bool(set(bundle.get("feature_names", [])) - set(features))
+    missing_features = set(bundle.get("feature_names", [])) - set(features)
+    schema_compatible = not bool(
+        missing_features - set(bundle.get("feature_defaults", {}))
+    )
     replay_frame = pd.DataFrame(bundle["replay_sample"])
     replay = predict_bundle_probability(bundle, replay_frame)
     expected = np.asarray(bundle["replay_probabilities"], dtype=float)
@@ -559,8 +562,10 @@ def run_v4_validation(
         "original_event_id",
         "p_scores",
         "p_concedes",
+        "vaep_scoring_partition",
         "vaep_value",
         "xt_value",
+        "xt_scoring_partition",
         "defenders_within_5",
         "nearest_defender_distance",
         "defensive_density",
@@ -652,8 +657,70 @@ def run_v4_validation(
             == 1
         ),
         "unified_rating_formula": bool(
-            np.allclose(
+            "raw_final_player_rating" in profiles
+            and "rating_minutes_reliability" in profiles
+            and np.allclose(
+                profiles["raw_final_player_rating"],
+                0.50 * profiles["vaep_total_p90"]
+                + 0.30 * profiles["vaep_per_touch"]
+                + 0.20 * profiles["xt_p90"],
+                rtol=0,
+                atol=1e-12,
+            )
+            and np.allclose(
+                profiles["rating_minutes_reliability"],
+                profiles["minutes"] / (profiles["minutes"] + 300.0),
+                rtol=0,
+                atol=1e-12,
+            )
+            and np.allclose(
                 profiles["final_player_rating"],
+                profiles["rating_minutes_reliability"]
+                * profiles["raw_final_player_rating"]
+                + (1.0 - profiles["rating_minutes_reliability"])
+                * profiles.groupby("position_group")[
+                    "raw_final_player_rating"
+                ].transform("mean"),
+                rtol=0,
+                atol=1e-12,
+            )
+        ),
+        "all_player_actions_cross_fitted": bool(
+            event_values["p_scores"].notna().all()
+            and event_values["p_concedes"].notna().all()
+            and event_values["vaep_scoring_partition"]
+            .isin({"development_oof", "untouched_test"})
+            .all()
+            and event_values["xt_scoring_partition"]
+            .str.match(r"^(development_oof_fold_\d+|untouched_test)$")
+            .all()
+        ),
+        "legacy_unshrunk_formula_removed": bool(
+            not np.allclose(
+                profiles["final_player_rating"],
+                0.50 * profiles["vaep_total_p90"]
+                + 0.30 * profiles["vaep_per_touch"]
+                + 0.20 * profiles["xt_p90"],
+                rtol=0,
+                atol=1e-12,
+            )
+        ),
+        "pre_action_feature_contract": bool(
+            provenance["target_window_offsets"] == [1, 2, 3]
+            and provenance["pre_action_features_only"]
+            and provenance["test_used_for_model_selection"] is False
+            and provenance["xt_cross_fitted_by_match"]
+            and not {
+                "end_x",
+                "end_y",
+                "successful_action",
+                "shot_xg",
+                "result",
+            }.intersection(provenance["vaep_feature_names"])
+        ),
+        "legacy_base_formula_reconstructs_raw": bool(
+            np.allclose(
+                profiles["raw_final_player_rating"],
                 0.50 * profiles["vaep_total_p90"]
                 + 0.30 * profiles["vaep_per_touch"]
                 + 0.20 * profiles["xt_p90"],
