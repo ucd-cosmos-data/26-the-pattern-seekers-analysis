@@ -48,6 +48,8 @@ TEAM_CODES = {
 
 PROSPECTIVE_SECTION_START = "<!-- PROSPECTIVE_VALIDATION_START -->"
 PROSPECTIVE_SECTION_END = "<!-- PROSPECTIVE_VALIDATION_END -->"
+PLAYER_ROLE_SECTION_START = "<!-- PLAYER_ROLE_VALIDATION_START -->"
+PLAYER_ROLE_SECTION_END = "<!-- PLAYER_ROLE_VALIDATION_END -->"
 
 
 def load_prospective_validation(path: Path) -> dict[str, Any] | None:
@@ -268,6 +270,230 @@ def refresh_prospective_validation_reporting(
                 ).glob("*_compiled_player_reports.md")
             )
         ),
+    }
+
+
+def load_player_role_validation(path: Path) -> dict[str, Any] | None:
+    """Load and schema-check the player-role challenger decision."""
+
+    if not path.is_file() or path.stat().st_size == 0:
+        return None
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    required = {
+        "incumbent_vaep_oof_metrics",
+        "probabilistic_roles",
+        "learned_valuation",
+        "rank_checks",
+        "gates",
+        "decisions",
+    }
+    missing = sorted(required - set(payload))
+    if missing:
+        raise ValueError(
+            f"Player-role validation artifact lacks keys: {missing}"
+        )
+    return payload
+
+
+def player_role_validation_markdown(summary: dict[str, Any]) -> str:
+    """Render the accepted production state and rejected challenger evidence."""
+
+    model = summary["incumbent_vaep_oof_metrics"]
+    roles = summary["probabilistic_roles"]
+    valuation = summary["learned_valuation"]
+    ranks = summary["rank_checks"]
+    interval = valuation["delta_confidence_interval_95"]
+    return "\n".join(
+        [
+            PLAYER_ROLE_SECTION_START,
+            "## Player-role and valuation validation status",
+            "",
+            (
+                "**Production state retained.** The probabilistic role matrix and "
+                "learned valuation were evaluated as challengers but were not "
+                "promoted because they missed their predeclared statistical gates."
+            ),
+            "",
+            "| Component | Decision | Validation evidence |",
+            "|---|---|---|",
+            (
+                f"| Probabilistic GMM roles | **{summary['decisions']['probabilistic_roles']}** "
+                f"| K={int(roles['selected_k'])}; silhouette "
+                f"{float(roles['silhouette']):.4f}; median 500-bootstrap ARI "
+                f"{float(roles['bootstrap_ari_median']):.4f} vs required 0.70 |"
+            ),
+            (
+                f"| Learned Ridge valuation | **{summary['decisions']['learned_valuation']}** "
+                f"| OOF Spearman {float(valuation['baseline_spearman']):.4f} → "
+                f"{float(valuation['challenger_spearman']):.4f}; gain 95% CI "
+                f"[{float(interval[0]):+.4f}, {float(interval[1]):+.4f}] crosses zero |"
+            ),
+            "",
+            (
+                "The active calibrated 360-VAEP model therefore remains unchanged: "
+                f"OOF ROC-AUC {float(model['roc_auc']):.6f}, PR-AUC "
+                f"{float(model['pr_auc']):.6f}, Brier "
+                f"{float(model['brier_score']):.6f}. "
+                f"Messi remains Argentina rank #{int(ranks['incumbent_messi_rank'])} "
+                f"and Mbappé remains France rank "
+                f"#{int(ranks['incumbent_mbappe_rank'])}; no player-name override "
+                "was used."
+            ),
+            PLAYER_ROLE_SECTION_END,
+        ]
+    )
+
+
+def _upsert_generated_section(
+    path: Path,
+    section: str,
+    start_marker: str,
+    end_marker: str,
+) -> bool:
+    """Append or replace a marker-delimited generated Markdown section."""
+
+    if not path.is_file():
+        return False
+    text = path.read_text(encoding="utf-8")
+    if start_marker in text:
+        prefix, remainder = text.split(start_marker, maxsplit=1)
+        if end_marker not in remainder:
+            raise ValueError(f"Unclosed generated section in {path}")
+        _, suffix = remainder.split(end_marker, maxsplit=1)
+        updated = prefix.rstrip() + "\n\n" + section + suffix
+    else:
+        updated = text.rstrip() + "\n\n" + section + "\n"
+    path.write_text(updated.rstrip() + "\n", encoding="utf-8")
+    return True
+
+
+def refresh_player_role_validation_reporting(
+    project_root: Path,
+    validation_path: Path | None = None,
+) -> dict[str, int]:
+    """Synchronize accepted rankings and challenger status across outputs."""
+
+    validation_path = validation_path or (
+        project_root / "results/reports/player_role_challenger_validation.json"
+    )
+    summary = load_player_role_validation(validation_path)
+    if summary is None:
+        raise FileNotFoundError(validation_path)
+    section = player_role_validation_markdown(summary)
+    markdown_targets = [
+        project_root / "results/Summary/v4_model_explanation_summary.md",
+        project_root
+        / "results/reports/final/world_cup_team_performance_and_top_players.md",
+        *sorted((project_root / "results/reports/teams").glob("*.md")),
+        *sorted((project_root / "results/reports/compiled").glob("*.md")),
+    ]
+    updated_markdown = sum(
+        _upsert_generated_section(
+            path,
+            section,
+            PLAYER_ROLE_SECTION_START,
+            PLAYER_ROLE_SECTION_END,
+        )
+        for path in markdown_targets
+    )
+
+    profiles = pd.read_csv(
+        project_root / "data/processed/player_evaluations.csv"
+    )
+    leaderboard = (
+        profiles[
+            [
+                "player",
+                "team",
+                "position",
+                "minutes",
+                "vaep_off_p90",
+                "vaep_def_p90",
+                "vaep_per_touch",
+                "xt_p90",
+                "final_player_rating",
+                "team_rank",
+            ]
+        ]
+        .rename(columns={"player": "player_name"})
+        .sort_values(["team", "team_rank", "player_name"])
+    )
+    csv_targets = [
+        project_root / "data/processed/player_leaderboard.csv",
+        project_root / "results/reports/player_leaderboard.csv",
+        project_root / "results/reports/team_player_leaderboards.csv",
+    ]
+    for path in csv_targets:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        leaderboard.to_csv(path, index=False)
+
+    updated_json = 0
+    for path in (
+        project_root / "results/reports/pipeline_manifest.json",
+        project_root / "results/eda_validation_report.json",
+        project_root / "results/MIscellaneous/eda_validation_report.json",
+    ):
+        if not path.is_file():
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        payload["player_role_valuation_challenger"] = summary
+        path.write_text(
+            json.dumps(payload, indent=2, ensure_ascii=True, default=_json_value)
+            + "\n",
+            encoding="utf-8",
+        )
+        updated_json += 1
+
+    # Only figures driven by player ranking values are refreshed. Calibration
+    # and tactical-cluster figures use unchanged model outputs.
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
+    figure_root = project_root / "results/figures"
+    figure_root.mkdir(parents=True, exist_ok=True)
+    plot = profiles.copy()
+    plt.figure(figsize=(10, 7))
+    sns.scatterplot(
+        data=plot,
+        x="xt_p90",
+        y="vaep_total_p90",
+        hue="position_group",
+        size="final_player_rating",
+        sizes=(25, 180),
+        alpha=0.8,
+    )
+    plt.title("Validated player value: 360-VAEP versus spatial xT")
+    plt.tight_layout()
+    plt.savefig(figure_root / "vaep_vs_xt_scatter.png", dpi=180)
+    plt.close()
+
+    france = profiles.loc[profiles["team"].eq("France")].nsmallest(
+        12, "team_rank"
+    )
+    plt.figure(figsize=(10, 6))
+    sns.barplot(
+        data=france,
+        x="final_player_rating",
+        y="player",
+        order=france.sort_values(
+            "final_player_rating", ascending=False
+        )["player"],
+        color="#2f6f9f",
+    )
+    plt.title("France validated player rankings")
+    plt.xlabel("Final player rating")
+    plt.ylabel("")
+    plt.tight_layout()
+    plt.savefig(figure_root / "france_team_rankings.png", dpi=180)
+    plt.close()
+    return {
+        "markdown_files": updated_markdown,
+        "json_files": updated_json,
+        "leaderboard_csv_files": len(csv_targets),
+        "figures": 2,
     }
 
 

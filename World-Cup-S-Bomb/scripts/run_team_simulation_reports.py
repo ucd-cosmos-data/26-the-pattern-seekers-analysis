@@ -30,6 +30,7 @@ from src.report_generators import (  # noqa: E402
     generate_full_team_coaching_reports,
     generate_individual_starter_reports,
     generate_player_heatmap_svgs,
+    refresh_player_role_validation_reporting,
     refresh_prospective_validation_reporting,
 )
 from src.simulation_engine import (  # noqa: E402
@@ -1376,6 +1377,14 @@ def run_pipeline(
         if prospective_validation.is_file():
             refresh_prospective_validation_reporting(
                 project_root, prospective_validation
+            )
+        player_role_validation = (
+            project_root
+            / "results/reports/player_role_challenger_validation.json"
+        )
+        if player_role_validation.is_file():
+            refresh_player_role_validation_reporting(
+                project_root, player_role_validation
             )
     return manifest
 

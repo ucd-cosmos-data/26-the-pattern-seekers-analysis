@@ -190,3 +190,16 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
 <!-- PROSPECTIVE_VALIDATION_END -->
+
+<!-- PLAYER_ROLE_VALIDATION_START -->
+## Player-role and valuation validation status
+
+**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
+
+| Component | Decision | Validation evidence |
+|---|---|---|
+| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
+| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
+
+The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
+<!-- PLAYER_ROLE_VALIDATION_END -->

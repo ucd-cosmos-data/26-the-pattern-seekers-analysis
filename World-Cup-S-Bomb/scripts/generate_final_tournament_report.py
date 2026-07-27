@@ -24,7 +24,9 @@ if str(PROJECT_ROOT) not in sys.path:
 from src.report_generators import (  # noqa: E402
     TEAM_CODES,
     build_dynamic_team_summary,
+    load_player_role_validation,
     load_prospective_validation,
+    player_role_validation_markdown,
     prospective_validation_markdown,
 )
 
@@ -975,6 +977,12 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
     )
     if prospective is not None:
         lines.extend(["", prospective_validation_markdown(prospective)])
+    player_role = load_player_role_validation(
+        project_root
+        / "results/reports/player_role_challenger_validation.json"
+    )
+    if player_role is not None:
+        lines.extend(["", player_role_validation_markdown(player_role)])
 
     destination = output_path if output_path.is_absolute() else project_root / output_path
     destination.parent.mkdir(parents=True, exist_ok=True)
