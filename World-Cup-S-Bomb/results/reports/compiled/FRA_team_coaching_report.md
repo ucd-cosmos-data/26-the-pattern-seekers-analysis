@@ -15,10 +15,10 @@ France: no tactical change cleared the modeled effect floor. Primary review sign
 3. Adrien Rabiot (Defensive Midfield)
 4. Raphaël Varane (Center Back)
 5. Theo Bernard François Hernández (Fullback/Wingback)
-6. Aurélien Djani Tchouaméni (Defensive Midfield)
-7. Jules Koundé (Fullback/Wingback)
-8. Ibrahima Konaté (Center Back)
-9. Hugo Lloris (Goalkeeper)
+6. Hugo Lloris (Goalkeeper)
+7. Aurélien Djani Tchouaméni (Defensive Midfield)
+8. Jules Koundé (Fullback/Wingback)
+9. Dayotchanculle Upamecano (Center Back)
 10. Marcus Thuram (Central/Wide Midfield)
 11. Jordan Veretout (Central/Wide Midfield)
 
@@ -37,9 +37,9 @@ France: no tactical change cleared the modeled effect floor. Primary review sign
 ## Unified 360-VAEP + xT player leaders
 
 1. Kylian Mbappé Lottin — Progressive Winger; rating 0.3127, VAEP/90 +0.643, xT/90 +0.134
-2. Olivier Giroud — Target Forward; rating 0.2377, VAEP/90 +0.476, xT/90 +0.008
+2. Olivier Giroud — Target Forward / Penalty-Box Anchor; rating 0.2377, VAEP/90 +0.476, xT/90 +0.008
 3. Ousmane Dembélé — Progressive Winger; rating 0.2020, VAEP/90 +0.351, xT/90 +0.112
-4. Antoine Griezmann — Ball-Winner; rating 0.1995, VAEP/90 +0.343, xT/90 +0.117
+4. Antoine Griezmann — Hybrid Playmaker / Roaming Creator; rating 0.1995, VAEP/90 +0.343, xT/90 +0.117
 5. Adrien Rabiot — Ball-Winner; rating 0.0915, VAEP/90 +0.246, xT/90 +0.013
 
 _Only players with at least 300 tournament minutes are ranked. Every player
@@ -95,3 +95,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

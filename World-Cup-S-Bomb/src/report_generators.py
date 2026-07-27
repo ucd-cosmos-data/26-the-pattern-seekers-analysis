@@ -52,6 +52,8 @@ PLAYER_ROLE_SECTION_START = "<!-- PLAYER_ROLE_VALIDATION_START -->"
 PLAYER_ROLE_SECTION_END = "<!-- PLAYER_ROLE_VALIDATION_END -->"
 ROLE_AWARE_SECTION_START = "<!-- ROLE_AWARE_VALUATION_START -->"
 ROLE_AWARE_SECTION_END = "<!-- ROLE_AWARE_VALUATION_END -->"
+ROLE_REFINEMENT_START = "<!-- CONTINUOUS_ROLE_REFINEMENT_START -->"
+ROLE_REFINEMENT_END = "<!-- CONTINUOUS_ROLE_REFINEMENT_END -->"
 
 
 def load_prospective_validation(path: Path) -> dict[str, Any] | None:
@@ -613,6 +615,97 @@ def refresh_role_aware_validation_reporting(
             summary["decision"] == "REJECTED_RETAIN_INCUMBENT"
             and summary["production_promoted"] is False
         )
+        path.write_text(
+            json.dumps(payload, indent=2, ensure_ascii=True, default=_json_value)
+            + "\n",
+            encoding="utf-8",
+        )
+        json_files += 1
+    return {"markdown_files": markdown_files, "json_files": json_files}
+
+
+def load_role_refinement(path: Path) -> dict[str, Any] | None:
+    """Load the accepted post-K-Means continuous role refinement."""
+
+    if not path.is_file() or path.stat().st_size == 0:
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def role_refinement_markdown(summary: dict[str, Any]) -> str:
+    """Render role-only changes separately from unchanged numerical ratings."""
+
+    france = "\n".join(
+        f"- {row['player']}: {row['kmeans_functional_role']} → "
+        f"**{row['functional_role']}**"
+        for row in summary["france_changes"]
+    )
+    return "\n".join(
+        [
+            ROLE_REFINEMENT_START,
+            "## Accepted continuous role refinement",
+            "",
+            (
+                f"**{summary['changed_roles']} of {summary['eligible_players']} "
+                f"players ({100 * summary['change_rate']:.1f}%) received an "
+                "evidence-backed post-K-Means role refinement; "
+                f"{summary['unchanged_roles']} retained their original role.** "
+                "The original cluster label remains available as "
+                "`kmeans_functional_role`. Ratings, team ranks, VAEP and xT were "
+                "not changed by this role-only promotion."
+            ),
+            "",
+            "France refinements:",
+            "",
+            france,
+            "",
+            (
+                "Refinements use continuous progression, creation, finishing, "
+                "pressing, defensive, security, aerial and completeness scores "
+                "with broad-position safeguards. No player-name condition is used."
+            ),
+            ROLE_REFINEMENT_END,
+        ]
+    )
+
+
+def refresh_role_refinement_reporting(
+    project_root: Path,
+    validation_path: Path | None = None,
+) -> dict[str, int]:
+    """Synchronize accepted role-only changes across reports and audits."""
+
+    validation_path = validation_path or (
+        project_root / "results/reports/role_refinement_validation.json"
+    )
+    summary = load_role_refinement(validation_path)
+    if summary is None or not summary.get("production_promoted"):
+        raise ValueError("Role refinement has not been promoted")
+    section = role_refinement_markdown(summary)
+    targets = [
+        project_root / "results/Summary/v4_model_explanation_summary.md",
+        project_root
+        / "results/reports/final/world_cup_team_performance_and_top_players.md",
+        *sorted((project_root / "results/reports/teams").glob("*.md")),
+        *sorted((project_root / "results/reports/compiled").glob("*.md")),
+    ]
+    markdown_files = sum(
+        _upsert_generated_section(
+            path, section, ROLE_REFINEMENT_START, ROLE_REFINEMENT_END
+        )
+        for path in targets
+    )
+    json_files = 0
+    for path in (
+        project_root / "results/reports/pipeline_manifest.json",
+        project_root / "results/eda_validation_report.json",
+        project_root / "results/MIscellaneous/eda_validation_report.json",
+    ):
+        if not path.is_file():
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        payload["continuous_role_refinement"] = summary
+        payload.setdefault("gates", {})["continuous_role_refinement"] = True
         path.write_text(
             json.dumps(payload, indent=2, ensure_ascii=True, default=_json_value)
             + "\n",

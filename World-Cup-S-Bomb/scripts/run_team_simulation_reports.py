@@ -33,6 +33,7 @@ from src.report_generators import (  # noqa: E402
     refresh_player_role_validation_reporting,
     refresh_prospective_validation_reporting,
     refresh_role_aware_validation_reporting,
+    refresh_role_refinement_reporting,
 )
 from src.simulation_engine import (  # noqa: E402
     EmpiricalHurdleModel,
@@ -1395,6 +1396,13 @@ def run_pipeline(
         if role_aware_validation.is_file():
             refresh_role_aware_validation_reporting(
                 project_root, role_aware_validation
+            )
+        role_refinement_validation = (
+            project_root / "results/reports/role_refinement_validation.json"
+        )
+        if role_refinement_validation.is_file():
+            refresh_role_refinement_reporting(
+                project_root, role_refinement_validation
             )
     return manifest
 

@@ -11,11 +11,11 @@ Portugal: no tactical change cleared the modeled effect floor. Primary review si
 ## Optimized starting 11
 
 1. Kléper Laveran Lima Ferreira (Center Back)
-2. Rúben Santos Gato Alves Dias (Center Back)
-3. Bruno Miguel Borges Fernandes (Attacking Midfield/Wing)
+2. Bruno Miguel Borges Fernandes (Attacking Midfield/Wing)
+3. Rúben Santos Gato Alves Dias (Center Back)
 4. Bernardo Mota Veiga de Carvalho e Silva (Central/Wide Midfield)
-5. João Félix Sequeira (Attacking Midfield/Wing)
-6. João Pedro Cavaco Cancelo (Fullback/Wingback)
+5. João Pedro Cavaco Cancelo (Fullback/Wingback)
+6. João Félix Sequeira (Attacking Midfield/Wing)
 7. Raphaël Adelino José Guerreiro (Fullback/Wingback)
 8. Cristiano Ronaldo dos Santos Aveiro (Forward)
 9. Diogo Meireles Costa (Goalkeeper)
@@ -38,8 +38,8 @@ Portugal: no tactical change cleared the modeled effect floor. Primary review si
 
 1. Cristiano Ronaldo dos Santos Aveiro — Target Forward; rating 0.2844, VAEP/90 +0.665, xT/90 +0.009
 2. João Félix Sequeira — Target Forward; rating 0.2101, VAEP/90 +0.405, xT/90 +0.046
-3. Bruno Miguel Borges Fernandes — Progressive Winger; rating 0.1671, VAEP/90 +0.220, xT/90 +0.128
-4. Bernardo Mota Veiga de Carvalho e Silva — Ball-Winner; rating 0.1382, VAEP/90 +0.251, xT/90 +0.058
+3. Bruno Miguel Borges Fernandes — Hybrid Playmaker / Roaming Creator; rating 0.1671, VAEP/90 +0.220, xT/90 +0.128
+4. Bernardo Mota Veiga de Carvalho e Silva — Box-to-Box / Engine Midfielder; rating 0.1382, VAEP/90 +0.251, xT/90 +0.058
 5. Raphaël Adelino José Guerreiro — Wide Creator; rating 0.1134, VAEP/90 +0.267, xT/90 +0.076
 
 _Only players with at least 300 tournament minutes are ranked. Every player
@@ -95,3 +95,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

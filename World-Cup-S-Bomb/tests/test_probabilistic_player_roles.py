@@ -111,3 +111,24 @@ def test_rating_rejects_invalid_weights() -> None:
                 "off_ball_score": 1.0,
             },
         )
+
+
+def test_promoted_role_refinement_preserves_ratings() -> None:
+    report = json.loads(
+        (
+            PROJECT_ROOT
+            / "results/reports/role_refinement_validation.json"
+        ).read_text(encoding="utf-8")
+    )
+    profiles = pd.read_csv(
+        PROJECT_ROOT / "data/processed/player_evaluations.csv"
+    )
+    comparison = pd.read_csv(
+        PROJECT_ROOT / "results/reports/role_aware_rating_comparison.csv"
+    )[["player", "old_rating"]]
+    merged = profiles.merge(comparison, on="player", validate="one_to_one")
+    assert report["production_promoted"] is True
+    assert report["changed_roles"] == 34
+    assert np.allclose(
+        merged["final_player_rating"], merged["old_rating"], atol=1e-12
+    )

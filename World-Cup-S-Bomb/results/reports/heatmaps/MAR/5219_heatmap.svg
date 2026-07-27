@@ -23,11 +23,11 @@
 <rect x="120" y="110" width="50" height="50" fill="rgb(162,202,237)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="160" width="50" height="50" fill="rgb(35,133,210)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="210" width="50" height="50" fill="rgb(162,202,237)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="120" y="260" width="50" height="50" fill="rgb(185,215,242)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="120" y="260" width="50" height="50" fill="rgb(184,215,242)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="310" width="50" height="50" fill="rgb(230,239,251)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="360" width="50" height="50" fill="rgb(230,239,251)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="120" y="410" width="50" height="50" fill="rgb(241,245,254)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="170" y="60" width="50" height="50" fill="rgb(185,215,242)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="170" y="60" width="50" height="50" fill="rgb(184,215,242)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="110" width="50" height="50" fill="rgb(162,202,237)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="160" width="50" height="50" fill="rgb(91,163,222)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="170" y="210" width="50" height="50" fill="rgb(128,184,230)" stroke="#ffffff" stroke-width="0.5"/>
@@ -44,7 +44,7 @@
 <rect x="220" y="360" width="50" height="50" fill="rgb(233,241,252)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="220" y="410" width="50" height="50" fill="rgb(237,243,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="270" y="60" width="50" height="50" fill="rgb(230,239,251)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="270" y="110" width="50" height="50" fill="rgb(185,215,242)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="270" y="110" width="50" height="50" fill="rgb(184,215,242)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="270" y="160" width="50" height="50" fill="rgb(117,178,227)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="270" y="210" width="50" height="50" fill="rgb(215,231,248)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="270" y="260" width="50" height="50" fill="rgb(207,227,246)" stroke="#ffffff" stroke-width="0.5"/>

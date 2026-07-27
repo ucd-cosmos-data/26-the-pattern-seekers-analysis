@@ -12,15 +12,15 @@ Argentina: no tactical change cleared the modeled effect floor. Primary review s
 
 1. Lionel Andrés Messi Cuccittini (Attacking Midfield/Wing)
 2. Damián Emiliano Martínez (Goalkeeper)
-3. Rodrigo Javier De Paul (Defensive Midfield)
-4. Enzo Fernandez (Defensive Midfield)
-5. Alexis Mac Allister (Central/Wide Midfield)
-6. Nahuel Molina Lucero (Fullback/Wingback)
+3. Enzo Fernandez (Defensive Midfield)
+4. Rodrigo Javier De Paul (Defensive Midfield)
+5. Nahuel Molina Lucero (Fullback/Wingback)
+6. Alexis Mac Allister (Central/Wide Midfield)
 7. Julián Álvarez (Forward)
-8. Marcos Javier Acuña (Fullback/Wingback)
-9. Nicolás Hernán Otamendi (Center Back)
+8. Nicolás Hernán Otamendi (Center Back)
+9. Nicolás Alejandro Tagliafico (Fullback/Wingback)
 10. Ángel Fabián Di María Hernández (Central/Wide Midfield)
-11. Cristian Gabriel Romero (Center Back)
+11. Lisandro Martínez (Center Back)
 
 ## Physical matchup deltas
 
@@ -95,3 +95,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

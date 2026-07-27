@@ -12,7 +12,7 @@
 
 - Team: Portugal (POR)
 - Position: Right Center Midfield
-- Functional role: Ball-Winner
+- Functional role: Box-to-Box / Engine Midfielder
 - VAEP offense per 90: 0.2385
 - VAEP defense per 90: 0.0121
 - VAEP total per 90: 0.2506
@@ -56,7 +56,7 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Portugal (POR)
 - Position: Center Attacking Midfield
-- Functional role: Progressive Winger
+- Functional role: Hybrid Playmaker / Roaming Creator
 - VAEP offense per 90: 0.2295
 - VAEP defense per 90: -0.0094
 - VAEP total per 90: 0.2201
@@ -166,8 +166,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 ## Top chemistry partners
 
 - Bruno Miguel Borges Fernandes — synergy 0.563, 230 shared minutes
+- Unknown — synergy 0.504, 224 shared minutes
 - João Pedro Cavaco Cancelo — synergy 0.490, 281 shared minutes
-- Bernardo Mota Veiga de Carvalho e Silva — synergy 0.457, 224 shared minutes
 
 ## Tactical recommendations
 
@@ -438,3 +438,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

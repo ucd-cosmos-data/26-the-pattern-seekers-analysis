@@ -2,7 +2,7 @@
 <title>Yunus Dimoara Musah V4 spatial heatmap</title>
 <rect width="640" height="500" fill="#f7fafc"/>
 <text x="20" y="28" font-family="Arial" font-size="18" font-weight="700">Yunus Dimoara Musah</text>
-<text x="20" y="49" font-family="Arial" font-size="12">Ball-Winner · 365 minutes · 31.3% final third</text>
+<text x="20" y="49" font-family="Arial" font-size="12">Box-to-Box / Engine Midfielder · 365 minutes · 31.3% final third</text>
 <rect x="20" y="60" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="110" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="160" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
@@ -60,12 +60,12 @@
 <rect x="320" y="360" width="50" height="50" fill="rgb(191,218,243)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="320" y="410" width="50" height="50" fill="rgb(175,209,240)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="370" y="60" width="50" height="50" fill="rgb(148,194,234)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="370" y="110" width="50" height="50" fill="rgb(104,171,225)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="370" y="110" width="50" height="50" fill="rgb(105,171,225)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="370" y="160" width="50" height="50" fill="rgb(153,197,235)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="370" y="210" width="50" height="50" fill="rgb(180,212,241)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="370" y="260" width="50" height="50" fill="rgb(164,203,237)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="370" y="310" width="50" height="50" fill="rgb(191,218,243)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="370" y="360" width="50" height="50" fill="rgb(104,171,225)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="370" y="360" width="50" height="50" fill="rgb(105,171,225)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="370" y="410" width="50" height="50" fill="rgb(153,197,235)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="420" y="60" width="50" height="50" fill="rgb(115,177,227)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="420" y="110" width="50" height="50" fill="rgb(164,203,237)" stroke="#ffffff" stroke-width="0.5"/>

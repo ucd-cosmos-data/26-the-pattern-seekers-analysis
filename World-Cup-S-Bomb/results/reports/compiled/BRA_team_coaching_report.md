@@ -10,16 +10,16 @@ Brazil: no tactical change cleared the modeled effect floor. Primary review sign
 
 ## Optimized starting 11
 
-1. Thiago Emiliano da Silva (Center Back)
+1. Marcos Aoás Corrêa (Center Back)
 2. Carlos Henrique Casimiro (Defensive Midfield)
-3. Éder Gabriel Militão (Fullback/Wingback)
-4. Raphael Dias Belloli (Attacking Midfield/Wing)
-5. Richarlison de Andrade (Forward)
-6. Lucas Tolentino Coelho de Lima (Defensive Midfield)
-7. Vinícius José Paixão de Oliveira Júnior (Central/Wide Midfield)
-8. Marcos Aoás Corrêa (Center Back)
-9. Danilo Luiz da Silva (Fullback/Wingback)
-10. Alisson Ramsés Becker (Goalkeeper)
+3. Thiago Emiliano da Silva (Center Back)
+4. Éder Gabriel Militão (Fullback/Wingback)
+5. Alisson Ramsés Becker (Goalkeeper)
+6. Raphael Dias Belloli (Attacking Midfield/Wing)
+7. Richarlison de Andrade (Forward)
+8. Lucas Tolentino Coelho de Lima (Defensive Midfield)
+9. Vinícius José Paixão de Oliveira Júnior (Central/Wide Midfield)
+10. Danilo Luiz da Silva (Fullback/Wingback)
 11. Rodrygo Silva de Goes (Central/Wide Midfield)
 
 ## Physical matchup deltas
@@ -95,3 +95,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

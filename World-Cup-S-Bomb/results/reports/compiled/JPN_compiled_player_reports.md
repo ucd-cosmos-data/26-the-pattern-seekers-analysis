@@ -36,7 +36,7 @@
 
 - Shūichi Gonda — synergy 0.773, 413 shared minutes
 - Wataru Endo — synergy 0.694, 326 shared minutes
-- Daichi Kamada — synergy 0.647, 337 shared minutes
+- Unknown — synergy 0.655, 292 shared minutes
 
 ## Tactical recommendations
 
@@ -80,7 +80,7 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Maya Yoshida — synergy 0.647, 337 shared minutes
 - Wataru Endo — synergy 0.592, 268 shared minutes
-- Shūichi Gonda — synergy 0.483, 337 shared minutes
+- Unknown — synergy 0.553, 263 shared minutes
 
 ## Tactical recommendations
 
@@ -124,7 +124,7 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Wataru Endo — synergy 0.579, 260 shared minutes
 - Maya Yoshida — synergy 0.567, 346 shared minutes
-- Daichi Kamada — synergy 0.425, 271 shared minutes
+- Unknown — synergy 0.551, 232 shared minutes
 
 ## Tactical recommendations
 
@@ -210,7 +210,7 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Maya Yoshida — synergy 0.773, 413 shared minutes
 - Wataru Endo — synergy 0.664, 326 shared minutes
-- Daichi Kamada — synergy 0.483, 337 shared minutes
+- Unknown — synergy 0.640, 292 shared minutes
 
 ## Tactical recommendations
 
@@ -263,3 +263,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

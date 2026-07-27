@@ -10,15 +10,15 @@ South Korea: no tactical change cleared the modeled effect floor. Primary review
 
 ## Optimized starting 11
 
-1. Moon-Hwan Kim (Fullback/Wingback)
-2. Heung-Min Son (Attacking Midfield/Wing)
-3. Young-Gwon Kim (Center Back)
+1. Young-Gwon Kim (Center Back)
+2. Moon-Hwan Kim (Fullback/Wingback)
+3. Heung-Min Son (Attacking Midfield/Wing)
 4. In-Beom Hwang (Defensive Midfield)
 5. Jin-Su Kim (Fullback/Wingback)
-6. Woo-Young Jung (Defensive Midfield)
-7. Seung-Gyu Kim (Goalkeeper)
-8. Min Jae Kim (Center Back)
-9. Gue-Sung Cho (Forward)
+6. Seung-Gyu Kim (Goalkeeper)
+7. Min Jae Kim (Center Back)
+8. Gue-Sung Cho (Forward)
+9. Jae-Sung Lee (Attacking Midfield/Wing)
 10. Kang-In Lee (Central/Wide Midfield)
 11. Hee-Chan Hwang (Central/Wide Midfield)
 
@@ -39,7 +39,7 @@ South Korea: no tactical change cleared the modeled effect floor. Primary review
 1. Heung-Min Son — Target Forward; rating 0.2082, VAEP/90 +0.385, xT/90 +0.078
 2. Jin-Su Kim — Attacking Wingback; rating 0.0983, VAEP/90 +0.216, xT/90 +0.041
 3. Moon-Hwan Kim — Attacking Wingback; rating 0.0784, VAEP/90 +0.140, xT/90 +0.046
-4. In-Beom Hwang — Box-to-Box Runner; rating 0.0494, VAEP/90 +0.106, xT/90 +0.061
+4. In-Beom Hwang — Box-to-Box / Engine Midfielder; rating 0.0494, VAEP/90 +0.106, xT/90 +0.061
 5. Woo-Young Jung — Ball-Winner; rating 0.0200, VAEP/90 +0.001, xT/90 +0.050
 
 _Only players with at least 300 tournament minutes are ranked. Every player
@@ -95,3 +95,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

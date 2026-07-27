@@ -1362,6 +1362,72 @@
     "rollback_reason": "At least one mandatory ranking, benchmark, integrity, or metric-preservation gate failed."
   },
   "gates": {
-    "role_aware_challenger_rollback": true
+    "role_aware_challenger_rollback": true,
+    "continuous_role_refinement": true
+  },
+  "continuous_role_refinement": {
+    "schema_version": "continuous-role-refinement-v1",
+    "decision": "ACCEPTED",
+    "production_promoted": true,
+    "eligible_players": 142,
+    "changed_roles": 34,
+    "unchanged_roles": 108,
+    "change_rate": 0.23943661971830985,
+    "gates": {
+      "ratings_and_team_ranks_unchanged": true,
+      "change_rate_between_5_and_30_percent": true,
+      "at_least_70_percent_roles_retained": true,
+      "griezmann_hybrid_creator": true,
+      "tchouameni_controlling_midfielder": true,
+      "theo_attacking_wingback": true,
+      "hakimi_attacking_wingback": true,
+      "modric_deep_playmaker": true,
+      "giroud_penalty_box_anchor": true,
+      "bellingham_engine_midfielder": true,
+      "amrabat_engine_midfielder": true,
+      "goalkeepers_unchanged": true
+    },
+    "benchmarks": {
+      "griezmann": "Hybrid Playmaker / Roaming Creator",
+      "tchouameni": "Holding / Controlling Midfielder",
+      "theo_hernandez": "Attacking Wingback",
+      "giroud": "Target Forward / Penalty-Box Anchor",
+      "hakimi": "Attacking Wingback",
+      "modric": "Deep Playmaker / Metronome",
+      "bellingham": "Box-to-Box / Engine Midfielder",
+      "amrabat": "Box-to-Box / Engine Midfielder"
+    },
+    "france_changes": [
+      {
+        "player": "Olivier Giroud",
+        "kmeans_functional_role": "Target Forward",
+        "functional_role": "Target Forward / Penalty-Box Anchor",
+        "role_refinement_reason": "AERIAL_FINISHING_CENTRALITY"
+      },
+      {
+        "player": "Antoine Griezmann",
+        "kmeans_functional_role": "Ball-Winner",
+        "functional_role": "Hybrid Playmaker / Roaming Creator",
+        "role_refinement_reason": "HIGH_CREATION_PRESSING_COMPLETENESS"
+      },
+      {
+        "player": "Theo Bernard Fran\u00e7ois Hern\u00e1ndez",
+        "kmeans_functional_role": "Wide Creator",
+        "functional_role": "Attacking Wingback",
+        "role_refinement_reason": "FINAL_THIRD_OR_PROGRESSIVE_WIDE_CREATION"
+      },
+      {
+        "player": "Ibrahima Konat\u00e9",
+        "kmeans_functional_role": "Deep Playmaker",
+        "functional_role": "Ball-Playing Centre-Back",
+        "role_refinement_reason": "HIGH_PROGRESSION_AND_SECURITY"
+      },
+      {
+        "player": "Aur\u00e9lien Djani Tchouam\u00e9ni",
+        "kmeans_functional_role": "Ball-Winner",
+        "functional_role": "Holding / Controlling Midfielder",
+        "role_refinement_reason": "HIGH_SECURITY_PROGRESSION_BUILDUP"
+      }
+    ]
   }
 }

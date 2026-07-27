@@ -10,13 +10,13 @@ Spain: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Optimized starting 11
 
-1. Rodrigo Hernández Cascante (Center Back)
-2. Daniel Olmo Carvajal (Attacking Midfield/Wing)
-3. Pedro González López (Central/Wide Midfield)
-4. Sergio Busquets i Burgos (Defensive Midfield)
+1. Unai Simón Mendibil (Goalkeeper)
+2. Rodrigo Hernández Cascante (Center Back)
+3. Daniel Olmo Carvajal (Attacking Midfield/Wing)
+4. Pedro González López (Central/Wide Midfield)
 5. Aymeric Laporte (Center Back)
-6. Unai Simón Mendibil (Goalkeeper)
-7. Pablo Martín Páez Gavira (Central/Wide Midfield)
+6. Pablo Martín Páez Gavira (Central/Wide Midfield)
+7. Sergio Busquets i Burgos (Defensive Midfield)
 8. Jordi Alba Ramos (Fullback/Wingback)
 9. Marco Asensio Willemsen (Forward)
 10. Ferrán Torres García (Attacking Midfield/Wing)
@@ -38,7 +38,7 @@ Spain: no tactical change cleared the modeled effect floor. Primary review signa
 
 1. Daniel Olmo Carvajal — Progressive Winger; rating 0.2554, VAEP/90 +0.555, xT/90 +0.072
 2. Pedro González López — Ball-Winner; rating 0.1236, VAEP/90 +0.180, xT/90 +0.105
-3. Rodrigo Hernández Cascante — Deep Playmaker; rating 0.0147, VAEP/90 +0.043, xT/90 +0.050
+3. Rodrigo Hernández Cascante — Ball-Playing Centre-Back; rating 0.0147, VAEP/90 +0.043, xT/90 +0.050
 4. Aymeric Laporte — Deep Playmaker; rating 0.0089, VAEP/90 +0.040, xT/90 +0.025
 5. Sergio Busquets i Burgos — Ball-Winner; rating 0.0032, VAEP/90 -0.055, xT/90 +0.046
 
@@ -95,3 +95,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

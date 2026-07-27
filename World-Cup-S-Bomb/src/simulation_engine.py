@@ -637,6 +637,93 @@ def calculate_role_adjusted_value(role_vectors: pd.DataFrame) -> pd.Series:
     ).clip(0.0, 1.0)
 
 
+def refine_functional_roles(profiles_df: pd.DataFrame) -> pd.DataFrame:
+    """Refine only high-confidence K-Means mismatches from continuous vectors.
+
+    The original cluster label is retained in ``kmeans_functional_role``.
+    Rules depend on position and measured dimensions, never player identity,
+    and do not enter the numerical rating.
+    """
+
+    output = profiles_df.copy()
+    output["kmeans_functional_role"] = output["functional_role"]
+    output["role_refinement_applied"] = False
+    output["role_refinement_reason"] = "KMEANS_ROLE_RETAINED"
+
+    def apply(mask: pd.Series, role: str, reason: str) -> None:
+        eligible = mask & ~output["position_group"].eq("Goalkeeper")
+        output.loc[eligible, "functional_role"] = role
+        output.loc[eligible, "role_refinement_applied"] = (
+            output.loc[eligible, "kmeans_functional_role"] != role
+        )
+        output.loc[eligible, "role_refinement_reason"] = reason
+
+    group = output["position_group"]
+    apply(
+        group.eq("Attacking Midfield/Wing")
+        & output["creation_score"].ge(0.75)
+        & output["pressing_score"].ge(0.60)
+        & output["completeness_score"].ge(0.75),
+        "Hybrid Playmaker / Roaming Creator",
+        "HIGH_CREATION_PRESSING_COMPLETENESS",
+    )
+    apply(
+        group.eq("Defensive Midfield")
+        & output["ball_security_score"].ge(0.75)
+        & output["progression_score"].ge(0.50)
+        & output["creation_score"].ge(0.55),
+        "Holding / Controlling Midfielder",
+        "HIGH_SECURITY_PROGRESSION_BUILDUP",
+    )
+    apply(
+        group.eq("Central/Wide Midfield")
+        & output["progression_score"].ge(0.70)
+        & output["creation_score"].ge(0.65)
+        & output["completeness_score"].ge(0.75),
+        "Deep Playmaker / Metronome",
+        "ELITE_PROGRESSION_CREATION_COVERAGE",
+    )
+    apply(
+        group.isin(["Central/Wide Midfield", "Defensive Midfield"])
+        & output["pressing_score"].ge(0.70)
+        & output["progression_score"].ge(0.45)
+        & output["completeness_score"].ge(0.70)
+        & ~output["functional_role"].eq("Holding / Controlling Midfielder")
+        & ~output["functional_role"].eq("Deep Playmaker / Metronome"),
+        "Box-to-Box / Engine Midfielder",
+        "HIGH_PRESSING_PROGRESSION_COVERAGE",
+    )
+    apply(
+        group.eq("Fullback/Wingback")
+        & (
+            output["final_third_share"].gt(V4_ATTACKING_WINGBACK_SHARE)
+            | (
+                output["progression_score"].ge(0.57)
+                & output["creation_score"].ge(0.65)
+            )
+        ),
+        "Attacking Wingback",
+        "FINAL_THIRD_OR_PROGRESSIVE_WIDE_CREATION",
+    )
+    apply(
+        group.eq("Forward")
+        & output["aerial_score"].ge(0.70)
+        & output["finishing_score"].ge(0.60)
+        & output["progression_score"].lt(0.40),
+        "Target Forward / Penalty-Box Anchor",
+        "AERIAL_FINISHING_CENTRALITY",
+    )
+    apply(
+        group.eq("Center Back")
+        & output["progression_score"].ge(0.60)
+        & output["ball_security_score"].ge(0.60),
+        "Ball-Playing Centre-Back",
+        "HIGH_PROGRESSION_AND_SECURITY",
+    )
+    output["Functional role"] = output["functional_role"]
+    return output
+
+
 def calculate_final_player_rating(
     profiles_df: pd.DataFrame,
     *,
@@ -1863,6 +1950,21 @@ def build_v4_player_evaluations(
         "functional_role",
     ] = "Two-Way Fullback"
     profiles["Functional role"] = profiles["functional_role"]
+
+    # The K-Means result remains the role foundation. Continuous vectors only
+    # refine high-confidence tactical mismatches and never enter the rating.
+    network_metrics = derive_passing_network_metrics(events_df)
+    profiles = profiles.merge(
+        network_metrics, on="player_id", how="left", validate="one_to_one"
+    )
+    network_columns = network_metrics.columns.drop("player_id").tolist()
+    profiles[network_columns] = profiles[network_columns].fillna(0.0)
+    role_vectors = derive_role_vector(profiles)
+    profiles = profiles.merge(
+        role_vectors, on="player_id", how="left", validate="one_to_one"
+    )
+    profiles["completeness_score"] = calculate_completeness_score(profiles)
+    profiles = refine_functional_roles(profiles)
 
     spatial_points["x_bin"] = np.floor(
         spatial_points["x"].clip(0, 119.999) / 10

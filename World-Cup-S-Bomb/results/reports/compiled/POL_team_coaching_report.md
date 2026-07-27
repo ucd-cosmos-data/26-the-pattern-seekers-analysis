@@ -11,15 +11,15 @@ Poland: Patient Build-up led the observed baseline by 0.0041 mean EvA. Primary r
 ## Optimized starting 11
 
 1. Kamil Glik (Center Back)
-2. Matty Cash (Fullback/Wingback)
-3. Robert Lewandowski (Forward)
-4. Bartosz Bereszyński (Fullback/Wingback)
-5. Piotr Zieliński (Central/Wide Midfield)
-6. Grzegorz Krychowiak (Defensive Midfield)
-7. Jakub Piotr Kiwior (Center Back)
-8. Wojciech Szczęsny (Goalkeeper)
-9. Przemysław Frankowski (Central/Wide Midfield)
-10. Krystian Bielik (Defensive Midfield)
+2. Robert Lewandowski (Forward)
+3. Piotr Zieliński (Central/Wide Midfield)
+4. Matty Cash (Fullback/Wingback)
+5. Jakub Piotr Kiwior (Center Back)
+6. Wojciech Szczęsny (Goalkeeper)
+7. Bartosz Bereszyński (Fullback/Wingback)
+8. Przemysław Frankowski (Central/Wide Midfield)
+9. Krystian Bielik (Defensive Midfield)
+10. Jakub Kamiński (Central/Wide Midfield)
 11. Kamil Grosicki (Attacking Midfield/Wing)
 
 ## Physical matchup deltas
@@ -36,7 +36,7 @@ Poland: Patient Build-up led the observed baseline by 0.0041 mean EvA. Primary r
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Robert Lewandowski — Target Forward; rating 0.2195, VAEP/90 +0.410, xT/90 +0.019
+1. Robert Lewandowski — Target Forward / Penalty-Box Anchor; rating 0.2195, VAEP/90 +0.410, xT/90 +0.019
 2. Piotr Zieliński — Ball-Winner; rating 0.0952, VAEP/90 +0.089, xT/90 +0.059
 3. Bartosz Bereszyński — Wide Creator; rating 0.0608, VAEP/90 +0.078, xT/90 +0.040
 4. Grzegorz Krychowiak — Ball-Winner; rating 0.0197, VAEP/90 +0.012, xT/90 +0.025
@@ -95,3 +95,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

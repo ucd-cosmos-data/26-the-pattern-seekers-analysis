@@ -38,7 +38,7 @@ Senegal: no tactical change cleared the modeled effect floor. Primary review sig
 
 1. Ismaïla Sarr — Target Forward; rating 0.2237, VAEP/90 +0.436, xT/90 +0.090
 2. Boulaye Dia — Target Forward; rating 0.1654, VAEP/90 +0.256, xT/90 -0.008
-3. Youssouf Sabaly — Box-to-Box Runner; rating 0.0749, VAEP/90 +0.115, xT/90 +0.078
+3. Youssouf Sabaly — Attacking Wingback; rating 0.0749, VAEP/90 +0.115, xT/90 +0.078
 4. Kalidou Koulibaly — Sweeper CB; rating 0.0102, VAEP/90 +0.044, xT/90 +0.011
 5. Abdou Diallo — Sweeper CB; rating -0.0118, VAEP/90 -0.044, xT/90 +0.036
 
@@ -95,3 +95,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

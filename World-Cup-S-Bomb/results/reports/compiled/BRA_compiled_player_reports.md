@@ -99,7 +99,7 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Brazil (BRA)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
+- Functional role: Ball-Playing Centre-Back
 - VAEP offense per 90: -0.0146
 - VAEP defense per 90: -0.0094
 - VAEP total per 90: -0.0240
@@ -142,7 +142,7 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Brazil (BRA)
 - Position: Left Defensive Midfield
-- Functional role: Ball-Winner
+- Functional role: Box-to-Box / Engine Midfielder
 - VAEP offense per 90: 0.0173
 - VAEP defense per 90: -0.0321
 - VAEP total per 90: -0.0149
@@ -166,7 +166,7 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Thiago Emiliano da Silva — synergy 0.771, 409 shared minutes
 - Marcos Aoás Corrêa — synergy 0.749, 409 shared minutes
-- Alisson Ramsés Becker — synergy 0.634, 395 shared minutes
+- Unknown — synergy 0.644, 291 shared minutes
 
 ## Tactical recommendations
 
@@ -209,7 +209,7 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Marcos Aoás Corrêa — synergy 0.759, 395 shared minutes
 - Thiago Emiliano da Silva — synergy 0.757, 395 shared minutes
-- Carlos Henrique Casimiro — synergy 0.634, 395 shared minutes
+- Unknown — synergy 0.640, 291 shared minutes
 
 ## Tactical recommendations
 
@@ -436,3 +436,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

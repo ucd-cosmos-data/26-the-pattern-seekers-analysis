@@ -10,12 +10,12 @@ England: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. Luke Shaw (Fullback/Wingback)
-2. John Stones (Center Back)
-3. Harry Maguire (Center Back)
+1. John Stones (Center Back)
+2. Harry Maguire (Center Back)
+3. Luke Shaw (Fullback/Wingback)
 4. Declan Rice (Defensive Midfield)
-5. Harry Kane (Forward)
-6. Jude Bellingham (Defensive Midfield)
+5. Jude Bellingham (Defensive Midfield)
+6. Harry Kane (Forward)
 7. Jordan Pickford (Goalkeeper)
 8. Jordan Brian Henderson (Central/Wide Midfield)
 9. Bukayo Saka (Attacking Midfield/Wing)
@@ -37,8 +37,8 @@ England: no tactical change cleared the modeled effect floor. Primary review sig
 ## Unified 360-VAEP + xT player leaders
 
 1. Harry Kane — Target Forward; rating 0.1828, VAEP/90 +0.275, xT/90 +0.047
-2. Luke Shaw — Wide Creator; rating 0.1223, VAEP/90 +0.269, xT/90 +0.085
-3. Jude Bellingham — Ball-Winner; rating 0.1069, VAEP/90 +0.300, xT/90 +0.042
+2. Luke Shaw — Attacking Wingback; rating 0.1223, VAEP/90 +0.269, xT/90 +0.085
+3. Jude Bellingham — Box-to-Box / Engine Midfielder; rating 0.1069, VAEP/90 +0.300, xT/90 +0.042
 4. Harry Maguire — Deep Playmaker; rating 0.0462, VAEP/90 +0.150, xT/90 +0.035
 5. Declan Rice — Ball-Winner; rating 0.0276, VAEP/90 +0.043, xT/90 +0.022
 
@@ -95,3 +95,19 @@ The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), 
 
 Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
 <!-- ROLE_AWARE_VALUATION_END -->
+
+<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
+## Accepted continuous role refinement
+
+**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+
+France refinements:
+
+- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
+- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
+- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
+- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
+- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+
+Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
+<!-- CONTINUOUS_ROLE_REFINEMENT_END -->

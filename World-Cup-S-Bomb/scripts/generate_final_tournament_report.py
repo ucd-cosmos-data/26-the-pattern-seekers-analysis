@@ -27,9 +27,11 @@ from src.report_generators import (  # noqa: E402
     load_player_role_validation,
     load_prospective_validation,
     load_role_aware_validation,
+    load_role_refinement,
     player_role_validation_markdown,
     prospective_validation_markdown,
     role_aware_validation_markdown,
+    role_refinement_markdown,
 )
 
 
@@ -991,6 +993,11 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
     )
     if role_aware is not None:
         lines.extend(["", role_aware_validation_markdown(role_aware)])
+    role_refinement = load_role_refinement(
+        project_root / "results/reports/role_refinement_validation.json"
+    )
+    if role_refinement is not None and role_refinement.get("production_promoted"):
+        lines.extend(["", role_refinement_markdown(role_refinement)])
 
     destination = output_path if output_path.is_absolute() else project_root / output_path
     destination.parent.mkdir(parents=True, exist_ok=True)
