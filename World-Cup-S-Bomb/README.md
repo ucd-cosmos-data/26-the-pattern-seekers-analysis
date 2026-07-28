@@ -208,6 +208,16 @@ Rankings describe this tournament sample and are not causal estimates or
 permanent measures of player quality. External competitions are still needed
 to assess generalization.
 
+`scripts/quantify_player_rating_uncertainty.py` attaches match-sampling
+uncertainty to every rating (a match-cluster bootstrap that reruns the exact
+production formula on resampled matches). It changes no grade — it reports a
+standard error, confidence interval, rank stability, and, per team, the
+probability that the #1 player truly outranks the #2. Outputs:
+`results/reports/player_rating_uncertainty.csv` and
+`results/MIscellaneous/player_rating_uncertainty.md`. Read the point ranking
+alongside these: several team leads are within sampling noise (e.g. the
+Argentina #1 gap is a lean, not a separation), which the bare ranking hides.
+
 ### Retrospective possession models
 
 - Cross-validation keeps complete matches in either training or validation.
@@ -251,7 +261,9 @@ analysis:
    CV, PR-AUC selection); the production benchmark keeps the fast single-CV path
    and the nested script is the unbiased release-time check.
 4. Validate VAEP calibration and player-ranking stability on another
-   competition or season.
+   competition or season. Within-tournament ranking stability is now quantified
+   by `scripts/quantify_player_rating_uncertainty.py`; cross-competition
+   validation remains open.
 5. Add continuous integration for compilation, lightweight leakage-contract
    tests, and artifact-schema checks. The full 64-match pipeline can remain a
    scheduled or release validation because of its runtime and data footprint.
