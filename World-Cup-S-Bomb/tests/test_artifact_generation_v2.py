@@ -77,6 +77,13 @@ def test_all_required_artifacts_and_32_team_profiles(tmp_path: Path) -> None:
     assert len(payload) == len(rankings)
     assert manifest.metadata["teams"] == 32
     assert manifest.metadata["player_profiles"] == 64
+    final_report = (tmp_path / "final_summary.md").read_text(
+        encoding="utf-8"
+    )
+    assert "# Team-by-team summary" in final_report
+    assert "## Team 00" in final_report
+    assert "## Team 31" in final_report
+    assert "Player 0-0" in final_report
 
 
 def test_team_manifest_can_include_teams_without_ranked_players(

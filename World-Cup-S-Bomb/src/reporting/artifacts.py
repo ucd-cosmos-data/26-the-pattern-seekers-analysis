@@ -395,8 +395,11 @@ class ArtifactGenerator:
     def _final_summary(
         rankings: pd.DataFrame,
         model_summary: dict[str, Any],
+        *,
+        teams: Sequence[str],
+        team_metrics: pd.DataFrame | None = None,
     ) -> str:
-        """Render tournament findings and rating movements."""
+        """Render the complete tournament, player, and all-team summary."""
 
         comparison = pd.DataFrame()
         if "legacy_final_player_rating" in rankings:
@@ -428,40 +431,200 @@ class ArtifactGenerator:
             "global_rank",
             "rank_improvement",
         ]
-        return "\n".join(
-            [
-                "# Final Summary",
-                "",
-                "## Tournament-wide findings",
-                "",
-                _markdown_table(
-                    rankings.head(15),
+        position_leaders = (
+            rankings.sort_values(
+                ["position_group", "position_rank", "global_rank"]
+            )
+            .groupby("position_group", sort=True)
+            .head(5)
+        )
+        team_lookup: dict[str, pd.Series] = {}
+        if team_metrics is not None and "team" in team_metrics:
+            team_lookup = {
+                str(row["team"]): row
+                for _, row in team_metrics.iterrows()
+            }
+
+        def team_value(team: str, metric: str) -> str:
+            row = team_lookup.get(team)
+            if row is None or metric not in row or pd.isna(row[metric]):
+                return "not available"
+            return f"{float(row[metric]):.4f}"
+
+        overview_records = []
+        for team in teams:
+            players = rankings.loc[rankings["team"].eq(team)].sort_values(
+                "team_rank"
+            )
+            leader = players.iloc[0] if not players.empty else None
+            overview_records.append(
+                {
+                    "team": team,
+                    "eligible_players": len(players),
+                    "top_ranked_player": (
+                        str(leader["player_name"])
+                        if leader is not None
+                        else "No player at 300-minute cutoff"
+                    ),
+                    "top_global_rank": (
+                        int(leader["global_rank"])
+                        if leader is not None
+                        else "—"
+                    ),
+                    "total_xt": team_value(team, "total_xt_created"),
+                    "pressure_resistance": team_value(
+                        team,
+                        "pressure_resistance_rate",
+                    ),
+                }
+            )
+        lines = [
+            "# World Cup V5 Role-Aware Final Report",
+            "",
+            "## Executive summary",
+            "",
+            f"This report consolidates **{len(teams)} national teams** and "
+            f"**{len(rankings)} players meeting the 300-minute cutoff**. "
+            "It uses StatsBomb events, lineups, minutes, and coverage-qualified "
+            "360 freeze frames. It does not use optical tracking, external "
+            "ratings, or player-name adjustments.",
+            "",
+            f"The active contribution layer is "
+            f"`{model_summary.get('selected_layer', 'unknown')}`. The "
+            "experimental attention challenger remains available but affects "
+            "rankings only when it passes its match-disjoint metric gate.",
+            "",
+            "## How to read the player rating",
+            "",
+            "The V5 score combines 40% VAEP/90, 15% VAEP/touch, 15% xT/90, "
+            "15% continuous role-adjusted value, 10% completeness, and 5% "
+            "coverage-qualified off-ball contribution. It is then shrunk "
+            "toward the broad position-group mean according to tournament "
+            "minutes.",
+            "",
+            "Missing 360 evidence remains missing. Roles modulate the weights "
+            "applied to observed contribution; neither functional nor "
+            "probabilistic role labels directly award rating points.",
+            "",
+            "## General player summary",
+            "",
+            "### Overall leaders",
+            "",
+            _markdown_table(
+                rankings.head(20),
+                [
+                    "global_rank",
+                    "player_name",
+                    "team",
+                    "position_group",
+                    "functional_role",
+                    "final_player_rating",
+                ],
+            ),
+            "",
+            "### Position-group leaders",
+            "",
+            _markdown_table(
+                position_leaders,
+                [
+                    "position_group",
+                    "position_rank",
+                    "player_name",
+                    "team",
+                    "functional_role",
+                    "final_player_rating",
+                ],
+            ),
+            "",
+            "### Largest upward rank movements",
+            "",
+            _markdown_table(over, columns),
+            "",
+            "### Largest downward rank movements",
+            "",
+            _markdown_table(under, columns),
+            "",
+            "Rank movement compares ordering, not raw rating differences, "
+            "because the V4 and V5 rating scales are different.",
+            "",
+            "## All-team overview",
+            "",
+            _markdown_table(
+                pd.DataFrame(overview_records),
+                [
+                    "team",
+                    "eligible_players",
+                    "top_ranked_player",
+                    "top_global_rank",
+                    "total_xt",
+                    "pressure_resistance",
+                ],
+            ),
+            "",
+            "# Team-by-team summary",
+            "",
+        ]
+        for team in teams:
+            players = rankings.loc[rankings["team"].eq(team)].sort_values(
+                "team_rank"
+            )
+            lines.extend(
+                [
+                    f"## {team}",
+                    "",
+                    f"- Total xT created: "
+                    f"{team_value(team, 'total_xt_created')}",
+                    f"- Total xA created: "
+                    f"{team_value(team, 'total_xa_created')}",
+                    f"- Pass completion under pressure: "
+                    f"{team_value(team, 'pressure_resistance_rate')}",
+                    f"- Mean defensive hull area: "
+                    f"{team_value(team, 'defensive_hull_area')}",
+                    f"- Mean defensive density: "
+                    f"{team_value(team, 'defensive_density')}",
+                    "",
+                    "### Top five eligible players",
+                    "",
+                ]
+            )
+            if players.empty:
+                lines.extend(
                     [
-                        "global_rank",
-                        "player_name",
-                        "team",
-                        "functional_role",
-                        "final_player_rating",
-                    ],
-                ),
+                        "_No player from this team reached the configured "
+                        "300-minute ranking cutoff. No lower-minute player is "
+                        "promoted as a substitute ranking._",
+                        "",
+                    ]
+                )
+            else:
+                lines.extend(
+                    [
+                        _markdown_table(
+                            players.head(5),
+                            [
+                                "team_rank",
+                                "global_rank",
+                                "player_name",
+                                "position_group",
+                                "functional_role",
+                                "final_player_rating",
+                            ],
+                        ),
+                        "",
+                    ]
+                )
+        lines.extend(
+            [
+                "## Interpretation boundary",
                 "",
-                "## Largest upward rank movements",
-                "",
-                _markdown_table(over, columns),
-                "",
-                "## Largest downward rank movements",
-                "",
-                _markdown_table(under, columns),
-                "",
-                "## Tactical insights",
-                "",
-                f"The selected contribution layer was "
-                f"`{model_summary.get('selected_layer', 'unknown')}`. "
-                "Interpret rankings with the recorded minutes reliability and "
-                "StatsBomb 360 coverage.",
+                "These rankings summarize performance in the 2022 tournament "
+                "sample. They are not transfer valuations, causal estimates, "
+                "medical assessments, or replacements for video and scouting "
+                "review.",
                 "",
             ]
         )
+        return "\n".join(lines)
 
     @staticmethod
     def _team_profile(
@@ -618,7 +781,12 @@ class ArtifactGenerator:
         final_path = self.output_root / "final_summary.md"
         _atomic_text(
             final_path,
-            self._final_summary(rankings, summary_payload),
+            self._final_summary(
+                rankings,
+                summary_payload,
+                teams=teams,
+                team_metrics=team_metrics,
+            ),
         )
         files.append(final_path)
 
