@@ -22,17 +22,12 @@
 - Pressured pass sample: 299.0000
 - Mean ball-security score: 0.5538
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Raphael Dias Belloli | Progressive Winger | 0.8012 |
-| 2 | Vinícius José Paixão de Oliveira Júnior | Progressive Winger | 0.7835 |
-| 3 | Richarlison de Andrade | Target Forward | 0.7494 |
-| 4 | Lucas Tolentino Coelho de Lima | Ball-Winner | 0.5959 |
-| 5 | Éder Gabriel Militão | Box-to-Box Runner | 0.5869 |
-| 6 | Carlos Henrique Casimiro | Box-to-Box / Engine Midfielder | 0.4963 |
-| 7 | Thiago Emiliano da Silva | Deep Playmaker | 0.4487 |
-| 8 | Marcos Aoás Corrêa | Ball-Playing Centre-Back | 0.4115 |
-| 9 | Alisson Ramsés Becker | Goalkeeper | 0.1781 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Vinícius José Paixão de Oliveira Júnior | Progressive Winger | 306.5833 | 0.7354 | Ranked (300+ min) |
+| 2.0000 | Richarlison de Andrade | Target Forward | 328.2500 | 0.7289 | Ranked (300+ min) |
+| 3.0000 | Raphael Dias Belloli | Progressive Winger | 330.4500 | 0.6537 | Ranked (300+ min) |
+| 4.0000 | Lucas Tolentino Coelho de Lima | Ball-Winner | 318.7667 | 0.6459 | Ranked (300+ min) |
+| 5.0000 | Marcos Aoás Corrêa | Ball-Playing Centre-Back | 455.0167 | 0.5648 | Ranked (300+ min) |

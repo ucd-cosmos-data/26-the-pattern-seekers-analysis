@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Argentina
 - Position group: Defensive Midfield
 - Functional role: Ball-Winner
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0006
-- Global rank: 74
-- Position rank: 8
-- Role rank: 9
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 86
+- Position rank: 14
+- Role rank: 11
 - Team rank: 9
-- Final player rating: 0.5265
+- Final player rating: 0.4966
+- Global ranking eligibility: eligible
 - Minutes: 601.1
 - Minutes reliability: 0.6671
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0088 |
+| vaep_off_scaled | 0.3513 |
+| vaep_def_scaled | 0.2342 |
 | vaep_per_touch | 0.0000 |
-| xt_p90 | 0.0597 |
-| role_adjusted_value | 0.6539 |
-| completeness_score | 0.8820 |
+| open_play_xt_p90 | 0.0266 |
+| set_piece_xt_p90 | 0.0187 |
+| role_adjusted_value | 0.5583 |
+| completeness_score | 0.6874 |
 | off_ball_score | 0.6698 |
 
 ## Continuous role vector

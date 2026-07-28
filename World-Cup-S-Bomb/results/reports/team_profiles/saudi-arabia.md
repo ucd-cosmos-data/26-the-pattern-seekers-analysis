@@ -22,7 +22,13 @@
 - Pressured pass sample: 162.0000
 - Mean ball-security score: not available
 
-## Squad ratings
+## Top five player summary
 
-_No eligible observations._
-_No player from this team reached the configured 300-minute ranking cutoff._
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| — | Salem Mohammed Al Dawsari | — | 298.5500 | — | Coverage only (<300 min) |
+| — | Mohammed Kanoo | — | 298.5500 | — | Coverage only (<300 min) |
+| — | Mohammed Khalil Al Owais | — | 298.5500 | — | Coverage only (<300 min) |
+| — | Saud Abdullah Abdul Hamid | — | 298.5500 | — | Coverage only (<300 min) |
+| — | Firas Tariq Nasser Al Albirakan | — | 283.1333 | — | Coverage only (<300 min) |
+_Coverage-only players are ordered by tournament minutes. No model rating assigned._

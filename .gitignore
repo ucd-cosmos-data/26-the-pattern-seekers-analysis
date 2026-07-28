@@ -58,5 +58,12 @@ venv/
 **/models/*
 !**/models/*.joblib
 !**/models/.gitkeep
+!**/src/models/
+!**/src/models/*.py
+
+# Local World Cup refactor validation archives and execution logs
+/validation/
+/World-Cup-S-Bomb/refactor/
+/World-Cup-S-Bomb/logs/attention/
 # Markdown
 !**/data/raw/info.md

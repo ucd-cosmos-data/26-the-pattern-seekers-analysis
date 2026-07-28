@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Portugal
 - Position group: Fullback/Wingback
 - Functional role: Box-to-Box Runner
-- Probabilistic role: Box-to-Box Midfielder
-- Role entropy: 0.0130
-- Global rank: 42
-- Position rank: 4
-- Role rank: 2
-- Team rank: 6
-- Final player rating: 0.6614
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0003
+- Global rank: 27
+- Position rank: 9
+- Role rank: 1
+- Team rank: 3
+- Final player rating: 0.6406
+- Global ranking eligibility: eligible
 - Minutes: 344.5
 - Minutes reliability: 0.5346
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.2209 |
+| vaep_off_scaled | 0.5023 |
+| vaep_def_scaled | 0.8553 |
 | vaep_per_touch | 0.0011 |
-| xt_p90 | 0.0678 |
-| role_adjusted_value | 0.6392 |
-| completeness_score | 0.6701 |
+| open_play_xt_p90 | 0.0226 |
+| set_piece_xt_p90 | 0.0353 |
+| role_adjusted_value | 0.2613 |
+| completeness_score | 0.5513 |
 | off_ball_score | 0.5272 |
 
 ## Continuous role vector

@@ -22,15 +22,12 @@
 - Pressured pass sample: 254.0000
 - Mean ball-security score: 0.4369
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Mathew Leckie | Target Forward | 0.6881 |
-| 2 | Aziz Eraltay Behich | Wide Creator | 0.6231 |
-| 3 | Jackson Irvine | Ball-Winner | 0.5723 |
-| 4 | Aaron Mooy | Box-to-Box Runner | 0.4618 |
-| 5 | Harry Souttar | Sweeper CB | 0.2990 |
-| 6 | Kye Rowles | Sweeper CB | 0.2961 |
-| 7 | Mathew Ryan | Goalkeeper | 0.1765 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Mathew Leckie | Target Forward | 341.6167 | 0.6183 | Ranked (300+ min) |
+| 2.0000 | Aziz Eraltay Behich | Wide Creator | 386.9167 | 0.6064 | Ranked (300+ min) |
+| 3.0000 | Mathew Ryan | Goalkeeper | 386.9167 | 0.5583 | Ranked (300+ min) |
+| 4.0000 | Aaron Mooy | Box-to-Box Runner | 386.9167 | 0.4732 | Ranked (300+ min) |
+| 5.0000 | Jackson Irvine | Ball-Winner | 373.7500 | 0.3902 | Ranked (300+ min) |

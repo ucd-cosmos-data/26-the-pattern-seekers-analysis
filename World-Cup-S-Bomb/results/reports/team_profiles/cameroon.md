@@ -22,7 +22,13 @@
 - Pressured pass sample: 208.0000
 - Mean ball-security score: not available
 
-## Squad ratings
+## Top five player summary
 
-_No eligible observations._
-_No player from this team reached the configured 300-minute ranking cutoff._
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| — | Nouhou Tolo | — | 292.5500 | — | Coverage only (<300 min) |
+| — | Ngoran Suiru Fai Collins | — | 292.5500 | — | Coverage only (<300 min) |
+| — | André-Frank Zambo Anguissa | — | 276.6500 | — | Coverage only (<300 min) |
+| — | Jean-Eric Maxim Choupo-Moting | — | 269.9833 | — | Coverage only (<300 min) |
+| — | Bryan Mbeumo | — | 224.2333 | — | Coverage only (<300 min) |
+_Coverage-only players are ordered by tournament minutes. No model rating assigned._

@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Argentina
 - Position group: Forward
 - Functional role: Target Forward
-- Probabilistic role: Progressive Winger
-- Role entropy: 0.0006
-- Global rank: 14
-- Position rank: 3
-- Role rank: 3
-- Team rank: 3
-- Final player rating: 0.7630
+- Probabilistic role: Finishing/Creative Attacker
+- Role entropy: 0.0024
+- Global rank: 3
+- Position rank: 2
+- Role rank: 1
+- Team rank: 2
+- Final player rating: 0.7526
+- Global ranking eligibility: eligible
 - Minutes: 485.2
 - Minutes reliability: 0.6179
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.6361 |
+| vaep_off_scaled | 0.9707 |
+| vaep_def_scaled | 0.4215 |
 | vaep_per_touch | 0.0075 |
-| xt_p90 | 0.0323 |
-| role_adjusted_value | 0.6381 |
-| completeness_score | 0.5169 |
+| open_play_xt_p90 | 0.0351 |
+| set_piece_xt_p90 | 0.0056 |
+| role_adjusted_value | 0.8896 |
+| completeness_score | 0.5773 |
 | off_ball_score | 0.5467 |
 
 ## Continuous role vector

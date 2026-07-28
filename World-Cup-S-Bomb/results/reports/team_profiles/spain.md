@@ -22,14 +22,12 @@
 - Pressured pass sample: 381.0000
 - Mean ball-security score: 0.6224
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Daniel Olmo Carvajal | Progressive Winger | 0.7996 |
-| 2 | Pedro González López | Ball-Winner | 0.7003 |
-| 3 | Rodrigo Hernández Cascante | Ball-Playing Centre-Back | 0.4818 |
-| 4 | Sergio Busquets i Burgos | Ball-Winner | 0.4694 |
-| 5 | Aymeric Laporte | Deep Playmaker | 0.4370 |
-| 6 | Unai Simón Mendibil | Goalkeeper | 0.1821 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Daniel Olmo Carvajal | Progressive Winger | 388.2500 | 0.6910 | Ranked (300+ min) |
+| 2.0000 | Unai Simón Mendibil | Goalkeeper | 413.9500 | 0.6107 | Ranked (300+ min) |
+| 3.0000 | Rodrigo Hernández Cascante | Ball-Playing Centre-Back | 413.9500 | 0.5688 | Ranked (300+ min) |
+| 4.0000 | Aymeric Laporte | Deep Playmaker | 316.9333 | 0.5273 | Ranked (300+ min) |
+| 5.0000 | Pedro González López | Ball-Winner | 372.4000 | 0.5198 | Ranked (300+ min) |

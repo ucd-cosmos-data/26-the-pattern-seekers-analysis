@@ -22,17 +22,12 @@
 - Pressured pass sample: 200.0000
 - Mean ball-security score: 0.6142
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Christian Pulisic | Progressive Winger | 0.8081 |
-| 2 | Timothy Weah | Progressive Winger | 0.7446 |
-| 3 | Yunus Dimoara Musah | Box-to-Box / Engine Midfielder | 0.6638 |
-| 4 | Antonee Robinson | Attacking Wingback | 0.6612 |
-| 5 | Sergino Dest | Attacking Wingback | 0.6278 |
-| 6 | Tyler Adams | Holding / Controlling Midfielder | 0.4673 |
-| 7 | Tim Ream | Ball-Playing Centre-Back | 0.3821 |
-| 8 | Walker Zimmerman | Deep Playmaker | 0.3284 |
-| 9 | Matthew Charles Turner | Goalkeeper | 0.1799 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Christian Pulisic | Progressive Winger | 336.3167 | 0.6972 | Ranked (300+ min) |
+| 2.0000 | Matthew Charles Turner | Goalkeeper | 391.2000 | 0.6497 | Ranked (300+ min) |
+| 3.0000 | Timothy Weah | Progressive Winger | 317.8833 | 0.6484 | Ranked (300+ min) |
+| 4.0000 | Sergino Dest | Attacking Wingback | 307.5667 | 0.6472 | Ranked (300+ min) |
+| 5.0000 | Antonee Robinson | Attacking Wingback | 386.2667 | 0.6006 | Ranked (300+ min) |

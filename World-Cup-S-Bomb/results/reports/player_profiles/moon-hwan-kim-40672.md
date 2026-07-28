@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: South Korea
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive/Pressing Fullback
 - Role entropy: 0.0000
-- Global rank: 56
-- Position rank: 14
-- Role rank: 8
+- Global rank: 52
+- Position rank: 18
+- Role rank: 10
 - Team rank: 3
-- Final player rating: 0.6242
+- Final player rating: 0.5775
+- Global ranking eligibility: eligible
 - Minutes: 389.6
 - Minutes reliability: 0.5650
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1400 |
+| vaep_off_scaled | 0.3437 |
+| vaep_def_scaled | 0.6998 |
 | vaep_per_touch | 0.0010 |
-| xt_p90 | 0.0459 |
-| role_adjusted_value | 0.6073 |
-| completeness_score | 0.6437 |
+| open_play_xt_p90 | 0.0118 |
+| set_piece_xt_p90 | 0.0235 |
+| role_adjusted_value | 0.0818 |
+| completeness_score | 0.6117 |
 | off_ball_score | 0.4852 |
 
 ## Continuous role vector

@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Poland
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0000
-- Global rank: 63
+- Global rank: 57
 - Position rank: 19
-- Role rank: 8
+- Role rank: 9
 - Team rank: 3
-- Final player rating: 0.5850
+- Final player rating: 0.5679
+- Global ranking eligibility: eligible
 - Minutes: 365.7
 - Minutes reliability: 0.5494
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0783 |
+| vaep_off_scaled | 0.1372 |
+| vaep_def_scaled | 0.7613 |
 | vaep_per_touch | 0.0009 |
-| xt_p90 | 0.0401 |
-| role_adjusted_value | 0.4932 |
-| completeness_score | 0.6578 |
+| open_play_xt_p90 | 0.0142 |
+| set_piece_xt_p90 | 0.0170 |
+| role_adjusted_value | 0.0000 |
+| completeness_score | 0.4734 |
 | off_ball_score | 0.3842 |
 
 ## Continuous role vector

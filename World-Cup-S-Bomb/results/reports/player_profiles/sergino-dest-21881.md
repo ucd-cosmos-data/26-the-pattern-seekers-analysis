@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: United States
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive/Pressing Fullback
 - Role entropy: 0.0000
-- Global rank: 54
-- Position rank: 12
-- Role rank: 7
-- Team rank: 5
-- Final player rating: 0.6278
+- Global rank: 24
+- Position rank: 8
+- Role rank: 5
+- Team rank: 4
+- Final player rating: 0.6472
+- Global ranking eligibility: eligible
 - Minutes: 307.6
 - Minutes reliability: 0.5062
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1026 |
+| vaep_off_scaled | 0.2416 |
+| vaep_def_scaled | 0.6879 |
 | vaep_per_touch | 0.0006 |
-| xt_p90 | 0.0985 |
-| role_adjusted_value | 0.5583 |
-| completeness_score | 0.8868 |
+| open_play_xt_p90 | 0.0289 |
+| set_piece_xt_p90 | 0.0539 |
+| role_adjusted_value | 0.8331 |
+| completeness_score | 0.6231 |
 | off_ball_score | 0.4752 |
 
 ## Continuous role vector

@@ -2,18 +2,18 @@
   "schema_version": "5.0-role-attention",
   "policy": "K-Means remains the functional-role baseline; probabilistic roles are active descriptors and never award value directly.",
   "probabilistic_roles": {
-    "selected_k": 13,
+    "selected_k": 9,
     "selected_covariance_type": "tied",
     "bootstrap_iterations": 200,
-    "bootstrap_ari_median": 0.6904783205266534,
-    "bootstrap_ari_p05": 0.616269398173773,
-    "pca_explained_variance": 0.8821436006329473
+    "bootstrap_ari_median": 0.688662595294866,
+    "bootstrap_ari_p05": 0.5521508779806494,
+    "pca_explained_variance": 0.8688015835697795
   },
   "decisions": {
     "incumbent_rankings_retained": false,
     "kmeans_baseline_retained": true,
     "probabilistic_roles": "ACTIVE_DESCRIPTIVE",
     "role_aware_valuation": "ACTIVE",
-    "attention": "REJECTED_ROLE_AWARE_FALLBACK"
+    "attention": "ACTIVE"
   }
 }

@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Senegal
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive/Pressing Fullback
 - Role entropy: 0.0000
-- Global rank: 53
+- Global rank: 33
 - Position rank: 11
-- Role rank: 6
-- Team rank: 3
-- Final player rating: 0.6306
+- Role rank: 7
+- Team rank: 2
+- Final player rating: 0.6216
+- Global ranking eligibility: eligible
 - Minutes: 387.3
 - Minutes reliability: 0.5635
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1148 |
+| vaep_off_scaled | 0.2670 |
+| vaep_def_scaled | 0.7084 |
 | vaep_per_touch | 0.0008 |
-| xt_p90 | 0.0776 |
-| role_adjusted_value | 0.6376 |
-| completeness_score | 0.7047 |
+| open_play_xt_p90 | 0.0240 |
+| set_piece_xt_p90 | 0.0438 |
+| role_adjusted_value | 0.3757 |
+| completeness_score | 0.6841 |
 | off_ball_score | 0.4317 |
 
 ## Continuous role vector

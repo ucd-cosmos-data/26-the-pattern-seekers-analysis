@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Poland
 - Position group: Fullback/Wingback
 - Functional role: Box-to-Box Runner
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive/Pressing Fullback
 - Role entropy: 0.0000
-- Global rank: 96
+- Global rank: 122
 - Position rank: 26
 - Role rank: 7
-- Team rank: 5
-- Final player rating: 0.4505
+- Team rank: 8
+- Final player rating: 0.3659
+- Global ranking eligibility: eligible
 - Minutes: 389.8
 - Minutes reliability: 0.5651
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0897 |
+| vaep_off_scaled | 0.0687 |
+| vaep_def_scaled | 0.0000 |
 | vaep_per_touch | -0.0010 |
-| xt_p90 | 0.0384 |
-| role_adjusted_value | 0.4130 |
-| completeness_score | 0.7340 |
+| open_play_xt_p90 | 0.0077 |
+| set_piece_xt_p90 | 0.0220 |
+| role_adjusted_value | 0.0535 |
+| completeness_score | 0.4315 |
 | off_ball_score | 0.3949 |
 
 ## Continuous role vector

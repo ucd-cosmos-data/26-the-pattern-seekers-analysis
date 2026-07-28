@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Portugal
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Defensive Centre-Back
+- Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 105
-- Position rank: 15
+- Global rank: 81
+- Position rank: 16
 - Role rank: 6
-- Team rank: 8
-- Final player rating: 0.4096
+- Team rank: 9
+- Final player rating: 0.5016
+- Global ranking eligibility: eligible
 - Minutes: 392.4
 - Minutes reliability: 0.5667
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0136 |
+| vaep_off_scaled | 0.4709 |
+| vaep_def_scaled | 0.9050 |
 | vaep_per_touch | 0.0001 |
-| xt_p90 | 0.0095 |
-| role_adjusted_value | 0.5575 |
-| completeness_score | 0.7120 |
+| open_play_xt_p90 | 0.0030 |
+| set_piece_xt_p90 | 0.0028 |
+| role_adjusted_value | 0.1020 |
+| completeness_score | 0.4494 |
 | off_ball_score | 0.4874 |
 
 ## Continuous role vector

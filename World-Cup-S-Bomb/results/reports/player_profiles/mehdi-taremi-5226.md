@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Iran
 - Position group: Forward
 - Functional role: Target Forward
-- Probabilistic role: Progressive Winger
-- Role entropy: 0.0017
-- Global rank: 13
-- Position rank: 2
-- Role rank: 2
+- Probabilistic role: Finishing/Creative Attacker
+- Role entropy: 0.0163
+- Global rank: 22
+- Position rank: 6
+- Role rank: 6
 - Team rank: 1
-- Final player rating: 0.7679
+- Final player rating: 0.6492
+- Global ranking eligibility: eligible
 - Minutes: 305.1
 - Minutes reliability: 0.5042
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.4116 |
+| vaep_off_scaled | 0.5152 |
+| vaep_def_scaled | 0.5205 |
 | vaep_per_touch | 0.0047 |
-| xt_p90 | 0.0526 |
-| role_adjusted_value | 0.6402 |
-| completeness_score | 0.7796 |
+| open_play_xt_p90 | 0.0368 |
+| set_piece_xt_p90 | 0.0072 |
+| role_adjusted_value | 0.8194 |
+| completeness_score | 0.5513 |
 | off_ball_score | 0.5079 |
 
 ## Continuous role vector

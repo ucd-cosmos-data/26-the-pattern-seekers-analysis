@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Croatia
 - Position group: Central/Wide Midfield
 - Functional role: Box-to-Box / Engine Midfielder
-- Probabilistic role: Box-to-Box Midfielder
-- Role entropy: 0.0049
-- Global rank: 23
-- Position rank: 3
-- Role rank: 1
-- Team rank: 2
-- Final player rating: 0.7244
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 90
+- Position rank: 10
+- Role rank: 9
+- Team rank: 7
+- Final player rating: 0.4852
+- Global ranking eligibility: eligible
 - Minutes: 649.9
 - Minutes reliability: 0.6842
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.2254 |
+| vaep_off_scaled | 0.2402 |
+| vaep_def_scaled | 0.2946 |
 | vaep_per_touch | 0.0012 |
-| xt_p90 | 0.0645 |
-| role_adjusted_value | 0.7307 |
-| completeness_score | 0.7690 |
+| open_play_xt_p90 | 0.0271 |
+| set_piece_xt_p90 | 0.0216 |
+| role_adjusted_value | 0.1313 |
+| completeness_score | 0.7196 |
 | off_ball_score | 0.6683 |
 
 ## Continuous role vector

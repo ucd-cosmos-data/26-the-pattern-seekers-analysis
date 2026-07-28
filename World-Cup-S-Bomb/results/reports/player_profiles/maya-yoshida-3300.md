@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Japan
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Defensive Centre-Back
-- Role entropy: 0.0212
-- Global rank: 125
-- Position rank: 34
-- Role rank: 17
-- Team rank: 4
-- Final player rating: 0.3098
+- Probabilistic role: Aerial/Progressive Centre-Back
+- Role entropy: 0.0415
+- Global rank: 103
+- Position rank: 24
+- Role rank: 13
+- Team rank: 5
+- Final player rating: 0.4598
+- Global ranking eligibility: eligible
 - Minutes: 412.5
 - Minutes reliability: 0.5790
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.1292 |
+| vaep_off_scaled | 0.0000 |
+| vaep_def_scaled | 0.8255 |
 | vaep_per_touch | -0.0010 |
-| xt_p90 | 0.0063 |
-| role_adjusted_value | 0.5338 |
-| completeness_score | 0.7477 |
+| open_play_xt_p90 | 0.0016 |
+| set_piece_xt_p90 | 0.0015 |
+| role_adjusted_value | 0.1692 |
+| completeness_score | 0.4358 |
 | off_ball_score | 0.4696 |
 
 ## Continuous role vector

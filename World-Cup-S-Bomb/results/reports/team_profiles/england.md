@@ -22,15 +22,12 @@
 - Pressured pass sample: 356.0000
 - Mean ball-security score: 0.5177
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Harry Kane | Target Forward | 0.7175 |
-| 2 | Luke Shaw | Attacking Wingback | 0.6932 |
-| 3 | Jude Bellingham | Box-to-Box / Engine Midfielder | 0.6575 |
-| 4 | Harry Maguire | Deep Playmaker | 0.5361 |
-| 5 | Declan Rice | Ball-Winner | 0.5097 |
-| 6 | John Stones | Ball-Playing Centre-Back | 0.4537 |
-| 7 | Jordan Pickford | Goalkeeper | 0.1870 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Jude Bellingham | Box-to-Box / Engine Midfielder | 441.7667 | 0.6766 | Ranked (300+ min) |
+| 2.0000 | Luke Shaw | Attacking Wingback | 457.1667 | 0.6671 | Ranked (300+ min) |
+| 3.0000 | Harry Maguire | Deep Playmaker | 453.7167 | 0.6336 | Ranked (300+ min) |
+| 4.0000 | Harry Kane | Target Forward | 421.5167 | 0.5879 | Ranked (300+ min) |
+| 5.0000 | John Stones | Ball-Playing Centre-Back | 464.8833 | 0.5345 | Ranked (300+ min) |

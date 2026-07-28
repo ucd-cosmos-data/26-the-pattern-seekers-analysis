@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: United States
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
-- Probabilistic role: Defensive Centre-Back
+- Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 112
-- Position rank: 22
+- Global rank: 104
+- Position rank: 25
 - Role rank: 7
-- Team rank: 7
-- Final player rating: 0.3821
+- Team rank: 6
+- Final player rating: 0.4543
+- Global ranking eligibility: eligible
 - Minutes: 391.2
 - Minutes reliability: 0.5660
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0011 |
+| vaep_off_scaled | 0.5892 |
+| vaep_def_scaled | 0.7351 |
 | vaep_per_touch | -0.0000 |
-| xt_p90 | 0.0030 |
-| role_adjusted_value | 0.5557 |
-| completeness_score | 0.7331 |
+| open_play_xt_p90 | 0.0022 |
+| set_piece_xt_p90 | -0.0054 |
+| role_adjusted_value | 0.1313 |
+| completeness_score | 0.4983 |
 | off_ball_score | 0.4206 |
 
 ## Continuous role vector

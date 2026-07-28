@@ -22,7 +22,13 @@
 - Pressured pass sample: 169.0000
 - Mean ball-security score: not available
 
-## Squad ratings
+## Top five player summary
 
-_No eligible observations._
-_No player from this team reached the configured 300-minute ranking cutoff._
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| — | Keylor Navas Gamboa | — | 294.4500 | — | Coverage only (<300 min) |
+| — | Óscar Esau Duarte Gaitán | — | 294.4500 | — | Coverage only (<300 min) |
+| — | Joel Nathaniel Campbell Samuels | — | 292.4333 | — | Coverage only (<300 min) |
+| — | Yeltsin Ignacio Tejeda Valverde | — | 286.9500 | — | Coverage only (<300 min) |
+| — | Bryan Oviedo | — | 269.9000 | — | Coverage only (<300 min) |
+_Coverage-only players are ordered by tournament minutes. No model rating assigned._

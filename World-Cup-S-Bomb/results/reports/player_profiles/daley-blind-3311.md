@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Netherlands
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0000
-- Global rank: 50
-- Position rank: 9
-- Role rank: 4
-- Team rank: 3
-- Final player rating: 0.6441
+- Global rank: 15
+- Position rank: 5
+- Role rank: 2
+- Team rank: 2
+- Final player rating: 0.6665
+- Global ranking eligibility: eligible
 - Minutes: 452.5
 - Minutes reliability: 0.6013
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1400 |
+| vaep_off_scaled | 0.3147 |
+| vaep_def_scaled | 0.7605 |
 | vaep_per_touch | 0.0009 |
-| xt_p90 | 0.0512 |
-| role_adjusted_value | 0.5877 |
-| completeness_score | 0.9403 |
+| open_play_xt_p90 | 0.0249 |
+| set_piece_xt_p90 | 0.0148 |
+| role_adjusted_value | 0.8420 |
+| completeness_score | 0.6395 |
 | off_ball_score | 0.4764 |
 
 ## Continuous role vector

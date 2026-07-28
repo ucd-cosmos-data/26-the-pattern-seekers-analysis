@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Croatia
 - Position group: Central/Wide Midfield
 - Functional role: Deep Playmaker / Metronome
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0017
-- Global rank: 37
-- Position rank: 9
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 109
+- Position rank: 11
 - Role rank: 1
-- Team rank: 4
-- Final player rating: 0.6724
+- Team rank: 9
+- Final player rating: 0.4437
+- Global ranking eligibility: eligible
 - Minutes: 672.7
 - Minutes reliability: 0.6916
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0867 |
+| vaep_off_scaled | 0.0479 |
+| vaep_def_scaled | 0.1034 |
 | vaep_per_touch | 0.0004 |
-| xt_p90 | 0.0921 |
-| role_adjusted_value | 0.7101 |
-| completeness_score | 0.8783 |
+| open_play_xt_p90 | 0.0283 |
+| set_piece_xt_p90 | 0.0462 |
+| role_adjusted_value | 0.3475 |
+| completeness_score | 0.6986 |
 | off_ball_score | 0.5995 |
 
 ## Continuous role vector

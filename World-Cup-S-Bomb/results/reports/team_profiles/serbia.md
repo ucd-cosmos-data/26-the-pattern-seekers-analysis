@@ -22,7 +22,13 @@
 - Pressured pass sample: 181.0000
 - Mean ball-security score: not available
 
-## Squad ratings
+## Top five player summary
 
-_No eligible observations._
-_No player from this team reached the configured 300-minute ranking cutoff._
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| — | Nikola Milenković | — | 293.6500 | — | Coverage only (<300 min) |
+| — | Vanja Milinković Savić | — | 293.6500 | — | Coverage only (<300 min) |
+| — | Aleksandar Mitrović | — | 279.4167 | — | Coverage only (<300 min) |
+| — | Dušan Tadić | — | 270.9333 | — | Coverage only (<300 min) |
+| — | Saša Lukić | — | 261.6500 | — | Coverage only (<300 min) |
+_Coverage-only players are ordered by tournament minutes. No model rating assigned._

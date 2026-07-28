@@ -2,8 +2,8 @@
   "schema_version": "5.0-role-attention",
   "decision": "PROMOTED_ROLE_AWARE_FALLBACK",
   "production_promoted": true,
-  "selected_layer": "role_aware_fallback",
-  "attention_metric_gate_passed": false,
+  "selected_layer": "attention",
+  "attention_metric_gate_passed": true,
   "rating_weights": {
     "vaep_90": 0.4,
     "vaep_per_touch": 0.15,
@@ -12,42 +12,42 @@
     "completeness_score": 0.1,
     "off_ball_score": 0.05
   },
-  "spearman_rank_correlation": 0.9848236869513466,
+  "spearman_rank_correlation": 0.7112380952380953,
   "attention_metrics": {
     "prospective": {
       "baseline": {
-        "roc_auc": 0.8643352486625718,
-        "pr_auc": 0.9724702156320654,
-        "expected_calibration_error": 0.19194946426545165,
-        "brier_score": 0.1423385056119552,
-        "rows": 1687,
-        "positives": 1442
+        "roc_auc": 0.8854592536176693,
+        "pr_auc": 0.9762708600330803,
+        "expected_calibration_error": 0.18657634486565663,
+        "brier_score": 0.13893107806111962,
+        "rows": 4185,
+        "positives": 3535
       },
       "attention": {
-        "roc_auc": 0.7551020408163265,
-        "pr_auc": 0.9414317282325395,
-        "expected_calibration_error": 0.024928574192502762,
-        "brier_score": 0.11046456405019106,
-        "rows": 1687,
-        "positives": 1442
+        "roc_auc": 0.8815010336198454,
+        "pr_auc": 0.9749559288867302,
+        "expected_calibration_error": 0.01466791677681487,
+        "brier_score": 0.09074607174201446,
+        "rows": 4185,
+        "positives": 3535
       }
     },
     "retrospective": {
       "baseline": {
-        "roc_auc": 0.6403799255551277,
-        "pr_auc": 0.5651794634542986,
-        "expected_calibration_error": 0.05690702040279421,
-        "brier_score": 0.2349615283727932,
-        "rows": 1687,
-        "positives": 742
+        "roc_auc": 0.6283359077171892,
+        "pr_auc": 0.5179234174805258,
+        "expected_calibration_error": 0.06589109296087851,
+        "brier_score": 0.23639596285314937,
+        "rows": 4185,
+        "positives": 1801
       },
       "attention": {
-        "roc_auc": 0.6010810194098605,
-        "pr_auc": 0.5289533392537316,
-        "expected_calibration_error": 0.02854293859086238,
-        "brier_score": 0.23912496396513705,
-        "rows": 1687,
-        "positives": 742
+        "roc_auc": 0.7257769965604493,
+        "pr_auc": 0.6257116564727998,
+        "expected_calibration_error": 0.016893763794800728,
+        "brier_score": 0.20855018097617775,
+        "rows": 4185,
+        "positives": 1801
       }
     }
   },

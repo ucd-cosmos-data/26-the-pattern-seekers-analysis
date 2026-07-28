@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Spain
 - Position group: Central/Wide Midfield
 - Functional role: Ball-Winner
-- Probabilistic role: Box-to-Box Midfielder
+- Probabilistic role: Pressing/Defensive Midfielder
 - Role entropy: 0.0000
-- Global rank: 30
+- Global rank: 72
 - Position rank: 6
-- Role rank: 1
-- Team rank: 2
-- Final player rating: 0.7003
+- Role rank: 4
+- Team rank: 5
+- Final player rating: 0.5198
+- Global ranking eligibility: eligible
 - Minutes: 372.4
 - Minutes reliability: 0.5538
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1796 |
+| vaep_off_scaled | 0.1598 |
+| vaep_def_scaled | 0.4418 |
 | vaep_per_touch | 0.0006 |
-| xt_p90 | 0.1051 |
-| role_adjusted_value | 0.7088 |
-| completeness_score | 0.6719 |
+| open_play_xt_p90 | 0.0433 |
+| set_piece_xt_p90 | 0.0410 |
+| role_adjusted_value | 0.0262 |
+| completeness_score | 0.7490 |
 | off_ball_score | 0.6686 |
 
 ## Continuous role vector

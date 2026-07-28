@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: France
 - Position group: Attacking Midfield/Wing
 - Functional role: Hybrid Playmaker / Roaming Creator
-- Probabilistic role: Roaming Creator
-- Role entropy: 0.0197
-- Global rank: 5
-- Position rank: 4
-- Role rank: 1
-- Team rank: 2
-- Final player rating: 0.8001
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0002
+- Global rank: 51
+- Position rank: 12
+- Role rank: 2
+- Team rank: 5
+- Final player rating: 0.5794
+- Global ranking eligibility: eligible
 - Minutes: 586.1
 - Minutes reliability: 0.6614
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.3432 |
+| vaep_off_scaled | 0.4709 |
+| vaep_def_scaled | 0.0559 |
 | vaep_per_touch | 0.0026 |
-| xt_p90 | 0.1166 |
-| role_adjusted_value | 0.6683 |
-| completeness_score | 0.8556 |
+| open_play_xt_p90 | 0.0361 |
+| set_piece_xt_p90 | 0.0821 |
+| role_adjusted_value | 0.1038 |
+| completeness_score | 0.6925 |
 | off_ball_score | 0.6459 |
 
 ## Continuous role vector

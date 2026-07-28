@@ -22,11 +22,12 @@
 - Pressured pass sample: 160.0000
 - Mean ball-security score: 0.4383
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Mehdi Taremi | Target Forward | 0.7679 |
-| 2 | Morteza Pouraliganji | Sweeper CB | 0.4487 |
-| 3 | Seyed Majid Hosseini | Sweeper CB | 0.3303 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Mehdi Taremi | Target Forward | 305.1000 | 0.6492 | Ranked (300+ min) |
+| 2.0000 | Morteza Pouraliganji | Sweeper CB | 305.1000 | 0.5266 | Ranked (300+ min) |
+| 3.0000 | Seyed Majid Hosseini | Sweeper CB | 305.1000 | 0.4105 | Ranked (300+ min) |
+| — | Ehsan Hajsafi | — | 249.9333 | — | Coverage only (<300 min) |
+| — | Saeid Ezatolahi Afagh | — | 240.1500 | — | Coverage only (<300 min) |

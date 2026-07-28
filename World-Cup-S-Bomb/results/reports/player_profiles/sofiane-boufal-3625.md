@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Morocco
 - Position group: Central/Wide Midfield
 - Functional role: Box-to-Box / Engine Midfielder
-- Probabilistic role: Box-to-Box Midfielder
-- Role entropy: 0.0000
-- Global rank: 24
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0028
+- Global rank: 39
 - Position rank: 4
-- Role rank: 2
-- Team rank: 1
-- Final player rating: 0.7188
+- Role rank: 3
+- Team rank: 2
+- Final player rating: 0.6071
+- Global ranking eligibility: eligible
 - Minutes: 476.7
 - Minutes reliability: 0.6137
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.2049 |
+| vaep_off_scaled | 0.1784 |
+| vaep_def_scaled | 0.6835 |
 | vaep_per_touch | 0.0020 |
-| xt_p90 | 0.0793 |
-| role_adjusted_value | 0.6052 |
-| completeness_score | 0.8177 |
+| open_play_xt_p90 | 0.0331 |
+| set_piece_xt_p90 | 0.0311 |
+| role_adjusted_value | 0.2702 |
+| completeness_score | 0.6049 |
 | off_ball_score | 0.5533 |
 
 ## Continuous role vector

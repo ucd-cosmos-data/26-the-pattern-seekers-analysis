@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Switzerland
 - Position group: Forward
 - Functional role: Target Forward
-- Probabilistic role: Target Forward
-- Role entropy: 0.0203
-- Global rank: 31
+- Probabilistic role: Finishing/Aerial Forward
+- Role entropy: 0.0634
+- Global rank: 58
 - Position rank: 10
-- Role rank: 11
-- Team rank: 1
-- Final player rating: 0.6985
+- Role rank: 12
+- Team rank: 2
+- Final player rating: 0.5661
+- Global ranking eligibility: eligible
 - Minutes: 330.1
 - Minutes reliability: 0.5239
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.3120 |
+| vaep_off_scaled | 0.3918 |
+| vaep_def_scaled | 0.3509 |
 | vaep_per_touch | 0.0039 |
-| xt_p90 | 0.0111 |
-| role_adjusted_value | 0.5966 |
-| completeness_score | 0.5579 |
+| open_play_xt_p90 | 0.0052 |
+| set_piece_xt_p90 | -0.0006 |
+| role_adjusted_value | 0.6647 |
+| completeness_score | 0.6231 |
 | off_ball_score | 0.5214 |
 
 ## Continuous role vector

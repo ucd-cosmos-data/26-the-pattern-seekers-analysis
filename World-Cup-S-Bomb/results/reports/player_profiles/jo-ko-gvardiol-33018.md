@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Croatia
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
-- Probabilistic role: Defensive Centre-Back
+- Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 103
-- Position rank: 13
-- Role rank: 5
-- Team rank: 8
-- Final player rating: 0.4121
+- Global rank: 80
+- Position rank: 15
+- Role rank: 6
+- Team rank: 5
+- Final player rating: 0.5028
+- Global ranking eligibility: eligible
 - Minutes: 720.3
 - Minutes reliability: 0.7060
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0191 |
+| vaep_off_scaled | 0.5521 |
+| vaep_def_scaled | 0.6888 |
 | vaep_per_touch | -0.0001 |
-| xt_p90 | 0.0193 |
-| role_adjusted_value | 0.6473 |
-| completeness_score | 0.8025 |
+| open_play_xt_p90 | 0.0082 |
+| set_piece_xt_p90 | 0.0032 |
+| role_adjusted_value | 0.4018 |
+| completeness_score | 0.6364 |
 | off_ball_score | 0.5624 |
 
 ## Continuous role vector

@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Argentina
 - Position group: Center Back
 - Functional role: Deep Playmaker
-- Probabilistic role: Defensive Centre-Back
-- Role entropy: 0.0000
-- Global rank: 113
-- Position rank: 23
+- Probabilistic role: Aerial/Progressive Centre-Back
+- Role entropy: 0.0004
+- Global rank: 105
+- Position rank: 26
 - Role rank: 6
 - Team rank: 12
-- Final player rating: 0.3750
+- Final player rating: 0.4533
+- Global ranking eligibility: eligible
 - Minutes: 733.9
 - Minutes reliability: 0.7098
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0166 |
+| vaep_off_scaled | 0.4670 |
+| vaep_def_scaled | 0.7754 |
 | vaep_per_touch | -0.0001 |
-| xt_p90 | 0.0040 |
-| role_adjusted_value | 0.5639 |
-| completeness_score | 0.8038 |
+| open_play_xt_p90 | 0.0005 |
+| set_piece_xt_p90 | 0.0004 |
+| role_adjusted_value | 0.1196 |
+| completeness_score | 0.4305 |
 | off_ball_score | 0.4680 |
 
 ## Continuous role vector

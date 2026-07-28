@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Morocco
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0000
-- Global rank: 52
-- Position rank: 10
-- Role rank: 5
-- Team rank: 5
-- Final player rating: 0.6353
+- Global rank: 34
+- Position rank: 12
+- Role rank: 4
+- Team rank: 1
+- Final player rating: 0.6202
+- Global ranking eligibility: eligible
 - Minutes: 350.2
 - Minutes reliability: 0.5386
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1651 |
+| vaep_off_scaled | 0.3585 |
+| vaep_def_scaled | 0.8202 |
 | vaep_per_touch | 0.0019 |
-| xt_p90 | 0.0328 |
-| role_adjusted_value | 0.5654 |
-| completeness_score | 0.7986 |
+| open_play_xt_p90 | 0.0037 |
+| set_piece_xt_p90 | 0.0326 |
+| role_adjusted_value | 0.2784 |
+| completeness_score | 0.6298 |
 | off_ball_score | 0.4705 |
 
 ## Continuous role vector

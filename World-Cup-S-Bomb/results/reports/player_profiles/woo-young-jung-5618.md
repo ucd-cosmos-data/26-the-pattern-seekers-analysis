@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: South Korea
 - Position group: Defensive Midfield
 - Functional role: Ball-Winner
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0009
-- Global rank: 78
-- Position rank: 11
-- Role rank: 12
-- Team rank: 5
-- Final player rating: 0.5092
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 75
+- Position rank: 10
+- Role rank: 7
+- Team rank: 7
+- Final player rating: 0.5147
+- Global ranking eligibility: eligible
 - Minutes: 317.9
 - Minutes reliability: 0.5145
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0013 |
+| vaep_off_scaled | 0.1709 |
+| vaep_def_scaled | 0.6426 |
 | vaep_per_touch | 0.0000 |
-| xt_p90 | 0.0498 |
-| role_adjusted_value | 0.6251 |
-| completeness_score | 0.7779 |
+| open_play_xt_p90 | 0.0129 |
+| set_piece_xt_p90 | 0.0189 |
+| role_adjusted_value | 0.1062 |
+| completeness_score | 0.5896 |
 | off_ball_score | 0.6016 |
 
 ## Continuous role vector

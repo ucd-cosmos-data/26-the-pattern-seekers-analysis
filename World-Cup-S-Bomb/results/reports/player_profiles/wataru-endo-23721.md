@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Japan
 - Position group: Defensive Midfield
 - Functional role: Ball-Winner
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0120
-- Global rank: 81
-- Position rank: 13
-- Role rank: 13
-- Team rank: 3
-- Final player rating: 0.4934
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 89
+- Position rank: 15
+- Role rank: 12
+- Team rank: 4
+- Final player rating: 0.4856
+- Global ranking eligibility: eligible
 - Minutes: 326.0
 - Minutes reliability: 0.5208
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0135 |
+| vaep_off_scaled | 0.2063 |
+| vaep_def_scaled | 0.4234 |
 | vaep_per_touch | -0.0001 |
-| xt_p90 | 0.0382 |
-| role_adjusted_value | 0.6645 |
-| completeness_score | 0.7615 |
+| open_play_xt_p90 | 0.0196 |
+| set_piece_xt_p90 | 0.0157 |
+| role_adjusted_value | 0.4580 |
+| completeness_score | 0.6152 |
 | off_ball_score | 0.6825 |
 
 ## Continuous role vector

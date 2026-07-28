@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Portugal
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0000
-- Global rank: 35
-- Position rank: 3
-- Role rank: 2
-- Team rank: 5
-- Final player rating: 0.6856
+- Global rank: 6
+- Position rank: 1
+- Role rank: 1
+- Team rank: 1
+- Final player rating: 0.7296
+- Global ranking eligibility: eligible
 - Minutes: 303.6
 - Minutes reliability: 0.5030
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.2667 |
+| vaep_off_scaled | 0.5869 |
+| vaep_def_scaled | 0.9547 |
 | vaep_per_touch | 0.0019 |
-| xt_p90 | 0.0764 |
-| role_adjusted_value | 0.6163 |
-| completeness_score | 0.7810 |
+| open_play_xt_p90 | 0.0076 |
+| set_piece_xt_p90 | 0.0527 |
+| role_adjusted_value | 1.0000 |
+| completeness_score | 0.6606 |
 | off_ball_score | 0.4604 |
 
 ## Continuous role vector

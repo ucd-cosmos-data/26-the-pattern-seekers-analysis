@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Switzerland
 - Position group: Defensive Midfield
 - Functional role: Ball-Winner
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0080
-- Global rank: 67
-- Position rank: 6
-- Role rank: 7
-- Team rank: 2
-- Final player rating: 0.5634
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0002
+- Global rank: 64
+- Position rank: 7
+- Role rank: 3
+- Team rank: 3
+- Final player rating: 0.5512
+- Global ranking eligibility: eligible
 - Minutes: 386.6
 - Minutes reliability: 0.5631
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0563 |
+| vaep_off_scaled | 0.3444 |
+| vaep_def_scaled | 0.6582 |
 | vaep_per_touch | 0.0004 |
-| xt_p90 | 0.0487 |
-| role_adjusted_value | 0.6126 |
-| completeness_score | 0.8928 |
+| open_play_xt_p90 | 0.0169 |
+| set_piece_xt_p90 | 0.0174 |
+| role_adjusted_value | 0.3423 |
+| completeness_score | 0.6301 |
 | off_ball_score | 0.6069 |
 
 ## Continuous role vector

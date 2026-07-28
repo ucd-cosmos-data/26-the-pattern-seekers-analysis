@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Spain
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
-- Probabilistic role: Roaming Creator
+- Probabilistic role: Finishing/Creative/Progressive Attacker
 - Role entropy: 0.0000
-- Global rank: 6
-- Position rank: 5
-- Role rank: 5
+- Global rank: 11
+- Position rank: 3
+- Role rank: 6
 - Team rank: 1
-- Final player rating: 0.7996
+- Final player rating: 0.6910
+- Global ranking eligibility: eligible
 - Minutes: 388.2
 - Minutes reliability: 0.5641
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.5547 |
+| vaep_off_scaled | 0.7889 |
+| vaep_def_scaled | 0.8547 |
 | vaep_per_touch | 0.0035 |
-| xt_p90 | 0.0722 |
-| role_adjusted_value | 0.6246 |
-| completeness_score | 0.7650 |
+| open_play_xt_p90 | 0.0269 |
+| set_piece_xt_p90 | 0.0395 |
+| role_adjusted_value | 0.5421 |
+| completeness_score | 0.5639 |
 | off_ball_score | 0.5063 |
 
 ## Continuous role vector

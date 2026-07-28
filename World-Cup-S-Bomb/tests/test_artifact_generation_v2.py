@@ -6,8 +6,10 @@ import json
 from pathlib import Path
 
 import pandas as pd
+import pytest
 
 from src.reporting.artifacts import ArtifactGenerator, RANKING_SCHEMA
+from scripts.run_pipeline import _purge_obsolete_v4_summaries
 
 
 def _players() -> pd.DataFrame:
@@ -59,6 +61,10 @@ def test_all_required_artifacts_and_32_team_profiles(tmp_path: Path) -> None:
         validation_comparison=comparison,
     )
     for name in (
+        "v5_player_rankings.csv",
+        "v5_player_rankings.json",
+        "v5_coaches_notebook.md",
+        "v5_artifact_manifest.json",
         "player_rankings.csv",
         "player_rankings.json",
         "coaches_notebook.md",
@@ -71,6 +77,14 @@ def test_all_required_artifacts_and_32_team_profiles(tmp_path: Path) -> None:
         assert (tmp_path / name).is_file()
     assert len(list((tmp_path / "team_profiles").glob("*.md"))) == 32
     assert len(list((tmp_path / "player_profiles").glob("*.md"))) == 64
+    assert not (tmp_path / "v5_team_profiles").exists()
+    assert not (tmp_path / "v5_player_profiles").exists()
+    assert not (tmp_path / "v5_final_summary.md").exists()
+    assert not (tmp_path / "v5_role_aware_model_summary.md").exists()
+    assert not (tmp_path / "v5_role_aware_model_summary.json").exists()
+    assert (
+        tmp_path / "v5_figures/v5_global_outfield_rankings.png"
+    ).is_file()
     rankings = pd.read_csv(tmp_path / "player_rankings.csv")
     assert set(RANKING_SCHEMA) <= set(rankings.columns)
     payload = json.loads((tmp_path / "player_rankings.json").read_text())
@@ -99,15 +113,70 @@ def test_team_manifest_can_include_teams_without_ranked_players(
             "defensive_hull_area": [300.0] * 32,
         }
     )
+    coverage_players = pd.DataFrame(
+        {
+            "player_id": range(100, 106),
+            "player_name": [f"Observed {index}" for index in range(6)],
+            "team": ["Team 31"] * 6,
+            "position_group": ["Midfield"] * 6,
+            "minutes": [270.0, 240.0, 210.0, 180.0, 150.0, 120.0],
+        }
+    )
     ArtifactGenerator(tmp_path).generate(
         players,
         model_summary={},
         tournament_teams=teams,
         team_metrics=team_metrics,
+        team_player_pool=coverage_players,
     )
     empty_team = (
         tmp_path / "team_profiles" / "team-31.md"
     ).read_text(encoding="utf-8")
-    assert "No player from this team reached" in empty_team
+    assert "Observed 0" in empty_team
+    assert "Observed 4" in empty_team
+    assert "Observed 5" not in empty_team
+    assert "Coverage only (<300 min)" in empty_team
+    assert "No model rating assigned" in empty_team
     assert "Total xT created: 1.2500" in empty_team
     assert "Pass completion under pressure: 0.7500" in empty_team
+    final_report = (tmp_path / "final_summary.md").read_text(
+        encoding="utf-8"
+    )
+    team_section = final_report.split("## Team 31", maxsplit=1)[1]
+    assert "Observed 0" in team_section
+    assert "Observed 4" in team_section
+    assert "Observed 5" not in team_section
+
+
+def test_v4_cleanup_requires_complete_v5_publication(
+    tmp_path: Path,
+) -> None:
+    obsolete = (
+        tmp_path / "results/Summary/v4_model_explanation_summary.md"
+    )
+    obsolete.parent.mkdir(parents=True)
+    obsolete.write_text("obsolete", encoding="utf-8")
+    with pytest.raises(RuntimeError):
+        _purge_obsolete_v4_summaries(tmp_path)
+    assert obsolete.is_file()
+
+
+def test_v4_cleanup_is_allowlisted_and_post_publication(
+    tmp_path: Path,
+) -> None:
+    report_root = tmp_path / "results/reports"
+    ArtifactGenerator(report_root).generate(
+        _players(),
+        model_summary={},
+    )
+    obsolete = (
+        tmp_path / "results/Summary/v4_model_explanation_summary.md"
+    )
+    retained = tmp_path / "results/Summary/tactical_history.md"
+    obsolete.parent.mkdir(parents=True)
+    obsolete.write_text("obsolete", encoding="utf-8")
+    retained.write_text("retain", encoding="utf-8")
+    manifest = _purge_obsolete_v4_summaries(tmp_path)
+    assert not obsolete.exists()
+    assert retained.is_file()
+    assert manifest.is_file()

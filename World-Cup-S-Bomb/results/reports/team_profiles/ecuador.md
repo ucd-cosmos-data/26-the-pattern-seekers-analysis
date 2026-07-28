@@ -22,7 +22,13 @@
 - Pressured pass sample: 174.0000
 - Mean ball-security score: not available
 
-## Squad ratings
+## Top five player summary
 
-_No eligible observations._
-_No player from this team reached the configured 300-minute ranking cutoff._
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| — | Pervis Josué Estupiñán Tenorio | — | 288.3833 | — | Coverage only (<300 min) |
+| — | Felix Eduardo Torres Caicedo | — | 288.3833 | — | Coverage only (<300 min) |
+| — | Hernán Ismael Galíndez | — | 288.3833 | — | Coverage only (<300 min) |
+| — | Piero Martín Hincapié Reyna | — | 288.3833 | — | Coverage only (<300 min) |
+| — | Moisés Isaac Caicedo Corozo | — | 282.9667 | — | Coverage only (<300 min) |
+_Coverage-only players are ordered by tournament minutes. No model rating assigned._

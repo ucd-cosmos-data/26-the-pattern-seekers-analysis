@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Iran
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Defensive Centre-Back
+- Probabilistic role: Aerial/Defensive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 122
+- Global rank: 116
 - Position rank: 31
 - Role rank: 15
 - Team rank: 3
-- Final player rating: 0.3303
+- Final player rating: 0.4105
+- Global ranking eligibility: eligible
 - Minutes: 305.1
 - Minutes reliability: 0.5042
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0845 |
+| vaep_off_scaled | 0.3221 |
+| vaep_def_scaled | 0.6057 |
 | vaep_per_touch | -0.0012 |
-| xt_p90 | 0.0097 |
-| role_adjusted_value | 0.4383 |
-| completeness_score | 0.6551 |
+| open_play_xt_p90 | 0.0016 |
+| set_piece_xt_p90 | 0.0056 |
+| role_adjusted_value | 0.0000 |
+| completeness_score | 0.4748 |
 | off_ball_score | 0.4025 |
 
 ## Continuous role vector

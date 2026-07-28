@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: France
 - Position group: Center Back
 - Functional role: Deep Playmaker
-- Probabilistic role: Defensive Centre-Back
+- Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 117
-- Position rank: 27
-- Role rank: 8
-- Team rank: 11
-- Final player rating: 0.3584
+- Global rank: 108
+- Position rank: 29
+- Role rank: 9
+- Team rank: 12
+- Final player rating: 0.4452
+- Global ranking eligibility: eligible
 - Minutes: 518.2
 - Minutes reliability: 0.6334
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0642 |
+| vaep_off_scaled | 0.3416 |
+| vaep_def_scaled | 0.6774 |
 | vaep_per_touch | -0.0004 |
-| xt_p90 | 0.0197 |
-| role_adjusted_value | 0.5523 |
-| completeness_score | 0.6876 |
+| open_play_xt_p90 | 0.0073 |
+| set_piece_xt_p90 | 0.0064 |
+| role_adjusted_value | 0.0082 |
+| completeness_score | 0.5743 |
 | off_ball_score | 0.5272 |
 
 ## Continuous role vector

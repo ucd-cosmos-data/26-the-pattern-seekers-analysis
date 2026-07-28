@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Morocco
 - Position group: Attacking Midfield/Wing
 - Functional role: Box-to-Box Runner
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive/Pressing Fullback
 - Role entropy: 0.0000
-- Global rank: 39
-- Position rank: 16
-- Role rank: 1
-- Team rank: 2
-- Final player rating: 0.6699
+- Global rank: 113
+- Position rank: 17
+- Role rank: 6
+- Team rank: 10
+- Final player rating: 0.4273
+- Global ranking eligibility: eligible
 - Minutes: 662.6
 - Minutes reliability: 0.6884
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0840 |
+| vaep_off_scaled | 0.0000 |
+| vaep_def_scaled | 0.0000 |
 | vaep_per_touch | 0.0006 |
-| xt_p90 | 0.0715 |
-| role_adjusted_value | 0.6605 |
-| completeness_score | 0.7236 |
+| open_play_xt_p90 | 0.0179 |
+| set_piece_xt_p90 | 0.0361 |
+| role_adjusted_value | 0.2939 |
+| completeness_score | 0.7394 |
 | off_ball_score | 0.5274 |
 
 ## Continuous role vector

@@ -22,20 +22,12 @@
 - Pressured pass sample: 373.0000
 - Mean ball-security score: 0.5325
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Kylian Mbappé Lottin | Progressive Winger | 0.8086 |
-| 2 | Antoine Griezmann | Hybrid Playmaker / Roaming Creator | 0.8001 |
-| 3 | Ousmane Dembélé | Progressive Winger | 0.7850 |
-| 4 | Olivier Giroud | Target Forward / Penalty-Box Anchor | 0.7159 |
-| 5 | Theo Bernard François Hernández | Attacking Wingback | 0.6582 |
-| 6 | Adrien Rabiot | Ball-Winner | 0.6165 |
-| 7 | Jules Koundé | Box-to-Box Runner | 0.5153 |
-| 8 | Aurélien Djani Tchouaméni | Holding / Controlling Midfielder | 0.4591 |
-| 9 | Ibrahima Konaté | Ball-Playing Centre-Back | 0.4551 |
-| 10 | Raphaël Varane | Deep Playmaker | 0.3959 |
-| 11 | Dayotchanculle Upamecano | Deep Playmaker | 0.3584 |
-| 12 | Hugo Lloris | Goalkeeper | 0.2042 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Kylian Mbappé Lottin | Progressive Winger | 654.3000 | 0.8258 | Ranked (300+ min) |
+| 2.0000 | Theo Bernard François Hernández | Attacking Wingback | 548.5000 | 0.6874 | Ranked (300+ min) |
+| 3.0000 | Adrien Rabiot | Ball-Winner | 529.2500 | 0.6586 | Ranked (300+ min) |
+| 4.0000 | Olivier Giroud | Target Forward / Penalty-Box Anchor | 432.6167 | 0.6245 | Ranked (300+ min) |
+| 5.0000 | Antoine Griezmann | Hybrid Playmaker / Roaming Creator | 586.0500 | 0.5794 | Ranked (300+ min) |

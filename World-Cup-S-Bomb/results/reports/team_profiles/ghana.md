@@ -22,12 +22,12 @@
 - Pressured pass sample: 139.0000
 - Mean ball-security score: 0.3880
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Thomas Teye Partey | Ball-Winner | 0.4639 |
-| 2 | Mohamed Salisu | Sweeper CB | 0.4153 |
-| 3 | Daniel Amartey | Sweeper CB | 0.3131 |
-| 4 | Lawrence Ati-Zigi | Goalkeeper | 0.1857 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Mohamed Salisu | Sweeper CB | 301.2000 | 0.5546 | Ranked (300+ min) |
+| 2.0000 | Lawrence Ati-Zigi | Goalkeeper | 301.2000 | 0.4223 | Ranked (300+ min) |
+| 3.0000 | Thomas Teye Partey | Ball-Winner | 301.2000 | 0.4125 | Ranked (300+ min) |
+| 4.0000 | Daniel Amartey | Sweeper CB | 301.2000 | 0.3654 | Ranked (300+ min) |
+| — | Iñaki Williams Arthuer | — | 272.7833 | — | Coverage only (<300 min) |

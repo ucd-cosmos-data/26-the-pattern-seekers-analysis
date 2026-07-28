@@ -66,11 +66,11 @@ def test_missing_role_input_is_not_fake_zero() -> None:
     assert vectors.loc[0, "finishing_score_evidence_count"] == 0
 
 
-def test_completeness_matches_requested_formula() -> None:
+def test_completeness_is_top_k_quality_adjusted() -> None:
     balanced = pd.DataFrame(
         {
-            column: [0.5, value]
-            for column, value in zip(
+            column: [0.5, value, low]
+            for column, value, low in zip(
                 (
                     "progression_score",
                     "creation_score",
@@ -80,11 +80,12 @@ def test_completeness_matches_requested_formula() -> None:
                     "ball_security_score",
                 ),
                 (1.0, 0.0, 0.0, 0.0, 0.0, 0.0),
+                (0.2, 0.2, 0.2, 0.2, 0.2, 0.2),
                 strict=True,
             )
         }
     )
     score = calculate_completeness_score(balanced)
-    assert np.isclose(score.iloc[0], 1.0)
+    assert np.isclose(score.iloc[0], 0.5)
     assert score.iloc[1] == 0.0
-
+    assert np.isclose(score.iloc[2], 0.2)

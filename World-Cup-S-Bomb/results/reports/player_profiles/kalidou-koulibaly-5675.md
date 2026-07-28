@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Senegal
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Defensive Centre-Back
-- Role entropy: 0.0018
-- Global rank: 95
-- Position rank: 7
+- Probabilistic role: Aerial/Defensive Centre-Back
+- Role entropy: 0.0002
+- Global rank: 45
+- Position rank: 4
 - Role rank: 3
-- Team rank: 4
-- Final player rating: 0.4534
+- Team rank: 3
+- Final player rating: 0.5927
+- Global ranking eligibility: eligible
 - Minutes: 387.3
 - Minutes reliability: 0.5635
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0445 |
+| vaep_off_scaled | 0.5153 |
+| vaep_def_scaled | 1.0000 |
 | vaep_per_touch | 0.0004 |
-| xt_p90 | 0.0112 |
-| role_adjusted_value | 0.6691 |
-| completeness_score | 0.7331 |
+| open_play_xt_p90 | 0.0008 |
+| set_piece_xt_p90 | 0.0030 |
+| role_adjusted_value | 0.6544 |
+| completeness_score | 0.5458 |
 | off_ball_score | 0.5193 |
 
 ## Continuous role vector

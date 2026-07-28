@@ -31,6 +31,7 @@ from src.features.events import (
     derive_pressure_outcomes,
     derive_reception_features,
 )
+from src.features.goalkeepers import build_goalkeeper_features
 from src.features.network import build_passing_network_features
 from src.features.off_ball import OffBallScorer
 from src.features.role_vectors import derive_role_vector
@@ -39,10 +40,16 @@ from src.features.spatial import (
     build_event_freeze_frame_features_from_csv,
 )
 from src.models.attention_experiment import run_attention_experiment
+from src.models.goalkeeper_valuation import (
+    calculate_goalkeeper_ratings,
+    goalkeeper_model_summary,
+)
 from src.models.roles import fit_probabilistic_roles
 from src.models.valuation import (
     DEFAULT_METRIC_DIRECTIONS,
     ContributionMetricTransformer,
+    GroupedElasticNetValuator,
+    IndependentValueScaler,
     calculate_completeness_score,
     calculate_final_player_rating,
     calculate_role_adjusted_value,
@@ -64,10 +71,20 @@ EVENT_COLUMNS = {
     "possession",
     "pass_recipient_id",
     "pass_outcome",
+    "pass_cross",
     "location",
     "pass_end_location",
     "carry_end_location",
     "shot_end_location",
+    "shot_outcome",
+    "shot_statsbomb_xg",
+    "shot_type",
+    "shot_body_part",
+    "shot_technique",
+    "shot_one_on_one",
+    "shot_first_time",
+    "goalkeeper_type",
+    "position",
     "under_pressure",
 }
 
@@ -165,6 +182,24 @@ def _atomic_json(payload: dict[str, Any], path: Path) -> None:
             encoding="utf-8",
         )
         os.replace(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+def _atomic_copy_bytes(source: Path, destination: Path) -> None:
+    """Copy a binary artifact atomically."""
+
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, temporary_name = tempfile.mkstemp(
+        prefix=f".{destination.name}.",
+        suffix=".tmp",
+        dir=destination.parent,
+    )
+    os.close(descriptor)
+    temporary = Path(temporary_name)
+    try:
+        temporary.write_bytes(source.read_bytes())
+        os.replace(temporary, destination)
     finally:
         temporary.unlink(missing_ok=True)
 
@@ -308,7 +343,6 @@ def _mark_historical_rating_reports(project_root: Path) -> list[Path]:
                 project_root / "results/reports/compiled"
             ).glob("*_compiled_player_reports.md")
         ),
-        project_root / "results/Summary/v4_model_explanation_summary.md",
         project_root / "results/MIscellaneous/player_rating_uncertainty.md",
     ]
     marker = "<!-- V5_CANONICAL_NOTICE -->"
@@ -345,6 +379,62 @@ def _mark_historical_rating_reports(project_root: Path) -> list[Path]:
             temporary_source.unlink(missing_ok=True)
         updated.append(path)
     return updated
+
+
+def _purge_obsolete_v4_summaries(project_root: Path) -> Path:
+    """Delete only allowlisted V4 summary files after V5 publication."""
+
+    results_root = (project_root / "results").resolve()
+    report_root = results_root / "reports"
+    required_publication = {
+        report_root / "v5_player_rankings.csv",
+        report_root / "v5_player_rankings.json",
+        report_root / "v5_coaches_notebook.md",
+        report_root / "model_summary.json",
+        report_root / "model_summary.md",
+        report_root / "final_summary.md",
+        report_root / "v5_artifact_manifest.json",
+        report_root / "team_profiles",
+        report_root / "player_profiles",
+    }
+    missing = sorted(
+        str(path.relative_to(project_root))
+        for path in required_publication
+        if not path.exists()
+    )
+    if missing:
+        raise RuntimeError(
+            "Refusing V4 cleanup before complete V5 publication: "
+            + ", ".join(missing)
+        )
+    candidates = {
+        results_root / "Summary/v4_model_explanation_summary.md",
+        *results_root.rglob("v4_final_summary.md"),
+    }
+    deleted: list[str] = []
+    for candidate in sorted(candidates):
+        resolved = candidate.resolve()
+        if results_root not in resolved.parents:
+            raise RuntimeError(f"Unsafe V4 cleanup target: {resolved}")
+        if resolved.is_file():
+            resolved.unlink()
+            deleted.append(str(resolved.relative_to(project_root)))
+    manifest_path = (
+        project_root / "results/reports/v5_cleanup_manifest.json"
+    )
+    _atomic_json(
+        {
+            "schema_version": "5.0-role-attention",
+            "cleanup_executed_after_v5_artifact_validation": True,
+            "deleted": deleted,
+            "allowlist": [
+                "results/Summary/v4_model_explanation_summary.md",
+                "results/**/v4_final_summary.md",
+            ],
+        },
+        manifest_path,
+    )
+    return manifest_path
 
 
 def _refresh_detailed_team_rating_sections(
@@ -566,7 +656,7 @@ def _refresh_detailed_team_rating_sections(
                 )
             payload["player_rating_schema"] = "5.0-role-attention"
             payload["top_v5_player_evaluations"] = records
-            payload["top_v4_player_evaluations"] = records
+            payload.pop("top_v4_player_evaluations", None)
             descriptor, temporary_name = tempfile.mkstemp(
                 prefix=f".{json_path.name}.",
                 suffix=".tmp",
@@ -619,7 +709,7 @@ def _publish_canonical_aliases(
         ),
         output_root / "model_summary.md": (
             project_root
-            / "results/Summary/v5_role_aware_model_summary.md"
+            / "results/Summary/model_summary.md"
         ),
         output_root / "model_summary.json": (
             project_root
@@ -629,6 +719,16 @@ def _publish_canonical_aliases(
     for source, destination in report_aliases.items():
         _atomic_copy_text(source, destination)
         destinations.append(destination)
+    figure_root = project_root / "results/figures"
+    for source in sorted((output_root / "v5_figures").glob("*.png")):
+        destination = figure_root / source.name
+        _atomic_copy_bytes(source, destination)
+        destinations.append(destination)
+    france_v5 = figure_root / "v5_france_team_rankings.png"
+    if france_v5.is_file():
+        france_legacy = figure_root / "france_team_rankings.png"
+        _atomic_copy_bytes(france_v5, france_legacy)
+        destinations.append(france_legacy)
     destinations.extend(
         _publish_validation_aliases(
             project_root,
@@ -643,6 +743,7 @@ def _publish_canonical_aliases(
         )
     )
     destinations.extend(_mark_historical_rating_reports(project_root))
+    destinations.append(_purge_obsolete_v4_summaries(project_root))
     return destinations
 
 
@@ -897,6 +998,342 @@ def _derive_team_profile_metrics(
     return team_metrics
 
 
+def _action_value_splits(
+    actions: pd.DataFrame,
+    *,
+    group_columns: tuple[str, ...],
+) -> pd.DataFrame:
+    """Aggregate VAEP/xT channels and separate open-play from set pieces."""
+
+    required = {
+        *group_columns,
+        "play_pattern",
+        "action_side",
+        "vaep_value",
+        "xt_value",
+        "xa_value",
+        "touch",
+    }
+    missing = required.difference(actions.columns)
+    if missing:
+        raise ValueError(f"Action value fields missing: {sorted(missing)}")
+    working = actions.loc[actions["player_id"].notna()].copy()
+    set_piece = working["play_pattern"].astype(str).str.contains(
+        "Corner|Free Kick|Throw",
+        case=False,
+        na=False,
+    )
+    working["_vaep_off"] = np.where(
+        working["action_side"].eq("offense"),
+        working["vaep_value"],
+        0.0,
+    )
+    working["_vaep_def"] = np.where(
+        working["action_side"].eq("defense"),
+        working["vaep_value"],
+        0.0,
+    )
+    working["_open_play_xt"] = np.where(
+        ~set_piece,
+        working["xt_value"],
+        0.0,
+    )
+    working["_set_piece_xt"] = np.where(
+        set_piece,
+        working["xt_value"],
+        0.0,
+    )
+    return working.groupby(list(group_columns), as_index=False).agg(
+        vaep_offense=("_vaep_off", "sum"),
+        vaep_defense=("_vaep_def", "sum"),
+        xt_total=("xt_value", "sum"),
+        open_play_xt_total=("_open_play_xt", "sum"),
+        set_piece_xt_total=("_set_piece_xt", "sum"),
+        xa_sum=("xa_value", "sum"),
+        total_touches=("touch", "sum"),
+    )
+
+
+def _add_match_valuation_rates(samples: pd.DataFrame) -> pd.DataFrame:
+    """Derive opportunity and per-90 metrics for grouped valuation."""
+
+    output = samples.copy()
+    minutes = pd.to_numeric(
+        output["minutes"],
+        errors="coerce",
+    ).clip(lower=1.0)
+    per_90_sources = {
+        "progressive_carries_p90": "progressive_carries",
+        "progressive_passes_p90": "progressive_passes",
+        "key_passes_p90": "key_passes",
+        "shots_p90": "shots",
+        "xg_p90": "xg_sum",
+        "goals_p90": "goals",
+        "pressures_p90": "pressures",
+        "counterpressures_p90": "counterpressures",
+        "recoveries_p90": "recoveries",
+        "interceptions_p90": "interceptions",
+        "turnovers_p90": "turnovers",
+        "aerial_wins_p90": "aerial_wins",
+        "xt_p90": "xt_total",
+        "open_play_xt_p90": "open_play_xt_total",
+        "set_piece_xt_p90": "set_piece_xt_total",
+        "xa_p90": "xa_sum",
+        "vaep_off_p90": "vaep_offense",
+        "vaep_def_p90": "vaep_defense",
+    }
+    for destination, source in per_90_sources.items():
+        if source in output:
+            output[destination] = (
+                90.0
+                * pd.to_numeric(output[source], errors="coerce")
+                / minutes
+            )
+    ratios = {
+        "line_breaking_pass_rate": (
+            "progressive_passes",
+            "passes",
+        ),
+        "pass_completion": ("completed_passes", "passes"),
+        "pressure_resistance": (
+            "successful_under_pressure_actions",
+            "under_pressure_actions",
+        ),
+        "duel_win_rate": ("duels_won", "duels"),
+        "aerial_dominance_index": ("aerial_wins", "aerial_events"),
+    }
+    for destination, (numerator, denominator) in ratios.items():
+        output[destination] = (
+            pd.to_numeric(output[numerator], errors="coerce")
+            / pd.to_numeric(
+                output[denominator],
+                errors="coerce",
+            ).replace(0.0, np.nan)
+        )
+    output["vaep_per_touch"] = (
+        output["vaep_offense"] + output["vaep_defense"]
+    ) / pd.to_numeric(
+        output["total_touches"],
+        errors="coerce",
+    ).replace(0.0, np.nan)
+    return output
+
+
+def _build_match_valuation_samples(
+    components: pd.DataFrame,
+    actions: pd.DataFrame,
+) -> pd.DataFrame:
+    """Build one leakage-auditable player-match contribution table."""
+
+    values = _action_value_splits(
+        actions,
+        group_columns=("game_id", "player_id"),
+    ).rename(columns={"game_id": "match_id"})
+    samples = components.merge(
+        values,
+        on=["match_id", "player_id"],
+        how="left",
+        validate="one_to_one",
+    )
+    value_columns = [
+        "vaep_offense",
+        "vaep_defense",
+        "xt_total",
+        "open_play_xt_total",
+        "set_piece_xt_total",
+        "xa_sum",
+        "total_touches",
+    ]
+    samples[value_columns] = samples[value_columns].fillna(0.0)
+    samples = samples.loc[
+        pd.to_numeric(samples["minutes"], errors="coerce").ge(20.0)
+        & ~samples["position_group"].eq("Goalkeeper")
+    ].copy()
+    return _add_match_valuation_rates(samples)
+
+
+def _fit_grouped_role_valuation(
+    match_samples: pd.DataFrame,
+    profiles: pd.DataFrame,
+    *,
+    random_state: int,
+) -> tuple[pd.Series, dict[str, Any], dict[str, GroupedElasticNetValuator]]:
+    """Fit separate match-grouped offensive and defensive ElasticNet heads."""
+
+    candidates = (
+        "open_play_xt_p90",
+        "set_piece_xt_p90",
+        "progressive_carries_p90",
+        "progressive_passes_p90",
+        "line_breaking_pass_rate",
+        "key_passes_p90",
+        "xa_p90",
+        "shots_p90",
+        "xg_p90",
+        "goals_p90",
+        "pressures_p90",
+        "counterpressures_p90",
+        "recoveries_p90",
+        "interceptions_p90",
+        "duel_win_rate",
+        "pass_completion",
+        "pressure_resistance",
+        "turnovers_p90",
+        "aerial_dominance_index",
+        "aerial_wins_p90",
+        "attention_context_value",
+    )
+    feature_names = tuple(
+        feature
+        for feature in candidates
+        if feature in match_samples and feature in profiles
+    )
+    if len(feature_names) < 8:
+        raise ValueError("Too few common grouped valuation features")
+    models: dict[str, GroupedElasticNetValuator] = {}
+    raw_predictions: dict[str, np.ndarray] = {}
+    diagnostics: dict[str, Any] = {
+        "grouping": "nested GroupKFold by match_id",
+        "feature_names": list(feature_names),
+        "heads": {},
+    }
+    for head, target in (
+        ("offense", "vaep_off_p90"),
+        ("defense", "vaep_def_p90"),
+    ):
+        model = GroupedElasticNetValuator(
+            feature_names=feature_names,
+            random_state=random_state,
+        ).fit(
+            match_samples,
+            match_samples[target],
+            match_samples["match_id"],
+        )
+        models[head] = model
+        raw_predictions[head] = model.predict(profiles)
+        coefficients = model.coefficient_series()
+        diagnostics["heads"][head] = {
+            "metrics": dataclasses.asdict(model.metrics_),
+            "best_alpha": model.best_alpha_,
+            "best_l1_ratio": model.best_l1_ratio_,
+            "coefficients": coefficients.to_dict(),
+            "nonzero_coefficients": int(coefficients.ne(0.0).sum()),
+            "coefficient_std": float(coefficients.std(ddof=0)),
+            "fold_audit": model.fold_audit_,
+        }
+    predicted = pd.DataFrame(
+        {
+            "position_group": profiles["position_group"].to_numpy(),
+            "vaep_off_p90": raw_predictions["offense"],
+            "vaep_def_p90": raw_predictions["defense"],
+        },
+        index=profiles.index,
+    )
+    scaled = IndependentValueScaler(
+        minimum_group_size=12,
+    ).fit_transform(predicted)
+    score = scaled.max(axis=1).rename("role_adjusted_value")
+    all_coefficients = pd.concat(
+        [model.coefficient_series() for model in models.values()],
+        axis=1,
+    )
+    diagnostics["coefficient_dispersion_gate"] = bool(
+        all_coefficients.std(axis=0, ddof=0).gt(0.005).all()
+        and all_coefficients.ne(0.0).sum(axis=0).ge(2).all()
+    )
+    if not diagnostics["coefficient_dispersion_gate"]:
+        raise RuntimeError(
+            "Grouped ElasticNet coefficient dispersion gate failed"
+        )
+    return score, diagnostics, models
+
+
+def _validation_regression_gate(
+    previous: dict[str, Any],
+    current: dict[str, Any],
+    *,
+    include_attention: bool,
+    tolerance: float = 0.01,
+) -> dict[str, Any]:
+    """Reject material degradation in comparable validation metrics."""
+
+    higher_is_better = {"roc_auc", "pr_auc"}
+    lower_is_better = {
+        "brier_score",
+        "calibration_error",
+        "expected_calibration_error",
+    }
+    comparisons: list[dict[str, Any]] = []
+
+    def compare(
+        old: Any,
+        new: Any,
+        path: tuple[str, ...],
+    ) -> None:
+        if isinstance(old, dict) and isinstance(new, dict):
+            for key in sorted(set(old).intersection(new)):
+                compare(old[key], new[key], (*path, str(key)))
+            return
+        if not path or path[-1] not in higher_is_better | lower_is_better:
+            return
+        if not isinstance(old, (int, float)) or not isinstance(
+            new,
+            (int, float),
+        ):
+            return
+        metric = path[-1]
+        passed = (
+            float(new) >= float(old) - tolerance
+            if metric in higher_is_better
+            else float(new) <= float(old) + tolerance
+        )
+        required_for_gate = not (
+            include_attention
+            and path
+            and path[0] == "attention"
+            and "baseline" in path
+        )
+        comparisons.append(
+            {
+                "metric_path": ".".join(path),
+                "previous": float(old),
+                "current": float(new),
+                "tolerance": tolerance,
+                "passed": bool(passed),
+                "required_for_gate": required_for_gate,
+            }
+        )
+
+    compare(
+        previous.get("legacy_vaep_oof", {}),
+        current.get("legacy_vaep_oof", {}),
+        ("legacy_vaep_oof",),
+    )
+    compare(
+        previous.get("legacy_vaep_test", {}),
+        current.get("legacy_vaep_test", {}),
+        ("legacy_vaep_test",),
+    )
+    if include_attention:
+        compare(
+            previous.get("attention", {}),
+            current.get("attention", {}),
+            ("attention",),
+        )
+    required = [
+        item for item in comparisons if item["required_for_gate"]
+    ]
+    passed = bool(required) and all(
+        item["passed"] for item in required
+    )
+    return {
+        "passed": passed,
+        "tolerance": tolerance,
+        "comparisons": comparisons,
+        "attention_compared": include_attention,
+    }
+
+
 def run_extended_pipeline(
     config: PipelineConfig,
     *,
@@ -917,12 +1354,21 @@ def run_extended_pipeline(
 
     profile_path = project_root / "data/processed/player_evaluations.csv"
     actions_path = project_root / "data/processed/world_cup_spadl_actions.parquet"
+    components_path = (
+        project_root / "data/interim/world_cup_player_match_components.csv"
+    )
     events_path = project_root / "notebooks/all_events.csv"
     frames_path = project_root / "data/interim/world_cup_360_frames.csv"
     provenance_path = (
         project_root / "data/processed/player_evaluation_provenance.json"
     )
-    for path in (profile_path, actions_path, events_path, provenance_path):
+    for path in (
+        profile_path,
+        actions_path,
+        components_path,
+        events_path,
+        provenance_path,
+    ):
         if not path.is_file():
             raise FileNotFoundError(path)
 
@@ -931,6 +1377,39 @@ def run_extended_pipeline(
     actions = pd.read_parquet(actions_path)
     actions["original_event_id"] = actions["original_event_id"].astype(str)
     events = _load_events(events_path)
+    components = pd.read_csv(components_path, low_memory=False)
+    components["player_id"] = components["player_id"].astype(int)
+
+    player_value_splits = _action_value_splits(
+        actions,
+        group_columns=("player_id",),
+    )
+    player_value_splits["player_id"] = player_value_splits[
+        "player_id"
+    ].astype(int)
+    player_value_splits = player_value_splits.merge(
+        profiles[["player_id", "minutes"]],
+        on="player_id",
+        how="inner",
+        validate="one_to_one",
+    )
+    split_minutes = player_value_splits["minutes"].clip(lower=1.0)
+    player_value_splits["open_play_xt_p90"] = (
+        90.0
+        * player_value_splits["open_play_xt_total"]
+        / split_minutes
+    )
+    player_value_splits["set_piece_xt_p90"] = (
+        90.0
+        * player_value_splits["set_piece_xt_total"]
+        / split_minutes
+    )
+    profiles = _merge_player_features(
+        profiles,
+        player_value_splits[
+            ["player_id", "open_play_xt_p90", "set_piece_xt_p90"]
+        ],
+    )
 
     reception = derive_reception_features(events)
     pressure = derive_pressure_outcomes(events)
@@ -992,8 +1471,16 @@ def run_extended_pipeline(
 
     off_ball = OffBallScorer().fit(profiles).transform(profiles)
     profiles = _merge_player_features(profiles, off_ball)
-    role_adjusted, metric_transformer, valuator = (
-        calculate_role_adjusted_value(profiles, profiles)
+    match_valuation_samples = _build_match_valuation_samples(
+        components,
+        actions,
+    )
+    role_adjusted, role_valuation_summary, role_models = (
+        _fit_grouped_role_valuation(
+            match_valuation_samples,
+            profiles,
+            random_state=config.random_state,
+        )
     )
     profiles["role_adjusted_value"] = role_adjusted
 
@@ -1054,7 +1541,7 @@ def run_extended_pipeline(
                 }
             )
             action_context = action_context.merge(
-                actions[["player_id"]],
+                actions[["game_id", "player_id"]],
                 left_on="action_index",
                 right_index=True,
                 how="left",
@@ -1076,27 +1563,98 @@ def run_extended_pipeline(
                 )
             )
             profiles = _merge_player_features(profiles, player_context)
-            directions = {
-                **DEFAULT_METRIC_DIRECTIONS,
-                "attention_context_value": True,
-            }
-            metric_transformer = ContributionMetricTransformer(
-                metric_directions=directions
-            ).fit(profiles)
-            role_adjusted, metric_transformer, valuator = (
-                calculate_role_adjusted_value(
+            match_context = (
+                action_context.dropna(subset=["player_id"])
+                .assign(
+                    player_id=lambda frame: frame["player_id"].astype(int),
+                    match_id=lambda frame: frame["game_id"].astype(int),
+                )
+                .groupby(["match_id", "player_id"], as_index=False)
+                .agg(
+                    attention_context_value=(
+                        "attention_context_value",
+                        "mean",
+                    )
+                )
+            )
+            match_valuation_samples = match_valuation_samples.merge(
+                match_context,
+                on=["match_id", "player_id"],
+                how="left",
+                validate="one_to_one",
+            )
+            role_adjusted, role_valuation_summary, role_models = (
+                _fit_grouped_role_valuation(
+                    match_valuation_samples,
                     profiles,
-                    profiles,
-                    metric_transformer=metric_transformer,
+                    random_state=config.random_state,
                 )
             )
             profiles["role_adjusted_value"] = role_adjusted
         else:
             print(FALLBACK_MESSAGE)
 
-    rated = calculate_final_player_rating(
-        profiles,
+    outfield_profiles = profiles.loc[
+        ~profiles["position_group"].eq("Goalkeeper")
+    ].copy()
+    rated_outfield = calculate_final_player_rating(
+        outfield_profiles,
         config=config.rating,
+    )
+    rated_outfield["global_rank_eligible"] = True
+    goalkeeper_features, goalkeeper_audit = build_goalkeeper_features(
+        events,
+        profiles,
+    )
+    goalkeeper_ratings = calculate_goalkeeper_ratings(
+        goalkeeper_features,
+        reliability_minutes=config.rating.reliability_minutes,
+    )
+    goalkeeper_profiles = profiles.loc[
+        profiles["position_group"].eq("Goalkeeper")
+    ].copy()
+    goalkeeper_columns = [
+        column
+        for column in goalkeeper_ratings
+        if column not in {"team", "minutes"}
+    ]
+    goalkeeper_profiles = goalkeeper_profiles.drop(
+        columns=[
+            column
+            for column in goalkeeper_columns
+            if column in goalkeeper_profiles and column != "player_id"
+        ]
+    ).merge(
+        goalkeeper_ratings[goalkeeper_columns],
+        on="player_id",
+        how="left",
+        validate="one_to_one",
+    )
+    goalkeeper_profiles["raw_final_player_rating"] = goalkeeper_profiles[
+        "goalkeeper_raw_rating"
+    ]
+    goalkeeper_profiles["rating_minutes_reliability"] = (
+        goalkeeper_profiles["goalkeeper_rating_reliability"]
+    )
+    goalkeeper_profiles["player_evaluation_score"] = goalkeeper_profiles[
+        "final_player_rating"
+    ]
+    goalkeeper_profiles["functional_role"] = "Goalkeeper"
+    goalkeeper_profiles["probabilistic_role"] = "Goalkeeper"
+    goalkeeper_profiles["role_rank"] = goalkeeper_profiles[
+        "goalkeeper_rank"
+    ]
+    rated = pd.concat(
+        [rated_outfield, goalkeeper_profiles],
+        ignore_index=True,
+        sort=False,
+    )
+    rated["team_rank"] = rated.groupby("team")[
+        "final_player_rating"
+    ].rank(method="min", ascending=False).astype(int)
+    goalkeeper_summary = goalkeeper_model_summary(
+        goalkeeper_audit,
+        goalkeeper_ratings,
     )
     legacy_column = (
         "legacy_final_player_rating"
@@ -1105,42 +1663,104 @@ def run_extended_pipeline(
     )
     rank_rho = float(
         spearmanr(
-            rated[legacy_column],
-            rated["final_player_rating"],
+            rated.loc[
+                rated["global_rank_eligible"].fillna(False),
+                legacy_column,
+            ],
+            rated.loc[
+                rated["global_rank_eligible"].fillna(False),
+                "final_player_rating",
+            ],
         ).statistic
     )
     attention_summary["spearman_with_legacy_rankings"] = rank_rho
 
-    mean_weights = valuator.metric_weights(
-        pd.concat(
-            [
-                metric_transformer.transform(rated).reset_index(drop=True),
-                rated[list(valuator.role_dimensions_)].reset_index(drop=True),
-            ],
-            axis=1,
-        )
-    ).mean().sort_values(ascending=False)
+    coefficient_frame = pd.concat(
+        {
+            head: model.coefficient_series()
+            for head, model in role_models.items()
+        },
+        axis=1,
+    )
+    mean_weights = coefficient_frame.mean(axis=1).sort_values(
+        ascending=False
+    )
     provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
+
+    def plain(value: Any) -> Any:
+        if dataclasses.is_dataclass(value) and not isinstance(value, type):
+            return {
+                field.name: plain(getattr(value, field.name))
+                for field in dataclasses.fields(value)
+            }
+        if isinstance(value, dict):
+            return {str(key): plain(item) for key, item in value.items()}
+        if isinstance(value, (list, tuple)):
+            return [plain(item) for item in value]
+        return value
+
+    current_validation_metrics = {
+        "legacy_vaep_oof": provenance.get("vaep_oof_metrics", {}),
+        "legacy_vaep_test": provenance.get(
+            "vaep_final_test_metrics",
+            {},
+        ),
+        "attention": plain(attention_summary.get("metrics", {})),
+    }
+    previous_summary_path = (
+        project_root / "results/reports/model_summary.json"
+    )
+    previous_metrics: dict[str, Any] = {}
+    if previous_summary_path.is_file():
+        previous_metrics = json.loads(
+            previous_summary_path.read_text(encoding="utf-8")
+        ).get("metrics", {})
+    regression_gate = _validation_regression_gate(
+        previous_metrics,
+        current_validation_metrics,
+        include_attention=config.attention.enabled,
+    )
+    if previous_metrics and not regression_gate["passed"]:
+        _atomic_json(
+            regression_gate,
+            output_root / "validation_regression_failure.json",
+        )
+        raise RuntimeError(
+            "Validation metric regression gate failed; canonical artifacts "
+            "will not be updated."
+        )
     model_summary = {
         "selected_layer": attention_summary["selected_layer"],
         "metric_gate_passed": attention_summary["metric_gate_passed"],
         "metrics": {
-            "legacy_vaep_oof": provenance.get("vaep_oof_metrics", {}),
-            "legacy_vaep_test": provenance.get(
-                "vaep_final_test_metrics",
+            **current_validation_metrics,
+            "role_aware_elastic_net": {
+                head: details["metrics"]
+                for head, details in role_valuation_summary[
+                    "heads"
+                ].items()
+            },
+            "goalkeeper_post_shot": goalkeeper_summary.get(
+                "post_shot_model",
                 {},
-            ),
-            "attention": attention_summary.get("metrics", {}),
+            ).get("metrics", {}),
             "spearman_with_legacy_rankings": rank_rho,
         },
         "metric_gate": attention_summary,
+        "validation_regression_gate": regression_gate,
         "feature_importance": {
-            "mean_role_aware_metric_weights": mean_weights.to_dict(),
+            "elastic_net_mean_coefficients": mean_weights.to_dict(),
+            "elastic_net_head_coefficients": {
+                head: model.coefficient_series().to_dict()
+                for head, model in role_models.items()
+            },
             "attention_or_baseline": attention_summary.get(
                 "feature_importance",
                 {},
             ),
         },
+        "role_aware_elastic_net": role_valuation_summary,
+        "goalkeeper_model": goalkeeper_summary,
         "cluster_stability": probabilistic.diagnostics,
         "probabilistic_role_selection": {
             "selected_k": probabilistic.selected_k,
@@ -1159,11 +1779,7 @@ def run_extended_pipeline(
         .rank(method="min", ascending=False)
         .astype(int)
     )
-    new_global_rank = (
-        rated["final_player_rating"]
-        .rank(method="min", ascending=False)
-        .astype(int)
-    )
+    new_global_rank = rated["global_rank"]
     comparison = pd.DataFrame(
         {
             "player": rated.get("player", rated.get("player_name")),
@@ -1184,12 +1800,21 @@ def run_extended_pipeline(
         project_root
         / "data/processed/world_cup_defensive_features.csv",
     )
+    team_player_pool = (
+        components.groupby(["player_id", "team"], as_index=False)
+        .agg(
+            player_name=("player", "first"),
+            position_group=("position_group", "first"),
+            minutes=("minutes", "sum"),
+        )
+    )
     manifest = ArtifactGenerator(output_root).generate(
         rated,
         model_summary=model_summary,
         validation_comparison=comparison,
         tournament_teams=sorted(events["team"].dropna().astype(str).unique()),
         team_metrics=team_metrics,
+        team_player_pool=team_player_pool,
     )
     canonical_files: list[Path] = []
     canonical_report_root = (
@@ -1205,7 +1830,7 @@ def run_extended_pipeline(
         "status": "complete",
         "output_root": str(output_root),
         "players": len(rated),
-        "teams": int(rated["team"].nunique()),
+        "teams": int(manifest.metadata["teams"]),
         "selected_layer": attention_summary["selected_layer"],
         "metric_gate_passed": attention_summary["metric_gate_passed"],
         "probabilistic_roles": {

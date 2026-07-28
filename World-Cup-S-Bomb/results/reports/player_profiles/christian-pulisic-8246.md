@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: United States
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
-- Probabilistic role: Roaming Creator
-- Role entropy: 0.0012
-- Global rank: 3
+- Probabilistic role: Finishing/Creative/Progressive Attacker
+- Role entropy: 0.0093
+- Global rank: 9
 - Position rank: 2
-- Role rank: 3
+- Role rank: 5
 - Team rank: 1
-- Final player rating: 0.8081
+- Final player rating: 0.6972
+- Global ranking eligibility: eligible
 - Minutes: 336.3
 - Minutes reliability: 0.5285
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.5271 |
+| vaep_off_scaled | 0.7447 |
+| vaep_def_scaled | 0.7751 |
 | vaep_per_touch | 0.0039 |
-| xt_p90 | 0.1139 |
-| role_adjusted_value | 0.6584 |
-| completeness_score | 0.7277 |
+| open_play_xt_p90 | 0.0316 |
+| set_piece_xt_p90 | 0.0663 |
+| role_adjusted_value | 0.6430 |
+| completeness_score | 0.7036 |
 | off_ball_score | 0.5490 |
 
 ## Continuous role vector

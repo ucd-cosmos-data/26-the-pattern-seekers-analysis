@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Japan
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive/Pressing Fullback
 - Role entropy: 0.0000
-- Global rank: 59
+- Global rank: 49
 - Position rank: 17
-- Role rank: 10
-- Team rank: 2
-- Final player rating: 0.6170
+- Role rank: 9
+- Team rank: 1
+- Final player rating: 0.5802
+- Global ranking eligibility: eligible
 - Minutes: 346.3
 - Minutes reliability: 0.5358
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1214 |
+| vaep_off_scaled | 0.3439 |
+| vaep_def_scaled | 0.5860 |
 | vaep_per_touch | 0.0016 |
-| xt_p90 | 0.0544 |
-| role_adjusted_value | 0.4573 |
-| completeness_score | 0.6538 |
+| open_play_xt_p90 | 0.0332 |
+| set_piece_xt_p90 | 0.0194 |
+| role_adjusted_value | 0.3050 |
+| completeness_score | 0.4976 |
 | off_ball_score | 0.3984 |
 
 ## Continuous role vector

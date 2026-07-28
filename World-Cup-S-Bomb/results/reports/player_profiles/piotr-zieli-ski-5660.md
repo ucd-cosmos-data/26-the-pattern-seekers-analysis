@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Poland
 - Position group: Central/Wide Midfield
 - Functional role: Ball-Winner
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0052
-- Global rank: 38
-- Position rank: 10
-- Role rank: 3
-- Team rank: 2
-- Final player rating: 0.6704
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 79
+- Position rank: 8
+- Role rank: 9
+- Team rank: 5
+- Final player rating: 0.5030
+- Global ranking eligibility: eligible
 - Minutes: 344.4
 - Minutes reliability: 0.5345
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0893 |
+| vaep_off_scaled | 0.0391 |
+| vaep_def_scaled | 0.2605 |
 | vaep_per_touch | 0.0008 |
-| xt_p90 | 0.0591 |
-| role_adjusted_value | 0.6478 |
-| completeness_score | 0.8839 |
+| open_play_xt_p90 | 0.0071 |
+| set_piece_xt_p90 | 0.0527 |
+| role_adjusted_value | 0.4714 |
+| completeness_score | 0.6738 |
 | off_ball_score | 0.5575 |
 
 ## Continuous role vector

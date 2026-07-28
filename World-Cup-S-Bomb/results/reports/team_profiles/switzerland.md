@@ -22,13 +22,12 @@
 - Pressured pass sample: 261.0000
 - Mean ball-security score: 0.5856
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Breel-Donald Embolo | Target Forward | 0.6985 |
-| 2 | Granit Xhaka | Ball-Winner | 0.5634 |
-| 3 | Ricardo Iván Rodríguez Araya | Wide Creator | 0.5390 |
-| 4 | Remo Freuler | Ball-Winner | 0.5162 |
-| 5 | Manuel Obafemi Akanji | Ball-Playing Centre-Back | 0.4367 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Manuel Obafemi Akanji | Ball-Playing Centre-Back | 386.5833 | 0.5879 | Ranked (300+ min) |
+| 2.0000 | Breel-Donald Embolo | Target Forward | 330.1500 | 0.5661 | Ranked (300+ min) |
+| 3.0000 | Granit Xhaka | Ball-Winner | 386.5833 | 0.5512 | Ranked (300+ min) |
+| 4.0000 | Ricardo Iván Rodríguez Araya | Wide Creator | 380.2333 | 0.5013 | Ranked (300+ min) |
+| 5.0000 | Remo Freuler | Ball-Winner | 346.0500 | 0.5010 | Ranked (300+ min) |

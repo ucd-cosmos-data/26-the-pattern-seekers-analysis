@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: France
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
-- Probabilistic role: Target Forward
+- Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0000
-- Global rank: 28
-- Position rank: 9
+- Global rank: 31
+- Position rank: 8
 - Role rank: 2
 - Team rank: 4
-- Final player rating: 0.7159
+- Final player rating: 0.6245
+- Global ranking eligibility: eligible
 - Minutes: 432.6
 - Minutes reliability: 0.5905
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.4755 |
+| vaep_off_scaled | 0.6128 |
+| vaep_def_scaled | 0.5791 |
 | vaep_per_touch | 0.0086 |
-| xt_p90 | 0.0075 |
-| role_adjusted_value | 0.6370 |
-| completeness_score | 0.4401 |
+| open_play_xt_p90 | 0.0034 |
+| set_piece_xt_p90 | 0.0055 |
+| role_adjusted_value | 1.0000 |
+| completeness_score | 0.3400 |
 | off_ball_score | 0.4295 |
 
 ## Continuous role vector

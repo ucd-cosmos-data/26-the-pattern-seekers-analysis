@@ -36,11 +36,11 @@ Netherlands: no tactical change cleared the modeled effect floor. Primary review
 
 ## V5 role-aware player leaders
 
-1. Cody Mathès Gakpo — Progressive Winger; rating 0.7771, VAEP/90 +0.324, xT/90 +0.075, role-adjusted 0.633
-2. Memphis Depay — Target Forward; rating 0.7622, VAEP/90 +0.589, xT/90 +0.047, role-adjusted 0.599
-3. Daley Blind — Wide Creator; rating 0.6441, VAEP/90 +0.140, xT/90 +0.051, role-adjusted 0.588
-4. Denzel Dumfries — Attacking Wingback; rating 0.6188, VAEP/90 +0.136, xT/90 +0.050, role-adjusted 0.479
-5. Frenkie de Jong — Box-to-Box / Engine Midfielder; rating 0.5535, VAEP/90 +0.060, xT/90 +0.028, role-adjusted 0.665
+1. Memphis Depay — Target Forward; rating 0.7260, VAEP/90 +0.589, xT/90 +0.047, role-adjusted 0.659
+2. Daley Blind — Wide Creator; rating 0.6665, VAEP/90 +0.140, xT/90 +0.051, role-adjusted 0.842
+3. Denzel Dumfries — Attacking Wingback; rating 0.6312, VAEP/90 +0.136, xT/90 +0.050, role-adjusted 0.542
+4. Cody Mathès Gakpo — Progressive Winger; rating 0.5976, VAEP/90 +0.324, xT/90 +0.075, role-adjusted 0.590
+5. Andries Noppert — Goalkeeper; rating 0.5806, VAEP/90 +0.054, xT/90 +0.001, role-adjusted 0.000
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 
@@ -68,11 +68,11 @@ _This challenger is isolated from 360-VAEP/xT player ratings, transition risk, r
 <!-- PLAYER_ROLE_VALIDATION_START -->
 ## V5 probabilistic role validation
 
-The production role model selected **K=13 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
+The production role model selected **K=9 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
 
-- Bootstrap ARI median: 0.6905
-- Bootstrap ARI fifth percentile: 0.6163
-- PCA explained variance: 0.8821
+- Bootstrap ARI median: 0.6887
+- Bootstrap ARI fifth percentile: 0.5522
+- PCA explained variance: 0.8688
 
 Roles do not award points directly. Continuous role dimensions only modulate the weights applied to observed contributions.
 <!-- PLAYER_ROLE_VALIDATION_END -->
@@ -84,12 +84,12 @@ Roles do not award points directly. Continuous role dimensions only modulate the
 
 | Task | Model | ROC-AUC | PR-AUC | ECE | Brier |
 |---|---|---:|---:|---:|---:|
-| Retrospective | Baseline | 0.6404 | 0.5652 | 0.0569 | 0.2350 |
-| Retrospective | Attention | 0.6011 | 0.5290 | 0.0285 | 0.2391 |
-| Prospective | Baseline | 0.8643 | 0.9725 | 0.1919 | 0.1423 |
-| Prospective | Attention | 0.7551 | 0.9414 | 0.0249 | 0.1105 |
+| Retrospective | Baseline | 0.6283 | 0.5179 | 0.0659 | 0.2364 |
+| Retrospective | Attention | 0.7258 | 0.6257 | 0.0169 | 0.2086 |
+| Prospective | Baseline | 0.8855 | 0.9763 | 0.1866 | 0.1389 |
+| Prospective | Attention | 0.8815 | 0.9750 | 0.0147 | 0.0907 |
 
-New-versus-legacy ranking Spearman correlation: 0.9848.
+New-versus-legacy ranking Spearman correlation: 0.7112.
 <!-- ROLE_AWARE_VALUATION_END -->
 
 <!-- CONTINUOUS_ROLE_REFINEMENT_START -->

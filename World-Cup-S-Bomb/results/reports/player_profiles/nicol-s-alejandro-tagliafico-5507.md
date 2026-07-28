@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Argentina
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0000
-- Global rank: 48
-- Position rank: 7
+- Global rank: 18
+- Position rank: 6
 - Role rank: 3
-- Team rank: 7
-- Final player rating: 0.6503
+- Team rank: 5
+- Final player rating: 0.6573
+- Global ranking eligibility: eligible
 - Minutes: 393.3
 - Minutes reliability: 0.5673
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.2323 |
+| vaep_off_scaled | 0.4595 |
+| vaep_def_scaled | 1.0000 |
 | vaep_per_touch | 0.0022 |
-| xt_p90 | 0.0210 |
-| role_adjusted_value | 0.6205 |
-| completeness_score | 0.7683 |
+| open_play_xt_p90 | 0.0047 |
+| set_piece_xt_p90 | 0.0132 |
+| role_adjusted_value | 0.3282 |
+| completeness_score | 0.6046 |
 | off_ball_score | 0.5326 |
 
 ## Continuous role vector

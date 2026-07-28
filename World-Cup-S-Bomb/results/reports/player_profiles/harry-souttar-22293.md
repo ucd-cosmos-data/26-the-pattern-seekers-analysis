@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Australia
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Defensive Centre-Back
-- Role entropy: 0.0001
-- Global rank: 127
+- Probabilistic role: Aerial/Defensive Centre-Back
+- Role entropy: 0.0000
+- Global rank: 124
 - Position rank: 36
-- Role rank: 18
-- Team rank: 5
-- Final player rating: 0.2990
+- Role rank: 19
+- Team rank: 7
+- Final player rating: 0.3638
+- Global ranking eligibility: eligible
 - Minutes: 386.9
 - Minutes reliability: 0.5633
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.1824 |
+| vaep_off_scaled | 0.3987 |
+| vaep_def_scaled | 0.1067 |
 | vaep_per_touch | -0.0019 |
-| xt_p90 | 0.0056 |
-| role_adjusted_value | 0.5496 |
-| completeness_score | 0.6975 |
+| open_play_xt_p90 | 0.0003 |
+| set_piece_xt_p90 | 0.0026 |
+| role_adjusted_value | 0.1997 |
+| completeness_score | 0.4495 |
 | off_ball_score | 0.4162 |
 
 ## Continuous role vector

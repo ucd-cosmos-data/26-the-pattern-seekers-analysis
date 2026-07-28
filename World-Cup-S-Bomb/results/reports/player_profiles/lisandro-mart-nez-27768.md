@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Argentina
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Defensive Centre-Back
+- Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 110
+- Global rank: 96
 - Position rank: 20
-- Role rank: 9
-- Team rank: 11
-- Final player rating: 0.3903
+- Role rank: 10
+- Team rank: 10
+- Final player rating: 0.4770
+- Global ranking eligibility: eligible
 - Minutes: 334.9
 - Minutes reliability: 0.5275
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0126 |
+| vaep_off_scaled | 0.4607 |
+| vaep_def_scaled | 0.7986 |
 | vaep_per_touch | -0.0001 |
-| xt_p90 | 0.0136 |
-| role_adjusted_value | 0.4583 |
-| completeness_score | 0.7964 |
+| open_play_xt_p90 | 0.0005 |
+| set_piece_xt_p90 | 0.0090 |
+| role_adjusted_value | 0.1222 |
+| completeness_score | 0.4261 |
 | off_ball_score | 0.4329 |
 
 ## Continuous role vector

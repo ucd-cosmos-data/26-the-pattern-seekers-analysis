@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Japan
 - Position group: Attacking Midfield/Wing
 - Functional role: Target Forward
-- Probabilistic role: Roaming Creator
-- Role entropy: 0.0084
-- Global rank: 33
+- Probabilistic role: Finishing/Creative Attacker
+- Role entropy: 0.0741
+- Global rank: 85
 - Position rank: 15
-- Role rank: 12
-- Team rank: 1
-- Final player rating: 0.6899
+- Role rank: 13
+- Team rank: 3
+- Final player rating: 0.4990
+- Global ranking eligibility: eligible
 - Minutes: 337.2
 - Minutes reliability: 0.5292
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1739 |
+| vaep_off_scaled | 0.1083 |
+| vaep_def_scaled | 0.3845 |
 | vaep_per_touch | 0.0018 |
-| xt_p90 | 0.0228 |
-| role_adjusted_value | 0.4981 |
-| completeness_score | 0.7196 |
+| open_play_xt_p90 | 0.0164 |
+| set_piece_xt_p90 | 0.0086 |
+| role_adjusted_value | 0.0000 |
+| completeness_score | 0.5781 |
 | off_ball_score | 0.5486 |
 
 ## Continuous role vector

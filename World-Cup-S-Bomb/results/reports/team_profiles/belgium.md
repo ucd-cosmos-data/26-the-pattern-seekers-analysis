@@ -22,7 +22,13 @@
 - Pressured pass sample: 230.0000
 - Mean ball-security score: not available
 
-## Squad ratings
+## Top five player summary
 
-_No eligible observations._
-_No player from this team reached the configured 300-minute ranking cutoff._
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| — | Jan Vertonghen | — | 284.2667 | — | Coverage only (<300 min) |
+| — | Kevin De Bruyne | — | 284.2667 | — | Coverage only (<300 min) |
+| — | Thibaut Courtois | — | 284.2667 | — | Coverage only (<300 min) |
+| — | Axel Witsel | — | 284.2667 | — | Coverage only (<300 min) |
+| — | Timothy Castagne | — | 284.2667 | — | Coverage only (<300 min) |
+_Coverage-only players are ordered by tournament minutes. No model rating assigned._

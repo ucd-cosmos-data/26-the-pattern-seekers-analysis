@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Poland
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Defensive Centre-Back
+- Probabilistic role: Aerial/Secure Centre-Back
 - Role entropy: 0.0000
-- Global rank: 107
-- Position rank: 17
+- Global rank: 92
+- Position rank: 18
 - Role rank: 8
-- Team rank: 7
-- Final player rating: 0.3978
+- Team rank: 6
+- Final player rating: 0.4824
+- Global ranking eligibility: eligible
 - Minutes: 389.8
 - Minutes reliability: 0.5651
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0229 |
+| vaep_off_scaled | 0.7678 |
+| vaep_def_scaled | 0.6820 |
 | vaep_per_touch | 0.0003 |
-| xt_p90 | 0.0043 |
-| role_adjusted_value | 0.4463 |
-| completeness_score | 0.6310 |
+| open_play_xt_p90 | 0.0030 |
+| set_piece_xt_p90 | -0.0003 |
+| role_adjusted_value | 0.2704 |
+| completeness_score | 0.3682 |
 | off_ball_score | 0.4936 |
 
 ## Continuous role vector

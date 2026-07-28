@@ -32,10 +32,12 @@ The original proposal is in
 
 `scripts/run_pipeline.py` is the production entry point for the extended player
 analysis. It preserves the existing match-cross-fitted VAEP/xT calculations,
-K-Means functional roles, 300-minute filter, and legacy ranking columns. It
+K-Means functional roles, 300-minute filter, and legacy comparison columns. It
 adds continuous role vectors, probabilistic GMM roles, spatial and passing
-network features, role-aware contribution, completeness, off-ball scoring,
-and empirical-Bayes minutes shrinkage.
+network features, independently scaled offensive and defensive value,
+match-grouped ElasticNet contribution models, top-dimension completeness,
+off-ball scoring, and empirical-Bayes minutes shrinkage. Goalkeepers use a
+separate evidence matrix and ranking rather than outfield zero-filled features.
 
 Run the complete pipeline from the repository root:
 
@@ -49,39 +51,45 @@ For a quick reproducibility run using already-validated legacy outputs:
 python .\scripts\run_pipeline.py --skip-legacy-foundation
 ```
 
-The optional lightweight spatial attention challenger is disabled by default:
+The lightweight spatial attention challenger is opt-in:
 
 ```powershell
 python .\scripts\run_pipeline.py --skip-legacy-foundation --enable-attention
 ```
 
 Its baseline and attention predictions are evaluated out of fold with
-match-disjoint `GroupKFold`. The attention layer is activated only when it
-meets both retrospective and prospective ROC-AUC/ECE gates. Failure prints the
-documented fallback message and continues with the role-aware layer. All
-attention is causal; future events are masked.
+match-disjoint `GroupKFold`. When it meets both retrospective and prospective
+ROC-AUC/ECE gates, its out-of-fold context signal enters a second
+match-grouped ElasticNet fit. Failure prints the documented fallback message
+and continues with the role-aware layer. All attention is causal; future
+events are masked.
 
-One canonical execution writes under `results/reports/`:
+One canonical execution writes the explicit V5 artifacts below under
+`results/reports/`, plus unversioned compatibility aliases:
 
-- `player_rankings.csv` and `player_rankings.json`
-- `coaches_notebook.md`
+- `v5_player_rankings.csv` and `v5_player_rankings.json`
+- `v5_coaches_notebook.md`
 - `model_summary.json` and `model_summary.md`
 - `final_summary.md`
 - 32 reports under `team_profiles/`
-- `rating_validation_comparison.csv`
-- `artifact_manifest.json` with SHA-256 hashes
-- 142 coverage-qualified reports under `player_profiles/`
+- coverage-qualified individual reports under `player_profiles/`
+- `v5_rating_validation_comparison.csv`
+- four diagnostic plots under `v5_figures/`
+- `v5_artifact_manifest.json` with SHA-256 hashes
 
 The same execution refreshes the downstream compatibility tables in
 `data/processed/player_evaluations.csv`,
 `data/processed/player_leaderboard.csv`,
 `results/reports/player_leaderboard.csv`, and
 `results/reports/team_player_leaderboards.csv`. The V4 possession and
-transition-model reports remain historical records; the V5 files above are
-canonical for player ratings.
+transition-model packets remain historical records; obsolete V4 final/model
+summaries are removed only after the complete V5 artifact set passes its
+publication checks.
 
-The current top five are Messi (0.8479), Mbappé (0.8086), Pulisic (0.8081),
-Raphinha (0.8012), and Griezmann (0.8001). See the
+The validated V5 top five outfield players are Messi (0.8371), Mbappé (0.8258),
+Julián Álvarez (0.7526), Vinícius Júnior (0.7354), and Ángel Di María
+(0.7329). Christian Pulisic is ninth after removing the former
+volume-generalist distortion. See the
 [`results/reports` index](results/reports/README.md) for the canonical reports
 and the boundary between V5 player values and historical V4 tactical outputs.
 
@@ -147,7 +155,7 @@ See the following reports for details:
 - [`results/MIscellaneous/stage5_leakage_audit.md`](results/MIscellaneous/stage5_leakage_audit.md)
 - [`results/reports/final_validation.csv`](results/reports/final_validation.csv)
 - [`results/eda_validation_report.json`](results/eda_validation_report.json)
-- [`results/Summary/v4_model_explanation_summary.md`](results/Summary/v4_model_explanation_summary.md)
+- [`results/reports/model_summary.md`](results/reports/model_summary.md)
 
 ## Environment
 
@@ -249,7 +257,7 @@ result tables, and figures are stored in `results/`.
 | `results/reports/final_validation.csv` | Side-by-side OOF metrics for all candidate architectures and the legacy baseline |
 | `results/reports/pipeline_manifest.json` | End-to-end runtime, artifact, count, and invariant checks |
 | `results/eda_validation_report.json` | Final acceptance and regression-test result |
-| `results/Summary/v4_model_explanation_summary.md` | Human-readable methodology, comparison, and player hierarchy |
+| `results/reports/model_summary.md` | Current methodology, validation gates, learned coefficients, goalkeeper audit, and player hierarchy |
 
 ## Validation design and limitations
 
@@ -318,8 +326,8 @@ nested or external validation.
 
 ## Project status and optional extensions
 
-The five-stage proposal and the leak-free V4 player-evaluation pipeline are
-complete. The production pipeline and final acceptance report currently pass,
+The five-stage tactical proposal and the leak-free V5 player-evaluation
+pipeline are complete. The production pipeline and final acceptance report pass,
 so none of the following items blocks use of the existing retrospective
 analysis:
 

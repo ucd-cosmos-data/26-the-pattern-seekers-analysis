@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: England
 - Position group: Forward
 - Functional role: Target Forward
-- Probabilistic role: Progressive Winger
-- Role entropy: 0.0008
-- Global rank: 26
-- Position rank: 8
+- Probabilistic role: Finishing/Creative Attacker
+- Role entropy: 0.0000
+- Global rank: 47
+- Position rank: 9
 - Role rank: 9
-- Team rank: 1
-- Final player rating: 0.7175
+- Team rank: 4
+- Final player rating: 0.5879
+- Global ranking eligibility: eligible
 - Minutes: 421.5
 - Minutes reliability: 0.5842
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.2750 |
+| vaep_off_scaled | 0.3455 |
+| vaep_def_scaled | 0.2891 |
 | vaep_per_touch | 0.0031 |
-| xt_p90 | 0.0474 |
-| role_adjusted_value | 0.6000 |
-| completeness_score | 0.5154 |
+| open_play_xt_p90 | 0.0333 |
+| set_piece_xt_p90 | 0.0069 |
+| role_adjusted_value | 0.8384 |
+| completeness_score | 0.4936 |
 | off_ball_score | 0.4045 |
 
 ## Continuous role vector

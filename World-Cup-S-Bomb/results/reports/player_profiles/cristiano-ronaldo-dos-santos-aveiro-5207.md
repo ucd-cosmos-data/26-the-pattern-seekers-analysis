@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Portugal
 - Position group: Forward
 - Functional role: Target Forward
-- Probabilistic role: Target Forward
-- Role entropy: 0.0001
-- Global rank: 22
-- Position rank: 7
-- Role rank: 8
-- Team rank: 3
-- Final player rating: 0.7282
+- Probabilistic role: Finishing/Aerial Forward
+- Role entropy: 0.0002
+- Global rank: 16
+- Position rank: 5
+- Role rank: 4
+- Team rank: 2
+- Final player rating: 0.6632
+- Global ranking eligibility: eligible
 - Minutes: 302.8
 - Minutes reliability: 0.5023
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.6654 |
+| vaep_off_scaled | 0.8854 |
+| vaep_def_scaled | 0.8013 |
 | vaep_per_touch | 0.0070 |
-| xt_p90 | 0.0091 |
-| role_adjusted_value | 0.5809 |
-| completeness_score | 0.5049 |
+| open_play_xt_p90 | 0.0103 |
+| set_piece_xt_p90 | 0.0041 |
+| role_adjusted_value | 0.7451 |
+| completeness_score | 0.3514 |
 | off_ball_score | 0.4866 |
 
 ## Continuous role vector

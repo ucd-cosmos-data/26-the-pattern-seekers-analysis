@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Australia
 - Position group: Forward
 - Functional role: Ball-Winner
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0016
-- Global rank: 66
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 118
 - Position rank: 12
-- Role rank: 6
-- Team rank: 3
-- Final player rating: 0.5723
+- Role rank: 15
+- Team rank: 5
+- Final player rating: 0.3902
+- Global ranking eligibility: eligible
 - Minutes: 373.8
 - Minutes reliability: 0.5547
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0089 |
+| vaep_off_scaled | 0.0000 |
+| vaep_def_scaled | 0.0000 |
 | vaep_per_touch | 0.0001 |
-| xt_p90 | 0.0285 |
-| role_adjusted_value | 0.5354 |
-| completeness_score | 0.7138 |
+| open_play_xt_p90 | 0.0097 |
+| set_piece_xt_p90 | 0.0105 |
+| role_adjusted_value | 0.0000 |
+| completeness_score | 0.5279 |
 | off_ball_score | 0.5217 |
 
 ## Continuous role vector

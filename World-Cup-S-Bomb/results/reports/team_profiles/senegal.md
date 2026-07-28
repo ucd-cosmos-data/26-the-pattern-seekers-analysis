@@ -22,14 +22,12 @@
 - Pressured pass sample: 224.0000
 - Mean ball-security score: 0.4805
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Ismaïla Sarr | Target Forward | 0.7976 |
-| 2 | Boulaye Dia | Target Forward | 0.6646 |
-| 3 | Youssouf Sabaly | Attacking Wingback | 0.6306 |
-| 4 | Kalidou Koulibaly | Sweeper CB | 0.4534 |
-| 5 | Abdou Diallo | Sweeper CB | 0.3828 |
-| 6 | Edouard Mendy | Goalkeeper | 0.1977 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Ismaïla Sarr | Target Forward | 365.2000 | 0.6553 | Ranked (300+ min) |
+| 2.0000 | Youssouf Sabaly | Attacking Wingback | 387.2833 | 0.6216 | Ranked (300+ min) |
+| 3.0000 | Kalidou Koulibaly | Sweeper CB | 387.2833 | 0.5927 | Ranked (300+ min) |
+| 4.0000 | Abdou Diallo | Sweeper CB | 348.5833 | 0.4803 | Ranked (300+ min) |
+| 5.0000 | Boulaye Dia | Target Forward | 330.0500 | 0.4795 | Ranked (300+ min) |

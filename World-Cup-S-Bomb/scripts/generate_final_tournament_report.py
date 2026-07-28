@@ -489,11 +489,13 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             "recovery proxies. Positive values indicate a modeled lineup edge."
         ),
         (
-            "- **Final player rating:** one cross-role score using 50% VAEP total per 90, "
-            "30% VAEP per touch, and 20% xT per 90."
+            "- **Final outfield rating:** 40% independently scaled offensive/defensive "
+            "VAEP evidence, 15% VAEP per touch, 15% xT per 90, 15% grouped-ElasticNet "
+            "role-adjusted value, 10% top-three quality-adjusted completeness, and 5% "
+            "coverage-qualified off-ball contribution."
         ),
         "",
-        "## V4 validation and final metrics",
+        "## Tactical-foundation validation and V5 player metrics",
         "",
         (
             f"**Validation status: {validation_status}.** The leakage-safe OOF audit "
@@ -503,7 +505,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
         ),
         "",
         markdown_table(
-            ["Team/model validation metric", "V4 final value"],
+            ["Team/model validation metric", "Validated value"],
             [
                 ["OOF positives", manifest["tournament_oof_metrics"]["positives"]],
                 ["OOF Brier score", f"{manifest['tournament_oof_metrics']['brier']:.6f}"],
@@ -529,7 +531,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
         ),
         "",
         markdown_table(
-            ["Player/report validation metric", "V4 final value"],
+            ["Player/report validation metric", "Validated value"],
             [
                 ["Players before cutoff", provenance["players_before_cutoff"]],
                 ["Eligible players (300+ minutes)", provenance["players_after_cutoff"]],
@@ -546,7 +548,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
         ),
         "",
         (
-            "All V4 acceptance gates passed, including missing-value-free output, complete OOF team "
+            "All tactical-foundation acceptance gates passed, including missing-value-free output, complete OOF team "
             "coverage, held-out-match exclusion, the 300-minute cutoff, fullback spatial-role "
             "safeguards, exact pressure discounting, within-role normalization, SB360 coverage, "
             "counterfactual safety, compiled-report completeness, and locked-classifier replay."
@@ -845,16 +847,19 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             "",
             (
                 "These leaderboards contain only players with at least 300 tournament "
-                "minutes. Every player uses the same unified VAEP+xT formula, so team "
-                "rankings no longer sort role-standardized values across incompatible "
-                "peer groups. Position sections remain navigation aids."
+                "minutes. Outfield players use the V5 continuous valuation formula; "
+                "goalkeepers use a separate evidence matrix and are not assigned a global "
+                "outfield rank. Position sections remain navigation aids."
             ),
             "",
-            "## Unified V4 rating construction",
+            "## V5 rating construction",
             "",
-            "- 360-Augmented VAEP total per 90: 50%.",
-            "- VAEP per touch: 30%.",
-            "- Independent successful-pass/carry xT per 90: 20%.",
+            "- Independently scaled offensive/defensive VAEP evidence: 40%.",
+            "- VAEP per touch: 15%.",
+            "- Independent successful-pass/carry xT per 90: 15%.",
+            "- Match-grouped ElasticNet role-adjusted value: 15%.",
+            "- Top-three quality-adjusted completeness: 10%.",
+            "- Coverage-qualified off-ball contribution: 5%.",
             "- Successful event endpoints and SB360 actor snapshots use the StatsBomb 120x80 pitch.",
             "- Fullbacks above 35% combined final-third share are classified as Attacking Wingbacks.",
             "",
@@ -864,11 +869,10 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
         [
             "",
             (
-                "**Goalkeeper warning:** the source features do not provide a complete "
-                "provider post-shot-xG model. The report uses on-target StatsBomb shot xG "
-                "as an explicitly labeled proxy, then adds goals prevented, claims, sweeping "
-                "location, and pressured distribution. It remains unsuitable as a standalone "
-                "goalkeeper selection model."
+                "**Goalkeeper boundary:** public events do not provide provider PSxG. "
+                "Goalkeepers therefore use a separately cross-fitted post-shot proxy plus "
+                "save, cross-stopping, sweeping, pressured-distribution, and separately "
+                "shrunk penalty evidence. They are excluded from global outfield ranking."
             ),
             "",
         ]
@@ -943,10 +947,11 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                 "artifact over the supplied tournament data. It is not a randomized or causal study."
             ),
             (
-                "- V4 preserves the schema-checked calibrated transition classifier and "
+                "- V5 preserves the schema-checked calibrated transition classifier and "
                 "64-match leave-one-match-out audit while replacing the player layer with "
-                "300-minute eligibility, SB360 spatial context, and unified VAEP+xT scoring. "
-                "Threshold abstention still prevents weak transition warnings."
+                "match-grouped ElasticNet valuation, independent offense/defense scaling, "
+                "goalkeeper bifurcation, and gated causal attention context. Threshold "
+                "abstention still prevents weak transition warnings."
             ),
             (
                 "- Rare transition events create high variance. Aggregate patterns and "

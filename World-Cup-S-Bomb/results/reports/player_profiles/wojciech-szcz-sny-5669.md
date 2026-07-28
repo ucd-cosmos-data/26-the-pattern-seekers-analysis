@@ -9,11 +9,12 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Goalkeeper
 - Probabilistic role: Goalkeeper
 - Role entropy: 0.0000
-- Global rank: 141
-- Position rank: 15
-- Role rank: 15
-- Team rank: 8
-- Final player rating: 0.1634
+- Global rank: not available
+- Position rank: 2
+- Role rank: 2
+- Team rank: 1
+- Final player rating: 0.6371
+- Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 389.8
 - Minutes reliability: 0.5651
 
@@ -21,12 +22,15 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.2055 |
-| vaep_per_touch | -0.0033 |
-| xt_p90 | 0.0047 |
-| role_adjusted_value | 0.3728 |
-| completeness_score | 0.2845 |
-| off_ball_score | 0.2921 |
+| post_shot_xg_proxy | 12.3807 |
+| goals_prevented_proxy_p90 | 1.7043 |
+| save_rate | 0.8333 |
+| claims_p90 | 1.6164 |
+| cross_stopping_rate | 0.1014 |
+| sweeper_actions_p90 | 0.6928 |
+| distribution_under_pressure | 0.5000 |
+| penalty_save_rate_shrunk | 0.4571 |
+| goalkeeper_feature_coverage | 1.0000 |
 
 ## Continuous role vector
 

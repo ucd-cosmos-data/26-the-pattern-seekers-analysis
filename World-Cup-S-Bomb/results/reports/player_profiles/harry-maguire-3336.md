@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: England
 - Position group: Center Back
 - Functional role: Deep Playmaker
-- Probabilistic role: Defensive Centre-Back
+- Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 73
+- Global rank: 28
 - Position rank: 1
 - Role rank: 1
-- Team rank: 4
-- Final player rating: 0.5361
+- Team rank: 3
+- Final player rating: 0.6336
+- Global ranking eligibility: eligible
 - Minutes: 453.7
 - Minutes reliability: 0.6020
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1502 |
+| vaep_off_scaled | 1.0000 |
+| vaep_def_scaled | 0.9761 |
 | vaep_per_touch | 0.0007 |
-| xt_p90 | 0.0346 |
-| role_adjusted_value | 0.6578 |
-| completeness_score | 0.7556 |
+| open_play_xt_p90 | 0.0098 |
+| set_piece_xt_p90 | 0.0125 |
+| role_adjusted_value | 0.6419 |
+| completeness_score | 0.5456 |
 | off_ball_score | 0.4843 |
 
 ## Continuous role vector

@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Brazil
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
-- Probabilistic role: Roaming Creator
+- Probabilistic role: Creative/Progressive/Pressing Fullback
 - Role entropy: 0.0000
-- Global rank: 4
-- Position rank: 3
-- Role rank: 4
-- Team rank: 1
-- Final player rating: 0.8012
+- Global rank: 20
+- Position rank: 5
+- Role rank: 7
+- Team rank: 3
+- Final player rating: 0.6537
+- Global ranking eligibility: eligible
 - Minutes: 330.4
 - Minutes reliability: 0.5241
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.4774 |
+| vaep_off_scaled | 0.6966 |
+| vaep_def_scaled | 0.3479 |
 | vaep_per_touch | 0.0035 |
-| xt_p90 | 0.1698 |
-| role_adjusted_value | 0.5490 |
-| completeness_score | 0.8145 |
+| open_play_xt_p90 | 0.0737 |
+| set_piece_xt_p90 | 0.1056 |
+| role_adjusted_value | 0.3760 |
+| completeness_score | 0.6201 |
 | off_ball_score | 0.4773 |
 
 ## Continuous role vector

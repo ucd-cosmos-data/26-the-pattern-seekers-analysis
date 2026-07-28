@@ -22,16 +22,12 @@
 - Pressured pass sample: 176.0000
 - Mean ball-security score: 0.4223
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Robert Lewandowski | Target Forward / Penalty-Box Anchor | 0.7329 |
-| 2 | Piotr Zieliński | Ball-Winner | 0.6704 |
-| 3 | Bartosz Bereszyński | Wide Creator | 0.5850 |
-| 4 | Grzegorz Krychowiak | Ball-Winner | 0.4934 |
-| 5 | Matty Cash | Box-to-Box Runner | 0.4505 |
-| 6 | Jakub Piotr Kiwior | Sweeper CB | 0.4032 |
-| 7 | Kamil Glik | Sweeper CB | 0.3978 |
-| 8 | Wojciech Szczęsny | Goalkeeper | 0.1634 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Wojciech Szczęsny | Goalkeeper | 389.7500 | 0.6371 | Ranked (300+ min) |
+| 2.0000 | Robert Lewandowski | Target Forward / Penalty-Box Anchor | 389.7500 | 0.6260 | Ranked (300+ min) |
+| 3.0000 | Bartosz Bereszyński | Wide Creator | 365.7333 | 0.5679 | Ranked (300+ min) |
+| 4.0000 | Grzegorz Krychowiak | Ball-Winner | 347.8833 | 0.5033 | Ranked (300+ min) |
+| 5.0000 | Piotr Zieliński | Ball-Winner | 344.4167 | 0.5030 | Ranked (300+ min) |

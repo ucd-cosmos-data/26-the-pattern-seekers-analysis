@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Croatia
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive/Pressing Fullback
 - Role entropy: 0.0000
-- Global rank: 68
-- Position rank: 21
-- Role rank: 11
+- Global rank: 87
+- Position rank: 24
+- Role rank: 12
 - Team rank: 6
-- Final player rating: 0.5633
+- Final player rating: 0.4912
+- Global ranking eligibility: eligible
 - Minutes: 624.1
 - Minutes reliability: 0.6754
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0353 |
+| vaep_off_scaled | 0.1874 |
+| vaep_def_scaled | 0.3940 |
 | vaep_per_touch | 0.0002 |
-| xt_p90 | 0.0695 |
-| role_adjusted_value | 0.5576 |
-| completeness_score | 0.6896 |
+| open_play_xt_p90 | 0.0129 |
+| set_piece_xt_p90 | 0.0547 |
+| role_adjusted_value | 0.1140 |
+| completeness_score | 0.6183 |
 | off_ball_score | 0.4298 |
 
 ## Continuous role vector

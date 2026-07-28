@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Morocco
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
-- Probabilistic role: Target Forward
+- Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0000
-- Global rank: 51
+- Global rank: 95
 - Position rank: 11
 - Role rank: 3
-- Team rank: 4
-- Final player rating: 0.6363
+- Team rank: 8
+- Final player rating: 0.4783
+- Global ranking eligibility: eligible
 - Minutes: 553.8
 - Minutes reliability: 0.6486
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.2282 |
+| vaep_off_scaled | 0.2553 |
+| vaep_def_scaled | 0.2968 |
 | vaep_per_touch | 0.0046 |
-| xt_p90 | -0.0001 |
-| role_adjusted_value | 0.5732 |
-| completeness_score | 0.4167 |
+| open_play_xt_p90 | 0.0043 |
+| set_piece_xt_p90 | 0.0008 |
+| role_adjusted_value | 0.4332 |
+| completeness_score | 0.4599 |
 | off_ball_score | 0.4394 |
 
 ## Continuous role vector

@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Portugal
 - Position group: Attacking Midfield/Wing
 - Functional role: Target Forward
-- Probabilistic role: Progressive Winger
-- Role entropy: 0.0002
-- Global rank: 17
-- Position rank: 11
-- Role rank: 6
-- Team rank: 1
-- Final player rating: 0.7621
+- Probabilistic role: Finishing/Creative Attacker
+- Role entropy: 0.0022
+- Global rank: 37
+- Position rank: 7
+- Role rank: 8
+- Team rank: 4
+- Final player rating: 0.6119
+- Global ranking eligibility: eligible
 - Minutes: 340.2
 - Minutes reliability: 0.5314
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.4051 |
+| vaep_off_scaled | 0.5552 |
+| vaep_def_scaled | 0.3680 |
 | vaep_per_touch | 0.0035 |
-| xt_p90 | 0.0463 |
-| role_adjusted_value | 0.5715 |
-| completeness_score | 0.7133 |
+| open_play_xt_p90 | 0.0310 |
+| set_piece_xt_p90 | 0.0137 |
+| role_adjusted_value | 0.6300 |
+| completeness_score | 0.5175 |
 | off_ball_score | 0.4915 |
 
 ## Continuous role vector

@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Ghana
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Defensive Centre-Back
+- Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 101
-- Position rank: 12
-- Role rank: 5
-- Team rank: 2
-- Final player rating: 0.4153
+- Global rank: 63
+- Position rank: 8
+- Role rank: 4
+- Team rank: 1
+- Final player rating: 0.5546
+- Global ranking eligibility: eligible
 - Minutes: 301.2
 - Minutes reliability: 0.5010
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0131 |
+| vaep_off_scaled | 0.6234 |
+| vaep_def_scaled | 0.7673 |
 | vaep_per_touch | 0.0001 |
-| xt_p90 | 0.0187 |
-| role_adjusted_value | 0.5554 |
-| completeness_score | 0.6437 |
+| open_play_xt_p90 | 0.0028 |
+| set_piece_xt_p90 | 0.0070 |
+| role_adjusted_value | 0.9428 |
+| completeness_score | 0.5507 |
 | off_ball_score | 0.5039 |
 
 ## Continuous role vector

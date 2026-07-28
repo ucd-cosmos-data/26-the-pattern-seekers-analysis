@@ -36,11 +36,11 @@ Argentina: no tactical change cleared the modeled effect floor. Primary review s
 
 ## V5 role-aware player leaders
 
-1. Lionel Andrés Messi Cuccittini — Progressive Winger; rating 0.8479, VAEP/90 +0.694, xT/90 +0.158, role-adjusted 0.731
-2. Ángel Fabián Di María Hernández — Progressive Winger; rating 0.7925, VAEP/90 +0.786, xT/90 +0.200, role-adjusted 0.620
-3. Julián Álvarez — Target Forward; rating 0.7630, VAEP/90 +0.636, xT/90 +0.032, role-adjusted 0.638
-4. Marcos Javier Acuña — Attacking Wingback; rating 0.7182, VAEP/90 +0.446, xT/90 +0.068, role-adjusted 0.598
-5. Alexis Mac Allister — Ball-Winner; rating 0.6838, VAEP/90 +0.284, xT/90 +0.007, role-adjusted 0.617
+1. Lionel Andrés Messi Cuccittini — Progressive Winger; rating 0.8371, VAEP/90 +0.694, xT/90 +0.158, role-adjusted 1.000
+2. Julián Álvarez — Target Forward; rating 0.7526, VAEP/90 +0.636, xT/90 +0.032, role-adjusted 0.890
+3. Ángel Fabián Di María Hernández — Progressive Winger; rating 0.7329, VAEP/90 +0.786, xT/90 +0.200, role-adjusted 0.954
+4. Marcos Javier Acuña — Attacking Wingback; rating 0.6948, VAEP/90 +0.446, xT/90 +0.068, role-adjusted 0.288
+5. Nicolás Alejandro Tagliafico — Wide Creator; rating 0.6573, VAEP/90 +0.232, xT/90 +0.021, role-adjusted 0.328
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 
@@ -68,11 +68,11 @@ _This challenger is isolated from 360-VAEP/xT player ratings, transition risk, r
 <!-- PLAYER_ROLE_VALIDATION_START -->
 ## V5 probabilistic role validation
 
-The production role model selected **K=13 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
+The production role model selected **K=9 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
 
-- Bootstrap ARI median: 0.6905
-- Bootstrap ARI fifth percentile: 0.6163
-- PCA explained variance: 0.8821
+- Bootstrap ARI median: 0.6887
+- Bootstrap ARI fifth percentile: 0.5522
+- PCA explained variance: 0.8688
 
 Roles do not award points directly. Continuous role dimensions only modulate the weights applied to observed contributions.
 <!-- PLAYER_ROLE_VALIDATION_END -->
@@ -84,12 +84,12 @@ Roles do not award points directly. Continuous role dimensions only modulate the
 
 | Task | Model | ROC-AUC | PR-AUC | ECE | Brier |
 |---|---|---:|---:|---:|---:|
-| Retrospective | Baseline | 0.6404 | 0.5652 | 0.0569 | 0.2350 |
-| Retrospective | Attention | 0.6011 | 0.5290 | 0.0285 | 0.2391 |
-| Prospective | Baseline | 0.8643 | 0.9725 | 0.1919 | 0.1423 |
-| Prospective | Attention | 0.7551 | 0.9414 | 0.0249 | 0.1105 |
+| Retrospective | Baseline | 0.6283 | 0.5179 | 0.0659 | 0.2364 |
+| Retrospective | Attention | 0.7258 | 0.6257 | 0.0169 | 0.2086 |
+| Prospective | Baseline | 0.8855 | 0.9763 | 0.1866 | 0.1389 |
+| Prospective | Attention | 0.8815 | 0.9750 | 0.0147 | 0.0907 |
 
-New-versus-legacy ranking Spearman correlation: 0.9848.
+New-versus-legacy ranking Spearman correlation: 0.7112.
 <!-- ROLE_AWARE_VALUATION_END -->
 
 <!-- CONTINUOUS_ROLE_REFINEMENT_START -->

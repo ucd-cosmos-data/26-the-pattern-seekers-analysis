@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Spain
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
-- Probabilistic role: Defensive Centre-Back
+- Probabilistic role: Aerial/Secure Centre-Back
 - Role entropy: 0.0000
-- Global rank: 83
-- Position rank: 2
-- Role rank: 1
+- Global rank: 56
+- Position rank: 6
+- Role rank: 2
 - Team rank: 3
-- Final player rating: 0.4818
+- Final player rating: 0.5688
+- Global ranking eligibility: eligible
 - Minutes: 413.9
 - Minutes reliability: 0.5798
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0428 |
+| vaep_off_scaled | 0.8775 |
+| vaep_def_scaled | 0.6721 |
 | vaep_per_touch | 0.0001 |
-| xt_p90 | 0.0496 |
-| role_adjusted_value | 0.6928 |
-| completeness_score | 0.7038 |
+| open_play_xt_p90 | 0.0086 |
+| set_piece_xt_p90 | 0.0241 |
+| role_adjusted_value | 0.2567 |
+| completeness_score | 0.5973 |
 | off_ball_score | 0.5868 |
 
 ## Continuous role vector

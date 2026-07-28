@@ -22,15 +22,12 @@
 - Pressured pass sample: 219.0000
 - Mean ball-security score: 0.4821
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Heung-Min Son | Target Forward | 0.7624 |
-| 2 | Jin-Su Kim | Attacking Wingback | 0.6469 |
-| 3 | Moon-Hwan Kim | Attacking Wingback | 0.6242 |
-| 4 | In-Beom Hwang | Box-to-Box / Engine Midfielder | 0.5809 |
-| 5 | Woo-Young Jung | Ball-Winner | 0.5092 |
-| 6 | Young-Gwon Kim | Sweeper CB | 0.4653 |
-| 7 | Seung-Gyu Kim | Goalkeeper | 0.1676 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Jin-Su Kim | Attacking Wingback | 340.6833 | 0.6518 | Ranked (300+ min) |
+| 2.0000 | Young-Gwon Kim | Sweeper CB | 373.1833 | 0.6239 | Ranked (300+ min) |
+| 3.0000 | Moon-Hwan Kim | Attacking Wingback | 389.6500 | 0.5775 | Ranked (300+ min) |
+| 4.0000 | Heung-Min Son | Target Forward | 389.6500 | 0.5768 | Ranked (300+ min) |
+| 5.0000 | In-Beom Hwang | Box-to-Box / Engine Midfielder | 360.1167 | 0.5706 | Ranked (300+ min) |

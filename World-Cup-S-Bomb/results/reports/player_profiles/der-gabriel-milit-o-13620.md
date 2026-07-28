@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Brazil
 - Position group: Fullback/Wingback
 - Functional role: Box-to-Box Runner
-- Probabilistic role: Defensive Centre-Back
-- Role entropy: 0.0000
-- Global rank: 62
-- Position rank: 18
-- Role rank: 3
-- Team rank: 5
-- Final player rating: 0.5869
+- Probabilistic role: Creative/Progressive/Pressing Fullback
+- Role entropy: 0.1232
+- Global rank: 61
+- Position rank: 20
+- Role rank: 2
+- Team rank: 6
+- Final player rating: 0.5580
+- Global ranking eligibility: eligible
 - Minutes: 363.6
 - Minutes reliability: 0.5479
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0677 |
+| vaep_off_scaled | 0.1921 |
+| vaep_def_scaled | 0.5806 |
 | vaep_per_touch | 0.0004 |
-| xt_p90 | 0.0324 |
-| role_adjusted_value | 0.6082 |
-| completeness_score | 0.8074 |
+| open_play_xt_p90 | -0.0002 |
+| set_piece_xt_p90 | 0.0166 |
+| role_adjusted_value | 0.4074 |
+| completeness_score | 0.6642 |
 | off_ball_score | 0.5744 |
 
 ## Continuous role vector

@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Netherlands
 - Position group: Center Back
 - Functional role: Deep Playmaker
-- Probabilistic role: Defensive Centre-Back
-- Role entropy: 0.0164
-- Global rank: 116
-- Position rank: 26
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0037
+- Global rank: 106
+- Position rank: 27
 - Role rank: 7
-- Team rank: 6
-- Final player rating: 0.3631
+- Team rank: 7
+- Final player rating: 0.4512
+- Global ranking eligibility: eligible
 - Minutes: 409.4
 - Minutes reliability: 0.5771
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0593 |
+| vaep_off_scaled | 0.3590 |
+| vaep_def_scaled | 0.6837 |
 | vaep_per_touch | -0.0003 |
-| xt_p90 | 0.0190 |
-| role_adjusted_value | 0.5731 |
-| completeness_score | 0.6298 |
+| open_play_xt_p90 | 0.0072 |
+| set_piece_xt_p90 | 0.0042 |
+| role_adjusted_value | 0.0105 |
+| completeness_score | 0.5587 |
 | off_ball_score | 0.5598 |
 
 ## Continuous role vector

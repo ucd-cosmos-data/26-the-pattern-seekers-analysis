@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: United States
 - Position group: Defensive Midfield
 - Functional role: Holding / Controlling Midfielder
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0004
-- Global rank: 87
-- Position rank: 16
-- Role rank: 1
-- Team rank: 6
-- Final player rating: 0.4673
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 111
+- Position rank: 19
+- Role rank: 2
+- Team rank: 7
+- Final player rating: 0.4335
+- Global ranking eligibility: eligible
 - Minutes: 391.2
 - Minutes reliability: 0.5660
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0310 |
+| vaep_off_scaled | 0.1795 |
+| vaep_def_scaled | 0.3443 |
 | vaep_per_touch | -0.0002 |
-| xt_p90 | 0.0347 |
-| role_adjusted_value | 0.7058 |
-| completeness_score | 0.6543 |
+| open_play_xt_p90 | 0.0110 |
+| set_piece_xt_p90 | 0.0125 |
+| role_adjusted_value | 0.0906 |
+| completeness_score | 0.7841 |
 | off_ball_score | 0.6634 |
 
 ## Continuous role vector

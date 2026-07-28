@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: France
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
-- Probabilistic role: Roaming Creator
+- Probabilistic role: Creative/Progressive/Pressing Fullback
 - Role entropy: 0.0000
-- Global rank: 9
-- Position rank: 7
-- Role rank: 7
-- Team rank: 3
-- Final player rating: 0.7850
+- Global rank: 55
+- Position rank: 14
+- Role rank: 10
+- Team rank: 6
+- Final player rating: 0.5705
+- Global ranking eligibility: eligible
 - Minutes: 448.0
 - Minutes reliability: 0.5989
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.3506 |
+| vaep_off_scaled | 0.4429 |
+| vaep_def_scaled | 0.4347 |
 | vaep_per_touch | 0.0027 |
-| xt_p90 | 0.1122 |
-| role_adjusted_value | 0.5442 |
-| completeness_score | 0.9155 |
+| open_play_xt_p90 | 0.0587 |
+| set_piece_xt_p90 | 0.0452 |
+| role_adjusted_value | 0.1916 |
+| completeness_score | 0.5758 |
 | off_ball_score | 0.4848 |
 
 ## Continuous role vector

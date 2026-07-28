@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Netherlands
 - Position group: Defensive Midfield
 - Functional role: Box-to-Box / Engine Midfielder
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.1992
-- Global rank: 71
-- Position rank: 7
-- Role rank: 9
-- Team rank: 5
-- Final player rating: 0.5535
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 65
+- Position rank: 8
+- Role rank: 7
+- Team rank: 6
+- Final player rating: 0.5482
+- Global ranking eligibility: eligible
 - Minutes: 499.5
 - Minutes reliability: 0.6247
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0600 |
+| vaep_off_scaled | 0.3383 |
+| vaep_def_scaled | 0.7061 |
 | vaep_per_touch | 0.0003 |
-| xt_p90 | 0.0281 |
-| role_adjusted_value | 0.6650 |
-| completeness_score | 0.8793 |
+| open_play_xt_p90 | 0.0133 |
+| set_piece_xt_p90 | 0.0072 |
+| role_adjusted_value | 0.3591 |
+| completeness_score | 0.6830 |
 | off_ball_score | 0.6336 |
 
 ## Continuous role vector

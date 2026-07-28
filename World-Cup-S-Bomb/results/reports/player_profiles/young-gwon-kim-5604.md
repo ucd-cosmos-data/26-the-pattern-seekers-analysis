@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: South Korea
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Defensive Centre-Back
+- Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 88
-- Position rank: 4
-- Role rank: 2
-- Team rank: 6
-- Final player rating: 0.4653
+- Global rank: 32
+- Position rank: 2
+- Role rank: 1
+- Team rank: 2
+- Final player rating: 0.6239
+- Global ranking eligibility: eligible
 - Minutes: 373.2
 - Minutes reliability: 0.5544
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0522 |
+| vaep_off_scaled | 0.5578 |
+| vaep_def_scaled | 0.9975 |
 | vaep_per_touch | 0.0004 |
-| xt_p90 | 0.0231 |
-| role_adjusted_value | 0.5988 |
-| completeness_score | 0.7399 |
+| open_play_xt_p90 | 0.0114 |
+| set_piece_xt_p90 | 0.0053 |
+| role_adjusted_value | 0.8467 |
+| completeness_score | 0.6098 |
 | off_ball_score | 0.4270 |
 
 ## Continuous role vector

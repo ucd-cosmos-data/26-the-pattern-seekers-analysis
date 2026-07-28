@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Australia
 - Position group: Defensive Midfield
 - Functional role: Box-to-Box Runner
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0006
-- Global rank: 90
-- Position rank: 18
-- Role rank: 6
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 97
+- Position rank: 16
+- Role rank: 4
 - Team rank: 4
-- Final player rating: 0.4618
+- Final player rating: 0.4732
+- Global ranking eligibility: eligible
 - Minutes: 386.9
 - Minutes reliability: 0.5633
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0151 |
+| vaep_off_scaled | 0.1331 |
+| vaep_def_scaled | 0.6008 |
 | vaep_per_touch | -0.0001 |
-| xt_p90 | 0.0294 |
-| role_adjusted_value | 0.5232 |
-| completeness_score | 0.7108 |
+| open_play_xt_p90 | 0.0025 |
+| set_piece_xt_p90 | 0.0223 |
+| role_adjusted_value | 0.0306 |
+| completeness_score | 0.6003 |
 | off_ball_score | 0.5760 |
 
 ## Continuous role vector

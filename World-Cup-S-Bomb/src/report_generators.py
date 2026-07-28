@@ -219,7 +219,6 @@ def refresh_prospective_validation_reporting(
         raise FileNotFoundError(validation_path)
     section = prospective_validation_markdown(summary)
     markdown_targets = [
-        project_root / "results/Summary/v4_model_explanation_summary.md",
         project_root
         / "results/reports/final/world_cup_team_performance_and_top_players.md",
         project_root / "results/MIscellaneous/coaching_model_benchmark.md",
@@ -385,7 +384,6 @@ def refresh_player_role_validation_reporting(
         raise FileNotFoundError(validation_path)
     section = player_role_validation_markdown(summary)
     markdown_targets = [
-        project_root / "results/Summary/v4_model_explanation_summary.md",
         project_root
         / "results/reports/final/world_cup_team_performance_and_top_players.md",
         *sorted((project_root / "results/reports/teams").glob("*.md")),
@@ -587,7 +585,6 @@ def refresh_role_aware_validation_reporting(
         raise FileNotFoundError(validation_path)
     section = role_aware_validation_markdown(summary)
     targets = [
-        project_root / "results/Summary/v4_model_explanation_summary.md",
         project_root
         / "results/reports/final/world_cup_team_performance_and_top_players.md",
         *sorted((project_root / "results/reports/teams").glob("*.md")),
@@ -683,7 +680,6 @@ def refresh_role_refinement_reporting(
         raise ValueError("Role refinement has not been promoted")
     section = role_refinement_markdown(summary)
     targets = [
-        project_root / "results/Summary/v4_model_explanation_summary.md",
         project_root
         / "results/reports/final/world_cup_team_performance_and_top_players.md",
         *sorted((project_root / "results/reports/teams").glob("*.md")),
@@ -1215,9 +1211,12 @@ def generate_full_team_coaching_reports(
 
 {player_lines}
 
-_Only players with at least 300 tournament minutes are ranked. Every player
-uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
-and 20% spatial xT per 90._
+_Only players with at least 300 tournament minutes are ranked. Outfield V5
+ratings combine independently scaled offensive/defensive VAEP evidence (40%),
+VAEP per touch (15%), xT per 90 (15%), match-grouped ElasticNet role-adjusted
+value (15%), top-three quality-adjusted completeness (10%), and
+coverage-qualified off-ball contribution (5%). Goalkeepers use a separate
+evidence matrix and ranking._
 
 ## Recurrent tactical mistakes
 

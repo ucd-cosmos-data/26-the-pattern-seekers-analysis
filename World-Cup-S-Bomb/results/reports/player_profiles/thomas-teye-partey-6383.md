@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Ghana
 - Position group: Defensive Midfield
 - Functional role: Ball-Winner
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0012
-- Global rank: 89
-- Position rank: 17
-- Role rank: 16
-- Team rank: 1
-- Final player rating: 0.4639
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 114
+- Position rank: 20
+- Role rank: 14
+- Team rank: 3
+- Final player rating: 0.4125
+- Global ranking eligibility: eligible
 - Minutes: 301.2
 - Minutes reliability: 0.5010
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0780 |
+| vaep_off_scaled | 0.1799 |
+| vaep_def_scaled | 0.0000 |
 | vaep_per_touch | -0.0005 |
-| xt_p90 | 0.0443 |
-| role_adjusted_value | 0.6647 |
-| completeness_score | 0.8433 |
+| open_play_xt_p90 | 0.0150 |
+| set_piece_xt_p90 | 0.0180 |
+| role_adjusted_value | 0.1888 |
+| completeness_score | 0.6513 |
 | off_ball_score | 0.6763 |
 
 ## Continuous role vector

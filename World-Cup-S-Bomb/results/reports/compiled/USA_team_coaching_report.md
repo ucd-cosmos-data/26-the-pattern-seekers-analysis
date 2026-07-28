@@ -36,11 +36,11 @@ United States: no tactical change cleared the modeled effect floor. Primary revi
 
 ## V5 role-aware player leaders
 
-1. Christian Pulisic — Progressive Winger; rating 0.8081, VAEP/90 +0.527, xT/90 +0.114, role-adjusted 0.658
-2. Timothy Weah — Progressive Winger; rating 0.7446, VAEP/90 +0.466, xT/90 +0.018, role-adjusted 0.548
-3. Yunus Dimoara Musah — Box-to-Box / Engine Midfielder; rating 0.6638, VAEP/90 +0.118, xT/90 +0.046, role-adjusted 0.599
-4. Antonee Robinson — Attacking Wingback; rating 0.6612, VAEP/90 +0.186, xT/90 +0.085, role-adjusted 0.605
-5. Sergino Dest — Attacking Wingback; rating 0.6278, VAEP/90 +0.103, xT/90 +0.098, role-adjusted 0.558
+1. Christian Pulisic — Progressive Winger; rating 0.6972, VAEP/90 +0.527, xT/90 +0.114, role-adjusted 0.643
+2. Matthew Charles Turner — Goalkeeper; rating 0.6497, VAEP/90 -0.126, xT/90 +0.003, role-adjusted 0.000
+3. Timothy Weah — Progressive Winger; rating 0.6484, VAEP/90 +0.466, xT/90 +0.018, role-adjusted 0.321
+4. Sergino Dest — Attacking Wingback; rating 0.6472, VAEP/90 +0.103, xT/90 +0.098, role-adjusted 0.833
+5. Antonee Robinson — Attacking Wingback; rating 0.6006, VAEP/90 +0.186, xT/90 +0.085, role-adjusted 0.075
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 
@@ -68,11 +68,11 @@ _This challenger is isolated from 360-VAEP/xT player ratings, transition risk, r
 <!-- PLAYER_ROLE_VALIDATION_START -->
 ## V5 probabilistic role validation
 
-The production role model selected **K=13 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
+The production role model selected **K=9 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
 
-- Bootstrap ARI median: 0.6905
-- Bootstrap ARI fifth percentile: 0.6163
-- PCA explained variance: 0.8821
+- Bootstrap ARI median: 0.6887
+- Bootstrap ARI fifth percentile: 0.5522
+- PCA explained variance: 0.8688
 
 Roles do not award points directly. Continuous role dimensions only modulate the weights applied to observed contributions.
 <!-- PLAYER_ROLE_VALIDATION_END -->
@@ -84,12 +84,12 @@ Roles do not award points directly. Continuous role dimensions only modulate the
 
 | Task | Model | ROC-AUC | PR-AUC | ECE | Brier |
 |---|---|---:|---:|---:|---:|
-| Retrospective | Baseline | 0.6404 | 0.5652 | 0.0569 | 0.2350 |
-| Retrospective | Attention | 0.6011 | 0.5290 | 0.0285 | 0.2391 |
-| Prospective | Baseline | 0.8643 | 0.9725 | 0.1919 | 0.1423 |
-| Prospective | Attention | 0.7551 | 0.9414 | 0.0249 | 0.1105 |
+| Retrospective | Baseline | 0.6283 | 0.5179 | 0.0659 | 0.2364 |
+| Retrospective | Attention | 0.7258 | 0.6257 | 0.0169 | 0.2086 |
+| Prospective | Baseline | 0.8855 | 0.9763 | 0.1866 | 0.1389 |
+| Prospective | Attention | 0.8815 | 0.9750 | 0.0147 | 0.0907 |
 
-New-versus-legacy ranking Spearman correlation: 0.9848.
+New-versus-legacy ranking Spearman correlation: 0.7112.
 <!-- ROLE_AWARE_VALUATION_END -->
 
 <!-- CONTINUOUS_ROLE_REFINEMENT_START -->

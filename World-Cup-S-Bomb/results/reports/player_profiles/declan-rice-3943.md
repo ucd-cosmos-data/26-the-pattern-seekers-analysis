@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: England
 - Position group: Defensive Midfield
 - Functional role: Ball-Winner
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0040
-- Global rank: 77
-- Position rank: 10
-- Role rank: 11
-- Team rank: 5
-- Final player rating: 0.5097
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 102
+- Position rank: 17
+- Role rank: 13
+- Team rank: 6
+- Final player rating: 0.4604
+- Global ranking eligibility: eligible
 - Minutes: 449.6
 - Minutes reliability: 0.5998
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0431 |
+| vaep_off_scaled | 0.3535 |
+| vaep_def_scaled | 0.5219 |
 | vaep_per_touch | 0.0002 |
-| xt_p90 | 0.0222 |
-| role_adjusted_value | 0.6504 |
-| completeness_score | 0.5680 |
+| open_play_xt_p90 | 0.0082 |
+| set_piece_xt_p90 | 0.0035 |
+| role_adjusted_value | 0.0000 |
+| completeness_score | 0.6178 |
 | off_ball_score | 0.6362 |
 
 ## Continuous role vector

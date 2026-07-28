@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: South Korea
 - Position group: Attacking Midfield/Wing
 - Functional role: Target Forward
-- Probabilistic role: Progressive Winger
-- Role entropy: 0.0001
-- Global rank: 15
-- Position rank: 10
-- Role rank: 4
-- Team rank: 1
-- Final player rating: 0.7624
+- Probabilistic role: Finishing/Creative Attacker
+- Role entropy: 0.0028
+- Global rank: 53
+- Position rank: 13
+- Role rank: 11
+- Team rank: 4
+- Final player rating: 0.5768
+- Global ranking eligibility: eligible
 - Minutes: 389.6
 - Minutes reliability: 0.5650
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.3846 |
+| vaep_off_scaled | 0.5194 |
+| vaep_def_scaled | 0.3347 |
 | vaep_per_touch | 0.0038 |
-| xt_p90 | 0.0781 |
-| role_adjusted_value | 0.4311 |
-| completeness_score | 0.7012 |
+| open_play_xt_p90 | 0.0316 |
+| set_piece_xt_p90 | 0.0413 |
+| role_adjusted_value | 0.1754 |
+| completeness_score | 0.4185 |
 | off_ball_score | 0.3675 |
 
 ## Continuous role vector

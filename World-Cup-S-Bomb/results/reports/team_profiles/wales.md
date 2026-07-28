@@ -22,7 +22,13 @@
 - Pressured pass sample: 194.0000
 - Mean ball-security score: not available
 
-## Squad ratings
+## Top five player summary
 
-_No eligible observations._
-_No player from this team reached the configured 300-minute ranking cutoff._
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| — | Chris Mepham | — | 296.7167 | — | Coverage only (<300 min) |
+| — | Joe Rodon | — | 296.7167 | — | Coverage only (<300 min) |
+| — | Aaron Ramsey | — | 281.3833 | — | Coverage only (<300 min) |
+| — | Ethan Ampadu | — | 265.5667 | — | Coverage only (<300 min) |
+| — | Ben Davies | — | 261.3333 | — | Coverage only (<300 min) |
+_Coverage-only players are ordered by tournament minutes. No model rating assigned._

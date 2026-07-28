@@ -22,17 +22,12 @@
 - Pressured pass sample: 343.0000
 - Mean ball-security score: 0.4606
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | João Félix Sequeira | Target Forward | 0.7621 |
-| 2 | Bruno Miguel Borges Fernandes | Hybrid Playmaker / Roaming Creator | 0.7574 |
-| 3 | Cristiano Ronaldo dos Santos Aveiro | Target Forward | 0.7282 |
-| 4 | Bernardo Mota Veiga de Carvalho e Silva | Box-to-Box / Engine Midfielder | 0.7162 |
-| 5 | Raphaël Adelino José Guerreiro | Wide Creator | 0.6856 |
-| 6 | João Pedro Cavaco Cancelo | Box-to-Box Runner | 0.6614 |
-| 7 | Kléper Laveran Lima Ferreira | Sweeper CB | 0.4796 |
-| 8 | Rúben Santos Gato Alves Dias | Sweeper CB | 0.4096 |
-| 9 | Diogo Meireles Costa | Goalkeeper | 0.1803 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Raphaël Adelino José Guerreiro | Wide Creator | 303.6167 | 0.7296 | Ranked (300+ min) |
+| 2.0000 | Cristiano Ronaldo dos Santos Aveiro | Target Forward | 302.8000 | 0.6632 | Ranked (300+ min) |
+| 3.0000 | João Pedro Cavaco Cancelo | Box-to-Box Runner | 344.5500 | 0.6406 | Ranked (300+ min) |
+| 4.0000 | João Félix Sequeira | Target Forward | 340.2333 | 0.6119 | Ranked (300+ min) |
+| 5.0000 | Kléper Laveran Lima Ferreira | Sweeper CB | 389.2833 | 0.5942 | Ranked (300+ min) |

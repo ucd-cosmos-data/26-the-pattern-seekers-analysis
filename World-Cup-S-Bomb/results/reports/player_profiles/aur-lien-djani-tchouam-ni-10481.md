@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: France
 - Position group: Defensive Midfield
 - Functional role: Holding / Controlling Midfielder
-- Probabilistic role: Controlling Midfielder
-- Role entropy: 0.0004
-- Global rank: 91
-- Position rank: 19
-- Role rank: 2
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 76
+- Position rank: 11
+- Role rank: 1
 - Team rank: 8
-- Final player rating: 0.4591
+- Final player rating: 0.5130
+- Global ranking eligibility: eligible
 - Minutes: 662.2
 - Minutes reliability: 0.6882
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0437 |
+| vaep_off_scaled | 0.0400 |
+| vaep_def_scaled | 0.6006 |
 | vaep_per_touch | -0.0002 |
-| xt_p90 | 0.0375 |
-| role_adjusted_value | 0.7005 |
-| completeness_score | 0.8425 |
+| open_play_xt_p90 | 0.0160 |
+| set_piece_xt_p90 | 0.0111 |
+| role_adjusted_value | 0.4444 |
+| completeness_score | 0.6471 |
 | off_ball_score | 0.6448 |
 
 ## Continuous role vector

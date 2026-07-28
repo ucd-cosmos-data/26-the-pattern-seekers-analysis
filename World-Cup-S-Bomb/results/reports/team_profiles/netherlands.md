@@ -22,17 +22,12 @@
 - Pressured pass sample: 370.0000
 - Mean ball-security score: 0.4279
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Cody Mathès Gakpo | Progressive Winger | 0.7771 |
-| 2 | Memphis Depay | Target Forward | 0.7622 |
-| 3 | Daley Blind | Wide Creator | 0.6441 |
-| 4 | Denzel Dumfries | Attacking Wingback | 0.6188 |
-| 5 | Frenkie de Jong | Box-to-Box / Engine Midfielder | 0.5535 |
-| 6 | Jurriën David Norman Timber | Deep Playmaker | 0.3631 |
-| 7 | Nathan Aké | Deep Playmaker | 0.3554 |
-| 8 | Virgil van Dijk | Sweeper CB | 0.3442 |
-| 9 | Andries Noppert | Goalkeeper | 0.3400 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Memphis Depay | Target Forward | 315.5833 | 0.7260 | Ranked (300+ min) |
+| 2.0000 | Daley Blind | Wide Creator | 452.4833 | 0.6665 | Ranked (300+ min) |
+| 3.0000 | Denzel Dumfries | Attacking Wingback | 509.5167 | 0.6312 | Ranked (300+ min) |
+| 4.0000 | Cody Mathès Gakpo | Progressive Winger | 460.2167 | 0.5976 | Ranked (300+ min) |
+| 5.0000 | Andries Noppert | Goalkeeper | 509.5167 | 0.5806 | Ranked (300+ min) |

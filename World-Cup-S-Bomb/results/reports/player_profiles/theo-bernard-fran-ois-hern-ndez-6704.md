@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: France
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0000
-- Global rank: 46
-- Position rank: 6
-- Role rank: 4
-- Team rank: 5
-- Final player rating: 0.6582
+- Global rank: 12
+- Position rank: 3
+- Role rank: 2
+- Team rank: 2
+- Final player rating: 0.6874
+- Global ranking eligibility: eligible
 - Minutes: 548.5
 - Minutes reliability: 0.6464
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1593 |
+| vaep_off_scaled | 0.3451 |
+| vaep_def_scaled | 0.8134 |
 | vaep_per_touch | 0.0011 |
-| xt_p90 | 0.0466 |
-| role_adjusted_value | 0.6461 |
-| completeness_score | 0.8964 |
+| open_play_xt_p90 | 0.0213 |
+| set_piece_xt_p90 | 0.0292 |
+| role_adjusted_value | 0.8562 |
+| completeness_score | 0.6518 |
 | off_ball_score | 0.4947 |
 
 ## Continuous role vector

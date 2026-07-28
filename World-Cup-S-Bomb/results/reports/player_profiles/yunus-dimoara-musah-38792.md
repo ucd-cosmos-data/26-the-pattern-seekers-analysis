@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: United States
 - Position group: Central/Wide Midfield
 - Functional role: Box-to-Box / Engine Midfielder
-- Probabilistic role: Box-to-Box Midfielder
-- Role entropy: 0.1060
-- Global rank: 41
-- Position rank: 11
-- Role rank: 4
-- Team rank: 3
-- Final player rating: 0.6638
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0000
+- Global rank: 112
+- Position rank: 12
+- Role rank: 11
+- Team rank: 8
+- Final player rating: 0.4310
+- Global ranking eligibility: eligible
 - Minutes: 364.9
 - Minutes reliability: 0.5488
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1181 |
+| vaep_off_scaled | 0.0964 |
+| vaep_def_scaled | 0.0848 |
 | vaep_per_touch | 0.0009 |
-| xt_p90 | 0.0460 |
-| role_adjusted_value | 0.5986 |
-| completeness_score | 0.8288 |
+| open_play_xt_p90 | 0.0167 |
+| set_piece_xt_p90 | 0.0210 |
+| role_adjusted_value | 0.1666 |
+| completeness_score | 0.6349 |
 | off_ball_score | 0.6371 |
 
 ## Continuous role vector

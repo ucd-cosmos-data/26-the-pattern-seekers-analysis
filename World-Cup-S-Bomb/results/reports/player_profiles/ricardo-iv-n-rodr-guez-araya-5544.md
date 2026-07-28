@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Switzerland
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Probabilistic role: Attacking Wingback
+- Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0000
-- Global rank: 72
-- Position rank: 23
+- Global rank: 82
+- Position rank: 22
 - Role rank: 10
-- Team rank: 3
-- Final player rating: 0.5390
+- Team rank: 4
+- Final player rating: 0.5013
+- Global ranking eligibility: eligible
 - Minutes: 380.2
 - Minutes reliability: 0.5590
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.0240 |
+| vaep_off_scaled | 0.1010 |
+| vaep_def_scaled | 0.5085 |
 | vaep_per_touch | 0.0002 |
-| xt_p90 | 0.0444 |
-| role_adjusted_value | 0.5859 |
-| completeness_score | 0.4533 |
+| open_play_xt_p90 | 0.0131 |
+| set_piece_xt_p90 | 0.0226 |
+| role_adjusted_value | 0.1135 |
+| completeness_score | 0.3929 |
 | off_ball_score | 0.3870 |
 
 ## Continuous role vector

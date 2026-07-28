@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Brazil
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
-- Probabilistic role: Defensive Centre-Back
-- Role entropy: 0.0004
-- Global rank: 104
-- Position rank: 14
-- Role rank: 6
-- Team rank: 8
-- Final player rating: 0.4115
+- Probabilistic role: Aerial/Secure Centre-Back
+- Role entropy: 0.0000
+- Global rank: 60
+- Position rank: 7
+- Role rank: 3
+- Team rank: 5
+- Final player rating: 0.5648
+- Global ranking eligibility: eligible
 - Minutes: 455.0
 - Minutes reliability: 0.6027
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | -0.0240 |
+| vaep_off_scaled | 0.2603 |
+| vaep_def_scaled | 0.9265 |
 | vaep_per_touch | -0.0001 |
-| xt_p90 | 0.0340 |
-| role_adjusted_value | 0.6165 |
-| completeness_score | 0.7829 |
+| open_play_xt_p90 | 0.0149 |
+| set_piece_xt_p90 | 0.0095 |
+| role_adjusted_value | 0.4104 |
+| completeness_score | 0.5596 |
 | off_ball_score | 0.5205 |
 
 ## Continuous role vector

@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Brazil
 - Position group: Defensive Midfield
 - Functional role: Ball-Winner
-- Probabilistic role: Roaming Creator
-- Role entropy: 0.0001
-- Global rank: 61
-- Position rank: 4
-- Role rank: 5
+- Probabilistic role: Pressing/Defensive Midfielder
+- Role entropy: 0.0175
+- Global rank: 25
+- Position rank: 3
+- Role rank: 2
 - Team rank: 4
-- Final player rating: 0.5959
+- Final player rating: 0.6459
+- Global ranking eligibility: eligible
 - Minutes: 318.8
 - Minutes reliability: 0.5152
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.1547 |
+| vaep_off_scaled | 0.5685 |
+| vaep_def_scaled | 0.9129 |
 | vaep_per_touch | 0.0010 |
-| xt_p90 | 0.0425 |
-| role_adjusted_value | 0.6518 |
-| completeness_score | 0.7987 |
+| open_play_xt_p90 | 0.0227 |
+| set_piece_xt_p90 | 0.0105 |
+| role_adjusted_value | 0.7549 |
+| completeness_score | 0.7315 |
 | off_ball_score | 0.6617 |
 
 ## Continuous role vector

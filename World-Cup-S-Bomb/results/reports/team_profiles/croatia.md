@@ -22,18 +22,12 @@
 - Pressured pass sample: 537.0000
 - Mean ball-security score: 0.5304
 
-## Squad ratings
+## Top five player summary
 
-| Team Rank | Player Name | Functional Role | Final Player Rating |
-|---|---|---|---|
-| 1 | Ivan Perišić | Wide Creator | 0.7778 |
-| 2 | Mateo Kovačić | Box-to-Box / Engine Midfielder | 0.7244 |
-| 3 | Andrej Kramarić | Target Forward | 0.7020 |
-| 4 | Luka Modrić | Deep Playmaker / Metronome | 0.6724 |
-| 5 | Borna Sosa | Wide Creator | 0.6271 |
-| 6 | Josip Juranović | Attacking Wingback | 0.5633 |
-| 7 | Marcelo Brozović | Box-to-Box / Engine Midfielder | 0.4578 |
-| 8 | Joško Gvardiol | Ball-Playing Centre-Back | 0.4121 |
-| 9 | Dejan Lovren | Deep Playmaker | 0.3959 |
-| 10 | Dominik Livaković | Goalkeeper | 0.1560 |
-
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| 1.0000 | Borna Sosa | Wide Creator | 440.4667 | 0.6170 | Ranked (300+ min) |
+| 2.0000 | Ivan Perišić | Wide Creator | 686.8167 | 0.6081 | Ranked (300+ min) |
+| 3.0000 | Andrej Kramarić | Target Forward | 478.4333 | 0.5837 | Ranked (300+ min) |
+| 4.0000 | Dominik Livaković | Goalkeeper | 720.2833 | 0.5503 | Ranked (300+ min) |
+| 5.0000 | Joško Gvardiol | Ball-Playing Centre-Back | 720.2833 | 0.5028 | Ranked (300+ min) |

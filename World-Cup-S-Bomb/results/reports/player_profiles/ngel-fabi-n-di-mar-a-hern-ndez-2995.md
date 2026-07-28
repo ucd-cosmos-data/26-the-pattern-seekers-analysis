@@ -7,13 +7,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Argentina
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
-- Probabilistic role: Roaming Creator
-- Role entropy: 0.0000
-- Global rank: 8
-- Position rank: 1
-- Role rank: 6
-- Team rank: 2
-- Final player rating: 0.7925
+- Probabilistic role: Creative/Progressive/Pressing Fullback
+- Role entropy: 0.0001
+- Global rank: 5
+- Position rank: 2
+- Role rank: 4
+- Team rank: 3
+- Final player rating: 0.7329
+- Global ranking eligibility: eligible
 - Minutes: 304.8
 - Minutes reliability: 0.5040
 
@@ -21,11 +22,13 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 | Metric | Value |
 |---|---|
-| vaep_total_p90 | 0.7859 |
+| vaep_off_scaled | 1.0000 |
+| vaep_def_scaled | 0.8096 |
 | vaep_per_touch | 0.0045 |
-| xt_p90 | 0.1997 |
-| role_adjusted_value | 0.6199 |
-| completeness_score | 0.7900 |
+| open_play_xt_p90 | 0.0681 |
+| set_piece_xt_p90 | 0.1233 |
+| role_adjusted_value | 0.9535 |
+| completeness_score | 0.6129 |
 | off_ball_score | 0.5308 |
 
 ## Continuous role vector

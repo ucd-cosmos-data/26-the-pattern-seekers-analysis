@@ -22,7 +22,13 @@
 - Pressured pass sample: 170.0000
 - Mean ball-security score: not available
 
-## Squad ratings
+## Top five player summary
 
-_No eligible observations._
-_No player from this team reached the configured 300-minute ranking cutoff._
+| Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
+|---|---|---|---|---|---|
+| — | Steven de Sousa Vitoria | — | 284.9667 | — | Coverage only (<300 min) |
+| — | Alphonso Davies | — | 284.9667 | — | Coverage only (<300 min) |
+| — | Milan Borjan | — | 284.9667 | — | Coverage only (<300 min) |
+| — | Kamal Miller | — | 284.9667 | — | Coverage only (<300 min) |
+| — | Alistair Johnston | — | 284.9667 | — | Coverage only (<300 min) |
+_Coverage-only players are ordered by tournament minutes. No model rating assigned._
