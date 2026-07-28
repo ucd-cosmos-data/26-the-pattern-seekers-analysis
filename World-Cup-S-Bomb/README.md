@@ -140,8 +140,16 @@ With `notebooks/all_events.csv` present, run these commands in order:
 .venv/bin/python scripts/benchmark_recommendation_models.py
 .venv/bin/python scripts/benchmark_transition_models.py
 .venv/bin/python scripts/run_team_simulation_reports.py
+.venv/bin/python scripts/quantify_player_rating_uncertainty.py
+.venv/bin/python scripts/annotate_reports_with_uncertainty.py
 .venv/bin/python scripts/eda_validation_checks.py --final
 ```
+
+`quantify_player_rating_uncertainty.py` writes the per-player uncertainty table;
+`annotate_reports_with_uncertainty.py` then folds those confidence figures into
+the compiled team markdowns. Both are additive and idempotent — they change no
+grade — and must run after `run_team_simulation_reports.py` regenerates the
+reports, so the annotations are not lost.
 
 The 360 download is cached by match and resumes from valid existing files.
 Pass `--force` only when a complete redownload is intended.
