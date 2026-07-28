@@ -36,11 +36,12 @@ Argentina: no tactical change cleared the modeled effect floor. Primary review s
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Lionel Andrés Messi Cuccittini — Progressive Winger; rating 0.3297, VAEP/90 +0.694, xT/90 +0.158
-2. Julián Álvarez — Target Forward; rating 0.2905, VAEP/90 +0.636, xT/90 +0.032
-3. Ángel Fabián Di María Hernández — Progressive Winger; rating 0.2879, VAEP/90 +0.786, xT/90 +0.200
-4. Marcos Javier Acuña — Attacking Wingback; rating 0.1687, VAEP/90 +0.446, xT/90 +0.068
-5. Alexis Mac Allister — Ball-Winner; rating 0.1423, VAEP/90 +0.284, xT/90 +0.007
+1. Lionel Andrés Messi Cuccittini — Progressive Winger; rating 0.3297, VAEP/90 +0.694, xT/90 +0.158 [95% CI 0.2111–0.4524]
+2. Julián Álvarez — Target Forward; rating 0.2905, VAEP/90 +0.636, xT/90 +0.032 [95% CI 0.1847–0.4221]
+3. Ángel Fabián Di María Hernández — Progressive Winger; rating 0.2879, VAEP/90 +0.786, xT/90 +0.200 [95% CI 0.1297–0.3794]
+4. Marcos Javier Acuña — Attacking Wingback; rating 0.1687, VAEP/90 +0.446, xT/90 +0.068 [95% CI 0.0615–0.3653]
+5. Alexis Mac Allister — Ball-Winner; rating 0.1423, VAEP/90 +0.284, xT/90 +0.007 [95% CI 0.0992–0.1812]
+- Rank confidence: P(Lionel Andrés Messi Cuccittini is the team's true #1) = 63% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

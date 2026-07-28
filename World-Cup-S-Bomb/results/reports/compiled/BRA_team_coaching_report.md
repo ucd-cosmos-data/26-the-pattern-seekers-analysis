@@ -36,11 +36,12 @@ Brazil: no tactical change cleared the modeled effect floor. Primary review sign
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Richarlison de Andrade — Target Forward; rating 0.2984, VAEP/90 +0.708, xT/90 +0.012
-2. Raphael Dias Belloli — Progressive Winger; rating 0.2420, VAEP/90 +0.477, xT/90 +0.170
-3. Vinícius José Paixão de Oliveira Júnior — Progressive Winger; rating 0.2296, VAEP/90 +0.584, xT/90 +0.124
-4. Lucas Tolentino Coelho de Lima — Ball-Winner; rating 0.0589, VAEP/90 +0.155, xT/90 +0.043
-5. Éder Gabriel Militão — Box-to-Box Runner; rating 0.0570, VAEP/90 +0.068, xT/90 +0.032
+1. Richarlison de Andrade — Target Forward; rating 0.2984, VAEP/90 +0.708, xT/90 +0.012 [95% CI 0.2532–0.3272]
+2. Raphael Dias Belloli — Progressive Winger; rating 0.2420, VAEP/90 +0.477, xT/90 +0.170 [95% CI 0.1768–0.3097]
+3. Vinícius José Paixão de Oliveira Júnior — Progressive Winger; rating 0.2296, VAEP/90 +0.584, xT/90 +0.124 [95% CI 0.1527–0.3090]
+4. Lucas Tolentino Coelho de Lima — Ball-Winner; rating 0.0589, VAEP/90 +0.155, xT/90 +0.043 [95% CI 0.0279–0.1024]
+5. Éder Gabriel Militão — Box-to-Box Runner; rating 0.0570, VAEP/90 +0.068, xT/90 +0.032 [95% CI 0.0165–0.0888]
+- Rank confidence: P(Richarlison de Andrade is the team's true #1) = 89% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

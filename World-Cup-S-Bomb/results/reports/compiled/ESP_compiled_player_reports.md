@@ -21,6 +21,8 @@
 - Final-third spatial share: 2.6%
 - Unified final player rating: 0.0089
 - Team rank: #4
+- Rating 95% CI: [-0.0060, 0.0218] (bootstrap SE 0.0073)
+- Rank stability: bootstrap mean rank 4.0; P(team #1) 0%, P(top 3) 27%
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/4353_heatmap.svg)
 
@@ -65,6 +67,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 22.0%
 - Unified final player rating: 0.0032
 - Team rank: #5
+- Rating 95% CI: [-0.0418, 0.0446] (bootstrap SE 0.0242)
+- Rank stability: bootstrap mean rank 4.2; P(team #1) 0%, P(top 3) 31%
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/5203_heatmap.svg)
 
@@ -109,6 +113,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 7.4%
 - Unified final player rating: 0.0147
 - Team rank: #3
+- Rating 95% CI: [-0.0305, 0.0468] (bootstrap SE 0.0201)
+- Rank stability: bootstrap mean rank 3.8; P(team #1) 0%, P(top 3) 40%
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/6765_heatmap.svg)
 
@@ -153,6 +159,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 0.0%
 - Unified final player rating: -0.0582
 - Team rank: #6
+- Rating 95% CI: [-0.0804, -0.0339] (bootstrap SE 0.0119)
+- Rank stability: bootstrap mean rank 6.0; P(team #1) 0%, P(top 3) 0%
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/11748_heatmap.svg)
 
@@ -197,6 +205,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 51.0%
 - Unified final player rating: 0.2554
 - Team rank: #1
+- Rating 95% CI: [0.1899, 0.3302] (bootstrap SE 0.0379)
+- Rank stability: bootstrap mean rank 1.0; P(team #1) 98%, P(top 3) 98%
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/16532_heatmap.svg)
 
@@ -241,6 +251,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 28.9%
 - Unified final player rating: 0.1236
 - Team rank: #2
+- Rating 95% CI: [0.0878, 0.1721] (bootstrap SE 0.0214)
+- Rank stability: bootstrap mean rank 2.0; P(team #1) 0%, P(top 3) 98%
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/30486_heatmap.svg)
 

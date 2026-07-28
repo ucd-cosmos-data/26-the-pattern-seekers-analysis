@@ -36,11 +36,12 @@ France: no tactical change cleared the modeled effect floor. Primary review sign
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Kylian Mbappé Lottin — Progressive Winger; rating 0.3127, VAEP/90 +0.643, xT/90 +0.134
-2. Olivier Giroud — Target Forward / Penalty-Box Anchor; rating 0.2377, VAEP/90 +0.476, xT/90 +0.008
-3. Ousmane Dembélé — Progressive Winger; rating 0.2020, VAEP/90 +0.351, xT/90 +0.112
-4. Antoine Griezmann — Hybrid Playmaker / Roaming Creator; rating 0.1995, VAEP/90 +0.343, xT/90 +0.117
-5. Adrien Rabiot — Ball-Winner; rating 0.0915, VAEP/90 +0.246, xT/90 +0.013
+1. Kylian Mbappé Lottin — Progressive Winger; rating 0.3127, VAEP/90 +0.643, xT/90 +0.134 [95% CI 0.2109–0.4304]
+2. Olivier Giroud — Target Forward / Penalty-Box Anchor; rating 0.2377, VAEP/90 +0.476, xT/90 +0.008 [95% CI 0.1910–0.2812]
+3. Ousmane Dembélé — Progressive Winger; rating 0.2020, VAEP/90 +0.351, xT/90 +0.112 [95% CI 0.1393–0.2580]
+4. Antoine Griezmann — Hybrid Playmaker / Roaming Creator; rating 0.1995, VAEP/90 +0.343, xT/90 +0.117 [95% CI 0.1293–0.2785]
+5. Adrien Rabiot — Ball-Winner; rating 0.0915, VAEP/90 +0.246, xT/90 +0.013 [95% CI 0.0405–0.1430]
+- Rank confidence: P(Kylian Mbappé Lottin is the team's true #1) = 94% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

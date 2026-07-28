@@ -36,11 +36,12 @@ Spain: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Daniel Olmo Carvajal — Progressive Winger; rating 0.2554, VAEP/90 +0.555, xT/90 +0.072
-2. Pedro González López — Ball-Winner; rating 0.1236, VAEP/90 +0.180, xT/90 +0.105
-3. Rodrigo Hernández Cascante — Ball-Playing Centre-Back; rating 0.0147, VAEP/90 +0.043, xT/90 +0.050
-4. Aymeric Laporte — Deep Playmaker; rating 0.0089, VAEP/90 +0.040, xT/90 +0.025
-5. Sergio Busquets i Burgos — Ball-Winner; rating 0.0032, VAEP/90 -0.055, xT/90 +0.046
+1. Daniel Olmo Carvajal — Progressive Winger; rating 0.2554, VAEP/90 +0.555, xT/90 +0.072 [95% CI 0.1899–0.3302]
+2. Pedro González López — Ball-Winner; rating 0.1236, VAEP/90 +0.180, xT/90 +0.105 [95% CI 0.0878–0.1721]
+3. Rodrigo Hernández Cascante — Ball-Playing Centre-Back; rating 0.0147, VAEP/90 +0.043, xT/90 +0.050 [95% CI -0.0305–0.0468]
+4. Aymeric Laporte — Deep Playmaker; rating 0.0089, VAEP/90 +0.040, xT/90 +0.025 [95% CI -0.0060–0.0218]
+5. Sergio Busquets i Burgos — Ball-Winner; rating 0.0032, VAEP/90 -0.055, xT/90 +0.046 [95% CI -0.0418–0.0446]
+- Rank confidence: P(Daniel Olmo Carvajal is the team's true #1) = 98% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

@@ -36,11 +36,12 @@ Portugal: no tactical change cleared the modeled effect floor. Primary review si
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Cristiano Ronaldo dos Santos Aveiro — Target Forward; rating 0.2844, VAEP/90 +0.665, xT/90 +0.009
-2. João Félix Sequeira — Target Forward; rating 0.2101, VAEP/90 +0.405, xT/90 +0.046
-3. Bruno Miguel Borges Fernandes — Hybrid Playmaker / Roaming Creator; rating 0.1671, VAEP/90 +0.220, xT/90 +0.128
-4. Bernardo Mota Veiga de Carvalho e Silva — Box-to-Box / Engine Midfielder; rating 0.1382, VAEP/90 +0.251, xT/90 +0.058
-5. Raphaël Adelino José Guerreiro — Wide Creator; rating 0.1134, VAEP/90 +0.267, xT/90 +0.076
+1. Cristiano Ronaldo dos Santos Aveiro — Target Forward; rating 0.2844, VAEP/90 +0.665, xT/90 +0.009 [95% CI 0.2078–0.3604]
+2. João Félix Sequeira — Target Forward; rating 0.2101, VAEP/90 +0.405, xT/90 +0.046 [95% CI 0.1595–0.2786]
+3. Bruno Miguel Borges Fernandes — Hybrid Playmaker / Roaming Creator; rating 0.1671, VAEP/90 +0.220, xT/90 +0.128 [95% CI 0.1332–0.2087]
+4. Bernardo Mota Veiga de Carvalho e Silva — Box-to-Box / Engine Midfielder; rating 0.1382, VAEP/90 +0.251, xT/90 +0.058 [95% CI 0.1086–0.1724]
+5. Raphaël Adelino José Guerreiro — Wide Creator; rating 0.1134, VAEP/90 +0.267, xT/90 +0.076 [95% CI 0.0717–0.1483]
+- Rank confidence: P(Cristiano Ronaldo dos Santos Aveiro is the team's true #1) = 100% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

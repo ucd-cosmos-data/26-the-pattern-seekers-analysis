@@ -36,11 +36,12 @@ Morocco: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Youssef En-Nesyri — Target Forward / Penalty-Box Anchor; rating 0.1563, VAEP/90 +0.228, xT/90 -0.000
-2. Sofiane Boufal — Box-to-Box / Engine Midfielder; rating 0.1268, VAEP/90 +0.205, xT/90 +0.079
-3. Hakim Ziyech — Box-to-Box Runner; rating 0.1034, VAEP/90 +0.084, xT/90 +0.071
-4. Azzedine Ounahi — Box-to-Box / Engine Midfielder; rating 0.0974, VAEP/90 +0.137, xT/90 +0.036
-5. Yahia Attiyat allah — Wide Creator; rating 0.0839, VAEP/90 +0.165, xT/90 +0.033
+1. Youssef En-Nesyri — Target Forward / Penalty-Box Anchor; rating 0.1563, VAEP/90 +0.228, xT/90 -0.000 [95% CI 0.1084–0.2222]
+2. Sofiane Boufal — Box-to-Box / Engine Midfielder; rating 0.1268, VAEP/90 +0.205, xT/90 +0.079 [95% CI 0.1024–0.1534]
+3. Hakim Ziyech — Box-to-Box Runner; rating 0.1034, VAEP/90 +0.084, xT/90 +0.071 [95% CI 0.0385–0.1673]
+4. Azzedine Ounahi — Box-to-Box / Engine Midfielder; rating 0.0974, VAEP/90 +0.137, xT/90 +0.036 [95% CI 0.0702–0.1338]
+5. Yahia Attiyat allah — Wide Creator; rating 0.0839, VAEP/90 +0.165, xT/90 +0.033 [95% CI 0.0488–0.1230]
+- Rank confidence: P(Youssef En-Nesyri is the team's true #1) = 76% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

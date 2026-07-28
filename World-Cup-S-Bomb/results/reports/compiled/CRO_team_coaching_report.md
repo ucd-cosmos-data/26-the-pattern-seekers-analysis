@@ -36,11 +36,12 @@ Croatia: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Ivan Perišić — Wide Creator; rating 0.2144, VAEP/90 +0.407, xT/90 +0.065
-2. Andrej Kramarić — Target Forward; rating 0.1937, VAEP/90 +0.365, xT/90 +0.010
-3. Mateo Kovačić — Box-to-Box / Engine Midfielder; rating 0.1302, VAEP/90 +0.225, xT/90 +0.065
-4. Luka Modrić — Deep Playmaker / Metronome; rating 0.0858, VAEP/90 +0.087, xT/90 +0.092
-5. Borna Sosa — Wide Creator; rating 0.0781, VAEP/90 +0.130, xT/90 +0.068
+1. Ivan Perišić — Wide Creator; rating 0.2144, VAEP/90 +0.407, xT/90 +0.065 [95% CI 0.1564–0.2751]
+2. Andrej Kramarić — Target Forward; rating 0.1937, VAEP/90 +0.365, xT/90 +0.010 [95% CI 0.1419–0.2779]
+3. Mateo Kovačić — Box-to-Box / Engine Midfielder; rating 0.1302, VAEP/90 +0.225, xT/90 +0.065 [95% CI 0.0826–0.1832]
+4. Luka Modrić — Deep Playmaker / Metronome; rating 0.0858, VAEP/90 +0.087, xT/90 +0.092 [95% CI 0.0248–0.1435]
+5. Borna Sosa — Wide Creator; rating 0.0781, VAEP/90 +0.130, xT/90 +0.068 [95% CI 0.0517–0.1123]
+- Rank confidence: P(Ivan Perišić is the team's true #1) = 71% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

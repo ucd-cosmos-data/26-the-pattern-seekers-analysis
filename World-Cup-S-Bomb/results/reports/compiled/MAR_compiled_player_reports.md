@@ -21,6 +21,8 @@
 - Final-third spatial share: 38.3%
 - Unified final player rating: 0.1268
 - Team rank: #2
+- Rating 95% CI: [0.1024, 0.1534] (bootstrap SE 0.0132)
+- Rank stability: bootstrap mean rank 2.2; P(team #1) 16%, P(top 3) 92%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/3625_heatmap.svg)
 
@@ -64,6 +66,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 3.2%
 - Unified final player rating: -0.0146
 - Team rank: #11
+- Rating 95% CI: [-0.0461, 0.0192] (bootstrap SE 0.0169)
+- Rank stability: bootstrap mean rank 10.8; P(team #1) 0%, P(top 3) 0%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5219_heatmap.svg)
 
@@ -108,6 +112,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 7.5%
 - Unified final player rating: -0.0027
 - Team rank: #9
+- Rating 95% CI: [-0.0139, 0.0140] (bootstrap SE 0.0073)
+- Rank stability: bootstrap mean rank 9.3; P(team #1) 0%, P(top 3) 0%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5234_heatmap.svg)
 
@@ -151,6 +157,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 32.3%
 - Unified final player rating: 0.1034
 - Team rank: #3
+- Rating 95% CI: [0.0385, 0.1673] (bootstrap SE 0.0341)
+- Rank stability: bootstrap mean rank 3.4; P(team #1) 7%, P(top 3) 60%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5237_heatmap.svg)
 
@@ -194,6 +202,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 26.6%
 - Unified final player rating: 0.0180
 - Team rank: #8
+- Rating 95% CI: [-0.0332, 0.0663] (bootstrap SE 0.0265)
+- Rank stability: bootstrap mean rank 8.3; P(team #1) 0%, P(top 3) 0%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5245_heatmap.svg)
 
@@ -238,6 +248,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 26.1%
 - Unified final player rating: 0.1563
 - Team rank: #1
+- Rating 95% CI: [0.1084, 0.2222] (bootstrap SE 0.0292)
+- Rank stability: bootstrap mean rank 1.3; P(team #1) 76%, P(top 3) 98%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/6301_heatmap.svg)
 
@@ -281,6 +293,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 0.8%
 - Unified final player rating: -0.0797
 - Team rank: #13
+- Rating 95% CI: [-0.0982, -0.0546] (bootstrap SE 0.0112)
+- Rank stability: bootstrap mean rank 13.0; P(team #1) 0%, P(top 3) 0%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/6785_heatmap.svg)
 
@@ -325,6 +339,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 2.4%
 - Unified final player rating: -0.0071
 - Team rank: #10
+- Rating 95% CI: [-0.0182, 0.0017] (bootstrap SE 0.0051)
+- Rank stability: bootstrap mean rank 10.0; P(team #1) 0%, P(top 3) 0%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/7459_heatmap.svg)
 
@@ -369,6 +385,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 2.0%
 - Unified final player rating: -0.0195
 - Team rank: #12
+- Rating 95% CI: [-0.0365, -0.0041] (bootstrap SE 0.0084)
+- Rank stability: bootstrap mean rank 11.4; P(team #1) 0%, P(top 3) 0%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/12149_heatmap.svg)
 
@@ -413,6 +431,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 17.3%
 - Unified final player rating: 0.0490
 - Team rank: #7
+- Rating 95% CI: [0.0313, 0.0738] (bootstrap SE 0.0107)
+- Rank stability: bootstrap mean rank 7.0; P(team #1) 0%, P(top 3) 0%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/15890_heatmap.svg)
 
@@ -456,6 +476,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 18.8%
 - Unified final player rating: 0.0718
 - Team rank: #6
+- Rating 95% CI: [0.0469, 0.1057] (bootstrap SE 0.0149)
+- Rank stability: bootstrap mean rank 5.4; P(team #1) 0%, P(top 3) 4%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/23774_heatmap.svg)
 
@@ -500,6 +522,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 19.7%
 - Unified final player rating: 0.0839
 - Team rank: #5
+- Rating 95% CI: [0.0488, 0.1230] (bootstrap SE 0.0193)
+- Rank stability: bootstrap mean rank 4.9; P(team #1) 0%, P(top 3) 12%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/31295_heatmap.svg)
 
@@ -543,6 +567,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Final-third spatial share: 22.9%
 - Unified final player rating: 0.0974
 - Team rank: #4
+- Rating 95% CI: [0.0702, 0.1338] (bootstrap SE 0.0164)
+- Rank stability: bootstrap mean rank 3.8; P(team #1) 0%, P(top 3) 33%
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/46258_heatmap.svg)
 

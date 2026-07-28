@@ -36,11 +36,12 @@ Netherlands: no tactical change cleared the modeled effect floor. Primary review
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Memphis Depay — Target Forward; rating 0.2694, VAEP/90 +0.589, xT/90 +0.047
-2. Cody Mathès Gakpo — Progressive Winger; rating 0.1895, VAEP/90 +0.324, xT/90 +0.075
-3. Daley Blind — Wide Creator; rating 0.0791, VAEP/90 +0.140, xT/90 +0.051
-4. Denzel Dumfries — Attacking Wingback; rating 0.0780, VAEP/90 +0.136, xT/90 +0.050
-5. Frenkie de Jong — Box-to-Box / Engine Midfielder; rating 0.0336, VAEP/90 +0.060, xT/90 +0.028
+1. Memphis Depay — Target Forward; rating 0.2694, VAEP/90 +0.589, xT/90 +0.047 [95% CI 0.1752–0.3483]
+2. Cody Mathès Gakpo — Progressive Winger; rating 0.1895, VAEP/90 +0.324, xT/90 +0.075 [95% CI 0.1554–0.2368]
+3. Daley Blind — Wide Creator; rating 0.0791, VAEP/90 +0.140, xT/90 +0.051 [95% CI 0.0582–0.0972]
+4. Denzel Dumfries — Attacking Wingback; rating 0.0780, VAEP/90 +0.136, xT/90 +0.050 [95% CI 0.0451–0.1107]
+5. Frenkie de Jong — Box-to-Box / Engine Midfielder; rating 0.0336, VAEP/90 +0.060, xT/90 +0.028 [95% CI -0.0007–0.0713]
+- Rank confidence: P(Memphis Depay is the team's true #1) = 95% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

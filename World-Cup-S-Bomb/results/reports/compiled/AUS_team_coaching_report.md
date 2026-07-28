@@ -36,10 +36,11 @@ Australia: Patient Build-up led the observed baseline by 0.0032 mean EvA. Primar
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Mathew Leckie — Target Forward; rating 0.1368, VAEP/90 +0.259, xT/90 +0.021
-2. Jackson Irvine — Ball-Winner; rating 0.1088, VAEP/90 +0.009, xT/90 +0.028
-3. Aziz Eraltay Behich — Wide Creator; rating 0.0793, VAEP/90 +0.144, xT/90 +0.044
-4. Aaron Mooy — Box-to-Box Runner; rating 0.0121, VAEP/90 -0.015, xT/90 +0.029
+1. Mathew Leckie — Target Forward; rating 0.1368, VAEP/90 +0.259, xT/90 +0.021 [95% CI 0.1020–0.1848]
+2. Jackson Irvine — Ball-Winner; rating 0.1088, VAEP/90 +0.009, xT/90 +0.028 [95% CI 0.0609–0.1863]
+3. Aziz Eraltay Behich — Wide Creator; rating 0.0793, VAEP/90 +0.144, xT/90 +0.044 [95% CI 0.0450–0.1085]
+4. Aaron Mooy — Box-to-Box Runner; rating 0.0121, VAEP/90 -0.015, xT/90 +0.029 [95% CI 0.0016–0.0280]
+- Rank confidence: P(Mathew Leckie is the team's true #1) = 76% (2,000-sample match bootstrap).
 5. Kye Rowles — Sweeper CB; rating -0.0346, VAEP/90 -0.110, xT/90 +0.002
 
 _Only players with at least 300 tournament minutes are ranked. Every player

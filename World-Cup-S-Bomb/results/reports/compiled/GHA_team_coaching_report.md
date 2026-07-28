@@ -36,7 +36,8 @@ Ghana: Patient Build-up led the observed baseline by 0.0054 mean EvA. Primary re
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Mohamed Salisu — Sweeper CB; rating 0.0010, VAEP/90 +0.013, xT/90 +0.019
+1. Mohamed Salisu — Sweeper CB; rating 0.0010, VAEP/90 +0.013, xT/90 +0.019 [95% CI -0.0080–0.0071]
+- Rank confidence: P(Mohamed Salisu is the team's true #1) = 47% (2,000-sample match bootstrap).
 2. Thomas Teye Partey — Ball-Winner; rating -0.0002, VAEP/90 -0.078, xT/90 +0.044
 3. Lawrence Ati-Zigi — Goalkeeper; rating -0.0554, VAEP/90 -0.119, xT/90 +0.007
 4. Daniel Amartey — Sweeper CB; rating -0.0630, VAEP/90 -0.238, xT/90 +0.012

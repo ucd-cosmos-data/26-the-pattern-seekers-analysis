@@ -36,11 +36,12 @@ South Korea: no tactical change cleared the modeled effect floor. Primary review
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Heung-Min Son — Target Forward; rating 0.2082, VAEP/90 +0.385, xT/90 +0.078
-2. Jin-Su Kim — Attacking Wingback; rating 0.0983, VAEP/90 +0.216, xT/90 +0.041
-3. Moon-Hwan Kim — Attacking Wingback; rating 0.0784, VAEP/90 +0.140, xT/90 +0.046
-4. In-Beom Hwang — Box-to-Box / Engine Midfielder; rating 0.0494, VAEP/90 +0.106, xT/90 +0.061
-5. Woo-Young Jung — Ball-Winner; rating 0.0200, VAEP/90 +0.001, xT/90 +0.050
+1. Heung-Min Son — Target Forward; rating 0.2082, VAEP/90 +0.385, xT/90 +0.078 [95% CI 0.1764–0.2496]
+2. Jin-Su Kim — Attacking Wingback; rating 0.0983, VAEP/90 +0.216, xT/90 +0.041 [95% CI 0.0454–0.1695]
+3. Moon-Hwan Kim — Attacking Wingback; rating 0.0784, VAEP/90 +0.140, xT/90 +0.046 [95% CI 0.0510–0.1107]
+4. In-Beom Hwang — Box-to-Box / Engine Midfielder; rating 0.0494, VAEP/90 +0.106, xT/90 +0.061 [95% CI 0.0312–0.0670]
+5. Woo-Young Jung — Ball-Winner; rating 0.0200, VAEP/90 +0.001, xT/90 +0.050 [95% CI 0.0075–0.0342]
+- Rank confidence: P(Heung-Min Son is the team's true #1) = 99% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

@@ -36,11 +36,12 @@ England: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Harry Kane — Target Forward; rating 0.1828, VAEP/90 +0.275, xT/90 +0.047
-2. Luke Shaw — Attacking Wingback; rating 0.1223, VAEP/90 +0.269, xT/90 +0.085
-3. Jude Bellingham — Box-to-Box / Engine Midfielder; rating 0.1069, VAEP/90 +0.300, xT/90 +0.042
-4. Harry Maguire — Deep Playmaker; rating 0.0462, VAEP/90 +0.150, xT/90 +0.035
-5. Declan Rice — Ball-Winner; rating 0.0276, VAEP/90 +0.043, xT/90 +0.022
+1. Harry Kane — Target Forward; rating 0.1828, VAEP/90 +0.275, xT/90 +0.047 [95% CI 0.1619–0.2175]
+2. Luke Shaw — Attacking Wingback; rating 0.1223, VAEP/90 +0.269, xT/90 +0.085 [95% CI 0.0856–0.1511]
+3. Jude Bellingham — Box-to-Box / Engine Midfielder; rating 0.1069, VAEP/90 +0.300, xT/90 +0.042 [95% CI 0.0458–0.1647]
+4. Harry Maguire — Deep Playmaker; rating 0.0462, VAEP/90 +0.150, xT/90 +0.035 [95% CI 0.0142–0.0695]
+5. Declan Rice — Ball-Winner; rating 0.0276, VAEP/90 +0.043, xT/90 +0.022 [95% CI 0.0068–0.0477]
+- Rank confidence: P(Harry Kane is the team's true #1) = 99% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

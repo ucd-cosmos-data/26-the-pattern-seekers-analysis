@@ -36,11 +36,12 @@ Poland: Patient Build-up led the observed baseline by 0.0041 mean EvA. Primary r
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Robert Lewandowski — Target Forward / Penalty-Box Anchor; rating 0.2195, VAEP/90 +0.410, xT/90 +0.019
-2. Piotr Zieliński — Ball-Winner; rating 0.0952, VAEP/90 +0.089, xT/90 +0.059
-3. Bartosz Bereszyński — Wide Creator; rating 0.0608, VAEP/90 +0.078, xT/90 +0.040
-4. Grzegorz Krychowiak — Ball-Winner; rating 0.0197, VAEP/90 +0.012, xT/90 +0.025
-5. Matty Cash — Box-to-Box Runner; rating 0.0124, VAEP/90 -0.090, xT/90 +0.038
+1. Robert Lewandowski — Target Forward / Penalty-Box Anchor; rating 0.2195, VAEP/90 +0.410, xT/90 +0.019 [95% CI 0.1433–0.3107]
+2. Piotr Zieliński — Ball-Winner; rating 0.0952, VAEP/90 +0.089, xT/90 +0.059 [95% CI 0.0666–0.1350]
+3. Bartosz Bereszyński — Wide Creator; rating 0.0608, VAEP/90 +0.078, xT/90 +0.040 [95% CI 0.0380–0.0907]
+4. Grzegorz Krychowiak — Ball-Winner; rating 0.0197, VAEP/90 +0.012, xT/90 +0.025 [95% CI 0.0088–0.0344]
+5. Matty Cash — Box-to-Box Runner; rating 0.0124, VAEP/90 -0.090, xT/90 +0.038 [95% CI -0.0314–0.0566]
+- Rank confidence: P(Robert Lewandowski is the team's true #1) = 99% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

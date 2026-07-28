@@ -36,9 +36,10 @@ Japan: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Daichi Kamada — Target Forward; rating 0.1462, VAEP/90 +0.174, xT/90 +0.023
-2. Junya Ito — Attacking Wingback; rating 0.0744, VAEP/90 +0.121, xT/90 +0.054
-3. Wataru Endo — Ball-Winner; rating 0.0148, VAEP/90 -0.014, xT/90 +0.038
+1. Daichi Kamada — Target Forward; rating 0.1462, VAEP/90 +0.174, xT/90 +0.023 [95% CI 0.1078–0.1946]
+2. Junya Ito — Attacking Wingback; rating 0.0744, VAEP/90 +0.121, xT/90 +0.054 [95% CI 0.0585–0.0948]
+3. Wataru Endo — Ball-Winner; rating 0.0148, VAEP/90 -0.014, xT/90 +0.038 [95% CI 0.0036–0.0345]
+- Rank confidence: P(Daichi Kamada is the team's true #1) = 98% (2,000-sample match bootstrap).
 4. Maya Yoshida — Sweeper CB; rating -0.0403, VAEP/90 -0.129, xT/90 +0.006
 5. Shūichi Gonda — Goalkeeper; rating -0.0686, VAEP/90 -0.162, xT/90 +0.007
 

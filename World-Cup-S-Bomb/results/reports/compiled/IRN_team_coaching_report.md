@@ -36,8 +36,9 @@ Iran: no tactical change cleared the modeled effect floor. Primary review signal
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Mehdi Taremi — Target Forward; rating 0.2247, VAEP/90 +0.412, xT/90 +0.053
-2. Morteza Pouraliganji — Sweeper CB; rating 0.0105, VAEP/90 +0.054, xT/90 +0.009
+1. Mehdi Taremi — Target Forward; rating 0.2247, VAEP/90 +0.412, xT/90 +0.053 [95% CI 0.1932–0.2558]
+2. Morteza Pouraliganji — Sweeper CB; rating 0.0105, VAEP/90 +0.054, xT/90 +0.009 [95% CI -0.0073–0.0249]
+- Rank confidence: P(Mehdi Taremi is the team's true #1) = 95% (2,000-sample match bootstrap).
 3. Seyed Majid Hosseini — Sweeper CB; rating -0.0246, VAEP/90 -0.084, xT/90 +0.010
 
 _Only players with at least 300 tournament minutes are ranked. Every player

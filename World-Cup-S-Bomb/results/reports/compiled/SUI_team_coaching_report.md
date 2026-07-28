@@ -36,11 +36,12 @@ Switzerland: no tactical change cleared the modeled effect floor. Primary review
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Breel-Donald Embolo — Target Forward; rating 0.1938, VAEP/90 +0.312, xT/90 +0.011
-2. Ricardo Iván Rodríguez Araya — Wide Creator; rating 0.0457, VAEP/90 +0.024, xT/90 +0.044
-3. Granit Xhaka — Ball-Winner; rating 0.0345, VAEP/90 +0.056, xT/90 +0.049
-4. Remo Freuler — Ball-Winner; rating 0.0287, VAEP/90 +0.047, xT/90 +0.020
-5. Manuel Obafemi Akanji — Ball-Playing Centre-Back; rating 0.0063, VAEP/90 +0.031, xT/90 +0.011
+1. Breel-Donald Embolo — Target Forward; rating 0.1938, VAEP/90 +0.312, xT/90 +0.011 [95% CI 0.1308–0.2633]
+2. Ricardo Iván Rodríguez Araya — Wide Creator; rating 0.0457, VAEP/90 +0.024, xT/90 +0.044 [95% CI 0.0217–0.0805]
+3. Granit Xhaka — Ball-Winner; rating 0.0345, VAEP/90 +0.056, xT/90 +0.049 [95% CI 0.0118–0.0528]
+4. Remo Freuler — Ball-Winner; rating 0.0287, VAEP/90 +0.047, xT/90 +0.020 [95% CI 0.0051–0.0675]
+5. Manuel Obafemi Akanji — Ball-Playing Centre-Back; rating 0.0063, VAEP/90 +0.031, xT/90 +0.011 [95% CI -0.0145–0.0210]
+- Rank confidence: P(Breel-Donald Embolo is the team's true #1) = 99% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,

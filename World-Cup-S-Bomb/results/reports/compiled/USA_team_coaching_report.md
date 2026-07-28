@@ -36,11 +36,12 @@ United States: no tactical change cleared the modeled effect floor. Primary revi
 
 ## Unified 360-VAEP + xT player leaders
 
-1. Christian Pulisic — Progressive Winger; rating 0.2496, VAEP/90 +0.527, xT/90 +0.114
-2. Timothy Weah — Progressive Winger; rating 0.2230, VAEP/90 +0.466, xT/90 +0.018
-3. Yunus Dimoara Musah — Box-to-Box / Engine Midfielder; rating 0.1005, VAEP/90 +0.118, xT/90 +0.046
-4. Antonee Robinson — Attacking Wingback; rating 0.0958, VAEP/90 +0.186, xT/90 +0.085
-5. Sergino Dest — Attacking Wingback; rating 0.0741, VAEP/90 +0.103, xT/90 +0.098
+1. Christian Pulisic — Progressive Winger; rating 0.2496, VAEP/90 +0.527, xT/90 +0.114 [95% CI 0.1947–0.3078]
+2. Timothy Weah — Progressive Winger; rating 0.2230, VAEP/90 +0.466, xT/90 +0.018 [95% CI 0.1592–0.3230]
+3. Yunus Dimoara Musah — Box-to-Box / Engine Midfielder; rating 0.1005, VAEP/90 +0.118, xT/90 +0.046 [95% CI 0.0824–0.1293]
+4. Antonee Robinson — Attacking Wingback; rating 0.0958, VAEP/90 +0.186, xT/90 +0.085 [95% CI 0.0550–0.1345]
+5. Sergino Dest — Attacking Wingback; rating 0.0741, VAEP/90 +0.103, xT/90 +0.098 [95% CI 0.0511–0.0978]
+- Rank confidence: P(Christian Pulisic is the team's true #1) = 83% (2,000-sample match bootstrap).
 
 _Only players with at least 300 tournament minutes are ranked. Every player
 uses the same cross-role formula: 50% VAEP total per 90, 30% VAEP per touch,
