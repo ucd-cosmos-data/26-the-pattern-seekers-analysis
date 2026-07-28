@@ -1,5 +1,9 @@
 # SEN — V4 Player Evaluation Collection
 
+<!-- V5_CANONICAL_NOTICE -->
+> **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
+
+
 - Included 300+ minute players: 6
 - Rankings use one cross-role 360-VAEP plus xT formula.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.

@@ -1,4 +1,4 @@
-"""Regression tests for the rejected-by-default role/valuation challengers."""
+"""Regression tests for V5 roles, valuation, and legacy compatibility."""
 
 from __future__ import annotations
 
@@ -56,7 +56,7 @@ def test_transformer_winsorizes_and_returns_stable_shape() -> None:
     assert transformed[-1, 0] < 10_000.0
 
 
-def test_rejected_challengers_do_not_replace_incumbent_rankings() -> None:
+def test_v5_roles_are_active_without_replacing_kmeans_baseline() -> None:
     report = json.loads(
         (
             PROJECT_ROOT
@@ -66,9 +66,10 @@ def test_rejected_challengers_do_not_replace_incumbent_rankings() -> None:
     profiles = pd.read_csv(
         PROJECT_ROOT / "data/processed/player_evaluations.csv"
     )
-    assert report["decisions"]["incumbent_rankings_retained"] is True
-    assert report["decisions"]["probabilistic_roles"] == "REJECTED"
-    assert report["decisions"]["learned_valuation"] == "REJECTED"
+    assert report["decisions"]["incumbent_rankings_retained"] is False
+    assert report["decisions"]["kmeans_baseline_retained"] is True
+    assert report["decisions"]["probabilistic_roles"] == "ACTIVE_DESCRIPTIVE"
+    assert report["decisions"]["role_aware_valuation"] == "ACTIVE"
     mbappe = profiles[
         profiles["team"].eq("France")
         & profiles["player"].str.contains("Mbapp", case=False, na=False)
@@ -113,7 +114,7 @@ def test_rating_rejects_invalid_weights() -> None:
         )
 
 
-def test_promoted_role_refinement_preserves_ratings() -> None:
+def test_v5_preserves_legacy_rating_column_and_publishes_new_rating() -> None:
     report = json.loads(
         (
             PROJECT_ROOT
@@ -125,10 +126,17 @@ def test_promoted_role_refinement_preserves_ratings() -> None:
     )
     comparison = pd.read_csv(
         PROJECT_ROOT / "results/reports/role_aware_rating_comparison.csv"
-    )[["player", "old_rating"]]
+    )[["player", "old_rating", "new_rating"]]
     merged = profiles.merge(comparison, on="player", validate="one_to_one")
     assert report["production_promoted"] is True
     assert report["changed_roles"] == 34
     assert np.allclose(
-        merged["final_player_rating"], merged["old_rating"], atol=1e-12
+        merged["legacy_final_player_rating"],
+        merged["old_rating"],
+        atol=1e-12,
+    )
+    assert np.allclose(
+        merged["final_player_rating"],
+        merged["new_rating"],
+        atol=1e-12,
     )

@@ -1,0 +1,59 @@
+# Timothy Weah Player Profile
+
+This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+
+## Ranking and role
+
+- Team: United States
+- Position group: Attacking Midfield/Wing
+- Functional role: Progressive Winger
+- Probabilistic role: Roaming Creator
+- Role entropy: 0.0000
+- Global rank: 20
+- Position rank: 13
+- Role rank: 10
+- Team rank: 2
+- Final player rating: 0.7446
+- Minutes: 317.9
+- Minutes reliability: 0.5145
+
+## Rating components
+
+| Metric | Value |
+|---|---|
+| vaep_total_p90 | 0.4664 |
+| vaep_per_touch | 0.0044 |
+| xt_p90 | 0.0182 |
+| role_adjusted_value | 0.5482 |
+| completeness_score | 0.6557 |
+| off_ball_score | 0.4421 |
+
+## Continuous role vector
+
+| Metric | Value |
+|---|---|
+| progression_score | 0.2490 |
+| creation_score | 0.5007 |
+| finishing_score | 0.7758 |
+| pressing_score | 0.3673 |
+| defensive_score | 0.4847 |
+| ball_security_score | 0.6599 |
+| aerial_score | 0.2089 |
+
+## Spatial, 360 and passing-network context
+
+| Metric | Value |
+|---|---|
+| sb360_coverage | 0.8810 |
+| mean_defenders_within_3m | 0.4312 |
+| mean_defenders_within_5m | 0.8623 |
+| mean_nearest_defender_m | 7.4828 |
+| mean_passing_lane_availability | 0.9031 |
+| packing_index_mean | 0.4416 |
+| mean_space_received | 0.5459 |
+| network_pagerank | 0.0622 |
+| network_betweenness | 0.0188 |
+| network_entropy | 0.8669 |
+| build_up_involvement_ratio | 0.5660 |
+
+Missing values indicate unavailable evidence; they are not converted into zero contribution.

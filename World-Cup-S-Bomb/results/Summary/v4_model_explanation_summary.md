@@ -1,5 +1,9 @@
 # World Cup V4 Model Summary
 
+<!-- V5_CANONICAL_NOTICE -->
+> **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
+
+
 ## V4 Model Explanations
 
 This document is the canonical technical summary for the consolidated World

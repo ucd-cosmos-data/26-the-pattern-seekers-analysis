@@ -13,3 +13,5 @@ seaborn==0.13.2
 statsbombpy==1.21.0
 tqdm==4.69.1
 xgboost==3.3.0
+pytest>=8.0,<10
+torch>=2.7,<3

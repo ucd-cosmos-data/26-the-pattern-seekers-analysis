@@ -1,0 +1,59 @@
+# Kye Rowles Player Profile
+
+This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+
+## Ranking and role
+
+- Team: Australia
+- Position group: Center Back
+- Functional role: Sweeper CB
+- Probabilistic role: Defensive Centre-Back
+- Role entropy: 0.0000
+- Global rank: 128
+- Position rank: 37
+- Role rank: 19
+- Team rank: 6
+- Final player rating: 0.2961
+- Minutes: 386.9
+- Minutes reliability: 0.5633
+
+## Rating components
+
+| Metric | Value |
+|---|---|
+| vaep_total_p90 | -0.1102 |
+| vaep_per_touch | -0.0010 |
+| xt_p90 | 0.0020 |
+| role_adjusted_value | 0.4120 |
+| completeness_score | 0.6879 |
+| off_ball_score | 0.4236 |
+
+## Continuous role vector
+
+| Metric | Value |
+|---|---|
+| progression_score | 0.2510 |
+| creation_score | 0.3387 |
+| finishing_score | 0.1749 |
+| pressing_score | 0.3571 |
+| defensive_score | 0.3973 |
+| ball_security_score | 0.5070 |
+| aerial_score | 0.5962 |
+
+## Spatial, 360 and passing-network context
+
+| Metric | Value |
+|---|---|
+| sb360_coverage | 0.8881 |
+| mean_defenders_within_3m | 0.2154 |
+| mean_defenders_within_5m | 0.3211 |
+| mean_nearest_defender_m | 10.2262 |
+| mean_passing_lane_availability | 0.9535 |
+| packing_index_mean | 0.4593 |
+| mean_space_received | 0.9101 |
+| network_pagerank | 0.0898 |
+| network_betweenness | 0.1894 |
+| network_entropy | 0.8547 |
+| build_up_involvement_ratio | 0.6265 |
+
+Missing values indicate unavailable evidence; they are not converted into zero contribution.

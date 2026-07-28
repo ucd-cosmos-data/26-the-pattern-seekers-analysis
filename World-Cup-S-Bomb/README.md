@@ -28,6 +28,69 @@ transitions. It is distinct from the retrospective Stage 5 outcome models.
 The original proposal is in
 [`data/raw/info.md`](data/raw/info.md).
 
+## Role-aware player pipeline
+
+`scripts/run_pipeline.py` is the production entry point for the extended player
+analysis. It preserves the existing match-cross-fitted VAEP/xT calculations,
+K-Means functional roles, 300-minute filter, and legacy ranking columns. It
+adds continuous role vectors, probabilistic GMM roles, spatial and passing
+network features, role-aware contribution, completeness, off-ball scoring,
+and empirical-Bayes minutes shrinkage.
+
+Run the complete pipeline from the repository root:
+
+```powershell
+python .\scripts\run_pipeline.py
+```
+
+For a quick reproducibility run using already-validated legacy outputs:
+
+```powershell
+python .\scripts\run_pipeline.py --skip-legacy-foundation
+```
+
+The optional lightweight spatial attention challenger is disabled by default:
+
+```powershell
+python .\scripts\run_pipeline.py --skip-legacy-foundation --enable-attention
+```
+
+Its baseline and attention predictions are evaluated out of fold with
+match-disjoint `GroupKFold`. The attention layer is activated only when it
+meets both retrospective and prospective ROC-AUC/ECE gates. Failure prints the
+documented fallback message and continues with the role-aware layer. All
+attention is causal; future events are masked.
+
+One canonical execution writes under `results/reports/`:
+
+- `player_rankings.csv` and `player_rankings.json`
+- `coaches_notebook.md`
+- `model_summary.json` and `model_summary.md`
+- `final_summary.md`
+- 32 reports under `team_profiles/`
+- `rating_validation_comparison.csv`
+- `artifact_manifest.json` with SHA-256 hashes
+- 142 coverage-qualified reports under `player_profiles/`
+
+The same execution refreshes the downstream compatibility tables in
+`data/processed/player_evaluations.csv`,
+`data/processed/player_leaderboard.csv`,
+`results/reports/player_leaderboard.csv`, and
+`results/reports/team_player_leaderboards.csv`. The V4 possession and
+transition-model reports remain historical records; the V5 files above are
+canonical for player ratings.
+
+The current top five are Messi (0.8479), Mbappé (0.8086), Pulisic (0.8081),
+Raphinha (0.8012), and Griezmann (0.8001). See the
+[`results/reports` index](results/reports/README.md) for the canonical reports
+and the boundary between V5 player values and historical V4 tactical outputs.
+
+StatsBomb 360 absences remain missing and are accompanied by evidence and
+coverage fields. Public freeze frames identify the event actor but do not
+provide stable identities for every off-ball player; consequently, named
+player off-ball results are coverage-qualified event-actor proxies, not
+optical-tracking movement estimates.
+
 ## Main results
 
 The attacking clusters are:
