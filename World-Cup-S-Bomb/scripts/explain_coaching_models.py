@@ -86,24 +86,67 @@ def row_log_loss(truth: np.ndarray, probability: np.ndarray) -> np.ndarray:
     return -(truth * np.log(probability) + (1 - truth) * np.log(1 - probability))
 
 
+class _EqualWeightSoftVote:
+    """Equal-weight soft-vote over member pipelines.
+
+    Reproduces the benchmark's ensemble exactly: the positive-class probability
+    is the element-wise mean of the members' predicted probabilities
+    (``benchmark_coaching_models.py`` builds ``Soft Vote`` predictions with
+    ``np.mean([...], axis=0)``), so the reconstructed folds match the saved OOF.
+    """
+
+    def __init__(self, pipelines: list[Pipeline]) -> None:
+        self.pipelines = pipelines
+
+    def predict_proba(self, features: pd.DataFrame) -> np.ndarray:
+        return np.mean(
+            [pipeline.predict_proba(features) for pipeline in self.pipelines],
+            axis=0,
+        )
+
+
+def bundle_predict_proba(fitted: object, features: pd.DataFrame) -> np.ndarray:
+    """predict_proba for either a fitted Pipeline or a stored soft-vote bundle.
+
+    ``select_coaching_models.fit_candidate`` stores an ensemble as
+    ``{"kind": "equal_weight_ensemble", "members": [(name, pipeline), ...]}``;
+    average the members to match the benchmark's soft vote.
+    """
+    if isinstance(fitted, dict) and fitted.get("kind") == "equal_weight_ensemble":
+        return np.mean(
+            [pipeline.predict_proba(features) for _, pipeline in fitted["members"]],
+            axis=0,
+        )
+    return fitted.predict_proba(features)
+
+
 def fit_selected_fold_model(
     train: pd.DataFrame,
     specification: dict[str, Any],
-) -> Pipeline:
+) -> object:
     numeric = list(specification["numeric_features"])
     categorical = list(specification["categorical_features"])
-    estimator = benchmark.model_definitions()[specification["model_name"]]
-    model = Pipeline(
-        [
-            ("preprocess", benchmark.preprocessor(numeric, categorical)),
-            ("model", clone(estimator)),
-        ]
-    )
-    model.fit(
-        train[categorical + numeric],
-        train[specification["target_column"]].astype(int),
-    )
-    return model
+    columns = categorical + numeric
+    target = train[specification["target_column"]].astype(int)
+    base_models = benchmark.model_definitions()
+
+    def build(estimator: object) -> Pipeline:
+        pipeline = Pipeline(
+            [
+                ("preprocess", benchmark.preprocessor(numeric, categorical)),
+                ("model", clone(estimator)),
+            ]
+        )
+        pipeline.fit(train[columns], target)
+        return pipeline
+
+    model_name = specification["model_name"]
+    if model_name in base_models:
+        return build(base_models[model_name])
+    # Selected model is a soft-vote ensemble (e.g. under PR-AUC selection);
+    # fit each member and average, mirroring the benchmark.
+    members = benchmark.ENSEMBLES[model_name]
+    return _EqualWeightSoftVote([build(base_models[member]) for member in members])
 
 
 def permute_within_matches(
@@ -288,7 +331,7 @@ def effect_profiles(
             for value in sorted(data[feature].dropna().astype(str).unique()):
                 counterfactual = data[features].copy()
                 counterfactual[feature] = value
-                probability = fitted.predict_proba(counterfactual)[:, 1]
+                probability = bundle_predict_proba(fitted, counterfactual)[:, 1]
                 records.append(
                     {
                         "target": target,
@@ -319,7 +362,7 @@ def effect_profiles(
         for value in values:
             counterfactual = data[features].copy()
             counterfactual[top_feature] = value
-            probability = fitted.predict_proba(counterfactual)[:, 1]
+            probability = bundle_predict_proba(fitted, counterfactual)[:, 1]
             records.append(
                 {
                     "target": target,
