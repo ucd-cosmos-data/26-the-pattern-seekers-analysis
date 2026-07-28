@@ -91,6 +91,32 @@ TACTICAL_CATEGORICAL = benchmark.START_CONTEXT_CATEGORICAL_FEATURES + [
 ]
 
 
+def resolve_features(data: pd.DataFrame) -> tuple[list[str], list[str]]:
+    """Keep only layout features present in the data.
+
+    The style columns are produced per fold, so they are always allowed. Any
+    other layout feature missing from the possession file (e.g. a column added
+    to the benchmark after this data was last regenerated) is dropped with a
+    warning rather than failing the whole run.
+    """
+
+    fold_local = {"attacking_style", "defensive_style"}
+    numeric = [column for column in TACTICAL_NUMERIC if column in data.columns]
+    categorical = [
+        column
+        for column in TACTICAL_CATEGORICAL
+        if column in fold_local or column in data.columns
+    ]
+    missing = sorted(
+        set(TACTICAL_NUMERIC + TACTICAL_CATEGORICAL)
+        - set(numeric)
+        - set(categorical)
+    )
+    if missing:
+        print(f"WARNING: dropping absent layout features: {', '.join(missing)}")
+    return numeric, categorical
+
+
 def load_selected_k(path: Path, fallback: int) -> int:
     if not path.is_file():
         return fallback
@@ -140,10 +166,12 @@ def assign_fold_local_styles(
     return assigned
 
 
-def build_pipeline(model_name: str) -> Pipeline:
+def build_pipeline(
+    model_name: str, numeric: list[str], categorical: list[str]
+) -> Pipeline:
     return Pipeline(
         [
-            ("preprocess", benchmark.preprocessor(TACTICAL_NUMERIC, TACTICAL_CATEGORICAL)),
+            ("preprocess", benchmark.preprocessor(numeric, categorical)),
             ("model", clone(benchmark.model_definitions()[model_name])),
         ]
     )
@@ -153,10 +181,12 @@ def select_inner_model(
     train_data: pd.DataFrame,
     target_column: str,
     candidates: list[str],
+    numeric: list[str],
+    categorical: list[str],
 ) -> tuple[str, dict[str, float]]:
     """Pick the architecture with the best inner out-of-fold average precision."""
 
-    columns = TACTICAL_CATEGORICAL + TACTICAL_NUMERIC
+    columns = categorical + numeric
     truth = train_data[target_column].astype(int).to_numpy()
     inner = StratifiedGroupKFold(
         n_splits=INNER_SPLITS, shuffle=True, random_state=RANDOM_STATE + 1
@@ -169,7 +199,7 @@ def select_inner_model(
     for model_name in candidates:
         oof = np.full(len(train_data), np.nan)
         for train_idx, valid_idx in inner_splits:
-            pipeline = build_pipeline(model_name)
+            pipeline = build_pipeline(model_name, numeric, categorical)
             pipeline.fit(
                 train_data.iloc[train_idx][columns],
                 truth[train_idx],
@@ -191,9 +221,11 @@ def nested_validate(
     attacking_k: int,
     defensive_k: int,
     candidates: list[str],
+    numeric: list[str],
+    categorical: list[str],
 ) -> dict[str, Any]:
     target_column = benchmark.TARGETS[target_key]
-    columns = TACTICAL_CATEGORICAL + TACTICAL_NUMERIC
+    columns = categorical + numeric
     truth_all = data[target_column].astype(int).to_numpy()
 
     outer = StratifiedGroupKFold(
@@ -218,10 +250,10 @@ def nested_validate(
         test_data = assigned.iloc[test_index].reset_index(drop=True)
 
         winner, inner_scores = select_inner_model(
-            train_data, target_column, candidates
+            train_data, target_column, candidates, numeric, categorical
         )
 
-        pipeline = build_pipeline(winner)
+        pipeline = build_pipeline(winner, numeric, categorical)
         pipeline.fit(train_data[columns], train_data[target_column].astype(int))
         probability = pipeline.predict_proba(test_data[columns])[:, 1]
         truth = test_data[target_column].astype(int).to_numpy()
@@ -334,6 +366,7 @@ def main() -> None:
     attacking_k = args.attacking_k or load_selected_k(args.attacking_model, 3)
     defensive_k = args.defensive_k or load_selected_k(args.defensive_model, 4)
     attacking_matrix, defensive_matrix = style_feature_matrices(data)
+    numeric, categorical = resolve_features(data)
 
     results = [
         nested_validate(
@@ -344,6 +377,8 @@ def main() -> None:
             attacking_k,
             defensive_k,
             args.models,
+            numeric,
+            categorical,
         )
         for target_key in args.targets
     ]
