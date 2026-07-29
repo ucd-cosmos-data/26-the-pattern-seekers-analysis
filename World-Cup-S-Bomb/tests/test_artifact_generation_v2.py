@@ -66,6 +66,7 @@ def test_all_required_artifacts_and_32_team_profiles(tmp_path: Path) -> None:
         "v5_coaches_notebook.md",
         "v5_artifact_manifest.json",
         "player_rankings.csv",
+        "player_rankings_300plus.csv",
         "player_rankings.json",
         "coaches_notebook.md",
         "model_summary.json",
@@ -87,6 +88,13 @@ def test_all_required_artifacts_and_32_team_profiles(tmp_path: Path) -> None:
     ).is_file()
     rankings = pd.read_csv(tmp_path / "player_rankings.csv")
     assert set(RANKING_SCHEMA) <= set(rankings.columns)
+    rankings_300plus = pd.read_csv(
+        tmp_path / "player_rankings_300plus.csv"
+    )
+    assert len(rankings_300plus) == len(rankings)
+    assert rankings_300plus["RankingStatus"].eq(
+        "Ranked (300+ min)"
+    ).all()
     payload = json.loads((tmp_path / "player_rankings.json").read_text())
     assert len(payload) == len(rankings)
     assert manifest.metadata["teams"] == 32
@@ -98,6 +106,38 @@ def test_all_required_artifacts_and_32_team_profiles(tmp_path: Path) -> None:
     assert "## Team 00" in final_report
     assert "## Team 31" in final_report
     assert "Player 0-0" in final_report
+
+
+def test_300plus_ranking_excludes_lower_minutes_and_reranks() -> None:
+    players = pd.DataFrame(
+        {
+            "player_name": ["High sample", "Low sample", "Goalkeeper"],
+            "team": ["A", "B", "A"],
+            "position_group": ["Forward", "Forward", "Goalkeeper"],
+            "functional_role": ["Creator", "Creator", "Goalkeeper"],
+            "final_player_rating": [0.80, 0.99, 0.70],
+            "minutes": [301.0, 299.0, 450.0],
+            "RankingStatus": [
+                "Ranked (300+ min)",
+                "Ranked (180â€“299 min)",
+                "Ranked (300+ min)",
+            ],
+            "global_rank_eligible": [True, True, False],
+        }
+    )
+
+    rankings = ArtifactGenerator.prepare_rankings(players)
+    eligible = ArtifactGenerator.prepare_300plus_rankings(rankings)
+
+    assert eligible["player_name"].tolist() == [
+        "High sample",
+        "Goalkeeper",
+    ]
+    high_sample = eligible.set_index("player_name").loc["High sample"]
+    goalkeeper = eligible.set_index("player_name").loc["Goalkeeper"]
+    assert high_sample["global_rank"] == 1
+    assert pd.isna(goalkeeper["global_rank"])
+    assert goalkeeper["goalkeeper_rank"] == 1
 
 
 def test_team_manifest_can_include_teams_without_ranked_players(

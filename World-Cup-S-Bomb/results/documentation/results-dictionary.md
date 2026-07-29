@@ -6,7 +6,8 @@ A compact directory of every result artifact family. Repeated player and team fi
 
 | If you need… | Go to |
 |---|---|
-| Current player rankings | [`reports/canonical/player_rankings.csv`](../reports/canonical/player_rankings.csv) |
+| Primary 300+-minute rankings | [`reports/canonical/player_rankings_300plus.csv`](../reports/canonical/player_rankings_300plus.csv) |
+| Full-cohort player table | [`reports/canonical/player_rankings.csv`](../reports/canonical/player_rankings.csv) |
 | Searchable JSON rankings | [`reports/canonical/player_rankings.json`](../reports/canonical/player_rankings.json) |
 | One player’s profile | [`reports/player_profiles/`](../reports/player_profiles/) |
 | One player’s heatmap | [`reports/visuals/heatmaps/`](../reports/visuals/heatmaps/) |
@@ -30,7 +31,7 @@ A compact directory of every result artifact family. Repeated player and team fi
 | Run metadata | `results/metadata/*` | 5 | Configuration, provenance, and feature-definition records. |
 | Supporting/legacy outputs | `results/MIscellaneous/*` | 49 | Exploratory summaries and noncanonical model leaderboards. |
 | Reports directory guide | `results/reports/README.md` | 1 | Short guide to the report tree. |
-| Canonical reports | `results/reports/canonical/*` | 6 | Current rankings, final summary, model summary, and coaches notebook. |
+| Canonical reports | `results/reports/canonical/*` | 7 | Current rankings, final summary, model summary, and coaches notebook. |
 | Canonical report data | `results/reports/canonical/data/*` | 2 | Team metrics and defensive-disruption tables supporting reports. |
 | Formatted final report | `results/reports/docs/final_summary.docx` | 1 | Word edition of the final tournament report. |
 | Player profiles | `results/reports/player_profiles/<player-slug>-<player-id>.md` | 593 | One human-readable role and valuation profile per player. |
@@ -41,7 +42,7 @@ A compact directory of every result artifact family. Repeated player and team fi
 | Player heatmaps | `results/reports/visuals/heatmaps/<player-slug>-<player-id>.svg` | 593 | One scalable spatial-event heatmap per player. |
 | Simulation outputs | `results/simulations/*` | 6 | Tactical-style, substitution, suppression, and out-of-fold simulations. |
 
-**Coverage:** 2,579 of 2,579 result artifacts.
+**Coverage:** 2,580 of 2,580 result artifacts.
 
 ## Which version wins?
 

@@ -7,6 +7,7 @@ Dictionary for locating and interpreting the active player, goalkeeper, position
 | Ranking resource | Location | Use |
 |---|---|---|
 | Complete ranking table | [`results/reports/canonical/player_rankings.csv`](../reports/canonical/player_rankings.csv) | Spreadsheet/dataframe source; 593 data rows × 373 columns. |
+| Primary 300+-minute ranking | [`results/reports/canonical/player_rankings_300plus.csv`](../reports/canonical/player_rankings_300plus.csv) | Excludes every player below 300 minutes and recalculates cohort-relative ranks. |
 | Complete ranking JSON | [`results/reports/canonical/player_rankings.json`](../reports/canonical/player_rankings.json) | Same records for applications and APIs. |
 | Human-readable leaders | [`results/reports/canonical/final_summary.md`](../reports/canonical/final_summary.md) | Overall, position-group, movement, team, and top-five summaries. |
 | Coach-facing leaders | [`results/reports/canonical/coaches_notebook.md`](../reports/canonical/coaches_notebook.md) | Pressing, networks, line breaking, spatial advantages, and goalkeeper leaders. |
@@ -15,7 +16,7 @@ Dictionary for locating and interpreting the active player, goalkeeper, position
 
 | Field | Meaning |
 |---|---|
-| `global_rank` | Global outfield rank. Goalkeepers are intentionally blank. |
+| `global_rank` | Global outfield rank. In the 300+ file this is recalculated only among eligible outfield players; goalkeepers are blank. |
 | `goalkeeper_rank` / `primary_goalkeeper_rank` | Separate goalkeeper-only rank. |
 | `position_rank` | Rank within the broad position group. |
 | `role_rank` | Rank among players sharing the functional role. |

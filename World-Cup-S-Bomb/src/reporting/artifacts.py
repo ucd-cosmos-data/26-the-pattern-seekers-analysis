@@ -223,6 +223,72 @@ class ArtifactGenerator:
         ).reset_index(drop=True)
 
     @staticmethod
+    def prepare_300plus_rankings(rankings: pd.DataFrame) -> pd.DataFrame:
+        """Filter to 300+ minutes and rerank entirely within that cohort."""
+
+        required = {
+            "RankingStatus",
+            "position_group",
+            "functional_role",
+            "team",
+            "player_name",
+            "final_player_rating",
+        }
+        missing = required.difference(rankings.columns)
+        if missing:
+            raise ValueError(
+                f"300+ minute ranking fields missing: {sorted(missing)}"
+            )
+        eligible = rankings.loc[
+            rankings["RankingStatus"].eq("Ranked (300+ min)")
+        ].copy()
+        if eligible.empty:
+            return eligible
+        goalkeepers = eligible["position_group"].eq("Goalkeeper")
+        outfield = ~goalkeepers
+        eligible["global_rank"] = pd.Series(
+            pd.NA,
+            index=eligible.index,
+            dtype="Int64",
+        )
+        eligible.loc[outfield, "global_rank"] = (
+            eligible.loc[outfield, "final_player_rating"]
+            .rank(method="min", ascending=False)
+            .astype(int)
+        )
+        eligible["primary_global_rank"] = eligible["global_rank"]
+        eligible["goalkeeper_rank"] = pd.Series(
+            pd.NA,
+            index=eligible.index,
+            dtype="Int64",
+        )
+        eligible.loc[goalkeepers, "goalkeeper_rank"] = (
+            eligible.loc[goalkeepers, "final_player_rating"]
+            .rank(method="min", ascending=False)
+            .astype(int)
+        )
+        eligible["primary_goalkeeper_rank"] = eligible["goalkeeper_rank"]
+        eligible["position_rank"] = (
+            eligible.groupby("position_group")["final_player_rating"]
+            .rank(method="min", ascending=False)
+            .astype(int)
+        )
+        eligible["role_rank"] = (
+            eligible.groupby("functional_role")["final_player_rating"]
+            .rank(method="min", ascending=False)
+            .astype(int)
+        )
+        eligible["team_rank"] = (
+            eligible.groupby("team")["final_player_rating"]
+            .rank(method="min", ascending=False)
+            .astype(int)
+        )
+        return eligible.sort_values(
+            ["global_rank", "goalkeeper_rank", "position_rank", "player_name"],
+            na_position="last",
+        ).reset_index(drop=True)
+
+    @staticmethod
     def _leaders(
         rankings: pd.DataFrame,
         metric: str,
@@ -1244,9 +1310,12 @@ class ArtifactGenerator:
             )
             + "\n"
         )
+        rankings_300plus = self.prepare_300plus_rankings(rankings)
+        ranking_300plus_csv = rankings_300plus.to_csv(index=False)
         for name, content in (
             ("v5_player_rankings.csv", ranking_csv),
             ("player_rankings.csv", ranking_csv),
+            ("player_rankings_300plus.csv", ranking_300plus_csv),
             ("v5_player_rankings.json", ranking_json),
             ("player_rankings.json", ranking_json),
         ):
