@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ecuador
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive/Creative Centre-Back
 - Role entropy: 0.1318
+- Global rank v2: 244
+- Position rank v2: 30
+- Role rank v2: 19
+- Team rank v2: 5
+- Final player rating v2: 0.3979
 - Global rank: 434
 - Position rank: 47
-- Role rank: 33
+- Role rank: 30
 - Team rank: 13
 - Final player rating: 0.4307
 - Ranking status: Ranked (180–299 min)

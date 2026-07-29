@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Saudi Arabia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.1254
+- Global rank v2: 308
+- Position rank v2: 84
+- Role rank v2: 24
+- Team rank v2: 6
+- Final player rating v2: 0.3530
 - Global rank: 118
 - Position rank: 64
-- Role rank: 18
+- Role rank: 15
 - Team rank: 7
 - Final player rating: 0.5325
 - Ranking status: Coverage only (<180 min)

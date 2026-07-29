@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Portugal
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.0582
+- Global rank v2: 70
+- Position rank v2: 27
+- Role rank v2: 3
+- Team rank v2: 4
+- Final player rating v2: 0.5924
 - Global rank: 75
 - Position rank: 39
-- Role rank: 6
+- Role rank: 5
 - Team rank: 6
 - Final player rating: 0.5451
 - Ranking status: Ranked (300+ min)

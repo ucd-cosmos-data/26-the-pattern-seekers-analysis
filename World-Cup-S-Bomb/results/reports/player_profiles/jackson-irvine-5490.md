@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Australia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
-- Functional role: Holding Anchor
+- Functional role: Pressing Forward
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0437
+- Global rank v2: 360
+- Position rank v2: 71
+- Role rank v2: 16
+- Team rank v2: 7
+- Final player rating v2: 0.3152
 - Global rank: 544
 - Position rank: 81
-- Role rank: 71
+- Role rank: 21
 - Team rank: 15
 - Final player rating: 0.3688
 - Ranking status: Ranked (300+ min)

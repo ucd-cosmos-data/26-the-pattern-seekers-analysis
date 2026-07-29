@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: France
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
+- Source functional role: Ball-Playing Centre-Back
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0720
+- Global rank v2: 49
+- Position rank v2: 2
+- Role rank v2: 2
+- Team rank v2: 6
+- Final player rating v2: 0.6300
 - Global rank: 372
 - Position rank: 26
-- Role rank: 10
+- Role rank: 11
 - Team rank: 17
 - Final player rating: 0.4522
 - Ranking status: Ranked (300+ min)

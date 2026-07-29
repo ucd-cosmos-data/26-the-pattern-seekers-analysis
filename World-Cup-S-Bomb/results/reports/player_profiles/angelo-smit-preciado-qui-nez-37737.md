@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ecuador
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0000
+- Global rank v2: 207
+- Position rank v2: 32
+- Role rank v2: 6
+- Team rank v2: 3
+- Final player rating v2: 0.4287
 - Global rank: 58
 - Position rank: 15
 - Role rank: 2

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Canada
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.1282
+- Global rank v2: 118
+- Position rank v2: 40
+- Role rank v2: 34
+- Team rank v2: 4
+- Final player rating v2: 0.5109
 - Global rank: 220
 - Position rank: 16
-- Role rank: 61
+- Role rank: 60
 - Team rank: 7
 - Final player rating: 0.4982
 - Ranking status: Coverage only (<180 min)

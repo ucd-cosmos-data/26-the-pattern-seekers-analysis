@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: France
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
+- Source functional role: Target Forward / Penalty-Box Anchor
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.0705
+- Global rank v2: 13
+- Position rank v2: 5
+- Role rank v2: 2
+- Team rank v2: 3
+- Final player rating v2: 0.7453
 - Global rank: 204
 - Position rank: 27
 - Role rank: 8

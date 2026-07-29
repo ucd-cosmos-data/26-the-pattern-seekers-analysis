@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Germany
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
-- Functional role: Ball-Winner
+- Functional role: Pressing Forward
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.0298
+- Global rank v2: 170
+- Position rank v2: 44
+- Role rank v2: 7
+- Team rank v2: 9
+- Final player rating v2: 0.4624
 - Global rank: 194
 - Position rank: 25
-- Role rank: 30
+- Role rank: 5
 - Team rank: 11
 - Final player rating: 0.5071
 - Ranking status: Ranked (180–299 min)

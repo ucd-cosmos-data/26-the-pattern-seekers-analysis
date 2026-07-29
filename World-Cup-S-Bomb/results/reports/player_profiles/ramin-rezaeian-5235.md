@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Iran
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Defensive/Pressing Fullback
 - Role entropy: 0.0007
+- Global rank v2: 140
+- Position rank v2: 19
+- Role rank v2: 16
+- Team rank v2: 2
+- Final player rating v2: 0.4864
 - Global rank: 143
 - Position rank: 48
 - Role rank: 36

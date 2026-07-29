@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: England
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.0464
+- Global rank v2: 143
+- Position rank v2: 15
+- Role rank v2: 3
+- Team rank v2: 8
+- Final player rating v2: 0.4835
 - Global rank: 331
 - Position rank: 41
-- Role rank: 25
+- Role rank: 27
 - Team rank: 14
 - Final player rating: 0.4657
 - Ranking status: Ranked (180–299 min)

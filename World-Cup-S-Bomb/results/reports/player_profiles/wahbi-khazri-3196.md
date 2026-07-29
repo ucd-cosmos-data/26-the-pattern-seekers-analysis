@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Tunisia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.1133
+- Global rank v2: 108
+- Position rank v2: 27
+- Role rank v2: 32
+- Team rank v2: 2
+- Final player rating v2: 0.5244
 - Global rank: 129
 - Position rank: 14
 - Role rank: 45

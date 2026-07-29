@@ -9,8 +9,10 @@ the paths below are the current source of truth.
 ```text
 results/
 ├── reports/
-│   ├── canonical/                 # Primary CSV, JSON, and Markdown deliverables
+│   ├── canonical/                 # Narrative summaries and supporting data
 │   │   └── data/                  # Supporting team-level datasets
+│   ├── ranking/                   # Qatar 2022 ranking tables, audit, and methodology
+│   │   └── by_team/               # One complete CSV per national team
 │   ├── player_profiles/           # 593 player profiles (Markdown)
 │   ├── team_profiles/             # 32 statistical team profiles (Markdown)
 │   ├── teams/                     # 32 tactical reports (Markdown + JSON)
@@ -21,11 +23,23 @@ results/
 └── metadata/                      # Artifact, pipeline, and cleanup manifests
 ```
 
-## Canonical deliverables
+## Ranking deliverables
 
-- [Player rankings CSV](canonical/player_rankings.csv) and
-  [JSON](canonical/player_rankings.json): all 593 rated players, including the
-  separate goalkeeper evaluation fields.
+- [Global outfield rankings](ranking/global_rankings_outfield.csv) and
+  [300-minute view](ranking/global_rankings_outfield_300min.csv): formal
+  360-position-aware Qatar 2022 rankings.
+- [Goalkeeper rankings](ranking/goalkeeper_rankings.csv): separate goalkeeper
+  ratings that are not mixed with outfield scores.
+- [Complete ranking CSV](ranking/player_rankings.csv) and
+  [JSON](ranking/player_rankings.json): all 593 rated players with legacy and
+  v2 fields.
+- [Per-team rankings](ranking/by_team/): complete CSVs for all 32 nations.
+- [Methodology](ranking/ranking_methodology.md) and
+  [eyes-test audit](ranking/ranking_audit.md): formula, weights, position/role
+  logic, and before/after checks.
+
+## Canonical narrative deliverables
+
 - [Final summary](canonical/final_summary.md): tournament findings and rating
   movements.
 - [Model summary](canonical/model_summary.md) and

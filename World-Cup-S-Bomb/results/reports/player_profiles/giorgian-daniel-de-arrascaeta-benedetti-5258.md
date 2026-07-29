@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Uruguay
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.0863
+- Global rank v2: 66
+- Position rank v2: 25
+- Role rank v2: 22
+- Team rank v2: 2
+- Final player rating v2: 0.5948
 - Global rank: 156
 - Position rank: 8
-- Role rank: 50
+- Role rank: 49
 - Team rank: 5
 - Final player rating: 0.5189
 - Ranking status: Coverage only (<180 min)

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Morocco
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.0026
+- Global rank v2: 96
+- Position rank v2: 35
+- Role rank v2: 29
+- Team rank v2: 3
+- Final player rating v2: 0.5447
 - Global rank: 202
 - Position rank: 12
-- Role rank: 57
+- Role rank: 56
 - Team rank: 6
 - Final player rating: 0.5042
 - Ranking status: Ranked (300+ min)

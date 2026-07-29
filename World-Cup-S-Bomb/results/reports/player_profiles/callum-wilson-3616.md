@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: England
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.0256
+- Global rank v2: 215
+- Position rank v2: 52
+- Role rank v2: 50
+- Team rank v2: 12
+- Final player rating v2: 0.4197
 - Global rank: 219
 - Position rank: 33
-- Role rank: 60
+- Role rank: 59
 - Team rank: 11
 - Final player rating: 0.4984
 - Ranking status: Coverage only (<180 min)

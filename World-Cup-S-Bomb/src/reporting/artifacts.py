@@ -16,6 +16,10 @@ import numpy as np
 import pandas as pd
 
 from src.contracts import ArtifactManifest
+from src.models.tournament_rankings import (
+    tournament_ranking_audit,
+    tournament_ranking_methodology_markdown,
+)
 
 
 RANKING_SCHEMA = (
@@ -33,6 +37,56 @@ RANKING_SCHEMA = (
     "primary_global_rank",
     "primary_goalkeeper_rank",
 )
+
+TOURNAMENT_RANKING_SCHEMA = (
+    "tournament",
+    "minutes_played",
+    "position_group_360",
+    "functional_role_original",
+    "final_player_rating_v2",
+    "global_rank_v2",
+    "position_rank_v2",
+    "role_rank_v2",
+    "team_rank_v2",
+    "gk_rating_v2",
+    "gk_rank_v2",
+    "is_main_goalkeeper",
+)
+
+TEAM_CODES = {
+    "Argentina": "ARG",
+    "Australia": "AUS",
+    "Belgium": "BEL",
+    "Brazil": "BRA",
+    "Cameroon": "CMR",
+    "Canada": "CAN",
+    "Costa Rica": "CRC",
+    "Croatia": "CRO",
+    "Denmark": "DEN",
+    "Ecuador": "ECU",
+    "England": "ENG",
+    "France": "FRA",
+    "Germany": "GER",
+    "Ghana": "GHA",
+    "Iran": "IRN",
+    "Japan": "JPN",
+    "Mexico": "MEX",
+    "Morocco": "MAR",
+    "Netherlands": "NED",
+    "Poland": "POL",
+    "Portugal": "POR",
+    "Qatar": "QAT",
+    "Saudi Arabia": "KSA",
+    "Senegal": "SEN",
+    "Serbia": "SRB",
+    "South Korea": "KOR",
+    "Spain": "ESP",
+    "Switzerland": "SUI",
+    "Tunisia": "TUN",
+    "United States": "USA",
+    "Uruguay": "URU",
+    "Wales": "WAL",
+}
 
 
 def _json_value(value: Any) -> Any:
@@ -214,11 +268,19 @@ class ArtifactGenerator:
         rankings["team_rank"] = rankings.groupby("team")[
             "final_player_rating"
         ].rank(method="min", ascending=False).astype(int)
-        ordered = list(RANKING_SCHEMA) + [
-            column for column in rankings if column not in RANKING_SCHEMA
+        preferred_schema = RANKING_SCHEMA + TOURNAMENT_RANKING_SCHEMA
+        ordered = [
+            column for column in preferred_schema if column in rankings
+        ] + [
+            column for column in rankings if column not in preferred_schema
         ]
+        sort_columns = (
+            ["global_rank_v2", "position_rank_v2", "player_name"]
+            if "global_rank_v2" in rankings
+            else ["global_rank", "position_rank", "player_name"]
+        )
         return rankings[ordered].sort_values(
-            ["global_rank", "position_rank", "player_name"],
+            sort_columns,
             na_position="last",
         ).reset_index(drop=True)
 
@@ -288,6 +350,241 @@ class ArtifactGenerator:
             na_position="last",
         ).reset_index(drop=True)
 
+    def _ranking_root(self) -> Path:
+        """Return the dedicated ranking directory beside canonical reports."""
+
+        report_root = (
+            self.output_root.parent
+            if self.output_root.name == "canonical"
+            else self.output_root
+        )
+        return report_root / "ranking"
+
+    @staticmethod
+    def _ranking_audit_markdown(audit: dict[str, Any]) -> str:
+        """Render a compact before/after and eyes-test report."""
+
+        lines = [
+            "# Qatar 2022 Ranking Audit",
+            "",
+            f"- Overall status: `{'PASS' if audit['passed'] else 'FAIL'}`",
+            "- Scope: 2022 FIFA World Cup tournament data only",
+            "- External rankings in score: none",
+            "- External analysis policy: Qatar 2022-specific and audit-only",
+            "",
+            "## Eyes-test checks",
+            "",
+        ]
+        lines.extend(
+            f"- [{'x' if passed else ' '}] `{name}`"
+            for name, passed in audit["checks"].items()
+        )
+        lines.extend(
+            [
+                "",
+                "## Before and after",
+                "",
+                "| Player | Old global | New global | Old team | New team |",
+                "|---|---:|---:|---:|---:|",
+            ]
+        )
+        for comparison in audit.get("before_after", {}).values():
+            lines.append(
+                f"| {comparison['player_name']} | "
+                f"{comparison['old_global_rank']} | "
+                f"{comparison['new_global_rank']} | "
+                f"{comparison['old_team_rank']} | "
+                f"{comparison['new_team_rank']} |"
+            )
+        lines.extend(
+            [
+                "",
+                "## New global top 20",
+                "",
+                "| Rank | Player | Team | 360 group | Role | Rating |",
+                "|---:|---|---|---|---|---:|",
+            ]
+        )
+        for player in audit.get("top_20_outfield", []):
+            lines.append(
+                f"| {player['global_rank_v2']} | {player['player_name']} | "
+                f"{player['team']} | {player['position_group_360']} | "
+                f"{player['functional_role']} | "
+                f"{player['final_player_rating_v2']:.4f} |"
+            )
+        lines.extend(
+            [
+                "",
+                "The audit is diagnostic only. Player names are never inputs "
+                "to the score.",
+                "",
+            ]
+        )
+        return "\n".join(lines)
+
+    def _write_ranking_artifacts(
+        self,
+        rankings: pd.DataFrame,
+    ) -> list[Path]:
+        """Write all ranking CSV/JSON/docs to the dedicated directory."""
+
+        required = {
+            "position_group_360",
+            "final_player_rating_v2",
+            "global_rank_v2",
+            "team_rank_v2",
+            "gk_rating_v2",
+            "gk_rank_v2",
+        }
+        ranking_root = self._ranking_root()
+        if not required <= set(rankings):
+            files: list[Path] = []
+            legacy_300 = self.prepare_300plus_rankings(rankings)
+            ranking_csv = rankings.to_csv(index=False)
+            ranking_300_csv = legacy_300.to_csv(index=False)
+            ranking_json = (
+                json.dumps(
+                    _json_value(rankings.to_dict("records")),
+                    indent=2,
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
+            for name, content in (
+                ("v5_player_rankings.csv", ranking_csv),
+                ("player_rankings.csv", ranking_csv),
+                ("player_rankings_300plus.csv", ranking_300_csv),
+                ("v5_player_rankings.json", ranking_json),
+                ("player_rankings.json", ranking_json),
+            ):
+                path = ranking_root / name
+                _atomic_text(path, content)
+                files.append(path)
+            return files
+        files = []
+
+        outfield = (
+            rankings.loc[rankings["position_group_360"].ne("GK")]
+            .sort_values(["global_rank_v2", "player_name"])
+            .reset_index(drop=True)
+        )
+        outfield_300 = (
+            outfield.loc[
+                pd.to_numeric(
+                    outfield.get("minutes_played", outfield.get("minutes")),
+                    errors="coerce",
+                ).ge(300.0)
+            ]
+            .copy()
+            .reset_index(drop=True)
+        )
+        all_goalkeepers = (
+            rankings.loc[rankings["position_group_360"].eq("GK")]
+            .sort_values(["gk_rank_v2", "player_name"])
+            .reset_index(drop=True)
+        )
+        goalkeepers = all_goalkeepers.loc[
+            all_goalkeepers["gk_rank_v2"].notna()
+        ].reset_index(drop=True)
+        all_rankings = pd.concat(
+            [outfield, all_goalkeepers],
+            ignore_index=True,
+            sort=False,
+        )
+
+        csv_outputs = {
+            "global_rankings_outfield.csv": outfield,
+            "global_rankings_outfield_300min.csv": outfield_300,
+            "goalkeeper_rankings.csv": goalkeepers,
+            "v5_player_rankings.csv": all_rankings,
+            "player_rankings.csv": all_rankings,
+            "player_rankings_300plus.csv": pd.concat(
+                [
+                    outfield_300,
+                    goalkeepers.loc[
+                        pd.to_numeric(
+                            goalkeepers.get(
+                                "minutes_played",
+                                goalkeepers.get("minutes"),
+                            ),
+                            errors="coerce",
+                        ).ge(300.0)
+                    ],
+                ],
+                ignore_index=True,
+                sort=False,
+            ),
+        }
+        for name, frame in csv_outputs.items():
+            path = ranking_root / name
+            _atomic_text(path, frame.to_csv(index=False))
+            files.append(path)
+
+        ranking_json = (
+            json.dumps(
+                _json_value(all_rankings.to_dict("records")),
+                indent=2,
+                ensure_ascii=False,
+            )
+            + "\n"
+        )
+        json_path = ranking_root / "player_rankings.json"
+        _atomic_text(json_path, ranking_json)
+        files.append(json_path)
+        v5_json_path = ranking_root / "v5_player_rankings.json"
+        _atomic_text(v5_json_path, ranking_json)
+        files.append(v5_json_path)
+
+        by_team_root = ranking_root / "by_team"
+        unknown_teams = set(rankings["team"].astype(str)) - set(TEAM_CODES)
+        if unknown_teams and len(set(rankings["team"].astype(str))) == 32:
+            raise ValueError(
+                f"Missing official team codes for: {sorted(unknown_teams)}"
+            )
+        for team, team_frame in rankings.groupby("team", sort=True):
+            code = TEAM_CODES.get(str(team), _slug(str(team)).upper())
+            team_output = team_frame.copy()
+            team_output["is_goalkeeper"] = team_output[
+                "position_group_360"
+            ].eq("GK")
+            team_output["_outfield_sort"] = pd.to_numeric(
+                team_output["team_rank_v2"],
+                errors="coerce",
+            )
+            team_output["_gk_sort"] = pd.to_numeric(
+                team_output["gk_rank_v2"],
+                errors="coerce",
+            )
+            team_output = team_output.sort_values(
+                ["is_goalkeeper", "_outfield_sort", "_gk_sort", "player_name"],
+                na_position="last",
+            ).drop(columns=["_outfield_sort", "_gk_sort"])
+            path = by_team_root / f"{code}.csv"
+            _atomic_text(path, team_output.to_csv(index=False))
+            files.append(path)
+
+        methodology_path = ranking_root / "ranking_methodology.md"
+        _atomic_text(
+            methodology_path,
+            tournament_ranking_methodology_markdown(),
+        )
+        files.append(methodology_path)
+
+        audit = tournament_ranking_audit(rankings, strict=False)
+        audit_json_path = ranking_root / "ranking_audit.json"
+        _atomic_text(
+            audit_json_path,
+            json.dumps(_json_value(audit), indent=2, ensure_ascii=False) + "\n",
+        )
+        files.append(audit_json_path)
+        audit_markdown_path = ranking_root / "ranking_audit.md"
+        _atomic_text(
+            audit_markdown_path,
+            self._ranking_audit_markdown(audit),
+        )
+        files.append(audit_markdown_path)
+        return files
+
     @staticmethod
     def _leaders(
         rankings: pd.DataFrame,
@@ -303,6 +600,14 @@ class ArtifactGenerator:
     def _coaches_notebook(self, rankings: pd.DataFrame) -> str:
         """Build the requested tactical notebook from measured features."""
 
+        has_v2 = "global_rank_v2" in rankings
+        tactical_leaders = (
+            rankings.loc[rankings["global_rank_v2"].notna()]
+            .sort_values("global_rank_v2")
+            .head(10)
+            if has_v2
+            else rankings.head(10)
+        )
         sections = [
             "# Coaches Notebook",
             "",
@@ -313,14 +618,25 @@ class ArtifactGenerator:
             "## Tactical insights",
             "",
             _markdown_table(
-                rankings.head(10),
-                [
-                    "global_rank",
-                    "player_name",
-                    "team",
-                    "functional_role",
-                    "final_player_rating",
-                ],
+                tactical_leaders,
+                (
+                    [
+                        "global_rank_v2",
+                        "player_name",
+                        "team",
+                        "position_group_360",
+                        "functional_role",
+                        "final_player_rating_v2",
+                    ]
+                    if has_v2
+                    else [
+                        "global_rank",
+                        "player_name",
+                        "team",
+                        "functional_role",
+                        "final_player_rating",
+                    ]
+                ),
             ),
             "",
             "## Passing networks",
@@ -357,18 +673,38 @@ class ArtifactGenerator:
                 _markdown_table(
                     rankings.loc[
                         rankings["position_group"].eq("Goalkeeper")
-                    ].sort_values("position_rank"),
-                    [
-                        "position_rank",
-                        "player_name",
-                        "team",
-                        "final_player_rating",
-                        "goals_prevented_proxy_p90",
-                        "save_rate",
-                        "high_leverage_save_pct",
-                        "penalty_save_rate_shrunk",
-                        "GKRankingStatus",
-                    ],
+                        & (
+                            rankings["gk_rank_v2"].notna()
+                            if has_v2
+                            else pd.Series(True, index=rankings.index)
+                        )
+                    ].sort_values(
+                        "gk_rank_v2" if has_v2 else "position_rank"
+                    ),
+                    (
+                        [
+                            "gk_rank_v2",
+                            "player_name",
+                            "team",
+                            "gk_rating_v2",
+                            "goals_prevented_proxy_p90",
+                            "save_rate",
+                            "penalties_saved",
+                            "GKRankingStatus",
+                        ]
+                        if has_v2
+                        else [
+                            "position_rank",
+                            "player_name",
+                            "team",
+                            "final_player_rating",
+                            "goals_prevented_proxy_p90",
+                            "save_rate",
+                            "high_leverage_save_pct",
+                            "penalty_save_rate_shrunk",
+                            "GKRankingStatus",
+                        ]
+                    ),
                 )
                 if rankings["position_group"].eq("Goalkeeper").any()
                 else "_No eligible goalkeeper sample._"
@@ -419,6 +755,22 @@ class ArtifactGenerator:
             "",
             "```json",
             json.dumps(metrics, indent=2, ensure_ascii=False),
+            "```",
+            "",
+            "## Qatar 2022 position-aware ranking layer",
+            "",
+            "This model evaluates players based solely on their performances "
+            "at the 2022 FIFA World Cup. Outfield components are normalized "
+            "within the formal `position_group_360`; a common tournament "
+            "impact channel preserves meaningful global ordering. "
+            "Goalkeepers remain on a separate scale.",
+            "",
+            "```json",
+            json.dumps(
+                payload.get("tournament_ranking_v2", {}),
+                indent=2,
+                ensure_ascii=False,
+            ),
             "```",
             "",
             "## Feature importance",
@@ -573,10 +925,50 @@ class ArtifactGenerator:
                 "## Ranking and role",
                 "",
                 f"- Team: {value('team')}",
+                f"- Tournament: {value('tournament')}",
+                f"- Formal 360 position group: "
+                f"{value('position_group_360')}",
                 f"- Position group: {value('position_group')}",
                 f"- Functional role: {value('functional_role')}",
+                f"- Source functional role: "
+                f"{value('functional_role_original')}",
+                (
+                    f"- Team main goalkeeper: "
+                    f"{value('is_main_goalkeeper')}"
+                    if str(player.get("position_group_360")) == "GK"
+                    else ""
+                ),
                 f"- Probabilistic role: {value('probabilistic_role')}",
                 f"- Role entropy: {value('role_entropy')}",
+                (
+                    f"- Goalkeeper rank v2: "
+                    f"{value('gk_rank_v2', 0)}"
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Global rank v2: "
+                    f"{value('global_rank_v2', 0)}"
+                ),
+                (
+                    f"- Goalkeeper rating v2: {value('gk_rating_v2')}"
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Position rank v2: "
+                    f"{value('position_rank_v2', 0)}"
+                ),
+                (
+                    ""
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Role rank v2: {value('role_rank_v2', 0)}"
+                ),
+                (
+                    ""
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Team rank v2: {value('team_rank_v2', 0)}"
+                ),
+                (
+                    ""
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Final player rating v2: "
+                    f"{value('final_player_rating_v2')}"
+                ),
                 f"- Global rank: {value('global_rank', 0)}",
                 f"- Position rank: {value('position_rank', 0)}",
                 f"- Role rank: {value('role_rank', 0)}",
@@ -638,6 +1030,30 @@ class ArtifactGenerator:
     ) -> str:
         """Render the complete tournament, player, and all-team summary."""
 
+        has_v2 = {
+            "position_group_360",
+            "global_rank_v2",
+            "final_player_rating_v2",
+            "gk_rank_v2",
+            "gk_rating_v2",
+        } <= set(rankings)
+        v2_outfield = (
+            rankings.loc[rankings["position_group_360"].ne("GK")]
+            .sort_values("global_rank_v2")
+            .head(10)
+            if has_v2
+            else pd.DataFrame()
+        )
+        v2_goalkeepers = (
+            rankings.loc[
+                rankings["position_group_360"].eq("GK")
+                & rankings["gk_rank_v2"].notna()
+            ]
+            .sort_values("gk_rank_v2")
+            .head(5)
+            if has_v2
+            else pd.DataFrame()
+        )
         if team_player_pool is None:
             team_player_pool = rankings.assign(
                 selection_priority=0,
@@ -646,19 +1062,40 @@ class ArtifactGenerator:
             if "minutes" not in team_player_pool:
                 team_player_pool["minutes"] = np.nan
         comparison = pd.DataFrame()
-        if "legacy_final_player_rating" in rankings:
+        if has_v2:
+            comparison = rankings.loc[
+                rankings["global_rank_v2"].notna()
+                & rankings["global_rank"].notna()
+            ].copy()
+            comparison["old_global_rank"] = pd.to_numeric(
+                comparison["global_rank"],
+                errors="coerce",
+            ).astype(int)
+            comparison["new_global_rank"] = pd.to_numeric(
+                comparison["global_rank_v2"],
+                errors="coerce",
+            ).astype(int)
+            comparison["rank_improvement"] = (
+                comparison["old_global_rank"]
+                - comparison["new_global_rank"]
+            )
+        elif "legacy_final_player_rating" in rankings:
             comparison = rankings.loc[
                 rankings["global_rank"].notna()
             ].assign(
-                legacy_global_rank=rankings[
+                old_global_rank=rankings[
                     "legacy_final_player_rating"
                 ].loc[rankings["global_rank"].notna()]
                 .rank(method="min", ascending=False)
-                .astype(int)
+                .astype(int),
+                new_global_rank=rankings.loc[
+                    rankings["global_rank"].notna(),
+                    "global_rank",
+                ].astype(int),
             )
             comparison["rank_improvement"] = (
-                comparison["legacy_global_rank"]
-                - comparison["global_rank"]
+                comparison["old_global_rank"]
+                - comparison["new_global_rank"]
             )
         over = (
             comparison.nlargest(10, "rank_improvement")
@@ -673,27 +1110,83 @@ class ArtifactGenerator:
         columns = [
             "player_name",
             "team",
-            "legacy_global_rank",
-            "global_rank",
+            "old_global_rank",
+            "new_global_rank",
             "rank_improvement",
         ]
-        primary_rankings = rankings.loc[
-            (
-                ~rankings["position_group"].eq("Goalkeeper")
-                & rankings["RankingStatus"].eq("Ranked (300+ min)")
+        if has_v2:
+            primary_rankings = (
+                rankings.loc[
+                    rankings["position_group_360"].ne("GK")
+                    & pd.to_numeric(
+                        rankings["minutes_played"],
+                        errors="coerce",
+                    ).ge(300.0)
+                ]
+                .sort_values("global_rank_v2")
             )
-            | (
-                rankings["position_group"].eq("Goalkeeper")
-                & rankings["GKRankingStatus"].eq("Ranked (270+ min)")
+            overall_columns = [
+                "global_rank_v2",
+                "player_name",
+                "team",
+                "position_group_360",
+                "functional_role",
+                "final_player_rating_v2",
+            ]
+            position_leaders = (
+                rankings.loc[rankings["position_group_360"].ne("GK")]
+                .sort_values(
+                    [
+                        "position_group_360",
+                        "position_rank_v2",
+                        "global_rank_v2",
+                    ]
+                )
+                .groupby("position_group_360", sort=True)
+                .head(5)
             )
-        ]
-        position_leaders = (
-            primary_rankings.sort_values(
-                ["position_group", "position_rank", "global_rank"]
+            position_columns = [
+                "position_group_360",
+                "position_rank_v2",
+                "player_name",
+                "team",
+                "functional_role",
+                "final_player_rating_v2",
+            ]
+        else:
+            primary_rankings = rankings.loc[
+                (
+                    ~rankings["position_group"].eq("Goalkeeper")
+                    & rankings["RankingStatus"].eq("Ranked (300+ min)")
+                )
+                | (
+                    rankings["position_group"].eq("Goalkeeper")
+                    & rankings["GKRankingStatus"].eq("Ranked (270+ min)")
+                )
+            ]
+            overall_columns = [
+                "global_rank",
+                "player_name",
+                "team",
+                "position_group",
+                "functional_role",
+                "final_player_rating",
+            ]
+            position_leaders = (
+                primary_rankings.sort_values(
+                    ["position_group", "position_rank", "global_rank"]
+                )
+                .groupby("position_group", sort=True)
+                .head(5)
             )
-            .groupby("position_group", sort=True)
-            .head(5)
-        )
+            position_columns = [
+                "position_group",
+                "position_rank",
+                "player_name",
+                "team",
+                "functional_role",
+                "final_player_rating",
+            ]
         team_lookup: dict[str, pd.Series] = {}
         if team_metrics is not None and "team" in team_metrics:
             team_lookup = {
@@ -710,14 +1203,19 @@ class ArtifactGenerator:
         overview_records = []
         for team in teams:
             players = rankings.loc[rankings["team"].eq(team)].sort_values(
-                "team_rank"
-            )
-            covered = team_player_pool.loc[
-                team_player_pool["team"].eq(team)
-            ].sort_values(
-                ["selection_priority", "team_rank", "minutes"],
-                ascending=[True, True, False],
+                "team_rank_v2" if has_v2 else "team_rank",
                 na_position="last",
+            )
+            covered = (
+                players.loc[players["position_group_360"].ne("GK")]
+                if has_v2
+                else team_player_pool.loc[
+                    team_player_pool["team"].eq(team)
+                ].sort_values(
+                    ["selection_priority", "team_rank", "minutes"],
+                    ascending=[True, True, False],
+                    na_position="last",
+                )
             )
             leader = covered.iloc[0] if not covered.empty else None
             overview_records.append(
@@ -731,9 +1229,21 @@ class ArtifactGenerator:
                         else "No observed player"
                     ),
                     "top_global_rank": (
-                        int(leader["global_rank"])
+                        int(
+                            leader[
+                                "global_rank_v2"
+                                if has_v2
+                                else "global_rank"
+                            ]
+                        )
                         if leader is not None
-                        and pd.notna(leader["global_rank"])
+                        and pd.notna(
+                            leader[
+                                "global_rank_v2"
+                                if has_v2
+                                else "global_rank"
+                            ]
+                        )
                         else "Not globally ranked"
                     ),
                     "total_xt": team_value(team, "total_xt_created"),
@@ -760,8 +1270,16 @@ class ArtifactGenerator:
             .get("contextual_vaep_gate", {})
             .get("selected_feature_set", "baseline")
         )
+        overall_leaders = (
+            primary_rankings.head(20)
+            if has_v2
+            else primary_rankings.sort_values(
+                ["primary_global_rank", "primary_goalkeeper_rank"],
+                na_position="last",
+            ).head(20)
+        )
         lines = [
-            "# World Cup V5 Role-Aware Final Report",
+            "# 2022 FIFA World Cup Player Ranking Report",
             "",
             "## Executive summary",
             "",
@@ -772,6 +1290,48 @@ class ArtifactGenerator:
             "360 freeze frames. It does not use optical tracking, external "
             "ratings, or player-name adjustments.",
             "",
+            (
+                "The position-aware tournament rankings are stored under "
+                "`results/reports/ranking/`. They add formal 360 groups while "
+                "preserving the source position and role detail."
+                if has_v2
+                else ""
+            ),
+            "",
+            "## Global top 10 outfield players — tournament ranking v2",
+            "",
+            (
+                _markdown_table(
+                    v2_outfield,
+                    [
+                        "global_rank_v2",
+                        "player_name",
+                        "team",
+                        "position_group_360",
+                        "functional_role",
+                        "final_player_rating_v2",
+                    ],
+                )
+                if has_v2
+                else "_Tournament ranking v2 was not available._"
+            ),
+            "",
+            "## Global top five goalkeepers — tournament ranking v2",
+            "",
+            (
+                _markdown_table(
+                    v2_goalkeepers,
+                    [
+                        "gk_rank_v2",
+                        "player_name",
+                        "team",
+                        "gk_rating_v2",
+                    ],
+                )
+                if has_v2
+                else "_Tournament goalkeeper ranking v2 was not available._"
+            ),
+            "",
             f"The active contribution layer is "
             f"`{model_summary.get('selected_layer', 'unknown')}`. The "
             "experimental attention challenger remains available but affects "
@@ -779,7 +1339,7 @@ class ArtifactGenerator:
             "",
             "## How to read the player rating",
             "",
-            f"The v2 outfield score uses the development-gated "
+            f"The preserved V5 contribution score uses the development-gated "
             f"{context_selection} VAEP feature set and grouped "
             "ElasticNet offense/defense heads with explicit role weights, "
             "VAEP/touch, open-play and set-piece-aware xT, sample-adjusted "
@@ -787,6 +1347,13 @@ class ArtifactGenerator:
             "defensive disruption. Positive ElasticNet calibration selects "
             "the composite weights with team-disjoint folds, followed by "
             "minutes/(minutes+450) position-prior shrinkage.",
+            "",
+            "The tournament ranking v2 adds explicit goals, xG, shots, xA, "
+            "chance creation, progression, possession, defending, and "
+            "off-ball components normalized within `position_group_360`. "
+            "A capped, general role-based finishing treatment corrects the "
+            "structural penalty on goal-centric forwards; it never checks "
+            "player names.",
             "",
             "Goalkeepers use a separate weighted seven-component matrix and "
             "ranking, including high-leverage saves. "
@@ -800,32 +1367,15 @@ class ArtifactGenerator:
             "### Overall leaders",
             "",
             _markdown_table(
-                primary_rankings.sort_values(
-                    ["primary_global_rank", "primary_goalkeeper_rank"],
-                    na_position="last",
-                ).head(20),
-                [
-                    "global_rank",
-                    "player_name",
-                    "team",
-                    "position_group",
-                    "functional_role",
-                    "final_player_rating",
-                ],
+                overall_leaders,
+                overall_columns,
             ),
             "",
             "### Position-group leaders",
             "",
             _markdown_table(
                 position_leaders,
-                [
-                    "position_group",
-                    "position_rank",
-                    "player_name",
-                    "team",
-                    "functional_role",
-                    "final_player_rating",
-                ],
+                position_columns,
             ),
             "",
             "### Largest upward rank movements",
@@ -836,8 +1386,14 @@ class ArtifactGenerator:
             "",
             _markdown_table(under, columns),
             "",
-            "Rank movement compares ordering, not raw rating differences, "
-            "because the V4 and V5 rating scales are different.",
+            (
+                "Rank movement compares the prior global ordering with "
+                "tournament ranking v2 ordering; it does not compare raw "
+                "rating magnitudes."
+                if has_v2
+                else "Rank movement compares ordering, not raw rating "
+                "differences."
+            ),
             "",
             "## All-team overview",
             "",
@@ -862,15 +1418,42 @@ class ArtifactGenerator:
         ]
         for team in teams:
             players = rankings.loc[rankings["team"].eq(team)].sort_values(
-                "team_rank"
-            )
-            covered = team_player_pool.loc[
-                team_player_pool["team"].eq(team)
-            ].sort_values(
-                ["selection_priority", "team_rank", "minutes"],
-                ascending=[True, True, False],
+                "team_rank_v2" if has_v2 else "team_rank",
                 na_position="last",
-            ).head(5)
+            )
+            if has_v2:
+                covered = (
+                    players.loc[players["position_group_360"].ne("GK")]
+                    .sort_values("team_rank_v2")
+                    .head(5)
+                )
+                summary_columns = [
+                    "team_rank_v2",
+                    "global_rank_v2",
+                    "player_name",
+                    "position_group_360",
+                    "functional_role",
+                    "minutes_played",
+                    "final_player_rating_v2",
+                ]
+            else:
+                covered = team_player_pool.loc[
+                    team_player_pool["team"].eq(team)
+                ].sort_values(
+                    ["selection_priority", "team_rank", "minutes"],
+                    ascending=[True, True, False],
+                    na_position="last",
+                ).head(5)
+                summary_columns = [
+                    "team_rank",
+                    "global_rank",
+                    "player_name",
+                    "position_group",
+                    "functional_role",
+                    "minutes",
+                    "final_player_rating",
+                    "ranking_status",
+                ]
             lines.extend(
                 [
                     f"## {team}",
@@ -902,16 +1485,7 @@ class ArtifactGenerator:
                     [
                         _markdown_table(
                             covered,
-                            [
-                                "team_rank",
-                                "global_rank",
-                                "player_name",
-                                "position_group",
-                                "functional_role",
-                                "minutes",
-                                "final_player_rating",
-                                "ranking_status",
-                            ],
+                            summary_columns,
                         ),
                         (
                             "_Coverage-only names are selected by tournament "
@@ -935,6 +1509,53 @@ class ArtifactGenerator:
             ]
         )
         return "\n".join(lines)
+
+    @staticmethod
+    def _v2_player_reason(player: pd.Series) -> str:
+        """Explain a high rank using only measured v2 component evidence."""
+
+        labels = {
+            "finishing_component_v2": (
+                "penalty-box finishing and shot-quality output"
+            ),
+            "creation_component_v2": (
+                "chance creation and final-third passing"
+            ),
+            "progression_component_v2": (
+                "progressive passing and carrying"
+            ),
+            "possession_component_v2": "ball security and possession value",
+            "defending_component_v2": (
+                "ball-winning and defensive contribution"
+            ),
+            "off_ball_component_v2": (
+                "coverage-qualified off-ball contribution"
+            ),
+            "tournament_impact_component_v2": (
+                "total tournament goals/xG/xA/VAEP/xT impact"
+            ),
+        }
+        measured = [
+            (column, float(player[column]))
+            for column in labels
+            if column in player and pd.notna(player[column])
+        ]
+        measured.sort(key=lambda item: item[1], reverse=True)
+        strongest = measured[:2]
+        if not strongest:
+            return (
+                "The ranking reflects the available Qatar 2022 contribution "
+                "profile and sample-size reliability."
+            )
+        evidence = " and ".join(
+            f"{labels[column]} ({value:.0%} within the model context)"
+            for column, value in strongest
+        )
+        return (
+            f"As a {player.get('functional_role', 'tournament role')}, the "
+            f"strongest measured signals are {evidence}. The assessment uses "
+            "Qatar 2022 evidence only."
+        )
 
     @staticmethod
     def _team_profile(
@@ -970,6 +1591,93 @@ class ArtifactGenerator:
             ):
                 return "not available"
             return f"{float(team_metrics[metric]):.4f}"
+
+        has_v2 = {
+            "position_group_360",
+            "team_rank_v2",
+            "final_player_rating_v2",
+            "gk_rank_v2",
+            "gk_rating_v2",
+        } <= set(players)
+        if has_v2:
+            outfield = (
+                players.loc[players["position_group_360"].ne("GK")]
+                .sort_values(["team_rank_v2", "player_name"])
+            )
+            goalkeepers = (
+                players.loc[players["position_group_360"].eq("GK")]
+                .sort_values(["gk_rank_v2", "player_name"])
+            )
+            top_five = outfield.head(5)
+            top_five_lines: list[str] = []
+            for _, player in top_five.iterrows():
+                top_five_lines.extend(
+                    [
+                        f"{int(player['team_rank_v2'])}. "
+                        f"**{player['player_name']}** — "
+                        f"{player['position_group_360']}, "
+                        f"{player['functional_role']} "
+                        f"({float(player['final_player_rating_v2']):.4f})",
+                        "",
+                        ArtifactGenerator._v2_player_reason(player),
+                        "",
+                    ]
+                )
+            top_five_content = (
+                "\n".join(top_five_lines).rstrip()
+                if top_five_lines
+                else "_No eligible outfield ranking._"
+            )
+            full_outfield_table = _markdown_table(
+                outfield,
+                [
+                    "team_rank_v2",
+                    "global_rank_v2",
+                    "player_name",
+                    "position_group_360",
+                    "position_group",
+                    "functional_role",
+                    "minutes_played",
+                    "final_player_rating_v2",
+                ],
+            )
+            goalkeeper_table = _markdown_table(
+                goalkeepers,
+                [
+                    "gk_rank_v2",
+                    "player_name",
+                    "is_main_goalkeeper",
+                    "GKRankingStatus",
+                    "position_group_360",
+                    "position_group",
+                    "functional_role",
+                    "minutes_played",
+                    "gk_rating_v2",
+                ],
+            )
+        else:
+            top_five_content = _markdown_table(
+                covered_players.sort_values(
+                    ["selection_priority", "team_rank", "minutes"],
+                    ascending=[True, True, False],
+                    na_position="last",
+                ).head(5),
+                [
+                    "team_rank",
+                    "player_name",
+                    "functional_role",
+                    "minutes",
+                    "final_player_rating",
+                    "ranking_status",
+                ],
+            )
+            if players.empty and not covered_players.empty:
+                top_five_content += (
+                    "\n\n_Coverage-only players are ordered by tournament "
+                    "minutes. No model rating assigned._"
+                )
+            full_outfield_table = "_Tournament ranking v2 was not available._"
+            goalkeeper_table = "_Tournament goalkeeper ranking v2 was not available._"
 
         return (
             "\n".join(
@@ -1012,32 +1720,23 @@ class ArtifactGenerator:
                 f"- Mean ball-security score (300+ comparison): "
                 f"{team_value('mean_ball_security_score_ranked_300')}",
                 "",
-                "## Top five player summary",
+                "## Top 5 Players",
                 "",
-                _markdown_table(
-                    covered_players.sort_values(
-                        ["selection_priority", "team_rank", "minutes"],
-                        ascending=[True, True, False],
-                        na_position="last",
-                    ).head(5),
-                    [
-                        "team_rank",
-                        "player_name",
-                        "functional_role",
-                        "minutes",
-                        "final_player_rating",
-                        "ranking_status",
-                    ],
-                ),
-                (
-                    ""
-                    if covered_players.empty
-                    else "_Coverage-only players are ordered by tournament "
-                    "minutes. No model rating assigned._"
-                    if players.empty
-                    else ""
-                ),
-                    "",
+                top_five_content,
+                "",
+                "Outfield and goalkeeper scores are not mixed. The top five "
+                "above use the within-team outfield rank; the goalkeeper-only "
+                "section below ranks only the team-main goalkeeper; backups "
+                "remain listed as unranked.",
+                "",
+                "## Full Player List — Outfield",
+                "",
+                full_outfield_table,
+                "",
+                "## Full Player List — Goalkeepers",
+                "",
+                goalkeeper_table,
+                "",
                 ]
             ).rstrip()
             + "\n"
@@ -1081,11 +1780,22 @@ class ArtifactGenerator:
                 plt.close(figure)
             generated.append(path)
 
-        outfield = rankings.loc[rankings["global_rank"].notna()].head(20)
+        has_v2 = "global_rank_v2" in rankings
+        rank_column = "global_rank_v2" if has_v2 else "global_rank"
+        rating_column = (
+            "final_player_rating_v2"
+            if has_v2
+            else "final_player_rating"
+        )
+        outfield = (
+            rankings.loc[rankings[rank_column].notna()]
+            .sort_values(rank_column)
+            .head(20)
+        )
         figure, axis = plt.subplots(figsize=(10, 7))
         axis.barh(
             outfield["player_name"].iloc[::-1],
-            outfield["final_player_rating"].iloc[::-1],
+            outfield[rating_column].iloc[::-1],
             color="#295f98",
         )
         axis.set_xlabel("V5 final player rating")
@@ -1094,13 +1804,22 @@ class ArtifactGenerator:
         save(figure, "v5_global_outfield_rankings.png")
 
         france = rankings.loc[rankings["team"].eq("France")].sort_values(
-            "team_rank"
+            "team_rank_v2" if has_v2 else "team_rank",
+            na_position="last",
         )
         if not france.empty:
             figure, axis = plt.subplots(figsize=(10, 6))
             axis.barh(
                 france["player_name"].iloc[::-1],
-                france["final_player_rating"].iloc[::-1],
+                france[
+                    "final_player_rating_v2"
+                    if has_v2
+                    else "final_player_rating"
+                ].fillna(
+                    france.get("gk_rating_v2", pd.Series(index=france.index))
+                    if has_v2
+                    else np.nan
+                ).iloc[::-1],
                 color="#264653",
             )
             axis.set_xlabel("V5 final player rating")
@@ -1110,12 +1829,19 @@ class ArtifactGenerator:
 
         goalkeepers = rankings.loc[
             rankings["position_group"].eq("Goalkeeper")
-        ].sort_values("position_rank")
+            & (
+                rankings["gk_rank_v2"].notna()
+                if has_v2
+                else pd.Series(True, index=rankings.index)
+            )
+        ].sort_values("gk_rank_v2" if has_v2 else "position_rank")
         if not goalkeepers.empty:
             figure, axis = plt.subplots(figsize=(10, 6))
             axis.barh(
                 goalkeepers["player_name"].iloc[::-1],
-                goalkeepers["final_player_rating"].iloc[::-1],
+                goalkeepers[
+                    "gk_rating_v2" if has_v2 else "final_player_rating"
+                ].iloc[::-1],
                 color="#2a9d8f",
             )
             axis.set_xlabel("Goalkeeper-only reliability-shrunk rating")
@@ -1207,6 +1933,12 @@ class ArtifactGenerator:
                                 "global_rank",
                                 "functional_role",
                                 "final_player_rating",
+                                "position_group_360",
+                                "final_player_rating_v2",
+                                "global_rank_v2",
+                                "team_rank_v2",
+                                "gk_rating_v2",
+                                "gk_rank_v2",
                                 "RankingStatus",
                                 "GKRankingStatus",
                             )
@@ -1226,6 +1958,12 @@ class ArtifactGenerator:
             "global_rank",
             "functional_role",
             "final_player_rating",
+            "position_group_360",
+            "final_player_rating_v2",
+            "global_rank_v2",
+            "team_rank_v2",
+            "gk_rating_v2",
+            "gk_rank_v2",
         ):
             if column not in coverage:
                 coverage[column] = np.nan
@@ -1289,7 +2027,7 @@ class ArtifactGenerator:
         )
         if not set(coverage["team"].dropna().astype(str)) <= set(teams):
             raise ValueError("Team player pool contains an unknown team")
-        files: list[Path] = []
+        files: list[Path] = self._write_ranking_artifacts(rankings)
         team_metric_lookup: dict[str, pd.Series] = {}
         if team_metrics is not None:
             if "team" not in team_metrics:
@@ -1300,28 +2038,6 @@ class ArtifactGenerator:
                 str(row["team"]): row
                 for _, row in team_metrics.iterrows()
             }
-
-        ranking_csv = rankings.to_csv(index=False)
-        ranking_json = (
-            json.dumps(
-                _json_value(rankings.to_dict("records")),
-                indent=2,
-                ensure_ascii=False,
-            )
-            + "\n"
-        )
-        rankings_300plus = self.prepare_300plus_rankings(rankings)
-        ranking_300plus_csv = rankings_300plus.to_csv(index=False)
-        for name, content in (
-            ("v5_player_rankings.csv", ranking_csv),
-            ("player_rankings.csv", ranking_csv),
-            ("player_rankings_300plus.csv", ranking_300plus_csv),
-            ("v5_player_rankings.json", ranking_json),
-            ("player_rankings.json", ranking_json),
-        ):
-            path = self.output_root / name
-            _atomic_text(path, content)
-            files.append(path)
 
         notebook = self._coaches_notebook(rankings)
         for name in ("v5_coaches_notebook.md", "coaches_notebook.md"):
@@ -1415,9 +2131,11 @@ class ArtifactGenerator:
         files.extend(self._generate_figures(rankings, summary_payload))
 
         hashes = {
-            str(path.relative_to(self.output_root)): hashlib.sha256(
-                path.read_bytes()
-            ).hexdigest()
+            (
+                str(path.relative_to(self.output_root))
+                if path.is_relative_to(self.output_root)
+                else str(path)
+            ): hashlib.sha256(path.read_bytes()).hexdigest()
             for path in files
         }
         manifest = ArtifactManifest(

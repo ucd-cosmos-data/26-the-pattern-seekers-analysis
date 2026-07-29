@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Wales
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Finishing/Creative Attacker
 - Role entropy: 0.0000
+- Global rank v2: 420
+- Position rank v2: 106
+- Role rank v2: 35
+- Team rank v2: 8
+- Final player rating v2: 0.2796
 - Global rank: 51
 - Position rank: 29
-- Role rank: 4
+- Role rank: 3
 - Team rank: 1
 - Final player rating: 0.5596
 - Ranking status: Coverage only (<180 min)

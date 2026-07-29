@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Uruguay
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0390
+- Global rank v2: 314
+- Position rank v2: 85
+- Role rank v2: 35
+- Team rank v2: 9
+- Final player rating v2: 0.3504
 - Global rank: 107
 - Position rank: 57
 - Role rank: 9

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Poland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Finishing/Creative Attacker
 - Role entropy: 0.0067
+- Global rank v2: 321
+- Position rank v2: 88
+- Role rank v2: 61
+- Team rank v2: 4
+- Final player rating v2: 0.3461
 - Global rank: 286
 - Position rank: 31
-- Role rank: 67
+- Role rank: 64
 - Team rank: 4
 - Final player rating: 0.4809
 - Ranking status: Ranked (180–299 min)

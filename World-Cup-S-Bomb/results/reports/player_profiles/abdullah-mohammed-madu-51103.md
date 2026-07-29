@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Saudi Arabia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
-- Functional role: Wide Creator
+- Functional role: Defensive Centre-Back
+- Source functional role: Wide Creator
+
 - Probabilistic role: Aerial/Progressive/Creative Centre-Back
 - Role entropy: 0.0000
+- Global rank v2: 508
+- Position rank v2: 93
+- Role rank v2: 2
+- Team rank v2: 14
+- Final player rating v2: 0.2022
 - Global rank: 502
 - Position rank: 76
-- Role rank: 35
+- Role rank: 1
 - Team rank: 17
 - Final player rating: 0.4073
 - Ranking status: Coverage only (<180 min)

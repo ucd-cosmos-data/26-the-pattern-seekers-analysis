@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Denmark
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Secure Centre-Back
 - Role entropy: 0.0367
+- Global rank v2: 173
+- Position rank v2: 17
+- Role rank v2: 7
+- Team rank v2: 6
+- Final player rating v2: 0.4606
 - Global rank: 353
 - Position rank: 18
-- Role rank: 13
+- Role rank: 10
 - Team rank: 14
 - Final player rating: 0.4587
 - Ranking status: Ranked (180–299 min)

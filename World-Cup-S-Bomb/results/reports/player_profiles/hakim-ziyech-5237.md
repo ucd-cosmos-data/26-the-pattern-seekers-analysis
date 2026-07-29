@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Morocco
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0062
+- Global rank v2: 30
+- Position rank v2: 12
+- Role rank v2: 1
+- Team rank v2: 1
+- Final player rating v2: 0.6748
 - Global rank: 345
 - Position rank: 99
-- Role rank: 26
+- Role rank: 28
 - Team rank: 11
 - Final player rating: 0.4615
 - Ranking status: Ranked (300+ min)

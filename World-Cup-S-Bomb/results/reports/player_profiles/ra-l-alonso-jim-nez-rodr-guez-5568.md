@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Mexico
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0013
+- Global rank v2: 393
+- Position rank v2: 76
+- Role rank v2: 40
+- Team rank v2: 12
+- Final player rating v2: 0.2997
 - Global rank: 247
 - Position rank: 42
 - Role rank: 28

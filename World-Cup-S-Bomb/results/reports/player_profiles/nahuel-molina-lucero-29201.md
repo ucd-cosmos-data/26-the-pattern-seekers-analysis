@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Argentina
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0235
+- Global rank v2: 296
+- Position rank v2: 50
+- Role rank v2: 8
+- Team rank v2: 13
+- Final player rating v2: 0.3587
 - Global rank: 294
 - Position rank: 93
-- Role rank: 22
+- Role rank: 24
 - Team rank: 10
 - Final player rating: 0.4793
 - Ranking status: Ranked (300+ min)

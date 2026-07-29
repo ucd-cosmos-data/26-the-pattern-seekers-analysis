@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Poland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Secure/Progressive Fullback
 - Role entropy: 0.2127
+- Global rank v2: 455
+- Position rank v2: 40
+- Role rank v2: 45
+- Team rank v2: 8
+- Final player rating v2: 0.2546
 - Global rank: 368
 - Position rank: 51
-- Role rank: 64
+- Role rank: 48
 - Team rank: 9
 - Final player rating: 0.4537
 - Ranking status: Coverage only (<180 min)

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Canada
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0483
+- Global rank v2: 298
+- Position rank v2: 37
+- Role rank v2: 22
+- Team rank v2: 11
+- Final player rating v2: 0.3576
 - Global rank: 445
 - Position rank: 53
-- Role rank: 39
+- Role rank: 31
 - Team rank: 14
 - Final player rating: 0.4280
 - Ranking status: Coverage only (<180 min)

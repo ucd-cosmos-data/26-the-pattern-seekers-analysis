@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Saudi Arabia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive/Creative Centre-Back
 - Role entropy: 0.0115
+- Global rank v2: 553
+- Position rank v2: 107
+- Role rank v2: 80
+- Team rank v2: 19
+- Final player rating v2: 0.0000
 - Global rank: 521
 - Position rank: 87
-- Role rank: 69
+- Role rank: 64
 - Team rank: 18
 - Final player rating: 0.3940
 - Ranking status: Ranked (180–299 min)

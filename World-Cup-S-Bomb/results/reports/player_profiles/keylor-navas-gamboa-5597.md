@@ -5,17 +5,26 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Costa Rica
+- Tournament: 2022_World_Cup
+- Formal 360 position group: GK
 - Position group: Goalkeeper
 - Functional role: Goalkeeper
+- Source functional role: Goalkeeper
+- Team main goalkeeper: 1.0000
 - Probabilistic role: Goalkeeper
 - Role entropy: 0.0000
+- Goalkeeper rank v2: 29
+- Goalkeeper rating v2: 0.0469
+
+
+
 - Global rank: not available
 - Position rank: 31
 - Role rank: 31
 - Team rank: 7
 - Final player rating: 0.4645
 - Ranking status: Ranked (180–299 min)
-- Goalkeeper ranking status: Ranked (270+ min)
+- Goalkeeper ranking status: Ranked (team main goalkeeper)
 - Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 294.4
 - Minutes reliability: 0.3955

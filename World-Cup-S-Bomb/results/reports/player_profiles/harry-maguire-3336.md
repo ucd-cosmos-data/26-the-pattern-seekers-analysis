@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: England
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0080
+- Global rank v2: 69
+- Position rank v2: 4
+- Role rank v2: 1
+- Team rank v2: 5
+- Final player rating v2: 0.5924
 - Global rank: 55
 - Position rank: 1
 - Role rank: 1

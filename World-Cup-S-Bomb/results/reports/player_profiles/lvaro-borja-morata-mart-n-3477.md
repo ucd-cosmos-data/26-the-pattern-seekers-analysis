@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Spain
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.0001
+- Global rank v2: 19
+- Position rank v2: 9
+- Role rank v2: 5
+- Team rank v2: 1
+- Final player rating v2: 0.7100
 - Global rank: 70
 - Position rank: 7
 - Role rank: 6

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Uruguay
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0035
+- Global rank v2: 537
+- Position rank v2: 100
+- Role rank v2: 35
+- Team rank v2: 16
+- Final player rating v2: 0.1516
 - Global rank: 403
 - Position rank: 104
-- Role rank: 28
+- Role rank: 31
 - Team rank: 15
 - Final player rating: 0.4411
 - Ranking status: Ranked (180–299 min)

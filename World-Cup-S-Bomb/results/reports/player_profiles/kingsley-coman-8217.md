@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: France
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.2462
+- Global rank v2: 289
+- Position rank v2: 81
+- Role rank v2: 57
+- Team rank v2: 14
+- Final player rating v2: 0.3620
 - Global rank: 187
 - Position rank: 85
-- Role rank: 55
+- Role rank: 54
 - Team rank: 9
 - Final player rating: 0.5100
 - Ranking status: Ranked (180–299 min)

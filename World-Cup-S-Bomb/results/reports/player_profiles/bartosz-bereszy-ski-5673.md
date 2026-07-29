@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Poland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
+- Source functional role: Wide Creator
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
+- Global rank v2: 541
+- Position rank v2: 102
+- Role rank v2: 27
+- Team rank v2: 14
+- Final player rating v2: 0.1466
 - Global rank: 168
 - Position rank: 55
 - Role rank: 12

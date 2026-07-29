@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: England
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.0947
+- Global rank v2: 336
+- Position rank v2: 90
+- Role rank v2: 26
+- Team rank v2: 15
+- Final player rating v2: 0.3328
 - Global rank: 120
 - Position rank: 65
-- Role rank: 19
+- Role rank: 16
 - Team rank: 9
 - Final player rating: 0.5313
 - Ranking status: Coverage only (<180 min)

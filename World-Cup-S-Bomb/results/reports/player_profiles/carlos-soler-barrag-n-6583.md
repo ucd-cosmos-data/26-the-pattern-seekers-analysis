@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Spain
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.2540
+- Global rank v2: 156
+- Position rank v2: 17
+- Role rank v2: 40
+- Team rank v2: 10
+- Final player rating v2: 0.4771
 - Global rank: 323
 - Position rank: 37
-- Role rank: 69
+- Role rank: 66
 - Team rank: 15
 - Final player rating: 0.4696
 - Ranking status: Coverage only (<180 min)

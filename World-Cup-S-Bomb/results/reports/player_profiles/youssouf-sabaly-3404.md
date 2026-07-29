@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Senegal
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0078
+- Global rank v2: 116
+- Position rank v2: 16
+- Role rank v2: 15
+- Team rank v2: 2
+- Final player rating v2: 0.5127
 - Global rank: 65
 - Position rank: 18
 - Role rank: 15

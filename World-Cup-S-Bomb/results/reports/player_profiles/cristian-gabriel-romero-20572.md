@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Argentina
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
+- Source functional role: Ball-Playing Centre-Back
+
 - Probabilistic role: Aerial/Secure Centre-Back
 - Role entropy: 0.0023
+- Global rank v2: 499
+- Position rank v2: 88
+- Role rank v2: 20
+- Team rank v2: 19
+- Final player rating v2: 0.2136
 - Global rank: 553
 - Position rank: 107
-- Role rank: 18
+- Role rank: 21
 - Team rank: 20
 - Final player rating: 0.2966
 - Ranking status: Ranked (300+ min)

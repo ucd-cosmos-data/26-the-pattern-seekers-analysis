@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Wales
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Wide Creator
+- Source functional role: Wide Creator
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.2716
+- Global rank v2: 271
+- Position rank v2: 24
+- Role rank v2: 10
+- Team rank v2: 4
+- Final player rating v2: 0.3733
 - Global rank: 343
 - Position rank: 45
-- Role rank: 28
+- Role rank: 27
 - Team rank: 8
 - Final player rating: 0.4621
 - Ranking status: Coverage only (<180 min)

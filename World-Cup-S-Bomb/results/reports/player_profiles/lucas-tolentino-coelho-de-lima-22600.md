@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Brazil
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.0954
+- Global rank v2: 94
+- Position rank v2: 10
+- Role rank v2: 7
+- Team rank v2: 8
+- Final player rating v2: 0.5495
 - Global rank: 154
 - Position rank: 5
-- Role rank: 5
+- Role rank: 2
 - Team rank: 11
 - Final player rating: 0.5191
 - Ranking status: Ranked (300+ min)

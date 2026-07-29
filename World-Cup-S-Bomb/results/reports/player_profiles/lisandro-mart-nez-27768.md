@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Argentina
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive/Creative Centre-Back
 - Role entropy: 0.0003
+- Global rank v2: 467
+- Position rank v2: 81
+- Role rank v2: 58
+- Team rank v2: 17
+- Final player rating v2: 0.2444
 - Global rank: 334
 - Position rank: 13
-- Role rank: 10
+- Role rank: 7
 - Team rank: 12
 - Final player rating: 0.4651
 - Ranking status: Ranked (300+ min)

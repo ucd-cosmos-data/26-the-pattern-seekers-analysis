@@ -2215,5 +2215,393 @@
     "formula": "BaseThreat(zone) * ActionImpactFactor, aggregated per 90",
     "position_group_percentile": "xd90_pct",
     "defensive_dimension_integration": "seventh evidence-aware defensive role input"
+  },
+  "tournament_ranking_v2": {
+    "scope": "2022 FIFA World Cup only",
+    "tournament": "2022_World_Cup",
+    "position_groups": [
+      "GK",
+      "CB",
+      "FB",
+      "DM",
+      "CM",
+      "AM",
+      "FW"
+    ],
+    "component_weights": {
+      "FW": {
+        "finishing": 0.47,
+        "creation": 0.17,
+        "progression": 0.06,
+        "possession": 0.04,
+        "defending": 0.04,
+        "off_ball": 0.1,
+        "tournament_impact": 0.12
+      },
+      "AM": {
+        "finishing": 0.25,
+        "creation": 0.28,
+        "progression": 0.14,
+        "possession": 0.08,
+        "defending": 0.05,
+        "off_ball": 0.08,
+        "tournament_impact": 0.12
+      },
+      "CM": {
+        "finishing": 0.1,
+        "creation": 0.25,
+        "progression": 0.23,
+        "possession": 0.15,
+        "defending": 0.13,
+        "off_ball": 0.07,
+        "tournament_impact": 0.07
+      },
+      "DM": {
+        "finishing": 0.05,
+        "creation": 0.13,
+        "progression": 0.22,
+        "possession": 0.18,
+        "defending": 0.28,
+        "off_ball": 0.1,
+        "tournament_impact": 0.04
+      },
+      "FB": {
+        "finishing": 0.08,
+        "creation": 0.18,
+        "progression": 0.2,
+        "possession": 0.12,
+        "defending": 0.25,
+        "off_ball": 0.1,
+        "tournament_impact": 0.07
+      },
+      "CB": {
+        "finishing": 0.03,
+        "creation": 0.05,
+        "progression": 0.17,
+        "possession": 0.18,
+        "defending": 0.37,
+        "off_ball": 0.15,
+        "tournament_impact": 0.05
+      }
+    },
+    "goalkeeper_weights": {
+      "goals_prevented_proxy_p90": 0.18,
+      "save_rate": 0.1,
+      "high_leverage_save_pct": 0.07,
+      "penalties_saved": 0.32,
+      "penalty_save_rate_shrunk": 0.1,
+      "cross_stopping_rate": 0.06,
+      "sweeper_actions_p90": 0.04,
+      "distribution_under_pressure": 0.04,
+      "claims_p90": 0.03,
+      "minutes": 0.06
+    },
+    "reliability_minutes": 180.0,
+    "target_forward_threshold": 0.7,
+    "target_forward_maximum_boost": 0.06,
+    "audit": {
+      "tournament": "2022_World_Cup",
+      "evidence_scope": {
+        "scoring_inputs": "Qatar 2022 tournament data only",
+        "external_rankings_used_in_scoring": false,
+        "external_analysis_policy": "If consulted, only analysis specific to the 2022 FIFA World Cup may be used, and only for post-score audit.",
+        "excluded": [
+          "club-season performance",
+          "career reputation",
+          "other tournaments",
+          "later performances"
+        ]
+      },
+      "checks": {
+        "ranking_input_scope_2022_world_cup_only": true,
+        "one_ranked_main_goalkeeper_per_team": true,
+        "backup_goalkeepers_are_unranked": true,
+        "harry_kane_team_rank_1_to_2": true,
+        "robert_lewandowski_team_rank_1_to_2": true,
+        "harry_kane_global_top_10": true,
+        "robert_lewandowski_global_top_20": true,
+        "messi_top_20": true,
+        "mbappe_top_20": true,
+        "bounou_top_8_goalkeeper": true,
+        "courtois_top_8_goalkeeper": true,
+        "martinez_top_10_goalkeeper": true,
+        "credible_top_20_standout_coverage": true,
+        "no_role_position_contradictions": true,
+        "no_high_goal_forward_below_mid_tier_teammate": true
+      },
+      "passed": true,
+      "role_consistency_violations": [],
+      "striker_fairness_failures": [],
+      "top_20_standout_coverage": {
+        "required": 8,
+        "present_in_dataset": [
+          "Bruno Fernandes",
+          "Giroud",
+          "Griezmann",
+          "Hakimi",
+          "Kane",
+          "Lewandowski",
+          "Mbappé",
+          "Messi",
+          "Modrić",
+          "Neymar",
+          "Richarlison",
+          "Álvarez"
+        ],
+        "present_in_top_20": [
+          "Bruno Fernandes",
+          "Giroud",
+          "Griezmann",
+          "Kane",
+          "Lewandowski",
+          "Mbappé",
+          "Messi",
+          "Modrić",
+          "Neymar",
+          "Richarlison",
+          "Álvarez"
+        ]
+      },
+      "top_20_outfield": [
+        {
+          "global_rank_v2": 1,
+          "player_name": "Lionel Andrés Messi Cuccittini",
+          "team": "Argentina",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 1.0
+        },
+        {
+          "global_rank_v2": 2,
+          "player_name": "Kylian Mbappé Lottin",
+          "team": "France",
+          "position_group_360": "FW",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.9389170170453992
+        },
+        {
+          "global_rank_v2": 3,
+          "player_name": "Bruno Miguel Borges Fernandes",
+          "team": "Portugal",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.836506932043697
+        },
+        {
+          "global_rank_v2": 4,
+          "player_name": "Robert Lewandowski",
+          "team": "Poland",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward / Penalty-Box Anchor",
+          "final_player_rating_v2": 0.8227041390588662
+        },
+        {
+          "global_rank_v2": 5,
+          "player_name": "Christian Pulisic",
+          "team": "United States",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.7846501367898109
+        },
+        {
+          "global_rank_v2": 6,
+          "player_name": "Mehdi Taremi",
+          "team": "Iran",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward",
+          "final_player_rating_v2": 0.777941289254311
+        },
+        {
+          "global_rank_v2": 7,
+          "player_name": "Harry Kane",
+          "team": "England",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward",
+          "final_player_rating_v2": 0.7777404659571306
+        },
+        {
+          "global_rank_v2": 8,
+          "player_name": "Mateo Kovačić",
+          "team": "Croatia",
+          "position_group_360": "CM",
+          "functional_role": "Deep Playmaker / Metronome",
+          "final_player_rating_v2": 0.7729531941086291
+        },
+        {
+          "global_rank_v2": 9,
+          "player_name": "Neymar da Silva Santos Junior",
+          "team": "Brazil",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.7702158441452054
+        },
+        {
+          "global_rank_v2": 10,
+          "player_name": "Luka Modrić",
+          "team": "Croatia",
+          "position_group_360": "CM",
+          "functional_role": "Deep Playmaker / Metronome",
+          "final_player_rating_v2": 0.7648310343530142
+        },
+        {
+          "global_rank_v2": 11,
+          "player_name": "Antoine Griezmann",
+          "team": "France",
+          "position_group_360": "AM",
+          "functional_role": "Hybrid Playmaker / Roaming Creator",
+          "final_player_rating_v2": 0.7606937278153832
+        },
+        {
+          "global_rank_v2": 12,
+          "player_name": "Ángel Fabián Di María Hernández",
+          "team": "Argentina",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.7554158967629158
+        },
+        {
+          "global_rank_v2": 13,
+          "player_name": "Olivier Giroud",
+          "team": "France",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward / Penalty-Box Anchor",
+          "final_player_rating_v2": 0.7452966071311844
+        },
+        {
+          "global_rank_v2": 14,
+          "player_name": "Richarlison de Andrade",
+          "team": "Brazil",
+          "position_group_360": "FW",
+          "functional_role": "Pressing Forward",
+          "final_player_rating_v2": 0.7381460004917125
+        },
+        {
+          "global_rank_v2": 15,
+          "player_name": "Salem Mohammed Al Dawsari",
+          "team": "Saudi Arabia",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.7361704967246997
+        },
+        {
+          "global_rank_v2": 16,
+          "player_name": "Jamal Musiala",
+          "team": "Germany",
+          "position_group_360": "AM",
+          "functional_role": "Hybrid Playmaker / Roaming Creator",
+          "final_player_rating_v2": 0.7310106383931627
+        },
+        {
+          "global_rank_v2": 17,
+          "player_name": "Gonçalo Matias Ramos",
+          "team": "Portugal",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward",
+          "final_player_rating_v2": 0.730836315666662
+        },
+        {
+          "global_rank_v2": 18,
+          "player_name": "Memphis Depay",
+          "team": "Netherlands",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward",
+          "final_player_rating_v2": 0.7234496476712097
+        },
+        {
+          "global_rank_v2": 19,
+          "player_name": "Álvaro Borja Morata Martín",
+          "team": "Spain",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward",
+          "final_player_rating_v2": 0.7100017263955385
+        },
+        {
+          "global_rank_v2": 20,
+          "player_name": "Julián Álvarez",
+          "team": "Argentina",
+          "position_group_360": "FW",
+          "functional_role": "Pressing Forward",
+          "final_player_rating_v2": 0.7086032744113817
+        }
+      ],
+      "top_10_goalkeepers": [
+        {
+          "gk_rank_v2": 1,
+          "player_name": "Wojciech Szczęsny",
+          "team": "Poland",
+          "gk_rating_v2": 1.0
+        },
+        {
+          "gk_rank_v2": 2,
+          "player_name": "Dominik Livaković",
+          "team": "Croatia",
+          "gk_rating_v2": 0.8915345191124872
+        },
+        {
+          "gk_rank_v2": 3,
+          "player_name": "Yassine Bounou",
+          "team": "Morocco",
+          "gk_rating_v2": 0.7854271308729174
+        },
+        {
+          "gk_rank_v2": 4,
+          "player_name": "Thibaut Courtois",
+          "team": "Belgium",
+          "gk_rating_v2": 0.6512660927988838
+        },
+        {
+          "gk_rank_v2": 5,
+          "player_name": "Sergio Rochet Álvarez",
+          "team": "Uruguay",
+          "gk_rating_v2": 0.5812763833766879
+        },
+        {
+          "gk_rank_v2": 6,
+          "player_name": "Unai Simón Mendibil",
+          "team": "Spain",
+          "gk_rating_v2": 0.5702792625131764
+        },
+        {
+          "gk_rank_v2": 7,
+          "player_name": "Mohammed Khalil Al Owais",
+          "team": "Saudi Arabia",
+          "gk_rating_v2": 0.5554404138410668
+        },
+        {
+          "gk_rank_v2": 8,
+          "player_name": "Damián Emiliano Martínez",
+          "team": "Argentina",
+          "gk_rating_v2": 0.53930876324817
+        },
+        {
+          "gk_rank_v2": 9,
+          "player_name": "Matthew Charles Turner",
+          "team": "United States",
+          "gk_rating_v2": 0.4669421385439262
+        },
+        {
+          "gk_rank_v2": 10,
+          "player_name": "Andries Noppert",
+          "team": "Netherlands",
+          "gk_rating_v2": 0.4149422162992421
+        }
+      ],
+      "before_after": {
+        "harry_kane": {
+          "player_name": "Harry Kane",
+          "old_global_rank": 301,
+          "new_global_rank": 7,
+          "old_team_rank": 13,
+          "new_team_rank": 1
+        },
+        "robert_lewandowski": {
+          "player_name": "Robert Lewandowski",
+          "old_global_rank": 144,
+          "new_global_rank": 4,
+          "old_team_rank": 2,
+          "new_team_rank": 1
+        }
+      }
+    }
   }
 }

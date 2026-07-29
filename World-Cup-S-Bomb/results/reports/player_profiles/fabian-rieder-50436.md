@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Switzerland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0005
+- Global rank v2: 353
+- Position rank v2: 93
+- Role rank v2: 12
+- Team rank v2: 12
+- Final player rating v2: 0.3222
 - Global rank: 98
 - Position rank: 53
 - Role rank: 5

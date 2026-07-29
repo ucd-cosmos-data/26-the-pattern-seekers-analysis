@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Belgium
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
-- Functional role: Sweeper CB
+- Functional role: Attacking Wingback
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.2043
+- Global rank v2: 514
+- Position rank v2: 97
+- Role rank v2: 56
+- Team rank v2: 16
+- Final player rating v2: 0.1928
 - Global rank: 270
 - Position rank: 89
-- Role rank: 4
+- Role rank: 52
 - Team rank: 10
 - Final player rating: 0.4850
 - Ranking status: Ranked (180–299 min)

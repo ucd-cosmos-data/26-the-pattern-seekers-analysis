@@ -5,17 +5,26 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Qatar
+- Tournament: 2022_World_Cup
+- Formal 360 position group: GK
 - Position group: Goalkeeper
 - Functional role: Goalkeeper
+- Source functional role: Goalkeeper
+- Team main goalkeeper: 1.0000
 - Probabilistic role: Goalkeeper
 - Role entropy: 0.0000
+- Goalkeeper rank v2: 31
+- Goalkeeper rating v2: 0.0357
+
+
+
 - Global rank: not available
 - Position rank: 30
 - Role rank: 30
 - Team rank: 6
 - Final player rating: 0.4698
 - Ranking status: Ranked (180–299 min)
-- Goalkeeper ranking status: Ranked (180–269 min)
+- Goalkeeper ranking status: Ranked (team main goalkeeper)
 - Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 192.1
 - Minutes reliability: 0.2564

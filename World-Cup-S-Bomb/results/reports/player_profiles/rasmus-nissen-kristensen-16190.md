@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Denmark
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0003
+- Global rank v2: 218
+- Position rank v2: 35
+- Role rank v2: 28
+- Team rank v2: 8
+- Final player rating v2: 0.4153
 - Global rank: 69
 - Position rank: 20
 - Role rank: 17

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Belgium
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.0638
+- Global rank v2: 370
+- Position rank v2: 73
+- Role rank v2: 62
+- Team rank v2: 10
+- Final player rating v2: 0.3095
 - Global rank: 302
 - Position rank: 59
-- Role rank: 68
+- Role rank: 65
 - Team rank: 11
 - Final player rating: 0.4751
 - Ranking status: Coverage only (<180 min)

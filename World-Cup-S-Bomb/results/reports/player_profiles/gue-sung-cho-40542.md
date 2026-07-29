@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: South Korea
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
+- Source functional role: Target Forward / Penalty-Box Anchor
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.1146
+- Global rank v2: 120
+- Position rank v2: 31
+- Role rank v2: 9
+- Team rank v2: 3
+- Final player rating v2: 0.5090
 - Global rank: 305
 - Position rank: 60
 - Role rank: 18

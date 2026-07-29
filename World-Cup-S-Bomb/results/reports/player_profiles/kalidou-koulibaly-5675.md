@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Senegal
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Secure Centre-Back
 - Role entropy: 0.0000
+- Global rank v2: 137
+- Position rank v2: 11
+- Role rank v2: 4
+- Team rank v2: 3
+- Final player rating v2: 0.4896
 - Global rank: 376
 - Position rank: 27
-- Role rank: 18
+- Role rank: 15
 - Team rank: 14
 - Final player rating: 0.4513
 - Ranking status: Ranked (300+ min)

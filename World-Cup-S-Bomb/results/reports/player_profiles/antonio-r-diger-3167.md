@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Germany
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
+- Source functional role: Ball-Playing Centre-Back
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0124
+- Global rank v2: 267
+- Position rank v2: 32
+- Role rank v2: 12
+- Team rank v2: 12
+- Final player rating v2: 0.3773
 - Global rank: 388
 - Position rank: 31
-- Role rank: 11
+- Role rank: 13
 - Team rank: 15
 - Final player rating: 0.4464
 - Ranking status: Ranked (180–299 min)

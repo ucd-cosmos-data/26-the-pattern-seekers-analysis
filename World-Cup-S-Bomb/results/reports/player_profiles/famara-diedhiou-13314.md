@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Senegal
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.0000
+- Global rank v2: 176
+- Position rank v2: 47
+- Role rank v2: 22
+- Team rank v2: 6
+- Final player rating v2: 0.4581
 - Global rank: 240
 - Position rank: 40
 - Role rank: 26

@@ -42,18 +42,32 @@ FOLDER_PURPOSES: dict[str, str] = {
     ),
     "MIscellaneous": (
         "Supporting tactical summaries, legacy exploratory outputs, and the "
-        "compact tournament PDF that do not belong to the canonical release."
+        "compact tournament PDF that do not belong to the active release."
+    ),
+    "miscellaneous": (
+        "Supporting tactical summaries, legacy exploratory outputs, and the "
+        "compact tournament PDF that do not belong to the active release."
     ),
     "reports": (
         "Human- and machine-readable player, team, coaching, and tournament "
         "reports."
     ),
     "reports/canonical": (
-        "Canonical release artifacts: rankings, final summary, model summary, "
-        "coaches notebook, and their data exports."
+        "Canonical release narrative: final summary, model summary, coaches "
+        "notebook, and their data exports."
     ),
     "reports/canonical/data": (
         "Canonical tabular data backing the published reports."
+    ),
+    "reports/ranking": (
+        "Active Qatar 2022 player and goalkeeper rankings, methodology, and "
+        "validation audit."
+    ),
+    "reports/ranking/by_team": (
+        "Complete player ranking CSVs for each national team."
+    ),
+    "reports/ranking/legacy": (
+        "Archived pre-v2 ranking tables retained for reproducible comparison."
     ),
     "reports/docs": (
         "Office-document editions of final reporting artifacts."
@@ -420,7 +434,11 @@ def _write_catalogs(records: list[dict[str, Any]]) -> None:
     with (DOCUMENTATION_ROOT / "file_dictionary.csv").open(
         "w", encoding="utf-8", newline=""
     ) as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fields,
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(records)
     with (DOCUMENTATION_ROOT / "file_dictionary.json").open(
@@ -683,8 +701,11 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
         ),
         (
             "Supporting/legacy outputs",
-            "MIscellaneous/*",
-            _family_count(records, "MIscellaneous"),
+            "miscellaneous/*",
+            (
+                _family_count(records, "miscellaneous")
+                + _family_count(records, "MIscellaneous")
+            ),
             "Exploratory summaries and noncanonical model leaderboards.",
         ),
         (
@@ -697,7 +718,25 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
             "Canonical reports",
             "reports/canonical/*",
             _family_count(records, "reports/canonical"),
-            "Current rankings, final summary, model summary, and coaches notebook.",
+            "Current final summary, model summary, and coaches notebook.",
+        ),
+        (
+            "Tournament rankings",
+            "reports/ranking/*",
+            _family_count(records, "reports/ranking"),
+            "Qatar 2022 outfield, 300-minute, goalkeeper, audit, and methodology artifacts.",
+        ),
+        (
+            "Per-team tournament rankings",
+            "reports/ranking/by_team/<TEAM>.csv",
+            _family_count(records, "reports/ranking/by_team"),
+            "Complete player ranking table for each of the 32 national teams.",
+        ),
+        (
+            "Archived legacy rankings",
+            "reports/ranking/legacy/*",
+            _family_count(records, "reports/ranking/legacy"),
+            "Pre-v2 tables retained for before/after reproducibility.",
         ),
         (
             "Canonical report data",
@@ -769,9 +808,9 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
         "",
         "| If you need… | Go to |",
         "|---|---|",
-        "| Primary 300+-minute rankings | [`reports/canonical/player_rankings_300plus.csv`](../reports/canonical/player_rankings_300plus.csv) |",
-        "| Full-cohort player table | [`reports/canonical/player_rankings.csv`](../reports/canonical/player_rankings.csv) |",
-        "| Searchable JSON rankings | [`reports/canonical/player_rankings.json`](../reports/canonical/player_rankings.json) |",
+        "| Primary 300+-minute rankings | [`reports/ranking/global_rankings_outfield_300min.csv`](../reports/ranking/global_rankings_outfield_300min.csv) |",
+        "| Full-cohort player table | [`reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) |",
+        "| Searchable JSON rankings | [`reports/ranking/player_rankings.json`](../reports/ranking/player_rankings.json) |",
         "| One player’s profile | [`reports/player_profiles/`](../reports/player_profiles/) |",
         "| One player’s heatmap | [`reports/visuals/heatmaps/`](../reports/visuals/heatmaps/) |",
         "| One team’s profile | [`reports/team_profiles/`](../reports/team_profiles/) |",
@@ -800,7 +839,8 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
             "",
             "## Which version wins?",
             "",
-            "Use `results/reports/canonical/` for active published values. "
+            "Use `results/reports/ranking/` for active player rankings and "
+            "`results/reports/canonical/` for active narrative summaries. "
             "`MIscellaneous/` may contain older or exploratory leaderboards and "
             "must not override canonical rankings or validation conclusions.",
             "",
@@ -818,10 +858,18 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
 def _write_profiles_dictionary(records: list[dict[str, Any]]) -> None:
     """Write the profile/report location dictionary."""
 
-    team_codes = sorted(
-        path.name
-        for path in (RESULTS_ROOT / "reports" / "starters").iterdir()
-        if path.is_dir()
+    starters_root = RESULTS_ROOT / "reports" / "starters"
+    team_codes = (
+        sorted(path.name for path in starters_root.iterdir() if path.is_dir())
+        if starters_root.is_dir()
+        else sorted(
+            {
+                path.name.split("_", maxsplit=1)[0]
+                for path in (RESULTS_ROOT / "reports" / "teams").glob(
+                    "*_team_coaching_report.md"
+                )
+            }
+        )
     )
     player_profiles = _family_count(records, "reports/player_profiles")
     starter_files = _family_count(records, "reports/starters", recursive=True)
@@ -875,7 +923,7 @@ def _write_rankings_dictionary(records: list[dict[str, Any]]) -> None:
     ranking_csv = next(
         record
         for record in records
-        if record["path"] == "reports/canonical/player_rankings.csv"
+        if record["path"] == "reports/ranking/player_rankings.csv"
     )
     lines = [
         "# Reports - Rankings",
@@ -883,13 +931,17 @@ def _write_rankings_dictionary(records: list[dict[str, Any]]) -> None:
         "Dictionary for locating and interpreting the active player, goalkeeper, "
         "position, role, and team rankings.",
         "",
-        "## Canonical ranking files",
+        "## Active ranking files",
         "",
         "| Ranking resource | Location | Use |",
         "|---|---|---|",
-        f"| Complete ranking table | [`results/reports/canonical/player_rankings.csv`](../reports/canonical/player_rankings.csv) | Spreadsheet/dataframe source; {ranking_csv['format_details']}. |",
-        "| Primary 300+-minute ranking | [`results/reports/canonical/player_rankings_300plus.csv`](../reports/canonical/player_rankings_300plus.csv) | Excludes every player below 300 minutes and recalculates cohort-relative ranks. |",
-        "| Complete ranking JSON | [`results/reports/canonical/player_rankings.json`](../reports/canonical/player_rankings.json) | Same records for applications and APIs. |",
+        f"| Complete ranking table | [`results/reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) | Spreadsheet/dataframe source; {ranking_csv['format_details']}. |",
+        "| Global outfield ranking | [`results/reports/ranking/global_rankings_outfield.csv`](../reports/ranking/global_rankings_outfield.csv) | All eligible outfield players ordered by `global_rank_v2`. |",
+        "| Primary 300+-minute ranking | [`results/reports/ranking/global_rankings_outfield_300min.csv`](../reports/ranking/global_rankings_outfield_300min.csv) | Filters exclusively on Qatar 2022 `minutes_played >= 300`. |",
+        "| Goalkeeper ranking | [`results/reports/ranking/goalkeeper_rankings.csv`](../reports/ranking/goalkeeper_rankings.csv) | Separate non-comparable rating for exactly one team-main goalkeeper per nation. |",
+        "| Complete ranking JSON | [`results/reports/ranking/player_rankings.json`](../reports/ranking/player_rankings.json) | Same records for applications and APIs. |",
+        "| Ranking methodology | [`results/reports/ranking/ranking_methodology.md`](../reports/ranking/ranking_methodology.md) | Position-aware weights, normalization, sample treatment, and role logic. |",
+        "| Ranking audit | [`results/reports/ranking/ranking_audit.md`](../reports/ranking/ranking_audit.md) | Before/after comparisons and eyes-test results. |",
         "| Human-readable leaders | [`results/reports/canonical/final_summary.md`](../reports/canonical/final_summary.md) | Overall, position-group, movement, team, and top-five summaries. |",
         "| Coach-facing leaders | [`results/reports/canonical/coaches_notebook.md`](../reports/canonical/coaches_notebook.md) | Pressing, networks, line breaking, spatial advantages, and goalkeeper leaders. |",
         "",
@@ -897,6 +949,14 @@ def _write_rankings_dictionary(records: list[dict[str, Any]]) -> None:
         "",
         "| Field | Meaning |",
         "|---|---|",
+        "| `position_group_360` | Formal tournament-usage group: GK, CB, FB, DM, CM, AM, or FW. |",
+        "| `global_rank_v2` | Position-aware global outfield rank; goalkeepers are blank. |",
+        "| `gk_rank_v2` | Rank among the 32 team-main goalkeepers; backups are blank. |",
+        "| `is_main_goalkeeper` | `true` only for the goalkeeper with the most Qatar 2022 minutes on that team. |",
+        "| `position_rank_v2` | Rank within `position_group_360`. |",
+        "| `role_rank_v2` | Rank within the coherent functional role. |",
+        "| `team_rank_v2` | Outfield rank within the 2022 national team. |",
+        "| `final_player_rating_v2` / `gk_rating_v2` | Separate 0–1 outfield and goalkeeper tournament scores. |",
         "| `global_rank` | Global outfield rank. In the 300+ file this is recalculated only among eligible outfield players; goalkeepers are blank. |",
         "| `goalkeeper_rank` / `primary_goalkeeper_rank` | Separate goalkeeper-only rank. |",
         "| `position_rank` | Rank within the broad position group. |",
@@ -919,7 +979,7 @@ def _write_rankings_dictionary(records: list[dict[str, Any]]) -> None:
         "",
         "`results/MIscellaneous/` contains coaching, recommendation, transition, "
         "and xG model leaderboards. These evaluate auxiliary models and are not "
-        "the canonical player ranking. Use the canonical CSV above for player "
+        "the active player ranking. Use the active CSV above for player "
         "ordering.",
         "",
         "To find any ranking-related filename, filter "
@@ -953,9 +1013,10 @@ def _write_compact_index(records: list[dict[str, Any]]) -> None:
         "",
         "## Canonical rule",
         "",
-        "When similarly named artifacts disagree, use files under "
-        "`results/reports/canonical/` unless a validation task explicitly calls "
-        "for an out-of-fold artifact from `audit/` or `diagnostics/`.",
+        "Use `results/reports/ranking/` for active player ordering and "
+        "`results/reports/canonical/` for narrative summaries. A validation "
+        "task may explicitly call for an out-of-fold artifact from `audit/` "
+        "or `diagnostics/`.",
         "",
         "Rebuild after result changes with "
         "`python results/documentation/generate_documentation.py`.",

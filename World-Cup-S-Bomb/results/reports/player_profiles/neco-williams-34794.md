@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Wales
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
+- Source functional role: Wide Creator
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0078
+- Global rank v2: 291
+- Position rank v2: 47
+- Role rank v2: 11
+- Team rank v2: 5
+- Final player rating v2: 0.3611
 - Global rank: 122
 - Position rank: 35
 - Role rank: 6

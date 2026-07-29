@@ -5,17 +5,26 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Switzerland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: GK
 - Position group: Goalkeeper
 - Functional role: Goalkeeper
+- Source functional role: Goalkeeper
+- Team main goalkeeper: 0.0000
 - Probabilistic role: Goalkeeper
 - Role entropy: 0.0000
+- Goalkeeper rank v2: not available
+- Goalkeeper rating v2: not available
+
+
+
 - Global rank: not available
 - Position rank: 28
 - Role rank: 28
 - Team rank: 9
 - Final player rating: 0.4741
 - Ranking status: Coverage only (<180 min)
-- Goalkeeper ranking status: Coverage only (<180 min)
+- Goalkeeper ranking status: Unranked (backup goalkeeper)
 - Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 100.3
 - Minutes reliability: 0.1562

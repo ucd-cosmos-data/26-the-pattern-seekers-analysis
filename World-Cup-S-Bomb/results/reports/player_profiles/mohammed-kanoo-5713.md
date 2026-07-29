@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Saudi Arabia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.2385
+- Global rank v2: 412
+- Position rank v2: 35
+- Role rank v2: 45
+- Team rank v2: 10
+- Final player rating v2: 0.2856
 - Global rank: 391
 - Position rank: 58
-- Role rank: 26
+- Role rank: 18
 - Team rank: 13
 - Final player rating: 0.4442
 - Ranking status: Ranked (180–299 min)

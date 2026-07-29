@@ -8,10 +8,10 @@ Use these three compact dictionaries instead of individual folder summaries:
 
 ## Exact-file search
 
-The results tree currently contains **2,580 files**. Use [`file_dictionary.csv`](file_dictionary.csv) for spreadsheet search or [`file_dictionary.json`](file_dictionary.json) for programmatic search. These are indexes only; the three Markdown documents above are the human-readable dictionary.
+The results tree currently contains **1,439 files**. Use [`file_dictionary.csv`](file_dictionary.csv) for spreadsheet search or [`file_dictionary.json`](file_dictionary.json) for programmatic search. These are indexes only; the three Markdown documents above are the human-readable dictionary.
 
 ## Canonical rule
 
-When similarly named artifacts disagree, use files under `results/reports/canonical/` unless a validation task explicitly calls for an out-of-fold artifact from `audit/` or `diagnostics/`.
+Use `results/reports/ranking/` for active player ordering and `results/reports/canonical/` for narrative summaries. A validation task may explicitly call for an out-of-fold artifact from `audit/` or `diagnostics/`.
 
 Rebuild after result changes with `python results/documentation/generate_documentation.py`.

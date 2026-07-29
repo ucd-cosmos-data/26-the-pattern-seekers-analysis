@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Wales
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0011
+- Global rank v2: 391
+- Position rank v2: 58
+- Role rank v2: 40
+- Team rank v2: 7
+- Final player rating v2: 0.3010
 - Global rank: 486
 - Position rank: 72
-- Role rank: 54
+- Role rank: 46
 - Team rank: 14
 - Final player rating: 0.4142
 - Ranking status: Ranked (180–299 min)

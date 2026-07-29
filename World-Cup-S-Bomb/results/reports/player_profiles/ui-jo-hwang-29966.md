@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: South Korea
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
-- Functional role: Ball-Winner
+- Functional role: Pressing Forward
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.2480
+- Global rank v2: 397
+- Position rank v2: 77
+- Role rank v2: 18
+- Team rank v2: 16
+- Final player rating v2: 0.2942
 - Global rank: 342
 - Position rank: 69
-- Role rank: 58
+- Role rank: 16
 - Team rank: 15
 - Final player rating: 0.4621
 - Ranking status: Coverage only (<180 min)

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Japan
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Secure/Progressive Fullback
 - Role entropy: 0.0200
+- Global rank v2: 389
+- Position rank v2: 64
+- Role rank v2: 15
+- Team rank v2: 18
+- Final player rating v2: 0.3015
 - Global rank: 458
 - Position rank: 53
-- Role rank: 33
+- Role rank: 37
 - Team rank: 21
 - Final player rating: 0.4252
 - Ranking status: Ranked (180–299 min)

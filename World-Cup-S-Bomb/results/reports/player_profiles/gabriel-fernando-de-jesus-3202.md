@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Brazil
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
-- Functional role: Ball-Winner
+- Functional role: Pressing Forward
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.0870
+- Global rank v2: 159
+- Position rank v2: 41
+- Role rank v2: 6
+- Team rank v2: 14
+- Final player rating v2: 0.4727
 - Global rank: 217
 - Position rank: 32
-- Role rank: 32
+- Role rank: 7
 - Team rank: 16
 - Final player rating: 0.4990
 - Ranking status: Coverage only (<180 min)

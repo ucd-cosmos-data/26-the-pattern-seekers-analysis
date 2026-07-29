@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Poland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.1768
+- Global rank v2: 58
+- Position rank v2: 6
+- Role rank v2: 3
+- Team rank v2: 2
+- Final player rating v2: 0.6136
 - Global rank: 330
 - Position rank: 40
-- Role rank: 16
+- Role rank: 9
 - Team rank: 7
 - Final player rating: 0.4657
 - Ranking status: Ranked (300+ min)

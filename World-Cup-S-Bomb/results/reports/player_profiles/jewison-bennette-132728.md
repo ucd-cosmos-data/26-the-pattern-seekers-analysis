@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Costa Rica
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.1006
+- Global rank v2: 498
+- Position rank v2: 115
+- Role rank v2: 55
+- Team rank v2: 10
+- Final player rating v2: 0.2141
 - Global rank: 164
 - Position rank: 77
-- Role rank: 22
+- Role rank: 18
 - Team rank: 1
 - Final player rating: 0.5157
 - Ranking status: Coverage only (<180 min)

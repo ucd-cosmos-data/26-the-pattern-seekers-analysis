@@ -55,6 +55,11 @@ from src.models.goalkeeper_valuation import (
     goalkeeper_model_summary,
 )
 from src.models.roles import fit_probabilistic_roles
+from src.models.tournament_rankings import (
+    TournamentRankingConfig,
+    calculate_tournament_rankings_v2,
+    tournament_ranking_audit,
+)
 from src.models.valuation import (
     DEFAULT_METRIC_DIRECTIONS,
     ContributionMetricTransformer,
@@ -361,10 +366,11 @@ def _mark_historical_rating_reports(project_root: Path) -> list[Path]:
             marker,
             "> **Historical V4 player-rating packet.** Player ratings, ranks, "
             "role-challenger decisions, and rating uncertainty below are "
-            "superseded by `results/reports/player_rankings.csv`, "
+            "superseded by `results/reports/ranking/player_rankings.csv`, "
             "`results/reports/player_profiles/`, and "
-            "`results/reports/model_summary.md`. Possession, tactical, and "
-            "match-bootstrap material remains a historical V4 result.",
+            "`results/reports/canonical/model_summary.md`. Possession, "
+            "tactical, and match-bootstrap material remains a historical V4 "
+            "result.",
             "",
         ]
     )
@@ -410,9 +416,10 @@ def _purge_obsolete_v4_summaries(project_root: Path) -> Path:
 
     results_root = (project_root / "results").resolve()
     report_root = results_root / "reports"
+    ranking_root = report_root / "ranking"
     required_publication = {
-        report_root / "v5_player_rankings.csv",
-        report_root / "v5_player_rankings.json",
+        ranking_root / "v5_player_rankings.csv",
+        ranking_root / "v5_player_rankings.json",
         report_root / "v5_coaches_notebook.md",
         report_root / "model_summary.json",
         report_root / "model_summary.md",
@@ -1770,6 +1777,15 @@ def run_extended_pipeline(
     rated["team_rank"] = rated.groupby("team")[
         "final_player_rating"
     ].rank(method="min", ascending=False).astype(int)
+    tournament_ranking_config = TournamentRankingConfig()
+    rated = calculate_tournament_rankings_v2(
+        rated,
+        config=tournament_ranking_config,
+    )
+    tournament_rank_audit = tournament_ranking_audit(
+        rated,
+        strict=True,
+    )
     goalkeeper_summary = goalkeeper_model_summary(
         goalkeeper_audit,
         goalkeeper_ratings,
@@ -1892,6 +1908,38 @@ def run_extended_pipeline(
             "candidates": probabilistic.candidate_metrics.to_dict("records"),
         },
         "rating_weights": dict(calibrated_weights),
+        "tournament_ranking_v2": {
+            "scope": "2022 FIFA World Cup only",
+            "tournament": "2022_World_Cup",
+            "position_groups": [
+                "GK",
+                "CB",
+                "FB",
+                "DM",
+                "CM",
+                "AM",
+                "FW",
+            ],
+            "component_weights": {
+                group: dict(weights)
+                for group, weights in (
+                    tournament_ranking_config.component_weights.items()
+                )
+            },
+            "goalkeeper_weights": dict(
+                tournament_ranking_config.goalkeeper_weights
+            ),
+            "reliability_minutes": (
+                tournament_ranking_config.reliability_minutes
+            ),
+            "target_forward_threshold": (
+                tournament_ranking_config.target_forward_threshold
+            ),
+            "target_forward_maximum_boost": (
+                tournament_ranking_config.target_forward_maximum_boost
+            ),
+            "audit": tournament_rank_audit,
+        },
         "composite_calibration": composite_calibration,
         "rating_methodology": {
             "outfield_eligibility_minutes": 45,

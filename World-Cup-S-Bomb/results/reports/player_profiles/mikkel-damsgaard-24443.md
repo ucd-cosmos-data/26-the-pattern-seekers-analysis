@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Denmark
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Wide Creator
+- Source functional role: Wide Creator
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.0016
+- Global rank v2: 205
+- Position rank v2: 62
+- Role rank v2: 8
+- Team rank v2: 7
+- Final player rating v2: 0.4306
 - Global rank: 272
 - Position rank: 96
 - Role rank: 21

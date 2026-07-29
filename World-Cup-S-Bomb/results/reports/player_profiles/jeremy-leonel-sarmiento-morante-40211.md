@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ecuador
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.0125
+- Global rank v2: 262
+- Position rank v2: 75
+- Role rank v2: 54
+- Team rank v2: 6
+- Final player rating v2: 0.3794
 - Global rank: 274
 - Position rank: 28
-- Role rank: 65
+- Role rank: 63
 - Team rank: 5
 - Final player rating: 0.4842
 - Ranking status: Coverage only (<180 min)

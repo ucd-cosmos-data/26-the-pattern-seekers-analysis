@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Wales
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Secure/Aerial Centre-Back
 - Role entropy: 0.0126
+- Global rank v2: 502
+- Position rank v2: 90
+- Role rank v2: 66
+- Team rank v2: 10
+- Final player rating v2: 0.2070
 - Global rank: 540
 - Position rank: 99
-- Role rank: 78
+- Role rank: 73
 - Team rank: 15
 - Final player rating: 0.3779
 - Ranking status: Ranked (180–299 min)

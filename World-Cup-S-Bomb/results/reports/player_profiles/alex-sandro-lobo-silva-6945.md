@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Brazil
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0001
+- Global rank v2: 85
+- Position rank v2: 8
+- Role rank v2: 8
+- Team rank v2: 6
+- Final player rating v2: 0.5583
 - Global rank: 121
 - Position rank: 34
 - Role rank: 28

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: South Korea
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.2702
+- Global rank v2: 425
+- Position rank v2: 107
+- Role rank v2: 36
+- Team rank v2: 17
+- Final player rating v2: 0.2774
 - Global rank: 296
 - Position rank: 98
-- Role rank: 48
+- Role rank: 36
 - Team rank: 12
 - Final player rating: 0.4783
 - Ranking status: Ranked (180–299 min)

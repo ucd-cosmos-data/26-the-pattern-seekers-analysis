@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Spain
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Secure/Progressive Fullback
 - Role entropy: 0.0004
+- Global rank v2: 101
+- Position rank v2: 12
+- Role rank v2: 12
+- Team rank v2: 8
+- Final player rating v2: 0.5365
 - Global rank: 133
 - Position rank: 41
 - Role rank: 33

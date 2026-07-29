@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Australia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Wide Creator
+- Source functional role: Wide Creator
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.1500
+- Global rank v2: 128
+- Position rank v2: 42
+- Role rank v2: 4
+- Team rank v2: 1
+- Final player rating v2: 0.5007
 - Global rank: 232
 - Position rank: 17
 - Role rank: 19

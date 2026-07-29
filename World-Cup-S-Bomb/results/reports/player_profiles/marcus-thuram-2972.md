@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: France
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Box-to-Box / Engine Midfielder
+- Source functional role: Box-to-Box / Engine Midfielder
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.2472
+- Global rank v2: 163
+- Position rank v2: 18
+- Role rank v2: 9
+- Team rank v2: 12
+- Final player rating v2: 0.4676
 - Global rank: 199
 - Position rank: 10
 - Role rank: 3

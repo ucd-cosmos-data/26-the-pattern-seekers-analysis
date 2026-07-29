@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Iran
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive/Creative Centre-Back
 - Role entropy: 0.1941
+- Global rank v2: 325
+- Position rank v2: 44
+- Role rank v2: 29
+- Team rank v2: 10
+- Final player rating v2: 0.3456
 - Global rank: 398
 - Position rank: 34
-- Role rank: 22
+- Role rank: 19
 - Team rank: 15
 - Final player rating: 0.4415
 - Ranking status: Ranked (300+ min)

@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Poland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
-- Functional role: Holding Anchor
+- Functional role: Pressing Forward
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.1952
+- Global rank v2: 323
+- Position rank v2: 67
+- Role rank v2: 14
+- Team rank v2: 5
+- Final player rating v2: 0.3458
 - Global rank: 321
 - Position rank: 65
 - Role rank: 14

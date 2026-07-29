@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Tunisia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Box-to-Box / Engine Midfielder
+- Source functional role: Box-to-Box / Engine Midfielder
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0552
+- Global rank v2: 158
+- Position rank v2: 18
+- Role rank v2: 8
+- Team rank v2: 3
+- Final player rating v2: 0.4754
 - Global rank: 269
 - Position rank: 11
 - Role rank: 6

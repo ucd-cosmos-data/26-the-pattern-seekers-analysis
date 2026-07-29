@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ecuador
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0353
+- Global rank v2: 484
+- Position rank v2: 76
+- Role rank v2: 52
+- Team rank v2: 15
+- Final player rating v2: 0.2281
 - Global rank: 522
 - Position rank: 83
-- Role rank: 63
+- Role rank: 55
 - Team rank: 15
 - Final player rating: 0.3931
 - Ranking status: Ranked (180–299 min)

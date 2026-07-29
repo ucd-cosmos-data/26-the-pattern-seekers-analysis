@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Canada
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
+- Source functional role: Ball-Playing Centre-Back
+
 - Probabilistic role: Aerial/Progressive/Creative Centre-Back
 - Role entropy: 0.0011
+- Global rank v2: 357
+- Position rank v2: 56
+- Role rank v2: 16
+- Team rank v2: 13
+- Final player rating v2: 0.3183
 - Global rank: 538
 - Position rank: 97
-- Role rank: 16
+- Role rank: 19
 - Team rank: 16
 - Final player rating: 0.3815
 - Ranking status: Ranked (180–299 min)

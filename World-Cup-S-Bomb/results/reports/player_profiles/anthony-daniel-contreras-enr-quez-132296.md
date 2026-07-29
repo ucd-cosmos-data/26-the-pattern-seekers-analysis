@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Costa Rica
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.1419
+- Global rank v2: 506
+- Position rank v2: 81
+- Role rank v2: 45
+- Team rank v2: 11
+- Final player rating v2: 0.2053
 - Global rank: 395
 - Position rank: 74
 - Role rank: 46

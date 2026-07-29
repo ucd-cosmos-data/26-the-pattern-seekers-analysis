@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Mexico
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
+- Source functional role: Wide Creator
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
+- Global rank v2: 445
+- Position rank v2: 74
+- Role rank v2: 19
+- Team rank v2: 15
+- Final player rating v2: 0.2587
 - Global rank: 250
 - Position rank: 87
 - Role rank: 20

@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: United States
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Finishing/Creative Attacker
 - Role entropy: 0.1191
+- Global rank v2: 388
+- Position rank v2: 64
+- Role rank v2: 48
+- Team rank v2: 15
+- Final player rating v2: 0.3016
 - Global rank: 189
 - Position rank: 66
 - Role rank: 47

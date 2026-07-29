@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Switzerland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.1321
+- Global rank v2: 194
+- Position rank v2: 57
+- Role rank v2: 10
+- Team rank v2: 7
+- Final player rating v2: 0.4396
 - Global rank: 177
 - Position rank: 81
-- Role rank: 26
+- Role rank: 22
 - Team rank: 6
 - Final player rating: 0.5125
 - Ranking status: Ranked (180–299 min)

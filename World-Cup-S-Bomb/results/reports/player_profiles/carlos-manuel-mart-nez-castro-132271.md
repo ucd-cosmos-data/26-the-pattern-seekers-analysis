@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Costa Rica
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Defensive/Pressing Fullback
 - Role entropy: 0.0000
+- Global rank v2: 451
+- Position rank v2: 77
+- Role rank v2: 21
+- Team rank v2: 8
+- Final player rating v2: 0.2555
 - Global rank: 216
 - Position rank: 75
 - Role rank: 12

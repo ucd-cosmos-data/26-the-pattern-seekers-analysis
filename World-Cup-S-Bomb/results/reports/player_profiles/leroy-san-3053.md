@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Germany
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.0286
+- Global rank v2: 73
+- Position rank v2: 28
+- Role rank v2: 24
+- Team rank v2: 8
+- Final player rating v2: 0.5846
 - Global rank: 30
 - Position rank: 15
 - Role rank: 17

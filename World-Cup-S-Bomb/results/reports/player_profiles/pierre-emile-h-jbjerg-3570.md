@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Denmark
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0006
+- Global rank v2: 264
+- Position rank v2: 23
+- Role rank v2: 17
+- Team rank v2: 12
+- Final player rating v2: 0.3786
 - Global rank: 496
 - Position rank: 64
-- Role rank: 56
+- Role rank: 48
 - Team rank: 18
 - Final player rating: 0.4109
 - Ranking status: Ranked (180–299 min)

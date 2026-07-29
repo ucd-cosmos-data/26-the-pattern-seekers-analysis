@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Senegal
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.2650
+- Global rank v2: 379
+- Position rank v2: 56
+- Role rank v2: 36
+- Team rank v2: 11
+- Final player rating v2: 0.3053
 - Global rank: 283
 - Position rank: 13
-- Role rank: 13
+- Role rank: 7
 - Team rank: 10
 - Final player rating: 0.4813
 - Ranking status: Coverage only (<180 min)

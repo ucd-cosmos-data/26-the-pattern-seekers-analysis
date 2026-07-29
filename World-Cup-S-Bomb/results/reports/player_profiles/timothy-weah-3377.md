@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: United States
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Finishing/Creative Attacker
 - Role entropy: 0.0000
+- Global rank v2: 115
+- Position rank v2: 39
+- Role rank v2: 6
+- Team rank v2: 7
+- Final player rating v2: 0.5127
 - Global rank: 91
 - Position rank: 49
-- Role rank: 9
+- Role rank: 8
 - Team rank: 7
 - Final player rating: 0.5393
 - Ranking status: Ranked (300+ min)

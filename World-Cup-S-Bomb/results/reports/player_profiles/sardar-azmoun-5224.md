@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Iran
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.2349
+- Global rank v2: 161
+- Position rank v2: 42
+- Role rank v2: 20
+- Team rank v2: 3
+- Final player rating v2: 0.4699
 - Global rank: 192
 - Position rank: 24
 - Role rank: 21

@@ -4,26 +4,27 @@
   "belgium_means_populated": true,
   "ecuador_means_populated": true,
   "outfield_minimum_minutes": 45.0,
-  "goalkeeper_minimum_minutes": 95.23333333333332,
+  "goalkeeper_minimum_minutes": 186.01666666666665,
+  "ranked_main_goalkeepers": 32,
+  "ranked_goalkeeper_teams": 32,
+  "unranked_backup_goalkeepers": 8,
   "outfield_status_counts": {
     "Coverage only (<180 min)": 238,
     "Ranked (180–299 min)": 189,
     "Ranked (300+ min)": 126
   },
   "goalkeeper_status_counts": {
-    "Ranked (270+ min)": 28,
-    "Coverage only (<180 min)": 8,
-    "Ranked (180–269 min)": 4
+    "Ranked (team main goalkeeper)": 32
   },
-  "rating_spearman_minutes": 0.0021757158702466355,
-  "rating_spearman_goals_plus_xa": 0.42462102592102613,
+  "rating_spearman_minutes": 0.33211423042487553,
+  "rating_spearman_goals_plus_xa": 0.7336795095752169,
   "minutes_bucket_mean_ratings": {
-    "[45, 180)": 0.4829006112121282,
-    "[180, 300)": 0.480410508655573,
-    "[300, inf)": 0.4859537875631127
+    "[45, 180)": 0.3476105586219658,
+    "[180, 300)": 0.3961125914713037,
+    "[300, inf)": 0.4827572598920896
   },
-  "minutes_bucket_means_non_decreasing": false,
-  "sub_180_players_in_global_top_20": 3,
+  "minutes_bucket_means_non_decreasing": true,
+  "sub_180_players_in_global_top_20": 1,
   "contextual_vaep_gate": {
     "selection_scope": "development_match_oof_only",
     "selected_feature_set": "baseline",
@@ -49,6 +50,6 @@
   },
   "composite_calibration_fallback": true,
   "messi_global_rank": 1,
-  "mbappe_global_rank": 3,
+  "mbappe_global_rank": 2,
   "missing_team_means": []
 }

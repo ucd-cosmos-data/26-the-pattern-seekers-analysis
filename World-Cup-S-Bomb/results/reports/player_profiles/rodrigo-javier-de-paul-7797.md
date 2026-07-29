@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Argentina
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.0732
+- Global rank v2: 67
+- Position rank v2: 5
+- Role rank v2: 2
+- Team rank v2: 7
+- Final player rating v2: 0.5941
 - Global rank: 11
 - Position rank: 1
 - Role rank: 1

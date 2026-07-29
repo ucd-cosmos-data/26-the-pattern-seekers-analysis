@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Croatia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Secure Centre-Back
 - Role entropy: 0.0598
+- Global rank v2: 151
+- Position rank v2: 14
+- Role rank v2: 6
+- Team rank v2: 11
+- Final player rating v2: 0.4797
 - Global rank: 463
 - Position rank: 56
-- Role rank: 42
+- Role rank: 37
 - Team rank: 18
 - Final player rating: 0.4243
 - Ranking status: Ranked (300+ min)

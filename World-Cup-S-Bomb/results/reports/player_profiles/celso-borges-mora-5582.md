@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Costa Rica
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0072
+- Global rank v2: 532
+- Position rank v2: 87
+- Role rank v2: 60
+- Team rank v2: 13
+- Final player rating v2: 0.1641
 - Global rank: 541
 - Position rank: 89
-- Role rank: 69
+- Role rank: 60
 - Team rank: 16
 - Final player rating: 0.3742
 - Ranking status: Ranked (180–299 min)

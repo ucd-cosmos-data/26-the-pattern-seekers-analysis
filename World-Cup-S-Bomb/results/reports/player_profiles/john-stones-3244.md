@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: England
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
+- Source functional role: Ball-Playing Centre-Back
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0044
+- Global rank v2: 149
+- Position rank v2: 13
+- Role rank v2: 8
+- Team rank v2: 9
+- Final player rating v2: 0.4812
 - Global rank: 358
 - Position rank: 22
-- Role rank: 8
+- Role rank: 9
 - Team rank: 15
 - Final player rating: 0.4570
 - Ranking status: Ranked (300+ min)

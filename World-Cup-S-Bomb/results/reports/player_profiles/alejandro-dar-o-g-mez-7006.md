@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Argentina
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.0145
+- Global rank v2: 375
+- Position rank v2: 31
+- Role rank v2: 31
+- Team rank v2: 16
+- Final player rating v2: 0.3082
 - Global rank: 322
 - Position rank: 36
-- Role rank: 53
+- Role rank: 40
 - Team rank: 11
 - Final player rating: 0.4699
 - Ranking status: Coverage only (<180 min)

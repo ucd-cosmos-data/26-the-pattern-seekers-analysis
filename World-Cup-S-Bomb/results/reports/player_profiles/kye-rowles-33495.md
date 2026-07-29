@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Australia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Secure/Aerial Centre-Back
 - Role entropy: 0.0012
+- Global rank v2: 551
+- Position rank v2: 105
+- Role rank v2: 78
+- Team rank v2: 16
+- Final player rating v2: 0.0694
 - Global rank: 546
 - Position rank: 101
-- Role rank: 80
+- Role rank: 75
 - Team rank: 16
 - Final player rating: 0.3599
 - Ranking status: Ranked (300+ min)

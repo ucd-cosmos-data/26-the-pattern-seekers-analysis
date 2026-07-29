@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Argentina
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
-- Functional role: Sweeper CB
+- Functional role: Deep Playmaker
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0009
+- Global rank v2: 363
+- Position rank v2: 53
+- Role rank v2: 13
+- Team rank v2: 15
+- Final player rating v2: 0.3137
 - Global rank: 441
 - Position rank: 49
-- Role rank: 36
+- Role rank: 35
 - Team rank: 16
 - Final player rating: 0.4296
 - Ranking status: Coverage only (<180 min)

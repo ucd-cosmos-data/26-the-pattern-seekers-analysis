@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: United States
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.0626
+- Global rank v2: 122
+- Position rank v2: 41
+- Role rank v2: 35
+- Team rank v2: 8
+- Final player rating v2: 0.5074
 - Global rank: 40
 - Position rank: 22
 - Role rank: 23

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ghana
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
-- Functional role: Ball-Winner
+- Functional role: Pressing Forward
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0127
+- Global rank v2: 463
+- Position rank v2: 80
+- Role rank v2: 21
+- Team rank v2: 14
+- Final player rating v2: 0.2479
 - Global rank: 446
 - Position rank: 78
-- Role rank: 73
+- Role rank: 20
 - Team rank: 13
 - Final player rating: 0.4279
 - Ranking status: Ranked (180–299 min)

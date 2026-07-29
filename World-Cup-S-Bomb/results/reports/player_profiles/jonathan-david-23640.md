@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Canada
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.1122
+- Global rank v2: 254
+- Position rank v2: 61
+- Role rank v2: 31
+- Team rank v2: 8
+- Final player rating v2: 0.3892
 - Global rank: 56
 - Position rank: 5
 - Role rank: 4

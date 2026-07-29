@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Canada
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0001
+- Global rank v2: 518
+- Position rank v2: 95
+- Role rank v2: 68
+- Team rank v2: 15
+- Final player rating v2: 0.1873
 - Global rank: 536
 - Position rank: 95
-- Role rank: 77
+- Role rank: 72
 - Team rank: 15
 - Final player rating: 0.3836
 - Ranking status: Ranked (180–299 min)

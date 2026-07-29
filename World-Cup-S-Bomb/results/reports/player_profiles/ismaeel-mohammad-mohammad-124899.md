@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Qatar
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0042
+- Global rank v2: 426
+- Position rank v2: 69
+- Role rank v2: 50
+- Team rank v2: 8
+- Final player rating v2: 0.2769
 - Global rank: 224
 - Position rank: 77
-- Role rank: 49
+- Role rank: 50
 - Team rank: 1
 - Final player rating: 0.4975
 - Ranking status: Ranked (180–299 min)

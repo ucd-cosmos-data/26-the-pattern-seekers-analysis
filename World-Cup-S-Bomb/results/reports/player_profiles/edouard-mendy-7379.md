@@ -5,17 +5,26 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Senegal
+- Tournament: 2022_World_Cup
+- Formal 360 position group: GK
 - Position group: Goalkeeper
 - Functional role: Goalkeeper
+- Source functional role: Goalkeeper
+- Team main goalkeeper: 1.0000
 - Probabilistic role: Goalkeeper
 - Role entropy: 0.0000
+- Goalkeeper rank v2: 25
+- Goalkeeper rating v2: 0.1258
+
+
+
 - Global rank: not available
 - Position rank: 29
 - Role rank: 29
 - Team rank: 11
 - Final player rating: 0.4737
 - Ranking status: Ranked (300+ min)
-- Goalkeeper ranking status: Ranked (270+ min)
+- Goalkeeper ranking status: Ranked (team main goalkeeper)
 - Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 387.3
 - Minutes reliability: 0.3965

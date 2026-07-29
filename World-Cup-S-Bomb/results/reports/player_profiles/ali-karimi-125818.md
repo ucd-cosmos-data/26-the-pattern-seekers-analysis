@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Iran
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0776
+- Global rank v2: 468
+- Position rank v2: 72
+- Role rank v2: 50
+- Team rank v2: 12
+- Final player rating v2: 0.2438
 - Global rank: 415
 - Position rank: 36
-- Role rank: 33
+- Role rank: 25
 - Team rank: 16
 - Final player rating: 0.4366
 - Ranking status: Coverage only (<180 min)

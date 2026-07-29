@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ecuador
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Secure/Progressive Fullback
 - Role entropy: 0.0403
+- Global rank v2: 449
+- Position rank v2: 39
+- Role rank v2: 44
+- Team rank v2: 13
+- Final player rating v2: 0.2557
 - Global rank: 364
 - Position rank: 50
-- Role rank: 63
+- Role rank: 47
 - Team rank: 9
 - Final player rating: 0.4554
 - Ranking status: Coverage only (<180 min)

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Argentina
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
-- Functional role: Ball-Winner
+- Functional role: Pressing Forward
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0250
+- Global rank v2: 20
+- Position rank v2: 10
+- Role rank v2: 2
+- Team rank v2: 3
+- Final player rating v2: 0.7086
 - Global rank: 117
 - Position rank: 11
-- Role rank: 17
+- Role rank: 3
 - Team rank: 7
 - Final player rating: 0.5328
 - Ranking status: Ranked (300+ min)

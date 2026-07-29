@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: United States
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
-- Functional role: Ball-Winner
+- Functional role: Pressing Forward
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0044
+- Global rank v2: 224
+- Position rank v2: 54
+- Role rank v2: 10
+- Team rank v2: 11
+- Final player rating v2: 0.4128
 - Global rank: 236
 - Position rank: 39
-- Role rank: 36
+- Role rank: 9
 - Team rank: 10
 - Final player rating: 0.4943
 - Ranking status: Coverage only (<180 min)

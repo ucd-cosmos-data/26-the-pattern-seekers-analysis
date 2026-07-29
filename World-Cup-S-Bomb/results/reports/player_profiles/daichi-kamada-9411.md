@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Japan
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.1922
+- Global rank v2: 354
+- Position rank v2: 94
+- Role rank v2: 29
+- Team rank v2: 12
+- Final player rating v2: 0.3211
 - Global rank: 223
 - Position rank: 88
-- Role rank: 33
+- Role rank: 26
 - Team rank: 10
 - Final player rating: 0.4977
 - Ranking status: Ranked (300+ min)

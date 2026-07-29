@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Switzerland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
+- Source functional role: Ball-Playing Centre-Back
+
 - Probabilistic role: Secure/Aerial Centre-Back
 - Role entropy: 0.0003
+- Global rank v2: 373
+- Position rank v2: 60
+- Role rank v2: 17
+- Team rank v2: 13
+- Final player rating v2: 0.3087
 - Global rank: 501
 - Position rank: 75
-- Role rank: 15
+- Role rank: 18
 - Team rank: 19
 - Final player rating: 0.4074
 - Ranking status: Coverage only (<180 min)

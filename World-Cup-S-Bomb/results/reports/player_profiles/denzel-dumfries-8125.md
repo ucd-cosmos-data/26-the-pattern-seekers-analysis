@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Netherlands
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0305
+- Global rank v2: 216
+- Position rank v2: 34
+- Role rank v2: 27
+- Team rank v2: 10
+- Final player rating v2: 0.4194
 - Global rank: 24
 - Position rank: 5
 - Role rank: 5

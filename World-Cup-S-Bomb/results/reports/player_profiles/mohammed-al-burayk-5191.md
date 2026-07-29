@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Saudi Arabia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.1178
+- Global rank v2: 238
+- Position rank v2: 38
+- Role rank v2: 31
+- Team rank v2: 5
+- Final player rating v2: 0.4011
 - Global rank: 64
 - Position rank: 17
 - Role rank: 14

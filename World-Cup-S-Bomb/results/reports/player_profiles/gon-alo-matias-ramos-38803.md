@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Portugal
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.0246
+- Global rank v2: 17
+- Position rank v2: 7
+- Role rank v2: 3
+- Team rank v2: 2
+- Final player rating v2: 0.7308
 - Global rank: 119
 - Position rank: 12
 - Role rank: 10

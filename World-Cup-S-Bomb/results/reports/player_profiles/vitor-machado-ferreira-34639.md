@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Portugal
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Deep Playmaker / Metronome
+- Source functional role: Deep Playmaker / Metronome
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.1797
+- Global rank v2: 199
+- Position rank v2: 20
+- Role rank v2: 6
+- Team rank v2: 11
+- Final player rating v2: 0.4364
 - Global rank: 316
 - Position rank: 35
 - Role rank: 5

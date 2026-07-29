@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Germany
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Two-Way Fullback
+- Source functional role: Two-Way Fullback
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0144
+- Global rank v2: 444
+- Position rank v2: 73
+- Role rank v2: 3
+- Team rank v2: 15
+- Final player rating v2: 0.2609
 - Global rank: 311
 - Position rank: 95
 - Role rank: 4

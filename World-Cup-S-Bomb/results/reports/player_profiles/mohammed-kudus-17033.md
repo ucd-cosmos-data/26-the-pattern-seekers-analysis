@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ghana
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.0440
+- Global rank v2: 183
+- Position rank v2: 55
+- Role rank v2: 45
+- Team rank v2: 1
+- Final player rating v2: 0.4450
 - Global rank: 23
 - Position rank: 14
 - Role rank: 16

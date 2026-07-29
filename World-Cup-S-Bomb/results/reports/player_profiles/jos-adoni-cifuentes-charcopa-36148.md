@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ecuador
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.0766
+- Global rank v2: 483
+- Position rank v2: 75
+- Role rank v2: 28
+- Team rank v2: 14
+- Final player rating v2: 0.2305
 - Global rank: 444
 - Position rank: 52
-- Role rank: 32
+- Role rank: 36
 - Team rank: 14
 - Final player rating: 0.4289
 - Ranking status: Coverage only (<180 min)

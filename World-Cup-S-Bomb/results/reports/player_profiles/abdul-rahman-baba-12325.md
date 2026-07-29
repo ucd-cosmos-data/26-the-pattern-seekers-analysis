@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ghana
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
+- Global rank v2: 338
+- Position rank v2: 55
+- Role rank v2: 43
+- Team rank v2: 6
+- Final player rating v2: 0.3318
 - Global rank: 132
 - Position rank: 40
 - Role rank: 32

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Cameroon
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0016
+- Global rank v2: 494
+- Position rank v2: 79
+- Role rank v2: 54
+- Team rank v2: 15
+- Final player rating v2: 0.2178
 - Global rank: 467
 - Position rank: 65
-- Role rank: 49
+- Role rank: 41
 - Team rank: 14
 - Final player rating: 0.4231
 - Ranking status: Coverage only (<180 min)

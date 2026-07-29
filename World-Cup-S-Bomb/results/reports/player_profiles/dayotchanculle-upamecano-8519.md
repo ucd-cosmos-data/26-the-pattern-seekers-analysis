@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: France
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0428
+- Global rank v2: 148
+- Position rank v2: 12
+- Role rank v2: 5
+- Team rank v2: 11
+- Final player rating v2: 0.4813
 - Global rank: 472
 - Position rank: 58
-- Role rank: 44
+- Role rank: 39
 - Team rank: 21
 - Final player rating: 0.4200
 - Ranking status: Ranked (300+ min)

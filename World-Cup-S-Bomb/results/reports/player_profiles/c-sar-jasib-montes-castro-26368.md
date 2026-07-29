@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Mexico
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Secure Centre-Back
 - Role entropy: 0.0700
+- Global rank v2: 358
+- Position rank v2: 57
+- Role rank v2: 40
+- Team rank v2: 10
+- Final player rating v2: 0.3181
 - Global rank: 399
 - Position rank: 35
-- Role rank: 23
+- Role rank: 20
 - Team rank: 14
 - Final player rating: 0.4414
 - Ranking status: Ranked (180–299 min)

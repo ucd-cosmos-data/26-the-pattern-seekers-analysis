@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Costa Rica
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0190
+- Global rank v2: 376
+- Position rank v2: 61
+- Role rank v2: 42
+- Team rank v2: 2
+- Final player rating v2: 0.3079
 - Global rank: 477
 - Position rank: 61
-- Role rank: 47
+- Role rank: 42
 - Team rank: 11
 - Final player rating: 0.4182
 - Ranking status: Ranked (180–299 min)

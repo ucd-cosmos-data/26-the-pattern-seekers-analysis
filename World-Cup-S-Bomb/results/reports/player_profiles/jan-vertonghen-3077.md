@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Belgium
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0003
+- Global rank v2: 428
+- Position rank v2: 72
+- Role rank v2: 51
+- Team rank v2: 14
+- Final player rating v2: 0.2748
 - Global rank: 488
 - Position rank: 68
-- Role rank: 54
+- Role rank: 49
 - Team rank: 14
 - Final player rating: 0.4137
 - Ranking status: Ranked (180–299 min)

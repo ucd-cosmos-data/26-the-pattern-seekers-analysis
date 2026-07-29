@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: England
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0001
+- Global rank v2: 98
+- Position rank v2: 11
+- Role rank v2: 11
+- Team rank v2: 7
+- Final player rating v2: 0.5427
 - Global rank: 16
 - Position rank: 2
 - Role rank: 2

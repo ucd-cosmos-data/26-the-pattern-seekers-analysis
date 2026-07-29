@@ -4,18 +4,18 @@ All observations use StatsBomb events and coverage-qualified StatsBomb 360 conte
 
 ## Tactical insights
 
-| Global Rank | Player Name | Team | Functional Role | Final Player Rating |
-|---|---|---|---|---|
-| 1 | Lionel Andrés Messi Cuccittini | Argentina | Progressive Winger | 0.7739 |
-| 2 | Jamal Musiala | Germany | Hybrid Playmaker / Roaming Creator | 0.6694 |
-| 3 | Kylian Mbappé Lottin | France | Progressive Winger | 0.6558 |
-| 4 | Neymar da Silva Santos Junior | Brazil | Progressive Winger | 0.6484 |
-| 5 | Christian Pulisic | United States | Progressive Winger | 0.6370 |
-| 6 | Ángel Fabián Di María Hernández | Argentina | Progressive Winger | 0.6357 |
-| 7 | Serge Gnabry | Germany | Progressive Winger | 0.6336 |
-| 8 | Daniel Olmo Carvajal | Spain | Progressive Winger | 0.6259 |
-| 9 | Vinícius José Paixão de Oliveira Júnior | Brazil | Progressive Winger | 0.6163 |
-| 10 | Marcos Javier Acuña | Argentina | Attacking Wingback | 0.6148 |
+| Global Rank V2 | Player Name | Team | Position Group 360 | Functional Role | Final Player Rating V2 |
+|---|---|---|---|---|---|
+| 1 | Lionel Andrés Messi Cuccittini | Argentina | AM | Progressive Winger | 1.0000 |
+| 2 | Kylian Mbappé Lottin | France | FW | Progressive Winger | 0.9389 |
+| 3 | Bruno Miguel Borges Fernandes | Portugal | AM | Progressive Winger | 0.8365 |
+| 4 | Robert Lewandowski | Poland | FW | Target Forward / Penalty-Box Anchor | 0.8227 |
+| 5 | Christian Pulisic | United States | AM | Progressive Winger | 0.7847 |
+| 6 | Mehdi Taremi | Iran | FW | Target Forward | 0.7779 |
+| 7 | Harry Kane | England | FW | Target Forward | 0.7777 |
+| 8 | Mateo Kovačić | Croatia | CM | Deep Playmaker / Metronome | 0.7730 |
+| 9 | Neymar da Silva Santos Junior | Brazil | AM | Progressive Winger | 0.7702 |
+| 10 | Luka Modrić | Croatia | CM | Deep Playmaker / Metronome | 0.7648 |
 
 ## Passing networks
 
@@ -79,45 +79,37 @@ All observations use StatsBomb events and coverage-qualified StatsBomb 360 conte
 
 ## Goalkeeper ranking
 
-| Position Rank | Player Name | Team | Final Player Rating | Goals Prevented Proxy P90 | Save Rate | High Leverage Save Pct | Penalty Save Rate Shrunk | Gkrankingstatus |
-|---|---|---|---|---|---|---|---|---|
-| 1 | Wojciech Szczęsny | Poland | 0.6318 | 1.7043 | 0.8333 | 1.0000 | 0.4704 | Ranked (270+ min) |
-| 2 | Mohammed Khalil Al Owais | Saudi Arabia | 0.6055 | 1.3528 | 0.7368 | 0.6000 | 0.2155 | Ranked (270+ min) |
-| 3 | Matthew Charles Turner | United States | 0.6048 | 0.5661 | 0.6923 | 0.5000 | 0.2155 | Ranked (270+ min) |
-| 4 | Diogo Meireles Costa | Portugal | 0.5730 | 0.8375 | 0.6667 | 0.3333 | — | Ranked (270+ min) |
-| 5 | Yassine Bounou | Morocco | 0.5696 | 0.2171 | 0.6364 | 0.5000 | 0.4704 | Ranked (270+ min) |
-| 6 | Kasper Schmeichel | Denmark | 0.5694 | 0.4186 | 0.7273 | 0.5000 | — | Ranked (270+ min) |
-| 7 | Thibaut Courtois | Belgium | 0.5655 | 0.9640 | 0.8182 | 0.5000 | 0.3822 | Ranked (270+ min) |
-| 8 | Mathew Ryan | Australia | 0.5576 | 0.7154 | 0.6842 | 0.5000 | — | Ranked (270+ min) |
-| 9 | Sergio Rochet Álvarez | Uruguay | 0.5541 | 0.3598 | 0.7143 | 0.5000 | 0.3276 | Ranked (270+ min) |
-| 10 | Unai Simón Mendibil | Spain | 0.5530 | 0.2923 | 0.7000 | 0.0000 | 0.2548 | Ranked (270+ min) |
-| 11 | Andries Noppert | Netherlands | 0.5529 | 0.9517 | 0.8182 | 0.2000 | 0.1293 | Ranked (270+ min) |
-| 12 | Alireza Safar Beiranvand | Iran | 0.5512 | 1.2642 | 0.8000 | 0.0000 | — | Coverage only (<180 min) |
-| 13 | Vanja Milinković Savić | Serbia | 0.5504 | 1.1107 | 0.6667 | 0.4286 | — | Ranked (270+ min) |
-| 14 | Dominik Livaković | Croatia | 0.5458 | 0.9375 | 0.7742 | 0.1429 | 0.4072 | Ranked (270+ min) |
-| 15 | Devis Rogers Epassy Mboka | Cameroon | 0.5452 | 1.3474 | 0.7692 | 0.0000 | — | Ranked (180–269 min) |
-| 16 | Munir Mohand Mohamedi | Morocco | 0.5428 | 1.2354 | 1.0000 | — | — | Coverage only (<180 min) |
-| 17 | Aymen Dahmen | Tunisia | 0.5405 | 0.8315 | 0.9000 | — | — | Ranked (270+ min) |
-| 18 | Yann Sommer | Switzerland | 0.5336 | 0.7100 | 0.6316 | 0.2500 | — | Ranked (270+ min) |
-| 19 | Manuel Neuer | Germany | 0.5283 | 0.4594 | 0.6667 | 0.0000 | — | Ranked (270+ min) |
-| 20 | Shūichi Gonda | Japan | 0.5231 | 0.8600 | 0.7895 | 0.3333 | 0.1437 | Ranked (270+ min) |
-| 21 | Seung-Gyu Kim | South Korea | 0.5200 | 0.5154 | 0.6000 | 0.2500 | 0.2155 | Ranked (270+ min) |
-| 22 | Ederson Santana de Moraes | Brazil | 0.5141 | 0.1795 | 0.6667 | — | — | Coverage only (<180 min) |
-| 23 | André Onana | Cameroon | 0.5102 | 0.7989 | 0.6667 | 0.0000 | — | Coverage only (<180 min) |
-| 24 | Steve Mandanda | France | 0.5064 | 0.3115 | 0.6667 | — | — | Coverage only (<180 min) |
-| 25 | Daniel Ward | Wales | 0.4892 | 0.5811 | 0.5714 | 0.0000 | — | Coverage only (<180 min) |
-| 26 | Milan Borjan | Canada | 0.4870 | 0.0263 | 0.5333 | 0.6667 | — | Ranked (270+ min) |
-| 27 | Saad Abdullah Al Sheeb | Qatar | 0.4812 | -0.3609 | 0.3333 | 0.0000 | 0.2155 | Coverage only (<180 min) |
-| 28 | Gregor Kobel | Switzerland | 0.4741 | 0.1647 | 0.5000 | 1.0000 | — | Coverage only (<180 min) |
-| 29 | Edouard Mendy | Senegal | 0.4737 | 0.0822 | 0.5000 | 0.3333 | — | Ranked (270+ min) |
-| 30 | Meshaal Aissa Barsham | Qatar | 0.4698 | -0.4469 | 0.3750 | 0.0000 | — | Ranked (180–269 min) |
-| 31 | Keylor Navas Gamboa | Costa Rica | 0.4645 | 0.2222 | 0.5000 | 0.1429 | 0.2155 | Ranked (270+ min) |
-| 32 | Alisson Ramsés Becker | Brazil | 0.4643 | 0.0312 | 0.7143 | — | 0.1437 | Ranked (270+ min) |
-| 33 | Wayne Hennessey | Wales | 0.4616 | -0.2901 | 0.5714 | — | — | Ranked (180–269 min) |
-| 34 | Lawrence Ati-Zigi | Ghana | 0.4610 | 0.4069 | 0.5882 | 0.3333 | 0.2155 | Ranked (270+ min) |
-| 35 | Hugo Lloris | France | 0.4575 | 0.5636 | 0.7083 | 0.0000 | 0.1078 | Ranked (270+ min) |
-| 36 | Hernán Ismael Galíndez | Ecuador | 0.4556 | -0.2755 | 0.2500 | 0.0000 | 0.2155 | Ranked (270+ min) |
-| 37 | Seyed Hossein Hosseini | Iran | 0.4542 | -0.1332 | 0.4545 | 0.0000 | — | Ranked (180–269 min) |
-| 38 | Damián Emiliano Martínez | Argentina | 0.4533 | -0.0736 | 0.4615 | 0.0000 | 0.2862 | Ranked (270+ min) |
-| 39 | Francisco Guillermo Ochoa Magaña | Mexico | 0.4524 | 0.0264 | 0.5000 | 0.5000 | 0.3822 | Ranked (270+ min) |
-| 40 | Jordan Pickford | England | 0.4508 | 0.2472 | 0.6364 | 0.5000 | 0.2155 | Ranked (270+ min) |
+| Gk Rank V2 | Player Name | Team | Gk Rating V2 | Goals Prevented Proxy P90 | Save Rate | Penalties Saved | Gkrankingstatus |
+|---|---|---|---|---|---|---|---|
+| 1 | Wojciech Szczęsny | Poland | 1.0000 | 1.7043 | 0.8333 | 2.0000 | Ranked (team main goalkeeper) |
+| 2 | Dominik Livaković | Croatia | 0.8915 | 0.9375 | 0.7742 | 4.0000 | Ranked (team main goalkeeper) |
+| 3 | Yassine Bounou | Morocco | 0.7854 | 0.2171 | 0.6364 | 2.0000 | Ranked (team main goalkeeper) |
+| 4 | Thibaut Courtois | Belgium | 0.6513 | 0.9640 | 0.8182 | 1.0000 | Ranked (team main goalkeeper) |
+| 5 | Sergio Rochet Álvarez | Uruguay | 0.5813 | 0.3598 | 0.7143 | 1.0000 | Ranked (team main goalkeeper) |
+| 6 | Unai Simón Mendibil | Spain | 0.5703 | 0.2923 | 0.7000 | 1.0000 | Ranked (team main goalkeeper) |
+| 7 | Mohammed Khalil Al Owais | Saudi Arabia | 0.5554 | 1.3528 | 0.7368 | 0.0000 | Ranked (team main goalkeeper) |
+| 8 | Damián Emiliano Martínez | Argentina | 0.5393 | -0.0736 | 0.4615 | 3.0000 | Ranked (team main goalkeeper) |
+| 9 | Matthew Charles Turner | United States | 0.4669 | 0.5661 | 0.6923 | 0.0000 | Ranked (team main goalkeeper) |
+| 10 | Andries Noppert | Netherlands | 0.4149 | 0.9517 | 0.8182 | 0.0000 | Ranked (team main goalkeeper) |
+| 11 | Diogo Meireles Costa | Portugal | 0.4135 | 0.8375 | 0.6667 | 0.0000 | Ranked (team main goalkeeper) |
+| 12 | Devis Rogers Epassy Mboka | Cameroon | 0.3690 | 1.3474 | 0.7692 | 0.0000 | Ranked (team main goalkeeper) |
+| 13 | Vanja Milinković Savić | Serbia | 0.3629 | 1.1107 | 0.6667 | 0.0000 | Ranked (team main goalkeeper) |
+| 14 | Shūichi Gonda | Japan | 0.3584 | 0.8600 | 0.7895 | 0.0000 | Ranked (team main goalkeeper) |
+| 15 | Kasper Schmeichel | Denmark | 0.3555 | 0.4186 | 0.7273 | 0.0000 | Ranked (team main goalkeeper) |
+| 16 | Mathew Ryan | Australia | 0.3489 | 0.7154 | 0.6842 | 0.0000 | Ranked (team main goalkeeper) |
+| 17 | Aymen Dahmen | Tunisia | 0.3481 | 0.8315 | 0.9000 | 0.0000 | Ranked (team main goalkeeper) |
+| 18 | Francisco Guillermo Ochoa Magaña | Mexico | 0.3239 | 0.0264 | 0.5000 | 1.0000 | Ranked (team main goalkeeper) |
+| 19 | Yann Sommer | Switzerland | 0.2763 | 0.7100 | 0.6316 | 0.0000 | Ranked (team main goalkeeper) |
+| 20 | Seung-Gyu Kim | South Korea | 0.2383 | 0.5154 | 0.6000 | 0.0000 | Ranked (team main goalkeeper) |
+| 21 | Manuel Neuer | Germany | 0.2289 | 0.4594 | 0.6667 | 0.0000 | Ranked (team main goalkeeper) |
+| 22 | Hugo Lloris | France | 0.1936 | 0.5636 | 0.7083 | 0.0000 | Ranked (team main goalkeeper) |
+| 23 | Milan Borjan | Canada | 0.1342 | 0.0263 | 0.5333 | 0.0000 | Ranked (team main goalkeeper) |
+| 24 | Lawrence Ati-Zigi | Ghana | 0.1269 | 0.4069 | 0.5882 | 0.0000 | Ranked (team main goalkeeper) |
+| 25 | Edouard Mendy | Senegal | 0.1258 | 0.0822 | 0.5000 | 0.0000 | Ranked (team main goalkeeper) |
+| 26 | Jordan Pickford | England | 0.1239 | 0.2472 | 0.6364 | 0.0000 | Ranked (team main goalkeeper) |
+| 27 | Alisson Ramsés Becker | Brazil | 0.1173 | 0.0312 | 0.7143 | 0.0000 | Ranked (team main goalkeeper) |
+| 28 | Wayne Hennessey | Wales | 0.0800 | -0.2901 | 0.5714 | 0.0000 | Ranked (team main goalkeeper) |
+| 29 | Keylor Navas Gamboa | Costa Rica | 0.0469 | 0.2222 | 0.5000 | 0.0000 | Ranked (team main goalkeeper) |
+| 30 | Seyed Hossein Hosseini | Iran | 0.0367 | -0.1332 | 0.4545 | 0.0000 | Ranked (team main goalkeeper) |
+| 31 | Meshaal Aissa Barsham | Qatar | 0.0357 | -0.4469 | 0.3750 | 0.0000 | Ranked (team main goalkeeper) |
+| 32 | Hernán Ismael Galíndez | Ecuador | 0.0000 | -0.2755 | 0.2500 | 0.0000 | Ranked (team main goalkeeper) |

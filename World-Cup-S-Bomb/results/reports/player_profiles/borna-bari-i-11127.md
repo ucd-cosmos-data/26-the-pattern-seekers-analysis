@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Croatia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
+- Source functional role: Wide Creator
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
+- Global rank v2: 350
+- Position rank v2: 57
+- Role rank v2: 14
+- Team rank v2: 17
+- Final player rating v2: 0.3252
 - Global rank: 153
 - Position rank: 51
 - Role rank: 11

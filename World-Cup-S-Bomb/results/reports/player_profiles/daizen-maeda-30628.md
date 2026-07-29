@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Japan
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.2356
+- Global rank v2: 190
+- Position rank v2: 49
+- Role rank v2: 24
+- Team rank v2: 5
+- Final player rating v2: 0.4408
 - Global rank: 340
 - Position rank: 67
 - Role rank: 42

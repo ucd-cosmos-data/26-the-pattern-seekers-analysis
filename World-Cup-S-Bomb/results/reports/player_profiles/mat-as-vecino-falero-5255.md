@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Uruguay
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0095
+- Global rank v2: 390
+- Position rank v2: 33
+- Role rank v2: 39
+- Team rank v2: 11
+- Final player rating v2: 0.3011
 - Global rank: 450
 - Position rank: 61
-- Role rank: 43
+- Role rank: 35
 - Team rank: 17
 - Final player rating: 0.4265
 - Ranking status: Ranked (180–299 min)

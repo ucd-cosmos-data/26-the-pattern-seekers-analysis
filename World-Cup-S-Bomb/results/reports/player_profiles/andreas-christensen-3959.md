@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Denmark
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
+- Source functional role: Ball-Playing Centre-Back
+
 - Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0005
+- Global rank v2: 103
+- Position rank v2: 6
+- Role rank v2: 5
+- Team rank v2: 2
+- Final player rating v2: 0.5346
 - Global rank: 290
 - Position rank: 4
 - Role rank: 2

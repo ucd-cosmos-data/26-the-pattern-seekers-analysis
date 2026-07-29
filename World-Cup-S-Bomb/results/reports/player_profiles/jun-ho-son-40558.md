@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: South Korea
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0003
+- Global rank v2: 317
+- Position rank v2: 44
+- Role rank v2: 27
+- Team rank v2: 12
+- Final player rating v2: 0.3488
 - Global rank: 433
 - Position rank: 45
-- Role rank: 37
+- Role rank: 29
 - Team rank: 16
 - Final player rating: 0.4308
 - Ranking status: Coverage only (<180 min)

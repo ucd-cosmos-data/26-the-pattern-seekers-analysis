@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Germany
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Hybrid Playmaker / Roaming Creator
+- Source functional role: Hybrid Playmaker / Roaming Creator
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.2808
+- Global rank v2: 16
+- Position rank v2: 8
+- Role rank v2: 2
+- Team rank v2: 1
+- Final player rating v2: 0.7310
 - Global rank: 2
 - Position rank: 2
 - Role rank: 1

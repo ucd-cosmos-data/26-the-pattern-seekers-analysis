@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Argentina
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0006
+- Global rank v2: 65
+- Position rank v2: 4
+- Role rank v2: 4
+- Team rank v2: 6
+- Final player rating v2: 0.5957
 - Global rank: 355
 - Position rank: 18
-- Role rank: 19
+- Role rank: 11
 - Team rank: 14
 - Final player rating: 0.4581
 - Ranking status: Ranked (300+ min)

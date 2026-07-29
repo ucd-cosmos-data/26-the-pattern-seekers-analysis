@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Qatar
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Defensive/Pressing Fullback
 - Role entropy: 0.0133
+- Global rank v2: 505
+- Position rank v2: 92
+- Role rank v2: 32
+- Team rank v2: 10
+- Final player rating v2: 0.2055
 - Global rank: 292
 - Position rank: 5
-- Role rank: 21
+- Role rank: 23
 - Team rank: 4
 - Final player rating: 0.4799
 - Ranking status: Ranked (180–299 min)

@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: South Korea
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0000
+- Global rank v2: 186
+- Position rank v2: 27
+- Role rank v2: 22
+- Team rank v2: 5
+- Final player rating v2: 0.4431
 - Global rank: 130
 - Position rank: 39
 - Role rank: 31

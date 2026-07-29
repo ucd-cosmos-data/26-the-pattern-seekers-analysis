@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: United States
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
+- Source functional role: Ball-Playing Centre-Back
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0000
+- Global rank v2: 441
+- Position rank v2: 76
+- Role rank v2: 18
+- Team rank v2: 16
+- Final player rating v2: 0.2651
 - Global rank: 539
 - Position rank: 98
-- Role rank: 17
+- Role rank: 20
 - Team rank: 18
 - Final player rating: 0.3798
 - Ranking status: Ranked (300+ min)

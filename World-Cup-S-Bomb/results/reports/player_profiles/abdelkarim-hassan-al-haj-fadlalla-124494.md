@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Qatar
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
-- Functional role: Wide Creator
+- Functional role: Ball-Playing Centre-Back
+- Source functional role: Wide Creator
+
 - Probabilistic role: Aerial/Progressive/Creative Centre-Back
 - Role entropy: 0.0003
+- Global rank v2: 169
+- Position rank v2: 15
+- Role rank v2: 9
+- Team rank v2: 2
+- Final player rating v2: 0.4625
 - Global rank: 329
 - Position rank: 11
-- Role rank: 27
+- Role rank: 5
 - Team rank: 7
 - Final player rating: 0.4657
 - Ranking status: Ranked (180–299 min)

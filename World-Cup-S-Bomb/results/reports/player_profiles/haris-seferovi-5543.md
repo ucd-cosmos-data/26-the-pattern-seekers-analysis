@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Switzerland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0255
+- Global rank v2: 246
+- Position rank v2: 59
+- Role rank v2: 29
+- Team rank v2: 9
+- Final player rating v2: 0.3939
 - Global rank: 306
 - Position rank: 61
 - Role rank: 37

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Morocco
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.1253
+- Global rank v2: 293
+- Position rank v2: 26
+- Role rank v2: 20
+- Team rank v2: 12
+- Final player rating v2: 0.3596
 - Global rank: 503
 - Position rank: 65
-- Role rank: 60
+- Role rank: 52
 - Team rank: 17
 - Final player rating: 0.4070
 - Ranking status: Ranked (180–299 min)

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Qatar
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.2484
+- Global rank v2: 288
+- Position rank v2: 66
+- Role rank v2: 56
+- Team rank v2: 4
+- Final player rating v2: 0.3632
 - Global rank: 414
 - Position rank: 75
-- Role rank: 71
+- Role rank: 68
 - Team rank: 9
 - Final player rating: 0.4369
 - Ranking status: Ranked (180–299 min)

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Uruguay
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0010
+- Global rank v2: 434
+- Position rank v2: 74
+- Role rank v2: 53
+- Team rank v2: 12
+- Final player rating v2: 0.2696
 - Global rank: 357
 - Position rank: 21
-- Role rank: 15
+- Role rank: 12
 - Team rank: 13
 - Final player rating: 0.4571
 - Ranking status: Ranked (180–299 min)

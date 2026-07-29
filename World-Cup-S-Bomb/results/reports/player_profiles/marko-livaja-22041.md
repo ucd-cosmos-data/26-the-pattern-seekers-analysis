@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Croatia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.0762
+- Global rank v2: 28
+- Position rank v2: 14
+- Role rank v2: 8
+- Team rank v2: 3
+- Final player rating v2: 0.6802
 - Global rank: 241
 - Position rank: 41
 - Role rank: 27

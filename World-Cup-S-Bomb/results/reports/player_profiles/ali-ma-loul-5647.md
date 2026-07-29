@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Tunisia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
+- Global rank v2: 443
+- Position rank v2: 72
+- Role rank v2: 51
+- Team rank v2: 16
+- Final player rating v2: 0.2632
 - Global rank: 151
 - Position rank: 50
 - Role rank: 38

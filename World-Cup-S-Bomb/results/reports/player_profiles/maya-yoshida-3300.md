@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Japan
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0507
+- Global rank v2: 305
+- Position rank v2: 42
+- Role rank v2: 27
+- Team rank v2: 10
+- Final player rating v2: 0.3537
 - Global rank: 513
 - Position rank: 83
-- Role rank: 65
+- Role rank: 60
 - Team rank: 22
 - Final player rating: 0.4022
 - Ranking status: Ranked (300+ min)

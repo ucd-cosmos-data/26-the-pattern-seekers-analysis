@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Denmark
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
-- Functional role: Ball-Winner
+- Functional role: Pressing Forward
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.0041
+- Global rank v2: 141
+- Position rank v2: 36
+- Role rank v2: 5
+- Team rank v2: 4
+- Final player rating v2: 0.4850
 - Global rank: 161
 - Position rank: 20
-- Role rank: 21
+- Role rank: 4
 - Team rank: 8
 - Final player rating: 0.5167
 - Ranking status: Coverage only (<180 min)

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Qatar
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0334
+- Global rank v2: 525
+- Position rank v2: 47
+- Role rank v2: 58
+- Team rank v2: 12
+- Final player rating v2: 0.1833
 - Global rank: 471
 - Position rank: 63
-- Role rank: 76
+- Role rank: 57
 - Team rank: 12
 - Final player rating: 0.4205
 - Ranking status: Ranked (180–299 min)

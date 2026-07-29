@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Morocco
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
+- Source functional role: Target Forward / Penalty-Box Anchor
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.2356
+- Global rank v2: 196
+- Position rank v2: 50
+- Role rank v2: 17
+- Team rank v2: 6
+- Final player rating v2: 0.4371
 - Global rank: 529
 - Position rank: 80
 - Role rank: 20

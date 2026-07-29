@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Qatar
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
+- Source functional role: Target Forward / Penalty-Box Anchor
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0100
+- Global rank v2: 127
+- Position rank v2: 33
+- Role rank v2: 10
+- Team rank v2: 1
+- Final player rating v2: 0.5019
 - Global rank: 276
 - Position rank: 49
 - Role rank: 13

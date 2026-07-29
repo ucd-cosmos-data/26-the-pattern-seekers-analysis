@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Serbia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
-- Functional role: Wide Creator
+- Functional role: Ball-Playing Centre-Back
+- Source functional role: Wide Creator
+
 - Probabilistic role: Aerial/Progressive/Creative Centre-Back
 - Role entropy: 0.0033
+- Global rank v2: 172
+- Position rank v2: 16
+- Role rank v2: 10
+- Team rank v2: 5
+- Final player rating v2: 0.4609
 - Global rank: 491
 - Position rank: 71
-- Role rank: 34
+- Role rank: 16
 - Team rank: 13
 - Final player rating: 0.4124
 - Ranking status: Ranked (180–299 min)

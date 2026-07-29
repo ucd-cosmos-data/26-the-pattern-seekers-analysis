@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: France
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.1881
+- Global rank v2: 452
+- Position rank v2: 78
+- Role rank v2: 22
+- Team rank v2: 15
+- Final player rating v2: 0.2551
 - Global rank: 233
 - Position rank: 81
 - Role rank: 14

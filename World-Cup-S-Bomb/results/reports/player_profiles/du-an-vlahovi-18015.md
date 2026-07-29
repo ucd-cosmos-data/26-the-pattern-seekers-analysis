@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Serbia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
+- Source functional role: Target Forward / Penalty-Box Anchor
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.0379
+- Global rank v2: 154
+- Position rank v2: 40
+- Role rank v2: 14
+- Team rank v2: 3
+- Final player rating v2: 0.4779
 - Global rank: 280
 - Position rank: 51
 - Role rank: 14

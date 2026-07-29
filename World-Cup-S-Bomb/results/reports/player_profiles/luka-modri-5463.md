@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Croatia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Deep Playmaker / Metronome
+- Source functional role: Deep Playmaker / Metronome
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0707
+- Global rank v2: 10
+- Position rank v2: 2
+- Role rank v2: 2
+- Team rank v2: 2
+- Final player rating v2: 0.7648
 - Global rank: 371
 - Position rank: 53
 - Role rank: 6

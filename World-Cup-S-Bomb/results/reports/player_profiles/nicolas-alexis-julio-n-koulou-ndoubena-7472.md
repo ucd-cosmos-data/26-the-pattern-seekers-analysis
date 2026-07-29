@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Cameroon
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Secure/Aerial Centre-Back
 - Role entropy: 0.0087
+- Global rank v2: 485
+- Position rank v2: 85
+- Role rank v2: 62
+- Team rank v2: 13
+- Final player rating v2: 0.2281
 - Global rank: 508
 - Position rank: 80
-- Role rank: 62
+- Role rank: 57
 - Team rank: 15
 - Final player rating: 0.4042
 - Ranking status: Ranked (180–299 min)

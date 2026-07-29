@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Morocco
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Defensive/Pressing Fullback
 - Role entropy: 0.1840
+- Global rank v2: 82
+- Position rank v2: 7
+- Role rank v2: 7
+- Team rank v2: 2
+- Final player rating v2: 0.5656
 - Global rank: 393
 - Position rank: 102
-- Role rank: 52
+- Role rank: 55
 - Team rank: 13
 - Final player rating: 0.4440
 - Ranking status: Ranked (300+ min)

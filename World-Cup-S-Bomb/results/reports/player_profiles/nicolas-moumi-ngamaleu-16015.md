@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Cameroon
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Finishing/Progressive Attacker
 - Role entropy: 0.1347
+- Global rank v2: 272
+- Position rank v2: 25
+- Role rank v2: 20
+- Team rank v2: 6
+- Final player rating v2: 0.3723
 - Global rank: 279
 - Position rank: 29
-- Role rank: 47
+- Role rank: 35
 - Team rank: 6
 - Final player rating: 0.4831
 - Ranking status: Coverage only (<180 min)

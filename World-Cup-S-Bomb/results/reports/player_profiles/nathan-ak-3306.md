@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Netherlands
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive/Creative Centre-Back
 - Role entropy: 0.1725
+- Global rank v2: 268
+- Position rank v2: 33
+- Role rank v2: 21
+- Team rank v2: 12
+- Final player rating v2: 0.3770
 - Global rank: 525
 - Position rank: 89
-- Role rank: 71
+- Role rank: 66
 - Team rank: 17
 - Final player rating: 0.3925
 - Ranking status: Ranked (300+ min)

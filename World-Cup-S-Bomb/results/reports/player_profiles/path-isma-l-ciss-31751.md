@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Senegal
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Box-to-Box / Engine Midfielder
+- Source functional role: Box-to-Box / Engine Midfielder
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0004
+- Global rank v2: 309
+- Position rank v2: 40
+- Role rank v2: 16
+- Team rank v2: 10
+- Final player rating v2: 0.3529
 - Global rank: 437
 - Position rank: 47
 - Role rank: 14

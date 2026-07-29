@@ -69,10 +69,16 @@ match-grouped ElasticNet fit. Failure prints the documented fallback message
 and continues with the role-aware layer. All attention is causal; future
 events are masked.
 
-One canonical execution writes the explicit V5 artifacts below under
-`results/reports/`, plus unversioned compatibility aliases:
+One canonical execution writes the narrative V5 artifacts under
+`results/reports/` and all player-ranking artifacts under
+`results/reports/ranking/`:
 
-- `v5_player_rankings.csv` and `v5_player_rankings.json`
+- `ranking/global_rankings_outfield.csv`
+- `ranking/global_rankings_outfield_300min.csv`
+- `ranking/goalkeeper_rankings.csv`
+- `ranking/player_rankings.csv` and `ranking/player_rankings.json`
+- 32 complete tables under `ranking/by_team/`
+- `ranking/ranking_methodology.md` and `ranking/ranking_audit.md`
 - `v5_coaches_notebook.md`
 - `model_summary.json` and `model_summary.md`
 - `final_summary.md`
@@ -102,6 +108,11 @@ coverage fields. Public freeze frames identify the event actor but do not
 provide stable identities for every off-ball player; consequently, named
 player off-ball results are coverage-qualified event-actor proxies, not
 optical-tracking movement estimates.
+
+The tournament ranking layer evaluates only the 2022 FIFA World Cup. It uses
+formal `GK/CB/FB/DM/CM/AM/FW` groups, within-group normalization, explicit
+goal/xG and chance-creation components, role-based (never name-based) finishing
+treatment, and a separate goalkeeper scale.
 
 ## Main results
 
@@ -159,7 +170,7 @@ See the following reports for details:
 - [`results/MIscellaneous/stage5_leakage_audit.md`](results/MIscellaneous/stage5_leakage_audit.md)
 - [`results/reports/final_validation.csv`](results/reports/final_validation.csv)
 - [`results/eda_validation_report.json`](results/eda_validation_report.json)
-- [`results/reports/model_summary.md`](results/reports/model_summary.md)
+- [`results/reports/canonical/model_summary.md`](results/reports/canonical/model_summary.md)
 
 ## Environment
 
@@ -261,7 +272,7 @@ result tables, and figures are stored in `results/`.
 | `results/reports/final_validation.csv` | Side-by-side OOF metrics for all candidate architectures and the legacy baseline |
 | `results/reports/pipeline_manifest.json` | End-to-end runtime, artifact, count, and invariant checks |
 | `results/eda_validation_report.json` | Final acceptance and regression-test result |
-| `results/reports/model_summary.md` | Current methodology, validation gates, learned coefficients, goalkeeper audit, and player hierarchy |
+| `results/reports/canonical/model_summary.md` | Current methodology, validation gates, learned coefficients, goalkeeper audit, and player hierarchy |
 
 ## Validation design and limitations
 

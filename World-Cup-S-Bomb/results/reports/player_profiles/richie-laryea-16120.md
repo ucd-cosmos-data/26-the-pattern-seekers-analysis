@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Canada
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Finishing/Creative Attacker
 - Role entropy: 0.0126
+- Global rank v2: 294
+- Position rank v2: 48
+- Role rank v2: 38
+- Team rank v2: 10
+- Final player rating v2: 0.3593
 - Global rank: 72
 - Position rank: 21
 - Role rank: 18

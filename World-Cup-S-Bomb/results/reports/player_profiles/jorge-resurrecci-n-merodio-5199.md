@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Spain
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0039
+- Global rank v2: 411
+- Position rank v2: 63
+- Role rank v2: 44
+- Team rank v2: 16
+- Final player rating v2: 0.2857
 - Global rank: 426
 - Position rank: 40
-- Role rank: 35
+- Role rank: 27
 - Team rank: 19
 - Final player rating: 0.4326
 - Ranking status: Coverage only (<180 min)

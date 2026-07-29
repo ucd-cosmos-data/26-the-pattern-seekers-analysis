@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Japan
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Box-to-Box / Engine Midfielder
+- Source functional role: Box-to-Box / Engine Midfielder
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0075
+- Global rank v2: 134
+- Position rank v2: 15
+- Role rank v2: 6
+- Team rank v2: 2
+- Final player rating v2: 0.4946
 - Global rank: 404
 - Position rank: 31
 - Role rank: 11

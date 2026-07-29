@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Serbia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Secure/Progressive Fullback
 - Role entropy: 0.1062
+- Global rank v2: 217
+- Position rank v2: 23
+- Role rank v2: 13
+- Team rank v2: 9
+- Final player rating v2: 0.4156
 - Global rank: 547
 - Position rank: 102
-- Role rank: 81
+- Role rank: 76
 - Team rank: 16
 - Final player rating: 0.3533
 - Ranking status: Ranked (180–299 min)

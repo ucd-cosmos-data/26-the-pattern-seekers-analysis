@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Belgium
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
+- Source functional role: Ball-Playing Centre-Back
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0026
+- Global rank v2: 461
+- Position rank v2: 79
+- Role rank v2: 19
+- Team rank v2: 15
+- Final player rating v2: 0.2489
 - Global rank: 495
 - Position rank: 73
-- Role rank: 14
+- Role rank: 17
 - Team rank: 15
 - Final player rating: 0.4109
 - Ranking status: Ranked (180–299 min)

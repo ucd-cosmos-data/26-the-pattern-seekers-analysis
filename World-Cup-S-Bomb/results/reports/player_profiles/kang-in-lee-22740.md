@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: South Korea
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Deep Playmaker / Metronome
+- Source functional role: Deep Playmaker / Metronome
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.2485
+- Global rank v2: 89
+- Position rank v2: 9
+- Role rank v2: 3
+- Team rank v2: 1
+- Final player rating v2: 0.5551
 - Global rank: 210
 - Position rank: 13
 - Role rank: 1

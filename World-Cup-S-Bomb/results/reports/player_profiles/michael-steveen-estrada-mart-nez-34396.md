@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ecuador
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0025
+- Global rank v2: 331
+- Position rank v2: 70
+- Role rank v2: 37
+- Team rank v2: 7
+- Final player rating v2: 0.3398
 - Global rank: 382
 - Position rank: 73
 - Role rank: 45

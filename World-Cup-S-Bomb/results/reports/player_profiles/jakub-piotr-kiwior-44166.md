@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Poland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0038
+- Global rank v2: 501
+- Position rank v2: 89
+- Role rank v2: 65
+- Team rank v2: 11
+- Final player rating v2: 0.2096
 - Global rank: 394
 - Position rank: 33
-- Role rank: 21
+- Role rank: 18
 - Team rank: 10
 - Final player rating: 0.4437
 - Ranking status: Ranked (300+ min)

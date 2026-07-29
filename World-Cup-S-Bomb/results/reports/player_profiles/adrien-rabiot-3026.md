@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: France
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.2038
+- Global rank v2: 74
+- Position rank v2: 6
+- Role rank v2: 5
+- Team rank v2: 8
+- Final player rating v2: 0.5810
 - Global rank: 146
 - Position rank: 3
-- Role rank: 4
+- Role rank: 1
 - Team rank: 7
 - Final player rating: 0.5224
 - Ranking status: Ranked (300+ min)

@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Iran
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0526
+- Global rank v2: 381
+- Position rank v2: 97
+- Role rank v2: 63
+- Team rank v2: 11
+- Final player rating v2: 0.3052
 - Global rank: 261
 - Position rank: 25
-- Role rank: 63
+- Role rank: 62
 - Team rank: 10
 - Final player rating: 0.4866
 - Ranking status: Ranked (180–299 min)

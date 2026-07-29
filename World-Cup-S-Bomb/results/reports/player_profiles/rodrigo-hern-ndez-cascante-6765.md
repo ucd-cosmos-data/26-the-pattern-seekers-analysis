@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Spain
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
+- Source functional role: Ball-Playing Centre-Back
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0014
+- Global rank v2: 40
+- Position rank v2: 1
+- Role rank v2: 1
+- Team rank v2: 3
+- Final player rating v2: 0.6520
 - Global rank: 295
 - Position rank: 6
 - Role rank: 3

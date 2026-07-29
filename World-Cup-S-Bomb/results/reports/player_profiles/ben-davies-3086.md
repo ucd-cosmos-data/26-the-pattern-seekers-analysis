@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Wales
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
-- Functional role: Wide Creator
+- Functional role: Ball-Playing Centre-Back
+- Source functional role: Wide Creator
+
 - Probabilistic role: Aerial/Progressive/Creative Centre-Back
 - Role entropy: 0.0000
+- Global rank v2: 304
+- Position rank v2: 41
+- Role rank v2: 15
+- Team rank v2: 6
+- Final player rating v2: 0.3537
 - Global rank: 384
 - Position rank: 29
-- Role rank: 29
+- Role rank: 12
 - Team rank: 11
 - Final player rating: 0.4472
 - Ranking status: Ranked (180–299 min)

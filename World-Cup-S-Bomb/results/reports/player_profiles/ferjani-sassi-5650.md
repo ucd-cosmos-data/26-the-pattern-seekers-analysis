@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Tunisia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0018
+- Global rank v2: 297
+- Position rank v2: 36
+- Role rank v2: 21
+- Team rank v2: 10
+- Final player rating v2: 0.3585
 - Global rank: 405
 - Position rank: 32
-- Role rank: 29
+- Role rank: 21
 - Team rank: 15
 - Final player rating: 0.4401
 - Ranking status: Coverage only (<180 min)

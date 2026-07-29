@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Netherlands
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.1666
+- Global rank v2: 18
+- Position rank v2: 8
+- Role rank v2: 4
+- Team rank v2: 1
+- Final player rating v2: 0.7234
 - Global rank: 136
 - Position rank: 15
 - Role rank: 12

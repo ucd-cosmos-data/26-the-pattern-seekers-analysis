@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Belgium
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
+- Global rank v2: 401
+- Position rank v2: 102
+- Role rank v2: 34
+- Team rank v2: 13
+- Final player rating v2: 0.2914
 - Global rank: 176
 - Position rank: 80
-- Role rank: 25
+- Role rank: 21
 - Team rank: 8
 - Final player rating: 0.5132
 - Ranking status: Coverage only (<180 min)

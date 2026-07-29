@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Australia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0042
+- Global rank v2: 486
+- Position rank v2: 77
+- Role rank v2: 53
+- Team rank v2: 10
+- Final player rating v2: 0.2274
 - Global rank: 474
 - Position rank: 68
-- Role rank: 51
+- Role rank: 43
 - Team rank: 13
 - Final player rating: 0.4197
 - Ranking status: Ranked (300+ min)

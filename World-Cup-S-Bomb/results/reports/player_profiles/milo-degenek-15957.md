@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Australia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Defensive/Pressing Fullback
 - Role entropy: 0.0000
+- Global rank v2: 542
+- Position rank v2: 103
+- Role rank v2: 38
+- Team rank v2: 15
+- Final player rating v2: 0.1413
 - Global rank: 285
 - Position rank: 90
-- Role rank: 20
+- Role rank: 22
 - Team rank: 7
 - Final player rating: 0.4811
 - Ranking status: Ranked (180–299 min)

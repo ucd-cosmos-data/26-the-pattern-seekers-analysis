@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Argentina
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Finishing/Creative Attacker
 - Role entropy: 0.0004
+- Global rank v2: 12
+- Position rank v2: 6
+- Role rank v2: 6
+- Team rank v2: 2
+- Final player rating v2: 0.7554
 - Global rank: 6
 - Position rank: 1
 - Role rank: 5

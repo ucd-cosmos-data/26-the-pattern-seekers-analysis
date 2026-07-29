@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Australia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.0094
+- Global rank v2: 273
+- Position rank v2: 77
+- Role rank v2: 32
+- Team rank v2: 5
+- Final player rating v2: 0.3716
 - Global rank: 332
 - Position rank: 42
 - Role rank: 41

@@ -61,13 +61,13 @@ def test_all_required_artifacts_and_32_team_profiles(tmp_path: Path) -> None:
         validation_comparison=comparison,
     )
     for name in (
-        "v5_player_rankings.csv",
-        "v5_player_rankings.json",
+        "ranking/v5_player_rankings.csv",
+        "ranking/v5_player_rankings.json",
         "v5_coaches_notebook.md",
         "v5_artifact_manifest.json",
-        "player_rankings.csv",
-        "player_rankings_300plus.csv",
-        "player_rankings.json",
+        "ranking/player_rankings.csv",
+        "ranking/player_rankings_300plus.csv",
+        "ranking/player_rankings.json",
         "coaches_notebook.md",
         "model_summary.json",
         "model_summary.md",
@@ -86,16 +86,18 @@ def test_all_required_artifacts_and_32_team_profiles(tmp_path: Path) -> None:
     assert (
         tmp_path / "v5_figures/v5_global_outfield_rankings.png"
     ).is_file()
-    rankings = pd.read_csv(tmp_path / "player_rankings.csv")
+    rankings = pd.read_csv(tmp_path / "ranking/player_rankings.csv")
     assert set(RANKING_SCHEMA) <= set(rankings.columns)
     rankings_300plus = pd.read_csv(
-        tmp_path / "player_rankings_300plus.csv"
+        tmp_path / "ranking/player_rankings_300plus.csv"
     )
     assert len(rankings_300plus) == len(rankings)
     assert rankings_300plus["RankingStatus"].eq(
         "Ranked (300+ min)"
     ).all()
-    payload = json.loads((tmp_path / "player_rankings.json").read_text())
+    payload = json.loads(
+        (tmp_path / "ranking/player_rankings.json").read_text()
+    )
     assert len(payload) == len(rankings)
     assert manifest.metadata["teams"] == 32
     assert manifest.metadata["player_profiles"] == 64

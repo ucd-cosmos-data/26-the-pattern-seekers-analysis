@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Uruguay
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.2034
+- Global rank v2: 326
+- Position rank v2: 68
+- Role rank v2: 36
+- Team rank v2: 10
+- Final player rating v2: 0.3448
 - Global rank: 191
 - Position rank: 23
 - Role rank: 20

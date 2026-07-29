@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Uruguay
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.0397
+- Global rank v2: 474
+- Position rank v2: 74
+- Role rank v2: 51
+- Team rank v2: 15
+- Final player rating v2: 0.2380
 - Global rank: 402
 - Position rank: 30
-- Role rank: 68
+- Role rank: 52
 - Team rank: 14
 - Final player rating: 0.4412
 - Ranking status: Coverage only (<180 min)

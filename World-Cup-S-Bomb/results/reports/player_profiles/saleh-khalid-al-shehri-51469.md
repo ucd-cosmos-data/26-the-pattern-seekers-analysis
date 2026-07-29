@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Saudi Arabia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0272
+- Global rank v2: 174
+- Position rank v2: 45
+- Role rank v2: 21
+- Team rank v2: 2
+- Final player rating v2: 0.4596
 - Global rank: 288
 - Position rank: 54
 - Role rank: 35

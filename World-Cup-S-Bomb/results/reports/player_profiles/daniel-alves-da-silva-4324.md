@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Brazil
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Secure/Progressive Fullback
 - Role entropy: 0.0507
+- Global rank v2: 290
+- Position rank v2: 46
+- Role rank v2: 7
+- Team rank v2: 19
+- Final player rating v2: 0.3613
 - Global rank: 140
 - Position rank: 46
 - Role rank: 7

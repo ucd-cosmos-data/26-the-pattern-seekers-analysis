@@ -14,7 +14,10 @@ from scipy.stats import spearmanr
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 REPORTS = PROJECT_ROOT / "results/reports"
 DIAGNOSTICS = PROJECT_ROOT / "results/diagnostics"
-BASELINE = DIAGNOSTICS / "v2_baseline_player_rankings.csv"
+BASELINE_CANDIDATES = (
+    DIAGNOSTICS / "v2_baseline_player_rankings.csv",
+    REPORTS / "ranking/legacy/player_rankings.csv",
+)
 
 
 def _rho(left: pd.Series, right: pd.Series) -> float | None:
@@ -27,14 +30,26 @@ def _rho(left: pd.Series, right: pd.Series) -> float | None:
 
 def main() -> None:
     DIAGNOSTICS.mkdir(parents=True, exist_ok=True)
-    current = pd.read_csv(REPORTS / "player_rankings.csv")
-    baseline = pd.read_csv(BASELINE)
-    teams = pd.read_csv(REPORTS / "team_metrics_v2.csv")
+    current = pd.read_csv(REPORTS / "ranking/player_rankings.csv")
+    baseline_path = next(
+        (path for path in BASELINE_CANDIDATES if path.is_file()),
+        None,
+    )
+    if baseline_path is None:
+        raise FileNotFoundError(
+            "No pre-v2 ranking baseline found in diagnostics or the "
+            "ranking/legacy archive"
+        )
+    baseline = pd.read_csv(baseline_path)
+    teams = pd.read_csv(REPORTS / "canonical/data/team_metrics_v2.csv")
     outfield = current.loc[
-        ~current["position_group"].eq("Goalkeeper")
+        current["position_group_360"].ne("GK")
     ].copy()
-    goalkeepers = current.loc[
-        current["position_group"].eq("Goalkeeper")
+    all_goalkeepers = current.loc[
+        current["position_group_360"].eq("GK")
+    ].copy()
+    goalkeepers = all_goalkeepers.loc[
+        all_goalkeepers["gk_rank_v2"].notna()
     ].copy()
     outfield["minutes_bucket"] = pd.cut(
         outfield["minutes"],
@@ -47,9 +62,9 @@ def main() -> None:
         outfield.groupby("minutes_bucket", observed=False)
         .agg(
             players=("player_name", "size"),
-            mean_rating=("final_player_rating", "mean"),
-            median_rating=("final_player_rating", "median"),
-            rating_std=("final_player_rating", "std"),
+            mean_rating=("final_player_rating_v2", "mean"),
+            median_rating=("final_player_rating_v2", "median"),
+            rating_std=("final_player_rating_v2", "std"),
         )
         .reset_index()
     )
@@ -59,17 +74,17 @@ def main() -> None:
     )
     top_positions = (
         outfield.sort_values(
-            ["position_group", "final_player_rating"],
+            ["position_group_360", "final_player_rating_v2"],
             ascending=[True, False],
         )
-        .groupby("position_group", sort=True)
+        .groupby("position_group_360", sort=True)
         .head(10)
     )
     top_positions.to_csv(
         DIAGNOSTICS / "v2_top10_by_position.csv",
         index=False,
     )
-    goalkeepers.sort_values("goalkeeper_rank").to_csv(
+    goalkeepers.sort_values("gk_rank_v2").to_csv(
         DIAGNOSTICS / "v2_goalkeeper_ranking.csv",
         index=False,
     )
@@ -77,8 +92,41 @@ def main() -> None:
         "player_name",
         "team",
     ]
-    comparison = baseline.merge(
-        current,
+    before_columns = [
+        *join_columns,
+        "player_name",
+        "team",
+        "position_group",
+        "functional_role",
+        "final_player_rating",
+        "global_rank",
+        "position_rank",
+        "role_rank",
+        "team_rank",
+        "goalkeeper_rank",
+        "minutes",
+    ]
+    after_columns = [
+        *join_columns,
+        "player_name",
+        "team",
+        "position_group_360",
+        "functional_role",
+        "final_player_rating_v2",
+        "global_rank_v2",
+        "position_rank_v2",
+        "role_rank_v2",
+        "team_rank_v2",
+        "gk_rating_v2",
+        "gk_rank_v2",
+        "minutes_played",
+    ]
+    before_columns = list(dict.fromkeys(before_columns))
+    after_columns = list(dict.fromkeys(after_columns))
+    comparison = baseline[
+        [column for column in before_columns if column in baseline]
+    ].merge(
+        current[[column for column in after_columns if column in current]],
         on=join_columns,
         how="outer",
         suffixes=("_before", "_after"),
@@ -105,7 +153,7 @@ def main() -> None:
             na=False,
             regex=True,
         )
-    ].sort_values("global_rank")
+    ].sort_values("global_rank_v2")
     elite.to_csv(
         DIAGNOSTICS / "v2_named_elite_audit.csv",
         index=False,
@@ -124,7 +172,7 @@ def main() -> None:
         for value in bucket_summary["mean_rating"].to_numpy()
     ]
     model_summary = json.loads(
-        (REPORTS / "model_summary.json").read_text(encoding="utf-8")
+        (REPORTS / "canonical/model_summary.json").read_text(encoding="utf-8")
     )
     checks = {
         "all_32_teams_present": int(teams["team"].nunique()) == 32,
@@ -141,6 +189,11 @@ def main() -> None:
         ),
         "outfield_minimum_minutes": float(outfield["minutes"].min()),
         "goalkeeper_minimum_minutes": float(goalkeepers["minutes"].min()),
+        "ranked_main_goalkeepers": int(len(goalkeepers)),
+        "ranked_goalkeeper_teams": int(goalkeepers["team"].nunique()),
+        "unranked_backup_goalkeepers": int(
+            all_goalkeepers["gk_rank_v2"].isna().sum()
+        ),
         "outfield_status_counts": (
             outfield["RankingStatus"].value_counts().to_dict()
         ),
@@ -148,11 +201,11 @@ def main() -> None:
             goalkeepers["GKRankingStatus"].value_counts().to_dict()
         ),
         "rating_spearman_minutes": _rho(
-            outfield["final_player_rating"],
+            outfield["final_player_rating_v2"],
             outfield["minutes"],
         ),
         "rating_spearman_goals_plus_xa": _rho(
-            outfield["final_player_rating"],
+            outfield["final_player_rating_v2"],
             target,
         ),
         "minutes_bucket_mean_ratings": {
@@ -169,12 +222,11 @@ def main() -> None:
                 for earlier, later in zip(
                     bucket_means,
                     bucket_means[1:],
-                    strict=True,
                 )
             )
         ),
         "sub_180_players_in_global_top_20": int(
-            outfield.nsmallest(20, "global_rank")["minutes"].lt(180).sum()
+            outfield.nsmallest(20, "global_rank_v2")["minutes"].lt(180).sum()
         ),
         "contextual_vaep_gate": model_summary.get(
             "metrics",
@@ -194,7 +246,7 @@ def main() -> None:
                         case=False,
                         na=False,
                     ),
-                    "global_rank",
+                    "global_rank_v2",
                 ].min()
             )
         ),
@@ -206,7 +258,7 @@ def main() -> None:
                         case=False,
                         na=False,
                     ),
-                    "global_rank",
+                    "global_rank_v2",
                 ].min()
             )
         ),

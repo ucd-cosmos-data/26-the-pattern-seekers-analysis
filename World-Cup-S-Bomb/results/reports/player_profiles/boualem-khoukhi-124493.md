@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Qatar
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0011
+- Global rank v2: 203
+- Position rank v2: 21
+- Role rank v2: 11
+- Team rank v2: 3
+- Final player rating v2: 0.4312
 - Global rank: 354
 - Position rank: 19
-- Role rank: 14
+- Role rank: 11
 - Team rank: 8
 - Final player rating: 0.4585
 - Ranking status: Ranked (180–299 min)

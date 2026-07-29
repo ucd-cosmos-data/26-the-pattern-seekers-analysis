@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Qatar
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0032
+- Global rank v2: 410
+- Position rank v2: 62
+- Role rank v2: 43
+- Team rank v2: 7
+- Final player rating v2: 0.2877
 - Global rank: 500
 - Position rank: 77
-- Role rank: 59
+- Role rank: 51
 - Team rank: 14
 - Final player rating: 0.4074
 - Ranking status: Coverage only (<180 min)

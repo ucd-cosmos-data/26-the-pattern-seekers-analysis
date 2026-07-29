@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Brazil
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
-- Functional role: Sweeper CB
+- Functional role: Attacking Wingback
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.2650
+- Global rank v2: 415
+- Position rank v2: 66
+- Role rank v2: 49
+- Team rank v2: 22
+- Final player rating v2: 0.2823
 - Global rank: 207
 - Position rank: 73
-- Role rank: 3
+- Role rank: 49
 - Team rank: 15
 - Final player rating: 0.5023
 - Ranking status: Ranked (180–299 min)

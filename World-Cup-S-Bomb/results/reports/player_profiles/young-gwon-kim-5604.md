@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: South Korea
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive/Creative Centre-Back
 - Role entropy: 0.1297
+- Global rank v2: 277
+- Position rank v2: 34
+- Role rank v2: 22
+- Team rank v2: 11
+- Final player rating v2: 0.3692
 - Global rank: 298
 - Position rank: 7
-- Role rank: 6
+- Role rank: 3
 - Team rank: 13
 - Final player rating: 0.4779
 - Ranking status: Ranked (300+ min)

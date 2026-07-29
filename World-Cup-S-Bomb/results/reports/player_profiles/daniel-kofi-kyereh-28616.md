@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ghana
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
-- Functional role: Wide Creator
+- Functional role: Deep Playmaker
+- Source functional role: Wide Creator
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.0802
+- Global rank v2: 398
+- Position rank v2: 59
+- Role rank v2: 16
+- Team rank v2: 9
+- Final player rating v2: 0.2940
 - Global rank: 385
 - Position rank: 26
-- Role rank: 30
+- Role rank: 29
 - Team rank: 12
 - Final player rating: 0.4469
 - Ranking status: Coverage only (<180 min)

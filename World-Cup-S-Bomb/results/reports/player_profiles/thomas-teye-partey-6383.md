@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ghana
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0033
+- Global rank v2: 193
+- Position rank v2: 21
+- Role rank v2: 12
+- Team rank v2: 2
+- Final player rating v2: 0.4401
 - Global rank: 519
 - Position rank: 82
-- Role rank: 62
+- Role rank: 54
 - Team rank: 16
 - Final player rating: 0.3973
 - Ranking status: Ranked (300+ min)

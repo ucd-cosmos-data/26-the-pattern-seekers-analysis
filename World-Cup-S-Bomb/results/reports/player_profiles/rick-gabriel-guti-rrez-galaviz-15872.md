@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Mexico
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0802
+- Global rank v2: 418
+- Position rank v2: 66
+- Role rank v2: 48
+- Team rank v2: 14
+- Final player rating v2: 0.2807
 - Global rank: 464
 - Position rank: 63
-- Role rank: 47
+- Role rank: 39
 - Team rank: 18
 - Final player rating: 0.4241
 - Ranking status: Coverage only (<180 min)

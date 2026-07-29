@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Japan
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
+- Source functional role: Wide Creator
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
+- Global rank v2: 384
+- Position rank v2: 63
+- Role rank v2: 16
+- Team rank v2: 17
+- Final player rating v2: 0.3040
 - Global rank: 196
 - Position rank: 69
 - Role rank: 15

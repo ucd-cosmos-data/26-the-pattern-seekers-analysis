@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Serbia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
-- Functional role: Holding Anchor
+- Functional role: Linking Attacker
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.1427
+- Global rank v2: 330
+- Position rank v2: 89
+- Role rank v2: 4
+- Team rank v2: 10
+- Final player rating v2: 0.3407
 - Global rank: 266
 - Position rank: 93
-- Role rank: 12
+- Role rank: 3
 - Team rank: 8
 - Final player rating: 0.4854
 - Ranking status: Ranked (180–299 min)

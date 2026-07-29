@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Switzerland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
+- Global rank v2: 446
+- Position rank v2: 75
+- Role rank v2: 52
+- Team rank v2: 14
+- Final player rating v2: 0.2583
 - Global rank: 346
 - Position rank: 100
-- Role rank: 51
+- Role rank: 54
 - Team rank: 12
 - Final player rating: 0.4614
 - Ranking status: Ranked (300+ min)

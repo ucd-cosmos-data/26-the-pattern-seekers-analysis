@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Morocco
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Secure/Aerial Centre-Back
 - Role entropy: 0.0001
+- Global rank v2: 406
+- Position rank v2: 67
+- Role rank v2: 46
+- Team rank v2: 16
+- Final player rating v2: 0.2886
 - Global rank: 465
 - Position rank: 57
-- Role rank: 43
+- Role rank: 38
 - Team rank: 16
 - Final player rating: 0.4241
 - Ranking status: Ranked (300+ min)

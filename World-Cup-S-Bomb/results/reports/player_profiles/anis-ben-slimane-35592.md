@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Tunisia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Creative Attacker
 - Role entropy: 0.2086
+- Global rank v2: 283
+- Position rank v2: 79
+- Role rank v2: 34
+- Team rank v2: 9
+- Final player rating v2: 0.3664
 - Global rank: 137
 - Position rank: 69
 - Role rank: 13

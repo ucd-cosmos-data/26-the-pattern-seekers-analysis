@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ghana
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Secure/Aerial Centre-Back
 - Role entropy: 0.0000
+- Global rank v2: 526
+- Position rank v2: 99
+- Role rank v2: 72
+- Team rank v2: 16
+- Final player rating v2: 0.1832
 - Global rank: 514
 - Position rank: 84
-- Role rank: 66
+- Role rank: 61
 - Team rank: 14
 - Final player rating: 0.4021
 - Ranking status: Coverage only (<180 min)

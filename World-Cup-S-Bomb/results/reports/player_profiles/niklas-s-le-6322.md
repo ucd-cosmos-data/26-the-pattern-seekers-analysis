@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Germany
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
-- Functional role: Sweeper CB
+- Functional role: Attacking Wingback
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Secure/Progressive Fullback
 - Role entropy: 0.0024
+- Global rank v2: 322
+- Position rank v2: 54
+- Role rank v2: 42
+- Team rank v2: 13
+- Final player rating v2: 0.3459
 - Global rank: 291
 - Position rank: 91
-- Role rank: 5
+- Role rank: 53
 - Team rank: 13
 - Final player rating: 0.4801
 - Ranking status: Ranked (180–299 min)

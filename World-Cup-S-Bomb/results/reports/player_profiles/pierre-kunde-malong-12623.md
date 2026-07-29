@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Cameroon
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Box-to-Box / Engine Midfielder
+- Source functional role: Box-to-Box / Engine Midfielder
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0102
+- Global rank v2: 324
+- Position rank v2: 45
+- Role rank v2: 17
+- Team rank v2: 9
+- Final player rating v2: 0.3456
 - Global rank: 314
 - Position rank: 15
 - Role rank: 7

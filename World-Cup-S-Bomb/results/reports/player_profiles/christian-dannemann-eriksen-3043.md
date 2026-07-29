@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Denmark
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.1382
+- Global rank v2: 54
+- Position rank v2: 5
+- Role rank v2: 19
+- Team rank v2: 1
+- Final player rating v2: 0.6217
 - Global rank: 218
 - Position rank: 15
-- Role rank: 59
+- Role rank: 58
 - Team rank: 10
 - Final player rating: 0.4987
 - Ranking status: Ranked (180–299 min)

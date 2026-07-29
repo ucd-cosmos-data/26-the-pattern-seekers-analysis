@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Germany
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
+- Source functional role: Target Forward / Penalty-Box Anchor
+
 - Probabilistic role: Finishing/Aerial/Secure Forward
 - Role entropy: 0.0000
+- Global rank v2: 31
+- Position rank v2: 15
+- Role rank v2: 3
+- Team rank v2: 5
+- Final player rating v2: 0.6731
 - Global rank: 106
 - Position rank: 9
 - Role rank: 2

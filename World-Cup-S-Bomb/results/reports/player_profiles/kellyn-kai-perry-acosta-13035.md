@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: United States
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0607
+- Global rank v2: 469
+- Position rank v2: 73
+- Role rank v2: 48
+- Team rank v2: 17
+- Final player rating v2: 0.2431
 - Global rank: 429
 - Position rank: 42
-- Role rank: 72
+- Role rank: 54
 - Team rank: 15
 - Final player rating: 0.4316
 - Ranking status: Coverage only (<180 min)

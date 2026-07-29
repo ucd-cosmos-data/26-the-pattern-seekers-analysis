@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Serbia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Finishing/Creative Attacker
 - Role entropy: 0.0020
+- Global rank v2: 368
+- Position rank v2: 59
+- Role rank v2: 45
+- Team rank v2: 11
+- Final player rating v2: 0.3110
 - Global rank: 147
 - Position rank: 49
 - Role rank: 37

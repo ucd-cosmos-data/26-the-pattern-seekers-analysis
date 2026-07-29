@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Croatia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Box-to-Box / Engine Midfielder
+- Source functional role: Box-to-Box / Engine Midfielder
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0013
+- Global rank v2: 106
+- Position rank v2: 13
+- Role rank v2: 5
+- Team rank v2: 8
+- Final player rating v2: 0.5314
 - Global rank: 510
 - Position rank: 79
 - Role rank: 19

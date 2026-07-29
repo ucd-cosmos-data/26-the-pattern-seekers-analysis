@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Ecuador
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
-- Functional role: Holding Anchor
+- Functional role: Defensive Centre-Back
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Defensive/Pressing Fullback
 - Role entropy: 0.0020
+- Global rank v2: 362
+- Position rank v2: 58
+- Role rank v2: 1
+- Team rank v2: 10
+- Final player rating v2: 0.3139
 - Global rank: 537
 - Position rank: 96
-- Role rank: 68
+- Role rank: 2
 - Team rank: 16
 - Final player rating: 0.3832
 - Ranking status: Coverage only (<180 min)

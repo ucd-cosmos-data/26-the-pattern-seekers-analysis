@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Netherlands
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0051
+- Global rank v2: 44
+- Position rank v2: 2
+- Role rank v2: 2
+- Team rank v2: 3
+- Final player rating v2: 0.6481
 - Global rank: 256
 - Position rank: 9
-- Role rank: 11
+- Role rank: 6
 - Team rank: 7
 - Final player rating: 0.4879
 - Ranking status: Ranked (300+ min)

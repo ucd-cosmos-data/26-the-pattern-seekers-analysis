@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Mexico
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.0611
+- Global rank v2: 276
+- Position rank v2: 78
+- Role rank v2: 55
+- Team rank v2: 7
+- Final player rating v2: 0.3695
 - Global rank: 87
 - Position rank: 46
 - Role rank: 35

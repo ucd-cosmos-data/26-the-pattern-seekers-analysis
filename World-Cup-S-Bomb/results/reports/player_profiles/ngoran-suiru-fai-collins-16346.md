@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Cameroon
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Deep Playmaker
+- Source functional role: Deep Playmaker
+
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.1377
+- Global rank v2: 464
+- Position rank v2: 83
+- Role rank v2: 24
+- Team rank v2: 12
+- Final player rating v2: 0.2465
 - Global rank: 304
 - Position rank: 94
-- Role rank: 23
+- Role rank: 25
 - Team rank: 7
 - Final player rating: 0.4739
 - Ranking status: Ranked (180–299 min)

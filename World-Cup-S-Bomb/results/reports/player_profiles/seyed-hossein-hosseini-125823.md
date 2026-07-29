@@ -5,17 +5,26 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Iran
+- Tournament: 2022_World_Cup
+- Formal 360 position group: GK
 - Position group: Goalkeeper
 - Functional role: Goalkeeper
+- Source functional role: Goalkeeper
+- Team main goalkeeper: 1.0000
 - Probabilistic role: Goalkeeper
 - Role entropy: 0.0000
+- Goalkeeper rank v2: 30
+- Goalkeeper rating v2: 0.0367
+
+
+
 - Global rank: not available
 - Position rank: 37
 - Role rank: 37
 - Team rank: 13
 - Final player rating: 0.4542
 - Ranking status: Ranked (180–299 min)
-- Goalkeeper ranking status: Ranked (180–269 min)
+- Goalkeeper ranking status: Ranked (team main goalkeeper)
 - Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 186.0
 - Minutes reliability: 0.2507

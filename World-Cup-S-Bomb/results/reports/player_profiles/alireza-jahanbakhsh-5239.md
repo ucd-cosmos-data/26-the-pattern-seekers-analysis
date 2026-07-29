@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Iran
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.0108
+- Global rank v2: 303
+- Position rank v2: 83
+- Role rank v2: 23
+- Team rank v2: 7
+- Final player rating v2: 0.3553
 - Global rank: 83
 - Position rank: 44
-- Role rank: 7
+- Role rank: 6
 - Team rank: 3
 - Final player rating: 0.5411
 - Ranking status: Coverage only (<180 min)

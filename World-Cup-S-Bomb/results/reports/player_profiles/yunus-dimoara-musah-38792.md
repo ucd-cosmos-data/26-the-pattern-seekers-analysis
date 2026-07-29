@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: United States
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Box-to-Box / Engine Midfielder
+- Source functional role: Box-to-Box / Engine Midfielder
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.3497
+- Global rank v2: 80
+- Position rank v2: 8
+- Role rank v2: 3
+- Team rank v2: 3
+- Final player rating v2: 0.5715
 - Global rank: 377
 - Position rank: 54
 - Role rank: 10

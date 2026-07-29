@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Brazil
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
+- Source functional role: Ball-Playing Centre-Back
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0111
+- Global rank v2: 109
+- Position rank v2: 7
+- Role rank v2: 6
+- Team rank v2: 12
+- Final player rating v2: 0.5241
 - Global rank: 284
 - Position rank: 3
 - Role rank: 1

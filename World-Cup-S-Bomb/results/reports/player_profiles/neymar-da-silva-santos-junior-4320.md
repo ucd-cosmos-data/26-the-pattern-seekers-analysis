@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Brazil
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
+- Source functional role: Progressive Winger
+
 - Probabilistic role: Pressing/Secure Attacker
 - Role entropy: 0.0082
+- Global rank v2: 9
+- Position rank v2: 4
+- Role rank v2: 5
+- Team rank v2: 1
+- Final player rating v2: 0.7702
 - Global rank: 4
 - Position rank: 3
 - Role rank: 3

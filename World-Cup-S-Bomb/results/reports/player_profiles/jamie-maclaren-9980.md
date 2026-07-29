@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Australia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
+- Source functional role: Target Forward
+
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0052
+- Global rank v2: 371
+- Position rank v2: 74
+- Role rank v2: 38
+- Team rank v2: 8
+- Final player rating v2: 0.3089
 - Global rank: 308
 - Position rank: 62
 - Role rank: 38

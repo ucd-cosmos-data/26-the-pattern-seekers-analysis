@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Tunisia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0000
+- Global rank v2: 437
+- Position rank v2: 75
+- Role rank v2: 54
+- Team rank v2: 14
+- Final player rating v2: 0.2671
 - Global rank: 485
 - Position rank: 66
-- Role rank: 52
+- Role rank: 47
 - Team rank: 18
 - Final player rating: 0.4145
 - Ranking status: Coverage only (<180 min)

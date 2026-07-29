@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Croatia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
+- Source functional role: Ball-Winner
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.1070
+- Global rank v2: 248
+- Position rank v2: 69
+- Role rank v2: 13
+- Team rank v2: 15
+- Final player rating v2: 0.3934
 - Global rank: 251
 - Position rank: 91
-- Role rank: 39
+- Role rank: 30
 - Team rank: 12
 - Final player rating: 0.4894
 - Ranking status: Ranked (180–299 min)

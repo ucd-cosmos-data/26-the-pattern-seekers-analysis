@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Germany
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.2422
+- Global rank v2: 529
+- Position rank v2: 85
+- Role rank v2: 58
+- Team rank v2: 16
+- Final player rating v2: 0.1699
 - Global rank: 494
 - Position rank: 74
-- Role rank: 55
+- Role rank: 47
 - Team rank: 17
 - Final player rating: 0.4116
 - Ranking status: Coverage only (<180 min)

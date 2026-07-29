@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Brazil
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
-- Functional role: Sweeper CB
+- Functional role: Ball-Winning Midfielder
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0003
+- Global rank v2: 355
+- Position rank v2: 50
+- Role rank v2: 1
+- Team rank v2: 21
+- Final player rating v2: 0.3209
 - Global rank: 442
 - Position rank: 50
-- Role rank: 37
+- Role rank: 2
 - Team rank: 25
 - Final player rating: 0.4296
 - Ranking status: Coverage only (<180 min)

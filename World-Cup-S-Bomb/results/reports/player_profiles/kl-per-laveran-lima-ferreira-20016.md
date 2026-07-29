@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Portugal
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Secure Centre-Back
 - Role entropy: 0.0391
+- Global rank v2: 343
+- Position rank v2: 51
+- Role rank v2: 35
+- Team rank v2: 16
+- Final player rating v2: 0.3283
 - Global rank: 390
 - Position rank: 32
-- Role rank: 20
+- Role rank: 17
 - Team rank: 19
 - Final player rating: 0.4454
 - Ranking status: Ranked (300+ min)

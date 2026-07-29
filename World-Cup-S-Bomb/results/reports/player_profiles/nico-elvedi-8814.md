@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Switzerland
+- Tournament: 2022_World_Cup
+- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
+- Source functional role: Sweeper CB
+
 - Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0674
+- Global rank v2: 232
+- Position rank v2: 27
+- Role rank v2: 16
+- Team rank v2: 8
+- Final player rating v2: 0.4040
 - Global rank: 489
 - Position rank: 69
-- Role rank: 55
+- Role rank: 50
 - Team rank: 18
 - Final player rating: 0.4135
 - Ranking status: Ranked (180–299 min)

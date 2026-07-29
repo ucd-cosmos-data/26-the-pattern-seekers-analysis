@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Serbia
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0715
+- Global rank v2: 531
+- Position rank v2: 86
+- Role rank v2: 59
+- Team rank v2: 15
+- Final player rating v2: 0.1669
 - Global rank: 527
 - Position rank: 85
-- Role rank: 65
+- Role rank: 57
 - Team rank: 14
 - Final player rating: 0.3912
 - Ranking status: Coverage only (<180 min)

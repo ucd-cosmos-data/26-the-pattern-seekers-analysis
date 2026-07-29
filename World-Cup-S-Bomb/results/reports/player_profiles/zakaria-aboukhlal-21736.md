@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Morocco
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Wide Creator
+- Source functional role: Wide Creator
+
 - Probabilistic role: Finishing/Progressive Attacker
 - Role entropy: 0.0001
+- Global rank v2: 117
+- Position rank v2: 29
+- Role rank v2: 3
+- Team rank v2: 4
+- Final player rating v2: 0.5120
 - Global rank: 211
 - Position rank: 29
 - Role rank: 17

@@ -5,10 +5,19 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: Belgium
+- Tournament: 2022_World_Cup
+- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
+- Source functional role: Attacking Wingback
+
 - Probabilistic role: Defensive/Pressing Fullback
 - Role entropy: 0.1115
+- Global rank v2: 306
+- Position rank v2: 51
+- Role rank v2: 40
+- Team rank v2: 6
+- Final player rating v2: 0.3534
 - Global rank: 193
 - Position rank: 67
 - Role rank: 48

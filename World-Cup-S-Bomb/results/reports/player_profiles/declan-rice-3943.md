@@ -5,13 +5,22 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 ## Ranking and role
 
 - Team: England
+- Tournament: 2022_World_Cup
+- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
+- Source functional role: Holding Anchor
+
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0004
+- Global rank v2: 280
+- Position rank v2: 34
+- Role rank v2: 19
+- Team rank v2: 14
+- Final player rating v2: 0.3684
 - Global rank: 447
 - Position rank: 54
-- Role rank: 40
+- Role rank: 32
 - Team rank: 17
 - Final player rating: 0.4275
 - Ranking status: Ranked (300+ min)
