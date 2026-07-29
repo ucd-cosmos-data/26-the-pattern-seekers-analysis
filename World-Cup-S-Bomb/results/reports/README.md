@@ -1,54 +1,62 @@
-# Canonical V5 Reports
+# World-Cup-S-Bomb Output Directory Index
 
-These are the current V5 role-aware player analytics outputs. They supersede
-V4 player-rating values embedded in historical simulation packets; possession,
-transition-risk, and tactical-scenario results remain valid for their original
-targets. Final report and profile paths use stable unversioned canonical names.
+This directory contains the stable report paths for the World-Cup-S-Bomb
+analysis. Versioned aliases and historical compiled outputs have been removed;
+the paths below are the current source of truth.
 
-## Current player hierarchy
+## Directory structure
 
-| Global rank | Player | Team | Functional role | Final rating |
-|---:|---|---|---|---:|
-| 1 | Lionel Andrés Messi Cuccittini | Argentina | Progressive Winger | 0.8371 |
-| 2 | Kylian Mbappé Lottin | France | Progressive Winger | 0.8258 |
-| 3 | Julián Álvarez | Argentina | Target Forward | 0.7526 |
-| 4 | Vinícius José Paixão de Oliveira Júnior | Brazil | Progressive Winger | 0.7354 |
-| 5 | Ángel Fabián Di María Hernández | Argentina | Progressive Winger | 0.7329 |
+```text
+results/
+├── reports/
+│   ├── canonical/                 # Primary CSV, JSON, and Markdown deliverables
+│   │   └── data/                  # Supporting team-level datasets
+│   ├── player_profiles/           # 593 player profiles (Markdown)
+│   ├── team_profiles/             # 32 statistical team profiles (Markdown)
+│   ├── teams/                     # 32 tactical reports (Markdown + JSON)
+│   ├── visuals/
+│   │   └── heatmaps/              # 593 player heatmaps (SVG)
+│   └── docs/                      # Human-readable document exports
+├── diagnostics/                   # Validation metrics and audit artifacts
+└── metadata/                      # Artifact, pipeline, and cleanup manifests
+```
 
-## Report index
+## Canonical deliverables
 
-- [`v5_player_rankings.csv`](v5_player_rankings.csv) and
-  [`v5_player_rankings.json`](v5_player_rankings.json): global outfield,
-  position, role, team, and separate goalkeeper rankings.
-- [`player_profiles/`](player_profiles/): 142 coverage-qualified
-  individual reports.
-- [`team_profiles/`](team_profiles/): 32 current team summaries.
-- [`v5_coaches_notebook.md`](v5_coaches_notebook.md): passing, pressing,
-  spatial, and line-breaking leaders.
-- [`model_summary.md`](model_summary.md) and
-  [`model_summary.json`](model_summary.json):
-  VAEP, ElasticNet, goalkeeper, GMM, attention, and regression-gate
-  diagnostics.
-- [`final_summary.md`](final_summary.md): tournament findings and rating
+- [Player rankings CSV](canonical/player_rankings.csv) and
+  [JSON](canonical/player_rankings.json): all 593 rated players, including the
+  separate goalkeeper evaluation fields.
+- [Final summary](canonical/final_summary.md): tournament findings and rating
   movements.
-- [`v5_rating_validation_comparison.csv`](v5_rating_validation_comparison.csv):
-  old-versus-new ratings.
-- [`v5_figures/`](v5_figures/): global, France, goalkeeper, and coefficient
+- [Model summary](canonical/model_summary.md) and
+  [model summary JSON](canonical/model_summary.json): model methodology,
+  validation state, and diagnostics.
+- [Coaches notebook](canonical/coaches_notebook.md): passing, pressing,
+  spatial, and line-breaking leaders.
+- [Team metrics](canonical/data/team_metrics_v2.csv) and
+  [defense disruption](canonical/data/defense_disruption.csv): supporting
+  canonical datasets.
+- [Formatted final summary](docs/final_summary.docx): Word export of the final
+  report.
+
+## Profiles, tactical reports, and visuals
+
+- [Player profiles](player_profiles/): 593 individual Markdown reports.
+- [Team profiles](team_profiles/): 32 statistical Markdown reports.
+- [Tactical team reports](teams/): 32 Markdown reports and 32 matching JSON
+  records.
+- [Player heatmaps](visuals/heatmaps/): 593 SVG files with globally unique
+  player identifiers.
+- [Supplementary V5 figures](v5_figures/): retained PNG ranking and coefficient
   plots.
-- [`v5_artifact_manifest.json`](v5_artifact_manifest.json): generated-file
-  hashes.
 
-## Active model state
+## Validation and provenance
 
-The active player layer is `attention`. Its causal, match-disjoint challenger
-passed both retrospective and prospective gates; only out-of-fold attention
-context enters the grouped ElasticNet valuation fit. The current-fold
-prospective attention metrics are ROC-AUC 0.8815, PR-AUC 0.9750, ECE 0.0147,
-and Brier score 0.0907. The legacy VAEP validation metrics are unchanged.
-
-Outfield V5 ratings use 40% independently scaled offensive/defensive VAEP
-evidence, 15% VAEP/touch, 15% xT/90, 15% grouped-ElasticNet role-adjusted
-value, 10% top-three quality-adjusted completeness, and 5%
-coverage-qualified off-ball contribution, followed by broad-position minutes
-shrinkage. Goalkeepers are excluded from global outfield rank and evaluated
-only through goalkeeper-specific evidence.
+- [Diagnostics](../diagnostics/): validation comparisons, uncertainty outputs,
+  model audit trails, and retained V2 diagnostic context.
+- [Artifact manifest](../metadata/artifact_manifest.json): portable,
+  deduplicated paths for retained generated artifacts.
+- [Pipeline manifest](../metadata/pipeline_manifest.json): pipeline and model
+  provenance.
+- [Cleanup audit](../metadata/cleanup_audit_log.json): pre-change hashes and
+  the complete move/delete plan used for this reorganization.
