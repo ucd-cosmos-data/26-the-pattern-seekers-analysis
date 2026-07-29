@@ -417,13 +417,13 @@ def _write_catalogs(records: list[dict[str, Any]]) -> None:
         "structure",
         "information",
     ]
-    with (DOCUMENTATION_ROOT / "file_catalog.csv").open(
+    with (DOCUMENTATION_ROOT / "file_dictionary.csv").open(
         "w", encoding="utf-8", newline=""
     ) as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
         writer.writerows(records)
-    with (DOCUMENTATION_ROOT / "file_catalog.json").open(
+    with (DOCUMENTATION_ROOT / "file_dictionary.json").open(
         "w", encoding="utf-8"
     ) as handle:
         json.dump(
@@ -634,10 +634,339 @@ def _write_coverage(records: list[dict[str, Any]], folders: list[str]) -> None:
     )
 
 
-def main() -> None:
-    """Generate the complete results documentation set."""
+def _family_count(
+    records: list[dict[str, Any]],
+    folder: str,
+    *,
+    recursive: bool = False,
+) -> int:
+    """Count catalog records in one artifact family."""
 
-    FOLDER_GUIDES.mkdir(parents=True, exist_ok=True)
+    if recursive:
+        prefix = folder + "/"
+        return sum(
+            1
+            for record in records
+            if record["folder"] == folder
+            or str(record["folder"]).startswith(prefix)
+        )
+    return sum(1 for record in records if record["folder"] == folder)
+
+
+def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
+    """Write a compact path-pattern dictionary covering every result file."""
+
+    families = [
+        (
+            "Audit tables",
+            "audit/*",
+            _family_count(records, "audit"),
+            "Observed-versus-expected and out-of-fold audit tables.",
+        ),
+        (
+            "Model diagnostics",
+            "diagnostics/*",
+            _family_count(records, "diagnostics"),
+            "Validation metrics, calibration, importance, and cluster diagnostics.",
+        ),
+        (
+            "Publication figures",
+            "figures/*",
+            _family_count(records, "figures"),
+            "Charts and the technical onboarding presentation.",
+        ),
+        (
+            "Run metadata",
+            "metadata/*",
+            _family_count(records, "metadata"),
+            "Configuration, provenance, and feature-definition records.",
+        ),
+        (
+            "Supporting/legacy outputs",
+            "MIscellaneous/*",
+            _family_count(records, "MIscellaneous"),
+            "Exploratory summaries and noncanonical model leaderboards.",
+        ),
+        (
+            "Reports directory guide",
+            "reports/README.md",
+            _family_count(records, "reports"),
+            "Short guide to the report tree.",
+        ),
+        (
+            "Canonical reports",
+            "reports/canonical/*",
+            _family_count(records, "reports/canonical"),
+            "Current rankings, final summary, model summary, and coaches notebook.",
+        ),
+        (
+            "Canonical report data",
+            "reports/canonical/data/*",
+            _family_count(records, "reports/canonical/data"),
+            "Team metrics and defensive-disruption tables supporting reports.",
+        ),
+        (
+            "Formatted final report",
+            "reports/docs/final_summary.docx",
+            _family_count(records, "reports/docs"),
+            "Word edition of the final tournament report.",
+        ),
+        (
+            "Player profiles",
+            "reports/player_profiles/<player-slug>-<player-id>.md",
+            _family_count(records, "reports/player_profiles"),
+            "One human-readable role and valuation profile per player.",
+        ),
+        (
+            "Starter report pairs",
+            "reports/starters/<TEAM>/<player-id>_starter_report.{md,json}",
+            _family_count(records, "reports/starters", recursive=True),
+            "Markdown and JSON player reports organized by national-team code.",
+        ),
+        (
+            "Team coaching report pairs",
+            "reports/teams/<TEAM>_team_coaching_report.{md,json}",
+            _family_count(records, "reports/teams"),
+            "Human-readable and structured coaching reports for 32 teams.",
+        ),
+        (
+            "Team profiles",
+            "reports/team_profiles/<team-name>.md",
+            _family_count(records, "reports/team_profiles"),
+            "Concise threat, defensive, resistance, and squad-rating profiles.",
+        ),
+        (
+            "Report figures",
+            "reports/v5_figures/*",
+            _family_count(records, "reports/v5_figures"),
+            "Current ranking and ElasticNet coefficient figures.",
+        ),
+        (
+            "Player heatmaps",
+            "reports/visuals/heatmaps/<player-slug>-<player-id>.svg",
+            _family_count(records, "reports/visuals/heatmaps"),
+            "One scalable spatial-event heatmap per player.",
+        ),
+        (
+            "Simulation outputs",
+            "simulations/*",
+            _family_count(records, "simulations"),
+            "Tactical-style, substitution, suppression, and out-of-fold simulations.",
+        ),
+    ]
+    covered = sum(row[2] for row in families)
+    if covered != len(records):
+        raise RuntimeError(
+            f"Dictionary families cover {covered} of {len(records)} artifacts"
+        )
+    lines = [
+        "# Results dictionary",
+        "",
+        "A compact directory of every result artifact family. Repeated player and "
+        "team files are represented once by their filename pattern.",
+        "",
+        "## Fast lookup",
+        "",
+        "| If you need… | Go to |",
+        "|---|---|",
+        "| Current player rankings | [`reports/canonical/player_rankings.csv`](../reports/canonical/player_rankings.csv) |",
+        "| Searchable JSON rankings | [`reports/canonical/player_rankings.json`](../reports/canonical/player_rankings.json) |",
+        "| One player’s profile | [`reports/player_profiles/`](../reports/player_profiles/) |",
+        "| One player’s heatmap | [`reports/visuals/heatmaps/`](../reports/visuals/heatmaps/) |",
+        "| One team’s profile | [`reports/team_profiles/`](../reports/team_profiles/) |",
+        "| Full team coaching report | [`reports/teams/`](../reports/teams/) |",
+        "| Tournament final summary | [`reports/canonical/final_summary.md`](../reports/canonical/final_summary.md) |",
+        "| Model metrics and gate result | [`reports/canonical/model_summary.md`](../reports/canonical/model_summary.md) |",
+        "| Coach-facing tactical notes | [`reports/canonical/coaches_notebook.md`](../reports/canonical/coaches_notebook.md) |",
+        "| Validation evidence | [`diagnostics/`](../diagnostics/) and [`audit/`](../audit/) |",
+        "| Run provenance/configuration | [`metadata/`](../metadata/) |",
+        "| Tactical simulations | [`simulations/`](../simulations/) |",
+        "| Exact filename search | [`file_dictionary.csv`](file_dictionary.csv) |",
+        "",
+        "## Complete artifact-family dictionary",
+        "",
+        "| Artifact family | Path or filename pattern | Files | Information contained |",
+        "|---|---|---:|---|",
+    ]
+    for name, pattern, count, information in families:
+        lines.append(
+            f"| {name} | `results/{pattern}` | {count:,} | {information} |"
+        )
+    lines.extend(
+        [
+            "",
+            f"**Coverage:** {covered:,} of {len(records):,} result artifacts.",
+            "",
+            "## Which version wins?",
+            "",
+            "Use `results/reports/canonical/` for active published values. "
+            "`MIscellaneous/` may contain older or exploratory leaderboards and "
+            "must not override canonical rankings or validation conclusions.",
+            "",
+            "For a literal one-row-per-file lookup, filter `file_dictionary.csv` "
+            "by `path`, `filename`, `folder`, or `information`. The JSON edition "
+            "contains the same dictionary for programmatic use.",
+            "",
+        ]
+    )
+    (DOCUMENTATION_ROOT / "results-dictionary.md").write_text(
+        "\n".join(lines), encoding="utf-8"
+    )
+
+
+def _write_profiles_dictionary(records: list[dict[str, Any]]) -> None:
+    """Write the profile/report location dictionary."""
+
+    team_codes = sorted(
+        path.name
+        for path in (RESULTS_ROOT / "reports" / "starters").iterdir()
+        if path.is_dir()
+    )
+    player_profiles = _family_count(records, "reports/player_profiles")
+    starter_files = _family_count(records, "reports/starters", recursive=True)
+    heatmaps = _family_count(records, "reports/visuals/heatmaps")
+    team_profiles = _family_count(records, "reports/team_profiles")
+    team_reports = _family_count(records, "reports/teams")
+    lines = [
+        "# Reports - Profiles",
+        "",
+        "Dictionary for locating player profiles, starter reports, heatmaps, and "
+        "team reports. Collections are described by pattern rather than by one "
+        "summary per file.",
+        "",
+        "## Profile locations",
+        "",
+        "| What you want | Location/pattern | Count | Format | What it contains |",
+        "|---|---|---:|---|---|",
+        f"| Player profile | `results/reports/player_profiles/<player-slug>-<player-id>.md` | {player_profiles:,} | Markdown | Identity, team, position, functional/probabilistic role, rating components, evidence coverage, and interpretation. |",
+        f"| Player heatmap | `results/reports/visuals/heatmaps/<player-slug>-<player-id>.svg` | {heatmaps:,} | SVG | Spatial density of the player’s recorded event locations. |",
+        f"| Starter report | `results/reports/starters/<TEAM>/<player-id>_starter_report.md` | {starter_files // 2:,} | Markdown | Human-readable player match/role report organized by team. |",
+        f"| Starter data | `results/reports/starters/<TEAM>/<player-id>_starter_report.json` | {starter_files // 2:,} | JSON | Structured version of the same starter report. |",
+        f"| Team profile | `results/reports/team_profiles/<team-name>.md` | {team_profiles:,} | Markdown | Threat creation, compactness, pressure resistance, and squad ratings. |",
+        f"| Team coaching report | `results/reports/teams/<TEAM>_team_coaching_report.md` | {team_reports // 2:,} | Markdown | Full coach-facing tactical and player report. |",
+        f"| Team coaching data | `results/reports/teams/<TEAM>_team_coaching_report.json` | {team_reports // 2:,} | JSON | Structured coaching-report content for downstream use. |",
+        "| Tournament player/team summary | `results/reports/canonical/final_summary.md` | 1 | Markdown | General player summary, all-team overview, and each team’s top five players. |",
+        "| Formatted final report | `results/reports/docs/final_summary.docx` | 1 | Word | Office-document edition of the final report. |",
+        "",
+        "## Team-code dictionary",
+        "",
+        "`<TEAM>` is one of: " + ", ".join(f"`{code}`" for code in team_codes) + ".",
+        "",
+        "## Finding a person",
+        "",
+        "1. Search `results/reports/player_profiles/` by surname or StatsBomb player ID.",
+        "2. Use the same slug/ID in `results/reports/visuals/heatmaps/` for the spatial view.",
+        "3. For JSON, locate the player ID under `results/reports/starters/<TEAM>/`.",
+        "4. If the filename is uncertain, search [`file_dictionary.csv`](file_dictionary.csv) by `filename` or `path`.",
+        "",
+        "Example: Christian Pulisic’s profile is "
+        "[`reports/player_profiles/christian-pulisic-8246.md`](../reports/player_profiles/christian-pulisic-8246.md).",
+        "",
+    ]
+    (DOCUMENTATION_ROOT / "reports-profiles.md").write_text(
+        "\n".join(lines), encoding="utf-8"
+    )
+
+
+def _write_rankings_dictionary(records: list[dict[str, Any]]) -> None:
+    """Write the rankings location and field dictionary."""
+
+    ranking_csv = next(
+        record
+        for record in records
+        if record["path"] == "reports/canonical/player_rankings.csv"
+    )
+    lines = [
+        "# Reports - Rankings",
+        "",
+        "Dictionary for locating and interpreting the active player, goalkeeper, "
+        "position, role, and team rankings.",
+        "",
+        "## Canonical ranking files",
+        "",
+        "| Ranking resource | Location | Use |",
+        "|---|---|---|",
+        f"| Complete ranking table | [`results/reports/canonical/player_rankings.csv`](../reports/canonical/player_rankings.csv) | Spreadsheet/dataframe source; {ranking_csv['format_details']}. |",
+        "| Complete ranking JSON | [`results/reports/canonical/player_rankings.json`](../reports/canonical/player_rankings.json) | Same records for applications and APIs. |",
+        "| Human-readable leaders | [`results/reports/canonical/final_summary.md`](../reports/canonical/final_summary.md) | Overall, position-group, movement, team, and top-five summaries. |",
+        "| Coach-facing leaders | [`results/reports/canonical/coaches_notebook.md`](../reports/canonical/coaches_notebook.md) | Pressing, networks, line breaking, spatial advantages, and goalkeeper leaders. |",
+        "",
+        "## Ranking-field dictionary",
+        "",
+        "| Field | Meaning |",
+        "|---|---|",
+        "| `global_rank` | Global outfield rank. Goalkeepers are intentionally blank. |",
+        "| `goalkeeper_rank` / `primary_goalkeeper_rank` | Separate goalkeeper-only rank. |",
+        "| `position_rank` | Rank within the broad position group. |",
+        "| `role_rank` | Rank among players sharing the functional role. |",
+        "| `team_rank` | Rank within the player’s national team. |",
+        "| `final_player_rating` | Reliability-adjusted final score used for ordering. |",
+        "| `RankingStatus` | Outfield ranking eligibility/status explanation. |",
+        "| `GKRankingStatus` | Goalkeeper ranking eligibility/status explanation. |",
+        "",
+        "## Ranking figures",
+        "",
+        "| Figure | Location |",
+        "|---|---|",
+        "| Global outfield ranking | [`v5_global_outfield_rankings.png`](../reports/v5_figures/v5_global_outfield_rankings.png) |",
+        "| Goalkeeper-only ranking | [`v5_goalkeeper_rankings.png`](../reports/v5_figures/v5_goalkeeper_rankings.png) |",
+        "| France squad ranking | [`v5_france_team_rankings.png`](../reports/v5_figures/v5_france_team_rankings.png) |",
+        "| Learned valuation coefficients | [`v5_elasticnet_coefficients.png`](../reports/v5_figures/v5_elasticnet_coefficients.png) |",
+        "",
+        "## Other leaderboards",
+        "",
+        "`results/MIscellaneous/` contains coaching, recommendation, transition, "
+        "and xG model leaderboards. These evaluate auxiliary models and are not "
+        "the canonical player ranking. Use the canonical CSV above for player "
+        "ordering.",
+        "",
+        "To find any ranking-related filename, filter "
+        "[`file_dictionary.csv`](file_dictionary.csv) for `rank` or `leaderboard`.",
+        "",
+    ]
+    (DOCUMENTATION_ROOT / "reports-rankings.md").write_text(
+        "\n".join(lines), encoding="utf-8"
+    )
+
+
+def _write_compact_index(records: list[dict[str, Any]]) -> None:
+    """Write the condensed documentation landing page."""
+
+    lines = [
+        "# Results documentation dictionary",
+        "",
+        "Use these three compact dictionaries instead of individual folder summaries:",
+        "",
+        "- [`Results Dictionary`](results-dictionary.md) — where every artifact family lives.",
+        "- [`Reports - Profiles`](reports-profiles.md) — player profiles, heatmaps, starter reports, team profiles, and coaching reports.",
+        "- [`Reports - Rankings`](reports-rankings.md) — global, goalkeeper, position, role, and team rankings.",
+        "",
+        "## Exact-file search",
+        "",
+        f"The results tree currently contains **{len(records):,} files**. Use "
+        "[`file_dictionary.csv`](file_dictionary.csv) for spreadsheet search or "
+        "[`file_dictionary.json`](file_dictionary.json) for programmatic search. "
+        "These are indexes only; the three Markdown documents above are the "
+        "human-readable dictionary.",
+        "",
+        "## Canonical rule",
+        "",
+        "When similarly named artifacts disagree, use files under "
+        "`results/reports/canonical/` unless a validation task explicitly calls "
+        "for an out-of-fold artifact from `audit/` or `diagnostics/`.",
+        "",
+        "Rebuild after result changes with "
+        "`python results/documentation/generate_documentation.py`.",
+        "",
+    ]
+    (DOCUMENTATION_ROOT / "README.md").write_text(
+        "\n".join(lines), encoding="utf-8"
+    )
+
+
+def main() -> None:
+    """Generate the condensed results dictionaries."""
+
     source_files = sorted(
         (
             path
@@ -646,30 +975,17 @@ def main() -> None:
         ),
         key=lambda path: _normalise(path).lower(),
     )
-    source_folders = sorted(
-        {
-            ".",
-            *(
-                _normalise(path)
-                for path in RESULTS_ROOT.rglob("*")
-                if path.is_dir()
-                and path != DOCUMENTATION_ROOT
-                and DOCUMENTATION_ROOT not in path.parents
-            ),
-        },
-        key=lambda folder: (folder.count("/"), folder.lower()),
-    )
     records = [_file_metadata(path) for path in source_files]
     _write_catalogs(records)
-    guides = _write_folder_guides(records, source_folders)
-    _write_index(records, source_folders, guides)
-    _write_coverage(records, source_folders)
+    _write_results_dictionary(records)
+    _write_profiles_dictionary(records)
+    _write_rankings_dictionary(records)
+    _write_compact_index(records)
     print(
         json.dumps(
             {
                 "artifacts_documented": len(records),
-                "folders_documented": len(source_folders),
-                "folder_guides": len(guides),
+                "dictionary_reports": 3,
             },
             indent=2,
         )
