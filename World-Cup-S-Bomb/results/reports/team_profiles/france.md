@@ -79,5 +79,5 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 22 | Hugo Lloris | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 614.2000 | 0.1936 |
+| 21 | Hugo Lloris | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 614.2000 | 0.1226 |
 | — | Steve Mandanda | False | Unranked (backup goalkeeper) | GK | Goalkeeper | Goalkeeper | 102.6833 | — |

@@ -23,7 +23,9 @@
     "mbappe_top_20": true,
     "bounou_top_8_goalkeeper": true,
     "courtois_top_8_goalkeeper": true,
-    "martinez_top_10_goalkeeper": true,
+    "martinez_top_2_goalkeeper": true,
+    "livakovic_top_8_goalkeeper": true,
+    "szczesny_top_8_goalkeeper": true,
     "credible_top_20_standout_coverage": true,
     "no_role_position_contradictions": true,
     "no_high_goal_forward_below_mid_tier_teammate": true
@@ -226,63 +228,63 @@
   "top_10_goalkeepers": [
     {
       "gk_rank_v2": 1,
-      "player_name": "Wojciech Szczęsny",
-      "team": "Poland",
+      "player_name": "Dominik Livaković",
+      "team": "Croatia",
       "gk_rating_v2": 1.0
     },
     {
       "gk_rank_v2": 2,
-      "player_name": "Dominik Livaković",
-      "team": "Croatia",
-      "gk_rating_v2": 0.8915345191124872
+      "player_name": "Damián Emiliano Martínez",
+      "team": "Argentina",
+      "gk_rating_v2": 0.5970623991407898
     },
     {
       "gk_rank_v2": 3,
       "player_name": "Yassine Bounou",
       "team": "Morocco",
-      "gk_rating_v2": 0.7854271308729174
+      "gk_rating_v2": 0.5876000576062959
     },
     {
       "gk_rank_v2": 4,
-      "player_name": "Thibaut Courtois",
-      "team": "Belgium",
-      "gk_rating_v2": 0.6512660927988838
+      "player_name": "Wojciech Szczęsny",
+      "team": "Poland",
+      "gk_rating_v2": 0.43940908424068587
     },
     {
       "gk_rank_v2": 5,
-      "player_name": "Sergio Rochet Álvarez",
-      "team": "Uruguay",
-      "gk_rating_v2": 0.5812763833766879
+      "player_name": "Unai Simón Mendibil",
+      "team": "Spain",
+      "gk_rating_v2": 0.3416886485445017
     },
     {
       "gk_rank_v2": 6,
-      "player_name": "Unai Simón Mendibil",
-      "team": "Spain",
-      "gk_rating_v2": 0.5702792625131764
+      "player_name": "Mohammed Khalil Al Owais",
+      "team": "Saudi Arabia",
+      "gk_rating_v2": 0.32604935854745526
     },
     {
       "gk_rank_v2": 7,
-      "player_name": "Mohammed Khalil Al Owais",
-      "team": "Saudi Arabia",
-      "gk_rating_v2": 0.5554404138410668
+      "player_name": "Thibaut Courtois",
+      "team": "Belgium",
+      "gk_rating_v2": 0.3069182414835569
     },
     {
       "gk_rank_v2": 8,
-      "player_name": "Damián Emiliano Martínez",
-      "team": "Argentina",
-      "gk_rating_v2": 0.53930876324817
+      "player_name": "Vanja Milinković Savić",
+      "team": "Serbia",
+      "gk_rating_v2": 0.2876384662665453
     },
     {
       "gk_rank_v2": 9,
-      "player_name": "Matthew Charles Turner",
-      "team": "United States",
-      "gk_rating_v2": 0.4669421385439262
+      "player_name": "Diogo Meireles Costa",
+      "team": "Portugal",
+      "gk_rating_v2": 0.2811220816401874
     },
     {
       "gk_rank_v2": 10,
       "player_name": "Andries Noppert",
       "team": "Netherlands",
-      "gk_rating_v2": 0.4149422162992421
+      "gk_rating_v2": 0.2683786715467032
     }
   ],
   "before_after": {

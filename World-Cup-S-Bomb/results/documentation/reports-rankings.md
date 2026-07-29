@@ -6,7 +6,7 @@ Dictionary for locating and interpreting the active player, goalkeeper, position
 
 | Ranking resource | Location | Use |
 |---|---|---|
-| Complete ranking table | [`results/reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) | Spreadsheet/dataframe source; 593 data rows × 398 columns. |
+| Complete ranking table | [`results/reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) | Spreadsheet/dataframe source; 593 data rows × 419 columns. |
 | Global outfield ranking | [`results/reports/ranking/global_rankings_outfield.csv`](../reports/ranking/global_rankings_outfield.csv) | All eligible outfield players ordered by `global_rank_v2`. |
 | Primary 300+-minute ranking | [`results/reports/ranking/global_rankings_outfield_300min.csv`](../reports/ranking/global_rankings_outfield_300min.csv) | Filters exclusively on Qatar 2022 `minutes_played >= 300`. |
 | Goalkeeper ranking | [`results/reports/ranking/goalkeeper_rankings.csv`](../reports/ranking/goalkeeper_rankings.csv) | Separate non-comparable rating for exactly one team-main goalkeeper per nation. |

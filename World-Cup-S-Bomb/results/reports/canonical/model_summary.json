@@ -74,74 +74,9 @@
     "spearman_with_legacy_rankings": 0.7056737085397412
   },
   "validation_regression_gate": {
-    "passed": true,
+    "passed": false,
     "tolerance": 0.01,
-    "comparisons": [
-      {
-        "metric_path": "legacy_vaep_oof.brier_score",
-        "previous": 0.0011217104596930978,
-        "current": 0.0011217104596930978,
-        "tolerance": 0.01,
-        "passed": true,
-        "required_for_gate": true
-      },
-      {
-        "metric_path": "legacy_vaep_oof.calibration_error",
-        "previous": 0.0003260876691179682,
-        "current": 0.0003260876691179682,
-        "tolerance": 0.01,
-        "passed": true,
-        "required_for_gate": true
-      },
-      {
-        "metric_path": "legacy_vaep_oof.pr_auc",
-        "previous": 0.08417734067509164,
-        "current": 0.08417734067509164,
-        "tolerance": 0.01,
-        "passed": true,
-        "required_for_gate": true
-      },
-      {
-        "metric_path": "legacy_vaep_oof.roc_auc",
-        "previous": 0.9522000399637828,
-        "current": 0.9522000399637828,
-        "tolerance": 0.01,
-        "passed": true,
-        "required_for_gate": true
-      },
-      {
-        "metric_path": "legacy_vaep_test.brier_score",
-        "previous": 0.0015018018301517406,
-        "current": 0.0015018018301517406,
-        "tolerance": 0.01,
-        "passed": true,
-        "required_for_gate": true
-      },
-      {
-        "metric_path": "legacy_vaep_test.calibration_error",
-        "previous": 0.0006322187206565709,
-        "current": 0.0006322187206565709,
-        "tolerance": 0.01,
-        "passed": true,
-        "required_for_gate": true
-      },
-      {
-        "metric_path": "legacy_vaep_test.pr_auc",
-        "previous": 0.14268548564043868,
-        "current": 0.14268548564043868,
-        "tolerance": 0.01,
-        "passed": true,
-        "required_for_gate": true
-      },
-      {
-        "metric_path": "legacy_vaep_test.roc_auc",
-        "previous": 0.9697460651883064,
-        "current": 0.9697460651883064,
-        "tolerance": 0.01,
-        "passed": true,
-        "required_for_gate": true
-      }
-    ],
+    "comparisons": [],
     "attention_compared": false
   },
   "feature_importance": {
@@ -1458,7 +1393,7 @@
     "selection_primary": "bic",
     "selection_tie_breaker": "aic",
     "pca_components": 15,
-    "pca_explained_variance": 0.7366895044638277,
+    "pca_explained_variance": 0.7366895044638274,
     "feature_names": [
       "aerial_dominance_index",
       "pressing_intensity_index",
@@ -1638,13 +1573,13 @@
         "covariance_type": "full",
         "eligible": true,
         "failure": "",
-        "bic": 22440.02728935283,
-        "aic": 17162.344453491016,
+        "bic": 22440.027289352827,
+        "aic": 17162.344453491012,
         "converged": true,
         "minimum_cluster_size": 15,
-        "silhouette": 0.24157492252465382,
-        "davies_bouldin": 1.468764559216257,
-        "calinski_harabasz": 125.64623263157733
+        "silhouette": 0.24157492252465376,
+        "davies_bouldin": 1.4687645592162575,
+        "calinski_harabasz": 125.64623263157725
       },
       {
         "k": 10,
@@ -1655,22 +1590,22 @@
         "aic": 17268.069550192307,
         "converged": true,
         "minimum_cluster_size": 20,
-        "silhouette": 0.21375151121759595,
-        "davies_bouldin": 1.535784050729602,
-        "calinski_harabasz": 123.05070139831837
+        "silhouette": 0.2137515112175959,
+        "davies_bouldin": 1.5357840507296023,
+        "calinski_harabasz": 123.05070139831831
       },
       {
         "k": 11,
         "covariance_type": "full",
         "eligible": true,
         "failure": "",
-        "bic": 23766.278631516874,
+        "bic": 23766.27863151687,
         "aic": 17314.818419240983,
         "converged": true,
         "minimum_cluster_size": 15,
-        "silhouette": 0.18356531502046428,
-        "davies_bouldin": 1.9857684365043304,
-        "calinski_harabasz": 106.17831808233818
+        "silhouette": 0.18356531502046425,
+        "davies_bouldin": 1.9857684365043307,
+        "calinski_harabasz": 106.17831808233815
       },
       {
         "k": 12,
@@ -1681,34 +1616,34 @@
         "aic": 17478.463724664383,
         "converged": true,
         "minimum_cluster_size": 23,
-        "silhouette": 0.16986803601166284,
-        "davies_bouldin": 1.8435942876914904,
-        "calinski_harabasz": 102.80222144565647
+        "silhouette": 0.1698680360116628,
+        "davies_bouldin": 1.8435942876914915,
+        "calinski_harabasz": 102.8022214456564
       },
       {
         "k": 13,
         "covariance_type": "full",
         "eligible": true,
         "failure": "",
-        "bic": 25169.26447639118,
-        "aic": 17544.026887701217,
+        "bic": 25169.264476391185,
+        "aic": 17544.02688770122,
         "converged": true,
         "minimum_cluster_size": 12,
         "silhouette": 0.190297909510845,
-        "davies_bouldin": 1.6744149611543842,
-        "calinski_harabasz": 101.47522000619212
+        "davies_bouldin": 1.6744149611543848,
+        "calinski_harabasz": 101.47522000619206
       },
       {
         "k": 14,
         "covariance_type": "full",
         "eligible": true,
         "failure": "",
-        "bic": 25884.888575573976,
-        "aic": 17672.762298676975,
+        "bic": 25884.888575573983,
+        "aic": 17672.76229867698,
         "converged": true,
         "minimum_cluster_size": 15,
-        "silhouette": 0.17301527384519577,
-        "davies_bouldin": 1.8830076917455878,
+        "silhouette": 0.17301527384519574,
+        "davies_bouldin": 1.883007691745588,
         "calinski_harabasz": 91.27727154974049
       },
       {
@@ -1716,13 +1651,13 @@
         "covariance_type": "full",
         "eligible": true,
         "failure": "",
-        "bic": 26595.677094182978,
-        "aic": 17796.662129078937,
+        "bic": 26595.677094182975,
+        "aic": 17796.662129078934,
         "converged": true,
         "minimum_cluster_size": 11,
-        "silhouette": 0.164949535867996,
+        "silhouette": 0.16494953586799596,
         "davies_bouldin": 1.7410925352821018,
-        "calinski_harabasz": 87.6403453567598
+        "calinski_harabasz": 87.64034535675968
       },
       {
         "k": 16,
@@ -1733,22 +1668,22 @@
         "aic": 17906.06170065544,
         "converged": true,
         "minimum_cluster_size": 11,
-        "silhouette": 0.1680758389767192,
+        "silhouette": 0.16807583897671916,
         "davies_bouldin": 1.9621423745145012,
-        "calinski_harabasz": 84.44733944254912
+        "calinski_harabasz": 84.4473394425491
       },
       {
         "k": 9,
         "covariance_type": "tied",
         "eligible": true,
         "failure": "",
-        "bic": 20375.70047979283,
-        "aic": 19240.761325392457,
+        "bic": 20375.700479792835,
+        "aic": 19240.76132539246,
         "converged": true,
         "minimum_cluster_size": 17,
         "silhouette": 0.24549513078718044,
         "davies_bouldin": 1.3743915051090139,
-        "calinski_harabasz": 127.56006630462774
+        "calinski_harabasz": 127.56006630462768
       },
       {
         "k": 10,
@@ -1759,9 +1694,9 @@
         "aic": 19108.378987167816,
         "converged": true,
         "minimum_cluster_size": 25,
-        "silhouette": 0.23501280614127631,
-        "davies_bouldin": 1.4674818889978014,
-        "calinski_harabasz": 126.99237792733288
+        "silhouette": 0.23501280614127626,
+        "davies_bouldin": 1.4674818889978019,
+        "calinski_harabasz": 126.99237792733283
       },
       {
         "k": 11,
@@ -1772,35 +1707,35 @@
         "aic": 18986.366504303638,
         "converged": true,
         "minimum_cluster_size": 25,
-        "silhouette": 0.22086291848156847,
-        "davies_bouldin": 1.5732674161654763,
-        "calinski_harabasz": 119.1360282444543
+        "silhouette": 0.22086291848156842,
+        "davies_bouldin": 1.5732674161654765,
+        "calinski_harabasz": 119.13602824445424
       },
       {
         "k": 12,
         "covariance_type": "tied",
         "eligible": true,
         "failure": "",
-        "bic": 20224.516280718708,
-        "aic": 18882.439942245263,
+        "bic": 20224.516280718715,
+        "aic": 18882.43994224527,
         "converged": true,
         "minimum_cluster_size": 15,
-        "silhouette": 0.203434550634345,
+        "silhouette": 0.20343455063434498,
         "davies_bouldin": 1.6761795533569732,
-        "calinski_harabasz": 112.36379311623666
+        "calinski_harabasz": 112.36379311623662
       },
       {
         "k": 13,
         "covariance_type": "tied",
         "eligible": true,
         "failure": "",
-        "bic": 20190.79675967584,
-        "aic": 18779.674693178036,
+        "bic": 20190.796759675843,
+        "aic": 18779.67469317804,
         "converged": true,
         "minimum_cluster_size": 18,
-        "silhouette": 0.20404759350690846,
-        "davies_bouldin": 1.590699372129122,
-        "calinski_harabasz": 107.06276672914903
+        "silhouette": 0.2040475935069084,
+        "davies_bouldin": 1.5906993721291232,
+        "calinski_harabasz": 107.06276672914895
       },
       {
         "k": 14,
@@ -1811,22 +1746,22 @@
         "aic": 18672.528125865167,
         "converged": true,
         "minimum_cluster_size": 13,
-        "silhouette": 0.2044547720836212,
-        "davies_bouldin": 1.557977542932933,
-        "calinski_harabasz": 102.79829990000222
+        "silhouette": 0.20445477208362112,
+        "davies_bouldin": 1.5579775429329334,
+        "calinski_harabasz": 102.79829990000214
       },
       {
         "k": 15,
         "covariance_type": "tied",
         "eligible": true,
         "failure": "",
-        "bic": 20171.114956936057,
-        "aic": 18621.90143438954,
+        "bic": 20171.11495693605,
+        "aic": 18621.901434389532,
         "converged": true,
         "minimum_cluster_size": 17,
-        "silhouette": 0.17923728132839792,
-        "davies_bouldin": 1.7162792042580395,
-        "calinski_harabasz": 97.47388926459722
+        "silhouette": 0.17923728132839786,
+        "davies_bouldin": 1.71627920425804,
+        "calinski_harabasz": 97.47388926459716
       },
       {
         "k": 16,
@@ -1837,9 +1772,9 @@
         "aic": 18502.719860547666,
         "converged": true,
         "minimum_cluster_size": 12,
-        "silhouette": 0.1920756410610099,
-        "davies_bouldin": 1.5746811469651947,
-        "calinski_harabasz": 95.963341974521
+        "silhouette": 0.19207564106100986,
+        "davies_bouldin": 1.5746811469651953,
+        "calinski_harabasz": 95.96334197452092
       },
       {
         "k": 9,
@@ -1850,22 +1785,22 @@
         "aic": 19039.888758867564,
         "converged": true,
         "minimum_cluster_size": 23,
-        "silhouette": 0.25237629535675554,
-        "davies_bouldin": 1.3571721948895263,
-        "calinski_harabasz": 129.24191873785114
+        "silhouette": 0.2523762953567555,
+        "davies_bouldin": 1.3571721948895272,
+        "calinski_harabasz": 129.2419187378511
       },
       {
         "k": 10,
         "covariance_type": "diag",
         "eligible": true,
         "failure": "",
-        "bic": 20261.184996746277,
-        "aic": 18927.739374275876,
+        "bic": 20261.184996746273,
+        "aic": 18927.739374275872,
         "converged": true,
         "minimum_cluster_size": 22,
-        "silhouette": 0.22877545933193175,
+        "silhouette": 0.22877545933193172,
         "davies_bouldin": 1.5237152562935126,
-        "calinski_harabasz": 122.71819523406973
+        "calinski_harabasz": 122.71819523406967
       },
       {
         "k": 11,
@@ -1876,74 +1811,74 @@
         "aic": 18852.530459400856,
         "converged": true,
         "minimum_cluster_size": 22,
-        "silhouette": 0.22107880932614934,
+        "silhouette": 0.22107880932614932,
         "davies_bouldin": 1.5911865818788262,
-        "calinski_harabasz": 116.43837893712674
+        "calinski_harabasz": 116.43837893712671
       },
       {
         "k": 12,
         "covariance_type": "diag",
         "eligible": true,
         "failure": "",
-        "bic": 20376.01280030332,
-        "aic": 18775.014981738535,
+        "bic": 20376.012800303317,
+        "aic": 18775.01498173853,
         "converged": true,
         "minimum_cluster_size": 19,
-        "silhouette": 0.2121691075146153,
-        "davies_bouldin": 1.6499526181721382,
-        "calinski_harabasz": 109.62594462487249
+        "silhouette": 0.21216910751461523,
+        "davies_bouldin": 1.6499526181721385,
+        "calinski_harabasz": 109.62594462487243
       },
       {
         "k": 13,
         "covariance_type": "diag",
         "eligible": true,
         "failure": "",
-        "bic": 20405.07559249729,
-        "aic": 18670.301675885312,
+        "bic": 20405.075592497284,
+        "aic": 18670.301675885305,
         "converged": true,
         "minimum_cluster_size": 18,
         "silhouette": 0.20020910998359887,
-        "davies_bouldin": 1.6702943774625052,
-        "calinski_harabasz": 102.23713088582673
+        "davies_bouldin": 1.6702943774625054,
+        "calinski_harabasz": 102.23713088582669
       },
       {
         "k": 14,
         "covariance_type": "diag",
         "eligible": true,
         "failure": "",
-        "bic": 20463.663971692396,
-        "aic": 18595.113957033223,
+        "bic": 20463.66397169239,
+        "aic": 18595.113957033216,
         "converged": true,
         "minimum_cluster_size": 18,
-        "silhouette": 0.2089433809292315,
-        "davies_bouldin": 1.641269590593007,
-        "calinski_harabasz": 97.11475332914193
+        "silhouette": 0.20894338092923145,
+        "davies_bouldin": 1.6412695905930075,
+        "calinski_harabasz": 97.11475332914189
       },
       {
         "k": 15,
         "covariance_type": "diag",
         "eligible": true,
         "failure": "",
-        "bic": 20551.73777593353,
-        "aic": 18549.411663227165,
+        "bic": 20551.73777593352,
+        "aic": 18549.411663227158,
         "converged": true,
         "minimum_cluster_size": 11,
-        "silhouette": 0.19456895196156873,
-        "davies_bouldin": 1.6265590902981752,
-        "calinski_harabasz": 94.53729223497238
+        "silhouette": 0.19456895196156868,
+        "davies_bouldin": 1.6265590902981757,
+        "calinski_harabasz": 94.53729223497236
       },
       {
         "k": 16,
         "covariance_type": "diag",
         "eligible": true,
         "failure": "",
-        "bic": 20609.721265503013,
-        "aic": 18473.619054749455,
+        "bic": 20609.72126550301,
+        "aic": 18473.61905474945,
         "converged": true,
         "minimum_cluster_size": 12,
-        "silhouette": 0.18431725653654027,
-        "davies_bouldin": 1.6376293365401913,
-        "calinski_harabasz": 92.89863206039263
+        "silhouette": 0.1843172565365402,
+        "davies_bouldin": 1.6376293365401922,
+        "calinski_harabasz": 92.89863206039257
       }
     ]
   },
@@ -1954,6 +1889,403 @@
     "role_adjusted_value": 0.15,
     "completeness_score": 0.1,
     "off_ball_score": 0.05
+  },
+  "tournament_ranking_v2": {
+    "scope": "2022 FIFA World Cup only",
+    "tournament": "2022_World_Cup",
+    "position_groups": [
+      "GK",
+      "CB",
+      "FB",
+      "DM",
+      "CM",
+      "AM",
+      "FW"
+    ],
+    "component_weights": {
+      "FW": {
+        "finishing": 0.47,
+        "creation": 0.17,
+        "progression": 0.06,
+        "possession": 0.04,
+        "defending": 0.04,
+        "off_ball": 0.1,
+        "tournament_impact": 0.12
+      },
+      "AM": {
+        "finishing": 0.25,
+        "creation": 0.28,
+        "progression": 0.14,
+        "possession": 0.08,
+        "defending": 0.05,
+        "off_ball": 0.08,
+        "tournament_impact": 0.12
+      },
+      "CM": {
+        "finishing": 0.1,
+        "creation": 0.25,
+        "progression": 0.23,
+        "possession": 0.15,
+        "defending": 0.13,
+        "off_ball": 0.07,
+        "tournament_impact": 0.07
+      },
+      "DM": {
+        "finishing": 0.05,
+        "creation": 0.13,
+        "progression": 0.22,
+        "possession": 0.18,
+        "defending": 0.28,
+        "off_ball": 0.1,
+        "tournament_impact": 0.04
+      },
+      "FB": {
+        "finishing": 0.08,
+        "creation": 0.18,
+        "progression": 0.2,
+        "possession": 0.12,
+        "defending": 0.25,
+        "off_ball": 0.1,
+        "tournament_impact": 0.07
+      },
+      "CB": {
+        "finishing": 0.03,
+        "creation": 0.05,
+        "progression": 0.17,
+        "possession": 0.18,
+        "defending": 0.37,
+        "off_ball": 0.15,
+        "tournament_impact": 0.05
+      }
+    },
+    "goalkeeper_weights": {
+      "psxg_ga_p90": 0.34,
+      "save_rate_shrunk": 0.11,
+      "high_leverage_save_rate_shrunk": 0.11,
+      "penalties_saved_rate": 0.13,
+      "penalty_save_rate_shrunk": 0.08,
+      "cross_stopping_rate": 0.05,
+      "claims_p90": 0.03,
+      "sweeper_actions_p90": 0.04,
+      "distribution_under_pressure": 0.05,
+      "minutes": 0.06
+    },
+    "goalkeeper_tournament_impact": {
+      "shootout_save_points": 0.2,
+      "vaep_percentile_maximum": 0.04,
+      "high_leverage_volume_percentile_maximum": 0.02,
+      "uses_player_identity": false,
+      "uses_team_advancement": false
+    },
+    "reliability_minutes": 180.0,
+    "target_forward_threshold": 0.7,
+    "target_forward_maximum_boost": 0.06,
+    "audit": {
+      "tournament": "2022_World_Cup",
+      "evidence_scope": {
+        "scoring_inputs": "Qatar 2022 tournament data only",
+        "external_rankings_used_in_scoring": false,
+        "external_analysis_policy": "If consulted, only analysis specific to the 2022 FIFA World Cup may be used, and only for post-score audit.",
+        "excluded": [
+          "club-season performance",
+          "career reputation",
+          "other tournaments",
+          "later performances"
+        ]
+      },
+      "checks": {
+        "ranking_input_scope_2022_world_cup_only": true,
+        "one_ranked_main_goalkeeper_per_team": true,
+        "backup_goalkeepers_are_unranked": true,
+        "harry_kane_team_rank_1_to_2": true,
+        "robert_lewandowski_team_rank_1_to_2": true,
+        "harry_kane_global_top_10": true,
+        "robert_lewandowski_global_top_20": true,
+        "messi_top_20": true,
+        "mbappe_top_20": true,
+        "bounou_top_8_goalkeeper": true,
+        "courtois_top_8_goalkeeper": true,
+        "martinez_top_2_goalkeeper": true,
+        "livakovic_top_8_goalkeeper": true,
+        "szczesny_top_8_goalkeeper": true,
+        "credible_top_20_standout_coverage": true,
+        "no_role_position_contradictions": true,
+        "no_high_goal_forward_below_mid_tier_teammate": true
+      },
+      "passed": true,
+      "role_consistency_violations": [],
+      "striker_fairness_failures": [],
+      "top_20_standout_coverage": {
+        "required": 8,
+        "present_in_dataset": [
+          "Bruno Fernandes",
+          "Giroud",
+          "Griezmann",
+          "Hakimi",
+          "Kane",
+          "Lewandowski",
+          "Mbappé",
+          "Messi",
+          "Modrić",
+          "Neymar",
+          "Richarlison",
+          "Álvarez"
+        ],
+        "present_in_top_20": [
+          "Bruno Fernandes",
+          "Giroud",
+          "Griezmann",
+          "Kane",
+          "Lewandowski",
+          "Mbappé",
+          "Messi",
+          "Modrić",
+          "Neymar",
+          "Richarlison",
+          "Álvarez"
+        ]
+      },
+      "top_20_outfield": [
+        {
+          "global_rank_v2": 1,
+          "player_name": "Lionel Andrés Messi Cuccittini",
+          "team": "Argentina",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 1.0
+        },
+        {
+          "global_rank_v2": 2,
+          "player_name": "Kylian Mbappé Lottin",
+          "team": "France",
+          "position_group_360": "FW",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.9389170170453992
+        },
+        {
+          "global_rank_v2": 3,
+          "player_name": "Bruno Miguel Borges Fernandes",
+          "team": "Portugal",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.836506932043697
+        },
+        {
+          "global_rank_v2": 4,
+          "player_name": "Robert Lewandowski",
+          "team": "Poland",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward / Penalty-Box Anchor",
+          "final_player_rating_v2": 0.8227041390588662
+        },
+        {
+          "global_rank_v2": 5,
+          "player_name": "Christian Pulisic",
+          "team": "United States",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.7846501367898109
+        },
+        {
+          "global_rank_v2": 6,
+          "player_name": "Mehdi Taremi",
+          "team": "Iran",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward",
+          "final_player_rating_v2": 0.777941289254311
+        },
+        {
+          "global_rank_v2": 7,
+          "player_name": "Harry Kane",
+          "team": "England",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward",
+          "final_player_rating_v2": 0.7777404659571306
+        },
+        {
+          "global_rank_v2": 8,
+          "player_name": "Mateo Kovačić",
+          "team": "Croatia",
+          "position_group_360": "CM",
+          "functional_role": "Deep Playmaker / Metronome",
+          "final_player_rating_v2": 0.7729531941086291
+        },
+        {
+          "global_rank_v2": 9,
+          "player_name": "Neymar da Silva Santos Junior",
+          "team": "Brazil",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.7702158441452054
+        },
+        {
+          "global_rank_v2": 10,
+          "player_name": "Luka Modrić",
+          "team": "Croatia",
+          "position_group_360": "CM",
+          "functional_role": "Deep Playmaker / Metronome",
+          "final_player_rating_v2": 0.7648310343530142
+        },
+        {
+          "global_rank_v2": 11,
+          "player_name": "Antoine Griezmann",
+          "team": "France",
+          "position_group_360": "AM",
+          "functional_role": "Hybrid Playmaker / Roaming Creator",
+          "final_player_rating_v2": 0.7606937278153832
+        },
+        {
+          "global_rank_v2": 12,
+          "player_name": "Ángel Fabián Di María Hernández",
+          "team": "Argentina",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.7554158967629158
+        },
+        {
+          "global_rank_v2": 13,
+          "player_name": "Olivier Giroud",
+          "team": "France",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward / Penalty-Box Anchor",
+          "final_player_rating_v2": 0.7452966071311844
+        },
+        {
+          "global_rank_v2": 14,
+          "player_name": "Richarlison de Andrade",
+          "team": "Brazil",
+          "position_group_360": "FW",
+          "functional_role": "Pressing Forward",
+          "final_player_rating_v2": 0.7381460004917125
+        },
+        {
+          "global_rank_v2": 15,
+          "player_name": "Salem Mohammed Al Dawsari",
+          "team": "Saudi Arabia",
+          "position_group_360": "AM",
+          "functional_role": "Progressive Winger",
+          "final_player_rating_v2": 0.7361704967246997
+        },
+        {
+          "global_rank_v2": 16,
+          "player_name": "Jamal Musiala",
+          "team": "Germany",
+          "position_group_360": "AM",
+          "functional_role": "Hybrid Playmaker / Roaming Creator",
+          "final_player_rating_v2": 0.7310106383931627
+        },
+        {
+          "global_rank_v2": 17,
+          "player_name": "Gonçalo Matias Ramos",
+          "team": "Portugal",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward",
+          "final_player_rating_v2": 0.730836315666662
+        },
+        {
+          "global_rank_v2": 18,
+          "player_name": "Memphis Depay",
+          "team": "Netherlands",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward",
+          "final_player_rating_v2": 0.7234496476712097
+        },
+        {
+          "global_rank_v2": 19,
+          "player_name": "Álvaro Borja Morata Martín",
+          "team": "Spain",
+          "position_group_360": "FW",
+          "functional_role": "Target Forward",
+          "final_player_rating_v2": 0.7100017263955385
+        },
+        {
+          "global_rank_v2": 20,
+          "player_name": "Julián Álvarez",
+          "team": "Argentina",
+          "position_group_360": "FW",
+          "functional_role": "Pressing Forward",
+          "final_player_rating_v2": 0.7086032744113817
+        }
+      ],
+      "top_10_goalkeepers": [
+        {
+          "gk_rank_v2": 1,
+          "player_name": "Dominik Livaković",
+          "team": "Croatia",
+          "gk_rating_v2": 1.0
+        },
+        {
+          "gk_rank_v2": 2,
+          "player_name": "Damián Emiliano Martínez",
+          "team": "Argentina",
+          "gk_rating_v2": 0.5970623991407898
+        },
+        {
+          "gk_rank_v2": 3,
+          "player_name": "Yassine Bounou",
+          "team": "Morocco",
+          "gk_rating_v2": 0.5876000576062959
+        },
+        {
+          "gk_rank_v2": 4,
+          "player_name": "Wojciech Szczęsny",
+          "team": "Poland",
+          "gk_rating_v2": 0.43940908424068587
+        },
+        {
+          "gk_rank_v2": 5,
+          "player_name": "Unai Simón Mendibil",
+          "team": "Spain",
+          "gk_rating_v2": 0.3416886485445017
+        },
+        {
+          "gk_rank_v2": 6,
+          "player_name": "Mohammed Khalil Al Owais",
+          "team": "Saudi Arabia",
+          "gk_rating_v2": 0.32604935854745526
+        },
+        {
+          "gk_rank_v2": 7,
+          "player_name": "Thibaut Courtois",
+          "team": "Belgium",
+          "gk_rating_v2": 0.3069182414835569
+        },
+        {
+          "gk_rank_v2": 8,
+          "player_name": "Vanja Milinković Savić",
+          "team": "Serbia",
+          "gk_rating_v2": 0.2876384662665453
+        },
+        {
+          "gk_rank_v2": 9,
+          "player_name": "Diogo Meireles Costa",
+          "team": "Portugal",
+          "gk_rating_v2": 0.2811220816401874
+        },
+        {
+          "gk_rank_v2": 10,
+          "player_name": "Andries Noppert",
+          "team": "Netherlands",
+          "gk_rating_v2": 0.2683786715467032
+        }
+      ],
+      "before_after": {
+        "harry_kane": {
+          "player_name": "Harry Kane",
+          "old_global_rank": 301,
+          "new_global_rank": 7,
+          "old_team_rank": 13,
+          "new_team_rank": 1
+        },
+        "robert_lewandowski": {
+          "player_name": "Robert Lewandowski",
+          "old_global_rank": 144,
+          "new_global_rank": 4,
+          "old_team_rank": 2,
+          "new_team_rank": 1
+        }
+      }
+    }
   },
   "composite_calibration": {
     "target": "0.65 * within-tournament minutes-share percentile + 0.35 * goals-plus-xA-share percentile",
@@ -2215,393 +2547,5 @@
     "formula": "BaseThreat(zone) * ActionImpactFactor, aggregated per 90",
     "position_group_percentile": "xd90_pct",
     "defensive_dimension_integration": "seventh evidence-aware defensive role input"
-  },
-  "tournament_ranking_v2": {
-    "scope": "2022 FIFA World Cup only",
-    "tournament": "2022_World_Cup",
-    "position_groups": [
-      "GK",
-      "CB",
-      "FB",
-      "DM",
-      "CM",
-      "AM",
-      "FW"
-    ],
-    "component_weights": {
-      "FW": {
-        "finishing": 0.47,
-        "creation": 0.17,
-        "progression": 0.06,
-        "possession": 0.04,
-        "defending": 0.04,
-        "off_ball": 0.1,
-        "tournament_impact": 0.12
-      },
-      "AM": {
-        "finishing": 0.25,
-        "creation": 0.28,
-        "progression": 0.14,
-        "possession": 0.08,
-        "defending": 0.05,
-        "off_ball": 0.08,
-        "tournament_impact": 0.12
-      },
-      "CM": {
-        "finishing": 0.1,
-        "creation": 0.25,
-        "progression": 0.23,
-        "possession": 0.15,
-        "defending": 0.13,
-        "off_ball": 0.07,
-        "tournament_impact": 0.07
-      },
-      "DM": {
-        "finishing": 0.05,
-        "creation": 0.13,
-        "progression": 0.22,
-        "possession": 0.18,
-        "defending": 0.28,
-        "off_ball": 0.1,
-        "tournament_impact": 0.04
-      },
-      "FB": {
-        "finishing": 0.08,
-        "creation": 0.18,
-        "progression": 0.2,
-        "possession": 0.12,
-        "defending": 0.25,
-        "off_ball": 0.1,
-        "tournament_impact": 0.07
-      },
-      "CB": {
-        "finishing": 0.03,
-        "creation": 0.05,
-        "progression": 0.17,
-        "possession": 0.18,
-        "defending": 0.37,
-        "off_ball": 0.15,
-        "tournament_impact": 0.05
-      }
-    },
-    "goalkeeper_weights": {
-      "goals_prevented_proxy_p90": 0.18,
-      "save_rate": 0.1,
-      "high_leverage_save_pct": 0.07,
-      "penalties_saved": 0.32,
-      "penalty_save_rate_shrunk": 0.1,
-      "cross_stopping_rate": 0.06,
-      "sweeper_actions_p90": 0.04,
-      "distribution_under_pressure": 0.04,
-      "claims_p90": 0.03,
-      "minutes": 0.06
-    },
-    "reliability_minutes": 180.0,
-    "target_forward_threshold": 0.7,
-    "target_forward_maximum_boost": 0.06,
-    "audit": {
-      "tournament": "2022_World_Cup",
-      "evidence_scope": {
-        "scoring_inputs": "Qatar 2022 tournament data only",
-        "external_rankings_used_in_scoring": false,
-        "external_analysis_policy": "If consulted, only analysis specific to the 2022 FIFA World Cup may be used, and only for post-score audit.",
-        "excluded": [
-          "club-season performance",
-          "career reputation",
-          "other tournaments",
-          "later performances"
-        ]
-      },
-      "checks": {
-        "ranking_input_scope_2022_world_cup_only": true,
-        "one_ranked_main_goalkeeper_per_team": true,
-        "backup_goalkeepers_are_unranked": true,
-        "harry_kane_team_rank_1_to_2": true,
-        "robert_lewandowski_team_rank_1_to_2": true,
-        "harry_kane_global_top_10": true,
-        "robert_lewandowski_global_top_20": true,
-        "messi_top_20": true,
-        "mbappe_top_20": true,
-        "bounou_top_8_goalkeeper": true,
-        "courtois_top_8_goalkeeper": true,
-        "martinez_top_10_goalkeeper": true,
-        "credible_top_20_standout_coverage": true,
-        "no_role_position_contradictions": true,
-        "no_high_goal_forward_below_mid_tier_teammate": true
-      },
-      "passed": true,
-      "role_consistency_violations": [],
-      "striker_fairness_failures": [],
-      "top_20_standout_coverage": {
-        "required": 8,
-        "present_in_dataset": [
-          "Bruno Fernandes",
-          "Giroud",
-          "Griezmann",
-          "Hakimi",
-          "Kane",
-          "Lewandowski",
-          "Mbappé",
-          "Messi",
-          "Modrić",
-          "Neymar",
-          "Richarlison",
-          "Álvarez"
-        ],
-        "present_in_top_20": [
-          "Bruno Fernandes",
-          "Giroud",
-          "Griezmann",
-          "Kane",
-          "Lewandowski",
-          "Mbappé",
-          "Messi",
-          "Modrić",
-          "Neymar",
-          "Richarlison",
-          "Álvarez"
-        ]
-      },
-      "top_20_outfield": [
-        {
-          "global_rank_v2": 1,
-          "player_name": "Lionel Andrés Messi Cuccittini",
-          "team": "Argentina",
-          "position_group_360": "AM",
-          "functional_role": "Progressive Winger",
-          "final_player_rating_v2": 1.0
-        },
-        {
-          "global_rank_v2": 2,
-          "player_name": "Kylian Mbappé Lottin",
-          "team": "France",
-          "position_group_360": "FW",
-          "functional_role": "Progressive Winger",
-          "final_player_rating_v2": 0.9389170170453992
-        },
-        {
-          "global_rank_v2": 3,
-          "player_name": "Bruno Miguel Borges Fernandes",
-          "team": "Portugal",
-          "position_group_360": "AM",
-          "functional_role": "Progressive Winger",
-          "final_player_rating_v2": 0.836506932043697
-        },
-        {
-          "global_rank_v2": 4,
-          "player_name": "Robert Lewandowski",
-          "team": "Poland",
-          "position_group_360": "FW",
-          "functional_role": "Target Forward / Penalty-Box Anchor",
-          "final_player_rating_v2": 0.8227041390588662
-        },
-        {
-          "global_rank_v2": 5,
-          "player_name": "Christian Pulisic",
-          "team": "United States",
-          "position_group_360": "AM",
-          "functional_role": "Progressive Winger",
-          "final_player_rating_v2": 0.7846501367898109
-        },
-        {
-          "global_rank_v2": 6,
-          "player_name": "Mehdi Taremi",
-          "team": "Iran",
-          "position_group_360": "FW",
-          "functional_role": "Target Forward",
-          "final_player_rating_v2": 0.777941289254311
-        },
-        {
-          "global_rank_v2": 7,
-          "player_name": "Harry Kane",
-          "team": "England",
-          "position_group_360": "FW",
-          "functional_role": "Target Forward",
-          "final_player_rating_v2": 0.7777404659571306
-        },
-        {
-          "global_rank_v2": 8,
-          "player_name": "Mateo Kovačić",
-          "team": "Croatia",
-          "position_group_360": "CM",
-          "functional_role": "Deep Playmaker / Metronome",
-          "final_player_rating_v2": 0.7729531941086291
-        },
-        {
-          "global_rank_v2": 9,
-          "player_name": "Neymar da Silva Santos Junior",
-          "team": "Brazil",
-          "position_group_360": "AM",
-          "functional_role": "Progressive Winger",
-          "final_player_rating_v2": 0.7702158441452054
-        },
-        {
-          "global_rank_v2": 10,
-          "player_name": "Luka Modrić",
-          "team": "Croatia",
-          "position_group_360": "CM",
-          "functional_role": "Deep Playmaker / Metronome",
-          "final_player_rating_v2": 0.7648310343530142
-        },
-        {
-          "global_rank_v2": 11,
-          "player_name": "Antoine Griezmann",
-          "team": "France",
-          "position_group_360": "AM",
-          "functional_role": "Hybrid Playmaker / Roaming Creator",
-          "final_player_rating_v2": 0.7606937278153832
-        },
-        {
-          "global_rank_v2": 12,
-          "player_name": "Ángel Fabián Di María Hernández",
-          "team": "Argentina",
-          "position_group_360": "AM",
-          "functional_role": "Progressive Winger",
-          "final_player_rating_v2": 0.7554158967629158
-        },
-        {
-          "global_rank_v2": 13,
-          "player_name": "Olivier Giroud",
-          "team": "France",
-          "position_group_360": "FW",
-          "functional_role": "Target Forward / Penalty-Box Anchor",
-          "final_player_rating_v2": 0.7452966071311844
-        },
-        {
-          "global_rank_v2": 14,
-          "player_name": "Richarlison de Andrade",
-          "team": "Brazil",
-          "position_group_360": "FW",
-          "functional_role": "Pressing Forward",
-          "final_player_rating_v2": 0.7381460004917125
-        },
-        {
-          "global_rank_v2": 15,
-          "player_name": "Salem Mohammed Al Dawsari",
-          "team": "Saudi Arabia",
-          "position_group_360": "AM",
-          "functional_role": "Progressive Winger",
-          "final_player_rating_v2": 0.7361704967246997
-        },
-        {
-          "global_rank_v2": 16,
-          "player_name": "Jamal Musiala",
-          "team": "Germany",
-          "position_group_360": "AM",
-          "functional_role": "Hybrid Playmaker / Roaming Creator",
-          "final_player_rating_v2": 0.7310106383931627
-        },
-        {
-          "global_rank_v2": 17,
-          "player_name": "Gonçalo Matias Ramos",
-          "team": "Portugal",
-          "position_group_360": "FW",
-          "functional_role": "Target Forward",
-          "final_player_rating_v2": 0.730836315666662
-        },
-        {
-          "global_rank_v2": 18,
-          "player_name": "Memphis Depay",
-          "team": "Netherlands",
-          "position_group_360": "FW",
-          "functional_role": "Target Forward",
-          "final_player_rating_v2": 0.7234496476712097
-        },
-        {
-          "global_rank_v2": 19,
-          "player_name": "Álvaro Borja Morata Martín",
-          "team": "Spain",
-          "position_group_360": "FW",
-          "functional_role": "Target Forward",
-          "final_player_rating_v2": 0.7100017263955385
-        },
-        {
-          "global_rank_v2": 20,
-          "player_name": "Julián Álvarez",
-          "team": "Argentina",
-          "position_group_360": "FW",
-          "functional_role": "Pressing Forward",
-          "final_player_rating_v2": 0.7086032744113817
-        }
-      ],
-      "top_10_goalkeepers": [
-        {
-          "gk_rank_v2": 1,
-          "player_name": "Wojciech Szczęsny",
-          "team": "Poland",
-          "gk_rating_v2": 1.0
-        },
-        {
-          "gk_rank_v2": 2,
-          "player_name": "Dominik Livaković",
-          "team": "Croatia",
-          "gk_rating_v2": 0.8915345191124872
-        },
-        {
-          "gk_rank_v2": 3,
-          "player_name": "Yassine Bounou",
-          "team": "Morocco",
-          "gk_rating_v2": 0.7854271308729174
-        },
-        {
-          "gk_rank_v2": 4,
-          "player_name": "Thibaut Courtois",
-          "team": "Belgium",
-          "gk_rating_v2": 0.6512660927988838
-        },
-        {
-          "gk_rank_v2": 5,
-          "player_name": "Sergio Rochet Álvarez",
-          "team": "Uruguay",
-          "gk_rating_v2": 0.5812763833766879
-        },
-        {
-          "gk_rank_v2": 6,
-          "player_name": "Unai Simón Mendibil",
-          "team": "Spain",
-          "gk_rating_v2": 0.5702792625131764
-        },
-        {
-          "gk_rank_v2": 7,
-          "player_name": "Mohammed Khalil Al Owais",
-          "team": "Saudi Arabia",
-          "gk_rating_v2": 0.5554404138410668
-        },
-        {
-          "gk_rank_v2": 8,
-          "player_name": "Damián Emiliano Martínez",
-          "team": "Argentina",
-          "gk_rating_v2": 0.53930876324817
-        },
-        {
-          "gk_rank_v2": 9,
-          "player_name": "Matthew Charles Turner",
-          "team": "United States",
-          "gk_rating_v2": 0.4669421385439262
-        },
-        {
-          "gk_rank_v2": 10,
-          "player_name": "Andries Noppert",
-          "team": "Netherlands",
-          "gk_rating_v2": 0.4149422162992421
-        }
-      ],
-      "before_after": {
-        "harry_kane": {
-          "player_name": "Harry Kane",
-          "old_global_rank": 301,
-          "new_global_rank": 7,
-          "old_team_rank": 13,
-          "new_team_rank": 1
-        },
-        "robert_lewandowski": {
-          "player_name": "Robert Lewandowski",
-          "old_global_rank": 144,
-          "new_global_rank": 4,
-          "old_team_rank": 2,
-          "new_team_rank": 1
-        }
-      }
-    }
   }
 }

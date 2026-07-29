@@ -1227,7 +1227,8 @@ _Ratings are computed from 45 outfield minutes or 90 goalkeeper minutes;
 300 minutes is the high-reliability outfield label. Outfield ratings use a
 development-gated VAEP feature set, role-weighted offensive/defensive channels,
 calibrated composite weights, xD-style disruption, and 450-minute reliability shrinkage.
-Goalkeepers use a separately weighted seven-component evidence matrix._
+Goalkeepers use the separate tournament-v2 PSxG-GA, save-rate, penalty,
+box-command, sweeping, pressure-distribution, and shootout-impact matrix._
 
 ## Recurrent tactical mistakes
 

@@ -150,16 +150,23 @@ This model evaluates players based solely on their performances at the 2022 FIFA
     }
   },
   "goalkeeper_weights": {
-    "goals_prevented_proxy_p90": 0.18,
-    "save_rate": 0.1,
-    "high_leverage_save_pct": 0.07,
-    "penalties_saved": 0.32,
-    "penalty_save_rate_shrunk": 0.1,
-    "cross_stopping_rate": 0.06,
-    "sweeper_actions_p90": 0.04,
-    "distribution_under_pressure": 0.04,
+    "psxg_ga_p90": 0.34,
+    "save_rate_shrunk": 0.11,
+    "high_leverage_save_rate_shrunk": 0.11,
+    "penalties_saved_rate": 0.13,
+    "penalty_save_rate_shrunk": 0.08,
+    "cross_stopping_rate": 0.05,
     "claims_p90": 0.03,
+    "sweeper_actions_p90": 0.04,
+    "distribution_under_pressure": 0.05,
     "minutes": 0.06
+  },
+  "goalkeeper_tournament_impact": {
+    "shootout_save_points": 0.2,
+    "vaep_percentile_maximum": 0.04,
+    "high_leverage_volume_percentile_maximum": 0.02,
+    "uses_player_identity": false,
+    "uses_team_advancement": false
   },
   "reliability_minutes": 180.0,
   "target_forward_threshold": 0.7,
@@ -189,7 +196,9 @@ This model evaluates players based solely on their performances at the 2022 FIFA
       "mbappe_top_20": true,
       "bounou_top_8_goalkeeper": true,
       "courtois_top_8_goalkeeper": true,
-      "martinez_top_10_goalkeeper": true,
+      "martinez_top_2_goalkeeper": true,
+      "livakovic_top_8_goalkeeper": true,
+      "szczesny_top_8_goalkeeper": true,
       "credible_top_20_standout_coverage": true,
       "no_role_position_contradictions": true,
       "no_high_goal_forward_below_mid_tier_teammate": true
@@ -392,63 +401,63 @@ This model evaluates players based solely on their performances at the 2022 FIFA
     "top_10_goalkeepers": [
       {
         "gk_rank_v2": 1,
-        "player_name": "Wojciech Szczęsny",
-        "team": "Poland",
+        "player_name": "Dominik Livaković",
+        "team": "Croatia",
         "gk_rating_v2": 1.0
       },
       {
         "gk_rank_v2": 2,
-        "player_name": "Dominik Livaković",
-        "team": "Croatia",
-        "gk_rating_v2": 0.8915345191124872
+        "player_name": "Damián Emiliano Martínez",
+        "team": "Argentina",
+        "gk_rating_v2": 0.5970623991407898
       },
       {
         "gk_rank_v2": 3,
         "player_name": "Yassine Bounou",
         "team": "Morocco",
-        "gk_rating_v2": 0.7854271308729174
+        "gk_rating_v2": 0.5876000576062959
       },
       {
         "gk_rank_v2": 4,
-        "player_name": "Thibaut Courtois",
-        "team": "Belgium",
-        "gk_rating_v2": 0.6512660927988838
+        "player_name": "Wojciech Szczęsny",
+        "team": "Poland",
+        "gk_rating_v2": 0.43940908424068587
       },
       {
         "gk_rank_v2": 5,
-        "player_name": "Sergio Rochet Álvarez",
-        "team": "Uruguay",
-        "gk_rating_v2": 0.5812763833766879
+        "player_name": "Unai Simón Mendibil",
+        "team": "Spain",
+        "gk_rating_v2": 0.3416886485445017
       },
       {
         "gk_rank_v2": 6,
-        "player_name": "Unai Simón Mendibil",
-        "team": "Spain",
-        "gk_rating_v2": 0.5702792625131764
+        "player_name": "Mohammed Khalil Al Owais",
+        "team": "Saudi Arabia",
+        "gk_rating_v2": 0.32604935854745526
       },
       {
         "gk_rank_v2": 7,
-        "player_name": "Mohammed Khalil Al Owais",
-        "team": "Saudi Arabia",
-        "gk_rating_v2": 0.5554404138410668
+        "player_name": "Thibaut Courtois",
+        "team": "Belgium",
+        "gk_rating_v2": 0.3069182414835569
       },
       {
         "gk_rank_v2": 8,
-        "player_name": "Damián Emiliano Martínez",
-        "team": "Argentina",
-        "gk_rating_v2": 0.53930876324817
+        "player_name": "Vanja Milinković Savić",
+        "team": "Serbia",
+        "gk_rating_v2": 0.2876384662665453
       },
       {
         "gk_rank_v2": 9,
-        "player_name": "Matthew Charles Turner",
-        "team": "United States",
-        "gk_rating_v2": 0.4669421385439262
+        "player_name": "Diogo Meireles Costa",
+        "team": "Portugal",
+        "gk_rating_v2": 0.2811220816401874
       },
       {
         "gk_rank_v2": 10,
         "player_name": "Andries Noppert",
         "team": "Netherlands",
-        "gk_rating_v2": 0.4149422162992421
+        "gk_rating_v2": 0.2683786715467032
       }
     ],
     "before_after": {
@@ -1394,6 +1403,8 @@ This model evaluates players based solely on their performances at the 2022 FIFA
 
 ## Goalkeeper model
 
+The published tournament-v2 goalkeeper table ranks exactly one minutes-selected goalkeeper per team. Its primary evidence is the match-disjoint PSxG-GA proxy, reliability-shrunk save rates, penalty performance, box command, sweeping, and distribution under pressure. Period-five shootout saves form an explicit identity-free tournament-impact term. The JSON below retains the earlier all-goalkeeper diagnostic branch for traceability; it is not the published v2 ordering.
+
 ```json
 {
   "shootout_shots_excluded": 41,
@@ -2079,7 +2090,7 @@ This model evaluates players based solely on their performances at the 2022 FIFA
   "selection_primary": "bic",
   "selection_tie_breaker": "aic",
   "pca_components": 15,
-  "pca_explained_variance": 0.7366895044638277,
+  "pca_explained_variance": 0.7366895044638274,
   "feature_names": [
     "aerial_dominance_index",
     "pressing_intensity_index",

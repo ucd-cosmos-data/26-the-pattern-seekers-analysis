@@ -76,4 +76,4 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 15 | Kasper Schmeichel | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 290.8000 | 0.3555 |
+| 16 | Kasper Schmeichel | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 290.8000 | 0.2245 |

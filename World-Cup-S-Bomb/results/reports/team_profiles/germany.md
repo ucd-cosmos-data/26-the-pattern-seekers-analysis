@@ -75,4 +75,4 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 21 | Manuel Neuer | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 294.0000 | 0.2289 |
+| 19 | Manuel Neuer | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 294.0000 | 0.1585 |

@@ -16,33 +16,35 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Goalkeeper rank v2: not available
 - Goalkeeper rating v2: not available
 
-
-
-- Global rank: not available
-- Position rank: 28
-- Role rank: 28
-- Team rank: 9
-- Final player rating: 0.4741
-- Ranking status: Coverage only (<180 min)
 - Goalkeeper ranking status: Unranked (backup goalkeeper)
 - Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 100.3
-- Minutes reliability: 0.1562
+- Goalkeeper v2 reliability: not available
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
 | post_shot_xg_proxy | 2.1835 |
+| psxg_ga_p90 | not available |
 | goals_prevented_proxy_p90 | 0.1647 |
 | save_rate | 0.5000 |
+| save_rate_shrunk | not available |
+| high_leverage_save_pct | 1.0000 |
+| high_leverage_save_rate_shrunk | not available |
+| penalties_saved_rate | not available |
+| penalty_save_rate_shrunk | not available |
+| shootout_penalties_faced | 0.0000 |
+| shootout_penalties_saved | 0.0000 |
 | claims_p90 | 0.8973 |
 | cross_stopping_rate | 0.0667 |
 | sweeper_actions_p90 | 0.0000 |
 | distribution_under_pressure | 0.0000 |
-| penalty_save_rate_shrunk | not available |
-| high_leverage_save_pct | 1.0000 |
-| goalkeeper_feature_coverage | 0.8571 |
+| gk_raw_rating_v2 | not available |
+| tournament_impact_score | not available |
+| gk_score_composite | not available |
+| reliability_factor | not available |
+| gk_rating_v2 | not available |
 
 ## Continuous role vector
 

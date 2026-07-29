@@ -77,4 +77,4 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 20 | Seung-Gyu Kim | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 389.6500 | 0.2383 |
+| 20 | Seung-Gyu Kim | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 389.6500 | 0.1327 |

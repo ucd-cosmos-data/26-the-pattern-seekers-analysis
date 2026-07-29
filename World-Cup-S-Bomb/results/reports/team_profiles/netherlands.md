@@ -76,4 +76,4 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 10 | Andries Noppert | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 509.5167 | 0.4149 |
+| 10 | Andries Noppert | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 509.5167 | 0.2684 |

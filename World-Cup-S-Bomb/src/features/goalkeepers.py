@@ -376,12 +376,18 @@ def build_goalkeeper_features(
         player_id = lookup.get((int(row.match_id), str(opponents[0])))
         if player_id is None:
             continue
+        is_shootout = int(row.period) == 5
+        was_saved = int("Saved" in str(row.shot_outcome))
         penalty_records.append(
             {
                 "player_id": player_id,
                 "penalties_faced": 1,
-                "penalties_saved": int(
-                    "Saved" in str(row.shot_outcome)
+                "penalties_saved": was_saved,
+                "shootout_penalties_faced": int(is_shootout),
+                "shootout_penalties_saved": int(is_shootout and was_saved),
+                "regular_penalties_faced": int(not is_shootout),
+                "regular_penalties_saved": int(
+                    not is_shootout and was_saved
                 ),
             }
         )
@@ -471,6 +477,10 @@ def build_goalkeeper_features(
         "completed_pressured_passes",
         "penalties_faced",
         "penalties_saved",
+        "shootout_penalties_faced",
+        "shootout_penalties_saved",
+        "regular_penalties_faced",
+        "regular_penalties_saved",
         "cross_opportunities",
     ]
     for column in numeric:
@@ -520,6 +530,7 @@ def build_goalkeeper_features(
         output["penalties_saved"]
         / output["penalties_faced"].replace(0.0, np.nan)
     )
+    output["penalties_saved_rate"] = observed_penalty_rate
     penalty_reliability = output["penalties_faced"] / (
         output["penalties_faced"] + 5.0
     )

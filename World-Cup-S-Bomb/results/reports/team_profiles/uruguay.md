@@ -75,4 +75,4 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 5 | Sergio Rochet Álvarez | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 298.0833 | 0.5813 |
+| 17 | Sergio Rochet Álvarez | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 298.0833 | 0.2170 |

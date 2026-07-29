@@ -75,4 +75,4 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 16 | Mathew Ryan | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 386.9167 | 0.3489 |
+| 14 | Mathew Ryan | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 386.9167 | 0.2412 |

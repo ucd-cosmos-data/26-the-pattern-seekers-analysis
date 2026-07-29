@@ -76,5 +76,5 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 19 | Yann Sommer | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 286.2833 | 0.2763 |
+| 18 | Yann Sommer | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 286.2833 | 0.1991 |
 | — | Gregor Kobel | False | Unranked (backup goalkeeper) | GK | Goalkeeper | Goalkeeper | 100.3000 | — |

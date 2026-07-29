@@ -80,4 +80,4 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 14 | Shūichi Gonda | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 412.5167 | 0.3584 |
+| 13 | Shūichi Gonda | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 412.5167 | 0.2437 |

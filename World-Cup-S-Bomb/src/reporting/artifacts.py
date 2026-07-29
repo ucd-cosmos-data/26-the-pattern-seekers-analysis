@@ -160,6 +160,46 @@ def _markdown_table(frame: pd.DataFrame, columns: list[str]) -> str:
     return "\n".join(lines)
 
 
+def _goalkeeper_evidence_examples(rankings: pd.DataFrame) -> str:
+    """Render score evidence for the three leading main goalkeepers."""
+
+    keepers = (
+        rankings.loc[
+            rankings["position_group_360"].eq("GK")
+            & rankings["gk_rank_v2"].notna()
+        ]
+        .sort_values("gk_rank_v2")
+        .head(3)
+        .copy()
+    )
+    columns = [
+        "gk_rank_v2",
+        "player_name",
+        "psxg_ga_p90",
+        "save_rate_shrunk",
+        "high_leverage_save_rate_shrunk",
+        "penalties_saved_rate",
+        "shootout_penalties_saved",
+        "tournament_impact_score",
+        "gk_rating_v2",
+    ]
+    available = [column for column in columns if column in keepers]
+    return "\n".join(
+        [
+            "## Leading goalkeeper evidence",
+            "",
+            "These rows are generated from the scored table after ranking; "
+            "player identity is not an input. They show why tournament-impact "
+            "actions can complement, but do not rewrite, the continuous "
+            "shot-stopping evidence. A negative PSxG-GA proxy remains visible "
+            "rather than being replaced by a favorable value.",
+            "",
+            _markdown_table(keepers, available),
+            "",
+        ]
+    )
+
+
 class ArtifactGenerator:
     """Generate rankings, notebook, summaries, and 32 team profiles."""
 
@@ -497,6 +537,7 @@ class ArtifactGenerator:
             "global_rankings_outfield_300min.csv": outfield_300,
             "goalkeeper_rankings.csv": goalkeepers,
             "v5_player_rankings.csv": all_rankings,
+            "player_rankings_v2.csv": all_rankings,
             "player_rankings.csv": all_rankings,
             "player_rankings_300plus.csv": pd.concat(
                 [
@@ -566,7 +607,9 @@ class ArtifactGenerator:
         methodology_path = ranking_root / "ranking_methodology.md"
         _atomic_text(
             methodology_path,
-            tournament_ranking_methodology_markdown(),
+            tournament_ranking_methodology_markdown()
+            + "\n"
+            + _goalkeeper_evidence_examples(rankings),
         )
         files.append(methodology_path)
 
@@ -795,6 +838,15 @@ class ArtifactGenerator:
             "",
             "## Goalkeeper model",
             "",
+            "The published tournament-v2 goalkeeper table ranks exactly one "
+            "minutes-selected goalkeeper per team. Its primary evidence is "
+            "the match-disjoint PSxG-GA proxy, reliability-shrunk save rates, "
+            "penalty performance, box command, sweeping, and distribution "
+            "under pressure. Period-five shootout saves form an explicit "
+            "identity-free tournament-impact term. The JSON below retains "
+            "the earlier all-goalkeeper diagnostic branch for traceability; "
+            "it is not the published v2 ordering.",
+            "",
             "```json",
             json.dumps(
                 payload.get("goalkeeper_model", {}),
@@ -870,15 +922,25 @@ class ArtifactGenerator:
         if str(player.get("position_group")) == "Goalkeeper":
             contribution_metrics = [
                 "post_shot_xg_proxy",
+                "psxg_ga_p90",
                 "goals_prevented_proxy_p90",
                 "save_rate",
+                "save_rate_shrunk",
+                "high_leverage_save_pct",
+                "high_leverage_save_rate_shrunk",
+                "penalties_saved_rate",
+                "penalty_save_rate_shrunk",
+                "shootout_penalties_faced",
+                "shootout_penalties_saved",
                 "claims_p90",
                 "cross_stopping_rate",
                 "sweeper_actions_p90",
                 "distribution_under_pressure",
-                "penalty_save_rate_shrunk",
-                "high_leverage_save_pct",
-                "goalkeeper_feature_coverage",
+                "gk_raw_rating_v2",
+                "tournament_impact_score",
+                "gk_score_composite",
+                "reliability_factor",
+                "gk_rating_v2",
             ]
         else:
             contribution_metrics = [
@@ -914,7 +976,10 @@ class ArtifactGenerator:
             )
 
         return (
-            "\n".join(
+            re.sub(
+                r"\n{3,}",
+                "\n\n",
+                "\n".join(
             [
                 f"# {value('player_name')} Player Profile",
                 "",
@@ -969,12 +1034,37 @@ class ArtifactGenerator:
                     else f"- Final player rating v2: "
                     f"{value('final_player_rating_v2')}"
                 ),
-                f"- Global rank: {value('global_rank', 0)}",
-                f"- Position rank: {value('position_rank', 0)}",
-                f"- Role rank: {value('role_rank', 0)}",
-                f"- Team rank: {value('team_rank', 0)}",
-                f"- Final player rating: {value('final_player_rating')}",
-                f"- Ranking status: {value('RankingStatus')}",
+                (
+                    ""
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Global rank: {value('global_rank', 0)}"
+                ),
+                (
+                    ""
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Position rank: {value('position_rank', 0)}"
+                ),
+                (
+                    ""
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Role rank: {value('role_rank', 0)}"
+                ),
+                (
+                    ""
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Team rank: {value('team_rank', 0)}"
+                ),
+                (
+                    ""
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Final player rating: "
+                    f"{value('final_player_rating')}"
+                ),
+                (
+                    ""
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Ranking status: {value('RankingStatus')}"
+                ),
                 (
                     f"- Goalkeeper ranking status: "
                     f"{value('GKRankingStatus')}"
@@ -987,8 +1077,13 @@ class ArtifactGenerator:
                     else "- Global ranking eligibility: eligible"
                 ),
                 f"- Minutes: {value('minutes', 1)}",
-                f"- Minutes reliability: "
-                f"{value('rating_minutes_reliability')}",
+                (
+                    f"- Goalkeeper v2 reliability: "
+                    f"{value('reliability_factor')}"
+                    if str(player.get("position_group_360")) == "GK"
+                    else f"- Minutes reliability: "
+                    f"{value('rating_minutes_reliability')}"
+                ),
                 "",
                 "## Rating components",
                 "",
@@ -1015,7 +1110,8 @@ class ArtifactGenerator:
                 "converted into zero contribution.",
                 "",
             ]
-            ).rstrip()
+                ).rstrip(),
+            )
             + "\n"
         )
 
@@ -1355,8 +1451,10 @@ class ArtifactGenerator:
             "structural penalty on goal-centric forwards; it never checks "
             "player names.",
             "",
-            "Goalkeepers use a separate weighted seven-component matrix and "
-            "ranking, including high-leverage saves. "
+            "Goalkeepers use a separate tournament-v2 matrix led by a "
+            "match-disjoint PSxG-GA proxy, reliability-shrunk save rates, "
+            "penalty performance, box command, sweeping, distribution under "
+            "pressure, and an explicit shootout-impact term. "
             "They are excluded from the outfield global ranking because "
             "StatsBomb Open Data does not contain native post-shot xG. "
             "Missing 360 evidence remains missing, and role labels never "
@@ -1415,6 +1513,11 @@ class ArtifactGenerator:
             "",
             "# Team-by-team summary",
             "",
+            "Scope note: every team top five below contains outfield players "
+            "only. Goalkeepers are excluded because `gk_rating_v2` uses a "
+            "separate, non-comparable scale; consult the goalkeeper "
+            "leaderboard for their ordering.",
+            "",
         ]
         for team in teams:
             players = rankings.loc[rankings["team"].eq(team)].sort_values(
@@ -1469,7 +1572,7 @@ class ArtifactGenerator:
                     f"- Mean defensive density: "
                     f"{team_value(team, 'defensive_density')}",
                     "",
-                    "### Top five player summary",
+                    "### Top five outfield-player summary",
                     "",
                 ]
             )

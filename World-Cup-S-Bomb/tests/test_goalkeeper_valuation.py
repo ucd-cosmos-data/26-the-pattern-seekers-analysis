@@ -49,3 +49,6 @@ def test_goalkeeper_features_exclude_shootouts_and_outfield_dimensions() -> None
     assert saved["high_leverage_shots_on_target"] == 1
     assert saved["high_leverage_saves"] == 1
     assert saved["high_leverage_save_pct"] == 1.0
+    assert saved["shootout_penalties_faced"] == 1
+    assert saved["shootout_penalties_saved"] == 0
+    assert saved["regular_penalties_faced"] == 0

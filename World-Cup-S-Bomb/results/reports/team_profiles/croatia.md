@@ -78,4 +78,4 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 2 | Dominik Livaković | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 720.2833 | 0.8915 |
+| 1 | Dominik Livaković | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 720.2833 | 1.0000 |

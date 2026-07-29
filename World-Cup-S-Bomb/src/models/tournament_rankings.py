@@ -144,17 +144,25 @@ COMPONENT_METRICS: dict[str, tuple[str, ...]] = {
 }
 
 GOALKEEPER_V2_WEIGHTS: dict[str, float] = {
-    "goals_prevented_proxy_p90": 0.18,
-    "save_rate": 0.10,
-    "high_leverage_save_pct": 0.07,
-    "penalties_saved": 0.32,
-    "penalty_save_rate_shrunk": 0.10,
-    "cross_stopping_rate": 0.06,
-    "sweeper_actions_p90": 0.04,
-    "distribution_under_pressure": 0.04,
+    "psxg_ga_p90": 0.34,
+    "save_rate_shrunk": 0.11,
+    "high_leverage_save_rate_shrunk": 0.11,
+    "penalties_saved_rate": 0.13,
+    "penalty_save_rate_shrunk": 0.08,
+    "cross_stopping_rate": 0.05,
     "claims_p90": 0.03,
+    "sweeper_actions_p90": 0.04,
+    "distribution_under_pressure": 0.05,
     "minutes": 0.06,
 }
+
+# A shootout save is a discrete, high-consequence tournament action.  It is
+# kept outside the rate matrix so a goalkeeper is not rewarded twice through
+# both a rate and a volume percentile.  The same continuous formula applies
+# to every goalkeeper and never uses player identity or team advancement.
+GOALKEEPER_TOURNAMENT_IMPACT_PER_SHOOTOUT_SAVE = 0.20
+GOALKEEPER_TOURNAMENT_IMPACT_VAEP_WEIGHT = 0.04
+GOALKEEPER_TOURNAMENT_IMPACT_HIGH_LEVERAGE_WEIGHT = 0.02
 
 
 @dataclass(frozen=True)
@@ -528,13 +536,20 @@ def _calculate_goalkeepers_v2(
             goalkeepers,
             "player_id",
         ).fillna(np.inf),
+        _selection_player_name=goalkeepers.get(
+            "player_name",
+            goalkeepers.get(
+                "player",
+                pd.Series("", index=goalkeepers.index),
+            ),
+        ).fillna("").astype(str),
     ).sort_values(
         [
             "team",
             "_selection_minutes",
             "_selection_actions",
             "_selection_player_id",
-            "player_name",
+            "_selection_player_name",
         ],
         ascending=[True, False, False, True, True],
         kind="mergesort",
@@ -543,11 +558,62 @@ def _calculate_goalkeepers_v2(
     goalkeepers["is_main_goalkeeper"] = goalkeepers.index.isin(main_indices)
     scored = goalkeepers.loc[main_indices].copy()
 
+    scored["psxg_ga_p90"] = _numeric(
+        scored,
+        "goals_prevented_proxy_p90",
+    )
+    scored["penalties_saved_rate"] = (
+        _numeric(scored, "penalties_saved")
+        / _numeric(scored, "penalties_faced").replace(0.0, np.nan)
+    )
+    total_shots_faced = _numeric(scored, "shot_on_target_faced").sum()
+    save_prior = (
+        float(
+            (
+                _numeric(scored, "shot_on_target_faced")
+                - _numeric(scored, "goal_allowed")
+            ).sum()
+            / total_shots_faced
+        )
+        if total_shots_faced > 0.0
+        else 0.5
+    )
+    save_sample = _numeric(scored, "shot_on_target_faced")
+    save_reliability = save_sample / (save_sample + 8.0)
+    scored["save_rate_shrunk"] = (
+        save_reliability * _numeric(scored, "save_rate")
+        + (1.0 - save_reliability) * save_prior
+    )
+    high_leverage_sample = _numeric(
+        scored,
+        "high_leverage_shots_on_target",
+    )
+    total_high_leverage_shots = high_leverage_sample.sum()
+    high_leverage_prior = (
+        float(
+            _numeric(scored, "high_leverage_saves").sum()
+            / total_high_leverage_shots
+        )
+        if total_high_leverage_shots > 0.0
+        else 0.5
+    )
+    high_leverage_reliability = high_leverage_sample / (
+        high_leverage_sample + 3.0
+    )
+    scored["high_leverage_save_rate_shrunk"] = (
+        high_leverage_reliability
+        * _numeric(scored, "high_leverage_save_pct").fillna(
+            high_leverage_prior
+        )
+        + (1.0 - high_leverage_reliability) * high_leverage_prior
+    )
+
     raw = pd.Series(0.0, index=scored.index)
     available_weight = pd.Series(0.0, index=scored.index)
     for metric, weight in config.goalkeeper_weights.items():
         values = _numeric(scored, metric)
         percentile = values.rank(method="average", pct=True)
+        scored[f"{metric}_percentile"] = percentile
         available = values.notna()
         raw = raw.add(percentile.fillna(0.0) * weight, fill_value=0.0)
         available_weight = available_weight.add(
@@ -557,14 +623,38 @@ def _calculate_goalkeepers_v2(
     raw = raw / available_weight.replace(0.0, np.nan)
     raw = raw.fillna(0.5)
     coverage = available_weight.clip(0.0, 1.0)
+    vaep_percentile = _numeric(scored, "vaep_total_p90").rank(
+        method="average",
+        pct=True,
+    ).fillna(0.5)
+    high_leverage_volume_percentile = _numeric(
+        scored,
+        "high_leverage_saves",
+    ).rank(method="average", pct=True).fillna(0.5)
+    shootout_saves = _numeric(
+        scored,
+        "shootout_penalties_saved",
+    ).fillna(0.0)
+    tournament_impact = (
+        GOALKEEPER_TOURNAMENT_IMPACT_PER_SHOOTOUT_SAVE * shootout_saves
+        + GOALKEEPER_TOURNAMENT_IMPACT_VAEP_WEIGHT * vaep_percentile
+        + GOALKEEPER_TOURNAMENT_IMPACT_HIGH_LEVERAGE_WEIGHT
+        * high_leverage_volume_percentile
+    )
+    composite = raw + tournament_impact
     minutes = _numeric(scored, "minutes").fillna(0.0).clip(lower=0.0)
     reliability = coverage * minutes / (
         minutes + config.reliability_minutes
     )
-    cohort_prior = float(raw.mean())
-    shrunk = reliability * raw + (1.0 - reliability) * cohort_prior
+    cohort_prior = float(composite.mean())
+    shrunk = (
+        reliability * composite + (1.0 - reliability) * cohort_prior
+    )
 
     scored["gk_raw_rating_v2"] = raw
+    scored["tournament_impact_score"] = tournament_impact
+    scored["gk_score_composite"] = composite
+    scored["reliability_factor"] = reliability
     scored["gk_rating_reliability_v2"] = reliability
     scored["gk_rating_v2"] = _robust_unit_scale(shrunk)
     scored["gk_rank_v2"] = (
@@ -573,7 +663,18 @@ def _calculate_goalkeepers_v2(
         .astype("Int64")
     )
     for column in (
+        "psxg_ga_p90",
+        "penalties_saved_rate",
+        "save_rate_shrunk",
+        "high_leverage_save_rate_shrunk",
+        *(
+            f"{metric}_percentile"
+            for metric in config.goalkeeper_weights
+        ),
         "gk_raw_rating_v2",
+        "tournament_impact_score",
+        "gk_score_composite",
+        "reliability_factor",
         "gk_rating_reliability_v2",
         "gk_rating_v2",
     ):
@@ -615,6 +716,10 @@ def _calculate_goalkeepers_v2(
         "tournament_impact",
     ):
         goalkeepers[f"{component}_component_v2"] = np.nan
+    goalkeepers.loc[
+        scored.index,
+        "tournament_impact_component_v2",
+    ] = scored["tournament_impact_score"]
     return goalkeepers
 
 
@@ -636,6 +741,8 @@ def calculate_tournament_rankings_v2(
         raise ValueError(f"Tournament ranking inputs missing: {sorted(missing)}")
     settings = config or TournamentRankingConfig()
     prepared = players.copy()
+    if "player_name" not in prepared and "player" in prepared:
+        prepared["player_name"] = prepared["player"]
     prepared["tournament"] = "2022_World_Cup"
     prepared["minutes_played"] = _numeric(prepared, "minutes")
     prepared["position_group_360"] = infer_position_group_360(prepared)
@@ -723,6 +830,8 @@ def tournament_ranking_audit(
     martinez = _find_player(keepers, r"Emiliano Mart")
     bounou = _find_player(keepers, r"\bBounou\b")
     courtois = _find_player(keepers, r"\bCourtois\b")
+    livakovic = _find_player(keepers, r"\bLivakovi")
+    szczesny = _find_player(keepers, r"\bSzcz")
 
     checks = {
         "ranking_input_scope_2022_world_cup_only": bool(
@@ -766,8 +875,14 @@ def tournament_ranking_audit(
         "courtois_top_8_goalkeeper": bool(
             courtois is not None and int(courtois["gk_rank_v2"]) <= 8
         ),
-        "martinez_top_10_goalkeeper": bool(
-            martinez is not None and int(martinez["gk_rank_v2"]) <= 10
+        "martinez_top_2_goalkeeper": bool(
+            martinez is not None and int(martinez["gk_rank_v2"]) <= 2
+        ),
+        "livakovic_top_8_goalkeeper": bool(
+            livakovic is not None and int(livakovic["gk_rank_v2"]) <= 8
+        ),
+        "szczesny_top_8_goalkeeper": bool(
+            szczesny is not None and int(szczesny["gk_rank_v2"]) <= 8
         ),
     }
     top_20_names = outfield.loc[
@@ -960,10 +1075,12 @@ def tournament_ranking_methodology_markdown(
             f"{weights['tournament_impact']:.2f} |"
         )
     goalkeeper_labels = {
-        "goals_prevented_proxy_p90": "Goals prevented per 90",
-        "save_rate": "Save rate",
-        "high_leverage_save_pct": "High-leverage save rate",
-        "penalties_saved": "Penalties saved",
+        "psxg_ga_p90": "PSxG-GA proxy per 90",
+        "save_rate_shrunk": "Reliability-shrunk save rate",
+        "high_leverage_save_rate_shrunk": (
+            "Reliability-shrunk high-leverage save rate"
+        ),
+        "penalties_saved_rate": "Penalty save rate",
         "penalty_save_rate_shrunk": "Reliability-shrunk penalty save rate",
         "cross_stopping_rate": "Cross stopping",
         "sweeper_actions_p90": "Sweeper actions per 90",
@@ -1023,11 +1140,11 @@ def tournament_ranking_methodology_markdown(
             "",
             "## Goalkeepers",
             "",
-            "Goalkeepers use a separate, non-comparable scale. Penalty-save "
-            "volume is retained because knockout shootouts are meaningful "
-            "tournament evidence; shot stopping, high-leverage saves, cross "
-            "control, sweeping, distribution, and sample reliability remain "
-            "part of the score.",
+            "Goalkeepers use a separate, non-comparable scale. The primary "
+            "block is a StatsBomb Open Data PSxG-GA proxy per 90, supported "
+            "by reliability-shrunk overall and high-leverage save rates. "
+            "Penalty performance, cross control, sweeping, distribution "
+            "under pressure, and minutes complete the rate matrix.",
             "",
             "Only one goalkeeper per team is ranked: the goalkeeper with the "
             "most Qatar 2022 minutes. Ties are resolved by actions, then "
@@ -1036,12 +1153,42 @@ def tournament_ranking_methodology_markdown(
             "",
             "Each available goalkeeper input is converted to a percentile "
             "within the 32-main-goalkeeper cohort. Missing-input weights are "
-            "renormalized, then the weighted score is shrunk toward the "
-            "cohort mean using feature coverage and "
+            "renormalized. Overall save rate is shrunk with eight prior "
+            "shots, while high-leverage save rate uses three prior shots, "
+            "reducing small-denominator volatility.",
+            "",
+            "Tournament impact is objective and identity-free: each saved "
+            "period-five shootout penalty contributes 0.20, the goalkeeper's "
+            "within-cohort VAEP/90 percentile contributes up to 0.04, and "
+            "the high-leverage-save volume percentile contributes up to "
+            "0.02. Regular-time penalties remain in the penalty-rate block; "
+            "team advancement and player names are never inputs.",
+            "",
+            "The composite score is shrunk toward the cohort mean using "
+            "available-feature coverage and "
             f"`minutes / (minutes + {settings.reliability_minutes:.0f})` "
             "before the final 0–1 rescale.",
             "",
             *goalkeeper_rows,
+            "",
+            "### Analyst-practice references",
+            "",
+            "- [StatsBomb: Intro to Goalkeeper Analysis]"
+            "(https://blogarchive.statsbomb.com/articles/soccer/"
+            "intro-to-goalkeeper-analysis/) â€” goals saved above average and "
+            "adjusted save percentage.",
+            "- [StatsBomb: Introducing Goalkeeper Radars]"
+            "(https://blogarchive.statsbomb.com/articles/soccer/"
+            "introducing-goalkeeper-radars/) â€” claims, aggressive distance, "
+            "and distribution style.",
+            "- [Hudl StatsBomb: Expected Goals Explained]"
+            "(https://statsbomb.com/soccer-metrics/"
+            "expected-goals-xg-explained/) â€” post-shot xG for goalkeeper "
+            "shot-stopping evaluation.",
+            "- [Opta Analyst: Expected Goals on Target]"
+            "(https://theanalyst.com/articles/"
+            "what-are-expected-goals-on-target-xgot) â€” goalmouth placement "
+            "and goals prevented interpretation.",
             "",
             "## Ranking fields",
             "",

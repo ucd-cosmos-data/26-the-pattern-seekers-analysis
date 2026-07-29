@@ -75,4 +75,4 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 24 | Lawrence Ati-Zigi | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 301.2000 | 0.1269 |
+| 25 | Lawrence Ati-Zigi | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 301.2000 | 0.0902 |

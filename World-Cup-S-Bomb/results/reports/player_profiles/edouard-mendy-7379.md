@@ -13,36 +13,38 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team main goalkeeper: 1.0000
 - Probabilistic role: Goalkeeper
 - Role entropy: 0.0000
-- Goalkeeper rank v2: 25
-- Goalkeeper rating v2: 0.1258
+- Goalkeeper rank v2: 24
+- Goalkeeper rating v2: 0.0943
 
-
-
-- Global rank: not available
-- Position rank: 29
-- Role rank: 29
-- Team rank: 11
-- Final player rating: 0.4737
-- Ranking status: Ranked (300+ min)
 - Goalkeeper ranking status: Ranked (team main goalkeeper)
 - Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 387.3
-- Minutes reliability: 0.3965
+- Goalkeeper v2 reliability: 0.5393
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
 | post_shot_xg_proxy | 7.3539 |
+| psxg_ga_p90 | 0.0822 |
 | goals_prevented_proxy_p90 | 0.0822 |
 | save_rate | 0.5000 |
+| save_rate_shrunk | 0.5616 |
+| high_leverage_save_pct | 0.3333 |
+| high_leverage_save_rate_shrunk | 0.3280 |
+| penalties_saved_rate | not available |
+| penalty_save_rate_shrunk | not available |
+| shootout_penalties_faced | 0.0000 |
+| shootout_penalties_saved | 0.0000 |
 | claims_p90 | 1.3943 |
 | cross_stopping_rate | 0.1176 |
 | sweeper_actions_p90 | 1.3943 |
 | distribution_under_pressure | 0.4444 |
-| penalty_save_rate_shrunk | not available |
-| high_leverage_save_pct | 0.3333 |
-| goalkeeper_feature_coverage | 0.8571 |
+| gk_raw_rating_v2 | 0.3825 |
+| tournament_impact_score | 0.0272 |
+| gk_score_composite | 0.4097 |
+| reliability_factor | 0.5393 |
+| gk_rating_v2 | 0.0943 |
 
 ## Continuous role vector
 

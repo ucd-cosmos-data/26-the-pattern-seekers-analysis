@@ -82,5 +82,5 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 27 | Alisson Ramsés Becker | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 394.9833 | 0.1173 |
+| 27 | Alisson Ramsés Becker | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 394.9833 | 0.0710 |
 | — | Ederson Santana de Moraes | False | Unranked (backup goalkeeper) | GK | Goalkeeper | Goalkeeper | 100.1000 | — |

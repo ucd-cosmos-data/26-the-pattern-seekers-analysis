@@ -74,4 +74,4 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Wojciech Szczęsny | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 389.7500 | 1.0000 |
+| 4 | Wojciech Szczęsny | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 389.7500 | 0.4394 |

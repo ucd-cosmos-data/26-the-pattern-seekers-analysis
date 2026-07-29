@@ -50,6 +50,19 @@ def test_qatar_2022_eyes_tests_pass_without_name_based_scoring() -> None:
     assert goalkeepers.loc[
         ~goalkeepers["is_main_goalkeeper"].astype(bool)
     ]["gk_rank_v2"].isna().all()
+    required_gk_columns = {
+        "psxg_ga_p90",
+        "psxg_ga_p90_percentile",
+        "penalties_saved_rate",
+        "penalties_saved_rate_percentile",
+        "save_rate_shrunk",
+        "high_leverage_save_rate_shrunk",
+        "tournament_impact_score",
+        "gk_score_composite",
+        "reliability_factor",
+    }
+    assert required_gk_columns <= set(ranked_goalkeepers.columns)
+    assert ranked_goalkeepers["gk_rating_v2"].between(0.0, 1.0).all()
 
 
 def test_player_name_does_not_change_v2_score() -> None:
@@ -71,6 +84,29 @@ def test_player_name_does_not_change_v2_score() -> None:
     ]
     assert ranked.loc[0, "goal_role_boost_v2"] == ranked.loc[
         1, "goal_role_boost_v2"
+    ]
+
+
+def test_goalkeeper_name_does_not_change_v2_score() -> None:
+    source = pd.read_csv(_canonical_source())
+    keeper = source.loc[
+        source["position_group"].eq("Goalkeeper")
+        & source["minutes"].ge(300.0)
+    ].iloc[0]
+    clone = keeper.copy()
+    clone["player_name"] = "Anonymous Tournament Goalkeeper"
+    clone["player"] = "Anonymous Tournament Goalkeeper"
+    clone["player_id"] = -998
+    clone["team"] = "Synthetic Team"
+    comparison = pd.DataFrame([keeper, clone]).reset_index(drop=True)
+
+    ranked = calculate_tournament_rankings_v2(comparison)
+
+    assert ranked.loc[0, "gk_raw_rating_v2"] == ranked.loc[
+        1, "gk_raw_rating_v2"
+    ]
+    assert ranked.loc[0, "tournament_impact_score"] == ranked.loc[
+        1, "tournament_impact_score"
     ]
 
 

@@ -18,7 +18,9 @@
 - [x] `mbappe_top_20`
 - [x] `bounou_top_8_goalkeeper`
 - [x] `courtois_top_8_goalkeeper`
-- [x] `martinez_top_10_goalkeeper`
+- [x] `martinez_top_2_goalkeeper`
+- [x] `livakovic_top_8_goalkeeper`
+- [x] `szczesny_top_8_goalkeeper`
 - [x] `credible_top_20_standout_coverage`
 - [x] `no_role_position_contradictions`
 - [x] `no_high_goal_forward_below_mid_tier_teammate`

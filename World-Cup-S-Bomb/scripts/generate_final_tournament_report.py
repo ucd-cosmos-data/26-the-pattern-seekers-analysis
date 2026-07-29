@@ -848,8 +848,10 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             (
                 "Ratings cover outfield players with at least 45 minutes and goalkeepers "
                 "with at least 90. Outfield players use the v2 continuous valuation formula; "
-                "goalkeepers use a separately weighted seven-component matrix and are not assigned a global "
-                "outfield rank. Position sections remain navigation aids."
+                "goalkeepers use the separate tournament-v2 PSxG-GA, save-rate, "
+                "penalty, box-command, sweeping, pressure-distribution, and "
+                "shootout-impact matrix and are not assigned a global outfield "
+                "rank. Position sections remain navigation aids."
             ),
             "",
             "## V2 rating construction",

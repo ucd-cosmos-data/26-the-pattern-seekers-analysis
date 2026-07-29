@@ -201,6 +201,43 @@ def _atomic_json(payload: dict[str, Any], path: Path) -> None:
         temporary.unlink(missing_ok=True)
 
 
+def _update_pipeline_manifest_goalkeepers(
+    project_root: Path,
+    *,
+    goalkeeper_summary: dict[str, Any],
+    ranking_audit: dict[str, Any],
+) -> Path:
+    """Record the active goalkeeper-v2 release in pipeline provenance."""
+
+    path = project_root / "results/metadata/pipeline_manifest.json"
+    payload = (
+        json.loads(path.read_text(encoding="utf-8"))
+        if path.is_file()
+        else {}
+    )
+    payload["goalkeeper_ranking_v2"] = {
+        "tournament": "2022_World_Cup",
+        "ranking_path": "results/reports/ranking/goalkeeper_rankings.csv",
+        "player_table_path": (
+            "results/reports/ranking/player_rankings_v2.csv"
+        ),
+        "ranked_goalkeepers": 32,
+        "selection": (
+            "maximum tournament minutes per team; actions, player_id, and "
+            "player_name are deterministic tie-breakers"
+        ),
+        "post_shot_validation": goalkeeper_summary.get(
+            "post_shot_model",
+            {},
+        ),
+        "audit_passed": bool(ranking_audit.get("passed", False)),
+        "uses_player_identity_in_scoring": False,
+        "uses_team_advancement_in_scoring": False,
+    }
+    _atomic_json(payload, path)
+    return path
+
+
 def _atomic_copy_bytes(source: Path, destination: Path) -> None:
     """Copy a binary artifact atomically."""
 
@@ -740,22 +777,41 @@ def _publish_canonical_aliases(
     _atomic_csv(team_table, team_destination)
     destinations.append(team_destination)
 
-    report_aliases = {
-        output_root / "final_summary.md": (
+    report_aliases = [
+        (
+            output_root / "final_summary.md",
             project_root
             / "results/reports/final/"
-            "world_cup_team_performance_and_top_players.md"
+            "world_cup_team_performance_and_top_players.md",
         ),
-        output_root / "model_summary.md": (
+        (
+            output_root / "final_summary.md",
+            project_root / "results/reports/canonical/final_summary.md",
+        ),
+        (
+            output_root / "model_summary.md",
             project_root
-            / "results/Summary/model_summary.md"
+            / "results/Summary/model_summary.md",
         ),
-        output_root / "model_summary.json": (
+        (
+            output_root / "model_summary.md",
+            project_root / "results/reports/canonical/model_summary.md",
+        ),
+        (
+            output_root / "model_summary.json",
             project_root
-            / "data/processed/player_evaluation_v5_provenance.json"
+            / "data/processed/player_evaluation_v5_provenance.json",
         ),
-    }
-    for source, destination in report_aliases.items():
+        (
+            output_root / "model_summary.json",
+            project_root / "results/reports/canonical/model_summary.json",
+        ),
+        (
+            output_root / "coaches_notebook.md",
+            project_root / "results/reports/canonical/coaches_notebook.md",
+        ),
+    ]
+    for source, destination in report_aliases:
         _atomic_copy_text(source, destination)
         destinations.append(destination)
     figure_root = project_root / "results/figures"
@@ -1929,6 +1985,13 @@ def run_extended_pipeline(
             "goalkeeper_weights": dict(
                 tournament_ranking_config.goalkeeper_weights
             ),
+            "goalkeeper_tournament_impact": {
+                "shootout_save_points": 0.20,
+                "vaep_percentile_maximum": 0.04,
+                "high_leverage_volume_percentile_maximum": 0.02,
+                "uses_player_identity": False,
+                "uses_team_advancement": False,
+            },
             "reliability_minutes": (
                 tournament_ranking_config.reliability_minutes
             ),
@@ -2093,6 +2156,11 @@ def run_extended_pipeline(
         tournament_teams=sorted(events["team"].dropna().astype(str).unique()),
         team_metrics=team_metrics,
         team_player_pool=team_player_pool,
+    )
+    _update_pipeline_manifest_goalkeepers(
+        project_root,
+        goalkeeper_summary=goalkeeper_summary,
+        ranking_audit=tournament_rank_audit,
     )
     canonical_files: list[Path] = []
     canonical_report_root = (

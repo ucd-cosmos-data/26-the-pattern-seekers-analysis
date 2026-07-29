@@ -676,6 +676,18 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
 
     families = [
         (
+            "Top-level release metadata",
+            "*",
+            _family_count(records, "."),
+            "Release-level cleanup and publication metadata.",
+        ),
+        (
+            "Legacy summary alias",
+            "Summary/*",
+            _family_count(records, "Summary"),
+            "Compatibility alias of the active model summary.",
+        ),
+        (
             "Audit tables",
             "audit/*",
             _family_count(records, "audit"),
@@ -719,6 +731,12 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
             "reports/canonical/*",
             _family_count(records, "reports/canonical"),
             "Current final summary, model summary, and coaches notebook.",
+        ),
+        (
+            "Final-summary compatibility alias",
+            "reports/final/*",
+            _family_count(records, "reports/final"),
+            "Compatibility alias of the active tournament final summary.",
         ),
         (
             "Tournament rankings",

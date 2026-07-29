@@ -76,4 +76,4 @@ Outfield and goalkeeper scores are not mixed. The top five above use the within-
 
 | Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
 |---|---|---|---|---|---|---|---|---|
-| 17 | Aymen Dahmen | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 296.5667 | 0.3481 |
+| 15 | Aymen Dahmen | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 296.5667 | 0.2389 |

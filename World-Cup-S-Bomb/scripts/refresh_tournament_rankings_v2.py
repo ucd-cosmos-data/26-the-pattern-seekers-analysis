@@ -60,6 +60,13 @@ def _config_payload(
             for group, weights in config.component_weights.items()
         },
         "goalkeeper_weights": dict(config.goalkeeper_weights),
+        "goalkeeper_tournament_impact": {
+            "shootout_save_points": 0.20,
+            "vaep_percentile_maximum": 0.04,
+            "high_leverage_volume_percentile_maximum": 0.02,
+            "uses_player_identity": False,
+            "uses_team_advancement": False,
+        },
         "reliability_minutes": config.reliability_minutes,
         "target_forward_threshold": config.target_forward_threshold,
         "target_forward_maximum_boost": (
@@ -127,7 +134,7 @@ def _refresh_release_manifest(
         }
     )
     relative_files = [
-        str(path.relative_to(results_root)) for path in inventory
+        path.relative_to(results_root).as_posix() for path in inventory
     ]
     payload = {
         "output_root": "results",
@@ -279,13 +286,14 @@ def refresh(
         "teams": len(teams),
         "audit_passed": audit["passed"],
         "files": {
-            str(path.relative_to(project_root)): hashlib.sha256(
+            path.relative_to(project_root).as_posix(): hashlib.sha256(
                 path.read_bytes()
             ).hexdigest()
             for path in files
         },
         "archived_legacy_files": [
-            str(path.relative_to(project_root)) for path in retained_legacy
+            path.relative_to(project_root).as_posix()
+            for path in retained_legacy
         ],
     }
     manifest_path = ranking_root / "refresh_manifest.json"

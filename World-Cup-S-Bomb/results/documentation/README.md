@@ -8,7 +8,7 @@ Use these three compact dictionaries instead of individual folder summaries:
 
 ## Exact-file search
 
-The results tree currently contains **1,439 files**. Use [`file_dictionary.csv`](file_dictionary.csv) for spreadsheet search or [`file_dictionary.json`](file_dictionary.json) for programmatic search. These are indexes only; the three Markdown documents above are the human-readable dictionary.
+The results tree currently contains **2,648 files**. Use [`file_dictionary.csv`](file_dictionary.csv) for spreadsheet search or [`file_dictionary.json`](file_dictionary.json) for programmatic search. These are indexes only; the three Markdown documents above are the human-readable dictionary.
 
 ## Canonical rule
 
