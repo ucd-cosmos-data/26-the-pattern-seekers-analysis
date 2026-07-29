@@ -16,6 +16,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 from src.config import RATING_WEIGHTS, RatingConfig
+from src.features.role_vectors import derive_role_channel_weights
 
 
 COMPLETENESS_DIMENSIONS = (
@@ -91,6 +92,7 @@ def calculate_completeness_score(
     *,
     top_k: int = 3,
     epsilon: float = 1e-9,
+    alpha: float = 0.6,
 ) -> pd.Series:
     """Calculate quality-adjusted balance over a player's strongest dimensions.
 
@@ -105,6 +107,8 @@ def calculate_completeness_score(
         raise ValueError(f"Completeness dimensions missing: {sorted(missing)}")
     if not 2 <= top_k <= len(COMPLETENESS_DIMENSIONS):
         raise ValueError("top_k must be between 2 and the dimension count")
+    if not 0.0 <= alpha <= 1.0:
+        raise ValueError("Completeness alpha must be in [0, 1]")
     values = role_vectors[list(COMPLETENESS_DIMENSIONS)].apply(
         pd.to_numeric,
         errors="coerce",
@@ -122,6 +126,25 @@ def calculate_completeness_score(
     balance = (1.0 - variation.clip(upper=1.0)).clip(0.0, 1.0)
     score = (mean.clip(0.0, 1.0) * balance).clip(0.0, 1.0)
     score.loc[~sufficient] = np.nan
+    if "minutes" in role_vectors:
+        minutes = pd.to_numeric(
+            role_vectors["minutes"],
+            errors="coerce",
+        ).fillna(0.0)
+        minute_factor = pd.Series(
+            np.select(
+                [
+                    minutes.lt(90.0),
+                    minutes.lt(180.0),
+                    minutes.lt(300.0),
+                ],
+                [0.50, 0.75, 0.90],
+                default=1.00,
+            ),
+            index=role_vectors.index,
+            dtype=float,
+        )
+        score = alpha * score + (1.0 - alpha) * minute_factor
     return score.rename("completeness_score")
 
 
@@ -707,11 +730,46 @@ def calculate_final_player_rating(
         output["legacy_team_rank"] = output["team_rank"]
 
     if {"vaep_off_p90", "vaep_def_p90"} <= set(output):
+        stable_channels = output[
+            [
+                "position_group",
+                "vaep_off_p90",
+                "vaep_def_p90",
+            ]
+        ].copy()
+        channel_reliability = (
+            pd.to_numeric(output["minutes"], errors="coerce")
+            .fillna(0.0)
+            .clip(lower=0.0)
+        )
+        channel_reliability = channel_reliability / (
+            channel_reliability + 450.0
+        )
+        for channel in ("vaep_off_p90", "vaep_def_p90"):
+            values = pd.to_numeric(
+                stable_channels[channel],
+                errors="coerce",
+            )
+            position_prior = values.groupby(
+                stable_channels["position_group"]
+            ).transform("mean")
+            stable_channels[channel] = (
+                channel_reliability * values
+                + (1.0 - channel_reliability) * position_prior
+            )
         value_channels = IndependentValueScaler(
             minimum_group_size=12,
-        ).fit_transform(output)
+        ).fit_transform(stable_channels)
         output[value_channels.columns] = value_channels
-        vaep_value = value_channels.max(axis=1)
+        channel_weights = derive_role_channel_weights(output)
+        output[channel_weights.columns] = channel_weights
+        vaep_value = (
+            channel_weights["role_off_weight"]
+            * value_channels["vaep_off_scaled"]
+            + channel_weights["role_def_weight"]
+            * value_channels["vaep_def_scaled"]
+        )
+        output["vaep_component"] = vaep_value
     else:
         vaep_value = _training_percentile(output["vaep_total_p90"])
 
@@ -780,4 +838,26 @@ def calculate_final_player_rating(
         "final_player_rating"
     ].rank(method="min", ascending=False).astype(int)
     output["player_evaluation_score"] = output["final_player_rating"]
+    output["RankingStatus"] = np.select(
+        [
+            minutes.ge(300.0),
+            minutes.ge(180.0),
+        ],
+        [
+            "Ranked (300+ min)",
+            "Ranked (180–299 min)",
+        ],
+        default="Coverage only (<180 min)",
+    )
+    output["primary_global_rank"] = pd.Series(
+        pd.NA,
+        index=output.index,
+        dtype="Int64",
+    )
+    primary = minutes.ge(300.0)
+    output.loc[primary, "primary_global_rank"] = (
+        output.loc[primary, "final_player_rating"]
+        .rank(method="min", ascending=False)
+        .astype(int)
+    )
     return output

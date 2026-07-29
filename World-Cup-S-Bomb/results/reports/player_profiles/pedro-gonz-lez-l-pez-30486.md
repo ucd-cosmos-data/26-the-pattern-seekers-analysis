@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Spain
 - Position group: Central/Wide Midfield
-- Functional role: Ball-Winner
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 72
-- Position rank: 6
-- Role rank: 4
-- Team rank: 5
-- Final player rating: 0.5198
+- Functional role: Holding Anchor
+- Probabilistic role: Pressing/Secure Attacker
+- Role entropy: 0.0267
+- Global rank: 249
+- Position rank: 21
+- Role rank: 9
+- Team rank: 13
+- Final player rating: 0.4897
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 372.4
-- Minutes reliability: 0.5538
+- Minutes reliability: 0.4528
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.1598 |
-| vaep_def_scaled | 0.4418 |
+| vaep_off_scaled | 0.3226 |
+| vaep_def_scaled | 0.5350 |
 | vaep_per_touch | 0.0006 |
-| open_play_xt_p90 | 0.0433 |
-| set_piece_xt_p90 | 0.0410 |
-| role_adjusted_value | 0.0262 |
-| completeness_score | 0.7490 |
-| off_ball_score | 0.6686 |
+| open_play_xt_p90 | 0.0483 |
+| set_piece_xt_p90 | 0.0568 |
+| role_adjusted_value | 0.1213 |
+| completeness_score | 0.8238 |
+| off_ball_score | 0.6671 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.6906 |
-| creation_score | 0.7528 |
-| finishing_score | 0.1749 |
-| pressing_score | 0.7490 |
-| defensive_score | 0.7629 |
-| ball_security_score | 0.6711 |
-| aerial_score | 0.4155 |
+| progression_score | 0.7214 |
+| creation_score | 0.7607 |
+| finishing_score | 0.2305 |
+| pressing_score | 0.6900 |
+| defensive_score | 0.7060 |
+| ball_security_score | 0.6494 |
+| aerial_score | 0.4413 |
 
 ## Spatial, 360 and passing-network context
 

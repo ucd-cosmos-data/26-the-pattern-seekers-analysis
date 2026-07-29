@@ -4,64 +4,812 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 0
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 18
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
+---
 
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
+<!-- PLAYER_REPORT 1: 5567_starter_report.md -->
 
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
+# Edson Omar Álvarez Velázquez — Starter Report
 
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
+- Team: Mexico (MEX)
+- Position: Center Defensive Midfield
+- Functional role: Box-to-Box / Engine Midfielder
+- VAEP offense per 90: 0.0428
+- VAEP defense per 90: -0.0299
+- VAEP total per 90: 0.0129
+- VAEP per touch: 0.00010
+- Spatial xT per 90: 0.0219
+- Final-third spatial share: 11.6%
+- Unified final player rating: 0.0185
+- Team rank: #14
 
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
+![V4 event and 360 heatmap](../heatmaps/MEX/5567_heatmap.svg)
 
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
+## Physical profile
 
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.688 |
+| Pressing intensity per 90 | 17.68 |
+| Recovery index per 90 | 3.93 |
 
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
+## Top chemistry partners
 
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
+- César Jasib Montes Castro — synergy 0.486, 183 shared minutes
+- Luis Gerardo Chávez Magallón — synergy 0.482, 183 shared minutes
+- Héctor Alfredo Moreno Herrera — synergy 0.473, 183 shared minutes
 
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
+## Tactical recommendations
 
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
 
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
+---
 
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
+<!-- PLAYER_REPORT 2: 5568_starter_report.md -->
 
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+# Raúl Alonso Jiménez Rodríguez — Starter Report
 
-France refinements:
+- Team: Mexico (MEX)
+- Position: Center Forward
+- Functional role: Target Forward
+- VAEP offense per 90: 0.4455
+- VAEP defense per 90: 0.1074
+- VAEP total per 90: 0.5529
+- VAEP per touch: 0.00554
+- Spatial xT per 90: 0.0300
+- Final-third spatial share: 56.5%
+- Unified final player rating: 0.2459
+- Team rank: #2
 
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+![V4 event and 360 heatmap](../heatmaps/MEX/5568_heatmap.svg)
 
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.750 |
+| Pressing intensity per 90 | 2.27 |
+| Recovery index per 90 | 3.40 |
+
+## Top chemistry partners
+
+- Jesús Daniel Gallardo Vasconcelos — synergy 0.224, 79 shared minutes
+- Luis Gerardo Chávez Magallón — synergy 0.200, 79 shared minutes
+- César Jasib Montes Castro — synergy 0.197, 79 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 3: 5571_starter_report.md -->
+
+# Hirving Rodrigo Lozano Bahena — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Right Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.2545
+- VAEP defense per 90: 0.0664
+- VAEP total per 90: 0.3209
+- VAEP per touch: 0.00290
+- Spatial xT per 90: 0.1701
+- Final-third spatial share: 57.5%
+- Unified final player rating: 0.1836
+- Team rank: #3
+
+![V4 event and 360 heatmap](../heatmaps/MEX/5571_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.067 |
+| Pressing intensity per 90 | 17.17 |
+| Recovery index per 90 | 5.39 |
+
+## Top chemistry partners
+
+- Luis Gerardo Chávez Magallón — synergy 0.475, 267 shared minutes
+- Francisco Guillermo Ochoa Magaña — synergy 0.455, 267 shared minutes
+- Héctor Alfredo Moreno Herrera — synergy 0.453, 267 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 4: 5573_starter_report.md -->
+
+# Héctor Alfredo Moreno Herrera — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Left Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.1292
+- VAEP defense per 90: -0.0278
+- VAEP total per 90: 0.1014
+- VAEP per touch: 0.00068
+- Spatial xT per 90: 0.0233
+- Final-third spatial share: 4.7%
+- Unified final player rating: 0.0163
+- Team rank: #15
+
+![V4 event and 360 heatmap](../heatmaps/MEX/5573_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.417 |
+| Pressing intensity per 90 | 5.25 |
+| Recovery index per 90 | 3.40 |
+
+## Top chemistry partners
+
+- César Jasib Montes Castro — synergy 0.656, 292 shared minutes
+- Jesús Daniel Gallardo Vasconcelos — synergy 0.653, 292 shared minutes
+- Francisco Guillermo Ochoa Magaña — synergy 0.653, 292 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 5: 5575_starter_report.md -->
+
+# Héctor Miguel Herrera López — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Right Defensive Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0888
+- VAEP defense per 90: -0.0158
+- VAEP total per 90: 0.0730
+- VAEP per touch: 0.00071
+- Spatial xT per 90: -0.0005
+- Final-third spatial share: 28.7%
+- Unified final player rating: 0.0257
+- Team rank: #12
+
+![V4 event and 360 heatmap](../heatmaps/MEX/5575_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.778 |
+| Pressing intensity per 90 | 15.11 |
+| Recovery index per 90 | 4.32 |
+
+## Top chemistry partners
+
+- Francisco Guillermo Ochoa Magaña — synergy 0.434, 167 shared minutes
+- Luis Gerardo Chávez Magallón — synergy 0.422, 167 shared minutes
+- César Jasib Montes Castro — synergy 0.418, 167 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 6: 5576_starter_report.md -->
+
+# Jesús Daniel Gallardo Vasconcelos — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Left Back
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.1528
+- VAEP defense per 90: -0.0943
+- VAEP total per 90: 0.0584
+- VAEP per touch: 0.00060
+- Spatial xT per 90: 0.0440
+- Final-third spatial share: 29.4%
+- Unified final player rating: 0.0476
+- Team rank: #10
+
+![V4 event and 360 heatmap](../heatmaps/MEX/5576_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 19.14 |
+| Recovery index per 90 | 4.01 |
+
+## Top chemistry partners
+
+- Héctor Alfredo Moreno Herrera — synergy 0.653, 292 shared minutes
+- Francisco Guillermo Ochoa Magaña — synergy 0.641, 292 shared minutes
+- César Jasib Montes Castro — synergy 0.635, 292 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 7: 5577_starter_report.md -->
+
+# Francisco Guillermo Ochoa Magaña — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Goalkeeper
+- Functional role: Goalkeeper
+- VAEP offense per 90: -0.0106
+- VAEP defense per 90: -0.1033
+- VAEP total per 90: -0.1139
+- VAEP per touch: -0.00167
+- Spatial xT per 90: -0.0001
+- Final-third spatial share: 0.3%
+- Unified final player rating: -0.0597
+- Team rank: #18
+
+![V4 event and 360 heatmap](../heatmaps/MEX/5577_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 0.00 |
+| Recovery index per 90 | 5.25 |
+
+## Top chemistry partners
+
+- César Jasib Montes Castro — synergy 0.654, 292 shared minutes
+- Héctor Alfredo Moreno Herrera — synergy 0.653, 292 shared minutes
+- Jesús Daniel Gallardo Vasconcelos — synergy 0.641, 292 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 8: 11388_starter_report.md -->
+
+# Néstor Alejandro Araújo Razo — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Right Center Back
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0122
+- VAEP defense per 90: -0.0042
+- VAEP total per 90: 0.0080
+- VAEP per touch: 0.00006
+- Spatial xT per 90: 0.0710
+- Final-third spatial share: 11.6%
+- Unified final player rating: -0.0043
+- Team rank: #17
+
+![V4 event and 360 heatmap](../heatmaps/MEX/11388_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 6.53 |
+| Recovery index per 90 | 5.60 |
+
+## Top chemistry partners
+
+- Héctor Miguel Herrera López — synergy 0.292, 96 shared minutes
+- Luis Gerardo Chávez Magallón — synergy 0.291, 96 shared minutes
+- César Jasib Montes Castro — synergy 0.287, 96 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 9: 15452_starter_report.md -->
+
+# Carlos Uriel Antuna Romero — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Right Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.2836
+- VAEP defense per 90: 0.0041
+- VAEP total per 90: 0.2877
+- VAEP per touch: 0.00389
+- Spatial xT per 90: 0.0329
+- Final-third spatial share: 57.3%
+- Unified final player rating: 0.1721
+- Team rank: #4
+
+![V4 event and 360 heatmap](../heatmaps/MEX/15452_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 8.32 |
+| Recovery index per 90 | 0.92 |
+
+## Top chemistry partners
+
+- César Jasib Montes Castro — synergy 0.278, 97 shared minutes
+- Héctor Alfredo Moreno Herrera — synergy 0.273, 97 shared minutes
+- Jesús Daniel Gallardo Vasconcelos — synergy 0.268, 97 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 10: 15872_starter_report.md -->
+
+# Érick Gabriel Gutiérrez Galaviz — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Left Defensive Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0107
+- VAEP defense per 90: 0.0007
+- VAEP total per 90: 0.0113
+- VAEP per touch: 0.00009
+- Spatial xT per 90: 0.0002
+- Final-third spatial share: 13.2%
+- Unified final player rating: 0.0199
+- Team rank: #13
+
+![V4 event and 360 heatmap](../heatmaps/MEX/15872_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 24.27 |
+| Recovery index per 90 | 1.62 |
+
+## Top chemistry partners
+
+- Héctor Alfredo Moreno Herrera — synergy 0.180, 56 shared minutes
+- César Jasib Montes Castro — synergy 0.180, 56 shared minutes
+- Héctor Miguel Herrera López — synergy 0.178, 56 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 11: 26280_starter_report.md -->
+
+# Orbelín Pineda Alvarado — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Center Attacking Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.2770
+- VAEP defense per 90: -0.0381
+- VAEP total per 90: 0.2389
+- VAEP per touch: 0.00193
+- Spatial xT per 90: 0.0147
+- Final-third spatial share: 38.9%
+- Unified final player rating: 0.1688
+- Team rank: #6
+
+![V4 event and 360 heatmap](../heatmaps/MEX/26280_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 30.63 |
+| Recovery index per 90 | 8.25 |
+
+## Top chemistry partners
+
+- Jorge Eduardo Sánchez Ramos — synergy 0.235, 76 shared minutes
+- Héctor Alfredo Moreno Herrera — synergy 0.231, 76 shared minutes
+- César Jasib Montes Castro — synergy 0.231, 76 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 12: 26297_starter_report.md -->
+
+# Carlos Alberto Rodríguez Gómez — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Right Center Midfield
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.1045
+- VAEP defense per 90: 0.0040
+- VAEP total per 90: 0.1085
+- VAEP per touch: 0.00063
+- Spatial xT per 90: 0.0143
+- Final-third spatial share: 19.4%
+- Unified final player rating: 0.1030
+- Team rank: #7
+
+![V4 event and 360 heatmap](../heatmaps/MEX/26297_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 7.44 |
+| Recovery index per 90 | 7.44 |
+
+## Top chemistry partners
+
+- César Jasib Montes Castro — synergy 0.155, 48 shared minutes
+- Jesús Daniel Gallardo Vasconcelos — synergy 0.152, 48 shared minutes
+- Luis Gerardo Chávez Magallón — synergy 0.150, 48 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 13: 26301_starter_report.md -->
+
+# Ernesto Alexis Vega Rojas — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Left Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.2690
+- VAEP defense per 90: 0.0407
+- VAEP total per 90: 0.3097
+- VAEP per touch: 0.00309
+- Spatial xT per 90: 0.0119
+- Final-third spatial share: 38.4%
+- Unified final player rating: 0.1710
+- Team rank: #5
+
+![V4 event and 360 heatmap](../heatmaps/MEX/26301_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.143 |
+| Pressing intensity per 90 | 15.30 |
+| Recovery index per 90 | 7.42 |
+
+## Top chemistry partners
+
+- Héctor Alfredo Moreno Herrera — synergy 0.478, 194 shared minutes
+- César Jasib Montes Castro — synergy 0.439, 194 shared minutes
+- Luis Gerardo Chávez Magallón — synergy 0.433, 194 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 14: 26368_starter_report.md -->
+
+# César Jasib Montes Castro — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Right Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0573
+- VAEP defense per 90: -0.0312
+- VAEP total per 90: 0.0261
+- VAEP per touch: 0.00017
+- Spatial xT per 90: 0.0112
+- Final-third spatial share: 5.3%
+- Unified final player rating: 0.0005
+- Team rank: #16
+
+![V4 event and 360 heatmap](../heatmaps/MEX/26368_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.611 |
+| Pressing intensity per 90 | 5.87 |
+| Recovery index per 90 | 1.85 |
+
+## Top chemistry partners
+
+- Héctor Alfredo Moreno Herrera — synergy 0.656, 292 shared minutes
+- Francisco Guillermo Ochoa Magaña — synergy 0.654, 292 shared minutes
+- Jesús Daniel Gallardo Vasconcelos — synergy 0.635, 292 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 15: 26400_starter_report.md -->
+
+# Henry Josué Martín Mex — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Center Forward
+- Functional role: Target Forward
+- VAEP offense per 90: 0.7312
+- VAEP defense per 90: 0.0088
+- VAEP total per 90: 0.7401
+- VAEP per touch: 0.01183
+- Spatial xT per 90: -0.0024
+- Final-third spatial share: 49.4%
+- Unified final player rating: 0.2721
+- Team rank: #1
+
+![V4 event and 360 heatmap](../heatmaps/MEX/26400_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 16.56 |
+| Recovery index per 90 | 0.61 |
+
+## Top chemistry partners
+
+- Luis Gerardo Chávez Magallón — synergy 0.401, 147 shared minutes
+- Jesús Daniel Gallardo Vasconcelos — synergy 0.389, 147 shared minutes
+- Francisco Guillermo Ochoa Magaña — synergy 0.371, 147 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 16: 26406_starter_report.md -->
+
+# Jorge Eduardo Sánchez Ramos — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Right Back
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.1504
+- VAEP defense per 90: -0.0245
+- VAEP total per 90: 0.1258
+- VAEP per touch: 0.00119
+- Spatial xT per 90: 0.0334
+- Final-third spatial share: 33.1%
+- Unified final player rating: 0.0584
+- Team rank: #8
+
+![V4 event and 360 heatmap](../heatmaps/MEX/26406_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.667 |
+| Pressing intensity per 90 | 9.83 |
+| Recovery index per 90 | 2.46 |
+
+## Top chemistry partners
+
+- César Jasib Montes Castro — synergy 0.485, 183 shared minutes
+- Luis Gerardo Chávez Magallón — synergy 0.457, 183 shared minutes
+- Héctor Alfredo Moreno Herrera — synergy 0.452, 183 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 17: 28825_starter_report.md -->
+
+# Luis Gerardo Chávez Magallón — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Left Defensive Midfield
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.1048
+- VAEP defense per 90: 0.0040
+- VAEP total per 90: 0.1088
+- VAEP per touch: 0.00089
+- Spatial xT per 90: 0.0750
+- Final-third spatial share: 31.6%
+- Unified final player rating: 0.0405
+- Team rank: #11
+
+![V4 event and 360 heatmap](../heatmaps/MEX/28825_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.462 |
+| Pressing intensity per 90 | 13.58 |
+| Recovery index per 90 | 4.01 |
+
+## Top chemistry partners
+
+- Héctor Alfredo Moreno Herrera — synergy 0.612, 292 shared minutes
+- Jesús Daniel Gallardo Vasconcelos — synergy 0.605, 292 shared minutes
+- Francisco Guillermo Ochoa Magaña — synergy 0.580, 292 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 18: 30500_starter_report.md -->
+
+# Kevin Nahin Álvarez Campos — Starter Report
+
+- Team: Mexico (MEX)
+- Position: Right Wing Back
+- Functional role: Attacking Wingback
+- VAEP offense per 90: 0.0627
+- VAEP defense per 90: 0.0200
+- VAEP total per 90: 0.0827
+- VAEP per touch: 0.00109
+- Spatial xT per 90: 0.0566
+- Final-third spatial share: 53.5%
+- Unified final player rating: 0.0536
+- Team rank: #9
+
+![V4 event and 360 heatmap](../heatmaps/MEX/30500_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 13.98 |
+| Recovery index per 90 | 2.33 |
+
+## Top chemistry partners
+
+- César Jasib Montes Castro — synergy 0.228, 77 shared minutes
+- Héctor Alfredo Moreno Herrera — synergy 0.225, 77 shared minutes
+- Jesús Daniel Gallardo Vasconcelos — synergy 0.220, 77 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

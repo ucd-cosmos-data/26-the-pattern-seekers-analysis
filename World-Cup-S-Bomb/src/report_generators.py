@@ -282,6 +282,12 @@ def load_player_role_validation(path: Path) -> dict[str, Any] | None:
     if not path.is_file() or path.stat().st_size == 0:
         return None
     payload = json.loads(path.read_text(encoding="utf-8"))
+    if str(payload.get("schema_version", "")).startswith("5."):
+        # The legacy report is an intermediate artifact during an idempotent
+        # V5 rerun. Its challenger section is replaced by the canonical V5
+        # publisher later in the same pipeline, so an already-published V5
+        # alias must not be interpreted as the older challenger schema.
+        return None
     required = {
         "incumbent_vaep_oof_metrics",
         "probabilistic_roles",
@@ -505,6 +511,8 @@ def load_role_aware_validation(path: Path) -> dict[str, Any] | None:
     if not path.is_file() or path.stat().st_size == 0:
         return None
     payload = json.loads(path.read_text(encoding="utf-8"))
+    if str(payload.get("schema_version", "")).startswith("5."):
+        return None
     required = {
         "decision", "production_promoted", "spearman_rank_correlation",
         "gates", "benchmarks", "incumbent_vaep_oof_metrics",
@@ -626,7 +634,10 @@ def load_role_refinement(path: Path) -> dict[str, Any] | None:
 
     if not path.is_file() or path.stat().st_size == 0:
         return None
-    return json.loads(path.read_text(encoding="utf-8"))
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if str(payload.get("schema_version", "")).startswith("5."):
+        return None
+    return payload
 
 
 def role_refinement_markdown(summary: dict[str, Any]) -> str:
@@ -755,7 +766,7 @@ def generate_individual_starter_reports(
     *,
     clear_existing: bool = False,
 ) -> int:
-    """Generate one Markdown/JSON pair for every 300-minute V4 player."""
+    """Generate one Markdown/JSON pair for every eligible player."""
 
     if clear_existing and output_root.exists():
         for existing in output_root.glob("*/*_starter_report.*"):
@@ -808,8 +819,8 @@ def generate_individual_starter_reports(
             "top_chemistry_partners": partner_records,
             "recommended_tactical_tweaks": tweaks,
             "cohort_definition": (
-                "Tournament players with at least 300 minutes; evaluation "
-                "uses one unified cross-role 360-VAEP plus xT rating"
+                "Outfield players with at least 45 minutes and goalkeepers "
+                "with at least 90; 300 minutes is a reliability label only"
             ),
         }
         partner_lines = "\n".join(
@@ -852,7 +863,8 @@ def generate_individual_starter_reports(
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 """
         path = (
             output_root
@@ -1180,7 +1192,7 @@ def generate_full_team_coaching_reports(
             f"VAEP/90 {float(row['vaep_total_p90']):+.3f}, "
             f"xT/90 {float(row['xt_p90']):+.3f}"
             for rank, row in enumerate(top_players, start=1)
-        ) or "No player cleared the 300-minute V4 evaluation cutoff."
+        ) or "No player cleared the 45/90-minute evaluation floors."
         markdown = f"""# {team} — Team Coaching Report
 
 ## Model-grounded summary
@@ -1211,12 +1223,11 @@ def generate_full_team_coaching_reports(
 
 {player_lines}
 
-_Only players with at least 300 tournament minutes are ranked. Outfield V5
-ratings combine independently scaled offensive/defensive VAEP evidence (40%),
-VAEP per touch (15%), xT per 90 (15%), match-grouped ElasticNet role-adjusted
-value (15%), top-three quality-adjusted completeness (10%), and
-coverage-qualified off-ball contribution (5%). Goalkeepers use a separate
-evidence matrix and ranking._
+_Ratings are computed from 45 outfield minutes or 90 goalkeeper minutes;
+300 minutes is the high-reliability outfield label. Outfield ratings use a
+development-gated VAEP feature set, role-weighted offensive/defensive channels,
+calibrated composite weights, xD-style disruption, and 450-minute reliability shrinkage.
+Goalkeepers use a separately weighted seven-component evidence matrix._
 
 ## Recurrent tactical mistakes
 
@@ -1261,8 +1272,8 @@ def compile_v4_report_packets(
         sections = [
             f"# {code} — V4 Player Evaluation Collection",
             "",
-            f"- Included 300+ minute players: {len(player_sources)}",
-            "- Rankings use one cross-role 360-VAEP plus xT formula.",
+            f"- Included eligible players: {len(player_sources)}",
+            "- Rankings use the role-aware, development-gated VAEP/xT/xD model.",
             "- Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.",
             "",
         ]

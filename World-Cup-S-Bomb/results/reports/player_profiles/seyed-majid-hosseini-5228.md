@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Iran
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Aerial/Defensive Centre-Back
-- Role entropy: 0.0000
-- Global rank: 116
-- Position rank: 31
-- Role rank: 15
-- Team rank: 3
-- Final player rating: 0.4105
+- Probabilistic role: Aerial/Secure Centre-Back
+- Role entropy: 0.0002
+- Global rank: 526
+- Position rank: 90
+- Role rank: 72
+- Team rank: 20
+- Final player rating: 0.3917
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 305.1
-- Minutes reliability: 0.5042
+- Minutes reliability: 0.4041
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3221 |
-| vaep_def_scaled | 0.6057 |
-| vaep_per_touch | -0.0012 |
-| open_play_xt_p90 | 0.0016 |
-| set_piece_xt_p90 | 0.0056 |
-| role_adjusted_value | 0.0000 |
-| completeness_score | 0.4748 |
-| off_ball_score | 0.4025 |
+| vaep_off_scaled | 0.3281 |
+| vaep_def_scaled | 0.6017 |
+| vaep_per_touch | -0.0010 |
+| open_play_xt_p90 | 0.0019 |
+| set_piece_xt_p90 | 0.0078 |
+| role_adjusted_value | 0.0400 |
+| completeness_score | 0.6657 |
+| off_ball_score | 0.4151 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.3189 |
-| creation_score | 0.3218 |
-| finishing_score | 0.1749 |
-| pressing_score | 0.4663 |
-| defensive_score | 0.5745 |
-| ball_security_score | 0.5162 |
-| aerial_score | 0.5692 |
+| progression_score | 0.3726 |
+| creation_score | 0.4073 |
+| finishing_score | 0.2305 |
+| pressing_score | 0.4170 |
+| defensive_score | 0.5805 |
+| ball_security_score | 0.5398 |
+| aerial_score | 0.5911 |
 
 ## Spatial, 360 and passing-network context
 

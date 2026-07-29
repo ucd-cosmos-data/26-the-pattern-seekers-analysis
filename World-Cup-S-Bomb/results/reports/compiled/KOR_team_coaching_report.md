@@ -10,17 +10,17 @@ South Korea: no tactical change cleared the modeled effect floor. Primary review
 
 ## Optimized starting 11
 
-1. Young-Gwon Kim (Center Back)
+1. Heung-Min Son (Attacking Midfield/Wing)
 2. Moon-Hwan Kim (Fullback/Wingback)
-3. Heung-Min Son (Attacking Midfield/Wing)
-4. In-Beom Hwang (Defensive Midfield)
-5. Jin-Su Kim (Fullback/Wingback)
-6. Seung-Gyu Kim (Goalkeeper)
-7. Min Jae Kim (Center Back)
-8. Gue-Sung Cho (Forward)
-9. Jae-Sung Lee (Attacking Midfield/Wing)
-10. Kang-In Lee (Central/Wide Midfield)
-11. Hee-Chan Hwang (Central/Wide Midfield)
+3. Gue-Sung Cho (Forward)
+4. Young-Gwon Kim (Center Back)
+5. In-Beom Hwang (Defensive Midfield)
+6. Jin-Su Kim (Fullback/Wingback)
+7. Seung-Gyu Kim (Goalkeeper)
+8. Jae-Sung Lee (Attacking Midfield/Wing)
+9. Kang-In Lee (Central/Wide Midfield)
+10. Hee-Chan Hwang (Central/Wide Midfield)
+11. Min Jae Kim (Center Back)
 
 ## Physical matchup deltas
 
@@ -32,17 +32,17 @@ South Korea: no tactical change cleared the modeled effect floor. Primary review
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 93, INSUFFICIENT_MINUTES: 17.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 93, GAIN_BELOW_THRESHOLD: 14, INSUFFICIENT_MINUTES: 3.
 
 ## V5 role-aware player leaders
 
-1. Jin-Su Kim — Attacking Wingback; rating 0.6518, VAEP/90 +0.216, xT/90 +0.041, role-adjusted 0.434
-2. Young-Gwon Kim — Sweeper CB; rating 0.6239, VAEP/90 +0.052, xT/90 +0.023, role-adjusted 0.847
-3. Moon-Hwan Kim — Attacking Wingback; rating 0.5775, VAEP/90 +0.140, xT/90 +0.046, role-adjusted 0.082
-4. Heung-Min Son — Target Forward; rating 0.5768, VAEP/90 +0.385, xT/90 +0.078, role-adjusted 0.175
-5. In-Beom Hwang — Box-to-Box / Engine Midfielder; rating 0.5706, VAEP/90 +0.106, xT/90 +0.061, role-adjusted 0.354
+1. Heung-Min Son — Target Forward; rating 0.5729, VAEP/90 +0.368, xT/90 +0.078, role-adjusted 0.475
+2. Jin-Su Kim — Attacking Wingback; rating 0.5652, VAEP/90 +0.255, xT/90 +0.041, role-adjusted 0.103
+3. Chang-Hoon Kwon — Ball-Winner; rating 0.5399, VAEP/90 +0.515, xT/90 +0.059, role-adjusted 0.068
+4. Hee-Chan Hwang — Progressive Winger; rating 0.5366, VAEP/90 +0.526, xT/90 +0.093, role-adjusted 0.982
+5. Woo-Yeong Jeong — Ball-Winner; rating 0.5359, VAEP/90 +0.415, xT/90 +0.028, role-adjusted 0.113
 
-_Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
+_Ratings include eligible outfield players from 45 minutes and goalkeepers from 90 minutes. The 300-minute threshold is a high-reliability label. V2 evaluates contextual VAEP behind a development-OOF non-inferiority gate, then uses the accepted feature set with role-weighted offense/defense channels, calibrated composite weights, xD-style disruption, and 450-minute shrinkage._
 
 ## Recurrent tactical mistakes
 
@@ -52,27 +52,14 @@ _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/
 
 _Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
-
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
-
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
-
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
-
 <!-- PLAYER_ROLE_VALIDATION_START -->
 ## V5 probabilistic role validation
 
-The production role model selected **K=9 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
+The production role model selected **K=16 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
 
-- Bootstrap ARI median: 0.6887
-- Bootstrap ARI fifth percentile: 0.5522
-- PCA explained variance: 0.8688
+- Bootstrap ARI median: 0.6260
+- Bootstrap ARI fifth percentile: 0.5113
+- PCA explained variance: 0.7367
 
 Roles do not award points directly. Continuous role dimensions only modulate the weights applied to observed contributions.
 <!-- PLAYER_ROLE_VALIDATION_END -->
@@ -80,16 +67,10 @@ Roles do not award points directly. Continuous role dimensions only modulate the
 <!-- ROLE_AWARE_VALUATION_START -->
 ## V5 role-aware valuation and attention gate
 
-**Production decision: `ROLE_AWARE_FALLBACK`.** The role-aware layer is active. The experimental attention challenger was evaluated match-disjoint and rejected because its discrimination was materially worse, despite better calibration.
+**Production decision: `ROLE_AWARE_FALLBACK`.** The role-aware layer is active.
+The optional attention experiment was disabled for this canonical run, so the interpretable role-aware fallback remains active without publishing unevaluated attention metrics.
 
-| Task | Model | ROC-AUC | PR-AUC | ECE | Brier |
-|---|---|---:|---:|---:|---:|
-| Retrospective | Baseline | 0.6283 | 0.5179 | 0.0659 | 0.2364 |
-| Retrospective | Attention | 0.7258 | 0.6257 | 0.0169 | 0.2086 |
-| Prospective | Baseline | 0.8855 | 0.9763 | 0.1866 | 0.1389 |
-| Prospective | Attention | 0.8815 | 0.9750 | 0.0147 | 0.0907 |
-
-New-versus-legacy ranking Spearman correlation: 0.7112.
+New-versus-legacy ranking Spearman correlation: 0.7057.
 <!-- ROLE_AWARE_VALUATION_END -->
 
 <!-- CONTINUOUS_ROLE_REFINEMENT_START -->

@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Portugal
 - Position group: Attacking Midfield/Wing
-- Functional role: Hybrid Playmaker / Roaming Creator
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0164
-- Global rank: 50
-- Position rank: 11
-- Role rank: 1
+- Functional role: Progressive Winger
+- Probabilistic role: Pressing/Finishing Attacker
+- Role entropy: 0.0138
+- Global rank: 88
+- Position rank: 47
+- Role rank: 36
 - Team rank: 7
-- Final player rating: 0.5800
+- Final player rating: 0.5399
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 384.9
-- Minutes reliability: 0.5620
+- Minutes reliability: 0.4610
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.2309 |
-| vaep_def_scaled | 0.0814 |
-| vaep_per_touch | 0.0014 |
-| open_play_xt_p90 | 0.0530 |
-| set_piece_xt_p90 | 0.0585 |
-| role_adjusted_value | 0.7533 |
-| completeness_score | 0.7540 |
-| off_ball_score | 0.6164 |
+| vaep_off_scaled | 0.2784 |
+| vaep_def_scaled | 0.2905 |
+| vaep_per_touch | 0.0013 |
+| open_play_xt_p90 | 0.0708 |
+| set_piece_xt_p90 | 0.0573 |
+| role_adjusted_value | 0.5160 |
+| completeness_score | 0.8482 |
+| off_ball_score | 0.6189 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.6886 |
-| creation_score | 0.7768 |
-| finishing_score | 0.8908 |
-| pressing_score | 0.7649 |
-| defensive_score | 0.5569 |
-| ball_security_score | 0.4880 |
-| aerial_score | 0.4120 |
+| progression_score | 0.7279 |
+| creation_score | 0.8184 |
+| finishing_score | 0.8463 |
+| pressing_score | 0.6982 |
+| defensive_score | 0.5511 |
+| ball_security_score | 0.4911 |
+| aerial_score | 0.4517 |
 
 ## Spatial, 360 and passing-network context
 

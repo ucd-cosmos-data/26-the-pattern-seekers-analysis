@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: France
 - Position group: Center Back
-- Functional role: Deep Playmaker
-- Probabilistic role: Aerial/Secure Centre-Back
-- Role entropy: 0.0000
-- Global rank: 77
-- Position rank: 14
+- Functional role: Ball-Playing Centre-Back
+- Probabilistic role: Aerial/Secure/Progressive Centre-Back
+- Role entropy: 0.0928
+- Global rank: 318
+- Position rank: 9
 - Role rank: 4
-- Team rank: 9
-- Final player rating: 0.5046
+- Team rank: 15
+- Final player rating: 0.4704
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 544.6
-- Minutes reliability: 0.6448
+- Minutes reliability: 0.5476
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.4937 |
-| vaep_def_scaled | 0.8694 |
-| vaep_per_touch | 0.0001 |
-| open_play_xt_p90 | 0.0019 |
-| set_piece_xt_p90 | 0.0044 |
-| role_adjusted_value | 0.2039 |
-| completeness_score | 0.3754 |
-| off_ball_score | 0.4292 |
+| vaep_off_scaled | 0.4798 |
+| vaep_def_scaled | 0.9232 |
+| vaep_per_touch | 0.0002 |
+| open_play_xt_p90 | 0.0040 |
+| set_piece_xt_p90 | 0.0080 |
+| role_adjusted_value | 0.0703 |
+| completeness_score | 0.6588 |
+| off_ball_score | 0.4282 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.3999 |
-| creation_score | 0.2979 |
-| finishing_score | 0.4073 |
-| pressing_score | 0.1508 |
-| defensive_score | 0.3245 |
-| ball_security_score | 0.6070 |
-| aerial_score | 0.5035 |
+| progression_score | 0.4619 |
+| creation_score | 0.3978 |
+| finishing_score | 0.4446 |
+| pressing_score | 0.1544 |
+| defensive_score | 0.3341 |
+| ball_security_score | 0.6094 |
+| aerial_score | 0.5275 |
 
 ## Spatial, 360 and passing-network context
 

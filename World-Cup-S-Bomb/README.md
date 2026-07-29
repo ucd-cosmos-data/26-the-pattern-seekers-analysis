@@ -31,13 +31,18 @@ The original proposal is in
 ## Role-aware player pipeline
 
 `scripts/run_pipeline.py` is the production entry point for the extended player
-analysis. It preserves the existing match-cross-fitted VAEP/xT calculations,
-K-Means functional roles, 300-minute filter, and legacy comparison columns. It
-adds continuous role vectors, probabilistic GMM roles, spatial and passing
-network features, independently scaled offensive and defensive value,
-match-grouped ElasticNet contribution models, top-dimension completeness,
-off-ball scoring, and empirical-Bayes minutes shrinkage. Goalkeepers use a
-separate evidence matrix and ranking rather than outfield zero-filled features.
+analysis. It preserves match-cross-fitted VAEP/xT calculations, K-Means
+functional roles, and legacy comparison columns. V2 rates all eligible
+outfield players from 45 minutes and goalkeepers from 90 minutes; 300 minutes
+is only the primary outfield reliability label. It adds pre-action score,
+time, opponent-strength, and game-phase context as a VAEP challenger that is
+accepted only by a development-OOF non-inferiority gate (the canonical run
+retains the baseline feature set); continuous role
+vectors; probabilistic GMM roles; spatial and passing-network features;
+explicit role-weighted offensive/defensive channels; team-disjoint ElasticNet
+calibration; xD-style defensive disruption; sample-adjusted completeness;
+off-ball scoring; and 450-minute empirical-Bayes shrinkage. Goalkeepers use a
+weighted seven-component matrix including high-leverage saves.
 
 Run the complete pipeline from the repository root:
 
@@ -86,10 +91,9 @@ transition-model packets remain historical records; obsolete V4 final/model
 summaries are removed only after the complete V5 artifact set passes its
 publication checks.
 
-The validated V5 top five outfield players are Messi (0.8371), Mbappé (0.8258),
-Julián Álvarez (0.7526), Vinícius Júnior (0.7354), and Ángel Di María
-(0.7329). Christian Pulisic is ninth after removing the former
-volume-generalist distortion. See the
+The canonical run publishes the regenerated leaderboard, selected
+learned-or-fallback calibration weights, status counts, and before/after
+validation. See the
 [`results/reports` index](results/reports/README.md) for the canonical reports
 and the boundary between V5 player values and historical V4 tactical outputs.
 
@@ -139,8 +143,8 @@ The leak-free player-evaluation comparison is:
 The legacy transition classifier predicts a different target and is shown as a
 reporting baseline, not as a VAEP model-selection candidate. Because positive
 next-action windows are rare, PR-AUC and calibration are more informative than
-RMSE alone. The final role-relative hierarchy retains the 300-minute cutoff;
-Lionel Messi ranks first for Argentina and Kylian Mbappé first for France.
+RMSE alone. The final role-relative hierarchy rates the 45/90-minute eligible
+cohort and exposes separate high-reliability ranks.
 
 See the following reports for details:
 
@@ -251,7 +255,7 @@ result tables, and figures are stored in `results/`.
 | Artifact | Purpose |
 |---|---|
 | `models/vaep_360_xt.joblib` | Selected calibrated VAEP models, feature schema, partitions, and cross-fitted xT grid |
-| `data/processed/player_evaluations.csv` | Role-relative player values and team rankings after the 300-minute cutoff |
+| `data/processed/player_evaluations.csv` | Role-relative values for the 45-minute outfield / 90-minute goalkeeper cohort, with reliability statuses |
 | `data/processed/player_event_value_audit.parquet` | Per-action targets, OOF/test probabilities, xT values, and scoring-partition provenance |
 | `data/processed/player_evaluation_provenance.json` | Feature contract, split assignments, metrics, and leakage controls |
 | `results/reports/final_validation.csv` | Side-by-side OOF metrics for all candidate architectures and the legacy baseline |
@@ -274,9 +278,10 @@ result tables, and figures are stored in `results/`.
 - xT grids are fitted outside the match partition they score. Deterministic
   feature hashing and fixed missing-value defaults avoid learning preprocessing
   state from the test partition; Logistic Regression scaling is fold-local.
-- The player-rating formula is an evaluation layer, not a model feature. It
-  retains the 300-minute cutoff and shrinks the base 50/30/20 VAEP/xT rating
-  toward the player's position-group mean according to minutes observed.
+- The player-rating formula is an evaluation layer, not a model feature.
+  Role-weighted offense/defense channels, calibrated composite components,
+  and xD are shrunk toward the player's position-group mean using
+  `minutes/(minutes+450)`.
 
 The next-action target is rare: the pooled development target has a positive
 rate of approximately 0.118%. Consequently, low RMSE is partly a consequence

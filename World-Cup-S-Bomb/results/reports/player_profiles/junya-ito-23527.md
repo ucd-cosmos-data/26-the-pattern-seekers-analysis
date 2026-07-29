@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Japan
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Creative/Progressive/Pressing Fullback
-- Role entropy: 0.0000
-- Global rank: 49
-- Position rank: 17
-- Role rank: 9
-- Team rank: 1
-- Final player rating: 0.5802
+- Probabilistic role: Creative/Progressive Fullback
+- Role entropy: 0.0152
+- Global rank: 105
+- Position rank: 32
+- Role rank: 26
+- Team rank: 2
+- Final player rating: 0.5356
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 346.3
-- Minutes reliability: 0.5358
+- Minutes reliability: 0.4349
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3439 |
-| vaep_def_scaled | 0.5860 |
-| vaep_per_touch | 0.0016 |
-| open_play_xt_p90 | 0.0332 |
-| set_piece_xt_p90 | 0.0194 |
-| role_adjusted_value | 0.3050 |
-| completeness_score | 0.4976 |
-| off_ball_score | 0.3984 |
+| vaep_off_scaled | 0.4820 |
+| vaep_def_scaled | 0.6800 |
+| vaep_per_touch | 0.0017 |
+| open_play_xt_p90 | 0.0391 |
+| set_piece_xt_p90 | 0.0154 |
+| role_adjusted_value | 0.0940 |
+| completeness_score | 0.7138 |
+| off_ball_score | 0.3981 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.4804 |
-| creation_score | 0.5739 |
-| finishing_score | 0.3908 |
-| pressing_score | 0.4770 |
-| defensive_score | 0.5651 |
-| ball_security_score | 0.1275 |
-| aerial_score | 0.4601 |
+| progression_score | 0.5226 |
+| creation_score | 0.6336 |
+| finishing_score | 0.4250 |
+| pressing_score | 0.4275 |
+| defensive_score | 0.5531 |
+| ball_security_score | 0.1669 |
+| aerial_score | 0.4989 |
 
 ## Spatial, 360 and passing-network context
 

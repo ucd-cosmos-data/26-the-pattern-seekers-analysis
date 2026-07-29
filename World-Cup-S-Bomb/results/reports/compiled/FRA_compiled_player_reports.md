@@ -4,29 +4,71 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 12
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 22
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
-<!-- PLAYER_REPORT 1: 3009_starter_report.md -->
+<!-- PLAYER_REPORT 1: 2972_starter_report.md -->
+
+# Marcus Thuram — Starter Report
+
+- Team: France (FRA)
+- Position: Left Midfield
+- Functional role: Box-to-Box / Engine Midfielder
+- VAEP offense per 90: 0.3108
+- VAEP defense per 90: 0.0270
+- VAEP total per 90: 0.3377
+- VAEP per touch: 0.00366
+- Spatial xT per 90: 0.0574
+- Final-third spatial share: 38.6%
+- Unified final player rating: 0.1291
+- Team rank: #8
+
+![V4 event and 360 heatmap](../heatmaps/FRA/2972_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 15.86 |
+| Recovery index per 90 | 3.97 |
+
+## Top chemistry partners
+
+- Jules Koundé — synergy 0.434, 170 shared minutes
+- Aurélien Djani Tchouaméni — synergy 0.369, 149 shared minutes
+- Kylian Mbappé Lottin — synergy 0.361, 182 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 2: 3009_starter_report.md -->
 
 # Kylian Mbappé Lottin — Starter Report
 
 - Team: France (FRA)
 - Position: Left Center Forward
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.6218
-- VAEP defense per 90: 0.0213
-- VAEP total per 90: 0.6431
-- VAEP per touch: 0.00462
+- VAEP offense per 90: 0.6059
+- VAEP defense per 90: 0.0188
+- VAEP total per 90: 0.6248
+- VAEP per touch: 0.00449
 - Spatial xT per 90: 0.1343
 - Final-third spatial share: 59.0%
-- Unified final player rating: 0.3127
+- Unified final player rating: 0.2993
 - Team rank: #1
-- Rating 95% CI: [0.2109, 0.4304] (bootstrap SE 0.0552)
-- Rank stability: bootstrap mean rank 1.1; P(team #1) 94%, P(top 3) 100%
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3009_heatmap.svg)
 
@@ -51,27 +93,26 @@
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 2: 3026_starter_report.md -->
+<!-- PLAYER_REPORT 3: 3026_starter_report.md -->
 
 # Adrien Rabiot — Starter Report
 
 - Team: France (FRA)
 - Position: Left Defensive Midfield
-- Functional role: Ball-Winner
-- VAEP offense per 90: 0.2675
-- VAEP defense per 90: -0.0211
-- VAEP total per 90: 0.2465
-- VAEP per touch: 0.00181
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.2687
+- VAEP defense per 90: -0.0252
+- VAEP total per 90: 0.2434
+- VAEP per touch: 0.00179
 - Spatial xT per 90: 0.0126
 - Final-third spatial share: 29.6%
-- Unified final player rating: 0.0915
-- Team rank: #5
-- Rating 95% CI: [0.0405, 0.1430] (bootstrap SE 0.0259)
-- Rank stability: bootstrap mean rank 5.5; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0774
+- Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3026_heatmap.svg)
 
@@ -97,27 +138,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 3: 3099_starter_report.md -->
+<!-- PLAYER_REPORT 4: 3099_starter_report.md -->
 
 # Hugo Lloris — Starter Report
 
 - Team: France (FRA)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0125
-- VAEP defense per 90: -0.0520
-- VAEP total per 90: -0.0645
-- VAEP per touch: -0.00134
+- VAEP offense per 90: -0.0048
+- VAEP defense per 90: -0.0389
+- VAEP total per 90: -0.0437
+- VAEP per touch: -0.00091
 - Spatial xT per 90: 0.0061
 - Final-third spatial share: 1.3%
-- Unified final player rating: -0.0381
-- Team rank: #12
-- Rating 95% CI: [-0.0854, 0.0192] (bootstrap SE 0.0275)
-- Rank stability: bootstrap mean rank 11.3; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0380
+- Team rank: #21
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3099_heatmap.svg)
 
@@ -143,27 +183,71 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 4: 3604_starter_report.md -->
+<!-- PLAYER_REPORT 5: 3543_starter_report.md -->
+
+# Steve Mandanda — Starter Report
+
+- Team: France (FRA)
+- Position: Goalkeeper
+- Functional role: Goalkeeper
+- VAEP offense per 90: -0.0105
+- VAEP defense per 90: -0.0923
+- VAEP total per 90: -0.1027
+- VAEP per touch: -0.00217
+- Spatial xT per 90: 0.0006
+- Final-third spatial share: 0.0%
+- Unified final player rating: -0.0595
+- Team rank: #22
+
+![V4 event and 360 heatmap](../heatmaps/FRA/3543_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 0.00 |
+| Recovery index per 90 | 6.14 |
+
+## Top chemistry partners
+
+- Ibrahima Konaté — synergy 0.298, 103 shared minutes
+- Aurélien Djani Tchouaméni — synergy 0.296, 103 shared minutes
+- Eduardo Camavinga — synergy 0.293, 103 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 6: 3604_starter_report.md -->
 
 # Olivier Giroud — Starter Report
 
 - Team: France (FRA)
 - Position: Center Forward
 - Functional role: Target Forward / Penalty-Box Anchor
-- VAEP offense per 90: 0.4138
-- VAEP defense per 90: 0.0617
-- VAEP total per 90: 0.4755
-- VAEP per touch: 0.00856
+- VAEP offense per 90: 0.4420
+- VAEP defense per 90: 0.0551
+- VAEP total per 90: 0.4970
+- VAEP per touch: 0.00895
 - Spatial xT per 90: 0.0075
 - Final-third spatial share: 37.3%
-- Unified final player rating: 0.2377
-- Team rank: #2
-- Rating 95% CI: [0.1910, 0.2812] (bootstrap SE 0.0231)
-- Rank stability: bootstrap mean rank 2.2; P(team #1) 6%, P(top 3) 96%
+- Unified final player rating: 0.2458
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/3604_heatmap.svg)
 
@@ -188,27 +272,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 5: 4445_starter_report.md -->
+<!-- PLAYER_REPORT 7: 4445_starter_report.md -->
 
 # Jules Koundé — Starter Report
 
 - Team: France (FRA)
 - Position: Right Back
-- Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.0959
-- VAEP defense per 90: -0.0719
-- VAEP total per 90: 0.0239
-- VAEP per touch: 0.00018
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0893
+- VAEP defense per 90: -0.0790
+- VAEP total per 90: 0.0103
+- VAEP per touch: 0.00008
 - Spatial xT per 90: 0.0185
 - Final-third spatial share: 18.4%
-- Unified final player rating: 0.0383
-- Team rank: #7
-- Rating 95% CI: [0.0076, 0.0789] (bootstrap SE 0.0180)
-- Rank stability: bootstrap mean rank 7.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0298
+- Team rank: #15
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/4445_heatmap.svg)
 
@@ -234,27 +317,71 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 6: 5477_starter_report.md -->
+<!-- PLAYER_REPORT 8: 5476_starter_report.md -->
+
+# Benjamin Pavard — Starter Report
+
+- Team: France (FRA)
+- Position: Right Back
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0280
+- VAEP defense per 90: 0.0014
+- VAEP total per 90: 0.0294
+- VAEP per touch: 0.00013
+- Spatial xT per 90: 0.0111
+- Final-third spatial share: 18.0%
+- Unified final player rating: 0.0476
+- Team rank: #13
+
+![V4 event and 360 heatmap](../heatmaps/FRA/5476_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 2.03 |
+| Recovery index per 90 | 3.05 |
+
+## Top chemistry partners
+
+- Ibrahima Konaté — synergy 0.276, 89 shared minutes
+- Antoine Griezmann — synergy 0.273, 89 shared minutes
+- Dayotchanculle Upamecano — synergy 0.272, 89 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 9: 5477_starter_report.md -->
 
 # Ousmane Dembélé — Starter Report
 
 - Team: France (FRA)
 - Position: Right Wing
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.3396
-- VAEP defense per 90: 0.0111
-- VAEP total per 90: 0.3506
-- VAEP per touch: 0.00273
+- VAEP offense per 90: 0.3254
+- VAEP defense per 90: 0.0062
+- VAEP total per 90: 0.3316
+- VAEP per touch: 0.00258
 - Spatial xT per 90: 0.1122
 - Final-third spatial share: 53.5%
-- Unified final player rating: 0.2020
-- Team rank: #3
-- Rating 95% CI: [0.1393, 0.2580] (bootstrap SE 0.0308)
-- Rank stability: bootstrap mean rank 3.3; P(team #1) 0%, P(top 3) 57%
+- Unified final player rating: 0.1828
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/5477_heatmap.svg)
 
@@ -279,27 +406,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 7: 5485_starter_report.md -->
+<!-- PLAYER_REPORT 10: 5485_starter_report.md -->
 
 # Raphaël Varane — Starter Report
 
 - Team: France (FRA)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0325
-- VAEP defense per 90: -0.0224
-- VAEP total per 90: 0.0101
-- VAEP per touch: 0.00008
+- Functional role: Ball-Playing Centre-Back
+- VAEP offense per 90: 0.0423
+- VAEP defense per 90: -0.0166
+- VAEP total per 90: 0.0256
+- VAEP per touch: 0.00021
 - Spatial xT per 90: 0.0120
 - Final-third spatial share: 4.9%
-- Unified final player rating: 0.0019
-- Team rank: #9
-- Rating 95% CI: [-0.0130, 0.0195] (bootstrap SE 0.0085)
-- Rank stability: bootstrap mean rank 9.2; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0042
+- Team rank: #18
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/5485_heatmap.svg)
 
@@ -324,27 +450,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 8: 5487_starter_report.md -->
+<!-- PLAYER_REPORT 11: 5487_starter_report.md -->
 
 # Antoine Griezmann — Starter Report
 
 - Team: France (FRA)
 - Position: Center Attacking Midfield
 - Functional role: Hybrid Playmaker / Roaming Creator
-- VAEP offense per 90: 0.3541
-- VAEP defense per 90: -0.0109
-- VAEP total per 90: 0.3432
-- VAEP per touch: 0.00257
+- VAEP offense per 90: 0.3536
+- VAEP defense per 90: -0.0158
+- VAEP total per 90: 0.3378
+- VAEP per touch: 0.00253
 - Spatial xT per 90: 0.1166
 - Final-third spatial share: 35.3%
-- Unified final player rating: 0.1995
+- Unified final player rating: 0.1859
 - Team rank: #4
-- Rating 95% CI: [0.1293, 0.2785] (bootstrap SE 0.0381)
-- Rank stability: bootstrap mean rank 3.4; P(team #1) 0%, P(top 3) 48%
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/5487_heatmap.svg)
 
@@ -370,27 +495,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 9: 6704_starter_report.md -->
+<!-- PLAYER_REPORT 12: 6704_starter_report.md -->
 
 # Theo Bernard François Hernández — Starter Report
 
 - Team: France (FRA)
 - Position: Left Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.1691
-- VAEP defense per 90: -0.0098
-- VAEP total per 90: 0.1593
-- VAEP per touch: 0.00112
+- VAEP offense per 90: 0.1915
+- VAEP defense per 90: -0.0101
+- VAEP total per 90: 0.1814
+- VAEP per touch: 0.00128
 - Spatial xT per 90: 0.0466
 - Final-third spatial share: 27.8%
-- Unified final player rating: 0.0850
-- Team rank: #6
-- Rating 95% CI: [0.0485, 0.1249] (bootstrap SE 0.0198)
-- Rank stability: bootstrap mean rank 5.5; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0793
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/6704_heatmap.svg)
 
@@ -416,27 +540,205 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 10: 8519_starter_report.md -->
+<!-- PLAYER_REPORT 13: 7153_starter_report.md -->
+
+# Jordan Veretout — Starter Report
+
+- Team: France (FRA)
+- Position: Left Center Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0363
+- VAEP defense per 90: -0.0051
+- VAEP total per 90: 0.0312
+- VAEP per touch: 0.00022
+- Spatial xT per 90: 0.0027
+- Final-third spatial share: 16.7%
+- Unified final player rating: 0.0967
+- Team rank: #9
+
+![V4 event and 360 heatmap](../heatmaps/FRA/7153_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 12.92 |
+| Recovery index per 90 | 2.87 |
+
+## Top chemistry partners
+
+- Eduardo Camavinga — synergy 0.202, 63 shared minutes
+- Aurélien Djani Tchouaméni — synergy 0.201, 63 shared minutes
+- Mattéo Guendouzi Olié — synergy 0.199, 63 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 14: 7345_starter_report.md -->
+
+# Mattéo Guendouzi Olié — Starter Report
+
+- Team: France (FRA)
+- Position: Left Wing
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.1173
+- VAEP defense per 90: -0.0008
+- VAEP total per 90: 0.1165
+- VAEP per touch: 0.00111
+- Spatial xT per 90: 0.0155
+- Final-third spatial share: 25.5%
+- Unified final player rating: 0.1596
+- Team rank: #6
+
+![V4 event and 360 heatmap](../heatmaps/FRA/7345_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 2.30 |
+| Recovery index per 90 | 5.76 |
+
+## Top chemistry partners
+
+- Aurélien Djani Tchouaméni — synergy 0.243, 78 shared minutes
+- Axel Disasi — synergy 0.237, 78 shared minutes
+- Ibrahima Konaté — synergy 0.230, 78 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 15: 7439_starter_report.md -->
+
+# Axel Disasi — Starter Report
+
+- Team: France (FRA)
+- Position: Right Back
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0986
+- VAEP defense per 90: -0.0651
+- VAEP total per 90: 0.0334
+- VAEP per touch: 0.00023
+- Spatial xT per 90: 0.0163
+- Final-third spatial share: 24.2%
+- Unified final player rating: 0.0470
+- Team rank: #14
+
+![V4 event and 360 heatmap](../heatmaps/FRA/7439_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 9.79 |
+| Recovery index per 90 | 0.82 |
+
+## Top chemistry partners
+
+- Aurélien Djani Tchouaméni — synergy 0.319, 106 shared minutes
+- Ibrahima Konaté — synergy 0.294, 106 shared minutes
+- Steve Mandanda — synergy 0.280, 103 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 16: 8217_starter_report.md -->
+
+# Kingsley Coman — Starter Report
+
+- Team: France (FRA)
+- Position: Right Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.1742
+- VAEP defense per 90: -0.0122
+- VAEP total per 90: 0.1620
+- VAEP per touch: 0.00136
+- Spatial xT per 90: 0.0426
+- Final-third spatial share: 44.3%
+- Unified final player rating: 0.1494
+- Team rank: #7
+
+![V4 event and 360 heatmap](../heatmaps/FRA/8217_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.143 |
+| Pressing intensity per 90 | 19.26 |
+| Recovery index per 90 | 3.50 |
+
+## Top chemistry partners
+
+- Aurélien Djani Tchouaméni — synergy 0.418, 161 shared minutes
+- Raphaël Varane — synergy 0.374, 150 shared minutes
+- Youssouf Fofana — synergy 0.359, 141 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 17: 8519_starter_report.md -->
 
 # Dayotchanculle Upamecano — Starter Report
 
 - Team: France (FRA)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0018
-- VAEP defense per 90: -0.0660
-- VAEP total per 90: -0.0642
-- VAEP per touch: -0.00040
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0022
+- VAEP defense per 90: -0.0535
+- VAEP total per 90: -0.0513
+- VAEP per touch: -0.00032
 - Spatial xT per 90: 0.0197
 - Final-third spatial share: 3.9%
-- Unified final player rating: -0.0210
-- Team rank: #11
-- Rating 95% CI: [-0.0440, 0.0095] (bootstrap SE 0.0140)
-- Rank stability: bootstrap mean rank 11.1; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0159
+- Team rank: #20
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/8519_heatmap.svg)
 
@@ -461,27 +763,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 11: 10481_starter_report.md -->
+<!-- PLAYER_REPORT 18: 10481_starter_report.md -->
 
 # Aurélien Djani Tchouaméni — Starter Report
 
 - Team: France (FRA)
 - Position: Right Defensive Midfield
 - Functional role: Holding / Controlling Midfielder
-- VAEP offense per 90: -0.0238
-- VAEP defense per 90: -0.0199
-- VAEP total per 90: -0.0437
-- VAEP per touch: -0.00025
+- VAEP offense per 90: -0.0011
+- VAEP defense per 90: -0.0162
+- VAEP total per 90: -0.0174
+- VAEP per touch: -0.00010
 - Spatial xT per 90: 0.0375
 - Final-third spatial share: 15.0%
-- Unified final player rating: -0.0006
-- Team rank: #10
-- Rating 95% CI: [-0.0438, 0.0355] (bootstrap SE 0.0217)
-- Rank stability: bootstrap mean rank 9.4; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0080
+- Team rank: #17
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/10481_heatmap.svg)
 
@@ -507,27 +808,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 12: 11135_starter_report.md -->
+<!-- PLAYER_REPORT 19: 11135_starter_report.md -->
 
 # Ibrahima Konaté — Starter Report
 
 - Team: France (FRA)
 - Position: Left Center Back
 - Functional role: Ball-Playing Centre-Back
-- VAEP offense per 90: 0.0587
-- VAEP defense per 90: -0.0353
-- VAEP total per 90: 0.0233
-- VAEP per touch: 0.00014
+- VAEP offense per 90: 0.0468
+- VAEP defense per 90: -0.0459
+- VAEP total per 90: 0.0009
+- VAEP per touch: 0.00001
 - Spatial xT per 90: 0.0290
 - Final-third spatial share: 3.6%
-- Unified final player rating: 0.0052
-- Team rank: #8
-- Rating 95% CI: [-0.0229, 0.0329] (bootstrap SE 0.0145)
-- Rank stability: bootstrap mean rank 9.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0026
+- Team rank: #19
 
 ![V4 event and 360 heatmap](../heatmaps/FRA/11135_heatmap.svg)
 
@@ -553,62 +853,138 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
+---
 
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
+<!-- PLAYER_REPORT 20: 11990_starter_report.md -->
 
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
+# Youssouf Fofana — Starter Report
 
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
+- Team: France (FRA)
+- Position: Left Defensive Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0508
+- VAEP defense per 90: -0.0090
+- VAEP total per 90: 0.0418
+- VAEP per touch: 0.00038
+- Spatial xT per 90: 0.0228
+- Final-third spatial share: 18.9%
+- Unified final player rating: 0.0231
+- Team rank: #16
 
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
+![V4 event and 360 heatmap](../heatmaps/FRA/11990_heatmap.svg)
 
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
+## Physical profile
 
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 25.59 |
+| Recovery index per 90 | 3.86 |
 
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
+## Top chemistry partners
 
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
+- Raphaël Varane — synergy 0.527, 209 shared minutes
+- Ibrahima Konaté — synergy 0.524, 206 shared minutes
+- Aurélien Djani Tchouaméni — synergy 0.517, 202 shared minutes
 
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
+## Tactical recommendations
 
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
 
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
+---
 
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
+<!-- PLAYER_REPORT 21: 22097_starter_report.md -->
 
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+# Randal Kolo Muani — Starter Report
 
-France refinements:
+- Team: France (FRA)
+- Position: Center Forward
+- Functional role: Target Forward / Penalty-Box Anchor
+- VAEP offense per 90: 0.5124
+- VAEP defense per 90: 0.0544
+- VAEP total per 90: 0.5668
+- VAEP per touch: 0.00756
+- Spatial xT per 90: 0.0363
+- Final-third spatial share: 55.0%
+- Unified final player rating: 0.2560
+- Team rank: #2
 
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+![V4 event and 360 heatmap](../heatmaps/FRA/22097_heatmap.svg)
 
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.533 |
+| Pressing intensity per 90 | 22.93 |
+| Recovery index per 90 | 2.20 |
+
+## Top chemistry partners
+
+- Aurélien Djani Tchouaméni — synergy 0.466, 204 shared minutes
+- Eduardo Camavinga — synergy 0.421, 156 shared minutes
+- Ibrahima Konaté — synergy 0.359, 132 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 22: 24778_starter_report.md -->
+
+# Eduardo Camavinga — Starter Report
+
+- Team: France (FRA)
+- Position: Left Back
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.0815
+- VAEP defense per 90: -0.0076
+- VAEP total per 90: 0.0739
+- VAEP per touch: 0.00046
+- Spatial xT per 90: 0.0719
+- Final-third spatial share: 23.3%
+- Unified final player rating: 0.0531
+- Team rank: #12
+
+![V4 event and 360 heatmap](../heatmaps/FRA/24778_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.600 |
+| Pressing intensity per 90 | 21.30 |
+| Recovery index per 90 | 6.91 |
+
+## Top chemistry partners
+
+- Aurélien Djani Tchouaméni — synergy 0.432, 156 shared minutes
+- Randal Kolo Muani — synergy 0.421, 156 shared minutes
+- Ibrahima Konaté — synergy 0.339, 114 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

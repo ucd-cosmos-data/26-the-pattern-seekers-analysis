@@ -28,6 +28,10 @@ RANKING_SCHEMA = (
     "position_rank",
     "role_rank",
     "team_rank",
+    "RankingStatus",
+    "GKRankingStatus",
+    "primary_global_rank",
+    "primary_goalkeeper_rank",
 )
 
 
@@ -138,6 +142,28 @@ class ArtifactGenerator:
         missing = required.difference(rankings.columns)
         if missing:
             raise ValueError(f"Ranking fields missing: {sorted(missing)}")
+        minutes = pd.to_numeric(
+            rankings.get("minutes", pd.Series(np.nan, index=rankings.index)),
+            errors="coerce",
+        )
+        if "RankingStatus" not in rankings:
+            rankings["RankingStatus"] = np.select(
+                [minutes.ge(300.0), minutes.ge(180.0)],
+                ["Ranked (300+ min)", "Ranked (180–299 min)"],
+                default="Coverage only (<180 min)",
+            )
+            if minutes.isna().all():
+                rankings["RankingStatus"] = "Ranked (300+ min)"
+        if "GKRankingStatus" not in rankings:
+            rankings["GKRankingStatus"] = np.where(
+                rankings["position_group"].eq("Goalkeeper"),
+                np.select(
+                    [minutes.ge(270.0), minutes.ge(180.0)],
+                    ["Ranked (270+ min)", "Ranked (180–269 min)"],
+                    default="Coverage only (<180 min)",
+                ),
+                pd.NA,
+            )
         eligible = (
             rankings["global_rank_eligible"].fillna(False).astype(bool)
             if "global_rank_eligible" in rankings
@@ -150,6 +176,32 @@ class ArtifactGenerator:
         )
         rankings.loc[eligible, "global_rank"] = (
             rankings.loc[eligible, "final_player_rating"]
+            .rank(method="min", ascending=False)
+            .astype(int)
+        )
+        rankings["primary_global_rank"] = pd.Series(
+            pd.NA,
+            index=rankings.index,
+            dtype="Int64",
+        )
+        primary = (
+            eligible
+            & rankings["RankingStatus"].eq("Ranked (300+ min)")
+        )
+        rankings.loc[primary, "primary_global_rank"] = (
+            rankings.loc[primary, "final_player_rating"]
+            .rank(method="min", ascending=False)
+            .astype(int)
+        )
+        if "primary_goalkeeper_rank" not in rankings:
+            rankings["primary_goalkeeper_rank"] = pd.Series(
+                pd.NA,
+                index=rankings.index,
+                dtype="Int64",
+            )
+        primary_gk = rankings["GKRankingStatus"].eq("Ranked (270+ min)")
+        rankings.loc[primary_gk, "primary_goalkeeper_rank"] = (
+            rankings.loc[primary_gk, "final_player_rating"]
             .rank(method="min", ascending=False)
             .astype(int)
         )
@@ -247,7 +299,9 @@ class ArtifactGenerator:
                         "final_player_rating",
                         "goals_prevented_proxy_p90",
                         "save_rate",
+                        "high_leverage_save_pct",
                         "penalty_save_rate_shrunk",
+                        "GKRankingStatus",
                     ],
                 )
                 if rankings["position_group"].eq("Goalkeeper").any()
@@ -331,6 +385,36 @@ class ArtifactGenerator:
             ),
             "```",
             "",
+            "## V2 rating methodology",
+            "",
+            "```json",
+            json.dumps(
+                payload.get("rating_methodology", {}),
+                indent=2,
+                ensure_ascii=False,
+            ),
+            "```",
+            "",
+            "## Composite calibration",
+            "",
+            "```json",
+            json.dumps(
+                payload.get("composite_calibration", {}),
+                indent=2,
+                ensure_ascii=False,
+            ),
+            "```",
+            "",
+            "## Defensive disruption",
+            "",
+            "```json",
+            json.dumps(
+                payload.get("defense_disruption", {}),
+                indent=2,
+                ensure_ascii=False,
+            ),
+            "```",
+            "",
             "## Cluster stability",
             "",
             "```json",
@@ -375,6 +459,7 @@ class ArtifactGenerator:
                 "sweeper_actions_p90",
                 "distribution_under_pressure",
                 "penalty_save_rate_shrunk",
+                "high_leverage_save_pct",
                 "goalkeeper_feature_coverage",
             ]
         else:
@@ -431,6 +516,13 @@ class ArtifactGenerator:
                 f"- Role rank: {value('role_rank', 0)}",
                 f"- Team rank: {value('team_rank', 0)}",
                 f"- Final player rating: {value('final_player_rating')}",
+                f"- Ranking status: {value('RankingStatus')}",
+                (
+                    f"- Goalkeeper ranking status: "
+                    f"{value('GKRankingStatus')}"
+                    if str(player.get("position_group")) == "Goalkeeper"
+                    else ""
+                ),
                 (
                     "- Global ranking eligibility: goalkeeper-only ranking"
                     if str(player.get("position_group")) == "Goalkeeper"
@@ -519,8 +611,18 @@ class ArtifactGenerator:
             "global_rank",
             "rank_improvement",
         ]
+        primary_rankings = rankings.loc[
+            (
+                ~rankings["position_group"].eq("Goalkeeper")
+                & rankings["RankingStatus"].eq("Ranked (300+ min)")
+            )
+            | (
+                rankings["position_group"].eq("Goalkeeper")
+                & rankings["GKRankingStatus"].eq("Ranked (270+ min)")
+            )
+        ]
         position_leaders = (
-            rankings.sort_values(
+            primary_rankings.sort_values(
                 ["position_group", "position_rank", "global_rank"]
             )
             .groupby("position_group", sort=True)
@@ -573,15 +675,33 @@ class ArtifactGenerator:
                         team,
                         "pressure_resistance_rate",
                     ),
+                    "mean_creation": team_value(
+                        team,
+                        "mean_creation_score",
+                    ),
+                    "mean_defensive": team_value(
+                        team,
+                        "mean_defensive_score",
+                    ),
+                    "mean_ball_security": team_value(
+                        team,
+                        "mean_ball_security_score",
+                    ),
                 }
             )
+        context_selection = (
+            model_summary.get("metrics", {})
+            .get("contextual_vaep_gate", {})
+            .get("selected_feature_set", "baseline")
+        )
         lines = [
             "# World Cup V5 Role-Aware Final Report",
             "",
             "## Executive summary",
             "",
             f"This report consolidates **{len(teams)} national teams** and "
-            f"**{len(rankings)} players meeting the 300-minute cutoff**. "
+            f"**{len(rankings)} eligible rated players** (outfield 45+ "
+            "minutes; goalkeepers 90+). "
             "It uses StatsBomb events, lineups, minutes, and coverage-qualified "
             "360 freeze frames. It does not use optical tracking, external "
             "ratings, or player-name adjustments.",
@@ -593,13 +713,17 @@ class ArtifactGenerator:
             "",
             "## How to read the player rating",
             "",
-            "The V5 outfield score combines independently scaled offensive "
-            "and defensive VAEP, VAEP/touch, open-play and set-piece-aware "
-            "xT, match-grouped ElasticNet contribution, quality-adjusted "
-            "top-three completeness, and coverage-qualified off-ball value. "
-            "It is then reliability-shrunk using tournament minutes.",
+            f"The v2 outfield score uses the development-gated "
+            f"{context_selection} VAEP feature set and grouped "
+            "ElasticNet offense/defense heads with explicit role weights, "
+            "VAEP/touch, open-play and set-piece-aware xT, sample-adjusted "
+            "completeness, coverage-qualified off-ball value, and xD-style "
+            "defensive disruption. Positive ElasticNet calibration selects "
+            "the composite weights with team-disjoint folds, followed by "
+            "minutes/(minutes+450) position-prior shrinkage.",
             "",
-            "Goalkeepers use a separate goalkeeper-only matrix and ranking. "
+            "Goalkeepers use a separate weighted seven-component matrix and "
+            "ranking, including high-leverage saves. "
             "They are excluded from the outfield global ranking because "
             "StatsBomb Open Data does not contain native post-shot xG. "
             "Missing 360 evidence remains missing, and role labels never "
@@ -610,7 +734,10 @@ class ArtifactGenerator:
             "### Overall leaders",
             "",
             _markdown_table(
-                rankings.head(20),
+                primary_rankings.sort_values(
+                    ["primary_global_rank", "primary_goalkeeper_rank"],
+                    na_position="last",
+                ).head(20),
                 [
                     "global_rank",
                     "player_name",
@@ -658,6 +785,9 @@ class ArtifactGenerator:
                     "top_global_rank",
                     "total_xt",
                     "pressure_resistance",
+                    "mean_creation",
+                    "mean_defensive",
+                    "mean_ball_security",
                 ],
             ),
             "",
@@ -750,6 +880,18 @@ class ArtifactGenerator:
         """Render one team's required tactical and squad sections."""
 
         def mean(metric: str) -> str:
+            aggregate_metric = {
+                "creation_score": "mean_creation_score",
+                "defensive_score": "mean_defensive_score",
+                "ball_security_score": "mean_ball_security_score",
+            }.get(metric)
+            if (
+                aggregate_metric is not None
+                and team_metrics is not None
+                and aggregate_metric in team_metrics
+                and pd.notna(team_metrics[aggregate_metric])
+            ):
+                return f"{float(team_metrics[aggregate_metric]):.4f}"
             if metric not in players or not players[metric].notna().any():
                 return "not available"
             return f"{players[metric].mean():.4f}"
@@ -773,6 +915,8 @@ class ArtifactGenerator:
                 f"- Total xT created: {team_value('total_xt_created')}",
                 f"- Total xA created: {team_value('total_xa_created')}",
                 f"- Mean creation score: {mean('creation_score')}",
+                f"- Mean creation score (300+ comparison): "
+                f"{team_value('mean_creation_score_ranked_300')}",
                 f"- Mean xT/90: {mean('xt_p90')}",
                 "",
                 "## Defensive compactness",
@@ -786,6 +930,9 @@ class ArtifactGenerator:
                 f"- Mean defensive depth: "
                 f"{team_value('defensive_depth')}",
                 f"- Mean defensive score: {mean('defensive_score')}",
+                f"- Mean defensive score (300+ comparison): "
+                f"{team_value('mean_defensive_score_ranked_300')}",
+                f"- Mean xD/90: {team_value('mean_xd90')}",
                 f"- Mean shape-maintenance score: "
                 f"{mean('shape_maintenance_score')}",
                 "",
@@ -796,6 +943,8 @@ class ArtifactGenerator:
                 f"- Pressured pass sample: "
                 f"{team_value('pressured_passes')}",
                 f"- Mean ball-security score: {mean('ball_security_score')}",
+                f"- Mean ball-security score (300+ comparison): "
+                f"{team_value('mean_ball_security_score_ranked_300')}",
                 "",
                 "## Top five player summary",
                 "",
@@ -992,6 +1141,8 @@ class ArtifactGenerator:
                                 "global_rank",
                                 "functional_role",
                                 "final_player_rating",
+                                "RankingStatus",
+                                "GKRankingStatus",
                             )
                             if column in rankings
                         ],
@@ -1012,13 +1163,63 @@ class ArtifactGenerator:
         ):
             if column not in coverage:
                 coverage[column] = np.nan
-        coverage["selection_priority"] = (
-            coverage["final_player_rating"].isna().astype(int)
+        coverage_minutes = pd.to_numeric(
+            coverage["minutes"],
+            errors="coerce",
+        )
+        computed_outfield_status = np.select(
+            [
+                coverage_minutes.ge(300.0),
+                coverage_minutes.ge(180.0),
+            ],
+            [
+                "Ranked (300+ min)",
+                "Ranked (180–299 min)",
+            ],
+            default="Coverage only (<180 min)",
+        )
+        computed_goalkeeper_status = np.select(
+            [
+                coverage_minutes.ge(270.0),
+                coverage_minutes.ge(180.0),
+            ],
+            [
+                "Ranked (270+ min)",
+                "Ranked (180–269 min)",
+            ],
+            default="Coverage only (<180 min)",
         )
         coverage["ranking_status"] = np.where(
-            coverage["final_player_rating"].notna(),
-            "Ranked (300+ min)",
-            "Coverage only (<300 min)",
+            coverage["position_group"].eq("Goalkeeper"),
+            coverage.get(
+                "GKRankingStatus",
+                pd.Series(pd.NA, index=coverage.index),
+            ).fillna(
+                pd.Series(computed_goalkeeper_status, index=coverage.index)
+            ),
+            coverage.get(
+                "RankingStatus",
+                pd.Series(pd.NA, index=coverage.index),
+            ).fillna(
+                pd.Series(computed_outfield_status, index=coverage.index)
+            ),
+        )
+        coverage["ranking_status"] = coverage["ranking_status"].fillna(
+            "Coverage only (<180 min)"
+        )
+        coverage["selection_priority"] = (
+            coverage["ranking_status"]
+            .map(
+                {
+                    "Ranked (300+ min)": 0,
+                    "Ranked (270+ min)": 0,
+                    "Ranked (180–299 min)": 1,
+                    "Ranked (180–269 min)": 1,
+                    "Coverage only (<180 min)": 2,
+                }
+            )
+            .fillna(3)
+            .astype(int)
         )
         if not set(coverage["team"].dropna().astype(str)) <= set(teams):
             raise ValueError("Team player pool contains an unknown team")

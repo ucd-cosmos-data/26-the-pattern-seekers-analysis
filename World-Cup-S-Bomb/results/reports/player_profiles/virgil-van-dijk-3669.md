@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Netherlands
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Aerial/Secure Centre-Back
-- Role entropy: 0.0000
-- Global rank: 115
-- Position rank: 30
-- Role rank: 14
-- Team rank: 9
-- Final player rating: 0.4124
+- Probabilistic role: Aerial/Secure/Progressive Centre-Back
+- Role entropy: 0.0001
+- Global rank: 551
+- Position rank: 105
+- Role rank: 84
+- Team rank: 18
+- Final player rating: 0.3227
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 509.5
-- Minutes reliability: 0.6294
+- Minutes reliability: 0.5310
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.4096 |
-| vaep_def_scaled | 0.4629 |
-| vaep_per_touch | -0.0006 |
-| open_play_xt_p90 | 0.0081 |
-| set_piece_xt_p90 | 0.0055 |
-| role_adjusted_value | 0.4301 |
-| completeness_score | 0.4723 |
-| off_ball_score | 0.4883 |
+| vaep_off_scaled | 0.2334 |
+| vaep_def_scaled | 0.1343 |
+| vaep_per_touch | -0.0010 |
+| open_play_xt_p90 | 0.0089 |
+| set_piece_xt_p90 | 0.0062 |
+| role_adjusted_value | 0.1310 |
+| completeness_score | 0.7322 |
+| off_ball_score | 0.4776 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5458 |
-| creation_score | 0.4521 |
-| finishing_score | 0.5692 |
-| pressing_score | 0.3127 |
-| defensive_score | 0.2764 |
-| ball_security_score | 0.4528 |
-| aerial_score | 0.8662 |
+| progression_score | 0.5735 |
+| creation_score | 0.5511 |
+| finishing_score | 0.5638 |
+| pressing_score | 0.2866 |
+| defensive_score | 0.3430 |
+| ball_security_score | 0.4877 |
+| aerial_score | 0.8331 |
 
 ## Spatial, 360 and passing-network context
 

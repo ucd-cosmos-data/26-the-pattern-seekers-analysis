@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Japan
 - Position group: Attacking Midfield/Wing
-- Functional role: Target Forward
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.0741
-- Global rank: 85
-- Position rank: 15
-- Role rank: 13
-- Team rank: 3
-- Final player rating: 0.4990
+- Functional role: Ball-Winner
+- Probabilistic role: Pressing/Secure Attacker
+- Role entropy: 0.1922
+- Global rank: 223
+- Position rank: 88
+- Role rank: 33
+- Team rank: 10
+- Final player rating: 0.4977
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 337.2
-- Minutes reliability: 0.5292
+- Minutes reliability: 0.4284
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.1083 |
-| vaep_def_scaled | 0.3845 |
-| vaep_per_touch | 0.0018 |
-| open_play_xt_p90 | 0.0164 |
-| set_piece_xt_p90 | 0.0086 |
-| role_adjusted_value | 0.0000 |
-| completeness_score | 0.5781 |
-| off_ball_score | 0.5486 |
+| vaep_off_scaled | 0.2083 |
+| vaep_def_scaled | 0.4986 |
+| vaep_per_touch | 0.0019 |
+| open_play_xt_p90 | 0.0145 |
+| set_piece_xt_p90 | 0.0083 |
+| role_adjusted_value | 0.1111 |
+| completeness_score | 0.7542 |
+| off_ball_score | 0.5613 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.3315 |
-| creation_score | 0.3190 |
-| finishing_score | 0.5974 |
-| pressing_score | 0.6761 |
-| defensive_score | 0.5833 |
-| ball_security_score | 0.4289 |
-| aerial_score | 0.4296 |
+| progression_score | 0.4141 |
+| creation_score | 0.4143 |
+| finishing_score | 0.6138 |
+| pressing_score | 0.6352 |
+| defensive_score | 0.5843 |
+| ball_security_score | 0.4567 |
+| aerial_score | 0.4576 |
 
 ## Spatial, 360 and passing-network context
 

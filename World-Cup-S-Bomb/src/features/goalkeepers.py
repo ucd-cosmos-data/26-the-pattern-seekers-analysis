@@ -332,6 +332,23 @@ def build_goalkeeper_features(
                 "penalty_faced": int(
                     "Penalty" in str(getattr(row, "shot_type", ""))
                 ),
+                "high_leverage_shots_on_target": int(
+                    float(
+                        0.0
+                        if pd.isna(row.shot_statsbomb_xg)
+                        else row.shot_statsbomb_xg
+                    )
+                    > 0.30
+                ),
+                "high_leverage_saves": int(
+                    float(
+                        0.0
+                        if pd.isna(row.shot_statsbomb_xg)
+                        else row.shot_statsbomb_xg
+                    )
+                    > 0.30
+                    and "Saved" in str(row.shot_outcome)
+                ),
             }
         )
     shots = pd.DataFrame.from_records(records)
@@ -446,6 +463,8 @@ def build_goalkeeper_features(
         "goal_allowed",
         "shot_on_target_faced",
         "penalty_faced",
+        "high_leverage_shots_on_target",
+        "high_leverage_saves",
         "claims",
         "sweeper_actions",
         "pressured_passes",
@@ -474,6 +493,10 @@ def build_goalkeeper_features(
     output["save_rate"] = (
         (output["shot_on_target_faced"] - output["goal_allowed"])
         / output["shot_on_target_faced"].replace(0.0, np.nan)
+    )
+    output["high_leverage_save_pct"] = (
+        output["high_leverage_saves"]
+        / output["high_leverage_shots_on_target"].replace(0.0, np.nan)
     )
     output["claims_p90"] = 90.0 * output["claims"] / minutes
     output["cross_stopping_rate"] = (
@@ -512,6 +535,10 @@ def build_goalkeeper_features(
             (shootout & on_target).sum()
         ),
         "regular_penalties_separated": int(regular_penalty.sum()),
+        "high_leverage_xg_threshold": 0.30,
+        "high_leverage_shots_on_target": int(
+            output["high_leverage_shots_on_target"].sum()
+        ),
         "post_shot_model": post_shot_audit,
         "global_ranking_eligible": False,
         "global_ranking_reason": (

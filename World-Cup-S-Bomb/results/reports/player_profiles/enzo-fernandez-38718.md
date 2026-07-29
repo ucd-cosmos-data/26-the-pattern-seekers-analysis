@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Argentina
 - Position group: Defensive Midfield
-- Functional role: Ball-Winner
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 86
-- Position rank: 14
-- Role rank: 11
-- Team rank: 9
-- Final player rating: 0.4966
+- Functional role: Holding Anchor
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.0006
+- Global rank: 355
+- Position rank: 18
+- Role rank: 19
+- Team rank: 14
+- Final player rating: 0.4581
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 601.1
-- Minutes reliability: 0.6671
+- Minutes reliability: 0.5719
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3513 |
-| vaep_def_scaled | 0.2342 |
-| vaep_per_touch | 0.0000 |
-| open_play_xt_p90 | 0.0266 |
-| set_piece_xt_p90 | 0.0187 |
-| role_adjusted_value | 0.5583 |
-| completeness_score | 0.6874 |
-| off_ball_score | 0.6698 |
+| vaep_off_scaled | 0.2948 |
+| vaep_def_scaled | 0.5774 |
+| vaep_per_touch | 0.0001 |
+| open_play_xt_p90 | 0.0361 |
+| set_piece_xt_p90 | 0.0236 |
+| role_adjusted_value | 0.2639 |
+| completeness_score | 0.8277 |
+| off_ball_score | 0.6583 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5780 |
-| creation_score | 0.6768 |
-| finishing_score | 0.7312 |
-| pressing_score | 0.7770 |
-| defensive_score | 0.5634 |
-| ball_security_score | 0.6261 |
-| aerial_score | 0.4988 |
+| progression_score | 0.6118 |
+| creation_score | 0.7071 |
+| finishing_score | 0.7507 |
+| pressing_score | 0.7347 |
+| defensive_score | 0.5718 |
+| ball_security_score | 0.6130 |
+| aerial_score | 0.5242 |
 
 ## Spatial, 360 and passing-network context
 

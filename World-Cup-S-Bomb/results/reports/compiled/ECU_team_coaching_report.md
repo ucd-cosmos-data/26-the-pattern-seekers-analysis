@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Ecuador: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Patient Build-up to Short Under Pressure). Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Ecuador: no tactical change cleared the modeled effect floor. Primary review signal: transition review against Compact Pressure Block (Patient Build-up to Short Under Pressure). Strongest positive squad synergy: Felix Eduardo Torres Caicedo + Piero Martín Hincapié Reyna (0.652). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.5571
 - Mean possession EvA gap: 0.002544
@@ -10,17 +10,17 @@ Ecuador: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Optimized starting 11
 
-1. Piero Martín Hincapié Reyna (Center Back)
-2. Felix Eduardo Torres Caicedo (Center Back)
-3. Pervis Josué Estupiñán Tenorio (Fullback/Wingback)
+1. Pervis Josué Estupiñán Tenorio (Fullback/Wingback)
+2. Gonzalo Jordy Plata Jiménez (Central/Wide Midfield)
+3. Felix Eduardo Torres Caicedo (Center Back)
 4. Moisés Isaac Caicedo Corozo (Defensive Midfield)
-5. Hernán Ismael Galíndez (Goalkeeper)
-6. Angelo Smit Preciado Quiñónez (Fullback/Wingback)
-7. Gonzalo Jordy Plata Jiménez (Central/Wide Midfield)
-8. Enner Remberto Valencia Lastra (Attacking Midfield/Wing)
-9. Jhegson Sebastián Méndez Carabalí (Defensive Midfield)
-10. Michael Steveen Estrada Martínez (Forward)
-11. Jeremy Leonel Sarmiento Morante (Central/Wide Midfield)
+5. Enner Remberto Valencia Lastra (Attacking Midfield/Wing)
+6. Piero Martín Hincapié Reyna (Center Back)
+7. Angelo Smit Preciado Quiñónez (Fullback/Wingback)
+8. Michael Steveen Estrada Martínez (Forward)
+9. Hernán Ismael Galíndez (Goalkeeper)
+10. Jeremy Leonel Sarmiento Morante (Central/Wide Midfield)
+11. Jhegson Sebastián Méndez Carabalí (Defensive Midfield)
 
 ## Physical matchup deltas
 
@@ -32,13 +32,17 @@ Ecuador: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 68, INSUFFICIENT_MINUTES: 9.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 68, GAIN_BELOW_THRESHOLD: 7, INSUFFICIENT_MINUTES: 2.
 
 ## V5 role-aware player leaders
 
-_No player reached the configured 300-minute ranking cutoff._
+1. Pervis Josué Estupiñán Tenorio — Attacking Wingback; rating 0.5858, VAEP/90 +0.250, xT/90 +0.088, role-adjusted 0.120
+2. Enner Remberto Valencia Lastra — Target Forward; rating 0.5711, VAEP/90 +0.599, xT/90 +0.028, role-adjusted 0.634
+3. Angelo Smit Preciado Quiñónez — Deep Playmaker; rating 0.5554, VAEP/90 +0.111, xT/90 +0.069, role-adjusted 0.137
+4. Gonzalo Jordy Plata Jiménez — Box-to-Box / Engine Midfielder; rating 0.4994, VAEP/90 +0.245, xT/90 +0.060, role-adjusted 0.182
+5. Jeremy Leonel Sarmiento Morante — Progressive Winger; rating 0.4842, VAEP/90 +0.227, xT/90 +0.070, role-adjusted 0.378
 
-_Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
+_Ratings include eligible outfield players from 45 minutes and goalkeepers from 90 minutes. The 300-minute threshold is a high-reliability label. V2 evaluates contextual VAEP behind a development-OOF non-inferiority gate, then uses the accepted feature set with role-weighted offense/defense channels, calibrated composite weights, xD-style disruption, and 450-minute shrinkage._
 
 ## Recurrent tactical mistakes
 
@@ -48,27 +52,14 @@ _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/
 
 _Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
-
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
-
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
-
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
-
 <!-- PLAYER_ROLE_VALIDATION_START -->
 ## V5 probabilistic role validation
 
-The production role model selected **K=9 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
+The production role model selected **K=16 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
 
-- Bootstrap ARI median: 0.6887
-- Bootstrap ARI fifth percentile: 0.5522
-- PCA explained variance: 0.8688
+- Bootstrap ARI median: 0.6260
+- Bootstrap ARI fifth percentile: 0.5113
+- PCA explained variance: 0.7367
 
 Roles do not award points directly. Continuous role dimensions only modulate the weights applied to observed contributions.
 <!-- PLAYER_ROLE_VALIDATION_END -->
@@ -76,16 +67,10 @@ Roles do not award points directly. Continuous role dimensions only modulate the
 <!-- ROLE_AWARE_VALUATION_START -->
 ## V5 role-aware valuation and attention gate
 
-**Production decision: `ROLE_AWARE_FALLBACK`.** The role-aware layer is active. The experimental attention challenger was evaluated match-disjoint and rejected because its discrimination was materially worse, despite better calibration.
+**Production decision: `ROLE_AWARE_FALLBACK`.** The role-aware layer is active.
+The optional attention experiment was disabled for this canonical run, so the interpretable role-aware fallback remains active without publishing unevaluated attention metrics.
 
-| Task | Model | ROC-AUC | PR-AUC | ECE | Brier |
-|---|---|---:|---:|---:|---:|
-| Retrospective | Baseline | 0.6283 | 0.5179 | 0.0659 | 0.2364 |
-| Retrospective | Attention | 0.7258 | 0.6257 | 0.0169 | 0.2086 |
-| Prospective | Baseline | 0.8855 | 0.9763 | 0.1866 | 0.1389 |
-| Prospective | Attention | 0.8815 | 0.9750 | 0.0147 | 0.0907 |
-
-New-versus-legacy ranking Spearman correlation: 0.7112.
+New-versus-legacy ranking Spearman correlation: 0.7057.
 <!-- ROLE_AWARE_VALUATION_END -->
 
 <!-- CONTINUOUS_ROLE_REFINEMENT_START -->

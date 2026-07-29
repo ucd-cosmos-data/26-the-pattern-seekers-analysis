@@ -4,29 +4,115 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 7
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 19
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
-<!-- PLAYER_REPORT 1: 3244_starter_report.md -->
+<!-- PLAYER_REPORT 1: 3205_starter_report.md -->
+
+# Kyle Walker — Starter Report
+
+- Team: England (ENG)
+- Position: Right Back
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0486
+- VAEP defense per 90: -0.0043
+- VAEP total per 90: 0.0443
+- VAEP per touch: 0.00027
+- Spatial xT per 90: 0.0423
+- Final-third spatial share: 19.1%
+- Unified final player rating: 0.0454
+- Team rank: #14
+
+![V4 event and 360 heatmap](../heatmaps/ENG/3205_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.556 |
+| Pressing intensity per 90 | 8.59 |
+| Recovery index per 90 | 2.86 |
+
+## Top chemistry partners
+
+- Declan Rice — synergy 0.585, 252 shared minutes
+- Jordan Pickford — synergy 0.584, 252 shared minutes
+- Harry Maguire — synergy 0.566, 252 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 2: 3233_starter_report.md -->
+
+# Raheem Sterling — Starter Report
+
+- Team: England (ENG)
+- Position: Left Wing
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.3540
+- VAEP defense per 90: 0.0067
+- VAEP total per 90: 0.3607
+- VAEP per touch: 0.00319
+- Spatial xT per 90: 0.0438
+- Final-third spatial share: 41.4%
+- Unified final player rating: 0.1801
+- Team rank: #6
+
+![V4 event and 360 heatmap](../heatmaps/ENG/3233_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.333 |
+| Pressing intensity per 90 | 10.69 |
+| Recovery index per 90 | 2.25 |
+
+## Top chemistry partners
+
+- John Stones — synergy 0.412, 157 shared minutes
+- Luke Shaw — synergy 0.408, 160 shared minutes
+- Declan Rice — synergy 0.400, 160 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 3: 3244_starter_report.md -->
 
 # John Stones — Starter Report
 
 - Team: England (ENG)
 - Position: Right Center Back
 - Functional role: Ball-Playing Centre-Back
-- VAEP offense per 90: 0.0774
-- VAEP defense per 90: -0.0250
-- VAEP total per 90: 0.0524
-- VAEP per touch: 0.00022
+- VAEP offense per 90: 0.0623
+- VAEP defense per 90: -0.0318
+- VAEP total per 90: 0.0305
+- VAEP per touch: 0.00013
 - Spatial xT per 90: 0.0105
 - Final-third spatial share: 3.6%
-- Unified final player rating: 0.0140
-- Team rank: #6
-- Rating 95% CI: [-0.0136, 0.0380] (bootstrap SE 0.0132)
-- Rank stability: bootstrap mean rank 5.9; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0043
+- Team rank: #17
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/3244_heatmap.svg)
 
@@ -52,27 +138,116 @@
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 2: 3336_starter_report.md -->
+<!-- PLAYER_REPORT 4: 3308_starter_report.md -->
+
+# Kieran Trippier — Starter Report
+
+- Team: England (ENG)
+- Position: Right Back
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.1647
+- VAEP defense per 90: -0.0088
+- VAEP total per 90: 0.1560
+- VAEP per touch: 0.00086
+- Spatial xT per 90: 0.0810
+- Final-third spatial share: 24.4%
+- Unified final player rating: 0.0673
+- Team rank: #12
+
+![V4 event and 360 heatmap](../heatmaps/ENG/3308_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.800 |
+| Pressing intensity per 90 | 11.90 |
+| Recovery index per 90 | 3.17 |
+
+## Top chemistry partners
+
+- John Stones — synergy 0.558, 227 shared minutes
+- Jordan Pickford — synergy 0.553, 227 shared minutes
+- Declan Rice — synergy 0.514, 198 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 5: 3318_starter_report.md -->
+
+# Marcus Rashford — Starter Report
+
+- Team: England (ENG)
+- Position: Left Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.5305
+- VAEP defense per 90: 0.0438
+- VAEP total per 90: 0.5744
+- VAEP per touch: 0.00420
+- Spatial xT per 90: 0.0662
+- Final-third spatial share: 49.6%
+- Unified final player rating: 0.2110
+- Team rank: #3
+
+![V4 event and 360 heatmap](../heatmaps/ENG/3318_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.167 |
+| Pressing intensity per 90 | 10.03 |
+| Recovery index per 90 | 3.17 |
+
+## Top chemistry partners
+
+- Luke Shaw — synergy 0.379, 160 shared minutes
+- Declan Rice — synergy 0.366, 153 shared minutes
+- Harry Maguire — synergy 0.335, 138 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 6: 3336_starter_report.md -->
 
 # Harry Maguire — Starter Report
 
 - Team: England (ENG)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- VAEP offense per 90: 0.1483
-- VAEP defense per 90: 0.0019
-- VAEP total per 90: 0.1502
-- VAEP per touch: 0.00069
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.1853
+- VAEP defense per 90: 0.0018
+- VAEP total per 90: 0.1871
+- VAEP per touch: 0.00086
 - Spatial xT per 90: 0.0346
 - Final-third spatial share: 5.8%
-- Unified final player rating: 0.0462
-- Team rank: #4
-- Rating 95% CI: [0.0142, 0.0695] (bootstrap SE 0.0140)
-- Rank stability: bootstrap mean rank 4.2; P(team #1) 0%, P(top 3) 1%
+- Unified final player rating: 0.0460
+- Team rank: #13
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/3336_heatmap.svg)
 
@@ -98,27 +273,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 3: 3382_starter_report.md -->
+<!-- PLAYER_REPORT 7: 3382_starter_report.md -->
 
 # Luke Shaw — Starter Report
 
 - Team: England (ENG)
 - Position: Left Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.2711
-- VAEP defense per 90: -0.0019
-- VAEP total per 90: 0.2692
-- VAEP per touch: 0.00132
+- VAEP offense per 90: 0.2759
+- VAEP defense per 90: -0.0032
+- VAEP total per 90: 0.2727
+- VAEP per touch: 0.00134
 - Spatial xT per 90: 0.0849
 - Final-third spatial share: 26.0%
-- Unified final player rating: 0.1223
-- Team rank: #2
-- Rating 95% CI: [0.0856, 0.1511] (bootstrap SE 0.0166)
-- Rank stability: bootstrap mean rank 2.3; P(team #1) 0%, P(top 3) 100%
+- Unified final player rating: 0.1041
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/3382_heatmap.svg)
 
@@ -143,27 +317,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 4: 3468_starter_report.md -->
+<!-- PLAYER_REPORT 8: 3468_starter_report.md -->
 
 # Jordan Pickford — Starter Report
 
 - Team: England (ENG)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0155
-- VAEP defense per 90: -0.0994
-- VAEP total per 90: -0.1150
-- VAEP per touch: -0.00169
+- VAEP offense per 90: -0.0214
+- VAEP defense per 90: -0.0995
+- VAEP total per 90: -0.1209
+- VAEP per touch: -0.00178
 - Spatial xT per 90: 0.0031
 - Final-third spatial share: 1.0%
-- Unified final player rating: -0.0552
-- Team rank: #7
-- Rating 95% CI: [-0.0686, -0.0406] (bootstrap SE 0.0072)
-- Rank stability: bootstrap mean rank 7.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0608
+- Team rank: #19
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/3468_heatmap.svg)
 
@@ -189,27 +362,115 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 5: 3943_starter_report.md -->
+<!-- PLAYER_REPORT 9: 3532_starter_report.md -->
+
+# Jordan Brian Henderson — Starter Report
+
+- Team: England (ENG)
+- Position: Right Center Midfield
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.1904
+- VAEP defense per 90: 0.0030
+- VAEP total per 90: 0.1934
+- VAEP per touch: 0.00128
+- Spatial xT per 90: 0.0294
+- Final-third spatial share: 33.7%
+- Unified final player rating: 0.1060
+- Team rank: #9
+
+![V4 event and 360 heatmap](../heatmaps/ENG/3532_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.400 |
+| Pressing intensity per 90 | 11.88 |
+| Recovery index per 90 | 1.93 |
+
+## Top chemistry partners
+
+- John Stones — synergy 0.618, 275 shared minutes
+- Jordan Pickford — synergy 0.617, 280 shared minutes
+- Harry Maguire — synergy 0.586, 280 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 10: 3616_starter_report.md -->
+
+# Callum Wilson — Starter Report
+
+- Team: England (ENG)
+- Position: Center Forward
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.5615
+- VAEP defense per 90: 0.0103
+- VAEP total per 90: 0.5719
+- VAEP per touch: 0.00698
+- Spatial xT per 90: 0.0387
+- Final-third spatial share: 37.2%
+- Unified final player rating: 0.2463
+- Team rank: #1
+
+![V4 event and 360 heatmap](../heatmaps/ENG/3616_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 13.89 |
+| Recovery index per 90 | 4.17 |
+
+## Top chemistry partners
+
+- John Stones — synergy 0.196, 65 shared minutes
+- Jordan Pickford — synergy 0.189, 65 shared minutes
+- Kieran Trippier — synergy 0.172, 57 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 11: 3943_starter_report.md -->
 
 # Declan Rice — Starter Report
 
 - Team: England (ENG)
 - Position: Left Defensive Midfield
-- Functional role: Ball-Winner
-- VAEP offense per 90: 0.0722
-- VAEP defense per 90: -0.0291
-- VAEP total per 90: 0.0431
-- VAEP per touch: 0.00025
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0728
+- VAEP defense per 90: -0.0260
+- VAEP total per 90: 0.0468
+- VAEP per touch: 0.00027
 - Spatial xT per 90: 0.0222
 - Final-third spatial share: 11.2%
-- Unified final player rating: 0.0276
-- Team rank: #5
-- Rating 95% CI: [0.0068, 0.0477] (bootstrap SE 0.0105)
-- Rank stability: bootstrap mean rank 4.9; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0248
+- Team rank: #15
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/3943_heatmap.svg)
 
@@ -234,27 +495,205 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 6: 10955_starter_report.md -->
+<!-- PLAYER_REPORT 12: 4354_starter_report.md -->
+
+# Phil Foden — Starter Report
+
+- Team: England (ENG)
+- Position: Right Wing
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.3901
+- VAEP defense per 90: -0.0950
+- VAEP total per 90: 0.2951
+- VAEP per touch: 0.00235
+- Spatial xT per 90: 0.0521
+- Final-third spatial share: 50.6%
+- Unified final player rating: 0.1698
+- Team rank: #7
+
+![V4 event and 360 heatmap](../heatmaps/ENG/4354_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.300 |
+| Pressing intensity per 90 | 10.78 |
+| Recovery index per 90 | 2.29 |
+
+## Top chemistry partners
+
+- John Stones — synergy 0.618, 276 shared minutes
+- Jude Bellingham — synergy 0.542, 276 shared minutes
+- Declan Rice — synergy 0.529, 239 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 13: 4706_starter_report.md -->
+
+# Kalvin Phillips — Starter Report
+
+- Team: England (ENG)
+- Position: Center Defensive Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: -0.0086
+- VAEP defense per 90: -0.0255
+- VAEP total per 90: -0.0341
+- VAEP per touch: -0.00039
+- Spatial xT per 90: 0.0251
+- Final-third spatial share: 3.2%
+- Unified final player rating: 0.0183
+- Team rank: #16
+
+![V4 event and 360 heatmap](../heatmaps/ENG/4706_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 23.48 |
+| Recovery index per 90 | 0.00 |
+
+## Top chemistry partners
+
+- Harry Maguire — synergy 0.156, 50 shared minutes
+- Jordan Pickford — synergy 0.155, 50 shared minutes
+- Jude Bellingham — synergy 0.120, 37 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 14: 7843_starter_report.md -->
+
+# Mason Mount — Starter Report
+
+- Team: England (ENG)
+- Position: Center Attacking Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.2364
+- VAEP defense per 90: 0.0099
+- VAEP total per 90: 0.2463
+- VAEP per touch: 0.00226
+- Spatial xT per 90: 0.0649
+- Final-third spatial share: 36.7%
+- Unified final player rating: 0.1641
+- Team rank: #8
+
+![V4 event and 360 heatmap](../heatmaps/ENG/7843_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.143 |
+| Pressing intensity per 90 | 19.32 |
+| Recovery index per 90 | 2.63 |
+
+## Top chemistry partners
+
+- Declan Rice — synergy 0.477, 205 shared minutes
+- Luke Shaw — synergy 0.477, 205 shared minutes
+- Harry Maguire — synergy 0.460, 205 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 15: 9638_starter_report.md -->
+
+# Jack Grealish — Starter Report
+
+- Team: England (ENG)
+- Position: Left Wing
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.5864
+- VAEP defense per 90: 0.0871
+- VAEP total per 90: 0.6735
+- VAEP per touch: 0.00444
+- Spatial xT per 90: 0.0926
+- Final-third spatial share: 36.5%
+- Unified final player rating: 0.2123
+- Team rank: #2
+
+![V4 event and 360 heatmap](../heatmaps/ENG/9638_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 16.95 |
+| Recovery index per 90 | 3.23 |
+
+## Top chemistry partners
+
+- Declan Rice — synergy 0.279, 93 shared minutes
+- Luke Shaw — synergy 0.276, 93 shared minutes
+- Jordan Pickford — synergy 0.272, 111 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 16: 10955_starter_report.md -->
 
 # Harry Kane — Starter Report
 
 - Team: England (ENG)
 - Position: Center Forward
 - Functional role: Target Forward
-- VAEP offense per 90: 0.2705
-- VAEP defense per 90: 0.0045
-- VAEP total per 90: 0.2750
-- VAEP per touch: 0.00308
+- VAEP offense per 90: 0.2913
+- VAEP defense per 90: -0.0034
+- VAEP total per 90: 0.2879
+- VAEP per touch: 0.00323
 - Spatial xT per 90: 0.0474
 - Final-third spatial share: 47.1%
-- Unified final player rating: 0.1828
-- Team rank: #1
-- Rating 95% CI: [0.1619, 0.2175] (bootstrap SE 0.0146)
-- Rank stability: bootstrap mean rank 1.0; P(team #1) 99%, P(top 3) 100%
+- Unified final player rating: 0.1982
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/10955_heatmap.svg)
 
@@ -279,27 +718,115 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 7: 30714_starter_report.md -->
+<!-- PLAYER_REPORT 17: 10956_starter_report.md -->
+
+# Eric Dier — Starter Report
+
+- Team: England (ENG)
+- Position: Left Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: -0.0005
+- VAEP defense per 90: -0.0275
+- VAEP total per 90: -0.0280
+- VAEP per touch: -0.00014
+- Spatial xT per 90: 0.0023
+- Final-third spatial share: 0.5%
+- Unified final player rating: -0.0096
+- Team rank: #18
+
+![V4 event and 360 heatmap](../heatmaps/ENG/10956_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 5.33 |
+| Recovery index per 90 | 5.33 |
+
+## Top chemistry partners
+
+- Luke Shaw — synergy 0.167, 51 shared minutes
+- Declan Rice — synergy 0.164, 51 shared minutes
+- Jordan Pickford — synergy 0.161, 51 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 18: 22084_starter_report.md -->
+
+# Bukayo Saka — Starter Report
+
+- Team: England (ENG)
+- Position: Right Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.4540
+- VAEP defense per 90: 0.0128
+- VAEP total per 90: 0.4668
+- VAEP per touch: 0.00391
+- Spatial xT per 90: 0.0593
+- Final-third spatial share: 53.7%
+- Unified final player rating: 0.2040
+- Team rank: #4
+
+![V4 event and 360 heatmap](../heatmaps/ENG/22084_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.333 |
+| Pressing intensity per 90 | 17.30 |
+| Recovery index per 90 | 2.78 |
+
+## Top chemistry partners
+
+- John Stones — synergy 0.625, 291 shared minutes
+- Declan Rice — synergy 0.599, 291 shared minutes
+- Harry Maguire — synergy 0.580, 291 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 19: 30714_starter_report.md -->
 
 # Jude Bellingham — Starter Report
 
 - Team: England (ENG)
 - Position: Right Defensive Midfield
 - Functional role: Box-to-Box / Engine Midfielder
-- VAEP offense per 90: 0.2709
-- VAEP defense per 90: 0.0294
-- VAEP total per 90: 0.3003
-- VAEP per touch: 0.00183
+- VAEP offense per 90: 0.2592
+- VAEP defense per 90: 0.0186
+- VAEP total per 90: 0.2778
+- VAEP per touch: 0.00169
 - Spatial xT per 90: 0.0420
 - Final-third spatial share: 26.4%
-- Unified final player rating: 0.1069
-- Team rank: #3
-- Rating 95% CI: [0.0458, 0.1647] (bootstrap SE 0.0315)
-- Rank stability: bootstrap mean rank 2.7; P(team #1) 1%, P(top 3) 99%
+- Unified final player rating: 0.0842
+- Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/ENG/30714_heatmap.svg)
 
@@ -324,62 +851,5 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
-
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
-
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
-
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
-
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
-
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
-
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
-
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
-
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
-
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
-
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
-
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
-
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
-
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
-
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
-
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
-
-France refinements:
-
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
-
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

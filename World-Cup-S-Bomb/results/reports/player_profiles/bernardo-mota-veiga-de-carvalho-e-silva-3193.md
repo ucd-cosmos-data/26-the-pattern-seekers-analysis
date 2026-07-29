@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Portugal
 - Position group: Central/Wide Midfield
-- Functional role: Box-to-Box / Engine Midfielder
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 59
-- Position rank: 5
-- Role rank: 5
-- Team rank: 8
-- Final player rating: 0.5649
+- Functional role: Ball-Winner
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.2674
+- Global rank: 260
+- Position rank: 24
+- Role rank: 41
+- Team rank: 12
+- Final player rating: 0.4868
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 382.1
-- Minutes reliability: 0.5602
+- Minutes reliability: 0.4592
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.2475 |
-| vaep_def_scaled | 0.6748 |
-| vaep_per_touch | 0.0013 |
-| open_play_xt_p90 | 0.0213 |
-| set_piece_xt_p90 | 0.0168 |
-| role_adjusted_value | 0.0243 |
-| completeness_score | 0.6136 |
-| off_ball_score | 0.6533 |
+| vaep_off_scaled | 0.3534 |
+| vaep_def_scaled | 0.5455 |
+| vaep_per_touch | 0.0011 |
+| open_play_xt_p90 | 0.0364 |
+| set_piece_xt_p90 | 0.0219 |
+| role_adjusted_value | 0.1365 |
+| completeness_score | 0.7846 |
+| off_ball_score | 0.6423 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5951 |
-| creation_score | 0.5570 |
-| finishing_score | 0.3275 |
-| pressing_score | 0.6950 |
-| defensive_score | 0.5440 |
-| ball_security_score | 0.6866 |
-| aerial_score | 0.2265 |
+| progression_score | 0.6465 |
+| creation_score | 0.6096 |
+| finishing_score | 0.3806 |
+| pressing_score | 0.6415 |
+| defensive_score | 0.5252 |
+| ball_security_score | 0.6635 |
+| aerial_score | 0.2920 |
 
 ## Spatial, 360 and passing-network context
 

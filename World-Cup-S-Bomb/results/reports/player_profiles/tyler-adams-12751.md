@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: United States
 - Position group: Defensive Midfield
 - Functional role: Holding / Controlling Midfielder
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 111
-- Position rank: 19
-- Role rank: 2
-- Team rank: 7
-- Final player rating: 0.4335
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.0003
+- Global rank: 492
+- Position rank: 73
+- Role rank: 4
+- Team rank: 17
+- Final player rating: 0.4124
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 391.2
-- Minutes reliability: 0.5660
+- Minutes reliability: 0.4650
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.1795 |
-| vaep_def_scaled | 0.3443 |
+| vaep_off_scaled | 0.2005 |
+| vaep_def_scaled | 0.5749 |
 | vaep_per_touch | -0.0002 |
-| open_play_xt_p90 | 0.0110 |
-| set_piece_xt_p90 | 0.0125 |
-| role_adjusted_value | 0.0906 |
-| completeness_score | 0.7841 |
-| off_ball_score | 0.6634 |
+| open_play_xt_p90 | 0.0168 |
+| set_piece_xt_p90 | 0.0179 |
+| role_adjusted_value | 0.0838 |
+| completeness_score | 0.8467 |
+| off_ball_score | 0.6579 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.4230 |
-| creation_score | 0.5908 |
-| finishing_score | 0.2723 |
-| pressing_score | 0.8582 |
-| defensive_score | 0.7946 |
-| ball_security_score | 0.7915 |
-| aerial_score | 0.5798 |
+| progression_score | 0.4759 |
+| creation_score | 0.6363 |
+| finishing_score | 0.3398 |
+| pressing_score | 0.8188 |
+| defensive_score | 0.7562 |
+| ball_security_score | 0.7510 |
+| aerial_score | 0.5874 |
 
 ## Spatial, 360 and passing-network context
 

@@ -2,10 +2,11 @@
 
 ## Threat creation
 
-- Total xT created: 2.2192
+- Total xT created: 2.5219
 - Total xA created: 4.8703
-- Mean creation score: 0.5158
-- Mean xT/90: 0.0350
+- Mean creation score: 0.5374
+- Mean creation score (300+ comparison): 0.6195
+- Mean xT/90: 0.0443
 
 ## Defensive compactness
 
@@ -13,21 +14,24 @@
 - Mean defensive density: 0.0278
 - Mean defensive width: 35.0479
 - Mean defensive depth: 21.8965
-- Mean defensive score: 0.4333
-- Mean shape-maintenance score: 0.6397
+- Mean defensive score: 0.4677
+- Mean defensive score (300+ comparison): 0.4498
+- Mean xD/90: 4.6419
+- Mean shape-maintenance score: 0.5267
 
 ## Pressure resistance
 
 - Pass completion under pressure: 0.7556
 - Pressured pass sample: 356.0000
-- Mean ball-security score: 0.5177
+- Mean ball-security score: 0.6180
+- Mean ball-security score (300+ comparison): 0.5547
 
 ## Top five player summary
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Jude Bellingham | Box-to-Box / Engine Midfielder | 441.7667 | 0.6766 | Ranked (300+ min) |
-| 2.0000 | Luke Shaw | Attacking Wingback | 457.1667 | 0.6671 | Ranked (300+ min) |
-| 3.0000 | Harry Maguire | Deep Playmaker | 453.7167 | 0.6336 | Ranked (300+ min) |
-| 4.0000 | Harry Kane | Target Forward | 421.5167 | 0.5879 | Ranked (300+ min) |
-| 5.0000 | John Stones | Ball-Playing Centre-Back | 464.8833 | 0.5345 | Ranked (300+ min) |
+| 1 | Luke Shaw | Attacking Wingback | 457.1667 | 0.5996 | Ranked (300+ min) |
+| 4 | Jude Bellingham | Box-to-Box / Engine Midfielder | 441.7667 | 0.5771 | Ranked (300+ min) |
+| 6 | Harry Maguire | Sweeper CB | 453.7167 | 0.5562 | Ranked (300+ min) |
+| 13 | Harry Kane | Target Forward | 421.5167 | 0.4760 | Ranked (300+ min) |
+| 15 | John Stones | Ball-Playing Centre-Back | 464.8833 | 0.4570 | Ranked (300+ min) |

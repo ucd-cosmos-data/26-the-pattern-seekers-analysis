@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Poland
 - Position group: Central/Wide Midfield
-- Functional role: Ball-Winner
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 79
-- Position rank: 8
-- Role rank: 9
-- Team rank: 5
-- Final player rating: 0.5030
+- Functional role: Holding Anchor
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.1768
+- Global rank: 330
+- Position rank: 40
+- Role rank: 16
+- Team rank: 7
+- Final player rating: 0.4657
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 344.4
-- Minutes reliability: 0.5345
+- Minutes reliability: 0.4335
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.0391 |
-| vaep_def_scaled | 0.2605 |
-| vaep_per_touch | 0.0008 |
-| open_play_xt_p90 | 0.0071 |
-| set_piece_xt_p90 | 0.0527 |
-| role_adjusted_value | 0.4714 |
-| completeness_score | 0.6738 |
-| off_ball_score | 0.5575 |
+| vaep_off_scaled | 0.1517 |
+| vaep_def_scaled | 0.5031 |
+| vaep_per_touch | 0.0010 |
+| open_play_xt_p90 | 0.0196 |
+| set_piece_xt_p90 | 0.0396 |
+| role_adjusted_value | 0.2114 |
+| completeness_score | 0.8085 |
+| off_ball_score | 0.5325 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.6645 |
-| creation_score | 0.7937 |
-| finishing_score | 0.7218 |
-| pressing_score | 0.5957 |
-| defensive_score | 0.5587 |
-| ball_security_score | 0.6634 |
-| aerial_score | 0.3016 |
+| progression_score | 0.6872 |
+| creation_score | 0.8160 |
+| finishing_score | 0.7085 |
+| pressing_score | 0.5305 |
+| defensive_score | 0.5614 |
+| ball_security_score | 0.6716 |
+| aerial_score | 0.3617 |
 
 ## Spatial, 360 and passing-network context
 

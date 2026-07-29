@@ -35,7 +35,7 @@ ATTACKING_STYLES = (
 )
 CANONICAL_TRANSITION_TARGET = "transition_conceded"
 MIN_SUBSTITUTION_NET_XG_GAIN = 0.0050
-V4_MIN_PLAYER_MINUTES = 300.0
+V4_MIN_PLAYER_MINUTES = 45.0
 V4_FINAL_THIRD_X = 80.0
 V4_ATTACKING_WINGBACK_SHARE = 0.35
 ROLE_AWARE_RATING_WEIGHTS = {
@@ -757,7 +757,7 @@ def calculate_final_player_rating(
         weights[column] * components[column] for column in weights
     )
     minutes = output["minutes"].clip(lower=1.0)
-    output["rating_minutes_reliability"] = minutes / (minutes + 300.0)
+    output["rating_minutes_reliability"] = minutes / (minutes + 450.0)
     position_prior = output.groupby("position_group")[
         "raw_final_player_rating"
     ].transform("mean")
@@ -1108,7 +1108,11 @@ def _calibrate_prefit(
     return _PrefitProbabilityCalibrator(estimator, calibrator, method)
 
 
-def _vaep_feature_matrix(actions: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
+def _vaep_feature_matrix(
+    actions: pd.DataFrame,
+    *,
+    include_context: bool = True,
+) -> tuple[pd.DataFrame, list[str]]:
     """Build a deterministic pre-action state matrix.
 
     Current-action results, endpoints, completion flags, and shot xG belong to
@@ -1116,6 +1120,15 @@ def _vaep_feature_matrix(actions: pd.DataFrame) -> tuple[pd.DataFrame, list[str]
     """
 
     state = pd.DataFrame(index=actions.index)
+    goals = actions["goal"].astype(int)
+    total_goals_before = (
+        goals.groupby(actions["game_id"]).cumsum() - goals
+    )
+    own_goals_before = (
+        goals.groupby([actions["game_id"], actions["team"]]).cumsum()
+        - goals
+    )
+    opponent_goals_before = total_goals_before - own_goals_before
     numeric = {
         "period_id": actions["period_id"],
         "time_seconds": actions["time_seconds"],
@@ -1127,6 +1140,21 @@ def _vaep_feature_matrix(actions: pd.DataFrame) -> tuple[pd.DataFrame, list[str]
         "defensive_density": actions["defensive_density"],
         "defenders_behind_ball": actions["defenders_behind_ball"],
     }
+    if include_context:
+        numeric.update(
+            {
+                "match_minute": actions["time_seconds"] / 60.0,
+                "goal_diff": own_goals_before - opponent_goals_before,
+                "opponent_strength": actions.get(
+                    "opponent_strength",
+                    pd.Series(0.5, index=actions.index),
+                ),
+                "game_phase_knockout": actions.get(
+                    "game_phase_knockout",
+                    pd.Series(0, index=actions.index),
+                ),
+            }
+        )
     for name, values in numeric.items():
         state[name] = pd.to_numeric(values, errors="coerce")
     state["same_team_previous_1"] = (
@@ -1436,6 +1464,8 @@ def _fit_vaep_candidates(
     features: pd.DataFrame,
     actions: pd.DataFrame,
     partitions: dict[str, list[int]],
+    *,
+    finalize_test: bool = True,
 ) -> tuple[pd.DataFrame, dict[str, object], list[str]]:
     """Compare candidates by development OOF metrics, then touch test once."""
 
@@ -1591,13 +1621,50 @@ def _fit_vaep_candidates(
         for specification in specifications
         if specification["name"] == selected_name
     )
+    development_selected: dict[str, object] = {
+        "model_name": selected_name,
+        "algorithm_type": str(validation.iloc[0]["algorithm_type"]),
+        "calibration_method": str(selected_specification["calibration"]),
+        "selected_specification": selected_specification,
+        "action_probabilities": candidate_oof[selected_name],
+    }
+    if not finalize_test:
+        return validation, development_selected, failures
+    selected = _finalize_vaep_candidate(
+        features,
+        actions,
+        partitions,
+        development_selected,
+    )
+    return validation, selected, failures
+
+
+def _finalize_vaep_candidate(
+    features: pd.DataFrame,
+    actions: pd.DataFrame,
+    partitions: dict[str, list[int]],
+    development_selected: dict[str, object],
+) -> dict[str, object]:
+    """Fit the OOF-selected feature/model specification and open test once."""
+
+    development_matches = list(partitions["development"])
+    test_matches = list(partitions["test"])
+    test_mask = actions["game_id"].isin(test_matches).to_numpy()
+    selected_name = str(development_selected["model_name"])
+    selected_specification = development_selected[
+        "selected_specification"
+    ]
+    if not isinstance(selected_specification, dict):
+        raise TypeError("Selected VAEP specification must be a dictionary")
     final_fit_matches, final_calibration_matches = _fit_calibration_split(
         development_matches
     )
     partitions["final_fit"] = final_fit_matches
     partitions["final_calibration"] = final_calibration_matches
     final_models: dict[str, object] = {}
-    scored_probabilities = candidate_oof[selected_name]
+    scored_probabilities = development_selected["action_probabilities"]
+    if not isinstance(scored_probabilities, dict):
+        raise TypeError("Selected VAEP probabilities must be a dictionary")
     test_truth_parts: list[np.ndarray] = []
     test_probability_parts: list[np.ndarray] = []
     for target, model_key in (
@@ -1644,7 +1711,7 @@ def _fit_vaep_candidates(
     }
     selected = {
         "model_name": selected_name,
-        "algorithm_type": str(validation.iloc[0]["algorithm_type"]),
+        "algorithm_type": str(development_selected["algorithm_type"]),
         "models": final_models,
         "calibration_method": str(selected_specification["calibration"]),
         "fit_elapsed_sec": np.nan,
@@ -1653,7 +1720,7 @@ def _fit_vaep_candidates(
         "test_metrics": test_metrics,
         "action_probabilities": scored_probabilities,
     }
-    return validation, selected, failures
+    return selected
 
 
 def build_v4_player_evaluations(
@@ -1662,6 +1729,7 @@ def build_v4_player_evaluations(
     frame_actors_df: pd.DataFrame,
     frame_metrics_df: pd.DataFrame,
     *,
+    match_context_df: pd.DataFrame | None = None,
     min_minutes: float = V4_MIN_PLAYER_MINUTES,
     legacy_validation_metrics: dict[str, object] | None = None,
 ) -> tuple[
@@ -1674,11 +1742,58 @@ def build_v4_player_evaluations(
     """Build unified team rankings from independent xT and 360-VAEP systems."""
 
     base_profiles = derive_physicality_metrics(components_df)
-    profiles = base_profiles.loc[base_profiles["minutes"].ge(min_minutes)].copy()
+    minutes = pd.to_numeric(
+        base_profiles["minutes"],
+        errors="coerce",
+    )
+    eligible = (
+        ~base_profiles["position_group"].eq("Goalkeeper")
+        & minutes.ge(min_minutes)
+    ) | (
+        base_profiles["position_group"].eq("Goalkeeper")
+        & minutes.ge(90.0)
+    )
+    profiles = base_profiles.loc[eligible].copy()
     if profiles.empty:
         raise ValueError("No players satisfy the V4 minutes cutoff")
 
     actions = convert_statsbomb_events_to_spadl(events_df)
+    if match_context_df is not None:
+        required_context = {
+            "match_id",
+            "team",
+            "opponent_strength",
+            "game_phase_knockout",
+        }
+        missing_context = required_context.difference(
+            match_context_df.columns
+        )
+        if missing_context:
+            raise ValueError(
+                f"Match context missing: {sorted(missing_context)}"
+            )
+        context = match_context_df.rename(
+            columns={"match_id": "game_id"}
+        ).drop_duplicates(["game_id", "team"])
+        actions = actions.merge(
+            context[
+                [
+                    "game_id",
+                    "team",
+                    "opponent_strength",
+                    "game_phase_knockout",
+                ]
+            ],
+            on=["game_id", "team"],
+            how="left",
+            validate="many_to_one",
+        )
+        actions["opponent_strength"] = actions[
+            "opponent_strength"
+        ].fillna(0.5)
+        actions["game_phase_knockout"] = actions[
+            "game_phase_knockout"
+        ].fillna(0).astype(int)
     actions = actions[actions["player_id"].notna()].copy()
     actions["player_id"] = actions["player_id"].astype(int)
     actions = _three_action_labels(actions)
@@ -1738,10 +1853,114 @@ def build_v4_player_evaluations(
     xt_grid, actions["xt_value"], actions["xt_scoring_partition"] = (
         _cross_fit_expected_threat(actions, partitions)
     )
-    vaep_features, feature_names = _vaep_feature_matrix(actions)
-    validation, selected, failures = _fit_vaep_candidates(
-        vaep_features, actions, partitions
+    contextual_features, contextual_feature_names = _vaep_feature_matrix(
+        actions,
+        include_context=True,
     )
+    baseline_features, baseline_feature_names = _vaep_feature_matrix(
+        actions,
+        include_context=False,
+    )
+    contextual_validation, contextual_development, contextual_failures = (
+        _fit_vaep_candidates(
+            contextual_features,
+            actions,
+            partitions,
+            finalize_test=False,
+        )
+    )
+    baseline_validation, baseline_development, baseline_failures = (
+        _fit_vaep_candidates(
+            baseline_features,
+            actions,
+            partitions,
+            finalize_test=False,
+        )
+    )
+    contextual_best = contextual_validation.iloc[0]
+    baseline_best = baseline_validation.iloc[0]
+    context_gate_passed = bool(
+        float(contextual_best["brier_score"])
+        <= float(baseline_best["brier_score"]) + 0.00001
+        and float(contextual_best["roc_auc"])
+        >= float(baseline_best["roc_auc"]) - 0.002
+        and float(contextual_best["pr_auc"])
+        >= float(baseline_best["pr_auc"]) - 0.002
+        and float(contextual_best["calibration_error"])
+        <= float(baseline_best["calibration_error"]) + 0.0002
+    )
+    selected_feature_set = (
+        "contextual" if context_gate_passed else "baseline"
+    )
+    if context_gate_passed:
+        vaep_features = contextual_features
+        feature_names = contextual_feature_names
+        selected_development = contextual_development
+    else:
+        vaep_features = baseline_features
+        feature_names = baseline_feature_names
+        selected_development = baseline_development
+    selected = _finalize_vaep_candidate(
+        vaep_features,
+        actions,
+        partitions,
+        selected_development,
+    )
+    contextual_validation = contextual_validation.assign(
+        feature_set="contextual",
+        selected=False,
+    )
+    baseline_validation = baseline_validation.assign(
+        feature_set="baseline",
+        selected=False,
+    )
+    selected_model_name = str(selected_development["model_name"])
+    selected_mask = (
+        contextual_validation["model_name"].eq(selected_model_name)
+        if context_gate_passed
+        else baseline_validation["model_name"].eq(selected_model_name)
+    )
+    if context_gate_passed:
+        contextual_validation.loc[selected_mask, "selected"] = True
+    else:
+        baseline_validation.loc[selected_mask, "selected"] = True
+    validation = pd.concat(
+        [contextual_validation, baseline_validation],
+        ignore_index=True,
+    )
+    context_gate = {
+        "selection_scope": "development_match_oof_only",
+        "selected_feature_set": selected_feature_set,
+        "passed": context_gate_passed,
+        "tolerances": {
+            "brier_score_max_increase": 0.00001,
+            "roc_auc_max_decrease": 0.002,
+            "pr_auc_max_decrease": 0.002,
+            "calibration_error_max_increase": 0.0002,
+        },
+        "contextual_metrics": {
+            metric: float(contextual_best[metric])
+            for metric in (
+                "brier_score",
+                "roc_auc",
+                "pr_auc",
+                "calibration_error",
+            )
+        },
+        "baseline_metrics": {
+            metric: float(baseline_best[metric])
+            for metric in (
+                "brier_score",
+                "roc_auc",
+                "pr_auc",
+                "calibration_error",
+            )
+        },
+    }
+    failures = [
+        *(f"contextual: {failure}" for failure in contextual_failures),
+        *(f"baseline: {failure}" for failure in baseline_failures),
+    ]
     for target, output in (
         ("scores", "p_scores"),
         ("concedes", "p_concedes"),
@@ -1862,13 +2081,13 @@ def build_v4_player_evaluations(
         + 0.30 * profiles["vaep_per_touch"]
         + 0.20 * profiles["xt_p90"]
     )
-    # Preserve the established role-relative hierarchy while protecting the
-    # 300-minute boundary from volatile per-90 estimates. This is an
+    # Preserve the established role-relative hierarchy while protecting
+    # low-minute estimates from volatile per-90 rates. This is an
     # evaluation-only empirical-Bayes shrinkage, never a model input.
     role_prior = profiles.groupby("position_group")[
         "raw_final_player_rating"
     ].transform("mean")
-    profiles["rating_minutes_reliability"] = minutes / (minutes + 300.0)
+    profiles["rating_minutes_reliability"] = minutes / (minutes + 450.0)
     profiles["final_player_rating"] = (
         profiles["rating_minutes_reliability"]
         * profiles["raw_final_player_rating"]
@@ -2052,6 +2271,8 @@ def build_v4_player_evaluations(
         "xt_not_in_vaep_features": True,
         "vaep_action_window": VAEP_ACTION_WINDOW,
         "vaep_feature_names": feature_names,
+        "contextual_vaep_feature_names": contextual_feature_names,
+        "contextual_vaep_gate": context_gate,
         "vaep_selected_model": selected["model_name"],
         "vaep_selected_algorithm": selected["algorithm_type"],
         "vaep_calibration_method": selected["calibration_method"],
@@ -2081,7 +2302,8 @@ def build_v4_player_evaluations(
         "vaep_model_comparison": validation.to_dict("records"),
         "model_failures": failures,
         "partitions": partitions,
-        "minutes_cutoff": float(min_minutes),
+        "outfield_minutes_cutoff": float(min_minutes),
+        "goalkeeper_minutes_cutoff": 90.0,
         "players_before_cutoff": int(len(base_profiles)),
         "players_after_cutoff": int(len(profiles)),
         "players_dropped": int(len(base_profiles) - len(profiles)),
@@ -2096,7 +2318,7 @@ def build_v4_player_evaluations(
         "ranking_formula": (
             "role-relative minutes shrinkage of "
             "(0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90), "
-            "reliability=minutes/(minutes+300)"
+            "reliability=minutes/(minutes+450)"
         ),
     }
     model_bundle = {
@@ -2107,6 +2329,7 @@ def build_v4_player_evaluations(
         "score_model": selected["models"]["scores"],
         "concede_model": selected["models"]["concedes"],
         "feature_names": feature_names,
+        "contextual_vaep_gate": context_gate,
         "xt_grid": xt_grid,
         "xt_grid_shape": [XT_GRID_ROWS, XT_GRID_COLUMNS],
         "partitions": partitions,

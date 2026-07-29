@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Senegal
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Aerial/Progressive Centre-Back
-- Role entropy: 0.0000
-- Global rank: 93
-- Position rank: 19
-- Role rank: 9
-- Team rank: 4
-- Final player rating: 0.4803
+- Probabilistic role: Aerial/Progressive/Creative Centre-Back
+- Role entropy: 0.0004
+- Global rank: 366
+- Position rank: 24
+- Role rank: 17
+- Team rank: 13
+- Final player rating: 0.4543
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 348.6
-- Minutes reliability: 0.5375
+- Minutes reliability: 0.4365
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3918 |
-| vaep_def_scaled | 0.7234 |
-| vaep_per_touch | -0.0004 |
-| open_play_xt_p90 | 0.0132 |
-| set_piece_xt_p90 | 0.0103 |
-| role_adjusted_value | 0.1528 |
-| completeness_score | 0.4319 |
-| off_ball_score | 0.4641 |
+| vaep_off_scaled | 0.3930 |
+| vaep_def_scaled | 0.7935 |
+| vaep_per_touch | -0.0001 |
+| open_play_xt_p90 | 0.0155 |
+| set_piece_xt_p90 | 0.0201 |
+| role_adjusted_value | 0.1281 |
+| completeness_score | 0.6499 |
+| off_ball_score | 0.4599 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.7108 |
-| creation_score | 0.5613 |
-| finishing_score | 0.3110 |
-| pressing_score | 0.4020 |
-| defensive_score | 0.2846 |
-| ball_security_score | 0.3535 |
-| aerial_score | 0.6843 |
+| progression_score | 0.7175 |
+| creation_score | 0.6197 |
+| finishing_score | 0.3575 |
+| pressing_score | 0.3590 |
+| defensive_score | 0.3243 |
+| ball_security_score | 0.3621 |
+| aerial_score | 0.6768 |
 
 ## Spatial, 360 and passing-network context
 

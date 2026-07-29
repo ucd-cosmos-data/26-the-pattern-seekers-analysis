@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Switzerland
 - Position group: Defensive Midfield
-- Functional role: Ball-Winner
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 83
-- Position rank: 13
-- Role rank: 10
-- Team rank: 5
-- Final player rating: 0.5010
+- Functional role: Holding Anchor
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.2424
+- Global rank: 449
+- Position rank: 56
+- Role rank: 42
+- Team rank: 17
+- Final player rating: 0.4266
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 346.1
-- Minutes reliability: 0.5356
+- Minutes reliability: 0.4347
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3658 |
-| vaep_def_scaled | 0.5215 |
-| vaep_per_touch | 0.0004 |
-| open_play_xt_p90 | -0.0021 |
-| set_piece_xt_p90 | 0.0153 |
-| role_adjusted_value | 0.4432 |
-| completeness_score | 0.5562 |
-| off_ball_score | 0.6047 |
+| vaep_off_scaled | 0.4222 |
+| vaep_def_scaled | 0.4985 |
+| vaep_per_touch | 0.0003 |
+| open_play_xt_p90 | 0.0022 |
+| set_piece_xt_p90 | 0.0182 |
+| role_adjusted_value | 0.1386 |
+| completeness_score | 0.7380 |
+| off_ball_score | 0.5885 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.2892 |
-| creation_score | 0.2739 |
-| finishing_score | 0.7101 |
-| pressing_score | 0.7403 |
-| defensive_score | 0.4977 |
-| ball_security_score | 0.5162 |
-| aerial_score | 0.5610 |
+| progression_score | 0.3622 |
+| creation_score | 0.3786 |
+| finishing_score | 0.7040 |
+| pressing_score | 0.7004 |
+| defensive_score | 0.4771 |
+| ball_security_score | 0.5297 |
+| aerial_score | 0.5722 |
 
 ## Spatial, 360 and passing-network context
 

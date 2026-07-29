@@ -4,8 +4,8 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 8
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 16
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -17,16 +17,14 @@
 - Team: Poland (POL)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0879
-- VAEP defense per 90: -0.0650
-- VAEP total per 90: 0.0229
-- VAEP per touch: 0.00029
+- VAEP offense per 90: 0.0992
+- VAEP defense per 90: -0.0528
+- VAEP total per 90: 0.0464
+- VAEP per touch: 0.00060
 - Spatial xT per 90: 0.0043
 - Final-third spatial share: 3.3%
-- Unified final player rating: 0.0034
-- Team rank: #6
-- Rating 95% CI: [-0.0352, 0.0356] (bootstrap SE 0.0182)
-- Rank stability: bootstrap mean rank 5.9; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0064
+- Team rank: #13
 
 ![V4 event and 360 heatmap](../heatmaps/POL/3034_heatmap.svg)
 
@@ -52,7 +50,8 @@
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
@@ -62,17 +61,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Poland (POL)
 - Position: Center Defensive Midfield
-- Functional role: Ball-Winner
-- VAEP offense per 90: 0.0211
-- VAEP defense per 90: -0.0095
-- VAEP total per 90: 0.0115
-- VAEP per touch: 0.00014
+- Functional role: Box-to-Box / Engine Midfielder
+- VAEP offense per 90: 0.0330
+- VAEP defense per 90: -0.0167
+- VAEP total per 90: 0.0163
+- VAEP per touch: 0.00020
 - Spatial xT per 90: 0.0252
 - Final-third spatial share: 16.7%
-- Unified final player rating: 0.0197
-- Team rank: #4
-- Rating 95% CI: [0.0088, 0.0344] (bootstrap SE 0.0067)
-- Rank stability: bootstrap mean rank 4.7; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0180
+- Team rank: #12
 
 ![V4 event and 360 heatmap](../heatmaps/POL/3637_heatmap.svg)
 
@@ -98,27 +95,70 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 3: 4734_starter_report.md -->
+<!-- PLAYER_REPORT 3: 4664_starter_report.md -->
+
+# Sebastian Szymański — Starter Report
+
+- Team: Poland (POL)
+- Position: Left Center Midfield
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.1432
+- VAEP defense per 90: -0.0389
+- VAEP total per 90: 0.1043
+- VAEP per touch: 0.00128
+- Spatial xT per 90: -0.0048
+- Final-third spatial share: 23.5%
+- Unified final player rating: 0.0949
+- Team rank: #7
+
+![V4 event and 360 heatmap](../heatmaps/POL/4664_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.200 |
+| Pressing intensity per 90 | 26.68 |
+| Recovery index per 90 | 2.67 |
+
+## Top chemistry partners
+
+- Grzegorz Krychowiak — synergy 0.374, 135 shared minutes
+- Jakub Piotr Kiwior — synergy 0.364, 135 shared minutes
+- Matty Cash — synergy 0.355, 135 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 4: 4734_starter_report.md -->
 
 # Matty Cash — Starter Report
 
 - Team: Poland (POL)
 - Position: Right Back
-- Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.0728
-- VAEP defense per 90: -0.1625
-- VAEP total per 90: -0.0897
-- VAEP per touch: -0.00101
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0670
+- VAEP defense per 90: -0.1948
+- VAEP total per 90: -0.1277
+- VAEP per touch: -0.00144
 - Spatial xT per 90: 0.0384
 - Final-third spatial share: 26.5%
-- Unified final player rating: 0.0124
-- Team rank: #5
-- Rating 95% CI: [-0.0314, 0.0566] (bootstrap SE 0.0231)
-- Rank stability: bootstrap mean rank 5.1; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0025
+- Team rank: #14
 
 ![V4 event and 360 heatmap](../heatmaps/POL/4734_heatmap.svg)
 
@@ -143,27 +183,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 4: 5660_starter_report.md -->
+<!-- PLAYER_REPORT 5: 5660_starter_report.md -->
 
 # Piotr Zieliński — Starter Report
 
 - Team: Poland (POL)
 - Position: Right Center Midfield
-- Functional role: Ball-Winner
-- VAEP offense per 90: 0.0993
-- VAEP defense per 90: -0.0101
-- VAEP total per 90: 0.0893
-- VAEP per touch: 0.00085
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0990
+- VAEP defense per 90: 0.0018
+- VAEP total per 90: 0.1007
+- VAEP per touch: 0.00096
 - Spatial xT per 90: 0.0591
 - Final-third spatial share: 24.8%
-- Unified final player rating: 0.0952
-- Team rank: #2
-- Rating 95% CI: [0.0666, 0.1350] (bootstrap SE 0.0173)
-- Rank stability: bootstrap mean rank 2.0; P(team #1) 0%, P(top 3) 99%
+- Unified final player rating: 0.0882
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5660_heatmap.svg)
 
@@ -188,27 +227,70 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 5: 5668_starter_report.md -->
+<!-- PLAYER_REPORT 6: 5665_starter_report.md -->
+
+# Arkadiusz Milik — Starter Report
+
+- Team: Poland (POL)
+- Position: Left Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.2390
+- VAEP defense per 90: 0.0088
+- VAEP total per 90: 0.2479
+- VAEP per touch: 0.00286
+- Spatial xT per 90: 0.0143
+- Final-third spatial share: 44.4%
+- Unified final player rating: 0.1120
+- Team rank: #3
+
+![V4 event and 360 heatmap](../heatmaps/POL/5665_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.400 |
+| Pressing intensity per 90 | 9.27 |
+| Recovery index per 90 | 1.55 |
+
+## Top chemistry partners
+
+- Kamil Glik — synergy 0.321, 116 shared minutes
+- Bartosz Bereszyński — synergy 0.321, 116 shared minutes
+- Krystian Bielik — synergy 0.320, 110 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 7: 5668_starter_report.md -->
 
 # Robert Lewandowski — Starter Report
 
 - Team: Poland (POL)
 - Position: Center Forward
 - Functional role: Target Forward / Penalty-Box Anchor
-- VAEP offense per 90: 0.3901
-- VAEP defense per 90: 0.0199
-- VAEP total per 90: 0.4101
-- VAEP per touch: 0.00421
+- VAEP offense per 90: 0.4895
+- VAEP defense per 90: 0.0174
+- VAEP total per 90: 0.5069
+- VAEP per touch: 0.00520
 - Spatial xT per 90: 0.0192
 - Final-third spatial share: 43.8%
-- Unified final player rating: 0.2195
+- Unified final player rating: 0.2483
 - Team rank: #1
-- Rating 95% CI: [0.1433, 0.3107] (bootstrap SE 0.0439)
-- Rank stability: bootstrap mean rank 1.0; P(team #1) 99%, P(top 3) 99%
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5668_heatmap.svg)
 
@@ -233,27 +315,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 6: 5669_starter_report.md -->
+<!-- PLAYER_REPORT 8: 5669_starter_report.md -->
 
 # Wojciech Szczęsny — Starter Report
 
 - Team: Poland (POL)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0251
-- VAEP defense per 90: -0.1804
-- VAEP total per 90: -0.2055
-- VAEP per touch: -0.00331
+- VAEP offense per 90: -0.0228
+- VAEP defense per 90: -0.2168
+- VAEP total per 90: -0.2395
+- VAEP per touch: -0.00386
 - Spatial xT per 90: 0.0047
 - Final-third spatial share: 2.9%
-- Unified final player rating: -0.0806
-- Team rank: #8
-- Rating 95% CI: [-0.1028, -0.0517] (bootstrap SE 0.0130)
-- Rank stability: bootstrap mean rank 8.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0885
+- Team rank: #16
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5669_heatmap.svg)
 
@@ -279,27 +360,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 7: 5673_starter_report.md -->
+<!-- PLAYER_REPORT 9: 5673_starter_report.md -->
 
 # Bartosz Bereszyński — Starter Report
 
 - Team: Poland (POL)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.0967
-- VAEP defense per 90: -0.0184
-- VAEP total per 90: 0.0783
-- VAEP per touch: 0.00090
+- VAEP offense per 90: 0.0993
+- VAEP defense per 90: -0.0213
+- VAEP total per 90: 0.0780
+- VAEP per touch: 0.00089
 - Spatial xT per 90: 0.0401
 - Final-third spatial share: 25.8%
-- Unified final player rating: 0.0608
-- Team rank: #3
-- Rating 95% CI: [0.0380, 0.0907] (bootstrap SE 0.0136)
-- Rank stability: bootstrap mean rank 3.0; P(team #1) 0%, P(top 3) 98%
+- Unified final player rating: 0.0508
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/POL/5673_heatmap.svg)
 
@@ -325,27 +405,248 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 8: 44166_starter_report.md -->
+<!-- PLAYER_REPORT 10: 7979_starter_report.md -->
+
+# Przemysław Frankowski — Starter Report
+
+- Team: Poland (POL)
+- Position: Left Midfield
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.1227
+- VAEP defense per 90: -0.0224
+- VAEP total per 90: 0.1003
+- VAEP per touch: 0.00126
+- Spatial xT per 90: 0.0032
+- Final-third spatial share: 37.1%
+- Unified final player rating: 0.0874
+- Team rank: #9
+
+![V4 event and 360 heatmap](../heatmaps/POL/7979_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.333 |
+| Pressing intensity per 90 | 15.56 |
+| Recovery index per 90 | 3.89 |
+
+## Top chemistry partners
+
+- Kamil Glik — synergy 0.560, 255 shared minutes
+- Bartosz Bereszyński — synergy 0.529, 255 shared minutes
+- Jakub Piotr Kiwior — synergy 0.505, 255 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 11: 8836_starter_report.md -->
+
+# Karol Świderski — Starter Report
+
+- Team: Poland (POL)
+- Position: Left Center Forward
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0027
+- VAEP defense per 90: 0.0022
+- VAEP total per 90: 0.0050
+- VAEP per touch: 0.00010
+- Spatial xT per 90: -0.0102
+- Final-third spatial share: 30.2%
+- Unified final player rating: 0.2175
+- Team rank: #2
+
+![V4 event and 360 heatmap](../heatmaps/POL/8836_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 24.00 |
+| Recovery index per 90 | 2.00 |
+
+## Top chemistry partners
+
+- Krystian Bielik — synergy 0.142, 45 shared minutes
+- Grzegorz Krychowiak — synergy 0.141, 45 shared minutes
+- Piotr Zieliński — synergy 0.139, 45 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 12: 11737_starter_report.md -->
+
+# Krystian Bielik — Starter Report
+
+- Team: Poland (POL)
+- Position: Right Defensive Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0325
+- VAEP defense per 90: -0.0126
+- VAEP total per 90: 0.0199
+- VAEP per touch: 0.00020
+- Spatial xT per 90: 0.0224
+- Final-third spatial share: 12.2%
+- Unified final player rating: 0.0192
+- Team rank: #11
+
+![V4 event and 360 heatmap](../heatmaps/POL/11737_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.583 |
+| Pressing intensity per 90 | 16.87 |
+| Recovery index per 90 | 2.25 |
+
+## Top chemistry partners
+
+- Bartosz Bereszyński — synergy 0.573, 240 shared minutes
+- Kamil Glik — synergy 0.571, 240 shared minutes
+- Wojciech Szczęsny — synergy 0.563, 240 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 13: 28453_starter_report.md -->
+
+# Michał Skóraś — Starter Report
+
+- Team: Poland (POL)
+- Position: Right Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.0759
+- VAEP defense per 90: -0.0722
+- VAEP total per 90: 0.0038
+- VAEP per touch: 0.00007
+- Spatial xT per 90: 0.0093
+- Final-third spatial share: 23.6%
+- Unified final player rating: 0.0973
+- Team rank: #6
+
+![V4 event and 360 heatmap](../heatmaps/POL/28453_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 10.58 |
+| Recovery index per 90 | 0.00 |
+
+## Top chemistry partners
+
+- Kamil Glik — synergy 0.156, 51 shared minutes
+- Matty Cash — synergy 0.154, 51 shared minutes
+- Wojciech Szczęsny — synergy 0.152, 51 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 14: 31955_starter_report.md -->
+
+# Jakub Kamiński — Starter Report
+
+- Team: Poland (POL)
+- Position: Right Midfield
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.1637
+- VAEP defense per 90: 0.0095
+- VAEP total per 90: 0.1732
+- VAEP per touch: 0.00231
+- Spatial xT per 90: 0.0468
+- Final-third spatial share: 42.6%
+- Unified final player rating: 0.1039
+- Team rank: #4
+
+![V4 event and 360 heatmap](../heatmaps/POL/31955_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.200 |
+| Pressing intensity per 90 | 13.13 |
+| Recovery index per 90 | 5.68 |
+
+## Top chemistry partners
+
+- Bartosz Bereszyński — synergy 0.540, 230 shared minutes
+- Matty Cash — synergy 0.516, 254 shared minutes
+- Kamil Glik — synergy 0.452, 254 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 15: 44166_starter_report.md -->
 
 # Jakub Piotr Kiwior — Starter Report
 
 - Team: Poland (POL)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0567
-- VAEP defense per 90: -0.0589
-- VAEP total per 90: -0.0022
-- VAEP per touch: -0.00002
+- VAEP offense per 90: 0.0632
+- VAEP defense per 90: -0.0470
+- VAEP total per 90: 0.0163
+- VAEP per touch: 0.00013
 - Spatial xT per 90: 0.0210
 - Final-third spatial share: 3.2%
-- Unified final player rating: -0.0020
-- Team rank: #7
-- Rating 95% CI: [-0.0295, 0.0299] (bootstrap SE 0.0158)
-- Rank stability: bootstrap mean rank 6.3; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0007
+- Team rank: #15
 
 ![V4 event and 360 heatmap](../heatmaps/POL/44166_heatmap.svg)
 
@@ -371,62 +672,50 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
+---
 
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
+<!-- PLAYER_REPORT 16: 50502_starter_report.md -->
 
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
+# Nicola Zalewski — Starter Report
 
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
+- Team: Poland (POL)
+- Position: Left Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.0504
+- VAEP defense per 90: -0.0009
+- VAEP total per 90: 0.0495
+- VAEP per touch: 0.00057
+- Spatial xT per 90: 0.0455
+- Final-third spatial share: 30.6%
+- Unified final player rating: 0.0975
+- Team rank: #5
 
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
+![V4 event and 360 heatmap](../heatmaps/POL/50502_heatmap.svg)
 
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
+## Physical profile
 
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 26.76 |
+| Recovery index per 90 | 2.43 |
 
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
+## Top chemistry partners
 
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
+- Matty Cash — synergy 0.228, 74 shared minutes
+- Bartosz Bereszyński — synergy 0.213, 74 shared minutes
+- Kamil Glik — synergy 0.212, 74 shared minutes
 
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
+## Tactical recommendations
 
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
 
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
-
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
-
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
-
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
-
-France refinements:
-
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
-
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

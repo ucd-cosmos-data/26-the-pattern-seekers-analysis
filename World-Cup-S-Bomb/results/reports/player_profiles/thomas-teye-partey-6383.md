@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Ghana
 - Position group: Defensive Midfield
-- Functional role: Ball-Winner
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 114
-- Position rank: 20
-- Role rank: 14
-- Team rank: 3
-- Final player rating: 0.4125
+- Functional role: Holding Anchor
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.0033
+- Global rank: 519
+- Position rank: 82
+- Role rank: 62
+- Team rank: 16
+- Final player rating: 0.3973
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 301.2
-- Minutes reliability: 0.5010
+- Minutes reliability: 0.4010
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.1799 |
-| vaep_def_scaled | 0.0000 |
-| vaep_per_touch | -0.0005 |
-| open_play_xt_p90 | 0.0150 |
-| set_piece_xt_p90 | 0.0180 |
-| role_adjusted_value | 0.1888 |
-| completeness_score | 0.6513 |
-| off_ball_score | 0.6763 |
+| vaep_off_scaled | 0.2370 |
+| vaep_def_scaled | 0.2143 |
+| vaep_per_touch | -0.0007 |
+| open_play_xt_p90 | 0.0216 |
+| set_piece_xt_p90 | 0.0226 |
+| role_adjusted_value | 0.1854 |
+| completeness_score | 0.8009 |
+| off_ball_score | 0.6491 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.6846 |
-| creation_score | 0.6472 |
-| finishing_score | 0.4624 |
-| pressing_score | 0.7510 |
-| defensive_score | 0.5974 |
-| ball_security_score | 0.5296 |
-| aerial_score | 0.8286 |
+| progression_score | 0.7002 |
+| creation_score | 0.6707 |
+| finishing_score | 0.4893 |
+| pressing_score | 0.6734 |
+| defensive_score | 0.5678 |
+| ball_security_score | 0.5317 |
+| aerial_score | 0.7985 |
 
 ## Spatial, 360 and passing-network context
 

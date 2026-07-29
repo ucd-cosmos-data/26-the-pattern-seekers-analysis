@@ -57,6 +57,7 @@ ROLE_DIMENSIONS: dict[str, tuple[RoleInput, ...]] = {
         RoleInput("blocks_p90"),
         RoleInput("vaep_def_p90"),
         RoleInput("duel_win_rate"),
+        RoleInput("xd90_pct"),
     ),
     "ball_security_score": (
         RoleInput("pass_completion"),
@@ -86,6 +87,100 @@ SPATIAL_DESCRIPTOR_ALIASES: dict[str, tuple[str, ...]] = {
     "wide_corridor_occupation": ("wide_corridor_share",),
     "zone14_occupation": ("zone14_share",),
 }
+
+
+ROLE_CHANNEL_WEIGHTS: dict[str, tuple[float, float]] = {
+    "Progressive Winger": (0.85, 0.15),
+    "Target Forward": (0.85, 0.15),
+    "Mobile Forward": (0.85, 0.15),
+    "Attacking Wingback": (0.70, 0.30),
+    "Wide Creator": (0.70, 0.30),
+    "Hybrid Playmaker": (0.55, 0.45),
+    "Roaming Creator": (0.55, 0.45),
+    "Deep Playmaker": (0.55, 0.45),
+    "Controlling Midfielder": (0.55, 0.45),
+    "Box-to-Box Midfielder": (0.55, 0.45),
+    "Ball-Winner": (0.35, 0.65),
+    "Ball-Winning Midfielder": (0.35, 0.65),
+    "Defensive Midfielder": (0.35, 0.65),
+    "Centre-Back": (0.25, 0.75),
+    "Center Back": (0.25, 0.75),
+    "Fullback": (0.25, 0.75),
+    "Defensive Centre-Back": (0.25, 0.75),
+    "Ball-Playing Centre-Back": (0.25, 0.75),
+    "Two-Way Fullback": (0.25, 0.75),
+}
+
+POSITION_CHANNEL_WEIGHTS: dict[str, tuple[float, float]] = {
+    "Forward": (0.85, 0.15),
+    "Attacking Midfield/Wing": (0.70, 0.30),
+    "Central/Wide Midfield": (0.55, 0.45),
+    "Defensive Midfield": (0.35, 0.65),
+    "Fullback/Wingback": (0.25, 0.75),
+    "Center Back": (0.25, 0.75),
+}
+
+
+def derive_role_channel_weights(profiles: pd.DataFrame) -> pd.DataFrame:
+    """Return symmetric offense/defense weights from role evidence.
+
+    The mapping is player-agnostic. Probabilistic roles take precedence,
+    functional roles are the fallback, and broad position supplies a
+    deterministic default when neither label is recognized.
+    """
+
+    role_columns = [
+        column
+        for column in ("probabilistic_role", "functional_role")
+        if column in profiles
+    ]
+    weights: list[tuple[float, float]] = []
+    sources: list[str] = []
+    for _, row in profiles.iterrows():
+        pair: tuple[float, float] | None = None
+        source = "position_group"
+        for column in role_columns:
+            label = str(row.get(column, ""))
+            if label in ROLE_CHANNEL_WEIGHTS:
+                pair = ROLE_CHANNEL_WEIGHTS[label]
+                source = column
+                break
+            lower = label.lower()
+            if "centre-back" in lower or "center back" in lower:
+                pair = (0.25, 0.75)
+            elif "attacking wingback" in lower or "wide creator" in lower:
+                pair = (0.70, 0.30)
+            elif "winger" in lower or "forward" in lower:
+                pair = (0.85, 0.15)
+            elif "ball-winn" in lower or "defensive midfield" in lower:
+                pair = (0.35, 0.65)
+            elif (
+                "playmaker" in lower
+                or "creator" in lower
+                or "box-to-box" in lower
+                or "midfielder" in lower
+            ):
+                pair = (0.55, 0.45)
+            elif "fullback" in lower:
+                pair = (0.25, 0.75)
+            if pair is not None:
+                source = column
+                break
+        if pair is None:
+            pair = POSITION_CHANNEL_WEIGHTS.get(
+                str(row.get("position_group", "")),
+                (0.50, 0.50),
+            )
+        weights.append(pair)
+        sources.append(source)
+    result = pd.DataFrame(
+        weights,
+        columns=["role_off_weight", "role_def_weight"],
+        index=profiles.index,
+        dtype=float,
+    )
+    result["role_weight_source"] = sources
+    return result
 
 
 class RoleVectorTransformer(BaseEstimator, TransformerMixin):

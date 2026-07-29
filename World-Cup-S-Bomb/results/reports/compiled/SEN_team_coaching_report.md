@@ -11,15 +11,15 @@ Senegal: no tactical change cleared the modeled effect floor. Primary review sig
 ## Optimized starting 11
 
 1. Youssouf Sabaly (Fullback/Wingback)
-2. Kalidou Koulibaly (Center Back)
-3. Ismaïla Sarr (Attacking Midfield/Wing)
-4. Boulaye Dia (Attacking Midfield/Wing)
-5. Edouard Mendy (Goalkeeper)
-6. Nampalys Mendy (Defensive Midfield)
+2. Ismaïla Sarr (Attacking Midfield/Wing)
+3. Boulaye Dia (Attacking Midfield/Wing)
+4. Kalidou Koulibaly (Center Back)
+5. Idrissa Gana Gueye (Attacking Midfield/Wing)
+6. Edouard Mendy (Goalkeeper)
 7. Ismail Jakobs (Fullback/Wingback)
-8. Idrissa Gana Gueye (Attacking Midfield/Wing)
-9. Abdou Diallo (Center Back)
-10. Krépin Diatta (Attacking Midfield/Wing)
+8. Nampalys Mendy (Defensive Midfield)
+9. Krépin Diatta (Attacking Midfield/Wing)
+10. Abdou Diallo (Center Back)
 11. Cheikh Ahmadou Bamba Mbacke Dieng (Forward)
 
 ## Physical matchup deltas
@@ -32,17 +32,17 @@ Senegal: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, INSUFFICIENT_MINUTES: 20.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 79, GAIN_BELOW_THRESHOLD: 14, INSUFFICIENT_MINUTES: 6.
 
 ## V5 role-aware player leaders
 
-1. Ismaïla Sarr — Target Forward; rating 0.6553, VAEP/90 +0.436, xT/90 +0.090, role-adjusted 0.615
-2. Youssouf Sabaly — Attacking Wingback; rating 0.6216, VAEP/90 +0.115, xT/90 +0.078, role-adjusted 0.376
-3. Kalidou Koulibaly — Sweeper CB; rating 0.5927, VAEP/90 +0.044, xT/90 +0.011, role-adjusted 0.654
-4. Abdou Diallo — Sweeper CB; rating 0.4803, VAEP/90 -0.044, xT/90 +0.036, role-adjusted 0.153
-5. Boulaye Dia — Target Forward; rating 0.4795, VAEP/90 +0.256, xT/90 -0.008, role-adjusted 0.397
+1. Ismaïla Sarr — Progressive Winger; rating 0.6070, VAEP/90 +0.461, xT/90 +0.090, role-adjusted 0.523
+2. Youssouf Sabaly — Attacking Wingback; rating 0.5530, VAEP/90 +0.132, xT/90 +0.078, role-adjusted 0.092
+3. Pape Matar Sarr — Holding Anchor; rating 0.5461, VAEP/90 +0.073, xT/90 +0.134, role-adjusted 0.869
+4. Krépin Diatta — Progressive Winger; rating 0.5405, VAEP/90 +0.244, xT/90 +0.094, role-adjusted 0.383
+5. Ismail Jakobs — Attacking Wingback; rating 0.5292, VAEP/90 +0.046, xT/90 +0.089, role-adjusted 0.123
 
-_Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
+_Ratings include eligible outfield players from 45 minutes and goalkeepers from 90 minutes. The 300-minute threshold is a high-reliability label. V2 evaluates contextual VAEP behind a development-OOF non-inferiority gate, then uses the accepted feature set with role-weighted offense/defense channels, calibrated composite weights, xD-style disruption, and 450-minute shrinkage._
 
 ## Recurrent tactical mistakes
 
@@ -52,27 +52,14 @@ _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/
 
 _Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
-
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
-
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
-
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
-
 <!-- PLAYER_ROLE_VALIDATION_START -->
 ## V5 probabilistic role validation
 
-The production role model selected **K=9 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
+The production role model selected **K=16 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
 
-- Bootstrap ARI median: 0.6887
-- Bootstrap ARI fifth percentile: 0.5522
-- PCA explained variance: 0.8688
+- Bootstrap ARI median: 0.6260
+- Bootstrap ARI fifth percentile: 0.5113
+- PCA explained variance: 0.7367
 
 Roles do not award points directly. Continuous role dimensions only modulate the weights applied to observed contributions.
 <!-- PLAYER_ROLE_VALIDATION_END -->
@@ -80,16 +67,10 @@ Roles do not award points directly. Continuous role dimensions only modulate the
 <!-- ROLE_AWARE_VALUATION_START -->
 ## V5 role-aware valuation and attention gate
 
-**Production decision: `ROLE_AWARE_FALLBACK`.** The role-aware layer is active. The experimental attention challenger was evaluated match-disjoint and rejected because its discrimination was materially worse, despite better calibration.
+**Production decision: `ROLE_AWARE_FALLBACK`.** The role-aware layer is active.
+The optional attention experiment was disabled for this canonical run, so the interpretable role-aware fallback remains active without publishing unevaluated attention metrics.
 
-| Task | Model | ROC-AUC | PR-AUC | ECE | Brier |
-|---|---|---:|---:|---:|---:|
-| Retrospective | Baseline | 0.6283 | 0.5179 | 0.0659 | 0.2364 |
-| Retrospective | Attention | 0.7258 | 0.6257 | 0.0169 | 0.2086 |
-| Prospective | Baseline | 0.8855 | 0.9763 | 0.1866 | 0.1389 |
-| Prospective | Attention | 0.8815 | 0.9750 | 0.0147 | 0.0907 |
-
-New-versus-legacy ranking Spearman correlation: 0.7112.
+New-versus-legacy ranking Spearman correlation: 0.7057.
 <!-- ROLE_AWARE_VALUATION_END -->
 
 <!-- CONTINUOUS_ROLE_REFINEMENT_START -->

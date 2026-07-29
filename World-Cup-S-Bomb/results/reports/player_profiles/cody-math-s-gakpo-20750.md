@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Netherlands
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.2519
-- Global rank: 42
-- Position rank: 9
-- Role rank: 9
-- Team rank: 4
-- Final player rating: 0.5976
+- Probabilistic role: Pressing/Finishing Attacker
+- Role entropy: 0.0099
+- Global rank: 68
+- Position rank: 35
+- Role rank: 31
+- Team rank: 3
+- Final player rating: 0.5509
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 460.2
-- Minutes reliability: 0.6054
+- Minutes reliability: 0.5056
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.4007 |
-| vaep_def_scaled | 0.3586 |
-| vaep_per_touch | 0.0032 |
-| open_play_xt_p90 | 0.0320 |
-| set_piece_xt_p90 | 0.0475 |
-| role_adjusted_value | 0.5900 |
-| completeness_score | 0.6659 |
-| off_ball_score | 0.5464 |
+| vaep_off_scaled | 0.3870 |
+| vaep_def_scaled | 0.4174 |
+| vaep_per_touch | 0.0029 |
+| open_play_xt_p90 | 0.0318 |
+| set_piece_xt_p90 | 0.0430 |
+| role_adjusted_value | 0.3762 |
+| completeness_score | 0.7946 |
+| off_ball_score | 0.5463 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5418 |
-| creation_score | 0.6599 |
-| finishing_score | 0.7688 |
-| pressing_score | 0.6616 |
-| defensive_score | 0.7001 |
-| ball_security_score | 0.3134 |
-| aerial_score | 0.4284 |
+| progression_score | 0.5911 |
+| creation_score | 0.6885 |
+| finishing_score | 0.7451 |
+| pressing_score | 0.5953 |
+| defensive_score | 0.6530 |
+| ball_security_score | 0.3224 |
+| aerial_score | 0.4764 |
 
 ## Spatial, 360 and passing-network context
 

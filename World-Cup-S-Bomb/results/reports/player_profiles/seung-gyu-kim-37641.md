@@ -10,13 +10,15 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Probabilistic role: Goalkeeper
 - Role entropy: 0.0000
 - Global rank: not available
-- Position rank: 10
-- Role rank: 10
-- Team rank: 6
-- Final player rating: 0.5318
+- Position rank: 21
+- Role rank: 21
+- Team rank: 8
+- Final player rating: 0.5200
+- Ranking status: Ranked (300+ min)
+- Goalkeeper ranking status: Ranked (270+ min)
 - Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 389.6
-- Minutes reliability: 0.5650
+- Minutes reliability: 0.4641
 
 ## Rating components
 
@@ -29,20 +31,21 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 | cross_stopping_rate | 0.1042 |
 | sweeper_actions_p90 | 0.6929 |
 | distribution_under_pressure | 0.8571 |
-| penalty_save_rate_shrunk | 0.2000 |
+| penalty_save_rate_shrunk | 0.2155 |
+| high_leverage_save_pct | 0.2500 |
 | goalkeeper_feature_coverage | 1.0000 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.4079 |
-| creation_score | 0.2697 |
-| finishing_score | 0.1749 |
-| pressing_score | 0.0502 |
-| defensive_score | 0.1397 |
-| ball_security_score | 0.5563 |
-| aerial_score | 0.0681 |
+| progression_score | 0.4704 |
+| creation_score | 0.3482 |
+| finishing_score | 0.2305 |
+| pressing_score | 0.0464 |
+| defensive_score | 0.2368 |
+| ball_security_score | 0.5628 |
+| aerial_score | 0.0975 |
 
 ## Spatial, 360 and passing-network context
 

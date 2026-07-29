@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: South Korea
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Creative/Progressive/Pressing Fullback
+- Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0000
-- Global rank: 52
-- Position rank: 18
-- Role rank: 10
-- Team rank: 3
-- Final player rating: 0.5775
+- Global rank: 130
+- Position rank: 39
+- Role rank: 31
+- Team rank: 6
+- Final player rating: 0.5277
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 389.6
-- Minutes reliability: 0.5650
+- Minutes reliability: 0.4641
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3437 |
-| vaep_def_scaled | 0.6998 |
+| vaep_off_scaled | 0.4939 |
+| vaep_def_scaled | 0.6917 |
 | vaep_per_touch | 0.0010 |
-| open_play_xt_p90 | 0.0118 |
-| set_piece_xt_p90 | 0.0235 |
-| role_adjusted_value | 0.0818 |
-| completeness_score | 0.6117 |
-| off_ball_score | 0.4852 |
+| open_play_xt_p90 | 0.0146 |
+| set_piece_xt_p90 | 0.0313 |
+| role_adjusted_value | 0.0355 |
+| completeness_score | 0.7851 |
+| off_ball_score | 0.4827 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.4401 |
-| creation_score | 0.6035 |
-| finishing_score | 0.1749 |
-| pressing_score | 0.5540 |
-| defensive_score | 0.7741 |
-| ball_security_score | 0.6683 |
-| aerial_score | 0.6960 |
+| progression_score | 0.5111 |
+| creation_score | 0.6572 |
+| finishing_score | 0.2305 |
+| pressing_score | 0.4811 |
+| defensive_score | 0.7143 |
+| ball_security_score | 0.6448 |
+| aerial_score | 0.6877 |
 
 ## Spatial, 360 and passing-network context
 

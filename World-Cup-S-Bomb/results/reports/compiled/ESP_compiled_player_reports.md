@@ -4,29 +4,117 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 6
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 20
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
-<!-- PLAYER_REPORT 1: 4353_starter_report.md -->
+<!-- PLAYER_REPORT 1: 3477_starter_report.md -->
+
+# Álvaro Borja Morata Martín — Starter Report
+
+- Team: Spain (ESP)
+- Position: Center Forward
+- Functional role: Target Forward
+- VAEP offense per 90: 0.7457
+- VAEP defense per 90: 0.0044
+- VAEP total per 90: 0.7500
+- VAEP per touch: 0.00962
+- Spatial xT per 90: 0.0316
+- Final-third spatial share: 45.8%
+- Unified final player rating: 0.2839
+- Team rank: #2
+
+![V4 event and 360 heatmap](../heatmaps/ESP/3477_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.667 |
+| Pressing intensity per 90 | 11.65 |
+| Recovery index per 90 | 0.90 |
+
+## Top chemistry partners
+
+- Unai Simón Mendibil — synergy 0.474, 201 shared minutes
+- Rodrigo Hernández Cascante — synergy 0.391, 201 shared minutes
+- Aymeric Laporte — synergy 0.374, 145 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 2: 3957_starter_report.md -->
+
+# César Azpilicueta Tanco — Starter Report
+
+- Team: Spain (ESP)
+- Position: Right Back
+- Functional role: Attacking Wingback
+- VAEP offense per 90: 0.1142
+- VAEP defense per 90: 0.0021
+- VAEP total per 90: 0.1164
+- VAEP per touch: 0.00038
+- Spatial xT per 90: 0.0875
+- Final-third spatial share: 18.1%
+- Unified final player rating: 0.0590
+- Team rank: #12
+
+![V4 event and 360 heatmap](../heatmaps/ESP/3957_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.600 |
+| Pressing intensity per 90 | 6.92 |
+| Recovery index per 90 | 1.26 |
+
+## Top chemistry partners
+
+- Rodrigo Hernández Cascante — synergy 0.409, 143 shared minutes
+- Unai Simón Mendibil — synergy 0.383, 143 shared minutes
+- Pablo Martín Páez Gavira — synergy 0.382, 143 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 3: 4353_starter_report.md -->
 
 # Aymeric Laporte — Starter Report
 
 - Team: Spain (ESP)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0530
-- VAEP defense per 90: -0.0126
-- VAEP total per 90: 0.0404
-- VAEP per touch: 0.00012
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0630
+- VAEP defense per 90: -0.0130
+- VAEP total per 90: 0.0500
+- VAEP per touch: 0.00015
 - Spatial xT per 90: 0.0249
 - Final-third spatial share: 2.6%
-- Unified final player rating: 0.0089
-- Team rank: #4
-- Rating 95% CI: [-0.0060, 0.0218] (bootstrap SE 0.0073)
-- Rank stability: bootstrap mean rank 4.0; P(team #1) 0%, P(top 3) 27%
+- Unified final player rating: 0.0071
+- Team rank: #18
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/4353_heatmap.svg)
 
@@ -52,27 +140,71 @@
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 2: 5203_starter_report.md -->
+<!-- PLAYER_REPORT 4: 5199_starter_report.md -->
+
+# Jorge Resurrección Merodio — Starter Report
+
+- Team: Spain (ESP)
+- Position: Center Defensive Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.1770
+- VAEP defense per 90: 0.0055
+- VAEP total per 90: 0.1825
+- VAEP per touch: 0.00076
+- Spatial xT per 90: 0.0057
+- Final-third spatial share: 12.1%
+- Unified final player rating: 0.0306
+- Team rank: #14
+
+![V4 event and 360 heatmap](../heatmaps/ESP/5199_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 12.41 |
+| Recovery index per 90 | 0.00 |
+
+## Top chemistry partners
+
+- Rodrigo Hernández Cascante — synergy 0.202, 65 shared minutes
+- Aymeric Laporte — synergy 0.199, 65 shared minutes
+- Unai Simón Mendibil — synergy 0.199, 65 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 5: 5203_starter_report.md -->
 
 # Sergio Busquets i Burgos — Starter Report
 
 - Team: Spain (ESP)
 - Position: Center Defensive Midfield
-- Functional role: Ball-Winner
-- VAEP offense per 90: -0.0391
-- VAEP defense per 90: -0.0154
-- VAEP total per 90: -0.0546
-- VAEP per touch: -0.00032
+- Functional role: Holding Anchor
+- VAEP offense per 90: -0.0152
+- VAEP defense per 90: -0.0123
+- VAEP total per 90: -0.0275
+- VAEP per touch: -0.00016
 - Spatial xT per 90: 0.0464
 - Final-third spatial share: 22.0%
-- Unified final player rating: 0.0032
-- Team rank: #5
-- Rating 95% CI: [-0.0418, 0.0446] (bootstrap SE 0.0242)
-- Rank stability: bootstrap mean rank 4.2; P(team #1) 0%, P(top 3) 31%
+- Unified final player rating: 0.0097
+- Team rank: #16
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/5203_heatmap.svg)
 
@@ -98,27 +230,248 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 3: 6765_starter_report.md -->
+<!-- PLAYER_REPORT 6: 5211_starter_report.md -->
+
+# Jordi Alba Ramos — Starter Report
+
+- Team: Spain (ESP)
+- Position: Left Back
+- Functional role: Attacking Wingback
+- VAEP offense per 90: 0.3569
+- VAEP defense per 90: 0.0016
+- VAEP total per 90: 0.3585
+- VAEP per touch: 0.00111
+- Spatial xT per 90: 0.1039
+- Final-third spatial share: 31.4%
+- Unified final player rating: 0.1088
+- Team rank: #9
+
+![V4 event and 360 heatmap](../heatmaps/ESP/5211_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.250 |
+| Pressing intensity per 90 | 13.63 |
+| Recovery index per 90 | 4.99 |
+
+## Top chemistry partners
+
+- Unai Simón Mendibil — synergy 0.615, 271 shared minutes
+- Sergio Busquets i Burgos — synergy 0.614, 271 shared minutes
+- Rodrigo Hernández Cascante — synergy 0.614, 271 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 7: 5719_starter_report.md -->
+
+# Marco Asensio Willemsen — Starter Report
+
+- Team: Spain (ESP)
+- Position: Center Forward
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.7770
+- VAEP defense per 90: 0.0217
+- VAEP total per 90: 0.7988
+- VAEP per touch: 0.00512
+- Spatial xT per 90: 0.0208
+- Final-third spatial share: 60.4%
+- Unified final player rating: 0.2964
+- Team rank: #1
+
+![V4 event and 360 heatmap](../heatmaps/ESP/5719_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.333 |
+| Pressing intensity per 90 | 10.63 |
+| Recovery index per 90 | 1.90 |
+
+## Top chemistry partners
+
+- Rodrigo Hernández Cascante — synergy 0.542, 237 shared minutes
+- Unai Simón Mendibil — synergy 0.528, 237 shared minutes
+- Pedro González López — synergy 0.517, 225 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 8: 5721_starter_report.md -->
+
+# Daniel Carvajal Ramos — Starter Report
+
+- Team: Spain (ESP)
+- Position: Right Back
+- Functional role: Two-Way Fullback
+- VAEP offense per 90: 0.0789
+- VAEP defense per 90: -0.1921
+- VAEP total per 90: -0.1132
+- VAEP per touch: -0.00057
+- Spatial xT per 90: 0.0309
+- Final-third spatial share: 22.2%
+- Unified final player rating: 0.0279
+- Team rank: #15
+
+![V4 event and 360 heatmap](../heatmaps/ESP/5721_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 7.91 |
+| Recovery index per 90 | 4.87 |
+
+## Top chemistry partners
+
+- Rodrigo Hernández Cascante — synergy 0.419, 148 shared minutes
+- Sergio Busquets i Burgos — synergy 0.405, 148 shared minutes
+- Daniel Olmo Carvajal — synergy 0.405, 148 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 9: 6583_starter_report.md -->
+
+# Carlos Soler Barragán — Starter Report
+
+- Team: Spain (ESP)
+- Position: Right Center Midfield
+- Functional role: Progressive Winger
+- VAEP offense per 90: -0.1166
+- VAEP defense per 90: 0.0097
+- VAEP total per 90: -0.1068
+- VAEP per touch: -0.00050
+- Spatial xT per 90: 0.0791
+- Final-third spatial share: 32.7%
+- Unified final player rating: 0.0810
+- Team rank: #11
+
+![V4 event and 360 heatmap](../heatmaps/ESP/6583_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 7.94 |
+| Recovery index per 90 | 4.41 |
+
+## Top chemistry partners
+
+- Rodrigo Hernández Cascante — synergy 0.310, 102 shared minutes
+- Aymeric Laporte — synergy 0.294, 102 shared minutes
+- Unai Simón Mendibil — synergy 0.292, 102 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 10: 6748_starter_report.md -->
+
+# Ferrán Torres García — Starter Report
+
+- Team: Spain (ESP)
+- Position: Right Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.4283
+- VAEP defense per 90: 0.0296
+- VAEP total per 90: 0.4579
+- VAEP per touch: 0.00325
+- Spatial xT per 90: 0.0532
+- Final-third spatial share: 56.3%
+- Unified final player rating: 0.1980
+- Team rank: #5
+
+![V4 event and 360 heatmap](../heatmaps/ESP/6748_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.250 |
+| Pressing intensity per 90 | 12.75 |
+| Recovery index per 90 | 3.19 |
+
+## Top chemistry partners
+
+- Sergio Busquets i Burgos — synergy 0.547, 226 shared minutes
+- Unai Simón Mendibil — synergy 0.530, 226 shared minutes
+- Pedro González López — synergy 0.478, 226 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 11: 6765_starter_report.md -->
 
 # Rodrigo Hernández Cascante — Starter Report
 
 - Team: Spain (ESP)
 - Position: Right Center Back
 - Functional role: Ball-Playing Centre-Back
-- VAEP offense per 90: 0.1100
-- VAEP defense per 90: -0.0672
-- VAEP total per 90: 0.0428
-- VAEP per touch: 0.00011
+- VAEP offense per 90: 0.0901
+- VAEP defense per 90: -0.0547
+- VAEP total per 90: 0.0354
+- VAEP per touch: 0.00009
 - Spatial xT per 90: 0.0496
 - Final-third spatial share: 7.4%
-- Unified final player rating: 0.0147
-- Team rank: #3
-- Rating 95% CI: [-0.0305, 0.0468] (bootstrap SE 0.0201)
-- Rank stability: bootstrap mean rank 3.8; P(team #1) 0%, P(top 3) 40%
+- Unified final player rating: 0.0085
+- Team rank: #17
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/6765_heatmap.svg)
 
@@ -144,27 +497,115 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 4: 11748_starter_report.md -->
+<!-- PLAYER_REPORT 12: 6840_starter_report.md -->
+
+# Marcos Llorente Moreno — Starter Report
+
+- Team: Spain (ESP)
+- Position: Right Back
+- Functional role: Two-Way Fullback
+- VAEP offense per 90: 0.1089
+- VAEP defense per 90: -0.0031
+- VAEP total per 90: 0.1058
+- VAEP per touch: 0.00054
+- Spatial xT per 90: 0.0017
+- Final-third spatial share: 26.3%
+- Unified final player rating: 0.0536
+- Team rank: #13
+
+![V4 event and 360 heatmap](../heatmaps/ESP/6840_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 13.17 |
+| Recovery index per 90 | 7.31 |
+
+## Top chemistry partners
+
+- Rodrigo Hernández Cascante — synergy 0.363, 123 shared minutes
+- Aymeric Laporte — synergy 0.357, 123 shared minutes
+- Pedro González López — synergy 0.348, 123 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 13: 6892_starter_report.md -->
+
+# Pau Francisco Torres — Starter Report
+
+- Team: Spain (ESP)
+- Position: Left Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0336
+- VAEP defense per 90: -0.0428
+- VAEP total per 90: -0.0092
+- VAEP per touch: -0.00002
+- Spatial xT per 90: 0.0648
+- Final-third spatial share: 4.8%
+- Unified final player rating: -0.0060
+- Team rank: #19
+
+![V4 event and 360 heatmap](../heatmaps/ESP/6892_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 3.71 |
+| Recovery index per 90 | 4.64 |
+
+## Top chemistry partners
+
+- Rodrigo Hernández Cascante — synergy 0.301, 97 shared minutes
+- Unai Simón Mendibil — synergy 0.296, 97 shared minutes
+- Sergio Busquets i Burgos — synergy 0.287, 97 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 14: 11748_starter_report.md -->
 
 # Unai Simón Mendibil — Starter Report
 
 - Team: Spain (ESP)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0114
-- VAEP defense per 90: -0.1136
-- VAEP total per 90: -0.1250
-- VAEP per touch: -0.00150
+- VAEP offense per 90: -0.0189
+- VAEP defense per 90: -0.0314
+- VAEP total per 90: -0.0503
+- VAEP per touch: -0.00060
 - Spatial xT per 90: 0.0007
 - Final-third spatial share: 0.0%
-- Unified final player rating: -0.0582
-- Team rank: #6
-- Rating 95% CI: [-0.0804, -0.0339] (bootstrap SE 0.0119)
-- Rank stability: bootstrap mean rank 6.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0439
+- Team rank: #20
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/11748_heatmap.svg)
 
@@ -190,27 +631,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 5: 16532_starter_report.md -->
+<!-- PLAYER_REPORT 15: 16532_starter_report.md -->
 
 # Daniel Olmo Carvajal — Starter Report
 
 - Team: Spain (ESP)
 - Position: Left Wing
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.5193
-- VAEP defense per 90: 0.0354
-- VAEP total per 90: 0.5547
-- VAEP per touch: 0.00345
+- VAEP offense per 90: 0.5137
+- VAEP defense per 90: 0.0442
+- VAEP total per 90: 0.5579
+- VAEP per touch: 0.00347
 - Spatial xT per 90: 0.0722
 - Final-third spatial share: 51.0%
-- Unified final player rating: 0.2554
-- Team rank: #1
-- Rating 95% CI: [0.1899, 0.3302] (bootstrap SE 0.0379)
-- Rank stability: bootstrap mean rank 1.0; P(team #1) 98%, P(top 3) 98%
+- Unified final player rating: 0.2312
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/16532_heatmap.svg)
 
@@ -236,27 +676,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 6: 30486_starter_report.md -->
+<!-- PLAYER_REPORT 16: 30486_starter_report.md -->
 
 # Pedro González López — Starter Report
 
 - Team: Spain (ESP)
 - Position: Left Center Midfield
-- Functional role: Ball-Winner
-- VAEP offense per 90: 0.1799
-- VAEP defense per 90: -0.0004
-- VAEP total per 90: 0.1796
-- VAEP per touch: 0.00059
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.1876
+- VAEP defense per 90: 0.0062
+- VAEP total per 90: 0.1938
+- VAEP per touch: 0.00064
 - Spatial xT per 90: 0.1051
 - Final-third spatial share: 28.9%
-- Unified final player rating: 0.1236
-- Team rank: #2
-- Rating 95% CI: [0.0878, 0.1721] (bootstrap SE 0.0214)
-- Rank stability: bootstrap mean rank 2.0; P(team #1) 0%, P(top 3) 98%
+- Unified final player rating: 0.1126
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/ESP/30486_heatmap.svg)
 
@@ -282,62 +721,183 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
+---
 
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
+<!-- PLAYER_REPORT 17: 30756_starter_report.md -->
 
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
+# Anssumane Fati — Starter Report
 
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
+- Team: Spain (ESP)
+- Position: Left Wing
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.7663
+- VAEP defense per 90: 0.1219
+- VAEP total per 90: 0.8882
+- VAEP per touch: 0.00577
+- Spatial xT per 90: -0.0613
+- Final-third spatial share: 70.5%
+- Unified final player rating: 0.2048
+- Team rank: #4
 
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
+![V4 event and 360 heatmap](../heatmaps/ESP/30756_heatmap.svg)
 
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
+## Physical profile
 
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.250 |
+| Pressing intensity per 90 | 4.86 |
+| Recovery index per 90 | 3.24 |
 
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
+## Top chemistry partners
 
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
+- Sergio Busquets i Burgos — synergy 0.176, 56 shared minutes
+- Unai Simón Mendibil — synergy 0.164, 56 shared minutes
+- Pedro González López — synergy 0.139, 56 shared minutes
 
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
+## Tactical recommendations
 
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Use recovery capacity to support higher attacking positions.
 
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
+---
 
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
+<!-- PLAYER_REPORT 18: 39161_starter_report.md -->
 
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+# Alejandro Balde Martínez — Starter Report
 
-France refinements:
+- Team: Spain (ESP)
+- Position: Left Back
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.4048
+- VAEP defense per 90: -0.0568
+- VAEP total per 90: 0.3479
+- VAEP per touch: 0.00161
+- Spatial xT per 90: 0.0483
+- Final-third spatial share: 26.2%
+- Unified final player rating: 0.0852
+- Team rank: #10
 
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+![V4 event and 360 heatmap](../heatmaps/ESP/39161_heatmap.svg)
 
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 16.34 |
+| Recovery index per 90 | 3.14 |
+
+## Top chemistry partners
+
+- Unai Simón Mendibil — synergy 0.396, 143 shared minutes
+- Rodrigo Hernández Cascante — synergy 0.395, 143 shared minutes
+- Daniel Olmo Carvajal — synergy 0.340, 118 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 19: 68574_starter_report.md -->
+
+# Nicholas Williams Arthuer — Starter Report
+
+- Team: Spain (ESP)
+- Position: Right Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.1825
+- VAEP defense per 90: 0.0050
+- VAEP total per 90: 0.1875
+- VAEP per touch: 0.00126
+- Spatial xT per 90: 0.1001
+- Final-third spatial share: 45.0%
+- Unified final player rating: 0.1603
+- Team rank: #6
+
+![V4 event and 360 heatmap](../heatmaps/ESP/68574_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 14.74 |
+| Recovery index per 90 | 3.40 |
+
+## Top chemistry partners
+
+- Rodrigo Hernández Cascante — synergy 0.406, 159 shared minutes
+- Unai Simón Mendibil — synergy 0.393, 159 shared minutes
+- Daniel Olmo Carvajal — synergy 0.362, 138 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 20: 133353_starter_report.md -->
+
+# Pablo Martín Páez Gavira — Starter Report
+
+- Team: Spain (ESP)
+- Position: Right Center Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.2026
+- VAEP defense per 90: 0.0265
+- VAEP total per 90: 0.2291
+- VAEP per touch: 0.00151
+- Spatial xT per 90: 0.0430
+- Final-third spatial share: 33.0%
+- Unified final player rating: 0.1141
+- Team rank: #7
+
+![V4 event and 360 heatmap](../heatmaps/ESP/133353_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.300 |
+| Pressing intensity per 90 | 17.79 |
+| Recovery index per 90 | 3.99 |
+
+## Top chemistry partners
+
+- Rodrigo Hernández Cascante — synergy 0.657, 293 shared minutes
+- Unai Simón Mendibil — synergy 0.608, 293 shared minutes
+- Sergio Busquets i Burgos — synergy 0.571, 259 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

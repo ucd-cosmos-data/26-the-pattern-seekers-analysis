@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: France
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
-- Probabilistic role: Creative/Progressive/Pressing Fullback
-- Role entropy: 0.0000
-- Global rank: 55
-- Position rank: 14
-- Role rank: 10
-- Team rank: 6
-- Final player rating: 0.5705
+- Probabilistic role: Finishing/Creative Attacker
+- Role entropy: 0.0031
+- Global rank: 38
+- Position rank: 20
+- Role rank: 21
+- Team rank: 3
+- Final player rating: 0.5711
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 448.0
-- Minutes reliability: 0.5989
+- Minutes reliability: 0.4989
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.4429 |
-| vaep_def_scaled | 0.4347 |
-| vaep_per_touch | 0.0027 |
-| open_play_xt_p90 | 0.0587 |
-| set_piece_xt_p90 | 0.0452 |
-| role_adjusted_value | 0.1916 |
-| completeness_score | 0.5758 |
-| off_ball_score | 0.4848 |
+| vaep_off_scaled | 0.4461 |
+| vaep_def_scaled | 0.4574 |
+| vaep_per_touch | 0.0026 |
+| open_play_xt_p90 | 0.0631 |
+| set_piece_xt_p90 | 0.0491 |
+| role_adjusted_value | 0.4638 |
+| completeness_score | 0.7579 |
+| off_ball_score | 0.4984 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5518 |
-| creation_score | 0.6486 |
-| finishing_score | 0.5575 |
-| pressing_score | 0.6543 |
-| defensive_score | 0.5528 |
-| ball_security_score | 0.5317 |
-| aerial_score | 0.3298 |
+| progression_score | 0.6044 |
+| creation_score | 0.7010 |
+| finishing_score | 0.5863 |
+| pressing_score | 0.6143 |
+| defensive_score | 0.5449 |
+| ball_security_score | 0.5187 |
+| aerial_score | 0.3752 |
 
 ## Spatial, 360 and passing-network context
 

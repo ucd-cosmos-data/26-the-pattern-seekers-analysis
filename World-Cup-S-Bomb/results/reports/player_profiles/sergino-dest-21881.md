@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: United States
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Creative/Progressive/Pressing Fullback
-- Role entropy: 0.0000
-- Global rank: 24
-- Position rank: 8
-- Role rank: 5
-- Team rank: 4
-- Final player rating: 0.6472
+- Probabilistic role: Secure/Progressive Fullback
+- Role entropy: 0.2500
+- Global rank: 86
+- Position rank: 26
+- Role rank: 22
+- Team rank: 6
+- Final player rating: 0.5399
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 307.6
-- Minutes reliability: 0.5062
+- Minutes reliability: 0.4060
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.2416 |
-| vaep_def_scaled | 0.6879 |
+| vaep_off_scaled | 0.3922 |
+| vaep_def_scaled | 0.7001 |
 | vaep_per_touch | 0.0006 |
-| open_play_xt_p90 | 0.0289 |
-| set_piece_xt_p90 | 0.0539 |
-| role_adjusted_value | 0.8331 |
-| completeness_score | 0.6231 |
-| off_ball_score | 0.4752 |
+| open_play_xt_p90 | 0.0362 |
+| set_piece_xt_p90 | 0.0623 |
+| role_adjusted_value | 0.1642 |
+| completeness_score | 0.7664 |
+| off_ball_score | 0.4761 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.6499 |
-| creation_score | 0.6275 |
-| finishing_score | 0.5692 |
-| pressing_score | 0.4852 |
-| defensive_score | 0.4947 |
-| ball_security_score | 0.6254 |
-| aerial_score | 0.3122 |
+| progression_score | 0.6953 |
+| creation_score | 0.6700 |
+| finishing_score | 0.5947 |
+| pressing_score | 0.4280 |
+| defensive_score | 0.5110 |
+| ball_security_score | 0.5944 |
+| aerial_score | 0.3707 |
 
 ## Spatial, 360 and passing-network context
 

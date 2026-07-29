@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Netherlands
 - Position group: Defensive Midfield
-- Functional role: Box-to-Box / Engine Midfielder
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 65
-- Position rank: 8
-- Role rank: 7
-- Team rank: 6
-- Final player rating: 0.5482
+- Functional role: Holding Anchor
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.0051
+- Global rank: 256
+- Position rank: 9
+- Role rank: 11
+- Team rank: 7
+- Final player rating: 0.4879
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 499.5
-- Minutes reliability: 0.6247
+- Minutes reliability: 0.5260
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3383 |
-| vaep_def_scaled | 0.7061 |
-| vaep_per_touch | 0.0003 |
-| open_play_xt_p90 | 0.0133 |
-| set_piece_xt_p90 | 0.0072 |
-| role_adjusted_value | 0.3591 |
-| completeness_score | 0.6830 |
-| off_ball_score | 0.6336 |
+| vaep_off_scaled | 0.5095 |
+| vaep_def_scaled | 0.8682 |
+| vaep_per_touch | 0.0007 |
+| open_play_xt_p90 | 0.0164 |
+| set_piece_xt_p90 | 0.0118 |
+| role_adjusted_value | 0.1279 |
+| completeness_score | 0.7859 |
+| off_ball_score | 0.6220 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5201 |
-| creation_score | 0.5415 |
-| finishing_score | 0.6162 |
-| pressing_score | 0.7146 |
-| defensive_score | 0.6784 |
-| ball_security_score | 0.7007 |
-| aerial_score | 0.7523 |
+| progression_score | 0.5767 |
+| creation_score | 0.6032 |
+| finishing_score | 0.6388 |
+| pressing_score | 0.6616 |
+| defensive_score | 0.6265 |
+| ball_security_score | 0.6817 |
+| aerial_score | 0.7305 |
 
 ## Spatial, 360 and passing-network context
 

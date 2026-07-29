@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Croatia
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Creative/Progressive/Pressing Fullback
-- Role entropy: 0.0000
-- Global rank: 87
-- Position rank: 24
-- Role rank: 12
-- Team rank: 6
-- Final player rating: 0.4912
+- Probabilistic role: Creative/Progressive Fullback
+- Role entropy: 0.0077
+- Global rank: 412
+- Position rank: 105
+- Role rank: 53
+- Team rank: 17
+- Final player rating: 0.4380
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 624.1
-- Minutes reliability: 0.6754
+- Minutes reliability: 0.5811
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.1874 |
-| vaep_def_scaled | 0.3940 |
-| vaep_per_touch | 0.0002 |
-| open_play_xt_p90 | 0.0129 |
-| set_piece_xt_p90 | 0.0547 |
-| role_adjusted_value | 0.1140 |
-| completeness_score | 0.6183 |
-| off_ball_score | 0.4298 |
+| vaep_off_scaled | 0.2910 |
+| vaep_def_scaled | 0.2936 |
+| vaep_per_touch | 0.0000 |
+| open_play_xt_p90 | 0.0147 |
+| set_piece_xt_p90 | 0.0548 |
+| role_adjusted_value | 0.0713 |
+| completeness_score | 0.7570 |
+| off_ball_score | 0.4294 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.7409 |
-| creation_score | 0.6796 |
-| finishing_score | 0.2688 |
-| pressing_score | 0.3988 |
-| defensive_score | 0.6033 |
-| ball_security_score | 0.4732 |
-| aerial_score | 0.2958 |
+| progression_score | 0.7710 |
+| creation_score | 0.7121 |
+| finishing_score | 0.3406 |
+| pressing_score | 0.3431 |
+| defensive_score | 0.5637 |
+| ball_security_score | 0.4947 |
+| aerial_score | 0.3595 |
 
 ## Spatial, 360 and passing-network context
 

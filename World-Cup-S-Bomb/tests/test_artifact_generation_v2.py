@@ -135,7 +135,8 @@ def test_team_manifest_can_include_teams_without_ranked_players(
     assert "Observed 0" in empty_team
     assert "Observed 4" in empty_team
     assert "Observed 5" not in empty_team
-    assert "Coverage only (<300 min)" in empty_team
+    assert "Ranked (180–299 min)" in empty_team
+    assert "Coverage only (<180 min)" in empty_team
     assert "No model rating assigned" in empty_team
     assert "Total xT created: 1.2500" in empty_team
     assert "Pass completion under pressure: 0.7500" in empty_team

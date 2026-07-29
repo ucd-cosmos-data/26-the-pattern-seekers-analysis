@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Argentina
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Probabilistic role: Creative/Progressive Fullback
+- Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
-- Global rank: 18
-- Position rank: 6
-- Role rank: 3
+- Global rank: 29
+- Position rank: 9
+- Role rank: 2
 - Team rank: 5
-- Final player rating: 0.6573
+- Final player rating: 0.5764
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 393.3
-- Minutes reliability: 0.5673
+- Minutes reliability: 0.4664
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.4595 |
+| vaep_off_scaled | 0.6934 |
 | vaep_def_scaled | 1.0000 |
-| vaep_per_touch | 0.0022 |
-| open_play_xt_p90 | 0.0047 |
-| set_piece_xt_p90 | 0.0132 |
-| role_adjusted_value | 0.3282 |
-| completeness_score | 0.6046 |
-| off_ball_score | 0.5326 |
+| vaep_per_touch | 0.0025 |
+| open_play_xt_p90 | 0.0045 |
+| set_piece_xt_p90 | 0.0165 |
+| role_adjusted_value | 0.0555 |
+| completeness_score | 0.7549 |
+| off_ball_score | 0.5281 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.3878 |
-| creation_score | 0.4585 |
-| finishing_score | 0.5739 |
-| pressing_score | 0.7464 |
-| defensive_score | 0.7218 |
-| ball_security_score | 0.5099 |
-| aerial_score | 0.6937 |
+| progression_score | 0.4429 |
+| creation_score | 0.5384 |
+| finishing_score | 0.5717 |
+| pressing_score | 0.6824 |
+| defensive_score | 0.6682 |
+| ball_security_score | 0.5486 |
+| aerial_score | 0.6810 |
 
 ## Spatial, 360 and passing-network context
 

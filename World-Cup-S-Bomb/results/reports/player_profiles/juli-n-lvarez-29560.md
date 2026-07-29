@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Argentina
 - Position group: Forward
-- Functional role: Target Forward
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.0024
-- Global rank: 3
-- Position rank: 2
-- Role rank: 1
-- Team rank: 2
-- Final player rating: 0.7526
+- Functional role: Ball-Winner
+- Probabilistic role: Finishing/Aerial Forward
+- Role entropy: 0.0250
+- Global rank: 117
+- Position rank: 11
+- Role rank: 17
+- Team rank: 7
+- Final player rating: 0.5328
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 485.2
-- Minutes reliability: 0.6179
+- Minutes reliability: 0.5188
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.9707 |
-| vaep_def_scaled | 0.4215 |
-| vaep_per_touch | 0.0075 |
-| open_play_xt_p90 | 0.0351 |
-| set_piece_xt_p90 | 0.0056 |
-| role_adjusted_value | 0.8896 |
-| completeness_score | 0.5773 |
-| off_ball_score | 0.5467 |
+| vaep_off_scaled | 0.5517 |
+| vaep_def_scaled | 0.2715 |
+| vaep_per_touch | 0.0060 |
+| open_play_xt_p90 | 0.0304 |
+| set_piece_xt_p90 | 0.0019 |
+| role_adjusted_value | 0.2791 |
+| completeness_score | 0.7677 |
+| off_ball_score | 0.5526 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.2938 |
-| creation_score | 0.3092 |
-| finishing_score | 0.9190 |
-| pressing_score | 0.8110 |
-| defensive_score | 0.5147 |
-| ball_security_score | 0.3035 |
-| aerial_score | 0.4131 |
+| progression_score | 0.3421 |
+| creation_score | 0.3563 |
+| finishing_score | 0.8817 |
+| pressing_score | 0.7674 |
+| defensive_score | 0.5725 |
+| ball_security_score | 0.3647 |
+| aerial_score | 0.4472 |
 
 ## Spatial, 360 and passing-network context
 

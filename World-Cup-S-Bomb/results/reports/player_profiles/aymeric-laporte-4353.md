@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Spain
 - Position group: Center Back
-- Functional role: Deep Playmaker
+- Functional role: Sweeper CB
 - Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 70
+- Global rank: 333
 - Position rank: 12
-- Role rank: 3
-- Team rank: 4
-- Final player rating: 0.5273
+- Role rank: 9
+- Team rank: 16
+- Final player rating: 0.4651
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 316.9
-- Minutes reliability: 0.5137
+- Minutes reliability: 0.4132
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.5952 |
-| vaep_def_scaled | 0.9126 |
-| vaep_per_touch | 0.0001 |
-| open_play_xt_p90 | 0.0029 |
-| set_piece_xt_p90 | 0.0105 |
-| role_adjusted_value | 0.1337 |
-| completeness_score | 0.4487 |
-| off_ball_score | 0.4619 |
+| vaep_off_scaled | 0.5542 |
+| vaep_def_scaled | 0.8692 |
+| vaep_per_touch | 0.0002 |
+| open_play_xt_p90 | 0.0062 |
+| set_piece_xt_p90 | 0.0187 |
+| role_adjusted_value | 0.0852 |
+| completeness_score | 0.6893 |
+| off_ball_score | 0.4522 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5870 |
-| creation_score | 0.5254 |
-| finishing_score | 0.3298 |
-| pressing_score | 0.1569 |
-| defensive_score | 0.3445 |
-| ball_security_score | 0.4289 |
-| aerial_score | 0.6678 |
+| progression_score | 0.6012 |
+| creation_score | 0.5747 |
+| finishing_score | 0.3642 |
+| pressing_score | 0.1616 |
+| defensive_score | 0.3262 |
+| ball_security_score | 0.4578 |
+| aerial_score | 0.6585 |
 
 ## Spatial, 360 and passing-network context
 

@@ -4,8 +4,8 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 7
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 19
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -17,16 +17,14 @@
 - Team: South Korea (KOR)
 - Position: Left Wing
 - Functional role: Target Forward
-- VAEP offense per 90: 0.3793
-- VAEP defense per 90: 0.0053
-- VAEP total per 90: 0.3846
-- VAEP per touch: 0.00379
+- VAEP offense per 90: 0.3616
+- VAEP defense per 90: 0.0059
+- VAEP total per 90: 0.3676
+- VAEP per touch: 0.00362
 - Spatial xT per 90: 0.0781
 - Final-third spatial share: 57.5%
-- Unified final player rating: 0.2082
-- Team rank: #1
-- Rating 95% CI: [0.1764, 0.2496] (bootstrap SE 0.0195)
-- Rank stability: bootstrap mean rank 1.0; P(team #1) 99%, P(top 3) 99%
+- Unified final player rating: 0.1877
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/3083_heatmap.svg)
 
@@ -52,27 +50,71 @@
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 2: 5604_starter_report.md -->
+<!-- PLAYER_REPORT 2: 3135_starter_report.md -->
+
+# Chang-Hoon Kwon — Starter Report
+
+- Team: South Korea (KOR)
+- Position: Right Wing
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.5291
+- VAEP defense per 90: -0.0143
+- VAEP total per 90: 0.5148
+- VAEP per touch: 0.00447
+- Spatial xT per 90: 0.0586
+- Final-third spatial share: 52.9%
+- Unified final player rating: 0.1870
+- Team rank: #4
+
+![V4 event and 360 heatmap](../heatmaps/KOR/3135_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 17.58 |
+| Recovery index per 90 | 3.20 |
+
+## Top chemistry partners
+
+- Young-Gwon Kim — synergy 0.177, 56 shared minutes
+- Woo-Young Jung — synergy 0.176, 56 shared minutes
+- Seung-Gyu Kim — synergy 0.166, 56 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 3: 5604_starter_report.md -->
 
 # Young-Gwon Kim — Starter Report
 
 - Team: South Korea (KOR)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0455
-- VAEP defense per 90: 0.0067
-- VAEP total per 90: 0.0522
-- VAEP per touch: 0.00039
+- VAEP offense per 90: 0.0382
+- VAEP defense per 90: -0.0086
+- VAEP total per 90: 0.0295
+- VAEP per touch: 0.00022
 - Spatial xT per 90: 0.0231
 - Final-third spatial share: 5.3%
-- Unified final player rating: 0.0134
-- Team rank: #6
-- Rating 95% CI: [-0.0175, 0.0442] (bootstrap SE 0.0162)
-- Rank stability: bootstrap mean rank 5.7; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0038
+- Team rank: #16
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/5604_heatmap.svg)
 
@@ -98,27 +140,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 3: 5618_starter_report.md -->
+<!-- PLAYER_REPORT 4: 5618_starter_report.md -->
 
 # Woo-Young Jung — Starter Report
 
 - Team: South Korea (KOR)
 - Position: Left Defensive Midfield
-- Functional role: Ball-Winner
-- VAEP offense per 90: 0.0163
-- VAEP defense per 90: -0.0150
-- VAEP total per 90: 0.0013
-- VAEP per touch: 0.00001
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0231
+- VAEP defense per 90: -0.0300
+- VAEP total per 90: -0.0069
+- VAEP per touch: -0.00005
 - Spatial xT per 90: 0.0498
 - Final-third spatial share: 18.3%
-- Unified final player rating: 0.0200
-- Team rank: #5
-- Rating 95% CI: [0.0075, 0.0342] (bootstrap SE 0.0067)
-- Rank stability: bootstrap mean rank 5.3; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0154
+- Team rank: #15
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/5618_heatmap.svg)
 
@@ -144,27 +185,250 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 4: 23763_starter_report.md -->
+<!-- PLAYER_REPORT 5: 5620_starter_report.md -->
+
+# Hee-Chan Hwang — Starter Report
+
+- Team: South Korea (KOR)
+- Position: Right Midfield
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.5508
+- VAEP defense per 90: -0.0245
+- VAEP total per 90: 0.5263
+- VAEP per touch: 0.00317
+- Spatial xT per 90: 0.0926
+- Final-third spatial share: 56.4%
+- Unified final player rating: 0.1461
+- Team rank: #7
+
+![V4 event and 360 heatmap](../heatmaps/KOR/5620_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 22.94 |
+| Recovery index per 90 | 7.17 |
+
+## Top chemistry partners
+
+- Moon-Hwan Kim — synergy 0.339, 126 shared minutes
+- Heung-Min Son — synergy 0.289, 126 shared minutes
+- Seung-Gyu Kim — synergy 0.288, 126 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 6: 5623_starter_report.md -->
+
+# Jae-Sung Lee — Starter Report
+
+- Team: South Korea (KOR)
+- Position: Center Attacking Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.1328
+- VAEP defense per 90: -0.0119
+- VAEP total per 90: 0.1209
+- VAEP per touch: 0.00105
+- Spatial xT per 90: -0.0013
+- Final-third spatial share: 33.3%
+- Unified final player rating: 0.1394
+- Team rank: #8
+
+![V4 event and 360 heatmap](../heatmaps/KOR/5623_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.375 |
+| Pressing intensity per 90 | 29.23 |
+| Recovery index per 90 | 2.96 |
+
+## Top chemistry partners
+
+- Moon-Hwan Kim — synergy 0.534, 212 shared minutes
+- Young-Gwon Kim — synergy 0.486, 212 shared minutes
+- Woo-Young Jung — synergy 0.484, 184 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 7: 5986_starter_report.md -->
+
+# Chul Hong — Starter Report
+
+- Team: South Korea (KOR)
+- Position: Left Back
+- Functional role: Attacking Wingback
+- VAEP offense per 90: 0.1047
+- VAEP defense per 90: -0.0154
+- VAEP total per 90: 0.0892
+- VAEP per touch: 0.00087
+- Spatial xT per 90: 0.0636
+- Final-third spatial share: 40.0%
+- Unified final player rating: 0.0541
+- Team rank: #12
+
+![V4 event and 360 heatmap](../heatmaps/KOR/5986_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 14.70 |
+| Recovery index per 90 | 5.51 |
+
+## Top chemistry partners
+
+- Young-Gwon Kim — synergy 0.158, 49 shared minutes
+- Jun-Ho Son — synergy 0.154, 49 shared minutes
+- Moon-Hwan Kim — synergy 0.150, 49 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 8: 22067_starter_report.md -->
+
+# Woo-Yeong Jeong — Starter Report
+
+- Team: South Korea (KOR)
+- Position: Center Attacking Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.3839
+- VAEP defense per 90: 0.0314
+- VAEP total per 90: 0.4152
+- VAEP per touch: 0.00399
+- Spatial xT per 90: 0.0279
+- Final-third spatial share: 64.0%
+- Unified final player rating: 0.1800
+- Team rank: #5
+
+![V4 event and 360 heatmap](../heatmaps/KOR/22067_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 28.00 |
+| Recovery index per 90 | 4.00 |
+
+## Top chemistry partners
+
+- Jin-Su Kim — synergy 0.145, 45 shared minutes
+- Chang-Hoon Kwon — synergy 0.141, 45 shared minutes
+- Woo-Young Jung — synergy 0.141, 45 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 9: 22740_starter_report.md -->
+
+# Kang-In Lee — Starter Report
+
+- Team: South Korea (KOR)
+- Position: Left Center Midfield
+- Functional role: Deep Playmaker / Metronome
+- VAEP offense per 90: 0.1432
+- VAEP defense per 90: 0.0071
+- VAEP total per 90: 0.1503
+- VAEP per touch: 0.00130
+- Spatial xT per 90: 0.1088
+- Final-third spatial share: 45.6%
+- Unified final player rating: 0.1050
+- Team rank: #9
+
+![V4 event and 360 heatmap](../heatmaps/KOR/22740_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 18.52 |
+| Recovery index per 90 | 4.76 |
+
+## Top chemistry partners
+
+- Young-Gwon Kim — synergy 0.439, 169 shared minutes
+- Moon-Hwan Kim — synergy 0.434, 170 shared minutes
+- Heung-Min Son — synergy 0.426, 170 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 10: 23763_starter_report.md -->
 
 # In-Beom Hwang — Starter Report
 
 - Team: South Korea (KOR)
 - Position: Left Defensive Midfield
-- Functional role: Box-to-Box / Engine Midfielder
-- VAEP offense per 90: 0.1148
-- VAEP defense per 90: -0.0088
-- VAEP total per 90: 0.1061
-- VAEP per touch: 0.00062
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.1234
+- VAEP defense per 90: -0.0074
+- VAEP total per 90: 0.1160
+- VAEP per touch: 0.00067
 - Spatial xT per 90: 0.0614
 - Final-third spatial share: 35.7%
-- Unified final player rating: 0.0494
-- Team rank: #4
-- Rating 95% CI: [0.0312, 0.0670] (bootstrap SE 0.0093)
-- Rank stability: bootstrap mean rank 4.0; P(team #1) 0%, P(top 3) 2%
+- Unified final player rating: 0.0434
+- Team rank: #13
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/23763_heatmap.svg)
 
@@ -189,27 +453,71 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 5: 37641_starter_report.md -->
+<!-- PLAYER_REPORT 11: 29966_starter_report.md -->
+
+# Ui-Jo Hwang — Starter Report
+
+- Team: South Korea (KOR)
+- Position: Center Forward
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.2333
+- VAEP defense per 90: 0.0117
+- VAEP total per 90: 0.2449
+- VAEP per touch: 0.00465
+- Spatial xT per 90: -0.0073
+- Final-third spatial share: 34.4%
+- Unified final player rating: 0.2136
+- Team rank: #2
+
+![V4 event and 360 heatmap](../heatmaps/KOR/29966_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.111 |
+| Pressing intensity per 90 | 12.80 |
+| Recovery index per 90 | 1.42 |
+
+## Top chemistry partners
+
+- Heung-Min Son — synergy 0.267, 127 shared minutes
+- Woo-Young Jung — synergy 0.261, 89 shared minutes
+- Min Jae Kim — synergy 0.231, 102 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 12: 37641_starter_report.md -->
 
 # Seung-Gyu Kim — Starter Report
 
 - Team: South Korea (KOR)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0085
-- VAEP defense per 90: -0.1830
-- VAEP total per 90: -0.1915
-- VAEP per touch: -0.00321
+- VAEP offense per 90: -0.0077
+- VAEP defense per 90: -0.1801
+- VAEP total per 90: -0.1878
+- VAEP per touch: -0.00315
 - Spatial xT per 90: 0.0035
 - Final-third spatial share: 1.2%
-- Unified final player rating: -0.0768
-- Team rank: #7
-- Rating 95% CI: [-0.1131, -0.0469] (bootstrap SE 0.0176)
-- Rank stability: bootstrap mean rank 7.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0765
+- Team rank: #19
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/37641_heatmap.svg)
 
@@ -235,27 +543,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 6: 40538_starter_report.md -->
+<!-- PLAYER_REPORT 13: 40538_starter_report.md -->
 
 # Jin-Su Kim — Starter Report
 
 - Team: South Korea (KOR)
 - Position: Left Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.2138
-- VAEP defense per 90: 0.0024
-- VAEP total per 90: 0.2162
-- VAEP per touch: 0.00236
+- VAEP offense per 90: 0.2657
+- VAEP defense per 90: -0.0107
+- VAEP total per 90: 0.2550
+- VAEP per touch: 0.00278
 - Spatial xT per 90: 0.0414
 - Final-third spatial share: 42.5%
-- Unified final player rating: 0.0983
-- Team rank: #2
-- Rating 95% CI: [0.0454, 0.1695] (bootstrap SE 0.0348)
-- Rank stability: bootstrap mean rank 2.2; P(team #1) 0%, P(top 3) 97%
+- Unified final player rating: 0.0894
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/40538_heatmap.svg)
 
@@ -280,27 +587,160 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 7: 40672_starter_report.md -->
+<!-- PLAYER_REPORT 14: 40542_starter_report.md -->
+
+# Gue-Sung Cho — Starter Report
+
+- Team: South Korea (KOR)
+- Position: Center Forward
+- Functional role: Target Forward / Penalty-Box Anchor
+- VAEP offense per 90: 0.3876
+- VAEP defense per 90: 0.0657
+- VAEP total per 90: 0.4532
+- VAEP per touch: 0.00587
+- Spatial xT per 90: -0.0085
+- Final-third spatial share: 46.2%
+- Unified final player rating: 0.2342
+- Team rank: #1
+
+![V4 event and 360 heatmap](../heatmaps/KOR/40542_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.556 |
+| Pressing intensity per 90 | 17.85 |
+| Recovery index per 90 | 1.82 |
+
+## Top chemistry partners
+
+- Jin-Su Kim — synergy 0.487, 263 shared minutes
+- In-Beom Hwang — synergy 0.478, 282 shared minutes
+- Young-Gwon Kim — synergy 0.466, 285 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 15: 40558_starter_report.md -->
+
+# Jun-Ho Son — Starter Report
+
+- Team: South Korea (KOR)
+- Position: Center Defensive Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0065
+- VAEP defense per 90: -0.0410
+- VAEP total per 90: -0.0345
+- VAEP per touch: -0.00023
+- Spatial xT per 90: 0.0632
+- Final-third spatial share: 9.6%
+- Unified final player rating: 0.0173
+- Team rank: #14
+
+![V4 event and 360 heatmap](../heatmaps/KOR/40558_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 21.10 |
+| Recovery index per 90 | 3.01 |
+
+## Top chemistry partners
+
+- Moon-Hwan Kim — synergy 0.272, 90 shared minutes
+- Seung-Gyu Kim — synergy 0.259, 90 shared minutes
+- Heung-Min Son — synergy 0.245, 90 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 16: 40564_starter_report.md -->
+
+# Kyung-Won Kwon — Starter Report
+
+- Team: South Korea (KOR)
+- Position: Right Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0046
+- VAEP defense per 90: -0.0420
+- VAEP total per 90: -0.0374
+- VAEP per touch: -0.00041
+- Spatial xT per 90: 0.0019
+- Final-third spatial share: 3.3%
+- Unified final player rating: -0.0109
+- Team rank: #18
+
+![V4 event and 360 heatmap](../heatmaps/KOR/40564_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.667 |
+| Pressing intensity per 90 | 4.24 |
+| Recovery index per 90 | 2.54 |
+
+## Top chemistry partners
+
+- In-Beom Hwang — synergy 0.318, 106 shared minutes
+- Moon-Hwan Kim — synergy 0.315, 106 shared minutes
+- Seung-Gyu Kim — synergy 0.314, 106 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 17: 40672_starter_report.md -->
 
 # Moon-Hwan Kim — Starter Report
 
 - Team: South Korea (KOR)
 - Position: Right Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.1685
-- VAEP defense per 90: -0.0285
-- VAEP total per 90: 0.1400
-- VAEP per touch: 0.00101
+- VAEP offense per 90: 0.1734
+- VAEP defense per 90: -0.0392
+- VAEP total per 90: 0.1342
+- VAEP per touch: 0.00097
 - Spatial xT per 90: 0.0459
 - Final-third spatial share: 39.5%
-- Unified final player rating: 0.0784
-- Team rank: #3
-- Rating 95% CI: [0.0510, 0.1107] (bootstrap SE 0.0155)
-- Rank stability: bootstrap mean rank 2.8; P(team #1) 0%, P(top 3) 98%
+- Unified final player rating: 0.0643
+- Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/KOR/40672_heatmap.svg)
 
@@ -326,62 +766,95 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
+---
 
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
+<!-- PLAYER_REPORT 18: 41711_starter_report.md -->
 
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
+# Sang-Ho Na — Starter Report
 
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
+- Team: South Korea (KOR)
+- Position: Right Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.2479
+- VAEP defense per 90: 0.0134
+- VAEP total per 90: 0.2613
+- VAEP per touch: 0.00258
+- Spatial xT per 90: 0.0175
+- Final-third spatial share: 62.4%
+- Unified final player rating: 0.1673
+- Team rank: #6
 
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
+![V4 event and 360 heatmap](../heatmaps/KOR/41711_heatmap.svg)
 
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
+## Physical profile
 
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.625 |
+| Pressing intensity per 90 | 17.31 |
+| Recovery index per 90 | 5.54 |
 
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
+## Top chemistry partners
 
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
+- Jin-Su Kim — synergy 0.350, 130 shared minutes
+- Seung-Gyu Kim — synergy 0.338, 130 shared minutes
+- Heung-Min Son — synergy 0.324, 130 shared minutes
 
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
+## Tactical recommendations
 
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
 
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
+---
 
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
+<!-- PLAYER_REPORT 19: 43565_starter_report.md -->
 
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+# Min Jae Kim — Starter Report
 
-France refinements:
+- Team: South Korea (KOR)
+- Position: Right Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.1160
+- VAEP defense per 90: -0.1335
+- VAEP total per 90: -0.0175
+- VAEP per touch: -0.00011
+- Spatial xT per 90: 0.0273
+- Final-third spatial share: 11.9%
+- Unified final player rating: -0.0069
+- Team rank: #17
 
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+![V4 event and 360 heatmap](../heatmaps/KOR/43565_heatmap.svg)
 
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.786 |
+| Pressing intensity per 90 | 6.67 |
+| Recovery index per 90 | 3.81 |
+
+## Top chemistry partners
+
+- Moon-Hwan Kim — synergy 0.645, 283 shared minutes
+- Young-Gwon Kim — synergy 0.645, 283 shared minutes
+- Seung-Gyu Kim — synergy 0.624, 283 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

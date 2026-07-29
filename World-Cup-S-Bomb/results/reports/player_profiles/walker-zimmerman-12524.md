@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: United States
 - Position group: Center Back
-- Functional role: Deep Playmaker
-- Probabilistic role: Aerial/Secure Centre-Back
+- Functional role: Ball-Playing Centre-Back
+- Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 119
-- Position rank: 33
-- Role rank: 10
-- Team rank: 9
-- Final player rating: 0.3898
+- Global rank: 539
+- Position rank: 98
+- Role rank: 17
+- Team rank: 18
+- Final player rating: 0.3798
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 310.1
-- Minutes reliability: 0.5083
+- Minutes reliability: 0.4079
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3670 |
-| vaep_def_scaled | 0.4964 |
-| vaep_per_touch | -0.0006 |
-| open_play_xt_p90 | 0.0019 |
-| set_piece_xt_p90 | 0.0000 |
-| role_adjusted_value | 0.1501 |
-| completeness_score | 0.3230 |
-| off_ball_score | 0.4801 |
+| vaep_off_scaled | 0.3433 |
+| vaep_def_scaled | 0.5078 |
+| vaep_per_touch | -0.0005 |
+| open_play_xt_p90 | 0.0032 |
+| set_piece_xt_p90 | 0.0007 |
+| role_adjusted_value | 0.0629 |
+| completeness_score | 0.6158 |
+| off_ball_score | 0.4654 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.3124 |
-| creation_score | 0.3261 |
-| finishing_score | 0.3392 |
-| pressing_score | 0.3748 |
-| defensive_score | 0.2805 |
-| ball_security_score | 0.5965 |
-| aerial_score | 0.7735 |
+| progression_score | 0.3858 |
+| creation_score | 0.3934 |
+| finishing_score | 0.3738 |
+| pressing_score | 0.3200 |
+| defensive_score | 0.3799 |
+| ball_security_score | 0.6061 |
+| aerial_score | 0.7709 |
 
 ## Spatial, 360 and passing-network context
 

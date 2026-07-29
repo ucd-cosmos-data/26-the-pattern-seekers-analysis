@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Switzerland
 - Position group: Forward
-- Functional role: Target Forward
+- Functional role: Ball-Winner
 - Probabilistic role: Finishing/Aerial Forward
-- Role entropy: 0.0634
-- Global rank: 58
-- Position rank: 10
-- Role rank: 12
-- Team rank: 2
-- Final player rating: 0.5661
+- Role entropy: 0.0673
+- Global rank: 363
+- Position rank: 70
+- Role rank: 62
+- Team rank: 13
+- Final player rating: 0.4557
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 330.1
-- Minutes reliability: 0.5239
+- Minutes reliability: 0.4232
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3918 |
-| vaep_def_scaled | 0.3509 |
+| vaep_off_scaled | 0.3107 |
+| vaep_def_scaled | 0.0478 |
 | vaep_per_touch | 0.0039 |
-| open_play_xt_p90 | 0.0052 |
-| set_piece_xt_p90 | -0.0006 |
-| role_adjusted_value | 0.6647 |
-| completeness_score | 0.6231 |
-| off_ball_score | 0.5214 |
+| open_play_xt_p90 | 0.0096 |
+| set_piece_xt_p90 | 0.0015 |
+| role_adjusted_value | 0.2362 |
+| completeness_score | 0.7411 |
+| off_ball_score | 0.5228 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.3587 |
-| creation_score | 0.3007 |
-| finishing_score | 0.9120 |
-| pressing_score | 0.6170 |
-| defensive_score | 0.2817 |
-| ball_security_score | 0.7099 |
-| aerial_score | 0.5293 |
+| progression_score | 0.3914 |
+| creation_score | 0.3715 |
+| finishing_score | 0.8749 |
+| pressing_score | 0.5531 |
+| defensive_score | 0.2990 |
+| ball_security_score | 0.6752 |
+| aerial_score | 0.5542 |
 
 ## Spatial, 360 and passing-network context
 

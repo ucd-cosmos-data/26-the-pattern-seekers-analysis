@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Japan
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Aerial/Progressive Centre-Back
-- Role entropy: 0.0415
-- Global rank: 103
-- Position rank: 24
-- Role rank: 13
-- Team rank: 5
-- Final player rating: 0.4598
+- Probabilistic role: Aerial/Secure/Progressive Centre-Back
+- Role entropy: 0.0507
+- Global rank: 513
+- Position rank: 83
+- Role rank: 65
+- Team rank: 22
+- Final player rating: 0.4022
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 412.5
-- Minutes reliability: 0.5790
+- Minutes reliability: 0.4783
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
 | vaep_off_scaled | 0.0000 |
-| vaep_def_scaled | 0.8255 |
-| vaep_per_touch | -0.0010 |
-| open_play_xt_p90 | 0.0016 |
-| set_piece_xt_p90 | 0.0015 |
-| role_adjusted_value | 0.1692 |
-| completeness_score | 0.4358 |
-| off_ball_score | 0.4696 |
+| vaep_def_scaled | 0.8080 |
+| vaep_per_touch | -0.0008 |
+| open_play_xt_p90 | 0.0039 |
+| set_piece_xt_p90 | 0.0024 |
+| role_adjusted_value | 0.0531 |
+| completeness_score | 0.6951 |
+| off_ball_score | 0.4725 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.3486 |
-| creation_score | 0.3514 |
-| finishing_score | 0.4542 |
-| pressing_score | 0.3641 |
-| defensive_score | 0.4742 |
-| ball_security_score | 0.6676 |
-| aerial_score | 0.8075 |
+| progression_score | 0.4017 |
+| creation_score | 0.4140 |
+| finishing_score | 0.4896 |
+| pressing_score | 0.3311 |
+| defensive_score | 0.5381 |
+| ball_security_score | 0.6515 |
+| aerial_score | 0.7813 |
 
 ## Spatial, 360 and passing-network context
 

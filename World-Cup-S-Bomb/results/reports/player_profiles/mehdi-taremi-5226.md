@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Iran
 - Position group: Forward
 - Functional role: Target Forward
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.0163
-- Global rank: 22
-- Position rank: 6
-- Role rank: 6
-- Team rank: 1
-- Final player rating: 0.6492
+- Probabilistic role: Finishing/Aerial Forward
+- Role entropy: 0.0447
+- Global rank: 159
+- Position rank: 19
+- Role rank: 16
+- Team rank: 6
+- Final player rating: 0.5184
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 305.1
-- Minutes reliability: 0.5042
+- Minutes reliability: 0.4041
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.5152 |
-| vaep_def_scaled | 0.5205 |
-| vaep_per_touch | 0.0047 |
-| open_play_xt_p90 | 0.0368 |
-| set_piece_xt_p90 | 0.0072 |
-| role_adjusted_value | 0.8194 |
-| completeness_score | 0.5513 |
-| off_ball_score | 0.5079 |
+| vaep_off_scaled | 0.3733 |
+| vaep_def_scaled | 0.5387 |
+| vaep_per_touch | 0.0050 |
+| open_play_xt_p90 | 0.0422 |
+| set_piece_xt_p90 | 0.0104 |
+| role_adjusted_value | 0.3531 |
+| completeness_score | 0.7805 |
+| off_ball_score | 0.5206 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5206 |
-| creation_score | 0.6120 |
-| finishing_score | 0.9096 |
-| pressing_score | 0.5675 |
-| defensive_score | 0.5786 |
-| ball_security_score | 0.5085 |
-| aerial_score | 0.6772 |
+| progression_score | 0.5725 |
+| creation_score | 0.6771 |
+| finishing_score | 0.8671 |
+| pressing_score | 0.5402 |
+| defensive_score | 0.6490 |
+| ball_security_score | 0.5371 |
+| aerial_score | 0.6984 |
 
 ## Spatial, 360 and passing-network context
 

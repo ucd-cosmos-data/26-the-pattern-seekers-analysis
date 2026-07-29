@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Brazil
 - Position group: Defensive Midfield
-- Functional role: Ball-Winner
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0175
-- Global rank: 25
-- Position rank: 3
-- Role rank: 2
-- Team rank: 4
-- Final player rating: 0.6459
+- Functional role: Holding Anchor
+- Probabilistic role: Pressing/Finishing Attacker
+- Role entropy: 0.0954
+- Global rank: 154
+- Position rank: 5
+- Role rank: 5
+- Team rank: 11
+- Final player rating: 0.5191
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 318.8
-- Minutes reliability: 0.5152
+- Minutes reliability: 0.4146
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.5685 |
-| vaep_def_scaled | 0.9129 |
+| vaep_off_scaled | 0.5505 |
+| vaep_def_scaled | 0.9222 |
 | vaep_per_touch | 0.0010 |
-| open_play_xt_p90 | 0.0227 |
-| set_piece_xt_p90 | 0.0105 |
-| role_adjusted_value | 0.7549 |
-| completeness_score | 0.7315 |
-| off_ball_score | 0.6617 |
+| open_play_xt_p90 | 0.0325 |
+| set_piece_xt_p90 | 0.0100 |
+| role_adjusted_value | 0.1863 |
+| completeness_score | 0.8481 |
+| off_ball_score | 0.6554 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.3939 |
-| creation_score | 0.7049 |
-| finishing_score | 0.8016 |
-| pressing_score | 0.7995 |
-| defensive_score | 0.6725 |
-| ball_security_score | 0.7148 |
-| aerial_score | 0.4824 |
+| progression_score | 0.4665 |
+| creation_score | 0.7457 |
+| finishing_score | 0.7625 |
+| pressing_score | 0.7528 |
+| defensive_score | 0.5972 |
+| ball_security_score | 0.6817 |
+| aerial_score | 0.5118 |
 
 ## Spatial, 360 and passing-network context
 

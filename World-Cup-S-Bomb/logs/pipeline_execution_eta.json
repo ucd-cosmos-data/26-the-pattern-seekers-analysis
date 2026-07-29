@@ -2,43 +2,43 @@
   "schema_version": 1,
   "pipeline": "run_team_simulation_reports_v4",
   "status": "complete",
-  "elapsed_seconds": 105.0160230420006,
-  "peak_memory_mb": 411.70355701446533,
+  "elapsed_seconds": 441.9879558000248,
+  "peak_memory_mb": 529.6944246292114,
   "stages": [
     {
       "name": "load_v4_inputs",
       "status": "complete",
-      "elapsed_seconds": 12.804017000002204,
+      "elapsed_seconds": 24.327862999867648,
       "completed": 4,
       "total": 4,
       "unit": "source",
-      "average_units_per_second": 0.31240195947875665,
+      "average_units_per_second": 0.1644205247300908,
       "eta_seconds": 0.0,
-      "peak_memory_mb": 165.78239345550537,
+      "peak_memory_mb": 167.58791637420654,
       "message": "validated 360 actor and density context"
     },
     {
       "name": "v4_player_spatial_evaluation",
       "status": "complete",
-      "elapsed_seconds": 80.07291229198745,
+      "elapsed_seconds": 371.73330449988134,
       "completed": 4,
       "total": 4,
       "unit": "layer",
-      "average_units_per_second": 0.04995447131251979,
+      "average_units_per_second": 0.010760402556293626,
       "eta_seconds": 0.0,
-      "peak_memory_mb": 411.70355701446533,
+      "peak_memory_mb": 529.6944246292114,
       "message": "SPADL + xT + calibrated 360-VAEP + unified rankings"
     },
     {
       "name": "reason_coded_substitutions",
       "status": "complete",
-      "elapsed_seconds": 7.562402291994658,
+      "elapsed_seconds": 36.943063999991864,
       "completed": 32,
       "total": 32,
       "unit": "team",
-      "average_units_per_second": 4.231459629418853,
+      "average_units_per_second": 0.8661977793722537,
       "eta_seconds": 0.0,
-      "peak_memory_mb": 411.70355701446533,
+      "peak_memory_mb": 529.6944246292114,
       "message": ""
     }
   ],
@@ -252,6 +252,186 @@
           "average_units_per_second": 4.1989170697676785,
           "eta_seconds": 0.0,
           "peak_memory_mb": 411.70402336120605,
+          "message": ""
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "pipeline": "run_team_simulation_reports_v4",
+      "status": "complete",
+      "elapsed_seconds": 105.0160230420006,
+      "peak_memory_mb": 411.70355701446533,
+      "stages": [
+        {
+          "name": "load_v4_inputs",
+          "status": "complete",
+          "elapsed_seconds": 12.804017000002204,
+          "completed": 4,
+          "total": 4,
+          "unit": "source",
+          "average_units_per_second": 0.31240195947875665,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 165.78239345550537,
+          "message": "validated 360 actor and density context"
+        },
+        {
+          "name": "v4_player_spatial_evaluation",
+          "status": "complete",
+          "elapsed_seconds": 80.07291229198745,
+          "completed": 4,
+          "total": 4,
+          "unit": "layer",
+          "average_units_per_second": 0.04995447131251979,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 411.70355701446533,
+          "message": "SPADL + xT + calibrated 360-VAEP + unified rankings"
+        },
+        {
+          "name": "reason_coded_substitutions",
+          "status": "complete",
+          "elapsed_seconds": 7.562402291994658,
+          "completed": 32,
+          "total": 32,
+          "unit": "team",
+          "average_units_per_second": 4.231459629418853,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 411.70355701446533,
+          "message": ""
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "pipeline": "run_team_simulation_reports_v4",
+      "status": "complete",
+      "elapsed_seconds": 393.57476850016974,
+      "peak_memory_mb": 446.52473735809326,
+      "stages": [
+        {
+          "name": "load_v4_inputs",
+          "status": "complete",
+          "elapsed_seconds": 25.13213719986379,
+          "completed": 4,
+          "total": 4,
+          "unit": "source",
+          "average_units_per_second": 0.15915876824123334,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 167.5690450668335,
+          "message": "validated 360 actor and density context"
+        },
+        {
+          "name": "v4_player_spatial_evaluation",
+          "status": "complete",
+          "elapsed_seconds": 311.5214927000925,
+          "completed": 4,
+          "total": 4,
+          "unit": "layer",
+          "average_units_per_second": 0.012840205551566466,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 446.52473735809326,
+          "message": "SPADL + xT + calibrated 360-VAEP + unified rankings"
+        },
+        {
+          "name": "reason_coded_substitutions",
+          "status": "complete",
+          "elapsed_seconds": 44.379067699890584,
+          "completed": 32,
+          "total": 32,
+          "unit": "team",
+          "average_units_per_second": 0.7210606634730836,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 446.52473735809326,
+          "message": ""
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "pipeline": "run_team_simulation_reports_v4",
+      "status": "complete",
+      "elapsed_seconds": 485.4004900001455,
+      "peak_memory_mb": 529.6952295303345,
+      "stages": [
+        {
+          "name": "load_v4_inputs",
+          "status": "complete",
+          "elapsed_seconds": 24.519756500143558,
+          "completed": 4,
+          "total": 4,
+          "unit": "source",
+          "average_units_per_second": 0.16313375705735825,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 167.59343242645264,
+          "message": "validated 360 actor and density context"
+        },
+        {
+          "name": "v4_player_spatial_evaluation",
+          "status": "complete",
+          "elapsed_seconds": 412.5947811000515,
+          "completed": 4,
+          "total": 4,
+          "unit": "layer",
+          "average_units_per_second": 0.009694742113158301,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 529.6952295303345,
+          "message": "SPADL + xT + calibrated 360-VAEP + unified rankings"
+        },
+        {
+          "name": "reason_coded_substitutions",
+          "status": "complete",
+          "elapsed_seconds": 36.680073499912396,
+          "completed": 32,
+          "total": 32,
+          "unit": "team",
+          "average_units_per_second": 0.8724082845710881,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 529.6952295303345,
+          "message": ""
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "pipeline": "run_team_simulation_reports_v4",
+      "status": "complete",
+      "elapsed_seconds": 485.581975299865,
+      "peak_memory_mb": 529.6935024261475,
+      "stages": [
+        {
+          "name": "load_v4_inputs",
+          "status": "complete",
+          "elapsed_seconds": 24.367008399916813,
+          "completed": 4,
+          "total": 4,
+          "unit": "source",
+          "average_units_per_second": 0.1641563844995291,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 167.5915126800537,
+          "message": "validated 360 actor and density context"
+        },
+        {
+          "name": "v4_player_spatial_evaluation",
+          "status": "complete",
+          "elapsed_seconds": 412.9821941999253,
+          "completed": 4,
+          "total": 4,
+          "unit": "layer",
+          "average_units_per_second": 0.009685647604612208,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 529.6935024261475,
+          "message": "SPADL + xT + calibrated 360-VAEP + unified rankings"
+        },
+        {
+          "name": "reason_coded_substitutions",
+          "status": "complete",
+          "elapsed_seconds": 37.46494149998762,
+          "completed": 32,
+          "total": 32,
+          "unit": "team",
+          "average_units_per_second": 0.8541318555111204,
+          "eta_seconds": 0.0,
+          "peak_memory_mb": 529.6935024261475,
           "message": ""
         }
       ]

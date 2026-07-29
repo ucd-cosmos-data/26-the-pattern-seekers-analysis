@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Portugal
 - Position group: Fullback/Wingback
-- Functional role: Wide Creator
-- Probabilistic role: Creative/Progressive Fullback
+- Functional role: Attacking Wingback
+- Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
-- Global rank: 6
-- Position rank: 1
-- Role rank: 1
+- Global rank: 22
+- Position rank: 4
+- Role rank: 4
 - Team rank: 1
-- Final player rating: 0.7296
+- Final player rating: 0.5849
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 303.6
-- Minutes reliability: 0.5030
+- Minutes reliability: 0.4029
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.5869 |
-| vaep_def_scaled | 0.9547 |
+| vaep_off_scaled | 0.6824 |
+| vaep_def_scaled | 0.9043 |
 | vaep_per_touch | 0.0019 |
-| open_play_xt_p90 | 0.0076 |
-| set_piece_xt_p90 | 0.0527 |
-| role_adjusted_value | 1.0000 |
-| completeness_score | 0.6606 |
-| off_ball_score | 0.4604 |
+| open_play_xt_p90 | 0.0185 |
+| set_piece_xt_p90 | 0.0579 |
+| role_adjusted_value | 0.1127 |
+| completeness_score | 0.8240 |
+| off_ball_score | 0.4616 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.6625 |
-| creation_score | 0.6782 |
-| finishing_score | 0.7359 |
-| pressing_score | 0.4162 |
-| defensive_score | 0.4754 |
-| ball_security_score | 0.4549 |
-| aerial_score | 0.4049 |
+| progression_score | 0.7051 |
+| creation_score | 0.7145 |
+| finishing_score | 0.7125 |
+| pressing_score | 0.3621 |
+| defensive_score | 0.4338 |
+| ball_security_score | 0.4845 |
+| aerial_score | 0.4280 |
 
 ## Spatial, 360 and passing-network context
 

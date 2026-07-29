@@ -4,8 +4,8 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 7
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 17
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -17,16 +17,14 @@
 - Team: Australia (AUS)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0162
-- VAEP defense per 90: -0.1269
-- VAEP total per 90: -0.1431
-- VAEP per touch: -0.00188
+- VAEP offense per 90: -0.0117
+- VAEP defense per 90: -0.1434
+- VAEP total per 90: -0.1551
+- VAEP per touch: -0.00203
 - Spatial xT per 90: 0.0019
 - Final-third spatial share: 2.3%
-- Unified final player rating: -0.0630
-- Team rank: #7
-- Rating 95% CI: [-0.0790, -0.0438] (bootstrap SE 0.0088)
-- Rank stability: bootstrap mean rank 6.7; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0689
+- Team rank: #17
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/3240_heatmap.svg)
 
@@ -52,7 +50,8 @@
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
@@ -62,17 +61,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Australia (AUS)
 - Position: Left Defensive Midfield
-- Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.0047
-- VAEP defense per 90: -0.0199
-- VAEP total per 90: -0.0151
-- VAEP per touch: -0.00012
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0153
+- VAEP defense per 90: -0.0175
+- VAEP total per 90: -0.0022
+- VAEP per touch: -0.00002
 - Spatial xT per 90: 0.0294
 - Final-third spatial share: 15.8%
-- Unified final player rating: 0.0121
-- Team rank: #4
-- Rating 95% CI: [0.0016, 0.0280] (bootstrap SE 0.0067)
-- Rank stability: bootstrap mean rank 4.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0139
+- Team rank: #13
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/3281_heatmap.svg)
 
@@ -97,7 +94,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
@@ -108,16 +106,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Australia (AUS)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.1466
-- VAEP defense per 90: -0.0025
-- VAEP total per 90: 0.1441
-- VAEP per touch: 0.00118
+- VAEP offense per 90: 0.1238
+- VAEP defense per 90: -0.0044
+- VAEP total per 90: 0.1193
+- VAEP per touch: 0.00097
 - Spatial xT per 90: 0.0435
 - Final-third spatial share: 23.6%
-- Unified final player rating: 0.0793
-- Team rank: #3
-- Rating 95% CI: [0.0450, 0.1085] (bootstrap SE 0.0168)
-- Rank stability: bootstrap mean rank 2.8; P(team #1) 0%, P(top 3) 98%
+- Unified final player rating: 0.0606
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/5479_heatmap.svg)
 
@@ -143,7 +139,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
@@ -154,16 +151,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Australia (AUS)
 - Position: Right Midfield
 - Functional role: Target Forward
-- VAEP offense per 90: 0.2321
-- VAEP defense per 90: 0.0271
-- VAEP total per 90: 0.2592
-- VAEP per touch: 0.00248
+- VAEP offense per 90: 0.1928
+- VAEP defense per 90: 0.0341
+- VAEP total per 90: 0.2269
+- VAEP per touch: 0.00217
 - Spatial xT per 90: 0.0211
 - Final-third spatial share: 40.8%
-- Unified final player rating: 0.1368
-- Team rank: #1
-- Rating 95% CI: [0.1020, 0.1848] (bootstrap SE 0.0230)
-- Rank stability: bootstrap mean rank 1.2; P(team #1) 76%, P(top 3) 98%
+- Unified final player rating: 0.1124
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/5481_heatmap.svg)
 
@@ -189,7 +184,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
@@ -199,17 +195,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Australia (AUS)
 - Position: Left Center Forward
-- Functional role: Ball-Winner
-- VAEP offense per 90: 0.0685
-- VAEP defense per 90: -0.0597
-- VAEP total per 90: 0.0089
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0530
+- VAEP defense per 90: -0.0438
+- VAEP total per 90: 0.0092
 - VAEP per touch: 0.00011
 - Spatial xT per 90: 0.0285
 - Final-third spatial share: 22.3%
-- Unified final player rating: 0.1088
-- Team rank: #2
-- Rating 95% CI: [0.0609, 0.1863] (bootstrap SE 0.0312)
-- Rank stability: bootstrap mean rank 1.9; P(team #1) 22%, P(top 3) 98%
+- Unified final player rating: 0.1353
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/5490_heatmap.svg)
 
@@ -235,27 +229,203 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 6: 22293_starter_report.md -->
+<!-- PLAYER_REPORT 6: 8346_starter_report.md -->
+
+# Craig Goodwin — Starter Report
+
+- Team: Australia (AUS)
+- Position: Left Midfield
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.2631
+- VAEP defense per 90: 0.0053
+- VAEP total per 90: 0.2684
+- VAEP per touch: 0.00266
+- Spatial xT per 90: 0.0577
+- Final-third spatial share: 39.5%
+- Unified final player rating: 0.1214
+- Team rank: #6
+
+![V4 event and 360 heatmap](../heatmaps/AUS/8346_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.375 |
+| Pressing intensity per 90 | 8.94 |
+| Recovery index per 90 | 2.23 |
+
+## Top chemistry partners
+
+- Kye Rowles — synergy 0.515, 242 shared minutes
+- Aziz Eraltay Behich — synergy 0.513, 242 shared minutes
+- Mathew Ryan — synergy 0.498, 242 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 7: 8859_starter_report.md -->
+
+# Ajdin Hrustic — Starter Report
+
+- Team: Australia (AUS)
+- Position: Right Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.0732
+- VAEP defense per 90: 0.0064
+- VAEP total per 90: 0.0796
+- VAEP per touch: 0.00074
+- Spatial xT per 90: 0.0077
+- Final-third spatial share: 29.2%
+- Unified final player rating: 0.0979
+- Team rank: #8
+
+![V4 event and 360 heatmap](../heatmaps/AUS/8859_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 25.68 |
+| Recovery index per 90 | 4.47 |
+
+## Top chemistry partners
+
+- Harry Souttar — synergy 0.242, 81 shared minutes
+- Kye Rowles — synergy 0.213, 81 shared minutes
+- Aaron Mooy — synergy 0.211, 81 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 8: 9980_starter_report.md -->
+
+# Jamie MacLaren — Starter Report
+
+- Team: Australia (AUS)
+- Position: Left Center Forward
+- Functional role: Target Forward
+- VAEP offense per 90: 0.2685
+- VAEP defense per 90: -0.0079
+- VAEP total per 90: 0.2605
+- VAEP per touch: 0.00391
+- Spatial xT per 90: -0.0335
+- Final-third spatial share: 50.6%
+- Unified final player rating: 0.2232
+- Team rank: #2
+
+![V4 event and 360 heatmap](../heatmaps/AUS/9980_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.429 |
+| Pressing intensity per 90 | 14.79 |
+| Recovery index per 90 | 0.00 |
+
+## Top chemistry partners
+
+- Kye Rowles — synergy 0.209, 73 shared minutes
+- Ajdin Hrustic — synergy 0.198, 67 shared minutes
+- Aaron Mooy — synergy 0.195, 73 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 9: 15957_starter_report.md -->
+
+# Miloš Degenek — Starter Report
+
+- Team: Australia (AUS)
+- Position: Right Back
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0114
+- VAEP defense per 90: -0.0485
+- VAEP total per 90: -0.0371
+- VAEP per touch: -0.00039
+- Spatial xT per 90: 0.0401
+- Final-third spatial share: 12.1%
+- Unified final player rating: 0.0337
+- Team rank: #12
+
+![V4 event and 360 heatmap](../heatmaps/AUS/15957_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.429 |
+| Pressing intensity per 90 | 8.89 |
+| Recovery index per 90 | 2.67 |
+
+## Top chemistry partners
+
+- Mathew Ryan — synergy 0.514, 202 shared minutes
+- Aaron Mooy — synergy 0.511, 202 shared minutes
+- Harry Souttar — synergy 0.508, 202 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 10: 22293_starter_report.md -->
 
 # Harry Souttar — Starter Report
 
 - Team: Australia (AUS)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0133
-- VAEP defense per 90: -0.1957
-- VAEP total per 90: -0.1824
-- VAEP per touch: -0.00193
+- VAEP offense per 90: 0.0077
+- VAEP defense per 90: -0.1806
+- VAEP total per 90: -0.1730
+- VAEP per touch: -0.00183
 - Spatial xT per 90: 0.0056
 - Final-third spatial share: 4.0%
-- Unified final player rating: -0.0547
-- Team rank: #6
-- Rating 95% CI: [-0.0905, -0.0188] (bootstrap SE 0.0191)
-- Rank stability: bootstrap mean rank 6.2; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0446
+- Team rank: #16
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/22293_heatmap.svg)
 
@@ -281,27 +451,202 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 7: 33495_starter_report.md -->
+<!-- PLAYER_REPORT 11: 28370_starter_report.md -->
+
+# Fran Karačić — Starter Report
+
+- Team: Australia (AUS)
+- Position: Right Back
+- Functional role: Attacking Wingback
+- VAEP offense per 90: 0.0755
+- VAEP defense per 90: -0.0401
+- VAEP total per 90: 0.0354
+- VAEP per touch: 0.00034
+- Spatial xT per 90: 0.1388
+- Final-third spatial share: 32.0%
+- Unified final player rating: 0.0522
+- Team rank: #10
+
+![V4 event and 360 heatmap](../heatmaps/AUS/28370_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.545 |
+| Pressing intensity per 90 | 14.35 |
+| Recovery index per 90 | 8.07 |
+
+## Top chemistry partners
+
+- Kye Rowles — synergy 0.294, 100 shared minutes
+- Jackson Irvine — synergy 0.278, 100 shared minutes
+- Aziz Eraltay Behich — synergy 0.274, 100 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 12: 33477_starter_report.md -->
+
+# Riley McGree — Starter Report
+
+- Team: Australia (AUS)
+- Position: Right Center Forward
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.1228
+- VAEP defense per 90: 0.0111
+- VAEP total per 90: 0.1339
+- VAEP per touch: 0.00156
+- Spatial xT per 90: 0.0312
+- Final-third spatial share: 39.8%
+- Unified final player rating: 0.1776
+- Team rank: #4
+
+![V4 event and 360 heatmap](../heatmaps/AUS/33477_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.400 |
+| Pressing intensity per 90 | 19.24 |
+| Recovery index per 90 | 3.38 |
+
+## Top chemistry partners
+
+- Jackson Irvine — synergy 0.565, 267 shared minutes
+- Kye Rowles — synergy 0.557, 267 shared minutes
+- Aaron Mooy — synergy 0.510, 267 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 13: 33488_starter_report.md -->
+
+# Keanu Baccus — Starter Report
+
+- Team: Australia (AUS)
+- Position: Right Defensive Midfield
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0304
+- VAEP defense per 90: -0.2747
+- VAEP total per 90: -0.2444
+- VAEP per touch: -0.00300
+- Spatial xT per 90: 0.0194
+- Final-third spatial share: 19.1%
+- Unified final player rating: -0.0106
+- Team rank: #14
+
+![V4 event and 360 heatmap](../heatmaps/AUS/33488_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.250 |
+| Pressing intensity per 90 | 28.23 |
+| Recovery index per 90 | 3.36 |
+
+## Top chemistry partners
+
+- Harry Souttar — synergy 0.372, 134 shared minutes
+- Aaron Mooy — synergy 0.358, 134 shared minutes
+- Kye Rowles — synergy 0.335, 134 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 14: 33492_starter_report.md -->
+
+# Mitchell Thomas Duke — Starter Report
+
+- Team: Australia (AUS)
+- Position: Left Center Forward
+- Functional role: Target Forward / Penalty-Box Anchor
+- VAEP offense per 90: 0.2592
+- VAEP defense per 90: 0.0289
+- VAEP total per 90: 0.2881
+- VAEP per touch: 0.00333
+- Spatial xT per 90: 0.0004
+- Final-third spatial share: 38.1%
+- Unified final player rating: 0.2037
+- Team rank: #3
+
+![V4 event and 360 heatmap](../heatmaps/AUS/33492_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.484 |
+| Pressing intensity per 90 | 20.16 |
+| Recovery index per 90 | 3.31 |
+
+## Top chemistry partners
+
+- Aaron Mooy — synergy 0.549, 272 shared minutes
+- Jackson Irvine — synergy 0.501, 272 shared minutes
+- Mathew Leckie — synergy 0.431, 272 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 15: 33495_starter_report.md -->
 
 # Kye Rowles — Starter Report
 
 - Team: Australia (AUS)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: -0.0067
-- VAEP defense per 90: -0.1035
-- VAEP total per 90: -0.1102
-- VAEP per touch: -0.00101
+- VAEP offense per 90: -0.0097
+- VAEP defense per 90: -0.0945
+- VAEP total per 90: -0.1041
+- VAEP per touch: -0.00095
 - Spatial xT per 90: 0.0020
 - Final-third spatial share: 2.5%
-- Unified final player rating: -0.0346
-- Team rank: #5
-- Rating 95% CI: [-0.0528, -0.0110] (bootstrap SE 0.0106)
-- Rank stability: bootstrap mean rank 5.1; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0289
+- Team rank: #15
 
 ![V4 event and 360 heatmap](../heatmaps/AUS/33495_heatmap.svg)
 
@@ -327,62 +672,95 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
+---
 
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
+<!-- PLAYER_REPORT 16: 33572_starter_report.md -->
 
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
+# Nathaniel Atkinson — Starter Report
 
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
+- Team: Australia (AUS)
+- Position: Right Back
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0258
+- VAEP defense per 90: -0.0281
+- VAEP total per 90: -0.0023
+- VAEP per touch: -0.00003
+- Spatial xT per 90: 0.0083
+- Final-third spatial share: 15.0%
+- Unified final player rating: 0.0453
+- Team rank: #11
 
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
+![V4 event and 360 heatmap](../heatmaps/AUS/33572_heatmap.svg)
 
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
+## Physical profile
 
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 14.98 |
+| Recovery index per 90 | 3.21 |
 
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
+## Top chemistry partners
 
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
+- Jackson Irvine — synergy 0.257, 84 shared minutes
+- Aaron Mooy — synergy 0.257, 84 shared minutes
+- Harry Souttar — synergy 0.257, 84 shared minutes
 
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
+## Tactical recommendations
 
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
 
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
+---
 
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
+<!-- PLAYER_REPORT 17: 227697_starter_report.md -->
 
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+# Garang Kuol — Starter Report
 
-France refinements:
+- Team: Australia (AUS)
+- Position: Left Center Forward
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.3619
+- VAEP defense per 90: 0.0042
+- VAEP total per 90: 0.3661
+- VAEP per touch: 0.00600
+- Spatial xT per 90: 0.0035
+- Final-third spatial share: 40.4%
+- Unified final player rating: 0.2338
+- Team rank: #1
 
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+![V4 event and 360 heatmap](../heatmaps/AUS/227697_heatmap.svg)
 
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 16.16 |
+| Recovery index per 90 | 0.00 |
+
+## Top chemistry partners
+
+- Mathew Ryan — synergy 0.150, 50 shared minutes
+- Harry Souttar — synergy 0.150, 50 shared minutes
+- Kye Rowles — synergy 0.150, 50 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

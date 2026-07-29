@@ -10,15 +10,15 @@ Switzerland: no tactical change cleared the modeled effect floor. Primary review
 
 ## Optimized starting 11
 
-1. Manuel Obafemi Akanji (Center Back)
+1. Breel-Donald Embolo (Forward)
 2. Granit Xhaka (Defensive Midfield)
-3. Remo Freuler (Defensive Midfield)
-4. Breel-Donald Embolo (Forward)
-5. Yann Sommer (Goalkeeper)
-6. Silvan Widmer (Fullback/Wingback)
-7. Ruben Vargas (Attacking Midfield/Wing)
-8. Ricardo Iván Rodríguez Araya (Fullback/Wingback)
-9. Xherdan Shaqiri (Central/Wide Midfield)
+3. Ricardo Iván Rodríguez Araya (Fullback/Wingback)
+4. Manuel Obafemi Akanji (Center Back)
+5. Ruben Vargas (Attacking Midfield/Wing)
+6. Remo Freuler (Defensive Midfield)
+7. Silvan Widmer (Fullback/Wingback)
+8. Xherdan Shaqiri (Central/Wide Midfield)
+9. Yann Sommer (Goalkeeper)
 10. Nico Elvedi (Center Back)
 11. Noah Okafor (Central/Wide Midfield)
 
@@ -32,17 +32,17 @@ Switzerland: no tactical change cleared the modeled effect floor. Primary review
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 121, INSUFFICIENT_MINUTES: 22.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 121, GAIN_BELOW_THRESHOLD: 13, INSUFFICIENT_MINUTES: 9.
 
 ## V5 role-aware player leaders
 
-1. Manuel Obafemi Akanji — Ball-Playing Centre-Back; rating 0.5879, VAEP/90 +0.031, xT/90 +0.011, role-adjusted 1.000
-2. Breel-Donald Embolo — Target Forward; rating 0.5661, VAEP/90 +0.312, xT/90 +0.011, role-adjusted 0.665
-3. Granit Xhaka — Ball-Winner; rating 0.5512, VAEP/90 +0.056, xT/90 +0.049, role-adjusted 0.342
-4. Ricardo Iván Rodríguez Araya — Wide Creator; rating 0.5013, VAEP/90 +0.024, xT/90 +0.044, role-adjusted 0.113
-5. Remo Freuler — Ball-Winner; rating 0.5010, VAEP/90 +0.047, xT/90 +0.020, role-adjusted 0.443
+1. Fabian Rieder — Deep Playmaker; rating 0.5372, VAEP/90 +0.241, xT/90 +0.034, role-adjusted 0.078
+2. Yann Sommer — Goalkeeper; rating 0.5336, VAEP/90 -0.126, xT/90 +0.000, role-adjusted 0.000
+3. Ruben Vargas — Progressive Winger; rating 0.5335, VAEP/90 +0.249, xT/90 +0.079, role-adjusted 0.344
+4. Silvan Widmer — Attacking Wingback; rating 0.5248, VAEP/90 +0.154, xT/90 +0.039, role-adjusted 0.086
+5. Edimilson Fernandes — Ball-Winner; rating 0.5140, VAEP/90 +0.137, xT/90 +0.029, role-adjusted 0.092
 
-_Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
+_Ratings include eligible outfield players from 45 minutes and goalkeepers from 90 minutes. The 300-minute threshold is a high-reliability label. V2 evaluates contextual VAEP behind a development-OOF non-inferiority gate, then uses the accepted feature set with role-weighted offense/defense channels, calibrated composite weights, xD-style disruption, and 450-minute shrinkage._
 
 ## Recurrent tactical mistakes
 
@@ -52,27 +52,14 @@ _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/
 
 _Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
-
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
-
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
-
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
-
 <!-- PLAYER_ROLE_VALIDATION_START -->
 ## V5 probabilistic role validation
 
-The production role model selected **K=9 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
+The production role model selected **K=16 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
 
-- Bootstrap ARI median: 0.6887
-- Bootstrap ARI fifth percentile: 0.5522
-- PCA explained variance: 0.8688
+- Bootstrap ARI median: 0.6260
+- Bootstrap ARI fifth percentile: 0.5113
+- PCA explained variance: 0.7367
 
 Roles do not award points directly. Continuous role dimensions only modulate the weights applied to observed contributions.
 <!-- PLAYER_ROLE_VALIDATION_END -->
@@ -80,16 +67,10 @@ Roles do not award points directly. Continuous role dimensions only modulate the
 <!-- ROLE_AWARE_VALUATION_START -->
 ## V5 role-aware valuation and attention gate
 
-**Production decision: `ROLE_AWARE_FALLBACK`.** The role-aware layer is active. The experimental attention challenger was evaluated match-disjoint and rejected because its discrimination was materially worse, despite better calibration.
+**Production decision: `ROLE_AWARE_FALLBACK`.** The role-aware layer is active.
+The optional attention experiment was disabled for this canonical run, so the interpretable role-aware fallback remains active without publishing unevaluated attention metrics.
 
-| Task | Model | ROC-AUC | PR-AUC | ECE | Brier |
-|---|---|---:|---:|---:|---:|
-| Retrospective | Baseline | 0.6283 | 0.5179 | 0.0659 | 0.2364 |
-| Retrospective | Attention | 0.7258 | 0.6257 | 0.0169 | 0.2086 |
-| Prospective | Baseline | 0.8855 | 0.9763 | 0.1866 | 0.1389 |
-| Prospective | Attention | 0.8815 | 0.9750 | 0.0147 | 0.0907 |
-
-New-versus-legacy ranking Spearman correlation: 0.7112.
+New-versus-legacy ranking Spearman correlation: 0.7057.
 <!-- ROLE_AWARE_VALUATION_END -->
 
 <!-- CONTINUOUS_ROLE_REFINEMENT_START -->

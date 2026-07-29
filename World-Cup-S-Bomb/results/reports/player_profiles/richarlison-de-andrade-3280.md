@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Brazil
 - Position group: Forward
-- Functional role: Target Forward
-- Probabilistic role: Finishing/Aerial Forward
-- Role entropy: 0.0000
-- Global rank: 7
-- Position rank: 3
-- Role rank: 2
-- Team rank: 2
-- Final player rating: 0.7289
+- Functional role: Ball-Winner
+- Probabilistic role: Finishing/Aerial/Secure Forward
+- Role entropy: 0.0017
+- Global rank: 99
+- Position rank: 8
+- Role rank: 11
+- Team rank: 8
+- Final player rating: 0.5369
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 328.2
-- Minutes reliability: 0.5225
+- Minutes reliability: 0.4218
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.9910 |
-| vaep_def_scaled | 0.7303 |
-| vaep_per_touch | 0.0099 |
-| open_play_xt_p90 | 0.0163 |
-| set_piece_xt_p90 | -0.0023 |
-| role_adjusted_value | 1.0000 |
-| completeness_score | 0.6212 |
-| off_ball_score | 0.5088 |
+| vaep_off_scaled | 0.6465 |
+| vaep_def_scaled | 0.5966 |
+| vaep_per_touch | 0.0090 |
+| open_play_xt_p90 | 0.0143 |
+| set_piece_xt_p90 | -0.0024 |
+| role_adjusted_value | 0.3559 |
+| completeness_score | 0.7701 |
+| off_ball_score | 0.5166 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.1891 |
-| creation_score | 0.5120 |
-| finishing_score | 0.9401 |
-| pressing_score | 0.7255 |
-| defensive_score | 0.5516 |
-| ball_security_score | 0.6092 |
-| aerial_score | 0.4542 |
+| progression_score | 0.2386 |
+| creation_score | 0.5243 |
+| finishing_score | 0.9058 |
+| pressing_score | 0.6820 |
+| defensive_score | 0.5841 |
+| ball_security_score | 0.6257 |
+| aerial_score | 0.4792 |
 
 ## Spatial, 360 and passing-network context
 

@@ -4,8 +4,8 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 9
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 18
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -17,16 +17,14 @@
 - Team: Netherlands (NED)
 - Position: Left Center Forward
 - Functional role: Target Forward
-- VAEP offense per 90: 0.4395
-- VAEP defense per 90: 0.1497
-- VAEP total per 90: 0.5892
-- VAEP per touch: 0.00421
+- VAEP offense per 90: 0.3792
+- VAEP defense per 90: 0.1147
+- VAEP total per 90: 0.4939
+- VAEP per touch: 0.00353
 - Spatial xT per 90: 0.0469
 - Final-third spatial share: 43.2%
-- Unified final player rating: 0.2694
+- Unified final player rating: 0.2467
 - Team rank: #1
-- Rating 95% CI: [0.1752, 0.3483] (bootstrap SE 0.0446)
-- Rank stability: bootstrap mean rank 1.0; P(team #1) 95%, P(top 3) 99%
 
 ![V4 event and 360 heatmap](../heatmaps/NED/2988_heatmap.svg)
 
@@ -51,27 +49,71 @@
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 2: 3306_starter_report.md -->
+<!-- PLAYER_REPORT 2: 3264_starter_report.md -->
+
+# Vincent Janssen — Starter Report
+
+- Team: Netherlands (NED)
+- Position: Right Center Forward
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.4282
+- VAEP defense per 90: 0.0318
+- VAEP total per 90: 0.4601
+- VAEP per touch: 0.00586
+- Spatial xT per 90: -0.0546
+- Final-third spatial share: 53.2%
+- Unified final player rating: 0.2361
+- Team rank: #2
+
+![V4 event and 360 heatmap](../heatmaps/NED/3264_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 18.65 |
+| Recovery index per 90 | 1.96 |
+
+## Top chemistry partners
+
+- Virgil van Dijk — synergy 0.260, 92 shared minutes
+- Nathan Aké — synergy 0.255, 92 shared minutes
+- Andries Noppert — synergy 0.255, 92 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 3: 3306_starter_report.md -->
 
 # Nathan Aké — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0085
-- VAEP defense per 90: -0.0540
-- VAEP total per 90: -0.0455
-- VAEP per touch: -0.00028
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0114
+- VAEP defense per 90: -0.0767
+- VAEP total per 90: -0.0653
+- VAEP per touch: -0.00039
 - Spatial xT per 90: 0.0173
 - Final-third spatial share: 6.5%
-- Unified final player rating: -0.0153
-- Team rank: #7
-- Rating 95% CI: [-0.0286, -0.0025] (bootstrap SE 0.0070)
-- Rank stability: bootstrap mean rank 7.1; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0198
+- Team rank: #16
 
 ![V4 event and 360 heatmap](../heatmaps/NED/3306_heatmap.svg)
 
@@ -96,27 +138,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 3: 3311_starter_report.md -->
+<!-- PLAYER_REPORT 4: 3311_starter_report.md -->
 
 # Daley Blind — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Left Wing Back
-- Functional role: Wide Creator
-- VAEP offense per 90: 0.1585
-- VAEP defense per 90: -0.0185
-- VAEP total per 90: 0.1400
-- VAEP per touch: 0.00090
+- Functional role: Attacking Wingback
+- VAEP offense per 90: 0.1373
+- VAEP defense per 90: -0.0335
+- VAEP total per 90: 0.1038
+- VAEP per touch: 0.00066
 - Spatial xT per 90: 0.0512
 - Final-third spatial share: 28.9%
-- Unified final player rating: 0.0791
-- Team rank: #3
-- Rating 95% CI: [0.0582, 0.0972] (bootstrap SE 0.0101)
-- Rank stability: bootstrap mean rank 3.6; P(team #1) 0%, P(top 3) 48%
+- Unified final player rating: 0.0580
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/NED/3311_heatmap.svg)
 
@@ -141,27 +182,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 4: 3669_starter_report.md -->
+<!-- PLAYER_REPORT 5: 3669_starter_report.md -->
 
 # Virgil van Dijk — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0155
-- VAEP defense per 90: -0.1148
-- VAEP total per 90: -0.0993
-- VAEP per touch: -0.00064
+- VAEP offense per 90: -0.0092
+- VAEP defense per 90: -0.1503
+- VAEP total per 90: -0.1596
+- VAEP per touch: -0.00102
 - Spatial xT per 90: 0.0151
 - Final-third spatial share: 2.8%
-- Unified final player rating: -0.0325
-- Team rank: #9
-- Rating 95% CI: [-0.0735, 0.0099] (bootstrap SE 0.0217)
-- Rank stability: bootstrap mean rank 8.3; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0452
+- Team rank: #18
 
 ![V4 event and 360 heatmap](../heatmaps/NED/3669_heatmap.svg)
 
@@ -187,27 +227,292 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 5: 8118_starter_report.md -->
+<!-- PLAYER_REPORT 6: 4318_starter_report.md -->
+
+# Davy Klaassen — Starter Report
+
+- Team: Netherlands (NED)
+- Position: Center Attacking Midfield
+- Functional role: Target Forward
+- VAEP offense per 90: 0.2124
+- VAEP defense per 90: 0.0554
+- VAEP total per 90: 0.2678
+- VAEP per touch: 0.00274
+- Spatial xT per 90: 0.0310
+- Final-third spatial share: 34.7%
+- Unified final player rating: 0.1656
+- Team rank: #7
+
+![V4 event and 360 heatmap](../heatmaps/NED/4318_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.400 |
+| Pressing intensity per 90 | 10.28 |
+| Recovery index per 90 | 2.68 |
+
+## Top chemistry partners
+
+- Nathan Aké — synergy 0.509, 201 shared minutes
+- Andries Noppert — synergy 0.475, 201 shared minutes
+- Virgil van Dijk — synergy 0.474, 201 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 7: 6994_starter_report.md -->
+
+# Marten de Roon — Starter Report
+
+- Team: Netherlands (NED)
+- Position: Right Defensive Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0088
+- VAEP defense per 90: -0.0756
+- VAEP total per 90: -0.0668
+- VAEP per touch: -0.00048
+- Spatial xT per 90: 0.0038
+- Final-third spatial share: 12.1%
+- Unified final player rating: 0.0052
+- Team rank: #13
+
+![V4 event and 360 heatmap](../heatmaps/NED/6994_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.625 |
+| Pressing intensity per 90 | 23.90 |
+| Recovery index per 90 | 1.38 |
+
+## Top chemistry partners
+
+- Virgil van Dijk — synergy 0.506, 196 shared minutes
+- Nathan Aké — synergy 0.496, 196 shared minutes
+- Daley Blind — synergy 0.490, 196 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 8: 7745_starter_report.md -->
+
+# Steven Berghuis — Starter Report
+
+- Team: Netherlands (NED)
+- Position: Right Defensive Midfield
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.0654
+- VAEP defense per 90: 0.0074
+- VAEP total per 90: 0.0728
+- VAEP per touch: 0.00047
+- Spatial xT per 90: 0.1062
+- Final-third spatial share: 39.4%
+- Unified final player rating: 0.0332
+- Team rank: #11
+
+![V4 event and 360 heatmap](../heatmaps/NED/7745_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.250 |
+| Pressing intensity per 90 | 13.15 |
+| Recovery index per 90 | 3.82 |
+
+## Top chemistry partners
+
+- Nathan Aké — synergy 0.532, 212 shared minutes
+- Virgil van Dijk — synergy 0.508, 212 shared minutes
+- Andries Noppert — synergy 0.505, 212 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 9: 7829_starter_report.md -->
+
+# Wout Weghorst — Starter Report
+
+- Team: Netherlands (NED)
+- Position: Right Center Forward
+- Functional role: Target Forward / Penalty-Box Anchor
+- VAEP offense per 90: 0.1751
+- VAEP defense per 90: 0.0038
+- VAEP total per 90: 0.1789
+- VAEP per touch: 0.00296
+- Spatial xT per 90: -0.0173
+- Final-third spatial share: 38.4%
+- Unified final player rating: 0.2168
+- Team rank: #4
+
+![V4 event and 360 heatmap](../heatmaps/NED/7829_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 34.84 |
+| Recovery index per 90 | 1.16 |
+
+## Top chemistry partners
+
+- Virgil van Dijk — synergy 0.225, 78 shared minutes
+- Jurriën David Norman Timber — synergy 0.225, 78 shared minutes
+- Nathan Aké — synergy 0.221, 74 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 10: 7891_starter_report.md -->
+
+# Teun Koopmeiners — Starter Report
+
+- Team: Netherlands (NED)
+- Position: Right Defensive Midfield
+- Functional role: Box-to-Box / Engine Midfielder
+- VAEP offense per 90: -0.0344
+- VAEP defense per 90: -0.0073
+- VAEP total per 90: -0.0417
+- VAEP per touch: -0.00033
+- Spatial xT per 90: 0.0455
+- Final-third spatial share: 22.4%
+- Unified final player rating: 0.0099
+- Team rank: #12
+
+![V4 event and 360 heatmap](../heatmaps/NED/7891_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 21.94 |
+| Recovery index per 90 | 3.72 |
+
+## Top chemistry partners
+
+- Nathan Aké — synergy 0.573, 239 shared minutes
+- Frenkie de Jong — synergy 0.567, 232 shared minutes
+- Virgil van Dijk — synergy 0.553, 242 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 11: 8069_starter_report.md -->
+
+# Matthijs de Ligt — Starter Report
+
+- Team: Netherlands (NED)
+- Position: Right Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0846
+- VAEP defense per 90: -0.0169
+- VAEP total per 90: 0.0678
+- VAEP per touch: 0.00067
+- Spatial xT per 90: 0.0253
+- Final-third spatial share: 13.6%
+- Unified final player rating: -0.0001
+- Team rank: #14
+
+![V4 event and 360 heatmap](../heatmaps/NED/8069_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.714 |
+| Pressing intensity per 90 | 7.84 |
+| Recovery index per 90 | 1.74 |
+
+## Top chemistry partners
+
+- Virgil van Dijk — synergy 0.311, 103 shared minutes
+- Frenkie de Jong — synergy 0.307, 103 shared minutes
+- Andries Noppert — synergy 0.303, 103 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 12: 8118_starter_report.md -->
 
 # Frenkie de Jong — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Left Defensive Midfield
-- Functional role: Box-to-Box / Engine Midfielder
-- VAEP offense per 90: 0.0675
-- VAEP defense per 90: -0.0075
-- VAEP total per 90: 0.0600
-- VAEP per touch: 0.00034
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.1118
+- VAEP defense per 90: 0.0067
+- VAEP total per 90: 0.1185
+- VAEP per touch: 0.00067
 - Spatial xT per 90: 0.0281
 - Final-third spatial share: 19.4%
-- Unified final player rating: 0.0336
-- Team rank: #5
-- Rating 95% CI: [-0.0007, 0.0713] (bootstrap SE 0.0186)
-- Rank stability: bootstrap mean rank 5.2; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0445
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/NED/8118_heatmap.svg)
 
@@ -233,27 +538,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 6: 8125_starter_report.md -->
+<!-- PLAYER_REPORT 13: 8125_starter_report.md -->
 
 # Denzel Dumfries — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Right Wing Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.1615
-- VAEP defense per 90: -0.0254
-- VAEP total per 90: 0.1361
-- VAEP per touch: 0.00125
+- VAEP offense per 90: 0.1741
+- VAEP defense per 90: 0.0083
+- VAEP total per 90: 0.1824
+- VAEP per touch: 0.00167
 - Spatial xT per 90: 0.0503
 - Final-third spatial share: 41.2%
-- Unified final player rating: 0.0780
-- Team rank: #4
-- Rating 95% CI: [0.0451, 0.1107] (bootstrap SE 0.0170)
-- Rank stability: bootstrap mean rank 3.7; P(team #1) 0%, P(top 3) 43%
+- Unified final player rating: 0.0792
+- Team rank: #8
 
 ![V4 event and 360 heatmap](../heatmaps/NED/8125_heatmap.svg)
 
@@ -278,27 +582,71 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 7: 8326_starter_report.md -->
+<!-- PLAYER_REPORT 14: 8259_starter_report.md -->
+
+# Steven Bergwijn — Starter Report
+
+- Team: Netherlands (NED)
+- Position: Left Center Forward
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.3557
+- VAEP defense per 90: 0.0870
+- VAEP total per 90: 0.4427
+- VAEP per touch: 0.00425
+- Spatial xT per 90: 0.0293
+- Final-third spatial share: 44.2%
+- Unified final player rating: 0.2357
+- Team rank: #3
+
+![V4 event and 360 heatmap](../heatmaps/NED/8259_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 8.62 |
+| Recovery index per 90 | 1.64 |
+
+## Top chemistry partners
+
+- Nathan Aké — synergy 0.526, 216 shared minutes
+- Frenkie de Jong — synergy 0.525, 219 shared minutes
+- Daley Blind — synergy 0.480, 219 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 15: 8326_starter_report.md -->
 
 # Andries Noppert — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0053
-- VAEP defense per 90: 0.0595
-- VAEP total per 90: 0.0542
-- VAEP per touch: 0.00080
+- VAEP offense per 90: -0.0050
+- VAEP defense per 90: 0.0272
+- VAEP total per 90: 0.0222
+- VAEP per touch: 0.00033
 - Spatial xT per 90: 0.0014
 - Final-third spatial share: 0.3%
-- Unified final player rating: -0.0018
-- Team rank: #6
-- Rating 95% CI: [-0.0747, 0.1059] (bootstrap SE 0.0523)
-- Rank stability: bootstrap mean rank 6.7; P(team #1) 0%, P(top 3) 8%
+- Unified final player rating: -0.0226
+- Team rank: #17
 
 ![V4 event and 360 heatmap](../heatmaps/NED/8326_heatmap.svg)
 
@@ -324,27 +672,70 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 8: 20750_starter_report.md -->
+<!-- PLAYER_REPORT 16: 20033_starter_report.md -->
+
+# Luuk de Jong — Starter Report
+
+- Team: Netherlands (NED)
+- Position: Left Center Forward
+- Functional role: Target Forward / Penalty-Box Anchor
+- VAEP offense per 90: -0.0483
+- VAEP defense per 90: 0.0105
+- VAEP total per 90: -0.0378
+- VAEP per touch: -0.00050
+- Spatial xT per 90: 0.0265
+- Final-third spatial share: 42.3%
+- Unified final player rating: 0.2107
+- Team rank: #5
+
+![V4 event and 360 heatmap](../heatmaps/NED/20033_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 14.20 |
+| Recovery index per 90 | 1.58 |
+
+## Top chemistry partners
+
+- Frenkie de Jong — synergy 0.177, 57 shared minutes
+- Teun Koopmeiners — synergy 0.175, 57 shared minutes
+- Virgil van Dijk — synergy 0.172, 57 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 17: 20750_starter_report.md -->
 
 # Cody Mathès Gakpo — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Center Attacking Midfield
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.3177
-- VAEP defense per 90: 0.0067
-- VAEP total per 90: 0.3243
-- VAEP per touch: 0.00323
+- VAEP offense per 90: 0.2911
+- VAEP defense per 90: 0.0006
+- VAEP total per 90: 0.2917
+- VAEP per touch: 0.00290
 - Spatial xT per 90: 0.0748
 - Final-third spatial share: 51.2%
-- Unified final player rating: 0.1895
-- Team rank: #2
-- Rating 95% CI: [0.1554, 0.2368] (bootstrap SE 0.0213)
-- Rank stability: bootstrap mean rank 2.0; P(team #1) 4%, P(top 3) 99%
+- Unified final player rating: 0.1690
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/NED/20750_heatmap.svg)
 
@@ -369,27 +760,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 9: 21809_starter_report.md -->
+<!-- PLAYER_REPORT 18: 21809_starter_report.md -->
 
 # Jurriën David Norman Timber — Starter Report
 
 - Team: Netherlands (NED)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0053
-- VAEP defense per 90: -0.0646
-- VAEP total per 90: -0.0593
-- VAEP per touch: -0.00032
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0076
+- VAEP defense per 90: -0.0427
+- VAEP total per 90: -0.0351
+- VAEP per touch: -0.00019
 - Spatial xT per 90: 0.0190
 - Final-third spatial share: 6.0%
-- Unified final player rating: -0.0185
-- Team rank: #8
-- Rating 95% CI: [-0.0336, 0.0015] (bootstrap SE 0.0091)
-- Rank stability: bootstrap mean rank 7.5; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0114
+- Team rank: #15
 
 ![V4 event and 360 heatmap](../heatmaps/NED/21809_heatmap.svg)
 
@@ -414,62 +804,5 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
-
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
-
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
-
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
-
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
-
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
-
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
-
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
-
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
-
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
-
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
-
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
-
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
-
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
-
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
-
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
-
-France refinements:
-
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
-
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

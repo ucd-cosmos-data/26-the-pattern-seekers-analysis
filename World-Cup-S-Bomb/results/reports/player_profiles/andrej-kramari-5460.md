@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Croatia
 - Position group: Attacking Midfield/Wing
-- Functional role: Target Forward
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.0003
-- Global rank: 48
-- Position rank: 10
-- Role rank: 10
-- Team rank: 3
-- Final player rating: 0.5837
+- Functional role: Ball-Winner
+- Probabilistic role: Finishing/Aerial Forward
+- Role entropy: 0.1641
+- Global rank: 190
+- Position rank: 86
+- Role rank: 29
+- Team rank: 8
+- Final player rating: 0.5091
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 478.4
-- Minutes reliability: 0.6146
+- Minutes reliability: 0.5153
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.4400 |
-| vaep_def_scaled | 0.7044 |
-| vaep_per_touch | 0.0032 |
-| open_play_xt_p90 | 0.0238 |
-| set_piece_xt_p90 | -0.0139 |
-| role_adjusted_value | 0.4949 |
-| completeness_score | 0.4777 |
-| off_ball_score | 0.4246 |
+| vaep_off_scaled | 0.4537 |
+| vaep_def_scaled | 0.5563 |
+| vaep_per_touch | 0.0031 |
+| open_play_xt_p90 | 0.0237 |
+| set_piece_xt_p90 | -0.0135 |
+| role_adjusted_value | 0.3267 |
+| completeness_score | 0.7039 |
+| off_ball_score | 0.4424 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.2394 |
-| creation_score | 0.4141 |
-| finishing_score | 0.8697 |
-| pressing_score | 0.2832 |
-| defensive_score | 0.3650 |
-| ball_security_score | 0.7176 |
-| aerial_score | 0.1643 |
+| progression_score | 0.2894 |
+| creation_score | 0.4562 |
+| finishing_score | 0.8283 |
+| pressing_score | 0.2430 |
+| defensive_score | 0.3524 |
+| ball_security_score | 0.6972 |
+| aerial_score | 0.2386 |
 
 ## Spatial, 360 and passing-network context
 

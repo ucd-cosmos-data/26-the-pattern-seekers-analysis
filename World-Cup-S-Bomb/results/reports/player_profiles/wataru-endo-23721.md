@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Japan
 - Position group: Defensive Midfield
-- Functional role: Ball-Winner
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 89
-- Position rank: 15
-- Role rank: 12
-- Team rank: 4
-- Final player rating: 0.4856
+- Functional role: Box-to-Box / Engine Midfielder
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.0075
+- Global rank: 404
+- Position rank: 31
+- Role rank: 11
+- Team rank: 18
+- Final player rating: 0.4403
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 326.0
-- Minutes reliability: 0.5208
+- Minutes reliability: 0.4201
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.2063 |
-| vaep_def_scaled | 0.4234 |
+| vaep_off_scaled | 0.2482 |
+| vaep_def_scaled | 0.6072 |
 | vaep_per_touch | -0.0001 |
-| open_play_xt_p90 | 0.0196 |
-| set_piece_xt_p90 | 0.0157 |
-| role_adjusted_value | 0.4580 |
-| completeness_score | 0.6152 |
-| off_ball_score | 0.6825 |
+| open_play_xt_p90 | 0.0214 |
+| set_piece_xt_p90 | 0.0168 |
+| role_adjusted_value | 0.3369 |
+| completeness_score | 0.7991 |
+| off_ball_score | 0.6736 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.4643 |
-| creation_score | 0.7232 |
-| finishing_score | 0.5411 |
-| pressing_score | 0.8913 |
-| defensive_score | 0.5951 |
-| ball_security_score | 0.4965 |
-| aerial_score | 0.7477 |
+| progression_score | 0.5235 |
+| creation_score | 0.7334 |
+| finishing_score | 0.5666 |
+| pressing_score | 0.8502 |
+| defensive_score | 0.6538 |
+| ball_security_score | 0.5106 |
+| aerial_score | 0.7574 |
 
 ## Spatial, 360 and passing-network context
 

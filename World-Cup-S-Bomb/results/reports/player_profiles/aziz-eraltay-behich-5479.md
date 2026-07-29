@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Australia
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Probabilistic role: Creative/Progressive Fullback
+- Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
-- Global rank: 40
-- Position rank: 14
-- Role rank: 7
-- Team rank: 2
-- Final player rating: 0.6064
+- Global rank: 97
+- Position rank: 30
+- Role rank: 4
+- Team rank: 3
+- Final player rating: 0.5377
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 386.9
-- Minutes reliability: 0.5633
+- Minutes reliability: 0.4623
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.2805 |
-| vaep_def_scaled | 0.8577 |
-| vaep_per_touch | 0.0012 |
-| open_play_xt_p90 | 0.0049 |
-| set_piece_xt_p90 | 0.0342 |
-| role_adjusted_value | 0.1267 |
-| completeness_score | 0.4327 |
-| off_ball_score | 0.4468 |
+| vaep_off_scaled | 0.3336 |
+| vaep_def_scaled | 0.8482 |
+| vaep_per_touch | 0.0010 |
+| open_play_xt_p90 | 0.0038 |
+| set_piece_xt_p90 | 0.0397 |
+| role_adjusted_value | 0.0716 |
+| completeness_score | 0.6971 |
+| off_ball_score | 0.4420 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.4925 |
-| creation_score | 0.4458 |
-| finishing_score | 0.3838 |
-| pressing_score | 0.4320 |
-| defensive_score | 0.7218 |
-| ball_security_score | 0.3183 |
-| aerial_score | 0.4542 |
+| progression_score | 0.5401 |
+| creation_score | 0.4914 |
+| finishing_score | 0.4193 |
+| pressing_score | 0.3629 |
+| defensive_score | 0.6409 |
+| ball_security_score | 0.3578 |
+| aerial_score | 0.4713 |
 
 ## Spatial, 360 and passing-network context
 

@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Senegal
 - Position group: Attacking Midfield/Wing
 - Functional role: Target Forward
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.0000
-- Global rank: 94
-- Position rank: 16
-- Role rank: 14
-- Team rank: 5
-- Final player rating: 0.4795
+- Probabilistic role: Finishing/Aerial Forward
+- Role entropy: 0.0092
+- Global rank: 271
+- Position rank: 95
+- Role rank: 31
+- Team rank: 8
+- Final player rating: 0.4849
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 330.1
-- Minutes reliability: 0.5238
+- Minutes reliability: 0.4231
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.2897 |
-| vaep_def_scaled | 0.1741 |
-| vaep_per_touch | 0.0038 |
-| open_play_xt_p90 | 0.0055 |
-| set_piece_xt_p90 | 0.0015 |
-| role_adjusted_value | 0.3969 |
-| completeness_score | 0.3765 |
-| off_ball_score | 0.3887 |
+| vaep_off_scaled | 0.3491 |
+| vaep_def_scaled | 0.4200 |
+| vaep_per_touch | 0.0039 |
+| open_play_xt_p90 | -0.0012 |
+| set_piece_xt_p90 | -0.0064 |
+| role_adjusted_value | 0.3356 |
+| completeness_score | 0.6271 |
+| off_ball_score | 0.4049 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.1378 |
-| creation_score | 0.2296 |
-| finishing_score | 0.8556 |
-| pressing_score | 0.2963 |
-| defensive_score | 0.2453 |
-| ball_security_score | 0.6775 |
-| aerial_score | 0.4883 |
+| progression_score | 0.1789 |
+| creation_score | 0.2987 |
+| finishing_score | 0.8215 |
+| pressing_score | 0.2666 |
+| defensive_score | 0.2735 |
+| ball_security_score | 0.6765 |
+| aerial_score | 0.5118 |
 
 ## Spatial, 360 and passing-network context
 

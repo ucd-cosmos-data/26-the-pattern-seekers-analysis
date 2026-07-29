@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Brazil
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
-- Probabilistic role: Finishing/Creative/Progressive Attacker
+- Probabilistic role: Finishing/Progressive Attacker
 - Role entropy: 0.0000
-- Global rank: 4
-- Position rank: 1
-- Role rank: 3
-- Team rank: 1
-- Final player rating: 0.7354
+- Global rank: 9
+- Position rank: 2
+- Role rank: 8
+- Team rank: 2
+- Final player rating: 0.6163
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 306.6
-- Minutes reliability: 0.5054
+- Minutes reliability: 0.4052
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.7194 |
-| vaep_def_scaled | 1.0000 |
-| vaep_per_touch | 0.0048 |
-| open_play_xt_p90 | 0.0639 |
-| set_piece_xt_p90 | 0.0513 |
-| role_adjusted_value | 1.0000 |
-| completeness_score | 0.6059 |
-| off_ball_score | 0.4927 |
+| vaep_off_scaled | 0.8612 |
+| vaep_def_scaled | 0.7698 |
+| vaep_per_touch | 0.0043 |
+| open_play_xt_p90 | 0.0710 |
+| set_piece_xt_p90 | 0.0528 |
+| role_adjusted_value | 0.7671 |
+| completeness_score | 0.7410 |
+| off_ball_score | 0.4802 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5317 |
-| creation_score | 0.5993 |
-| finishing_score | 0.8955 |
-| pressing_score | 0.6201 |
-| defensive_score | 0.6643 |
-| ball_security_score | 0.4218 |
-| aerial_score | 0.0880 |
+| progression_score | 0.5697 |
+| creation_score | 0.6349 |
+| finishing_score | 0.8524 |
+| pressing_score | 0.5515 |
+| defensive_score | 0.5750 |
+| ball_security_score | 0.4347 |
+| aerial_score | 0.1155 |
 
 ## Spatial, 360 and passing-network context
 

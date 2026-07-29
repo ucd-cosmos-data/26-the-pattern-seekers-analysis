@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: France
 - Position group: Defensive Midfield
 - Functional role: Holding / Controlling Midfielder
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 76
-- Position rank: 11
-- Role rank: 1
-- Team rank: 8
-- Final player rating: 0.5130
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.0003
+- Global rank: 476
+- Position rank: 69
+- Role rank: 3
+- Team rank: 22
+- Final player rating: 0.4183
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 662.2
-- Minutes reliability: 0.6882
+- Minutes reliability: 0.5954
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.0400 |
-| vaep_def_scaled | 0.6006 |
-| vaep_per_touch | -0.0002 |
-| open_play_xt_p90 | 0.0160 |
-| set_piece_xt_p90 | 0.0111 |
-| role_adjusted_value | 0.4444 |
-| completeness_score | 0.6471 |
-| off_ball_score | 0.6448 |
+| vaep_off_scaled | 0.0802 |
+| vaep_def_scaled | 0.7475 |
+| vaep_per_touch | -0.0001 |
+| open_play_xt_p90 | 0.0225 |
+| set_piece_xt_p90 | 0.0150 |
+| role_adjusted_value | 0.1828 |
+| completeness_score | 0.8108 |
+| off_ball_score | 0.6321 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5317 |
-| creation_score | 0.6430 |
-| finishing_score | 0.7031 |
-| pressing_score | 0.5610 |
-| defensive_score | 0.5880 |
-| ball_security_score | 0.8324 |
-| aerial_score | 0.5692 |
+| progression_score | 0.5725 |
+| creation_score | 0.6794 |
+| finishing_score | 0.7187 |
+| pressing_score | 0.5087 |
+| defensive_score | 0.5276 |
+| ball_security_score | 0.7792 |
+| aerial_score | 0.5658 |
 
 ## Spatial, 360 and passing-network context
 

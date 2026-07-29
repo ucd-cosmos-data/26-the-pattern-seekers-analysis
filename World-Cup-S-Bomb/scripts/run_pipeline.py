@@ -24,7 +24,12 @@ import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
 
-from src.config import AttentionConfig, PipelineConfig
+from src.config import (
+    AttentionConfig,
+    MIN_GOALKEEPER_MINUTES,
+    MIN_PLAYER_MINUTES,
+    PipelineConfig,
+)
 from src.features.attention import build_attention_arrays_from_csv
 from src.features.events import (
     add_profile_rates,
@@ -32,14 +37,19 @@ from src.features.events import (
     derive_reception_features,
 )
 from src.features.goalkeepers import build_goalkeeper_features
+from src.features.defense_disruption import derive_defense_disruption
 from src.features.network import build_passing_network_features
 from src.features.off_ball import OffBallScorer
-from src.features.role_vectors import derive_role_vector
+from src.features.role_vectors import (
+    derive_role_channel_weights,
+    derive_role_vector,
+)
 from src.features.spatial import (
     SpatialFeatureTransformer,
     build_event_freeze_frame_features_from_csv,
 )
 from src.models.attention_experiment import run_attention_experiment
+from src.models.composite_calibration import calibrate_composite_weights
 from src.models.goalkeeper_valuation import (
     calculate_goalkeeper_ratings,
     goalkeeper_model_summary,
@@ -363,9 +373,23 @@ def _mark_historical_rating_reports(project_root: Path) -> list[Path]:
         if not path.is_file():
             continue
         content = path.read_text(encoding="utf-8")
-        if marker in content:
+        refreshed = content.replace(
+            "- Rankings use the role-aware contextual VAEP/xT/xD model.",
+            "- Rankings use the role-aware, development-gated "
+            "VAEP/xT/xD model.",
+        )
+        if marker in refreshed:
+            if refreshed == content:
+                continue
+            temporary_source = path.with_suffix(".v5.tmp")
+            temporary_source.write_text(refreshed, encoding="utf-8")
+            try:
+                _atomic_copy_text(temporary_source, path)
+            finally:
+                temporary_source.unlink(missing_ok=True)
+            updated.append(path)
             continue
-        lines = content.splitlines()
+        lines = refreshed.splitlines()
         insertion = 1 if lines and lines[0].startswith("#") else 0
         lines[insertion:insertion] = ["", notice]
         temporary_source = path.with_suffix(".v5.tmp")
@@ -452,8 +476,7 @@ def _refresh_detailed_team_rating_sections(
     selection = model_summary["probabilistic_role_selection"]
     stability = model_summary["cluster_stability"]
     gate = model_summary["metric_gate"]
-    retrospective = gate["metrics"]["retrospective"]
-    prospective = gate["metrics"]["prospective"]
+    gate_metrics = gate.get("metrics", {})
     role_validation_block = "\n".join(
         [
             "<!-- PLAYER_ROLE_VALIDATION_START -->",
@@ -477,46 +500,45 @@ def _refresh_detailed_team_rating_sections(
             "<!-- PLAYER_ROLE_VALIDATION_END -->",
         ]
     )
+    attention_lines: list[str]
+    if {"retrospective", "prospective"}.issubset(gate_metrics):
+        retrospective = gate_metrics["retrospective"]
+        prospective = gate_metrics["prospective"]
+        attention_lines = [
+            "The experimental attention challenger was evaluated "
+            "match-disjoint and rejected because its discrimination was "
+            "materially worse, despite better calibration.",
+            "",
+            "| Task | Model | ROC-AUC | PR-AUC | ECE | Brier |",
+            "|---|---|---:|---:|---:|---:|",
+            *[
+                "| "
+                f"{task.title()} | {model.title()} | "
+                f"{metrics['roc_auc']:.4f} | "
+                f"{metrics['pr_auc']:.4f} | "
+                f"{metrics['expected_calibration_error']:.4f} | "
+                f"{metrics['brier_score']:.4f} |"
+                for task, task_metrics in (
+                    ("retrospective", retrospective),
+                    ("prospective", prospective),
+                )
+                for model, metrics in task_metrics.items()
+            ],
+        ]
+    else:
+        attention_lines = [
+            "The optional attention experiment was disabled for this "
+            "canonical run, so the interpretable role-aware fallback remains "
+            "active without publishing unevaluated attention metrics.",
+        ]
     role_aware_block = "\n".join(
         [
             "<!-- ROLE_AWARE_VALUATION_START -->",
             "## V5 role-aware valuation and attention gate",
             "",
             "**Production decision: `ROLE_AWARE_FALLBACK`.** The role-aware "
-            "layer is active. The experimental attention challenger was "
-            "evaluated match-disjoint and rejected because its discrimination "
-            "was materially worse, despite better calibration.",
-            "",
-            "| Task | Model | ROC-AUC | PR-AUC | ECE | Brier |",
-            "|---|---|---:|---:|---:|---:|",
-            (
-                "| Retrospective | Baseline | "
-                f"{retrospective['baseline']['roc_auc']:.4f} | "
-                f"{retrospective['baseline']['pr_auc']:.4f} | "
-                f"{retrospective['baseline']['expected_calibration_error']:.4f} | "
-                f"{retrospective['baseline']['brier_score']:.4f} |"
-            ),
-            (
-                "| Retrospective | Attention | "
-                f"{retrospective['attention']['roc_auc']:.4f} | "
-                f"{retrospective['attention']['pr_auc']:.4f} | "
-                f"{retrospective['attention']['expected_calibration_error']:.4f} | "
-                f"{retrospective['attention']['brier_score']:.4f} |"
-            ),
-            (
-                "| Prospective | Baseline | "
-                f"{prospective['baseline']['roc_auc']:.4f} | "
-                f"{prospective['baseline']['pr_auc']:.4f} | "
-                f"{prospective['baseline']['expected_calibration_error']:.4f} | "
-                f"{prospective['baseline']['brier_score']:.4f} |"
-            ),
-            (
-                "| Prospective | Attention | "
-                f"{prospective['attention']['roc_auc']:.4f} | "
-                f"{prospective['attention']['pr_auc']:.4f} | "
-                f"{prospective['attention']['expected_calibration_error']:.4f} | "
-                f"{prospective['attention']['brier_score']:.4f} |"
-            ),
+            "layer is active.",
+            *attention_lines,
             "",
             f"New-versus-legacy ranking Spearman correlation: "
             f"{gate['spearman_with_legacy_rankings']:.4f}.",
@@ -570,7 +592,8 @@ def _refresh_detailed_team_rating_sections(
         ]
         if players.empty:
             lines.append(
-                "_No player reached the configured 300-minute ranking cutoff._"
+                "_No player reached the 45-minute outfield or 90-minute "
+                "goalkeeper eligibility floor._"
             )
         else:
             for row in players.head(5).itertuples(index=False):
@@ -585,11 +608,13 @@ def _refresh_detailed_team_rating_sections(
         lines.extend(
             [
                 "",
-                "_Only players with at least 300 tournament minutes are "
-                "ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, "
-                "15% continuous role-adjusted value, 10% completeness, and "
-                "5% coverage-qualified off-ball contribution, followed by "
-                "position-group minutes shrinkage._",
+                "_Ratings include eligible outfield players from 45 minutes "
+                "and goalkeepers from 90 minutes. The 300-minute threshold is "
+                "a high-reliability label. V2 evaluates contextual VAEP "
+                "behind a development-OOF non-inferiority gate, then uses "
+                "the accepted feature set with role-weighted offense/defense "
+                "channels, calibrated composite weights, xD-style "
+                "disruption, and 450-minute shrinkage._",
                 "",
             ]
         )
@@ -610,7 +635,14 @@ def _refresh_detailed_team_rating_sections(
                 marker_replacement,
                 refreshed,
             )
-            if marker_count != 1:
+            if marker_count == 0:
+                refreshed = (
+                    refreshed.rstrip()
+                    + "\n\n"
+                    + marker_replacement
+                    + "\n"
+                )
+            elif marker_count != 1:
                 raise RuntimeError(
                     f"Expected one {marker} block in {markdown_path}"
                 )
@@ -1157,7 +1189,7 @@ def _fit_grouped_role_valuation(
     profiles: pd.DataFrame,
     *,
     random_state: int,
-) -> tuple[pd.Series, dict[str, Any], dict[str, GroupedElasticNetValuator]]:
+) -> tuple[pd.DataFrame, dict[str, Any], dict[str, GroupedElasticNetValuator]]:
     """Fit separate match-grouped offensive and defensive ElasticNet heads."""
 
     candidates = (
@@ -1232,7 +1264,22 @@ def _fit_grouped_role_valuation(
     scaled = IndependentValueScaler(
         minimum_group_size=12,
     ).fit_transform(predicted)
-    score = scaled.max(axis=1).rename("role_adjusted_value")
+    channel_weights = derive_role_channel_weights(profiles)
+    score = (
+        channel_weights["role_off_weight"] * scaled["vaep_off_scaled"]
+        + channel_weights["role_def_weight"] * scaled["vaep_def_scaled"]
+    ).rename("role_adjusted_value")
+    role_outputs = pd.DataFrame(
+        {
+            "role_off_scaled": scaled["vaep_off_scaled"],
+            "role_def_scaled": scaled["vaep_def_scaled"],
+            "role_adjusted_value": score,
+            "role_off_weight": channel_weights["role_off_weight"],
+            "role_def_weight": channel_weights["role_def_weight"],
+            "role_weight_source": channel_weights["role_weight_source"],
+        },
+        index=profiles.index,
+    )
     all_coefficients = pd.concat(
         [model.coefficient_series() for model in models.values()],
         axis=1,
@@ -1245,7 +1292,16 @@ def _fit_grouped_role_valuation(
         raise RuntimeError(
             "Grouped ElasticNet coefficient dispersion gate failed"
         )
-    return score, diagnostics, models
+    diagnostics["combination"] = {
+        "formula": (
+            "role_off_weight * role_off_scaled + "
+            "role_def_weight * role_def_scaled"
+        ),
+        "role_weight_source_counts": (
+            channel_weights["role_weight_source"].value_counts().to_dict()
+        ),
+    }
+    return role_outputs, diagnostics, models
 
 
 def _validation_regression_gate(
@@ -1374,6 +1430,20 @@ def run_extended_pipeline(
 
     profiles = pd.read_csv(profile_path)
     profiles["player_id"] = profiles["player_id"].astype(int)
+    profiles = profiles.loc[
+        (
+            ~profiles["position_group"].eq("Goalkeeper")
+            & pd.to_numeric(profiles["minutes"], errors="coerce").ge(
+                MIN_PLAYER_MINUTES
+            )
+        )
+        | (
+            profiles["position_group"].eq("Goalkeeper")
+            & pd.to_numeric(profiles["minutes"], errors="coerce").ge(
+                MIN_GOALKEEPER_MINUTES
+            )
+        )
+    ].copy()
     actions = pd.read_parquet(actions_path)
     actions["original_event_id"] = actions["original_event_id"].astype(str)
     events = _load_events(events_path)
@@ -1421,6 +1491,8 @@ def run_extended_pipeline(
     profiles = _merge_player_features(profiles, spatial)
     network = build_passing_network_features(events)
     profiles = _merge_player_features(profiles, network)
+    defense_disruption = derive_defense_disruption(actions, profiles)
+    profiles = _merge_player_features(profiles, defense_disruption)
 
     geometry_cache = (
         project_root
@@ -1475,14 +1547,23 @@ def run_extended_pipeline(
         components,
         actions,
     )
-    role_adjusted, role_valuation_summary, role_models = (
+    match_valuation_samples = match_valuation_samples.loc[
+        match_valuation_samples["player_id"].isin(
+            profiles.loc[
+                ~profiles["position_group"].eq("Goalkeeper"),
+                "player_id",
+            ]
+        )
+    ].copy()
+    role_outputs, role_valuation_summary, role_models = (
         _fit_grouped_role_valuation(
             match_valuation_samples,
             profiles,
             random_state=config.random_state,
         )
     )
-    profiles["role_adjusted_value"] = role_adjusted
+    for column in role_outputs:
+        profiles[column] = role_outputs[column]
 
     attention_summary: dict[str, Any] = {
         "enabled": config.attention.enabled,
@@ -1583,23 +1664,42 @@ def run_extended_pipeline(
                 how="left",
                 validate="one_to_one",
             )
-            role_adjusted, role_valuation_summary, role_models = (
+            role_outputs, role_valuation_summary, role_models = (
                 _fit_grouped_role_valuation(
                     match_valuation_samples,
                     profiles,
                     random_state=config.random_state,
                 )
             )
-            profiles["role_adjusted_value"] = role_adjusted
+            for column in role_outputs:
+                profiles[column] = role_outputs[column]
         else:
             print(FALLBACK_MESSAGE)
 
     outfield_profiles = profiles.loc[
         ~profiles["position_group"].eq("Goalkeeper")
+        & pd.to_numeric(profiles["minutes"], errors="coerce").ge(
+            MIN_PLAYER_MINUTES
+        )
     ].copy()
-    rated_outfield = calculate_final_player_rating(
+    baseline_outfield = calculate_final_player_rating(
         outfield_profiles,
         config=config.rating,
+    )
+    calibrated_weights, composite_calibration = (
+        calibrate_composite_weights(
+            baseline_outfield,
+            config.rating.weights,
+            random_state=config.random_state,
+        )
+    )
+    calibrated_rating_config = dataclasses.replace(
+        config.rating,
+        weights=calibrated_weights,
+    )
+    rated_outfield = calculate_final_player_rating(
+        baseline_outfield,
+        config=calibrated_rating_config,
     )
     rated_outfield["global_rank_eligible"] = True
     goalkeeper_features, goalkeeper_audit = build_goalkeeper_features(
@@ -1612,6 +1712,7 @@ def run_extended_pipeline(
     )
     goalkeeper_profiles = profiles.loc[
         profiles["position_group"].eq("Goalkeeper")
+        & profiles["player_id"].isin(goalkeeper_ratings["player_id"])
     ].copy()
     goalkeeper_columns = [
         column
@@ -1644,6 +1745,23 @@ def run_extended_pipeline(
     goalkeeper_profiles["role_rank"] = goalkeeper_profiles[
         "goalkeeper_rank"
     ]
+    goalkeeper_profiles["RankingStatus"] = np.select(
+        [
+            pd.to_numeric(
+                goalkeeper_profiles["minutes"],
+                errors="coerce",
+            ).ge(300.0),
+            pd.to_numeric(
+                goalkeeper_profiles["minutes"],
+                errors="coerce",
+            ).ge(180.0),
+        ],
+        [
+            "Ranked (300+ min)",
+            "Ranked (180–299 min)",
+        ],
+        default="Coverage only (<180 min)",
+    )
     rated = pd.concat(
         [rated_outfield, goalkeeper_profiles],
         ignore_index=True,
@@ -1703,6 +1821,10 @@ def run_extended_pipeline(
         "legacy_vaep_oof": provenance.get("vaep_oof_metrics", {}),
         "legacy_vaep_test": provenance.get(
             "vaep_final_test_metrics",
+            {},
+        ),
+        "contextual_vaep_gate": provenance.get(
+            "contextual_vaep_gate",
             {},
         ),
         "attention": plain(attention_summary.get("metrics", {})),
@@ -1769,15 +1891,69 @@ def run_extended_pipeline(
             ),
             "candidates": probabilistic.candidate_metrics.to_dict("records"),
         },
-        "rating_weights": dict(config.rating.weights),
+        "rating_weights": dict(calibrated_weights),
+        "composite_calibration": composite_calibration,
+        "rating_methodology": {
+            "outfield_eligibility_minutes": 45,
+            "goalkeeper_eligibility_minutes": 90,
+            "outfield_primary_ranking_minutes": 300,
+            "goalkeeper_primary_ranking_minutes": 270,
+            "outfield_reliability": "minutes / (minutes + 450)",
+            "goalkeeper_reliability": (
+                "feature_coverage * minutes / (minutes + 450)"
+            ),
+            "outfield_ranking_statuses": [
+                "Ranked (300+ min)",
+                "Ranked (180–299 min)",
+                "Coverage only (<180 min)",
+            ],
+            "goalkeeper_ranking_statuses": [
+                "Ranked (270+ min)",
+                "Ranked (180–269 min)",
+                "Coverage only (<180 min)",
+            ],
+            "role_channel_formula": (
+                "w_off(role) * offense_scaled + "
+                "w_def(role) * defense_scaled"
+            ),
+            "completeness_formula": (
+                "0.6 * quality_adjusted_top3_completeness + "
+                "0.4 * minutes_factor"
+            ),
+            "contextual_vaep_features": [
+                "pre_action_goal_diff",
+                "match_minute",
+                "pre_tournament_opponent_strength",
+                "group_stage_vs_knockout",
+            ],
+            "contextual_vaep_grouping": (
+                "context features are accepted only by a match-disjoint "
+                "development-OOF non-inferiority gate; the untouched test "
+                "is opened once for the selected feature set"
+            ),
+        },
+        "defense_disruption": {
+            "grid": "6 columns x 8 rows",
+            "formula": (
+                "BaseThreat(zone) * ActionImpactFactor, aggregated per 90"
+            ),
+            "position_group_percentile": "xd90_pct",
+            "defensive_dimension_integration": (
+                "seventh evidence-aware defensive role input"
+            ),
+        },
     }
 
     player_output = output_root / "player_evaluations_v5.csv"
     rated.to_csv(player_output, index=False)
+    defense_disruption.to_csv(
+        output_root / "defense_disruption.csv",
+        index=False,
+    )
     old_global_rank = (
         rated[legacy_column]
         .rank(method="min", ascending=False)
-        .astype(int)
+        .astype("Int64")
     )
     new_global_rank = rated["global_rank"]
     comparison = pd.DataFrame(
@@ -1800,6 +1976,50 @@ def run_extended_pipeline(
         project_root
         / "data/processed/world_cup_defensive_features.csv",
     )
+    team_composites = (
+        rated_outfield.groupby("team", as_index=False)
+        .agg(
+            mean_creation_score=("creation_score", "mean"),
+            mean_defensive_score=("defensive_score", "mean"),
+            mean_ball_security_score=("ball_security_score", "mean"),
+            mean_xd90=("xd90", "mean"),
+        )
+    )
+    high_reliability = rated_outfield.loc[
+        pd.to_numeric(
+            rated_outfield["minutes"],
+            errors="coerce",
+        ).ge(300.0)
+    ]
+    ranked_composites = (
+        high_reliability.groupby("team", as_index=False)
+        .agg(
+            mean_creation_score_ranked_300=("creation_score", "mean"),
+            mean_defensive_score_ranked_300=("defensive_score", "mean"),
+            mean_ball_security_score_ranked_300=(
+                "ball_security_score",
+                "mean",
+            ),
+        )
+    )
+    team_metrics = (
+        team_metrics.merge(
+            team_composites,
+            on="team",
+            how="left",
+            validate="one_to_one",
+        )
+        .merge(
+            ranked_composites,
+            on="team",
+            how="left",
+            validate="one_to_one",
+        )
+    )
+    team_metrics.to_csv(
+        output_root / "team_metrics_v2.csv",
+        index=False,
+    )
     team_player_pool = (
         components.groupby(["player_id", "team"], as_index=False)
         .agg(
@@ -1808,6 +2028,16 @@ def run_extended_pipeline(
             minutes=("minutes", "sum"),
         )
     )
+    team_player_pool = team_player_pool.loc[
+        (
+            ~team_player_pool["position_group"].eq("Goalkeeper")
+            & team_player_pool["minutes"].ge(MIN_PLAYER_MINUTES)
+        )
+        | (
+            team_player_pool["position_group"].eq("Goalkeeper")
+            & team_player_pool["minutes"].ge(MIN_GOALKEEPER_MINUTES)
+        )
+    ].copy()
     manifest = ArtifactGenerator(output_root).generate(
         rated,
         model_summary=model_summary,

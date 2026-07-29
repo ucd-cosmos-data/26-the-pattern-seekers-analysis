@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Morocco
 - Position group: Fullback/Wingback
-- Functional role: Wide Creator
-- Probabilistic role: Creative/Progressive Fullback
+- Functional role: Attacking Wingback
+- Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
-- Global rank: 34
-- Position rank: 12
-- Role rank: 4
-- Team rank: 1
-- Final player rating: 0.6202
+- Global rank: 76
+- Position rank: 22
+- Role rank: 19
+- Team rank: 2
+- Final player rating: 0.5451
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 350.2
-- Minutes reliability: 0.5386
+- Minutes reliability: 0.4376
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3585 |
-| vaep_def_scaled | 0.8202 |
-| vaep_per_touch | 0.0019 |
-| open_play_xt_p90 | 0.0037 |
-| set_piece_xt_p90 | 0.0326 |
-| role_adjusted_value | 0.2784 |
-| completeness_score | 0.6298 |
-| off_ball_score | 0.4705 |
+| vaep_off_scaled | 0.4608 |
+| vaep_def_scaled | 0.8189 |
+| vaep_per_touch | 0.0018 |
+| open_play_xt_p90 | 0.0024 |
+| set_piece_xt_p90 | 0.0304 |
+| role_adjusted_value | 0.0864 |
+| completeness_score | 0.7638 |
+| off_ball_score | 0.4639 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.6655 |
-| creation_score | 0.6908 |
-| finishing_score | 0.4707 |
-| pressing_score | 0.6205 |
-| defensive_score | 0.5628 |
-| ball_security_score | 0.3669 |
-| aerial_score | 0.3169 |
+| progression_score | 0.7030 |
+| creation_score | 0.7270 |
+| finishing_score | 0.4941 |
+| pressing_score | 0.5506 |
+| defensive_score | 0.5808 |
+| ball_security_score | 0.3779 |
+| aerial_score | 0.3780 |
 
 ## Spatial, 360 and passing-network context
 

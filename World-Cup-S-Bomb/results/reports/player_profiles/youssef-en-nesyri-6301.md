@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Morocco
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
-- Probabilistic role: Finishing/Aerial Forward
-- Role entropy: 0.0000
-- Global rank: 95
-- Position rank: 11
-- Role rank: 3
-- Team rank: 8
-- Final player rating: 0.4783
+- Probabilistic role: Finishing/Aerial/Secure Forward
+- Role entropy: 0.2356
+- Global rank: 529
+- Position rank: 80
+- Role rank: 20
+- Team rank: 22
+- Final player rating: 0.3895
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 553.8
-- Minutes reliability: 0.6486
+- Minutes reliability: 0.5517
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.2553 |
-| vaep_def_scaled | 0.2968 |
-| vaep_per_touch | 0.0046 |
-| open_play_xt_p90 | 0.0043 |
-| set_piece_xt_p90 | 0.0008 |
-| role_adjusted_value | 0.4332 |
-| completeness_score | 0.4599 |
-| off_ball_score | 0.4394 |
+| vaep_off_scaled | 0.0731 |
+| vaep_def_scaled | 0.2534 |
+| vaep_per_touch | 0.0049 |
+| open_play_xt_p90 | 0.0014 |
+| set_piece_xt_p90 | -0.0015 |
+| role_adjusted_value | 0.2002 |
+| completeness_score | 0.6827 |
+| off_ball_score | 0.4393 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.1419 |
-| creation_score | 0.1993 |
-| finishing_score | 0.8439 |
-| pressing_score | 0.6341 |
-| defensive_score | 0.3005 |
-| ball_security_score | 0.4204 |
-| aerial_score | 0.8369 |
+| progression_score | 0.1914 |
+| creation_score | 0.3248 |
+| finishing_score | 0.8024 |
+| pressing_score | 0.5940 |
+| defensive_score | 0.4506 |
+| ball_security_score | 0.4299 |
+| aerial_score | 0.8249 |
 
 ## Spatial, 360 and passing-network context
 

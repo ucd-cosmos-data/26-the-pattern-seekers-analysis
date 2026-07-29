@@ -4,8 +4,8 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 6
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 18
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -16,17 +16,15 @@
 
 - Team: Senegal (SEN)
 - Position: Left Wing
-- Functional role: Target Forward
-- VAEP offense per 90: 0.4347
-- VAEP defense per 90: 0.0013
-- VAEP total per 90: 0.4360
-- VAEP per touch: 0.00476
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.4656
+- VAEP defense per 90: -0.0045
+- VAEP total per 90: 0.4611
+- VAEP per touch: 0.00503
 - Spatial xT per 90: 0.0903
 - Final-third spatial share: 56.0%
-- Unified final player rating: 0.2237
-- Team rank: #1
-- Rating 95% CI: [0.1847, 0.2513] (bootstrap SE 0.0172)
-- Rank stability: bootstrap mean rank 1.0; P(team #1) 95%, P(top 3) 98%
+- Unified final player rating: 0.2095
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/2941_heatmap.svg)
 
@@ -41,7 +39,7 @@
 ## Top chemistry partners
 
 - Youssouf Sabaly — synergy 0.628, 365 shared minutes
-- Unknown — synergy 0.579, 291 shared minutes
+- Nampalys Mendy — synergy 0.579, 291 shared minutes
 - Kalidou Koulibaly — synergy 0.542, 365 shared minutes
 
 ## Tactical recommendations
@@ -51,7 +49,8 @@
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
@@ -62,16 +61,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Senegal (SEN)
 - Position: Right Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.1418
-- VAEP defense per 90: -0.0271
-- VAEP total per 90: 0.1148
-- VAEP per touch: 0.00083
+- VAEP offense per 90: 0.1545
+- VAEP defense per 90: -0.0222
+- VAEP total per 90: 0.1322
+- VAEP per touch: 0.00096
 - Spatial xT per 90: 0.0776
 - Final-third spatial share: 34.9%
-- Unified final player rating: 0.0749
-- Team rank: #3
-- Rating 95% CI: [0.0480, 0.1057] (bootstrap SE 0.0148)
-- Rank stability: bootstrap mean rank 3.0; P(team #1) 0%, P(top 3) 98%
+- Unified final player rating: 0.0667
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/3404_heatmap.svg)
 
@@ -96,27 +93,159 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 3: 5675_starter_report.md -->
+<!-- PLAYER_REPORT 3: 3436_starter_report.md -->
+
+# Idrissa Gana Gueye — Starter Report
+
+- Team: Senegal (SEN)
+- Position: Center Attacking Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.1582
+- VAEP defense per 90: 0.0067
+- VAEP total per 90: 0.1649
+- VAEP per touch: 0.00146
+- Spatial xT per 90: 0.0092
+- Final-third spatial share: 40.4%
+- Unified final player rating: 0.1404
+- Team rank: #8
+
+![V4 event and 360 heatmap](../heatmaps/SEN/3436_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.286 |
+| Pressing intensity per 90 | 21.80 |
+| Recovery index per 90 | 5.53 |
+
+## Top chemistry partners
+
+- Kalidou Koulibaly — synergy 0.601, 293 shared minutes
+- Youssouf Sabaly — synergy 0.554, 293 shared minutes
+- Ismail Jakobs — synergy 0.534, 213 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 4: 3684_starter_report.md -->
+
+# Cheikhou Kouyaté — Starter Report
+
+- Team: Senegal (SEN)
+- Position: Right Defensive Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.0951
+- VAEP defense per 90: -0.3045
+- VAEP total per 90: -0.2094
+- VAEP per touch: -0.00258
+- Spatial xT per 90: -0.0106
+- Final-third spatial share: 30.4%
+- Unified final player rating: 0.0036
+- Team rank: #14
+
+![V4 event and 360 heatmap](../heatmaps/SEN/3684_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.333 |
+| Pressing intensity per 90 | 13.53 |
+| Recovery index per 90 | 2.46 |
+
+## Top chemistry partners
+
+- Nampalys Mendy — synergy 0.227, 73 shared minutes
+- Idrissa Gana Gueye — synergy 0.224, 73 shared minutes
+- Pape Abou Cissé — synergy 0.218, 73 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 5: 4506_starter_report.md -->
+
+# Nampalys Mendy — Starter Report
+
+- Team: Senegal (SEN)
+- Position: Left Defensive Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0519
+- VAEP defense per 90: -0.0106
+- VAEP total per 90: 0.0413
+- VAEP per touch: 0.00033
+- Spatial xT per 90: 0.0282
+- Final-third spatial share: 23.8%
+- Unified final player rating: 0.0235
+- Team rank: #12
+
+![V4 event and 360 heatmap](../heatmaps/SEN/4506_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 12.84 |
+| Recovery index per 90 | 5.20 |
+
+## Top chemistry partners
+
+- Youssouf Sabaly — synergy 0.639, 294 shared minutes
+- Kalidou Koulibaly — synergy 0.624, 294 shared minutes
+- Abdou Diallo — synergy 0.604, 256 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 6: 5675_starter_report.md -->
 
 # Kalidou Koulibaly — Starter Report
 
 - Team: Senegal (SEN)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0369
-- VAEP defense per 90: 0.0076
-- VAEP total per 90: 0.0445
-- VAEP per touch: 0.00039
+- VAEP offense per 90: 0.0266
+- VAEP defense per 90: -0.0222
+- VAEP total per 90: 0.0044
+- VAEP per touch: 0.00004
 - Spatial xT per 90: 0.0112
 - Final-third spatial share: 4.3%
-- Unified final player rating: 0.0102
-- Team rank: #4
-- Rating 95% CI: [-0.0227, 0.0530] (bootstrap SE 0.0209)
-- Rank stability: bootstrap mean rank 4.2; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0028
+- Team rank: #16
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/5675_heatmap.svg)
 
@@ -142,27 +271,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 4: 7379_starter_report.md -->
+<!-- PLAYER_REPORT 7: 7379_starter_report.md -->
 
 # Edouard Mendy — Starter Report
 
 - Team: Senegal (SEN)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0119
-- VAEP defense per 90: -0.0923
-- VAEP total per 90: -0.1041
-- VAEP per touch: -0.00196
+- VAEP offense per 90: -0.0118
+- VAEP defense per 90: -0.1169
+- VAEP total per 90: -0.1286
+- VAEP per touch: -0.00242
 - Spatial xT per 90: 0.0055
 - Final-third spatial share: 1.7%
-- Unified final player rating: -0.0516
-- Team rank: #6
-- Rating 95% CI: [-0.0662, -0.0364] (bootstrap SE 0.0076)
-- Rank stability: bootstrap mean rank 6.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0625
+- Team rank: #18
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/7379_heatmap.svg)
 
@@ -188,27 +316,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 5: 8553_starter_report.md -->
+<!-- PLAYER_REPORT 8: 8553_starter_report.md -->
 
 # Abdou Diallo — Starter Report
 
 - Team: Senegal (SEN)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0119
-- VAEP defense per 90: -0.0556
-- VAEP total per 90: -0.0436
-- VAEP per touch: -0.00036
+- VAEP offense per 90: 0.0207
+- VAEP defense per 90: -0.0315
+- VAEP total per 90: -0.0108
+- VAEP per touch: -0.00009
 - Spatial xT per 90: 0.0357
 - Final-third spatial share: 9.7%
-- Unified final player rating: -0.0118
-- Team rank: #5
-- Rating 95% CI: [-0.0207, -0.0013] (bootstrap SE 0.0050)
-- Rank stability: bootstrap mean rank 4.8; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0044
+- Team rank: #17
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/8553_heatmap.svg)
 
@@ -234,27 +361,114 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 6: 20611_starter_report.md -->
+<!-- PLAYER_REPORT 9: 13314_starter_report.md -->
+
+# Famara Diedhiou — Starter Report
+
+- Team: Senegal (SEN)
+- Position: Center Forward
+- Functional role: Target Forward
+- VAEP offense per 90: 0.5425
+- VAEP defense per 90: 0.0063
+- VAEP total per 90: 0.5488
+- VAEP per touch: 0.00687
+- Spatial xT per 90: 0.0055
+- Final-third spatial share: 38.8%
+- Unified final player rating: 0.2460
+- Team rank: #1
+
+![V4 event and 360 heatmap](../heatmaps/SEN/13314_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.375 |
+| Pressing intensity per 90 | 16.72 |
+| Recovery index per 90 | 2.79 |
+
+## Top chemistry partners
+
+- Nampalys Mendy — synergy 0.276, 97 shared minutes
+- Youssouf Sabaly — synergy 0.249, 97 shared minutes
+- Edouard Mendy — synergy 0.242, 97 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 10: 15970_starter_report.md -->
+
+# Pape Abou Cissé — Starter Report
+
+- Team: Senegal (SEN)
+- Position: Left Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.1412
+- VAEP defense per 90: -0.0430
+- VAEP total per 90: 0.0982
+- VAEP per touch: 0.00127
+- Spatial xT per 90: -0.0031
+- Final-third spatial share: 6.3%
+- Unified final player rating: 0.0032
+- Team rank: #15
+
+![V4 event and 360 heatmap](../heatmaps/SEN/15970_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.400 |
+| Pressing intensity per 90 | 5.93 |
+| Recovery index per 90 | 0.74 |
+
+## Top chemistry partners
+
+- Edouard Mendy — synergy 0.353, 121 shared minutes
+- Kalidou Koulibaly — synergy 0.343, 121 shared minutes
+- Youssouf Sabaly — synergy 0.336, 121 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 11: 20611_starter_report.md -->
 
 # Boulaye Dia — Starter Report
 
 - Team: Senegal (SEN)
 - Position: Center Attacking Midfield
 - Functional role: Target Forward
-- VAEP offense per 90: 0.2600
-- VAEP defense per 90: -0.0040
-- VAEP total per 90: 0.2559
-- VAEP per touch: 0.00383
+- VAEP offense per 90: 0.2614
+- VAEP defense per 90: -0.0022
+- VAEP total per 90: 0.2592
+- VAEP per touch: 0.00388
 - Spatial xT per 90: -0.0076
 - Final-third spatial share: 57.7%
-- Unified final player rating: 0.1654
-- Team rank: #2
-- Rating 95% CI: [0.1288, 0.2123] (bootstrap SE 0.0212)
-- Rank stability: bootstrap mean rank 2.0; P(team #1) 3%, P(top 3) 98%
+- Unified final player rating: 0.1566
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/SEN/20611_heatmap.svg)
 
@@ -269,8 +483,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 ## Top chemistry partners
 
 - Youssouf Sabaly — synergy 0.554, 330 shared minutes
-- Unknown — synergy 0.530, 237 shared minutes
-- Unknown — synergy 0.487, 259 shared minutes
+- Nampalys Mendy — synergy 0.530, 237 shared minutes
+- Idrissa Gana Gueye — synergy 0.487, 259 shared minutes
 
 ## Tactical recommendations
 
@@ -279,62 +493,320 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
+---
 
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
+<!-- PLAYER_REPORT 12: 20758_starter_report.md -->
 
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
+# Krépin Diatta — Starter Report
 
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
+- Team: Senegal (SEN)
+- Position: Right Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.2345
+- VAEP defense per 90: 0.0092
+- VAEP total per 90: 0.2437
+- VAEP per touch: 0.00184
+- Spatial xT per 90: 0.0943
+- Final-third spatial share: 55.4%
+- Unified final player rating: 0.1664
+- Team rank: #5
 
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
+![V4 event and 360 heatmap](../heatmaps/SEN/20758_heatmap.svg)
 
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
+## Physical profile
 
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.600 |
+| Pressing intensity per 90 | 21.27 |
+| Recovery index per 90 | 4.95 |
 
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
+## Top chemistry partners
 
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
+- Nampalys Mendy — synergy 0.443, 182 shared minutes
+- Youssouf Sabaly — synergy 0.428, 182 shared minutes
+- Abdou Diallo — synergy 0.418, 170 shared minutes
 
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
+## Tactical recommendations
 
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
 
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
+---
 
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
+<!-- PLAYER_REPORT 13: 21026_starter_report.md -->
 
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+# Pape Gueye — Starter Report
 
-France refinements:
+- Team: Senegal (SEN)
+- Position: Left Defensive Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.1651
+- VAEP defense per 90: 0.0043
+- VAEP total per 90: 0.1694
+- VAEP per touch: 0.00197
+- Spatial xT per 90: 0.0515
+- Final-third spatial share: 26.9%
+- Unified final player rating: 0.0422
+- Team rank: #11
 
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+![V4 event and 360 heatmap](../heatmaps/SEN/21026_heatmap.svg)
 
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.857 |
+| Pressing intensity per 90 | 11.96 |
+| Recovery index per 90 | 5.20 |
+
+## Top chemistry partners
+
+- Youssouf Sabaly — synergy 0.447, 173 shared minutes
+- Edouard Mendy — synergy 0.446, 173 shared minutes
+- Ismail Jakobs — synergy 0.429, 163 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 14: 31751_starter_report.md -->
+
+# Pathé Ismaël Ciss — Starter Report
+
+- Team: Senegal (SEN)
+- Position: Right Defensive Midfield
+- Functional role: Box-to-Box / Engine Midfielder
+- VAEP offense per 90: 0.0163
+- VAEP defense per 90: -0.0068
+- VAEP total per 90: 0.0094
+- VAEP per touch: 0.00010
+- Spatial xT per 90: 0.0281
+- Final-third spatial share: 10.8%
+- Unified final player rating: 0.0188
+- Team rank: #13
+
+![V4 event and 360 heatmap](../heatmaps/SEN/31751_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.750 |
+| Pressing intensity per 90 | 18.46 |
+| Recovery index per 90 | 4.17 |
+
+## Top chemistry partners
+
+- Youssouf Sabaly — synergy 0.417, 151 shared minutes
+- Kalidou Koulibaly — synergy 0.415, 151 shared minutes
+- Abdou Diallo — synergy 0.414, 151 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 15: 32915_starter_report.md -->
+
+# Ismail Jakobs — Starter Report
+
+- Team: Senegal (SEN)
+- Position: Left Back
+- Functional role: Attacking Wingback
+- VAEP offense per 90: 0.0560
+- VAEP defense per 90: -0.0097
+- VAEP total per 90: 0.0463
+- VAEP per touch: 0.00044
+- Spatial xT per 90: 0.0888
+- Final-third spatial share: 31.1%
+- Unified final player rating: 0.0486
+- Team rank: #10
+
+![V4 event and 360 heatmap](../heatmaps/SEN/32915_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.786 |
+| Pressing intensity per 90 | 9.41 |
+| Recovery index per 90 | 3.04 |
+
+## Top chemistry partners
+
+- Edouard Mendy — synergy 0.616, 296 shared minutes
+- Youssouf Sabaly — synergy 0.611, 296 shared minutes
+- Abdou Diallo — synergy 0.582, 258 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 16: 50498_starter_report.md -->
+
+# Pape Matar Sarr — Starter Report
+
+- Team: Senegal (SEN)
+- Position: Center Attacking Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0642
+- VAEP defense per 90: 0.0086
+- VAEP total per 90: 0.0728
+- VAEP per touch: 0.00045
+- Spatial xT per 90: 0.1338
+- Final-third spatial share: 27.2%
+- Unified final player rating: 0.1617
+- Team rank: #6
+
+![V4 event and 360 heatmap](../heatmaps/SEN/50498_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 9.23 |
+| Recovery index per 90 | 2.64 |
+
+## Top chemistry partners
+
+- Kalidou Koulibaly — synergy 0.213, 68 shared minutes
+- Cheikh Ahmadou Bamba Mbacke Dieng — synergy 0.207, 68 shared minutes
+- Edouard Mendy — synergy 0.205, 68 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 17: 80484_starter_report.md -->
+
+# Iliman Ndiaye — Starter Report
+
+- Team: Senegal (SEN)
+- Position: Right Wing
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.3006
+- VAEP defense per 90: 0.0060
+- VAEP total per 90: 0.3065
+- VAEP per touch: 0.00336
+- Spatial xT per 90: 0.0050
+- Final-third spatial share: 51.0%
+- Unified final player rating: 0.1715
+- Team rank: #4
+
+![V4 event and 360 heatmap](../heatmaps/SEN/80484_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 17.85 |
+| Recovery index per 90 | 2.55 |
+
+## Top chemistry partners
+
+- Pathé Ismaël Ciss — synergy 0.391, 141 shared minutes
+- Youssouf Sabaly — synergy 0.365, 141 shared minutes
+- Edouard Mendy — synergy 0.360, 141 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 18: 88123_starter_report.md -->
+
+# Cheikh Ahmadou Bamba Mbacke Dieng — Starter Report
+
+- Team: Senegal (SEN)
+- Position: Center Forward
+- Functional role: Target Forward
+- VAEP offense per 90: 0.2107
+- VAEP defense per 90: 0.0062
+- VAEP total per 90: 0.2169
+- VAEP per touch: 0.00324
+- Spatial xT per 90: -0.0142
+- Final-third spatial share: 29.4%
+- Unified final player rating: 0.2101
+- Team rank: #2
+
+![V4 event and 360 heatmap](../heatmaps/SEN/88123_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.100 |
+| Pressing intensity per 90 | 17.82 |
+| Recovery index per 90 | 3.56 |
+
+## Top chemistry partners
+
+- Youssouf Sabaly — synergy 0.271, 126 shared minutes
+- Ismaïla Sarr — synergy 0.270, 104 shared minutes
+- Ismail Jakobs — synergy 0.249, 97 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

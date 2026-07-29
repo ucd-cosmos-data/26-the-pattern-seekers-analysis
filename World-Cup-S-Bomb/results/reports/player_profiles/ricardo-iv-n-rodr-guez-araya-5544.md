@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Switzerland
 - Position group: Fullback/Wingback
-- Functional role: Wide Creator
-- Probabilistic role: Creative/Progressive Fullback
+- Functional role: Attacking Wingback
+- Probabilistic role: Progressive/Creative Fullback
 - Role entropy: 0.0000
-- Global rank: 82
-- Position rank: 22
-- Role rank: 10
-- Team rank: 4
-- Final player rating: 0.5013
+- Global rank: 346
+- Position rank: 100
+- Role rank: 51
+- Team rank: 12
+- Final player rating: 0.4614
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 380.2
-- Minutes reliability: 0.5590
+- Minutes reliability: 0.4580
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.1010 |
-| vaep_def_scaled | 0.5085 |
-| vaep_per_touch | 0.0002 |
-| open_play_xt_p90 | 0.0131 |
-| set_piece_xt_p90 | 0.0226 |
-| role_adjusted_value | 0.1135 |
-| completeness_score | 0.3929 |
-| off_ball_score | 0.3870 |
+| vaep_off_scaled | 0.2121 |
+| vaep_def_scaled | 0.5067 |
+| vaep_per_touch | 0.0000 |
+| open_play_xt_p90 | 0.0158 |
+| set_piece_xt_p90 | 0.0286 |
+| role_adjusted_value | 0.0532 |
+| completeness_score | 0.6458 |
+| off_ball_score | 0.3955 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.6786 |
-| creation_score | 0.6401 |
-| finishing_score | 0.1749 |
-| pressing_score | 0.2237 |
-| defensive_score | 0.3292 |
-| ball_security_score | 0.2120 |
-| aerial_score | 0.9202 |
+| progression_score | 0.7180 |
+| creation_score | 0.6811 |
+| finishing_score | 0.2305 |
+| pressing_score | 0.1948 |
+| defensive_score | 0.3402 |
+| ball_security_score | 0.2539 |
+| aerial_score | 0.8687 |
 
 ## Spatial, 360 and passing-network context
 

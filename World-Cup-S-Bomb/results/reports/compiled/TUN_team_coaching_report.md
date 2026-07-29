@@ -2,7 +2,7 @@
 
 ## Model-grounded summary
 
-Tunisia: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.788. Strongest positive squad synergy: not available. Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
+Tunisia: no tactical change cleared the modeled effect floor. Primary review signal: pressing deficit -2.788. Strongest positive squad synergy: Yassine Meriah + Montassar Omar Talbi (0.659). Model transition-conceded-v2, target transition_conceded, calibration platt, threshold None (no validated threshold; abstention).
 
 - Total wasted Net xG: 0.1552
 - Mean possession EvA gap: 0.000626
@@ -12,15 +12,15 @@ Tunisia: no tactical change cleared the modeled effect floor. Primary review sig
 
 1. Montassar Omar Talbi (Center Back)
 2. Ellyes Joris Skhiri (Defensive Midfield)
-3. Yassine Meriah (Center Back)
-4. Aymen Dahmen (Goalkeeper)
-5. Aïssa Bilal Laïdouni (Defensive Midfield)
-6. Ali Abdi (Fullback/Wingback)
-7. Youssef Msakni (Attacking Midfield/Wing)
-8. Dylan Daniel Mahmoud Bronn (Center Back)
-9. Issam Jebali (Forward)
-10. Anis Ben Slimane (Attacking Midfield/Wing)
-11. Wajdi Kechrida (Fullback/Wingback)
+3. Youssef Msakni (Attacking Midfield/Wing)
+4. Issam Jebali (Forward)
+5. Ali Abdi (Fullback/Wingback)
+6. Aïssa Bilal Laïdouni (Defensive Midfield)
+7. Anis Ben Slimane (Attacking Midfield/Wing)
+8. Yassine Meriah (Center Back)
+9. Aymen Dahmen (Goalkeeper)
+10. Naïm Sliti (Attacking Midfield/Wing)
+11. Mohamed Dräger (Fullback/Wingback)
 
 ## Physical matchup deltas
 
@@ -32,13 +32,17 @@ Tunisia: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## Best bench intervention
 
-> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 91, INSUFFICIENT_MINUTES: 19.
+> **No validated intervention:** No bench substitution met the +0.0050 Net xG floor and strictly positive confidence interval requirement. Reason codes: POSITIONAL_INCOMPATIBILITY: 91, GAIN_BELOW_THRESHOLD: 14, INSUFFICIENT_MINUTES: 5.
 
 ## V5 role-aware player leaders
 
-_No player reached the configured 300-minute ranking cutoff._
+1. Youssef Msakni — Progressive Winger; rating 0.6009, VAEP/90 +0.583, xT/90 +0.084, role-adjusted 0.969
+2. Naïm Sliti — Progressive Winger; rating 0.5549, VAEP/90 +0.390, xT/90 +0.093, role-adjusted 0.377
+3. Aymen Dahmen — Goalkeeper; rating 0.5405, VAEP/90 -0.112, xT/90 +0.001, role-adjusted 0.247
+4. Mohamed Dräger — Deep Playmaker; rating 0.5383, VAEP/90 +0.191, xT/90 +0.037, role-adjusted 0.477
+5. Mohamed Ali Ben Romdhane — Wide Creator; rating 0.5311, VAEP/90 +0.209, xT/90 +0.058, role-adjusted 0.110
 
-_Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
+_Ratings include eligible outfield players from 45 minutes and goalkeepers from 90 minutes. The 300-minute threshold is a high-reliability label. V2 evaluates contextual VAEP behind a development-OOF non-inferiority gate, then uses the accepted feature set with role-weighted offense/defense channels, calibrated composite weights, xD-style disruption, and 450-minute shrinkage._
 
 ## Recurrent tactical mistakes
 
@@ -48,27 +52,14 @@ _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/
 
 _Counterfactual values are predictive scenario estimates, not causal treatment effects. Substitutions below the gain floor or with confidence intervals crossing zero are suppressed._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
-
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
-
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
-
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
-
 <!-- PLAYER_ROLE_VALIDATION_START -->
 ## V5 probabilistic role validation
 
-The production role model selected **K=9 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
+The production role model selected **K=16 with `tied` covariance by BIC with AIC tie-breaking. K-Means functional roles remain the published baseline; GMM probabilities and entropy are additive descriptors.
 
-- Bootstrap ARI median: 0.6887
-- Bootstrap ARI fifth percentile: 0.5522
-- PCA explained variance: 0.8688
+- Bootstrap ARI median: 0.6260
+- Bootstrap ARI fifth percentile: 0.5113
+- PCA explained variance: 0.7367
 
 Roles do not award points directly. Continuous role dimensions only modulate the weights applied to observed contributions.
 <!-- PLAYER_ROLE_VALIDATION_END -->
@@ -76,16 +67,10 @@ Roles do not award points directly. Continuous role dimensions only modulate the
 <!-- ROLE_AWARE_VALUATION_START -->
 ## V5 role-aware valuation and attention gate
 
-**Production decision: `ROLE_AWARE_FALLBACK`.** The role-aware layer is active. The experimental attention challenger was evaluated match-disjoint and rejected because its discrimination was materially worse, despite better calibration.
+**Production decision: `ROLE_AWARE_FALLBACK`.** The role-aware layer is active.
+The optional attention experiment was disabled for this canonical run, so the interpretable role-aware fallback remains active without publishing unevaluated attention metrics.
 
-| Task | Model | ROC-AUC | PR-AUC | ECE | Brier |
-|---|---|---:|---:|---:|---:|
-| Retrospective | Baseline | 0.6283 | 0.5179 | 0.0659 | 0.2364 |
-| Retrospective | Attention | 0.7258 | 0.6257 | 0.0169 | 0.2086 |
-| Prospective | Baseline | 0.8855 | 0.9763 | 0.1866 | 0.1389 |
-| Prospective | Attention | 0.8815 | 0.9750 | 0.0147 | 0.0907 |
-
-New-versus-legacy ranking Spearman correlation: 0.7112.
+New-versus-legacy ranking Spearman correlation: 0.7057.
 <!-- ROLE_AWARE_VALUATION_END -->
 
 <!-- CONTINUOUS_ROLE_REFINEMENT_START -->

@@ -1,0 +1,64 @@
+# Rodrygo Silva de Goes Player Profile
+
+This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+
+## Ranking and role
+
+- Team: Brazil
+- Position group: Central/Wide Midfield
+- Functional role: Progressive Winger
+- Probabilistic role: Finishing/Progressive Attacker
+- Role entropy: 0.0203
+- Global rank: 32
+- Position rank: 4
+- Role rank: 19
+- Team rank: 5
+- Final player rating: 0.5747
+- Ranking status: Ranked (180–299 min)
+
+- Global ranking eligibility: eligible
+- Minutes: 199.3
+- Minutes reliability: 0.3069
+
+## Rating components
+
+| Metric | Value |
+|---|---|
+| vaep_off_scaled | 0.7092 |
+| vaep_def_scaled | 1.0000 |
+| vaep_per_touch | 0.0038 |
+| open_play_xt_p90 | 0.0348 |
+| set_piece_xt_p90 | 0.0558 |
+| role_adjusted_value | 0.8901 |
+| completeness_score | 0.7709 |
+| off_ball_score | 0.5893 |
+
+## Continuous role vector
+
+| Metric | Value |
+|---|---|
+| progression_score | 0.5964 |
+| creation_score | 0.6757 |
+| finishing_score | 0.7521 |
+| pressing_score | 0.7209 |
+| defensive_score | 0.6404 |
+| ball_security_score | 0.3244 |
+| aerial_score | 0.5812 |
+
+## Spatial, 360 and passing-network context
+
+| Metric | Value |
+|---|---|
+| sb360_coverage | 0.8911 |
+| mean_defenders_within_3m | 0.4738 |
+| mean_defenders_within_5m | 0.9451 |
+| mean_nearest_defender_m | 7.7385 |
+| mean_passing_lane_availability | 0.8846 |
+| packing_index_mean | 0.6334 |
+| mean_space_received | 0.5236 |
+| network_pagerank | 0.0468 |
+| network_betweenness | 0.0322 |
+| network_entropy | 0.9072 |
+| build_up_involvement_ratio | 0.6273 |
+
+Missing values indicate unavailable evidence; they are not converted into zero contribution.

@@ -45,3 +45,7 @@ def test_goalkeeper_features_exclude_shootouts_and_outfield_dimensions() -> None
         "final_third_occupancy",
     }.intersection(features.columns)
     assert set(features["player_id"]) == {10, 21}
+    saved = features.set_index("player_id").loc[10]
+    assert saved["high_leverage_shots_on_target"] == 1
+    assert saved["high_leverage_saves"] == 1
+    assert saved["high_leverage_save_pct"] == 1.0

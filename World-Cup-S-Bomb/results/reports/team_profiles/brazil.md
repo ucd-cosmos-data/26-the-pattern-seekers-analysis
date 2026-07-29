@@ -2,10 +2,11 @@
 
 ## Threat creation
 
-- Total xT created: 3.3449
+- Total xT created: 3.8085
 - Total xA created: 6.8525
-- Mean creation score: 0.5521
-- Mean xT/90: 0.0544
+- Mean creation score: 0.5582
+- Mean creation score (300+ comparison): 0.6357
+- Mean xT/90: 0.0642
 
 ## Defensive compactness
 
@@ -13,21 +14,24 @@
 - Mean defensive density: 0.0211
 - Mean defensive width: 37.2536
 - Mean defensive depth: 24.3013
-- Mean defensive score: 0.5539
-- Mean shape-maintenance score: 0.5297
+- Mean defensive score: 0.5207
+- Mean defensive score (300+ comparison): 0.5537
+- Mean xD/90: 5.3820
+- Mean shape-maintenance score: 0.5126
 
 ## Pressure resistance
 
 - Pass completion under pressure: 0.7291
 - Pressured pass sample: 299.0000
-- Mean ball-security score: 0.5538
+- Mean ball-security score: 0.5394
+- Mean ball-security score (300+ comparison): 0.5657
 
 ## Top five player summary
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Vinícius José Paixão de Oliveira Júnior | Progressive Winger | 306.5833 | 0.7354 | Ranked (300+ min) |
-| 2.0000 | Richarlison de Andrade | Target Forward | 328.2500 | 0.7289 | Ranked (300+ min) |
-| 3.0000 | Raphael Dias Belloli | Progressive Winger | 330.4500 | 0.6537 | Ranked (300+ min) |
-| 4.0000 | Lucas Tolentino Coelho de Lima | Ball-Winner | 318.7667 | 0.6459 | Ranked (300+ min) |
-| 5.0000 | Marcos Aoás Corrêa | Ball-Playing Centre-Back | 455.0167 | 0.5648 | Ranked (300+ min) |
+| 2 | Vinícius José Paixão de Oliveira Júnior | Progressive Winger | 306.5833 | 0.6163 | Ranked (300+ min) |
+| 3 | Raphael Dias Belloli | Progressive Winger | 330.4500 | 0.6014 | Ranked (300+ min) |
+| 8 | Richarlison de Andrade | Ball-Winner | 328.2500 | 0.5369 | Ranked (300+ min) |
+| 11 | Lucas Tolentino Coelho de Lima | Holding Anchor | 318.7667 | 0.5191 | Ranked (300+ min) |
+| 13 | Éder Gabriel Militão | Two-Way Fullback | 363.5833 | 0.5099 | Ranked (300+ min) |

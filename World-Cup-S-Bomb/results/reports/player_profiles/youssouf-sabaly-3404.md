@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Senegal
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Creative/Progressive/Pressing Fullback
-- Role entropy: 0.0000
-- Global rank: 33
-- Position rank: 11
-- Role rank: 7
+- Probabilistic role: Creative/Progressive Fullback
+- Role entropy: 0.0078
+- Global rank: 65
+- Position rank: 18
+- Role rank: 15
 - Team rank: 2
-- Final player rating: 0.6216
+- Final player rating: 0.5530
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 387.3
-- Minutes reliability: 0.5635
+- Minutes reliability: 0.4625
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.2670 |
-| vaep_def_scaled | 0.7084 |
-| vaep_per_touch | 0.0008 |
-| open_play_xt_p90 | 0.0240 |
-| set_piece_xt_p90 | 0.0438 |
-| role_adjusted_value | 0.3757 |
-| completeness_score | 0.6841 |
-| off_ball_score | 0.4317 |
+| vaep_off_scaled | 0.4324 |
+| vaep_def_scaled | 0.7682 |
+| vaep_per_touch | 0.0010 |
+| open_play_xt_p90 | 0.0249 |
+| set_piece_xt_p90 | 0.0527 |
+| role_adjusted_value | 0.0916 |
+| completeness_score | 0.8134 |
+| off_ball_score | 0.4341 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.6851 |
-| creation_score | 0.8148 |
-| finishing_score | 0.3322 |
-| pressing_score | 0.4254 |
-| defensive_score | 0.5053 |
-| ball_security_score | 0.7176 |
-| aerial_score | 0.3322 |
+| progression_score | 0.7210 |
+| creation_score | 0.8133 |
+| finishing_score | 0.3749 |
+| pressing_score | 0.3835 |
+| defensive_score | 0.5524 |
+| ball_security_score | 0.6898 |
+| aerial_score | 0.3938 |
 
 ## Spatial, 360 and passing-network context
 

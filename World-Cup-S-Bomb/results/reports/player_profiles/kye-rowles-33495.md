@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Australia
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Aerial/Progressive Centre-Back
-- Role entropy: 0.0000
-- Global rank: 121
-- Position rank: 34
-- Role rank: 17
-- Team rank: 6
-- Final player rating: 0.3659
+- Probabilistic role: Secure/Aerial Centre-Back
+- Role entropy: 0.0012
+- Global rank: 546
+- Position rank: 101
+- Role rank: 80
+- Team rank: 16
+- Final player rating: 0.3599
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 386.9
-- Minutes reliability: 0.5633
+- Minutes reliability: 0.4623
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.2996 |
-| vaep_def_scaled | 0.5125 |
+| vaep_off_scaled | 0.2622 |
+| vaep_def_scaled | 0.4830 |
 | vaep_per_touch | -0.0010 |
-| open_play_xt_p90 | 0.0003 |
-| set_piece_xt_p90 | -0.0002 |
-| role_adjusted_value | 0.0000 |
-| completeness_score | 0.3571 |
-| off_ball_score | 0.4236 |
+| open_play_xt_p90 | 0.0010 |
+| set_piece_xt_p90 | 0.0010 |
+| role_adjusted_value | 0.0235 |
+| completeness_score | 0.6405 |
+| off_ball_score | 0.4268 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.2510 |
-| creation_score | 0.3387 |
-| finishing_score | 0.1749 |
-| pressing_score | 0.3571 |
-| defensive_score | 0.3973 |
-| ball_security_score | 0.5070 |
-| aerial_score | 0.5962 |
+| progression_score | 0.3265 |
+| creation_score | 0.4056 |
+| finishing_score | 0.2305 |
+| pressing_score | 0.3138 |
+| defensive_score | 0.4253 |
+| ball_security_score | 0.5167 |
+| aerial_score | 0.5981 |
 
 ## Spatial, 360 and passing-network context
 

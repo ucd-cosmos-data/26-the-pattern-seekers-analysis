@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Morocco
 - Position group: Defensive Midfield
-- Functional role: Box-to-Box / Engine Midfielder
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0013
-- Global rank: 120
-- Position rank: 21
-- Role rank: 12
-- Team rank: 12
-- Final player rating: 0.3773
+- Functional role: Holding Anchor
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.0164
+- Global rank: 548
+- Position rank: 90
+- Role rank: 72
+- Team rank: 23
+- Final player rating: 0.3498
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 698.4
-- Minutes reliability: 0.6995
+- Minutes reliability: 0.6081
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.1329 |
-| vaep_def_scaled | 0.3891 |
-| vaep_per_touch | -0.0004 |
-| open_play_xt_p90 | 0.0036 |
-| set_piece_xt_p90 | 0.0078 |
-| role_adjusted_value | 0.0144 |
-| completeness_score | 0.6975 |
-| off_ball_score | 0.6273 |
+| vaep_off_scaled | 0.0905 |
+| vaep_def_scaled | 0.4901 |
+| vaep_per_touch | -0.0005 |
+| open_play_xt_p90 | 0.0070 |
+| set_piece_xt_p90 | 0.0095 |
+| role_adjusted_value | 0.0742 |
+| completeness_score | 0.7984 |
+| off_ball_score | 0.6073 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5126 |
-| creation_score | 0.4401 |
-| finishing_score | 0.2500 |
-| pressing_score | 0.7838 |
-| defensive_score | 0.7136 |
-| ball_security_score | 0.7028 |
-| aerial_score | 0.2911 |
+| progression_score | 0.5532 |
+| creation_score | 0.5212 |
+| finishing_score | 0.3322 |
+| pressing_score | 0.7280 |
+| defensive_score | 0.6662 |
+| ball_security_score | 0.6781 |
+| aerial_score | 0.3578 |
 
 ## Spatial, 360 and passing-network context
 

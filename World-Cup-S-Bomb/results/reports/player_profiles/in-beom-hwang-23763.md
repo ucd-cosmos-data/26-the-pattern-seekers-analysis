@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: South Korea
 - Position group: Defensive Midfield
-- Functional role: Box-to-Box / Engine Midfielder
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 54
-- Position rank: 5
-- Role rank: 4
-- Team rank: 5
-- Final player rating: 0.5706
+- Functional role: Holding Anchor
+- Probabilistic role: Pressing/Finishing Attacker
+- Role entropy: 0.2320
+- Global rank: 205
+- Position rank: 6
+- Role rank: 7
+- Team rank: 10
+- Final player rating: 0.5033
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 360.1
-- Minutes reliability: 0.5455
+- Minutes reliability: 0.4445
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.4927 |
-| vaep_def_scaled | 0.6956 |
-| vaep_per_touch | 0.0006 |
-| open_play_xt_p90 | 0.0163 |
-| set_piece_xt_p90 | 0.0258 |
-| role_adjusted_value | 0.3538 |
-| completeness_score | 0.5935 |
-| off_ball_score | 0.5904 |
+| vaep_off_scaled | 0.5186 |
+| vaep_def_scaled | 0.7601 |
+| vaep_per_touch | 0.0007 |
+| open_play_xt_p90 | 0.0263 |
+| set_piece_xt_p90 | 0.0351 |
+| role_adjusted_value | 0.1975 |
+| completeness_score | 0.7416 |
+| off_ball_score | 0.5815 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5986 |
-| creation_score | 0.6542 |
-| finishing_score | 0.5246 |
-| pressing_score | 0.5272 |
-| defensive_score | 0.6033 |
-| ball_security_score | 0.4254 |
-| aerial_score | 0.4331 |
+| progression_score | 0.6276 |
+| creation_score | 0.6828 |
+| finishing_score | 0.5548 |
+| pressing_score | 0.4675 |
+| defensive_score | 0.5459 |
+| ball_security_score | 0.4435 |
+| aerial_score | 0.4761 |
 
 ## Spatial, 360 and passing-network context
 

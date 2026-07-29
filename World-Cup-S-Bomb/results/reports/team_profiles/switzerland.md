@@ -2,10 +2,11 @@
 
 ## Threat creation
 
-- Total xT created: 1.2567
+- Total xT created: 1.4531
 - Total xA created: 4.1514
-- Mean creation score: 0.4801
-- Mean xT/90: 0.0271
+- Mean creation score: 0.5231
+- Mean creation score (300+ comparison): 0.5389
+- Mean xT/90: 0.0280
 
 ## Defensive compactness
 
@@ -13,21 +14,24 @@
 - Mean defensive density: 0.0247
 - Mean defensive width: 36.6558
 - Mean defensive depth: 23.9577
-- Mean defensive score: 0.4021
-- Mean shape-maintenance score: 0.5835
+- Mean defensive score: 0.4384
+- Mean defensive score (300+ comparison): 0.3884
+- Mean xD/90: 6.5340
+- Mean shape-maintenance score: 0.4764
 
 ## Pressure resistance
 
 - Pass completion under pressure: 0.7318
 - Pressured pass sample: 261.0000
-- Mean ball-security score: 0.5856
+- Mean ball-security score: 0.5397
+- Mean ball-security score (300+ comparison): 0.5759
 
 ## Top five player summary
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Manuel Obafemi Akanji | Ball-Playing Centre-Back | 386.5833 | 0.5879 | Ranked (300+ min) |
-| 2.0000 | Breel-Donald Embolo | Target Forward | 330.1500 | 0.5661 | Ranked (300+ min) |
-| 3.0000 | Granit Xhaka | Ball-Winner | 386.5833 | 0.5512 | Ranked (300+ min) |
-| 4.0000 | Ricardo Iván Rodríguez Araya | Wide Creator | 380.2333 | 0.5013 | Ranked (300+ min) |
-| 5.0000 | Remo Freuler | Ball-Winner | 346.0500 | 0.5010 | Ranked (300+ min) |
+| 2 | Yann Sommer | Goalkeeper | 286.2833 | 0.5336 | Ranked (270+ min) |
+| 11 | Manuel Obafemi Akanji | Ball-Playing Centre-Back | 386.5833 | 0.4637 | Ranked (300+ min) |
+| 12 | Ricardo Iván Rodríguez Araya | Attacking Wingback | 380.2333 | 0.4614 | Ranked (300+ min) |
+| 13 | Breel-Donald Embolo | Ball-Winner | 330.1500 | 0.4557 | Ranked (300+ min) |
+| 14 | Granit Xhaka | Holding Anchor | 386.5833 | 0.4528 | Ranked (300+ min) |

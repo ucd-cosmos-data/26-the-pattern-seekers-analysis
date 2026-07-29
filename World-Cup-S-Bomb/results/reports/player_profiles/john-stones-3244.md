@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: England
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
-- Probabilistic role: Aerial/Secure Centre-Back
-- Role entropy: 0.0000
-- Global rank: 68
-- Position rank: 11
-- Role rank: 5
-- Team rank: 5
-- Final player rating: 0.5345
+- Probabilistic role: Aerial/Secure/Progressive Centre-Back
+- Role entropy: 0.0044
+- Global rank: 358
+- Position rank: 22
+- Role rank: 8
+- Team rank: 15
+- Final player rating: 0.4570
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 464.9
-- Minutes reliability: 0.6078
+- Minutes reliability: 0.5081
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.7159 |
-| vaep_def_scaled | 0.8578 |
-| vaep_per_touch | 0.0002 |
-| open_play_xt_p90 | 0.0023 |
-| set_piece_xt_p90 | 0.0014 |
-| role_adjusted_value | 0.4123 |
-| completeness_score | 0.5340 |
-| off_ball_score | 0.5020 |
+| vaep_off_scaled | 0.5707 |
+| vaep_def_scaled | 0.8178 |
+| vaep_per_touch | 0.0001 |
+| open_play_xt_p90 | 0.0038 |
+| set_piece_xt_p90 | 0.0067 |
+| role_adjusted_value | 0.1004 |
+| completeness_score | 0.7352 |
+| off_ball_score | 0.4934 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.6061 |
-| creation_score | 0.4824 |
-| finishing_score | 0.5317 |
-| pressing_score | 0.2627 |
-| defensive_score | 0.3304 |
-| ball_security_score | 0.7901 |
-| aerial_score | 0.7477 |
+| progression_score | 0.6208 |
+| creation_score | 0.5530 |
+| finishing_score | 0.5509 |
+| pressing_score | 0.2584 |
+| defensive_score | 0.3229 |
+| ball_security_score | 0.7579 |
+| aerial_score | 0.7327 |
 
 ## Spatial, 360 and passing-network context
 

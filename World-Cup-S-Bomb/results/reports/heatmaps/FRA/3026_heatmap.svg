@@ -2,7 +2,7 @@
 <title>Adrien Rabiot V4 spatial heatmap</title>
 <rect width="640" height="500" fill="#f7fafc"/>
 <text x="20" y="28" font-family="Arial" font-size="18" font-weight="700">Adrien Rabiot</text>
-<text x="20" y="49" font-family="Arial" font-size="12">Ball-Winner · 529 minutes · 29.6% final third</text>
+<text x="20" y="49" font-family="Arial" font-size="12">Holding Anchor · 529 minutes · 29.6% final third</text>
 <rect x="20" y="60" width="50" height="50" fill="rgb(237,243,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="110" width="50" height="50" fill="rgb(233,241,252)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="160" width="50" height="50" fill="rgb(215,231,248)" stroke="#ffffff" stroke-width="0.5"/>

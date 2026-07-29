@@ -1,0 +1,64 @@
+# Héctor Miguel Herrera López Player Profile
+
+This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+
+## Ranking and role
+
+- Team: Mexico
+- Position group: Defensive Midfield
+- Functional role: Holding Anchor
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.1840
+- Global rank: 453
+- Position rank: 58
+- Role rank: 44
+- Team rank: 17
+- Final player rating: 0.4260
+- Ranking status: Coverage only (<180 min)
+
+- Global ranking eligibility: eligible
+- Minutes: 166.7
+- Minutes reliability: 0.2703
+
+## Rating components
+
+| Metric | Value |
+|---|---|
+| vaep_off_scaled | 0.3882 |
+| vaep_def_scaled | 0.6806 |
+| vaep_per_touch | 0.0007 |
+| open_play_xt_p90 | -0.0055 |
+| set_piece_xt_p90 | 0.0050 |
+| role_adjusted_value | 0.0618 |
+| completeness_score | 0.6864 |
+| off_ball_score | 0.6323 |
+
+## Continuous role vector
+
+| Metric | Value |
+|---|---|
+| progression_score | 0.2670 |
+| creation_score | 0.5125 |
+| finishing_score | 0.2305 |
+| pressing_score | 0.6541 |
+| defensive_score | 0.6441 |
+| ball_security_score | 0.6467 |
+| aerial_score | 0.8859 |
+
+## Spatial, 360 and passing-network context
+
+| Metric | Value |
+|---|---|
+| sb360_coverage | 0.8645 |
+| mean_defenders_within_3m | 0.3825 |
+| mean_defenders_within_5m | 0.7097 |
+| mean_nearest_defender_m | 7.4828 |
+| mean_passing_lane_availability | 0.9482 |
+| packing_index_mean | 0.5207 |
+| mean_space_received | 0.7143 |
+| network_pagerank | 0.0720 |
+| network_betweenness | 0.0865 |
+| network_entropy | 0.8968 |
+| build_up_involvement_ratio | 0.6441 |
+
+Missing values indicate unavailable evidence; they are not converted into zero contribution.

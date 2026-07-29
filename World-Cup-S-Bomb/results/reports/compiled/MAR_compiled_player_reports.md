@@ -4,8 +4,8 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 13
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 23
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -16,17 +16,15 @@
 
 - Team: Morocco (MAR)
 - Position: Left Midfield
-- Functional role: Box-to-Box / Engine Midfielder
-- VAEP offense per 90: 0.1924
-- VAEP defense per 90: 0.0126
-- VAEP total per 90: 0.2049
-- VAEP per touch: 0.00204
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.1888
+- VAEP defense per 90: 0.0105
+- VAEP total per 90: 0.1993
+- VAEP per touch: 0.00198
 - Spatial xT per 90: 0.0793
 - Final-third spatial share: 38.3%
-- Unified final player rating: 0.1268
-- Team rank: #2
-- Rating 95% CI: [0.1024, 0.1534] (bootstrap SE 0.0132)
-- Rank stability: bootstrap mean rank 2.2; P(team #1) 16%, P(top 3) 92%
+- Unified final player rating: 0.1122
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/3625_heatmap.svg)
 
@@ -51,27 +49,71 @@
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 2: 5219_starter_report.md -->
+<!-- PLAYER_REPORT 2: 3634_starter_report.md -->
+
+# Abdelhamid Sabiri — Starter Report
+
+- Team: Morocco (MAR)
+- Position: Left Center Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: -0.0816
+- VAEP defense per 90: -0.0258
+- VAEP total per 90: -0.1074
+- VAEP per touch: -0.00130
+- Spatial xT per 90: 0.0138
+- Final-third spatial share: 17.7%
+- Unified final player rating: 0.0599
+- Team rank: #13
+
+![V4 event and 360 heatmap](../heatmaps/MAR/3634_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.750 |
+| Pressing intensity per 90 | 15.75 |
+| Recovery index per 90 | 0.93 |
+
+## Top chemistry partners
+
+- Sofyan Amrabat — synergy 0.485, 194 shared minutes
+- Yassine Bounou — synergy 0.440, 166 shared minutes
+- Achraf Hakimi Mouh — synergy 0.407, 166 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 3: 5219_starter_report.md -->
 
 # Romain Saïss — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0638
-- VAEP defense per 90: -0.1049
-- VAEP total per 90: -0.0411
-- VAEP per touch: -0.00048
+- VAEP offense per 90: 0.0639
+- VAEP defense per 90: -0.0631
+- VAEP total per 90: 0.0009
+- VAEP per touch: 0.00001
 - Spatial xT per 90: 0.0112
 - Final-third spatial share: 3.2%
-- Unified final player rating: -0.0146
-- Team rank: #11
-- Rating 95% CI: [-0.0461, 0.0192] (bootstrap SE 0.0169)
-- Rank stability: bootstrap mean rank 10.8; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0030
+- Team rank: #16
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5219_heatmap.svg)
 
@@ -97,27 +139,71 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 3: 5234_starter_report.md -->
+<!-- PLAYER_REPORT 4: 5233_starter_report.md -->
+
+# Munir Mohand Mohamedi — Starter Report
+
+- Team: Morocco (MAR)
+- Position: Goalkeeper
+- Functional role: Goalkeeper
+- VAEP offense per 90: -0.0156
+- VAEP defense per 90: -0.1445
+- VAEP total per 90: -0.1600
+- VAEP per touch: -0.00403
+- Spatial xT per 90: 0.0028
+- Final-third spatial share: 0.0%
+- Unified final player rating: -0.0646
+- Team rank: #23
+
+![V4 event and 360 heatmap](../heatmaps/MAR/5233_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 0.00 |
+| Recovery index per 90 | 4.73 |
+
+## Top chemistry partners
+
+- Romain Saïss — synergy 0.283, 95 shared minutes
+- Nayef Aguerd — synergy 0.283, 95 shared minutes
+- Sofyan Amrabat — synergy 0.278, 95 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 5: 5234_starter_report.md -->
 
 # Sofyan Amrabat — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Center Defensive Midfield
-- Functional role: Box-to-Box / Engine Midfielder
-- VAEP offense per 90: 0.0046
-- VAEP defense per 90: -0.0446
-- VAEP total per 90: -0.0400
-- VAEP per touch: -0.00037
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0028
+- VAEP defense per 90: -0.0543
+- VAEP total per 90: -0.0515
+- VAEP per touch: -0.00048
 - Spatial xT per 90: 0.0165
 - Final-third spatial share: 7.5%
-- Unified final player rating: -0.0027
-- Team rank: #9
-- Rating 95% CI: [-0.0139, 0.0140] (bootstrap SE 0.0073)
-- Rank stability: bootstrap mean rank 9.3; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0053
+- Team rank: #17
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5234_heatmap.svg)
 
@@ -142,27 +228,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 4: 5237_starter_report.md -->
+<!-- PLAYER_REPORT 6: 5237_starter_report.md -->
 
 # Hakim Ziyech — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Right Wing
-- Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.0988
-- VAEP defense per 90: -0.0147
-- VAEP total per 90: 0.0840
-- VAEP per touch: 0.00064
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.1045
+- VAEP defense per 90: -0.0137
+- VAEP total per 90: 0.0908
+- VAEP per touch: 0.00069
 - Spatial xT per 90: 0.0715
 - Final-third spatial share: 32.3%
-- Unified final player rating: 0.1034
-- Team rank: #3
-- Rating 95% CI: [0.0385, 0.1673] (bootstrap SE 0.0341)
-- Rank stability: bootstrap mean rank 3.4; P(team #1) 7%, P(top 3) 60%
+- Unified final player rating: 0.1071
+- Team rank: #7
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5237_heatmap.svg)
 
@@ -187,27 +272,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 5: 5245_starter_report.md -->
+<!-- PLAYER_REPORT 7: 5245_starter_report.md -->
 
 # Achraf Hakimi Mouh — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Right Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.0486
-- VAEP defense per 90: -0.0877
-- VAEP total per 90: -0.0392
-- VAEP per touch: -0.00029
+- VAEP offense per 90: 0.0615
+- VAEP defense per 90: -0.0817
+- VAEP total per 90: -0.0202
+- VAEP per touch: -0.00015
 - Spatial xT per 90: 0.0545
 - Final-third spatial share: 26.6%
-- Unified final player rating: 0.0180
-- Team rank: #8
-- Rating 95% CI: [-0.0332, 0.0663] (bootstrap SE 0.0265)
-- Rank stability: bootstrap mean rank 8.3; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0222
+- Team rank: #15
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/5245_heatmap.svg)
 
@@ -233,27 +317,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 6: 6301_starter_report.md -->
+<!-- PLAYER_REPORT 8: 6301_starter_report.md -->
 
 # Youssef En-Nesyri — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Center Forward
 - Functional role: Target Forward / Penalty-Box Anchor
-- VAEP offense per 90: 0.2222
-- VAEP defense per 90: 0.0060
-- VAEP total per 90: 0.2282
-- VAEP per touch: 0.00457
+- VAEP offense per 90: 0.2149
+- VAEP defense per 90: 0.0314
+- VAEP total per 90: 0.2463
+- VAEP per touch: 0.00494
 - Spatial xT per 90: -0.0001
 - Final-third spatial share: 26.1%
-- Unified final player rating: 0.1563
-- Team rank: #1
-- Rating 95% CI: [0.1084, 0.2222] (bootstrap SE 0.0292)
-- Rank stability: bootstrap mean rank 1.3; P(team #1) 76%, P(top 3) 98%
+- Unified final player rating: 0.1760
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/6301_heatmap.svg)
 
@@ -278,27 +361,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 7: 6785_starter_report.md -->
+<!-- PLAYER_REPORT 9: 6785_starter_report.md -->
 
 # Yassine Bounou — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: -0.0144
-- VAEP defense per 90: -0.1723
-- VAEP total per 90: -0.1867
-- VAEP per touch: -0.00299
+- VAEP offense per 90: -0.0172
+- VAEP defense per 90: -0.1099
+- VAEP total per 90: -0.1271
+- VAEP per touch: -0.00203
 - Spatial xT per 90: 0.0033
 - Final-third spatial share: 0.8%
-- Unified final player rating: -0.0797
-- Team rank: #13
-- Rating 95% CI: [-0.0982, -0.0546] (bootstrap SE 0.0112)
-- Rank stability: bootstrap mean rank 13.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0625
+- Team rank: #22
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/6785_heatmap.svg)
 
@@ -324,27 +406,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 8: 7459_starter_report.md -->
+<!-- PLAYER_REPORT 10: 7459_starter_report.md -->
 
 # Jawad El Yamiq — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0024
-- VAEP defense per 90: -0.0152
-- VAEP total per 90: -0.0128
-- VAEP per touch: -0.00012
+- VAEP offense per 90: 0.0027
+- VAEP defense per 90: -0.0059
+- VAEP total per 90: -0.0032
+- VAEP per touch: -0.00003
 - Spatial xT per 90: 0.0022
 - Final-third spatial share: 2.4%
-- Unified final player rating: -0.0071
-- Team rank: #10
-- Rating 95% CI: [-0.0182, 0.0017] (bootstrap SE 0.0051)
-- Rank stability: bootstrap mean rank 10.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0057
+- Team rank: #18
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/7459_heatmap.svg)
 
@@ -370,27 +451,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 9: 12149_starter_report.md -->
+<!-- PLAYER_REPORT 11: 12149_starter_report.md -->
 
 # Nayef Aguerd — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Right Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0224
-- VAEP defense per 90: -0.0817
-- VAEP total per 90: -0.0593
-- VAEP per touch: -0.00062
+- VAEP offense per 90: 0.0287
+- VAEP defense per 90: -0.0677
+- VAEP total per 90: -0.0390
+- VAEP per touch: -0.00041
 - Spatial xT per 90: 0.0064
 - Final-third spatial share: 2.0%
-- Unified final player rating: -0.0195
-- Team rank: #12
-- Rating 95% CI: [-0.0365, -0.0041] (bootstrap SE 0.0084)
-- Rank stability: bootstrap mean rank 11.4; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0133
+- Team rank: #19
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/12149_heatmap.svg)
 
@@ -416,27 +496,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 10: 15890_starter_report.md -->
+<!-- PLAYER_REPORT 12: 15890_starter_report.md -->
 
 # Noussair Mazraoui — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.0499
-- VAEP defense per 90: -0.0041
-- VAEP total per 90: 0.0458
-- VAEP per touch: 0.00062
+- VAEP offense per 90: 0.0485
+- VAEP defense per 90: 0.0031
+- VAEP total per 90: 0.0516
+- VAEP per touch: 0.00069
 - Spatial xT per 90: 0.0181
 - Final-third spatial share: 17.3%
-- Unified final player rating: 0.0490
-- Team rank: #7
-- Rating 95% CI: [0.0313, 0.0738] (bootstrap SE 0.0107)
-- Rank stability: bootstrap mean rank 7.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0427
+- Team rank: #14
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/15890_heatmap.svg)
 
@@ -461,27 +540,116 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 11: 23774_starter_report.md -->
+<!-- PLAYER_REPORT 13: 21214_starter_report.md -->
+
+# Ilias Chair — Starter Report
+
+- Team: Morocco (MAR)
+- Position: Right Center Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.1486
+- VAEP defense per 90: 0.0012
+- VAEP total per 90: 0.1497
+- VAEP per touch: 0.00167
+- Spatial xT per 90: 0.0213
+- Final-third spatial share: 37.5%
+- Unified final player rating: 0.1051
+- Team rank: #8
+
+![V4 event and 360 heatmap](../heatmaps/MAR/21214_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 15.84 |
+| Recovery index per 90 | 0.00 |
+
+## Top chemistry partners
+
+- Hakim Ziyech — synergy 0.161, 51 shared minutes
+- Achraf Hakimi Mouh — synergy 0.158, 51 shared minutes
+- Sofyan Amrabat — synergy 0.156, 51 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 14: 21736_starter_report.md -->
+
+# Zakaria Aboukhlal — Starter Report
+
+- Team: Morocco (MAR)
+- Position: Left Center Forward
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.2944
+- VAEP defense per 90: 0.0161
+- VAEP total per 90: 0.3105
+- VAEP per touch: 0.00569
+- Spatial xT per 90: 0.0663
+- Final-third spatial share: 52.6%
+- Unified final player rating: 0.2266
+- Team rank: #3
+
+![V4 event and 360 heatmap](../heatmaps/MAR/21736_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 16.09 |
+| Recovery index per 90 | 4.47 |
+
+## Top chemistry partners
+
+- Sofyan Amrabat — synergy 0.250, 101 shared minutes
+- Jawad El Yamiq — synergy 0.234, 83 shared minutes
+- Yassine Bounou — synergy 0.228, 77 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 15: 23774_starter_report.md -->
 
 # Selim Amallah — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Left Center Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.0696
-- VAEP defense per 90: -0.0246
-- VAEP total per 90: 0.0450
-- VAEP per touch: 0.00066
+- VAEP offense per 90: 0.0765
+- VAEP defense per 90: -0.0065
+- VAEP total per 90: 0.0699
+- VAEP per touch: 0.00102
 - Spatial xT per 90: 0.0064
 - Final-third spatial share: 18.8%
-- Unified final player rating: 0.0718
-- Team rank: #6
-- Rating 95% CI: [0.0469, 0.1057] (bootstrap SE 0.0149)
-- Rank stability: bootstrap mean rank 5.4; P(team #1) 0%, P(top 3) 4%
+- Unified final player rating: 0.0733
+- Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/23774_heatmap.svg)
 
@@ -507,27 +675,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 12: 31295_starter_report.md -->
+<!-- PLAYER_REPORT 16: 31295_starter_report.md -->
 
 # Yahia Attiyat allah — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Left Back
-- Functional role: Wide Creator
-- VAEP offense per 90: 0.1737
-- VAEP defense per 90: -0.0087
-- VAEP total per 90: 0.1651
-- VAEP per touch: 0.00187
+- Functional role: Attacking Wingback
+- VAEP offense per 90: 0.1654
+- VAEP defense per 90: -0.0093
+- VAEP total per 90: 0.1561
+- VAEP per touch: 0.00177
 - Spatial xT per 90: 0.0328
 - Final-third spatial share: 19.7%
-- Unified final player rating: 0.0839
-- Team rank: #5
-- Rating 95% CI: [0.0488, 0.1230] (bootstrap SE 0.0193)
-- Rank stability: bootstrap mean rank 4.9; P(team #1) 0%, P(top 3) 12%
+- Unified final player rating: 0.0675
+- Team rank: #12
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/31295_heatmap.svg)
 
@@ -552,27 +719,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 13: 46258_starter_report.md -->
+<!-- PLAYER_REPORT 17: 46258_starter_report.md -->
 
 # Azzedine Ounahi — Starter Report
 
 - Team: Morocco (MAR)
 - Position: Right Center Midfield
 - Functional role: Box-to-Box / Engine Midfielder
-- VAEP offense per 90: 0.1370
-- VAEP defense per 90: 0.0000
-- VAEP total per 90: 0.1370
-- VAEP per touch: 0.00106
+- VAEP offense per 90: 0.1128
+- VAEP defense per 90: -0.0013
+- VAEP total per 90: 0.1115
+- VAEP per touch: 0.00086
 - Spatial xT per 90: 0.0363
 - Final-third spatial share: 22.9%
-- Unified final player rating: 0.0974
-- Team rank: #4
-- Rating 95% CI: [0.0702, 0.1338] (bootstrap SE 0.0164)
-- Rank stability: bootstrap mean rank 3.8; P(team #1) 0%, P(top 3) 33%
+- Unified final player rating: 0.0826
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/MAR/46258_heatmap.svg)
 
@@ -597,62 +763,272 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
+---
 
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
+<!-- PLAYER_REPORT 18: 59493_starter_report.md -->
 
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
+# Abderrazak Hamdallah — Starter Report
 
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
+- Team: Morocco (MAR)
+- Position: Center Forward
+- Functional role: Target Forward
+- VAEP offense per 90: 0.4187
+- VAEP defense per 90: 0.0602
+- VAEP total per 90: 0.4788
+- VAEP per touch: 0.00646
+- Spatial xT per 90: 0.0628
+- Final-third spatial share: 49.1%
+- Unified final player rating: 0.2416
+- Team rank: #1
 
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
+![V4 event and 360 heatmap](../heatmaps/MAR/59493_heatmap.svg)
 
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
+## Physical profile
 
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.364 |
+| Pressing intensity per 90 | 10.30 |
+| Recovery index per 90 | 5.15 |
 
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
+## Top chemistry partners
 
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
+- Sofyan Amrabat — synergy 0.233, 87 shared minutes
+- Zakaria Aboukhlal — synergy 0.221, 72 shared minutes
+- Jawad El Yamiq — synergy 0.196, 66 shared minutes
 
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
+## Tactical recommendations
 
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Use recovery capacity to support higher attacking positions.
 
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
+---
 
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
+<!-- PLAYER_REPORT 19: 67700_starter_report.md -->
 
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+# Badr Banoun — Starter Report
 
-France refinements:
+- Team: Morocco (MAR)
+- Position: Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: -0.4914
+- VAEP defense per 90: -0.0581
+- VAEP total per 90: -0.5495
+- VAEP per touch: -0.00682
+- Spatial xT per 90: -0.0015
+- Final-third spatial share: 3.6%
+- Unified final player rating: -0.0453
+- Team rank: #21
 
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+![V4 event and 360 heatmap](../heatmaps/MAR/67700_heatmap.svg)
 
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 8.96 |
+| Recovery index per 90 | 1.28 |
+
+## Top chemistry partners
+
+- Yassine Bounou — synergy 0.220, 70 shared minutes
+- Sofyan Amrabat — synergy 0.219, 70 shared minutes
+- Achraf Hakimi Mouh — synergy 0.217, 70 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 20: 139016_starter_report.md -->
+
+# Achraf Dari — Starter Report
+
+- Team: Morocco (MAR)
+- Position: Right Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0112
+- VAEP defense per 90: -0.1063
+- VAEP total per 90: -0.0950
+- VAEP per touch: -0.00078
+- Spatial xT per 90: 0.0111
+- Final-third spatial share: 4.4%
+- Unified final player rating: -0.0203
+- Team rank: #20
+
+![V4 event and 360 heatmap](../heatmaps/MAR/139016_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.600 |
+| Pressing intensity per 90 | 8.98 |
+| Recovery index per 90 | 3.59 |
+
+## Top chemistry partners
+
+- Sofyan Amrabat — synergy 0.517, 200 shared minutes
+- Jawad El Yamiq — synergy 0.516, 200 shared minutes
+- Yassine Bounou — synergy 0.496, 200 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 21: 149714_starter_report.md -->
+
+# Abdessamad Ezzalzouli — Starter Report
+
+- Team: Morocco (MAR)
+- Position: Left Wing
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.1483
+- VAEP defense per 90: -0.0092
+- VAEP total per 90: 0.1391
+- VAEP per touch: 0.00243
+- Spatial xT per 90: 0.0687
+- Final-third spatial share: 39.0%
+- Unified final player rating: 0.1588
+- Team rank: #5
+
+![V4 event and 360 heatmap](../heatmaps/MAR/149714_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.333 |
+| Pressing intensity per 90 | 31.99 |
+| Recovery index per 90 | 5.05 |
+
+## Top chemistry partners
+
+- Yassine Bounou — synergy 0.300, 107 shared minutes
+- Hakim Ziyech — synergy 0.295, 107 shared minutes
+- Sofyan Amrabat — synergy 0.275, 107 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 22: 156734_starter_report.md -->
+
+# Bilal El Khannous — Starter Report
+
+- Team: Morocco (MAR)
+- Position: Right Center Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.0694
+- VAEP defense per 90: -0.0969
+- VAEP total per 90: -0.0274
+- VAEP per touch: -0.00024
+- Spatial xT per 90: -0.0110
+- Final-third spatial share: 31.5%
+- Unified final player rating: 0.0944
+- Team rank: #9
+
+![V4 event and 360 heatmap](../heatmaps/MAR/156734_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 21.26 |
+| Recovery index per 90 | 0.00 |
+
+## Top chemistry partners
+
+- Hakim Ziyech — synergy 0.175, 55 shared minutes
+- Jawad El Yamiq — synergy 0.173, 55 shared minutes
+- Achraf Dari — synergy 0.171, 55 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 23: 296254_starter_report.md -->
+
+# Walid Cheddira — Starter Report
+
+- Team: Morocco (MAR)
+- Position: Center Forward
+- Functional role: Target Forward
+- VAEP offense per 90: 0.4235
+- VAEP defense per 90: -0.0103
+- VAEP total per 90: 0.4132
+- VAEP per touch: 0.00773
+- Spatial xT per 90: 0.0382
+- Final-third spatial share: 26.4%
+- Unified final player rating: 0.2359
+- Team rank: #2
+
+![V4 event and 360 heatmap](../heatmaps/MAR/296254_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 24.96 |
+| Recovery index per 90 | 1.19 |
+
+## Top chemistry partners
+
+- Yahia Attiyat allah — synergy 0.218, 74 shared minutes
+- Yassine Bounou — synergy 0.202, 76 shared minutes
+- Jawad El Yamiq — synergy 0.175, 73 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

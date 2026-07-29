@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: United States
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
-- Probabilistic role: Finishing/Creative/Progressive Attacker
-- Role entropy: 0.0093
-- Global rank: 9
-- Position rank: 2
-- Role rank: 5
+- Probabilistic role: Finishing/Progressive Attacker
+- Role entropy: 0.0584
+- Global rank: 5
+- Position rank: 4
+- Role rank: 4
 - Team rank: 1
-- Final player rating: 0.6972
+- Final player rating: 0.6370
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 336.3
-- Minutes reliability: 0.5285
+- Minutes reliability: 0.4277
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.7447 |
-| vaep_def_scaled | 0.7751 |
+| vaep_off_scaled | 0.6989 |
+| vaep_def_scaled | 0.5986 |
 | vaep_per_touch | 0.0039 |
-| open_play_xt_p90 | 0.0316 |
-| set_piece_xt_p90 | 0.0663 |
-| role_adjusted_value | 0.6430 |
-| completeness_score | 0.7036 |
-| off_ball_score | 0.5490 |
+| open_play_xt_p90 | 0.0388 |
+| set_piece_xt_p90 | 0.0751 |
+| role_adjusted_value | 0.7410 |
+| completeness_score | 0.8474 |
+| off_ball_score | 0.5557 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.7329 |
-| creation_score | 0.7190 |
-| finishing_score | 0.8862 |
-| pressing_score | 0.6090 |
-| defensive_score | 0.4771 |
-| ball_security_score | 0.3662 |
-| aerial_score | 0.4554 |
+| progression_score | 0.7633 |
+| creation_score | 0.7556 |
+| finishing_score | 0.8586 |
+| pressing_score | 0.5547 |
+| defensive_score | 0.4598 |
+| ball_security_score | 0.3469 |
+| aerial_score | 0.4944 |
 
 ## Spatial, 360 and passing-network context
 

@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: England
 - Position group: Defensive Midfield
-- Functional role: Ball-Winner
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 102
-- Position rank: 17
-- Role rank: 13
-- Team rank: 6
-- Final player rating: 0.4604
+- Functional role: Holding Anchor
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.0004
+- Global rank: 447
+- Position rank: 54
+- Role rank: 40
+- Team rank: 17
+- Final player rating: 0.4275
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 449.6
-- Minutes reliability: 0.5998
+- Minutes reliability: 0.4997
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3535 |
-| vaep_def_scaled | 0.5219 |
-| vaep_per_touch | 0.0002 |
-| open_play_xt_p90 | 0.0082 |
-| set_piece_xt_p90 | 0.0035 |
-| role_adjusted_value | 0.0000 |
-| completeness_score | 0.6178 |
-| off_ball_score | 0.6362 |
+| vaep_off_scaled | 0.3707 |
+| vaep_def_scaled | 0.6724 |
+| vaep_per_touch | 0.0003 |
+| open_play_xt_p90 | 0.0139 |
+| set_piece_xt_p90 | 0.0082 |
+| role_adjusted_value | 0.0310 |
+| completeness_score | 0.7143 |
+| off_ball_score | 0.6116 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.3888 |
-| creation_score | 0.3458 |
-| finishing_score | 0.1749 |
-| pressing_score | 0.6678 |
-| defensive_score | 0.6191 |
-| ball_security_score | 0.8120 |
-| aerial_score | 0.4554 |
+| progression_score | 0.4441 |
+| creation_score | 0.4707 |
+| finishing_score | 0.2305 |
+| pressing_score | 0.5922 |
+| defensive_score | 0.5210 |
+| ball_security_score | 0.7628 |
+| aerial_score | 0.4986 |
 
 ## Spatial, 360 and passing-network context
 

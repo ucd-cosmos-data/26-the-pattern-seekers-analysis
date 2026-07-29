@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Australia
 - Position group: Central/Wide Midfield
 - Functional role: Target Forward
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0041
-- Global rank: 35
-- Position rank: 3
-- Role rank: 7
-- Team rank: 1
-- Final player rating: 0.6183
+- Probabilistic role: Pressing/Finishing Attacker
+- Role entropy: 0.0094
+- Global rank: 332
+- Position rank: 42
+- Role rank: 41
+- Team rank: 9
+- Final player rating: 0.4655
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 341.6
-- Minutes reliability: 0.5324
+- Minutes reliability: 0.4315
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.2379 |
-| vaep_def_scaled | 0.9555 |
-| vaep_per_touch | 0.0025 |
-| open_play_xt_p90 | 0.0187 |
-| set_piece_xt_p90 | -0.0033 |
-| role_adjusted_value | 0.3389 |
-| completeness_score | 0.5383 |
-| off_ball_score | 0.5151 |
+| vaep_off_scaled | 0.3335 |
+| vaep_def_scaled | 0.7123 |
+| vaep_per_touch | 0.0022 |
+| open_play_xt_p90 | 0.0200 |
+| set_piece_xt_p90 | 0.0011 |
+| role_adjusted_value | 0.2306 |
+| completeness_score | 0.7611 |
+| off_ball_score | 0.5108 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.3707 |
-| creation_score | 0.5134 |
-| finishing_score | 0.5176 |
-| pressing_score | 0.7124 |
-| defensive_score | 0.6238 |
-| ball_security_score | 0.2627 |
-| aerial_score | 0.8709 |
+| progression_score | 0.4412 |
+| creation_score | 0.5880 |
+| finishing_score | 0.5360 |
+| pressing_score | 0.6734 |
+| defensive_score | 0.6533 |
+| ball_security_score | 0.2824 |
+| aerial_score | 0.8665 |
 
 ## Spatial, 360 and passing-network context
 

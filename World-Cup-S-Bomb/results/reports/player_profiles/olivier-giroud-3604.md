@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: France
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
-- Probabilistic role: Finishing/Aerial Forward
-- Role entropy: 0.0000
-- Global rank: 31
-- Position rank: 8
-- Role rank: 2
-- Team rank: 4
-- Final player rating: 0.6245
+- Probabilistic role: Finishing/Aerial/Secure Forward
+- Role entropy: 0.0705
+- Global rank: 204
+- Position rank: 27
+- Role rank: 8
+- Team rank: 12
+- Final player rating: 0.5035
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 432.6
-- Minutes reliability: 0.5905
+- Minutes reliability: 0.4902
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.6128 |
-| vaep_def_scaled | 0.5791 |
-| vaep_per_touch | 0.0086 |
-| open_play_xt_p90 | 0.0034 |
-| set_piece_xt_p90 | 0.0055 |
-| role_adjusted_value | 1.0000 |
-| completeness_score | 0.3400 |
-| off_ball_score | 0.4295 |
+| vaep_off_scaled | 0.4918 |
+| vaep_def_scaled | 0.4160 |
+| vaep_per_touch | 0.0089 |
+| open_play_xt_p90 | 0.0042 |
+| set_piece_xt_p90 | 0.0033 |
+| role_adjusted_value | 0.4294 |
+| completeness_score | 0.6103 |
+| off_ball_score | 0.4416 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.2460 |
-| creation_score | 0.3739 |
-| finishing_score | 0.9777 |
-| pressing_score | 0.4595 |
-| defensive_score | 0.2412 |
-| ball_security_score | 0.3789 |
-| aerial_score | 0.8721 |
+| progression_score | 0.3026 |
+| creation_score | 0.4309 |
+| finishing_score | 0.9497 |
+| pressing_score | 0.4157 |
+| defensive_score | 0.3150 |
+| ball_security_score | 0.3936 |
+| aerial_score | 0.8727 |
 
 ## Spatial, 360 and passing-network context
 

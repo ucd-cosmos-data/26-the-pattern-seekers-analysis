@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Brazil
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
-- Probabilistic role: Aerial/Secure Centre-Back
-- Role entropy: 0.0000
-- Global rank: 60
-- Position rank: 7
-- Role rank: 3
-- Team rank: 5
-- Final player rating: 0.5648
+- Probabilistic role: Aerial/Secure/Progressive Centre-Back
+- Role entropy: 0.0111
+- Global rank: 284
+- Position rank: 3
+- Role rank: 1
+- Team rank: 19
+- Final player rating: 0.4811
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 455.0
-- Minutes reliability: 0.6027
+- Minutes reliability: 0.5028
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.2603 |
-| vaep_def_scaled | 0.9265 |
-| vaep_per_touch | -0.0001 |
-| open_play_xt_p90 | 0.0149 |
-| set_piece_xt_p90 | 0.0095 |
-| role_adjusted_value | 0.4104 |
-| completeness_score | 0.5596 |
-| off_ball_score | 0.5205 |
+| vaep_off_scaled | 0.2907 |
+| vaep_def_scaled | 0.9425 |
+| vaep_per_touch | -0.0000 |
+| open_play_xt_p90 | 0.0188 |
+| set_piece_xt_p90 | 0.0153 |
+| role_adjusted_value | 0.0865 |
+| completeness_score | 0.7533 |
+| off_ball_score | 0.5102 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5407 |
-| creation_score | 0.6500 |
-| finishing_score | 0.5059 |
-| pressing_score | 0.3340 |
-| defensive_score | 0.4184 |
-| ball_security_score | 0.6310 |
-| aerial_score | 0.6174 |
+| progression_score | 0.5742 |
+| creation_score | 0.6754 |
+| finishing_score | 0.5166 |
+| pressing_score | 0.3111 |
+| defensive_score | 0.3874 |
+| ball_security_score | 0.6437 |
+| aerial_score | 0.6231 |
 
 ## Spatial, 360 and passing-network context
 

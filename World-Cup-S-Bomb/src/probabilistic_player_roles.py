@@ -623,7 +623,7 @@ def evaluate_learned_valuation(
     tournament["learned_rating_raw"] = estimator.predict(
         tournament[feature_names].to_numpy()
     )
-    reliability = tournament["minutes"] / (tournament["minutes"] + 300.0)
+    reliability = tournament["minutes"] / (tournament["minutes"] + 450.0)
     prior = tournament.groupby("position_group")[
         "learned_rating_raw"
     ].transform("mean")

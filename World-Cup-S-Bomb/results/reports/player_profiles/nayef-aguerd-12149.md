@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Morocco
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Aerial/Defensive Centre-Back
+- Probabilistic role: Aerial/Secure Centre-Back
 - Role entropy: 0.0000
-- Global rank: 117
-- Position rank: 32
-- Role rank: 16
-- Team rank: 11
-- Final player rating: 0.4073
+- Global rank: 520
+- Position rank: 86
+- Role rank: 68
+- Team rank: 20
+- Final player rating: 0.3973
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 369.2
-- Minutes reliability: 0.5517
+- Minutes reliability: 0.4507
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.4436 |
-| vaep_def_scaled | 0.6085 |
-| vaep_per_touch | -0.0006 |
-| open_play_xt_p90 | 0.0007 |
-| set_piece_xt_p90 | 0.0023 |
-| role_adjusted_value | 0.0931 |
-| completeness_score | 0.3887 |
-| off_ball_score | 0.4164 |
+| vaep_off_scaled | 0.4228 |
+| vaep_def_scaled | 0.6193 |
+| vaep_per_touch | -0.0004 |
+| open_play_xt_p90 | 0.0012 |
+| set_piece_xt_p90 | 0.0052 |
+| role_adjusted_value | 0.0507 |
+| completeness_score | 0.6624 |
+| off_ball_score | 0.4204 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.3949 |
-| creation_score | 0.4317 |
-| finishing_score | 0.3838 |
-| pressing_score | 0.2643 |
-| defensive_score | 0.3638 |
-| ball_security_score | 0.3930 |
-| aerial_score | 0.6115 |
+| progression_score | 0.4601 |
+| creation_score | 0.5133 |
+| finishing_score | 0.4356 |
+| pressing_score | 0.2355 |
+| defensive_score | 0.3733 |
+| ball_security_score | 0.4027 |
+| aerial_score | 0.6164 |
 
 ## Spatial, 360 and passing-network context
 

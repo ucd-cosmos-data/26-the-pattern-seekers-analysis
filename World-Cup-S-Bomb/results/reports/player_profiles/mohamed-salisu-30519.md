@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Ghana
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Aerial/Progressive Centre-Back
-- Role entropy: 0.0000
-- Global rank: 63
-- Position rank: 8
-- Role rank: 4
-- Team rank: 1
-- Final player rating: 0.5546
+- Probabilistic role: Aerial/Progressive/Creative Centre-Back
+- Role entropy: 0.0015
+- Global rank: 347
+- Position rank: 17
+- Role rank: 12
+- Team rank: 10
+- Final player rating: 0.4611
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 301.2
-- Minutes reliability: 0.5010
+- Minutes reliability: 0.4010
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.6234 |
-| vaep_def_scaled | 0.7673 |
-| vaep_per_touch | 0.0001 |
-| open_play_xt_p90 | 0.0028 |
-| set_piece_xt_p90 | 0.0070 |
-| role_adjusted_value | 0.9428 |
-| completeness_score | 0.5507 |
-| off_ball_score | 0.5039 |
+| vaep_off_scaled | 0.6165 |
+| vaep_def_scaled | 0.7505 |
+| vaep_per_touch | 0.0004 |
+| open_play_xt_p90 | 0.0064 |
+| set_piece_xt_p90 | 0.0123 |
+| role_adjusted_value | 0.1668 |
+| completeness_score | 0.7578 |
+| off_ball_score | 0.4980 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.6102 |
-| creation_score | 0.3810 |
-| finishing_score | 0.7136 |
-| pressing_score | 0.5005 |
-| defensive_score | 0.5411 |
-| ball_security_score | 0.1718 |
-| aerial_score | 0.7864 |
+| progression_score | 0.6344 |
+| creation_score | 0.4551 |
+| finishing_score | 0.6785 |
+| pressing_score | 0.4396 |
+| defensive_score | 0.5874 |
+| ball_security_score | 0.1972 |
+| aerial_score | 0.7785 |
 
 ## Spatial, 360 and passing-network context
 

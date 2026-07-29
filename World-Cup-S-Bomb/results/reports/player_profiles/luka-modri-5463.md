@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Croatia
 - Position group: Central/Wide Midfield
 - Functional role: Deep Playmaker / Metronome
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 109
-- Position rank: 11
-- Role rank: 1
-- Team rank: 9
-- Final player rating: 0.4437
+- Probabilistic role: Secure/Pressing Midfielder
+- Role entropy: 0.0707
+- Global rank: 371
+- Position rank: 53
+- Role rank: 6
+- Team rank: 16
+- Final player rating: 0.4527
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 672.7
-- Minutes reliability: 0.6916
+- Minutes reliability: 0.5992
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.0479 |
-| vaep_def_scaled | 0.1034 |
-| vaep_per_touch | 0.0004 |
-| open_play_xt_p90 | 0.0283 |
-| set_piece_xt_p90 | 0.0462 |
-| role_adjusted_value | 0.3475 |
-| completeness_score | 0.6986 |
-| off_ball_score | 0.5995 |
+| vaep_off_scaled | 0.1207 |
+| vaep_def_scaled | 0.3795 |
+| vaep_per_touch | 0.0005 |
+| open_play_xt_p90 | 0.0395 |
+| set_piece_xt_p90 | 0.0526 |
+| role_adjusted_value | 0.2323 |
+| completeness_score | 0.8339 |
+| off_ball_score | 0.5918 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.8124 |
-| creation_score | 0.7458 |
-| finishing_score | 0.6890 |
-| pressing_score | 0.6757 |
-| defensive_score | 0.6455 |
-| ball_security_score | 0.5430 |
-| aerial_score | 0.3462 |
+| progression_score | 0.8178 |
+| creation_score | 0.7668 |
+| finishing_score | 0.7130 |
+| pressing_score | 0.6408 |
+| defensive_score | 0.6344 |
+| ball_security_score | 0.5380 |
+| aerial_score | 0.3983 |
 
 ## Spatial, 360 and passing-network context
 

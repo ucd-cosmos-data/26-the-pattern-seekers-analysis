@@ -9,7 +9,10 @@ player level. A probabilistic GMM supplies role probabilities and entropy, but
 roles never add value directly: they continuously modulate the relative
 importance of observed contribution metrics.
 
-The raw composite uses the configured weights:
+The raw composite uses non-negative weights learned by a team-disjoint
+ElasticNet calibration against a transparent team-importance proxy. If the
+learned weights fail the non-inferiority gate, the prior weights below remain
+the fallback:
 
 | Component | Weight |
 |---|---:|
@@ -20,9 +23,21 @@ The raw composite uses the configured weights:
 | Completeness | 0.10 |
 | Off-ball score | 0.05 |
 
+Offensive and defensive VAEP and ElasticNet heads are combined with explicit
+role weights rather than `max(Off, Def)`. A contextual VAEP challenger adds
+pre-action score differential, match minute, the opponent's 6 October 2022
+FIFA ranking strength, and group-stage/knockout phase. It is accepted only by
+a development-OOF non-inferiority gate; the canonical run rejected it and
+retained the baseline feature set before opening the untouched test. The
+defensive vector also includes a 6-by-8-zone xD-style disruption percentile.
+
 The final score applies reliability
-`minutes / (minutes + 300)` and shrinks to the broad position-group mean.
+`minutes / (minutes + 450)` and shrinks to the broad position-group mean.
 Probabilistic or K-Means role clusters are not shrinkage targets.
+
+Ratings are computed for outfield players with 45+ minutes and goalkeepers
+with 90+ minutes. The 300-minute outfield threshold and 270-minute goalkeeper
+threshold are reporting labels, not computational exclusions.
 
 ## Validation boundaries
 
@@ -54,5 +69,5 @@ manifest records SHA-256 hashes so a complete run can be audited. Run
 from the repository root with:
 
 ```powershell
-python .\scripts\run_pipeline.py --skip-legacy-foundation --enable-attention
+python .\scripts\run_pipeline.py --reuse-validated-oof
 ```

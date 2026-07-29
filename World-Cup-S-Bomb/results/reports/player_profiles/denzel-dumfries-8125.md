@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Netherlands
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Creative/Progressive/Pressing Fullback
-- Role entropy: 0.0000
-- Global rank: 29
-- Position rank: 10
-- Role rank: 6
-- Team rank: 3
-- Final player rating: 0.6312
+- Probabilistic role: Creative/Progressive Fullback
+- Role entropy: 0.0305
+- Global rank: 24
+- Position rank: 5
+- Role rank: 5
+- Team rank: 1
+- Final player rating: 0.5827
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 509.5
-- Minutes reliability: 0.6294
+- Minutes reliability: 0.5310
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3234 |
-| vaep_def_scaled | 0.7188 |
-| vaep_per_touch | 0.0012 |
-| open_play_xt_p90 | 0.0265 |
-| set_piece_xt_p90 | 0.0180 |
-| role_adjusted_value | 0.5418 |
-| completeness_score | 0.5560 |
-| off_ball_score | 0.4373 |
+| vaep_off_scaled | 0.5185 |
+| vaep_def_scaled | 0.9382 |
+| vaep_per_touch | 0.0017 |
+| open_play_xt_p90 | 0.0285 |
+| set_piece_xt_p90 | 0.0218 |
+| role_adjusted_value | 0.0795 |
+| completeness_score | 0.7465 |
+| off_ball_score | 0.4375 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5528 |
-| creation_score | 0.5746 |
-| finishing_score | 0.5293 |
-| pressing_score | 0.5419 |
-| defensive_score | 0.5681 |
-| ball_security_score | 0.1176 |
-| aerial_score | 0.6397 |
+| progression_score | 0.5976 |
+| creation_score | 0.6428 |
+| finishing_score | 0.5759 |
+| pressing_score | 0.4848 |
+| defensive_score | 0.5579 |
+| ball_security_score | 0.1616 |
+| aerial_score | 0.6461 |
 
 ## Spatial, 360 and passing-network context
 

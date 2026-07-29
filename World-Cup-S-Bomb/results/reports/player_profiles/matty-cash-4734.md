@@ -6,42 +6,44 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Team: Poland
 - Position group: Fullback/Wingback
-- Functional role: Box-to-Box Runner
-- Probabilistic role: Creative/Progressive/Pressing Fullback
-- Role entropy: 0.0000
-- Global rank: 122
-- Position rank: 26
-- Role rank: 7
-- Team rank: 8
-- Final player rating: 0.3659
+- Functional role: Deep Playmaker
+- Probabilistic role: Creative/Progressive Fullback
+- Role entropy: 0.0081
+- Global rank: 545
+- Position rank: 107
+- Role rank: 35
+- Team rank: 16
+- Final player rating: 0.3685
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 389.8
-- Minutes reliability: 0.5651
+- Minutes reliability: 0.4641
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.0687 |
+| vaep_off_scaled | 0.1504 |
 | vaep_def_scaled | 0.0000 |
-| vaep_per_touch | -0.0010 |
-| open_play_xt_p90 | 0.0077 |
-| set_piece_xt_p90 | 0.0220 |
-| role_adjusted_value | 0.0535 |
-| completeness_score | 0.4315 |
-| off_ball_score | 0.3949 |
+| vaep_per_touch | -0.0014 |
+| open_play_xt_p90 | 0.0099 |
+| set_piece_xt_p90 | 0.0286 |
+| role_adjusted_value | 0.0318 |
+| completeness_score | 0.6752 |
+| off_ball_score | 0.3916 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.5392 |
-| creation_score | 0.5754 |
-| finishing_score | 0.2782 |
-| pressing_score | 0.4028 |
-| defensive_score | 0.3785 |
-| ball_security_score | 0.3085 |
-| aerial_score | 0.2829 |
+| progression_score | 0.5652 |
+| creation_score | 0.6245 |
+| finishing_score | 0.3423 |
+| pressing_score | 0.3549 |
+| defensive_score | 0.4301 |
+| ball_security_score | 0.3361 |
+| aerial_score | 0.3471 |
 
 ## Spatial, 360 and passing-network context
 

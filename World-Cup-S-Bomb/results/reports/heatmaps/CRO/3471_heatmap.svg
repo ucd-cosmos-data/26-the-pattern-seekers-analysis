@@ -2,7 +2,7 @@
 <title>Dejan Lovren V4 spatial heatmap</title>
 <rect width="640" height="500" fill="#f7fafc"/>
 <text x="20" y="28" font-family="Arial" font-size="18" font-weight="700">Dejan Lovren</text>
-<text x="20" y="49" font-family="Arial" font-size="12">Deep Playmaker · 624 minutes · 3.9% final third</text>
+<text x="20" y="49" font-family="Arial" font-size="12">Sweeper CB · 624 minutes · 3.9% final third</text>
 <rect x="20" y="60" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="110" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="20" y="160" width="50" height="50" fill="rgb(245,248,255)" stroke="#ffffff" stroke-width="0.5"/>
@@ -39,10 +39,10 @@
 <rect x="220" y="110" width="50" height="50" fill="rgb(235,243,253)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="220" y="160" width="50" height="50" fill="rgb(196,221,244)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="220" y="210" width="50" height="50" fill="rgb(170,207,239)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="220" y="260" width="50" height="50" fill="rgb(135,187,231)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="220" y="260" width="50" height="50" fill="rgb(135,188,231)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="220" y="310" width="50" height="50" fill="rgb(35,133,210)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="220" y="360" width="50" height="50" fill="rgb(156,199,236)" stroke="#ffffff" stroke-width="0.5"/>
-<rect x="220" y="410" width="50" height="50" fill="rgb(190,217,243)" stroke="#ffffff" stroke-width="0.5"/>
+<rect x="220" y="410" width="50" height="50" fill="rgb(190,218,243)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="270" y="60" width="50" height="50" fill="rgb(240,245,254)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="270" y="110" width="50" height="50" fill="rgb(234,242,252)" stroke="#ffffff" stroke-width="0.5"/>
 <rect x="270" y="160" width="50" height="50" fill="rgb(197,222,244)" stroke="#ffffff" stroke-width="0.5"/>

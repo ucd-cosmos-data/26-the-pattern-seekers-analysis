@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: England
 - Position group: Forward
 - Functional role: Target Forward
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.0000
-- Global rank: 47
-- Position rank: 9
-- Role rank: 9
-- Team rank: 4
-- Final player rating: 0.5879
+- Probabilistic role: Finishing/Aerial Forward
+- Role entropy: 0.0113
+- Global rank: 301
+- Position rank: 58
+- Role rank: 36
+- Team rank: 13
+- Final player rating: 0.4760
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 421.5
-- Minutes reliability: 0.5842
+- Minutes reliability: 0.4837
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 0.3455 |
-| vaep_def_scaled | 0.2891 |
-| vaep_per_touch | 0.0031 |
-| open_play_xt_p90 | 0.0333 |
-| set_piece_xt_p90 | 0.0069 |
-| role_adjusted_value | 0.8384 |
-| completeness_score | 0.4936 |
-| off_ball_score | 0.4045 |
+| vaep_off_scaled | 0.2456 |
+| vaep_def_scaled | 0.0443 |
+| vaep_per_touch | 0.0032 |
+| open_play_xt_p90 | 0.0400 |
+| set_piece_xt_p90 | 0.0075 |
+| role_adjusted_value | 0.3905 |
+| completeness_score | 0.7257 |
+| off_ball_score | 0.4272 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.4633 |
-| creation_score | 0.6627 |
-| finishing_score | 0.9354 |
-| pressing_score | 0.2409 |
-| defensive_score | 0.3122 |
-| ball_security_score | 0.3465 |
-| aerial_score | 0.7735 |
+| progression_score | 0.5135 |
+| creation_score | 0.6892 |
+| finishing_score | 0.9002 |
+| pressing_score | 0.2200 |
+| defensive_score | 0.3423 |
+| ball_security_score | 0.3653 |
+| aerial_score | 0.7681 |
 
 ## Spatial, 360 and passing-network context
 

@@ -7,41 +7,43 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team: Argentina
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.0004
+- Probabilistic role: Pressing/Finishing Attacker
+- Role entropy: 0.0296
 - Global rank: 1
 - Position rank: 1
 - Role rank: 1
 - Team rank: 1
-- Final player rating: 0.8371
+- Final player rating: 0.7739
+- Ranking status: Ranked (300+ min)
+
 - Global ranking eligibility: eligible
 - Minutes: 733.9
-- Minutes reliability: 0.7098
+- Minutes reliability: 0.6199
 
 ## Rating components
 
 | Metric | Value |
 |---|---|
-| vaep_off_scaled | 1.0000 |
-| vaep_def_scaled | 1.0000 |
-| vaep_per_touch | 0.0042 |
-| open_play_xt_p90 | 0.0598 |
-| set_piece_xt_p90 | 0.0718 |
-| role_adjusted_value | 1.0000 |
-| completeness_score | 0.7366 |
+| vaep_off_scaled | 0.9977 |
+| vaep_def_scaled | 0.8100 |
+| vaep_per_touch | 0.0038 |
+| open_play_xt_p90 | 0.0748 |
+| set_piece_xt_p90 | 0.0831 |
+| role_adjusted_value | 0.9512 |
+| completeness_score | 0.8654 |
 | off_ball_score | 0.5235 |
 
 ## Continuous role vector
 
 | Metric | Value |
 |---|---|
-| progression_score | 0.7440 |
-| creation_score | 0.7951 |
-| finishing_score | 0.9930 |
-| pressing_score | 0.4404 |
-| defensive_score | 0.4249 |
-| ball_security_score | 0.6345 |
-| aerial_score | 0.3122 |
+| progression_score | 0.7758 |
+| creation_score | 0.8285 |
+| finishing_score | 0.9744 |
+| pressing_score | 0.3938 |
+| defensive_score | 0.4206 |
+| ball_security_score | 0.6048 |
+| aerial_score | 0.3710 |
 
 ## Spatial, 360 and passing-network context
 

@@ -4,8 +4,8 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 13
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 20
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
@@ -17,16 +17,14 @@
 - Team: Argentina (ARG)
 - Position: Right Midfield
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.7666
-- VAEP defense per 90: 0.0193
-- VAEP total per 90: 0.7859
-- VAEP per touch: 0.00447
+- VAEP offense per 90: 0.7181
+- VAEP defense per 90: 0.0150
+- VAEP total per 90: 0.7331
+- VAEP per touch: 0.00417
 - Spatial xT per 90: 0.1997
 - Final-third spatial share: 61.5%
-- Unified final player rating: 0.2879
-- Team rank: #3
-- Rating 95% CI: [0.1297, 0.3794] (bootstrap SE 0.0605)
-- Rank stability: bootstrap mean rank 2.4; P(team #1) 20%, P(top 3) 90%
+- Unified final player rating: 0.2290
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/2995_heatmap.svg)
 
@@ -52,7 +50,8 @@
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
@@ -62,17 +61,15 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 - Team: Argentina (ARG)
 - Position: Left Center Back
-- Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0271
-- VAEP defense per 90: -0.0438
-- VAEP total per 90: -0.0166
-- VAEP per touch: -0.00009
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0320
+- VAEP defense per 90: -0.0465
+- VAEP total per 90: -0.0144
+- VAEP per touch: -0.00008
 - Spatial xT per 90: 0.0040
 - Final-third spatial share: 3.2%
-- Unified final player rating: -0.0078
-- Team rank: #12
-- Rating 95% CI: [-0.0244, 0.0123] (bootstrap SE 0.0095)
-- Rank stability: bootstrap mean rank 11.5; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0075
+- Team rank: #17
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/3090_heatmap.svg)
 
@@ -98,7 +95,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
@@ -109,16 +107,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Right Wing
 - Functional role: Progressive Winger
-- VAEP offense per 90: 0.6499
-- VAEP defense per 90: 0.0442
-- VAEP total per 90: 0.6941
-- VAEP per touch: 0.00416
+- VAEP offense per 90: 0.5820
+- VAEP defense per 90: 0.0497
+- VAEP total per 90: 0.6317
+- VAEP per touch: 0.00378
 - Spatial xT per 90: 0.1579
 - Final-third spatial share: 45.2%
-- Unified final player rating: 0.3297
-- Team rank: #1
-- Rating 95% CI: [0.2111, 0.4524] (bootstrap SE 0.0608)
-- Rank stability: bootstrap mean rank 1.5; P(team #1) 63%, P(top 3) 100%
+- Unified final player rating: 0.2832
+- Team rank: #2
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/5503_heatmap.svg)
 
@@ -143,7 +139,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
@@ -154,16 +151,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Left Back
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.2089
-- VAEP defense per 90: 0.0235
-- VAEP total per 90: 0.2323
-- VAEP per touch: 0.00224
+- VAEP offense per 90: 0.2347
+- VAEP defense per 90: 0.0293
+- VAEP total per 90: 0.2640
+- VAEP per touch: 0.00255
 - Spatial xT per 90: 0.0210
 - Final-third spatial share: 27.6%
-- Unified final player rating: 0.1020
-- Team rank: #6
-- Rating 95% CI: [0.0420, 0.1894] (bootstrap SE 0.0388)
-- Rank stability: bootstrap mean rank 6.6; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0925
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/5507_heatmap.svg)
 
@@ -189,7 +184,8 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
@@ -200,16 +196,14 @@ tracking. Scores exclude players below 300 tournament minutes._
 - Team: Argentina (ARG)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: 0.0326
-- VAEP defense per 90: 0.2239
-- VAEP total per 90: 0.2565
-- VAEP per touch: 0.00565
+- VAEP offense per 90: 0.0382
+- VAEP defense per 90: 0.1576
+- VAEP total per 90: 0.1958
+- VAEP per touch: 0.00431
 - Spatial xT per 90: 0.0025
 - Final-third spatial share: 1.1%
-- Unified final player rating: 0.0776
-- Team rank: #8
-- Rating 95% CI: [-0.0478, 0.2128] (bootstrap SE 0.0697)
-- Rank stability: bootstrap mean rank 7.8; P(team #1) 0%, P(top 3) 2%
+- Unified final player rating: 0.0385
+- Team rank: #12
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/6909_heatmap.svg)
 
@@ -235,27 +229,115 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 6: 7797_starter_report.md -->
+<!-- PLAYER_REPORT 6: 7006_starter_report.md -->
+
+# Alejandro Darío Gómez — Starter Report
+
+- Team: Argentina (ARG)
+- Position: Left Midfield
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.2994
+- VAEP defense per 90: -0.0133
+- VAEP total per 90: 0.2861
+- VAEP per touch: 0.00173
+- Spatial xT per 90: 0.0295
+- Final-third spatial share: 28.8%
+- Unified final player rating: 0.1159
+- Team rank: #7
+
+![V4 event and 360 heatmap](../heatmaps/ARG/7006_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 10.90 |
+| Recovery index per 90 | 4.19 |
+
+## Top chemistry partners
+
+- Nicolás Hernán Otamendi — synergy 0.315, 107 shared minutes
+- Cristian Gabriel Romero — synergy 0.312, 107 shared minutes
+- Nahuel Molina Lucero — synergy 0.298, 107 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 7: 7161_starter_report.md -->
+
+# Germán Alejandro Pezzella — Starter Report
+
+- Team: Argentina (ARG)
+- Position: Right Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: -0.0029
+- VAEP defense per 90: -0.0020
+- VAEP total per 90: -0.0049
+- VAEP per touch: -0.00003
+- Spatial xT per 90: 0.0119
+- Final-third spatial share: 3.9%
+- Unified final player rating: -0.0079
+- Team rank: #18
+
+![V4 event and 360 heatmap](../heatmaps/ARG/7161_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.143 |
+| Pressing intensity per 90 | 2.57 |
+| Recovery index per 90 | 2.57 |
+
+## Top chemistry partners
+
+- Nicolás Hernán Otamendi — synergy 0.223, 70 shared minutes
+- Leandro Daniel Paredes — synergy 0.223, 70 shared minutes
+- Damián Emiliano Martínez — synergy 0.216, 70 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 8: 7797_starter_report.md -->
 
 # Rodrigo Javier De Paul — Starter Report
 
 - Team: Argentina (ARG)
 - Position: Right Defensive Midfield
-- Functional role: Box-to-Box / Engine Midfielder
-- VAEP offense per 90: 0.2109
-- VAEP defense per 90: 0.0159
-- VAEP total per 90: 0.2268
-- VAEP per touch: 0.00100
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.2237
+- VAEP defense per 90: 0.0205
+- VAEP total per 90: 0.2442
+- VAEP per touch: 0.00108
 - Spatial xT per 90: 0.0524
 - Final-third spatial share: 27.7%
-- Unified final player rating: 0.0940
-- Team rank: #7
-- Rating 95% CI: [0.0532, 0.1421] (bootstrap SE 0.0229)
-- Rank stability: bootstrap mean rank 7.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0868
+- Team rank: #10
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/7797_heatmap.svg)
 
@@ -280,27 +362,115 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 7: 19597_starter_report.md -->
+<!-- PLAYER_REPORT 9: 11456_starter_report.md -->
+
+# Lautaro Javier Martínez — Starter Report
+
+- Team: Argentina (ARG)
+- Position: Left Center Forward
+- Functional role: Target Forward / Penalty-Box Anchor
+- VAEP offense per 90: 0.7623
+- VAEP defense per 90: 0.0019
+- VAEP total per 90: 0.7643
+- VAEP per touch: 0.00783
+- Spatial xT per 90: 0.0205
+- Final-third spatial share: 43.6%
+- Unified final player rating: 0.2956
+- Team rank: #1
+
+![V4 event and 360 heatmap](../heatmaps/ARG/11456_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.545 |
+| Pressing intensity per 90 | 6.92 |
+| Recovery index per 90 | 1.65 |
+
+## Top chemistry partners
+
+- Lionel Andrés Messi Cuccittini — synergy 0.432, 273 shared minutes
+- Damián Emiliano Martínez — synergy 0.429, 273 shared minutes
+- Nahuel Molina Lucero — synergy 0.414, 154 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 10: 16308_starter_report.md -->
+
+# Leandro Daniel Paredes — Starter Report
+
+- Team: Argentina (ARG)
+- Position: Right Defensive Midfield
+- Functional role: Holding / Controlling Midfielder
+- VAEP offense per 90: -0.3663
+- VAEP defense per 90: -0.0395
+- VAEP total per 90: -0.4058
+- VAEP per touch: -0.00167
+- Spatial xT per 90: 0.0436
+- Final-third spatial share: 10.4%
+- Unified final player rating: -0.0526
+- Team rank: #20
+
+![V4 event and 360 heatmap](../heatmaps/ARG/16308_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 20.27 |
+| Recovery index per 90 | 3.82 |
+
+## Top chemistry partners
+
+- Nicolás Hernán Otamendi — synergy 0.578, 235 shared minutes
+- Nicolás Alejandro Tagliafico — synergy 0.549, 220 shared minutes
+- Damián Emiliano Martínez — synergy 0.544, 235 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 11: 19597_starter_report.md -->
 
 # Marcos Javier Acuña — Starter Report
 
 - Team: Argentina (ARG)
 - Position: Left Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.4390
-- VAEP defense per 90: 0.0074
-- VAEP total per 90: 0.4464
-- VAEP per touch: 0.00332
+- VAEP offense per 90: 0.4113
+- VAEP defense per 90: 0.0112
+- VAEP total per 90: 0.4224
+- VAEP per touch: 0.00314
 - Spatial xT per 90: 0.0682
 - Final-third spatial share: 36.0%
-- Unified final player rating: 0.1687
-- Team rank: #4
-- Rating 95% CI: [0.0615, 0.3653] (bootstrap SE 0.0859)
-- Rank stability: bootstrap mean rank 4.8; P(team #1) 0%, P(top 3) 8%
+- Unified final player rating: 0.1344
+- Team rank: #6
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/19597_heatmap.svg)
 
@@ -325,27 +495,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 8: 20572_starter_report.md -->
+<!-- PLAYER_REPORT 12: 20572_starter_report.md -->
 
 # Cristian Gabriel Romero — Starter Report
 
 - Team: Argentina (ARG)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0176
-- VAEP defense per 90: -0.1230
-- VAEP total per 90: -0.1054
-- VAEP per touch: -0.00070
+- Functional role: Ball-Playing Centre-Back
+- VAEP offense per 90: 0.0197
+- VAEP defense per 90: -0.1490
+- VAEP total per 90: -0.1293
+- VAEP per touch: -0.00086
 - Spatial xT per 90: 0.0054
 - Final-third spatial share: 4.7%
-- Unified final player rating: -0.0369
-- Team rank: #13
-- Rating 95% CI: [-0.0780, -0.0051] (bootstrap SE 0.0192)
-- Rank stability: bootstrap mean rank 12.7; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0398
+- Team rank: #19
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/20572_heatmap.svg)
 
@@ -371,27 +540,71 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 9: 27768_starter_report.md -->
+<!-- PLAYER_REPORT 13: 26404_starter_report.md -->
+
+# Guido Rodríguez — Starter Report
+
+- Team: Argentina (ARG)
+- Position: Left Defensive Midfield
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0077
+- VAEP defense per 90: -0.0016
+- VAEP total per 90: 0.0060
+- VAEP per touch: 0.00002
+- Spatial xT per 90: 0.0093
+- Final-third spatial share: 2.0%
+- Unified final player rating: 0.0198
+- Team rank: #14
+
+![V4 event and 360 heatmap](../heatmaps/ARG/26404_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 1.000 |
+| Pressing intensity per 90 | 9.51 |
+| Recovery index per 90 | 1.59 |
+
+## Top chemistry partners
+
+- Nicolás Hernán Otamendi — synergy 0.186, 57 shared minutes
+- Alexis Mac Allister — synergy 0.183, 57 shared minutes
+- Marcos Javier Acuña — synergy 0.180, 57 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 14: 27768_starter_report.md -->
 
 # Lisandro Martínez — Starter Report
 
 - Team: Argentina (ARG)
 - Position: Left Center Back
 - Functional role: Sweeper CB
-- VAEP offense per 90: 0.0259
-- VAEP defense per 90: -0.0385
-- VAEP total per 90: -0.0126
-- VAEP per touch: -0.00012
+- VAEP offense per 90: 0.0225
+- VAEP defense per 90: 0.0076
+- VAEP total per 90: 0.0301
+- VAEP per touch: 0.00028
 - Spatial xT per 90: 0.0136
 - Final-third spatial share: 8.0%
-- Unified final player rating: -0.0058
-- Team rank: #11
-- Rating 95% CI: [-0.0585, 0.0266] (bootstrap SE 0.0218)
-- Rank stability: bootstrap mean rank 11.4; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0024
+- Team rank: #16
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/27768_heatmap.svg)
 
@@ -416,27 +629,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 10: 27886_starter_report.md -->
+<!-- PLAYER_REPORT 15: 27886_starter_report.md -->
 
 # Alexis Mac Allister — Starter Report
 
 - Team: Argentina (ARG)
 - Position: Left Center Midfield
 - Functional role: Ball-Winner
-- VAEP offense per 90: 0.2799
-- VAEP defense per 90: 0.0039
-- VAEP total per 90: 0.2838
-- VAEP per touch: 0.00203
+- VAEP offense per 90: 0.3174
+- VAEP defense per 90: 0.0059
+- VAEP total per 90: 0.3233
+- VAEP per touch: 0.00231
 - Spatial xT per 90: 0.0067
 - Final-third spatial share: 38.9%
-- Unified final player rating: 0.1423
+- Unified final player rating: 0.1387
 - Team rank: #5
-- Rating 95% CI: [0.0992, 0.1812] (bootstrap SE 0.0208)
-- Rank stability: bootstrap mean rank 5.0; P(team #1) 0%, P(top 3) 2%
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/27886_heatmap.svg)
 
@@ -461,27 +673,116 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 11: 29201_starter_report.md -->
+<!-- PLAYER_REPORT 16: 28263_starter_report.md -->
+
+# Gonzalo Ariel Montiel — Starter Report
+
+- Team: Argentina (ARG)
+- Position: Right Back
+- Functional role: Deep Playmaker
+- VAEP offense per 90: -0.0937
+- VAEP defense per 90: -0.0168
+- VAEP total per 90: -0.1106
+- VAEP per touch: -0.00070
+- Spatial xT per 90: 0.0448
+- Final-third spatial share: 25.1%
+- Unified final player rating: 0.0311
+- Team rank: #13
+
+![V4 event and 360 heatmap](../heatmaps/ARG/28263_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.667 |
+| Pressing intensity per 90 | 13.08 |
+| Recovery index per 90 | 2.06 |
+
+## Top chemistry partners
+
+- Nicolás Hernán Otamendi — synergy 0.368, 131 shared minutes
+- Damián Emiliano Martínez — synergy 0.364, 131 shared minutes
+- Lionel Andrés Messi Cuccittini — synergy 0.341, 131 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 17: 28268_starter_report.md -->
+
+# Exequiel Alejandro Palacios — Starter Report
+
+- Team: Argentina (ARG)
+- Position: Left Center Midfield
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.1206
+- VAEP defense per 90: -0.0952
+- VAEP total per 90: 0.0254
+- VAEP per touch: 0.00023
+- Spatial xT per 90: 0.0302
+- Final-third spatial share: 30.1%
+- Unified final player rating: 0.0963
+- Team rank: #8
+
+![V4 event and 360 heatmap](../heatmaps/ARG/28268_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 26.57 |
+| Recovery index per 90 | 5.31 |
+
+## Top chemistry partners
+
+- Enzo Fernandez — synergy 0.214, 68 shared minutes
+- Nicolás Hernán Otamendi — synergy 0.200, 68 shared minutes
+- Lisandro Martínez — synergy 0.200, 68 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 18: 29201_starter_report.md -->
 
 # Nahuel Molina Lucero — Starter Report
 
 - Team: Argentina (ARG)
 - Position: Right Wing Back
-- Functional role: Box-to-Box Runner
-- VAEP offense per 90: 0.1627
-- VAEP defense per 90: -0.0486
-- VAEP total per 90: 0.1141
-- VAEP per touch: 0.00084
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.1532
+- VAEP defense per 90: -0.0599
+- VAEP total per 90: 0.0933
+- VAEP per touch: 0.00069
 - Spatial xT per 90: 0.0220
 - Final-third spatial share: 24.9%
-- Unified final player rating: 0.0668
-- Team rank: #9
-- Rating 95% CI: [0.0190, 0.1217] (bootstrap SE 0.0269)
-- Rank stability: bootstrap mean rank 8.3; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0523
+- Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/29201_heatmap.svg)
 
@@ -507,27 +808,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 12: 29560_starter_report.md -->
+<!-- PLAYER_REPORT 19: 29560_starter_report.md -->
 
 # Julián Álvarez — Starter Report
 
 - Team: Argentina (ARG)
 - Position: Center Forward
-- Functional role: Target Forward
-- VAEP offense per 90: 0.6055
-- VAEP defense per 90: 0.0306
-- VAEP total per 90: 0.6361
-- VAEP per touch: 0.00749
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.4752
+- VAEP defense per 90: 0.0332
+- VAEP total per 90: 0.5084
+- VAEP per touch: 0.00599
 - Spatial xT per 90: 0.0323
 - Final-third spatial share: 49.0%
-- Unified final player rating: 0.2905
-- Team rank: #2
-- Rating 95% CI: [0.1847, 0.4221] (bootstrap SE 0.0634)
-- Rank stability: bootstrap mean rank 2.3; P(team #1) 16%, P(top 3) 98%
+- Unified final player rating: 0.2513
+- Team rank: #3
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/29560_heatmap.svg)
 
@@ -552,27 +852,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 13: 38718_starter_report.md -->
+<!-- PLAYER_REPORT 20: 38718_starter_report.md -->
 
 # Enzo Fernandez — Starter Report
 
 - Team: Argentina (ARG)
 - Position: Center Defensive Midfield
-- Functional role: Ball-Winner
-- VAEP offense per 90: 0.0715
-- VAEP defense per 90: -0.0628
-- VAEP total per 90: 0.0088
-- VAEP per touch: 0.00004
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0521
+- VAEP defense per 90: -0.0420
+- VAEP total per 90: 0.0101
+- VAEP per touch: 0.00005
 - Spatial xT per 90: 0.0597
 - Final-third spatial share: 16.1%
-- Unified final player rating: 0.0209
-- Team rank: #10
-- Rating 95% CI: [-0.0037, 0.0560] (bootstrap SE 0.0151)
-- Rank stability: bootstrap mean rank 9.8; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0190
+- Team rank: #15
 
 ![V4 event and 360 heatmap](../heatmaps/ARG/38718_heatmap.svg)
 
@@ -597,62 +896,5 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
-
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
-
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
-
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
-
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
-
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
-
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
-
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
-
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
-
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
-
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
-
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
-
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
-
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
-
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
-
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
-
-France refinements:
-
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
-
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

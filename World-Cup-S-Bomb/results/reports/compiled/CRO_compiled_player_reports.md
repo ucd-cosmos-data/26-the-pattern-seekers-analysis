@@ -4,29 +4,71 @@
 > **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
-- Included 300+ minute players: 10
-- Rankings use one cross-role 360-VAEP plus xT formula.
+- Included eligible players: 20
+- Rankings use the role-aware, development-gated VAEP/xT/xD model.
 - Heatmaps combine successful on-ball endpoints and SB360 actor snapshots.
 
 ---
 
-<!-- PLAYER_REPORT 1: 3471_starter_report.md -->
+<!-- PLAYER_REPORT 1: 3441_starter_report.md -->
+
+# Nikola Vlašić — Starter Report
+
+- Team: Croatia (CRO)
+- Position: Right Wing
+- Functional role: Ball-Winner
+- VAEP offense per 90: -0.1252
+- VAEP defense per 90: 0.0290
+- VAEP total per 90: -0.0961
+- VAEP per touch: -0.00106
+- Spatial xT per 90: 0.0314
+- Final-third spatial share: 45.7%
+- Unified final player rating: 0.1033
+- Team rank: #10
+
+![V4 event and 360 heatmap](../heatmaps/CRO/3441_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.333 |
+| Pressing intensity per 90 | 13.50 |
+| Recovery index per 90 | 3.18 |
+
+## Top chemistry partners
+
+- Dejan Lovren — synergy 0.487, 192 shared minutes
+- Joško Gvardiol — synergy 0.478, 227 shared minutes
+- Mateo Kovačić — synergy 0.455, 177 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 2: 3471_starter_report.md -->
 
 # Dejan Lovren — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Right Center Back
-- Functional role: Deep Playmaker
-- VAEP offense per 90: 0.0408
-- VAEP defense per 90: -0.0648
-- VAEP total per 90: -0.0240
-- VAEP per touch: -0.00014
+- Functional role: Sweeper CB
+- VAEP offense per 90: 0.0467
+- VAEP defense per 90: -0.0619
+- VAEP total per 90: -0.0153
+- VAEP per touch: -0.00009
 - Spatial xT per 90: 0.0123
 - Final-third spatial share: 3.9%
-- Unified final player rating: -0.0092
-- Team rank: #9
-- Rating 95% CI: [-0.0279, 0.0138] (bootstrap SE 0.0107)
-- Rank stability: bootstrap mean rank 8.3; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0068
+- Team rank: #18
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/3471_heatmap.svg)
 
@@ -52,27 +94,26 @@
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 2: 5456_starter_report.md -->
+<!-- PLAYER_REPORT 3: 5456_starter_report.md -->
 
 # Mateo Kovačić — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Left Center Midfield
-- Functional role: Box-to-Box / Engine Midfielder
-- VAEP offense per 90: 0.2336
-- VAEP defense per 90: -0.0082
-- VAEP total per 90: 0.2254
-- VAEP per touch: 0.00123
+- Functional role: Deep Playmaker / Metronome
+- VAEP offense per 90: 0.2231
+- VAEP defense per 90: -0.0065
+- VAEP total per 90: 0.2166
+- VAEP per touch: 0.00118
 - Spatial xT per 90: 0.0645
 - Final-third spatial share: 21.7%
-- Unified final player rating: 0.1302
-- Team rank: #3
-- Rating 95% CI: [0.0826, 0.1832] (bootstrap SE 0.0258)
-- Rank stability: bootstrap mean rank 3.0; P(team #1) 1%, P(top 3) 94%
+- Unified final player rating: 0.1160
+- Team rank: #9
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/5456_heatmap.svg)
 
@@ -98,27 +139,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 3: 5460_starter_report.md -->
+<!-- PLAYER_REPORT 4: 5460_starter_report.md -->
 
 # Andrej Kramarić — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Right Wing
-- Functional role: Target Forward
-- VAEP offense per 90: 0.3381
-- VAEP defense per 90: 0.0267
-- VAEP total per 90: 0.3648
-- VAEP per touch: 0.00322
+- Functional role: Ball-Winner
+- VAEP offense per 90: 0.3292
+- VAEP defense per 90: 0.0205
+- VAEP total per 90: 0.3497
+- VAEP per touch: 0.00308
 - Spatial xT per 90: 0.0102
 - Final-third spatial share: 46.1%
-- Unified final player rating: 0.1937
-- Team rank: #2
-- Rating 95% CI: [0.1419, 0.2779] (bootstrap SE 0.0377)
-- Rank stability: bootstrap mean rank 1.8; P(team #1) 28%, P(top 3) 100%
+- Unified final player rating: 0.1772
+- Team rank: #5
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/5460_heatmap.svg)
 
@@ -143,27 +183,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 4: 5463_starter_report.md -->
+<!-- PLAYER_REPORT 5: 5463_starter_report.md -->
 
 # Luka Modrić — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Right Center Midfield
 - Functional role: Deep Playmaker / Metronome
-- VAEP offense per 90: 0.1052
-- VAEP defense per 90: -0.0185
-- VAEP total per 90: 0.0867
-- VAEP per touch: 0.00042
+- VAEP offense per 90: 0.1147
+- VAEP defense per 90: -0.0136
+- VAEP total per 90: 0.1011
+- VAEP per touch: 0.00049
 - Spatial xT per 90: 0.0921
 - Final-third spatial share: 23.2%
-- Unified final player rating: 0.0858
-- Team rank: #4
-- Rating 95% CI: [0.0248, 0.1435] (bootstrap SE 0.0318)
-- Rank stability: bootstrap mean rank 4.4; P(team #1) 0%, P(top 3) 6%
+- Unified final player rating: 0.0847
+- Team rank: #11
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/5463_heatmap.svg)
 
@@ -188,27 +227,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 5: 5469_starter_report.md -->
+<!-- PLAYER_REPORT 6: 5469_starter_report.md -->
 
 # Marcelo Brozović — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Center Defensive Midfield
 - Functional role: Box-to-Box / Engine Midfielder
-- VAEP offense per 90: 0.0185
-- VAEP defense per 90: -0.0461
-- VAEP total per 90: -0.0276
-- VAEP per touch: -0.00012
+- VAEP offense per 90: 0.0253
+- VAEP defense per 90: -0.0439
+- VAEP total per 90: -0.0186
+- VAEP per touch: -0.00008
 - Spatial xT per 90: 0.0245
 - Final-third spatial share: 15.9%
-- Unified final player rating: 0.0045
-- Team rank: #7
-- Rating 95% CI: [-0.0392, 0.0415] (bootstrap SE 0.0222)
-- Rank stability: bootstrap mean rank 7.5; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0071
+- Team rank: #16
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/5469_heatmap.svg)
 
@@ -234,27 +272,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 6: 5474_starter_report.md -->
+<!-- PLAYER_REPORT 7: 5474_starter_report.md -->
 
 # Ivan Perišić — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Left Wing
 - Functional role: Wide Creator
-- VAEP offense per 90: 0.4128
-- VAEP defense per 90: -0.0058
-- VAEP total per 90: 0.4070
-- VAEP per touch: 0.00341
+- VAEP offense per 90: 0.4187
+- VAEP defense per 90: 0.0130
+- VAEP total per 90: 0.4316
+- VAEP per touch: 0.00362
 - Spatial xT per 90: 0.0652
 - Final-third spatial share: 46.4%
-- Unified final player rating: 0.2144
-- Team rank: #1
-- Rating 95% CI: [0.1564, 0.2751] (bootstrap SE 0.0308)
-- Rank stability: bootstrap mean rank 1.3; P(team #1) 71%, P(top 3) 100%
+- Unified final player rating: 0.2088
+- Team rank: #4
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/5474_heatmap.svg)
 
@@ -279,27 +316,203 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 7: 12625_starter_report.md -->
+<!-- PLAYER_REPORT 8: 7693_starter_report.md -->
+
+# Bruno Petković — Starter Report
+
+- Team: Croatia (CRO)
+- Position: Center Forward
+- Functional role: Target Forward
+- VAEP offense per 90: 0.6791
+- VAEP defense per 90: -0.0014
+- VAEP total per 90: 0.6777
+- VAEP per touch: 0.00622
+- Spatial xT per 90: 0.0198
+- Final-third spatial share: 43.4%
+- Unified final player rating: 0.2771
+- Team rank: #1
+
+![V4 event and 360 heatmap](../heatmaps/CRO/7693_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.462 |
+| Pressing intensity per 90 | 10.68 |
+| Recovery index per 90 | 3.20 |
+
+## Top chemistry partners
+
+- Luka Modrić — synergy 0.527, 228 shared minutes
+- Joško Gvardiol — synergy 0.472, 253 shared minutes
+- Dejan Lovren — synergy 0.464, 224 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 9: 8654_starter_report.md -->
+
+# Ante Budimir — Starter Report
+
+- Team: Croatia (CRO)
+- Position: Center Forward
+- Functional role: Target Forward / Penalty-Box Anchor
+- VAEP offense per 90: 0.4429
+- VAEP defense per 90: 0.2496
+- VAEP total per 90: 0.6925
+- VAEP per touch: 0.01354
+- Spatial xT per 90: -0.0031
+- Final-third spatial share: 48.5%
+- Unified final player rating: 0.2515
+- Team rank: #2
+
+![V4 event and 360 heatmap](../heatmaps/CRO/8654_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.429 |
+| Pressing intensity per 90 | 15.98 |
+| Recovery index per 90 | 1.60 |
+
+## Top chemistry partners
+
+- Joško Gvardiol — synergy 0.166, 56 shared minutes
+- Luka Modrić — synergy 0.154, 50 shared minutes
+- Josip Juranović — synergy 0.134, 56 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 10: 11127_starter_report.md -->
+
+# Borna Barišić — Starter Report
+
+- Team: Croatia (CRO)
+- Position: Left Back
+- Functional role: Wide Creator
+- VAEP offense per 90: 0.0589
+- VAEP defense per 90: 0.0245
+- VAEP total per 90: 0.0834
+- VAEP per touch: 0.00073
+- Spatial xT per 90: 0.0466
+- Final-third spatial share: 29.9%
+- Unified final player rating: 0.0531
+- Team rank: #13
+
+![V4 event and 360 heatmap](../heatmaps/CRO/11127_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.625 |
+| Pressing intensity per 90 | 14.88 |
+| Recovery index per 90 | 1.49 |
+
+## Top chemistry partners
+
+- Marcelo Brozović — synergy 0.354, 121 shared minutes
+- Dejan Lovren — synergy 0.335, 121 shared minutes
+- Joško Gvardiol — synergy 0.335, 121 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Target this player on direct restarts and back-post deliveries.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 11: 11603_starter_report.md -->
+
+# Mario Pašalić — Starter Report
+
+- Team: Croatia (CRO)
+- Position: Right Wing
+- Functional role: Holding Anchor
+- VAEP offense per 90: 0.0016
+- VAEP defense per 90: 0.0437
+- VAEP total per 90: 0.0453
+- VAEP per touch: 0.00046
+- Spatial xT per 90: 0.0200
+- Final-third spatial share: 24.1%
+- Unified final player rating: 0.1177
+- Team rank: #8
+
+![V4 event and 360 heatmap](../heatmaps/CRO/11603_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.438 |
+| Pressing intensity per 90 | 17.62 |
+| Recovery index per 90 | 3.09 |
+
+## Top chemistry partners
+
+- Luka Modrić — synergy 0.578, 258 shared minutes
+- Dominik Livaković — synergy 0.544, 291 shared minutes
+- Mateo Kovačić — synergy 0.537, 238 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 12: 12625_starter_report.md -->
 
 # Borna Sosa — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Left Back
-- Functional role: Wide Creator
-- VAEP offense per 90: 0.1443
-- VAEP defense per 90: -0.0144
-- VAEP total per 90: 0.1299
+- Functional role: Attacking Wingback
+- VAEP offense per 90: 0.1392
+- VAEP defense per 90: -0.0103
+- VAEP total per 90: 0.1289
 - VAEP per touch: 0.00086
 - Spatial xT per 90: 0.0682
 - Final-third spatial share: 31.2%
-- Unified final player rating: 0.0781
-- Team rank: #5
-- Rating 95% CI: [0.0517, 0.1123] (bootstrap SE 0.0162)
-- Rank stability: bootstrap mean rank 4.7; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0659
+- Team rank: #12
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/12625_heatmap.svg)
 
@@ -324,27 +537,71 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 8: 16531_starter_report.md -->
+<!-- PLAYER_REPORT 13: 16527_starter_report.md -->
+
+# Mislav Oršić — Starter Report
+
+- Team: Croatia (CRO)
+- Position: Left Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.1009
+- VAEP defense per 90: -0.0146
+- VAEP total per 90: 0.0862
+- VAEP per touch: 0.00091
+- Spatial xT per 90: 0.1218
+- Final-third spatial share: 61.8%
+- Unified final player rating: 0.1446
+- Team rank: #7
+
+![V4 event and 360 heatmap](../heatmaps/CRO/16527_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 14.89 |
+| Recovery index per 90 | 1.92 |
+
+## Top chemistry partners
+
+- Dominik Livaković — synergy 0.459, 187 shared minutes
+- Joško Gvardiol — synergy 0.424, 187 shared minutes
+- Mateo Kovačić — synergy 0.400, 145 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 14: 16531_starter_report.md -->
 
 # Dominik Livaković — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Goalkeeper
 - Functional role: Goalkeeper
-- VAEP offense per 90: 0.0142
-- VAEP defense per 90: -0.2275
-- VAEP total per 90: -0.2132
-- VAEP per touch: -0.00369
+- VAEP offense per 90: 0.0049
+- VAEP defense per 90: -0.1350
+- VAEP total per 90: -0.1301
+- VAEP per touch: -0.00225
 - Spatial xT per 90: 0.0029
 - Final-third spatial share: 1.0%
-- Unified final player rating: -0.0909
-- Team rank: #10
-- Rating 95% CI: [-0.1162, -0.0567] (bootstrap SE 0.0150)
-- Rank stability: bootstrap mean rank 10.0; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0636
+- Team rank: #20
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/16531_heatmap.svg)
 
@@ -370,27 +627,115 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 9: 29163_starter_report.md -->
+<!-- PLAYER_REPORT 15: 22041_starter_report.md -->
+
+# Marko Livaja — Starter Report
+
+- Team: Croatia (CRO)
+- Position: Center Forward
+- Functional role: Target Forward
+- VAEP offense per 90: 0.3027
+- VAEP defense per 90: 0.0085
+- VAEP total per 90: 0.3111
+- VAEP per touch: 0.00351
+- Spatial xT per 90: 0.0486
+- Final-third spatial share: 51.3%
+- Unified final player rating: 0.2128
+- Team rank: #3
+
+![V4 event and 360 heatmap](../heatmaps/CRO/22041_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.308 |
+| Pressing intensity per 90 | 17.26 |
+| Recovery index per 90 | 2.47 |
+
+## Top chemistry partners
+
+- Mateo Kovačić — synergy 0.462, 222 shared minutes
+- Joško Gvardiol — synergy 0.411, 256 shared minutes
+- Dejan Lovren — synergy 0.403, 189 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Pair with a faster recovery defender after aggressive rotations.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 16: 28914_starter_report.md -->
+
+# Lovro Majer — Starter Report
+
+- Team: Croatia (CRO)
+- Position: Right Wing
+- Functional role: Progressive Winger
+- VAEP offense per 90: 0.0858
+- VAEP defense per 90: 0.0705
+- VAEP total per 90: 0.1564
+- VAEP per touch: 0.00082
+- Spatial xT per 90: 0.0758
+- Final-third spatial share: 42.9%
+- Unified final player rating: 0.1557
+- Team rank: #6
+
+![V4 event and 360 heatmap](../heatmaps/CRO/28914_heatmap.svg)
+
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.000 |
+| Pressing intensity per 90 | 14.24 |
+| Recovery index per 90 | 7.12 |
+
+## Top chemistry partners
+
+- Dominik Livaković — synergy 0.399, 152 shared minutes
+- Joško Gvardiol — synergy 0.368, 152 shared minutes
+- Mislav Oršić — synergy 0.352, 123 shared minutes
+
+## Tactical recommendations
+
+- Lead the first pressing trigger and protect the inside passing lane.
+- Avoid isolating this player in high-volume aerial matchups.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
+
+---
+
+<!-- PLAYER_REPORT 17: 29163_starter_report.md -->
 
 # Josip Juranović — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Right Back
 - Functional role: Attacking Wingback
-- VAEP offense per 90: 0.1142
-- VAEP defense per 90: -0.0789
-- VAEP total per 90: 0.0353
-- VAEP per touch: 0.00024
+- VAEP offense per 90: 0.1137
+- VAEP defense per 90: -0.1099
+- VAEP total per 90: 0.0038
+- VAEP per touch: 0.00003
 - Spatial xT per 90: 0.0695
 - Final-third spatial share: 27.1%
-- Unified final player rating: 0.0464
-- Team rank: #6
-- Rating 95% CI: [0.0341, 0.0652] (bootstrap SE 0.0081)
-- Rank stability: bootstrap mean rank 5.9; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: 0.0317
+- Team rank: #15
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/29163_heatmap.svg)
 
@@ -415,27 +760,26 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
 ---
 
-<!-- PLAYER_REPORT 10: 33018_starter_report.md -->
+<!-- PLAYER_REPORT 18: 33018_starter_report.md -->
 
 # Joško Gvardiol — Starter Report
 
 - Team: Croatia (CRO)
 - Position: Left Center Back
 - Functional role: Ball-Playing Centre-Back
-- VAEP offense per 90: 0.0443
-- VAEP defense per 90: -0.0634
-- VAEP total per 90: -0.0191
-- VAEP per touch: -0.00011
+- VAEP offense per 90: 0.0513
+- VAEP defense per 90: -0.0477
+- VAEP total per 90: 0.0036
+- VAEP per touch: 0.00002
 - Spatial xT per 90: 0.0193
 - Final-third spatial share: 4.9%
-- Unified final player rating: -0.0065
-- Team rank: #8
-- Rating 95% CI: [-0.0281, 0.0197] (bootstrap SE 0.0121)
-- Rank stability: bootstrap mean rank 8.1; P(team #1) 0%, P(top 3) 0%
+- Unified final player rating: -0.0000
+- Team rank: #17
 
 ![V4 event and 360 heatmap](../heatmaps/CRO/33018_heatmap.svg)
 
@@ -460,62 +804,93 @@ tracking. Scores exclude players below 300 tournament minutes._
 
 _The heatmap combines successful event endpoints with StatsBomb 360 actor
 snapshots. StatsBomb 360 is freeze-frame context, not continuous player
-tracking. Scores exclude players below 300 tournament minutes._
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-<!-- PROSPECTIVE_VALIDATION_START -->
-## Prospective possession-model validation
+---
 
-**Overall status: `PARTIAL_PASS_ROLLBACK`.** Box-entry prediction passed every discrimination, calibration, and paired match-bootstrap gate. The shot challenger improved numerically but its confidence interval crossed zero, so it was rejected. The combined prospective artifact was not deployed and the stable production state was preserved.
+<!-- PLAYER_REPORT 19: 37148_starter_report.md -->
 
-| Target | Status | Baseline ROC-AUC | Challenger ROC-AUC | PR-AUC | Brier | ECE | Paired ROC gain (90% interval) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Box entry | **PASSED** | 0.6888 | 0.7268 | 0.6131 | 0.1722 | 0.0309 | +0.0155 [+0.0106, +0.0205] |
-| Shot | **REJECTED** | 0.6642 | 0.6841 | 0.2686 | 0.0960 | 0.0118 | +0.0038 [-0.0030, +0.0120] |
+# Josip Šutalo — Starter Report
 
-_This challenger is isolated from 360-VAEP/xT player ratings, transition risk, retrospective possession models, and tactical clustering. Player and team descriptive metrics therefore remain unchanged._
-<!-- PROSPECTIVE_VALIDATION_END -->
+- Team: Croatia (CRO)
+- Position: Right Center Back
+- Functional role: Sweeper CB
+- VAEP offense per 90: -0.0327
+- VAEP defense per 90: -0.0685
+- VAEP total per 90: -0.1013
+- VAEP per touch: -0.00059
+- Spatial xT per 90: 0.0018
+- Final-third spatial share: 1.0%
+- Unified final player rating: -0.0164
+- Team rank: #19
 
-<!-- PLAYER_ROLE_VALIDATION_START -->
-## Player-role and valuation validation status
+![V4 event and 360 heatmap](../heatmaps/CRO/37148_heatmap.svg)
 
-**Production state retained.** The probabilistic role matrix and learned valuation were evaluated as challengers but were not promoted because they missed their predeclared statistical gates.
+## Physical profile
 
-| Component | Decision | Validation evidence |
-|---|---|---|
-| Probabilistic GMM roles | **REJECTED** | K=9; silhouette 0.3159; median 500-bootstrap ARI 0.6961 vs required 0.70 |
-| Learned Ridge valuation | **REJECTED** | OOF Spearman 0.7095 → 0.7150; gain 95% CI [-0.0053, +0.0165] crosses zero |
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.333 |
+| Pressing intensity per 90 | 0.94 |
+| Recovery index per 90 | 3.74 |
 
-The active calibrated 360-VAEP model therefore remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123. Messi remains Argentina rank #1 and Mbappé remains France rank #1; no player-name override was used.
-<!-- PLAYER_ROLE_VALIDATION_END -->
+## Top chemistry partners
 
-<!-- ROLE_AWARE_VALUATION_START -->
-## Continuous role-aware valuation A/B test
+- Joško Gvardiol — synergy 0.295, 96 shared minutes
+- Luka Modrić — synergy 0.294, 96 shared minutes
+- Dominik Livaković — synergy 0.290, 96 shared minutes
 
-**Decision: `REJECTED_RETAIN_INCUMBENT`.** The challenger was not promoted. Its Spearman correlation with the incumbent ranking was 0.9854, above the predeclared 0.90 ceiling, so it did not change the overall ordering enough to qualify as the intended systemic correction.
+## Tactical recommendations
 
-| Benchmark | Incumbent | Challenger diagnostic |
-|---|---:|---:|
-| Messi global rank | 1 | 1 |
-| Mbappé global rank | 2 | 2 |
-| Griezmann global rank | 21 | 6 |
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Use recovery capacity to support higher attacking positions.
 
-The diagnostic Griezmann movement came from creation (0.799), pressing (0.711), and completeness (0.862), with no player-name rule. Nevertheless, all published player/team rankings retain the incumbent 360-VAEP+xT rating.
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._
 
-Foundational model performance remains unchanged: OOF ROC-AUC 0.948994, PR-AUC 0.084827, Brier 0.001123, ECE 0.000336.
-<!-- ROLE_AWARE_VALUATION_END -->
+---
 
-<!-- CONTINUOUS_ROLE_REFINEMENT_START -->
-## Accepted continuous role refinement
+<!-- PLAYER_REPORT 20: 49337_starter_report.md -->
 
-**34 of 142 players (23.9%) received an evidence-backed post-K-Means role refinement; 108 retained their original role.** The original cluster label remains available as `kmeans_functional_role`. Ratings, team ranks, VAEP and xT were not changed by this role-only promotion.
+# Josip Stanišić — Starter Report
 
-France refinements:
+- Team: Croatia (CRO)
+- Position: Right Back
+- Functional role: Deep Playmaker
+- VAEP offense per 90: 0.0805
+- VAEP defense per 90: -0.0068
+- VAEP total per 90: 0.0737
+- VAEP per touch: 0.00067
+- Spatial xT per 90: -0.0053
+- Final-third spatial share: 14.5%
+- Unified final player rating: 0.0506
+- Team rank: #14
 
-- Olivier Giroud: Target Forward → **Target Forward / Penalty-Box Anchor**
-- Antoine Griezmann: Ball-Winner → **Hybrid Playmaker / Roaming Creator**
-- Theo Bernard François Hernández: Wide Creator → **Attacking Wingback**
-- Ibrahima Konaté: Deep Playmaker → **Ball-Playing Centre-Back**
-- Aurélien Djani Tchouaméni: Ball-Winner → **Holding / Controlling Midfielder**
+![V4 event and 360 heatmap](../heatmaps/CRO/49337_heatmap.svg)
 
-Refinements use continuous progression, creation, finishing, pressing, defensive, security, aerial and completeness scores with broad-position safeguards. No player-name condition is used.
-<!-- CONTINUOUS_ROLE_REFINEMENT_END -->
+## Physical profile
+
+| Metric | Score |
+|---|---:|
+| Aerial dominance | 0.500 |
+| Pressing intensity per 90 | 10.30 |
+| Recovery index per 90 | 2.81 |
+
+## Top chemistry partners
+
+- Josip Šutalo — synergy 0.283, 96 shared minutes
+- Mateo Kovačić — synergy 0.280, 96 shared minutes
+- Joško Gvardiol — synergy 0.278, 96 shared minutes
+
+## Tactical recommendations
+
+- Use a compact pressing trigger rather than sustained solo pressure.
+- Use recovery capacity to support higher attacking positions.
+
+_The heatmap combines successful event endpoints with StatsBomb 360 actor
+snapshots. StatsBomb 360 is freeze-frame context, not continuous player
+tracking. Ratings include eligible outfield players from 45 minutes and
+goalkeepers from 90 minutes; ranking status communicates sample reliability._

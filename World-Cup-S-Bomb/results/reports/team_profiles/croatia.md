@@ -2,10 +2,11 @@
 
 ## Threat creation
 
-- Total xT created: 3.0319
+- Total xT created: 3.7160
 - Total xA created: 5.6716
-- Mean creation score: 0.5282
-- Mean xT/90: 0.0429
+- Mean creation score: 0.5431
+- Mean creation score (300+ comparison): 0.6113
+- Mean xT/90: 0.0393
 
 ## Defensive compactness
 
@@ -13,21 +14,24 @@
 - Mean defensive density: 0.0281
 - Mean defensive width: 35.6728
 - Mean defensive depth: 21.7871
-- Mean defensive score: 0.5369
-- Mean shape-maintenance score: 0.5500
+- Mean defensive score: 0.5524
+- Mean defensive score (300+ comparison): 0.5733
+- Mean xD/90: 6.2421
+- Mean shape-maintenance score: 0.4332
 
 ## Pressure resistance
 
 - Pass completion under pressure: 0.7430
 - Pressured pass sample: 537.0000
-- Mean ball-security score: 0.5304
+- Mean ball-security score: 0.4884
+- Mean ball-security score (300+ comparison): 0.5513
 
 ## Top five player summary
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Borna Sosa | Wide Creator | 440.4667 | 0.6170 | Ranked (300+ min) |
-| 2.0000 | Ivan Perišić | Wide Creator | 686.8167 | 0.6081 | Ranked (300+ min) |
-| 3.0000 | Andrej Kramarić | Target Forward | 478.4333 | 0.5837 | Ranked (300+ min) |
-| 4.0000 | Dominik Livaković | Goalkeeper | 720.2833 | 0.5503 | Ranked (300+ min) |
-| 5.0000 | Joško Gvardiol | Ball-Playing Centre-Back | 720.2833 | 0.5028 | Ranked (300+ min) |
+| 1 | Ivan Perišić | Wide Creator | 686.8167 | 0.6035 | Ranked (300+ min) |
+| 2 | Borna Sosa | Attacking Wingback | 440.4667 | 0.5514 | Ranked (300+ min) |
+| 4 | Dominik Livaković | Goalkeeper | 720.2833 | 0.5458 | Ranked (270+ min) |
+| 8 | Andrej Kramarić | Ball-Winner | 478.4333 | 0.5091 | Ranked (300+ min) |
+| 10 | Mateo Kovačić | Deep Playmaker / Metronome | 649.9167 | 0.4947 | Ranked (300+ min) |
