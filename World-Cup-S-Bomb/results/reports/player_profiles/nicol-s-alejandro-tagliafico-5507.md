@@ -1,76 +1,40 @@
-# Nicolás Alejandro Tagliafico Player Profile
+# Nicolás Alejandro Tagliafico — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Argentina
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Source functional role: Wide Creator
-
-- Probabilistic role: Progressive/Creative Fullback
-- Role entropy: 0.0000
-- Unified global rank: 88
-- Unified team rank: 11
-- Tournament Performance Score: 0.8278
-- Global rank v2: 164
-- Position rank v2: 23
-- Role rank v2: 7
-- Team rank v2: 10
-- Final player rating v2: 0.4667
-- Global rank: 29
-- Position rank: 9
-- Role rank: 2
-- Team rank: 5
-- Final player rating: 0.5764
-- Ranking status: Ranked (300+ min)
-
-- Global ranking eligibility: eligible
 - Minutes: 393.3
-- Minutes reliability: 0.4664
+- Global Rank v3: 68
+- Team Rank v3: 8
+- Position Rank v3: 13
+- Role Rank v3: 12
+- Tournament Impact: 1.3104
+- Role Quality: 0.2339
+- Impact interval: [0.1687, 2.7605]
+- Rank band: 21–344
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.9122
+- Non-shootout xA: 0.1407
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.6934 |
-| vaep_def_scaled | 1.0000 |
-| vaep_per_touch | 0.0025 |
-| open_play_xt_p90 | 0.0045 |
-| set_piece_xt_p90 | 0.0165 |
-| role_adjusted_value | 0.0555 |
-| completeness_score | 0.7549 |
-| off_ball_score | 0.5281 |
+| Attack | 1.4161 |
+| Defense | -0.1057 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4429 |
-| creation_score | 0.5384 |
-| finishing_score | 0.5717 |
-| pressing_score | 0.6824 |
-| defensive_score | 0.6682 |
-| ball_security_score | 0.5486 |
-| aerial_score | 0.6810 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.7997 |
-| mean_defenders_within_3m | 0.3542 |
-| mean_defenders_within_5m | 0.6393 |
-| mean_nearest_defender_m | 6.9017 |
-| mean_passing_lane_availability | 0.9194 |
-| packing_index_mean | 0.5378 |
-| mean_space_received | 0.6860 |
-| network_pagerank | 0.0412 |
-| network_betweenness | 0.0382 |
-| network_entropy | 0.8647 |
-| build_up_involvement_ratio | 0.6723 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

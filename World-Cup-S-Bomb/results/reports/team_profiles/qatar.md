@@ -1,76 +1,37 @@
-# Qatar Team Profile
+# Qatar — Qatar 2022 Team Profile
 
-## Threat creation
+Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
 
-- Total xT created: 0.7960
-- Total xA created: 1.1791
-- Mean creation score: 0.4849
-- Mean creation score (300+ comparison): not available
-- Mean xT/90: 0.0207
+## Team leaders
 
-## Defensive compactness
+| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 140 | Ismaeel Mohammad Mohammad | Fullback/Wingback | Attacking Wingback | 180.6167 | 0.8474 | 0.2260 | wide |
+| 2 | 150 | Almoez Ali Zainalabiddin Abdulla | Forward | Pressing Forward | 231.4000 | 0.8147 | 0.4671 | wide |
+| 3 | 235 | Akram Hassan Afif | Forward | Progressive Winger | 287.4000 | 0.5108 | 0.2350 | wide |
+| 4 | 257 | Pedro Miguel Correia | Center Back | Deep Playmaker | 273.6000 | 0.4642 | 0.1703 | wide |
+| 5 | 287 | Hassan Khalid Al Heidos | Central/Wide Midfield | Ball-Winner | 209.0833 | 0.4003 | 0.1315 | wide |
+| 6 | 295 | Boualem Khoukhi | Center Back | Sweeper CB | 287.4000 | 0.3825 | 0.0987 | wide |
+| 7 | 308 | Homam Alamin Ahmed | Fullback/Wingback | Wide Creator | 273.5000 | 0.3546 | 0.1755 | wide |
+| 8 | 317 | Abdelkarim Hassan Al Haj Fadlalla | Center Back | Ball-Playing Centre-Back | 287.4000 | 0.3408 | 0.0848 | wide |
+| 9 | 348 | Mohammed Muntari | Forward | Target Forward / Penalty-Box Anchor | 77.7500 | 0.2785 | 0.4953 | wide |
+| 10 | 396 | Karim Boudiaf | Defensive Midfield | Holding Anchor | 195.8667 | 0.1977 | 0.1051 | wide |
+| 11 | 482 | Abdulaziz Hatem Mohammed Abdullah | Central/Wide Midfield | Ball-Winner | 207.5000 | 0.0838 | 0.1132 | wide |
+| 12 | 539 | Meshaal Aissa Barsham | Goalkeeper | Goalkeeper | 192.0833 | — | — | moderate |
+| 13 | 549 | Bassam Hisham Al Rawi | Center Back | Sweeper CB | 95.3167 | -0.0014 | 0.0800 | wide |
+| 14 | 571 | Assim Omer Al Haj Madibo | Defensive Midfield | Holding Anchor | 159.8500 | -0.0303 | 0.0894 | wide |
 
-- Mean defensive hull area: 451.6214
-- Mean defensive density: 0.0529
-- Mean defensive width: 36.8355
-- Mean defensive depth: 20.2886
-- Mean defensive score: 0.4605
-- Mean defensive score (300+ comparison): not available
-- Mean xD/90: 6.5679
-- Mean shape-maintenance score: 0.5372
+## Outfield component totals
 
-## Pressure resistance
+- Attack component total: 4.3801
+- Defensive component total: 0.2635
+- Regulation/extra-time goals: 1
+- Shootout goals excluded from ordinary impact: 0
 
-- Pass completion under pressure: 0.6995
-- Pressured pass sample: 193.0000
-- Mean ball-security score: 0.5492
-- Mean ball-security score (300+ comparison): not available
+## Main goalkeeper
 
-## Top 5 Players
+| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
+|---|---|---|---|---|
+| 30.0000 | Meshaal Aissa Barsham | 0.4005 | 0.0000 | 0.3605 |
 
-1. **Abdelkarim Hassan Al Haj Fadlalla** — CB, Ball-Playing Centre-Back (0.7844)
-
-As a Ball-Playing Centre-Back, the strongest measured signals are progressive passing and carrying (78% within the model context) and coverage-qualified off-ball contribution (66% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **Boualem Khoukhi** — CB, Sweeper CB (0.7552)
-
-As a Sweeper CB, the strongest measured signals are coverage-qualified off-ball contribution (70% within the model context) and ball-winning and defensive contribution (62% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **Assim Omer Al Haj Madibo** — DM, Holding Anchor (0.6792)
-
-As a Holding Anchor, the strongest measured signals are ball-winning and defensive contribution (64% within the model context) and chance creation and final-third passing (50% within the model context). The assessment uses Qatar 2022 evidence only.
-
-4. **Hassan Khalid Al Heidos** — CM, Ball-Winner (0.3331)
-
-As a Ball-Winner, the strongest measured signals are chance creation and final-third passing (72% within the model context) and progressive passing and carrying (58% within the model context). The assessment uses Qatar 2022 evidence only.
-
-5. **Akram Hassan Afif** — FW, Progressive Winger (0.3146)
-
-As a Progressive Winger, the strongest measured signals are progressive passing and carrying (98% within the model context) and chance creation and final-third passing (88% within the model context). The assessment uses Qatar 2022 evidence only.
-
-The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
-
-## Full Player List — Outfield
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|
-| 1 | 101 | Abdelkarim Hassan Al Haj Fadlalla | CB | Center Back | Ball-Playing Centre-Back | 287.4000 | 0.7844 |
-| 2 | 112 | Boualem Khoukhi | CB | Center Back | Sweeper CB | 287.4000 | 0.7552 |
-| 3 | 148 | Assim Omer Al Haj Madibo | DM | Defensive Midfield | Holding Anchor | 159.8500 | 0.6792 |
-| 4 | 336 | Hassan Khalid Al Heidos | CM | Central/Wide Midfield | Ball-Winner | 209.0833 | 0.3331 |
-| 5 | 349 | Akram Hassan Afif | FW | Forward | Progressive Winger | 287.4000 | 0.3146 |
-| 6 | 365 | Pedro Miguel Correia | CB | Center Back | Deep Playmaker | 273.6000 | 0.2924 |
-| 7 | 383 | Bassam Hisham Al Rawi | CB | Center Back | Sweeper CB | 95.3167 | 0.2746 |
-| 8 | 394 | Ismaeel Mohammad Mohammad | FB | Fullback/Wingback | Attacking Wingback | 180.6167 | 0.2618 |
-| 9 | 443 | Mohammed Muntari | FW | Forward | Target Forward / Penalty-Box Anchor | 77.7500 | 0.1897 |
-| 10 | 462 | Karim Boudiaf | DM | Defensive Midfield | Holding Anchor | 195.8667 | 0.1692 |
-| 11 | 476 | Almoez Ali Zainalabiddin Abdulla | FW | Forward | Pressing Forward | 231.4000 | 0.1532 |
-| 12 | 482 | Abdulaziz Hatem Mohammed Abdullah | CM | Central/Wide Midfield | Ball-Winner | 207.5000 | 0.1490 |
-| 14 | 580 | Homam Alamin Ahmed | FB | Fullback/Wingback | Wide Creator | 273.5000 | 0.0710 |
-
-## Full Player List — Goalkeepers
-
-| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 29 | 13 | 519 | Meshaal Aissa Barsham | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 192.0833 | 0.0416 | 0.1149 |
-| — | — | — | Saad Abdullah Al Sheeb | False | Unranked (backup goalkeeper) | GK | Goalkeeper | Goalkeeper | 95.3167 | — | — |
+All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.

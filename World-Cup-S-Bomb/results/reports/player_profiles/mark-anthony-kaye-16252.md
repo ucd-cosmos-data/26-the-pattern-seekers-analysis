@@ -1,76 +1,40 @@
-# Mark Anthony Kaye Player Profile
+# Mark Anthony Kaye — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Canada
-- Tournament: 2022_World_Cup
-- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Box-to-Box / Engine Midfielder
-- Source functional role: Box-to-Box / Engine Midfielder
-
-- Probabilistic role: Secure/Pressing Midfielder
-- Role entropy: 0.0011
-- Unified global rank: 424
-- Unified team rank: 15
-- Tournament Performance Score: 0.2252
-- Global rank v2: 351
-- Position rank v2: 49
-- Role rank v2: 18
-- Team rank v2: 12
-- Final player rating v2: 0.3248
-- Global rank: 419
-- Position rank: 37
-- Role rank: 13
-- Team rank: 12
-- Final player rating: 0.4355
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 59.9
-- Minutes reliability: 0.1174
+- Global Rank v3: 501
+- Team Rank v3: 14
+- Position Rank v3: 51
+- Role Rank v3: 13
+- Tournament Impact: 0.0212
+- Role Quality: 0.1064
+- Impact interval: [0.0000, 0.0636]
+- Rank band: 399–485
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0389
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3193 |
-| vaep_def_scaled | 0.6738 |
-| vaep_per_touch | 0.0001 |
-| open_play_xt_p90 | 0.0041 |
-| set_piece_xt_p90 | 0.0209 |
-| role_adjusted_value | 0.2950 |
-| completeness_score | 0.5411 |
-| off_ball_score | 0.7486 |
+| Attack | 0.0333 |
+| Defense | -0.0121 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5104 |
-| creation_score | 0.2789 |
-| finishing_score | 0.5683 |
-| pressing_score | 0.8444 |
-| defensive_score | 0.6427 |
-| ball_security_score | 0.3885 |
-| aerial_score | 0.1768 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8942 |
-| mean_defenders_within_3m | 0.2781 |
-| mean_defenders_within_5m | 0.6568 |
-| mean_nearest_defender_m | 6.3684 |
-| mean_passing_lane_availability | 0.9840 |
-| packing_index_mean | 0.3964 |
-| mean_space_received | 0.6326 |
-| network_pagerank | 0.1017 |
-| network_betweenness | 0.1000 |
-| network_entropy | 0.8279 |
-| build_up_involvement_ratio | 0.7857 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

@@ -1,76 +1,40 @@
-# Brenden Aaronson Player Profile
+# Brenden Aaronson — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: United States
-- Tournament: 2022_World_Cup
-- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
-- Source functional role: Progressive Winger
-
-- Probabilistic role: Pressing/Finishing Attacker
-- Role entropy: 0.0626
-- Unified global rank: 307
-- Unified team rank: 12
-- Tournament Performance Score: 0.3745
-- Global rank v2: 122
-- Position rank v2: 41
-- Role rank v2: 35
-- Team rank v2: 8
-- Final player rating v2: 0.5074
-- Global rank: 40
-- Position rank: 22
-- Role rank: 23
-- Team rank: 3
-- Final player rating: 0.5695
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 137.5
-- Minutes reliability: 0.2340
+- Global Rank v3: 145
+- Team Rank v3: 7
+- Position Rank v3: 80
+- Role Rank v3: 51
+- Tournament Impact: 0.7994
+- Role Quality: 0.3718
+- Impact interval: [0.0758, 1.7599]
+- Rank band: 49–402
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0943
+- Non-shootout xA: 0.1579
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.6635 |
-| vaep_def_scaled | 0.6276 |
-| vaep_per_touch | 0.0052 |
-| open_play_xt_p90 | 0.0563 |
-| set_piece_xt_p90 | 0.0070 |
-| role_adjusted_value | 0.2943 |
-| completeness_score | 0.7036 |
-| off_ball_score | 0.6707 |
+| Attack | 0.8222 |
+| Defense | -0.0228 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4989 |
-| creation_score | 0.6499 |
-| finishing_score | 0.4935 |
-| pressing_score | 0.9226 |
-| defensive_score | 0.7797 |
-| ball_security_score | 0.5705 |
-| aerial_score | 0.5512 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9055 |
-| mean_defenders_within_3m | 0.5478 |
-| mean_defenders_within_5m | 1.0391 |
-| mean_nearest_defender_m | 7.2214 |
-| mean_passing_lane_availability | 0.8982 |
-| packing_index_mean | 0.4478 |
-| mean_space_received | 0.5374 |
-| network_pagerank | 0.0428 |
-| network_betweenness | 0.0286 |
-| network_entropy | 0.9545 |
-| build_up_involvement_ratio | 0.6792 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

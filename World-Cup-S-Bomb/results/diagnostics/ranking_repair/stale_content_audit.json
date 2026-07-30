@@ -1,0 +1,772 @@
+{
+  "active_model_version": "ranking-repair-v3.0-qatar-2022",
+  "active_stale_count": 0,
+  "classification_counts": {
+    "active-and-correct": 15,
+    "compatibility-or-legacy": 59,
+    "test-fixture": 21
+  },
+  "records": [
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "not use within-position z-scores as absolute global value, the former repeated",
+      "line": 48,
+      "path": "README.md",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "exposure cascade, or the former one-sided defensive publication lift.",
+      "line": 49,
+      "path": "README.md",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"ranking_formula\": \"role-relative minutes shrinkage of (0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90), reliability=minutes/(minutes+450)\"",
+      "line": 590,
+      "path": "data/processed/player_evaluation_provenance.json",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"outfield_reliability\": \"minutes / (minutes + 450)\",",
+      "line": 2667,
+      "path": "data/processed/player_evaluation_v5_provenance.json",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"goalkeeper_reliability\": \"feature_coverage * minutes / (minutes + 450)\",",
+      "line": 2668,
+      "path": "data/processed/player_evaluation_v5_provenance.json",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "- Do not use within-position z-scores as absolute global value.",
+      "line": 434,
+      "path": "docs/ranking-repair-eight-pass-prompt.md",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "Replace the raw, equally averaged, one-sided direct-defensive lift with",
+      "line": 542,
+      "path": "docs/ranking-repair-eight-pass-prompt.md",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "The active one-sided defensive evidence lift should be retired when the",
+      "line": 633,
+      "path": "docs/ranking-repair-eight-pass-prompt.md",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "4. Do not let shootout saves add an unbounded `0.20` each to the base score.",
+      "line": 692,
+      "path": "docs/ranking-repair-eight-pass-prompt.md",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "- the old within-position z-score is the active absolute global value",
+      "line": 832,
+      "path": "docs/ranking-repair-eight-pass-prompt.md",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "- the old one-sided defensive lift is active when retired",
+      "line": 833,
+      "path": "docs/ranking-repair-eight-pass-prompt.md",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "- `shootout_save_points: 0.20`",
+      "line": 962,
+      "path": "docs/ranking-repair-eight-pass-prompt.md",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "- old within-position z-score descriptions",
+      "line": 964,
+      "path": "docs/ranking-repair-eight-pass-prompt.md",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "- old one-sided defensive-lift descriptions",
+      "line": 965,
+      "path": "docs/ranking-repair-eight-pass-prompt.md",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "Tournament Impact is not a within-position z-score. The active release also",
+      "line": 25,
+      "path": "docs/role_aware_pipeline.md",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "`minutes / (minutes + 450)` shrinkage, additional exposure adjustments, and a",
+      "line": 166,
+      "path": "docs/role_aware_pipeline.md",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "one-sided defensive evidence lift. The former goalkeeper publication added",
+      "line": 167,
+      "path": "docs/role_aware_pipeline.md",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "`0.20` per shootout save and described a Blom-derived bridge too broadly.",
+      "line": 168,
+      "path": "docs/role_aware_pipeline.md",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "Defensive value is based on opportunity-adjusted threat prevention and signed errors. The old one-sided defensive publication lift is retired.",
+      "line": 28,
+      "path": "results/Summary/model_summary.md",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"outfield_reliability\": \"minutes / (minutes + 450)\",",
+      "line": 2523,
+      "path": "results/diagnostics/ranking_repair/champion/model_summary.json",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"goalkeeper_reliability\": \"feature_coverage * minutes / (minutes + 450)\",",
+      "line": 2524,
+      "path": "results/diagnostics/ranking_repair/champion/model_summary.json",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "active text explicitly negates retired method",
+      "context": "\"within-position z-scoring or a position-dependent publication lift.\",",
+      "line": 1030,
+      "path": "results/documentation/generate_documentation.py",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "\"exposure penalties, the one-sided defensive publication lift, an \"",
+      "line": 1110,
+      "path": "results/documentation/generate_documentation.py",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "active text explicitly negates retired method",
+      "context": "\"unbounded `0.20` per shootout save, or a Blom bridge described as \"",
+      "line": 1111,
+      "path": "results/documentation/generate_documentation.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "active text explicitly negates retired method",
+      "context": "- **Tournament Impact v3** is signed total contribution in common action-value units. It determines global and team order without within-position z-scoring or a position-dependent publication lift.",
+      "line": 7,
+      "path": "results/documentation/reports-rankings.md",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "Retired methodology may appear only in that explicitly historical material. The active score does not use the old within-position z-score as absolute global value, repeated 450/180/90-minute exposure penalties, the one-sided defensive publication lift, an unbounded `0.20` per shootout save, or a Blo",
+      "line": 65,
+      "path": "results/documentation/reports-rankings.md",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "Retired methodology may appear only in that explicitly historical material. The active score does not use the old within-position z-score as absolute global value, repeated 450/180/90-minute exposure penalties, the one-sided defensive publication lift, an unbounded `0.20` per shootout save, or a Blo",
+      "line": 65,
+      "path": "results/documentation/reports-rankings.md",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "Retired methodology may appear only in that explicitly historical material. The active score does not use the old within-position z-score as absolute global value, repeated 450/180/90-minute exposure penalties, the one-sided defensive publication lift, an unbounded `0.20` per shootout save, or a Blo",
+      "line": 65,
+      "path": "results/documentation/reports-rankings.md",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit retired-method inventory",
+      "context": "\"within-position z-score as absolute global value\",",
+      "line": 71,
+      "path": "results/metadata/feature_definitions.json",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit retired-method inventory",
+      "context": "\"one-sided direct-defensive publication lift\",",
+      "line": 73,
+      "path": "results/metadata/feature_definitions.json",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit retired-method inventory",
+      "context": "\"0.20 additive points per goalkeeper shootout save\",",
+      "line": 74,
+      "path": "results/metadata/feature_definitions.json",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "Defensive value is based on opportunity-adjusted threat prevention and signed errors. The old one-sided defensive publication lift is retired.",
+      "line": 28,
+      "path": "results/reports/canonical/model_summary.md",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "Defensive value is based on opportunity-adjusted threat prevention and signed errors. The old one-sided defensive publication lift is retired.",
+      "line": 28,
+      "path": "results/reports/model_summary.md",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "active text explicitly negates retired method",
+      "context": "1. **Tournament Impact** is a signed total in common action-value units. It determines outfield Global Rank and Team Rank. No within-position z-score, player identity, role bonus, or minutes multiplier creates this value.",
+      "line": 13,
+      "path": "results/reports/ranking/ranking_methodology.md",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"- Outfield reliability is minutes/(minutes+450).\",",
+      "line": 863,
+      "path": "scripts/generate_final_tournament_report.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"shootout_save_points\": 0.20,",
+      "line": 69,
+      "path": "scripts/refresh_tournament_rankings_v2.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"shootout_save_points\": 0.20,",
+      "line": 2039,
+      "path": "scripts/run_pipeline.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"outfield_reliability\": \"minutes / (minutes + 450)\",",
+      "line": 2063,
+      "path": "scripts/run_pipeline.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"feature_coverage * minutes / (minutes + 450)\"",
+      "line": 2065,
+      "path": "scripts/run_pipeline.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "stale-audit scanner definition",
+      "context": "r\"(EXPOSURE_SATURATION_SHARE|PUBLICATION_EXPOSURE_SHARE|\"",
+      "line": 1723,
+      "path": "scripts/run_ranking_repair_v3.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "stale-audit scanner definition",
+      "context": "r\"MinutesReliability.{0,20}450|\"",
+      "line": 1724,
+      "path": "scripts/run_ranking_repair_v3.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "stale-audit scanner definition",
+      "context": "\"within-position-absolute\": re.compile(",
+      "line": 1728,
+      "path": "scripts/run_ranking_repair_v3.py",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "stale-audit scanner definition",
+      "context": "r\"within-position.{0,80}(?:absolute|global|publication|z-score)\",",
+      "line": 1729,
+      "path": "scripts/run_ranking_repair_v3.py",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "stale-audit scanner definition",
+      "context": "\"one-sided-defensive-lift\": re.compile(",
+      "line": 1732,
+      "path": "scripts/run_ranking_repair_v3.py",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "stale-audit scanner definition",
+      "context": "r\"(one-sided.{0,50}defensive|DEFENSIVE_EVIDENCE_LIFT)\",",
+      "line": 1733,
+      "path": "scripts/run_ranking_repair_v3.py",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "stale-audit scanner definition",
+      "context": "r\"Part IX: Unified tournament publication layer\",",
+      "line": 1737,
+      "path": "scripts/run_ranking_repair_v3.py",
+      "pattern": "stale-docx-appendix"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"uses `minutes/(minutes+450)` shrinkage; 300 minutes is a reporting \"",
+      "line": 784,
+      "path": "scripts/run_team_simulation_reports.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "EXPOSURE_SATURATION_SHARE = 0.75",
+      "line": 40,
+      "path": "scripts/unify_tournament_ratings.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "DEFENSIVE_EVIDENCE_LIFT = 1.00",
+      "line": 41,
+      "path": "scripts/unify_tournament_ratings.py",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "PUBLICATION_EXPOSURE_SHARE = 0.75",
+      "line": 42,
+      "path": "scripts/unify_tournament_ratings.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "(1.0 - EXPOSURE_SATURATION_SHARE)",
+      "line": 370,
+      "path": "scripts/unify_tournament_ratings.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "+ EXPOSURE_SATURATION_SHARE * reliability",
+      "line": 371,
+      "path": "scripts/unify_tournament_ratings.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"exposure_share\": EXPOSURE_SATURATION_SHARE,",
+      "line": 374,
+      "path": "scripts/unify_tournament_ratings.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "factor = 1.0 - PUBLICATION_EXPOSURE_SHARE * uncertainty",
+      "line": 395,
+      "path": "scripts/unify_tournament_ratings.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"exposure_share\": PUBLICATION_EXPOSURE_SHARE,",
+      "line": 397,
+      "path": "scripts/unify_tournament_ratings.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "DEFENSIVE_EVIDENCE_LIFT",
+      "line": 509,
+      "path": "scripts/unify_tournament_ratings.py",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"lift_fraction\": DEFENSIVE_EVIDENCE_LIFT,",
+      "line": 517,
+      "path": "scripts/unify_tournament_ratings.py",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "active text explicitly negates retired method",
+      "context": "\"within-position z-score, role bonus, team-strength bonus, or repeated \"",
+      "line": 573,
+      "path": "scripts/update_unified_final_summary_docx.py",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "\"The former one-sided defensive publication lift is retired.\"",
+      "line": 604,
+      "path": "scripts/update_unified_final_summary_docx.py",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "active text explicitly negates retired method",
+      "context": "\"within-position normalization as absolute global value.\"",
+      "line": 817,
+      "path": "scripts/update_unified_final_summary_docx.py",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "active validator rejects retired content",
+      "context": "if \"Part IX: Unified tournament publication layer\" in text:",
+      "line": 1053,
+      "path": "scripts/update_unified_final_summary_docx.py",
+      "pattern": "stale-docx-appendix"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "GOALKEEPER_TOURNAMENT_IMPACT_PER_SHOOTOUT_SAVE = 0.20",
+      "line": 163,
+      "path": "src/models/tournament_rankings.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"period-five shootout penalty contributes 0.20, the goalkeeper's \"",
+      "line": 1161,
+      "path": "src/models/tournament_rankings.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "reliability = minutes / (minutes + 450)",
+      "line": 7,
+      "path": "src/rating_uncertainty.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"normalization, a one-sided direct defensive-evidence \"",
+      "line": 667,
+      "path": "src/reporting/artifacts.py",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"minutes/(minutes+450) position-prior shrinkage.\",",
+      "line": 1623,
+      "path": "src/reporting/artifacts.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "active-and-correct",
+      "classification_reason": "active text explicitly negates retired method",
+      "context": "\"No within-position z-score, player identity, role bonus, or \"",
+      "line": 600,
+      "path": "src/reporting/ranking_repair_release.py",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "\"prevention and signed errors. The old one-sided defensive \"",
+      "line": 951,
+      "path": "src/reporting/ranking_repair_release.py",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit retired-method inventory",
+      "context": "\"within-position z-score as absolute global value\",",
+      "line": 1989,
+      "path": "src/reporting/ranking_repair_release.py",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit retired-method inventory",
+      "context": "\"one-sided direct-defensive publication lift\",",
+      "line": 1991,
+      "path": "src/reporting/ranking_repair_release.py",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit retired-method inventory",
+      "context": "\"0.20 additive points per goalkeeper shootout save\",",
+      "line": 1992,
+      "path": "src/reporting/ranking_repair_release.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "output[\"rating_minutes_reliability\"] = minutes / (minutes + 450.0)",
+      "line": 762,
+      "path": "src/simulation_engine.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "profiles[\"rating_minutes_reliability\"] = minutes / (minutes + 450.0)",
+      "line": 2094,
+      "path": "src/simulation_engine.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
+      "context": "\"reliability=minutes/(minutes+450)\"",
+      "line": 2325,
+      "path": "src/simulation_engine.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "assert \"Part IX: Unified tournament publication layer\" not in text",
+      "line": 69,
+      "path": "tests/test_final_summary_docx_v3.py",
+      "pattern": "stale-docx-appendix"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "assert \"minutes / (minutes + 450)\" not in active",
+      "line": 96,
+      "path": "tests/test_ranking_documentation_v3.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "assert \"minutes / (minutes + 450)\" in legacy",
+      "line": 97,
+      "path": "tests/test_ranking_documentation_v3.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "assert \"`0.20` per shootout save\" in legacy",
+      "line": 98,
+      "path": "tests/test_ranking_documentation_v3.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "\"minutes / (minutes + 450)\",",
+      "line": 578,
+      "path": "tests/test_ranking_repair_release_v3.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "\"shootout_save_points: 0.20\",",
+      "line": 579,
+      "path": "tests/test_ranking_repair_release_v3.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "\"within-position z-score is the active absolute global value\",",
+      "line": 581,
+      "path": "tests/test_ranking_repair_release_v3.py",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "\"one-sided defensive evidence lift is active\",",
+      "line": 582,
+      "path": "tests/test_ranking_repair_release_v3.py",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "\"SHOOTOUT_SAVE_POINTS = 0.20\\n\"",
+      "line": 22,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "\"impact = minutes / (minutes + 450)\\n\",",
+      "line": 23,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "'APPENDIX_TITLE = \"Part IX: Unified tournament publication layer\"\\n',",
+      "line": 29,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "stale-docx-appendix"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "'if \"Part IX: Unified tournament publication layer\" in text:\\n'",
+      "line": 34,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "stale-docx-appendix"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "\"The active score does not use within-position z-scores as absolute \"",
+      "line": 40,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "within-position-absolute"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "\"The former score used minutes / (minutes + 450).\\n\",",
+      "line": 47,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "'  \"0.20 additive points per goalkeeper shootout save\"\\n'",
+      "line": 59,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "'\"shootout_save_points\": 0.20,\\n',",
+      "line": 65,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "\"shootout save points: 0.20\\n\",",
+      "line": 70,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "'assert \"minutes / (minutes + 450)\" in historical_text\\n',",
+      "line": 75,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "'    pattern = r\"EXPOSURE_SATURATION_SHARE\"\\n'",
+      "line": 81,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "old-exposure-constants"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "'{\"context\": \"SHOOTOUT_SAVE_POINTS = 0.20\"}\\n',",
+      "line": 89,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "test-fixture",
+      "classification_reason": "test source or fixture",
+      "context": "(\"README.md\", \"within-position-absolute\")",
+      "line": 115,
+      "path": "tests/test_stale_content_scan.py",
+      "pattern": "within-position-absolute"
+    }
+  ],
+  "schema_version": "ranking-repair-stale-audit-3.0"
+}

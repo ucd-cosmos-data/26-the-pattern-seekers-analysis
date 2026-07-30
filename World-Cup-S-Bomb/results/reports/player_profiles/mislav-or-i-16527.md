@@ -1,76 +1,40 @@
-# Mislav Oršić Player Profile
+# Mislav Oršić — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Croatia
-- Tournament: 2022_World_Cup
-- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
-- Source functional role: Progressive Winger
-
-- Probabilistic role: Finishing/Progressive Attacker
-- Role entropy: 0.0000
-- Unified global rank: 140
-- Unified team rank: 11
-- Tournament Performance Score: 0.7038
-- Global rank v2: 37
-- Position rank v2: 16
-- Role rank v2: 13
-- Team rank v2: 5
-- Final player rating v2: 0.6612
-- Global rank: 73
-- Position rank: 37
-- Role rank: 33
-- Team rank: 3
-- Final player rating: 0.5462
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 187.3
-- Minutes reliability: 0.2939
+- Global Rank v3: 103
+- Team Rank v3: 9
+- Position Rank v3: 22
+- Role Rank v3: 18
+- Tournament Impact: 1.0328
+- Role Quality: 0.5097
+- Impact interval: [0.1765, 2.1430]
+- Rank band: 36–336
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 0
+- Actual assists: 2
+- Non-shootout xG: 0.2761
+- Non-shootout xA: 1.1109
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.2086 |
-| vaep_def_scaled | 0.4037 |
-| vaep_per_touch | 0.0009 |
-| open_play_xt_p90 | 0.0790 |
-| set_piece_xt_p90 | 0.0428 |
-| role_adjusted_value | 0.9629 |
-| completeness_score | 0.7261 |
-| off_ball_score | 0.5246 |
+| Attack | 1.0312 |
+| Defense | 0.0016 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5821 |
-| creation_score | 0.7022 |
-| finishing_score | 0.9604 |
-| pressing_score | 0.6113 |
-| defensive_score | 0.4849 |
-| ball_security_score | 0.3421 |
-| aerial_score | 0.1178 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8219 |
-| mean_defenders_within_3m | 0.4286 |
-| mean_defenders_within_5m | 0.9655 |
-| mean_nearest_defender_m | 5.9407 |
-| mean_passing_lane_availability | 0.7995 |
-| packing_index_mean | 0.7882 |
-| mean_space_received | 0.5471 |
-| network_pagerank | 0.0322 |
-| network_betweenness | 0.0307 |
-| network_entropy | 0.6240 |
-| build_up_involvement_ratio | 0.6393 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

@@ -1,76 +1,40 @@
-# Guido Rodríguez Player Profile
+# Guido Rodríguez — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Argentina
-- Tournament: 2022_World_Cup
-- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Deep Playmaker
-- Source functional role: Sweeper CB
-
-- Probabilistic role: Aerial/Progressive Centre-Back
-- Role entropy: 0.0009
-- Unified global rank: 518
-- Unified team rank: 19
-- Tournament Performance Score: 0.1152
-- Global rank v2: 363
-- Position rank v2: 53
-- Role rank v2: 13
-- Team rank v2: 15
-- Final player rating v2: 0.3137
-- Global rank: 441
-- Position rank: 49
-- Role rank: 35
-- Team rank: 16
-- Final player rating: 0.4296
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 56.8
-- Minutes reliability: 0.1120
+- Global Rank v3: 528
+- Team Rank v3: 19
+- Position Rank v3: 90
+- Role Rank v3: 39
+- Tournament Impact: -0.0088
+- Role Quality: 0.0582
+- Impact interval: [-0.0263, 0.0000]
+- Rank band: 441–530
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3023 |
-| vaep_def_scaled | 0.6645 |
-| vaep_per_touch | 0.0000 |
-| open_play_xt_p90 | 0.0082 |
-| set_piece_xt_p90 | 0.0011 |
-| role_adjusted_value | 0.0412 |
-| completeness_score | 0.4575 |
-| off_ball_score | 0.6428 |
+| Attack | 0.0086 |
+| Defense | -0.0173 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5635 |
-| creation_score | 0.3766 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.6286 |
-| defensive_score | 0.2854 |
-| ball_security_score | 0.3931 |
-| aerial_score | 0.6352 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8453 |
-| mean_defenders_within_3m | 0.1373 |
-| mean_defenders_within_5m | 0.2222 |
-| mean_nearest_defender_m | 8.6742 |
-| mean_passing_lane_availability | 0.9539 |
-| packing_index_mean | 0.4967 |
-| mean_space_received | 0.8712 |
-| network_pagerank | 0.1098 |
-| network_betweenness | 0.1952 |
-| network_entropy | 0.9292 |
-| build_up_involvement_ratio | 0.8000 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

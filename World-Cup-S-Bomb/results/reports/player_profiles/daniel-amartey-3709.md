@@ -1,76 +1,40 @@
-# Daniel Amartey Player Profile
+# Daniel Amartey — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Ghana
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Source functional role: Sweeper CB
-
-- Probabilistic role: Aerial/Secure Centre-Back
-- Role entropy: 0.0000
-- Unified global rank: 237
-- Unified team rank: 5
-- Tournament Performance Score: 0.5005
-- Global rank v2: 423
-- Position rank v2: 71
-- Role rank v2: 50
-- Team rank v2: 11
-- Final player rating v2: 0.2788
-- Global rank: 550
-- Position rank: 104
-- Role rank: 78
-- Team rank: 17
-- Final player rating: 0.3237
-- Ranking status: Ranked (300+ min)
-
-- Global ranking eligibility: eligible
 - Minutes: 301.2
-- Minutes reliability: 0.4010
+- Global Rank v3: 316
+- Team Rank v3: 7
+- Position Rank v3: 41
+- Role Rank v3: 29
+- Tournament Impact: 0.3147
+- Role Quality: 0.0916
+- Impact interval: [0.0070, 0.7967]
+- Rank band: 143–462
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0845
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3327 |
-| vaep_def_scaled | 0.0000 |
-| vaep_per_touch | -0.0021 |
-| open_play_xt_p90 | 0.0068 |
-| set_piece_xt_p90 | 0.0051 |
-| role_adjusted_value | 0.0424 |
-| completeness_score | 0.7206 |
-| off_ball_score | 0.4826 |
+| Attack | 0.0451 |
+| Defense | 0.2695 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5603 |
-| creation_score | 0.5840 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.3434 |
-| defensive_score | 0.5277 |
-| ball_security_score | 0.4725 |
-| aerial_score | 0.6698 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8770 |
-| mean_defenders_within_3m | 0.2372 |
-| mean_defenders_within_5m | 0.4515 |
-| mean_nearest_defender_m | 8.2685 |
-| mean_passing_lane_availability | 0.9393 |
-| packing_index_mean | 0.6403 |
-| mean_space_received | 0.8360 |
-| network_pagerank | 0.0979 |
-| network_betweenness | 0.1801 |
-| network_entropy | 0.8335 |
-| build_up_involvement_ratio | 0.7143 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

@@ -1,76 +1,40 @@
-# İlkay Gündoğan Player Profile
+# İlkay Gündoğan — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Germany
-- Tournament: 2022_World_Cup
-- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Linking Attacker
-- Source functional role: Holding Anchor
-
-- Probabilistic role: Secure/Pressing Midfielder
-- Role entropy: 0.0200
-- Unified global rank: 171
-- Unified team rank: 5
-- Tournament Performance Score: 0.6436
-- Global rank v2: 45
-- Position rank v2: 19
-- Role rank v2: 1
-- Team rank v2: 7
-- Final player rating v2: 0.6336
-- Global rank: 78
-- Position rank: 41
-- Role rank: 2
-- Team rank: 7
-- Final player rating: 0.5430
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 190.1
-- Minutes reliability: 0.2969
+- Global Rank v3: 100
+- Team Rank v3: 8
+- Position Rank v3: 104
+- Role Rank v3: 2
+- Tournament Impact: 1.0698
+- Role Quality: 0.2737
+- Impact interval: [0.1004, 2.5742]
+- Rank band: 24–391
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 1
+- Actual assists: 0
+- Non-shootout xG: 1.1290
+- Non-shootout xA: 0.0956
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.2687 |
-| vaep_def_scaled | 0.5442 |
-| vaep_per_touch | 0.0008 |
-| open_play_xt_p90 | 0.0366 |
-| set_piece_xt_p90 | 0.0413 |
-| role_adjusted_value | 0.4736 |
-| completeness_score | 0.8163 |
-| off_ball_score | 0.7074 |
+| Attack | 1.0802 |
+| Defense | -0.0104 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.7704 |
-| creation_score | 0.6123 |
-| finishing_score | 0.9165 |
-| pressing_score | 0.6461 |
-| defensive_score | 0.6500 |
-| ball_security_score | 0.7893 |
-| aerial_score | 0.3628 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9380 |
-| mean_defenders_within_3m | 0.3161 |
-| mean_defenders_within_5m | 0.7521 |
-| mean_nearest_defender_m | 6.0259 |
-| mean_passing_lane_availability | 0.9394 |
-| packing_index_mean | 0.7748 |
-| mean_space_received | 0.6083 |
-| network_pagerank | 0.0740 |
-| network_betweenness | 0.0452 |
-| network_entropy | 0.9451 |
-| build_up_involvement_ratio | 0.6739 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

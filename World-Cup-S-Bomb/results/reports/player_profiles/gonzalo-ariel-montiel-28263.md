@@ -1,76 +1,40 @@
-# Gonzalo Ariel Montiel Player Profile
+# Gonzalo Ariel Montiel — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Argentina
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Deep Playmaker
-- Source functional role: Deep Playmaker
-
-- Probabilistic role: Creative/Progressive Fullback
-- Role entropy: 0.0020
-- Unified global rank: 282
-- Unified team rank: 15
-- Tournament Performance Score: 0.4138
-- Global rank v2: 200
-- Position rank v2: 30
-- Role rank v2: 5
-- Team rank v2: 11
-- Final player rating v2: 0.4361
-- Global rank: 138
-- Position rank: 44
-- Role rank: 6
-- Team rank: 8
-- Final player rating: 0.5240
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 130.8
-- Minutes reliability: 0.2252
+- Global Rank v3: 416
+- Team Rank v3: 16
+- Position Rank v3: 75
+- Role Rank v3: 21
+- Tournament Impact: 0.1311
+- Role Quality: 0.1651
+- Impact interval: [0.0000, 0.3049]
+- Rank band: 263–472
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0206
+- Non-shootout xA: 0.2137
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.0000 |
-| vaep_def_scaled | 0.7373 |
-| vaep_per_touch | -0.0007 |
-| open_play_xt_p90 | 0.0288 |
-| set_piece_xt_p90 | 0.0160 |
-| role_adjusted_value | 0.9440 |
-| completeness_score | 0.6295 |
-| off_ball_score | 0.4526 |
+| Attack | 0.2389 |
+| Defense | -0.1079 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5725 |
-| creation_score | 0.6211 |
-| finishing_score | 0.9323 |
-| pressing_score | 0.4349 |
-| defensive_score | 0.5361 |
-| ball_security_score | 0.5491 |
-| aerial_score | 0.5916 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8139 |
-| mean_defenders_within_3m | 0.2915 |
-| mean_defenders_within_5m | 0.5022 |
-| mean_nearest_defender_m | 8.6959 |
-| mean_passing_lane_availability | 0.9462 |
-| packing_index_mean | 0.4709 |
-| mean_space_received | 0.7526 |
-| network_pagerank | 0.0369 |
-| network_betweenness | 0.0167 |
-| network_entropy | 0.9118 |
-| build_up_involvement_ratio | 0.6923 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

@@ -5,9 +5,9 @@
     "selected_k": 16,
     "selected_covariance_type": "tied",
     "bootstrap_iterations": 200,
-    "bootstrap_ari_median": 0.6259683225154202,
-    "bootstrap_ari_p05": 0.5113410563073265,
-    "pca_explained_variance": 0.7366895044638274
+    "bootstrap_ari_median": 0.6036598225005755,
+    "bootstrap_ari_p05": 0.5142039370497995,
+    "pca_explained_variance": 0.7366500751764506
   },
   "decisions": {
     "incumbent_rankings_retained": false,

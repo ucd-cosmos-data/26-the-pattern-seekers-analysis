@@ -1,21 +1,21 @@
 Global Rank,Team Rank,Player,Team,Position Group,Tournament Performance Score
-4,1,Joško Gvardiol,Croatia,CB,0.997329
-5,2,Mateo Kovačić,Croatia,CM,0.995523
-6,3,Luka Modrić,Croatia,CM,0.995311
-19,4,Dominik Livaković,Croatia,GK,0.967704
-25,5,Ivan Perišić,Croatia,AM,0.955821
-31,6,Marcelo Brozović,Croatia,DM,0.944635
-36,7,Dejan Lovren,Croatia,CB,0.936293
-91,8,Borna Sosa,Croatia,FB,0.804356
-111,9,Josip Juranović,Croatia,FB,0.757699
-136,10,Andrej Kramarić,Croatia,AM,0.707909
-140,11,Mislav Oršić,Croatia,AM,0.703831
-155,12,Marko Livaja,Croatia,FW,0.667879
-215,13,Mario Pašalić,Croatia,AM,0.556199
-225,14,Bruno Petković,Croatia,FW,0.518791
-243,15,Borna Barišić,Croatia,FB,0.485192
-245,16,Lovro Majer,Croatia,AM,0.483122
-344,17,Nikola Vlašić,Croatia,AM,0.318038
-537,18,Josip Stanišić,Croatia,FB,0.102774
-546,19,Josip Šutalo,Croatia,CB,0.096988
-567,20,Ante Budimir,Croatia,FW,0.084173
+4,1,Ivan Perišić,Croatia,Attacking Midfield/Wing,0.4651489963
+23,2,Andrej Kramarić,Croatia,Attacking Midfield/Wing,0.2958766142
+26,3,Mateo Kovačić,Croatia,Central/Wide Midfield,0.2855071843
+31,4,Bruno Petković,Croatia,Forward,0.2729609931
+51,5,Marko Livaja,Croatia,Forward,0.2316351847
+59,6,Luka Modrić,Croatia,Central/Wide Midfield,0.2137802629
+83,7,Dominik Livaković,Croatia,Goalkeeper,0.169589926
+87,8,Lovro Majer,Croatia,Attacking Midfield/Wing,0.1647921344
+94,9,Josip Juranović,Croatia,Fullback/Wingback,0.1574531684
+109,10,Mislav Oršić,Croatia,Attacking Midfield/Wing,0.1447582797
+123,11,Marcelo Brozović,Croatia,Defensive Midfield,0.132349581
+143,12,Nikola Vlašić,Croatia,Attacking Midfield/Wing,0.1190641467
+183,13,Borna Sosa,Croatia,Fullback/Wingback,0.09975775538
+203,14,Dejan Lovren,Croatia,Center Back,0.091675913
+270,15,Joško Gvardiol,Croatia,Center Back,0.06946177272
+271,16,Mario Pašalić,Croatia,Attacking Midfield/Wing,0.06896036919
+327,17,Ante Budimir,Croatia,Forward,0.05436979429
+454,18,Josip Stanišić,Croatia,Fullback/Wingback,0.02732361222
+488,19,Borna Barišić,Croatia,Fullback/Wingback,0.02321284668
+581,20,Josip Šutalo,Croatia,Center Back,0.005359978575

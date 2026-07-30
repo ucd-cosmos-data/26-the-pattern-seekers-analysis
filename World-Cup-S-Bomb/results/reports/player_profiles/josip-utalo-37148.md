@@ -1,76 +1,40 @@
-# Josip Šutalo Player Profile
+# Josip Šutalo — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Croatia
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Source functional role: Sweeper CB
-
-- Probabilistic role: Aerial/Secure Centre-Back
-- Role entropy: 0.0000
-- Unified global rank: 546
-- Unified team rank: 19
-- Tournament Performance Score: 0.0970
-- Global rank v2: 519
-- Position rank v2: 96
-- Role rank v2: 69
-- Team rank v2: 19
-- Final player rating v2: 0.1867
-- Global rank: 507
-- Position rank: 79
-- Role rank: 56
-- Team rank: 19
-- Final player rating: 0.4043
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 96.2
-- Minutes reliability: 0.1761
+- Global Rank v3: 549
+- Team Rank v3: 19
+- Position Rank v3: 70
+- Role Rank v3: 50
+- Tournament Impact: -0.0617
+- Role Quality: 0.0799
+- Impact interval: [-0.1850, 0.0000]
+- Rank band: 457–552
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3537 |
-| vaep_def_scaled | 0.6278 |
-| vaep_per_touch | -0.0006 |
-| open_play_xt_p90 | 0.0016 |
-| set_piece_xt_p90 | 0.0002 |
-| role_adjusted_value | 0.0093 |
-| completeness_score | 0.4933 |
-| off_ball_score | 0.4284 |
+| Attack | -0.0624 |
+| Defense | 0.0007 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.3924 |
-| creation_score | 0.3720 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.2526 |
-| defensive_score | 0.2469 |
-| ball_security_score | 0.8158 |
-| aerial_score | 0.4741 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8990 |
-| mean_defenders_within_3m | 0.1124 |
-| mean_defenders_within_5m | 0.1966 |
-| mean_nearest_defender_m | 11.0795 |
-| mean_passing_lane_availability | 0.9875 |
-| packing_index_mean | 0.4382 |
-| mean_space_received | 0.9130 |
-| network_pagerank | 0.1176 |
-| network_betweenness | 0.3333 |
-| network_entropy | 0.8570 |
-| build_up_involvement_ratio | 0.7600 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

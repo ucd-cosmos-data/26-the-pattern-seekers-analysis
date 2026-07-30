@@ -1,76 +1,40 @@
-# Silvan Widmer Player Profile
+# Silvan Widmer — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Switzerland
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Source functional role: Attacking Wingback
-
-- Probabilistic role: Defensive/Pressing Fullback
-- Role entropy: 0.2202
-- Unified global rank: 133
-- Unified team rank: 4
-- Tournament Performance Score: 0.7200
-- Global rank v2: 181
-- Position rank v2: 25
-- Role rank v2: 21
-- Team rank v2: 5
-- Final player rating v2: 0.4494
-- Global rank: 135
-- Position rank: 43
-- Role rank: 34
-- Team rank: 4
-- Final player rating: 0.5248
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 281.9
-- Minutes reliability: 0.3851
+- Global Rank v3: 93
+- Team Rank v3: 4
+- Position Rank v3: 15
+- Role Rank v3: 12
+- Tournament Impact: 1.1077
+- Role Quality: 0.2268
+- Impact interval: [0.2639, 2.3927]
+- Rank band: 26–296
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 0.0512
+- Non-shootout xA: 0.9248
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.5310 |
-| vaep_def_scaled | 0.6772 |
-| vaep_per_touch | 0.0012 |
-| open_play_xt_p90 | 0.0137 |
-| set_piece_xt_p90 | 0.0253 |
-| role_adjusted_value | 0.0863 |
-| completeness_score | 0.7469 |
-| off_ball_score | 0.4713 |
+| Attack | 1.1706 |
+| Defense | -0.0629 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.7225 |
-| creation_score | 0.8170 |
-| finishing_score | 0.3817 |
-| pressing_score | 0.6169 |
-| defensive_score | 0.6274 |
-| ball_security_score | 0.4003 |
-| aerial_score | 0.5146 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8228 |
-| mean_defenders_within_3m | 0.3206 |
-| mean_defenders_within_5m | 0.5766 |
-| mean_nearest_defender_m | 8.0929 |
-| mean_passing_lane_availability | 0.9010 |
-| packing_index_mean | 0.8158 |
-| mean_space_received | 0.7155 |
-| network_pagerank | 0.1114 |
-| network_betweenness | 0.2932 |
-| network_entropy | 0.8870 |
-| build_up_involvement_ratio | 0.7500 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

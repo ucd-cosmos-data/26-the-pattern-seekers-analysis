@@ -1,76 +1,40 @@
-# Jordan Veretout Player Profile
+# Jordan Veretout — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: France
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Holding Anchor
-- Source functional role: Holding Anchor
-
-- Probabilistic role: Secure/Pressing Midfielder
-- Role entropy: 0.2463
-- Unified global rank: 534
-- Unified team rank: 20
-- Tournament Performance Score: 0.1047
-- Global rank v2: 471
-- Position rank v2: 42
-- Role rank v2: 51
-- Team rank v2: 18
-- Final player rating v2: 0.2397
-- Global rank: 378
-- Position rank: 55
-- Role rank: 16
-- Team rank: 18
-- Final player rating: 0.4504
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 62.7
-- Minutes reliability: 0.1223
+- Global Rank v3: 504
+- Team Rank v3: 19
+- Position Rank v3: 27
+- Role Rank v3: 6
+- Tournament Impact: 0.0179
+- Role Quality: 0.2418
+- Impact interval: [0.0000, 0.0536]
+- Rank band: 408–490
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.2550 |
-| vaep_def_scaled | 0.4633 |
-| vaep_per_touch | 0.0002 |
-| open_play_xt_p90 | 0.0026 |
-| set_piece_xt_p90 | 0.0001 |
-| role_adjusted_value | 0.0450 |
-| completeness_score | 0.4049 |
-| off_ball_score | 0.4966 |
+| Attack | 0.0287 |
+| Defense | -0.0108 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.2517 |
-| creation_score | 0.2106 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.3742 |
-| defensive_score | 0.3547 |
-| ball_security_score | 0.5281 |
-| aerial_score | 0.5838 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8983 |
-| mean_defenders_within_3m | 0.3491 |
-| mean_defenders_within_5m | 0.6981 |
-| mean_nearest_defender_m | 5.9531 |
-| mean_passing_lane_availability | 0.9429 |
-| packing_index_mean | 0.3962 |
-| mean_space_received | 0.6212 |
-| network_pagerank | 0.0515 |
-| network_betweenness | 0.0095 |
-| network_entropy | 0.8664 |
-| build_up_involvement_ratio | 0.6000 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

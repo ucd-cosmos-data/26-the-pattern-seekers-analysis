@@ -1,76 +1,40 @@
-# Ethan Ampadu Player Profile
+# Ethan Ampadu — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Wales
-- Tournament: 2022_World_Cup
-- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
-- Source functional role: Holding Anchor
-
-- Probabilistic role: Secure/Pressing Midfielder
-- Role entropy: 0.0011
-- Unified global rank: 254
-- Unified team rank: 6
-- Tournament Performance Score: 0.4614
-- Global rank v2: 391
-- Position rank v2: 58
-- Role rank v2: 40
-- Team rank v2: 7
-- Final player rating v2: 0.3010
-- Global rank: 486
-- Position rank: 72
-- Role rank: 46
-- Team rank: 14
-- Final player rating: 0.4142
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 265.6
-- Minutes reliability: 0.3711
+- Global Rank v3: 448
+- Team Rank v3: 12
+- Position Rank v3: 77
+- Role Rank v3: 53
+- Tournament Impact: 0.0909
+- Role Quality: 0.0895
+- Impact interval: [-0.0292, 0.3047]
+- Rank band: 280–533
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0138
+- Non-shootout xA: 0.0660
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.2059 |
-| vaep_def_scaled | 0.5494 |
-| vaep_per_touch | -0.0004 |
-| open_play_xt_p90 | 0.0236 |
-| set_piece_xt_p90 | 0.0170 |
-| role_adjusted_value | 0.1636 |
-| completeness_score | 0.7374 |
-| off_ball_score | 0.5100 |
+| Attack | 0.0490 |
+| Defense | 0.0419 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.7154 |
-| creation_score | 0.6071 |
-| finishing_score | 0.3614 |
-| pressing_score | 0.3953 |
-| defensive_score | 0.7246 |
-| ball_security_score | 0.3672 |
-| aerial_score | 0.4992 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9180 |
-| mean_defenders_within_3m | 0.4444 |
-| mean_defenders_within_5m | 0.8116 |
-| mean_nearest_defender_m | 5.8233 |
-| mean_passing_lane_availability | 0.8747 |
-| packing_index_mean | 0.7899 |
-| mean_space_received | 0.5571 |
-| network_pagerank | 0.0897 |
-| network_betweenness | 0.0857 |
-| network_entropy | 0.9008 |
-| build_up_involvement_ratio | 0.7033 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

@@ -1,76 +1,40 @@
-# Celso Borges Mora Player Profile
+# Celso Borges Mora — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Costa Rica
-- Tournament: 2022_World_Cup
-- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
-- Source functional role: Holding Anchor
-
-- Probabilistic role: Secure/Pressing Midfielder
-- Role entropy: 0.0072
-- Unified global rank: 256
-- Unified team rank: 5
-- Tournament Performance Score: 0.4599
-- Global rank v2: 532
-- Position rank v2: 87
-- Role rank v2: 60
-- Team rank v2: 13
-- Final player rating v2: 0.1641
-- Global rank: 541
-- Position rank: 89
-- Role rank: 60
-- Team rank: 16
-- Final player rating: 0.3742
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 260.0
-- Minutes reliability: 0.3662
+- Global Rank v3: 521
+- Team Rank v3: 13
+- Position Rank v3: 83
+- Role Rank v3: 57
+- Tournament Impact: -0.0045
+- Role Quality: 0.0833
+- Impact interval: [-0.0766, 0.0719]
+- Rank band: 398–547
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0378
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.1450 |
-| vaep_def_scaled | 0.5179 |
-| vaep_per_touch | -0.0008 |
-| open_play_xt_p90 | 0.0069 |
-| set_piece_xt_p90 | 0.0020 |
-| role_adjusted_value | 0.0554 |
-| completeness_score | 0.6715 |
-| off_ball_score | 0.4993 |
+| Attack | -0.0341 |
+| Defense | 0.0296 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4406 |
-| creation_score | 0.4821 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.4026 |
-| defensive_score | 0.6618 |
-| ball_security_score | 0.6874 |
-| aerial_score | 0.6060 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9229 |
-| mean_defenders_within_3m | 0.5284 |
-| mean_defenders_within_5m | 0.9313 |
-| mean_nearest_defender_m | 5.4171 |
-| mean_passing_lane_availability | 0.9216 |
-| packing_index_mean | 0.6985 |
-| mean_space_received | 0.5635 |
-| network_pagerank | 0.0926 |
-| network_betweenness | 0.2320 |
-| network_entropy | 0.8963 |
-| build_up_involvement_ratio | 0.6744 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

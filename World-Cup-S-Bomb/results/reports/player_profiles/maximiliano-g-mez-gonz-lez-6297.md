@@ -1,76 +1,40 @@
-# Maximiliano Gómez González Player Profile
+# Maximiliano Gómez González — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Uruguay
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
-- Source functional role: Target Forward / Penalty-Box Anchor
-
-- Probabilistic role: Finishing/Aerial/Secure Forward
-- Role entropy: 0.1302
-- Unified global rank: 579
-- Unified team rank: 17
-- Tournament Performance Score: 0.0726
-- Global rank v2: 270
-- Position rank v2: 62
-- Role rank v2: 19
-- Team rank v2: 8
-- Final player rating v2: 0.3738
-- Global rank: 259
-- Position rank: 45
-- Role rank: 12
-- Team rank: 12
-- Final player rating: 0.4869
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 48.9
-- Minutes reliability: 0.0980
+- Global Rank v3: 363
+- Team Rank v3: 10
+- Position Rank v3: 23
+- Role Rank v3: 9
+- Tournament Impact: 0.2109
+- Role Quality: 0.7079
+- Impact interval: [0.0000, 0.5063]
+- Rank band: 208–506
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0778
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.4512 |
-| vaep_def_scaled | 0.3602 |
-| vaep_per_touch | 0.0101 |
-| open_play_xt_p90 | 0.0153 |
-| set_piece_xt_p90 | -0.0518 |
-| role_adjusted_value | 0.3836 |
-| completeness_score | 0.4015 |
-| off_ball_score | 0.4256 |
+| Attack | 0.2007 |
+| Defense | 0.0102 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.3403 |
-| creation_score | 0.1356 |
-| finishing_score | 0.6948 |
-| pressing_score | 0.2098 |
-| defensive_score | 0.2334 |
-| ball_security_score | 0.4255 |
-| aerial_score | 0.8671 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9697 |
-| mean_defenders_within_3m | 0.6875 |
-| mean_defenders_within_5m | 1.1875 |
-| mean_nearest_defender_m | 9.8455 |
-| mean_passing_lane_availability | 0.8619 |
-| packing_index_mean | 0.7188 |
-| mean_space_received | 0.4674 |
-| network_pagerank | 0.0217 |
-| network_betweenness | 0.0000 |
-| network_entropy | 1.0000 |
-| build_up_involvement_ratio | 0.7000 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

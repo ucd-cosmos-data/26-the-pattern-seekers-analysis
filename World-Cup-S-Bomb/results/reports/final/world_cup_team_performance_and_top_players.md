@@ -1,767 +1,197 @@
-# 2022 FIFA World Cup Player Ranking Report
+# 2022 FIFA World Cup — Player Ranking Final Summary
 
-## Executive summary
+Active release: `ranking-repair-v3.0-qatar-2022` (**PASS — promoted all passing v3 components**).
 
-This report consolidates **32 national teams** and **593 eligible rated players** (outfield 45+ minutes; goalkeepers 90+). It uses StatsBomb events, lineups, minutes, and coverage-qualified 360 freeze frames. It does not use optical tracking, external ratings, or player-name adjustments.
+The ranking publishes three different answers. **Tournament Impact** is the signed total contribution used for global and team ordering. **Role Quality** is a once-shrunk posterior rate used for position and role comparisons. **Uncertainty** is a match-bootstrap interval and rank band; it is not another minutes penalty.
 
-The position-aware tournament rankings are stored under `results/reports/ranking/`. They add formal 360 groups while preserving the source position and role detail.
+Regulation and extra-time evidence uses periods 1–4. Penalty-shootout events use period 5 and remain outside ordinary goals, xG, xA, xT, VAEP, and outfield impact.
 
-## Global top 10 players - unified tournament rating
+## Global outfield leaders
 
-| Global Rank | Team Rank | Player Name | Team | Position Group 360 | Functional Role | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 1 | Lionel Andrés Messi Cuccittini | Argentina | AM | Progressive Winger | 0.9999 |
-| 2 | 1 | Kylian Mbappé Lottin | France | FW | Progressive Winger | 0.9996 |
-| 3 | 2 | Theo Bernard François Hernández | France | FB | Attacking Wingback | 0.9981 |
-| 4 | 1 | Joško Gvardiol | Croatia | CB | Ball-Playing Centre-Back | 0.9973 |
-| 5 | 2 | Mateo Kovačić | Croatia | CM | Deep Playmaker / Metronome | 0.9955 |
-| 6 | 3 | Luka Modrić | Croatia | CM | Deep Playmaker / Metronome | 0.9953 |
-| 7 | 1 | Rodrigo Hernández Cascante | Spain | CB | Ball-Playing Centre-Back | 0.9936 |
-| 8 | 1 | Jude Bellingham | England | DM | Box-to-Box / Engine Midfielder | 0.9912 |
-| 9 | 1 | Frenkie de Jong | Netherlands | DM | Holding Anchor | 0.9909 |
-| 10 | 1 | Bruno Miguel Borges Fernandes | Portugal | AM | Progressive Winger | 0.9865 |
-
-## Global top five goalkeepers — tournament ranking v2
-
-| Gk Rank V2 | Player Name | Team | Gk Rating V2 |
-|---|---|---|---|
-| 1 | Dominik Livaković | Croatia | 1.0000 |
-| 2 | Damián Emiliano Martínez | Argentina | 0.5971 |
-| 3 | Yassine Bounou | Morocco | 0.5876 |
-| 4 | Wojciech Szczęsny | Poland | 0.4394 |
-| 5 | Unai Simón Mendibil | Spain | 0.3417 |
-
-The active contribution layer is `role_aware_fallback`. The experimental attention challenger remains available but affects rankings only when it passes its match-disjoint metric gate.
-
-## How to read the player rating
-
-The preserved V5 contribution score uses the development-gated baseline VAEP feature set and grouped ElasticNet offense/defense heads with explicit role weights, VAEP/touch, open-play and set-piece-aware xT, sample-adjusted completeness, coverage-qualified off-ball value, and xD-style defensive disruption. Positive ElasticNet calibration selects the composite weights with team-disjoint folds, followed by minutes/(minutes+450) position-prior shrinkage.
-
-The tournament ranking v2 adds explicit goals, xG, shots, xA, chance creation, progression, possession, defending, and off-ball components normalized within `position_group_360`. A capped, general role-based finishing treatment corrects the structural penalty on goal-centric forwards; it never checks player names.
-
-Goalkeepers use a separate tournament-v2 matrix led by a match-disjoint PSxG-GA proxy, reliability-shrunk save rates, penalty performance, box command, sweeping, distribution under pressure, and an explicit shootout-impact term. Their dedicated goalkeeper order is mapped into the unified table through a finite-sample Blom empirical-quantile bridge against the outfield score distribution. This preserves goalkeeper order without turning the maximum of a 32-player cohort into an automatic global podium place. Missing 360 evidence remains missing, and role labels never award rating points.
-
-## General player summary
-
-### Overall leaders
-
-| Global Rank V2 | Player Name | Team | Position Group 360 | Functional Role | Final Player Rating V2 |
-|---|---|---|---|---|---|
-| 1 | Lionel Andrés Messi Cuccittini | Argentina | AM | Progressive Winger | 1.0000 |
-| 2 | Kylian Mbappé Lottin | France | FW | Progressive Winger | 0.9389 |
-| 3 | Bruno Miguel Borges Fernandes | Portugal | AM | Progressive Winger | 0.8365 |
-| 4 | Robert Lewandowski | Poland | FW | Target Forward / Penalty-Box Anchor | 0.8227 |
-| 5 | Christian Pulisic | United States | AM | Progressive Winger | 0.7847 |
-| 6 | Mehdi Taremi | Iran | FW | Target Forward | 0.7779 |
-| 7 | Harry Kane | England | FW | Target Forward | 0.7777 |
-| 8 | Mateo Kovačić | Croatia | CM | Deep Playmaker / Metronome | 0.7730 |
-| 10 | Luka Modrić | Croatia | CM | Deep Playmaker / Metronome | 0.7648 |
-| 11 | Antoine Griezmann | France | AM | Hybrid Playmaker / Roaming Creator | 0.7607 |
-| 12 | Ángel Fabián Di María Hernández | Argentina | AM | Progressive Winger | 0.7554 |
-| 13 | Olivier Giroud | France | FW | Target Forward / Penalty-Box Anchor | 0.7453 |
-| 14 | Richarlison de Andrade | Brazil | FW | Pressing Forward | 0.7381 |
-| 18 | Memphis Depay | Netherlands | FW | Target Forward | 0.7234 |
-| 20 | Julián Álvarez | Argentina | FW | Pressing Forward | 0.7086 |
-| 22 | Theo Bernard François Hernández | France | FB | Attacking Wingback | 0.6969 |
-| 24 | Cristiano Ronaldo dos Santos Aveiro | Portugal | FW | Target Forward | 0.6923 |
-| 27 | Vinícius José Paixão de Oliveira Júnior | Brazil | AM | Progressive Winger | 0.6809 |
-| 29 | Cody Mathès Gakpo | Netherlands | AM | Progressive Winger | 0.6788 |
-| 30 | Hakim Ziyech | Morocco | AM | Deep Playmaker | 0.6748 |
-
-### Position-group leaders
-
-| Position Group 360 | Position Rank V2 | Player Name | Team | Functional Role | Final Player Rating V2 |
-|---|---|---|---|---|---|
-| AM | 1 | Lionel Andrés Messi Cuccittini | Argentina | Progressive Winger | 1.0000 |
-| AM | 2 | Bruno Miguel Borges Fernandes | Portugal | Progressive Winger | 0.8365 |
-| AM | 3 | Christian Pulisic | United States | Progressive Winger | 0.7847 |
-| AM | 4 | Neymar da Silva Santos Junior | Brazil | Progressive Winger | 0.7702 |
-| AM | 5 | Antoine Griezmann | France | Hybrid Playmaker / Roaming Creator | 0.7607 |
-| CB | 1 | Rodrigo Hernández Cascante | Spain | Ball-Playing Centre-Back | 0.6520 |
-| CB | 2 | Ibrahima Konaté | France | Ball-Playing Centre-Back | 0.6300 |
-| CB | 3 | Joško Gvardiol | Croatia | Ball-Playing Centre-Back | 0.6128 |
-| CB | 4 | Harry Maguire | England | Sweeper CB | 0.5924 |
-| CB | 5 | Thiago Emiliano da Silva | Brazil | Ball-Playing Centre-Back | 0.5571 |
-| CM | 1 | Mateo Kovačić | Croatia | Deep Playmaker / Metronome | 0.7730 |
-| CM | 2 | Luka Modrić | Croatia | Deep Playmaker / Metronome | 0.7648 |
-| CM | 3 | Pedro González López | Spain | Holding Anchor | 0.6630 |
-| CM | 4 | Alexis Mac Allister | Argentina | Ball-Winner | 0.6482 |
-| CM | 5 | Christian Dannemann Eriksen | Denmark | Progressive Winger | 0.6217 |
-| DM | 1 | Jude Bellingham | England | Box-to-Box / Engine Midfielder | 0.6702 |
-| DM | 2 | Frenkie de Jong | Netherlands | Holding Anchor | 0.6481 |
-| DM | 3 | Rodrigo Bentancur Colmán | Uruguay | Box-to-Box / Engine Midfielder | 0.6246 |
-| DM | 4 | Enzo Fernandez | Argentina | Holding Anchor | 0.5957 |
-| DM | 5 | Rodrigo Javier De Paul | Argentina | Deep Playmaker | 0.5941 |
-| FB | 1 | Theo Bernard François Hernández | France | Attacking Wingback | 0.6969 |
-| FB | 2 | Joshua Kimmich | Germany | Attacking Wingback | 0.6896 |
-| FB | 3 | David Raum | Germany | Attacking Wingback | 0.6543 |
-| FB | 4 | Jordi Alba Ramos | Spain | Attacking Wingback | 0.6251 |
-| FB | 5 | Alistair Johnston | Canada | Attacking Wingback | 0.6040 |
-| FW | 1 | Kylian Mbappé Lottin | France | Progressive Winger | 0.9389 |
-| FW | 2 | Robert Lewandowski | Poland | Target Forward / Penalty-Box Anchor | 0.8227 |
-| FW | 3 | Mehdi Taremi | Iran | Target Forward | 0.7779 |
-| FW | 4 | Harry Kane | England | Target Forward | 0.7777 |
-| FW | 5 | Olivier Giroud | France | Target Forward / Penalty-Box Anchor | 0.7453 |
-
-### Largest upward rank movements
-
-_No eligible observations._
-
-### Largest downward rank movements
-
-_No eligible observations._
-
-Rank movement compares the prior global ordering with tournament ranking v2 ordering; it does not compare raw rating magnitudes.
-
-## All-team overview
-
-| Team | Eligible Players | Observed Players | Top Ranked Player | Top Global Rank | Total Xt | Pressure Resistance | Mean Creation | Mean Defensive | Mean Ball Security |
+| Rank | Player Name | Team | Position Group | Minutes Played | Tournament Impact | Role Quality | Uncertainty Low V3 | Uncertainty High V3 | Uncertainty Status V3 |
 |---|---|---|---|---|---|---|---|---|---|
-| Argentina | 20 | 20 | Lionel Andrés Messi Cuccittini | 1 | 4.0073 | 0.7447 | 0.4948 | 0.5032 | 0.5631 |
-| Australia | 17 | 17 | Craig Goodwin | 216 | 1.1032 | 0.6496 | 0.4821 | 0.5524 | 0.4073 |
-| Belgium | 17 | 17 | Kevin De Bruyne | 93 | 1.4404 | 0.7696 | 0.5216 | 0.4606 | 0.5504 |
-| Brazil | 25 | 24 | Thiago Emiliano da Silva | 23 | 3.8085 | 0.7291 | 0.5582 | 0.5207 | 0.5394 |
-| Cameroon | 18 | 17 | Jean-Charles Castelletto | 42 | 1.0760 | 0.6971 | 0.5205 | 0.5087 | 0.5478 |
-| Canada | 16 | 16 | Alistair Johnston | 43 | 1.7913 | 0.7118 | 0.5417 | 0.5160 | 0.5611 |
-| Costa Rica | 17 | 17 | Kendall Jamaal Waston Manley | 86 | 0.4184 | 0.6509 | 0.3933 | 0.5727 | 0.5415 |
-| Croatia | 20 | 20 | Joško Gvardiol | 4 | 3.7160 | 0.7430 | 0.5431 | 0.5524 | 0.4884 |
-| Denmark | 18 | 18 | Andreas Christensen | 61 | 1.7188 | 0.7086 | 0.5094 | 0.5011 | 0.4851 |
-| Ecuador | 16 | 16 | Pervis Josué Estupiñán Tenorio | 53 | 1.0181 | 0.6954 | 0.4626 | 0.5420 | 0.5067 |
-| England | 19 | 19 | Jude Bellingham | 8 | 2.5219 | 0.7556 | 0.5374 | 0.4677 | 0.6180 |
-| France | 22 | 21 | Kylian Mbappé Lottin | 2 | 3.9248 | 0.6863 | 0.5247 | 0.5475 | 0.5195 |
-| Germany | 17 | 17 | Joshua Kimmich | 15 | 2.4318 | 0.7731 | 0.6119 | 0.5340 | 0.5662 |
-| Ghana | 17 | 17 | Mohamed Salisu | 119 | 0.9360 | 0.6763 | 0.4424 | 0.5817 | 0.5040 |
-| Iran | 20 | 19 | Mehdi Taremi | 32 | 1.2461 | 0.6687 | 0.5135 | 0.5081 | 0.4805 |
-| Japan | 22 | 22 | Wataru Endo | 74 | 1.5415 | 0.6415 | 0.5311 | 0.5298 | 0.3974 |
-| Mexico | 18 | 18 | Luis Gerardo Chávez Magallón | 107 | 1.3586 | 0.6241 | 0.5345 | 0.5386 | 0.4373 |
-| Morocco | 23 | 22 | Achraf Hakimi Mouh | 14 | 2.4078 | 0.6771 | 0.4573 | 0.5519 | 0.4718 |
-| Netherlands | 18 | 18 | Frenkie de Jong | 9 | 2.0451 | 0.7135 | 0.5206 | 0.4882 | 0.5096 |
-| Poland | 16 | 16 | Wojciech Szczęsny | 67 | 1.1292 | 0.6818 | 0.4694 | 0.5129 | 0.5278 |
-| Portugal | 22 | 22 | Bruno Miguel Borges Fernandes | 10 | 2.6573 | 0.7085 | 0.5171 | 0.4842 | 0.5829 |
-| Qatar | 15 | 14 | Abdelkarim Hassan Al Haj Fadlalla | 101 | 0.7960 | 0.6995 | 0.4849 | 0.4605 | 0.5492 |
-| Saudi Arabia | 20 | 20 | Salem Mohammed Al Dawsari | 54 | 1.0502 | 0.6235 | 0.4610 | 0.5524 | 0.4362 |
-| Senegal | 18 | 18 | Kalidou Koulibaly | 29 | 1.6919 | 0.6875 | 0.5320 | 0.5050 | 0.5330 |
-| Serbia | 16 | 16 | Nikola Milenković | 72 | 1.3908 | 0.6740 | 0.4786 | 0.4911 | 0.4913 |
-| South Korea | 19 | 19 | Moon-Hwan Kim | 76 | 1.8015 | 0.6712 | 0.5134 | 0.5248 | 0.5144 |
-| Spain | 20 | 20 | Rodrigo Hernández Cascante | 7 | 2.5669 | 0.8268 | 0.4769 | 0.4885 | 0.5700 |
-| Switzerland | 19 | 18 | Manuel Obafemi Akanji | 46 | 1.4531 | 0.7318 | 0.5231 | 0.4384 | 0.5397 |
-| Tunisia | 18 | 18 | Ali Abdi | 95 | 1.2810 | 0.5839 | 0.5512 | 0.5960 | 0.3517 |
-| United States | 18 | 18 | Christian Pulisic | 24 | 2.0784 | 0.7900 | 0.5144 | 0.4811 | 0.5368 |
-| Uruguay | 17 | 17 | Mathías Olivera Miramontes | 21 | 1.4720 | 0.6460 | 0.5435 | 0.5093 | 0.4344 |
-| Wales | 15 | 14 | Chris Mepham | 113 | 0.8960 | 0.6856 | 0.5076 | 0.5235 | 0.4787 |
+| 1 | Lionel Andrés Messi Cuccittini | Argentina | Attacking Midfield/Wing | 733.9000 | 7.7476 | 0.6520 | 3.1135 | 13.5334 | moderate |
+| 2 | Kylian Mbappé Lottin | France | Forward | 654.3000 | 6.5782 | 0.6996 | 2.5973 | 11.7683 | wide |
+| 3 | Jamal Musiala | Germany | Attacking Midfield/Wing | 274.0667 | 4.1561 | 0.7486 | 0.9115 | 8.2791 | wide |
+| 4 | Ivan Perišić | Croatia | Attacking Midfield/Wing | 686.8167 | 3.5483 | 0.4896 | 1.1067 | 6.1664 | wide |
+| 5 | Olivier Giroud | France | Forward | 432.6167 | 3.4045 | 0.7311 | 0.8893 | 6.3457 | wide |
+| 6 | Robert Lewandowski | Poland | Forward | 389.7500 | 3.3782 | 0.6082 | 0.7418 | 6.4745 | wide |
+| 7 | Julián Álvarez | Argentina | Forward | 485.2333 | 3.2864 | 0.5528 | 0.8162 | 6.3346 | wide |
+| 8 | Richarlison de Andrade | Brazil | Forward | 328.2500 | 3.1357 | 0.7874 | 0.7524 | 5.9369 | wide |
+| 9 | Lautaro Javier Martínez | Argentina | Forward | 273.0000 | 2.9942 | 0.8178 | 1.0337 | 5.7569 | wide |
+| 10 | Antoine Griezmann | France | Attacking Midfield/Wing | 586.0500 | 2.8675 | 0.3831 | 0.8781 | 5.5553 | wide |
+| 11 | Christian Pulisic | United States | Attacking Midfield/Wing | 336.3167 | 2.8660 | 0.5936 | 0.6429 | 5.5382 | wide |
+| 12 | Ismaïla Sarr | Senegal | Attacking Midfield/Wing | 365.2000 | 2.8574 | 0.5774 | 0.8141 | 5.3609 | wide |
+| 13 | Neymar da Silva Santos Junior | Brazil | Attacking Midfield/Wing | 281.4833 | 2.7969 | 0.4576 | 0.0000 | 5.6008 | wide |
+| 14 | Ángel Fabián Di María Hernández | Argentina | Central/Wide Midfield | 304.8167 | 2.7820 | 0.5513 | 0.6589 | 5.7593 | wide |
+| 15 | Daniel Olmo Carvajal | Spain | Attacking Midfield/Wing | 388.2500 | 2.7667 | 0.5581 | 0.3531 | 5.2043 | wide |
+| 16 | Harry Kane | England | Forward | 421.5167 | 2.7640 | 0.5425 | 0.7696 | 5.1034 | wide |
+| 17 | Cristiano Ronaldo dos Santos Aveiro | Portugal | Forward | 302.8000 | 2.7349 | 0.6671 | 0.4498 | 5.8942 | wide |
+| 18 | Raphael Dias Belloli | Brazil | Attacking Midfield/Wing | 330.4500 | 2.6050 | 0.5227 | 0.3730 | 5.1769 | wide |
+| 19 | Breel-Donald Embolo | Switzerland | Forward | 330.1500 | 2.5406 | 0.5788 | 0.2764 | 5.6260 | wide |
+| 20 | Serge Gnabry | Germany | Attacking Midfield/Wing | 273.3333 | 2.3362 | 0.5282 | 0.1739 | 4.8463 | wide |
 
-# Team-by-team summary
+## 300+ minute outfield leaders
 
-Scope note: every team top five below uses the unified tournament score and includes the ranked team-main goalkeeper when that score places the goalkeeper in the top five. Backup goalkeepers remain unranked.
+| Global Rank V3 | Player Name | Team | Position Group | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|
+| 1 | Lionel Andrés Messi Cuccittini | Argentina | Attacking Midfield/Wing | 733.9000 | 7.7476 | 0.6520 | moderate |
+| 2 | Kylian Mbappé Lottin | France | Forward | 654.3000 | 6.5782 | 0.6996 | wide |
+| 4 | Ivan Perišić | Croatia | Attacking Midfield/Wing | 686.8167 | 3.5483 | 0.4896 | wide |
+| 5 | Olivier Giroud | France | Forward | 432.6167 | 3.4045 | 0.7311 | wide |
+| 6 | Robert Lewandowski | Poland | Forward | 389.7500 | 3.3782 | 0.6082 | wide |
+| 7 | Julián Álvarez | Argentina | Forward | 485.2333 | 3.2864 | 0.5528 | wide |
+| 8 | Richarlison de Andrade | Brazil | Forward | 328.2500 | 3.1357 | 0.7874 | wide |
+| 10 | Antoine Griezmann | France | Attacking Midfield/Wing | 586.0500 | 2.8675 | 0.3831 | wide |
+| 11 | Christian Pulisic | United States | Attacking Midfield/Wing | 336.3167 | 2.8660 | 0.5936 | wide |
+| 12 | Ismaïla Sarr | Senegal | Attacking Midfield/Wing | 365.2000 | 2.8574 | 0.5774 | wide |
+| 14 | Ángel Fabián Di María Hernández | Argentina | Central/Wide Midfield | 304.8167 | 2.7820 | 0.5513 | wide |
+| 15 | Daniel Olmo Carvajal | Spain | Attacking Midfield/Wing | 388.2500 | 2.7667 | 0.5581 | wide |
+| 16 | Harry Kane | England | Forward | 421.5167 | 2.7640 | 0.5425 | wide |
+| 17 | Cristiano Ronaldo dos Santos Aveiro | Portugal | Forward | 302.8000 | 2.7349 | 0.6671 | wide |
+| 18 | Raphael Dias Belloli | Brazil | Attacking Midfield/Wing | 330.4500 | 2.6050 | 0.5227 | wide |
+| 19 | Breel-Donald Embolo | Switzerland | Forward | 330.1500 | 2.5406 | 0.5788 | wide |
+| 21 | Vinícius José Paixão de Oliveira Júnior | Brazil | Central/Wide Midfield | 306.5833 | 2.2644 | 0.5584 | wide |
+| 22 | Andrej Kramarić | Croatia | Attacking Midfield/Wing | 478.4333 | 2.2193 | 0.4675 | wide |
+| 25 | Mateo Kovačić | Croatia | Central/Wide Midfield | 649.9167 | 2.1379 | 0.2806 | wide |
+| 27 | Memphis Depay | Netherlands | Forward | 315.5833 | 2.0676 | 0.5340 | wide |
 
-## Argentina
+## Below-300-minute high-impact players
 
-- Total xT created: 4.0073
-- Total xA created: 6.7228
-- Pass completion under pressure: 0.7447
-- Mean defensive hull area: 647.6227
-- Mean defensive density: 0.0258
+These rows are ordered by total Tournament Impact, while the uncertainty columns expose their smaller sample.
 
-### Top five unified player summary
+| Global Rank V3 | Player Name | Team | Position Group | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Bootstrap Rank Best V3 | Bootstrap Rank Worst V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|---|
+| 3 | Jamal Musiala | Germany | Attacking Midfield/Wing | 274.0667 | 4.1561 | 0.7486 | 1 | 119 | wide |
+| 9 | Lautaro Javier Martínez | Argentina | Forward | 273.0000 | 2.9942 | 0.8178 | 3 | 110 | wide |
+| 13 | Neymar da Silva Santos Junior | Brazil | Attacking Midfield/Wing | 281.4833 | 2.7969 | 0.4576 | 3 | 449 | wide |
+| 20 | Serge Gnabry | Germany | Attacking Midfield/Wing | 273.3333 | 2.3362 | 0.5282 | 5 | 340 | wide |
+| 23 | Niclas Füllkrug | Germany | Forward | 92.5833 | 2.1753 | 0.9095 | 6 | 295 | wide |
+| 24 | Gonçalo Matias Ramos | Portugal | Forward | 171.8833 | 2.1551 | 0.8245 | 3 | 372 | wide |
+| 26 | Enner Remberto Valencia Lastra | Ecuador | Attacking Midfield/Wing | 261.9167 | 2.0719 | 0.5665 | 4 | 436 | wide |
+| 28 | Álvaro Borja Morata Martín | Spain | Forward | 200.8333 | 2.0473 | 0.7900 | 10 | 206 | wide |
+| 29 | Bruno Petković | Croatia | Forward | 252.7333 | 2.0394 | 0.5711 | 11 | 187 | wide |
+| 30 | Marco Asensio Willemsen | Spain | Forward | 236.9667 | 1.9510 | 0.5528 | 10 | 267 | wide |
+| 32 | Salem Mohammed Al Dawsari | Saudi Arabia | Central/Wide Midfield | 298.5500 | 1.9257 | 0.4899 | 7 | 260 | wide |
+| 33 | Aleksandar Mitrović | Serbia | Forward | 279.4167 | 1.9041 | 0.7149 | 6 | 466 | wide |
+| 37 | Phil Foden | England | Attacking Midfield/Wing | 275.5333 | 1.8910 | 0.5025 | 8 | 307 | wide |
+| 42 | Rodrygo Silva de Goes | Brazil | Central/Wide Midfield | 199.3000 | 1.7845 | 0.5761 | 16 | 204 | wide |
+| 43 | Romelu Lukaku Menama | Belgium | Forward | 63.5167 | 1.7552 | 0.8949 | 4 | 466 | wide |
 
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
+## Position leaders by Role Quality
+
+| Position Group | Position Rank V3 | Player Name | Team | Role Quality V3 | Tournament Impact Raw V3 | Uncertainty Status V3 |
 |---|---|---|---|---|---|---|
-| 1 | 1 | Lionel Andrés Messi Cuccittini | AM | Progressive Winger | 733.9000 | 0.9999 |
-| 2 | 11 | Rodrigo Javier De Paul | DM | Deep Playmaker | 634.7333 | 0.9857 |
-| 3 | 13 | Enzo Fernandez | DM | Holding Anchor | 601.1167 | 0.9843 |
-| 4 | 26 | Damián Emiliano Martínez | GK | Goalkeeper | 733.9000 | 0.9558 |
-| 5 | 27 | Julián Álvarez | FW | Pressing Forward | 485.2333 | 0.9558 |
+| Attacking Midfield/Wing | 1 | Jamal Musiala | Germany | 0.7486 | 4.1561 | wide |
+| Attacking Midfield/Wing | 2 | Karim Ansarifard | Iran | 0.6940 | 0.1768 | wide |
+| Attacking Midfield/Wing | 3 | Lionel Andrés Messi Cuccittini | Argentina | 0.6520 | 7.7476 | moderate |
+| Center Back | 1 | Hiroki Ito | Japan | 0.2623 | 0.0683 | wide |
+| Center Back | 2 | Jackson Gabriel Porozo Vernaza | Ecuador | 0.1915 | 0.3443 | wide |
+| Center Back | 3 | Pedro Miguel Correia | Qatar | 0.1703 | 0.4642 | wide |
+| Central/Wide Midfield | 1 | Ilias Chair | Morocco | 0.4812 | 0.0747 | wide |
+| Central/Wide Midfield | 2 | Noah Okafor | Switzerland | 0.4740 | 0.1943 | wide |
+| Central/Wide Midfield | 3 | Arkadiusz Milik | Poland | 0.4710 | 0.3030 | wide |
+| Defensive Midfield | 1 | Bruno Guimarães Rodriguez Moura | Brazil | 0.5197 | 0.8082 | wide |
+| Defensive Midfield | 2 | Leon Goretzka | Germany | 0.3608 | 0.7417 | wide |
+| Defensive Midfield | 3 | Lucas Tolentino Coelho de Lima | Brazil | 0.3434 | 1.2980 | wide |
+| Forward | 1 | Niclas Füllkrug | Germany | 0.9095 | 2.1753 | wide |
+| Forward | 2 | Romelu Lukaku Menama | Belgium | 0.8949 | 1.7552 | wide |
+| Forward | 3 | Andreas Evald Cornelius | Denmark | 0.8340 | 1.6080 | wide |
+| Fullback/Wingback | 1 | Richie Laryea | Canada | 0.4199 | 0.6283 | wide |
+| Fullback/Wingback | 2 | Nemanja Radonjić | Serbia | 0.4069 | 0.1280 | wide |
+| Fullback/Wingback | 3 | DeAndre Yedlin | United States | 0.4040 | 0.0694 | wide |
 
+## Role leaders by Role Quality
 
-## Australia
+| Functional Role | Role Rank V3 | Player Name | Team | Role Quality V3 | Tournament Impact Raw V3 |
+|---|---|---|---|---|---|
+| Target Forward / Penalty-Box Anchor | 1 | Niclas Füllkrug | Germany | 0.9095 | 2.1753 |
+| Pressing Forward | 1 | Kai Havertz | Germany | 0.8259 | 1.6210 |
+| Target Forward | 1 | Gonçalo Matias Ramos | Portugal | 0.8245 | 2.1551 |
+| Progressive Winger | 1 | Callum Wilson | England | 0.7634 | 0.6385 |
+| Hybrid Playmaker / Roaming Creator | 1 | Jamal Musiala | Germany | 0.7486 | 4.1561 |
+| Ball-Winner | 1 | Karim Ansarifard | Iran | 0.6940 | 0.1768 |
+| Deep Playmaker | 1 | Bruno Guimarães Rodriguez Moura | Brazil | 0.5197 | 0.8082 |
+| Wide Creator | 1 | Zakaria Aboukhlal | Morocco | 0.5154 | 0.5938 |
+| Box-to-Box / Engine Midfielder | 1 | Marcus Thuram | France | 0.4541 | 0.4459 |
+| Attacking Wingback | 1 | Richie Laryea | Canada | 0.4199 | 0.6283 |
+| Holding Anchor | 1 | Leon Goretzka | Germany | 0.3608 | 0.7417 |
+| Pressing Attacker | 1 | Orbelín Pineda Alvarado | Mexico | 0.3192 | 0.5461 |
+| Deep Playmaker / Metronome | 1 | Weston McKennie | United States | 0.3179 | 1.0405 |
+| Linking Attacker | 1 | Mario Pašalić | Croatia | 0.2848 | 0.4377 |
+| Ball-Playing Centre-Back | 1 | Hiroki Ito | Japan | 0.2623 | 0.0683 |
+| Ball-Winning Midfielder | 1 | Ali Al Hassan | Saudi Arabia | 0.2576 | 0.0173 |
+| Holding / Controlling Midfielder | 1 | Luis Gerardo Chávez Magallón | Mexico | 0.2497 | 0.6152 |
+| Defensive Centre-Back | 1 | Jackson Gabriel Porozo Vernaza | Ecuador | 0.1915 | 0.3443 |
+| Two-Way Fullback | 1 | Thilo Kehrer | Germany | 0.1719 | 0.0965 |
+| Sweeper CB | 1 | Jean-Charles Castelletto | Cameroon | 0.1505 | 0.8016 |
 
-- Total xT created: 1.1032
-- Total xA created: 1.3333
-- Pass completion under pressure: 0.6496
-- Mean defensive hull area: 507.7118
-- Mean defensive density: 0.5985
+## Team leaders
 
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
+| Team | Team Rank | Player Name | Position Group | Global Rank | Tournament Performance Score | Uncertainty Status V3 |
 |---|---|---|---|---|---|---|
-| 1 | 216 | Craig Goodwin | AM | Wide Creator | 241.7000 | 0.5496 |
-| 2 | 218 | Harry Souttar | CB | Sweeper CB | 386.9167 | 0.5406 |
-| 3 | 219 | Fran Karačić | FB | Attacking Wingback | 100.3667 | 0.5379 |
-| 4 | 246 | Aziz Eraltay Behich | FB | Wide Creator | 386.9167 | 0.4766 |
-| 5 | 248 | Mathew Ryan | GK | Goalkeeper | 386.9167 | 0.4727 |
-
-
-## Belgium
-
-- Total xT created: 1.4404
-- Total xA created: 2.5562
-- Pass completion under pressure: 0.7696
-- Mean defensive hull area: 640.6988
-- Mean defensive density: 0.0190
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 93 | Kevin De Bruyne | AM | Progressive Winger | 284.2667 | 0.7940 |
-| 2 | 121 | Thibaut Courtois | GK | Goalkeeper | 284.2667 | 0.7420 |
-| 3 | 272 | Thomas Meunier | FB | Attacking Wingback | 217.3667 | 0.4318 |
-| 4 | 273 | Axel Witsel | DM | Holding Anchor | 284.2667 | 0.4295 |
-| 5 | 293 | Michy Batshuayi Tunga | FW | Target Forward | 151.9000 | 0.3987 |
-
-
-## Brazil
-
-- Total xT created: 3.8085
-- Total xA created: 6.8525
-- Pass completion under pressure: 0.7291
-- Mean defensive hull area: 579.4863
-- Mean defensive density: 0.0211
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 23 | Thiago Emiliano da Silva | CB | Ball-Playing Centre-Back | 409.0667 | 0.9586 |
-| 2 | 30 | Marcos Aoás Corrêa | CB | Ball-Playing Centre-Back | 455.0167 | 0.9462 |
-| 3 | 40 | Richarlison de Andrade | FW | Pressing Forward | 328.2500 | 0.9313 |
-| 4 | 45 | Neymar da Silva Santos Junior | AM | Progressive Winger | 281.4833 | 0.9264 |
-| 5 | 58 | Alex Sandro Lobo Silva | FB | Attacking Wingback | 199.5333 | 0.9029 |
-
-
-## Cameroon
-
-- Total xT created: 1.0760
-- Total xA created: 1.8107
-- Pass completion under pressure: 0.6971
-- Mean defensive hull area: 518.5576
-- Mean defensive density: 0.0268
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 42 | Jean-Charles Castelletto | CB | Sweeper CB | 192.4500 | 0.9291 |
-| 2 | 124 | Nouhou Tolo | FB | Wide Creator | 292.5500 | 0.7399 |
-| 3 | 180 | André-Frank Zambo Anguissa | DM | Box-to-Box / Engine Midfielder | 276.6500 | 0.6274 |
-| 4 | 200 | Jean-Eric Maxim Choupo-Moting | FW | Target Forward | 269.9833 | 0.5731 |
-| 5 | 208 | Vincent Paté Aboubakar | FW | Target Forward | 164.2333 | 0.5652 |
-
-
-## Canada
-
-- Total xT created: 1.7913
-- Total xA created: 2.0764
-- Pass completion under pressure: 0.7118
-- Mean defensive hull area: 569.4089
-- Mean defensive density: 0.0243
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 43 | Alistair Johnston | FB | Attacking Wingback | 284.9667 | 0.9284 |
-| 2 | 108 | Atiba Hutchinson | DM | Holding Anchor | 164.2000 | 0.7635 |
-| 3 | 116 | Alphonso Davies | CM | Box-to-Box / Engine Midfielder | 284.9667 | 0.7500 |
-| 4 | 209 | Tajon Buchanan | AM | Progressive Winger | 270.0833 | 0.5622 |
-| 5 | 255 | Steven de Sousa Vitoria | CB | Sweeper CB | 284.9667 | 0.4600 |
-
-
-## Costa Rica
-
-- Total xT created: 0.4184
-- Total xA created: 0.4012
-- Pass completion under pressure: 0.6509
-- Mean defensive hull area: 510.3123
-- Mean defensive density: 0.0278
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 86 | Kendall Jamaal Waston Manley | CB | Sweeper CB | 249.4500 | 0.8398 |
-| 2 | 173 | Óscar Esau Duarte Gaitán | CB | Sweeper CB | 294.4500 | 0.6410 |
-| 3 | 205 | Francisco Javier Calvo Quesada | CB | Sweeper CB | 194.4167 | 0.5702 |
-| 4 | 231 | Juan Pablo Vargas Campos | CB | Sweeper CB | 100.0333 | 0.5049 |
-| 5 | 256 | Celso Borges Mora | DM | Holding Anchor | 260.0500 | 0.4599 |
-
-
-## Croatia
-
-- Total xT created: 3.7160
-- Total xA created: 5.6716
-- Pass completion under pressure: 0.7430
-- Mean defensive hull area: 480.9343
-- Mean defensive density: 0.0281
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 4 | Joško Gvardiol | CB | Ball-Playing Centre-Back | 720.2833 | 0.9973 |
-| 2 | 5 | Mateo Kovačić | CM | Deep Playmaker / Metronome | 649.9167 | 0.9955 |
-| 3 | 6 | Luka Modrić | CM | Deep Playmaker / Metronome | 672.6667 | 0.9953 |
-| 4 | 19 | Dominik Livaković | GK | Goalkeeper | 720.2833 | 0.9677 |
-| 5 | 25 | Ivan Perišić | AM | Wide Creator | 686.8167 | 0.9558 |
-
-
-## Denmark
-
-- Total xT created: 1.7188
-- Total xA created: 2.1738
-- Pass completion under pressure: 0.7086
-- Mean defensive hull area: 439.0378
-- Mean defensive density: 0.0278
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 61 | Andreas Christensen | CB | Ball-Playing Centre-Back | 290.8000 | 0.8923 |
-| 2 | 83 | Christian Dannemann Eriksen | CM | Progressive Winger | 290.8000 | 0.8472 |
-| 3 | 102 | Joachim Andersen | CB | Sweeper CB | 290.8000 | 0.7842 |
-| 4 | 194 | Rasmus Nissen Kristensen | FB | Attacking Wingback | 234.2167 | 0.5867 |
-| 5 | 224 | Simon Thorup Kjær | CB | Ball-Playing Centre-Back | 63.9833 | 0.5210 |
-
-
-## Ecuador
-
-- Total xT created: 1.0181
-- Total xA created: 1.1631
-- Pass completion under pressure: 0.6954
-- Mean defensive hull area: 440.9376
-- Mean defensive density: 0.0261
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 53 | Pervis Josué Estupiñán Tenorio | FB | Attacking Wingback | 288.3833 | 0.9153 |
-| 2 | 125 | Piero Martín Hincapié Reyna | CB | Sweeper CB | 288.3833 | 0.7398 |
-| 3 | 150 | Enner Remberto Valencia Lastra | AM | Target Forward | 261.9167 | 0.6777 |
-| 4 | 156 | Angelo Smit Preciado Quiñónez | FB | Deep Playmaker | 276.2167 | 0.6662 |
-| 5 | 213 | Jackson Gabriel Porozo Vernaza | CB | Defensive Centre-Back | 108.3000 | 0.5589 |
-
-
-## England
-
-- Total xT created: 2.5219
-- Total xA created: 4.8703
-- Pass completion under pressure: 0.7556
-- Mean defensive hull area: 482.2597
-- Mean defensive density: 0.0278
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 8 | Jude Bellingham | DM | Box-to-Box / Engine Midfielder | 441.7667 | 0.9912 |
-| 2 | 12 | Harry Maguire | CB | Sweeper CB | 453.7167 | 0.9848 |
-| 3 | 33 | Luke Shaw | FB | Attacking Wingback | 457.1667 | 0.9418 |
-| 4 | 49 | Harry Kane | FW | Target Forward | 421.5167 | 0.9238 |
-| 5 | 56 | John Stones | CB | Ball-Playing Centre-Back | 464.8833 | 0.9075 |
-
-
-## France
-
-- Total xT created: 3.9248
-- Total xA created: 8.4503
-- Pass completion under pressure: 0.6863
-- Mean defensive hull area: 524.0383
-- Mean defensive density: 0.2887
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 2 | Kylian Mbappé Lottin | FW | Progressive Winger | 654.3000 | 0.9996 |
-| 2 | 3 | Theo Bernard François Hernández | FB | Attacking Wingback | 548.5000 | 0.9981 |
-| 3 | 16 | Aurélien Djani Tchouaméni | DM | Holding / Controlling Midfielder | 662.2167 | 0.9798 |
-| 4 | 17 | Ibrahima Konaté | CB | Ball-Playing Centre-Back | 330.8167 | 0.9791 |
-| 5 | 18 | Adrien Rabiot | DM | Holding Anchor | 529.2500 | 0.9715 |
-
-
-## Germany
-
-- Total xT created: 2.4318
-- Total xA created: 6.0997
-- Pass completion under pressure: 0.7731
-- Mean defensive hull area: 489.2536
-- Mean defensive density: 0.0243
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 15 | Joshua Kimmich | FB | Attacking Wingback | 294.0000 | 0.9800 |
-| 2 | 34 | David Raum | FB | Attacking Wingback | 250.3000 | 0.9413 |
-| 3 | 75 | Serge Gnabry | AM | Progressive Winger | 273.3333 | 0.8624 |
-| 4 | 144 | Jamal Musiala | AM | Hybrid Playmaker / Roaming Creator | 274.0667 | 0.6966 |
-| 5 | 171 | İlkay Gündoğan | AM | Linking Attacker | 190.0500 | 0.6436 |
-
-
-## Ghana
-
-- Total xT created: 0.9360
-- Total xA created: 0.9937
-- Pass completion under pressure: 0.6763
-- Mean defensive hull area: 432.5226
-- Mean defensive density: 0.0269
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 119 | Mohamed Salisu | CB | Sweeper CB | 301.2000 | 0.7441 |
-| 2 | 137 | Thomas Teye Partey | DM | Holding Anchor | 301.2000 | 0.7064 |
-| 3 | 172 | Salis Abdul Samed | DM | Holding Anchor | 264.9500 | 0.6416 |
-| 4 | 197 | Tariq Lamptey | FB | Deep Playmaker | 112.2167 | 0.5788 |
-| 5 | 237 | Daniel Amartey | CB | Sweeper CB | 301.2000 | 0.5005 |
-
-
-## Iran
-
-- Total xT created: 1.2461
-- Total xA created: 2.6253
-- Pass completion under pressure: 0.6687
-- Mean defensive hull area: 460.4993
-- Mean defensive density: 0.0330
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 32 | Mehdi Taremi | FW | Target Forward | 305.1000 | 0.9440 |
-| 2 | 132 | Milad Mohammadi | FB | Wide Creator | 211.9833 | 0.7256 |
-| 3 | 160 | Ramin Rezaeian | FB | Attacking Wingback | 202.0167 | 0.6647 |
-| 4 | 162 | Morteza Pouraliganji | CB | Sweeper CB | 305.1000 | 0.6593 |
-| 5 | 249 | Saeid Ezatolahi Afagh | DM | Holding Anchor | 240.1500 | 0.4667 |
-
-
-## Japan
-
-- Total xT created: 1.5415
-- Total xA created: 2.4186
-- Pass completion under pressure: 0.6415
-- Mean defensive hull area: 501.4214
-- Mean defensive density: 0.0229
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 74 | Wataru Endo | DM | Box-to-Box / Engine Midfielder | 326.0167 | 0.8646 |
-| 2 | 115 | Kaoru Mitoma | FB | Attacking Wingback | 186.1167 | 0.7511 |
-| 3 | 118 | Takuma Asano | FW | Target Forward | 186.3500 | 0.7449 |
-| 4 | 129 | Maya Yoshida | CB | Sweeper CB | 412.5167 | 0.7302 |
-| 5 | 174 | Hidemasa Morita | DM | Box-to-Box / Engine Midfielder | 298.3667 | 0.6393 |
-
-
-## Mexico
-
-- Total xT created: 1.3586
-- Total xA created: 2.6085
-- Pass completion under pressure: 0.6241
-- Mean defensive hull area: 639.3089
-- Mean defensive density: 0.0298
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 107 | Luis Gerardo Chávez Magallón | DM | Holding / Controlling Midfielder | 291.5000 | 0.7668 |
-| 2 | 123 | Hirving Rodrigo Lozano Bahena | AM | Progressive Winger | 267.3167 | 0.7402 |
-| 3 | 127 | Edson Omar Álvarez Velázquez | DM | Box-to-Box / Engine Midfielder | 183.2333 | 0.7368 |
-| 4 | 163 | Héctor Alfredo Moreno Herrera | CB | Sweeper CB | 291.5000 | 0.6584 |
-| 5 | 223 | Jesús Daniel Gallardo Vasconcelos | FB | Wide Creator | 291.5000 | 0.5222 |
-
-
-## Morocco
-
-- Total xT created: 2.4078
-- Total xA created: 3.2076
-- Pass completion under pressure: 0.6771
-- Mean defensive hull area: 518.2011
-- Mean defensive density: 0.0225
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 14 | Achraf Hakimi Mouh | FB | Attacking Wingback | 660.8000 | 0.9816 |
-| 2 | 22 | Hakim Ziyech | AM | Deep Playmaker | 662.6333 | 0.9598 |
-| 3 | 44 | Yassine Bounou | GK | Goalkeeper | 603.1500 | 0.9281 |
-| 4 | 92 | Azzedine Ounahi | CM | Box-to-Box / Engine Midfielder | 589.2500 | 0.7969 |
-| 5 | 104 | Sofiane Boufal | AM | Progressive Winger | 476.6667 | 0.7737 |
-
-
-## Netherlands
-
-- Total xT created: 2.0451
-- Total xA created: 2.8899
-- Pass completion under pressure: 0.7135
-- Mean defensive hull area: 559.8047
-- Mean defensive density: 0.0575
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 9 | Frenkie de Jong | DM | Holding Anchor | 499.4500 | 0.9909 |
-| 2 | 38 | Cody Mathès Gakpo | AM | Progressive Winger | 460.2167 | 0.9337 |
-| 3 | 48 | Daley Blind | FB | Attacking Wingback | 452.4833 | 0.9242 |
-| 4 | 52 | Jurriën David Norman Timber | CB | Sweeper CB | 409.4000 | 0.9183 |
-| 5 | 68 | Memphis Depay | FW | Target Forward | 315.5833 | 0.8828 |
-
-
-## Poland
-
-- Total xT created: 1.1292
-- Total xA created: 1.5400
-- Pass completion under pressure: 0.6818
-- Mean defensive hull area: 457.5096
-- Mean defensive density: 0.0296
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 67 | Wojciech Szczęsny | GK | Goalkeeper | 389.7500 | 0.8837 |
-| 2 | 71 | Piotr Zieliński | CM | Holding Anchor | 344.4167 | 0.8728 |
-| 3 | 90 | Krystian Bielik | DM | Holding Anchor | 240.0167 | 0.8126 |
-| 4 | 109 | Robert Lewandowski | FW | Target Forward / Penalty-Box Anchor | 389.7500 | 0.7619 |
-| 5 | 128 | Grzegorz Krychowiak | DM | Box-to-Box / Engine Midfielder | 347.8833 | 0.7339 |
-
-
-## Portugal
-
-- Total xT created: 2.6573
-- Total xA created: 4.5349
-- Pass completion under pressure: 0.7085
-- Mean defensive hull area: 596.9005
-- Mean defensive density: 0.0206
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 10 | Bruno Miguel Borges Fernandes | AM | Progressive Winger | 384.9500 | 0.9865 |
-| 2 | 63 | Raphaël Adelino José Guerreiro | FB | Attacking Wingback | 303.6167 | 0.8906 |
-| 3 | 73 | Bernardo Mota Veiga de Carvalho e Silva | CM | Ball-Winner | 382.1000 | 0.8662 |
-| 4 | 82 | João Pedro Cavaco Cancelo | FB | Wide Creator | 344.5500 | 0.8478 |
-| 5 | 94 | João Félix Sequeira | AM | Ball-Winner | 340.2333 | 0.7935 |
-
-
-## Qatar
-
-- Total xT created: 0.7960
-- Total xA created: 1.1791
-- Pass completion under pressure: 0.6995
-- Mean defensive hull area: 451.6214
-- Mean defensive density: 0.0529
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 101 | Abdelkarim Hassan Al Haj Fadlalla | CB | Ball-Playing Centre-Back | 287.4000 | 0.7844 |
-| 2 | 112 | Boualem Khoukhi | CB | Sweeper CB | 287.4000 | 0.7552 |
-| 3 | 148 | Assim Omer Al Haj Madibo | DM | Holding Anchor | 159.8500 | 0.6792 |
-| 4 | 336 | Hassan Khalid Al Heidos | CM | Ball-Winner | 209.0833 | 0.3331 |
-| 5 | 349 | Akram Hassan Afif | FW | Progressive Winger | 287.4000 | 0.3146 |
-
-
-## Saudi Arabia
-
-- Total xT created: 1.0502
-- Total xA created: 1.2324
-- Pass completion under pressure: 0.6235
-- Mean defensive hull area: 480.3764
-- Mean defensive density: 0.0271
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 54 | Salem Mohammed Al Dawsari | AM | Progressive Winger | 298.5500 | 0.9144 |
-| 2 | 103 | Mohammed Khalil Al Owais | GK | Goalkeeper | 298.5500 | 0.7813 |
-| 3 | 152 | Abdulelah Al Amri | CB | Sweeper CB | 210.8167 | 0.6709 |
-| 4 | 178 | Saud Abdullah Abdul Hamid | FB | Attacking Wingback | 298.5500 | 0.6325 |
-| 5 | 222 | Hassan Mohammed Al-Tambakti | CB | Sweeper CB | 201.4667 | 0.5224 |
-
-
-## Senegal
-
-- Total xT created: 1.6919
-- Total xA created: 2.0598
-- Pass completion under pressure: 0.6875
-- Mean defensive hull area: 550.7399
-- Mean defensive density: 0.0216
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 29 | Kalidou Koulibaly | CB | Sweeper CB | 387.2833 | 0.9492 |
-| 2 | 62 | Youssouf Sabaly | FB | Attacking Wingback | 387.2833 | 0.8913 |
-| 3 | 99 | Pathé Ismaël Ciss | DM | Box-to-Box / Engine Midfielder | 151.1667 | 0.7866 |
-| 4 | 170 | Ismaïla Sarr | AM | Progressive Winger | 365.2000 | 0.6445 |
-| 5 | 206 | Ismail Jakobs | FB | Attacking Wingback | 296.4833 | 0.5691 |
-
-
-## Serbia
-
-- Total xT created: 1.3908
-- Total xA created: 2.0346
-- Pass completion under pressure: 0.6740
-- Mean defensive hull area: 611.0415
-- Mean defensive density: 0.0224
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 72 | Nikola Milenković | CB | Sweeper CB | 293.6500 | 0.8671 |
-| 2 | 89 | Aleksandar Mitrović | FW | Target Forward | 279.4167 | 0.8163 |
-| 3 | 97 | Strahinja Pavlović | CB | Ball-Playing Centre-Back | 252.8500 | 0.7873 |
-| 4 | 139 | Vanja Milinković Savić | GK | Goalkeeper | 293.6500 | 0.7039 |
-| 5 | 143 | Dušan Tadić | AM | Progressive Winger | 270.9333 | 0.6974 |
-
-
-## South Korea
-
-- Total xT created: 1.8015
-- Total xA created: 2.3972
-- Pass completion under pressure: 0.6712
-- Mean defensive hull area: 410.9954
-- Mean defensive density: 0.0297
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 76 | Moon-Hwan Kim | FB | Attacking Wingback | 389.6500 | 0.8602 |
-| 2 | 110 | Woo-Young Jung | DM | Holding Anchor | 317.9167 | 0.7606 |
-| 3 | 134 | Jin-Su Kim | FB | Attacking Wingback | 340.6833 | 0.7197 |
-| 4 | 161 | Min Jae Kim | CB | Sweeper CB | 283.4500 | 0.6640 |
-| 5 | 169 | Young-Gwon Kim | CB | Sweeper CB | 373.1833 | 0.6446 |
-
-
-## Spain
-
-- Total xT created: 2.5669
-- Total xA created: 2.7253
-- Pass completion under pressure: 0.8268
-- Mean defensive hull area: 501.6197
-- Mean defensive density: 0.0268
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 7 | Rodrigo Hernández Cascante | CB | Ball-Playing Centre-Back | 413.9500 | 0.9936 |
-| 2 | 37 | Jordi Alba Ramos | FB | Attacking Wingback | 270.7667 | 0.9352 |
-| 3 | 47 | Pedro González López | CM | Holding Anchor | 372.4000 | 0.9252 |
-| 4 | 55 | Sergio Busquets i Burgos | DM | Holding Anchor | 379.2833 | 0.9097 |
-| 5 | 64 | Daniel Olmo Carvajal | AM | Progressive Winger | 388.2500 | 0.8891 |
-
-
-## Switzerland
-
-- Total xT created: 1.4531
-- Total xA created: 4.1514
-- Pass completion under pressure: 0.7318
-- Mean defensive hull area: 558.4177
-- Mean defensive density: 0.0247
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 46 | Manuel Obafemi Akanji | CB | Ball-Playing Centre-Back | 386.5833 | 0.9258 |
-| 2 | 105 | Granit Xhaka | DM | Holding Anchor | 386.5833 | 0.7732 |
-| 3 | 106 | Breel-Donald Embolo | FW | Pressing Forward | 330.1500 | 0.7705 |
-| 4 | 133 | Silvan Widmer | FB | Attacking Wingback | 281.8500 | 0.7200 |
-| 5 | 153 | Xherdan Shaqiri | AM | Progressive Winger | 233.5833 | 0.6699 |
-
-
-## Tunisia
-
-- Total xT created: 1.2810
-- Total xA created: 1.9897
-- Pass completion under pressure: 0.5839
-- Mean defensive hull area: 396.7358
-- Mean defensive density: 0.0421
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 95 | Ali Abdi | FB | Attacking Wingback | 213.6333 | 0.7891 |
-| 2 | 98 | Montassar Omar Talbi | CB | Sweeper CB | 296.5667 | 0.7873 |
-| 3 | 130 | Aïssa Bilal Laïdouni | DM | Box-to-Box / Engine Midfielder | 257.2333 | 0.7276 |
-| 4 | 135 | Ellyes Joris Skhiri | DM | Box-to-Box / Engine Midfielder | 296.5667 | 0.7189 |
-| 5 | 199 | Yassine Meriah | CB | Sweeper CB | 296.5667 | 0.5743 |
-
-
-## United States
-
-- Total xT created: 2.0784
-- Total xA created: 3.2488
-- Pass completion under pressure: 0.7900
-- Mean defensive hull area: 451.8615
-- Mean defensive density: 0.0339
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 24 | Christian Pulisic | AM | Progressive Winger | 336.3167 | 0.9577 |
-| 2 | 57 | Tyler Adams | DM | Holding / Controlling Midfielder | 391.2000 | 0.9051 |
-| 3 | 81 | Sergino Dest | FB | Attacking Wingback | 307.5667 | 0.8482 |
-| 4 | 84 | Antonee Robinson | FB | Attacking Wingback | 386.2667 | 0.8426 |
-| 5 | 87 | Yunus Dimoara Musah | CM | Box-to-Box / Engine Midfielder | 364.8667 | 0.8376 |
-
-
-## Uruguay
-
-- Total xT created: 1.4720
-- Total xA created: 1.9893
-- Pass completion under pressure: 0.6460
-- Mean defensive hull area: 457.0204
-- Mean defensive density: 0.0260
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 21 | Mathías Olivera Miramontes | FB | Wide Creator | 263.6333 | 0.9647 |
-| 2 | 50 | José María Giménez de Vargas | CB | Sweeper CB | 298.0833 | 0.9232 |
-| 3 | 60 | Rodrigo Bentancur Colmán | DM | Box-to-Box / Engine Midfielder | 231.6667 | 0.8957 |
-| 4 | 69 | Federico Santiago Valverde Dipetta | DM | Holding Anchor | 298.0833 | 0.8811 |
-| 5 | 279 | Giorgian Daniel De Arrascaeta Benedetti | AM | Progressive Winger | 118.1000 | 0.4215 |
-
-
-## Wales
-
-- Total xT created: 0.8960
-- Total xA created: 1.2536
-- Pass completion under pressure: 0.6856
-- Mean defensive hull area: 599.2348
-- Mean defensive density: 0.0252
-
-### Top five unified player summary
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|
-| 1 | 113 | Chris Mepham | CB | Sweeper CB | 296.7167 | 0.7543 |
-| 2 | 207 | Neco Williams | FB | Wide Creator | 216.3833 | 0.5662 |
-| 3 | 210 | Gareth Frank Bale | FW | Target Forward | 247.7167 | 0.5613 |
-| 4 | 227 | Ben Davies | CB | Ball-Playing Centre-Back | 261.3333 | 0.5151 |
-| 5 | 247 | Joe Rodon | CB | Sweeper CB | 296.7167 | 0.4743 |
-
-
-## Interpretation boundary
-
-These rankings summarize performance in the 2022 tournament sample. They are not transfer valuations, causal estimates, medical assessments, or replacements for video and scouting review.
+| Argentina | 1 | Lionel Andrés Messi Cuccittini | Attacking Midfield/Wing | 1 | 1.0000 | moderate |
+| Australia | 1 | Mathew Leckie | Central/Wide Midfield | 119 | 0.1383 | wide |
+| Belgium | 1 | Romelu Lukaku Menama | Forward | 45 | 0.2368 | wide |
+| Brazil | 1 | Richarlison de Andrade | Forward | 8 | 0.4126 | wide |
+| Cameroon | 1 | Devis Rogers Epassy Mboka | Goalkeeper | 120 | 0.1381 | moderate |
+| Canada | 1 | Jonathan David | Forward | 49 | 0.2327 | wide |
+| Costa Rica | 1 | Keysher Fuller Spence | Fullback/Wingback | 142 | 0.1194 | wide |
+| Croatia | 1 | Ivan Perišić | Attacking Midfield/Wing | 4 | 0.4651 | wide |
+| Denmark | 1 | Andreas Evald Cornelius | Forward | 56 | 0.2180 | wide |
+| Ecuador | 1 | Enner Remberto Valencia Lastra | Attacking Midfield/Wing | 27 | 0.2771 | wide |
+| England | 1 | Harry Kane | Forward | 17 | 0.3653 | wide |
+| France | 1 | Kylian Mbappé Lottin | Forward | 2 | 0.8510 | wide |
+| Germany | 1 | Jamal Musiala | Attacking Midfield/Wing | 3 | 0.5426 | wide |
+| Ghana | 1 | Mohammed Kudus | Attacking Midfield/Wing | 70 | 0.1826 | wide |
+| Iran | 1 | Mehdi Taremi | Forward | 41 | 0.2492 | wide |
+| Japan | 1 | Takuma Asano | Forward | 105 | 0.1508 | wide |
+| Mexico | 1 | Henry Josué Martín Mex | Forward | 60 | 0.2078 | wide |
+| Morocco | 1 | Youssef En-Nesyri | Forward | 46 | 0.2367 | wide |
+| Netherlands | 1 | Memphis Depay | Forward | 29 | 0.2766 | wide |
+| Poland | 1 | Robert Lewandowski | Forward | 6 | 0.4435 | wide |
+| Portugal | 1 | Cristiano Ronaldo dos Santos Aveiro | Forward | 18 | 0.3616 | wide |
+| Qatar | 1 | Ismaeel Mohammad Mohammad | Fullback/Wingback | 140 | 0.1212 | wide |
+| Saudi Arabia | 1 | Mohammed Khalil Al Owais | Goalkeeper | 28 | 0.2766 | moderate |
+| Senegal | 1 | Ismaïla Sarr | Attacking Midfield/Wing | 13 | 0.3771 | wide |
+| Serbia | 1 | Aleksandar Mitrović | Forward | 35 | 0.2557 | wide |
+| South Korea | 1 | Heung-Min Son | Attacking Midfield/Wing | 48 | 0.2340 | wide |
+| Spain | 1 | Daniel Olmo Carvajal | Attacking Midfield/Wing | 16 | 0.3656 | wide |
+| Switzerland | 1 | Breel-Donald Embolo | Forward | 20 | 0.3368 | wide |
+| Tunisia | 1 | Issam Jebali | Forward | 67 | 0.1874 | wide |
+| United States | 1 | Christian Pulisic | Attacking Midfield/Wing | 12 | 0.3782 | wide |
+| Uruguay | 1 | Giorgian Daniel De Arrascaeta Benedetti | Central/Wide Midfield | 84 | 0.1693 | wide |
+| Wales | 1 | Kieffer Roberto Francisco Moore | Forward | 68 | 0.1870 | wide |
+
+## Dedicated goalkeeper leaders
+
+| Goalkeeper Rank V3 | Player Name | Team | Dedicated Goalkeeper Score V3 | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Goalkeeper Score Interval Low V3 | Goalkeeper Score Interval High V3 | Goalkeeper Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1.0000 | Wojciech Szczęsny | Poland | 0.6002 | 0.6669 | 0.0000 | 0.3931 | 0.6401 | moderate |
+| 2.0000 | Mohammed Khalil Al Owais | Saudi Arabia | 0.5912 | 0.6569 | 0.0000 | 0.4250 | 0.6081 | moderate |
+| 3.0000 | Matthew Charles Turner | United States | 0.5711 | 0.6346 | 0.0000 | 0.4357 | 0.6470 | moderate |
+| 4.0000 | Yassine Bounou | Morocco | 0.5696 | 0.6151 | 0.0160 | 0.4255 | 0.6247 | moderate |
+| 5.0000 | Dominik Livaković | Croatia | 0.5570 | 0.5967 | 0.0199 | 0.3598 | 0.5840 | moderate |
+| 6.0000 | Andries Noppert | Netherlands | 0.5409 | 0.6011 | 0.0000 | 0.4435 | 0.5712 | moderate |
+| 7.0000 | Devis Rogers Epassy Mboka | Cameroon | 0.5394 | 0.5994 | 0.0000 | 0.3584 | 0.6010 | moderate |
+| 8.0000 | Diogo Meireles Costa | Portugal | 0.5143 | 0.5714 | 0.0000 | 0.4009 | 0.5894 | moderate |
+| 9.0000 | Aymen Dahmen | Tunisia | 0.5127 | 0.5697 | 0.0000 | 0.3968 | 0.5556 | moderate |
+| 10.0000 | Shūichi Gonda | Japan | 0.5040 | 0.5600 | 0.0000 | 0.3797 | 0.5426 | moderate |
+| 11.0000 | Unai Simón Mendibil | Spain | 0.4890 | 0.5433 | 0.0000 | 0.3916 | 0.5627 | moderate |
+| 12.0000 | Kasper Schmeichel | Denmark | 0.4786 | 0.5318 | 0.0000 | 0.4350 | 0.5521 | moderate |
+| 13.0000 | Vanja Milinković Savić | Serbia | 0.4739 | 0.5265 | 0.0000 | 0.4123 | 0.5328 | moderate |
+| 14.0000 | Sergio Rochet Álvarez | Uruguay | 0.4717 | 0.5241 | 0.0000 | 0.3746 | 0.5616 | moderate |
+| 15.0000 | Thibaut Courtois | Belgium | 0.4604 | 0.5116 | 0.0000 | 0.3713 | 0.5202 | moderate |
+
+The dedicated goalkeeper order combines a 90% continuous allocation with a separate shootout contribution capped at 10%. `percentile_equivalent_placement` is used only when a unified publication placement is required; it is not measured absolute cross-position contribution.
+
+## Release gate and limitations
+
+Overall release decision: **PASS — promoted all passing v3 components**.
+
+- StatsBomb Open Data is event data, not continuous optical tracking.
+- 360 coverage is event-actor and match dependent; missing coverage remains missing rather than zero.
+- Goalkeeper cross-position publication uses an explicitly labelled percentile-equivalent placement because common-unit GK action values are not fully identified.
+- Tournament Impact describes Qatar 2022 only and is not a career or future-strength estimate.
+
+All rankings describe Qatar 2022 tournament evidence only. They are not career-strength, reputation, award, or future-performance rankings.

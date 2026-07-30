@@ -1,76 +1,40 @@
-# José María Giménez de Vargas Player Profile
+# José María Giménez de Vargas — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Uruguay
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Source functional role: Sweeper CB
-
-- Probabilistic role: Secure/Pressing Midfielder
-- Role entropy: 0.0858
-- Unified global rank: 50
-- Unified team rank: 2
-- Tournament Performance Score: 0.9232
-- Global rank v2: 125
-- Position rank v2: 10
-- Role rank v2: 3
-- Team rank v2: 5
-- Final player rating v2: 0.5047
-- Global rank: 163
-- Position rank: 2
-- Role rank: 2
-- Team rank: 6
-- Final player rating: 0.5158
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 298.1
-- Minutes reliability: 0.3985
+- Global Rank v3: 422
+- Team Rank v3: 12
+- Position Rank v3: 53
+- Role Rank v3: 39
+- Tournament Impact: 0.1180
+- Role Quality: 0.0870
+- Impact interval: [0.0140, 0.2569]
+- Rank band: 293–463
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.1294
+- Non-shootout xA: 0.0519
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 1.0000 |
-| vaep_def_scaled | 0.7742 |
-| vaep_per_touch | 0.0012 |
-| open_play_xt_p90 | 0.0122 |
-| set_piece_xt_p90 | 0.0138 |
-| role_adjusted_value | 0.3556 |
-| completeness_score | 0.6896 |
-| off_ball_score | 0.4736 |
+| Attack | 0.2244 |
+| Defense | -0.1064 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5388 |
-| creation_score | 0.6015 |
-| finishing_score | 0.4935 |
-| pressing_score | 0.3618 |
-| defensive_score | 0.6762 |
-| ball_security_score | 0.3784 |
-| aerial_score | 0.8513 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8705 |
-| mean_defenders_within_3m | 0.2449 |
-| mean_defenders_within_5m | 0.4348 |
-| mean_nearest_defender_m | 8.9336 |
-| mean_passing_lane_availability | 0.9444 |
-| packing_index_mean | 0.7025 |
-| mean_space_received | 0.8701 |
-| network_pagerank | 0.0921 |
-| network_betweenness | 0.1816 |
-| network_entropy | 0.8567 |
-| build_up_involvement_ratio | 0.6163 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

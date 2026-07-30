@@ -1,76 +1,40 @@
-# Sultan Abdullah Salim Al Ghannam Player Profile
+# Sultan Abdullah Salim Al Ghannam — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Saudi Arabia
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Source functional role: Attacking Wingback
-
-- Probabilistic role: Creative/Progressive Fullback
-- Role entropy: 0.0575
-- Unified global rank: 463
-- Unified team rank: 12
-- Tournament Performance Score: 0.1683
-- Global rank v2: 478
-- Position rank v2: 86
-- Role rank v2: 54
-- Team rank v2: 13
-- Final player rating v2: 0.2346
-- Global rank: 101
-- Position rank: 31
-- Role rank: 25
-- Team rank: 6
-- Final player rating: 0.5365
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 146.2
-- Minutes reliability: 0.2452
+- Global Rank v3: 252
+- Team Rank v3: 6
+- Position Rank v3: 29
+- Role Rank v3: 24
+- Tournament Impact: 0.4462
+- Role Quality: 0.1996
+- Impact interval: [0.0531, 0.9643]
+- Rank band: 113–427
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.2448
+- Non-shootout xA: 0.1015
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.6086 |
-| vaep_def_scaled | 0.7963 |
-| vaep_per_touch | 0.0031 |
-| open_play_xt_p90 | 0.0182 |
-| set_piece_xt_p90 | 0.0233 |
-| role_adjusted_value | 0.1347 |
-| completeness_score | 0.6068 |
-| off_ball_score | 0.3144 |
+| Attack | 0.4664 |
+| Defense | -0.0201 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4899 |
-| creation_score | 0.7044 |
-| finishing_score | 0.6026 |
-| pressing_score | 0.2562 |
-| defensive_score | 0.4748 |
-| ball_security_score | 0.1113 |
-| aerial_score | 0.1223 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8333 |
-| mean_defenders_within_3m | 0.4133 |
-| mean_defenders_within_5m | 0.7600 |
-| mean_nearest_defender_m | 6.8122 |
-| mean_passing_lane_availability | 0.8309 |
-| packing_index_mean | 0.6200 |
-| mean_space_received | 0.6253 |
-| network_pagerank | 0.0514 |
-| network_betweenness | 0.0923 |
-| network_entropy | 0.6309 |
-| build_up_involvement_ratio | 0.5909 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

@@ -1,77 +1,39 @@
-# Canada Team Profile
+# Canada — Qatar 2022 Team Profile
 
-## Threat creation
+Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
 
-- Total xT created: 1.7913
-- Total xA created: 2.0764
-- Mean creation score: 0.5417
-- Mean creation score (300+ comparison): not available
-- Mean xT/90: 0.0516
+## Team leaders
 
-## Defensive compactness
+| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 49 | Jonathan David | Forward | Target Forward | 201.6167 | 1.7233 | 0.5884 | wide |
+| 2 | 53 | Tajon Buchanan | Central/Wide Midfield | Progressive Winger | 270.0833 | 1.6638 | 0.4518 | wide |
+| 3 | 57 | Alphonso Davies | Central/Wide Midfield | Box-to-Box / Engine Midfielder | 284.9667 | 1.5965 | 0.3869 | wide |
+| 4 | 103 | Alistair Johnston | Fullback/Wingback | Attacking Wingback | 284.9667 | 1.0843 | 0.1824 | wide |
+| 5 | 161 | Cyle Larin | Forward | Target Forward / Penalty-Box Anchor | 142.4333 | 0.7624 | 0.5199 | wide |
+| 6 | 198 | Richie Laryea | Fullback/Wingback | Attacking Wingback | 163.4500 | 0.6283 | 0.4199 | wide |
+| 7 | 285 | David Junior Hoilett | Central/Wide Midfield | Progressive Winger | 167.4000 | 0.4146 | 0.3161 | wide |
+| 8 | 372 | Stephen Antunes Eustáquio | Defensive Midfield | Holding / Controlling Midfielder | 125.3500 | 0.2413 | 0.1307 | wide |
+| 9 | 385 | Jonathan Osorio | Defensive Midfield | Ball-Winner | 130.7833 | 0.2087 | 0.2345 | wide |
+| 10 | 436 | Sam Adekugbe | Fullback/Wingback | Attacking Wingback | 105.6000 | 0.1338 | 0.1871 | wide |
+| 11 | 445 | Steven de Sousa Vitoria | Center Back | Sweeper CB | 284.9667 | 0.1183 | 0.0718 | wide |
+| 12 | 455 | Atiba Hutchinson | Defensive Midfield | Holding Anchor | 164.2000 | 0.1105 | 0.1009 | wide |
+| 13 | 466 | Milan Borjan | Goalkeeper | Goalkeeper | 284.9667 | — | — | moderate |
+| 14 | 527 | Ismael Koné | Defensive Midfield | Holding Anchor | 122.0833 | 0.0271 | 0.1967 | wide |
+| 15 | 530 | Mark Anthony Kaye | Defensive Midfield | Box-to-Box / Engine Midfielder | 59.8500 | 0.0212 | 0.1064 | wide |
+| 16 | 583 | Kamal Miller | Center Back | Ball-Playing Centre-Back | 284.9667 | -0.0685 | 0.0538 | wide |
 
-- Mean defensive hull area: 569.4089
-- Mean defensive density: 0.0243
-- Mean defensive width: 37.7327
-- Mean defensive depth: 23.9557
-- Mean defensive score: 0.5160
-- Mean defensive score (300+ comparison): not available
-- Mean xD/90: 5.5849
-- Mean shape-maintenance score: 0.5422
+## Outfield component totals
 
-## Pressure resistance
+- Attack component total: 8.7209
+- Defensive component total: -0.0551
+- Regulation/extra-time goals: 1
+- Shootout goals excluded from ordinary impact: 0
 
-- Pass completion under pressure: 0.7118
-- Pressured pass sample: 170.0000
-- Mean ball-security score: 0.5611
-- Mean ball-security score (300+ comparison): not available
+## Main goalkeeper
 
-## Top 5 Players
+| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
+|---|---|---|---|---|
+| 26.0000 | Milan Borjan | 0.4283 | 0.0000 | 0.3854 |
 
-1. **Alistair Johnston** — FB, Attacking Wingback (0.9284)
-
-As a Attacking Wingback, the strongest measured signals are ball security and possession value (82% within the model context) and chance creation and final-third passing (77% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **Atiba Hutchinson** — DM, Holding Anchor (0.7635)
-
-As a Holding Anchor, the strongest measured signals are ball-winning and defensive contribution (77% within the model context) and progressive passing and carrying (76% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **Alphonso Davies** — CM, Box-to-Box / Engine Midfielder (0.7500)
-
-As a Box-to-Box / Engine Midfielder, the strongest measured signals are penalty-box finishing and shot-quality output (88% within the model context) and total tournament goals/xG/xA/VAEP/xT impact (85% within the model context). The assessment uses Qatar 2022 evidence only.
-
-4. **Tajon Buchanan** — AM, Progressive Winger (0.5622)
-
-As a Progressive Winger, the strongest measured signals are progressive passing and carrying (83% within the model context) and total tournament goals/xG/xA/VAEP/xT impact (77% within the model context). The assessment uses Qatar 2022 evidence only.
-
-5. **Steven de Sousa Vitoria** — CB, Sweeper CB (0.4600)
-
-As a Sweeper CB, the strongest measured signals are ball-winning and defensive contribution (48% within the model context) and ball security and possession value (46% within the model context). The assessment uses Qatar 2022 evidence only.
-
-The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
-
-## Full Player List — Outfield
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|
-| 1 | 43 | Alistair Johnston | FB | Fullback/Wingback | Attacking Wingback | 284.9667 | 0.9284 |
-| 2 | 108 | Atiba Hutchinson | DM | Defensive Midfield | Holding Anchor | 164.2000 | 0.7635 |
-| 3 | 116 | Alphonso Davies | CM | Central/Wide Midfield | Box-to-Box / Engine Midfielder | 284.9667 | 0.7500 |
-| 4 | 209 | Tajon Buchanan | AM | Central/Wide Midfield | Progressive Winger | 270.0833 | 0.5622 |
-| 5 | 255 | Steven de Sousa Vitoria | CB | Center Back | Sweeper CB | 284.9667 | 0.4600 |
-| 6 | 260 | Kamal Miller | CB | Center Back | Ball-Playing Centre-Back | 284.9667 | 0.4530 |
-| 7 | 262 | David Junior Hoilett | AM | Central/Wide Midfield | Progressive Winger | 167.4000 | 0.4433 |
-| 8 | 269 | Stephen Antunes Eustáquio | DM | Defensive Midfield | Holding / Controlling Midfielder | 125.3500 | 0.4363 |
-| 9 | 314 | Richie Laryea | FB | Fullback/Wingback | Attacking Wingback | 163.4500 | 0.3643 |
-| 10 | 340 | Cyle Larin | FW | Forward | Target Forward / Penalty-Box Anchor | 142.4333 | 0.3295 |
-| 11 | 372 | Ismael Koné | DM | Defensive Midfield | Holding Anchor | 122.0833 | 0.2876 |
-| 12 | 396 | Sam Adekugbe | FB | Fullback/Wingback | Attacking Wingback | 105.6000 | 0.2577 |
-| 13 | 399 | Jonathan David | FW | Forward | Target Forward | 201.6167 | 0.2522 |
-| 15 | 424 | Mark Anthony Kaye | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 59.8500 | 0.2252 |
-| 16 | 448 | Jonathan Osorio | DM | Defensive Midfield | Ball-Winner | 130.7833 | 0.1866 |
-
-## Full Player List — Goalkeepers
-
-| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 23 | 14 | 411 | Milan Borjan | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 284.9667 | 0.1068 | 0.2333 |
+All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.

@@ -1,76 +1,40 @@
-# Strahinja Pavlović Player Profile
+# Strahinja Pavlović — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Serbia
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
-- Source functional role: Wide Creator
-
-- Probabilistic role: Aerial/Progressive/Creative Centre-Back
-- Role entropy: 0.0033
-- Unified global rank: 97
-- Unified team rank: 3
-- Tournament Performance Score: 0.7873
-- Global rank v2: 172
-- Position rank v2: 16
-- Role rank v2: 10
-- Team rank v2: 5
-- Final player rating v2: 0.4609
-- Global rank: 491
-- Position rank: 71
-- Role rank: 16
-- Team rank: 13
-- Final player rating: 0.4124
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 252.8
-- Minutes reliability: 0.3597
+- Global Rank v3: 306
+- Team Rank v3: 9
+- Position Rank v3: 56
+- Role Rank v3: 10
+- Tournament Impact: 0.3262
+- Role Quality: 0.0859
+- Impact interval: [0.0000, 0.6575]
+- Rank band: 165–463
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.1779
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.6753 |
-| vaep_def_scaled | 0.2976 |
-| vaep_per_touch | -0.0003 |
-| open_play_xt_p90 | 0.0300 |
-| set_piece_xt_p90 | 0.0137 |
-| role_adjusted_value | 0.1844 |
-| completeness_score | 0.7336 |
-| off_ball_score | 0.5098 |
+| Attack | 0.3629 |
+| Defense | -0.0366 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.7091 |
-| creation_score | 0.4589 |
-| finishing_score | 0.6686 |
-| pressing_score | 0.5804 |
-| defensive_score | 0.6111 |
-| ball_security_score | 0.3864 |
-| aerial_score | 0.9421 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8529 |
-| mean_defenders_within_3m | 0.3124 |
-| mean_defenders_within_5m | 0.5198 |
-| mean_nearest_defender_m | 7.9142 |
-| mean_passing_lane_availability | 0.9097 |
-| packing_index_mean | 0.8298 |
-| mean_space_received | 0.7783 |
-| network_pagerank | 0.0927 |
-| network_betweenness | 0.2061 |
-| network_entropy | 0.9231 |
-| build_up_involvement_ratio | 0.6753 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

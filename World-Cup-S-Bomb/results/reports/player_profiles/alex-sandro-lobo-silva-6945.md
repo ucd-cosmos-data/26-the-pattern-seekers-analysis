@@ -1,76 +1,40 @@
-# Alex Sandro Lobo Silva Player Profile
+# Alex Sandro Lobo Silva — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Brazil
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Source functional role: Attacking Wingback
-
-- Probabilistic role: Progressive/Creative Fullback
-- Role entropy: 0.0001
-- Unified global rank: 58
-- Unified team rank: 5
-- Tournament Performance Score: 0.9029
-- Global rank v2: 85
-- Position rank v2: 8
-- Role rank v2: 8
-- Team rank v2: 6
-- Final player rating v2: 0.5583
-- Global rank: 121
-- Position rank: 34
-- Role rank: 28
-- Team rank: 9
-- Final player rating: 0.5312
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 199.5
-- Minutes reliability: 0.3072
+- Global Rank v3: 332
+- Team Rank v3: 20
+- Position Rank v3: 43
+- Role Rank v3: 33
+- Tournament Impact: 0.2706
+- Role Quality: 0.1814
+- Impact interval: [0.0048, 0.7201]
+- Rank band: 148–457
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0218
+- Non-shootout xA: 0.0781
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3167 |
-| vaep_def_scaled | 0.8150 |
-| vaep_per_touch | 0.0006 |
-| open_play_xt_p90 | 0.0090 |
-| set_piece_xt_p90 | 0.0550 |
-| role_adjusted_value | 0.0503 |
-| completeness_score | 0.7446 |
-| off_ball_score | 0.5830 |
+| Attack | 0.3211 |
+| Defense | -0.0505 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.6627 |
-| creation_score | 0.6423 |
-| finishing_score | 0.3873 |
-| pressing_score | 0.6674 |
-| defensive_score | 0.8393 |
-| ball_security_score | 0.6038 |
-| aerial_score | 0.7440 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8236 |
-| mean_defenders_within_3m | 0.2968 |
-| mean_defenders_within_5m | 0.5304 |
-| mean_nearest_defender_m | 7.2625 |
-| mean_passing_lane_availability | 0.9468 |
-| packing_index_mean | 0.6131 |
-| mean_space_received | 0.7649 |
-| network_pagerank | 0.0790 |
-| network_betweenness | 0.2492 |
-| network_entropy | 0.8294 |
-| build_up_involvement_ratio | 0.6471 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

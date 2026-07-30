@@ -1,0 +1,69 @@
+{
+  "active_global_field": "tournament_impact_v3",
+  "active_role_field": "role_quality_v3",
+  "checks": {
+    "global_rank_order_agrees": true,
+    "player_identity_used": false,
+    "position_normalization_used": false,
+    "shootout_outcomes_used": false,
+    "team_identity_used": false,
+    "team_rank_order_agrees": true,
+    "uncertainty_used_as_score_penalty": false
+  },
+  "leave_one_match_out_stability": {
+    "matches": 64,
+    "rank_spearman_mean": 0.9942217506124761,
+    "rank_spearman_minimum": 0.9837459964062145,
+    "top20_jaccard_mean": 0.9533102766798419,
+    "top20_jaccard_minimum": 0.7391304347826086
+  },
+  "legacy_exposure_cascade_active": false,
+  "legacy_one_sided_defensive_lift_active": false,
+  "model_version": "qatar-2022-ranking-v3",
+  "passed": true,
+  "position_composition": {
+    "100": {
+      "AM": 43,
+      "CM": 5,
+      "DM": 4,
+      "FB": 14,
+      "FW": 34
+    },
+    "20": {
+      "AM": 11,
+      "FW": 9
+    },
+    "50": {
+      "AM": 25,
+      "CM": 2,
+      "DM": 1,
+      "FB": 1,
+      "FW": 21
+    }
+  },
+  "score_goals_spearman": {
+    "bootstrap_draws": 1000,
+    "ci_high": 0.588787209543112,
+    "ci_low": 0.47947584804612725,
+    "estimate": 0.5390574133204324
+  },
+  "score_minutes_spearman": {
+    "bootstrap_draws": 1000,
+    "ci_high": 0.5272068442094947,
+    "ci_low": 0.390830701240411,
+    "estimate": 0.4598183884154808
+  },
+  "score_xa_spearman": {
+    "bootstrap_draws": 1000,
+    "ci_high": 0.6571140723830587,
+    "ci_low": 0.5432946728843248,
+    "estimate": 0.6018381018909079
+  },
+  "score_xg_spearman": {
+    "bootstrap_draws": 1000,
+    "ci_high": 0.8175926815669406,
+    "ci_low": 0.7482490748258295,
+    "estimate": 0.7859305419843499
+  },
+  "uncertainty_field": "uncertainty_low_v3 / uncertainty_high_v3"
+}

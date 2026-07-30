@@ -1,76 +1,40 @@
-# Rodrygo Silva de Goes Player Profile
+# Rodrygo Silva de Goes — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Brazil
-- Tournament: 2022_World_Cup
-- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
-- Source functional role: Progressive Winger
-
-- Probabilistic role: Finishing/Progressive Attacker
-- Role entropy: 0.0203
-- Unified global rank: 203
-- Unified team rank: 11
-- Tournament Performance Score: 0.5723
-- Global rank v2: 34
-- Position rank v2: 14
-- Role rank v2: 12
-- Team rank v2: 4
-- Final player rating v2: 0.6664
-- Global rank: 32
-- Position rank: 4
-- Role rank: 19
-- Team rank: 5
-- Final player rating: 0.5747
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 199.3
-- Minutes reliability: 0.3069
+- Global Rank v3: 42
+- Team Rank v3: 5
+- Position Rank v3: 6
+- Role Rank v3: 6
+- Tournament Impact: 1.7845
+- Role Quality: 0.5761
+- Impact interval: [0.4899, 3.1222]
+- Rank band: 16–204
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 0.4618
+- Non-shootout xA: 0.5158
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.7092 |
-| vaep_def_scaled | 1.0000 |
-| vaep_per_touch | 0.0038 |
-| open_play_xt_p90 | 0.0348 |
-| set_piece_xt_p90 | 0.0558 |
-| role_adjusted_value | 0.8901 |
-| completeness_score | 0.7709 |
-| off_ball_score | 0.5893 |
+| Attack | 1.7818 |
+| Defense | 0.0028 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5964 |
-| creation_score | 0.6757 |
-| finishing_score | 0.7521 |
-| pressing_score | 0.7209 |
-| defensive_score | 0.6404 |
-| ball_security_score | 0.3244 |
-| aerial_score | 0.5812 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8911 |
-| mean_defenders_within_3m | 0.4738 |
-| mean_defenders_within_5m | 0.9451 |
-| mean_nearest_defender_m | 7.7385 |
-| mean_passing_lane_availability | 0.8846 |
-| packing_index_mean | 0.6334 |
-| mean_space_received | 0.5236 |
-| network_pagerank | 0.0468 |
-| network_betweenness | 0.0322 |
-| network_entropy | 0.9072 |
-| build_up_involvement_ratio | 0.6273 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

@@ -1,20 +1,22 @@
 # Reports - Profiles
 
-Dictionary for locating player profiles, starter reports, heatmaps, and team reports. Collections are described by pattern rather than by one summary per file.
+Dictionary for locating player profiles, starter reports, heatmaps, and team reports. Active profiles use the Qatar 2022 v3 contract: Tournament Impact, Role Quality, and Uncertainty are separate products. Collections are described by pattern rather than by one summary per file.
 
 ## Profile locations
 
 | What you want | Location/pattern | Count | Format | What it contains |
 |---|---|---:|---|---|
-| Player profile | `results/reports/player_profiles/<player-slug>-<player-id>.md` | 593 | Markdown | Identity, team, position, functional/probabilistic role, rating components, evidence coverage, and interpretation. |
+| Player profile | `results/reports/player_profiles/<player-slug>-<player-id>.md` | 593 | Markdown | Tournament Impact v3 and global/team ranks; Role Quality v3 and role/position ranks; match-bootstrap interval/status; corrected periods 1–4 outcomes; active components; and clearly separated compatibility fields. |
 | Player heatmap | `results/reports/visuals/heatmaps/<player-slug>-<player-id>.svg` | 593 | SVG | Spatial density of the player’s recorded event locations. |
-| Starter report | `results/reports/starters/<TEAM>/<player-id>_starter_report.md` | 593 | Markdown | Human-readable player match/role report organized by team. |
-| Starter data | `results/reports/starters/<TEAM>/<player-id>_starter_report.json` | 593 | JSON | Structured version of the same starter report. |
-| Team profile | `results/reports/team_profiles/<team-name>.md` | 32 | Markdown | Threat creation, compactness, pressure resistance, and squad ratings. |
-| Team coaching report | `results/reports/teams/<TEAM>_team_coaching_report.md` | 32 | Markdown | Full coach-facing tactical and player report. |
+| Starter report | `results/reports/starters/<TEAM>/<player-id>_starter_report.md` | 593 | Markdown | Human-readable v3 impact, role-quality, outcome, component, and uncertainty report organized by team. |
+| Starter data | `results/reports/starters/<TEAM>/<player-id>_starter_report.json` | 593 | JSON | Structured v3 version of the same starter report. |
+| Team profile | `results/reports/team_profiles/<team-name>.md` | 32 | Markdown | Team context plus active v3 player leaders, with regulation/extra-time outcomes separated from shootouts. |
+| Team coaching report | `results/reports/teams/<TEAM>_team_coaching_report.md` | 32 | Markdown | Full coach-facing tactical report with active Tournament Impact, Role Quality, and Uncertainty fields. |
 | Team coaching data | `results/reports/teams/<TEAM>_team_coaching_report.json` | 32 | JSON | Structured coaching-report content for downstream use. |
 | Tournament player/team summary | `results/reports/canonical/final_summary.md` | 1 | Markdown | General player summary, all-team overview, and each team’s top five players. |
 | Formatted final report | `results/reports/docs/final_summary.docx` | 1 | Word | Office-document edition of the final report. |
+
+Only Qatar 2022 periods 1–4 contribute to ordinary outfield profile outcomes. Period-five conversions appear only in explicitly named shootout fields. For goalkeepers, the dedicated ranking contains one main goalkeeper per team; any `percentile_equivalent_placement` is a publication fallback, not measured absolute cross-position value.
 
 ## Team-code dictionary
 

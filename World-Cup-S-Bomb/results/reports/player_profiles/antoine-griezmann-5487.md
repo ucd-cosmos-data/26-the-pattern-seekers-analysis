@@ -1,76 +1,40 @@
-# Antoine Griezmann Player Profile
+# Antoine Griezmann — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: France
-- Tournament: 2022_World_Cup
-- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Hybrid Playmaker / Roaming Creator
-- Source functional role: Hybrid Playmaker / Roaming Creator
-
-- Probabilistic role: Pressing/Finishing Attacker
-- Role entropy: 0.0720
-- Unified global rank: 39
-- Unified team rank: 7
-- Tournament Performance Score: 0.9322
-- Global rank v2: 11
-- Position rank v2: 5
-- Role rank v2: 1
-- Team rank v2: 2
-- Final player rating v2: 0.7607
-- Global rank: 52
-- Position rank: 30
-- Role rank: 2
-- Team rank: 4
-- Final player rating: 0.5590
-- Ranking status: Ranked (300+ min)
-
-- Global ranking eligibility: eligible
 - Minutes: 586.1
-- Minutes reliability: 0.5657
+- Global Rank v3: 10
+- Team Rank v3: 3
+- Position Rank v3: 74
+- Role Rank v3: 2
+- Tournament Impact: 2.8675
+- Role Quality: 0.3831
+- Impact interval: [0.8781, 5.5553]
+- Rank band: 4–121
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 3
+- Non-shootout xG: 0.4963
+- Non-shootout xA: 2.5415
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.5045 |
-| vaep_def_scaled | 0.2763 |
-| vaep_per_touch | 0.0025 |
-| open_play_xt_p90 | 0.0455 |
-| set_piece_xt_p90 | 0.0711 |
-| role_adjusted_value | 0.2979 |
-| completeness_score | 0.8341 |
-| off_ball_score | 0.6408 |
+| Attack | 2.9248 |
+| Defense | -0.0574 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.7197 |
-| creation_score | 0.8042 |
-| finishing_score | 0.5402 |
-| pressing_score | 0.7513 |
-| defensive_score | 0.6490 |
-| ball_security_score | 0.5699 |
-| aerial_score | 0.5913 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9045 |
-| mean_defenders_within_3m | 0.4487 |
-| mean_defenders_within_5m | 0.9614 |
-| mean_nearest_defender_m | 5.9065 |
-| mean_passing_lane_availability | 0.8903 |
-| packing_index_mean | 0.7086 |
-| mean_space_received | 0.4915 |
-| network_pagerank | 0.0836 |
-| network_betweenness | 0.0513 |
-| network_entropy | 0.9170 |
-| build_up_involvement_ratio | 0.7342 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

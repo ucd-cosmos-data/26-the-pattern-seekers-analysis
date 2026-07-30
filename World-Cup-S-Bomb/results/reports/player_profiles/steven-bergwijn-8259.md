@@ -1,76 +1,40 @@
-# Steven Bergwijn Player Profile
+# Steven Bergwijn — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Netherlands
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Pressing Forward
-- Source functional role: Ball-Winner
-
-- Probabilistic role: Finishing/Aerial Forward
-- Role entropy: 0.1439
-- Unified global rank: 438
-- Unified team rank: 15
-- Tournament Performance Score: 0.1976
-- Global rank v2: 366
-- Position rank v2: 72
-- Role rank v2: 17
-- Team rank v2: 15
-- Final player rating v2: 0.3122
-- Global rank: 278
-- Position rank: 50
-- Role rank: 12
-- Team rank: 10
-- Final player rating: 0.4832
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 219.2
-- Minutes reliability: 0.3276
+- Global Rank v3: 96
+- Team Rank v3: 4
+- Position Rank v3: 63
+- Role Rank v3: 14
+- Tournament Impact: 1.0864
+- Role Quality: 0.4915
+- Impact interval: [0.0887, 2.6024]
+- Rank band: 24–387
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.3399
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3865 |
-| vaep_def_scaled | 0.5308 |
-| vaep_per_touch | 0.0042 |
-| open_play_xt_p90 | 0.0441 |
-| set_piece_xt_p90 | -0.0149 |
-| role_adjusted_value | 0.0901 |
-| completeness_score | 0.6144 |
-| off_ball_score | 0.5238 |
+| Attack | 1.0653 |
+| Defense | 0.0212 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4068 |
-| creation_score | 0.2528 |
-| finishing_score | 0.5649 |
-| pressing_score | 0.3621 |
-| defensive_score | 0.3447 |
-| ball_security_score | 0.8477 |
-| aerial_score | 0.1301 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9324 |
-| mean_defenders_within_3m | 0.6341 |
-| mean_defenders_within_5m | 1.1739 |
-| mean_nearest_defender_m | 7.2658 |
-| mean_passing_lane_availability | 0.9080 |
-| packing_index_mean | 0.3442 |
-| mean_space_received | 0.4763 |
-| network_pagerank | 0.0545 |
-| network_betweenness | 0.0206 |
-| network_entropy | 0.9164 |
-| build_up_involvement_ratio | 0.7222 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

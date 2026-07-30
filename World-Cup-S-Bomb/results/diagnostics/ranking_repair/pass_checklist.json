@@ -1,0 +1,47 @@
+{
+  "active_model_version": "ranking-repair-v3.0-qatar-2022",
+  "passes": {
+    "1": {
+      "decision": "PASS",
+      "selection": "immutable champion snapshot",
+      "tests": "tests/test_ranking_repair_champion.py"
+    },
+    "2": {
+      "decision": "PASS",
+      "selection": "qatar-2022-periods-1-4-v1",
+      "tests": "tests/test_event_scope.py"
+    },
+    "3": {
+      "decision": "PASS",
+      "selection": "defensive_challenger:signed_ridge",
+      "tests": "tests/test_defensive_challenger.py"
+    },
+    "4": {
+      "decision": "PASS",
+      "selection": "Tournament Impact / Role Quality / Uncertainty",
+      "tests": "tests/test_tournament_rankings_v3.py"
+    },
+    "5": {
+      "decision": "PASS",
+      "selection": "process_only",
+      "tests": "tests/test_tournament_rankings_v3.py"
+    },
+    "6": {
+      "decision": "PASS",
+      "selection": "opportunity-adjusted signed_ridge; legacy lift retired",
+      "tests": "tests/test_defensive_challenger.py and tests/test_tournament_rankings_v3.py"
+    },
+    "7": {
+      "decision": "PASS",
+      "selection": "goalkeeper_v3",
+      "tests": "tests/test_goalkeeper_valuation_v3.py"
+    },
+    "8": {
+      "decision": "PASS",
+      "selection": "active v3 generators and complete artifact family",
+      "tests": "tests/test_ranking_repair_release_v3.py and DOCX validation"
+    }
+  },
+  "release_status": "PASS — promoted all passing v3 components",
+  "schema_version": "ranking-repair-pass-checklist-3.0"
+}

@@ -1,76 +1,40 @@
-# Vitor Machado Ferreira Player Profile
+# Vitor Machado Ferreira — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Portugal
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Deep Playmaker / Metronome
-- Source functional role: Deep Playmaker / Metronome
-
-- Probabilistic role: Secure/Pressing Midfielder
-- Role entropy: 0.1797
-- Unified global rank: 321
-- Unified team rank: 15
-- Tournament Performance Score: 0.3577
-- Global rank v2: 199
-- Position rank v2: 20
-- Role rank v2: 6
-- Team rank v2: 11
-- Final player rating v2: 0.4364
-- Global rank: 316
-- Position rank: 35
-- Role rank: 5
-- Team rank: 16
-- Final player rating: 0.4704
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 131.8
-- Minutes reliability: 0.2266
+- Global Rank v3: 371
+- Team Rank v3: 16
+- Position Rank v3: 31
+- Role Rank v3: 5
+- Tournament Impact: 0.2037
+- Role Quality: 0.2349
+- Impact interval: [0.0288, 0.4370]
+- Rank band: 221–450
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0539
+- Non-shootout xA: 0.0375
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.2532 |
-| vaep_def_scaled | 0.4408 |
-| vaep_per_touch | 0.0004 |
-| open_play_xt_p90 | 0.0196 |
-| set_piece_xt_p90 | 0.0895 |
-| role_adjusted_value | 0.1992 |
-| completeness_score | 0.6622 |
-| off_ball_score | 0.5797 |
+| Attack | 0.2264 |
+| Defense | -0.0227 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.6166 |
-| creation_score | 0.6663 |
-| finishing_score | 0.5289 |
-| pressing_score | 0.5476 |
-| defensive_score | 0.5214 |
-| ball_security_score | 0.9025 |
-| aerial_score | 0.1672 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9311 |
-| mean_defenders_within_3m | 0.3314 |
-| mean_defenders_within_5m | 0.7337 |
-| mean_nearest_defender_m | 6.1739 |
-| mean_passing_lane_availability | 0.9274 |
-| packing_index_mean | 0.6302 |
-| mean_space_received | 0.6158 |
-| network_pagerank | 0.0647 |
-| network_betweenness | 0.0476 |
-| network_entropy | 0.9654 |
-| build_up_involvement_ratio | 0.5690 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

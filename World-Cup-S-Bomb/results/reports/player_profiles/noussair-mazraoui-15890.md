@@ -1,76 +1,40 @@
-# Noussair Mazraoui Player Profile
+# Noussair Mazraoui — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Morocco
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Source functional role: Wide Creator
-
-- Probabilistic role: Progressive/Creative Fullback
-- Role entropy: 0.0000
-- Unified global rank: 201
-- Unified team rank: 10
-- Tournament Performance Score: 0.5730
-- Global rank v2: 421
-- Position rank v2: 67
-- Role rank v2: 17
-- Team rank v2: 17
-- Final player rating v2: 0.2793
-- Global rank: 183
-- Position rank: 63
-- Role rank: 13
-- Team rank: 5
-- Final player rating: 0.5107
-- Ranking status: Ranked (300+ min)
-
-- Global ranking eligibility: eligible
 - Minutes: 376.8
-- Minutes reliability: 0.4558
+- Global Rank v3: 389
+- Team Rank v3: 16
+- Position Rank v3: 94
+- Role Rank v3: 30
+- Tournament Impact: 0.1767
+- Role Quality: 0.1459
+- Impact interval: [-0.0013, 0.3879]
+- Rank band: 243–507
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.1513
+- Non-shootout xA: 0.0192
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.0951 |
-| vaep_def_scaled | 0.8793 |
-| vaep_per_touch | 0.0007 |
-| open_play_xt_p90 | 0.0146 |
-| set_piece_xt_p90 | 0.0035 |
-| role_adjusted_value | 0.0558 |
-| completeness_score | 0.7815 |
-| off_ball_score | 0.4851 |
+| Attack | 0.2754 |
+| Defense | -0.0988 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4463 |
-| creation_score | 0.4686 |
-| finishing_score | 0.4963 |
-| pressing_score | 0.6532 |
-| defensive_score | 0.6632 |
-| ball_security_score | 0.6312 |
-| aerial_score | 0.3269 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8009 |
-| mean_defenders_within_3m | 0.3960 |
-| mean_defenders_within_5m | 0.6734 |
-| mean_nearest_defender_m | 6.7667 |
-| mean_passing_lane_availability | 0.9316 |
-| packing_index_mean | 0.5925 |
-| mean_space_received | 0.6618 |
-| network_pagerank | 0.0558 |
-| network_betweenness | 0.0409 |
-| network_entropy | 0.8764 |
-| build_up_involvement_ratio | 0.6543 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

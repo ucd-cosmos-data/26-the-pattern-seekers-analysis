@@ -1,76 +1,40 @@
-# Weston McKennie Player Profile
+# Weston McKennie — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: United States
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Deep Playmaker / Metronome
-- Source functional role: Deep Playmaker / Metronome
-
-- Probabilistic role: Pressing/Finishing Attacker
-- Role entropy: 0.1960
-- Unified global rank: 117
-- Unified team rank: 6
-- Tournament Performance Score: 0.7500
-- Global rank v2: 90
-- Position rank v2: 10
-- Role rank v2: 4
-- Team rank v2: 4
-- Final player rating v2: 0.5548
-- Global rank: 252
-- Position rank: 22
-- Role rank: 3
-- Team rank: 11
-- Final player rating: 0.4894
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 273.6
-- Minutes reliability: 0.3781
+- Global Rank v3: 102
+- Team Rank v3: 4
+- Position Rank v3: 15
+- Role Rank v3: 1
+- Tournament Impact: 1.0405
+- Role Quality: 0.3179
+- Impact interval: [0.0935, 2.2345]
+- Rank band: 31–402
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.3757
+- Non-shootout xA: 0.0995
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.4491 |
-| vaep_def_scaled | 0.2761 |
-| vaep_per_touch | 0.0016 |
-| open_play_xt_p90 | 0.0587 |
-| set_piece_xt_p90 | 0.0136 |
-| role_adjusted_value | 0.2984 |
-| completeness_score | 0.7417 |
-| off_ball_score | 0.5492 |
+| Attack | 1.0371 |
+| Defense | 0.0033 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.7658 |
-| creation_score | 0.6976 |
-| finishing_score | 0.6217 |
-| pressing_score | 0.5133 |
-| defensive_score | 0.5123 |
-| ball_security_score | 0.5093 |
-| aerial_score | 0.6447 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9019 |
-| mean_defenders_within_3m | 0.4749 |
-| mean_defenders_within_5m | 0.8494 |
-| mean_nearest_defender_m | 7.3015 |
-| mean_passing_lane_availability | 0.8723 |
-| packing_index_mean | 0.8075 |
-| mean_space_received | 0.6140 |
-| network_pagerank | 0.0692 |
-| network_betweenness | 0.0522 |
-| network_entropy | 0.9185 |
-| build_up_involvement_ratio | 0.6434 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

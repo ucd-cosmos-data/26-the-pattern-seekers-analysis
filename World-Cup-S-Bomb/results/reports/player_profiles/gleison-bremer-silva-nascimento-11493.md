@@ -1,76 +1,40 @@
-# Gleison Bremer Silva Nascimento Player Profile
+# Gleison Bremer Silva Nascimento — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Brazil
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Source functional role: Sweeper CB
-
-- Probabilistic role: Secure/Aerial Centre-Back
-- Role entropy: 0.0181
-- Unified global rank: 285
-- Unified team rank: 15
-- Tournament Performance Score: 0.4081
-- Global rank v2: 258
-- Position rank v2: 31
-- Role rank v2: 20
-- Team rank v2: 18
-- Final player rating v2: 0.3844
-- Global rank: 365
-- Position rank: 23
-- Role rank: 13
-- Team rank: 23
-- Final player rating: 0.4549
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 122.3
-- Minutes reliability: 0.2137
+- Global Rank v3: 297
+- Team Rank v3: 17
+- Position Rank v3: 6
+- Role Rank v3: 3
+- Tournament Impact: 0.3459
+- Role Quality: 0.1414
+- Impact interval: [0.0000, 1.0108]
+- Rank band: 107–473
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.3444
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.6666 |
-| vaep_def_scaled | 1.0000 |
-| vaep_per_touch | 0.0022 |
-| open_play_xt_p90 | -0.0017 |
-| set_piece_xt_p90 | -0.0043 |
-| role_adjusted_value | 0.0981 |
-| completeness_score | 0.6505 |
-| off_ball_score | 0.4888 |
+| Attack | 0.3833 |
+| Defense | -0.0374 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.3446 |
-| creation_score | 0.3332 |
-| finishing_score | 0.5953 |
-| pressing_score | 0.4604 |
-| defensive_score | 0.5844 |
-| ball_security_score | 0.6277 |
-| aerial_score | 0.8066 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8780 |
-| mean_defenders_within_3m | 0.1704 |
-| mean_defenders_within_5m | 0.2466 |
-| mean_nearest_defender_m | 9.7901 |
-| mean_passing_lane_availability | 0.9683 |
-| packing_index_mean | 0.4305 |
-| mean_space_received | 0.9038 |
-| network_pagerank | 0.0576 |
-| network_betweenness | 0.1143 |
-| network_entropy | 0.7984 |
-| build_up_involvement_ratio | 0.6757 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

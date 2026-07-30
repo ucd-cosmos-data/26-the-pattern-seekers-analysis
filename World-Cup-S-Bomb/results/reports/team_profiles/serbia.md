@@ -1,77 +1,39 @@
-# Serbia Team Profile
+# Serbia — Qatar 2022 Team Profile
 
-## Threat creation
+Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
 
-- Total xT created: 1.3908
-- Total xA created: 2.0346
-- Mean creation score: 0.4786
-- Mean creation score (300+ comparison): not available
-- Mean xT/90: 0.0385
+## Team leaders
 
-## Defensive compactness
+| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 35 | Aleksandar Mitrović | Forward | Target Forward | 279.4167 | 1.9041 | 0.7149 | wide |
+| 2 | 91 | Dušan Tadić | Attacking Midfield/Wing | Progressive Winger | 270.9333 | 1.1647 | 0.4720 | wide |
+| 3 | 99 | Filip Kostić | Fullback/Wingback | Attacking Wingback | 191.1833 | 1.1053 | 0.2756 | wide |
+| 4 | 155 | Sergej Milinković-Savić | Attacking Midfield/Wing | Linking Attacker | 242.5333 | 0.7838 | 0.2325 | wide |
+| 5 | 178 | Dušan Vlahović | Forward | Target Forward / Penalty-Box Anchor | 86.0667 | 0.6982 | 0.7486 | wide |
+| 6 | 199 | Andrija Živković | Fullback/Wingback | Attacking Wingback | 212.0833 | 0.6266 | 0.1968 | wide |
+| 7 | 217 | Nikola Milenković | Center Back | Sweeper CB | 293.6500 | 0.5794 | 0.1338 | wide |
+| 8 | 229 | Vanja Milinković Savić | Goalkeeper | Goalkeeper | 293.6500 | — | — | moderate |
+| 9 | 305 | Filip Mladenović | Fullback/Wingback | Wide Creator | 65.3167 | 0.3593 | 0.2226 | wide |
+| 10 | 324 | Strahinja Pavlović | Center Back | Ball-Playing Centre-Back | 252.8500 | 0.3262 | 0.0859 | wide |
+| 11 | 344 | Luka Jović | Forward | Target Forward / Penalty-Box Anchor | 46.0500 | 0.2898 | 0.7432 | wide |
+| 12 | 421 | Nemanja Gudelj | Defensive Midfield | Holding Anchor | 102.6500 | 0.1632 | 0.1137 | wide |
+| 13 | 442 | Nemanja Radonjić | Fullback/Wingback | Attacking Wingback | 81.5667 | 0.1280 | 0.4069 | wide |
+| 14 | 459 | Nemanja Maksimović | Defensive Midfield | Holding Anchor | 143.7667 | 0.1064 | 0.1022 | wide |
+| 15 | 460 | Saša Lukić | Defensive Midfield | Holding Anchor | 261.6500 | 0.1061 | 0.0908 | wide |
+| 16 | 566 | Milos Veljkovic | Center Back | Sweeper CB | 228.9000 | -0.0205 | 0.0651 | wide |
 
-- Mean defensive hull area: 611.0415
-- Mean defensive density: 0.0224
-- Mean defensive width: 38.4632
-- Mean defensive depth: 25.5942
-- Mean defensive score: 0.4911
-- Mean defensive score (300+ comparison): not available
-- Mean xD/90: 5.8940
-- Mean shape-maintenance score: 0.4913
+## Outfield component totals
 
-## Pressure resistance
+- Attack component total: 7.5085
+- Defensive component total: 0.8121
+- Regulation/extra-time goals: 5
+- Shootout goals excluded from ordinary impact: 0
 
-- Pass completion under pressure: 0.6740
-- Pressured pass sample: 181.0000
-- Mean ball-security score: 0.4913
-- Mean ball-security score (300+ comparison): not available
+## Main goalkeeper
 
-## Top 5 Players
+| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
+|---|---|---|---|---|
+| 13.0000 | Vanja Milinković Savić | 0.5265 | 0.0000 | 0.4739 |
 
-1. **Nikola Milenković** — CB, Sweeper CB (0.8671)
-
-As a Sweeper CB, the strongest measured signals are ball-winning and defensive contribution (73% within the model context) and coverage-qualified off-ball contribution (71% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **Aleksandar Mitrović** — FW, Target Forward (0.8163)
-
-As a Target Forward, the strongest measured signals are penalty-box finishing and shot-quality output (86% within the model context) and total tournament goals/xG/xA/VAEP/xT impact (76% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **Strahinja Pavlović** — CB, Ball-Playing Centre-Back (0.7873)
-
-As a Ball-Playing Centre-Back, the strongest measured signals are progressive passing and carrying (81% within the model context) and penalty-box finishing and shot-quality output (79% within the model context). The assessment uses Qatar 2022 evidence only.
-
-4. **Vanja Milinković Savić** — GK, Goalkeeper (0.7039)
-
-As a Goalkeeper, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (3% within the model context). The assessment uses Qatar 2022 evidence only.
-
-5. **Dušan Tadić** — AM, Progressive Winger (0.6974)
-
-As a Progressive Winger, the strongest measured signals are chance creation and final-third passing (92% within the model context) and coverage-qualified off-ball contribution (87% within the model context). The assessment uses Qatar 2022 evidence only.
-
-The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
-
-## Full Player List — Outfield
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|
-| 1 | 72 | Nikola Milenković | CB | Center Back | Sweeper CB | 293.6500 | 0.8671 |
-| 2 | 89 | Aleksandar Mitrović | FW | Forward | Target Forward | 279.4167 | 0.8163 |
-| 3 | 97 | Strahinja Pavlović | CB | Center Back | Ball-Playing Centre-Back | 252.8500 | 0.7873 |
-| 5 | 143 | Dušan Tadić | AM | Attacking Midfield/Wing | Progressive Winger | 270.9333 | 0.6974 |
-| 6 | 166 | Andrija Živković | FB | Fullback/Wingback | Attacking Wingback | 212.0833 | 0.6493 |
-| 7 | 204 | Filip Kostić | FB | Fullback/Wingback | Attacking Wingback | 191.1833 | 0.5706 |
-| 8 | 263 | Nemanja Maksimović | DM | Defensive Midfield | Holding Anchor | 143.7667 | 0.4420 |
-| 9 | 286 | Milos Veljkovic | CB | Center Back | Sweeper CB | 228.9000 | 0.4057 |
-| 10 | 297 | Saša Lukić | DM | Defensive Midfield | Holding Anchor | 261.6500 | 0.3919 |
-| 11 | 379 | Sergej Milinković-Savić | AM | Attacking Midfield/Wing | Linking Attacker | 242.5333 | 0.2816 |
-| 12 | 437 | Dušan Vlahović | FW | Forward | Target Forward / Penalty-Box Anchor | 86.0667 | 0.1994 |
-| 13 | 478 | Nemanja Radonjić | FB | Fullback/Wingback | Attacking Wingback | 81.5667 | 0.1516 |
-| 14 | 493 | Nemanja Gudelj | DM | Defensive Midfield | Holding Anchor | 102.6500 | 0.1407 |
-| 15 | 511 | Filip Mladenović | FB | Fullback/Wingback | Wide Creator | 65.3167 | 0.1200 |
-| 16 | 569 | Luka Jović | FW | Forward | Target Forward / Penalty-Box Anchor | 46.0500 | 0.0816 |
-
-## Full Player List — Goalkeepers
-
-| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 8 | 4 | 139 | Vanja Milinković Savić | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 293.6500 | 0.2876 | 0.7039 |
+All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.

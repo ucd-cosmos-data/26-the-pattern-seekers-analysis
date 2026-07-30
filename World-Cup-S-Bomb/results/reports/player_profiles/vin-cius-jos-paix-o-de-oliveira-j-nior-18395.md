@@ -1,76 +1,40 @@
-# Vinícius José Paixão de Oliveira Júnior Player Profile
+# Vinícius José Paixão de Oliveira Júnior — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Brazil
-- Tournament: 2022_World_Cup
-- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
-- Source functional role: Progressive Winger
-
-- Probabilistic role: Finishing/Progressive Attacker
-- Role entropy: 0.0000
-- Unified global rank: 70
-- Unified team rank: 8
-- Tournament Performance Score: 0.8743
-- Global rank v2: 27
-- Position rank v2: 10
-- Role rank v2: 9
-- Team rank v2: 3
-- Final player rating v2: 0.6809
-- Global rank: 9
-- Position rank: 2
-- Role rank: 8
-- Team rank: 2
-- Final player rating: 0.6163
-- Ranking status: Ranked (300+ min)
-
-- Global ranking eligibility: eligible
 - Minutes: 306.6
-- Minutes reliability: 0.4052
+- Global Rank v3: 21
+- Team Rank v3: 4
+- Position Rank v3: 10
+- Role Rank v3: 9
+- Tournament Impact: 2.2644
+- Role Quality: 0.5584
+- Impact interval: [0.4629, 4.2860]
+- Rank band: 7–226
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 0
+- Actual assists: 2
+- Non-shootout xG: 0.8115
+- Non-shootout xA: 0.5599
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.8612 |
-| vaep_def_scaled | 0.7698 |
-| vaep_per_touch | 0.0043 |
-| open_play_xt_p90 | 0.0710 |
-| set_piece_xt_p90 | 0.0528 |
-| role_adjusted_value | 0.7671 |
-| completeness_score | 0.7410 |
-| off_ball_score | 0.4802 |
+| Attack | 2.2549 |
+| Defense | 0.0095 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5697 |
-| creation_score | 0.6349 |
-| finishing_score | 0.8524 |
-| pressing_score | 0.5515 |
-| defensive_score | 0.5750 |
-| ball_security_score | 0.4347 |
-| aerial_score | 0.1155 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8300 |
-| mean_defenders_within_3m | 0.5244 |
-| mean_defenders_within_5m | 0.8585 |
-| mean_nearest_defender_m | 8.6517 |
-| mean_passing_lane_availability | 0.8456 |
-| packing_index_mean | 0.6561 |
-| mean_space_received | 0.5731 |
-| network_pagerank | 0.0548 |
-| network_betweenness | 0.0262 |
-| network_entropy | 0.8962 |
-| build_up_involvement_ratio | 0.6148 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

@@ -1,78 +1,40 @@
-# Costa Rica Team Profile
+# Costa Rica — Qatar 2022 Team Profile
 
-## Threat creation
+Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
 
-- Total xT created: 0.4184
-- Total xA created: 0.4012
-- Mean creation score: 0.3933
-- Mean creation score (300+ comparison): not available
-- Mean xT/90: 0.0098
+## Team leaders
 
-## Defensive compactness
+| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 142 | Keysher Fuller Spence | Fullback/Wingback | Deep Playmaker | 267.9167 | 0.8335 | 0.2035 | wide |
+| 2 | 263 | Yeltsin Ignacio Tejeda Valverde | Central/Wide Midfield | Holding Anchor | 286.9500 | 0.4570 | 0.1198 | wide |
+| 3 | 298 | Kendall Jamaal Waston Manley | Center Back | Sweeper CB | 249.4500 | 0.3723 | 0.0998 | wide |
+| 4 | 350 | Joel Nathaniel Campbell Samuels | Forward | Progressive Winger | 292.4333 | 0.2728 | 0.2139 | wide |
+| 5 | 426 | Juan Pablo Vargas Campos | Center Back | Sweeper CB | 100.0333 | 0.1515 | 0.1244 | wide |
+| 6 | 437 | Anthony Daniel Contreras Enríquez | Forward | Target Forward | 132.7833 | 0.1325 | 0.3604 | wide |
+| 7 | 444 | Jewison Bennette | Attacking Midfield/Wing | Ball-Winner | 119.3167 | 0.1213 | 0.3265 | wide |
+| 8 | 473 | Johan Alberto Venegas Ulloa | Forward | Pressing Forward | 73.2333 | 0.0931 | 0.2648 | wide |
+| 9 | 498 | Bryan Oviedo | Fullback/Wingback | Wide Creator | 269.9000 | 0.0679 | 0.1523 | wide |
+| 10 | 536 | Youstin Delfin Salas Gómez | Fullback/Wingback | Two-Way Fullback | 62.5667 | 0.0126 | 0.1646 | wide |
+| 11 | 544 | Gerson Torres Barrantes | Attacking Midfield/Wing | Ball-Winner | 64.0667 | 0.0043 | 0.1092 | wide |
+| 12 | 545 | Francisco Javier Calvo Quesada | Center Back | Sweeper CB | 194.4167 | 0.0040 | 0.0614 | wide |
+| 13 | 551 | Celso Borges Mora | Defensive Midfield | Holding Anchor | 260.0500 | -0.0045 | 0.0833 | wide |
+| 14 | 565 | Carlos Manuel Martínez Castro | Fullback/Wingback | Deep Playmaker | 45.0000 | -0.0186 | 0.1669 | wide |
+| 15 | 567 | Óscar Esau Duarte Gaitán | Center Back | Sweeper CB | 294.4500 | -0.0207 | 0.0671 | wide |
+| 16 | 575 | Brandon Aguilera Zamora | Attacking Midfield/Wing | Pressing Attacker | 104.1500 | -0.0437 | 0.0957 | wide |
+| 17 | 576 | Keylor Navas Gamboa | Goalkeeper | Goalkeeper | 294.4500 | — | — | moderate |
 
-- Mean defensive hull area: 510.3123
-- Mean defensive density: 0.0278
-- Mean defensive width: 37.0724
-- Mean defensive depth: 22.1473
-- Mean defensive score: 0.5727
-- Mean defensive score (300+ comparison): not available
-- Mean xD/90: 8.7734
-- Mean shape-maintenance score: 0.5630
+## Outfield component totals
 
-## Pressure resistance
+- Attack component total: 1.9874
+- Defensive component total: 0.4478
+- Regulation/extra-time goals: 2
+- Shootout goals excluded from ordinary impact: 0
 
-- Pass completion under pressure: 0.6509
-- Pressured pass sample: 169.0000
-- Mean ball-security score: 0.5415
-- Mean ball-security score (300+ comparison): not available
+## Main goalkeeper
 
-## Top 5 Players
+| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
+|---|---|---|---|---|
+| 32.0000 | Keylor Navas Gamboa | 0.3509 | 0.0000 | 0.3158 |
 
-1. **Kendall Jamaal Waston Manley** — CB, Sweeper CB (0.8398)
-
-As a Sweeper CB, the strongest measured signals are coverage-qualified off-ball contribution (70% within the model context) and ball-winning and defensive contribution (61% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **Óscar Esau Duarte Gaitán** — CB, Sweeper CB (0.6410)
-
-As a Sweeper CB, the strongest measured signals are chance creation and final-third passing (58% within the model context) and coverage-qualified off-ball contribution (55% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **Francisco Javier Calvo Quesada** — CB, Sweeper CB (0.5702)
-
-As a Sweeper CB, the strongest measured signals are coverage-qualified off-ball contribution (64% within the model context) and progressive passing and carrying (61% within the model context). The assessment uses Qatar 2022 evidence only.
-
-4. **Juan Pablo Vargas Campos** — CB, Sweeper CB (0.5049)
-
-As a Sweeper CB, the strongest measured signals are penalty-box finishing and shot-quality output (63% within the model context) and coverage-qualified off-ball contribution (55% within the model context). The assessment uses Qatar 2022 evidence only.
-
-5. **Celso Borges Mora** — DM, Holding Anchor (0.4599)
-
-As a Holding Anchor, the strongest measured signals are ball-winning and defensive contribution (49% within the model context) and chance creation and final-third passing (44% within the model context). The assessment uses Qatar 2022 evidence only.
-
-The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
-
-## Full Player List — Outfield
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|
-| 1 | 86 | Kendall Jamaal Waston Manley | CB | Center Back | Sweeper CB | 249.4500 | 0.8398 |
-| 2 | 173 | Óscar Esau Duarte Gaitán | CB | Center Back | Sweeper CB | 294.4500 | 0.6410 |
-| 3 | 205 | Francisco Javier Calvo Quesada | CB | Center Back | Sweeper CB | 194.4167 | 0.5702 |
-| 4 | 231 | Juan Pablo Vargas Campos | CB | Center Back | Sweeper CB | 100.0333 | 0.5049 |
-| 5 | 256 | Celso Borges Mora | DM | Defensive Midfield | Holding Anchor | 260.0500 | 0.4599 |
-| 6 | 290 | Keysher Fuller Spence | FB | Fullback/Wingback | Deep Playmaker | 267.9167 | 0.4020 |
-| 7 | 303 | Bryan Oviedo | FB | Fullback/Wingback | Wide Creator | 269.9000 | 0.3907 |
-| 8 | 310 | Youstin Delfin Salas Gómez | FB | Fullback/Wingback | Two-Way Fullback | 62.5667 | 0.3696 |
-| 9 | 341 | Yeltsin Ignacio Tejeda Valverde | CM | Central/Wide Midfield | Holding Anchor | 286.9500 | 0.3293 |
-| 10 | 426 | Joel Nathaniel Campbell Samuels | FW | Forward | Progressive Winger | 292.4333 | 0.2202 |
-| 11 | 453 | Carlos Manuel Martínez Castro | FB | Fullback/Wingback | Deep Playmaker | 45.0000 | 0.1838 |
-| 12 | 542 | Jewison Bennette | AM | Attacking Midfield/Wing | Ball-Winner | 119.3167 | 0.0999 |
-| 14 | 564 | Anthony Daniel Contreras Enríquez | FW | Forward | Target Forward | 132.7833 | 0.0858 |
-| 15 | 565 | Johan Alberto Venegas Ulloa | FW | Forward | Pressing Forward | 73.2333 | 0.0847 |
-| 16 | 570 | Brandon Aguilera Zamora | AM | Attacking Midfield/Wing | Pressing Attacker | 104.1500 | 0.0815 |
-| 17 | 576 | Gerson Torres Barrantes | AM | Attacking Midfield/Wing | Ball-Winner | 64.0667 | 0.0774 |
-
-## Full Player List — Goalkeepers
-
-| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 31 | 13 | 556 | Keylor Navas Gamboa | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 294.4500 | 0.0189 | 0.0923 |
+All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.

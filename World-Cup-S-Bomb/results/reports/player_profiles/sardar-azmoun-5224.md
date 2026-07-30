@@ -1,76 +1,40 @@
-# Sardar Azmoun Player Profile
+# Sardar Azmoun — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Iran
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
-- Source functional role: Target Forward
-
-- Probabilistic role: Finishing/Aerial/Secure Forward
-- Role entropy: 0.2349
-- Unified global rank: 390
-- Unified team rank: 11
-- Tournament Performance Score: 0.2653
-- Global rank v2: 161
-- Position rank v2: 42
-- Role rank v2: 20
-- Team rank v2: 3
-- Final player rating v2: 0.4699
-- Global rank: 192
-- Position rank: 24
-- Role rank: 21
-- Team rank: 8
-- Final player rating: 0.5086
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 138.7
-- Minutes reliability: 0.2356
+- Global Rank v3: 109
+- Team Rank v3: 2
+- Position Rank v3: 28
+- Role Rank v3: 10
+- Tournament Impact: 1.0056
+- Role Quality: 0.6698
+- Impact interval: [0.0965, 2.1544]
+- Rank band: 34–398
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.9606
+- Non-shootout xA: 0.0857
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.4485 |
-| vaep_def_scaled | 0.3815 |
-| vaep_per_touch | 0.0070 |
-| open_play_xt_p90 | 0.0420 |
-| set_piece_xt_p90 | 0.0020 |
-| role_adjusted_value | 0.4417 |
-| completeness_score | 0.6194 |
-| off_ball_score | 0.4144 |
+| Attack | 1.0007 |
+| Defense | 0.0049 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5537 |
-| creation_score | 0.5656 |
-| finishing_score | 0.7572 |
-| pressing_score | 0.1569 |
-| defensive_score | 0.3128 |
-| ball_security_score | 0.3582 |
-| aerial_score | 0.7263 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8613 |
-| mean_defenders_within_3m | 0.6186 |
-| mean_defenders_within_5m | 1.1525 |
-| mean_nearest_defender_m | 7.5193 |
-| mean_passing_lane_availability | 0.7582 |
-| packing_index_mean | 0.6017 |
-| mean_space_received | 0.4756 |
-| network_pagerank | 0.0447 |
-| network_betweenness | 0.0008 |
-| network_entropy | 0.8955 |
-| build_up_involvement_ratio | 0.6944 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

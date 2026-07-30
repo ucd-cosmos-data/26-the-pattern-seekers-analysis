@@ -1,79 +1,41 @@
-# Denmark Team Profile
+# Denmark — Qatar 2022 Team Profile
 
-## Threat creation
+Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
 
-- Total xT created: 1.7188
-- Total xA created: 2.1738
-- Mean creation score: 0.5094
-- Mean creation score (300+ comparison): not available
-- Mean xT/90: 0.0474
+## Team leaders
 
-## Defensive compactness
+| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 56 | Andreas Evald Cornelius | Forward | Target Forward / Penalty-Box Anchor | 104.8333 | 1.6080 | 0.8340 | wide |
+| 2 | 81 | Christian Dannemann Eriksen | Central/Wide Midfield | Progressive Winger | 290.8000 | 1.2408 | 0.2763 | wide |
+| 3 | 111 | Andreas Skov Olsen | Attacking Midfield/Wing | Progressive Winger | 133.4000 | 1.0294 | 0.4773 | wide |
+| 4 | 116 | Joakim Mæhle | Fullback/Wingback | Attacking Wingback | 264.1000 | 1.0021 | 0.2365 | wide |
+| 5 | 122 | Kasper Dolberg | Forward | Pressing Forward | 126.5000 | 0.9379 | 0.7412 | wide |
+| 6 | 135 | Jesper Lindstrøm | Attacking Midfield/Wing | Progressive Winger | 213.4500 | 0.8646 | 0.3770 | wide |
+| 7 | 191 | Mathias Jensen | Central/Wide Midfield | Progressive Winger | 92.1167 | 0.6463 | 0.3268 | wide |
+| 8 | 208 | Martin Braithwaite Christensen | Forward | Target Forward | 110.3667 | 0.5948 | 0.7186 | wide |
+| 9 | 211 | Kasper Schmeichel | Goalkeeper | Goalkeeper | 290.8000 | — | — | moderate |
+| 10 | 226 | Andreas Christensen | Center Back | Ball-Playing Centre-Back | 290.8000 | 0.5354 | 0.0924 | wide |
+| 11 | 244 | Mikkel Damsgaard | Attacking Midfield/Wing | Wide Creator | 162.5667 | 0.5007 | 0.2831 | wide |
+| 12 | 264 | Joachim Andersen | Center Back | Sweeper CB | 290.8000 | 0.4489 | 0.1048 | wide |
+| 13 | 283 | Rasmus Nissen Kristensen | Fullback/Wingback | Attacking Wingback | 234.2167 | 0.4158 | 0.1723 | wide |
+| 14 | 331 | Pierre-Emile Højbjerg | Central/Wide Midfield | Holding Anchor | 290.8000 | 0.3174 | 0.1059 | wide |
+| 15 | 419 | Alexander Hartmann Bah | Fullback/Wingback | Attacking Wingback | 56.5833 | 0.1663 | 0.1828 | wide |
+| 16 | 435 | Victor Nelsson | Center Back | Sweeper CB | 97.1500 | 0.1361 | 0.0808 | wide |
+| 17 | 479 | Thomas Delaney | Defensive Midfield | Holding Anchor | 45.5333 | 0.0858 | 0.2177 | wide |
+| 18 | 562 | Simon Thorup Kjær | Center Back | Ball-Playing Centre-Back | 63.9833 | -0.0144 | 0.0775 | wide |
 
-- Mean defensive hull area: 439.0378
-- Mean defensive density: 0.0278
-- Mean defensive width: 33.8394
-- Mean defensive depth: 21.0430
-- Mean defensive score: 0.5011
-- Mean defensive score (300+ comparison): not available
-- Mean xD/90: 6.6813
-- Mean shape-maintenance score: 0.5304
+## Outfield component totals
 
-## Pressure resistance
+- Attack component total: 9.8992
+- Defensive component total: 0.6165
+- Regulation/extra-time goals: 1
+- Shootout goals excluded from ordinary impact: 0
 
-- Pass completion under pressure: 0.7086
-- Pressured pass sample: 175.0000
-- Mean ball-security score: 0.4851
-- Mean ball-security score (300+ comparison): not available
+## Main goalkeeper
 
-## Top 5 Players
+| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
+|---|---|---|---|---|
+| 12.0000 | Kasper Schmeichel | 0.5318 | 0.0000 | 0.4786 |
 
-1. **Andreas Christensen** — CB, Ball-Playing Centre-Back (0.8923)
-
-As a Ball-Playing Centre-Back, the strongest measured signals are ball security and possession value (87% within the model context) and penalty-box finishing and shot-quality output (85% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **Christian Dannemann Eriksen** — CM, Progressive Winger (0.8472)
-
-As a Progressive Winger, the strongest measured signals are chance creation and final-third passing (96% within the model context) and progressive passing and carrying (88% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **Joachim Andersen** — CB, Sweeper CB (0.7842)
-
-As a Sweeper CB, the strongest measured signals are progressive passing and carrying (90% within the model context) and coverage-qualified off-ball contribution (69% within the model context). The assessment uses Qatar 2022 evidence only.
-
-4. **Rasmus Nissen Kristensen** — FB, Attacking Wingback (0.5867)
-
-As a Attacking Wingback, the strongest measured signals are progressive passing and carrying (84% within the model context) and coverage-qualified off-ball contribution (81% within the model context). The assessment uses Qatar 2022 evidence only.
-
-5. **Simon Thorup Kjær** — CB, Ball-Playing Centre-Back (0.5210)
-
-As a Ball-Playing Centre-Back, the strongest measured signals are progressive passing and carrying (82% within the model context) and ball-winning and defensive contribution (79% within the model context). The assessment uses Qatar 2022 evidence only.
-
-The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
-
-## Full Player List — Outfield
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|
-| 1 | 61 | Andreas Christensen | CB | Center Back | Ball-Playing Centre-Back | 290.8000 | 0.8923 |
-| 2 | 83 | Christian Dannemann Eriksen | CM | Central/Wide Midfield | Progressive Winger | 290.8000 | 0.8472 |
-| 3 | 102 | Joachim Andersen | CB | Center Back | Sweeper CB | 290.8000 | 0.7842 |
-| 4 | 194 | Rasmus Nissen Kristensen | FB | Fullback/Wingback | Attacking Wingback | 234.2167 | 0.5867 |
-| 5 | 224 | Simon Thorup Kjær | CB | Center Back | Ball-Playing Centre-Back | 63.9833 | 0.5210 |
-| 6 | 242 | Joakim Mæhle | FB | Fullback/Wingback | Attacking Wingback | 264.1000 | 0.4943 |
-| 7 | 251 | Pierre-Emile Højbjerg | CM | Central/Wide Midfield | Holding Anchor | 290.8000 | 0.4659 |
-| 9 | 296 | Alexander Hartmann Bah | FB | Fullback/Wingback | Attacking Wingback | 56.5833 | 0.3973 |
-| 10 | 339 | Mikkel Damsgaard | AM | Attacking Midfield/Wing | Wide Creator | 162.5667 | 0.3307 |
-| 11 | 363 | Mathias Jensen | CM | Central/Wide Midfield | Progressive Winger | 92.1167 | 0.2960 |
-| 12 | 382 | Kasper Dolberg | FW | Forward | Pressing Forward | 126.5000 | 0.2763 |
-| 13 | 416 | Thomas Delaney | DM | Defensive Midfield | Holding Anchor | 45.5333 | 0.2317 |
-| 14 | 421 | Andreas Evald Cornelius | FW | Forward | Target Forward / Penalty-Box Anchor | 104.8333 | 0.2282 |
-| 15 | 422 | Victor Nelsson | CB | Center Back | Sweeper CB | 97.1500 | 0.2270 |
-| 16 | 428 | Andreas Skov Olsen | AM | Attacking Midfield/Wing | Progressive Winger | 133.4000 | 0.2188 |
-| 17 | 468 | Martin Braithwaite Christensen | FW | Forward | Target Forward | 110.3667 | 0.1664 |
-| 18 | 517 | Jesper Lindstrøm | AM | Attacking Midfield/Wing | Progressive Winger | 213.4500 | 0.1155 |
-
-## Full Player List — Goalkeepers
-
-| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 16 | 8 | 284 | Kasper Schmeichel | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 290.8000 | 0.2245 | 0.4102 |
+All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.

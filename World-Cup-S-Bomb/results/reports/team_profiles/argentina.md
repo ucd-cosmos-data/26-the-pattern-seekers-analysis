@@ -1,81 +1,43 @@
-# Argentina Team Profile
+# Argentina — Qatar 2022 Team Profile
 
-## Threat creation
+Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
 
-- Total xT created: 4.0073
-- Total xA created: 6.7228
-- Mean creation score: 0.4948
-- Mean creation score (300+ comparison): 0.5570
-- Mean xT/90: 0.0418
+## Team leaders
 
-## Defensive compactness
+| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | Lionel Andrés Messi Cuccittini | Attacking Midfield/Wing | Progressive Winger | 733.9000 | 7.7476 | 0.6520 | moderate |
+| 2 | 7 | Julián Álvarez | Forward | Pressing Forward | 485.2333 | 3.2864 | 0.5528 | wide |
+| 3 | 9 | Lautaro Javier Martínez | Forward | Target Forward / Penalty-Box Anchor | 273.0000 | 2.9942 | 0.8178 | wide |
+| 4 | 15 | Ángel Fabián Di María Hernández | Central/Wide Midfield | Progressive Winger | 304.8167 | 2.7820 | 0.5513 | wide |
+| 5 | 36 | Marcos Javier Acuña | Fullback/Wingback | Attacking Wingback | 397.4833 | 1.9009 | 0.2806 | wide |
+| 6 | 40 | Alexis Mac Allister | Central/Wide Midfield | Ball-Winner | 552.3500 | 1.8824 | 0.2875 | wide |
+| 7 | 55 | Rodrigo Javier De Paul | Defensive Midfield | Deep Playmaker | 634.7333 | 1.6102 | 0.2841 | wide |
+| 8 | 72 | Nicolás Alejandro Tagliafico | Fullback/Wingback | Wide Creator | 393.3333 | 1.3104 | 0.2339 | wide |
+| 9 | 100 | Nahuel Molina Lucero | Fullback/Wingback | Deep Playmaker | 594.0000 | 1.0896 | 0.1712 | wide |
+| 10 | 165 | Enzo Fernandez | Defensive Midfield | Holding Anchor | 601.1167 | 0.7429 | 0.1130 | wide |
+| 11 | 258 | Leandro Daniel Paredes | Defensive Midfield | Holding / Controlling Midfielder | 235.3500 | 0.4632 | 0.1259 | wide |
+| 12 | 289 | Cristian Gabriel Romero | Center Back | Ball-Playing Centre-Back | 575.9167 | 0.3941 | 0.0807 | wide |
+| 13 | 319 | Alejandro Darío Gómez | Central/Wide Midfield | Ball-Winner | 107.3667 | 0.3368 | 0.3421 | wide |
+| 14 | 353 | Lisandro Martínez | Center Back | Sweeper CB | 334.9167 | 0.2685 | 0.0769 | wide |
+| 15 | 412 | Damián Emiliano Martínez | Goalkeeper | Goalkeeper | 733.9000 | — | — | moderate |
+| 16 | 416 | Nicolás Hernán Otamendi | Center Back | Sweeper CB | 733.9000 | 0.1713 | 0.0492 | wide |
+| 17 | 440 | Gonzalo Ariel Montiel | Fullback/Wingback | Deep Playmaker | 130.7833 | 0.1311 | 0.1651 | wide |
+| 18 | 478 | Exequiel Alejandro Palacios | Central/Wide Midfield | Holding Anchor | 67.7333 | 0.0872 | 0.2380 | wide |
+| 19 | 556 | Germán Alejandro Pezzella | Center Back | Sweeper CB | 69.9500 | -0.0072 | 0.0784 | wide |
+| 20 | 559 | Guido Rodríguez | Defensive Midfield | Deep Playmaker | 56.7667 | -0.0088 | 0.0582 | wide |
 
-- Mean defensive hull area: 647.6227
-- Mean defensive density: 0.0258
-- Mean defensive width: 38.8223
-- Mean defensive depth: 26.0773
-- Mean defensive score: 0.5032
-- Mean defensive score (300+ comparison): 0.5375
-- Mean xD/90: 6.1207
-- Mean shape-maintenance score: 0.4727
+## Outfield component totals
 
-## Pressure resistance
+- Attack component total: 27.8462
+- Defensive component total: -0.6635
+- Regulation/extra-time goals: 15
+- Shootout goals excluded from ordinary impact: 7
 
-- Pass completion under pressure: 0.7447
-- Pressured pass sample: 521.0000
-- Mean ball-security score: 0.5631
-- Mean ball-security score (300+ comparison): 0.5367
+## Main goalkeeper
 
-## Top 5 Players
+| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
+|---|---|---|---|---|
+| 23.0000 | Damián Emiliano Martínez | 0.4407 | 0.0071 | 0.4038 |
 
-1. **Lionel Andrés Messi Cuccittini** — AM, Progressive Winger (0.9999)
-
-As a Progressive Winger, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (100% within the model context) and penalty-box finishing and shot-quality output (98% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **Rodrigo Javier De Paul** — DM, Deep Playmaker (0.9857)
-
-As a Deep Playmaker, the strongest measured signals are progressive passing and carrying (85% within the model context) and chance creation and final-third passing (82% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **Enzo Fernandez** — DM, Holding Anchor (0.9843)
-
-As a Holding Anchor, the strongest measured signals are chance creation and final-third passing (91% within the model context) and penalty-box finishing and shot-quality output (86% within the model context). The assessment uses Qatar 2022 evidence only.
-
-4. **Damián Emiliano Martínez** — GK, Goalkeeper (0.9558)
-
-As a Goalkeeper, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (64% within the model context). The assessment uses Qatar 2022 evidence only.
-
-5. **Julián Álvarez** — FW, Pressing Forward (0.9558)
-
-As a Pressing Forward, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (86% within the model context) and penalty-box finishing and shot-quality output (81% within the model context). The assessment uses Qatar 2022 evidence only.
-
-The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
-
-## Full Player List — Outfield
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|
-| 1 | 1 | Lionel Andrés Messi Cuccittini | AM | Attacking Midfield/Wing | Progressive Winger | 733.9000 | 0.9999 |
-| 2 | 11 | Rodrigo Javier De Paul | DM | Defensive Midfield | Deep Playmaker | 634.7333 | 0.9857 |
-| 3 | 13 | Enzo Fernandez | DM | Defensive Midfield | Holding Anchor | 601.1167 | 0.9843 |
-| 5 | 27 | Julián Álvarez | FW | Forward | Pressing Forward | 485.2333 | 0.9558 |
-| 6 | 28 | Alexis Mac Allister | CM | Central/Wide Midfield | Ball-Winner | 552.3500 | 0.9540 |
-| 7 | 35 | Marcos Javier Acuña | FB | Fullback/Wingback | Attacking Wingback | 397.4833 | 0.9389 |
-| 8 | 41 | Ángel Fabián Di María Hernández | AM | Central/Wide Midfield | Progressive Winger | 304.8167 | 0.9300 |
-| 9 | 78 | Nicolás Hernán Otamendi | CB | Center Back | Sweeper CB | 733.9000 | 0.8556 |
-| 10 | 79 | Leandro Daniel Paredes | DM | Defensive Midfield | Holding / Controlling Midfielder | 235.3500 | 0.8555 |
-| 11 | 88 | Nicolás Alejandro Tagliafico | FB | Fullback/Wingback | Wide Creator | 393.3333 | 0.8278 |
-| 12 | 164 | Nahuel Molina Lucero | FB | Fullback/Wingback | Deep Playmaker | 594.0000 | 0.6572 |
-| 13 | 176 | Cristian Gabriel Romero | CB | Center Back | Ball-Playing Centre-Back | 575.9167 | 0.6363 |
-| 14 | 228 | Lautaro Javier Martínez | FW | Forward | Target Forward / Penalty-Box Anchor | 273.0000 | 0.5126 |
-| 15 | 282 | Gonzalo Ariel Montiel | FB | Fullback/Wingback | Deep Playmaker | 130.7833 | 0.4138 |
-| 16 | 366 | Lisandro Martínez | CB | Center Back | Sweeper CB | 334.9167 | 0.2911 |
-| 17 | 440 | Alejandro Darío Gómez | CM | Central/Wide Midfield | Ball-Winner | 107.3667 | 0.1965 |
-| 18 | 489 | Exequiel Alejandro Palacios | CM | Central/Wide Midfield | Holding Anchor | 67.7333 | 0.1425 |
-| 19 | 518 | Guido Rodríguez | DM | Defensive Midfield | Deep Playmaker | 56.7667 | 0.1152 |
-| 20 | 551 | Germán Alejandro Pezzella | CB | Center Back | Sweeper CB | 69.9500 | 0.0948 |
-
-## Full Player List — Goalkeepers
-
-| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 2 | 4 | 26 | Damián Emiliano Martínez | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 733.9000 | 0.5971 | 0.9558 |
+All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.

@@ -1,80 +1,36 @@
-# Francisco Guillermo Ochoa Magaña Player Profile
+# Francisco Guillermo Ochoa Magaña — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Mexico
-- Tournament: 2022_World_Cup
-- Formal 360 position group: GK
 - Position group: Goalkeeper
 - Functional role: Goalkeeper
-- Source functional role: Goalkeeper
-- Team main goalkeeper: 1.0000
-- Probabilistic role: Goalkeeper
-- Role entropy: 0.0000
-- Unified global rank: 393
-- Unified team rank: 10
-- Tournament Performance Score: 0.2622
-- Goalkeeper rank v2: 22
-- Goalkeeper rating v2: 0.1131
-
-- Goalkeeper ranking status: Ranked (team main goalkeeper)
-- Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 291.5
-- Goalkeeper v2 reliability: 0.6182
+- Dedicated goalkeeper rank: 31.0
+- Dedicated goalkeeper score: 0.3322
+- Continuous goalkeeper score: 0.3691
+- Separate shootout component: 0.0000
+- Cross-position field: percentile-equivalent placement (publication fallback, not absolute common-unit value)
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| post_shot_xg_proxy | 3.0856 |
-| psxg_ga_p90 | 0.0264 |
-| goals_prevented_proxy_p90 | 0.0264 |
-| save_rate | 0.5000 |
-| save_rate_shrunk | 0.5968 |
-| high_leverage_save_pct | 0.5000 |
-| high_leverage_save_rate_shrunk | 0.3935 |
-| penalties_saved_rate | 1.0000 |
-| penalty_save_rate_shrunk | 0.3822 |
-| shootout_penalties_faced | 0.0000 |
-| shootout_penalties_saved | 0.0000 |
-| claims_p90 | 0.6175 |
-| cross_stopping_rate | 0.1000 |
-| sweeper_actions_p90 | 0.3087 |
-| distribution_under_pressure | 0.3333 |
-| gk_raw_rating_v2 | 0.4225 |
-| tournament_impact_score | 0.0397 |
-| gk_score_composite | 0.4622 |
-| reliability_factor | 0.6182 |
-| gk_rating_v2 | 0.1131 |
+| Attack | — |
+| Defense | — |
+| Other | — |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5094 |
-| creation_score | 0.3212 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.0464 |
-| defensive_score | 0.2255 |
-| ball_security_score | 0.3864 |
-| aerial_score | 0.0975 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.7218 |
-| mean_defenders_within_3m | 0.0417 |
-| mean_defenders_within_5m | 0.1042 |
-| mean_nearest_defender_m | 17.0526 |
-| mean_passing_lane_availability | 0.9749 |
-| packing_index_mean | 0.6146 |
-| mean_space_received | 0.9665 |
-| network_pagerank | 0.0424 |
-| network_betweenness | 0.0000 |
-| network_entropy | 0.7925 |
-| build_up_involvement_ratio | 0.7971 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

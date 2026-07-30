@@ -1,76 +1,40 @@
-# Niclas Füllkrug Player Profile
+# Niclas Füllkrug — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Germany
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
-- Source functional role: Target Forward / Penalty-Box Anchor
-
-- Probabilistic role: Finishing/Aerial/Secure Forward
-- Role entropy: 0.0000
-- Unified global rank: 305
-- Unified team rank: 13
-- Tournament Performance Score: 0.3824
-- Global rank v2: 31
-- Position rank v2: 15
-- Role rank v2: 3
-- Team rank v2: 5
-- Final player rating v2: 0.6731
-- Global rank: 106
-- Position rank: 9
-- Role rank: 2
-- Team rank: 8
-- Final player rating: 0.5353
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 92.6
-- Minutes reliability: 0.1706
+- Global Rank v3: 23
+- Team Rank v3: 3
+- Position Rank v3: 1
+- Role Rank v3: 1
+- Tournament Impact: 2.1753
+- Role Quality: 0.9095
+- Impact interval: [0.2632, 4.6108]
+- Rank band: 6–295
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 2
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 1.6887
+- Non-shootout xA: 0.5638
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.8256 |
-| vaep_def_scaled | 0.6289 |
-| vaep_per_touch | 0.0150 |
-| open_play_xt_p90 | 0.0150 |
-| set_piece_xt_p90 | 0.0027 |
-| role_adjusted_value | 1.0000 |
-| completeness_score | 0.5841 |
-| off_ball_score | 0.3928 |
+| Attack | 2.1528 |
+| Defense | 0.0225 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.3879 |
-| creation_score | 0.6086 |
-| finishing_score | 0.9949 |
-| pressing_score | 0.1314 |
-| defensive_score | 0.2637 |
-| ball_security_score | 0.4768 |
-| aerial_score | 0.8536 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8969 |
-| mean_defenders_within_3m | 0.7011 |
-| mean_defenders_within_5m | 1.5287 |
-| mean_nearest_defender_m | 10.9986 |
-| mean_passing_lane_availability | 0.7911 |
-| packing_index_mean | 0.6667 |
-| mean_space_received | 0.4591 |
-| network_pagerank | 0.0299 |
-| network_betweenness | 0.0222 |
-| network_entropy | 0.9631 |
-| build_up_involvement_ratio | 0.6053 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

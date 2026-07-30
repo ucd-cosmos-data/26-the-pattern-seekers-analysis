@@ -1,76 +1,40 @@
-# Jackson Gabriel Porozo Vernaza Player Profile
+# Jackson Gabriel Porozo Vernaza — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Ecuador
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Defensive Centre-Back
-- Source functional role: Holding Anchor
-
-- Probabilistic role: Defensive/Pressing Fullback
-- Role entropy: 0.0020
-- Unified global rank: 213
-- Unified team rank: 5
-- Tournament Performance Score: 0.5589
-- Global rank v2: 362
-- Position rank v2: 58
-- Role rank v2: 1
-- Team rank v2: 10
-- Final player rating v2: 0.3139
-- Global rank: 537
-- Position rank: 96
-- Role rank: 2
-- Team rank: 16
-- Final player rating: 0.3832
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 108.3
-- Minutes reliability: 0.1940
+- Global Rank v3: 299
+- Team Rank v3: 7
+- Position Rank v3: 2
+- Role Rank v3: 1
+- Tournament Impact: 0.3443
+- Role Quality: 0.1915
+- Impact interval: [0.0000, 0.8095]
+- Rank band: 130–483
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0525
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.7385 |
-| vaep_def_scaled | 0.0716 |
-| vaep_per_touch | -0.0015 |
-| open_play_xt_p90 | 0.0027 |
-| set_piece_xt_p90 | 0.0002 |
-| role_adjusted_value | 0.1123 |
-| completeness_score | 0.6462 |
-| off_ball_score | 0.4857 |
+| Attack | 0.2269 |
+| Defense | 0.1175 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.3109 |
-| creation_score | 0.2686 |
-| finishing_score | 0.4902 |
-| pressing_score | 0.5763 |
-| defensive_score | 0.6647 |
-| ball_security_score | 0.9012 |
-| aerial_score | 0.6515 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9220 |
-| mean_defenders_within_3m | 0.3769 |
-| mean_defenders_within_5m | 0.5462 |
-| mean_nearest_defender_m | 7.8028 |
-| mean_passing_lane_availability | 0.9563 |
-| packing_index_mean | 0.5462 |
-| mean_space_received | 0.7943 |
-| network_pagerank | 0.0456 |
-| network_betweenness | 0.0224 |
-| network_entropy | 0.9504 |
-| build_up_involvement_ratio | 0.5833 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

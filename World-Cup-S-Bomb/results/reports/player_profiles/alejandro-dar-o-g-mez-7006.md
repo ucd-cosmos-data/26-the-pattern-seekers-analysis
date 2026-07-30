@@ -1,76 +1,40 @@
-# Alejandro Darío Gómez Player Profile
+# Alejandro Darío Gómez — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Argentina
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Ball-Winner
-- Source functional role: Ball-Winner
-
-- Probabilistic role: Pressing/Secure Attacker
-- Role entropy: 0.0145
-- Unified global rank: 440
-- Unified team rank: 17
-- Tournament Performance Score: 0.1965
-- Global rank v2: 375
-- Position rank v2: 31
-- Role rank v2: 31
-- Team rank v2: 16
-- Final player rating v2: 0.3082
-- Global rank: 322
-- Position rank: 36
-- Role rank: 40
-- Team rank: 11
-- Final player rating: 0.4699
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 107.4
-- Minutes reliability: 0.1926
+- Global Rank v3: 302
+- Team Rank v3: 13
+- Position Rank v3: 10
+- Role Rank v3: 28
+- Tournament Impact: 0.3368
+- Role Quality: 0.3421
+- Impact interval: [0.0000, 0.8226]
+- Rank band: 130–464
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0231
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.4306 |
-| vaep_def_scaled | 0.4385 |
-| vaep_per_touch | 0.0017 |
-| open_play_xt_p90 | -0.0066 |
-| set_piece_xt_p90 | 0.0361 |
-| role_adjusted_value | 0.1235 |
-| completeness_score | 0.6101 |
-| off_ball_score | 0.5568 |
+| Attack | 0.3324 |
+| Defense | 0.0044 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5640 |
-| creation_score | 0.1560 |
-| finishing_score | 0.5222 |
-| pressing_score | 0.5359 |
-| defensive_score | 0.3618 |
-| ball_security_score | 0.7851 |
-| aerial_score | 0.6377 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.7913 |
-| mean_defenders_within_3m | 0.4066 |
-| mean_defenders_within_5m | 0.8077 |
-| mean_nearest_defender_m | 6.8800 |
-| mean_passing_lane_availability | 0.9102 |
-| packing_index_mean | 0.6538 |
-| mean_space_received | 0.5795 |
-| network_pagerank | 0.0535 |
-| network_betweenness | 0.0000 |
-| network_entropy | 0.9156 |
-| build_up_involvement_ratio | 0.7647 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

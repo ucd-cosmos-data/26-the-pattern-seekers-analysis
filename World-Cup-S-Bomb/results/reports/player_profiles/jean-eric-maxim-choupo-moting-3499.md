@@ -1,76 +1,40 @@
-# Jean-Eric Maxim Choupo-Moting Player Profile
+# Jean-Eric Maxim Choupo-Moting — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Cameroon
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
-- Source functional role: Target Forward
-
-- Probabilistic role: Finishing/Aerial Forward
-- Role entropy: 0.0068
-- Unified global rank: 200
-- Unified team rank: 4
-- Tournament Performance Score: 0.5731
-- Global rank v2: 124
-- Position rank v2: 32
-- Role rank v2: 16
-- Team rank v2: 2
-- Final player rating v2: 0.5058
-- Global rank: 375
-- Position rank: 71
-- Role rank: 44
-- Team rank: 12
-- Final player rating: 0.4515
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 270.0
-- Minutes reliability: 0.3750
+- Global Rank v3: 176
+- Team Rank v3: 3
+- Position Rank v3: 70
+- Role Rank v3: 38
+- Tournament Impact: 0.6725
+- Role Quality: 0.4355
+- Impact interval: [0.0000, 1.3876]
+- Rank band: 72–431
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.5235
+- Non-shootout xA: 0.0470
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.1425 |
-| vaep_def_scaled | 0.1451 |
-| vaep_per_touch | 0.0023 |
-| open_play_xt_p90 | 0.0369 |
-| set_piece_xt_p90 | 0.0098 |
-| role_adjusted_value | 0.1829 |
-| completeness_score | 0.6920 |
-| off_ball_score | 0.4867 |
+| Attack | 0.7020 |
+| Defense | -0.0295 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.6024 |
-| creation_score | 0.5573 |
-| finishing_score | 0.7580 |
-| pressing_score | 0.4170 |
-| defensive_score | 0.3561 |
-| ball_security_score | 0.4323 |
-| aerial_score | 0.8586 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8724 |
-| mean_defenders_within_3m | 0.7154 |
-| mean_defenders_within_5m | 1.1502 |
-| mean_nearest_defender_m | 7.8635 |
-| mean_passing_lane_availability | 0.7913 |
-| packing_index_mean | 0.6324 |
-| mean_space_received | 0.4149 |
-| network_pagerank | 0.0656 |
-| network_betweenness | 0.0421 |
-| network_entropy | 0.9442 |
-| build_up_involvement_ratio | 0.7432 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

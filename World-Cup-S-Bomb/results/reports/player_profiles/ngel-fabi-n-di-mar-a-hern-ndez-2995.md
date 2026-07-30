@@ -1,76 +1,40 @@
-# Ángel Fabián Di María Hernández Player Profile
+# Ángel Fabián Di María Hernández — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Argentina
-- Tournament: 2022_World_Cup
-- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Progressive Winger
-- Source functional role: Progressive Winger
-
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.0004
-- Unified global rank: 41
-- Unified team rank: 8
-- Tournament Performance Score: 0.9300
-- Global rank v2: 12
-- Position rank v2: 6
-- Role rank v2: 6
-- Team rank v2: 2
-- Final player rating v2: 0.7554
-- Global rank: 6
-- Position rank: 1
-- Role rank: 5
-- Team rank: 2
-- Final player rating: 0.6357
-- Ranking status: Ranked (300+ min)
-
-- Global ranking eligibility: eligible
 - Minutes: 304.8
-- Minutes reliability: 0.4038
+- Global Rank v3: 14
+- Team Rank v3: 4
+- Position Rank v3: 13
+- Role Rank v3: 12
+- Tournament Impact: 2.7820
+- Role Quality: 0.5513
+- Impact interval: [0.6589, 5.7593]
+- Rank band: 3–177
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 0.5338
+- Non-shootout xA: 0.7451
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 1.0000 |
-| vaep_def_scaled | 0.5807 |
-| vaep_per_touch | 0.0042 |
-| open_play_xt_p90 | 0.0640 |
-| set_piece_xt_p90 | 0.1356 |
-| role_adjusted_value | 0.7767 |
-| completeness_score | 0.7921 |
-| off_ball_score | 0.5167 |
+| Attack | 2.7671 |
+| Defense | 0.0148 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.6956 |
-| creation_score | 0.6526 |
-| finishing_score | 0.8052 |
-| pressing_score | 0.5522 |
-| defensive_score | 0.4348 |
-| ball_security_score | 0.4485 |
-| aerial_score | 0.1161 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8371 |
-| mean_defenders_within_3m | 0.4304 |
-| mean_defenders_within_5m | 0.8446 |
-| mean_nearest_defender_m | 7.9117 |
-| mean_passing_lane_availability | 0.8307 |
-| packing_index_mean | 0.7554 |
-| mean_space_received | 0.6107 |
-| network_pagerank | 0.0560 |
-| network_betweenness | 0.0066 |
-| network_entropy | 0.8862 |
-| build_up_involvement_ratio | 0.6691 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

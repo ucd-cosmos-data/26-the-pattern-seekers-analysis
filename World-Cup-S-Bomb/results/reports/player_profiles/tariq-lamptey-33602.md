@@ -1,76 +1,40 @@
-# Tariq Lamptey Player Profile
+# Tariq Lamptey — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Ghana
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Deep Playmaker
-- Source functional role: Deep Playmaker
-
-- Probabilistic role: Defensive/Pressing Fullback
-- Role entropy: 0.0033
-- Unified global rank: 197
-- Unified team rank: 4
-- Tournament Performance Score: 0.5788
-- Global rank v2: 480
-- Position rank v2: 88
-- Role rank v2: 27
-- Team rank v2: 15
-- Final player rating v2: 0.2334
-- Global rank: 238
-- Position rank: 83
-- Role rank: 16
-- Team rank: 7
-- Final player rating: 0.4941
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 112.2
-- Minutes reliability: 0.1996
+- Global Rank v3: 419
+- Team Rank v3: 12
+- Position Rank v3: 71
+- Role Rank v3: 18
+- Tournament Impact: 0.1235
+- Role Quality: 0.1668
+- Impact interval: [0.0000, 0.3448]
+- Rank band: 265–484
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0745
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.2464 |
-| vaep_def_scaled | 0.5890 |
-| vaep_per_touch | -0.0005 |
-| open_play_xt_p90 | 0.0291 |
-| set_piece_xt_p90 | 0.0194 |
-| role_adjusted_value | 0.0698 |
-| completeness_score | 0.6164 |
-| off_ball_score | 0.4343 |
+| Attack | 0.1063 |
+| Defense | 0.0172 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5079 |
-| creation_score | 0.4017 |
-| finishing_score | 0.5121 |
-| pressing_score | 0.6195 |
-| defensive_score | 0.7784 |
-| ball_security_score | 0.2916 |
-| aerial_score | 0.1284 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.7895 |
-| mean_defenders_within_3m | 0.5429 |
-| mean_defenders_within_5m | 0.8667 |
-| mean_nearest_defender_m | 8.2210 |
-| mean_passing_lane_availability | 0.8558 |
-| packing_index_mean | 0.7333 |
-| mean_space_received | 0.7305 |
-| network_pagerank | 0.0384 |
-| network_betweenness | 0.0214 |
-| network_entropy | 0.9516 |
-| build_up_involvement_ratio | 0.6400 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

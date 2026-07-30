@@ -1,76 +1,40 @@
-# Noah Okafor Player Profile
+# Noah Okafor — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Switzerland
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Ball-Winner
-- Source functional role: Ball-Winner
-
-- Probabilistic role: Finishing/Progressive Attacker
-- Role entropy: 0.2906
-- Unified global rank: 509
-- Unified team rank: 15
-- Tournament Performance Score: 0.1245
-- Global rank v2: 345
-- Position rank v2: 29
-- Role rank v2: 27
-- Team rank v2: 10
-- Final player rating v2: 0.3276
-- Global rank: 303
-- Position rank: 33
-- Role rank: 37
-- Team rank: 8
-- Final player rating: 0.4746
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 58.4
-- Minutes reliability: 0.1148
+- Global Rank v3: 376
+- Team Rank v3: 13
+- Position Rank v3: 2
+- Role Rank v3: 8
+- Tournament Impact: 0.1943
+- Role Quality: 0.4740
+- Impact interval: [0.0112, 0.4380]
+- Rank band: 225–453
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0321
+- Non-shootout xA: 0.0489
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3984 |
-| vaep_def_scaled | 0.4790 |
-| vaep_per_touch | 0.0024 |
-| open_play_xt_p90 | 0.0374 |
-| set_piece_xt_p90 | -0.0096 |
-| role_adjusted_value | 0.2924 |
-| completeness_score | 0.5114 |
-| off_ball_score | 0.5202 |
+| Attack | 0.1942 |
+| Defense | 0.0001 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5106 |
-| creation_score | 0.4118 |
-| finishing_score | 0.5576 |
-| pressing_score | 0.6082 |
-| defensive_score | 0.4041 |
-| ball_security_score | 0.4784 |
-| aerial_score | 0.0975 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9528 |
-| mean_defenders_within_3m | 0.5743 |
-| mean_defenders_within_5m | 0.8911 |
-| mean_nearest_defender_m | 7.3119 |
-| mean_passing_lane_availability | 0.9348 |
-| packing_index_mean | 0.4455 |
-| mean_space_received | 0.4878 |
-| network_pagerank | 0.0278 |
-| network_betweenness | 0.0000 |
-| network_entropy | 0.5793 |
-| build_up_involvement_ratio | 0.7000 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

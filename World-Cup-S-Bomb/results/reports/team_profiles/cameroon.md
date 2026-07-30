@@ -1,79 +1,40 @@
-# Cameroon Team Profile
+# Cameroon — Qatar 2022 Team Profile
 
-## Threat creation
+Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
 
-- Total xT created: 1.0760
-- Total xA created: 1.8107
-- Mean creation score: 0.5205
-- Mean creation score (300+ comparison): not available
-- Mean xT/90: 0.0278
+## Team leaders
 
-## Defensive compactness
+| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 120 | Devis Rogers Epassy Mboka | Goalkeeper | Goalkeeper | 196.3167 | — | — | moderate |
+| 2 | 127 | Vincent Paté Aboubakar | Forward | Target Forward | 164.2333 | 0.9097 | 0.5129 | wide |
+| 3 | 152 | Jean-Charles Castelletto | Center Back | Sweeper CB | 192.4500 | 0.8016 | 0.1505 | wide |
+| 4 | 186 | Jean-Eric Maxim Choupo-Moting | Forward | Target Forward | 269.9833 | 0.6725 | 0.4355 | wide |
+| 5 | 230 | Nicolas Alexis Julio N'Koulou Ndoubena | Center Back | Sweeper CB | 192.4500 | 0.5187 | 0.1478 | wide |
+| 6 | 251 | Karl Brillant Toko Ekambi | Attacking Midfield/Wing | Ball-Winner | 177.3833 | 0.4868 | 0.4512 | wide |
+| 7 | 268 | Bryan Mbeumo | Attacking Midfield/Wing | Progressive Winger | 224.2333 | 0.4459 | 0.3741 | wide |
+| 8 | 349 | Ngoran Suiru Fai Collins | Fullback/Wingback | Deep Playmaker | 292.5500 | 0.2730 | 0.1498 | wide |
+| 9 | 383 | Christopher Wooh | Center Back | Sweeper CB | 100.1000 | 0.2121 | 0.1028 | wide |
+| 10 | 404 | André-Frank Zambo Anguissa | Defensive Midfield | Box-to-Box / Engine Midfielder | 276.6500 | 0.1853 | 0.1043 | wide |
+| 11 | 405 | Pierre Kunde Malong | Defensive Midfield | Box-to-Box / Engine Midfielder | 134.4333 | 0.1830 | 0.1183 | wide |
+| 12 | 407 | Enzo Ebosse | Center Back | Sweeper CB | 100.1000 | 0.1789 | 0.1273 | wide |
+| 13 | 423 | Nicolas Moumi Ngamaleu | Central/Wide Midfield | Ball-Winner | 100.4500 | 0.1597 | 0.4669 | wide |
+| 14 | 425 | Martin Hongla Yma II | Central/Wide Midfield | Holding Anchor | 122.5333 | 0.1552 | 0.1182 | wide |
+| 15 | 481 | Gaël Ondoua | Defensive Midfield | Holding Anchor | 57.5500 | 0.0845 | 0.1254 | wide |
+| 16 | 496 | Nouhou Tolo | Fullback/Wingback | Wide Creator | 292.5500 | 0.0684 | 0.1525 | wide |
+| 17 | 563 | Samuel Yves Oum Gwet | Defensive Midfield | Holding Anchor | 112.1333 | -0.0162 | 0.0947 | wide |
 
-- Mean defensive hull area: 518.5576
-- Mean defensive density: 0.0268
-- Mean defensive width: 35.6121
-- Mean defensive depth: 22.8279
-- Mean defensive score: 0.5087
-- Mean defensive score (300+ comparison): not available
-- Mean xD/90: 7.5045
-- Mean shape-maintenance score: 0.5639
+## Outfield component totals
 
-## Pressure resistance
+- Attack component total: 5.0865
+- Defensive component total: 0.2327
+- Regulation/extra-time goals: 4
+- Shootout goals excluded from ordinary impact: 0
 
-- Pass completion under pressure: 0.6971
-- Pressured pass sample: 208.0000
-- Mean ball-security score: 0.5478
-- Mean ball-security score (300+ comparison): not available
+## Main goalkeeper
 
-## Top 5 Players
+| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
+|---|---|---|---|---|
+| 7.0000 | Devis Rogers Epassy Mboka | 0.5994 | 0.0000 | 0.5394 |
 
-1. **Jean-Charles Castelletto** — CB, Sweeper CB (0.9291)
-
-As a Sweeper CB, the strongest measured signals are penalty-box finishing and shot-quality output (89% within the model context) and ball-winning and defensive contribution (72% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **Nouhou Tolo** — FB, Wide Creator (0.7399)
-
-As a Wide Creator, the strongest measured signals are ball-winning and defensive contribution (71% within the model context) and coverage-qualified off-ball contribution (42% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **André-Frank Zambo Anguissa** — DM, Box-to-Box / Engine Midfielder (0.6274)
-
-As a Box-to-Box / Engine Midfielder, the strongest measured signals are ball security and possession value (71% within the model context) and coverage-qualified off-ball contribution (70% within the model context). The assessment uses Qatar 2022 evidence only.
-
-4. **Jean-Eric Maxim Choupo-Moting** — FW, Target Forward (0.5731)
-
-As a Target Forward, the strongest measured signals are progressive passing and carrying (83% within the model context) and total tournament goals/xG/xA/VAEP/xT impact (72% within the model context). The assessment uses Qatar 2022 evidence only.
-
-5. **Vincent Paté Aboubakar** — FW, Target Forward (0.5652)
-
-As a Target Forward, the strongest measured signals are penalty-box finishing and shot-quality output (81% within the model context) and chance creation and final-third passing (77% within the model context). The assessment uses Qatar 2022 evidence only.
-
-The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
-
-## Full Player List — Outfield
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|
-| 1 | 42 | Jean-Charles Castelletto | CB | Center Back | Sweeper CB | 192.4500 | 0.9291 |
-| 2 | 124 | Nouhou Tolo | FB | Fullback/Wingback | Wide Creator | 292.5500 | 0.7399 |
-| 3 | 180 | André-Frank Zambo Anguissa | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 276.6500 | 0.6274 |
-| 4 | 200 | Jean-Eric Maxim Choupo-Moting | FW | Forward | Target Forward | 269.9833 | 0.5731 |
-| 5 | 208 | Vincent Paté Aboubakar | FW | Forward | Target Forward | 164.2333 | 0.5652 |
-| 7 | 306 | Ngoran Suiru Fai Collins | FB | Fullback/Wingback | Deep Playmaker | 292.5500 | 0.3774 |
-| 8 | 312 | Enzo Ebosse | CB | Center Back | Sweeper CB | 100.1000 | 0.3682 |
-| 9 | 313 | Nicolas Alexis Julio N'Koulou Ndoubena | CB | Center Back | Sweeper CB | 192.4500 | 0.3667 |
-| 10 | 325 | Karl Brillant Toko Ekambi | AM | Attacking Midfield/Wing | Ball-Winner | 177.3833 | 0.3555 |
-| 11 | 351 | Pierre Kunde Malong | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 134.4333 | 0.3131 |
-| 12 | 367 | Bryan Mbeumo | AM | Attacking Midfield/Wing | Progressive Winger | 224.2333 | 0.2910 |
-| 13 | 369 | Gaël Ondoua | DM | Defensive Midfield | Holding Anchor | 57.5500 | 0.2904 |
-| 14 | 381 | Christopher Wooh | CB | Center Back | Sweeper CB | 100.1000 | 0.2773 |
-| 15 | 400 | Martin Hongla Yma II | CM | Central/Wide Midfield | Holding Anchor | 122.5333 | 0.2496 |
-| 16 | 415 | Nicolas Moumi Ngamaleu | CM | Central/Wide Midfield | Ball-Winner | 100.4500 | 0.2322 |
-| 17 | 496 | Samuel Yves Oum Gwet | DM | Defensive Midfield | Holding Anchor | 112.1333 | 0.1367 |
-
-## Full Player List — Goalkeepers
-
-| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 12 | 6 | 211 | Devis Rogers Epassy Mboka | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 196.3167 | 0.2535 | 0.5598 |
-| — | — | — | André Onana | False | Unranked (backup goalkeeper) | GK | Goalkeeper | Goalkeeper | 96.2333 | — | — |
+All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.

@@ -1,19 +1,19 @@
 Global Rank,Team Rank,Player,Team,Position Group,Tournament Performance Score
-9,1,Frenkie de Jong,Netherlands,DM,0.990913
-38,2,Cody Mathès Gakpo,Netherlands,AM,0.933732
-48,3,Daley Blind,Netherlands,FB,0.924189
-52,4,Jurriën David Norman Timber,Netherlands,CB,0.918267
-68,5,Memphis Depay,Netherlands,FW,0.882836
-100,6,Denzel Dumfries,Netherlands,FB,0.784489
-131,7,Nathan Aké,Netherlands,CB,0.726334
-145,8,Marten de Roon,Netherlands,DM,0.695297
-175,9,Andries Noppert,Netherlands,GK,0.637077
-185,10,Teun Koopmeiners,Netherlands,DM,0.616875
-195,11,Virgil van Dijk,Netherlands,CB,0.585524
-271,12,Steven Berghuis,Netherlands,DM,0.434595
-299,13,Davy Klaassen,Netherlands,AM,0.391106
-402,14,Wout Weghorst,Netherlands,FW,0.249096
-438,15,Steven Bergwijn,Netherlands,FW,0.197563
-469,16,Matthijs de Ligt,Netherlands,CB,0.165484
-472,17,Vincent Janssen,Netherlands,FW,0.163494
-479,18,Luuk de Jong,Netherlands,FW,0.151613
+29,1,Memphis Depay,Netherlands,Forward,0.2765588747
+37,2,Cody Mathès Gakpo,Netherlands,Attacking Midfield/Wing,0.2548893722
+95,3,Daley Blind,Netherlands,Fullback/Wingback,0.1567813065
+101,4,Andries Noppert,Netherlands,Goalkeeper,0.1516401055
+102,5,Steven Bergwijn,Netherlands,Forward,0.1515893553
+107,6,Frenkie de Jong,Netherlands,Defensive Midfield,0.1466122737
+112,7,Denzel Dumfries,Netherlands,Fullback/Wingback,0.143933667
+145,8,Davy Klaassen,Netherlands,Attacking Midfield/Wing,0.1187173898
+239,9,Steven Berghuis,Netherlands,Defensive Midfield,0.07762796441
+240,10,Vincent Janssen,Netherlands,Forward,0.07757376888
+245,11,Virgil van Dijk,Netherlands,Center Back,0.07637112405
+309,12,Wout Weghorst,Netherlands,Forward,0.05833585745
+408,13,Teun Koopmeiners,Netherlands,Defensive Midfield,0.03592477576
+461,14,Luuk de Jong,Netherlands,Forward,0.02671929798
+501,15,Marten de Roon,Netherlands,Defensive Midfield,0.02128451784
+512,16,Matthijs de Ligt,Netherlands,Center Back,0.01892637014
+513,17,Jurriën David Norman Timber,Netherlands,Center Back,0.01886824677
+529,18,Nathan Aké,Netherlands,Center Back,0.01625895576

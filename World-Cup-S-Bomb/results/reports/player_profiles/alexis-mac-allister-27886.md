@@ -1,76 +1,40 @@
-# Alexis Mac Allister Player Profile
+# Alexis Mac Allister — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Argentina
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Ball-Winner
-- Source functional role: Ball-Winner
-
-- Probabilistic role: Pressing/Secure Attacker
-- Role entropy: 0.0208
-- Unified global rank: 28
-- Unified team rank: 6
-- Tournament Performance Score: 0.9540
-- Global rank v2: 43
-- Position rank v2: 4
-- Role rank v2: 1
-- Team rank v2: 4
-- Final player rating v2: 0.6482
-- Global rank: 258
-- Position rank: 23
-- Role rank: 31
-- Team rank: 9
-- Final player rating: 0.4870
-- Ranking status: Ranked (300+ min)
-
-- Global ranking eligibility: eligible
 - Minutes: 552.4
-- Minutes reliability: 0.5511
+- Global Rank v3: 38
+- Team Rank v3: 6
+- Position Rank v3: 19
+- Role Rank v3: 38
+- Tournament Impact: 1.8824
+- Role Quality: 0.2875
+- Impact interval: [0.5315, 3.5558]
+- Rank band: 11–197
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 0.5018
+- Non-shootout xA: 0.7431
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.6376 |
-| vaep_def_scaled | 0.5474 |
-| vaep_per_touch | 0.0023 |
-| open_play_xt_p90 | 0.0185 |
-| set_piece_xt_p90 | -0.0117 |
-| role_adjusted_value | 0.1356 |
-| completeness_score | 0.8048 |
-| off_ball_score | 0.5987 |
+| Attack | 1.9386 |
+| Defense | -0.0562 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4417 |
-| creation_score | 0.6174 |
-| finishing_score | 0.7007 |
-| pressing_score | 0.5192 |
-| defensive_score | 0.6690 |
-| ball_security_score | 0.7341 |
-| aerial_score | 0.4387 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8798 |
-| mean_defenders_within_3m | 0.5005 |
-| mean_defenders_within_5m | 1.0087 |
-| mean_nearest_defender_m | 5.9580 |
-| mean_passing_lane_availability | 0.9140 |
-| packing_index_mean | 0.4962 |
-| mean_space_received | 0.4746 |
-| network_pagerank | 0.0803 |
-| network_betweenness | 0.1002 |
-| network_entropy | 0.9147 |
-| build_up_involvement_ratio | 0.6576 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

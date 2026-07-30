@@ -1,81 +1,43 @@
-# Croatia Team Profile
+# Croatia — Qatar 2022 Team Profile
 
-## Threat creation
+Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
 
-- Total xT created: 3.7160
-- Total xA created: 5.6716
-- Mean creation score: 0.5431
-- Mean creation score (300+ comparison): 0.6113
-- Mean xT/90: 0.0393
+## Team leaders
 
-## Defensive compactness
+| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 4 | Ivan Perišić | Attacking Midfield/Wing | Wide Creator | 686.8167 | 3.5483 | 0.4896 | wide |
+| 2 | 23 | Andrej Kramarić | Attacking Midfield/Wing | Ball-Winner | 478.4333 | 2.2193 | 0.4675 | wide |
+| 3 | 26 | Mateo Kovačić | Central/Wide Midfield | Deep Playmaker / Metronome | 649.9167 | 2.1379 | 0.2806 | wide |
+| 4 | 31 | Bruno Petković | Forward | Target Forward | 252.7333 | 2.0394 | 0.5711 | wide |
+| 5 | 51 | Marko Livaja | Forward | Target Forward | 255.5333 | 1.7149 | 0.7076 | wide |
+| 6 | 59 | Luka Modrić | Central/Wide Midfield | Deep Playmaker / Metronome | 672.6667 | 1.5747 | 0.1629 | wide |
+| 7 | 83 | Dominik Livaković | Goalkeeper | Goalkeeper | 720.2833 | — | — | moderate |
+| 8 | 87 | Lovro Majer | Attacking Midfield/Wing | Progressive Winger | 151.7167 | 1.1901 | 0.4076 | wide |
+| 9 | 94 | Josip Juranović | Fullback/Wingback | Attacking Wingback | 624.1333 | 1.1325 | 0.1702 | wide |
+| 10 | 109 | Mislav Oršić | Attacking Midfield/Wing | Progressive Winger | 187.3167 | 1.0328 | 0.5097 | wide |
+| 11 | 123 | Marcelo Brozović | Defensive Midfield | Box-to-Box / Engine Midfielder | 569.8667 | 0.9354 | 0.1265 | wide |
+| 12 | 143 | Nikola Vlašić | Attacking Midfield/Wing | Ball-Winner | 226.7500 | 0.8311 | 0.3472 | wide |
+| 13 | 183 | Borna Sosa | Fullback/Wingback | Attacking Wingback | 440.4667 | 0.6795 | 0.1804 | wide |
+| 14 | 203 | Dejan Lovren | Center Back | Sweeper CB | 624.1333 | 0.6160 | 0.0904 | wide |
+| 15 | 270 | Joško Gvardiol | Center Back | Ball-Playing Centre-Back | 720.2833 | 0.4416 | 0.0593 | wide |
+| 16 | 271 | Mario Pašalić | Attacking Midfield/Wing | Linking Attacker | 291.1667 | 0.4377 | 0.2848 | wide |
+| 17 | 327 | Ante Budimir | Forward | Target Forward / Penalty-Box Anchor | 56.3167 | 0.3231 | 0.7372 | wide |
+| 18 | 454 | Josip Stanišić | Fullback/Wingback | Deep Playmaker | 96.1500 | 0.1108 | 0.1658 | wide |
+| 19 | 488 | Borna Barišić | Fullback/Wingback | Wide Creator | 121.0000 | 0.0785 | 0.1778 | wide |
+| 20 | 581 | Josip Šutalo | Center Back | Sweeper CB | 96.1500 | -0.0617 | 0.0799 | wide |
 
-- Mean defensive hull area: 480.9343
-- Mean defensive density: 0.0281
-- Mean defensive width: 35.6728
-- Mean defensive depth: 21.7871
-- Mean defensive score: 0.5524
-- Mean defensive score (300+ comparison): 0.5733
-- Mean xD/90: 6.2421
-- Mean shape-maintenance score: 0.4332
+## Outfield component totals
 
-## Pressure resistance
+- Attack component total: 20.3834
+- Defensive component total: 0.5982
+- Regulation/extra-time goals: 8
+- Shootout goals excluded from ordinary impact: 7
 
-- Pass completion under pressure: 0.7430
-- Pressured pass sample: 537.0000
-- Mean ball-security score: 0.4884
-- Mean ball-security score (300+ comparison): 0.5513
+## Main goalkeeper
 
-## Top 5 Players
+| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
+|---|---|---|---|---|
+| 5.0000 | Dominik Livaković | 0.5967 | 0.0199 | 0.5570 |
 
-1. **Joško Gvardiol** — CB, Ball-Playing Centre-Back (0.9973)
-
-As a Ball-Playing Centre-Back, the strongest measured signals are coverage-qualified off-ball contribution (82% within the model context) and progressive passing and carrying (77% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **Mateo Kovačić** — CM, Deep Playmaker / Metronome (0.9955)
-
-As a Deep Playmaker / Metronome, the strongest measured signals are chance creation and final-third passing (84% within the model context) and coverage-qualified off-ball contribution (82% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **Luka Modrić** — CM, Deep Playmaker / Metronome (0.9953)
-
-As a Deep Playmaker / Metronome, the strongest measured signals are progressive passing and carrying (95% within the model context) and total tournament goals/xG/xA/VAEP/xT impact (90% within the model context). The assessment uses Qatar 2022 evidence only.
-
-4. **Dominik Livaković** — GK, Goalkeeper (0.9677)
-
-As a Goalkeeper, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (83% within the model context). The assessment uses Qatar 2022 evidence only.
-
-5. **Ivan Perišić** — AM, Wide Creator (0.9558)
-
-As a Wide Creator, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (93% within the model context) and chance creation and final-third passing (76% within the model context). The assessment uses Qatar 2022 evidence only.
-
-The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
-
-## Full Player List — Outfield
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|
-| 1 | 4 | Joško Gvardiol | CB | Center Back | Ball-Playing Centre-Back | 720.2833 | 0.9973 |
-| 2 | 5 | Mateo Kovačić | CM | Central/Wide Midfield | Deep Playmaker / Metronome | 649.9167 | 0.9955 |
-| 3 | 6 | Luka Modrić | CM | Central/Wide Midfield | Deep Playmaker / Metronome | 672.6667 | 0.9953 |
-| 5 | 25 | Ivan Perišić | AM | Attacking Midfield/Wing | Wide Creator | 686.8167 | 0.9558 |
-| 6 | 31 | Marcelo Brozović | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 569.8667 | 0.9446 |
-| 7 | 36 | Dejan Lovren | CB | Center Back | Sweeper CB | 624.1333 | 0.9363 |
-| 8 | 91 | Borna Sosa | FB | Fullback/Wingback | Attacking Wingback | 440.4667 | 0.8044 |
-| 9 | 111 | Josip Juranović | FB | Fullback/Wingback | Attacking Wingback | 624.1333 | 0.7577 |
-| 10 | 136 | Andrej Kramarić | AM | Attacking Midfield/Wing | Ball-Winner | 478.4333 | 0.7079 |
-| 11 | 140 | Mislav Oršić | AM | Attacking Midfield/Wing | Progressive Winger | 187.3167 | 0.7038 |
-| 12 | 155 | Marko Livaja | FW | Forward | Target Forward | 255.5333 | 0.6679 |
-| 13 | 215 | Mario Pašalić | AM | Attacking Midfield/Wing | Linking Attacker | 291.1667 | 0.5562 |
-| 14 | 225 | Bruno Petković | FW | Forward | Target Forward | 252.7333 | 0.5188 |
-| 15 | 243 | Borna Barišić | FB | Fullback/Wingback | Wide Creator | 121.0000 | 0.4852 |
-| 16 | 245 | Lovro Majer | AM | Attacking Midfield/Wing | Progressive Winger | 151.7167 | 0.4831 |
-| 17 | 344 | Nikola Vlašić | AM | Attacking Midfield/Wing | Ball-Winner | 226.7500 | 0.3180 |
-| 18 | 537 | Josip Stanišić | FB | Fullback/Wingback | Deep Playmaker | 96.1500 | 0.1028 |
-| 19 | 546 | Josip Šutalo | CB | Center Back | Sweeper CB | 96.1500 | 0.0970 |
-| 20 | 567 | Ante Budimir | FW | Forward | Target Forward / Penalty-Box Anchor | 56.3167 | 0.0842 |
-
-## Full Player List — Goalkeepers
-
-| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | 4 | 19 | Dominik Livaković | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 720.2833 | 1.0000 | 0.9677 |
+All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.

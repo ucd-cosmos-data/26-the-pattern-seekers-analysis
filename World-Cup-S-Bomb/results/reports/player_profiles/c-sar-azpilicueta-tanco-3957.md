@@ -1,76 +1,40 @@
-# César Azpilicueta Tanco Player Profile
+# César Azpilicueta Tanco — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Spain
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Source functional role: Attacking Wingback
-
-- Probabilistic role: Secure/Progressive Fullback
-- Role entropy: 0.0004
-- Unified global rank: 187
-- Unified team rank: 10
-- Tournament Performance Score: 0.6125
-- Global rank v2: 101
-- Position rank v2: 12
-- Role rank v2: 12
-- Team rank v2: 8
-- Final player rating v2: 0.5365
-- Global rank: 133
-- Position rank: 41
-- Role rank: 33
-- Team rank: 9
-- Final player rating: 0.5263
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 143.1
-- Minutes reliability: 0.2412
+- Global Rank v3: 312
+- Team Rank v3: 13
+- Position Rank v3: 98
+- Role Rank v3: 55
+- Tournament Impact: 0.3187
+- Role Quality: 0.1319
+- Impact interval: [0.0000, 0.6629]
+- Rank band: 162–505
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.5150
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3211 |
-| vaep_def_scaled | 0.7856 |
-| vaep_per_touch | 0.0004 |
-| open_play_xt_p90 | 0.0240 |
-| set_piece_xt_p90 | 0.0635 |
-| role_adjusted_value | 0.0717 |
-| completeness_score | 0.7150 |
-| off_ball_score | 0.5102 |
+| Attack | 0.3448 |
+| Defense | -0.0261 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.7114 |
-| creation_score | 0.7587 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.3995 |
-| defensive_score | 0.4863 |
-| ball_security_score | 0.6904 |
-| aerial_score | 0.6965 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8682 |
-| mean_defenders_within_3m | 0.1094 |
-| mean_defenders_within_5m | 0.2768 |
-| mean_nearest_defender_m | 7.8627 |
-| mean_passing_lane_availability | 0.9826 |
-| packing_index_mean | 0.5804 |
-| mean_space_received | 0.8309 |
-| network_pagerank | 0.0782 |
-| network_betweenness | 0.1762 |
-| network_entropy | 0.8671 |
-| build_up_involvement_ratio | 0.6812 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

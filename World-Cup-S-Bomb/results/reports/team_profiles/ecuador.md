@@ -1,77 +1,39 @@
-# Ecuador Team Profile
+# Ecuador — Qatar 2022 Team Profile
 
-## Threat creation
+Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
 
-- Total xT created: 1.0181
-- Total xA created: 1.1631
-- Mean creation score: 0.4626
-- Mean creation score (300+ comparison): not available
-- Mean xT/90: 0.0265
+## Team leaders
 
-## Defensive compactness
+| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 27 | Enner Remberto Valencia Lastra | Attacking Midfield/Wing | Target Forward | 261.9167 | 2.0719 | 0.5665 | wide |
+| 2 | 136 | Gonzalo Jordy Plata Jiménez | Central/Wide Midfield | Box-to-Box / Engine Midfielder | 281.4000 | 0.8636 | 0.3260 | wide |
+| 3 | 176 | Pervis Josué Estupiñán Tenorio | Fullback/Wingback | Attacking Wingback | 288.3833 | 0.7002 | 0.2038 | wide |
+| 4 | 185 | Michael Steveen Estrada Martínez | Forward | Target Forward | 225.8167 | 0.6770 | 0.4567 | wide |
+| 5 | 195 | Moisés Isaac Caicedo Corozo | Defensive Midfield | Holding Anchor | 282.9667 | 0.6356 | 0.1735 | wide |
+| 6 | 303 | Angelo Smit Preciado Quiñónez | Fullback/Wingback | Deep Playmaker | 276.2167 | 0.3625 | 0.1602 | wide |
+| 7 | 316 | Jackson Gabriel Porozo Vernaza | Center Back | Defensive Centre-Back | 108.3000 | 0.3443 | 0.1915 | wide |
+| 8 | 358 | Jeremy Leonel Sarmiento Morante | Central/Wide Midfield | Progressive Winger | 102.9000 | 0.2596 | 0.4688 | wide |
+| 9 | 380 | Romario Andrés Ibarra Mina | Central/Wide Midfield | Wide Creator | 74.0833 | 0.2259 | 0.2111 | wide |
+| 10 | 394 | Felix Eduardo Torres Caicedo | Center Back | Sweeper CB | 288.3833 | 0.2036 | 0.0815 | wide |
+| 11 | 448 | Hernán Ismael Galíndez | Goalkeeper | Goalkeeper | 288.3833 | — | — | moderate |
+| 12 | 456 | José Adoni Cifuentes Charcopa | Defensive Midfield | Deep Playmaker | 71.3000 | 0.1096 | 0.3206 | wide |
+| 13 | 477 | Jhegson Sebastián Méndez Carabalí | Defensive Midfield | Holding Anchor | 191.4500 | 0.0890 | 0.0762 | wide |
+| 14 | 553 | Alan Steven Franco Palma | Central/Wide Midfield | Ball-Winner | 50.4167 | -0.0054 | 0.1111 | wide |
+| 15 | 555 | Carlos Armando Gruezo Arboleda | Defensive Midfield | Holding Anchor | 45.0000 | -0.0068 | 0.0797 | wide |
+| 16 | 578 | Piero Martín Hincapié Reyna | Center Back | Sweeper CB | 288.3833 | -0.0531 | 0.0536 | wide |
 
-- Mean defensive hull area: 440.9376
-- Mean defensive density: 0.0261
-- Mean defensive width: 35.2827
-- Mean defensive depth: 20.7552
-- Mean defensive score: 0.5420
-- Mean defensive score (300+ comparison): not available
-- Mean xD/90: 6.2430
-- Mean shape-maintenance score: 0.5957
+## Outfield component totals
 
-## Pressure resistance
+- Attack component total: 6.5781
+- Defensive component total: -0.1006
+- Regulation/extra-time goals: 4
+- Shootout goals excluded from ordinary impact: 0
 
-- Pass completion under pressure: 0.6954
-- Pressured pass sample: 174.0000
-- Mean ball-security score: 0.5067
-- Mean ball-security score (300+ comparison): not available
+## Main goalkeeper
 
-## Top 5 Players
+| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
+|---|---|---|---|---|
+| 25.0000 | Hernán Ismael Galíndez | 0.4321 | 0.0000 | 0.3889 |
 
-1. **Pervis Josué Estupiñán Tenorio** — FB, Attacking Wingback (0.9153)
-
-As a Attacking Wingback, the strongest measured signals are chance creation and final-third passing (82% within the model context) and progressive passing and carrying (75% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **Piero Martín Hincapié Reyna** — CB, Sweeper CB (0.7398)
-
-As a Sweeper CB, the strongest measured signals are coverage-qualified off-ball contribution (81% within the model context) and ball-winning and defensive contribution (68% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **Enner Remberto Valencia Lastra** — AM, Target Forward (0.6777)
-
-As a Target Forward, the strongest measured signals are penalty-box finishing and shot-quality output (95% within the model context) and total tournament goals/xG/xA/VAEP/xT impact (85% within the model context). The assessment uses Qatar 2022 evidence only.
-
-4. **Angelo Smit Preciado Quiñónez** — FB, Deep Playmaker (0.6662)
-
-As a Deep Playmaker, the strongest measured signals are chance creation and final-third passing (78% within the model context) and ball-winning and defensive contribution (63% within the model context). The assessment uses Qatar 2022 evidence only.
-
-5. **Jackson Gabriel Porozo Vernaza** — CB, Defensive Centre-Back (0.5589)
-
-As a Defensive Centre-Back, the strongest measured signals are ball-winning and defensive contribution (64% within the model context) and coverage-qualified off-ball contribution (58% within the model context). The assessment uses Qatar 2022 evidence only.
-
-The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
-
-## Full Player List — Outfield
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|
-| 1 | 53 | Pervis Josué Estupiñán Tenorio | FB | Fullback/Wingback | Attacking Wingback | 288.3833 | 0.9153 |
-| 2 | 125 | Piero Martín Hincapié Reyna | CB | Center Back | Sweeper CB | 288.3833 | 0.7398 |
-| 3 | 150 | Enner Remberto Valencia Lastra | AM | Attacking Midfield/Wing | Target Forward | 261.9167 | 0.6777 |
-| 4 | 156 | Angelo Smit Preciado Quiñónez | FB | Fullback/Wingback | Deep Playmaker | 276.2167 | 0.6662 |
-| 5 | 213 | Jackson Gabriel Porozo Vernaza | CB | Center Back | Defensive Centre-Back | 108.3000 | 0.5589 |
-| 6 | 233 | Gonzalo Jordy Plata Jiménez | CM | Central/Wide Midfield | Box-to-Box / Engine Midfielder | 281.4000 | 0.5042 |
-| 7 | 235 | Moisés Isaac Caicedo Corozo | DM | Defensive Midfield | Holding Anchor | 282.9667 | 0.5013 |
-| 8 | 276 | Felix Eduardo Torres Caicedo | CB | Center Back | Sweeper CB | 288.3833 | 0.4238 |
-| 9 | 347 | Jhegson Sebastián Méndez Carabalí | DM | Defensive Midfield | Holding Anchor | 191.4500 | 0.3157 |
-| 10 | 405 | Michael Steveen Estrada Martínez | FW | Forward | Target Forward | 225.8167 | 0.2409 |
-| 11 | 452 | Jeremy Leonel Sarmiento Morante | AM | Central/Wide Midfield | Progressive Winger | 102.9000 | 0.1842 |
-| 12 | 526 | Romario Andrés Ibarra Mina | AM | Central/Wide Midfield | Wide Creator | 74.0833 | 0.1098 |
-| 13 | 539 | José Adoni Cifuentes Charcopa | DM | Defensive Midfield | Deep Playmaker | 71.3000 | 0.1024 |
-| 14 | 557 | Alan Steven Franco Palma | CM | Central/Wide Midfield | Ball-Winner | 50.4167 | 0.0918 |
-| 15 | 572 | Carlos Armando Gruezo Arboleda | DM | Defensive Midfield | Holding Anchor | 45.0000 | 0.0802 |
-
-## Full Player List — Goalkeepers
-
-| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 32 | 16 | 574 | Hernán Ismael Galíndez | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 288.3833 | 0.0000 | 0.0782 |
+All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.

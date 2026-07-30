@@ -1,76 +1,40 @@
-# Bernardo Mota Veiga de Carvalho e Silva Player Profile
+# Bernardo Mota Veiga de Carvalho e Silva — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Portugal
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Ball-Winner
-- Source functional role: Ball-Winner
-
-- Probabilistic role: Secure/Pressing Midfielder
-- Role entropy: 0.2674
-- Unified global rank: 73
-- Unified team rank: 3
-- Tournament Performance Score: 0.8662
-- Global rank v2: 71
-- Position rank v2: 7
-- Role rank v2: 4
-- Team rank v2: 5
-- Final player rating v2: 0.5894
-- Global rank: 260
-- Position rank: 24
-- Role rank: 32
-- Team rank: 12
-- Final player rating: 0.4868
-- Ranking status: Ranked (300+ min)
-
-- Global ranking eligibility: eligible
 - Minutes: 382.1
-- Minutes reliability: 0.4592
+- Global Rank v3: 112
+- Team Rank v3: 6
+- Position Rank v3: 32
+- Role Rank v3: 44
+- Tournament Impact: 0.9879
+- Role Quality: 0.2312
+- Impact interval: [0.2275, 1.8644]
+- Rank band: 42–312
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.1093
+- Non-shootout xA: 0.2327
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3534 |
-| vaep_def_scaled | 0.5455 |
-| vaep_per_touch | 0.0011 |
-| open_play_xt_p90 | 0.0364 |
-| set_piece_xt_p90 | 0.0219 |
-| role_adjusted_value | 0.1365 |
-| completeness_score | 0.7846 |
-| off_ball_score | 0.6423 |
+| Attack | 1.0117 |
+| Defense | -0.0238 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.6465 |
-| creation_score | 0.6096 |
-| finishing_score | 0.3806 |
-| pressing_score | 0.6415 |
-| defensive_score | 0.5252 |
-| ball_security_score | 0.6635 |
-| aerial_score | 0.2920 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9000 |
-| mean_defenders_within_3m | 0.3070 |
-| mean_defenders_within_5m | 0.7037 |
-| mean_nearest_defender_m | 6.7810 |
-| mean_passing_lane_availability | 0.9397 |
-| packing_index_mean | 0.5747 |
-| mean_space_received | 0.6503 |
-| network_pagerank | 0.0888 |
-| network_betweenness | 0.1632 |
-| network_entropy | 0.9094 |
-| build_up_involvement_ratio | 0.6923 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

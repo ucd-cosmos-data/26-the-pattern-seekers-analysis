@@ -1,76 +1,40 @@
-# Bruno Guimarães Rodriguez Moura Player Profile
+# Bruno Guimarães Rodriguez Moura — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Brazil
-- Tournament: 2022_World_Cup
-- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Deep Playmaker
-- Source functional role: Progressive Winger
-
-- Probabilistic role: Finishing/Aerial Forward
-- Role entropy: 0.2244
-- Unified global rank: 457
-- Unified team rank: 21
-- Tournament Performance Score: 0.1787
-- Global rank v2: 340
-- Position rank v2: 47
-- Role rank v2: 11
-- Team rank v2: 20
-- Final player rating v2: 0.3309
-- Global rank: 277
-- Position rank: 12
-- Role rank: 21
-- Team rank: 17
-- Final player rating: 0.4835
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 83.9
-- Minutes reliability: 0.1572
+- Global Rank v3: 143
+- Team Rank v3: 11
+- Position Rank v3: 1
+- Role Rank v3: 1
+- Tournament Impact: 0.8082
+- Role Quality: 0.5197
+- Impact interval: [0.0000, 2.1961]
+- Rank band: 33–468
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.6478
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.6290 |
-| vaep_def_scaled | 0.6919 |
-| vaep_per_touch | 0.0019 |
-| open_play_xt_p90 | 0.0955 |
-| set_piece_xt_p90 | 0.0410 |
-| role_adjusted_value | 1.0000 |
-| completeness_score | 0.5983 |
-| off_ball_score | 0.5781 |
+| Attack | 0.8118 |
+| Defense | -0.0036 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.6713 |
-| creation_score | 0.2720 |
-| finishing_score | 0.7844 |
-| pressing_score | 0.4960 |
-| defensive_score | 0.3555 |
-| ball_security_score | 0.6863 |
-| aerial_score | 0.0975 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9179 |
-| mean_defenders_within_3m | 0.5196 |
-| mean_defenders_within_5m | 0.9944 |
-| mean_nearest_defender_m | 5.9424 |
-| mean_passing_lane_availability | 0.8747 |
-| packing_index_mean | 0.8771 |
-| mean_space_received | 0.4876 |
-| network_pagerank | 0.0578 |
-| network_betweenness | 0.0571 |
-| network_entropy | 0.9504 |
-| build_up_involvement_ratio | 0.5750 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

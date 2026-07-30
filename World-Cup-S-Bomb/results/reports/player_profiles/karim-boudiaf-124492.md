@@ -1,76 +1,40 @@
-# Karim Boudiaf Player Profile
+# Karim Boudiaf — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Qatar
-- Tournament: 2022_World_Cup
-- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
-- Source functional role: Holding Anchor
-
-- Probabilistic role: Secure/Pressing Midfielder
-- Role entropy: 0.0011
-- Unified global rank: 462
-- Unified team rank: 10
-- Tournament Performance Score: 0.1692
-- Global rank v2: 507
-- Position rank v2: 80
-- Role rank v2: 55
-- Team rank v2: 11
-- Final player rating v2: 0.2047
-- Global rank: 499
-- Position rank: 76
-- Role rank: 50
-- Team rank: 13
-- Final player rating: 0.4092
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 195.9
-- Minutes reliability: 0.3033
+- Global Rank v3: 374
+- Team Rank v3: 10
+- Position Rank v3: 54
+- Role Rank v3: 37
+- Tournament Impact: 0.1977
+- Role Quality: 0.1051
+- Impact interval: [0.0007, 0.4818]
+- Rank band: 212–476
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.2791 |
-| vaep_def_scaled | 0.6549 |
-| vaep_per_touch | 0.0001 |
-| open_play_xt_p90 | 0.0105 |
-| set_piece_xt_p90 | 0.0013 |
-| role_adjusted_value | 0.0594 |
-| completeness_score | 0.5984 |
-| off_ball_score | 0.4722 |
+| Attack | 0.0838 |
+| Defense | 0.1139 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4908 |
-| creation_score | 0.3324 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.3560 |
-| defensive_score | 0.3723 |
-| ball_security_score | 0.5318 |
-| aerial_score | 0.8904 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9132 |
-| mean_defenders_within_3m | 0.4264 |
-| mean_defenders_within_5m | 0.7791 |
-| mean_nearest_defender_m | 5.7467 |
-| mean_passing_lane_availability | 0.9141 |
-| packing_index_mean | 0.6043 |
-| mean_space_received | 0.5744 |
-| network_pagerank | 0.0776 |
-| network_betweenness | 0.0566 |
-| network_entropy | 0.9364 |
-| build_up_involvement_ratio | 0.6140 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

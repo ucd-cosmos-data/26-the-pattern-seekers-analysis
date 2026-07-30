@@ -1,76 +1,40 @@
-# Johan Alberto Venegas Ulloa Player Profile
+# Johan Alberto Venegas Ulloa — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Costa Rica
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Pressing Forward
-- Source functional role: Ball-Winner
-
-- Probabilistic role: Pressing/Secure Attacker
-- Role entropy: 0.0301
-- Unified global rank: 565
-- Unified team rank: 15
-- Tournament Performance Score: 0.0847
-- Global rank v2: 414
-- Position rank v2: 78
-- Role rank v2: 19
-- Team rank v2: 6
-- Final player rating v2: 0.2833
-- Global rank: 335
-- Position rank: 66
-- Role rank: 15
-- Team rank: 8
-- Final player rating: 0.4641
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 73.2
-- Minutes reliability: 0.1400
+- Global Rank v3: 447
+- Team Rank v3: 8
+- Position Rank v3: 77
+- Role Rank v3: 19
+- Tournament Impact: 0.0931
+- Role Quality: 0.2648
+- Impact interval: [0.0000, 0.2792]
+- Rank band: 286–480
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3229 |
-| vaep_def_scaled | 0.2492 |
-| vaep_per_touch | 0.0017 |
-| open_play_xt_p90 | 0.0034 |
-| set_piece_xt_p90 | -0.0021 |
-| role_adjusted_value | 0.0000 |
-| completeness_score | 0.4602 |
-| off_ball_score | 0.4735 |
+| Attack | 0.1113 |
+| Defense | -0.0182 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.3483 |
-| creation_score | 0.1757 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.4713 |
-| defensive_score | 0.4523 |
-| ball_security_score | 0.6637 |
-| aerial_score | 0.3651 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8966 |
-| mean_defenders_within_3m | 0.3974 |
-| mean_defenders_within_5m | 0.7564 |
-| mean_nearest_defender_m | 9.9376 |
-| mean_passing_lane_availability | 0.8713 |
-| packing_index_mean | 0.3846 |
-| mean_space_received | 0.5842 |
-| network_pagerank | 0.0458 |
-| network_betweenness | 0.0000 |
-| network_entropy | 0.8787 |
-| build_up_involvement_ratio | 0.7895 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

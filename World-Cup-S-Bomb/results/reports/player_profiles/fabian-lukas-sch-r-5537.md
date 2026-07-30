@@ -1,76 +1,40 @@
-# Fabian Lukas Schär Player Profile
+# Fabian Lukas Schär — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Switzerland
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Source functional role: Sweeper CB
-
-- Probabilistic role: Aerial/Secure Centre-Back
-- Role entropy: 0.0000
-- Unified global rank: 291
-- Unified team rank: 9
-- Tournament Performance Score: 0.4012
-- Global rank v2: 346
-- Position rank v2: 53
-- Role rank v2: 37
-- Team rank v2: 11
-- Final player rating v2: 0.3270
-- Global rank: 438
-- Position rank: 49
-- Role rank: 32
-- Team rank: 16
-- Final player rating: 0.4299
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 145.3
-- Minutes reliability: 0.2441
+- Global Rank v3: 417
+- Team Rank v3: 14
+- Position Rank v3: 48
+- Role Rank v3: 35
+- Tournament Impact: 0.1300
+- Role Quality: 0.0891
+- Impact interval: [-0.0041, 0.3940]
+- Rank band: 243–517
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.1037
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.4537 |
-| vaep_def_scaled | 0.7130 |
-| vaep_per_touch | -0.0000 |
-| open_play_xt_p90 | 0.0046 |
-| set_piece_xt_p90 | 0.0130 |
-| role_adjusted_value | 0.1995 |
-| completeness_score | 0.6288 |
-| off_ball_score | 0.4525 |
+| Attack | 0.0576 |
+| Defense | 0.0723 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.6191 |
-| creation_score | 0.4319 |
-| finishing_score | 0.5599 |
-| pressing_score | 0.4074 |
-| defensive_score | 0.5535 |
-| ball_security_score | 0.3258 |
-| aerial_score | 0.8280 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8319 |
-| mean_defenders_within_3m | 0.2273 |
-| mean_defenders_within_5m | 0.3586 |
-| mean_nearest_defender_m | 9.1732 |
-| mean_passing_lane_availability | 0.9465 |
-| packing_index_mean | 0.8182 |
-| mean_space_received | 0.8846 |
-| network_pagerank | 0.0657 |
-| network_betweenness | 0.1205 |
-| network_entropy | 0.9125 |
-| build_up_involvement_ratio | 0.6800 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

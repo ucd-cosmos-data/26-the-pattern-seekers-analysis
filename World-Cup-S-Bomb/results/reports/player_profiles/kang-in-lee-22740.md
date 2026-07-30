@@ -1,76 +1,40 @@
-# Kang-In Lee Player Profile
+# Kang-In Lee — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: South Korea
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CM
 - Position group: Central/Wide Midfield
 - Functional role: Deep Playmaker / Metronome
-- Source functional role: Deep Playmaker / Metronome
-
-- Probabilistic role: Pressing/Secure Attacker
-- Role entropy: 0.2485
-- Unified global rank: 190
-- Unified team rank: 7
-- Tournament Performance Score: 0.5956
-- Global rank v2: 89
-- Position rank v2: 9
-- Role rank v2: 3
-- Team rank v2: 1
-- Final player rating v2: 0.5551
-- Global rank: 210
-- Position rank: 13
-- Role rank: 1
-- Team rank: 11
-- Final player rating: 0.5013
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 170.1
-- Minutes reliability: 0.2743
+- Global Rank v3: 295
+- Team Rank v3: 11
+- Position Rank v3: 22
+- Role Rank v3: 3
+- Tournament Impact: 0.3499
+- Role Quality: 0.2675
+- Impact interval: [0.0225, 0.8983]
+- Rank band: 124–435
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 0.1180
+- Non-shootout xA: 0.3084
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.2763 |
-| vaep_def_scaled | 0.5112 |
-| vaep_per_touch | 0.0013 |
-| open_play_xt_p90 | 0.0338 |
-| set_piece_xt_p90 | 0.0751 |
-| role_adjusted_value | 0.5897 |
-| completeness_score | 0.7077 |
-| off_ball_score | 0.6133 |
+| Attack | 0.3889 |
+| Defense | -0.0390 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.6694 |
-| creation_score | 0.7206 |
-| finishing_score | 0.6234 |
-| pressing_score | 0.7605 |
-| defensive_score | 0.5524 |
-| ball_security_score | 0.5497 |
-| aerial_score | 0.4671 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8417 |
-| mean_defenders_within_3m | 0.3675 |
-| mean_defenders_within_5m | 0.7564 |
-| mean_nearest_defender_m | 6.1786 |
-| mean_passing_lane_availability | 0.8940 |
-| packing_index_mean | 0.8547 |
-| mean_space_received | 0.5531 |
-| network_pagerank | 0.0458 |
-| network_betweenness | 0.0120 |
-| network_entropy | 0.9247 |
-| build_up_involvement_ratio | 0.6406 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

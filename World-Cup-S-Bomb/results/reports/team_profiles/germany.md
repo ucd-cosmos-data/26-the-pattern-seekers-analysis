@@ -1,78 +1,40 @@
-# Germany Team Profile
+# Germany — Qatar 2022 Team Profile
 
-## Threat creation
+Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
 
-- Total xT created: 2.4318
-- Total xA created: 6.0997
-- Mean creation score: 0.6119
-- Mean creation score (300+ comparison): not available
-- Mean xT/90: 0.0683
+## Team leaders
 
-## Defensive compactness
+| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 3 | Jamal Musiala | Attacking Midfield/Wing | Hybrid Playmaker / Roaming Creator | 274.0667 | 4.1561 | 0.7486 | wide |
+| 2 | 21 | Serge Gnabry | Attacking Midfield/Wing | Progressive Winger | 273.3333 | 2.3362 | 0.5282 | wide |
+| 3 | 24 | Niclas Füllkrug | Forward | Target Forward / Penalty-Box Anchor | 92.5833 | 2.1753 | 0.9095 | wide |
+| 4 | 54 | Kai Havertz | Forward | Pressing Forward | 112.4167 | 1.6210 | 0.8259 | wide |
+| 5 | 61 | Thomas Müller | Forward | Pressing Forward | 201.7167 | 1.4673 | 0.7300 | wide |
+| 6 | 69 | Leroy Sané | Attacking Midfield/Wing | Progressive Winger | 126.8167 | 1.3424 | 0.4406 | wide |
+| 7 | 92 | David Raum | Fullback/Wingback | Attacking Wingback | 250.3000 | 1.1563 | 0.2541 | wide |
+| 8 | 106 | İlkay Gündoğan | Attacking Midfield/Wing | Linking Attacker | 190.0500 | 1.0698 | 0.2737 | wide |
+| 9 | 121 | Joshua Kimmich | Fullback/Wingback | Attacking Wingback | 294.0000 | 0.9697 | 0.2015 | wide |
+| 10 | 166 | Leon Goretzka | Defensive Midfield | Holding Anchor | 171.8833 | 0.7417 | 0.3608 | wide |
+| 11 | 167 | Antonio Rüdiger | Center Back | Ball-Playing Centre-Back | 294.0000 | 0.7401 | 0.1257 | wide |
+| 12 | 320 | Manuel Neuer | Goalkeeper | Goalkeeper | 294.0000 | — | — | moderate |
+| 13 | 336 | Mario Götze | Central/Wide Midfield | Progressive Winger | 54.1000 | 0.3088 | 0.3806 | wide |
+| 14 | 424 | Niklas Süle | Fullback/Wingback | Attacking Wingback | 287.5833 | 0.1585 | 0.0993 | wide |
+| 15 | 471 | Thilo Kehrer | Fullback/Wingback | Two-Way Fullback | 69.3333 | 0.0965 | 0.1719 | wide |
+| 16 | 484 | Lukas Klostermann | Fullback/Wingback | Ball-Winner | 81.5167 | 0.0806 | 0.1153 | wide |
+| 17 | 517 | Nico Schlotterbeck | Center Back | Sweeper CB | 107.6833 | 0.0387 | 0.0696 | wide |
 
-- Mean defensive hull area: 489.2536
-- Mean defensive density: 0.0243
-- Mean defensive width: 35.7881
-- Mean defensive depth: 22.0275
-- Mean defensive score: 0.5340
-- Mean defensive score (300+ comparison): not available
-- Mean xD/90: 5.4881
-- Mean shape-maintenance score: 0.5711
+## Outfield component totals
 
-## Pressure resistance
+- Attack component total: 18.1617
+- Defensive component total: 0.2973
+- Regulation/extra-time goals: 6
+- Shootout goals excluded from ordinary impact: 0
 
-- Pass completion under pressure: 0.7731
-- Pressured pass sample: 216.0000
-- Mean ball-security score: 0.5662
-- Mean ball-security score (300+ comparison): not available
+## Main goalkeeper
 
-## Top 5 Players
+| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
+|---|---|---|---|---|
+| 18.0000 | Manuel Neuer | 0.4792 | 0.0000 | 0.4313 |
 
-1. **Joshua Kimmich** — FB, Attacking Wingback (0.9800)
-
-As a Attacking Wingback, the strongest measured signals are chance creation and final-third passing (97% within the model context) and coverage-qualified off-ball contribution (97% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **David Raum** — FB, Attacking Wingback (0.9413)
-
-As a Attacking Wingback, the strongest measured signals are chance creation and final-third passing (96% within the model context) and coverage-qualified off-ball contribution (94% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **Serge Gnabry** — AM, Progressive Winger (0.8624)
-
-As a Progressive Winger, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (91% within the model context) and chance creation and final-third passing (87% within the model context). The assessment uses Qatar 2022 evidence only.
-
-4. **Jamal Musiala** — AM, Hybrid Playmaker / Roaming Creator (0.6966)
-
-As a Hybrid Playmaker / Roaming Creator, the strongest measured signals are chance creation and final-third passing (89% within the model context) and progressive passing and carrying (87% within the model context). The assessment uses Qatar 2022 evidence only.
-
-5. **İlkay Gündoğan** — AM, Linking Attacker (0.6436)
-
-As a Linking Attacker, the strongest measured signals are coverage-qualified off-ball contribution (99% within the model context) and penalty-box finishing and shot-quality output (88% within the model context). The assessment uses Qatar 2022 evidence only.
-
-The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
-
-## Full Player List — Outfield
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|
-| 1 | 15 | Joshua Kimmich | FB | Fullback/Wingback | Attacking Wingback | 294.0000 | 0.9800 |
-| 2 | 34 | David Raum | FB | Fullback/Wingback | Attacking Wingback | 250.3000 | 0.9413 |
-| 3 | 75 | Serge Gnabry | AM | Attacking Midfield/Wing | Progressive Winger | 273.3333 | 0.8624 |
-| 4 | 144 | Jamal Musiala | AM | Attacking Midfield/Wing | Hybrid Playmaker / Roaming Creator | 274.0667 | 0.6966 |
-| 5 | 171 | İlkay Gündoğan | AM | Attacking Midfield/Wing | Linking Attacker | 190.0500 | 0.6436 |
-| 6 | 196 | Antonio Rüdiger | CB | Center Back | Ball-Playing Centre-Back | 294.0000 | 0.5847 |
-| 7 | 198 | Thilo Kehrer | FB | Fullback/Wingback | Two-Way Fullback | 69.3333 | 0.5782 |
-| 8 | 240 | Kai Havertz | FW | Forward | Pressing Forward | 112.4167 | 0.4975 |
-| 9 | 244 | Niklas Süle | FB | Fullback/Wingback | Attacking Wingback | 287.5833 | 0.4842 |
-| 10 | 257 | Nico Schlotterbeck | CB | Center Back | Sweeper CB | 107.6833 | 0.4560 |
-| 11 | 278 | Leroy Sané | AM | Attacking Midfield/Wing | Progressive Winger | 126.8167 | 0.4215 |
-| 12 | 292 | Thomas Müller | FW | Forward | Pressing Forward | 201.7167 | 0.4011 |
-| 13 | 305 | Niclas Füllkrug | FW | Forward | Target Forward / Penalty-Box Anchor | 92.5833 | 0.3824 |
-| 15 | 456 | Leon Goretzka | DM | Defensive Midfield | Holding Anchor | 171.8833 | 0.1812 |
-| 16 | 480 | Mario Götze | CM | Central/Wide Midfield | Progressive Winger | 54.1000 | 0.1503 |
-| 17 | 506 | Lukas Klostermann | FB | Fullback/Wingback | Ball-Winner | 81.5167 | 0.1273 |
-
-## Full Player List — Goalkeepers
-
-| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 19 | 14 | 338 | Manuel Neuer | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 294.0000 | 0.1585 | 0.3308 |
+All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.

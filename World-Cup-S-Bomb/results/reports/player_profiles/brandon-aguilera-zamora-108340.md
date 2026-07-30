@@ -1,76 +1,40 @@
-# Brandon Aguilera Zamora Player Profile
+# Brandon Aguilera Zamora — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Costa Rica
-- Tournament: 2022_World_Cup
-- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Pressing Attacker
-- Source functional role: Holding Anchor
-
-- Probabilistic role: Secure/Pressing Midfielder
-- Role entropy: 0.0014
-- Unified global rank: 570
-- Unified team rank: 16
-- Tournament Performance Score: 0.0815
-- Global rank v2: 523
-- Position rank v2: 118
-- Role rank v2: 3
-- Team rank v2: 12
-- Final player rating v2: 0.1859
-- Global rank: 255
-- Position rank: 92
-- Role rank: 3
-- Team rank: 5
-- Final player rating: 0.4881
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 104.2
-- Minutes reliability: 0.1879
+- Global Rank v3: 544
+- Team Rank v3: 16
+- Position Rank v3: 119
+- Role Rank v3: 3
+- Tournament Impact: -0.0437
+- Role Quality: 0.0957
+- Impact interval: [-0.1348, 0.0079]
+- Rank band: 441–551
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.2203 |
-| vaep_def_scaled | 0.4454 |
-| vaep_per_touch | -0.0001 |
-| open_play_xt_p90 | 0.0015 |
-| set_piece_xt_p90 | -0.0003 |
-| role_adjusted_value | 0.0597 |
-| completeness_score | 0.5650 |
-| off_ball_score | 0.4962 |
+| Attack | -0.0096 |
+| Defense | -0.0341 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.3594 |
-| creation_score | 0.3040 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.6541 |
-| defensive_score | 0.7028 |
-| ball_security_score | 0.3860 |
-| aerial_score | 0.6625 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9074 |
-| mean_defenders_within_3m | 0.5102 |
-| mean_defenders_within_5m | 0.8844 |
-| mean_nearest_defender_m | 6.3483 |
-| mean_passing_lane_availability | 0.9021 |
-| packing_index_mean | 0.3605 |
-| mean_space_received | 0.5288 |
-| network_pagerank | 0.0439 |
-| network_betweenness | 0.0256 |
-| network_entropy | 0.9271 |
-| build_up_involvement_ratio | 0.6842 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

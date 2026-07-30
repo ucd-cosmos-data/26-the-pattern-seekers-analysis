@@ -3,9 +3,9 @@
   "decision": "PRESERVED_IN_V5",
   "production_promoted": true,
   "eligible_players": 593,
-  "changed_roles": 98,
-  "unchanged_roles": 495,
-  "change_rate": 0.16526138279932545,
+  "changed_roles": 141,
+  "unchanged_roles": 452,
+  "change_rate": 0.23777403035413153,
   "gates": {
     "legacy_rating_column_preserved": true,
     "v5_rating_active": true,

@@ -1,76 +1,40 @@
-# Hiroki Ito Player Profile
+# Hiroki Ito — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Japan
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
-- Source functional role: Ball-Playing Centre-Back
-
-- Probabilistic role: Pressing/Secure Attacker
-- Role entropy: 0.0061
-- Unified global rank: 533
-- Unified team rank: 19
-- Tournament Performance Score: 0.1049
-- Global rank v2: 301
-- Position rank v2: 40
-- Role rank v2: 14
-- Team rank v2: 9
-- Final player rating v2: 0.3572
-- Global rank: 431
-- Position rank: 46
-- Role rank: 14
-- Team rank: 20
-- Final player rating: 0.4310
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 51.4
-- Minutes reliability: 0.1024
+- Global Rank v3: 470
+- Team Rank v3: 19
+- Position Rank v3: 1
+- Role Rank v3: 1
+- Tournament Impact: 0.0683
+- Role Quality: 0.2623
+- Impact interval: [0.0000, 0.2048]
+- Rank band: 313–496
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0222
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.5144 |
-| vaep_def_scaled | 0.7091 |
-| vaep_per_touch | 0.0003 |
-| open_play_xt_p90 | 0.0331 |
-| set_piece_xt_p90 | 0.0176 |
-| role_adjusted_value | 0.1485 |
-| completeness_score | 0.5494 |
-| off_ball_score | 0.4565 |
+| Attack | 0.0659 |
+| Defense | 0.0023 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.8418 |
-| creation_score | 0.6137 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.0938 |
-| defensive_score | 0.1880 |
-| ball_security_score | 0.6139 |
-| aerial_score | 0.9399 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9576 |
-| mean_defenders_within_3m | 0.1519 |
-| mean_defenders_within_5m | 0.3734 |
-| mean_nearest_defender_m | 7.5080 |
-| mean_passing_lane_availability | 0.9689 |
-| packing_index_mean | 0.7405 |
-| mean_space_received | 0.8075 |
-| network_pagerank | 0.0880 |
-| network_betweenness | 0.1714 |
-| network_entropy | 0.8095 |
-| build_up_involvement_ratio | 0.7600 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

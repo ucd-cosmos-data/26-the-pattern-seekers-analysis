@@ -1,76 +1,40 @@
-# Boulaye Dia Player Profile
+# Boulaye Dia — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Senegal
-- Tournament: 2022_World_Cup
-- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Target Forward
-- Source functional role: Target Forward
-
-- Probabilistic role: Finishing/Aerial Forward
-- Role entropy: 0.0092
-- Unified global rank: 413
-- Unified team rank: 12
-- Tournament Performance Score: 0.2324
-- Global rank v2: 407
-- Position rank v2: 105
-- Role rank v2: 43
-- Team rank v2: 14
-- Final player rating v2: 0.2882
-- Global rank: 271
-- Position rank: 95
-- Role rank: 31
-- Team rank: 8
-- Final player rating: 0.4849
-- Ranking status: Ranked (300+ min)
-
-- Global ranking eligibility: eligible
 - Minutes: 330.1
-- Minutes reliability: 0.4231
+- Global Rank v3: 80
+- Team Rank v3: 2
+- Position Rank v3: 44
+- Role Rank v3: 35
+- Tournament Impact: 1.2215
+- Role Quality: 0.4578
+- Impact interval: [0.2298, 2.1778]
+- Rank band: 32–300
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.6622
+- Non-shootout xA: 0.0304
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3491 |
-| vaep_def_scaled | 0.4200 |
-| vaep_per_touch | 0.0039 |
-| open_play_xt_p90 | -0.0012 |
-| set_piece_xt_p90 | -0.0064 |
-| role_adjusted_value | 0.3356 |
-| completeness_score | 0.6271 |
-| off_ball_score | 0.4049 |
+| Attack | 1.1981 |
+| Defense | 0.0234 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.1789 |
-| creation_score | 0.2987 |
-| finishing_score | 0.8215 |
-| pressing_score | 0.2666 |
-| defensive_score | 0.2735 |
-| ball_security_score | 0.6765 |
-| aerial_score | 0.5118 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8019 |
-| mean_defenders_within_3m | 0.7052 |
-| mean_defenders_within_5m | 1.1753 |
-| mean_nearest_defender_m | 9.6862 |
-| mean_passing_lane_availability | 0.8526 |
-| packing_index_mean | 0.3227 |
-| mean_space_received | 0.4752 |
-| network_pagerank | 0.0588 |
-| network_betweenness | 0.0025 |
-| network_entropy | 0.9518 |
-| build_up_involvement_ratio | 0.5909 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

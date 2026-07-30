@@ -1,76 +1,40 @@
-# Mohammad Hossein Kanani Zadegan Player Profile
+# Mohammad Hossein Kanani Zadegan — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Iran
-- Tournament: 2022_World_Cup
-- Formal 360 position group: CB
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Source functional role: Sweeper CB
-
-- Probabilistic role: Aerial/Secure Centre-Back
-- Role entropy: 0.0000
-- Unified global rank: 583
-- Unified team rank: 19
-- Tournament Performance Score: 0.0671
-- Global rank v2: 521
-- Position rank v2: 97
-- Role rank v2: 70
-- Team rank v2: 14
-- Final player rating v2: 0.1860
-- Global rank: 504
-- Position rank: 77
-- Role rank: 54
-- Team rank: 19
-- Final player rating: 0.4067
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 58.1
-- Minutes reliability: 0.1143
+- Global Rank v3: 537
+- Team Rank v3: 16
+- Position Rank v3: 60
+- Role Rank v3: 43
+- Tournament Impact: -0.0256
+- Role Quality: 0.0840
+- Impact interval: [-0.0809, 0.0040]
+- Rank band: 446–545
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3994 |
-| vaep_def_scaled | 0.6033 |
-| vaep_per_touch | -0.0030 |
-| open_play_xt_p90 | 0.0015 |
-| set_piece_xt_p90 | -0.0008 |
-| role_adjusted_value | 0.0096 |
-| completeness_score | 0.4415 |
-| off_ball_score | 0.3202 |
+| Attack | -0.0169 |
+| Defense | -0.0088 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4199 |
-| creation_score | 0.3580 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.1970 |
-| defensive_score | 0.4106 |
-| ball_security_score | 0.5070 |
-| aerial_score | 0.0975 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8500 |
-| mean_defenders_within_3m | 0.4706 |
-| mean_defenders_within_5m | 0.8529 |
-| mean_nearest_defender_m | 9.5898 |
-| mean_passing_lane_availability | 0.9676 |
-| packing_index_mean | 0.8824 |
-| mean_space_received | 0.8408 |
-| network_pagerank | 0.0423 |
-| network_betweenness | 0.0063 |
-| network_entropy | 0.9796 |
-| build_up_involvement_ratio | 0.5556 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

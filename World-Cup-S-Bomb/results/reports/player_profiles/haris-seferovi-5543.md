@@ -1,76 +1,40 @@
-# Haris Seferović Player Profile
+# Haris Seferović — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Switzerland
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FW
 - Position group: Forward
 - Functional role: Target Forward
-- Source functional role: Target Forward
-
-- Probabilistic role: Finishing/Aerial Forward
-- Role entropy: 0.0255
-- Unified global rank: 491
-- Unified team rank: 14
-- Tournament Performance Score: 0.1416
-- Global rank v2: 246
-- Position rank v2: 59
-- Role rank v2: 29
-- Team rank v2: 9
-- Final player rating v2: 0.3939
-- Global rank: 306
-- Position rank: 61
-- Role rank: 37
-- Team rank: 10
-- Final player rating: 0.4731
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 86.2
-- Minutes reliability: 0.1608
+- Global Rank v3: 305
+- Team Rank v3: 10
+- Position Rank v3: 61
+- Role Rank v3: 29
+- Tournament Impact: 0.3293
+- Role Quality: 0.4954
+- Impact interval: [0.0000, 0.8373]
+- Rank band: 129–484
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.2703
+- Non-shootout xA: 0.0321
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3289 |
-| vaep_def_scaled | 0.2201 |
-| vaep_per_touch | 0.0029 |
-| open_play_xt_p90 | 0.0081 |
-| set_piece_xt_p90 | 0.0024 |
-| role_adjusted_value | 0.1694 |
-| completeness_score | 0.5025 |
-| off_ball_score | 0.5133 |
+| Attack | 0.3333 |
+| Defense | -0.0040 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4106 |
-| creation_score | 0.4587 |
-| finishing_score | 0.6324 |
-| pressing_score | 0.4698 |
-| defensive_score | 0.2551 |
-| ball_security_score | 0.6903 |
-| aerial_score | 0.2920 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9091 |
-| mean_defenders_within_3m | 0.6167 |
-| mean_defenders_within_5m | 1.0833 |
-| mean_nearest_defender_m | 8.2957 |
-| mean_passing_lane_availability | 0.8911 |
-| packing_index_mean | 0.5667 |
-| mean_space_received | 0.5343 |
-| network_pagerank | 0.0213 |
-| network_betweenness | 0.0159 |
-| network_entropy | 0.9821 |
-| build_up_involvement_ratio | 0.7333 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

@@ -1,76 +1,37 @@
-# Wales Team Profile
+# Wales — Qatar 2022 Team Profile
 
-## Threat creation
+Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
 
-- Total xT created: 0.8960
-- Total xA created: 1.2536
-- Mean creation score: 0.5076
-- Mean creation score (300+ comparison): not available
-- Mean xT/90: 0.0266
+## Team leaders
 
-## Defensive compactness
+| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 68 | Kieffer Roberto Francisco Moore | Forward | Target Forward / Penalty-Box Anchor | 251.7167 | 1.3645 | 0.5086 | wide |
+| 2 | 113 | Gareth Frank Bale | Forward | Target Forward | 247.7167 | 1.0182 | 0.4258 | wide |
+| 3 | 144 | Aaron Ramsey | Central/Wide Midfield | Ball-Winner | 281.3833 | 0.8288 | 0.2179 | wide |
+| 4 | 294 | Brennan Johnson | Attacking Midfield/Wing | Ball-Winner | 116.5167 | 0.3844 | 0.4175 | wide |
+| 5 | 328 | Harry Wilson | Central/Wide Midfield | Wide Creator | 167.2333 | 0.3209 | 0.2427 | wide |
+| 6 | 343 | Neco Williams | Fullback/Wingback | Wide Creator | 216.3833 | 0.2902 | 0.1815 | wide |
+| 7 | 355 | Ben Davies | Center Back | Ball-Playing Centre-Back | 261.3333 | 0.2614 | 0.0851 | wide |
+| 8 | 378 | Chris Mepham | Center Back | Sweeper CB | 296.7167 | 0.2264 | 0.0842 | wide |
+| 9 | 381 | Connor Roberts | Fullback/Wingback | Deep Playmaker | 215.5333 | 0.2192 | 0.1568 | wide |
+| 10 | 434 | Daniel James | Attacking Midfield/Wing | Ball-Winner | 166.4833 | 0.1371 | 0.4307 | wide |
+| 11 | 472 | Joe Rodon | Center Back | Sweeper CB | 296.7167 | 0.0936 | 0.0964 | wide |
+| 12 | 474 | Ethan Ampadu | Defensive Midfield | Holding Anchor | 265.5667 | 0.0909 | 0.0895 | wide |
+| 13 | 507 | Joe Allen | Defensive Midfield | Ball-Winner | 105.6000 | 0.0551 | 0.1039 | wide |
+| 14 | 521 | Wayne Hennessey | Goalkeeper | Goalkeeper | 202.7167 | — | — | moderate |
 
-- Mean defensive hull area: 599.2348
-- Mean defensive density: 0.0252
-- Mean defensive width: 37.5838
-- Mean defensive depth: 24.8475
-- Mean defensive score: 0.5235
-- Mean defensive score (300+ comparison): not available
-- Mean xD/90: 6.5441
-- Mean shape-maintenance score: 0.4439
+## Outfield component totals
 
-## Pressure resistance
+- Attack component total: 5.2886
+- Defensive component total: 0.0022
+- Regulation/extra-time goals: 1
+- Shootout goals excluded from ordinary impact: 0
 
-- Pass completion under pressure: 0.6856
-- Pressured pass sample: 194.0000
-- Mean ball-security score: 0.4787
-- Mean ball-security score (300+ comparison): not available
+## Main goalkeeper
 
-## Top 5 Players
+| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
+|---|---|---|---|---|
+| 29.0000 | Wayne Hennessey | 0.4089 | 0.0000 | 0.3680 |
 
-1. **Chris Mepham** — CB, Sweeper CB (0.7543)
-
-As a Sweeper CB, the strongest measured signals are chance creation and final-third passing (83% within the model context) and coverage-qualified off-ball contribution (66% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **Neco Williams** — FB, Wide Creator (0.5662)
-
-As a Wide Creator, the strongest measured signals are ball-winning and defensive contribution (72% within the model context) and progressive passing and carrying (57% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **Gareth Frank Bale** — FW, Target Forward (0.5613)
-
-As a Target Forward, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (79% within the model context) and penalty-box finishing and shot-quality output (66% within the model context). The assessment uses Qatar 2022 evidence only.
-
-4. **Ben Davies** — CB, Ball-Playing Centre-Back (0.5151)
-
-As a Ball-Playing Centre-Back, the strongest measured signals are progressive passing and carrying (67% within the model context) and penalty-box finishing and shot-quality output (67% within the model context). The assessment uses Qatar 2022 evidence only.
-
-5. **Joe Rodon** — CB, Sweeper CB (0.4743)
-
-As a Sweeper CB, the strongest measured signals are ball security and possession value (56% within the model context) and coverage-qualified off-ball contribution (47% within the model context). The assessment uses Qatar 2022 evidence only.
-
-The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
-
-## Full Player List — Outfield
-
-| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|
-| 1 | 113 | Chris Mepham | CB | Center Back | Sweeper CB | 296.7167 | 0.7543 |
-| 2 | 207 | Neco Williams | FB | Fullback/Wingback | Wide Creator | 216.3833 | 0.5662 |
-| 3 | 210 | Gareth Frank Bale | FW | Forward | Target Forward | 247.7167 | 0.5613 |
-| 4 | 227 | Ben Davies | CB | Center Back | Ball-Playing Centre-Back | 261.3333 | 0.5151 |
-| 5 | 247 | Joe Rodon | CB | Center Back | Sweeper CB | 296.7167 | 0.4743 |
-| 6 | 254 | Ethan Ampadu | DM | Defensive Midfield | Holding Anchor | 265.5667 | 0.4614 |
-| 7 | 270 | Kieffer Roberto Francisco Moore | FW | Forward | Target Forward / Penalty-Box Anchor | 251.7167 | 0.4356 |
-| 8 | 331 | Harry Wilson | CM | Central/Wide Midfield | Wide Creator | 167.2333 | 0.3417 |
-| 9 | 444 | Joe Allen | DM | Defensive Midfield | Ball-Winner | 105.6000 | 0.1877 |
-| 10 | 460 | Connor Roberts | FB | Fullback/Wingback | Deep Playmaker | 215.5333 | 0.1730 |
-| 11 | 500 | Brennan Johnson | AM | Attacking Midfield/Wing | Ball-Winner | 116.5167 | 0.1322 |
-| 13 | 507 | Aaron Ramsey | CM | Central/Wide Midfield | Ball-Winner | 281.3833 | 0.1271 |
-| 14 | 578 | Daniel James | AM | Attacking Midfield/Wing | Ball-Winner | 166.4833 | 0.0740 |
-
-## Full Player List — Goalkeepers
-
-| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 28 | 12 | 501 | Wayne Hennessey | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 202.7167 | 0.0606 | 0.1316 |
-| — | — | — | Daniel Ward | False | Unranked (backup goalkeeper) | GK | Goalkeeper | Goalkeeper | 109.3333 | — | — |
+All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.

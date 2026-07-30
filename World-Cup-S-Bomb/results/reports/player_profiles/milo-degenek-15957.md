@@ -1,76 +1,40 @@
-# Miloš Degenek Player Profile
+# Miloš Degenek — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Australia
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Deep Playmaker
-- Source functional role: Deep Playmaker
-
-- Probabilistic role: Defensive/Pressing Fullback
-- Role entropy: 0.0000
-- Unified global rank: 359
-- Unified team rank: 9
-- Tournament Performance Score: 0.3032
-- Global rank v2: 542
-- Position rank v2: 103
-- Role rank v2: 38
-- Team rank v2: 15
-- Final player rating v2: 0.1413
-- Global rank: 285
-- Position rank: 90
-- Role rank: 22
-- Team rank: 7
-- Final player rating: 0.4811
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 202.4
-- Minutes reliability: 0.3103
+- Global Rank v3: 356
+- Team Rank v3: 12
+- Position Rank v3: 73
+- Role Rank v3: 20
+- Tournament Impact: 0.2324
+- Role Quality: 0.1658
+- Impact interval: [-0.0841, 0.7905]
+- Rank band: 144–547
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.0934 |
-| vaep_def_scaled | 0.6616 |
-| vaep_per_touch | -0.0004 |
-| open_play_xt_p90 | 0.0020 |
-| set_piece_xt_p90 | 0.0382 |
-| role_adjusted_value | 0.0359 |
-| completeness_score | 0.6609 |
-| off_ball_score | 0.3889 |
+| Attack | 0.0287 |
+| Defense | 0.2037 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.6417 |
-| creation_score | 0.4956 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.3646 |
-| defensive_score | 0.5485 |
-| ball_security_score | 0.3177 |
-| aerial_score | 0.5590 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.7670 |
-| mean_defenders_within_3m | 0.2710 |
-| mean_defenders_within_5m | 0.4860 |
-| mean_nearest_defender_m | 8.4516 |
-| mean_passing_lane_availability | 0.8936 |
-| packing_index_mean | 0.9065 |
-| mean_space_received | 0.7524 |
-| network_pagerank | 0.0455 |
-| network_betweenness | 0.0575 |
-| network_entropy | 0.8210 |
-| build_up_involvement_ratio | 0.6866 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

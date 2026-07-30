@@ -1,76 +1,40 @@
-# Heung-Min Son Player Profile
+# Heung-Min Son — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: South Korea
-- Tournament: 2022_World_Cup
-- Formal 360 position group: AM
 - Position group: Attacking Midfield/Wing
 - Functional role: Target Forward
-- Source functional role: Target Forward
-
-- Probabilistic role: Finishing/Progressive Attacker
-- Role entropy: 0.0690
-- Unified global rank: 226
-- Unified team rank: 9
-- Tournament Performance Score: 0.5165
-- Global rank v2: 179
-- Position rank v2: 53
-- Role rank v2: 23
-- Team rank v2: 4
-- Final player rating v2: 0.4499
-- Global rank: 35
-- Position rank: 17
-- Role rank: 1
-- Team rank: 1
-- Final player rating: 0.5729
-- Ranking status: Ranked (300+ min)
-
-- Global ranking eligibility: eligible
 - Minutes: 389.6
-- Minutes reliability: 0.4641
+- Global Rank v3: 45
+- Team Rank v3: 1
+- Position Rank v3: 33
+- Role Rank v3: 33
+- Tournament Impact: 1.7334
+- Role Quality: 0.4732
+- Impact interval: [0.3971, 3.3401]
+- Rank band: 13–234
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 0.4538
+- Non-shootout xA: 0.6422
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.5017 |
-| vaep_def_scaled | 0.4610 |
-| vaep_per_touch | 0.0036 |
-| open_play_xt_p90 | 0.0413 |
-| set_piece_xt_p90 | 0.0368 |
-| role_adjusted_value | 0.4750 |
-| completeness_score | 0.6867 |
-| off_ball_score | 0.3853 |
+| Attack | 1.8187 |
+| Defense | -0.0853 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4381 |
-| creation_score | 0.6481 |
-| finishing_score | 0.6363 |
-| pressing_score | 0.2519 |
-| defensive_score | 0.3914 |
-| ball_security_score | 0.3848 |
-| aerial_score | 0.2597 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8863 |
-| mean_defenders_within_3m | 0.4543 |
-| mean_defenders_within_5m | 0.9717 |
-| mean_nearest_defender_m | 10.0220 |
-| mean_passing_lane_availability | 0.8415 |
-| packing_index_mean | 0.5804 |
-| mean_space_received | 0.5316 |
-| network_pagerank | 0.0827 |
-| network_betweenness | 0.0531 |
-| network_entropy | 0.9360 |
-| build_up_involvement_ratio | 0.5649 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

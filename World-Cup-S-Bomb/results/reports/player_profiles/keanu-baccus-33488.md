@@ -1,76 +1,40 @@
-# Keanu Baccus Player Profile
+# Keanu Baccus — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Australia
-- Tournament: 2022_World_Cup
-- Formal 360 position group: DM
 - Position group: Defensive Midfield
 - Functional role: Deep Playmaker
-- Source functional role: Deep Playmaker
-
-- Probabilistic role: Pressing/Finishing Attacker
-- Role entropy: 0.2457
-- Unified global rank: 454
-- Unified team rank: 14
-- Tournament Performance Score: 0.1819
-- Global rank v2: 539
-- Position rank v2: 89
-- Role rank v2: 37
-- Team rank v2: 14
-- Final player rating v2: 0.1485
-- Global rank: 531
-- Position rank: 87
-- Role rank: 38
-- Team rank: 14
-- Final player rating: 0.3879
-- Ranking status: Coverage only (<180 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 133.9
-- Minutes reliability: 0.2293
+- Global Rank v3: 407
+- Team Rank v3: 13
+- Position Rank v3: 17
+- Role Rank v3: 8
+- Tournament Impact: 0.1410
+- Role Quality: 0.2340
+- Impact interval: [-0.0712, 0.4987]
+- Rank band: 205–546
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0355
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.2919 |
-| vaep_def_scaled | 0.0053 |
-| vaep_per_touch | -0.0030 |
-| open_play_xt_p90 | 0.0148 |
-| set_piece_xt_p90 | 0.0046 |
-| role_adjusted_value | 0.1493 |
-| completeness_score | 0.5883 |
-| off_ball_score | 0.5015 |
+| Attack | 0.0420 |
+| Defense | 0.0989 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.3876 |
-| creation_score | 0.4381 |
-| finishing_score | 0.4396 |
-| pressing_score | 0.6383 |
-| defensive_score | 0.6662 |
-| ball_security_score | 0.3086 |
-| aerial_score | 0.4179 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9115 |
-| mean_defenders_within_3m | 0.5543 |
-| mean_defenders_within_5m | 1.0000 |
-| mean_nearest_defender_m | 7.9489 |
-| mean_passing_lane_availability | 0.8821 |
-| packing_index_mean | 0.4857 |
-| mean_space_received | 0.6376 |
-| network_pagerank | 0.0365 |
-| network_betweenness | 0.0330 |
-| network_entropy | 0.9446 |
-| build_up_involvement_ratio | 0.4318 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

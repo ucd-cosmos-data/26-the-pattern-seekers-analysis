@@ -1,76 +1,40 @@
-# Nouhou Tolo Player Profile
+# Nouhou Tolo — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Cameroon
-- Tournament: 2022_World_Cup
-- Formal 360 position group: FB
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Source functional role: Wide Creator
-
-- Probabilistic role: Progressive/Creative Fullback
-- Role entropy: 0.0000
-- Unified global rank: 124
-- Unified team rank: 2
-- Tournament Performance Score: 0.7399
-- Global rank v2: 534
-- Position rank v2: 99
-- Role rank v2: 26
-- Team rank v2: 16
-- Final player rating v2: 0.1583
-- Global rank: 317
-- Position rank: 97
-- Role rank: 25
-- Team rank: 9
-- Final player rating: 0.4704
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 292.6
-- Minutes reliability: 0.3940
+- Global Rank v3: 469
+- Team Rank v3: 15
+- Position Rank v3: 91
+- Role Rank v3: 28
+- Tournament Impact: 0.0684
+- Role Quality: 0.1525
+- Impact interval: [-0.1265, 0.2836]
+- Rank band: 279–550
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.1396 |
-| vaep_def_scaled | 0.7252 |
-| vaep_per_touch | 0.0003 |
-| open_play_xt_p90 | 0.0036 |
-| set_piece_xt_p90 | 0.0046 |
-| role_adjusted_value | 0.0069 |
-| completeness_score | 0.6522 |
-| off_ball_score | 0.4496 |
+| Attack | 0.1665 |
+| Defense | -0.0981 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4445 |
-| creation_score | 0.4541 |
-| finishing_score | 0.2305 |
-| pressing_score | 0.6220 |
-| defensive_score | 0.6237 |
-| ball_security_score | 0.3161 |
-| aerial_score | 0.6847 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8318 |
-| mean_defenders_within_3m | 0.3718 |
-| mean_defenders_within_5m | 0.7184 |
-| mean_nearest_defender_m | 6.3653 |
-| mean_passing_lane_availability | 0.9044 |
-| packing_index_mean | 0.8664 |
-| mean_space_received | 0.6154 |
-| network_pagerank | 0.0730 |
-| network_betweenness | 0.0966 |
-| network_entropy | 0.8491 |
-| build_up_involvement_ratio | 0.4881 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

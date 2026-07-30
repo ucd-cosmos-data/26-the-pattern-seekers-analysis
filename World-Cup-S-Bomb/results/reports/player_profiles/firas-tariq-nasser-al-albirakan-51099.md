@@ -1,76 +1,40 @@
-# Firas Tariq Nasser Al Albirakan Player Profile
+# Firas Tariq Nasser Al Albirakan — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Saudi Arabia
-- Tournament: 2022_World_Cup
-- Formal 360 position group: AM
 - Position group: Central/Wide Midfield
 - Functional role: Target Forward
-- Source functional role: Target Forward
-
-- Probabilistic role: Pressing/Finishing Attacker
-- Role entropy: 0.1923
-- Unified global rank: 520
-- Unified team rank: 16
-- Tournament Performance Score: 0.1149
-- Global rank v2: 512
-- Position rank v2: 116
-- Role rank v2: 46
-- Team rank v2: 15
-- Final player rating v2: 0.1978
-- Global rank: 263
-- Position rank: 26
-- Role rank: 30
-- Team rank: 10
-- Final player rating: 0.4862
-- Ranking status: Ranked (180–299 min)
-
-- Global ranking eligibility: eligible
 - Minutes: 283.1
-- Minutes reliability: 0.3862
+- Global Rank v3: 130
+- Team Rank v3: 2
+- Position Rank v3: 85
+- Role Rank v3: 43
+- Tournament Impact: 0.8631
+- Role Quality: 0.3517
+- Impact interval: [0.1222, 1.8766]
+- Rank band: 44–362
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 0.1240
+- Non-shootout xA: 0.0806
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.6692 |
-| vaep_def_scaled | 0.4266 |
-| vaep_per_touch | 0.0047 |
-| open_play_xt_p90 | -0.0162 |
-| set_piece_xt_p90 | 0.0068 |
-| role_adjusted_value | 0.2090 |
-| completeness_score | 0.6137 |
-| off_ball_score | 0.4381 |
+| Attack | 0.7622 |
+| Defense | 0.1009 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.3167 |
-| creation_score | 0.4848 |
-| finishing_score | 0.4592 |
-| pressing_score | 0.3941 |
-| defensive_score | 0.3391 |
-| ball_security_score | 0.4133 |
-| aerial_score | 0.6866 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8389 |
-| mean_defenders_within_3m | 0.5761 |
-| mean_defenders_within_5m | 1.0072 |
-| mean_nearest_defender_m | 9.3882 |
-| mean_passing_lane_availability | 0.8514 |
-| packing_index_mean | 0.4601 |
-| mean_space_received | 0.5310 |
-| network_pagerank | 0.0796 |
-| network_betweenness | 0.0569 |
-| network_entropy | 0.9363 |
-| build_up_involvement_ratio | 0.6517 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.
