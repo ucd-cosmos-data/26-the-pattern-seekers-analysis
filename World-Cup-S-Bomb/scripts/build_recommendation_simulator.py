@@ -852,7 +852,8 @@ def argentina_france_demo(
                     ),
                 },
                 "explanation": (
-                    "Model advantage across held-out pre-match scenarios."
+                    "Model advantage across held-out possessions "
+                    "(within-tournament cross-validation)."
                     if clear
                     else "No sufficiently clear model advantage; fallback uses the "
                     "team's prior attacking-style tendency."
@@ -862,18 +863,21 @@ def argentina_france_demo(
     payload = {
         "fixture": "Argentina vs France",
         "match_id": FINAL_MATCH_ID,
-        "status": "held-out retrospective pre-match demonstration",
+        "status": "retrospective possession-level holdout demonstration (not a pre-match forecast)",
         "selected_transition_penalty": selected_penalty,
         "box_entry_value": box_value,
         "recommendations": recommendations,
         "limitations": [
             "Observational policy evaluation is not proof of causal effectiveness.",
             "Transition risk remains low-confidence and receives constrained influence.",
-            "The demonstration uses prior-only fold features and starting-lineup context.",
+            "Folds hold out possessions, not matches: training data includes other "
+            "possessions from this same final, so this is not a pre-match forecast.",
         ],
     }
     lines = [
-        "# Argentina–France Held-Out Recommendation",
+        "# Argentina–France Retrospective Recommendation",
+        "",
+        "*Possession-level holdout (within-tournament cross-validation), not a pre-match forecast.*",
         "",
         f"- Selected transition penalty: {selected_penalty:.2f}",
         f"- Estimated box-entry value: {box_value:.4f} xG-equivalent",

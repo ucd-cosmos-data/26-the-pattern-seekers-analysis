@@ -1,7 +1,7 @@
 {
   "fixture": "Argentina vs France",
   "match_id": 3869685,
-  "status": "held-out retrospective pre-match demonstration",
+  "status": "retrospective possession-level holdout demonstration (not a pre-match forecast)",
   "selected_transition_penalty": 0.0,
   "box_entry_value": 0.039399135606541055,
   "recommendations": [
@@ -42,7 +42,7 @@
         "width": "use the full width",
         "carrying": "encourage progressive carries"
       },
-      "explanation": "Model advantage across held-out pre-match scenarios."
+      "explanation": "Model advantage across held-out possessions (within-tournament cross-validation)."
     },
     {
       "team": "France",
@@ -81,12 +81,12 @@
         "width": "use the full width",
         "carrying": "encourage progressive carries"
       },
-      "explanation": "Model advantage across held-out pre-match scenarios."
+      "explanation": "Model advantage across held-out possessions (within-tournament cross-validation)."
     }
   ],
   "limitations": [
     "Observational policy evaluation is not proof of causal effectiveness.",
     "Transition risk remains low-confidence and receives constrained influence.",
-    "The demonstration uses prior-only fold features and starting-lineup context."
+    "Folds hold out possessions, not matches: training data includes other possessions from this same final, so this is not a pre-match forecast."
   ]
 }
