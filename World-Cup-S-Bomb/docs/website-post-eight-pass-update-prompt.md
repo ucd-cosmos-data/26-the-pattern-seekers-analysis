@@ -52,20 +52,30 @@ score systems into one field.
 Confirm all of the following before editing the website:
 
 1. Eight-pass repair completed and champion/challenger decisions recorded.
-2. The completed eight-pass state has been reviewed and committed in the
-   analytics repository. Obtain its exact 40-character Git SHA as
-   `PASS8_COMMIT`. Do not use a moving branch name, `HEAD`, a date, or “latest”
-   as publication provenance.
-3. Check out or otherwise verify the analytics repository at exactly
+2. The pulled eight-pass history contains:
+   - implementation commit
+     `87eef9fc47f4741df8d01edf074068ef8287fadb`;
+   - generated release-artifact commit
+     `8a1250b7b17cb7b3f91b4b4b474f42a2284504be`.
+3. Do **not** treat the artifact commit above as website-ready by itself. The
+   verification recorded below found release-family failures. Obtain a
+   corrective commit descended from `8a1250b7...`, rerun all release tests, and
+   use that passing commit’s exact 40-character SHA as `PASS8_COMMIT`. Do not
+   use a moving branch name, `HEAD`, a date, or “latest” as publication
+   provenance.
+4. Check out or otherwise verify the analytics repository at exactly
    `PASS8_COMMIT`. The governed source, generator, ranking, report, profile,
    figure, and manifest paths must have no uncommitted differences from that
    commit.
-4. Analytics artifacts have been regenerated and hash-manifested by that
+5. Analytics artifacts have been regenerated and hash-manifested by that
    committed state.
-5. These files exist and are internally consistent:
+6. These files exist and are internally consistent:
 
-- `results/reports/ranking/player_rankings.csv`
-- `results/reports/ranking/player_rankings.json`
+- `results/reports/ranking/player_rankings_v3.csv`
+- `results/reports/ranking/player_rankings_v3.json`
+- byte-identical active aliases:
+  `player_rankings.csv`, `player_rankings.json`, `player_rankings_v2.csv`,
+  `v5_player_rankings.csv`, and `v5_player_rankings.json`
 - `results/reports/ranking/player_rankings_300plus.csv`
 - `results/reports/ranking/global_rankings_outfield.csv`
 - `results/reports/ranking/global_rankings_outfield_300min.csv`
@@ -76,13 +86,30 @@ Confirm all of the following before editing the website:
 - `results/reports/ranking/ranking_methodology.md`
 - `results/reports/ranking/ranking_audit.md`
 - `results/reports/ranking/ranking_audit.json`
+- `results/reports/ranking/refresh_manifest.json`
+- `results/diagnostics/ranking_repair/v3_release_audit.json`
+- `results/diagnostics/ranking_repair/pass_checklist.json`
+- `results/diagnostics/unified_team_validation.json`
+- `results/diagnostics/v3_validation_summary.json`
 - `results/reports/player_profiles/*.md`
 - `results/reports/team_profiles/*.md`
-- `results/reports/model_summary.json`
-- `results/reports/model_summary.md`
 - `results/reports/canonical/model_summary.json`
 - `results/reports/canonical/model_summary.md`
-- `results/reports/final_summary.md`
+- byte-identical model-summary aliases:
+  `results/reports/model_summary.json`,
+  `results/reports/model_summary.md`, and
+  `results/Summary/model_summary.md`
+- `results/reports/canonical/final_summary.md`
+- byte-identical final-summary aliases:
+  `results/reports/final_summary.md` and
+  `results/reports/final/world_cup_team_performance_and_top_players.md`
+- `results/reports/canonical/coaches_notebook.md`
+- byte-identical compatibility copy:
+  `results/reports/coaches_notebook.md`
+- `results/reports/docs/final_summary.docx`
+- `results/reports/v3_figures/*.png`
+- `results/metadata/artifact_manifest.json`
+- `results/reports/artifact_manifest.json`
 - `results/MIscellaneous/attacking_style_profiles.csv`
 - `results/MIscellaneous/defensive_style_profiles.csv`
 - `results/MIscellaneous/style_matchup_effectiveness.csv`
@@ -91,7 +118,7 @@ Confirm all of the following before editing the website:
 - `results/MIscellaneous/team_defensive_style_profiles.csv`
 - `data/processed/player_heatmap_cells.csv`
 
-6. Website package scripts are available:
+7. Website package scripts are available:
 
 ```sh
 pnpm data:build
@@ -107,12 +134,51 @@ pnpm build
 If any precondition fails, stop and report the missing artifact. Do not patch
 the website onto stale analytics.
 
-The original eight-pass execution prompt intentionally says not to create a
-Git commit unless requested. Therefore, do not assume a Pass-8 commit exists
-merely because the passes ran. This website update requires the owner-reviewed
-commit SHA as a separate release input. If no such commit exists, stop before
-website import and request that the completed, validated eight-pass state be
-committed; do not create or select a commit implicitly.
+### Verified pulled-release state and blockers
+
+The following observations are grounded in the actual Git range
+`0e1f2b3b9f89e59ebc482c0bbe0ef0c3776917b7..8a1250b7b17cb7b3f91b4b4b474f42a2284504be`:
+
+- all eight checklist passes report `PASS`;
+- active model version is `ranking-repair-v3.0-qatar-2022`;
+- 593 rich player rows and 593 player profiles were regenerated;
+- 553 outfield rows, 126 300+ outfield rows, 142 all-position 300+ rows,
+  32 ranked main goalkeepers, 585 unified rows, and 8 profile-only backup
+  goalkeepers are present;
+- all 32 `by_team` files, all 32 `by_team_unified` files, and all 32
+  `team_profiles` were regenerated;
+- canonical/root/Summary model-summary Markdown files are byte-identical;
+- canonical/root/final-path final summaries are byte-identical;
+- canonical/root coaches notebooks are byte-identical;
+- the final DOCX validation reports `PASS`;
+- v3 ranking, goalkeeper, defensive, event-scope, documentation, and DOCX
+  generators/tests were added.
+
+The pulled artifact commit is nevertheless **not website-ready**. Verification
+produced 47 passing tests and these 3 failing release tests:
+
+1. `test_champion_copies_match_frozen_hashes` — all five frozen copies
+   (`player_rankings`, `unified_rankings`, `goalkeeper_rankings`,
+   `model_summary`, and `ranking_audit`) disagree with their recorded hashes in
+   `champion_snapshot.json`.
+2. `test_release_manifests_use_portable_current_paths` — the master artifact
+   manifest does not match the current result tree, including path-case
+   inconsistencies around `MIscellaneous`.
+3. `test_profile_starter_team_and_figure_families_are_complete` — starter JSON
+   lacks `active_model_version`; inspection also shows all 593 starter reports
+   and all 32 team coaching reports were left unchanged and still contain
+   legacy V5/rating language. The required seven files under
+   `results/reports/v3_figures/` are absent.
+
+Treat those as release blockers. Repair the analytics generators and regenerate
+the affected champion snapshot, manifests, starter reports/JSON, team coaching
+reports/JSON, and v3 figures before setting `PASS8_COMMIT`. The website must
+never import the stale starter/team-coaching ranking sections or old V5 figures.
+
+The pulled history proves that implementation and artifact commits exist, but
+the current artifact commit fails release validation. `PASS8_COMMIT` therefore
+means the later owner-reviewed corrective commit—not `87eef9f...` and not the
+failing `8a1250b...` release candidate.
 
 ### Commit-pinned Pass-8 consistency gate
 
@@ -137,11 +203,12 @@ Before website work, validate the complete publication bundle at
 5. Verify all ranking-dependent publications were generated from those same
    committed rankings:
    - every player profile;
-   - every team/team-profile report;
+   - every starter Markdown/JSON report;
+   - every team coaching Markdown/JSON report and every team profile;
    - canonical and compatibility final summaries;
    - canonical coaches notebook and every compatibility copy;
    - model-summary JSON and Markdown variants;
-   - ranking figures;
+   - all seven required v3 ranking/model figures;
    - final DOCX;
    - documentation dictionaries and manifests.
 6. Compare the following mirrored outputs byte-for-byte where their contracts
@@ -220,20 +287,22 @@ release blocker.
 Publish three distinct populations:
 
 1. **300+ minute cohort**
-   - Current website-facing 142-player reliability publication.
-   - Prefer `player_rankings_300plus.csv` / outfield 300+ plus eligible main GKs
-     if the repaired 300+ export still includes them.
+   - Exactly 142 rows in the verified v3 release:
+     126 outfield players plus 16 main goalkeepers with 300+ minutes.
+   - Source: `player_rankings_300plus.csv`.
    - This is the continuity tab for the existing site audience.
 
 2. **Unified / larger ranking cohort**
    - `unified_tournament_rankings.csv`
-   - Eligible outfield players plus exactly 32 team-main goalkeepers.
+   - Exactly 585 rows in the verified v3 release:
+     all 553 outfield players plus exactly 32 team-main goalkeepers.
    - Score field: `Tournament Performance Score`
    - Backup goalkeepers remain unranked in this list.
 
 3. **All profiles**
-   - Every markdown profile under `results/reports/player_profiles/`
-   - Includes unranked backup goalkeepers and lower-minute players when present.
+   - Exactly 593 Markdown profiles under `results/reports/player_profiles/`.
+   - Includes all 553 outfield players, 32 ranked main goalkeepers, and 8
+     unranked backup goalkeepers.
    - Every profile must have a prerendered route.
 
 Never collapse these into one generic `rank`/`rating` without discrimination.
@@ -253,10 +322,10 @@ route each website surface to exactly one ranking authority:
 | 300+ continuity tab | `ranking/player_rankings_300plus.csv` | The post–Pass-8 300+ export contract, including only rows whose ranking status and minutes satisfy that export |
 | Outfield-only global reference | `ranking/global_rankings_outfield.csv` | Outfield model/ranks only; never substitute for unified ordering |
 | Outfield-only 300+ reference | `ranking/global_rankings_outfield_300min.csv` | 300+ outfield analysis only; do not silently use it for the all-position continuity tab |
-| Dedicated goalkeeper rank | `ranking/goalkeeper_rankings.csv` | `gk_rating_v2`, `gk_rank_v2`, eligibility/main-GK status |
-| GK-to-unified publication mapping | `ranking/goalkeeper_rankings_unified.csv` | GK order plus unified rank/score; not the dedicated GK score |
-| Rich profile metrics and repaired component fields | `ranking/player_rankings.csv` and profile Markdown | Join by validated player identity; do not use this table’s legacy aliases when repaired `*_v2` fields are authoritative |
-| Team tactical/narrative values | `results/reports/team_profiles/<team>.md` | Team narrative and tactical metrics only; player ranking order still comes from `by_team_unified` |
+| Dedicated goalkeeper rank | `ranking/goalkeeper_rankings.csv` | `dedicated_goalkeeper_score_v3`, `continuous_goalkeeper_rating_v3`, `shootout_component_v3`, `goalkeeper_rank_v3`, score/rank intervals, uncertainty and main-GK status |
+| GK-to-unified publication mapping | `ranking/goalkeeper_rankings_unified.csv` | `percentile_equivalent_placement`, `percentile_equivalent_score_v3`, publication global/team rank; never substitute the dedicated GK score |
+| Rich profile metrics and repaired component fields | `ranking/player_rankings_v3.csv` / `.json` and profile Markdown | `tournament_impact_v3`, `role_quality_v3`, v3 rank fields, v3 uncertainty fields, active attack/defense components; v2/v5 columns are provenance only |
+| Team tactical/narrative values | `results/reports/team_profiles/<team>.md` | Active v3 team leaders, component totals, and main-GK table; unified player order still comes from `by_team_unified` |
 
 The non-unified `ranking/by_team/*.csv` files must never power the website’s
 unified team ordering. Likewise, `global_rankings_outfield*.csv` must never be
@@ -284,6 +353,38 @@ missing or duplicate match. Never use fuzzy name matching or name-only joins.
 
 If the post–Pass-8 manifest or audit changes any file contract, stop and update
 this matrix explicitly before importing. Do not guess between ranking variants.
+
+### v3 report and notebook authority
+
+Use these exact publication authorities after the corrective commit passes:
+
+- ultimate model summary:
+  `results/reports/canonical/model_summary.json` and
+  `results/reports/canonical/model_summary.md`;
+- final summary:
+  `results/reports/canonical/final_summary.md`;
+- coaches notebook:
+  `results/reports/canonical/coaches_notebook.md`;
+- team summaries:
+  all 32 files under `results/reports/team_profiles/`;
+- player summaries:
+  all 593 files under `results/reports/player_profiles/`;
+- final document:
+  `results/reports/docs/final_summary.docx`;
+- release decisions and metrics:
+  `results/diagnostics/ranking_repair/v3_release_audit.json`;
+- pass status:
+  `results/diagnostics/ranking_repair/pass_checklist.json`;
+- ranking-file hashes:
+  `results/reports/ranking/refresh_manifest.json`;
+- complete result-tree hashes:
+  `results/metadata/artifact_manifest.json`.
+
+Verify the documented compatibility copies are byte-identical, but import the
+canonical/explicit-v3 paths above. Do not use `results/reports/teams/` or
+`results/reports/starters/` for ranking copy until their corrective regeneration
+removes V5 language and adds v3 provenance. They may be used later for
+non-ranking tactical material only after a field-by-field stale-content audit.
 
 ### Goalkeeper semantics
 
@@ -330,7 +431,8 @@ Current relative root is wrong for
 
 - expected players = 142 only
 - 300-minute exclusive publication
-- old ranking path `results/reports/player_rankings.csv`
+- old ranking path `results/reports/player_rankings.csv` instead of explicit
+  active path `results/reports/ranking/player_rankings_v3.csv`
 - old formula language in Models/Limits/About
 - sitemap count magic number 191
 - portrait sync limited to 142
@@ -361,25 +463,34 @@ full profile publication.
 Keep existing pattern/team/model sources where still authoritative. Replace or
 add ranking sources:
 
-- `player-rankings-full` → `results/reports/ranking/player_rankings.csv`
+- `player-rankings-full-v3` → `results/reports/ranking/player_rankings_v3.csv`
+- `player-rankings-full-v3-json` → `results/reports/ranking/player_rankings_v3.json`
 - `player-rankings-300plus` → `results/reports/ranking/player_rankings_300plus.csv`
-  or `global_rankings_outfield_300min.csv` plus documented GK handling
+- `outfield-rankings-full-v3` → `results/reports/ranking/global_rankings_outfield.csv`
+- `outfield-rankings-300plus-v3` → `results/reports/ranking/global_rankings_outfield_300min.csv`
 - `unified-tournament-rankings` → `results/reports/ranking/unified_tournament_rankings.csv`
 - `goalkeeper-rankings` → `results/reports/ranking/goalkeeper_rankings.csv`
 - `goalkeeper-rankings-unified` → `results/reports/ranking/goalkeeper_rankings_unified.csv`
 - `ranking-methodology` → `results/reports/ranking/ranking_methodology.md`
 - `ranking-audit` → `results/reports/ranking/ranking_audit.json`
+- `v3-release-audit` → `results/diagnostics/ranking_repair/v3_release_audit.json`
+- `pass-checklist` → `results/diagnostics/ranking_repair/pass_checklist.json`
 - `player-profiles` → `results/reports/player_profiles`
 - `team-profiles` → `results/reports/team_profiles`
-- `model-summary-json` → `results/reports/model_summary.json`
-  or canonical mirror if that becomes the authority
-- `model-summary-md` → `results/reports/model_summary.md`
-- `final-summary` → `results/reports/final_summary.md`
+- `model-summary-json` → `results/reports/canonical/model_summary.json`
+- `model-summary-md` → `results/reports/canonical/model_summary.md`
+- `final-summary` → `results/reports/canonical/final_summary.md`
+- `coaches-notebook` → `results/reports/canonical/coaches_notebook.md`
+- `final-summary-docx` → `results/reports/docs/final_summary.docx`
+- `ranking-refresh-manifest` → `results/reports/ranking/refresh_manifest.json`
+- `artifact-manifest` → `results/metadata/artifact_manifest.json`
+- `v3-figures` → `results/reports/v3_figures/*.png`
 - attacking/defensive/matchup CSVs and summaries unchanged unless digests drift
 
-Discover the post–Pass-8 pipeline/artifact manifest authority. Do not keep a
-dead `results/reports/pipeline_manifest.json` path if the file no longer exists.
-Use the actual repaired location and update all source links accordingly.
+`results/reports/pipeline_manifest.json` now exists as a compatibility pointer,
+but the complete artifact authority is
+`results/metadata/artifact_manifest.json`; the ranking-family authority is
+`results/reports/ranking/refresh_manifest.json`. Do not confuse these scopes.
 
 ### Expected counts
 
@@ -388,11 +499,14 @@ Derive counts from artifacts; do not hard-code stale values. Validate:
 - 3 attacking styles
 - 4 defensive responses
 - 12 matchup cells
-- 32 teams
-- 300+ cohort size from repaired 300+ export
-- unified ranked size from unified CSV
+- 32 teams and 32 team profiles
+- 593 rich player rows and 593 player profiles
+- 553 outfield rows
+- 126 300+ outfield rows
+- 142 all-position 300+ rows, including 16 main GKs
+- 585 unified rows
 - exactly 32 main goalkeepers
-- profile count equals generated profile markdown files
+- exactly 8 profile-only backup goalkeepers
 
 ### Discriminated player schema
 
@@ -401,23 +515,34 @@ Every player record must carry:
 ```ts
 kind: 'outfield' | 'goalkeeper'
 cohorts: {
+  minutes300: boolean
   outfield300: boolean
   unified: boolean
   profileOnly: boolean
 }
 scores: {
-  outfieldModel: number | null
-  goalkeeperModel: number | null
-  unifiedTournament: number | null
+  tournamentImpact: number | null
+  roleQuality: number | null
+  dedicatedGoalkeeper: number | null
+  continuousGoalkeeper: number | null
+  shootoutGoalkeeper: number | null
+  unifiedTournamentPerformance: number | null
 }
 ranks: {
-  outfieldGlobal: number | null
-  outfieldPosition: number | null
-  outfieldRole: number | null
-  outfieldTeam: number | null
+  impactGlobal: number | null
+  roleQualityPosition: number | null
+  roleQualityRole: number | null
+  impactTeam: number | null
   goalkeeper: number | null
   unifiedGlobal: number | null
   unifiedTeam: number | null
+}
+uncertainty: {
+  low: number | null
+  high: number | null
+  rankBest: number | null
+  rankWorst: number | null
+  status: string | null
 }
 status: string
 ```
@@ -575,12 +700,16 @@ profile coverage.
 Keep the existing visual language. Add accessible tabs:
 
 1. **300+ minutes**
-   - continuity cohort
-   - explain reliability threshold
-   - score = published 300+ model/reliability score used by that export
+   - continuity cohort of exactly 142 players
+   - explain that it contains 126 outfield players and 16 main GKs
+   - preserve the export’s publication ordering
+   - use `Global Rank`, `Team Rank`, and `Tournament Performance Score` for the
+     common publication list
+   - additionally label outfield `Tournament Impact` and GK
+     `Dedicated Goalkeeper Score` as separate, non-interchangeable products
 
 2. **Unified tournament ranking**
-   - larger ranking list
+   - larger 585-player ranking list
    - score = `Tournament Performance Score`
    - identify goalkeepers clearly
    - explain GK bridge limitation briefly
@@ -624,17 +753,24 @@ Treat existing and newly published players consistently:
 Each profile must show, as applicable:
 
 - identity, team, minutes, role labels
-- tournament / unified rank and score when published
+- outfield `Tournament Impact` (`tournament_impact_v3`) and global/team rank;
+- outfield `Role Quality` (`role_quality_v3`) and position/role rank;
+- uncertainty interval, bootstrap rank band, and uncertainty status;
+- unified publication rank and `Tournament Performance Score` when published;
 - 300+ membership badge when applicable
-- outfield components for outfield players
-- GK components for goalkeepers
+- active attack, signed-defense, and other components for outfield players
+- continuous GK rating, dedicated GK score/rank, shootout component, score/rank
+  intervals, and GK uncertainty for main goalkeepers
 - unranked backup-GK state when relevant
 - role signature / heatmap / coverage only when data exists
 - methodology links to repaired ranking methodology and model summary
 
-Remove or rewrite stale hard-coded outfield weight copy if Pass 8 changed the
-formula. Derive active formula language from
-`ranking_methodology.md` and `model_summary.md`.
+Remove the stale single weighted-rating formula. The v3 publication has three
+separate products: Tournament Impact, Role Quality, and Uncertainty. Derive
+active language from `ranking_methodology.md` and the canonical model summary.
+State that attack selected `process_only`, defense promoted `signed_ridge`,
+goalkeepers promoted `goalkeeper_v3`, ordinary evidence uses periods 1–4, and
+the GK cross-position bridge is `percentile_equivalent_placement`.
 
 ### Media
 
@@ -795,8 +931,8 @@ an orphan page.
 
 Use repaired analytics text/data:
 
-- `results/reports/model_summary.md`
-- `results/reports/model_summary.json` (`role_labels`, role-weight sources,
+- `results/reports/canonical/model_summary.md`
+- `results/reports/canonical/model_summary.json` (`role_labels`, role-weight sources,
   probabilistic versus functional role counts)
 - `results/reports/ranking/ranking_methodology.md`
 - role fields on player tables (`position_group`, `functional_role`,
@@ -858,7 +994,11 @@ Update all team index and detail pages from repaired post–Pass-8 values.
 
 For each of the 32 teams:
 
-- repaired threat / pressure / defensive metrics from team profiles
+- v3 team player ordering, Tournament Impact, Role Quality, Uncertainty,
+  outfield component totals, and main-GK values from `team_profiles`
+- threat / pressure / defensive tactical metrics from their existing governed
+  tactical sources, not from `team_profiles` (the regenerated v3 team profiles
+  do not contain those tactical sections)
 - dominant defensive response and response shares
 - unified team player ordering from `by_team_unified`
 - 300+ subset clearly labeled if shown
@@ -874,6 +1014,14 @@ The displayed unified player order must come only from
 `final_player_rating_v2`, `gk_rating_v2`, a legacy `team_rank`, or the
 non-unified `by_team/<TEAM>.csv`. Cross-check every displayed row against the
 corresponding global row in `unified_tournament_rankings.csv`.
+
+The 32 files in `results/reports/teams/` were not regenerated by the pulled
+artifact commit and still contain headings such as “V5 role-aware player
+leaders,” old rating values, and `ROLE_AWARE_FALLBACK`. Do not import those
+ranking sections. Before using team-coaching reports at all, the corrective
+analytics release must regenerate their Markdown/JSON with v3 provenance and
+replace their ranking sections from active v3 tables. Non-ranking tactical
+sections may remain unchanged only when their upstream hashes did not change.
 
 ### Exit gate
 
@@ -902,9 +1050,10 @@ Rewrite method pages from the repaired model summary and validation metrics.
 
 ### Models page must describe
 
-From `model_summary.json` / `.md` and ranking methodology:
+From canonical `model_summary.json` / `.md`, the v3 release audit, and ranking
+methodology:
 
-- active player-ranking version after Pass 8
+- active version `ranking-repair-v3.0-qatar-2022`
 - outfield score contract
 - GK dedicated model and separate scale
 - unified publication layer and its limits
@@ -933,14 +1082,22 @@ Use these authorities together:
 - `results/reports/ranking/ranking_methodology.md`
 - `results/reports/ranking/ranking_audit.json`
 - `results/reports/ranking/ranking_audit.md`
-- `results/reports/model_summary.json`
-- `results/reports/model_summary.md`
+- `results/reports/canonical/model_summary.json`
+- `results/reports/canonical/model_summary.md`
+- `results/diagnostics/ranking_repair/v3_release_audit.json`
+- `results/diagnostics/ranking_repair/pass_checklist.json`
 - the final ranking CSV schemas and refresh manifest
 
 Explain accurately and in the existing editorial format:
 
-- the final outfield inputs, component definitions, scaling, weights, and
-  validation-selected layer;
+- Tournament Impact as signed total common-unit contribution for outfield
+  global/team ordering, with no position normalization;
+- Role Quality as a once-shrunk empirical-Bayes posterior rate for
+  position/role comparison only;
+- Uncertainty as a match-bootstrap interval and rank band, never a score
+  penalty;
+- attack selection `process_only` (`retain_champion`);
+- defense selection `signed_ridge` (`promote_challenger`);
 - the separate goalkeeper model, inputs, eligibility, and score scale;
 - the 300+ publication threshold and any distinct profile/GK thresholds;
 - uncertainty, exposure/reliability treatment, and missing-data behavior;
@@ -1012,11 +1169,25 @@ manifest-authoritative final path.
 
 ### Figures and source links
 
-Use suitable, final-stage visualizations from the analytics figures directory:
+Use two explicitly separated figure authorities:
 
-`C:\cosmos\26-the-pattern-seekers-analysis\World-Cup-S-Bomb\results\figures`
+1. Active v3 ranking/model figures:
+   `results/reports/v3_figures/`
+2. Existing tactical/model figures:
+   `results/figures/`, only when their upstream inputs were not changed by the
+   ranking repair and their manifest hashes remain valid.
 
-Candidate figures include:
+The corrective v3 release must generate exactly:
+
+- `v3_global_outfield_rankings.png`
+- `v3_global_outfield_300min.png`
+- `v3_goalkeeper_rankings.png`
+- `v3_representative_team_rankings.png`
+- `v3_defensive_feature_importance.png`
+- `v3_champion_challenger_movement.png`
+- `v3_position_composition_and_stability.png`
+
+Existing non-ranking candidates include:
 
 - `coaching_model_explanations.png`
 - `calibrated_brier_curve.png`
@@ -1025,14 +1196,13 @@ Candidate figures include:
 - `defensive_style_fingerprints.png`
 - `attacking_defensive_matchups.png`
 - `vaep_vs_xt_scatter.png`
-- final regenerated player/GK ranking figures
+- no v5 ranking figure
 
 Rules:
 
-1. Inventory `results/figures/` after Pass 8 and use only figures whose content
-   and digest match the final selected models/data.
-2. Do not publish stale `v5_*` figures unless Pass 8 regenerated and relabeled
-   them as current. Prefer final unversioned or current-version outputs.
+1. Require all seven `results/reports/v3_figures/` files before website work.
+2. Do not publish `v5_*` ranking figures. The pulled artifact commit modified
+   old v5 filenames but did not produce the required v3 figure family.
 3. Select figures that directly support the surrounding section; do not add
    decorative or unrelated plots.
 4. Copy approved web-optimized derivatives into the website’s existing static
@@ -1042,8 +1212,9 @@ Rules:
    not change section widths, palette, type scale, or responsive grid.
 6. Put an adjacent `SourceLink` on every imported visualization linking to its
    exact research file, for example
-   `results/figures/coaching_model_explanations.png`, using the repository’s
-   existing `sourceUrl(...)` helper.
+   `results/figures/coaching_model_explanations.png` or
+   `results/reports/v3_figures/v3_goalkeeper_rankings.png`, using the
+   repository’s existing `sourceUrl(...)` helper.
 7. Add the figure paths and hashes to `site-data.sources.json`, the generated
    provenance/claims metadata, credits if required, and relevant tests.
 8. If no final figure supports a section, keep the existing in-format semantic
@@ -1051,9 +1222,8 @@ Rules:
 
 For the Three Questions / Three Models page, prioritize the current coaching
 model explanation and calibration figures for completed possessions and
-earlier predictions. For the player-rating section, use only a ranking/model
-figure regenerated by Pass 8 and link it to its exact file in
-`results/figures/`.
+earlier predictions. For the player-rating section, use only a passing v3
+figure from `results/reports/v3_figures/` and link it to that exact file.
 
 ### Validation page must describe
 
@@ -1148,6 +1318,28 @@ completed reconciliation record. Sitemap and robots use the configured origin.
 
 ## Mandatory commands
 
+Before entering the website repository, use the Python 3.12 analytics
+environment and run from
+`C:\cosmos\26-the-pattern-seekers-analysis\World-Cup-S-Bomb`:
+
+```powershell
+python -m pytest `
+  tests/test_ranking_repair_champion.py `
+  tests/test_event_scope.py `
+  tests/test_defensive_challenger.py `
+  tests/test_tournament_rankings_v3.py `
+  tests/test_goalkeeper_valuation_v3.py `
+  tests/test_goalkeeper_publication_bridge_v3.py `
+  tests/test_ranking_repair_release_v3.py `
+  tests/test_final_summary_docx_v3.py `
+  tests/test_ranking_documentation_v3.py `
+  tests/test_stale_content_scan.py
+```
+
+All tests must pass. Specifically confirm the three failures documented in the
+verified pulled-release section are gone and that the figure-family assertions
+run to completion. Then record the corrective `PASS8_COMMIT`.
+
 From `C:\cosmos\final_proj_website\the-worlds-coach`:
 
 ```powershell
@@ -1201,8 +1393,17 @@ If the production origin differs, use the owner-confirmed origin instead.
 - Rankings, player/team profiles, final summaries, coaches notebook, model
   summaries, figures, DOCX, dictionaries, and manifests pass the commit-pinned
   consistency gate before import.
-- 300+ tab population matches repaired 300+ export rules.
-- Unified tab population matches `unified_tournament_rankings.csv`.
+- The complete analytics test command above passes with no failure or skipped
+  release-family assertion.
+- Frozen champion hashes match `champion_snapshot.json`.
+- Master and ranking manifests exactly cover their governed current files with
+  portable, case-correct paths and valid SHA-256 values.
+- All 593 starter Markdown/JSON pairs and all 32 team coaching Markdown/JSON
+  pairs carry v3 provenance and contain no active V5 ranking copy.
+- All seven required files under `results/reports/v3_figures/` exist and pass
+  size/hash checks.
+- 300+ tab contains exactly 142 rows: 126 outfield and 16 main GKs.
+- Unified tab contains exactly 585 rows: 553 outfield and 32 main GKs.
 - Unified ranks are unique, finite, and ordered by
   `Tournament Performance Score`.
 - Every team’s displayed unified order exactly matches its
@@ -1211,8 +1412,8 @@ If the production origin differs, use the owner-confirmed origin instead.
 - No website surface substitutes outfield, GK-only, legacy, or non-unified
   rank fields for unified rank or `Tournament Performance Score`.
 - Exactly 32 main GKs are ranked in dedicated and unified GK publications.
-- Backup GKs are unranked in unified ranking.
-- Every profile markdown has a prerendered route.
+- Exactly 8 backup GKs are unranked in unified ranking but retain profiles.
+- All 593 profile Markdown files have prerendered routes.
 - Existing and new players receive all applicable repaired profile information;
   no valid existing detail is dropped by the new cohort joins.
 - Team pages match `by_team_unified` and repaired team profiles.
@@ -1226,7 +1427,8 @@ If the production origin differs, use the owner-confirmed origin instead.
 - The player-rating, completed-possession, and earlier-prediction methodology
   sections all match their final-stage artifacts.
 - Every displayed research figure is current, hash-governed, and linked to its
-  exact file under `results/figures/`.
+  exact file under `results/reports/v3_figures/` or `results/figures/`,
+  according to its authority.
 - Source digests are pinned after review.
 
 ### UI
@@ -1240,7 +1442,8 @@ If the production origin differs, use the owner-confirmed origin instead.
 - Completed-possession and earlier-prediction sections contain final metrics,
   decisions, and source links.
 - Imported figures remain inside the existing layout and each includes an
-  exact `results/figures/<filename>` source link.
+  exact source link to `results/reports/v3_figures/<filename>` or
+  `results/figures/<filename>`.
 - Story carousel shows the new top 10 in order.
 - Patient Build-up values are accurate and consistent across story and patterns.
 - Pattern bars/cells with different values are visually distinct and labeled.
