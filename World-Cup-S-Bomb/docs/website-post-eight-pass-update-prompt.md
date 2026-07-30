@@ -113,6 +113,11 @@ Keep:
   `PlayerPortrait`, `RoleSignature`, `PossessionStory`, `MatchupMatrix`,
   `ResearchFrame`, `EvidenceNote`, `TechnicalDisclosure`
 - current responsive, reduced-motion, keyboard, and no-JS behaviors
+- the present player-profile visual treatment, information hierarchy, portrait
+  treatment, spacing, cards, rails, and disclosures for existing players;
+- the present visual treatment of pressure-related defensive styles, pressure
+  metrics, and their bars/chapters. Refresh their values and explanatory text
+  from post–Pass-8 sources without visually redesigning those sections.
 
 Forbidden:
 
@@ -120,6 +125,17 @@ Forbidden:
 - replacing semantic tokens with ad-hoc hex colors
 - inventing a charting library unless required for an existing pattern
 - rewriting route architecture for fashion rather than data contracts
+
+All new copy, fields, figures, tabs, badges, disclosures, and methodology
+details must be inserted into the existing design grammar. Reuse current
+containers, max widths, grids, breakpoints, spacing rhythm, type classes,
+surfaces, borders, focus states, and component primitives. New content must
+stay aligned with adjacent headings and content columns at every breakpoint.
+Do not widen sections, create isolated visual styles, reorder unrelated
+content, or cause clipping, overflow, layout shift, uneven card heights, or
+broken reading order. Capture before/after screenshots at desktop and mobile
+for every changed route family and treat any unintended format change as a
+release blocker.
 
 ### Score and cohort separation
 
@@ -350,10 +366,56 @@ For attack, defense, and matchup visuals:
 Update copy wherever current UI implies interchangeable bars or unspecified
 meaning.
 
+### Recompute every pattern and observed-matchup bar
+
+This is a data-and-encoding update, not copy-only cleanup. Audit and update
+every bar, segmented bar, heat strip, heat cell, and width calculation used by:
+
+- homepage pattern/story sections;
+- `/styles/`;
+- `/styles/attacking/`;
+- `/styles/defensive/`;
+- `/styles/matchups/`;
+- `PossessionStory.svelte`;
+- `MatchupMatrix.svelte`;
+- `StyleChapter.svelte`;
+- any duplicated pattern visual on team or methodology pages.
+
+For each visual mark:
+
+1. Trace the displayed value to its post–Pass-8 source column.
+2. Recompute its domain from the relevant peer group rather than reusing a
+   hard-coded width or a domain for a different metric.
+3. Set width/fill/heat level from the actual finite value.
+4. Show the exact formatted value beside or in the visual.
+5. Give the visual an accessible label containing the metric, value, unit, and
+   comparison basis.
+6. Handle null, non-finite, and equal-domain values explicitly.
+7. Test that unequal inputs normally produce unequal visual lengths or heat
+   levels; if five-bin heat quantization intentionally groups nearby values,
+   retain exact values and explain the binning.
+
+The **Observed matchup** selected-result bars in `MatchupMatrix.svelte`
+currently render five equal-size blocks and only vary the number of filled
+blocks. Replace or update that encoding so shot rate, penalty-area entry rate,
+and mean xG visibly reflect their actual relative values. A continuous
+proportional bar is preferred; a clearly labeled segmented scale is acceptable
+only when its filled segments and exact values are correct. Do not let all
+three metrics appear identical merely because they fall in the same coarse
+bin.
+
+The homepage **Observed matchup** step in `PossessionStory.svelte` must also be
+updated from the repaired selected matchup cell. If it displays bars, their
+widths must use metric-specific domains. If it remains numeric, verify all four
+values and labels against the same generated cell used by the full matchup
+page.
+
 ### Exit gate
 
 Generated JSON populations match repaired CSVs. Claims validate against the
-metric index. Pattern values match source CSVs to formatting tolerance.
+metric index. Pattern values match source CSVs to formatting tolerance. The
+pattern and Observed matchup visuals have source-traceable values and no
+incorrect identical-bar presentation.
 
 ---
 
@@ -413,6 +475,24 @@ Requirements:
 
 Prerender every profile.
 
+Treat existing and newly published players consistently:
+
+- Keep every existing player route and its current visual style.
+- Refresh every existing player’s identity-independent metrics, ranks, scores,
+  cohort membership, role information, team information, source links, and
+  methodology text from post–Pass-8 artifacts.
+- Add every newly eligible or newly generated player using the same profile
+  template and design system—not a reduced “new player” template.
+- Preserve valid existing portrait, heatmap, role-signature, and context
+  information; add newly available information without deleting valid content.
+- Populate new portraits/heatmaps/context only when authoritative artifacts
+  exist; otherwise use the existing neutral unavailable/fallback treatment.
+- Ensure new information appears for both existing and new players wherever
+  the applicable source fields exist.
+- Do not overwrite an existing player’s richer profile with nulls merely
+  because one repaired ranking export is narrower; join the full profile,
+  event/context, media, outfield/GK, and cohort sources by `player_id`.
+
 Each profile must show, as applicable:
 
 - identity, team, minutes, role labels
@@ -439,6 +519,11 @@ and tests must account for the expanded set.
 
 - Both tabs render and sort correctly.
 - Profile route count equals generated profile count.
+- Every pre-existing profile still renders in the same visual system with
+  refreshed information.
+- Every new profile has the same applicable information and presentation
+  quality as an existing profile.
+- Existing valid profile detail is not lost during the broader-cohort import.
 - No outfield formula is shown as if it were the GK model.
 - No backup GK appears as ranked in the unified tab.
 
@@ -519,6 +604,8 @@ For each defensive response:
 - shape distinctions
 - shot/xG allowed metrics from source
 - plain-language summary
+- preserve the existing pressure-style presentation and chapter structure while
+  refreshing pressure values, labels, and evidence from the final artifacts
 
 For matchups:
 
@@ -530,16 +617,26 @@ For matchups:
 
 ### Visual requirements
 
-- Bars or heat cells with different values must render differently.
+- Rebuild all pattern bars and Observed matchup result bars from the refreshed
+  generated values; do not preserve stale inline widths.
+- Bars with different normalized values must render at different lengths.
+- Heat cells with different bins must render differently; exact values must
+  remain visible when nearby values share a bin.
 - Relative color scales must be group-local and explained.
 - Do not present volume as if it were quality.
+- The selected Observed matchup card must use metric-specific scales for shot
+  rate, penalty-area entry rate, and mean xG. Never compare raw percentages and
+  xG on one undocumented common domain.
+- Add focused component tests using deliberately low, middle, and high values
+  to prove widths/levels are data-driven and accessible labels are correct.
 - Keep current CSS/semantic visual approach; do not introduce a new chart stack
   unless an existing component already needs a minimal extension.
 
 ### Exit gate
 
 All 3/4/12 entities appear. Effectiveness labels are explicit. Visual encoding
-is distinguishable and explained.
+is distinguishable and explained. Pattern and Observed matchup bars are
+verified against refreshed source rows.
 
 ---
 
@@ -689,6 +786,141 @@ Replace stale statements such as:
 - old shootout-save point formula if retired
 - old within-position z-score is absolute global value if retired
 
+### Current player-rating methodology
+
+Replace the complete player-rating methodology—not only the headline or model
+status—with the final post–Pass-8 method. Reconcile the methodology overview,
+`/method/models/`, `/method/validation/`, `/method/limitations/`, Players
+introductory copy, finder labels, profile explanations, About, team-page
+explanations, evidence notes, technical disclosures, and source links.
+
+Use these authorities together:
+
+- `results/reports/ranking/ranking_methodology.md`
+- `results/reports/ranking/ranking_audit.json`
+- `results/reports/ranking/ranking_audit.md`
+- `results/reports/model_summary.json`
+- `results/reports/model_summary.md`
+- the final ranking CSV schemas and refresh manifest
+
+Explain accurately and in the existing editorial format:
+
+- the final outfield inputs, component definitions, scaling, weights, and
+  validation-selected layer;
+- the separate goalkeeper model, inputs, eligibility, and score scale;
+- the 300+ publication threshold and any distinct profile/GK thresholds;
+- uncertainty, exposure/reliability treatment, and missing-data behavior;
+- the unified Tournament Performance Score and GK bridge;
+- rank scopes: global, position, role, team, GK-only, and unified;
+- which challengers were accepted, rejected, or rolled back in Pass 8.
+
+Do not retain the old V5 formula, old fixed weights, old 142-only eligibility
+statement, or retired corrections as current methodology. Preserve historical
+comparisons only when explicitly labeled.
+
+### “Three questions” before “Three models”
+
+On `src/routes/method/models/+page.svelte`, keep the current
+`ResearchFrame`, spacing, typography, responsive behavior, section surfaces,
+cards, disclosures, and route structure exactly intact, but change the hero
+title hierarchy from **“Three models. Three questions.”** to:
+
+1. **“Three questions.”** on the top line;
+2. **“Three models.”** on the line below.
+
+This is an order and content correction, not a redesign. Use the existing
+heading classes and width constraints. Add only the minimal inline/block markup
+needed to guarantee that order across breakpoints without overflow or layout
+shift.
+
+Keep the three model families and questions in this same order throughout the
+page, methodology overview, accessibility labels, navigation summaries, and
+technical disclosures:
+
+1. Completed possessions — retrospective explanation after the full sequence.
+2. Earlier prediction — prospective evaluation using only information
+   available before the target outcome.
+3. Player ratings — tournament player evaluation under the final repaired
+   methodology.
+
+### Completed possessions and earlier predictions
+
+Refresh both model families from the final-stage artifacts; do not merely swap
+their headings:
+
+- selected completed-possession models and target definitions;
+- information boundaries and leakage controls;
+- features/layouts and calibration method;
+- held-out, match-disjoint validation metrics;
+- prospective candidates, targets, gates, uncertainty intervals, and final
+  keep/reject/rollback decisions;
+- exact ROC-AUC, PR-AUC, log loss, Brier score, calibration error, sample
+  counts, and statuses where the final artifacts publish them.
+
+Authoritative inputs include:
+
+- `results/MIscellaneous/coaching_model_leaderboard.csv`
+- `results/MIscellaneous/coaching_model_fold_metrics.csv`
+- `results/MIscellaneous/coaching_model_uncertainty.csv`
+- `results/MIscellaneous/coaching_model_selection.md`
+- `results/MIscellaneous/coaching_model_benchmark.md`
+- `results/MIscellaneous/coaching_model_explanations.md`
+- `results/MIscellaneous/coaching_model_validation_v2.json`
+- `results/diagnostics/prospective_model_validation.csv`
+- final `model_summary.json` / `.md`
+
+Update `src/routes/method/+page.svelte`,
+`src/routes/method/models/+page.svelte`, their server loaders, and
+`src/routes/lab/prospective-models/+page.svelte` together so completed
+possessions and earlier predictions cannot disagree. Replace dead legacy source
+paths such as `results/reports/prospective_model_validation.csv` with the
+manifest-authoritative final path.
+
+### Figures and source links
+
+Use suitable, final-stage visualizations from the analytics figures directory:
+
+`C:\cosmos\26-the-pattern-seekers-analysis\World-Cup-S-Bomb\results\figures`
+
+Candidate figures include:
+
+- `coaching_model_explanations.png`
+- `calibrated_brier_curve.png`
+- `attacking_styles_overview.png`
+- `attacking_style_pca.png`
+- `defensive_style_fingerprints.png`
+- `attacking_defensive_matchups.png`
+- `vaep_vs_xt_scatter.png`
+- final regenerated player/GK ranking figures
+
+Rules:
+
+1. Inventory `results/figures/` after Pass 8 and use only figures whose content
+   and digest match the final selected models/data.
+2. Do not publish stale `v5_*` figures unless Pass 8 regenerated and relabeled
+   them as current. Prefer final unversioned or current-version outputs.
+3. Select figures that directly support the surrounding section; do not add
+   decorative or unrelated plots.
+4. Copy approved web-optimized derivatives into the website’s existing static
+   media structure while retaining the research filename in provenance.
+5. Preserve aspect ratio, avoid cumulative layout shift, provide useful alt
+   text and a caption, and use the existing image/card/figure formatting. Do
+   not change section widths, palette, type scale, or responsive grid.
+6. Put an adjacent `SourceLink` on every imported visualization linking to its
+   exact research file, for example
+   `results/figures/coaching_model_explanations.png`, using the repository’s
+   existing `sourceUrl(...)` helper.
+7. Add the figure paths and hashes to `site-data.sources.json`, the generated
+   provenance/claims metadata, credits if required, and relevant tests.
+8. If no final figure supports a section, keep the existing in-format semantic
+   visualization rather than inserting a stale image.
+
+For the Three Questions / Three Models page, prioritize the current coaching
+model explanation and calibration figures for completed possessions and
+earlier predictions. For the player-rating section, use only a ranking/model
+figure regenerated by Pass 8 and link it to its exact file in
+`results/figures/`.
+
 ### Validation page must describe
 
 - Pass 8 gate outcomes
@@ -716,24 +948,46 @@ presented as active.
 
 ---
 
-## Pass J — SEO, sitemap, claims, README, and stale-content sweep
+## Pass J — Site-wide post–Pass-8 truth sweep, SEO, claims, and docs
 
 ### Goal
 
-Make discovery metadata and docs match the expanded publication.
+Make every public area—not only the routes named above—agree with the final
+post–Pass-8 artifacts, then update discovery metadata and documentation.
 
 ### Work
 
-1. Update sitemap generation to include all profile routes.
-2. Derive expected route counts from generated meta rather than magic numbers.
-3. Fix `PUBLIC_SITE_ORIGIN` handling so production canonical/robots/sitemap do
+1. Inventory every public route, shared component, server loader, generated
+   data file, download, metadata endpoint, and public claim. Include:
+   - homepage/story;
+   - all Styles and Observed matchup pages;
+   - Players indexes and every profile;
+   - Teams index and every team;
+   - Method, Data, Models, Validation, Limits;
+   - Lab pages and scenarios;
+   - About, credits, sitemap, robots, social metadata, and CSV downloads.
+2. Build a reconciliation checklist mapping every displayed number, cohort
+   count, rank, score, formula, threshold, model name, validation statement,
+   source link, and dated snapshot identifier to an authoritative post–Pass-8
+   artifact.
+3. Correct every mismatch discovered. Do not limit work to the examples in
+   this prompt. If a final-stage artifact changes information anywhere on the
+   site, update that area, its loader/generated data, governed claim, tests,
+   downloads, and metadata together.
+4. Update sitemap generation to include all profile routes.
+5. Derive expected route counts from generated meta rather than magic numbers.
+6. Fix `PUBLIC_SITE_ORIGIN` handling so production canonical/robots/sitemap do
    not publish `localhost` values.
-4. Refresh governed claims for:
+7. Refresh governed claims for:
    - player counts by cohort
    - Patient Build-up and other pattern shares
+   - all 12 Observed matchup cells and their visual domains
    - model/validation metrics that changed
-5. Update README/`PRODUCT.md` for the two-tab ranking publication.
-6. Search the website repo for stale strings:
+8. Regenerate downloadable CSVs and verify they match the data displayed in
+   the corresponding pages.
+9. Update README/`PRODUCT.md` for the two-tab ranking publication.
+10. Search the entire website repo—not only route files—for stale strings and
+    old numeric literals:
 
 - `142` used as the only universe
 - old ranking path `results/reports/player_rankings.csv`
@@ -741,13 +995,20 @@ Make discovery metadata and docs match the expanded publication.
 - retired shootout/exposure/z-score formula language
 - old top-10 names/scores
 - dead pipeline manifest path
+- pre–Pass-8 snapshot IDs and hashes
+- old player/team ranks, ratings, counts, and thresholds
+- stale Patient Build-up, defensive-response, and matchup values
+- hard-coded bar widths, heat levels, or domains
+- obsolete source URLs, filenames, and validation metrics
 
 Classify each remaining match as active, historical/labeled, test fixture, or
-stale.
+stale. Historical values may remain only when clearly labeled as historical
+and necessary for explaining the repair.
 
 ### Exit gate
 
-No stale active claims. Sitemap and robots use the configured origin.
+No stale active claims or visual encodings remain. Every route family has a
+completed reconciliation record. Sitemap and robots use the configured origin.
 
 ---
 
@@ -805,18 +1066,39 @@ If the production origin differs, use the owner-confirmed origin instead.
 - Exactly 32 main GKs are ranked in dedicated and unified GK publications.
 - Backup GKs are unranked in unified ranking.
 - Every profile markdown has a prerendered route.
+- Existing and new players receive all applicable repaired profile information;
+  no valid existing detail is dropped by the new cohort joins.
 - Team pages match `by_team_unified` and repaired team profiles.
 - Pattern shares and effectiveness metrics match source CSVs.
+- Every Observed matchup value and visual domain matches the refreshed
+  12-cell source.
 - Model/validation/limits copy matches model summary and audits.
+- Every rendered number, formula, threshold, model label, rank, and source link
+  has been reconciled against a post–Pass-8 artifact or explicitly marked
+  historical.
+- The player-rating, completed-possession, and earlier-prediction methodology
+  sections all match their final-stage artifacts.
+- Every displayed research figure is current, hash-governed, and linked to its
+  exact file under `results/figures/`.
 - Source digests are pinned after review.
 
 ### UI
 
 - Style/tokens/components remain recognizably the same.
 - Two player tabs work with mouse, keyboard, and no-JS fallback.
+- Existing and new player profiles share the same established visual style and
+  information quality.
+- The Models hero shows “Three questions.” above “Three models.” without
+  changing its established layout or responsive behavior.
+- Completed-possession and earlier-prediction sections contain final metrics,
+  decisions, and source links.
+- Imported figures remain inside the existing layout and each includes an
+  exact `results/figures/<filename>` source link.
 - Story carousel shows the new top 10 in order.
 - Patient Build-up values are accurate and consistent across story and patterns.
 - Pattern bars/cells with different values are visually distinct and labeled.
+- Observed matchup result bars use refreshed values and metric-specific,
+  documented domains; different values do not appear as identical bars.
 - Methodology Patterns materials include basic and advanced roles plus diagram.
 - Team pages show repaired values and broader roster states where applicable.
 - GK and outfield profiles show the correct score semantics.
