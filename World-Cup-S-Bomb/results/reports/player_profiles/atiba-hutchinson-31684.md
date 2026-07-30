@@ -13,6 +13,9 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Probabilistic role: Secure/Pressing Midfielder
 - Role entropy: 0.0036
+- Unified global rank: 108
+- Unified team rank: 2
+- Tournament Performance Score: 0.7635
 - Global rank v2: 142
 - Position rank v2: 16
 - Role rank v2: 10

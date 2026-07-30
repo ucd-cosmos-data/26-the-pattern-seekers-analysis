@@ -28,51 +28,51 @@
 
 ## Top 5 Players
 
-1. **Craig Goodwin** — AM, Wide Creator (0.5007)
+1. **Craig Goodwin** — AM, Wide Creator (0.5496)
 
 As a Wide Creator, the strongest measured signals are chance creation and final-third passing (82% within the model context) and total tournament goals/xG/xA/VAEP/xT impact (79% within the model context). The assessment uses Qatar 2022 evidence only.
 
-2. **Fran Karačić** — FB, Attacking Wingback (0.4304)
+2. **Harry Souttar** — CB, Sweeper CB (0.5406)
+
+As a Sweeper CB, the strongest measured signals are chance creation and final-third passing (62% within the model context) and ball-winning and defensive contribution (55% within the model context). The assessment uses Qatar 2022 evidence only.
+
+3. **Fran Karačić** — FB, Attacking Wingback (0.5379)
 
 As a Attacking Wingback, the strongest measured signals are progressive passing and carrying (89% within the model context) and ball-winning and defensive contribution (73% within the model context). The assessment uses Qatar 2022 evidence only.
 
-3. **Garang Kuol** — FW, Pressing Forward (0.4046)
+4. **Aziz Eraltay Behich** — FB, Wide Creator (0.4766)
 
-As a Pressing Forward, the strongest measured signals are ball security and possession value (62% within the model context) and coverage-qualified off-ball contribution (52% within the model context). The assessment uses Qatar 2022 evidence only.
+As a Wide Creator, the strongest measured signals are ball-winning and defensive contribution (55% within the model context) and total tournament goals/xG/xA/VAEP/xT impact (53% within the model context). The assessment uses Qatar 2022 evidence only.
 
-4. **Mitchell Thomas Duke** — FW, Target Forward / Penalty-Box Anchor (0.3993)
+5. **Mathew Ryan** — GK, Goalkeeper (0.4727)
 
-As a Target Forward / Penalty-Box Anchor, the strongest measured signals are ball-winning and defensive contribution (76% within the model context) and penalty-box finishing and shot-quality output (61% within the model context). The assessment uses Qatar 2022 evidence only.
+As a Goalkeeper, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (2% within the model context). The assessment uses Qatar 2022 evidence only.
 
-5. **Mathew Leckie** — AM, Target Forward (0.3716)
-
-As a Target Forward, the strongest measured signals are ball-winning and defensive contribution (80% within the model context) and total tournament goals/xG/xA/VAEP/xT impact (71% within the model context). The assessment uses Qatar 2022 evidence only.
-
-Outfield and goalkeeper scores are not mixed. The top five above use the within-team outfield rank; the goalkeeper-only section below ranks only the team-main goalkeeper; backups remain listed as unranked.
+The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
 
 ## Full Player List — Outfield
 
-| Team Rank V2 | Global Rank V2 | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Final Player Rating V2 |
+| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
 |---|---|---|---|---|---|---|---|
-| 1 | 128 | Craig Goodwin | AM | Central/Wide Midfield | Wide Creator | 241.7000 | 0.5007 |
-| 2 | 206 | Fran Karačić | FB | Fullback/Wingback | Attacking Wingback | 100.3667 | 0.4304 |
-| 3 | 231 | Garang Kuol | FW | Forward | Pressing Forward | 50.1167 | 0.4046 |
-| 4 | 243 | Mitchell Thomas Duke | FW | Forward | Target Forward / Penalty-Box Anchor | 272.2667 | 0.3993 |
-| 5 | 273 | Mathew Leckie | AM | Central/Wide Midfield | Target Forward | 341.6167 | 0.3716 |
-| 6 | 287 | Riley McGree | FW | Forward | Pressing Forward | 266.6167 | 0.3640 |
-| 7 | 360 | Jackson Irvine | FW | Forward | Pressing Forward | 373.7500 | 0.3152 |
-| 8 | 371 | Jamie MacLaren | FW | Forward | Target Forward | 73.0167 | 0.3089 |
-| 9 | 482 | Harry Souttar | CB | Center Back | Sweeper CB | 386.9167 | 0.2308 |
-| 10 | 486 | Aaron Mooy | DM | Defensive Midfield | Holding Anchor | 386.9167 | 0.2274 |
-| 11 | 493 | Ajdin Hrustic | CM | Central/Wide Midfield | Ball-Winner | 80.6167 | 0.2201 |
-| 12 | 496 | Nathaniel Atkinson | FB | Fullback/Wingback | Deep Playmaker | 84.1167 | 0.2173 |
-| 13 | 509 | Aziz Eraltay Behich | FB | Fullback/Wingback | Wide Creator | 386.9167 | 0.2014 |
-| 14 | 539 | Keanu Baccus | DM | Defensive Midfield | Deep Playmaker | 133.9000 | 0.1485 |
-| 15 | 542 | Miloš Degenek | FB | Fullback/Wingback | Deep Playmaker | 202.4333 | 0.1413 |
-| 16 | 551 | Kye Rowles | CB | Center Back | Sweeper CB | 386.9167 | 0.0694 |
+| 1 | 216 | Craig Goodwin | AM | Central/Wide Midfield | Wide Creator | 241.7000 | 0.5496 |
+| 2 | 218 | Harry Souttar | CB | Center Back | Sweeper CB | 386.9167 | 0.5406 |
+| 3 | 219 | Fran Karačić | FB | Fullback/Wingback | Attacking Wingback | 100.3667 | 0.5379 |
+| 4 | 246 | Aziz Eraltay Behich | FB | Fullback/Wingback | Wide Creator | 386.9167 | 0.4766 |
+| 6 | 304 | Mathew Leckie | AM | Central/Wide Midfield | Target Forward | 341.6167 | 0.3841 |
+| 7 | 309 | Mitchell Thomas Duke | FW | Forward | Target Forward / Penalty-Box Anchor | 272.2667 | 0.3716 |
+| 8 | 357 | Riley McGree | FW | Forward | Pressing Forward | 266.6167 | 0.3045 |
+| 9 | 359 | Miloš Degenek | FB | Fullback/Wingback | Deep Playmaker | 202.4333 | 0.3032 |
+| 10 | 387 | Kye Rowles | CB | Center Back | Sweeper CB | 386.9167 | 0.2685 |
+| 11 | 397 | Aaron Mooy | DM | Defensive Midfield | Holding Anchor | 386.9167 | 0.2576 |
+| 12 | 401 | Jackson Irvine | FW | Forward | Pressing Forward | 373.7500 | 0.2491 |
+| 13 | 423 | Nathaniel Atkinson | FB | Fullback/Wingback | Deep Playmaker | 84.1167 | 0.2261 |
+| 14 | 454 | Keanu Baccus | DM | Defensive Midfield | Deep Playmaker | 133.9000 | 0.1819 |
+| 15 | 513 | Ajdin Hrustic | CM | Central/Wide Midfield | Ball-Winner | 80.6167 | 0.1175 |
+| 16 | 553 | Jamie MacLaren | FW | Forward | Target Forward | 73.0167 | 0.0927 |
+| 17 | 573 | Garang Kuol | FW | Forward | Pressing Forward | 50.1167 | 0.0785 |
 
 ## Full Player List — Goalkeepers
 
-| Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
-|---|---|---|---|---|---|---|---|---|
-| 14 | Mathew Ryan | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 386.9167 | 0.2412 |
+| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 14 | 5 | 248 | Mathew Ryan | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 386.9167 | 0.2412 | 0.4727 |

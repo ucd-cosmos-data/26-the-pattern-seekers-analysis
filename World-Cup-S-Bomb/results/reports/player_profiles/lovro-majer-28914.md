@@ -13,6 +13,9 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Probabilistic role: Pressing/Finishing Attacker
 - Role entropy: 0.0090
+- Unified global rank: 245
+- Unified team rank: 16
+- Tournament Performance Score: 0.4831
 - Global rank v2: 84
 - Position rank v2: 32
 - Role rank v2: 27

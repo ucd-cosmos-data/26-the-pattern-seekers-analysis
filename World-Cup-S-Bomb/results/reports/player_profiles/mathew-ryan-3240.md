@@ -13,6 +13,9 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Team main goalkeeper: 1.0000
 - Probabilistic role: Goalkeeper
 - Role entropy: 0.0000
+- Unified global rank: 248
+- Unified team rank: 5
+- Tournament Performance Score: 0.4727
 - Goalkeeper rank v2: 14
 - Goalkeeper rating v2: 0.2412
 

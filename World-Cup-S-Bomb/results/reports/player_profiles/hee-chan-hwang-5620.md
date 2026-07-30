@@ -13,6 +13,9 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Probabilistic role: Finishing/Progressive Attacker
 - Role entropy: 0.1148
+- Unified global rank: 324
+- Unified team rank: 11
+- Tournament Performance Score: 0.3565
 - Global rank v2: 112
 - Position rank v2: 38
 - Role rank v2: 33

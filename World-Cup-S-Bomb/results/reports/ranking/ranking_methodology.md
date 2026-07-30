@@ -67,6 +67,14 @@ The composite score is shrunk toward the cohort mean using available-feature cov
 
 The 300-minute file filters on Qatar 2022 minutes and preserves the all-player `global_rank_v2`, allowing direct comparison with the unfiltered table.
 
+## Unified cross-position publication score
+
+Outfield players receive 90-minute empirical-Bayes shrinkage, a continuous exposure-saturation safeguard, the gated defensive-VAEP floor, within-position Z normalization, a one-sided direct defensive-evidence safeguard, and the monotonic upper-tail CDF transformation. A final score-tapered exposure safeguard reduces short-sample uncertainty without reordering genuine extreme performers. Attacking midfielders and forwards below their positional median for goals-minus-xG per 90 receive a continuous, xG-evidence- and reliability-weighted realization discount. Direct defensive evidence uses position-relative interception, block, clearance, pressure, recovery, aerial, duel, and positioning rates. It can only close a positive evidence gap and is attenuated by minutes reliability. Each candidate step has a rank and positional-variance release gate.
+
+The 32 team-main goalkeepers keep their dedicated `gk_rank_v2` order. Their order statistics are converted to Blom plotting positions `(r - 0.375) / (n + 0.25)` with an order-preserving upper-tail shrinkage toward the 96.5th percentile, and mapped to the matching empirical outfield score quantiles. This finite-sample bridge prevents the maximum of a small goalkeeper cohort from becoming an automatic global podium score. Backup goalkeepers remain unranked.
+
+The clean publication fields are `Global Rank`, `Team Rank`, `Player`, `Team`, `Position Group`, and `Tournament Performance Score`.
+
 ## Leading goalkeeper evidence
 
 These rows are generated from the scored table after ranking; player identity is not an input. They show why tournament-impact actions can complement, but do not rewrite, the continuous shot-stopping evidence. A negative PSxG-GA proxy remains visible rather than being replaced by a favorable value.

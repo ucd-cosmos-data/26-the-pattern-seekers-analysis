@@ -13,6 +13,9 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.1122
+- Unified global rank: 399
+- Unified team rank: 13
+- Tournament Performance Score: 0.2522
 - Global rank v2: 254
 - Position rank v2: 61
 - Role rank v2: 31

@@ -28,52 +28,52 @@
 
 ## Top 5 Players
 
-1. **Youssef Msakni** — AM, Progressive Winger (0.5934)
+1. **Ali Abdi** — FB, Attacking Wingback (0.7891)
 
-As a Progressive Winger, the strongest measured signals are chance creation and final-third passing (88% within the model context) and progressive passing and carrying (80% within the model context). The assessment uses Qatar 2022 evidence only.
+As a Attacking Wingback, the strongest measured signals are ball-winning and defensive contribution (75% within the model context) and coverage-qualified off-ball contribution (67% within the model context). The assessment uses Qatar 2022 evidence only.
 
-2. **Wahbi Khazri** — FW, Progressive Winger (0.5244)
+2. **Montassar Omar Talbi** — CB, Sweeper CB (0.7873)
 
-As a Progressive Winger, the strongest measured signals are progressive passing and carrying (93% within the model context) and penalty-box finishing and shot-quality output (79% within the model context). The assessment uses Qatar 2022 evidence only.
+As a Sweeper CB, the strongest measured signals are ball-winning and defensive contribution (80% within the model context) and ball security and possession value (61% within the model context). The assessment uses Qatar 2022 evidence only.
 
-3. **Aïssa Bilal Laïdouni** — DM, Box-to-Box / Engine Midfielder (0.4754)
+3. **Aïssa Bilal Laïdouni** — DM, Box-to-Box / Engine Midfielder (0.7276)
 
 As a Box-to-Box / Engine Midfielder, the strongest measured signals are chance creation and final-third passing (82% within the model context) and ball-winning and defensive contribution (71% within the model context). The assessment uses Qatar 2022 evidence only.
 
-4. **Issam Jebali** — FW, Pressing Forward (0.4585)
+4. **Ellyes Joris Skhiri** — DM, Box-to-Box / Engine Midfielder (0.7189)
 
-As a Pressing Forward, the strongest measured signals are ball security and possession value (70% within the model context) and chance creation and final-third passing (70% within the model context). The assessment uses Qatar 2022 evidence only.
+As a Box-to-Box / Engine Midfielder, the strongest measured signals are ball security and possession value (60% within the model context) and chance creation and final-third passing (59% within the model context). The assessment uses Qatar 2022 evidence only.
 
-5. **Naïm Sliti** — AM, Progressive Winger (0.4514)
+5. **Yassine Meriah** — CB, Sweeper CB (0.5743)
 
-As a Progressive Winger, the strongest measured signals are coverage-qualified off-ball contribution (84% within the model context) and progressive passing and carrying (74% within the model context). The assessment uses Qatar 2022 evidence only.
+As a Sweeper CB, the strongest measured signals are coverage-qualified off-ball contribution (74% within the model context) and chance creation and final-third passing (59% within the model context). The assessment uses Qatar 2022 evidence only.
 
-Outfield and goalkeeper scores are not mixed. The top five above use the within-team outfield rank; the goalkeeper-only section below ranks only the team-main goalkeeper; backups remain listed as unranked.
+The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
 
 ## Full Player List — Outfield
 
-| Team Rank V2 | Global Rank V2 | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Final Player Rating V2 |
+| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
 |---|---|---|---|---|---|---|---|
-| 1 | 68 | Youssef Msakni | AM | Attacking Midfield/Wing | Progressive Winger | 176.0667 | 0.5934 |
-| 2 | 108 | Wahbi Khazri | FW | Forward | Progressive Winger | 88.5667 | 0.5244 |
-| 3 | 158 | Aïssa Bilal Laïdouni | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 257.2333 | 0.4754 |
-| 4 | 175 | Issam Jebali | FW | Forward | Pressing Forward | 196.3500 | 0.4585 |
-| 5 | 177 | Naïm Sliti | AM | Attacking Midfield/Wing | Progressive Winger | 127.1667 | 0.4514 |
-| 6 | 198 | Montassar Omar Talbi | CB | Center Back | Sweeper CB | 296.5667 | 0.4369 |
-| 7 | 261 | Ali Abdi | FB | Fullback/Wingback | Attacking Wingback | 213.6333 | 0.3824 |
-| 8 | 269 | Ellyes Joris Skhiri | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 296.5667 | 0.3741 |
-| 9 | 283 | Anis Ben Slimane | AM | Attacking Midfield/Wing | Target Forward | 149.6500 | 0.3664 |
-| 10 | 297 | Ferjani Sassi | DM | Defensive Midfield | Holding Anchor | 61.1167 | 0.3585 |
-| 11 | 367 | Mohamed Dräger | FB | Fullback/Wingback | Deep Playmaker | 132.2833 | 0.3114 |
-| 12 | 404 | Dylan Daniel Mahmoud Bronn | CB | Center Back | Deep Playmaker | 170.3167 | 0.2900 |
-| 13 | 422 | Yassine Meriah | CB | Center Back | Sweeper CB | 296.5667 | 0.2790 |
-| 14 | 437 | Nader Ghandri | CB | Center Back | Sweeper CB | 102.6833 | 0.2671 |
-| 15 | 442 | Mohamed Ali Ben Romdhane | AM | Attacking Midfield/Wing | Wide Creator | 73.8667 | 0.2639 |
-| 16 | 443 | Ali Maâloul | FB | Fullback/Wingback | Attacking Wingback | 102.6833 | 0.2632 |
-| 17 | 454 | Wajdi Kechrida | FB | Fullback/Wingback | Attacking Wingback | 136.5667 | 0.2546 |
+| 1 | 95 | Ali Abdi | FB | Fullback/Wingback | Attacking Wingback | 213.6333 | 0.7891 |
+| 2 | 98 | Montassar Omar Talbi | CB | Center Back | Sweeper CB | 296.5667 | 0.7873 |
+| 3 | 130 | Aïssa Bilal Laïdouni | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 257.2333 | 0.7276 |
+| 4 | 135 | Ellyes Joris Skhiri | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 296.5667 | 0.7189 |
+| 5 | 199 | Yassine Meriah | CB | Center Back | Sweeper CB | 296.5667 | 0.5743 |
+| 6 | 236 | Youssef Msakni | AM | Attacking Midfield/Wing | Progressive Winger | 176.0667 | 0.5009 |
+| 8 | 317 | Nader Ghandri | CB | Center Back | Sweeper CB | 102.6833 | 0.3589 |
+| 9 | 323 | Issam Jebali | FW | Forward | Pressing Forward | 196.3500 | 0.3567 |
+| 10 | 354 | Ferjani Sassi | DM | Defensive Midfield | Holding Anchor | 61.1167 | 0.3077 |
+| 11 | 361 | Mohamed Dräger | FB | Fullback/Wingback | Deep Playmaker | 132.2833 | 0.3014 |
+| 12 | 373 | Naïm Sliti | AM | Attacking Midfield/Wing | Progressive Winger | 127.1667 | 0.2841 |
+| 13 | 380 | Dylan Daniel Mahmoud Bronn | CB | Center Back | Deep Playmaker | 170.3167 | 0.2773 |
+| 14 | 406 | Wahbi Khazri | FW | Forward | Progressive Winger | 88.5667 | 0.2393 |
+| 15 | 407 | Anis Ben Slimane | AM | Attacking Midfield/Wing | Target Forward | 149.6500 | 0.2368 |
+| 16 | 455 | Wajdi Kechrida | FB | Fullback/Wingback | Attacking Wingback | 136.5667 | 0.1816 |
+| 17 | 477 | Ali Maâloul | FB | Fullback/Wingback | Attacking Wingback | 102.6833 | 0.1519 |
+| 18 | 559 | Mohamed Ali Ben Romdhane | AM | Attacking Midfield/Wing | Wide Creator | 73.8667 | 0.0901 |
 
 ## Full Player List — Goalkeepers
 
-| Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
-|---|---|---|---|---|---|---|---|---|
-| 15 | Aymen Dahmen | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 296.5667 | 0.2389 |
+| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 15 | 7 | 266 | Aymen Dahmen | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 296.5667 | 0.2389 | 0.4380 |

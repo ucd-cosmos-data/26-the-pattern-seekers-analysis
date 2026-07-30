@@ -6,10 +6,13 @@ Dictionary for locating and interpreting the active player, goalkeeper, position
 
 | Ranking resource | Location | Use |
 |---|---|---|
-| Complete ranking table | [`results/reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) | Spreadsheet/dataframe source; 593 data rows × 419 columns. |
+| Complete ranking table | [`results/reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) | Spreadsheet/dataframe source; 593 data rows × 422 columns. |
+| Unified tournament ranking | [`results/reports/ranking/unified_tournament_rankings.csv`](../reports/ranking/unified_tournament_rankings.csv) | Exact six-field cross-position release table; includes the 32 team-main goalkeepers while backups remain unranked. |
+| Complete unified team tables | [`results/reports/ranking/by_team_unified/`](../reports/ranking/by_team_unified/) | One exact-schema CSV per team, ordered by unified `Team Rank`. |
 | Global outfield ranking | [`results/reports/ranking/global_rankings_outfield.csv`](../reports/ranking/global_rankings_outfield.csv) | All eligible outfield players ordered by `global_rank_v2`. |
 | Primary 300+-minute ranking | [`results/reports/ranking/global_rankings_outfield_300min.csv`](../reports/ranking/global_rankings_outfield_300min.csv) | Filters exclusively on Qatar 2022 `minutes_played >= 300`. |
 | Goalkeeper ranking | [`results/reports/ranking/goalkeeper_rankings.csv`](../reports/ranking/goalkeeper_rankings.csv) | Separate non-comparable rating for exactly one team-main goalkeeper per nation. |
+| Unified goalkeeper ranking | [`results/reports/ranking/goalkeeper_rankings_unified.csv`](../reports/ranking/goalkeeper_rankings_unified.csv) | The same 32-player dedicated GK order with unified global rank, team rank, and tournament score appended. |
 | Complete ranking JSON | [`results/reports/ranking/player_rankings.json`](../reports/ranking/player_rankings.json) | Same records for applications and APIs. |
 | Ranking methodology | [`results/reports/ranking/ranking_methodology.md`](../reports/ranking/ranking_methodology.md) | Position-aware weights, normalization, sample treatment, and role logic. |
 | Ranking audit | [`results/reports/ranking/ranking_audit.md`](../reports/ranking/ranking_audit.md) | Before/after comparisons and eyes-test results. |
@@ -28,6 +31,9 @@ Dictionary for locating and interpreting the active player, goalkeeper, position
 | `role_rank_v2` | Rank within the coherent functional role. |
 | `team_rank_v2` | Outfield rank within the 2022 national team. |
 | `final_player_rating_v2` / `gk_rating_v2` | Separate 0–1 outfield and goalkeeper tournament scores. |
+| `Global Rank` | Unified cross-position rank. Main goalkeepers are bridged to the outfield score distribution by cohort plotting position; backups are blank. |
+| `Team Rank` | Unified within-team rank across eligible outfield players and the team-main goalkeeper. |
+| `Tournament Performance Score` | Unified release score used by `unified_tournament_rankings.csv`; it does not alter the underlying outfield or goalkeeper model. |
 | `global_rank` | Global outfield rank. In the 300+ file this is recalculated only among eligible outfield players; goalkeepers are blank. |
 | `goalkeeper_rank` / `primary_goalkeeper_rank` | Separate goalkeeper-only rank. |
 | `position_rank` | Rank within the broad position group. |
@@ -41,7 +47,7 @@ Dictionary for locating and interpreting the active player, goalkeeper, position
 
 | Figure | Location |
 |---|---|
-| Global outfield ranking | [`v5_global_outfield_rankings.png`](../reports/v5_figures/v5_global_outfield_rankings.png) |
+| Unified global ranking | [`v5_global_outfield_rankings.png`](../reports/v5_figures/v5_global_outfield_rankings.png) |
 | Goalkeeper-only ranking | [`v5_goalkeeper_rankings.png`](../reports/v5_figures/v5_goalkeeper_rankings.png) |
 | France squad ranking | [`v5_france_team_rankings.png`](../reports/v5_figures/v5_france_team_rankings.png) |
 | Learned valuation coefficients | [`v5_elasticnet_coefficients.png`](../reports/v5_figures/v5_elasticnet_coefficients.png) |

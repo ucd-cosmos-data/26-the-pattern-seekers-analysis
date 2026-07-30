@@ -71,6 +71,7 @@ from src.models.valuation import (
 )
 from src.reporting.artifacts import ArtifactGenerator
 from src.validation.metric_gate import FALLBACK_MESSAGE
+from scripts.unify_tournament_ratings import attach_unified_tournament_ratings
 
 
 EVENT_COLUMNS = {
@@ -1842,6 +1843,8 @@ def run_extended_pipeline(
         rated,
         strict=True,
     )
+    rated = attach_unified_tournament_ratings(rated)
+    unified_validation = rated.attrs["unified_validation"]
     goalkeeper_summary = goalkeeper_model_summary(
         goalkeeper_audit,
         goalkeeper_ratings,
@@ -2003,6 +2006,7 @@ def run_extended_pipeline(
             ),
             "audit": tournament_rank_audit,
         },
+        "unified_tournament_rating": unified_validation,
         "composite_calibration": composite_calibration,
         "rating_methodology": {
             "outfield_eligibility_minutes": 45,

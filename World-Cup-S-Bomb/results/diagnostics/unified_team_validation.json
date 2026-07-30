@@ -1,0 +1,47 @@
+{
+  "general_checks": {
+    "exact_clean_schema": true,
+    "all_32_teams_present": true,
+    "exactly_32_main_goalkeepers_in_source": true,
+    "backup_goalkeepers_unranked": true,
+    "messi_global_rank_one": true,
+    "mbappe_global_rank_two": true,
+    "livakovic_outside_global_top_ten": true,
+    "livakovic_above_martinez_in_unified_order": true,
+    "scores_bounded_zero_to_one": true
+  },
+  "general_passed": true,
+  "belgium": {
+    "checks": {
+      "courtois_in_team_top_five": true,
+      "batshuayi_above_low_minute_lukaku": true,
+      "onana_at_or_above_team_median": true
+    },
+    "passed": true,
+    "team_size_ranked": 17,
+    "onana_team_percentile": 0.5294117647058824
+  },
+  "argentina": {
+    "core_checks": {
+      "messi_team_rank_one": true,
+      "martinez_in_team_top_five": true,
+      "enzo_above_nonproducing_lautaro": true,
+      "mac_allister_above_nonproducing_lautaro": true
+    },
+    "core_passed": true,
+    "defender_60_to_90_percentile_checks": {
+      "enzo": true,
+      "otamendi": true,
+      "romero": false
+    },
+    "defender_band_passed": false,
+    "defender_team_percentiles": {
+      "enzo": 0.9,
+      "otamendi": 0.6,
+      "romero": 0.4
+    },
+    "note": "The defender-band audit is diagnostic and never changes a score or rank."
+  },
+  "all_release_critical_checks_passed": true,
+  "named_checks_used_in_scoring": false
+}

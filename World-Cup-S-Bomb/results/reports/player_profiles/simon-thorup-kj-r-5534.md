@@ -13,6 +13,9 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Probabilistic role: Aerial/Secure/Progressive Centre-Back
 - Role entropy: 0.0000
+- Unified global rank: 224
+- Unified team rank: 5
+- Tournament Performance Score: 0.5210
 - Global rank v2: 221
 - Position rank v2: 24
 - Role rank v2: 11

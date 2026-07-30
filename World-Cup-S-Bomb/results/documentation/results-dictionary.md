@@ -28,15 +28,16 @@ A compact directory of every result artifact family. Repeated player and team fi
 | Top-level release metadata | `results/*` | 0 | Release-level cleanup and publication metadata. |
 | Legacy summary alias | `results/Summary/*` | 1 | Compatibility alias of the active model summary. |
 | Audit tables | `results/audit/*` | 6 | Observed-versus-expected and out-of-fold audit tables. |
-| Model diagnostics | `results/diagnostics/*` | 18 | Validation metrics, calibration, importance, and cluster diagnostics. |
+| Model diagnostics | `results/diagnostics/*` | 19 | Validation metrics, calibration, importance, and cluster diagnostics. |
 | Publication figures | `results/figures/*` | 14 | Charts and the technical onboarding presentation. |
 | Run metadata | `results/metadata/*` | 5 | Configuration, provenance, and feature-definition records. |
 | Supporting/legacy outputs | `results/miscellaneous/*` | 49 | Exploratory summaries and noncanonical model leaderboards. |
 | Reports directory guide | `results/reports/README.md` | 20 | Short guide to the report tree. |
 | Canonical reports | `results/reports/canonical/*` | 5 | Current final summary, model summary, and coaches notebook. |
 | Final-summary compatibility alias | `results/reports/final/*` | 1 | Compatibility alias of the active tournament final summary. |
-| Tournament rankings | `results/reports/ranking/*` | 13 | Qatar 2022 outfield, 300-minute, goalkeeper, audit, and methodology artifacts. |
+| Tournament rankings | `results/reports/ranking/*` | 15 | Qatar 2022 outfield, 300-minute, goalkeeper, audit, and methodology artifacts. |
 | Per-team tournament rankings | `results/reports/ranking/by_team/<TEAM>.csv` | 32 | Complete player ranking table for each of the 32 national teams. |
+| Unified per-team tournament rankings | `results/reports/ranking/by_team_unified/<TEAM>.csv` | 32 | Exact six-field unified ranking table for each of the 32 national teams. |
 | Archived legacy rankings | `results/reports/ranking/legacy/*` | 3 | Pre-v2 tables retained for before/after reproducibility. |
 | Canonical report data | `results/reports/canonical/data/*` | 2 | Team metrics and defensive-disruption tables supporting reports. |
 | Formatted final report | `results/reports/docs/final_summary.docx` | 1 | Word edition of the final tournament report. |
@@ -48,7 +49,7 @@ A compact directory of every result artifact family. Repeated player and team fi
 | Player heatmaps | `results/reports/visuals/heatmaps/<player-slug>-<player-id>.svg` | 593 | One scalable spatial-event heatmap per player. |
 | Simulation outputs | `results/simulations/*` | 6 | Tactical-style, substitution, suppression, and out-of-fold simulations. |
 
-**Coverage:** 2,648 of 2,648 result artifacts.
+**Coverage:** 2,683 of 2,683 result artifacts.
 
 ## Which version wins?
 

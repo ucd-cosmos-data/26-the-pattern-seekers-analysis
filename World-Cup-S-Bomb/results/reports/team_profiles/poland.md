@@ -28,50 +28,50 @@
 
 ## Top 5 Players
 
-1. **Robert Lewandowski** — FW, Target Forward / Penalty-Box Anchor (0.8227)
+1. **Wojciech Szczęsny** — GK, Goalkeeper (0.8837)
 
-As a Target Forward / Penalty-Box Anchor, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (88% within the model context) and penalty-box finishing and shot-quality output (85% within the model context). The assessment uses Qatar 2022 evidence only.
+As a Goalkeeper, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (2% within the model context). The assessment uses Qatar 2022 evidence only.
 
-2. **Piotr Zieliński** — CM, Holding Anchor (0.6136)
+2. **Piotr Zieliński** — CM, Holding Anchor (0.8728)
 
 As a Holding Anchor, the strongest measured signals are chance creation and final-third passing (88% within the model context) and penalty-box finishing and shot-quality output (82% within the model context). The assessment uses Qatar 2022 evidence only.
 
-3. **Krystian Bielik** — DM, Holding Anchor (0.3935)
+3. **Krystian Bielik** — DM, Holding Anchor (0.8126)
 
 As a Holding Anchor, the strongest measured signals are ball security and possession value (79% within the model context) and ball-winning and defensive contribution (70% within the model context). The assessment uses Qatar 2022 evidence only.
 
-4. **Jakub Kamiński** — AM, Progressive Winger (0.3461)
+4. **Robert Lewandowski** — FW, Target Forward / Penalty-Box Anchor (0.7619)
 
-As a Progressive Winger, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (66% within the model context) and chance creation and final-third passing (59% within the model context). The assessment uses Qatar 2022 evidence only.
+As a Target Forward / Penalty-Box Anchor, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (88% within the model context) and penalty-box finishing and shot-quality output (85% within the model context). The assessment uses Qatar 2022 evidence only.
 
-5. **Karol Świderski** — FW, Pressing Forward (0.3458)
+5. **Grzegorz Krychowiak** — DM, Box-to-Box / Engine Midfielder (0.7339)
 
-As a Pressing Forward, the strongest measured signals are ball-winning and defensive contribution (66% within the model context) and ball security and possession value (65% within the model context). The assessment uses Qatar 2022 evidence only.
+As a Box-to-Box / Engine Midfielder, the strongest measured signals are ball-winning and defensive contribution (65% within the model context) and chance creation and final-third passing (56% within the model context). The assessment uses Qatar 2022 evidence only.
 
-Outfield and goalkeeper scores are not mixed. The top five above use the within-team outfield rank; the goalkeeper-only section below ranks only the team-main goalkeeper; backups remain listed as unranked.
+The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
 
 ## Full Player List — Outfield
 
-| Team Rank V2 | Global Rank V2 | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Final Player Rating V2 |
+| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
 |---|---|---|---|---|---|---|---|
-| 1 | 4 | Robert Lewandowski | FW | Forward | Target Forward / Penalty-Box Anchor | 389.7500 | 0.8227 |
-| 2 | 58 | Piotr Zieliński | CM | Central/Wide Midfield | Holding Anchor | 344.4167 | 0.6136 |
-| 3 | 247 | Krystian Bielik | DM | Defensive Midfield | Holding Anchor | 240.0167 | 0.3935 |
-| 4 | 321 | Jakub Kamiński | AM | Central/Wide Midfield | Progressive Winger | 253.6333 | 0.3461 |
-| 5 | 323 | Karol Świderski | FW | Forward | Pressing Forward | 45.0000 | 0.3458 |
-| 6 | 436 | Nicola Zalewski | CM | Central/Wide Midfield | Ball-Winner | 73.9833 | 0.2681 |
-| 7 | 439 | Grzegorz Krychowiak | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 347.8833 | 0.2664 |
-| 8 | 455 | Michał Skóraś | CM | Central/Wide Midfield | Ball-Winner | 51.0167 | 0.2546 |
-| 9 | 476 | Arkadiusz Milik | CM | Central/Wide Midfield | Ball-Winner | 116.4833 | 0.2354 |
-| 10 | 481 | Kamil Glik | CB | Center Back | Sweeper CB | 389.7500 | 0.2329 |
-| 11 | 501 | Jakub Piotr Kiwior | CB | Center Back | Sweeper CB | 376.7000 | 0.2096 |
-| 12 | 522 | Przemysław Frankowski | AM | Central/Wide Midfield | Wide Creator | 254.5333 | 0.1860 |
-| 13 | 530 | Sebastian Szymański | CM | Central/Wide Midfield | Wide Creator | 134.9500 | 0.1692 |
-| 14 | 541 | Bartosz Bereszyński | FB | Fullback/Wingback | Wide Creator | 365.7333 | 0.1466 |
-| 15 | 546 | Matty Cash | FB | Fullback/Wingback | Deep Playmaker | 389.7500 | 0.1210 |
+| 2 | 71 | Piotr Zieliński | CM | Central/Wide Midfield | Holding Anchor | 344.4167 | 0.8728 |
+| 3 | 90 | Krystian Bielik | DM | Defensive Midfield | Holding Anchor | 240.0167 | 0.8126 |
+| 4 | 109 | Robert Lewandowski | FW | Forward | Target Forward / Penalty-Box Anchor | 389.7500 | 0.7619 |
+| 5 | 128 | Grzegorz Krychowiak | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 347.8833 | 0.7339 |
+| 6 | 191 | Bartosz Bereszyński | FB | Fullback/Wingback | Wide Creator | 365.7333 | 0.5929 |
+| 7 | 308 | Kamil Glik | CB | Center Back | Sweeper CB | 389.7500 | 0.3725 |
+| 8 | 378 | Jakub Kamiński | AM | Central/Wide Midfield | Progressive Winger | 253.6333 | 0.2821 |
+| 9 | 419 | Matty Cash | FB | Fullback/Wingback | Deep Playmaker | 389.7500 | 0.2289 |
+| 10 | 425 | Jakub Piotr Kiwior | CB | Center Back | Sweeper CB | 376.7000 | 0.2223 |
+| 11 | 474 | Arkadiusz Milik | CM | Central/Wide Midfield | Ball-Winner | 116.4833 | 0.1556 |
+| 12 | 503 | Nicola Zalewski | CM | Central/Wide Midfield | Ball-Winner | 73.9833 | 0.1293 |
+| 13 | 510 | Sebastian Szymański | CM | Central/Wide Midfield | Wide Creator | 134.9500 | 0.1222 |
+| 14 | 535 | Przemysław Frankowski | AM | Central/Wide Midfield | Wide Creator | 254.5333 | 0.1033 |
+| 15 | 555 | Michał Skóraś | CM | Central/Wide Midfield | Ball-Winner | 51.0167 | 0.0924 |
+| 16 | 584 | Karol Świderski | FW | Forward | Pressing Forward | 45.0000 | 0.0618 |
 
 ## Full Player List — Goalkeepers
 
-| Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
-|---|---|---|---|---|---|---|---|---|
-| 4 | Wojciech Szczęsny | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 389.7500 | 0.4394 |
+| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 4 | 1 | 67 | Wojciech Szczęsny | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 389.7500 | 0.4394 | 0.8837 |

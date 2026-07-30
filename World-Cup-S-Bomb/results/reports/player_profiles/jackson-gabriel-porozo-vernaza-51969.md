@@ -13,6 +13,9 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Probabilistic role: Defensive/Pressing Fullback
 - Role entropy: 0.0020
+- Unified global rank: 213
+- Unified team rank: 5
+- Tournament Performance Score: 0.5589
 - Global rank v2: 362
 - Position rank v2: 58
 - Role rank v2: 1

@@ -28,52 +28,52 @@
 
 ## Top 5 Players
 
-1. **Memphis Depay** — FW, Target Forward (0.7234)
-
-As a Target Forward, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (88% within the model context) and coverage-qualified off-ball contribution (80% within the model context). The assessment uses Qatar 2022 evidence only.
-
-2. **Cody Mathès Gakpo** — AM, Progressive Winger (0.6788)
-
-As a Progressive Winger, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (92% within the model context) and chance creation and final-third passing (82% within the model context). The assessment uses Qatar 2022 evidence only.
-
-3. **Frenkie de Jong** — DM, Holding Anchor (0.6481)
+1. **Frenkie de Jong** — DM, Holding Anchor (0.9909)
 
 As a Holding Anchor, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (83% within the model context) and penalty-box finishing and shot-quality output (78% within the model context). The assessment uses Qatar 2022 evidence only.
 
-4. **Wout Weghorst** — FW, Target Forward / Penalty-Box Anchor (0.5979)
+2. **Cody Mathès Gakpo** — AM, Progressive Winger (0.9337)
 
-As a Target Forward / Penalty-Box Anchor, the strongest measured signals are penalty-box finishing and shot-quality output (94% within the model context) and ball-winning and defensive contribution (66% within the model context). The assessment uses Qatar 2022 evidence only.
+As a Progressive Winger, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (92% within the model context) and chance creation and final-third passing (82% within the model context). The assessment uses Qatar 2022 evidence only.
 
-5. **Luuk de Jong** — FW, Target Forward / Penalty-Box Anchor (0.5763)
+3. **Daley Blind** — FB, Attacking Wingback (0.9242)
 
-As a Target Forward / Penalty-Box Anchor, the strongest measured signals are penalty-box finishing and shot-quality output (88% within the model context) and coverage-qualified off-ball contribution (71% within the model context). The assessment uses Qatar 2022 evidence only.
+As a Attacking Wingback, the strongest measured signals are penalty-box finishing and shot-quality output (86% within the model context) and total tournament goals/xG/xA/VAEP/xT impact (81% within the model context). The assessment uses Qatar 2022 evidence only.
 
-Outfield and goalkeeper scores are not mixed. The top five above use the within-team outfield rank; the goalkeeper-only section below ranks only the team-main goalkeeper; backups remain listed as unranked.
+4. **Jurriën David Norman Timber** — CB, Sweeper CB (0.9183)
+
+As a Sweeper CB, the strongest measured signals are coverage-qualified off-ball contribution (96% within the model context) and progressive passing and carrying (67% within the model context). The assessment uses Qatar 2022 evidence only.
+
+5. **Memphis Depay** — FW, Target Forward (0.8828)
+
+As a Target Forward, the strongest measured signals are total tournament goals/xG/xA/VAEP/xT impact (88% within the model context) and coverage-qualified off-ball contribution (80% within the model context). The assessment uses Qatar 2022 evidence only.
+
+The top five above use the unified within-team rank and can include the ranked team-main goalkeeper. The goalkeeper-only section retains the dedicated goalkeeper rank and the cross-position calibrated tournament score; backups remain listed as unranked.
 
 ## Full Player List — Outfield
 
-| Team Rank V2 | Global Rank V2 | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Final Player Rating V2 |
+| Team Rank | Global Rank | Player Name | Position Group 360 | Position Group | Functional Role | Minutes Played | Tournament Performance Score |
 |---|---|---|---|---|---|---|---|
-| 1 | 18 | Memphis Depay | FW | Forward | Target Forward | 315.5833 | 0.7234 |
-| 2 | 29 | Cody Mathès Gakpo | AM | Attacking Midfield/Wing | Progressive Winger | 460.2167 | 0.6788 |
-| 3 | 44 | Frenkie de Jong | DM | Defensive Midfield | Holding Anchor | 499.4500 | 0.6481 |
-| 4 | 62 | Wout Weghorst | FW | Forward | Target Forward / Penalty-Box Anchor | 77.5000 | 0.5979 |
-| 5 | 77 | Luuk de Jong | FW | Forward | Target Forward / Penalty-Box Anchor | 57.0333 | 0.5763 |
-| 6 | 110 | Daley Blind | FB | Fullback/Wingback | Attacking Wingback | 452.4833 | 0.5234 |
-| 7 | 123 | Jurriën David Norman Timber | CB | Center Back | Sweeper CB | 409.4000 | 0.5061 |
-| 8 | 201 | Davy Klaassen | AM | Attacking Midfield/Wing | Target Forward | 201.3667 | 0.4354 |
-| 9 | 213 | Teun Koopmeiners | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 242.0167 | 0.4224 |
-| 10 | 216 | Denzel Dumfries | FB | Fullback/Wingback | Attacking Wingback | 509.5167 | 0.4194 |
-| 11 | 229 | Vincent Janssen | FW | Forward | Pressing Forward | 91.6833 | 0.4054 |
-| 12 | 268 | Nathan Aké | CB | Center Back | Sweeper CB | 506.2667 | 0.3770 |
-| 13 | 300 | Steven Berghuis | DM | Defensive Midfield | Deep Playmaker | 212.1333 | 0.3572 |
-| 14 | 352 | Virgil van Dijk | CB | Center Back | Sweeper CB | 509.5167 | 0.3233 |
-| 15 | 366 | Steven Bergwijn | FW | Forward | Pressing Forward | 219.2500 | 0.3122 |
-| 16 | 431 | Matthijs de Ligt | CB | Center Back | Sweeper CB | 103.3667 | 0.2723 |
-| 17 | 515 | Marten de Roon | DM | Defensive Midfield | Holding Anchor | 195.8000 | 0.1914 |
+| 1 | 9 | Frenkie de Jong | DM | Defensive Midfield | Holding Anchor | 499.4500 | 0.9909 |
+| 2 | 38 | Cody Mathès Gakpo | AM | Attacking Midfield/Wing | Progressive Winger | 460.2167 | 0.9337 |
+| 3 | 48 | Daley Blind | FB | Fullback/Wingback | Attacking Wingback | 452.4833 | 0.9242 |
+| 4 | 52 | Jurriën David Norman Timber | CB | Center Back | Sweeper CB | 409.4000 | 0.9183 |
+| 5 | 68 | Memphis Depay | FW | Forward | Target Forward | 315.5833 | 0.8828 |
+| 6 | 100 | Denzel Dumfries | FB | Fullback/Wingback | Attacking Wingback | 509.5167 | 0.7845 |
+| 7 | 131 | Nathan Aké | CB | Center Back | Sweeper CB | 506.2667 | 0.7263 |
+| 8 | 145 | Marten de Roon | DM | Defensive Midfield | Holding Anchor | 195.8000 | 0.6953 |
+| 10 | 185 | Teun Koopmeiners | DM | Defensive Midfield | Box-to-Box / Engine Midfielder | 242.0167 | 0.6169 |
+| 11 | 195 | Virgil van Dijk | CB | Center Back | Sweeper CB | 509.5167 | 0.5855 |
+| 12 | 271 | Steven Berghuis | DM | Defensive Midfield | Deep Playmaker | 212.1333 | 0.4346 |
+| 13 | 299 | Davy Klaassen | AM | Attacking Midfield/Wing | Target Forward | 201.3667 | 0.3911 |
+| 14 | 402 | Wout Weghorst | FW | Forward | Target Forward / Penalty-Box Anchor | 77.5000 | 0.2491 |
+| 15 | 438 | Steven Bergwijn | FW | Forward | Pressing Forward | 219.2500 | 0.1976 |
+| 16 | 469 | Matthijs de Ligt | CB | Center Back | Sweeper CB | 103.3667 | 0.1655 |
+| 17 | 472 | Vincent Janssen | FW | Forward | Pressing Forward | 91.6833 | 0.1635 |
+| 18 | 479 | Luuk de Jong | FW | Forward | Target Forward / Penalty-Box Anchor | 57.0333 | 0.1516 |
 
 ## Full Player List — Goalkeepers
 
-| Gk Rank V2 | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 |
-|---|---|---|---|---|---|---|---|---|
-| 10 | Andries Noppert | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 509.5167 | 0.2684 |
+| Gk Rank V2 | Team Rank | Global Rank | Player Name | Is Main Goalkeeper | Gkrankingstatus | Position Group 360 | Position Group | Functional Role | Minutes Played | Gk Rating V2 | Tournament Performance Score |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 10 | 9 | 175 | Andries Noppert | True | Ranked (team main goalkeeper) | GK | Goalkeeper | Goalkeeper | 509.5167 | 0.2684 | 0.6371 |

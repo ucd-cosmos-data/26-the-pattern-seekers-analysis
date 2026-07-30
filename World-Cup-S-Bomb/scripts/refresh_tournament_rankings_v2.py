@@ -34,12 +34,17 @@ from src.reporting.artifacts import (  # noqa: E402
     _json_value,
     _slug,
 )
+from scripts.unify_tournament_ratings import (  # noqa: E402
+    attach_unified_tournament_ratings,
+)
 
 
 def _source_path(project_root: Path) -> Path:
     candidates = (
-        project_root / "results/reports/ranking/player_rankings.csv",
+        project_root / "results/reports/player_evaluations_v5.csv",
         project_root / "results/reports/canonical/player_rankings.csv",
+        project_root / "results/reports/ranking/legacy/player_rankings.csv",
+        project_root / "results/reports/ranking/player_rankings.csv",
     )
     for path in candidates:
         if path.is_file():
@@ -178,6 +183,8 @@ def refresh(
     rated = calculate_tournament_rankings_v2(source, config=config)
     audit = tournament_ranking_audit(rated, strict=True)
     rankings = ArtifactGenerator.prepare_rankings(rated)
+    rankings = attach_unified_tournament_ratings(rankings)
+    unified_validation = rankings.attrs["unified_validation"]
     generator = ArtifactGenerator(reports_root)
     files = generator._write_ranking_artifacts(rankings)
 
@@ -188,6 +195,7 @@ def refresh(
         else {}
     )
     model_summary["tournament_ranking_v2"] = _config_payload(config, audit)
+    model_summary["unified_tournament_rating"] = unified_validation
     model_summary.setdefault("schema_version", "5.0-role-attention")
     _atomic_text(
         model_json_path,
@@ -205,6 +213,22 @@ def refresh(
         generator._model_summary_markdown(model_summary),
     )
     files.append(model_markdown_path)
+    for mirror, content in (
+        (
+            reports_root / "model_summary.json",
+            model_json_path.read_text(encoding="utf-8"),
+        ),
+        (
+            reports_root / "model_summary.md",
+            model_markdown_path.read_text(encoding="utf-8"),
+        ),
+        (
+            project_root / "results/Summary/model_summary.md",
+            model_markdown_path.read_text(encoding="utf-8"),
+        ),
+    ):
+        _atomic_text(mirror, content)
+        files.append(mirror)
 
     team_metrics_path = canonical_root / "data/team_metrics_v2.csv"
     team_metrics = (
@@ -225,6 +249,13 @@ def refresh(
         ),
     )
     files.append(final_summary_path)
+    final_summary_text = final_summary_path.read_text(encoding="utf-8")
+    for mirror in (
+        reports_root / "final_summary.md",
+        reports_root / "final/world_cup_team_performance_and_top_players.md",
+    ):
+        _atomic_text(mirror, final_summary_text)
+        files.append(mirror)
 
     coaches_path = canonical_root / "coaches_notebook.md"
     _atomic_text(coaches_path, generator._coaches_notebook(rankings))

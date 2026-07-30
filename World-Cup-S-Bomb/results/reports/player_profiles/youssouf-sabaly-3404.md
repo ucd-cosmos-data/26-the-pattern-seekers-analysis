@@ -13,6 +13,9 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Probabilistic role: Creative/Progressive Fullback
 - Role entropy: 0.0078
+- Unified global rank: 62
+- Unified team rank: 2
+- Tournament Performance Score: 0.8913
 - Global rank v2: 116
 - Position rank v2: 16
 - Role rank v2: 15

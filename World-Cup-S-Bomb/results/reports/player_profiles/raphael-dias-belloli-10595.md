@@ -13,6 +13,9 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 
 - Probabilistic role: Finishing/Creative Attacker
 - Role entropy: 0.0000
+- Unified global rank: 141
+- Unified team rank: 9
+- Tournament Performance Score: 0.7000
 - Global rank v2: 38
 - Position rank v2: 17
 - Role rank v2: 14

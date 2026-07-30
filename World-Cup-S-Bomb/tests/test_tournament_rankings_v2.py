@@ -12,6 +12,7 @@ from src.models.tournament_rankings import (
     tournament_ranking_audit,
 )
 from src.reporting.artifacts import ArtifactGenerator
+from scripts.unify_tournament_ratings import attach_unified_tournament_ratings
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -126,6 +127,7 @@ def test_dedicated_ranking_artifacts_and_32_team_files(
 ) -> None:
     source = pd.read_csv(_canonical_source())
     ranked = calculate_tournament_rankings_v2(source)
+    ranked = attach_unified_tournament_ratings(ranked)
 
     files = ArtifactGenerator(tmp_path)._write_ranking_artifacts(ranked)
 
@@ -133,6 +135,8 @@ def test_dedicated_ranking_artifacts_and_32_team_files(
         tmp_path / "ranking/global_rankings_outfield.csv",
         tmp_path / "ranking/global_rankings_outfield_300min.csv",
         tmp_path / "ranking/goalkeeper_rankings.csv",
+        tmp_path / "ranking/goalkeeper_rankings_unified.csv",
+        tmp_path / "ranking/unified_tournament_rankings.csv",
         tmp_path / "ranking/ranking_methodology.md",
         tmp_path / "ranking/ranking_audit.md",
         tmp_path / "ranking/ranking_audit.json",
@@ -150,3 +154,25 @@ def test_dedicated_ranking_artifacts_and_32_team_files(
     assert len(goalkeepers) == 32
     assert goalkeepers["team"].is_unique
     assert goalkeepers["is_main_goalkeeper"].all()
+    assert {
+        "Global Rank",
+        "Team Rank",
+        "Tournament Performance Score",
+    } <= set(goalkeepers)
+    unified = pd.read_csv(
+        tmp_path / "ranking/unified_tournament_rankings.csv"
+    )
+    assert unified.columns.tolist() == [
+        "Global Rank",
+        "Team Rank",
+        "Player",
+        "Team",
+        "Position Group",
+        "Tournament Performance Score",
+    ]
+    profile = ArtifactGenerator._player_profile(
+        ranked.loc[ranked["Global Rank"].notna()].iloc[0]
+    )
+    assert "Unified global rank:" in profile
+    assert "Unified team rank:" in profile
+    assert "Tournament Performance Score:" in profile

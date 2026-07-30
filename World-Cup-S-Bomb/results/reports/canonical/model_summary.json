@@ -2132,7 +2132,7 @@
           "team": "France",
           "position_group_360": "AM",
           "functional_role": "Hybrid Playmaker / Roaming Creator",
-          "final_player_rating_v2": 0.7606937278153832
+          "final_player_rating_v2": 0.760693727815383
         },
         {
           "global_rank_v2": 12,
@@ -2164,7 +2164,7 @@
           "team": "Saudi Arabia",
           "position_group_360": "AM",
           "functional_role": "Progressive Winger",
-          "final_player_rating_v2": 0.7361704967246997
+          "final_player_rating_v2": 0.7361704967246995
         },
         {
           "global_rank_v2": 16,
@@ -2547,5 +2547,144 @@
     "formula": "BaseThreat(zone) * ActionImpactFactor, aggregated per 90",
     "position_group_percentile": "xd90_pct",
     "defensive_dimension_integration": "seventh evidence-aware defensive role input"
+  },
+  "unified_tournament_rating": {
+    "rows": 593,
+    "teams": 32,
+    "position_groups": [
+      "AM",
+      "CB",
+      "CM",
+      "DM",
+      "FB",
+      "FW",
+      "GK"
+    ],
+    "steps": {
+      "adaptive_90_minute_shrinkage": {
+        "accepted": true,
+        "spearman_with_incumbent": 0.9672737253428242,
+        "position_median_dispersion_before": 0.05443167374280721,
+        "position_median_dispersion_after": 0.0568729675805584,
+        "position_variance_imbalance_after": 1.5551271393328496,
+        "half_life_minutes": 90.0,
+        "mean_reliability": 0.6556540179521645
+      },
+      "exposure_saturation": {
+        "exposure_share": 0.75,
+        "minimum_factor": 0.5,
+        "maximum_factor": 0.9180725816239835,
+        "mean_factor": 0.7417405134641233,
+        "accepted": true,
+        "spearman_with_incumbent": 0.8934002627752393,
+        "position_median_dispersion_before": 0.0568729675805584,
+        "position_median_dispersion_after": 0.03351016437127149,
+        "position_variance_imbalance_after": 1.8926683250055387
+      },
+      "defensive_vaep_floor": {
+        "available": true,
+        "source_column": "vaep_def_p90",
+        "floor_percentile": 0.1,
+        "floor_value": -0.08686706676788662,
+        "adjusted_players": 48,
+        "accepted": true,
+        "spearman_with_incumbent": 0.9998289179353894,
+        "position_median_dispersion_before": 0.03351016437127149,
+        "position_median_dispersion_after": 0.03351016437127149,
+        "position_variance_imbalance_after": 1.893058519651461
+      },
+      "within_position_z_score": {
+        "accepted": true,
+        "spearman_with_incumbent": 0.9188030045728797,
+        "position_median_dispersion_before": 0.03351016437127149,
+        "position_median_dispersion_after": 0.03661042583085334,
+        "position_variance_imbalance_after": 1.012254901960781,
+        "position_mean_dispersion_after": 8.440632066703573e-17
+      },
+      "direct_defensive_evidence": {
+        "available": true,
+        "available_metrics": [
+          "interceptions_p90",
+          "blocks_p90",
+          "clearances_p90",
+          "pressures_p90",
+          "post_pressure_recoveries_p90",
+          "aerial_wins_p90",
+          "duel_win_rate",
+          "defensive_positioning_score"
+        ],
+        "lift_fraction": 1.0,
+        "adjusted_players": 155,
+        "mean_positive_lift": 0.5845528609921085,
+        "recentered_within_position": false,
+        "uses_player_identity": false,
+        "uses_team_identity": false,
+        "accepted": true,
+        "spearman_with_incumbent": 0.8954516154943726,
+        "position_median_dispersion_before": 0.03661042583085334,
+        "position_median_dispersion_after": 0.23964346004296747,
+        "position_variance_imbalance_after": 1.2463743593728642,
+        "position_median_dispersion_cap": 0.25
+      },
+      "upper_tail_cdf": {
+        "accepted": true,
+        "raw_leader_preserved_in_top_three": true,
+        "spearman_with_normalized_score": 1.0,
+        "expanded_outliers": 25
+      },
+      "publication_exposure_safeguard": {
+        "exposure_share": 0.75,
+        "minimum_factor": 0.5298129105111419,
+        "maximum_factor": 0.9998814097107055,
+        "mean_factor": 0.8157966003524948,
+        "accepted": true,
+        "spearman_with_incumbent": 0.9960534752436945,
+        "position_median_dispersion_before": 0.09439468109156465,
+        "position_median_dispersion_after": 0.08380885667662258,
+        "position_variance_imbalance_after": 1.2057239227402656
+      },
+      "attacking_realization": {
+        "available": true,
+        "penalty_fraction": 0.55,
+        "adjusted_players": 99,
+        "maximum_applied_penalty": 0.3044073579041306,
+        "mean_positive_penalty": 0.06592985892036164,
+        "uses_player_identity": false,
+        "uses_team_identity": false,
+        "accepted": true,
+        "spearman_with_incumbent": 0.9976364278348746,
+        "position_median_dispersion_before": 0.08380885667662258,
+        "position_median_dispersion_after": 0.09127614200773808,
+        "position_variance_imbalance_after": 1.2057239227402656
+      },
+      "goalkeeper_quantile_bridge": {
+        "accepted": true,
+        "ranked_goalkeepers": 32,
+        "method": "blom_empirical_quantile_bridge",
+        "goalkeeper_order_spearman": 1.0,
+        "minimum_target_percentile": 0.01937984496124031,
+        "maximum_target_percentile": 0.968027161829217,
+        "upper_tail_shrinkage_threshold": 0.9,
+        "upper_tail_shrinkage_center": 0.965
+      }
+    },
+    "final": {
+      "score_min": 0.061297,
+      "score_max": 0.999879,
+      "raw_to_final_spearman": 0.6486038255964883,
+      "unranked_backup_goalkeepers": 8,
+      "top_player": "Lionel Andrés Messi Cuccittini"
+    },
+    "generalized_validation": {
+      "heavy_defenders_evaluated": 84,
+      "heavy_defender_team_percentile_median": 0.7623529411764706,
+      "heavy_defender_share_at_or_above_60th_team_percentile": 0.7380952380952381,
+      "heavy_defender_share_in_60th_to_90th_team_percentile": 0.4642857142857143,
+      "final_position_variance_imbalance": 1.2057236536403573,
+      "global_leader_percentile": 1.0,
+      "scores_bounded_zero_to_one": true,
+      "productive_vs_low_minute_teams_evaluated": 8,
+      "productive_attacker_pairwise_ordering_success_rate": 1.0
+    }
   }
 }
