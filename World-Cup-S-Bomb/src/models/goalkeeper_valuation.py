@@ -8,13 +8,14 @@ import numpy as np
 import pandas as pd
 
 
-GOALKEEPER_METRICS: dict[str, bool] = {
-    "goals_prevented_proxy_p90": True,
-    "save_rate": True,
-    "cross_stopping_rate": True,
-    "sweeper_actions_p90": True,
-    "distribution_under_pressure": True,
-    "penalty_save_rate_shrunk": True,
+GOALKEEPER_METRICS: dict[str, tuple[bool, float]] = {
+    "goals_prevented_proxy_p90": (True, 0.225),
+    "save_rate": (True, 0.135),
+    "cross_stopping_rate": (True, 0.135),
+    "sweeper_actions_p90": (True, 0.135),
+    "distribution_under_pressure": (True, 0.135),
+    "penalty_save_rate_shrunk": (True, 0.135),
+    "high_leverage_save_pct": (True, 0.100),
 }
 
 
@@ -27,7 +28,8 @@ def _percentile(series: pd.Series, higher: bool) -> pd.Series:
 def calculate_goalkeeper_ratings(
     goalkeeper_features: pd.DataFrame,
     *,
-    reliability_minutes: float = 300.0,
+    reliability_minutes: float = 450.0,
+    minimum_minutes: float = 90.0,
 ) -> pd.DataFrame:
     """Calculate a separate, reliability-shrunk goalkeeper leaderboard."""
 
@@ -36,14 +38,32 @@ def calculate_goalkeeper_ratings(
     )
     if missing:
         raise ValueError(f"Goalkeeper metrics missing: {sorted(missing)}")
-    output = goalkeeper_features.copy()
+    output = goalkeeper_features.loc[
+        pd.to_numeric(
+            goalkeeper_features["minutes"],
+            errors="coerce",
+        ).ge(minimum_minutes)
+    ].copy()
+    if output.empty:
+        raise ValueError("No goalkeepers satisfy the 90-minute eligibility rule")
     components = pd.DataFrame(index=output.index)
     availability = pd.DataFrame(index=output.index)
-    for metric, higher in GOALKEEPER_METRICS.items():
+    for metric, (higher, _) in GOALKEEPER_METRICS.items():
         components[metric] = _percentile(output[metric], higher)
         availability[metric] = output[metric].notna()
     evidence = availability.sum(axis=1)
-    score = components.mean(axis=1, skipna=True)
+    weights = pd.Series(
+        {
+            metric: weight
+            for metric, (_, weight) in GOALKEEPER_METRICS.items()
+        }
+    )
+    weighted = components.mul(weights, axis=1)
+    available_weight = availability.mul(weights, axis=1).sum(axis=1)
+    score = weighted.sum(axis=1, skipna=True) / available_weight.replace(
+        0.0,
+        np.nan,
+    )
     cohort_prior = float(score.mean())
     feature_reliability = evidence / len(GOALKEEPER_METRICS)
     minutes = pd.to_numeric(
@@ -69,6 +89,28 @@ def calculate_goalkeeper_ratings(
         index=output.index,
         dtype="Int64",
     )
+    output["GKRankingStatus"] = np.select(
+        [
+            minutes.ge(270.0),
+            minutes.ge(180.0),
+        ],
+        [
+            "Ranked (270+ min)",
+            "Ranked (180–269 min)",
+        ],
+        default="Coverage only (<180 min)",
+    )
+    output["primary_goalkeeper_rank"] = pd.Series(
+        pd.NA,
+        index=output.index,
+        dtype="Int64",
+    )
+    primary = minutes.ge(270.0)
+    output.loc[primary, "primary_goalkeeper_rank"] = (
+        output.loc[primary, "final_player_rating"]
+        .rank(method="min", ascending=False)
+        .astype(int)
+    )
     return output
 
 
@@ -86,5 +128,15 @@ def goalkeeper_model_summary(
         ),
         "rating_reliability_mean": float(
             ratings["goalkeeper_rating_reliability"].mean()
+        ),
+        "eligibility_minutes": 90,
+        "primary_ranking_minutes": 270,
+        "reliability_minutes": 450,
+        "component_weights": {
+            metric: weight
+            for metric, (_, weight) in GOALKEEPER_METRICS.items()
+        },
+        "ranking_status_counts": (
+            ratings["GKRankingStatus"].value_counts().to_dict()
         ),
     }

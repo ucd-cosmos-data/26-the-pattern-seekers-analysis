@@ -1,62 +1,40 @@
-# Pedro González López Player Profile
+# Pedro González López — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Spain
 - Position group: Central/Wide Midfield
-- Functional role: Ball-Winner
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 72
-- Position rank: 6
-- Role rank: 4
-- Team rank: 5
-- Final player rating: 0.5198
-- Global ranking eligibility: eligible
+- Functional role: Holding Anchor
 - Minutes: 372.4
-- Minutes reliability: 0.5538
+- Global Rank v3: 122
+- Team Rank v3: 6
+- Position Rank v3: 24
+- Role Rank v3: 4
+- Tournament Impact: 0.8863
+- Role Quality: 0.2562
+- Impact interval: [0.1401, 1.7004]
+- Rank band: 54–364
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.4286
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.1598 |
-| vaep_def_scaled | 0.4418 |
-| vaep_per_touch | 0.0006 |
-| open_play_xt_p90 | 0.0433 |
-| set_piece_xt_p90 | 0.0410 |
-| role_adjusted_value | 0.0262 |
-| completeness_score | 0.7490 |
-| off_ball_score | 0.6686 |
+| Attack | 0.9149 |
+| Defense | -0.0287 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.6906 |
-| creation_score | 0.7528 |
-| finishing_score | 0.1749 |
-| pressing_score | 0.7490 |
-| defensive_score | 0.7629 |
-| ball_security_score | 0.6711 |
-| aerial_score | 0.4155 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9273 |
-| mean_defenders_within_3m | 0.3237 |
-| mean_defenders_within_5m | 0.6591 |
-| mean_nearest_defender_m | 6.3650 |
-| mean_passing_lane_availability | 0.9334 |
-| packing_index_mean | 0.7312 |
-| mean_space_received | 0.6366 |
-| network_pagerank | 0.1078 |
-| network_betweenness | 0.1804 |
-| network_entropy | 0.8697 |
-| build_up_involvement_ratio | 0.6012 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

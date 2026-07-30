@@ -1,62 +1,40 @@
-# Kamil Glik Player Profile
+# Kamil Glik — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Poland
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Aerial/Secure Centre-Back
-- Role entropy: 0.0000
-- Global rank: 92
-- Position rank: 18
-- Role rank: 8
-- Team rank: 6
-- Final player rating: 0.4824
-- Global ranking eligibility: eligible
 - Minutes: 389.8
-- Minutes reliability: 0.5651
+- Global Rank v3: 313
+- Team Rank v3: 7
+- Position Rank v3: 59
+- Role Rank v3: 44
+- Tournament Impact: 0.3107
+- Role Quality: 0.0851
+- Impact interval: [0.0018, 0.6361]
+- Rank band: 167–467
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.1506
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.7678 |
-| vaep_def_scaled | 0.6820 |
-| vaep_per_touch | 0.0003 |
-| open_play_xt_p90 | 0.0030 |
-| set_piece_xt_p90 | -0.0003 |
-| role_adjusted_value | 0.2704 |
-| completeness_score | 0.3682 |
-| off_ball_score | 0.4936 |
+| Attack | 0.3059 |
+| Defense | 0.0048 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.1353 |
-| creation_score | 0.2007 |
-| finishing_score | 0.4261 |
-| pressing_score | 0.3529 |
-| defensive_score | 0.3128 |
-| ball_security_score | 0.4634 |
-| aerial_score | 0.6561 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8547 |
-| mean_defenders_within_3m | 0.2210 |
-| mean_defenders_within_5m | 0.3626 |
-| mean_nearest_defender_m | 10.2751 |
-| mean_passing_lane_availability | 0.9700 |
-| packing_index_mean | 0.3739 |
-| mean_space_received | 0.9031 |
-| network_pagerank | 0.0783 |
-| network_betweenness | 0.1345 |
-| network_entropy | 0.8049 |
-| build_up_involvement_ratio | 0.6301 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

@@ -31,7 +31,7 @@ def test_compute_ratings_matches_hand_formula() -> None:
 
     assert np.allclose(raw, [0.63, 0.252])
     prior = np.mean([0.63, 0.252])  # shared position-group prior
-    rel = sum_m / (sum_m + 300.0)  # [0.75, 0.6]
+    rel = sum_m / (sum_m + 450.0)
     expected = rel * raw + (1 - rel) * prior
     assert np.allclose(final, expected)
 

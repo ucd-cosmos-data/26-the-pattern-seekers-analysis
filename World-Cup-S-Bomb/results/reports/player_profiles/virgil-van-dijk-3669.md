@@ -1,62 +1,40 @@
-# Virgil van Dijk Player Profile
+# Virgil van Dijk — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Netherlands
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Probabilistic role: Aerial/Secure Centre-Back
-- Role entropy: 0.0000
-- Global rank: 115
-- Position rank: 30
-- Role rank: 14
-- Team rank: 9
-- Final player rating: 0.4124
-- Global ranking eligibility: eligible
 - Minutes: 509.5
-- Minutes reliability: 0.6294
+- Global Rank v3: 271
+- Team Rank v3: 11
+- Position Rank v3: 61
+- Role Rank v3: 45
+- Tournament Impact: 0.4054
+- Role Quality: 0.0834
+- Impact interval: [-0.0213, 0.9888]
+- Rank band: 111–525
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.1944
+- Non-shootout xA: 0.0501
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.4096 |
-| vaep_def_scaled | 0.4629 |
-| vaep_per_touch | -0.0006 |
-| open_play_xt_p90 | 0.0081 |
-| set_piece_xt_p90 | 0.0055 |
-| role_adjusted_value | 0.4301 |
-| completeness_score | 0.4723 |
-| off_ball_score | 0.4883 |
+| Attack | 0.2058 |
+| Defense | 0.1996 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5458 |
-| creation_score | 0.4521 |
-| finishing_score | 0.5692 |
-| pressing_score | 0.3127 |
-| defensive_score | 0.2764 |
-| ball_security_score | 0.4528 |
-| aerial_score | 0.8662 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8726 |
-| mean_defenders_within_3m | 0.1842 |
-| mean_defenders_within_5m | 0.2978 |
-| mean_nearest_defender_m | 10.4249 |
-| mean_passing_lane_availability | 0.9596 |
-| packing_index_mean | 0.5886 |
-| mean_space_received | 0.9204 |
-| network_pagerank | 0.0918 |
-| network_betweenness | 0.1215 |
-| network_entropy | 0.8216 |
-| build_up_involvement_ratio | 0.7022 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

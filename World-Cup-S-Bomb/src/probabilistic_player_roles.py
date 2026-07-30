@@ -31,6 +31,8 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import RobustScaler, StandardScaler
 from sklearn.linear_model import Ridge
 
+from src.features.event_scope import filter_ordinary_actions
+
 
 RANDOM_STATE = 42
 ROLE_K_RANGE = range(9, 17)
@@ -98,7 +100,15 @@ def build_spatial_features(actions: pd.DataFrame) -> pd.DataFrame:
     missing = required.difference(actions.columns)
     if missing:
         raise ValueError(f"Spatial action columns missing: {sorted(missing)}")
-    valid = actions.loc[actions["player_id"].notna()].copy()
+    # Public feature helpers also accept already-scoped synthetic/action
+    # frames. Production SPADL frames always carry ``period_id`` and are
+    # filtered through the authoritative Qatar 2022 boundary.
+    valid = (
+        filter_ordinary_actions(actions)
+        if {"period_id", "period"}.intersection(actions.columns)
+        else actions.copy()
+    )
+    valid = valid.loc[valid["player_id"].notna()].copy()
     valid["player_id"] = valid["player_id"].astype(int)
     spatial = pd.DataFrame(
         [
@@ -520,7 +530,14 @@ def evaluate_learned_valuation(
 ) -> tuple[pd.DataFrame, dict[str, Any]]:
     """Challenge the fixed rating with grouped-OOF positive Ridge regression."""
 
-    action_values = actions.loc[actions["player_id"].notna()].copy()
+    action_values = (
+        filter_ordinary_actions(actions)
+        if {"period_id", "period"}.intersection(actions.columns)
+        else actions.copy()
+    )
+    action_values = action_values.loc[
+        action_values["player_id"].notna()
+    ].copy()
     action_values["player_id"] = action_values["player_id"].astype(int)
     action_values["non_shot_xg"] = np.where(
         ~action_values["type_name"].eq("Shot"),
@@ -623,7 +640,7 @@ def evaluate_learned_valuation(
     tournament["learned_rating_raw"] = estimator.predict(
         tournament[feature_names].to_numpy()
     )
-    reliability = tournament["minutes"] / (tournament["minutes"] + 300.0)
+    reliability = tournament["minutes"] / (tournament["minutes"] + 450.0)
     prior = tournament.groupby("position_group")[
         "learned_rating_raw"
     ].transform("mean")

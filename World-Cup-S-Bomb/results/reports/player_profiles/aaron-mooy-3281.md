@@ -1,62 +1,40 @@
-# Aaron Mooy Player Profile
+# Aaron Mooy — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Australia
 - Position group: Defensive Midfield
-- Functional role: Box-to-Box Runner
-- Probabilistic role: Pressing/Defensive Midfielder
-- Role entropy: 0.0000
-- Global rank: 97
-- Position rank: 16
-- Role rank: 4
-- Team rank: 4
-- Final player rating: 0.4732
-- Global ranking eligibility: eligible
+- Functional role: Holding Anchor
 - Minutes: 386.9
-- Minutes reliability: 0.5633
+- Global Rank v3: 469
+- Team Rank v3: 15
+- Position Rank v3: 88
+- Role Rank v3: 61
+- Tournament Impact: 0.0655
+- Role Quality: 0.0788
+- Impact interval: [-0.0046, 0.1842]
+- Rank band: 332–518
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0392
+- Non-shootout xA: 0.0395
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.1331 |
-| vaep_def_scaled | 0.6008 |
-| vaep_per_touch | -0.0001 |
-| open_play_xt_p90 | 0.0025 |
-| set_piece_xt_p90 | 0.0223 |
-| role_adjusted_value | 0.0306 |
-| completeness_score | 0.6003 |
-| off_ball_score | 0.5760 |
+| Attack | 0.1042 |
+| Defense | -0.0388 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5397 |
-| creation_score | 0.6014 |
-| finishing_score | 0.2958 |
-| pressing_score | 0.6089 |
-| defensive_score | 0.6379 |
-| ball_security_score | 0.3007 |
-| aerial_score | 0.5106 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9246 |
-| mean_defenders_within_3m | 0.3968 |
-| mean_defenders_within_5m | 0.7504 |
-| mean_nearest_defender_m | 5.7503 |
-| mean_passing_lane_availability | 0.9049 |
-| packing_index_mean | 0.8112 |
-| mean_space_received | 0.5868 |
-| network_pagerank | 0.1196 |
-| network_betweenness | 0.3351 |
-| network_entropy | 0.9074 |
-| build_up_involvement_ratio | 0.6174 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

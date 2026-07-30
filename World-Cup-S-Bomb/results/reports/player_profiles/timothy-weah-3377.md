@@ -1,62 +1,40 @@
-# Timothy Weah Player Profile
+# Timothy Weah — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: United States
 - Position group: Attacking Midfield/Wing
-- Functional role: Progressive Winger
-- Probabilistic role: Creative/Progressive/Pressing Fullback
-- Role entropy: 0.0000
-- Global rank: 23
-- Position rank: 6
-- Role rank: 8
-- Team rank: 3
-- Final player rating: 0.6484
-- Global ranking eligibility: eligible
+- Functional role: Ball-Winner
 - Minutes: 317.9
-- Minutes reliability: 0.5145
+- Global Rank v3: 37
+- Team Rank v3: 2
+- Position Rank v3: 43
+- Role Rank v3: 12
+- Tournament Impact: 1.8921
+- Role Quality: 0.4622
+- Impact interval: [0.3167, 3.8105]
+- Rank band: 9–275
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.4401
+- Non-shootout xA: 0.4117
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.6070 |
-| vaep_def_scaled | 0.9615 |
-| vaep_per_touch | 0.0044 |
-| open_play_xt_p90 | 0.0054 |
-| set_piece_xt_p90 | 0.0124 |
-| role_adjusted_value | 0.3214 |
-| completeness_score | 0.5327 |
-| off_ball_score | 0.4421 |
+| Attack | 1.8950 |
+| Defense | -0.0029 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.2490 |
-| creation_score | 0.5007 |
-| finishing_score | 0.7758 |
-| pressing_score | 0.3673 |
-| defensive_score | 0.4847 |
-| ball_security_score | 0.6599 |
-| aerial_score | 0.2089 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8810 |
-| mean_defenders_within_3m | 0.4312 |
-| mean_defenders_within_5m | 0.8623 |
-| mean_nearest_defender_m | 7.4828 |
-| mean_passing_lane_availability | 0.9031 |
-| packing_index_mean | 0.4416 |
-| mean_space_received | 0.5459 |
-| network_pagerank | 0.0622 |
-| network_betweenness | 0.0188 |
-| network_entropy | 0.8669 |
-| build_up_involvement_ratio | 0.5660 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

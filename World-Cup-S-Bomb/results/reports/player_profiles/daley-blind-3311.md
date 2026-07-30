@@ -1,62 +1,40 @@
-# Daley Blind Player Profile
+# Daley Blind — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Netherlands
 - Position group: Fullback/Wingback
-- Functional role: Wide Creator
-- Probabilistic role: Creative/Progressive Fullback
-- Role entropy: 0.0000
-- Global rank: 15
-- Position rank: 5
-- Role rank: 2
-- Team rank: 2
-- Final player rating: 0.6665
-- Global ranking eligibility: eligible
+- Functional role: Attacking Wingback
 - Minutes: 452.5
-- Minutes reliability: 0.6013
+- Global Rank v3: 92
+- Team Rank v3: 4
+- Position Rank v3: 25
+- Role Rank v3: 20
+- Tournament Impact: 1.1231
+- Role Quality: 0.2042
+- Impact interval: [0.2729, 2.1208]
+- Rank band: 38–282
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 0.5217
+- Non-shootout xA: 0.3113
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3147 |
-| vaep_def_scaled | 0.7605 |
-| vaep_per_touch | 0.0009 |
-| open_play_xt_p90 | 0.0249 |
-| set_piece_xt_p90 | 0.0148 |
-| role_adjusted_value | 0.8420 |
-| completeness_score | 0.6395 |
-| off_ball_score | 0.4764 |
+| Attack | 1.0825 |
+| Defense | 0.0406 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5749 |
-| creation_score | 0.6458 |
-| finishing_score | 0.6984 |
-| pressing_score | 0.6476 |
-| defensive_score | 0.6215 |
-| ball_security_score | 0.6120 |
-| aerial_score | 0.4965 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8738 |
-| mean_defenders_within_3m | 0.2717 |
-| mean_defenders_within_5m | 0.5508 |
-| mean_nearest_defender_m | 7.5459 |
-| mean_passing_lane_availability | 0.9141 |
-| packing_index_mean | 0.6328 |
-| mean_space_received | 0.7370 |
-| network_pagerank | 0.0892 |
-| network_betweenness | 0.1826 |
-| network_entropy | 0.8628 |
-| build_up_involvement_ratio | 0.6706 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

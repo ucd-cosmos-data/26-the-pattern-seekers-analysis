@@ -1,62 +1,40 @@
-# Aziz Eraltay Behich Player Profile
+# Aziz Eraltay Behich — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Australia
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Probabilistic role: Creative/Progressive Fullback
-- Role entropy: 0.0000
-- Global rank: 40
-- Position rank: 14
-- Role rank: 7
-- Team rank: 2
-- Final player rating: 0.6064
-- Global ranking eligibility: eligible
 - Minutes: 386.9
-- Minutes reliability: 0.5633
+- Global Rank v3: 241
+- Team Rank v3: 6
+- Position Rank v3: 77
+- Role Rank v3: 24
+- Tournament Impact: 0.4769
+- Role Quality: 0.1659
+- Impact interval: [0.0772, 0.9956]
+- Rank band: 110–410
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.1269
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.2805 |
-| vaep_def_scaled | 0.8577 |
-| vaep_per_touch | 0.0012 |
-| open_play_xt_p90 | 0.0049 |
-| set_piece_xt_p90 | 0.0342 |
-| role_adjusted_value | 0.1267 |
-| completeness_score | 0.4327 |
-| off_ball_score | 0.4468 |
+| Attack | 0.5905 |
+| Defense | -0.1136 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4925 |
-| creation_score | 0.4458 |
-| finishing_score | 0.3838 |
-| pressing_score | 0.4320 |
-| defensive_score | 0.7218 |
-| ball_security_score | 0.3183 |
-| aerial_score | 0.4542 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8207 |
-| mean_defenders_within_3m | 0.3602 |
-| mean_defenders_within_5m | 0.5748 |
-| mean_nearest_defender_m | 7.7026 |
-| mean_passing_lane_availability | 0.9166 |
-| packing_index_mean | 0.6142 |
-| mean_space_received | 0.7225 |
-| network_pagerank | 0.1073 |
-| network_betweenness | 0.2489 |
-| network_entropy | 0.8387 |
-| build_up_involvement_ratio | 0.7019 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

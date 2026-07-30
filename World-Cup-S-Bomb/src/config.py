@@ -12,7 +12,12 @@ PITCH_LENGTH_UNITS = 120.0
 PITCH_WIDTH_UNITS = 80.0
 PITCH_LENGTH_METRES = 105.0
 PITCH_WIDTH_METRES = 68.0
-MIN_PLAYER_MINUTES = 300.0
+MIN_PLAYER_MINUTES = 45.0
+MIN_GOALKEEPER_MINUTES = 90.0
+PRIMARY_RANKING_MINUTES = 300.0
+PRIMARY_GOALKEEPER_RANKING_MINUTES = 270.0
+OUTFIELD_RELIABILITY_MINUTES = 450.0
+GOALKEEPER_RELIABILITY_MINUTES = 450.0
 
 RATING_WEIGHTS: dict[str, float] = {
     "vaep_90": 0.40,
@@ -92,7 +97,7 @@ class RatingConfig:
     weights: Mapping[str, float] = field(
         default_factory=lambda: dict(RATING_WEIGHTS)
     )
-    reliability_minutes: float = 300.0
+    reliability_minutes: float = OUTFIELD_RELIABILITY_MINUTES
     minimum_minutes: float = MIN_PLAYER_MINUTES
 
     def __post_init__(self) -> None:

@@ -62,6 +62,8 @@ COMPONENTS = PROJECT_ROOT / "data/interim/world_cup_player_match_components.csv"
 INTERVALS = PROJECT_ROOT / "data/interim/world_cup_lineup_intervals.csv"
 LINEUPS = PROJECT_ROOT / "data/interim/world_cup_possession_lineups.csv"
 EVENTS = PROJECT_ROOT / "notebooks/all_events.csv"
+MATCHES = PROJECT_ROOT / "data/raw/matches.csv"
+FIFA_RANKINGS = PROJECT_ROOT / "config/fifa_rankings_2022-10-06.csv"
 FRAMES_360 = PROJECT_ROOT / "data/interim/world_cup_360_frames.csv"
 FRAME_METRICS_360 = (
     PROJECT_ROOT / "data/interim/world_cup_360_frame_metrics.csv"
@@ -125,6 +127,61 @@ def _load_inputs() -> dict[str, pd.DataFrame]:
     )
     event_columns = sorted(V4_EVENT_COLUMNS & available_event_columns)
     events = pd.read_csv(EVENTS, usecols=event_columns, low_memory=False)
+    matches = pd.read_csv(
+        MATCHES,
+        usecols=[
+            "match_id",
+            "home_team",
+            "away_team",
+            "competition_stage",
+        ],
+    )
+    fifa_rankings = pd.read_csv(FIFA_RANKINGS)
+    rank_lookup = fifa_rankings.set_index("team")["fifa_rank"]
+    home_context = matches[
+        ["match_id", "home_team", "away_team", "competition_stage"]
+    ].rename(
+        columns={
+            "home_team": "team",
+            "away_team": "opponent_team",
+        }
+    )
+    away_context = matches[
+        ["match_id", "away_team", "home_team", "competition_stage"]
+    ].rename(
+        columns={
+            "away_team": "team",
+            "home_team": "opponent_team",
+        }
+    )
+    match_context = pd.concat(
+        [home_context, away_context],
+        ignore_index=True,
+    )
+    match_context["opponent_fifa_rank"] = (
+        match_context["opponent_team"].map(rank_lookup)
+    )
+    if match_context["opponent_fifa_rank"].isna().any():
+        missing_teams = sorted(
+            match_context.loc[
+                match_context["opponent_fifa_rank"].isna(),
+                "opponent_team",
+            ].unique()
+        )
+        raise ValueError(
+            f"Pre-tournament FIFA rankings missing teams: {missing_teams}"
+        )
+    maximum_rank = float(fifa_rankings["fifa_rank"].max())
+    match_context["opponent_strength"] = (
+        1.0
+        - (
+            match_context["opponent_fifa_rank"].astype(float) - 1.0
+        )
+        / max(maximum_rank - 1.0, 1.0)
+    )
+    match_context["game_phase_knockout"] = (
+        ~match_context["competition_stage"].eq("Group Stage")
+    ).astype(int)
     missing_required = sorted(
         {
             "id",
@@ -190,6 +247,7 @@ def _load_inputs() -> dict[str, pd.DataFrame]:
         "recommendations": recommendations,
         "defensive": defensive,
         "events": events,
+        "match_context": match_context,
         "frame_actors": frame_actors,
         "frame_metrics": frame_metrics,
     }
@@ -691,7 +749,8 @@ def _write_v4_model_summary(
         (
             f"- Eligible players: {provenance['players_after_cutoff']} of "
             f"{provenance['players_before_cutoff']}; "
-            f"{provenance['players_dropped']} excluded below 300 minutes."
+            f"{provenance['players_dropped']} excluded below the 45-minute "
+            "outfield or 90-minute goalkeeper floor."
         ),
         (
             f"- Legacy transition OOF: Brier {float(oof_metrics['brier']):.6f}, "
@@ -720,10 +779,10 @@ def _write_v4_model_summary(
         "|---:|---|---|---:|---:|---:|---:|---:|",
         top_table,
         "",
-        "The base rating remains "
-        "`0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90`; "
-        "the final hierarchy applies the V4 role-relative minutes reliability "
-        "adjustment `minutes/(minutes+300)` to stabilize the 300-minute edge.",
+        "The legacy foundation is subsequently superseded by the v2 "
+        "role-weighted, development-gated VAEP/xT/xD composite. Its final hierarchy "
+        "uses `minutes/(minutes+450)` shrinkage; 300 minutes is a reporting "
+        "status, not a computation filter.",
         "",
     ]
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -1026,6 +1085,7 @@ def run_pipeline(
             data["events"],
             data["frame_actors"],
             data["frame_metrics"],
+            match_context_df=data["match_context"],
             legacy_validation_metrics=oof_metrics,
         )
         update(4, "SPADL + xT + calibrated 360-VAEP + unified rankings")
@@ -1059,6 +1119,8 @@ def run_pipeline(
             "vaep_value",
             "xt_value",
             "xt_scoring_partition",
+            "opponent_strength",
+            "game_phase_knockout",
             "defenders_within_5",
             "nearest_defender_distance",
             "defensive_density",
@@ -1279,7 +1341,15 @@ def run_pipeline(
         "suppression_reason_coverage": not suppressions.empty
         and bool(suppressions["reason_code"].notna().all()),
         "team_reports": team_count == 32,
-        "minutes_cutoff": bool(v4_profiles["minutes"].ge(300).all()),
+        "minutes_cutoff": bool(
+            (
+                ~v4_profiles["position_group"].eq("Goalkeeper")
+                & v4_profiles["minutes"].ge(45.0)
+            ).where(
+                ~v4_profiles["position_group"].eq("Goalkeeper"),
+                v4_profiles["minutes"].ge(90.0),
+            ).all()
+        ),
         "fullback_role_safeguard": not bool(
             v4_profiles.loc[
                 v4_profiles["position_group"].eq("Fullback/Wingback"),
@@ -1309,15 +1379,29 @@ def run_pipeline(
             v4_profiles.loc[
                 v4_profiles["player"].str.contains("Mbapp", case=False, na=False)
                 & v4_profiles["team"].eq("France"),
-                "team_rank",
-            ].le(2).all()
+                "final_player_rating",
+            ].ge(
+                v4_profiles.loc[
+                    v4_profiles["team"].eq("France")
+                    & v4_profiles["minutes"].ge(300.0)
+                    & ~v4_profiles["position_group"].eq("Goalkeeper"),
+                    "final_player_rating",
+                ].nlargest(2).min()
+            ).all()
         ),
         "messi_argentina_first": bool(
             v4_profiles.loc[
                 v4_profiles["player"].str.contains("Messi", case=False, na=False)
                 & v4_profiles["team"].eq("Argentina"),
-                "team_rank",
-            ].eq(1).all()
+                "final_player_rating",
+            ].ge(
+                v4_profiles.loc[
+                    v4_profiles["team"].eq("Argentina")
+                    & v4_profiles["minutes"].ge(300.0)
+                    & ~v4_profiles["position_group"].eq("Goalkeeper"),
+                    "final_player_rating",
+                ].max()
+            ).all()
         ),
     }
     if not all(checks.values()):

@@ -1,62 +1,40 @@
-# Aymeric Laporte Player Profile
+# Aymeric Laporte — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Spain
 - Position group: Center Back
-- Functional role: Deep Playmaker
-- Probabilistic role: Aerial/Progressive Centre-Back
-- Role entropy: 0.0000
-- Global rank: 70
-- Position rank: 12
-- Role rank: 3
-- Team rank: 4
-- Final player rating: 0.5273
-- Global ranking eligibility: eligible
+- Functional role: Sweeper CB
 - Minutes: 316.9
-- Minutes reliability: 0.5137
+- Global Rank v3: 371
+- Team Rank v3: 15
+- Position Rank v3: 90
+- Role Rank v3: 65
+- Tournament Impact: 0.2069
+- Role Quality: 0.0670
+- Impact interval: [0.0000, 0.4549]
+- Rank band: 216–499
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0415
+- Non-shootout xA: 0.0173
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.5952 |
-| vaep_def_scaled | 0.9126 |
-| vaep_per_touch | 0.0001 |
-| open_play_xt_p90 | 0.0029 |
-| set_piece_xt_p90 | 0.0105 |
-| role_adjusted_value | 0.1337 |
-| completeness_score | 0.4487 |
-| off_ball_score | 0.4619 |
+| Attack | 0.2463 |
+| Defense | -0.0394 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5870 |
-| creation_score | 0.5254 |
-| finishing_score | 0.3298 |
-| pressing_score | 0.1569 |
-| defensive_score | 0.3445 |
-| ball_security_score | 0.4289 |
-| aerial_score | 0.6678 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9382 |
-| mean_defenders_within_3m | 0.0755 |
-| mean_defenders_within_5m | 0.1870 |
-| mean_nearest_defender_m | 10.3498 |
-| mean_passing_lane_availability | 0.9690 |
-| packing_index_mean | 0.5795 |
-| mean_space_received | 0.9315 |
-| network_pagerank | 0.1270 |
-| network_betweenness | 0.3690 |
-| network_entropy | 0.7716 |
-| build_up_involvement_ratio | 0.6923 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

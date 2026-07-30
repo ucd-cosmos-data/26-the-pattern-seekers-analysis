@@ -49,11 +49,6 @@ venv/
 !**/results/figures/*.png
 !**/results/figures/*.pptx
 
-# World Cup project
-**/World-Cup-S-Bomb/results/reports/starters/
-**/World-Cup-S-Bomb/results/reports/teams/
-
-
 # Models
 **/models/*
 !**/models/*.joblib

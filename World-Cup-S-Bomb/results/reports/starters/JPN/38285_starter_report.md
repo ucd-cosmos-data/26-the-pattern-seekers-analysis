@@ -1,0 +1,40 @@
+# Ayase Ueda — Qatar 2022 Starter Report
+
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
+
+## Tournament Impact, Role Quality, and Uncertainty
+
+- Team: Japan
+- Position group: Forward
+- Functional role: Target Forward
+- Minutes: 45.0
+- Global Rank v3: 487
+- Team Rank v3: 20
+- Position Rank v3: 74
+- Role Rank v3: 44
+- Tournament Impact: 0.0523
+- Role Quality: 0.3394
+- Impact interval: [0.0000, 0.1568]
+- Rank band: 339–494
+- Uncertainty status: wide
+
+## Decisive outcomes
+
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0156
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
+|---|---|
+| Attack | 0.0439 |
+| Defense | 0.0083 |
+| Other | 0.0000 |
+
+## Compatibility
+
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.
