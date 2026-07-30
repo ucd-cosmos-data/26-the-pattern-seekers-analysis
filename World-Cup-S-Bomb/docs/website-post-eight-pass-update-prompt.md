@@ -52,8 +52,17 @@ score systems into one field.
 Confirm all of the following before editing the website:
 
 1. Eight-pass repair completed and champion/challenger decisions recorded.
-2. Analytics artifacts regenerated and hash-manifested.
-3. These files exist and are internally consistent:
+2. The completed eight-pass state has been reviewed and committed in the
+   analytics repository. Obtain its exact 40-character Git SHA as
+   `PASS8_COMMIT`. Do not use a moving branch name, `HEAD`, a date, or “latest”
+   as publication provenance.
+3. Check out or otherwise verify the analytics repository at exactly
+   `PASS8_COMMIT`. The governed source, generator, ranking, report, profile,
+   figure, and manifest paths must have no uncommitted differences from that
+   commit.
+4. Analytics artifacts have been regenerated and hash-manifested by that
+   committed state.
+5. These files exist and are internally consistent:
 
 - `results/reports/ranking/player_rankings.csv`
 - `results/reports/ranking/player_rankings.json`
@@ -82,7 +91,7 @@ Confirm all of the following before editing the website:
 - `results/MIscellaneous/team_defensive_style_profiles.csv`
 - `data/processed/player_heatmap_cells.csv`
 
-4. Website package scripts are available:
+6. Website package scripts are available:
 
 ```sh
 pnpm data:build
@@ -97,6 +106,75 @@ pnpm build
 
 If any precondition fails, stop and report the missing artifact. Do not patch
 the website onto stale analytics.
+
+The original eight-pass execution prompt intentionally says not to create a
+Git commit unless requested. Therefore, do not assume a Pass-8 commit exists
+merely because the passes ran. This website update requires the owner-reviewed
+commit SHA as a separate release input. If no such commit exists, stop before
+website import and request that the completed, validated eight-pass state be
+committed; do not create or select a commit implicitly.
+
+### Commit-pinned Pass-8 consistency gate
+
+Before website work, validate the complete publication bundle at
+`PASS8_COMMIT`:
+
+1. Record:
+   - `git rev-parse PASS8_COMMIT`
+   - analytics repository remote URL
+   - ranking refresh-manifest hash
+   - artifact-manifest hash
+2. Verify `results/reports/ranking/refresh_manifest.json` reports a passed
+   audit and its hashes match the files from `PASS8_COMMIT`.
+3. Verify `results/metadata/artifact_manifest.json` covers all regenerated
+   report/profile/figure/document outputs and matches the committed bytes.
+4. Verify these active ranking families agree:
+   - feature-rich full and 300+ rankings;
+   - outfield full and 300+ rankings;
+   - dedicated and unified GK rankings;
+   - global unified ranking;
+   - all 32 `by_team` and `by_team_unified` partitions.
+5. Verify all ranking-dependent publications were generated from those same
+   committed rankings:
+   - every player profile;
+   - every team/team-profile report;
+   - canonical and compatibility final summaries;
+   - canonical coaches notebook and every compatibility copy;
+   - model-summary JSON and Markdown variants;
+   - ranking figures;
+   - final DOCX;
+   - documentation dictionaries and manifests.
+6. Compare the following mirrored outputs byte-for-byte where their contracts
+   say they are aliases:
+   - canonical/root/Summary model-summary variants;
+   - canonical/root/final-path final-summary variants;
+   - canonical and compatibility coaches-notebook variants.
+7. Semantically validate non-identical formats:
+   - profile ranks/scores equal ranking rows;
+   - team player order equals `by_team_unified`;
+   - final-summary leaders equal active ranking leaders;
+   - coaches-notebook tables and claims equal active rankings/team profiles;
+   - model-summary formulas, selected layers, metrics, confidence intervals,
+     and gate decisions equal the ranking audit;
+   - DOCX text/tables equal the Markdown final-summary contract.
+8. Compute the dependency closure of every source/data/model change made
+   between the pre-repair champion and `PASS8_COMMIT`. Regenerate every derived
+   metric family reached by those dependencies. This includes possession,
+   attacking/defensive pattern, matchup, coaching-model, player, goalkeeper,
+   team, validation, and summary metrics when their inputs changed. Metrics
+   outside that dependency closure may retain identical values, but their
+   unchanged hashes and provenance must be verified rather than assumed.
+
+If any comparison fails, do not work around it in the website importer. Return
+to the analytics repository, fix the responsible generator, regenerate the
+entire dependent artifact family, rerun Pass-8 validation, obtain a newly
+reviewed commit SHA, and restart this gate. Never manually make summaries agree
+with rankings.
+
+Store `PASS8_COMMIT`, the two manifest hashes, and the analytics remote in the
+website source manifest and generated snapshot metadata. All website source
+links should point to files at that immutable commit (for example GitHub
+`.../blob/<PASS8_COMMIT>/...` URLs), not a moving `main` branch.
 
 ---
 
@@ -159,6 +237,53 @@ Publish three distinct populations:
    - Every profile must have a prerendered route.
 
 Never collapse these into one generic `rank`/`rating` without discrimination.
+
+### Ranking source-of-truth matrix
+
+Do not choose a ranking file because its name appears newer or because it has
+more columns. After Pass 8, validate `results/reports/ranking/refresh_manifest.json`,
+require `audit_passed: true`, verify every selected file’s SHA-256 digest, and
+route each website surface to exactly one ranking authority:
+
+| Website use | Authoritative ranking artifact | Fields/order to publish |
+| --- | --- | --- |
+| Unified player tab | `ranking/unified_tournament_rankings.csv` | Exact row order; `Global Rank`, `Team Rank`, `Tournament Performance Score` |
+| Homepage/story top 10 | `ranking/unified_tournament_rankings.csv` | First 10 rows after validating contiguous global rank |
+| Unified ordering on each team page | `ranking/by_team_unified/<TEAM>.csv` | Exact team rows ordered by `Team Rank`; retain unified global rank and score |
+| 300+ continuity tab | `ranking/player_rankings_300plus.csv` | The post–Pass-8 300+ export contract, including only rows whose ranking status and minutes satisfy that export |
+| Outfield-only global reference | `ranking/global_rankings_outfield.csv` | Outfield model/ranks only; never substitute for unified ordering |
+| Outfield-only 300+ reference | `ranking/global_rankings_outfield_300min.csv` | 300+ outfield analysis only; do not silently use it for the all-position continuity tab |
+| Dedicated goalkeeper rank | `ranking/goalkeeper_rankings.csv` | `gk_rating_v2`, `gk_rank_v2`, eligibility/main-GK status |
+| GK-to-unified publication mapping | `ranking/goalkeeper_rankings_unified.csv` | GK order plus unified rank/score; not the dedicated GK score |
+| Rich profile metrics and repaired component fields | `ranking/player_rankings.csv` and profile Markdown | Join by validated player identity; do not use this table’s legacy aliases when repaired `*_v2` fields are authoritative |
+| Team tactical/narrative values | `results/reports/team_profiles/<team>.md` | Team narrative and tactical metrics only; player ranking order still comes from `by_team_unified` |
+
+The non-unified `ranking/by_team/*.csv` files must never power the website’s
+unified team ordering. Likewise, `global_rankings_outfield*.csv` must never be
+used to fill goalkeeper or unified score fields.
+
+Treat `by_team_unified` as a materialized partition of
+`unified_tournament_rankings.csv`, not an independent ranking. Validate before
+import:
+
+- exactly 32 team files exist;
+- concatenating all team files produces the same row multiset as the unified
+  global table;
+- every team file has only its named team;
+- `Team Rank` is unique and contiguous within each team;
+- `Global Rank`, `Team Rank`, `Player`, `Team`, `Position Group`, and
+  `Tournament Performance Score` match the global unified row exactly;
+- sorting each team file by `Team Rank` gives the displayed team order;
+- all file hashes match the post–Pass-8 refresh manifest.
+
+The six-column unified release intentionally lacks `player_id`. Resolve it
+through an exact, validated crosswalk to `player_rankings.csv` using the
+canonical player name plus team, then carry the numeric `player_id` internally.
+Require one and only one match for every unified row; fail the build on a
+missing or duplicate match. Never use fuzzy name matching or name-only joins.
+
+If the post–Pass-8 manifest or audit changes any file contract, stop and update
+this matrix explicitly before importing. Do not guess between ranking variants.
 
 ### Goalkeeper semantics
 
@@ -324,7 +449,10 @@ generated JSON.
 ### Implementation requirements
 
 1. Parse full ranking tables with repaired column names.
-2. Join by numeric `player_id`, never by display name alone.
+2. Join tables carrying IDs by numeric `player_id`. For the six-column unified
+   releases, create the strict canonical-name-plus-team crosswalk described in
+   the ranking source-of-truth matrix and convert it to `player_id` before all
+   downstream joins.
 3. Parse profile markdown with discriminated outfield/GK parsers.
 4. Parse repaired team profiles (`Top 5`, full outfield list, GK list) instead
    of the old exclusive `Squad ratings` 300+ assumption.
@@ -741,6 +869,12 @@ For each of the 32 teams:
 Remove copy that says only 300-minute players exist if the team page now
 exposes the broader repaired roster.
 
+The displayed unified player order must come only from
+`results/reports/ranking/by_team_unified/<TEAM>.csv`. Do not infer it by sorting
+`final_player_rating_v2`, `gk_rating_v2`, a legacy `team_rank`, or the
+non-unified `by_team/<TEAM>.csv`. Cross-check every displayed row against the
+corresponding global row in `unified_tournament_rankings.csv`.
+
 ### Exit gate
 
 All 32 team routes prerender. Team metrics and player lists match repaired
@@ -1017,6 +1151,7 @@ completed reconciliation record. Sitemap and robots use the configured origin.
 From `C:\cosmos\final_proj_website\the-worlds-coach`:
 
 ```powershell
+$env:PASS8_COMMIT = "<owner-reviewed 40-character analytics commit SHA>"
 $env:RESEARCH_ROOT = "C:\cosmos\26-the-pattern-seekers-analysis\World-Cup-S-Bomb"
 pnpm install
 pnpm data:build
@@ -1059,10 +1194,22 @@ If the production origin differs, use the owner-confirmed origin instead.
 
 ### Data
 
+- Website snapshot metadata records the exact `PASS8_COMMIT`, analytics remote,
+  refresh-manifest hash, and artifact-manifest hash.
+- Every governed analytics input matches its byte content at `PASS8_COMMIT`;
+  moving-branch source URLs are not used.
+- Rankings, player/team profiles, final summaries, coaches notebook, model
+  summaries, figures, DOCX, dictionaries, and manifests pass the commit-pinned
+  consistency gate before import.
 - 300+ tab population matches repaired 300+ export rules.
 - Unified tab population matches `unified_tournament_rankings.csv`.
 - Unified ranks are unique, finite, and ordered by
   `Tournament Performance Score`.
+- Every team’s displayed unified order exactly matches its
+  `by_team_unified/<TEAM>.csv`, and all 32 team files exactly partition the
+  unified global table.
+- No website surface substitutes outfield, GK-only, legacy, or non-unified
+  rank fields for unified rank or `Tournament Performance Score`.
 - Exactly 32 main GKs are ranked in dedicated and unified GK publications.
 - Backup GKs are unranked in unified ranking.
 - Every profile markdown has a prerendered route.
@@ -1120,6 +1267,7 @@ Return:
 
 1. **Outcome**
    - website data version / snapshot id
+   - exact `PASS8_COMMIT` and manifest hashes
    - ranking cohorts published
 2. **Pass results**
    - one concise subsection per Pass A–J
