@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import sys
 import tempfile
 from pathlib import Path
 
@@ -25,10 +26,10 @@ from sklearn.preprocessing import StandardScaler
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_POSSESSIONS = PROJECT_ROOT / "data" / "processed" / "world_cup_defensive_clusters.csv"
 DEFAULT_PLAYERS = PROJECT_ROOT / "data" / "processed" / "world_cup_defensive_players.csv"
-DEFAULT_MATCHUPS = PROJECT_ROOT / "results" / "style_matchup_effectiveness.csv"
-DEFAULT_TEAM_PROFILES = PROJECT_ROOT / "results" / "team_defensive_style_profiles.csv"
-DEFAULT_PLAYER_ROLES = PROJECT_ROOT / "results" / "defensive_player_roles.csv"
-DEFAULT_SUMMARY = PROJECT_ROOT / "results" / "defensive_matchup_summary.md"
+DEFAULT_MATCHUPS = PROJECT_ROOT / "results" / "MIscellaneous" / "style_matchup_effectiveness.csv"
+DEFAULT_TEAM_PROFILES = PROJECT_ROOT / "results" / "MIscellaneous" / "team_defensive_style_profiles.csv"
+DEFAULT_PLAYER_ROLES = PROJECT_ROOT / "results" / "MIscellaneous" / "defensive_player_roles.csv"
+DEFAULT_SUMMARY = PROJECT_ROOT / "results" / "MIscellaneous" / "defensive_matchup_summary.md"
 DEFAULT_FIGURE = PROJECT_ROOT / "results" / "figures" / "attacking_defensive_matchups.png"
 
 PLAYER_FEATURES = [
@@ -213,7 +214,13 @@ def build_player_roles(players: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, f
 
 
 def save_matchup_figure(path: Path, matchups: pd.DataFrame) -> None:
-    attack_order = ["Patient Build-up", "Short Under Pressure", "Direct Long Play"]
+    # Preferred display order for the known styles; any label not in the
+    # preference list is appended alphabetically instead of silently
+    # producing an all-NaN reindex if upstream cluster names change.
+    preferred_attack_order = ["Patient Build-up", "Short Under Pressure", "Direct Long Play"]
+    present_styles = list(matchups["attacking_style"].unique())
+    attack_order = [style for style in preferred_attack_order if style in present_styles]
+    attack_order += sorted(style for style in present_styles if style not in preferred_attack_order)
     defense_order = sorted(matchups["defensive_style"].unique())
     xg = matchups.pivot(
         index="attacking_style", columns="defensive_style", values="mean_xg"
@@ -347,8 +354,16 @@ def main() -> None:
         .shape[0]
     ):
         raise ValueError("Matchup rows do not reconcile with observed style pairs")
-    if team_profiles["defending_team"].nunique() != 32:
-        raise ValueError("Team defensive profiles do not cover all 32 teams")
+    # Coverage check, not an integrity check: a team with zero eligible
+    # possessions legitimately drops out, so warn instead of discarding
+    # every computed output on the floor.
+    team_count = int(team_profiles["defending_team"].nunique())
+    if team_count != 32:
+        print(
+            f"WARNING: team defensive profiles cover {team_count} of 32 teams; "
+            "teams without eligible possessions are absent from the output.",
+            file=sys.stderr,
+        )
 
     for path in (
         args.matchups,

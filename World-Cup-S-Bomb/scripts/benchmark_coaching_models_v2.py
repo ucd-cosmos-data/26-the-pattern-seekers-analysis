@@ -55,19 +55,19 @@ DEFAULT_LINEUPS = (
 DEFAULT_FEATURES = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_player_aware_model_features.csv"
 )
-DEFAULT_LEADERBOARD = PROJECT_ROOT / "results" / "coaching_model_leaderboard.csv"
-DEFAULT_FOLDS = PROJECT_ROOT / "results" / "coaching_model_fold_metrics.csv"
-DEFAULT_ABLATION = PROJECT_ROOT / "results" / "coaching_feature_ablation.csv"
+DEFAULT_LEADERBOARD = PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_model_leaderboard.csv"
+DEFAULT_FOLDS = PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_model_fold_metrics.csv"
+DEFAULT_ABLATION = PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_feature_ablation.csv"
 DEFAULT_PREDICTIONS = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_coaching_model_oof_predictions.csv"
 )
-DEFAULT_REPORT = PROJECT_ROOT / "results" / "coaching_model_benchmark.md"
+DEFAULT_REPORT = PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_model_benchmark.md"
 DEFAULT_MODEL = PROJECT_ROOT / "models" / "coaching_model_benchmark.joblib"
 DEFAULT_RECOMMENDATIONS = (
     PROJECT_ROOT / "data" / "processed" / "world_cup_recommendation_features.csv"
 )
 DEFAULT_V2_MODEL = PROJECT_ROOT / "models" / "coaching_model_benchmark_v2.joblib"
-DEFAULT_V2_METRICS = PROJECT_ROOT / "results" / "coaching_model_validation_v2.json"
+DEFAULT_V2_METRICS = PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_model_validation_v2.json"
 DEFAULT_V2_PREDICTIONS = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_coaching_model_predictions_v2.csv"
 )

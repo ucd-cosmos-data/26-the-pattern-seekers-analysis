@@ -3,16 +3,16 @@
   "match_id": 3869685,
   "status": "held-out retrospective pre-match demonstration",
   "selected_transition_penalty": 0.0,
-  "box_entry_value": 0.03939913560654106,
+  "box_entry_value": 0.039399135606541055,
   "recommendations": [
     {
       "team": "Argentina",
       "recommended_style": "Patient Build-up",
       "runner_up": "Direct Long Play",
       "clear_model_winner": true,
-      "score_margin": 0.015903673370359434,
+      "score_margin": 0.015903673370359438,
       "model_family_votes": 5,
-      "score_margin_lower_bound": 0.015903673370359434,
+      "score_margin_lower_bound": 0.015903673370359438,
       "style_scores": [
         {
           "attacking_style": "Patient Build-up",
@@ -26,14 +26,14 @@
           "expected_xg": 0.010819371784936293,
           "box_probability": 0.2796956380755203,
           "transition_probability": 0.02131662123708324,
-          "score": 0.021839138158031745
+          "score": 0.02183913815803174
         },
         {
           "attacking_style": "Short Under Pressure",
           "expected_xg": 0.008366806927926174,
           "box_probability": 0.15463953428259974,
           "transition_probability": 0.027705737389397314,
-          "score": 0.014459470909258677
+          "score": 0.014459470909258676
         }
       ],
       "coaching_specifics": {
@@ -49,9 +49,9 @@
       "recommended_style": "Patient Build-up",
       "runner_up": "Direct Long Play",
       "clear_model_winner": true,
-      "score_margin": 0.011330203576798953,
+      "score_margin": 0.011330203576798956,
       "model_family_votes": 5,
-      "score_margin_lower_bound": 0.011330203576798956,
+      "score_margin_lower_bound": 0.01133020357679896,
       "style_scores": [
         {
           "attacking_style": "Patient Build-up",
@@ -65,14 +65,14 @@
           "expected_xg": 0.009522742376030095,
           "box_probability": 0.3156652848640361,
           "transition_probability": 0.019807478720018205,
-          "score": 0.02195968174066567
+          "score": 0.021959681740665666
         },
         {
           "attacking_style": "Short Under Pressure",
           "expected_xg": 0.007533522656500271,
           "box_probability": 0.15201395931799483,
           "transition_probability": 0.025313390736588053,
-          "score": 0.013522741253757164
+          "score": 0.013522741253757162
         }
       ],
       "coaching_specifics": {

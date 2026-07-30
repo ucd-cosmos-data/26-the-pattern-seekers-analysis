@@ -103,9 +103,14 @@
       "models/attacking_style_kmeans.joblib": "loadable KMeans bundle",
       "models/defensive_style_kmeans.joblib": "loadable KMeans bundle",
       "models/coaching_model_benchmark_v2.joblib": "loadable calibrated transition bundle",
-      "models/coaching_model_benchmark.joblib": "legacy artifact; current environment reports NumPy BitGenerator compatibility error",
-      "models/coaching_model_final.joblib": "legacy artifact; current environment reports NumPy BitGenerator compatibility error",
-      "models/recommendation_simulator.joblib": "legacy artifact; current environment reports pandas dtype compatibility error"
+      "models/coaching_model_benchmark.joblib": "loadable legacy benchmark bundle",
+      "models/coaching_model_final.joblib": "loadable final selection bundle",
+      "models/recommendation_simulator.joblib": "loadable policy-metadata bundle (contains no fitted estimators; production refit deferred)"
+    },
+    "artifact_load_reverification": {
+      "date": "2026-07-29",
+      "environment": "project .venv: numpy 2.5.1, scikit-learn 1.9.0, pandas 3.0.5, scipy 1.18.0",
+      "result": "all seven models/*.joblib artifacts load without error; the NumPy BitGenerator and pandas dtype compatibility errors recorded on 2026-07-27 no longer reproduce"
     }
   },
   "upgrade_target": {

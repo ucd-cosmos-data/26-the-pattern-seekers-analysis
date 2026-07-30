@@ -30,8 +30,8 @@ DEFAULT_LINEUPS = (
 DEFAULT_OUTPUT = (
     PROJECT_ROOT / "data" / "processed" / "world_cup_recommendation_features.csv"
 )
-DEFAULT_REPORT = PROJECT_ROOT / "results" / "recommendation_feature_validation.md"
-DEFAULT_STYLE_PROFILES = PROJECT_ROOT / "results" / "attacking_style_profiles.csv"
+DEFAULT_REPORT = PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_feature_validation.md"
+DEFAULT_STYLE_PROFILES = PROJECT_ROOT / "results" / "MIscellaneous" / "attacking_style_profiles.csv"
 
 RANDOM_STATE = 42
 N_SPLITS = 5

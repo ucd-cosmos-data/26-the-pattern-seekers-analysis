@@ -25,9 +25,9 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_FEATURES = (
     PROJECT_ROOT / "data" / "processed" / "world_cup_recommendation_features.csv"
 )
-DEFAULT_STYLES = PROJECT_ROOT / "results" / "attacking_style_profiles.csv"
+DEFAULT_STYLES = PROJECT_ROOT / "results" / "MIscellaneous" / "attacking_style_profiles.csv"
 DEFAULT_TEAM_RESULTS = (
-    PROJECT_ROOT / "results" / "recommendation_leave_one_team_out.csv"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_leave_one_team_out.csv"
 )
 DEFAULT_CHOICES = (
     PROJECT_ROOT
@@ -36,7 +36,7 @@ DEFAULT_CHOICES = (
     / "recommendation_leave_one_team_out_choices.csv"
 )
 DEFAULT_REPORT = (
-    PROJECT_ROOT / "results" / "recommendation_leave_one_team_out.md"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_leave_one_team_out.md"
 )
 
 RANDOM_STATE = 42

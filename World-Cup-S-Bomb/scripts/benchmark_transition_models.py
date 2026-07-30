@@ -32,13 +32,13 @@ DEFAULT_INPUT = (
     PROJECT_ROOT / "data" / "processed" / "world_cup_recommendation_features.csv"
 )
 DEFAULT_LEADERBOARD = (
-    PROJECT_ROOT / "results" / "transition_model_leaderboard.csv"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "transition_model_leaderboard.csv"
 )
-DEFAULT_FOLDS = PROJECT_ROOT / "results" / "transition_model_fold_metrics.csv"
+DEFAULT_FOLDS = PROJECT_ROOT / "results" / "MIscellaneous" / "transition_model_fold_metrics.csv"
 DEFAULT_PREDICTIONS = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_transition_oof_predictions.csv"
 )
-DEFAULT_REPORT = PROJECT_ROOT / "results" / "transition_model_benchmark.md"
+DEFAULT_REPORT = PROJECT_ROOT / "results" / "MIscellaneous" / "transition_model_benchmark.md"
 
 RANDOM_STATE = 42
 CATEGORICAL_FEATURES = [

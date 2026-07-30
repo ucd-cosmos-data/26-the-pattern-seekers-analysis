@@ -39,9 +39,9 @@ from sklearn.preprocessing import StandardScaler
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = PROJECT_ROOT / "data" / "processed" / "world_cup_possessions.csv"
 DEFAULT_ASSIGNMENTS = PROJECT_ROOT / "data" / "processed" / "world_cup_possession_clusters.csv"
-DEFAULT_MODEL_SELECTION = PROJECT_ROOT / "results" / "attacking_style_model_selection.csv"
-DEFAULT_PROFILES = PROJECT_ROOT / "results" / "attacking_style_profiles.csv"
-DEFAULT_SUMMARY = PROJECT_ROOT / "results" / "attacking_style_summary.md"
+DEFAULT_MODEL_SELECTION = PROJECT_ROOT / "results" / "MIscellaneous" / "attacking_style_model_selection.csv"
+DEFAULT_PROFILES = PROJECT_ROOT / "results" / "MIscellaneous" / "attacking_style_profiles.csv"
+DEFAULT_SUMMARY = PROJECT_ROOT / "results" / "MIscellaneous" / "attacking_style_summary.md"
 DEFAULT_MODEL = PROJECT_ROOT / "models" / "attacking_style_kmeans.joblib"
 DEFAULT_FIGURE = PROJECT_ROOT / "results" / "figures" / "attacking_style_pca.png"
 

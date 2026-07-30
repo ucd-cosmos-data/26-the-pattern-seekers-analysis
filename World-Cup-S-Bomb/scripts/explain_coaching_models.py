@@ -27,10 +27,10 @@ DEFAULT_OOF_PREDICTIONS = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_coaching_model_oof_predictions.csv"
 )
 DEFAULT_IMPORTANCE = (
-    PROJECT_ROOT / "results" / "coaching_permutation_importance.csv"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_permutation_importance.csv"
 )
-DEFAULT_EFFECTS = PROJECT_ROOT / "results" / "coaching_effect_profiles.csv"
-DEFAULT_REPORT = PROJECT_ROOT / "results" / "coaching_model_explanations.md"
+DEFAULT_EFFECTS = PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_effect_profiles.csv"
+DEFAULT_REPORT = PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_model_explanations.md"
 DEFAULT_FIGURE = (
     PROJECT_ROOT / "results" / "figures" / "coaching_model_explanations.png"
 )

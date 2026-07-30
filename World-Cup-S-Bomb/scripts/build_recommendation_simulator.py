@@ -34,19 +34,19 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_FEATURES = (
     PROJECT_ROOT / "data" / "processed" / "world_cup_recommendation_features.csv"
 )
-DEFAULT_STYLE_PROFILES = PROJECT_ROOT / "results" / "attacking_style_profiles.csv"
+DEFAULT_STYLE_PROFILES = PROJECT_ROOT / "results" / "MIscellaneous" / "attacking_style_profiles.csv"
 DEFAULT_POLICY_RESULTS = (
-    PROJECT_ROOT / "results" / "recommendation_policy_evaluation.csv"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_policy_evaluation.csv"
 )
 DEFAULT_CANDIDATES = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_candidate_style_oof.csv"
 )
-DEFAULT_REPORT = PROJECT_ROOT / "results" / "recommendation_simulator_summary.md"
+DEFAULT_REPORT = PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_simulator_summary.md"
 DEFAULT_DEMO_JSON = (
-    PROJECT_ROOT / "results" / "argentina_france_recommendation.json"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "argentina_france_recommendation.json"
 )
 DEFAULT_DEMO_MD = (
-    PROJECT_ROOT / "results" / "argentina_france_recommendation.md"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "argentina_france_recommendation.md"
 )
 DEFAULT_MODEL = PROJECT_ROOT / "models" / "recommendation_simulator.joblib"
 
@@ -62,12 +62,12 @@ ATTACK_STYLES = [
 ]
 CATEGORICAL_FEATURES = [
     "attacking_style",
-    "play_pattern",
+    "first_play_pattern",
     "competition_stage",
     "score_state",
 ]
 PROPENSITY_CATEGORICAL = [
-    "play_pattern",
+    "first_play_pattern",
     "competition_stage",
     "score_state",
 ]
@@ -507,7 +507,18 @@ def policy_choices(
             "mean_score": "model_score",
         }
     )
-    choice["runner_up_score"] = second["mean_score"].to_numpy()
+    # Key-based join instead of positional to_numpy() alignment so a
+    # possession with a missing candidate style cannot silently misalign
+    # runner-up data.
+    runner_up = second[
+        ["possession_uid", "attacking_style", "mean_score"]
+    ].rename(
+        columns={
+            "attacking_style": "runner_style",
+            "mean_score": "runner_up_score",
+        }
+    )
+    choice = choice.merge(runner_up, on="possession_uid", how="left")
     choice["score_margin"] = (
         choice["model_score"] - choice["runner_up_score"]
     )
@@ -523,8 +534,8 @@ def policy_choices(
         how="left",
     ).rename(columns={"family_score": "top_family_score"})
     runner_family = choice[
-        ["possession_uid"]
-    ].assign(runner_style=second["attacking_style"].to_numpy()).merge(
+        ["possession_uid", "runner_style"]
+    ].merge(
         family_scores,
         left_on=["possession_uid", "runner_style"],
         right_on=["possession_uid", "attacking_style"],
@@ -1069,9 +1080,17 @@ def main() -> None:
     args.report_output.write_text(
         "\n".join(report_lines) + "\n", encoding="utf-8"
     )
+    # Persist only JSON-safe records: pickled DataFrames are not portable
+    # across pandas versions and previously made this bundle version-fragile.
+    # The schema is identical in fit and --reuse-candidates modes.
+    model_specifications = (
+        pd.concat(model_specs_frames, ignore_index=True).to_dict("records")
+        if model_specs_frames
+        else []
+    )
     joblib.dump(
         {
-            "version": 1,
+            "version": 2,
             "selected_transition_penalty": selected_penalty,
             "box_entry_value": average_box_value,
             "attack_styles": ATTACK_STYLES,
@@ -1080,12 +1099,11 @@ def main() -> None:
                 "transition_numeric": transition_numeric,
                 "categorical": CATEGORICAL_FEATURES,
             },
-            "model_family_specifications": (
-                pd.concat(model_specs_frames, ignore_index=True)
-                if model_specs_frames
-                else "Reused previously generated OOF candidate predictions"
+            "model_family_specifications": model_specifications,
+            "specifications_source": (
+                "fit" if model_specs_frames else "reused-oof-candidates"
             ),
-            "policy_evaluation": policy_results,
+            "policy_evaluation": policy_results.to_dict("records"),
             "note": (
                 "Bundle contains validated architecture metadata. Production refit "
                 "is deferred until external-format input is supplied."

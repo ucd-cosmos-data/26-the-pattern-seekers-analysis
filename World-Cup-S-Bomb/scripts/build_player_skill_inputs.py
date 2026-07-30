@@ -26,7 +26,7 @@ DEFAULT_INTERVALS = (
 DEFAULT_LINEUPS = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_possession_lineups.csv"
 )
-DEFAULT_VALIDATION = PROJECT_ROOT / "results" / "player_skill_input_validation.md"
+DEFAULT_VALIDATION = PROJECT_ROOT / "results" / "MIscellaneous" / "player_skill_input_validation.md"
 
 EVENT_COLUMNS = [
     "match_id",

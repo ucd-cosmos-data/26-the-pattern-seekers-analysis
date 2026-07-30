@@ -65,7 +65,7 @@ DEFAULT_POSSESSIONS = (
 )
 DEFAULT_ATTACKING_MODEL = PROJECT_ROOT / "models" / "attacking_style_kmeans.joblib"
 DEFAULT_DEFENSIVE_MODEL = PROJECT_ROOT / "models" / "defensive_style_kmeans.joblib"
-DEFAULT_JSON = PROJECT_ROOT / "results" / "nested_coaching_validation.json"
+DEFAULT_JSON = PROJECT_ROOT / "results" / "MIscellaneous" / "nested_coaching_validation.json"
 DEFAULT_SUMMARY = (
     PROJECT_ROOT / "results" / "MIscellaneous" / "nested_coaching_validation.md"
 )

@@ -24,7 +24,7 @@ DEFAULT_EVENTS = PROJECT_ROOT / "notebooks" / "all_events.csv"
 DEFAULT_MATCHES = PROJECT_ROOT / "data" / "raw" / "matches.csv"
 DEFAULT_OUTPUT = PROJECT_ROOT / "data" / "processed" / "world_cup_possessions.csv"
 DEFAULT_DICTIONARY = PROJECT_ROOT / "data" / "processed" / "possession_data_dictionary.md"
-DEFAULT_REPORT = PROJECT_ROOT / "results" / "possession_validation_report.md"
+DEFAULT_REPORT = PROJECT_ROOT / "results" / "MIscellaneous" / "possession_validation_report.md"
 
 PITCH_LENGTH = 120.0
 PITCH_WIDTH = 80.0

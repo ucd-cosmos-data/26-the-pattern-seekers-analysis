@@ -25,23 +25,23 @@ DEFAULT_FEATURES = (
 DEFAULT_CANDIDATES = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_candidate_style_oof.csv"
 )
-DEFAULT_POLICY = PROJECT_ROOT / "results" / "recommendation_policy_evaluation.csv"
+DEFAULT_POLICY = PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_policy_evaluation.csv"
 DEFAULT_PAIRED = (
-    PROJECT_ROOT / "results" / "recommendation_paired_policy_tests.csv"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_paired_policy_tests.csv"
 )
 DEFAULT_PROPENSITY = (
-    PROJECT_ROOT / "results" / "recommendation_propensity_diagnostics.csv"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_propensity_diagnostics.csv"
 )
 DEFAULT_SENSITIVITY = (
-    PROJECT_ROOT / "results" / "recommendation_propensity_sensitivity.csv"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_propensity_sensitivity.csv"
 )
 DEFAULT_PLACEBO = (
-    PROJECT_ROOT / "results" / "recommendation_policy_placebo.csv"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_policy_placebo.csv"
 )
 DEFAULT_CHOICES = (
     PROJECT_ROOT / "data" / "interim" / "recommendation_policy_choices.csv"
 )
-DEFAULT_REPORT = PROJECT_ROOT / "results" / "recommendation_validation_summary.md"
+DEFAULT_REPORT = PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_validation_summary.md"
 
 RANDOM_STATE = 42
 CLIP_THRESHOLDS = (0.02, 0.05, 0.10)

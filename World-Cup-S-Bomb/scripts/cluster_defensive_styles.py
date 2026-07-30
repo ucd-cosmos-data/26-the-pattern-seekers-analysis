@@ -32,9 +32,9 @@ from sklearn.preprocessing import StandardScaler
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = PROJECT_ROOT / "data" / "processed" / "world_cup_defensive_features.csv"
 DEFAULT_OUTPUT = PROJECT_ROOT / "data" / "processed" / "world_cup_defensive_clusters.csv"
-DEFAULT_SELECTION = PROJECT_ROOT / "results" / "defensive_style_model_selection.csv"
-DEFAULT_PROFILES = PROJECT_ROOT / "results" / "defensive_style_profiles.csv"
-DEFAULT_SUMMARY = PROJECT_ROOT / "results" / "defensive_style_summary.md"
+DEFAULT_SELECTION = PROJECT_ROOT / "results" / "MIscellaneous" / "defensive_style_model_selection.csv"
+DEFAULT_PROFILES = PROJECT_ROOT / "results" / "MIscellaneous" / "defensive_style_profiles.csv"
+DEFAULT_SUMMARY = PROJECT_ROOT / "results" / "MIscellaneous" / "defensive_style_summary.md"
 DEFAULT_MODEL = PROJECT_ROOT / "models" / "defensive_style_kmeans.joblib"
 DEFAULT_FIGURE = PROJECT_ROOT / "results" / "figures" / "defensive_style_fingerprints.png"
 
