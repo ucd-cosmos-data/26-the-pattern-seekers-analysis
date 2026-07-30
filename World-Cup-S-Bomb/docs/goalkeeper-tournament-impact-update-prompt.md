@@ -319,6 +319,51 @@ Required face-validity gates:
 These are publication gates, not permission to alter individual scores after
 calculation.
 
+### Prospective reasonable ordering
+
+Use the following full ordering as the preregistered face-validity benchmark for
+the consequence-aware model:
+
+1. Emiliano Martínez — Argentina
+2. Dominik Livaković — Croatia
+3. Yassine Bounou — Morocco
+4. Wojciech Szczęsny — Poland
+5. Matthew Charles Turner — United States
+6. Andries Noppert — Netherlands
+7. Mohammed Khalil Al Owais — Saudi Arabia
+8. Hugo Lloris — France
+9. Jordan Pickford — England
+10. Shūichi Gonda — Japan
+11. Devis Rogers Epassy Mboka — Cameroon
+12. Aymen Dahmen — Tunisia
+13. Diogo Meireles Costa — Portugal
+14. Alisson Ramsés Becker — Brazil
+15. Unai Simón Mendibil — Spain
+16. Kasper Schmeichel — Denmark
+17. Thibaut Courtois — Belgium
+18. Sergio Rochet Álvarez — Uruguay
+19. Vanja Milinković Savić — Serbia
+20. Mathew Ryan — Australia
+21. Seung-Gyu Kim — South Korea
+22. Yann Sommer — Switzerland
+23. Manuel Neuer — Germany
+24. Lawrence Ati-Zigi — Ghana
+25. Hernán Ismael Galíndez — Ecuador
+26. Milan Borjan — Canada
+27. Edouard Mendy — Senegal
+28. Seyed Hossein Hosseini — Iran
+29. Francisco Guillermo Ochoa Magaña — Mexico
+30. Wayne Hennessey — Wales
+31. Meshaal Aissa Barsham — Qatar
+32. Keylor Navas Gamboa — Costa Rica
+
+Martínez at number one is the strict publication gate. Positions 2–32 are an
+expected reasonableness benchmark, not permission to hardcode an exact
+permutation. Compare the calculated result against this list using rank
+correlation, absolute rank movement, top-five overlap, and documented
+event-level explanations for material differences. A defensible evidence-based
+deviation is acceptable; unexplained extreme deviations are not.
+
 ---
 
 ## Required code and test updates
@@ -358,6 +403,91 @@ Do not weaken, delete, skip, or xfail existing tests to obtain a green suite.
 
 ---
 
+## Ranking propagation and cohort contract
+
+The goalkeeper update is incomplete unless the same v4 truth is propagated to
+every ranking surface that contains goalkeepers. Recalculate ranks after the
+new goalkeeper placements are merged; never copy old rank numbers into a new
+table.
+
+### Dedicated goalkeeper ranking
+
+Update all 32 main goalkeepers in:
+
+- `goalkeeper_rankings_v4.csv` and `.json`;
+- canonical `goalkeeper_rankings.csv` and `.json`;
+- `goalkeeper_rankings_unified_v4.csv` and `.json`;
+- canonical `goalkeeper_rankings_unified.csv` and `.json`.
+
+### Unified global tournament ranking
+
+Regenerate:
+
+- `results/reports/ranking/unified_tournament_rankings.csv`;
+- its JSON alias or website payload;
+- every file under `results/reports/ranking/by_team_unified/`.
+
+The unified table must still contain 585 ranked players: 553 eligible outfield
+players plus 32 main goalkeepers. Replace the old goalkeeper publication bridge
+with the v4 bridge, then recompute the complete unified ordering and all global,
+team, position, and role rank columns affected by that change.
+
+The bridge must remain explicitly labelled as a cross-position publication
+mapping. Do not claim the outfield and goalkeeper raw scores are measured in an
+identical absolute unit.
+
+### 300-plus-minute ranking
+
+Regenerate:
+
+- `results/reports/ranking/player_rankings_300plus.csv`;
+- its JSON alias or website payload.
+
+This is the all-position 300-plus-minute table. It must remain at 142 rows under
+the current eligibility contract: 126 outfield players plus the 16 main
+goalkeepers who satisfy `minutes >= 300`. Merge the new v4 goalkeeper placement
+for every eligible goalkeeper and recompute the complete 142-player order.
+
+Do not insert goalkeepers into the explicitly outfield-only artifacts:
+
+- `global_rankings_outfield.csv` — 553 outfield players;
+- `global_rankings_outfield_300min.csv` — 126 outfield players.
+
+Those two files must remain numerically unchanged except for refreshed
+provenance or manifest metadata. Add regression tests proving that the
+goalkeeper update changes goalkeeper-containing rankings but does not alter
+outfield model scores or outfield-only ordering.
+
+### Rich player table and aliases
+
+Update v4 goalkeeper fields in:
+
+- `player_rankings_v3.csv` and `.json`;
+- the canonical `player_rankings.csv` and `.json` aliases;
+- any active rich-table successor created by this prompt.
+
+Preserve all valid outfield v3 fields. Add explicit model-version and source
+fields so consumers can identify outfield v3 values and goalkeeper Tournament
+Impact v4 values without ambiguity.
+
+### Website ranking tabs
+
+The post–Pass-8 website importer must receive consistent data for both player
+tabs:
+
+- **Unified tournament ranking:** the regenerated 585-player unified table;
+- **300+ minutes:** the regenerated 142-player all-position table.
+
+Both tabs must show the same v4 relative ordering for goalkeepers after applying
+the cohort filter. Goalkeeper profiles opened from either tab must use the same
+v4 score, components, methodology, and uncertainty fields. No tab may retain
+Martínez at v3 rank 23.
+
+Add cross-file tests for every eligible goalkeeper proving agreement among the
+dedicated, unified, 300-plus, team, profile, and website-payload artifacts.
+
+---
+
 ## Required output artifacts
 
 Create versioned active artifacts:
@@ -384,7 +514,8 @@ Keep explicit v3 baseline files and columns available for audit.
 
 Regenerate every dependent artifact from the same run:
 
-- unified tournament ranking;
+- unified tournament ranking with all 585 rows re-ranked;
+- 142-player all-position 300-plus-minute ranking;
 - all `by_team_unified` ranking files;
 - affected player profiles;
 - all 593 starter Markdown/JSON pairs;
@@ -417,6 +548,46 @@ Each goalkeeper profile must explain the reasons for movement. Martínez's
 profile must trace his ranking to real event contributions, including ordinary
 shot stopping, the final high-leverage intervention, regular penalties, and
 both shootouts. Do not use award status as causal evidence in the score.
+
+### Methodology and canonical narrative dependency closure
+
+Fully replace stale goalkeeper-methodology text in:
+
+- `results/reports/canonical/model_summary.md`;
+- `results/reports/canonical/model_summary.json`;
+- `results/reports/canonical/final_summary.md`;
+- `results/reports/canonical/coaches_notebook.md`;
+- `docs/final_summary.docx`;
+- any active ultimate-model summary, coaches-notebook alias, or generated
+  website methodology payload.
+
+Do not append a v4 note beneath obsolete v3 language. Rewrite the active
+goalkeeper sections so they consistently explain:
+
+- the distinction between Event Profile v3 and Tournament Impact v4;
+- ordinary non-penalty shot scope;
+- action-level match and elimination leverage;
+- regular-penalty treatment;
+- shootout sequence reconstruction and win-probability-added;
+- attribution rules for saves, off-target kicks, and woodwork;
+- cross, sweeping, and distribution support channels;
+- channel-specific reliability and uncertainty;
+- the selected formula and weights;
+- calibration and validation results;
+- cross-position bridge limitations;
+- the prospective ordering benchmark and actual result;
+- why Martínez moves from v3 rank 23 to v4 rank 1;
+- why external awards and consensus were validation evidence rather than
+  scoring features.
+
+The final summary must report the final 32-goalkeeper ranking, v3-to-v4 movement,
+the top-five stability result, and every release gate. The coaches notebook must
+translate the components into practical coaching interpretation without
+claiming that the score is a career-strength forecast.
+
+The canonical Markdown, JSON, DOCX, figures, player profiles, team reports, and
+website methodology copy must agree on model version, formula, ranks, counts,
+and limitations.
 
 Generate at minimum:
 
@@ -456,6 +627,12 @@ Verify explicitly:
 - score order equals rank order;
 - no duplicate goalkeeper/team rows;
 - no identity scoring features;
+- unified tournament ranking contains 585 rows, including all 32 main GKs;
+- all-position 300-plus ranking contains 142 rows, including exactly the 16
+  main GKs with `minutes >= 300`;
+- outfield-only global rankings remain at 553 and 126 rows and retain their
+  pre-update score and rank ordering;
+- every goalkeeper-containing ranking uses v4 and agrees on cohort eligibility;
 - 593 starter Markdown/JSON pairs;
 - 32 team coaching Markdown/JSON pairs;
 - all selected inputs and generated outputs match refreshed manifests;
