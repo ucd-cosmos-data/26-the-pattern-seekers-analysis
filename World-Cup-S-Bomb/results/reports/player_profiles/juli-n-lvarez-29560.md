@@ -13,10 +13,10 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Position rank: 2
 - Role rank: 1
 - Team rank: 2
-- Final player rating: 0.7526
+- Final player rating: 0.7648
 - Global ranking eligibility: eligible
 - Minutes: 485.2
-- Minutes reliability: 0.6179
+- Minutes reliability: 0.4471
 
 ## Rating components
 

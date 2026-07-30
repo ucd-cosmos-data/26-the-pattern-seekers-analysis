@@ -9,14 +9,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Target Forward
 - Probabilistic role: Finishing/Creative Attacker
 - Role entropy: 0.0003
-- Global rank: 48
-- Position rank: 10
-- Role rank: 10
-- Team rank: 3
-- Final player rating: 0.5837
+- Global rank: 26
+- Position rank: 14
+- Role rank: 11
+- Team rank: 2
+- Final player rating: 0.6735
 - Global ranking eligibility: eligible
 - Minutes: 478.4
-- Minutes reliability: 0.6146
+- Minutes reliability: 0.4436
 
 ## Rating components
 

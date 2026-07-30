@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Memphis Depay | Target Forward | 315.5833 | 0.7260 | Ranked (300+ min) |
-| 2.0000 | Daley Blind | Wide Creator | 452.4833 | 0.6665 | Ranked (300+ min) |
-| 3.0000 | Denzel Dumfries | Attacking Wingback | 509.5167 | 0.6312 | Ranked (300+ min) |
-| 4.0000 | Cody Mathès Gakpo | Progressive Winger | 460.2167 | 0.5976 | Ranked (300+ min) |
-| 5.0000 | Andries Noppert | Goalkeeper | 509.5167 | 0.5806 | Ranked (300+ min) |
+| 1.0000 | Memphis Depay | Target Forward | 315.5833 | 0.7448 | Ranked (300+ min) |
+| 2.0000 | Cody Mathès Gakpo | Progressive Winger | 460.2167 | 0.7327 | Ranked (300+ min) |
+| 3.0000 | Daley Blind | Wide Creator | 452.4833 | 0.5847 | Ranked (300+ min) |
+| 4.0000 | Andries Noppert | Goalkeeper | 509.5167 | 0.5664 | Ranked (300+ min) |
+| 5.0000 | Denzel Dumfries | Attacking Wingback | 509.5167 | 0.5644 | Ranked (300+ min) |

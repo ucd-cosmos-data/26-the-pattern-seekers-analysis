@@ -9,14 +9,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Box-to-Box Runner
 - Probabilistic role: Creative/Progressive/Pressing Fullback
 - Role entropy: 0.1232
-- Global rank: 61
-- Position rank: 20
-- Role rank: 2
-- Team rank: 6
-- Final player rating: 0.5580
+- Global rank: 62
+- Position rank: 18
+- Role rank: 3
+- Team rank: 4
+- Final player rating: 0.5176
 - Global ranking eligibility: eligible
 - Minutes: 363.6
-- Minutes reliability: 0.5479
+- Minutes reliability: 0.3773
 
 ## Rating components
 

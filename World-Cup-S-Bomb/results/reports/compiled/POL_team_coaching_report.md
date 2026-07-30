@@ -36,11 +36,11 @@ Poland: Patient Build-up led the observed baseline by 0.0041 mean EvA. Primary r
 
 ## V5 role-aware player leaders
 
-1. Wojciech Szczęsny — Goalkeeper; rating 0.6371, VAEP/90 -0.205, xT/90 +0.005, role-adjusted 0.000
-2. Robert Lewandowski — Target Forward / Penalty-Box Anchor; rating 0.6260, VAEP/90 +0.410, xT/90 +0.019, role-adjusted 0.868
-3. Bartosz Bereszyński — Wide Creator; rating 0.5679, VAEP/90 +0.078, xT/90 +0.040, role-adjusted 0.000
-4. Grzegorz Krychowiak — Ball-Winner; rating 0.5033, VAEP/90 +0.012, xT/90 +0.025, role-adjusted 0.067
-5. Piotr Zieliński — Ball-Winner; rating 0.5030, VAEP/90 +0.089, xT/90 +0.059, role-adjusted 0.471
+1. Robert Lewandowski — Target Forward / Penalty-Box Anchor; rating 0.7277, VAEP/90 +0.410, xT/90 +0.019, role-adjusted 0.868
+2. Wojciech Szczęsny — Goalkeeper; rating 0.6026, VAEP/90 -0.205, xT/90 +0.005, role-adjusted 0.000
+3. Piotr Zieliński — Ball-Winner; rating 0.5995, VAEP/90 +0.089, xT/90 +0.059, role-adjusted 0.471
+4. Bartosz Bereszyński — Wide Creator; rating 0.4995, VAEP/90 +0.078, xT/90 +0.040, role-adjusted 0.000
+5. Matty Cash — Box-to-Box Runner; rating 0.3994, VAEP/90 -0.090, xT/90 +0.038, role-adjusted 0.053
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

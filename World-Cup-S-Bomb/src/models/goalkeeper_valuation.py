@@ -17,6 +17,24 @@ GOALKEEPER_METRICS: dict[str, bool] = {
     "penalty_save_rate_shrunk": True,
 }
 
+# Shot-stopping is the core of the role: an unweighted mean previously gave
+# ball-playing and claiming metrics two-thirds of the composite, which let
+# low-shot-volume distributors outrank high-volume shot-stoppers.
+GOALKEEPER_METRIC_WEIGHTS: dict[str, float] = {
+    "goals_prevented_proxy_p90": 0.35,
+    "save_rate": 0.20,
+    "distribution_under_pressure": 0.15,
+    "cross_stopping_rate": 0.10,
+    "sweeper_actions_p90": 0.10,
+    "penalty_save_rate_shrunk": 0.10,
+}
+
+# A save percentage on a handful of shots is mostly noise: shot-stopping
+# percentiles are shrunk toward the cohort-neutral 0.5 with weight
+# SOT / (SOT + SHOT_EVIDENCE_SHRINKAGE).
+SHOT_STOPPING_METRICS = ("goals_prevented_proxy_p90", "save_rate")
+SHOT_EVIDENCE_SHRINKAGE = 15.0
+
 
 def _percentile(series: pd.Series, higher: bool) -> pd.Series:
     numeric = pd.to_numeric(series, errors="coerce")
@@ -27,10 +45,14 @@ def _percentile(series: pd.Series, higher: bool) -> pd.Series:
 def calculate_goalkeeper_ratings(
     goalkeeper_features: pd.DataFrame,
     *,
-    reliability_minutes: float = 300.0,
+    reliability_minutes: float = 600.0,
 ) -> pd.DataFrame:
     """Calculate a separate, reliability-shrunk goalkeeper leaderboard."""
 
+    if set(GOALKEEPER_METRIC_WEIGHTS) != set(GOALKEEPER_METRICS):
+        raise ValueError("Goalkeeper metric weights are out of sync")
+    if abs(sum(GOALKEEPER_METRIC_WEIGHTS.values()) - 1.0) > 1e-12:
+        raise ValueError("Goalkeeper metric weights must sum to one")
     missing = set(GOALKEEPER_METRICS).difference(
         goalkeeper_features.columns
     )
@@ -39,11 +61,42 @@ def calculate_goalkeeper_ratings(
     output = goalkeeper_features.copy()
     components = pd.DataFrame(index=output.index)
     availability = pd.DataFrame(index=output.index)
+    if "shot_on_target_faced" not in output:
+        raise ValueError(
+            "Goalkeeper features must include shot_on_target_faced for "
+            "shot-evidence shrinkage"
+        )
+    shots_faced = pd.to_numeric(
+        output["shot_on_target_faced"],
+        errors="coerce",
+    )
+    shot_evidence = (
+        shots_faced / (shots_faced + SHOT_EVIDENCE_SHRINKAGE)
+    ).fillna(0.0)
     for metric, higher in GOALKEEPER_METRICS.items():
-        components[metric] = _percentile(output[metric], higher)
+        percentile = _percentile(output[metric], higher)
+        if metric in SHOT_STOPPING_METRICS:
+            percentile = 0.5 + shot_evidence * (percentile - 0.5)
+        components[metric] = percentile
         availability[metric] = output[metric].notna()
     evidence = availability.sum(axis=1)
-    score = components.mean(axis=1, skipna=True)
+    metric_weights = pd.DataFrame(
+        {
+            metric: np.where(
+                availability[metric],
+                GOALKEEPER_METRIC_WEIGHTS[metric],
+                0.0,
+            )
+            for metric in GOALKEEPER_METRICS
+        },
+        index=output.index,
+    )
+    weight_totals = metric_weights.sum(axis=1)
+    if (weight_totals <= 0).any():
+        raise ValueError("A goalkeeper has no available rating metrics")
+    score = (
+        components.fillna(0.0) * metric_weights
+    ).sum(axis=1) / weight_totals
     cohort_prior = float(score.mean())
     feature_reliability = evidence / len(GOALKEEPER_METRICS)
     minutes = pd.to_numeric(

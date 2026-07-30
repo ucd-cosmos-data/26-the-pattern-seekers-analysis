@@ -36,11 +36,11 @@ Portugal: no tactical change cleared the modeled effect floor. Primary review si
 
 ## V5 role-aware player leaders
 
-1. Raphaël Adelino José Guerreiro — Wide Creator; rating 0.7296, VAEP/90 +0.267, xT/90 +0.076, role-adjusted 1.000
-2. Cristiano Ronaldo dos Santos Aveiro — Target Forward; rating 0.6632, VAEP/90 +0.665, xT/90 +0.009, role-adjusted 0.745
-3. João Pedro Cavaco Cancelo — Box-to-Box Runner; rating 0.6406, VAEP/90 +0.221, xT/90 +0.068, role-adjusted 0.261
-4. João Félix Sequeira — Target Forward; rating 0.6119, VAEP/90 +0.405, xT/90 +0.046, role-adjusted 0.630
-5. Kléper Laveran Lima Ferreira — Sweeper CB; rating 0.5942, VAEP/90 +0.068, xT/90 +0.024, role-adjusted 0.867
+1. Bruno Miguel Borges Fernandes — Hybrid Playmaker / Roaming Creator; rating 0.7247, VAEP/90 +0.220, xT/90 +0.128, role-adjusted 0.753
+2. Cristiano Ronaldo dos Santos Aveiro — Target Forward; rating 0.7220, VAEP/90 +0.665, xT/90 +0.009, role-adjusted 0.745
+3. João Félix Sequeira — Target Forward; rating 0.7218, VAEP/90 +0.405, xT/90 +0.046, role-adjusted 0.630
+4. Raphaël Adelino José Guerreiro — Wide Creator; rating 0.6216, VAEP/90 +0.267, xT/90 +0.076, role-adjusted 1.000
+5. Bernardo Mota Veiga de Carvalho e Silva — Box-to-Box / Engine Midfielder; rating 0.6141, VAEP/90 +0.251, xT/90 +0.058, role-adjusted 0.024
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

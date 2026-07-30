@@ -36,11 +36,11 @@ Netherlands: no tactical change cleared the modeled effect floor. Primary review
 
 ## V5 role-aware player leaders
 
-1. Memphis Depay — Target Forward; rating 0.7260, VAEP/90 +0.589, xT/90 +0.047, role-adjusted 0.659
-2. Daley Blind — Wide Creator; rating 0.6665, VAEP/90 +0.140, xT/90 +0.051, role-adjusted 0.842
-3. Denzel Dumfries — Attacking Wingback; rating 0.6312, VAEP/90 +0.136, xT/90 +0.050, role-adjusted 0.542
-4. Cody Mathès Gakpo — Progressive Winger; rating 0.5976, VAEP/90 +0.324, xT/90 +0.075, role-adjusted 0.590
-5. Andries Noppert — Goalkeeper; rating 0.5806, VAEP/90 +0.054, xT/90 +0.001, role-adjusted 0.000
+1. Memphis Depay — Target Forward; rating 0.7448, VAEP/90 +0.589, xT/90 +0.047, role-adjusted 0.659
+2. Cody Mathès Gakpo — Progressive Winger; rating 0.7327, VAEP/90 +0.324, xT/90 +0.075, role-adjusted 0.590
+3. Daley Blind — Wide Creator; rating 0.5847, VAEP/90 +0.140, xT/90 +0.051, role-adjusted 0.842
+4. Andries Noppert — Goalkeeper; rating 0.5664, VAEP/90 +0.054, xT/90 +0.001, role-adjusted 0.000
+5. Denzel Dumfries — Attacking Wingback; rating 0.5644, VAEP/90 +0.136, xT/90 +0.050, role-adjusted 0.542
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

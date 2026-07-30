@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Raphaël Adelino José Guerreiro | Wide Creator | 303.6167 | 0.7296 | Ranked (300+ min) |
-| 2.0000 | Cristiano Ronaldo dos Santos Aveiro | Target Forward | 302.8000 | 0.6632 | Ranked (300+ min) |
-| 3.0000 | João Pedro Cavaco Cancelo | Box-to-Box Runner | 344.5500 | 0.6406 | Ranked (300+ min) |
-| 4.0000 | João Félix Sequeira | Target Forward | 340.2333 | 0.6119 | Ranked (300+ min) |
-| 5.0000 | Kléper Laveran Lima Ferreira | Sweeper CB | 389.2833 | 0.5942 | Ranked (300+ min) |
+| 1.0000 | Bruno Miguel Borges Fernandes | Hybrid Playmaker / Roaming Creator | 384.9500 | 0.7247 | Ranked (300+ min) |
+| 2.0000 | Cristiano Ronaldo dos Santos Aveiro | Target Forward | 302.8000 | 0.7220 | Ranked (300+ min) |
+| 3.0000 | João Félix Sequeira | Target Forward | 340.2333 | 0.7218 | Ranked (300+ min) |
+| 4.0000 | Raphaël Adelino José Guerreiro | Wide Creator | 303.6167 | 0.6216 | Ranked (300+ min) |
+| 5.0000 | Bernardo Mota Veiga de Carvalho e Silva | Box-to-Box / Engine Midfielder | 382.1000 | 0.6141 | Ranked (300+ min) |

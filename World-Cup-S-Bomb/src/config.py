@@ -92,7 +92,10 @@ class RatingConfig:
     weights: Mapping[str, float] = field(
         default_factory=lambda: dict(RATING_WEIGHTS)
     )
-    reliability_minutes: float = 300.0
+    # Half-weight at 600 minutes (~6.7 matches). The previous 300 gave a
+    # 300-minute player half signal, which let three-match per-90 hot streaks
+    # crowd the top of the global ranking.
+    reliability_minutes: float = 600.0
     minimum_minutes: float = MIN_PLAYER_MINUTES
 
     def __post_init__(self) -> None:

@@ -36,11 +36,11 @@ France: no tactical change cleared the modeled effect floor. Primary review sign
 
 ## V5 role-aware player leaders
 
-1. Kylian Mbappé Lottin — Progressive Winger; rating 0.8258, VAEP/90 +0.643, xT/90 +0.134, role-adjusted 1.000
-2. Theo Bernard François Hernández — Attacking Wingback; rating 0.6874, VAEP/90 +0.159, xT/90 +0.047, role-adjusted 0.856
-3. Adrien Rabiot — Ball-Winner; rating 0.6586, VAEP/90 +0.246, xT/90 +0.013, role-adjusted 0.604
-4. Olivier Giroud — Target Forward / Penalty-Box Anchor; rating 0.6245, VAEP/90 +0.476, xT/90 +0.008, role-adjusted 1.000
-5. Antoine Griezmann — Hybrid Playmaker / Roaming Creator; rating 0.5794, VAEP/90 +0.343, xT/90 +0.117, role-adjusted 0.104
+1. Kylian Mbappé Lottin — Progressive Winger; rating 0.8139, VAEP/90 +0.643, xT/90 +0.134, role-adjusted 1.000
+2. Olivier Giroud — Target Forward / Penalty-Box Anchor; rating 0.7268, VAEP/90 +0.476, xT/90 +0.008, role-adjusted 1.000
+3. Antoine Griezmann — Hybrid Playmaker / Roaming Creator; rating 0.7101, VAEP/90 +0.343, xT/90 +0.117, role-adjusted 0.104
+4. Ousmane Dembélé — Progressive Winger; rating 0.7085, VAEP/90 +0.351, xT/90 +0.112, role-adjusted 0.192
+5. Theo Bernard François Hernández — Attacking Wingback; rating 0.5988, VAEP/90 +0.159, xT/90 +0.047, role-adjusted 0.856
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

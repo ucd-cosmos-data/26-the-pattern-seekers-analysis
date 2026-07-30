@@ -9,14 +9,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Target Forward / Penalty-Box Anchor
 - Probabilistic role: Finishing/Aerial Forward
 - Role entropy: 0.0000
-- Global rank: 31
-- Position rank: 8
+- Global rank: 13
+- Position rank: 7
 - Role rank: 2
-- Team rank: 4
-- Final player rating: 0.6245
+- Team rank: 2
+- Final player rating: 0.7268
 - Global ranking eligibility: eligible
 - Minutes: 432.6
-- Minutes reliability: 0.5905
+- Minutes reliability: 0.4190
 
 ## Rating components
 

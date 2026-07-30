@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Christian Pulisic | Progressive Winger | 336.3167 | 0.6972 | Ranked (300+ min) |
-| 2.0000 | Matthew Charles Turner | Goalkeeper | 391.2000 | 0.6497 | Ranked (300+ min) |
-| 3.0000 | Timothy Weah | Progressive Winger | 317.8833 | 0.6484 | Ranked (300+ min) |
-| 4.0000 | Sergino Dest | Attacking Wingback | 307.5667 | 0.6472 | Ranked (300+ min) |
-| 5.0000 | Antonee Robinson | Attacking Wingback | 386.2667 | 0.6006 | Ranked (300+ min) |
+| 1.0000 | Christian Pulisic | Progressive Winger | 336.3167 | 0.7584 | Ranked (300+ min) |
+| 2.0000 | Timothy Weah | Progressive Winger | 317.8833 | 0.6964 | Ranked (300+ min) |
+| 3.0000 | Matthew Charles Turner | Goalkeeper | 391.2000 | 0.5885 | Ranked (300+ min) |
+| 4.0000 | Yunus Dimoara Musah | Box-to-Box / Engine Midfielder | 364.8667 | 0.5809 | Ranked (300+ min) |
+| 5.0000 | Sergino Dest | Attacking Wingback | 307.5667 | 0.5694 | Ranked (300+ min) |

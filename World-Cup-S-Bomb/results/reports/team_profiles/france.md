@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Kylian Mbappé Lottin | Progressive Winger | 654.3000 | 0.8258 | Ranked (300+ min) |
-| 2.0000 | Theo Bernard François Hernández | Attacking Wingback | 548.5000 | 0.6874 | Ranked (300+ min) |
-| 3.0000 | Adrien Rabiot | Ball-Winner | 529.2500 | 0.6586 | Ranked (300+ min) |
-| 4.0000 | Olivier Giroud | Target Forward / Penalty-Box Anchor | 432.6167 | 0.6245 | Ranked (300+ min) |
-| 5.0000 | Antoine Griezmann | Hybrid Playmaker / Roaming Creator | 586.0500 | 0.5794 | Ranked (300+ min) |
+| 1.0000 | Kylian Mbappé Lottin | Progressive Winger | 654.3000 | 0.8139 | Ranked (300+ min) |
+| 2.0000 | Olivier Giroud | Target Forward / Penalty-Box Anchor | 432.6167 | 0.7268 | Ranked (300+ min) |
+| 3.0000 | Antoine Griezmann | Hybrid Playmaker / Roaming Creator | 586.0500 | 0.7101 | Ranked (300+ min) |
+| 4.0000 | Ousmane Dembélé | Progressive Winger | 448.0000 | 0.7085 | Ranked (300+ min) |
+| 5.0000 | Theo Bernard François Hernández | Attacking Wingback | 548.5000 | 0.5988 | Ranked (300+ min) |

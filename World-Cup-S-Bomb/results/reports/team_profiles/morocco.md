@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Yahia Attiyat allah | Wide Creator | 350.1833 | 0.6202 | Ranked (300+ min) |
-| 2.0000 | Sofiane Boufal | Box-to-Box / Engine Midfielder | 476.6667 | 0.6071 | Ranked (300+ min) |
-| 3.0000 | Noussair Mazraoui | Wide Creator | 376.8333 | 0.5972 | Ranked (300+ min) |
-| 4.0000 | Yassine Bounou | Goalkeeper | 603.1500 | 0.5796 | Ranked (300+ min) |
-| 5.0000 | Achraf Hakimi Mouh | Attacking Wingback | 660.8000 | 0.5007 | Ranked (300+ min) |
+| 1.0000 | Youssef En-Nesyri | Target Forward / Penalty-Box Anchor | 553.8167 | 0.6445 | Ranked (300+ min) |
+| 2.0000 | Sofiane Boufal | Box-to-Box / Engine Midfielder | 476.6667 | 0.6286 | Ranked (300+ min) |
+| 3.0000 | Hakim Ziyech | Box-to-Box Runner | 662.6333 | 0.6254 | Ranked (300+ min) |
+| 4.0000 | Azzedine Ounahi | Box-to-Box / Engine Midfielder | 589.2500 | 0.5682 | Ranked (300+ min) |
+| 5.0000 | Yahia Attiyat allah | Wide Creator | 350.1833 | 0.5495 | Ranked (300+ min) |

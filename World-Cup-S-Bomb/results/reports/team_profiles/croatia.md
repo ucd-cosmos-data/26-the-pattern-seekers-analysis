@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Borna Sosa | Wide Creator | 440.4667 | 0.6170 | Ranked (300+ min) |
-| 2.0000 | Ivan Perišić | Wide Creator | 686.8167 | 0.6081 | Ranked (300+ min) |
-| 3.0000 | Andrej Kramarić | Target Forward | 478.4333 | 0.5837 | Ranked (300+ min) |
-| 4.0000 | Dominik Livaković | Goalkeeper | 720.2833 | 0.5503 | Ranked (300+ min) |
-| 5.0000 | Joško Gvardiol | Ball-Playing Centre-Back | 720.2833 | 0.5028 | Ranked (300+ min) |
+| 1.0000 | Ivan Perišić | Wide Creator | 686.8167 | 0.7174 | Ranked (300+ min) |
+| 2.0000 | Andrej Kramarić | Target Forward | 478.4333 | 0.6735 | Ranked (300+ min) |
+| 3.0000 | Mateo Kovačić | Box-to-Box / Engine Midfielder | 649.9167 | 0.6199 | Ranked (300+ min) |
+| 4.0000 | Luka Modrić | Deep Playmaker / Metronome | 672.6667 | 0.5872 | Ranked (300+ min) |
+| 5.0000 | Dominik Livaković | Goalkeeper | 720.2833 | 0.5627 | Ranked (300+ min) |

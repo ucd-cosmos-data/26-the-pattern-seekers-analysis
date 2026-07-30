@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Lionel Andrés Messi Cuccittini | Progressive Winger | 733.9000 | 0.8371 | Ranked (300+ min) |
-| 2.0000 | Julián Álvarez | Target Forward | 485.2333 | 0.7526 | Ranked (300+ min) |
-| 3.0000 | Ángel Fabián Di María Hernández | Progressive Winger | 304.8167 | 0.7329 | Ranked (300+ min) |
-| 4.0000 | Marcos Javier Acuña | Attacking Wingback | 397.4833 | 0.6948 | Ranked (300+ min) |
-| 5.0000 | Nicolás Alejandro Tagliafico | Wide Creator | 393.3333 | 0.6573 | Ranked (300+ min) |
+| 1.0000 | Lionel Andrés Messi Cuccittini | Progressive Winger | 733.9000 | 0.8296 | Ranked (300+ min) |
+| 2.0000 | Julián Álvarez | Target Forward | 485.2333 | 0.7648 | Ranked (300+ min) |
+| 3.0000 | Ángel Fabián Di María Hernández | Progressive Winger | 304.8167 | 0.7181 | Ranked (300+ min) |
+| 4.0000 | Marcos Javier Acuña | Attacking Wingback | 397.4833 | 0.6135 | Ranked (300+ min) |
+| 5.0000 | Alexis Mac Allister | Ball-Winner | 552.3500 | 0.6132 | Ranked (300+ min) |

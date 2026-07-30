@@ -9,14 +9,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Box-to-Box / Engine Midfielder
 - Probabilistic role: Pressing/Defensive Midfielder
 - Role entropy: 0.0000
-- Global rank: 112
-- Position rank: 12
-- Role rank: 11
-- Team rank: 8
-- Final player rating: 0.4310
+- Global rank: 44
+- Position rank: 11
+- Role rank: 4
+- Team rank: 4
+- Final player rating: 0.5809
 - Global ranking eligibility: eligible
 - Minutes: 364.9
-- Minutes reliability: 0.5488
+- Minutes reliability: 0.3782
 
 ## Rating components
 

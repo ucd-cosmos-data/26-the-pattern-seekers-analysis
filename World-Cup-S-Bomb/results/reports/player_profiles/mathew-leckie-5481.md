@@ -9,14 +9,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Target Forward
 - Probabilistic role: Pressing/Defensive Midfielder
 - Role entropy: 0.0041
-- Global rank: 35
-- Position rank: 3
-- Role rank: 7
+- Global rank: 37
+- Position rank: 7
+- Role rank: 14
 - Team rank: 1
-- Final player rating: 0.6183
+- Final player rating: 0.6129
 - Global ranking eligibility: eligible
 - Minutes: 341.6
-- Minutes reliability: 0.5324
+- Minutes reliability: 0.3628
 
 ## Rating components
 

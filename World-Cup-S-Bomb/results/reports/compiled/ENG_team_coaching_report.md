@@ -36,11 +36,11 @@ England: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## V5 role-aware player leaders
 
-1. Jude Bellingham — Box-to-Box / Engine Midfielder; rating 0.6766, VAEP/90 +0.300, xT/90 +0.042, role-adjusted 0.521
-2. Luke Shaw — Attacking Wingback; rating 0.6671, VAEP/90 +0.269, xT/90 +0.085, role-adjusted 0.387
-3. Harry Maguire — Deep Playmaker; rating 0.6336, VAEP/90 +0.150, xT/90 +0.035, role-adjusted 0.642
-4. Harry Kane — Target Forward; rating 0.5879, VAEP/90 +0.275, xT/90 +0.047, role-adjusted 0.838
-5. John Stones — Ball-Playing Centre-Back; rating 0.5345, VAEP/90 +0.052, xT/90 +0.010, role-adjusted 0.412
+1. Harry Kane — Target Forward; rating 0.7239, VAEP/90 +0.275, xT/90 +0.047, role-adjusted 0.838
+2. Luke Shaw — Attacking Wingback; rating 0.5993, VAEP/90 +0.269, xT/90 +0.085, role-adjusted 0.387
+3. Jude Bellingham — Box-to-Box / Engine Midfielder; rating 0.5420, VAEP/90 +0.300, xT/90 +0.042, role-adjusted 0.521
+4. Jordan Pickford — Goalkeeper; rating 0.4707, VAEP/90 -0.115, xT/90 +0.003, role-adjusted 0.000
+5. Harry Maguire — Deep Playmaker; rating 0.4097, VAEP/90 +0.150, xT/90 +0.035, role-adjusted 0.642
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

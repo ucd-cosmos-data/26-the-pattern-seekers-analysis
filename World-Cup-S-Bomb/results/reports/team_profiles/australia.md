@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Mathew Leckie | Target Forward | 341.6167 | 0.6183 | Ranked (300+ min) |
-| 2.0000 | Aziz Eraltay Behich | Wide Creator | 386.9167 | 0.6064 | Ranked (300+ min) |
-| 3.0000 | Mathew Ryan | Goalkeeper | 386.9167 | 0.5583 | Ranked (300+ min) |
-| 4.0000 | Aaron Mooy | Box-to-Box Runner | 386.9167 | 0.4732 | Ranked (300+ min) |
-| 5.0000 | Jackson Irvine | Ball-Winner | 373.7500 | 0.3902 | Ranked (300+ min) |
+| 1.0000 | Mathew Leckie | Target Forward | 341.6167 | 0.6129 | Ranked (300+ min) |
+| 2.0000 | Jackson Irvine | Ball-Winner | 373.7500 | 0.5614 | Ranked (300+ min) |
+| 3.0000 | Mathew Ryan | Goalkeeper | 386.9167 | 0.5483 | Ranked (300+ min) |
+| 4.0000 | Aziz Eraltay Behich | Wide Creator | 386.9167 | 0.5290 | Ranked (300+ min) |
+| 5.0000 | Aaron Mooy | Box-to-Box Runner | 386.9167 | 0.3679 | Ranked (300+ min) |

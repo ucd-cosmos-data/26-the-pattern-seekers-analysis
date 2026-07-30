@@ -18,96 +18,96 @@ Goalkeepers use a separate goalkeeper-only matrix and ranking. They are excluded
 
 | Global Rank | Player Name | Team | Position Group | Functional Role | Final Player Rating |
 |---|---|---|---|---|---|
-| 1 | Lionel Andrés Messi Cuccittini | Argentina | Attacking Midfield/Wing | Progressive Winger | 0.8371 |
-| 2 | Kylian Mbappé Lottin | France | Forward | Progressive Winger | 0.8258 |
-| 3 | Julián Álvarez | Argentina | Forward | Target Forward | 0.7526 |
-| 4 | Vinícius José Paixão de Oliveira Júnior | Brazil | Central/Wide Midfield | Progressive Winger | 0.7354 |
-| 5 | Ángel Fabián Di María Hernández | Argentina | Central/Wide Midfield | Progressive Winger | 0.7329 |
-| 6 | Raphaël Adelino José Guerreiro | Portugal | Fullback/Wingback | Wide Creator | 0.7296 |
-| 7 | Richarlison de Andrade | Brazil | Forward | Target Forward | 0.7289 |
-| 8 | Memphis Depay | Netherlands | Forward | Target Forward | 0.7260 |
-| 9 | Christian Pulisic | United States | Attacking Midfield/Wing | Progressive Winger | 0.6972 |
-| 10 | Marcos Javier Acuña | Argentina | Fullback/Wingback | Attacking Wingback | 0.6948 |
-| 11 | Daniel Olmo Carvajal | Spain | Attacking Midfield/Wing | Progressive Winger | 0.6910 |
-| 12 | Theo Bernard François Hernández | France | Fullback/Wingback | Attacking Wingback | 0.6874 |
-| 13 | Jude Bellingham | England | Defensive Midfield | Box-to-Box / Engine Midfielder | 0.6766 |
-| 14 | Luke Shaw | England | Fullback/Wingback | Attacking Wingback | 0.6671 |
-| 15 | Daley Blind | Netherlands | Fullback/Wingback | Wide Creator | 0.6665 |
-| 16 | Cristiano Ronaldo dos Santos Aveiro | Portugal | Forward | Target Forward | 0.6632 |
-| 17 | Adrien Rabiot | France | Defensive Midfield | Ball-Winner | 0.6586 |
-| 18 | Nicolás Alejandro Tagliafico | Argentina | Fullback/Wingback | Wide Creator | 0.6573 |
-| 19 | Ismaïla Sarr | Senegal | Attacking Midfield/Wing | Target Forward | 0.6553 |
-| 20 | Raphael Dias Belloli | Brazil | Attacking Midfield/Wing | Progressive Winger | 0.6537 |
+| 1 | Lionel Andrés Messi Cuccittini | Argentina | Attacking Midfield/Wing | Progressive Winger | 0.8296 |
+| 2 | Kylian Mbappé Lottin | France | Forward | Progressive Winger | 0.8139 |
+| 3 | Julián Álvarez | Argentina | Forward | Target Forward | 0.7648 |
+| 4 | Christian Pulisic | United States | Attacking Midfield/Wing | Progressive Winger | 0.7584 |
+| 5 | Richarlison de Andrade | Brazil | Forward | Target Forward | 0.7537 |
+| 6 | Mehdi Taremi | Iran | Forward | Target Forward | 0.7489 |
+| 7 | Ismaïla Sarr | Senegal | Attacking Midfield/Wing | Target Forward | 0.7461 |
+| 8 | Memphis Depay | Netherlands | Forward | Target Forward | 0.7448 |
+| 9 | Daniel Olmo Carvajal | Spain | Attacking Midfield/Wing | Progressive Winger | 0.7428 |
+| 10 | Raphael Dias Belloli | Brazil | Attacking Midfield/Wing | Progressive Winger | 0.7389 |
+| 11 | Cody Mathès Gakpo | Netherlands | Attacking Midfield/Wing | Progressive Winger | 0.7327 |
+| 12 | Robert Lewandowski | Poland | Forward | Target Forward / Penalty-Box Anchor | 0.7277 |
+| 13 | Olivier Giroud | France | Forward | Target Forward / Penalty-Box Anchor | 0.7268 |
+| 14 | Bruno Miguel Borges Fernandes | Portugal | Attacking Midfield/Wing | Hybrid Playmaker / Roaming Creator | 0.7247 |
+| 15 | Harry Kane | England | Forward | Target Forward | 0.7239 |
+| 16 | Cristiano Ronaldo dos Santos Aveiro | Portugal | Forward | Target Forward | 0.7220 |
+| 17 | João Félix Sequeira | Portugal | Attacking Midfield/Wing | Target Forward | 0.7218 |
+| 18 | Ángel Fabián Di María Hernández | Argentina | Central/Wide Midfield | Progressive Winger | 0.7181 |
+| 19 | Ivan Perišić | Croatia | Attacking Midfield/Wing | Wide Creator | 0.7174 |
+| 20 | Vinícius José Paixão de Oliveira Júnior | Brazil | Central/Wide Midfield | Progressive Winger | 0.7128 |
 
 ### Position-group leaders
 
 | Position Group | Position Rank | Player Name | Team | Functional Role | Final Player Rating |
 |---|---|---|---|---|---|
-| Attacking Midfield/Wing | 1 | Lionel Andrés Messi Cuccittini | Argentina | Progressive Winger | 0.8371 |
-| Attacking Midfield/Wing | 2 | Christian Pulisic | United States | Progressive Winger | 0.6972 |
-| Attacking Midfield/Wing | 3 | Daniel Olmo Carvajal | Spain | Progressive Winger | 0.6910 |
-| Attacking Midfield/Wing | 4 | Ismaïla Sarr | Senegal | Target Forward | 0.6553 |
-| Attacking Midfield/Wing | 5 | Raphael Dias Belloli | Brazil | Progressive Winger | 0.6537 |
-| Center Back | 1 | Harry Maguire | England | Deep Playmaker | 0.6336 |
-| Center Back | 2 | Young-Gwon Kim | South Korea | Sweeper CB | 0.6239 |
-| Center Back | 3 | Kléper Laveran Lima Ferreira | Portugal | Sweeper CB | 0.5942 |
-| Center Back | 4 | Kalidou Koulibaly | Senegal | Sweeper CB | 0.5927 |
-| Center Back | 5 | Manuel Obafemi Akanji | Switzerland | Ball-Playing Centre-Back | 0.5879 |
-| Central/Wide Midfield | 1 | Vinícius José Paixão de Oliveira Júnior | Brazil | Progressive Winger | 0.7354 |
-| Central/Wide Midfield | 2 | Ángel Fabián Di María Hernández | Argentina | Progressive Winger | 0.7329 |
-| Central/Wide Midfield | 3 | Mathew Leckie | Australia | Target Forward | 0.6183 |
-| Central/Wide Midfield | 4 | Sofiane Boufal | Morocco | Box-to-Box / Engine Midfielder | 0.6071 |
-| Central/Wide Midfield | 5 | Bernardo Mota Veiga de Carvalho e Silva | Portugal | Box-to-Box / Engine Midfielder | 0.5649 |
-| Defensive Midfield | 1 | Jude Bellingham | England | Box-to-Box / Engine Midfielder | 0.6766 |
-| Defensive Midfield | 2 | Adrien Rabiot | France | Ball-Winner | 0.6586 |
-| Defensive Midfield | 3 | Lucas Tolentino Coelho de Lima | Brazil | Ball-Winner | 0.6459 |
-| Defensive Midfield | 4 | Rodrigo Javier De Paul | Argentina | Box-to-Box / Engine Midfielder | 0.6436 |
-| Defensive Midfield | 5 | In-Beom Hwang | South Korea | Box-to-Box / Engine Midfielder | 0.5706 |
-| Forward | 1 | Kylian Mbappé Lottin | France | Progressive Winger | 0.8258 |
-| Forward | 2 | Julián Álvarez | Argentina | Target Forward | 0.7526 |
-| Forward | 3 | Richarlison de Andrade | Brazil | Target Forward | 0.7289 |
-| Forward | 4 | Memphis Depay | Netherlands | Target Forward | 0.7260 |
-| Forward | 5 | Cristiano Ronaldo dos Santos Aveiro | Portugal | Target Forward | 0.6632 |
-| Fullback/Wingback | 1 | Raphaël Adelino José Guerreiro | Portugal | Wide Creator | 0.7296 |
-| Fullback/Wingback | 2 | Marcos Javier Acuña | Argentina | Attacking Wingback | 0.6948 |
-| Fullback/Wingback | 3 | Theo Bernard François Hernández | France | Attacking Wingback | 0.6874 |
-| Fullback/Wingback | 4 | Luke Shaw | England | Attacking Wingback | 0.6671 |
-| Fullback/Wingback | 5 | Daley Blind | Netherlands | Wide Creator | 0.6665 |
-| Goalkeeper | 1 | Matthew Charles Turner | United States | Goalkeeper | 0.6497 |
-| Goalkeeper | 2 | Wojciech Szczęsny | Poland | Goalkeeper | 0.6371 |
-| Goalkeeper | 3 | Unai Simón Mendibil | Spain | Goalkeeper | 0.6107 |
-| Goalkeeper | 4 | Diogo Meireles Costa | Portugal | Goalkeeper | 0.5835 |
-| Goalkeeper | 5 | Andries Noppert | Netherlands | Goalkeeper | 0.5806 |
+| Attacking Midfield/Wing | 1 | Lionel Andrés Messi Cuccittini | Argentina | Progressive Winger | 0.8296 |
+| Attacking Midfield/Wing | 2 | Christian Pulisic | United States | Progressive Winger | 0.7584 |
+| Attacking Midfield/Wing | 3 | Ismaïla Sarr | Senegal | Target Forward | 0.7461 |
+| Attacking Midfield/Wing | 4 | Daniel Olmo Carvajal | Spain | Progressive Winger | 0.7428 |
+| Attacking Midfield/Wing | 5 | Raphael Dias Belloli | Brazil | Progressive Winger | 0.7389 |
+| Center Back | 1 | Harry Maguire | England | Deep Playmaker | 0.4097 |
+| Center Back | 2 | Kléper Laveran Lima Ferreira | Portugal | Sweeper CB | 0.3751 |
+| Center Back | 3 | Young-Gwon Kim | South Korea | Sweeper CB | 0.3694 |
+| Center Back | 4 | Manuel Obafemi Akanji | Switzerland | Ball-Playing Centre-Back | 0.3563 |
+| Center Back | 5 | Rodrigo Hernández Cascante | Spain | Ball-Playing Centre-Back | 0.3436 |
+| Central/Wide Midfield | 1 | Ángel Fabián Di María Hernández | Argentina | Progressive Winger | 0.7181 |
+| Central/Wide Midfield | 2 | Vinícius José Paixão de Oliveira Júnior | Brazil | Progressive Winger | 0.7128 |
+| Central/Wide Midfield | 3 | Sofiane Boufal | Morocco | Box-to-Box / Engine Midfielder | 0.6286 |
+| Central/Wide Midfield | 4 | Mateo Kovačić | Croatia | Box-to-Box / Engine Midfielder | 0.6199 |
+| Central/Wide Midfield | 5 | Bernardo Mota Veiga de Carvalho e Silva | Portugal | Box-to-Box / Engine Midfielder | 0.6141 |
+| Defensive Midfield | 1 | Jude Bellingham | England | Box-to-Box / Engine Midfielder | 0.5420 |
+| Defensive Midfield | 2 | Rodrigo Javier De Paul | Argentina | Box-to-Box / Engine Midfielder | 0.5269 |
+| Defensive Midfield | 3 | Adrien Rabiot | France | Ball-Winner | 0.5228 |
+| Defensive Midfield | 4 | Lucas Tolentino Coelho de Lima | Brazil | Ball-Winner | 0.5018 |
+| Defensive Midfield | 5 | In-Beom Hwang | South Korea | Box-to-Box / Engine Midfielder | 0.4697 |
+| Forward | 1 | Kylian Mbappé Lottin | France | Progressive Winger | 0.8139 |
+| Forward | 2 | Julián Álvarez | Argentina | Target Forward | 0.7648 |
+| Forward | 3 | Richarlison de Andrade | Brazil | Target Forward | 0.7537 |
+| Forward | 4 | Mehdi Taremi | Iran | Target Forward | 0.7489 |
+| Forward | 5 | Memphis Depay | Netherlands | Target Forward | 0.7448 |
+| Fullback/Wingback | 1 | Raphaël Adelino José Guerreiro | Portugal | Wide Creator | 0.6216 |
+| Fullback/Wingback | 2 | Marcos Javier Acuña | Argentina | Attacking Wingback | 0.6135 |
+| Fullback/Wingback | 3 | Luke Shaw | England | Attacking Wingback | 0.5993 |
+| Fullback/Wingback | 4 | Theo Bernard François Hernández | France | Attacking Wingback | 0.5988 |
+| Fullback/Wingback | 5 | Daley Blind | Netherlands | Wide Creator | 0.5847 |
+| Goalkeeper | 1 | Wojciech Szczęsny | Poland | Goalkeeper | 0.6026 |
+| Goalkeeper | 2 | Matthew Charles Turner | United States | Goalkeeper | 0.5885 |
+| Goalkeeper | 3 | Unai Simón Mendibil | Spain | Goalkeeper | 0.5679 |
+| Goalkeeper | 4 | Andries Noppert | Netherlands | Goalkeeper | 0.5664 |
+| Goalkeeper | 5 | Dominik Livaković | Croatia | Goalkeeper | 0.5627 |
 
 ### Largest upward rank movements
 
 | Player Name | Team | Legacy Global Rank | Global Rank | Rank Improvement |
 |---|---|---|---|---|
-| Young-Gwon Kim | South Korea | 86 | 32 | 54 |
-| Marcos Aoás Corrêa | Brazil | 108 | 60 | 48 |
-| Manuel Obafemi Akanji | Switzerland | 93 | 46 | 47 |
-| Kalidou Koulibaly | Senegal | 90 | 45 | 45 |
-| Harry Maguire | England | 70 | 28 | 42 |
-| Theo Bernard François Hernández | France | 52 | 12 | 40 |
-| Daley Blind | Netherlands | 55 | 15 | 40 |
-| Lucas Tolentino Coelho de Lima | Brazil | 65 | 25 | 40 |
-| Mohamed Salisu | Ghana | 101 | 63 | 38 |
-| Sergino Dest | United States | 61 | 24 | 37 |
+| Sergino Dest | United States | 61 | 45 | 16 |
+| Sergio Busquets i Burgos | Spain | 98 | 84 | 14 |
+| Thomas Teye Partey | Ghana | 102 | 88 | 14 |
+| Cody Mathès Gakpo | Netherlands | 24 | 11 | 13 |
+| Bruno Miguel Borges Fernandes | Portugal | 27 | 14 | 13 |
+| Aurélien Djani Tchouaméni | France | 103 | 90 | 13 |
+| Daley Blind | Netherlands | 55 | 43 | 12 |
+| Theo Bernard François Hernández | France | 52 | 41 | 11 |
+| Harry Kane | England | 25 | 15 | 10 |
+| Hakim Ziyech | Morocco | 41 | 31 | 10 |
 
 ### Largest downward rank movements
 
 | Player Name | Team | Legacy Global Rank | Global Rank | Rank Improvement |
 |---|---|---|---|---|
-| Jackson Irvine | Australia | 39 | 118 | -79 |
-| Hakim Ziyech | Morocco | 41 | 113 | -72 |
-| Yunus Dimoara Musah | United States | 44 | 112 | -68 |
-| Boulaye Dia | Senegal | 28 | 94 | -66 |
-| Youssef En-Nesyri | Morocco | 29 | 95 | -66 |
-| Selim Amallah | Morocco | 62 | 126 | -64 |
-| Luka Modrić | Croatia | 51 | 109 | -58 |
-| Mateo Kovačić | Croatia | 34 | 90 | -56 |
-| Daichi Kamada | Japan | 30 | 85 | -55 |
-| Alexis Mac Allister | Argentina | 31 | 73 | -42 |
+| Jude Bellingham | England | 40 | 56 | -16 |
+| Ángel Fabián Di María Hernández | Argentina | 5 | 18 | -13 |
+| Jackson Irvine | Australia | 39 | 51 | -12 |
+| John Stones | England | 84 | 96 | -12 |
+| Rodrigo Javier De Paul | Argentina | 49 | 60 | -11 |
+| Adrien Rabiot | France | 50 | 61 | -11 |
+| Cristiano Ronaldo dos Santos Aveiro | Portugal | 6 | 16 | -10 |
+| Timothy Weah | United States | 15 | 25 | -10 |
+| Rodrigo Hernández Cascante | Spain | 83 | 93 | -10 |
+| Aymeric Laporte | Spain | 91 | 101 | -10 |
 
 Rank movement compares ordering, not raw rating differences, because the V4 and V5 rating scales are different.
 
@@ -116,35 +116,35 @@ Rank movement compares ordering, not raw rating differences, because the V4 and 
 | Team | Eligible Players | Observed Players | Top Ranked Player | Top Global Rank | Total Xt | Pressure Resistance |
 |---|---|---|---|---|---|---|
 | Argentina | 13 | 24 | Lionel Andrés Messi Cuccittini | 1 | 3.4707 | 0.7447 |
-| Australia | 7 | 20 | Mathew Leckie | 35 | 0.9578 | 0.6496 |
+| Australia | 7 | 20 | Mathew Leckie | 37 | 0.9578 | 0.6496 |
 | Belgium | 0 | 20 | Jan Vertonghen | Not globally ranked | 1.1828 | 0.7696 |
-| Brazil | 9 | 26 | Vinícius José Paixão de Oliveira Júnior | 4 | 3.3449 | 0.7291 |
+| Brazil | 9 | 26 | Richarlison de Andrade | 5 | 3.3449 | 0.7291 |
 | Cameroon | 0 | 22 | Nouhou Tolo | Not globally ranked | 0.9097 | 0.6971 |
 | Canada | 0 | 19 | Steven de Sousa Vitoria | Not globally ranked | 1.4035 | 0.7118 |
 | Costa Rica | 0 | 22 | Keylor Navas Gamboa | Not globally ranked | 0.3533 | 0.6509 |
-| Croatia | 10 | 20 | Borna Sosa | 36 | 3.0319 | 0.7430 |
+| Croatia | 10 | 20 | Ivan Perišić | 19 | 3.0319 | 0.7430 |
 | Denmark | 0 | 20 | Christian Dannemann Eriksen | Not globally ranked | 1.5191 | 0.7086 |
 | Ecuador | 0 | 18 | Pervis Josué Estupiñán Tenorio | Not globally ranked | 0.8517 | 0.6954 |
-| England | 7 | 20 | Jude Bellingham | 13 | 2.2192 | 0.7556 |
+| England | 7 | 20 | Harry Kane | 15 | 2.2192 | 0.7556 |
 | France | 12 | 24 | Kylian Mbappé Lottin | 2 | 3.4775 | 0.6863 |
 | Germany | 0 | 20 | Antonio Rüdiger | Not globally ranked | 2.3732 | 0.7731 |
-| Ghana | 4 | 20 | Mohamed Salisu | 63 | 0.7889 | 0.6763 |
-| Iran | 3 | 21 | Mehdi Taremi | 22 | 1.0611 | 0.6687 |
-| Japan | 5 | 22 | Junya Ito | 49 | 1.3961 | 0.6415 |
+| Ghana | 4 | 20 | Lawrence Ati-Zigi | Not globally ranked | 0.7889 | 0.6763 |
+| Iran | 3 | 21 | Mehdi Taremi | 6 | 1.0611 | 0.6687 |
+| Japan | 5 | 22 | Daichi Kamada | 29 | 1.3961 | 0.6415 |
 | Mexico | 0 | 21 | Héctor Alfredo Moreno Herrera | Not globally ranked | 1.2560 | 0.6241 |
-| Morocco | 13 | 25 | Yahia Attiyat allah | 34 | 2.0022 | 0.6771 |
+| Morocco | 13 | 25 | Youssef En-Nesyri | 28 | 2.0022 | 0.6771 |
 | Netherlands | 9 | 21 | Memphis Depay | 8 | 1.7121 | 0.7135 |
-| Poland | 8 | 21 | Wojciech Szczęsny | Not globally ranked | 0.9662 | 0.6818 |
-| Portugal | 9 | 24 | Raphaël Adelino José Guerreiro | 6 | 2.1783 | 0.7085 |
+| Poland | 8 | 21 | Robert Lewandowski | 12 | 0.9662 | 0.6818 |
+| Portugal | 9 | 24 | Bruno Miguel Borges Fernandes | 14 | 2.1783 | 0.7085 |
 | Qatar | 0 | 20 | Akram Hassan Afif | Not globally ranked | 0.6696 | 0.6995 |
 | Saudi Arabia | 0 | 23 | Salem Mohammed Al Dawsari | Not globally ranked | 0.9437 | 0.6235 |
-| Senegal | 6 | 20 | Ismaïla Sarr | 19 | 1.4521 | 0.6875 |
+| Senegal | 6 | 20 | Ismaïla Sarr | 7 | 1.4521 | 0.6875 |
 | Serbia | 0 | 23 | Nikola Milenković | Not globally ranked | 1.1887 | 0.6740 |
-| South Korea | 7 | 21 | Jin-Su Kim | 21 | 1.4549 | 0.6712 |
-| Spain | 6 | 21 | Daniel Olmo Carvajal | 11 | 2.1806 | 0.8268 |
-| Switzerland | 5 | 24 | Manuel Obafemi Akanji | 46 | 1.2567 | 0.7318 |
+| South Korea | 7 | 21 | Heung-Min Son | 23 | 1.4549 | 0.6712 |
+| Spain | 6 | 21 | Daniel Olmo Carvajal | 9 | 2.1806 | 0.8268 |
+| Switzerland | 5 | 24 | Breel-Donald Embolo | 24 | 1.2567 | 0.7318 |
 | Tunisia | 0 | 21 | Ellyes Joris Skhiri | Not globally ranked | 1.1588 | 0.5839 |
-| United States | 9 | 20 | Christian Pulisic | 9 | 1.6176 | 0.7900 |
+| United States | 9 | 20 | Christian Pulisic | 4 | 1.6176 | 0.7900 |
 | Uruguay | 0 | 19 | José María Giménez de Vargas | Not globally ranked | 1.3303 | 0.6460 |
 | Wales | 0 | 18 | Chris Mepham | Not globally ranked | 0.7680 | 0.6856 |
 
@@ -162,11 +162,11 @@ Rank movement compares ordering, not raw rating differences, because the V4 and 
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 1 | Lionel Andrés Messi Cuccittini | Forward | Progressive Winger | 733.9000 | 0.8371 | Ranked (300+ min) |
-| 2.0000 | 3 | Julián Álvarez | Attacking Midfield/Wing | Target Forward | 485.2333 | 0.7526 | Ranked (300+ min) |
-| 3.0000 | 5 | Ángel Fabián Di María Hernández | Attacking Midfield/Wing | Progressive Winger | 304.8167 | 0.7329 | Ranked (300+ min) |
-| 4.0000 | 10 | Marcos Javier Acuña | Fullback/Wingback | Attacking Wingback | 397.4833 | 0.6948 | Ranked (300+ min) |
-| 5.0000 | 18 | Nicolás Alejandro Tagliafico | Fullback/Wingback | Wide Creator | 393.3333 | 0.6573 | Ranked (300+ min) |
+| 1.0000 | 1 | Lionel Andrés Messi Cuccittini | Forward | Progressive Winger | 733.9000 | 0.8296 | Ranked (300+ min) |
+| 2.0000 | 3 | Julián Álvarez | Attacking Midfield/Wing | Target Forward | 485.2333 | 0.7648 | Ranked (300+ min) |
+| 3.0000 | 18 | Ángel Fabián Di María Hernández | Attacking Midfield/Wing | Progressive Winger | 304.8167 | 0.7181 | Ranked (300+ min) |
+| 4.0000 | 35 | Marcos Javier Acuña | Fullback/Wingback | Attacking Wingback | 397.4833 | 0.6135 | Ranked (300+ min) |
+| 5.0000 | 36 | Alexis Mac Allister | Central/Wide Midfield | Ball-Winner | 552.3500 | 0.6132 | Ranked (300+ min) |
 
 
 ## Australia
@@ -181,11 +181,11 @@ Rank movement compares ordering, not raw rating differences, because the V4 and 
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 35 | Mathew Leckie | Central/Wide Midfield | Target Forward | 341.6167 | 0.6183 | Ranked (300+ min) |
-| 2.0000 | 40 | Aziz Eraltay Behich | Fullback/Wingback | Wide Creator | 386.9167 | 0.6064 | Ranked (300+ min) |
-| 3.0000 | — | Mathew Ryan | Goalkeeper | Goalkeeper | 386.9167 | 0.5583 | Ranked (300+ min) |
-| 4.0000 | 97 | Aaron Mooy | Defensive Midfield | Box-to-Box Runner | 386.9167 | 0.4732 | Ranked (300+ min) |
-| 5.0000 | 118 | Jackson Irvine | Defensive Midfield | Ball-Winner | 373.7500 | 0.3902 | Ranked (300+ min) |
+| 1.0000 | 37 | Mathew Leckie | Central/Wide Midfield | Target Forward | 341.6167 | 0.6129 | Ranked (300+ min) |
+| 2.0000 | 51 | Jackson Irvine | Defensive Midfield | Ball-Winner | 373.7500 | 0.5614 | Ranked (300+ min) |
+| 3.0000 | — | Mathew Ryan | Goalkeeper | Goalkeeper | 386.9167 | 0.5483 | Ranked (300+ min) |
+| 4.0000 | 59 | Aziz Eraltay Behich | Fullback/Wingback | Wide Creator | 386.9167 | 0.5290 | Ranked (300+ min) |
+| 5.0000 | 91 | Aaron Mooy | Defensive Midfield | Box-to-Box Runner | 386.9167 | 0.3679 | Ranked (300+ min) |
 
 
 ## Belgium
@@ -219,11 +219,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 4 | Vinícius José Paixão de Oliveira Júnior | Attacking Midfield/Wing | Progressive Winger | 306.5833 | 0.7354 | Ranked (300+ min) |
-| 2.0000 | 7 | Richarlison de Andrade | Forward | Target Forward | 328.2500 | 0.7289 | Ranked (300+ min) |
-| 3.0000 | 20 | Raphael Dias Belloli | Attacking Midfield/Wing | Progressive Winger | 330.4500 | 0.6537 | Ranked (300+ min) |
-| 4.0000 | 25 | Lucas Tolentino Coelho de Lima | Defensive Midfield | Ball-Winner | 318.7667 | 0.6459 | Ranked (300+ min) |
-| 5.0000 | 60 | Marcos Aoás Corrêa | Center Back | Ball-Playing Centre-Back | 455.0167 | 0.5648 | Ranked (300+ min) |
+| 1.0000 | 5 | Richarlison de Andrade | Forward | Target Forward | 328.2500 | 0.7537 | Ranked (300+ min) |
+| 2.0000 | 10 | Raphael Dias Belloli | Attacking Midfield/Wing | Progressive Winger | 330.4500 | 0.7389 | Ranked (300+ min) |
+| 3.0000 | 20 | Vinícius José Paixão de Oliveira Júnior | Attacking Midfield/Wing | Progressive Winger | 306.5833 | 0.7128 | Ranked (300+ min) |
+| 4.0000 | 62 | Éder Gabriel Militão | Fullback/Wingback | Box-to-Box Runner | 363.5833 | 0.5176 | Ranked (300+ min) |
+| 5.0000 | — | Alisson Ramsés Becker | Goalkeeper | Goalkeeper | 394.9833 | 0.5044 | Ranked (300+ min) |
 
 
 ## Cameroon
@@ -295,11 +295,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 36 | Borna Sosa | Fullback/Wingback | Wide Creator | 440.4667 | 0.6170 | Ranked (300+ min) |
-| 2.0000 | 38 | Ivan Perišić | Attacking Midfield/Wing | Wide Creator | 686.8167 | 0.6081 | Ranked (300+ min) |
-| 3.0000 | 48 | Andrej Kramarić | Forward | Target Forward | 478.4333 | 0.5837 | Ranked (300+ min) |
-| 4.0000 | — | Dominik Livaković | Goalkeeper | Goalkeeper | 720.2833 | 0.5503 | Ranked (300+ min) |
-| 5.0000 | 80 | Joško Gvardiol | Center Back | Ball-Playing Centre-Back | 720.2833 | 0.5028 | Ranked (300+ min) |
+| 1.0000 | 19 | Ivan Perišić | Attacking Midfield/Wing | Wide Creator | 686.8167 | 0.7174 | Ranked (300+ min) |
+| 2.0000 | 26 | Andrej Kramarić | Forward | Target Forward | 478.4333 | 0.6735 | Ranked (300+ min) |
+| 3.0000 | 33 | Mateo Kovačić | Central/Wide Midfield | Box-to-Box / Engine Midfielder | 649.9167 | 0.6199 | Ranked (300+ min) |
+| 4.0000 | 42 | Luka Modrić | Central/Wide Midfield | Deep Playmaker / Metronome | 672.6667 | 0.5872 | Ranked (300+ min) |
+| 5.0000 | — | Dominik Livaković | Goalkeeper | Goalkeeper | 720.2833 | 0.5627 | Ranked (300+ min) |
 
 
 ## Denmark
@@ -352,11 +352,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 13 | Jude Bellingham | Central/Wide Midfield | Box-to-Box / Engine Midfielder | 441.7667 | 0.6766 | Ranked (300+ min) |
-| 2.0000 | 14 | Luke Shaw | Fullback/Wingback | Attacking Wingback | 457.1667 | 0.6671 | Ranked (300+ min) |
-| 3.0000 | 28 | Harry Maguire | Center Back | Deep Playmaker | 453.7167 | 0.6336 | Ranked (300+ min) |
-| 4.0000 | 47 | Harry Kane | Forward | Target Forward | 421.5167 | 0.5879 | Ranked (300+ min) |
-| 5.0000 | 68 | John Stones | Center Back | Ball-Playing Centre-Back | 464.8833 | 0.5345 | Ranked (300+ min) |
+| 1.0000 | 15 | Harry Kane | Forward | Target Forward | 421.5167 | 0.7239 | Ranked (300+ min) |
+| 2.0000 | 40 | Luke Shaw | Fullback/Wingback | Attacking Wingback | 457.1667 | 0.5993 | Ranked (300+ min) |
+| 3.0000 | 56 | Jude Bellingham | Central/Wide Midfield | Box-to-Box / Engine Midfielder | 441.7667 | 0.5420 | Ranked (300+ min) |
+| 4.0000 | — | Jordan Pickford | Goalkeeper | Goalkeeper | 486.3333 | 0.4707 | Ranked (300+ min) |
+| 5.0000 | 78 | Harry Maguire | Center Back | Deep Playmaker | 453.7167 | 0.4097 | Ranked (300+ min) |
 
 
 ## France
@@ -371,11 +371,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 2 | Kylian Mbappé Lottin | Attacking Midfield/Wing | Progressive Winger | 654.3000 | 0.8258 | Ranked (300+ min) |
-| 2.0000 | 12 | Theo Bernard François Hernández | Fullback/Wingback | Attacking Wingback | 548.5000 | 0.6874 | Ranked (300+ min) |
-| 3.0000 | 17 | Adrien Rabiot | Defensive Midfield | Ball-Winner | 529.2500 | 0.6586 | Ranked (300+ min) |
-| 4.0000 | 31 | Olivier Giroud | Forward | Target Forward / Penalty-Box Anchor | 432.6167 | 0.6245 | Ranked (300+ min) |
-| 5.0000 | 51 | Antoine Griezmann | Attacking Midfield/Wing | Hybrid Playmaker / Roaming Creator | 586.0500 | 0.5794 | Ranked (300+ min) |
+| 1.0000 | 2 | Kylian Mbappé Lottin | Attacking Midfield/Wing | Progressive Winger | 654.3000 | 0.8139 | Ranked (300+ min) |
+| 2.0000 | 13 | Olivier Giroud | Forward | Target Forward / Penalty-Box Anchor | 432.6167 | 0.7268 | Ranked (300+ min) |
+| 3.0000 | 21 | Antoine Griezmann | Attacking Midfield/Wing | Hybrid Playmaker / Roaming Creator | 586.0500 | 0.7101 | Ranked (300+ min) |
+| 4.0000 | 22 | Ousmane Dembélé | Attacking Midfield/Wing | Progressive Winger | 448.0000 | 0.7085 | Ranked (300+ min) |
+| 5.0000 | 41 | Theo Bernard François Hernández | Fullback/Wingback | Attacking Wingback | 548.5000 | 0.5988 | Ranked (300+ min) |
 
 
 ## Germany
@@ -409,10 +409,10 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 63 | Mohamed Salisu | Center Back | Sweeper CB | 301.2000 | 0.5546 | Ranked (300+ min) |
-| 2.0000 | — | Lawrence Ati-Zigi | Goalkeeper | Goalkeeper | 301.2000 | 0.4223 | Ranked (300+ min) |
-| 3.0000 | 114 | Thomas Teye Partey | Defensive Midfield | Ball-Winner | 301.2000 | 0.4125 | Ranked (300+ min) |
-| 4.0000 | 123 | Daniel Amartey | Center Back | Sweeper CB | 301.2000 | 0.3654 | Ranked (300+ min) |
+| 1.0000 | — | Lawrence Ati-Zigi | Goalkeeper | Goalkeeper | 301.2000 | 0.4759 | Ranked (300+ min) |
+| 2.0000 | 88 | Thomas Teye Partey | Defensive Midfield | Ball-Winner | 301.2000 | 0.3703 | Ranked (300+ min) |
+| 3.0000 | 95 | Mohamed Salisu | Center Back | Sweeper CB | 301.2000 | 0.3346 | Ranked (300+ min) |
+| 4.0000 | 119 | Daniel Amartey | Center Back | Sweeper CB | 301.2000 | 0.2298 | Ranked (300+ min) |
 | — | — | Iñaki Williams Arthuer | Forward | — | 272.7833 | — | Coverage only (<300 min) |
 
 
@@ -428,9 +428,9 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 22 | Mehdi Taremi | Forward | Target Forward | 305.1000 | 0.6492 | Ranked (300+ min) |
-| 2.0000 | 71 | Morteza Pouraliganji | Center Back | Sweeper CB | 305.1000 | 0.5266 | Ranked (300+ min) |
-| 3.0000 | 116 | Seyed Majid Hosseini | Center Back | Sweeper CB | 305.1000 | 0.4105 | Ranked (300+ min) |
+| 1.0000 | 6 | Mehdi Taremi | Forward | Target Forward | 305.1000 | 0.7489 | Ranked (300+ min) |
+| 2.0000 | 98 | Morteza Pouraliganji | Center Back | Sweeper CB | 305.1000 | 0.3209 | Ranked (300+ min) |
+| 3.0000 | 121 | Seyed Majid Hosseini | Center Back | Sweeper CB | 305.1000 | 0.2281 | Ranked (300+ min) |
 | — | — | Ehsan Hajsafi | Fullback/Wingback | — | 249.9333 | — | Coverage only (<300 min) |
 | — | — | Saeid Ezatolahi Afagh | Defensive Midfield | — | 240.1500 | — | Coverage only (<300 min) |
 
@@ -447,11 +447,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 49 | Junya Ito | Fullback/Wingback | Attacking Wingback | 346.3333 | 0.5802 | Ranked (300+ min) |
-| 2.0000 | — | Shūichi Gonda | Goalkeeper | Goalkeeper | 412.5167 | 0.5397 | Ranked (300+ min) |
-| 3.0000 | 85 | Daichi Kamada | Attacking Midfield/Wing | Target Forward | 337.2167 | 0.4990 | Ranked (300+ min) |
-| 4.0000 | 89 | Wataru Endo | Defensive Midfield | Ball-Winner | 326.0167 | 0.4856 | Ranked (300+ min) |
-| 5.0000 | 103 | Maya Yoshida | Center Back | Sweeper CB | 412.5167 | 0.4598 | Ranked (300+ min) |
+| 1.0000 | 29 | Daichi Kamada | Attacking Midfield/Wing | Target Forward | 337.2167 | 0.6398 | Ranked (300+ min) |
+| 2.0000 | — | Shūichi Gonda | Goalkeeper | Goalkeeper | 412.5167 | 0.5473 | Ranked (300+ min) |
+| 3.0000 | 55 | Junya Ito | Fullback/Wingback | Attacking Wingback | 346.3333 | 0.5448 | Ranked (300+ min) |
+| 4.0000 | 79 | Wataru Endo | Defensive Midfield | Ball-Winner | 326.0167 | 0.4067 | Ranked (300+ min) |
+| 5.0000 | 124 | Maya Yoshida | Center Back | Sweeper CB | 412.5167 | 0.2159 | Ranked (300+ min) |
 
 
 ## Mexico
@@ -485,11 +485,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 34 | Yahia Attiyat allah | Fullback/Wingback | Wide Creator | 350.1833 | 0.6202 | Ranked (300+ min) |
-| 2.0000 | 39 | Sofiane Boufal | Attacking Midfield/Wing | Box-to-Box / Engine Midfielder | 476.6667 | 0.6071 | Ranked (300+ min) |
-| 3.0000 | 43 | Noussair Mazraoui | Fullback/Wingback | Wide Creator | 376.8333 | 0.5972 | Ranked (300+ min) |
-| 4.0000 | — | Yassine Bounou | Goalkeeper | Goalkeeper | 603.1500 | 0.5796 | Ranked (300+ min) |
-| 5.0000 | 84 | Achraf Hakimi Mouh | Fullback/Wingback | Attacking Wingback | 660.8000 | 0.5007 | Ranked (300+ min) |
+| 1.0000 | 28 | Youssef En-Nesyri | Forward | Target Forward / Penalty-Box Anchor | 553.8167 | 0.6445 | Ranked (300+ min) |
+| 2.0000 | 30 | Sofiane Boufal | Attacking Midfield/Wing | Box-to-Box / Engine Midfielder | 476.6667 | 0.6286 | Ranked (300+ min) |
+| 3.0000 | 31 | Hakim Ziyech | Attacking Midfield/Wing | Box-to-Box Runner | 662.6333 | 0.6254 | Ranked (300+ min) |
+| 4.0000 | 46 | Azzedine Ounahi | Central/Wide Midfield | Box-to-Box / Engine Midfielder | 589.2500 | 0.5682 | Ranked (300+ min) |
+| 5.0000 | 54 | Yahia Attiyat allah | Fullback/Wingback | Wide Creator | 350.1833 | 0.5495 | Ranked (300+ min) |
 
 
 ## Netherlands
@@ -504,11 +504,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 8 | Memphis Depay | Forward | Target Forward | 315.5833 | 0.7260 | Ranked (300+ min) |
-| 2.0000 | 15 | Daley Blind | Fullback/Wingback | Wide Creator | 452.4833 | 0.6665 | Ranked (300+ min) |
-| 3.0000 | 29 | Denzel Dumfries | Fullback/Wingback | Attacking Wingback | 509.5167 | 0.6312 | Ranked (300+ min) |
-| 4.0000 | 42 | Cody Mathès Gakpo | Forward | Progressive Winger | 460.2167 | 0.5976 | Ranked (300+ min) |
-| 5.0000 | — | Andries Noppert | Goalkeeper | Goalkeeper | 509.5167 | 0.5806 | Ranked (300+ min) |
+| 1.0000 | 8 | Memphis Depay | Forward | Target Forward | 315.5833 | 0.7448 | Ranked (300+ min) |
+| 2.0000 | 11 | Cody Mathès Gakpo | Forward | Progressive Winger | 460.2167 | 0.7327 | Ranked (300+ min) |
+| 3.0000 | 43 | Daley Blind | Fullback/Wingback | Wide Creator | 452.4833 | 0.5847 | Ranked (300+ min) |
+| 4.0000 | — | Andries Noppert | Goalkeeper | Goalkeeper | 509.5167 | 0.5664 | Ranked (300+ min) |
+| 5.0000 | 50 | Denzel Dumfries | Fullback/Wingback | Attacking Wingback | 509.5167 | 0.5644 | Ranked (300+ min) |
 
 
 ## Poland
@@ -523,11 +523,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | — | Wojciech Szczęsny | Goalkeeper | Goalkeeper | 389.7500 | 0.6371 | Ranked (300+ min) |
-| 2.0000 | 30 | Robert Lewandowski | Forward | Target Forward / Penalty-Box Anchor | 389.7500 | 0.6260 | Ranked (300+ min) |
-| 3.0000 | 57 | Bartosz Bereszyński | Fullback/Wingback | Wide Creator | 365.7333 | 0.5679 | Ranked (300+ min) |
-| 4.0000 | 78 | Grzegorz Krychowiak | Defensive Midfield | Ball-Winner | 347.8833 | 0.5033 | Ranked (300+ min) |
-| 5.0000 | 79 | Piotr Zieliński | Central/Wide Midfield | Ball-Winner | 344.4167 | 0.5030 | Ranked (300+ min) |
+| 1.0000 | 12 | Robert Lewandowski | Forward | Target Forward / Penalty-Box Anchor | 389.7500 | 0.7277 | Ranked (300+ min) |
+| 2.0000 | — | Wojciech Szczęsny | Goalkeeper | Goalkeeper | 389.7500 | 0.6026 | Ranked (300+ min) |
+| 3.0000 | 39 | Piotr Zieliński | Central/Wide Midfield | Ball-Winner | 344.4167 | 0.5995 | Ranked (300+ min) |
+| 4.0000 | 66 | Bartosz Bereszyński | Fullback/Wingback | Wide Creator | 365.7333 | 0.4995 | Ranked (300+ min) |
+| 5.0000 | 82 | Matty Cash | Fullback/Wingback | Box-to-Box Runner | 389.7500 | 0.3994 | Ranked (300+ min) |
 
 
 ## Portugal
@@ -542,11 +542,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 6 | Raphaël Adelino José Guerreiro | Fullback/Wingback | Wide Creator | 303.6167 | 0.7296 | Ranked (300+ min) |
-| 2.0000 | 16 | Cristiano Ronaldo dos Santos Aveiro | Forward | Target Forward | 302.8000 | 0.6632 | Ranked (300+ min) |
-| 3.0000 | 27 | João Pedro Cavaco Cancelo | Fullback/Wingback | Box-to-Box Runner | 344.5500 | 0.6406 | Ranked (300+ min) |
-| 4.0000 | 37 | João Félix Sequeira | Forward | Target Forward | 340.2333 | 0.6119 | Ranked (300+ min) |
-| 5.0000 | 44 | Kléper Laveran Lima Ferreira | Center Back | Sweeper CB | 389.2833 | 0.5942 | Ranked (300+ min) |
+| 1.0000 | 14 | Bruno Miguel Borges Fernandes | Attacking Midfield/Wing | Hybrid Playmaker / Roaming Creator | 384.9500 | 0.7247 | Ranked (300+ min) |
+| 2.0000 | 16 | Cristiano Ronaldo dos Santos Aveiro | Forward | Target Forward | 302.8000 | 0.7220 | Ranked (300+ min) |
+| 3.0000 | 17 | João Félix Sequeira | Forward | Target Forward | 340.2333 | 0.7218 | Ranked (300+ min) |
+| 4.0000 | 32 | Raphaël Adelino José Guerreiro | Fullback/Wingback | Wide Creator | 303.6167 | 0.6216 | Ranked (300+ min) |
+| 5.0000 | 34 | Bernardo Mota Veiga de Carvalho e Silva | Central/Wide Midfield | Box-to-Box / Engine Midfielder | 382.1000 | 0.6141 | Ranked (300+ min) |
 
 
 ## Qatar
@@ -599,11 +599,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 19 | Ismaïla Sarr | Attacking Midfield/Wing | Target Forward | 365.2000 | 0.6553 | Ranked (300+ min) |
-| 2.0000 | 33 | Youssouf Sabaly | Fullback/Wingback | Attacking Wingback | 387.2833 | 0.6216 | Ranked (300+ min) |
-| 3.0000 | 45 | Kalidou Koulibaly | Center Back | Sweeper CB | 387.2833 | 0.5927 | Ranked (300+ min) |
-| 4.0000 | 93 | Abdou Diallo | Center Back | Sweeper CB | 348.5833 | 0.4803 | Ranked (300+ min) |
-| 5.0000 | 94 | Boulaye Dia | Forward | Target Forward | 330.0500 | 0.4795 | Ranked (300+ min) |
+| 1.0000 | 7 | Ismaïla Sarr | Attacking Midfield/Wing | Target Forward | 365.2000 | 0.7461 | Ranked (300+ min) |
+| 2.0000 | 27 | Boulaye Dia | Forward | Target Forward | 330.0500 | 0.6550 | Ranked (300+ min) |
+| 3.0000 | 53 | Youssouf Sabaly | Fullback/Wingback | Attacking Wingback | 387.2833 | 0.5531 | Ranked (300+ min) |
+| 4.0000 | — | Edouard Mendy | Goalkeeper | Goalkeeper | 387.2833 | 0.4924 | Ranked (300+ min) |
+| 5.0000 | 94 | Kalidou Koulibaly | Center Back | Sweeper CB | 387.2833 | 0.3428 | Ranked (300+ min) |
 
 
 ## Serbia
@@ -637,11 +637,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 21 | Jin-Su Kim | Fullback/Wingback | Attacking Wingback | 340.6833 | 0.6518 | Ranked (300+ min) |
-| 2.0000 | 32 | Young-Gwon Kim | Center Back | Sweeper CB | 373.1833 | 0.6239 | Ranked (300+ min) |
-| 3.0000 | 52 | Moon-Hwan Kim | Fullback/Wingback | Attacking Wingback | 389.6500 | 0.5775 | Ranked (300+ min) |
-| 4.0000 | 53 | Heung-Min Son | Attacking Midfield/Wing | Target Forward | 389.6500 | 0.5768 | Ranked (300+ min) |
-| 5.0000 | 54 | In-Beom Hwang | Central/Wide Midfield | Box-to-Box / Engine Midfielder | 360.1167 | 0.5706 | Ranked (300+ min) |
+| 1.0000 | 23 | Heung-Min Son | Attacking Midfield/Wing | Target Forward | 389.6500 | 0.7023 | Ranked (300+ min) |
+| 2.0000 | 47 | Jin-Su Kim | Fullback/Wingback | Attacking Wingback | 340.6833 | 0.5670 | Ranked (300+ min) |
+| 3.0000 | — | Seung-Gyu Kim | Goalkeeper | Goalkeeper | 389.6500 | 0.5336 | Ranked (300+ min) |
+| 4.0000 | 58 | Moon-Hwan Kim | Fullback/Wingback | Attacking Wingback | 389.6500 | 0.5324 | Ranked (300+ min) |
+| 5.0000 | 70 | In-Beom Hwang | Central/Wide Midfield | Box-to-Box / Engine Midfielder | 360.1167 | 0.4697 | Ranked (300+ min) |
 
 
 ## Spain
@@ -656,11 +656,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 11 | Daniel Olmo Carvajal | Attacking Midfield/Wing | Progressive Winger | 388.2500 | 0.6910 | Ranked (300+ min) |
-| 2.0000 | — | Unai Simón Mendibil | Goalkeeper | Goalkeeper | 413.9500 | 0.6107 | Ranked (300+ min) |
-| 3.0000 | 56 | Rodrigo Hernández Cascante | Center Back | Ball-Playing Centre-Back | 413.9500 | 0.5688 | Ranked (300+ min) |
-| 4.0000 | 70 | Aymeric Laporte | Center Back | Deep Playmaker | 316.9333 | 0.5273 | Ranked (300+ min) |
-| 5.0000 | 72 | Pedro González López | Central/Wide Midfield | Ball-Winner | 372.4000 | 0.5198 | Ranked (300+ min) |
+| 1.0000 | 9 | Daniel Olmo Carvajal | Attacking Midfield/Wing | Progressive Winger | 388.2500 | 0.7428 | Ranked (300+ min) |
+| 2.0000 | 38 | Pedro González López | Central/Wide Midfield | Ball-Winner | 372.4000 | 0.6055 | Ranked (300+ min) |
+| 3.0000 | — | Unai Simón Mendibil | Goalkeeper | Goalkeeper | 413.9500 | 0.5679 | Ranked (300+ min) |
+| 4.0000 | 84 | Sergio Busquets i Burgos | Defensive Midfield | Ball-Winner | 379.2833 | 0.3759 | Ranked (300+ min) |
+| 5.0000 | 93 | Rodrigo Hernández Cascante | Center Back | Ball-Playing Centre-Back | 413.9500 | 0.3436 | Ranked (300+ min) |
 
 
 ## Switzerland
@@ -675,11 +675,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 46 | Manuel Obafemi Akanji | Center Back | Ball-Playing Centre-Back | 386.5833 | 0.5879 | Ranked (300+ min) |
-| 2.0000 | 58 | Breel-Donald Embolo | Forward | Target Forward | 330.1500 | 0.5661 | Ranked (300+ min) |
-| 3.0000 | 64 | Granit Xhaka | Defensive Midfield | Ball-Winner | 386.5833 | 0.5512 | Ranked (300+ min) |
-| 4.0000 | 82 | Ricardo Iván Rodríguez Araya | Fullback/Wingback | Wide Creator | 380.2333 | 0.5013 | Ranked (300+ min) |
-| 5.0000 | 83 | Remo Freuler | Defensive Midfield | Ball-Winner | 346.0500 | 0.5010 | Ranked (300+ min) |
+| 1.0000 | 24 | Breel-Donald Embolo | Forward | Target Forward | 330.1500 | 0.7020 | Ranked (300+ min) |
+| 2.0000 | 69 | Ricardo Iván Rodríguez Araya | Fullback/Wingback | Wide Creator | 380.2333 | 0.4710 | Ranked (300+ min) |
+| 3.0000 | 72 | Granit Xhaka | Defensive Midfield | Ball-Winner | 386.5833 | 0.4518 | Ranked (300+ min) |
+| 4.0000 | 77 | Remo Freuler | Defensive Midfield | Ball-Winner | 346.0500 | 0.4320 | Ranked (300+ min) |
+| 5.0000 | 92 | Manuel Obafemi Akanji | Center Back | Ball-Playing Centre-Back | 386.5833 | 0.3563 | Ranked (300+ min) |
 
 
 ## Tunisia
@@ -713,11 +713,11 @@ _Coverage-only names are selected by tournament minutes and receive no model rat
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|---|---|
-| 1.0000 | 9 | Christian Pulisic | Central/Wide Midfield | Progressive Winger | 336.3167 | 0.6972 | Ranked (300+ min) |
-| 2.0000 | — | Matthew Charles Turner | Goalkeeper | Goalkeeper | 391.2000 | 0.6497 | Ranked (300+ min) |
-| 3.0000 | 23 | Timothy Weah | Forward | Progressive Winger | 317.8833 | 0.6484 | Ranked (300+ min) |
-| 4.0000 | 24 | Sergino Dest | Fullback/Wingback | Attacking Wingback | 307.5667 | 0.6472 | Ranked (300+ min) |
-| 5.0000 | 41 | Antonee Robinson | Fullback/Wingback | Attacking Wingback | 386.2667 | 0.6006 | Ranked (300+ min) |
+| 1.0000 | 4 | Christian Pulisic | Central/Wide Midfield | Progressive Winger | 336.3167 | 0.7584 | Ranked (300+ min) |
+| 2.0000 | 25 | Timothy Weah | Forward | Progressive Winger | 317.8833 | 0.6964 | Ranked (300+ min) |
+| 3.0000 | — | Matthew Charles Turner | Goalkeeper | Goalkeeper | 391.2000 | 0.5885 | Ranked (300+ min) |
+| 4.0000 | 44 | Yunus Dimoara Musah | Defensive Midfield | Box-to-Box / Engine Midfielder | 364.8667 | 0.5809 | Ranked (300+ min) |
+| 5.0000 | 45 | Sergino Dest | Fullback/Wingback | Attacking Wingback | 307.5667 | 0.5694 | Ranked (300+ min) |
 
 
 ## Uruguay

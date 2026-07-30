@@ -36,11 +36,11 @@ South Korea: no tactical change cleared the modeled effect floor. Primary review
 
 ## V5 role-aware player leaders
 
-1. Jin-Su Kim — Attacking Wingback; rating 0.6518, VAEP/90 +0.216, xT/90 +0.041, role-adjusted 0.434
-2. Young-Gwon Kim — Sweeper CB; rating 0.6239, VAEP/90 +0.052, xT/90 +0.023, role-adjusted 0.847
-3. Moon-Hwan Kim — Attacking Wingback; rating 0.5775, VAEP/90 +0.140, xT/90 +0.046, role-adjusted 0.082
-4. Heung-Min Son — Target Forward; rating 0.5768, VAEP/90 +0.385, xT/90 +0.078, role-adjusted 0.175
-5. In-Beom Hwang — Box-to-Box / Engine Midfielder; rating 0.5706, VAEP/90 +0.106, xT/90 +0.061, role-adjusted 0.354
+1. Heung-Min Son — Target Forward; rating 0.7023, VAEP/90 +0.385, xT/90 +0.078, role-adjusted 0.175
+2. Jin-Su Kim — Attacking Wingback; rating 0.5670, VAEP/90 +0.216, xT/90 +0.041, role-adjusted 0.434
+3. Seung-Gyu Kim — Goalkeeper; rating 0.5336, VAEP/90 -0.192, xT/90 +0.004, role-adjusted 0.000
+4. Moon-Hwan Kim — Attacking Wingback; rating 0.5324, VAEP/90 +0.140, xT/90 +0.046, role-adjusted 0.082
+5. In-Beom Hwang — Box-to-Box / Engine Midfielder; rating 0.4697, VAEP/90 +0.106, xT/90 +0.061, role-adjusted 0.354
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

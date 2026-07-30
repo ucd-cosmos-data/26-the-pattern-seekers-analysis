@@ -707,13 +707,19 @@ def calculate_final_player_rating(
         output["legacy_team_rank"] = output["team_rank"]
 
     if {"vaep_off_p90", "vaep_def_p90"} <= set(output):
+        # The scaled channels remain published for profile transparency, but
+        # they no longer feed the rating: within-position min-max scaling
+        # saturates at 1.0, so max(off, def) let one-dimensional specialists
+        # match two-way elites (e.g. the best offensive fullback scored the
+        # same vaep component as the tournament's best attacker).
         value_channels = IndependentValueScaler(
             minimum_group_size=12,
         ).fit_transform(output)
         output[value_channels.columns] = value_channels
-        vaep_value = value_channels.max(axis=1)
-    else:
-        vaep_value = _training_percentile(output["vaep_total_p90"])
+    # Rating component: global winsorized tournament percentile of total
+    # VAEP, comparable across positions; role fairness is the explicit job
+    # of role_adjusted_value, not of the value channel scaling.
+    vaep_value = _training_percentile(output["vaep_total_p90"])
 
     components = pd.DataFrame(
         {

@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Daniel Olmo Carvajal | Progressive Winger | 388.2500 | 0.6910 | Ranked (300+ min) |
-| 2.0000 | Unai Simón Mendibil | Goalkeeper | 413.9500 | 0.6107 | Ranked (300+ min) |
-| 3.0000 | Rodrigo Hernández Cascante | Ball-Playing Centre-Back | 413.9500 | 0.5688 | Ranked (300+ min) |
-| 4.0000 | Aymeric Laporte | Deep Playmaker | 316.9333 | 0.5273 | Ranked (300+ min) |
-| 5.0000 | Pedro González López | Ball-Winner | 372.4000 | 0.5198 | Ranked (300+ min) |
+| 1.0000 | Daniel Olmo Carvajal | Progressive Winger | 388.2500 | 0.7428 | Ranked (300+ min) |
+| 2.0000 | Pedro González López | Ball-Winner | 372.4000 | 0.6055 | Ranked (300+ min) |
+| 3.0000 | Unai Simón Mendibil | Goalkeeper | 413.9500 | 0.5679 | Ranked (300+ min) |
+| 4.0000 | Sergio Busquets i Burgos | Ball-Winner | 379.2833 | 0.3759 | Ranked (300+ min) |
+| 5.0000 | Rodrigo Hernández Cascante | Ball-Playing Centre-Back | 413.9500 | 0.3436 | Ranked (300+ min) |

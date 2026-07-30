@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Jin-Su Kim | Attacking Wingback | 340.6833 | 0.6518 | Ranked (300+ min) |
-| 2.0000 | Young-Gwon Kim | Sweeper CB | 373.1833 | 0.6239 | Ranked (300+ min) |
-| 3.0000 | Moon-Hwan Kim | Attacking Wingback | 389.6500 | 0.5775 | Ranked (300+ min) |
-| 4.0000 | Heung-Min Son | Target Forward | 389.6500 | 0.5768 | Ranked (300+ min) |
-| 5.0000 | In-Beom Hwang | Box-to-Box / Engine Midfielder | 360.1167 | 0.5706 | Ranked (300+ min) |
+| 1.0000 | Heung-Min Son | Target Forward | 389.6500 | 0.7023 | Ranked (300+ min) |
+| 2.0000 | Jin-Su Kim | Attacking Wingback | 340.6833 | 0.5670 | Ranked (300+ min) |
+| 3.0000 | Seung-Gyu Kim | Goalkeeper | 389.6500 | 0.5336 | Ranked (300+ min) |
+| 4.0000 | Moon-Hwan Kim | Attacking Wingback | 389.6500 | 0.5324 | Ranked (300+ min) |
+| 5.0000 | In-Beom Hwang | Box-to-Box / Engine Midfielder | 360.1167 | 0.4697 | Ranked (300+ min) |

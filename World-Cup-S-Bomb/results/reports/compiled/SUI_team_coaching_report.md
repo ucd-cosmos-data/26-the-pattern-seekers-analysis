@@ -36,11 +36,11 @@ Switzerland: no tactical change cleared the modeled effect floor. Primary review
 
 ## V5 role-aware player leaders
 
-1. Manuel Obafemi Akanji — Ball-Playing Centre-Back; rating 0.5879, VAEP/90 +0.031, xT/90 +0.011, role-adjusted 1.000
-2. Breel-Donald Embolo — Target Forward; rating 0.5661, VAEP/90 +0.312, xT/90 +0.011, role-adjusted 0.665
-3. Granit Xhaka — Ball-Winner; rating 0.5512, VAEP/90 +0.056, xT/90 +0.049, role-adjusted 0.342
-4. Ricardo Iván Rodríguez Araya — Wide Creator; rating 0.5013, VAEP/90 +0.024, xT/90 +0.044, role-adjusted 0.113
-5. Remo Freuler — Ball-Winner; rating 0.5010, VAEP/90 +0.047, xT/90 +0.020, role-adjusted 0.443
+1. Breel-Donald Embolo — Target Forward; rating 0.7020, VAEP/90 +0.312, xT/90 +0.011, role-adjusted 0.665
+2. Ricardo Iván Rodríguez Araya — Wide Creator; rating 0.4710, VAEP/90 +0.024, xT/90 +0.044, role-adjusted 0.113
+3. Granit Xhaka — Ball-Winner; rating 0.4518, VAEP/90 +0.056, xT/90 +0.049, role-adjusted 0.342
+4. Remo Freuler — Ball-Winner; rating 0.4320, VAEP/90 +0.047, xT/90 +0.020, role-adjusted 0.443
+5. Manuel Obafemi Akanji — Ball-Playing Centre-Back; rating 0.3563, VAEP/90 +0.031, xT/90 +0.011, role-adjusted 1.000
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

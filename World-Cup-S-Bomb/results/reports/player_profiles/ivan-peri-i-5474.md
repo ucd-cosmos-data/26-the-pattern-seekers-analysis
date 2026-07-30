@@ -9,14 +9,14 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Wide Creator
 - Probabilistic role: Finishing/Creative/Progressive Attacker
 - Role entropy: 0.0000
-- Global rank: 38
-- Position rank: 8
-- Role rank: 6
-- Team rank: 2
-- Final player rating: 0.6081
+- Global rank: 19
+- Position rank: 9
+- Role rank: 1
+- Team rank: 1
+- Final player rating: 0.7174
 - Global ranking eligibility: eligible
 - Minutes: 686.8
-- Minutes reliability: 0.6960
+- Minutes reliability: 0.5337
 
 ## Rating components
 

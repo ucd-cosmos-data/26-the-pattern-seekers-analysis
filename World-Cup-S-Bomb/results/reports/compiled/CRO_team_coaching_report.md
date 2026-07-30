@@ -36,11 +36,11 @@ Croatia: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## V5 role-aware player leaders
 
-1. Borna Sosa — Wide Creator; rating 0.6170, VAEP/90 +0.130, xT/90 +0.068, role-adjusted 0.241
-2. Ivan Perišić — Wide Creator; rating 0.6081, VAEP/90 +0.407, xT/90 +0.065, role-adjusted 0.330
-3. Andrej Kramarić — Target Forward; rating 0.5837, VAEP/90 +0.365, xT/90 +0.010, role-adjusted 0.495
-4. Dominik Livaković — Goalkeeper; rating 0.5503, VAEP/90 -0.213, xT/90 +0.003, role-adjusted 0.000
-5. Joško Gvardiol — Ball-Playing Centre-Back; rating 0.5028, VAEP/90 -0.019, xT/90 +0.019, role-adjusted 0.402
+1. Ivan Perišić — Wide Creator; rating 0.7174, VAEP/90 +0.407, xT/90 +0.065, role-adjusted 0.330
+2. Andrej Kramarić — Target Forward; rating 0.6735, VAEP/90 +0.365, xT/90 +0.010, role-adjusted 0.495
+3. Mateo Kovačić — Box-to-Box / Engine Midfielder; rating 0.6199, VAEP/90 +0.225, xT/90 +0.065, role-adjusted 0.131
+4. Luka Modrić — Deep Playmaker / Metronome; rating 0.5872, VAEP/90 +0.087, xT/90 +0.092, role-adjusted 0.347
+5. Dominik Livaković — Goalkeeper; rating 0.5627, VAEP/90 -0.213, xT/90 +0.003, role-adjusted 0.000
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 
