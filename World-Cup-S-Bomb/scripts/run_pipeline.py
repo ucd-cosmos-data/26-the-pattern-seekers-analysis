@@ -36,6 +36,7 @@ from src.features.events import (
     derive_pressure_outcomes,
     derive_reception_features,
 )
+from src.features.event_scope import filter_ordinary_actions
 from src.features.goalkeepers import build_goalkeeper_features
 from src.features.defense_disruption import derive_defense_disruption
 from src.features.network import build_passing_network_features
@@ -273,6 +274,12 @@ def _publish_validation_aliases(
         report_root / "role_aware_rating_comparison.csv"
     )
     _atomic_copy_text(comparison_source, comparison_destination)
+    diagnostics_root = project_root / "results/diagnostics"
+    diagnostics_root.mkdir(parents=True, exist_ok=True)
+    comparison_diagnostic = (
+        diagnostics_root / "rating_validation_comparison.csv"
+    )
+    _atomic_copy_text(comparison_source, comparison_diagnostic)
 
     selection = summary["probabilistic_role_selection"]
     stability = summary["cluster_stability"]
@@ -311,6 +318,10 @@ def _publish_validation_aliases(
     }
     role_path = report_root / "player_role_challenger_validation.json"
     _atomic_json(role_payload, role_path)
+    role_diagnostic = (
+        diagnostics_root / "player_role_challenger_validation.json"
+    )
+    _atomic_json(role_payload, role_diagnostic)
 
     valuation_payload = {
         "schema_version": "5.0-role-attention",
@@ -353,6 +364,10 @@ def _publish_validation_aliases(
         report_root / "role_aware_valuation_validation.json"
     )
     _atomic_json(valuation_payload, valuation_path)
+    valuation_diagnostic = (
+        diagnostics_root / "role_aware_valuation_validation.json"
+    )
+    _atomic_json(valuation_payload, valuation_diagnostic)
 
     changed_roles = int(
         (
@@ -379,11 +394,19 @@ def _publish_validation_aliases(
         report_root / "role_refinement_validation.json"
     )
     _atomic_json(refinement_payload, refinement_path)
+    refinement_diagnostic = (
+        diagnostics_root / "role_refinement_validation.json"
+    )
+    _atomic_json(refinement_payload, refinement_diagnostic)
     return [
         comparison_destination,
+        comparison_diagnostic,
         role_path,
+        role_diagnostic,
         valuation_path,
+        valuation_diagnostic,
         refinement_path,
+        refinement_diagnostic,
     ]
 
 
@@ -626,7 +649,16 @@ def _refresh_detailed_team_rating_sections(
         ),
     ]
     for markdown_path in markdown_paths:
-        first_line = markdown_path.read_text(encoding="utf-8").splitlines()[0]
+        content = markdown_path.read_text(encoding="utf-8")
+        if (
+            "Tournament Impact orders the team table." in content
+            and "Role Quality and Uncertainty remain separate products."
+            in content
+        ):
+            # Pass-8 v3 team reports own this generated family. The preserved
+            # V5 foundation refresher must neither reject nor overwrite them.
+            continue
+        first_line = content.splitlines()[0]
         team = first_line.removeprefix("# ").split(" — ", maxsplit=1)[0]
         players = rankings.loc[rankings["team"].eq(team)].sort_values(
             "team_rank"
@@ -663,7 +695,6 @@ def _refresh_detailed_team_rating_sections(
                 "",
             ]
         )
-        content = markdown_path.read_text(encoding="utf-8")
         replacement = "\n".join(lines) + "\n"
         refreshed, count = section_pattern.subn(replacement, content)
         if count != 1:
@@ -1113,7 +1144,8 @@ def _action_value_splits(
     missing = required.difference(actions.columns)
     if missing:
         raise ValueError(f"Action value fields missing: {sorted(missing)}")
-    working = actions.loc[actions["player_id"].notna()].copy()
+    working = filter_ordinary_actions(actions)
+    working = working.loc[working["player_id"].notna()].copy()
     set_piece = working["play_pattern"].astype(str).str.contains(
         "Corner|Free Kick|Throw",
         case=False,
@@ -1291,6 +1323,10 @@ def _fit_grouped_role_valuation(
     diagnostics: dict[str, Any] = {
         "grouping": "nested GroupKFold by match_id",
         "feature_names": list(feature_names),
+        "coefficient_dispersion_gate_definition": (
+            "coefficient standard deviation / target standard deviation "
+            "> 0.02 with at least two nonzero coefficients per head"
+        ),
         "heads": {},
     }
     for head, target in (
@@ -1308,13 +1344,24 @@ def _fit_grouped_role_valuation(
         models[head] = model
         raw_predictions[head] = model.predict(profiles)
         coefficients = model.coefficient_series()
+        target_scale = float(
+            pd.to_numeric(match_samples[target], errors="coerce").std(ddof=0)
+        )
+        coefficient_std = float(coefficients.std(ddof=0))
+        dispersion_ratio = (
+            coefficient_std / target_scale
+            if target_scale > 1e-12
+            else 0.0
+        )
         diagnostics["heads"][head] = {
             "metrics": dataclasses.asdict(model.metrics_),
             "best_alpha": model.best_alpha_,
             "best_l1_ratio": model.best_l1_ratio_,
             "coefficients": coefficients.to_dict(),
             "nonzero_coefficients": int(coefficients.ne(0.0).sum()),
-            "coefficient_std": float(coefficients.std(ddof=0)),
+            "coefficient_std": coefficient_std,
+            "target_std": target_scale,
+            "coefficient_dispersion_ratio": dispersion_ratio,
             "fold_audit": model.fold_audit_,
         }
     predicted = pd.DataFrame(
@@ -1344,13 +1391,12 @@ def _fit_grouped_role_valuation(
         },
         index=profiles.index,
     )
-    all_coefficients = pd.concat(
-        [model.coefficient_series() for model in models.values()],
-        axis=1,
-    )
     diagnostics["coefficient_dispersion_gate"] = bool(
-        all_coefficients.std(axis=0, ddof=0).gt(0.005).all()
-        and all_coefficients.ne(0.0).sum(axis=0).ge(2).all()
+        all(
+            details["coefficient_dispersion_ratio"] > 0.02
+            and details["nonzero_coefficients"] >= 2
+            for details in diagnostics["heads"].values()
+        )
     )
     if not diagnostics["coefficient_dispersion_gate"]:
         raise RuntimeError(
@@ -1509,6 +1555,7 @@ def run_extended_pipeline(
         )
     ].copy()
     actions = pd.read_parquet(actions_path)
+    actions = filter_ordinary_actions(actions)
     actions["original_event_id"] = actions["original_event_id"].astype(str)
     events = _load_events(events_path)
     components = pd.read_csv(components_path, low_memory=False)

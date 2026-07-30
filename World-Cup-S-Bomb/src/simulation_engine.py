@@ -27,6 +27,8 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
 
+from src.features.event_scope import filter_ordinary_actions
+
 
 ATTACKING_STYLES = (
     "Patient Build-up",
@@ -1757,7 +1759,9 @@ def build_v4_player_evaluations(
     if profiles.empty:
         raise ValueError("No players satisfy the V4 minutes cutoff")
 
-    actions = convert_statsbomb_events_to_spadl(events_df)
+    actions = filter_ordinary_actions(
+        convert_statsbomb_events_to_spadl(events_df)
+    )
     if match_context_df is not None:
         required_context = {
             "match_id",

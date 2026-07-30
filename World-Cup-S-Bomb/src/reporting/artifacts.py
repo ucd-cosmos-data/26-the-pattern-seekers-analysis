@@ -538,22 +538,18 @@ class ArtifactGenerator:
             na_position="last",
         ).reset_index(drop=True)
 
-        unified_rankings = all_rankings.rename(
-            columns={
-                "player_name": "Player",
-                "team": "Team",
-                "position_group_360": "Position Group",
+        unified_rankings = pd.DataFrame(
+            {
+                "Global Rank": all_rankings["Global Rank"],
+                "Team Rank": all_rankings["Team Rank"],
+                "Player": all_rankings["player_name"],
+                "Team": all_rankings["team"],
+                "Position Group": all_rankings["position_group_360"],
+                "Tournament Performance Score": all_rankings[
+                    "Tournament Performance Score"
+                ],
             }
-        )[
-            [
-                "Global Rank",
-                "Team Rank",
-                "Player",
-                "Team",
-                "Position Group",
-                "Tournament Performance Score",
-            ]
-        ]
+        )
 
         csv_outputs = {
             "unified_tournament_rankings.csv": unified_rankings,

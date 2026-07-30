@@ -28,21 +28,31 @@ transitions. It is distinct from the retrospective Stage 5 outcome models.
 The original proposal is in
 [`data/raw/info.md`](data/raw/info.md).
 
-## Role-aware player pipeline
+## Active player-ranking pipeline
 
 `scripts/run_pipeline.py` is the production entry point for the extended player
-analysis. It preserves match-cross-fitted VAEP/xT calculations, K-Means
-functional roles, and legacy comparison columns. V2 rates all eligible
-outfield players from 45 minutes and goalkeepers from 90 minutes; 300 minutes
-is only the primary outfield reliability label. It adds pre-action score,
-time, opponent-strength, and game-phase context as a VAEP challenger that is
-accepted only by a development-OOF non-inferiority gate (the canonical run
-retains the baseline feature set); continuous role
-vectors; probabilistic GMM roles; spatial and passing-network features;
-explicit role-weighted offensive/defensive channels; team-disjoint ElasticNet
-calibration; xD-style defensive disruption; sample-adjusted completeness;
-off-ball scoring; and 450-minute empirical-Bayes shrinkage. Goalkeepers use a
-weighted seven-component matrix including high-leverage saves.
+analysis. It preserves the match-cross-fitted VAEP/xT, continuous and
+probabilistic role, spatial, network, 360, and off-ball evidence, then publishes
+the `ranking-repair-v3.0-qatar-2022` contract:
+
+- **Tournament Impact v3** is signed total contribution in common action-value
+  units and determines global and team order.
+- **Role Quality v3** is one empirical-Bayes posterior contribution rate and
+  determines position and role order.
+- **Uncertainty** is a whole-match bootstrap interval/status; it explains
+  precision and never becomes another exposure penalty.
+
+Ordinary outfield features use Qatar 2022 periods 1–4 only. Period 5 is retained
+solely as a separate shootout channel, so shootout kicks cannot enter ordinary
+goals, assists, xG, xA, xT, VAEP, or Tournament Impact. The active score does
+not use within-position z-scores as absolute global value, the former repeated
+exposure cascade, or the former one-sided defensive publication lift.
+
+Goalkeepers remain a dedicated branch with exactly one ranked main goalkeeper
+per team. Continuous play, regular penalties, and shootouts are separate;
+shootouts are capped at 10% of the dedicated score. The fallback
+`percentile_equivalent_placement` is a publication bridge, not measured
+absolute cross-position value.
 
 Run the complete pipeline from the repository root:
 
@@ -69,39 +79,48 @@ match-grouped ElasticNet fit. Failure prints the documented fallback message
 and continues with the role-aware layer. All attention is causal; future
 events are masked.
 
-One canonical execution writes the narrative V5 artifacts under
-`results/reports/` and all player-ranking artifacts under
-`results/reports/ranking/`:
+One canonical execution writes the active v3 narrative under `results/reports/`
+and player-ranking artifacts under `results/reports/ranking/`:
 
+- `ranking/player_rankings.csv` and `ranking/player_rankings_v3.csv`
+- `ranking/player_rankings.json` and `ranking/player_rankings_v3.json`
 - `ranking/global_rankings_outfield.csv`
 - `ranking/global_rankings_outfield_300min.csv`
 - `ranking/goalkeeper_rankings.csv`
-- `ranking/player_rankings.csv` and `ranking/player_rankings.json`
-- 32 complete tables under `ranking/by_team/`
+- `ranking/unified_tournament_rankings.csv`
+- 32 complete tables under both `ranking/by_team/` and
+  `ranking/by_team_unified/`
 - `ranking/ranking_methodology.md` and `ranking/ranking_audit.md`
-- `v5_coaches_notebook.md`
-- `model_summary.json` and `model_summary.md`
-- `final_summary.md`
+- `canonical/model_summary.{json,md}` and canonical compatibility mirrors
+- `canonical/final_summary.md` and final-summary compatibility mirrors
+- `docs/final_summary.docx`
 - 32 reports under `team_profiles/`
-- coverage-qualified individual reports under `player_profiles/`
-- `v5_rating_validation_comparison.csv`
-- four diagnostic plots under `v5_figures/`
-- `v5_artifact_manifest.json` with SHA-256 hashes
+- coverage-qualified reports under `player_profiles/` and `starters/`
+- seven active ranking and validation figures under `v3_figures/`
+- portable manifests with relative paths and SHA-256 hashes
+
+After v3 promotion, `ranking/player_rankings_v2.csv`,
+`ranking/v5_player_rankings.csv`, and `ranking/v5_player_rankings.json` are
+byte-identical compatibility aliases of the corresponding active table. Their
+filenames do not activate the retired v2/V5 formulas.
+Original pre-v3 tables remain under `ranking/legacy/`, and existing
+`v5_figures/` are historical comparison evidence rather than active figures.
 
 The same execution refreshes the downstream compatibility tables in
 `data/processed/player_evaluations.csv`,
 `data/processed/player_leaderboard.csv`,
 `results/reports/player_leaderboard.csv`, and
 `results/reports/team_player_leaderboards.csv`. The V4 possession and
-transition-model packets remain historical records; obsolete V4 final/model
-summaries are removed only after the complete V5 artifact set passes its
-publication checks.
+transition-model packets and the V5 ranking foundation remain historical
+records; active publication occurs only after every independently selected v3
+component and artifact family passes its release gate.
 
 The canonical run publishes the regenerated leaderboard, selected
 learned-or-fallback calibration weights, status counts, and before/after
 validation. See the
 [`results/reports` index](results/reports/README.md) for the canonical reports
-and the boundary between V5 player values and historical V4 tactical outputs.
+and the boundary between active v3 rankings, compatibility aliases, and
+historical tactical/ranking outputs.
 
 StatsBomb 360 absences remain missing and are accompanied by evidence and
 coverage fields. Public freeze frames identify the event actor but do not
@@ -109,10 +128,10 @@ provide stable identities for every off-ball player; consequently, named
 player off-ball results are coverage-qualified event-actor proxies, not
 optical-tracking movement estimates.
 
-The tournament ranking layer evaluates only the 2022 FIFA World Cup. It uses
-formal `GK/CB/FB/DM/CM/AM/FW` groups, within-group normalization, explicit
-goal/xG and chance-creation components, role-based (never name-based) finishing
-treatment, and a separate goalkeeper scale.
+The tournament ranking layer evaluates only the 2022 FIFA World Cup. Formal
+`GK/CB/FB/DM/CM/AM/FW` groups and probabilistic roles interpret Role Quality;
+they cannot change common-unit Tournament Impact. Names, reputation, teams,
+advancement, awards, and external rankings are excluded from scoring.
 
 ## Main results
 
@@ -154,8 +173,9 @@ The leak-free player-evaluation comparison is:
 The legacy transition classifier predicts a different target and is shown as a
 reporting baseline, not as a VAEP model-selection candidate. Because positive
 next-action windows are rare, PR-AUC and calibration are more informative than
-RMSE alone. The final role-relative hierarchy rates the 45/90-minute eligible
-cohort and exposes separate high-reliability ranks.
+RMSE alone. These learned action values feed the v3 ranking layer; they do not
+themselves define global order. Tournament Impact, Role Quality, and
+Uncertainty remain separate in the published player cohort.
 
 See the following reports for details:
 
@@ -209,33 +229,19 @@ upstream dataset.
 
 ## Reproduce the pipeline
 
-With `notebooks/all_events.csv` present, run these commands in order:
+With `notebooks/all_events.csv` present, run the canonical orchestration from
+the repository root:
 
 ```bash
-.venv/bin/python scripts/preprocess_possessions.py
-.venv/bin/python scripts/cluster_attacking_styles.py
-.venv/bin/python scripts/cache_360_frames.py
-.venv/bin/python scripts/build_defensive_features.py
-.venv/bin/python scripts/cluster_defensive_styles.py
-.venv/bin/python scripts/analyze_defensive_matchups.py
-.venv/bin/python scripts/build_player_skill_inputs.py
-.venv/bin/python scripts/benchmark_coaching_models.py
-.venv/bin/python scripts/select_coaching_models.py
-.venv/bin/python scripts/explain_coaching_models.py
-.venv/bin/python scripts/build_recommendation_features.py
-.venv/bin/python scripts/benchmark_recommendation_models.py
-.venv/bin/python scripts/benchmark_transition_models.py
-.venv/bin/python scripts/run_team_simulation_reports.py
-.venv/bin/python scripts/quantify_player_rating_uncertainty.py
-.venv/bin/python scripts/annotate_reports_with_uncertainty.py
-.venv/bin/python scripts/eda_validation_checks.py --final
+.venv/bin/python scripts/run_pipeline.py --reuse-validated-oof
 ```
 
-`quantify_player_rating_uncertainty.py` writes the per-player uncertainty table;
-`annotate_reports_with_uncertainty.py` then folds those confidence figures into
-the compiled team markdowns. Both are additive and idempotent — they change no
-grade — and must run after `run_team_simulation_reports.py` regenerates the
-reports, so the annotations are not lost.
+This executes the event-scope repair, component validation, active v3 ranking
+release, reports, figures, manifests, documentation, and artifact validators in
+dependency order. The standalone
+`quantify_player_rating_uncertainty.py`/`annotate_reports_with_uncertainty.py`
+pair remains available only for reproducing historical pre-v3 report packets;
+active v3 uncertainty is generated with the ranking itself.
 
 The 360 download is cached by match and resumes from valid existing files.
 Pass `--force` only when a complete redownload is intended.
@@ -269,10 +275,13 @@ result tables, and figures are stored in `results/`.
 | `data/processed/player_evaluations.csv` | Role-relative values for the 45-minute outfield / 90-minute goalkeeper cohort, with reliability statuses |
 | `data/processed/player_event_value_audit.parquet` | Per-action targets, OOF/test probabilities, xT values, and scoring-partition provenance |
 | `data/processed/player_evaluation_provenance.json` | Feature contract, split assignments, metrics, and leakage controls |
+| `results/reports/ranking/player_rankings_v3.csv` | Active feature-rich Qatar 2022 Tournament Impact, Role Quality, uncertainty, and goalkeeper release |
+| `results/reports/ranking/unified_tournament_rankings.csv` | Six-field active publication view derived from v3 placement fields |
+| `results/reports/ranking/goalkeeper_rankings.csv` | Dedicated 32-main-goalkeeper v3 table with continuous, penalty, bounded-shootout, and uncertainty channels |
 | `results/reports/final_validation.csv` | Side-by-side OOF metrics for all candidate architectures and the legacy baseline |
 | `results/reports/pipeline_manifest.json` | End-to-end runtime, artifact, count, and invariant checks |
 | `results/eda_validation_report.json` | Final acceptance and regression-test result |
-| `results/reports/canonical/model_summary.md` | Current methodology, validation gates, learned coefficients, goalkeeper audit, and player hierarchy |
+| `results/reports/canonical/model_summary.md` | Active v3 methodology, champion/challenger gates, event scope, goalkeeper boundary, and retained fallbacks |
 
 ## Validation design and limitations
 
@@ -289,10 +298,12 @@ result tables, and figures are stored in `results/`.
 - xT grids are fitted outside the match partition they score. Deterministic
   feature hashing and fixed missing-value defaults avoid learning preprocessing
   state from the test partition; Logistic Regression scaling is fold-local.
-- The player-rating formula is an evaluation layer, not a model feature.
-  Role-weighted offense/defense channels, calibrated composite components,
-  and xD are shrunk toward the player's position-group mean using
-  `minutes/(minutes+450)`.
+- The player-ranking formula is an evaluation layer, not a model feature.
+  Tournament Impact totals signed common-unit contribution without
+  within-position normalization. Role Quality applies one fitted
+  empirical-Bayes rate shrinkage; uncertainty is published separately.
+- Ordinary player-evaluation outcomes and action values use periods 1–4.
+  Period-five shootouts stay in separately named audit/GK fields.
 
 The next-action target is rare: the pooled development target has a positive
 rate of approximately 0.118%. Consequently, low RMSE is partly a consequence
@@ -303,15 +314,12 @@ Rankings describe this tournament sample and are not causal estimates or
 permanent measures of player quality. External competitions are still needed
 to assess generalization.
 
-`scripts/quantify_player_rating_uncertainty.py` attaches match-sampling
-uncertainty to every rating (a match-cluster bootstrap that reruns the exact
-production formula on resampled matches). It changes no grade — it reports a
-standard error, confidence interval, rank stability, and, per team, the
-probability that the #1 player truly outranks the #2. Outputs:
-`results/reports/player_rating_uncertainty.csv` and
-`results/MIscellaneous/player_rating_uncertainty.md`. Read the point ranking
-alongside these: several team leads are within sampling noise (e.g. the
-Argentina #1 gap is a lean, not a separation), which the bare ranking hides.
+The v3 ranking calculation resamples whole matches and publishes impact
+intervals, rank-stability bands, and `stable`/`moderate`/`wide` labels directly
+in the active table. This uncertainty changes no score or rank.
+`scripts/quantify_player_rating_uncertainty.py` and its standalone outputs are
+retained as historical/compatibility diagnostics for the pre-v3 formula; they
+do not override the active v3 fields.
 
 ### Retrospective possession models
 
@@ -342,10 +350,12 @@ nested or external validation.
 
 ## Project status and optional extensions
 
-The five-stage tactical proposal and the leak-free V5 player-evaluation
-pipeline are complete. The production pipeline and final acceptance report pass,
-so none of the following items blocks use of the existing retrospective
-analysis:
+The five-stage tactical proposal, leak-free learned-value foundation, and
+Qatar 2022 ranking-repair v3 release are the active architecture. Component
+promotion remains conditional on the recorded champion/challenger and artifact
+gates; a failed component retains its frozen champion and is disclosed rather
+than hidden. None of the following items blocks use of the existing
+retrospective analysis:
 
 1. Predict attacking style from only the first 5–10 seconds of a possession.
 2. Measure attacking tactical flexibility across teams.
@@ -356,9 +366,8 @@ analysis:
    CV, PR-AUC selection); the production benchmark keeps the fast single-CV path
    and the nested script is the unbiased release-time check.
 4. Validate VAEP calibration and player-ranking stability on another
-   competition or season. Within-tournament ranking stability is now quantified
-   by `scripts/quantify_player_rating_uncertainty.py`; cross-competition
-   validation remains open.
+   competition or season. V3 quantifies within-tournament stability by
+   whole-match bootstrap; cross-competition validation remains open.
 5. Add continuous integration for compilation, lightweight leakage-contract
    tests, and artifact-schema checks. The full 64-match pipeline can remain a
    scheduled or release validation because of its runtime and data footprint.
