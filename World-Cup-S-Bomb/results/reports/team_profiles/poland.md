@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Robert Lewandowski | Target Forward / Penalty-Box Anchor | 389.7500 | 0.7277 | Ranked (300+ min) |
-| 2.0000 | Wojciech Szczęsny | Goalkeeper | 389.7500 | 0.6026 | Ranked (300+ min) |
-| 3.0000 | Piotr Zieliński | Ball-Winner | 344.4167 | 0.5995 | Ranked (300+ min) |
-| 4.0000 | Bartosz Bereszyński | Wide Creator | 365.7333 | 0.4995 | Ranked (300+ min) |
-| 5.0000 | Matty Cash | Box-to-Box Runner | 389.7500 | 0.3994 | Ranked (300+ min) |
+| 1.0000 | Robert Lewandowski | Target Forward / Penalty-Box Anchor | 389.7500 | 0.6684 | Ranked (300+ min) |
+| 2.0000 | Wojciech Szczęsny | Goalkeeper | 389.7500 | 0.6156 | Ranked (300+ min) |
+| 3.0000 | Piotr Zieliński | Ball-Winner | 344.4167 | 0.6106 | Ranked (300+ min) |
+| 4.0000 | Bartosz Bereszyński | Wide Creator | 365.7333 | 0.4876 | Ranked (300+ min) |
+| 5.0000 | Grzegorz Krychowiak | Ball-Winner | 347.8833 | 0.4309 | Ranked (300+ min) |

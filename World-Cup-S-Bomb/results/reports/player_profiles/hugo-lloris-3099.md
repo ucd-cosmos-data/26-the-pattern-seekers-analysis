@@ -10,10 +10,10 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Probabilistic role: Goalkeeper
 - Role entropy: 0.0000
 - Global rank: not available
-- Position rank: 14
-- Role rank: 14
+- Position rank: 16
+- Role rank: 16
 - Team rank: 7
-- Final player rating: 0.4836
+- Final player rating: 0.4675
 - Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 614.2
 - Minutes reliability: 0.5058

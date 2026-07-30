@@ -10,10 +10,10 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Probabilistic role: Finishing/Creative/Progressive Attacker
 - Role entropy: 0.0000
 - Global rank: 19
-- Position rank: 9
+- Position rank: 11
 - Role rank: 1
 - Team rank: 1
-- Final player rating: 0.7174
+- Final player rating: 0.6590
 - Global ranking eligibility: eligible
 - Minutes: 686.8
 - Minutes reliability: 0.5337

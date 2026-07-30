@@ -36,9 +36,9 @@ Iran: no tactical change cleared the modeled effect floor. Primary review signal
 
 ## V5 role-aware player leaders
 
-1. Mehdi Taremi — Target Forward; rating 0.7489, VAEP/90 +0.412, xT/90 +0.053, role-adjusted 0.819
-2. Morteza Pouraliganji — Sweeper CB; rating 0.3209, VAEP/90 +0.054, xT/90 +0.009, role-adjusted 0.341
-3. Seyed Majid Hosseini — Sweeper CB; rating 0.2281, VAEP/90 -0.084, xT/90 +0.010, role-adjusted 0.000
+1. Mehdi Taremi — Target Forward; rating 0.6946, VAEP/90 +0.412, xT/90 +0.053, role-adjusted 0.819
+2. Morteza Pouraliganji — Sweeper CB; rating 0.3195, VAEP/90 +0.054, xT/90 +0.009, role-adjusted 0.341
+3. Seyed Majid Hosseini — Sweeper CB; rating 0.2498, VAEP/90 -0.084, xT/90 +0.010, role-adjusted 0.000
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

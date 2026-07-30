@@ -21,12 +21,15 @@ GOALKEEPER_METRICS: dict[str, bool] = {
 # ball-playing and claiming metrics two-thirds of the composite, which let
 # low-shot-volume distributors outrank high-volume shot-stoppers.
 GOALKEEPER_METRIC_WEIGHTS: dict[str, float] = {
-    "goals_prevented_proxy_p90": 0.35,
+    "goals_prevented_proxy_p90": 0.30,
     "save_rate": 0.20,
-    "distribution_under_pressure": 0.15,
-    "cross_stopping_rate": 0.10,
-    "sweeper_actions_p90": 0.10,
-    "penalty_save_rate_shrunk": 0.10,
+    # The penalty channel includes shootout penalties, which decide
+    # tournaments; 0.20 lets shootout performances move the ranking
+    # while the per-keeper shrunk save rate keeps tiny samples honest.
+    "penalty_save_rate_shrunk": 0.20,
+    "distribution_under_pressure": 0.12,
+    "cross_stopping_rate": 0.09,
+    "sweeper_actions_p90": 0.09,
 }
 
 # A save percentage on a handful of shots is mostly noise: shot-stopping

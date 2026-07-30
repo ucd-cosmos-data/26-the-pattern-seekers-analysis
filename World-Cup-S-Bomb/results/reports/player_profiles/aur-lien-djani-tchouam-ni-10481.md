@@ -9,11 +9,11 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Holding / Controlling Midfielder
 - Probabilistic role: Pressing/Defensive Midfielder
 - Role entropy: 0.0000
-- Global rank: 90
-- Position rank: 19
+- Global rank: 84
+- Position rank: 17
 - Role rank: 2
 - Team rank: 9
-- Final player rating: 0.3692
+- Final player rating: 0.4248
 - Global ranking eligibility: eligible
 - Minutes: 662.2
 - Minutes reliability: 0.5246

@@ -36,10 +36,10 @@ Ghana: Patient Build-up led the observed baseline by 0.0054 mean EvA. Primary re
 
 ## V5 role-aware player leaders
 
-1. Lawrence Ati-Zigi — Goalkeeper; rating 0.4759, VAEP/90 -0.119, xT/90 +0.007, role-adjusted 0.000
-2. Thomas Teye Partey — Ball-Winner; rating 0.3703, VAEP/90 -0.078, xT/90 +0.044, role-adjusted 0.189
-3. Mohamed Salisu — Sweeper CB; rating 0.3346, VAEP/90 +0.013, xT/90 +0.019, role-adjusted 0.943
-4. Daniel Amartey — Sweeper CB; rating 0.2298, VAEP/90 -0.238, xT/90 +0.012, role-adjusted 0.076
+1. Lawrence Ati-Zigi — Goalkeeper; rating 0.4816, VAEP/90 -0.119, xT/90 +0.007, role-adjusted 0.000
+2. Thomas Teye Partey — Ball-Winner; rating 0.4215, VAEP/90 -0.078, xT/90 +0.044, role-adjusted 0.189
+3. Mohamed Salisu — Sweeper CB; rating 0.3393, VAEP/90 +0.013, xT/90 +0.019, role-adjusted 0.943
+4. Daniel Amartey — Sweeper CB; rating 0.2526, VAEP/90 -0.238, xT/90 +0.012, role-adjusted 0.076
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

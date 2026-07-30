@@ -9,11 +9,11 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Progressive Winger
 - Probabilistic role: Finishing/Creative/Progressive Attacker
 - Role entropy: 0.0000
-- Global rank: 20
+- Global rank: 7
 - Position rank: 2
-- Role rank: 8
-- Team rank: 3
-- Final player rating: 0.7128
+- Role rank: 5
+- Team rank: 2
+- Final player rating: 0.6966
 - Global ranking eligibility: eligible
 - Minutes: 306.6
 - Minutes reliability: 0.3382

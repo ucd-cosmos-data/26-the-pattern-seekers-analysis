@@ -9,11 +9,11 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Ball-Winner
 - Probabilistic role: Pressing/Defensive Midfielder
 - Role entropy: 0.0000
-- Global rank: 80
-- Position rank: 12
-- Role rank: 12
+- Global rank: 78
+- Position rank: 13
+- Role rank: 13
 - Team rank: 6
-- Final player rating: 0.4014
+- Final player rating: 0.4430
 - Global ranking eligibility: eligible
 - Minutes: 317.9
 - Minutes reliability: 0.3463

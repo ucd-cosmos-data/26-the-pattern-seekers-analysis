@@ -9,11 +9,11 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Deep Playmaker
 - Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0000
-- Global rank: 118
-- Position rank: 29
-- Role rank: 9
+- Global rank: 117
+- Position rank: 28
+- Role rank: 8
 - Team rank: 9
-- Final player rating: 0.2362
+- Final player rating: 0.2586
 - Global ranking eligibility: eligible
 - Minutes: 506.3
 - Minutes reliability: 0.4576

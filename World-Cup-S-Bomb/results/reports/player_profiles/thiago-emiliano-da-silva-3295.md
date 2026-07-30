@@ -10,10 +10,10 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Probabilistic role: Aerial/Progressive Centre-Back
 - Role entropy: 0.0001
 - Global rank: 99
-- Position rank: 11
+- Position rank: 10
 - Role rank: 2
 - Team rank: 8
-- Final player rating: 0.3200
+- Final player rating: 0.3407
 - Global ranking eligibility: eligible
 - Minutes: 409.1
 - Minutes reliability: 0.4054

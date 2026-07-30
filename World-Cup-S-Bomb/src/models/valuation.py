@@ -686,6 +686,10 @@ def calculate_final_player_rating(
         "role_adjusted_value",
         "completeness_score",
         "off_ball_score",
+        "progression_score",
+        "ball_security_score",
+        "defensive_score",
+        "pressing_score",
     }
     missing = required.difference(profiles.columns)
     if missing:
@@ -721,6 +725,19 @@ def calculate_final_player_rating(
     # of role_adjusted_value, not of the value channel scaling.
     vaep_value = _training_percentile(output["vaep_total_p90"])
 
+    # Build-up control leans on ball security (controllers' signature and a
+    # quality small-sample attackers rarely carry) over raw progression;
+    # defensive work averages the defending and pressing role-vector scores.
+    # Both are percentiled so the compressed 0-1 role scores can actually
+    # separate the players they describe.
+    build_up_raw = (
+        0.35 * pd.to_numeric(output["progression_score"], errors="coerce")
+        + 0.65 * pd.to_numeric(output["ball_security_score"], errors="coerce")
+    )
+    defensive_work_raw = (
+        0.5 * pd.to_numeric(output["defensive_score"], errors="coerce")
+        + 0.5 * pd.to_numeric(output["pressing_score"], errors="coerce")
+    )
     components = pd.DataFrame(
         {
             "vaep_90": vaep_value,
@@ -738,6 +755,8 @@ def calculate_final_player_rating(
                 output["off_ball_score"],
                 errors="coerce",
             ),
+            "build_up_score": _training_percentile(build_up_raw),
+            "defensive_work_score": _training_percentile(defensive_work_raw),
         },
         index=output.index,
     )
@@ -754,6 +773,9 @@ def calculate_final_player_rating(
         settings.weights[column] * components[column]
         for column in RATING_WEIGHTS
     )
+    # Persist the two new composite inputs for downstream transparency.
+    output["build_up_percentile"] = components["build_up_score"]
+    output["defensive_work_percentile"] = components["defensive_work_score"]
     minutes = pd.to_numeric(output["minutes"], errors="coerce").clip(lower=0.0)
     reliability = minutes / (minutes + settings.reliability_minutes)
     position_prior = output.groupby("position_group")[

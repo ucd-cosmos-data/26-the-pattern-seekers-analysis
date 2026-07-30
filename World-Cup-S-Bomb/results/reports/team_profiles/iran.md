@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Mehdi Taremi | Target Forward | 305.1000 | 0.7489 | Ranked (300+ min) |
-| 2.0000 | Morteza Pouraliganji | Sweeper CB | 305.1000 | 0.3209 | Ranked (300+ min) |
-| 3.0000 | Seyed Majid Hosseini | Sweeper CB | 305.1000 | 0.2281 | Ranked (300+ min) |
+| 1.0000 | Mehdi Taremi | Target Forward | 305.1000 | 0.6946 | Ranked (300+ min) |
+| 2.0000 | Morteza Pouraliganji | Sweeper CB | 305.1000 | 0.3195 | Ranked (300+ min) |
+| 3.0000 | Seyed Majid Hosseini | Sweeper CB | 305.1000 | 0.2498 | Ranked (300+ min) |
 | — | Ehsan Hajsafi | — | 249.9333 | — | Coverage only (<300 min) |
 | — | Saeid Ezatolahi Afagh | — | 240.1500 | — | Coverage only (<300 min) |

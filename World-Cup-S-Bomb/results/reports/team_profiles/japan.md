@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Daichi Kamada | Target Forward | 337.2167 | 0.6398 | Ranked (300+ min) |
-| 2.0000 | Shūichi Gonda | Goalkeeper | 412.5167 | 0.5473 | Ranked (300+ min) |
-| 3.0000 | Junya Ito | Attacking Wingback | 346.3333 | 0.5448 | Ranked (300+ min) |
-| 4.0000 | Wataru Endo | Ball-Winner | 326.0167 | 0.4067 | Ranked (300+ min) |
-| 5.0000 | Maya Yoshida | Sweeper CB | 412.5167 | 0.2159 | Ranked (300+ min) |
+| 1.0000 | Daichi Kamada | Target Forward | 337.2167 | 0.6008 | Ranked (300+ min) |
+| 2.0000 | Shūichi Gonda | Goalkeeper | 412.5167 | 0.5341 | Ranked (300+ min) |
+| 3.0000 | Junya Ito | Attacking Wingback | 346.3333 | 0.5126 | Ranked (300+ min) |
+| 4.0000 | Wataru Endo | Ball-Winner | 326.0167 | 0.4487 | Ranked (300+ min) |
+| 5.0000 | Maya Yoshida | Sweeper CB | 412.5167 | 0.2473 | Ranked (300+ min) |

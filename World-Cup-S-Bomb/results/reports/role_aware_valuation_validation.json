@@ -12,7 +12,7 @@
     "completeness_score": 0.1,
     "off_ball_score": 0.05
   },
-  "spearman_rank_correlation": 0.9848998875140609,
+  "spearman_rank_correlation": 0.9758110236220472,
   "attention_metrics": {
     "prospective": {
       "baseline": {

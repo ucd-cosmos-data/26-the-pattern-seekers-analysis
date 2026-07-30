@@ -36,11 +36,11 @@ Argentina: no tactical change cleared the modeled effect floor. Primary review s
 
 ## V5 role-aware player leaders
 
-1. Lionel Andrés Messi Cuccittini — Progressive Winger; rating 0.8296, VAEP/90 +0.694, xT/90 +0.158, role-adjusted 1.000
-2. Julián Álvarez — Target Forward; rating 0.7648, VAEP/90 +0.636, xT/90 +0.032, role-adjusted 0.890
-3. Ángel Fabián Di María Hernández — Progressive Winger; rating 0.7181, VAEP/90 +0.786, xT/90 +0.200, role-adjusted 0.954
-4. Marcos Javier Acuña — Attacking Wingback; rating 0.6135, VAEP/90 +0.446, xT/90 +0.068, role-adjusted 0.288
-5. Alexis Mac Allister — Ball-Winner; rating 0.6132, VAEP/90 +0.284, xT/90 +0.007, role-adjusted 0.428
+1. Lionel Andrés Messi Cuccittini — Progressive Winger; rating 0.7870, VAEP/90 +0.694, xT/90 +0.158, role-adjusted 1.000
+2. Julián Álvarez — Target Forward; rating 0.7024, VAEP/90 +0.636, xT/90 +0.032, role-adjusted 0.890
+3. Ángel Fabián Di María Hernández — Progressive Winger; rating 0.7023, VAEP/90 +0.786, xT/90 +0.200, role-adjusted 0.954
+4. Alexis Mac Allister — Ball-Winner; rating 0.6272, VAEP/90 +0.284, xT/90 +0.007, role-adjusted 0.428
+5. Marcos Javier Acuña — Attacking Wingback; rating 0.5892, VAEP/90 +0.446, xT/90 +0.068, role-adjusted 0.288
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

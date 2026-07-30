@@ -36,11 +36,11 @@ Australia: Patient Build-up led the observed baseline by 0.0032 mean EvA. Primar
 
 ## V5 role-aware player leaders
 
-1. Mathew Leckie — Target Forward; rating 0.6129, VAEP/90 +0.259, xT/90 +0.021, role-adjusted 0.339
-2. Jackson Irvine — Ball-Winner; rating 0.5614, VAEP/90 +0.009, xT/90 +0.028, role-adjusted 0.000
-3. Mathew Ryan — Goalkeeper; rating 0.5483, VAEP/90 -0.143, xT/90 +0.002, role-adjusted 0.000
-4. Aziz Eraltay Behich — Wide Creator; rating 0.5290, VAEP/90 +0.144, xT/90 +0.044, role-adjusted 0.127
-5. Aaron Mooy — Box-to-Box Runner; rating 0.3679, VAEP/90 -0.015, xT/90 +0.029, role-adjusted 0.031
+1. Mathew Leckie — Target Forward; rating 0.6018, VAEP/90 +0.259, xT/90 +0.021, role-adjusted 0.339
+2. Mathew Ryan — Goalkeeper; rating 0.5469, VAEP/90 -0.143, xT/90 +0.002, role-adjusted 0.000
+3. Jackson Irvine — Ball-Winner; rating 0.5304, VAEP/90 +0.009, xT/90 +0.028, role-adjusted 0.000
+4. Aziz Eraltay Behich — Wide Creator; rating 0.5045, VAEP/90 +0.144, xT/90 +0.044, role-adjusted 0.127
+5. Aaron Mooy — Box-to-Box Runner; rating 0.3950, VAEP/90 -0.015, xT/90 +0.029, role-adjusted 0.031
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

@@ -91,7 +91,7 @@
     "positives": 152,
     "matches": 64
   },
-  "spearman_with_legacy_rankings": 0.9848998875140609
+  "spearman_with_legacy_rankings": 0.9758110236220472
 }
 ```
 

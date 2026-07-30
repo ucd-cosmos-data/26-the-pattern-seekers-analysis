@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Lawrence Ati-Zigi | Goalkeeper | 301.2000 | 0.4759 | Ranked (300+ min) |
-| 2.0000 | Thomas Teye Partey | Ball-Winner | 301.2000 | 0.3703 | Ranked (300+ min) |
-| 3.0000 | Mohamed Salisu | Sweeper CB | 301.2000 | 0.3346 | Ranked (300+ min) |
-| 4.0000 | Daniel Amartey | Sweeper CB | 301.2000 | 0.2298 | Ranked (300+ min) |
+| 1.0000 | Lawrence Ati-Zigi | Goalkeeper | 301.2000 | 0.4816 | Ranked (300+ min) |
+| 2.0000 | Thomas Teye Partey | Ball-Winner | 301.2000 | 0.4215 | Ranked (300+ min) |
+| 3.0000 | Mohamed Salisu | Sweeper CB | 301.2000 | 0.3393 | Ranked (300+ min) |
+| 4.0000 | Daniel Amartey | Sweeper CB | 301.2000 | 0.2526 | Ranked (300+ min) |
 | — | Iñaki Williams Arthuer | — | 272.7833 | — | Coverage only (<300 min) |

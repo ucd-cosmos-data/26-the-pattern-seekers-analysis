@@ -36,11 +36,11 @@ Morocco: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## V5 role-aware player leaders
 
-1. Youssef En-Nesyri — Target Forward / Penalty-Box Anchor; rating 0.6445, VAEP/90 +0.228, xT/90 -0.000, role-adjusted 0.433
-2. Sofiane Boufal — Box-to-Box / Engine Midfielder; rating 0.6286, VAEP/90 +0.205, xT/90 +0.079, role-adjusted 0.270
-3. Hakim Ziyech — Box-to-Box Runner; rating 0.6254, VAEP/90 +0.084, xT/90 +0.071, role-adjusted 0.294
-4. Azzedine Ounahi — Box-to-Box / Engine Midfielder; rating 0.5682, VAEP/90 +0.137, xT/90 +0.036, role-adjusted 0.155
-5. Yahia Attiyat allah — Wide Creator; rating 0.5495, VAEP/90 +0.165, xT/90 +0.033, role-adjusted 0.278
+1. Sofiane Boufal — Box-to-Box / Engine Midfielder; rating 0.6350, VAEP/90 +0.205, xT/90 +0.079, role-adjusted 0.270
+2. Hakim Ziyech — Box-to-Box Runner; rating 0.5978, VAEP/90 +0.084, xT/90 +0.071, role-adjusted 0.294
+3. Youssef En-Nesyri — Target Forward / Penalty-Box Anchor; rating 0.5838, VAEP/90 +0.228, xT/90 -0.000, role-adjusted 0.433
+4. Azzedine Ounahi — Box-to-Box / Engine Midfielder; rating 0.5722, VAEP/90 +0.137, xT/90 +0.036, role-adjusted 0.155
+5. Yassine Bounou — Goalkeeper; rating 0.5696, VAEP/90 -0.187, xT/90 +0.003, role-adjusted 0.000
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

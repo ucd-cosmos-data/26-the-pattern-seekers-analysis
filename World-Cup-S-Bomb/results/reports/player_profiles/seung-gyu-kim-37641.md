@@ -12,8 +12,8 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Global rank: not available
 - Position rank: 10
 - Role rank: 10
-- Team rank: 3
-- Final player rating: 0.5336
+- Team rank: 4
+- Final player rating: 0.5290
 - Global ranking eligibility: goalkeeper-only ranking
 - Minutes: 389.6
 - Minutes reliability: 0.3937

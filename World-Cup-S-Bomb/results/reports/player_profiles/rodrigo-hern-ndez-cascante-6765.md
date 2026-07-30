@@ -9,11 +9,11 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Ball-Playing Centre-Back
 - Probabilistic role: Aerial/Secure Centre-Back
 - Role entropy: 0.0000
-- Global rank: 93
+- Global rank: 94
 - Position rank: 5
 - Role rank: 2
 - Team rank: 5
-- Final player rating: 0.3436
+- Final player rating: 0.3626
 - Global ranking eligibility: eligible
 - Minutes: 413.9
 - Minutes reliability: 0.4083

@@ -6,16 +6,16 @@ All observations use StatsBomb events and coverage-qualified StatsBomb 360 conte
 
 | Global Rank | Player Name | Team | Functional Role | Final Player Rating |
 |---|---|---|---|---|
-| 1 | Lionel Andrés Messi Cuccittini | Argentina | Progressive Winger | 0.8296 |
-| 2 | Kylian Mbappé Lottin | France | Progressive Winger | 0.8139 |
-| 3 | Julián Álvarez | Argentina | Target Forward | 0.7648 |
-| 4 | Christian Pulisic | United States | Progressive Winger | 0.7584 |
-| 5 | Richarlison de Andrade | Brazil | Target Forward | 0.7537 |
-| 6 | Mehdi Taremi | Iran | Target Forward | 0.7489 |
-| 7 | Ismaïla Sarr | Senegal | Target Forward | 0.7461 |
-| 8 | Memphis Depay | Netherlands | Target Forward | 0.7448 |
-| 9 | Daniel Olmo Carvajal | Spain | Progressive Winger | 0.7428 |
-| 10 | Raphael Dias Belloli | Brazil | Progressive Winger | 0.7389 |
+| 1 | Lionel Andrés Messi Cuccittini | Argentina | Progressive Winger | 0.7870 |
+| 2 | Kylian Mbappé Lottin | France | Progressive Winger | 0.7401 |
+| 3 | Christian Pulisic | United States | Progressive Winger | 0.7066 |
+| 4 | Julián Álvarez | Argentina | Target Forward | 0.7024 |
+| 5 | Ángel Fabián Di María Hernández | Argentina | Progressive Winger | 0.7023 |
+| 6 | Richarlison de Andrade | Brazil | Target Forward | 0.7007 |
+| 7 | Vinícius José Paixão de Oliveira Júnior | Brazil | Progressive Winger | 0.6966 |
+| 8 | Daniel Olmo Carvajal | Spain | Progressive Winger | 0.6955 |
+| 9 | Mehdi Taremi | Iran | Target Forward | 0.6946 |
+| 10 | Bruno Miguel Borges Fernandes | Portugal | Hybrid Playmaker / Roaming Creator | 0.6935 |
 
 ## Passing networks
 
@@ -81,19 +81,19 @@ All observations use StatsBomb events and coverage-qualified StatsBomb 360 conte
 
 | Position Rank | Player Name | Team | Final Player Rating | Goals Prevented Proxy P90 | Save Rate | Penalty Save Rate Shrunk |
 |---|---|---|---|---|---|---|
-| 1 | Wojciech Szczęsny | Poland | 0.6026 | 1.7043 | 0.8333 | 0.4571 |
-| 2 | Matthew Charles Turner | United States | 0.5885 | 0.5661 | 0.6923 | 0.2000 |
-| 3 | Unai Simón Mendibil | Spain | 0.5679 | 0.2923 | 0.7000 | 0.2444 |
-| 4 | Andries Noppert | Netherlands | 0.5664 | 0.9517 | 0.8182 | 0.1200 |
-| 5 | Dominik Livaković | Croatia | 0.5627 | 0.9375 | 0.7742 | 0.4000 |
-| 6 | Diogo Meireles Costa | Portugal | 0.5555 | 0.8375 | 0.6667 | — |
-| 7 | Yassine Bounou | Morocco | 0.5491 | 0.2171 | 0.6364 | 0.4571 |
-| 8 | Mathew Ryan | Australia | 0.5483 | 0.7154 | 0.6842 | — |
-| 9 | Shūichi Gonda | Japan | 0.5473 | 0.8600 | 0.7895 | 0.1333 |
-| 10 | Seung-Gyu Kim | South Korea | 0.5336 | 0.5154 | 0.6000 | 0.2000 |
-| 11 | Alisson Ramsés Becker | Brazil | 0.5044 | 0.0312 | 0.7143 | 0.1333 |
-| 12 | Edouard Mendy | Senegal | 0.4924 | 0.0822 | 0.5000 | — |
-| 13 | Damián Emiliano Martínez | Argentina | 0.4856 | -0.0736 | 0.4615 | 0.2800 |
-| 14 | Hugo Lloris | France | 0.4836 | 0.5636 | 0.7083 | 0.1000 |
-| 15 | Lawrence Ati-Zigi | Ghana | 0.4759 | 0.4069 | 0.5882 | 0.2000 |
-| 16 | Jordan Pickford | England | 0.4707 | 0.2472 | 0.6364 | 0.2000 |
+| 1 | Wojciech Szczęsny | Poland | 0.6156 | 1.7043 | 0.8333 | 0.4571 |
+| 2 | Dominik Livaković | Croatia | 0.5805 | 0.9375 | 0.7742 | 0.4000 |
+| 3 | Matthew Charles Turner | United States | 0.5790 | 0.5661 | 0.6923 | 0.2000 |
+| 4 | Yassine Bounou | Morocco | 0.5696 | 0.2171 | 0.6364 | 0.4571 |
+| 5 | Unai Simón Mendibil | Spain | 0.5695 | 0.2923 | 0.7000 | 0.2444 |
+| 6 | Diogo Meireles Costa | Portugal | 0.5553 | 0.8375 | 0.6667 | — |
+| 7 | Andries Noppert | Netherlands | 0.5469 | 0.9517 | 0.8182 | 0.1200 |
+| 8 | Mathew Ryan | Australia | 0.5469 | 0.7154 | 0.6842 | — |
+| 9 | Shūichi Gonda | Japan | 0.5341 | 0.8600 | 0.7895 | 0.1333 |
+| 10 | Seung-Gyu Kim | South Korea | 0.5290 | 0.5154 | 0.6000 | 0.2000 |
+| 11 | Damián Emiliano Martínez | Argentina | 0.5043 | -0.0736 | 0.4615 | 0.2800 |
+| 12 | Alisson Ramsés Becker | Brazil | 0.4955 | 0.0312 | 0.7143 | 0.1333 |
+| 13 | Edouard Mendy | Senegal | 0.4931 | 0.0822 | 0.5000 | — |
+| 14 | Lawrence Ati-Zigi | Ghana | 0.4816 | 0.4069 | 0.5882 | 0.2000 |
+| 15 | Jordan Pickford | England | 0.4751 | 0.2472 | 0.6364 | 0.2000 |
+| 16 | Hugo Lloris | France | 0.4675 | 0.5636 | 0.7083 | 0.1000 |

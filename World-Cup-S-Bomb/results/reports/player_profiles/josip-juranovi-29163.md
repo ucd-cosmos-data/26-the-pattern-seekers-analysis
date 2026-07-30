@@ -9,11 +9,11 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Attacking Wingback
 - Probabilistic role: Creative/Progressive/Pressing Fullback
 - Role entropy: 0.0000
-- Global rank: 68
+- Global rank: 73
 - Position rank: 22
 - Role rank: 11
 - Team rank: 7
-- Final player rating: 0.4839
+- Final player rating: 0.4804
 - Global ranking eligibility: eligible
 - Minutes: 624.1
 - Minutes reliability: 0.5099

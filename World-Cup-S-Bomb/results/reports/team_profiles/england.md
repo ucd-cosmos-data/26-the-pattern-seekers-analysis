@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Harry Kane | Target Forward | 421.5167 | 0.7239 | Ranked (300+ min) |
-| 2.0000 | Luke Shaw | Attacking Wingback | 457.1667 | 0.5993 | Ranked (300+ min) |
-| 3.0000 | Jude Bellingham | Box-to-Box / Engine Midfielder | 441.7667 | 0.5420 | Ranked (300+ min) |
-| 4.0000 | Jordan Pickford | Goalkeeper | 486.3333 | 0.4707 | Ranked (300+ min) |
-| 5.0000 | Harry Maguire | Deep Playmaker | 453.7167 | 0.4097 | Ranked (300+ min) |
+| 1.0000 | Harry Kane | Target Forward | 421.5167 | 0.6516 | Ranked (300+ min) |
+| 2.0000 | Jude Bellingham | Box-to-Box / Engine Midfielder | 441.7667 | 0.5737 | Ranked (300+ min) |
+| 3.0000 | Luke Shaw | Attacking Wingback | 457.1667 | 0.5711 | Ranked (300+ min) |
+| 4.0000 | Jordan Pickford | Goalkeeper | 486.3333 | 0.4751 | Ranked (300+ min) |
+| 5.0000 | Declan Rice | Ball-Winner | 449.5500 | 0.4492 | Ranked (300+ min) |

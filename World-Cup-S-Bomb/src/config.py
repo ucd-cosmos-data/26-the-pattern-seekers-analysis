@@ -14,13 +14,19 @@ PITCH_LENGTH_METRES = 105.0
 PITCH_WIDTH_METRES = 68.0
 MIN_PLAYER_MINUTES = 300.0
 
+# Direct value (VAEP/xT) still leads, but build-up control and defensive
+# work now carry explicit weight: a composite with none let elite
+# controllers (high progression/security/pressing, low direct value)
+# fall to the bottom third of the global ranking.
 RATING_WEIGHTS: dict[str, float] = {
-    "vaep_90": 0.40,
-    "vaep_per_touch": 0.15,
-    "xt_90": 0.15,
+    "vaep_90": 0.36,
+    "vaep_per_touch": 0.10,
+    "xt_90": 0.12,
     "role_adjusted_value": 0.15,
-    "completeness_score": 0.10,
+    "completeness_score": 0.07,
     "off_ball_score": 0.05,
+    "build_up_score": 0.08,
+    "defensive_work_score": 0.07,
 }
 
 

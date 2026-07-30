@@ -26,8 +26,8 @@
 
 | Team Rank | Player Name | Functional Role | Minutes | Final Player Rating | Ranking Status |
 |---|---|---|---|---|---|
-| 1.0000 | Ivan Perišić | Wide Creator | 686.8167 | 0.7174 | Ranked (300+ min) |
-| 2.0000 | Andrej Kramarić | Target Forward | 478.4333 | 0.6735 | Ranked (300+ min) |
-| 3.0000 | Mateo Kovačić | Box-to-Box / Engine Midfielder | 649.9167 | 0.6199 | Ranked (300+ min) |
-| 4.0000 | Luka Modrić | Deep Playmaker / Metronome | 672.6667 | 0.5872 | Ranked (300+ min) |
-| 5.0000 | Dominik Livaković | Goalkeeper | 720.2833 | 0.5627 | Ranked (300+ min) |
+| 1.0000 | Ivan Perišić | Wide Creator | 686.8167 | 0.6590 | Ranked (300+ min) |
+| 2.0000 | Mateo Kovačić | Box-to-Box / Engine Midfielder | 649.9167 | 0.6438 | Ranked (300+ min) |
+| 3.0000 | Andrej Kramarić | Target Forward | 478.4333 | 0.6326 | Ranked (300+ min) |
+| 4.0000 | Luka Modrić | Deep Playmaker / Metronome | 672.6667 | 0.6046 | Ranked (300+ min) |
+| 5.0000 | Dominik Livaković | Goalkeeper | 720.2833 | 0.5805 | Ranked (300+ min) |

@@ -36,11 +36,11 @@ Brazil: no tactical change cleared the modeled effect floor. Primary review sign
 
 ## V5 role-aware player leaders
 
-1. Richarlison de Andrade — Target Forward; rating 0.7537, VAEP/90 +0.708, xT/90 +0.012, role-adjusted 1.000
-2. Raphael Dias Belloli — Progressive Winger; rating 0.7389, VAEP/90 +0.477, xT/90 +0.170, role-adjusted 0.376
-3. Vinícius José Paixão de Oliveira Júnior — Progressive Winger; rating 0.7128, VAEP/90 +0.584, xT/90 +0.124, role-adjusted 1.000
-4. Éder Gabriel Militão — Box-to-Box Runner; rating 0.5176, VAEP/90 +0.068, xT/90 +0.032, role-adjusted 0.407
-5. Alisson Ramsés Becker — Goalkeeper; rating 0.5044, VAEP/90 -0.109, xT/90 +0.001, role-adjusted 0.000
+1. Richarlison de Andrade — Target Forward; rating 0.7007, VAEP/90 +0.708, xT/90 +0.012, role-adjusted 1.000
+2. Vinícius José Paixão de Oliveira Júnior — Progressive Winger; rating 0.6966, VAEP/90 +0.584, xT/90 +0.124, role-adjusted 1.000
+3. Raphael Dias Belloli — Progressive Winger; rating 0.6856, VAEP/90 +0.477, xT/90 +0.170, role-adjusted 0.376
+4. Lucas Tolentino Coelho de Lima — Ball-Winner; rating 0.5408, VAEP/90 +0.155, xT/90 +0.043, role-adjusted 0.755
+5. Éder Gabriel Militão — Box-to-Box Runner; rating 0.5223, VAEP/90 +0.068, xT/90 +0.032, role-adjusted 0.407
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

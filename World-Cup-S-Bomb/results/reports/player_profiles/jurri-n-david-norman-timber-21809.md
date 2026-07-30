@@ -9,11 +9,11 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Deep Playmaker
 - Probabilistic role: Pressing/Defensive Midfielder
 - Role entropy: 0.0037
-- Global rank: 115
-- Position rank: 26
+- Global rank: 111
+- Position rank: 22
 - Role rank: 6
-- Team rank: 8
-- Final player rating: 0.2447
+- Team rank: 7
+- Final player rating: 0.2789
 - Global ranking eligibility: eligible
 - Minutes: 409.4
 - Minutes reliability: 0.4056

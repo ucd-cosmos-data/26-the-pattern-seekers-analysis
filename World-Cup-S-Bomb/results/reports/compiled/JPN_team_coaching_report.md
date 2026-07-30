@@ -36,11 +36,11 @@ Japan: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## V5 role-aware player leaders
 
-1. Daichi Kamada — Target Forward; rating 0.6398, VAEP/90 +0.174, xT/90 +0.023, role-adjusted 0.000
-2. Shūichi Gonda — Goalkeeper; rating 0.5473, VAEP/90 -0.162, xT/90 +0.007, role-adjusted 0.000
-3. Junya Ito — Attacking Wingback; rating 0.5448, VAEP/90 +0.121, xT/90 +0.054, role-adjusted 0.305
-4. Wataru Endo — Ball-Winner; rating 0.4067, VAEP/90 -0.014, xT/90 +0.038, role-adjusted 0.458
-5. Maya Yoshida — Sweeper CB; rating 0.2159, VAEP/90 -0.129, xT/90 +0.006, role-adjusted 0.169
+1. Daichi Kamada — Target Forward; rating 0.6008, VAEP/90 +0.174, xT/90 +0.023, role-adjusted 0.000
+2. Shūichi Gonda — Goalkeeper; rating 0.5341, VAEP/90 -0.162, xT/90 +0.007, role-adjusted 0.000
+3. Junya Ito — Attacking Wingback; rating 0.5126, VAEP/90 +0.121, xT/90 +0.054, role-adjusted 0.305
+4. Wataru Endo — Ball-Winner; rating 0.4487, VAEP/90 -0.014, xT/90 +0.038, role-adjusted 0.458
+5. Maya Yoshida — Sweeper CB; rating 0.2473, VAEP/90 -0.129, xT/90 +0.006, role-adjusted 0.169
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

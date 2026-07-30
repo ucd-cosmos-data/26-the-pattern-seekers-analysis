@@ -36,11 +36,11 @@ United States: no tactical change cleared the modeled effect floor. Primary revi
 
 ## V5 role-aware player leaders
 
-1. Christian Pulisic — Progressive Winger; rating 0.7584, VAEP/90 +0.527, xT/90 +0.114, role-adjusted 0.643
-2. Timothy Weah — Progressive Winger; rating 0.6964, VAEP/90 +0.466, xT/90 +0.018, role-adjusted 0.321
-3. Matthew Charles Turner — Goalkeeper; rating 0.5885, VAEP/90 -0.126, xT/90 +0.003, role-adjusted 0.000
-4. Yunus Dimoara Musah — Box-to-Box / Engine Midfielder; rating 0.5809, VAEP/90 +0.118, xT/90 +0.046, role-adjusted 0.167
-5. Sergino Dest — Attacking Wingback; rating 0.5694, VAEP/90 +0.103, xT/90 +0.098, role-adjusted 0.833
+1. Christian Pulisic — Progressive Winger; rating 0.7066, VAEP/90 +0.527, xT/90 +0.114, role-adjusted 0.643
+2. Timothy Weah — Progressive Winger; rating 0.6508, VAEP/90 +0.466, xT/90 +0.018, role-adjusted 0.321
+3. Yunus Dimoara Musah — Box-to-Box / Engine Midfielder; rating 0.6009, VAEP/90 +0.118, xT/90 +0.046, role-adjusted 0.167
+4. Matthew Charles Turner — Goalkeeper; rating 0.5790, VAEP/90 -0.126, xT/90 +0.003, role-adjusted 0.000
+5. Sergino Dest — Attacking Wingback; rating 0.5614, VAEP/90 +0.103, xT/90 +0.098, role-adjusted 0.833
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

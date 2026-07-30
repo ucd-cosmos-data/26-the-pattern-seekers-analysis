@@ -36,11 +36,11 @@ Spain: no tactical change cleared the modeled effect floor. Primary review signa
 
 ## V5 role-aware player leaders
 
-1. Daniel Olmo Carvajal — Progressive Winger; rating 0.7428, VAEP/90 +0.555, xT/90 +0.072, role-adjusted 0.542
-2. Pedro González López — Ball-Winner; rating 0.6055, VAEP/90 +0.180, xT/90 +0.105, role-adjusted 0.026
-3. Unai Simón Mendibil — Goalkeeper; rating 0.5679, VAEP/90 -0.125, xT/90 +0.001, role-adjusted 0.000
-4. Sergio Busquets i Burgos — Ball-Winner; rating 0.3759, VAEP/90 -0.055, xT/90 +0.046, role-adjusted 0.256
-5. Rodrigo Hernández Cascante — Ball-Playing Centre-Back; rating 0.3436, VAEP/90 +0.043, xT/90 +0.050, role-adjusted 0.257
+1. Daniel Olmo Carvajal — Progressive Winger; rating 0.6955, VAEP/90 +0.555, xT/90 +0.072, role-adjusted 0.542
+2. Pedro González López — Ball-Winner; rating 0.6255, VAEP/90 +0.180, xT/90 +0.105, role-adjusted 0.026
+3. Unai Simón Mendibil — Goalkeeper; rating 0.5695, VAEP/90 -0.125, xT/90 +0.001, role-adjusted 0.000
+4. Sergio Busquets i Burgos — Ball-Winner; rating 0.4341, VAEP/90 -0.055, xT/90 +0.046, role-adjusted 0.256
+5. Rodrigo Hernández Cascante — Ball-Playing Centre-Back; rating 0.3626, VAEP/90 +0.043, xT/90 +0.050, role-adjusted 0.257
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 

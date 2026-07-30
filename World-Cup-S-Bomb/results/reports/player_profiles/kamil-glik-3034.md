@@ -9,11 +9,11 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Sweeper CB
 - Probabilistic role: Aerial/Secure Centre-Back
 - Role entropy: 0.0000
-- Global rank: 104
-- Position rank: 15
-- Role rank: 6
+- Global rank: 109
+- Position rank: 20
+- Role rank: 9
 - Team rank: 7
-- Final player rating: 0.2912
+- Final player rating: 0.2889
 - Global ranking eligibility: eligible
 - Minutes: 389.8
 - Minutes reliability: 0.3938

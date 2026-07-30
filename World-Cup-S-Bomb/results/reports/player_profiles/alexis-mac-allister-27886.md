@@ -9,11 +9,11 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Ball-Winner
 - Probabilistic role: Finishing/Creative Attacker
 - Role entropy: 0.0068
-- Global rank: 36
-- Position rank: 6
+- Global rank: 29
+- Position rank: 5
 - Role rank: 1
-- Team rank: 5
-- Final player rating: 0.6132
+- Team rank: 4
+- Final player rating: 0.6272
 - Global ranking eligibility: eligible
 - Minutes: 552.4
 - Minutes reliability: 0.4793

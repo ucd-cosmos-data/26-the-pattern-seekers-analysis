@@ -9,11 +9,11 @@ This report uses tournament events and coverage-qualified StatsBomb 360 context.
 - Functional role: Box-to-Box Runner
 - Probabilistic role: Pressing/Defensive Midfielder
 - Role entropy: 0.0000
-- Global rank: 91
+- Global rank: 88
 - Position rank: 20
-- Role rank: 7
+- Role rank: 6
 - Team rank: 5
-- Final player rating: 0.3679
+- Final player rating: 0.3950
 - Global ranking eligibility: eligible
 - Minutes: 386.9
 - Minutes reliability: 0.3920

@@ -36,11 +36,11 @@ Senegal: no tactical change cleared the modeled effect floor. Primary review sig
 
 ## V5 role-aware player leaders
 
-1. Ismaïla Sarr — Target Forward; rating 0.7461, VAEP/90 +0.436, xT/90 +0.090, role-adjusted 0.615
-2. Boulaye Dia — Target Forward; rating 0.6550, VAEP/90 +0.256, xT/90 -0.008, role-adjusted 0.397
-3. Youssouf Sabaly — Attacking Wingback; rating 0.5531, VAEP/90 +0.115, xT/90 +0.078, role-adjusted 0.376
-4. Edouard Mendy — Goalkeeper; rating 0.4924, VAEP/90 -0.104, xT/90 +0.005, role-adjusted 0.000
-5. Kalidou Koulibaly — Sweeper CB; rating 0.3428, VAEP/90 +0.044, xT/90 +0.011, role-adjusted 0.654
+1. Ismaïla Sarr — Target Forward; rating 0.6893, VAEP/90 +0.436, xT/90 +0.090, role-adjusted 0.615
+2. Boulaye Dia — Target Forward; rating 0.6086, VAEP/90 +0.256, xT/90 -0.008, role-adjusted 0.397
+3. Youssouf Sabaly — Attacking Wingback; rating 0.5471, VAEP/90 +0.115, xT/90 +0.078, role-adjusted 0.376
+4. Edouard Mendy — Goalkeeper; rating 0.4931, VAEP/90 -0.104, xT/90 +0.005, role-adjusted 0.000
+5. Kalidou Koulibaly — Sweeper CB; rating 0.3610, VAEP/90 +0.044, xT/90 +0.011, role-adjusted 0.654
 
 _Only players with at least 300 tournament minutes are ranked. V5 uses 40% VAEP/90, 15% VAEP/touch, 15% xT/90, 15% continuous role-adjusted value, 10% completeness, and 5% coverage-qualified off-ball contribution, followed by position-group minutes shrinkage._
 
