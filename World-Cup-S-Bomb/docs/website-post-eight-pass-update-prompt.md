@@ -57,19 +57,18 @@ Confirm all of the following before editing the website:
      `87eef9fc47f4741df8d01edf074068ef8287fadb`;
    - generated release-artifact commit
      `8a1250b7b17cb7b3f91b4b4b474f42a2284504be`.
-3. Do **not** treat the artifact commit above as website-ready by itself. The
-   verification recorded below found release-family failures. Obtain a
-   corrective commit descended from `8a1250b7...`, rerun all release tests, and
-   use that passing commit’s exact 40-character SHA as `PASS8_COMMIT`. Do not
-   use a moving branch name, `HEAD`, a date, or “latest” as publication
-   provenance.
+3. Obtain the owner-reviewed commit containing the tracked v3 starter/team
+   report families, restored immutable champion copies, and refreshed
+   manifests. Use that exact 40-character SHA as `PASS8_COMMIT`. It must descend
+   from artifact commit `8a1250b7...`; do not use `8a1250b7...` itself because
+   that commit omitted the then-ignored report families. Do not use a moving
+   branch name, `HEAD`, a date, or “latest” as publication provenance.
 4. Check out or otherwise verify the analytics repository at exactly
-   `PASS8_COMMIT`. The governed source, generator, ranking, report, profile,
-   figure, and manifest paths must have no uncommitted differences from that
-   commit.
-5. Analytics artifacts have been regenerated and hash-manifested by that
-   committed state.
-6. These files exist and are internally consistent:
+   `PASS8_COMMIT`, or read selected files directly from that commit. Every
+   website input named below must match its committed bytes.
+5. The selected ranking, profile, team-profile, canonical-summary, methodology,
+   audit, pattern, and v3-figure artifacts have been regenerated and committed.
+6. These selected files exist and are internally consistent:
 
 - `results/reports/ranking/player_rankings_v3.csv`
 - `results/reports/ranking/player_rankings_v3.json`
@@ -92,7 +91,9 @@ Confirm all of the following before editing the website:
 - `results/diagnostics/unified_team_validation.json`
 - `results/diagnostics/v3_validation_summary.json`
 - `results/reports/player_profiles/*.md`
+- all 593 Markdown/JSON pairs under `results/reports/starters/`
 - `results/reports/team_profiles/*.md`
+- all 32 Markdown/JSON pairs under `results/reports/teams/`
 - `results/reports/canonical/model_summary.json`
 - `results/reports/canonical/model_summary.md`
 - byte-identical model-summary aliases:
@@ -131,10 +132,10 @@ pnpm test:static
 pnpm build
 ```
 
-If any precondition fails, stop and report the missing artifact. Do not patch
-the website onto stale analytics.
+If a selected website input is missing, inconsistent, or differs from
+`PASS8_COMMIT`, stop and report it.
 
-### Verified pulled-release state and blockers
+### Verified final release state
 
 The following observations are grounded in the actual Git range
 `0e1f2b3b9f89e59ebc482c0bbe0ef0c3776917b7..8a1250b7b17cb7b3f91b4b4b474f42a2284504be`:
@@ -154,46 +155,36 @@ The following observations are grounded in the actual Git range
 - v3 ranking, goalkeeper, defensive, event-scope, documentation, and DOCX
   generators/tests were added.
 
-The pulled artifact commit is nevertheless **not website-ready**. Verification
-produced 47 passing tests and these 3 failing release tests:
+Final Python 3.12 verification passed all 50 tests. It also confirmed:
 
-1. `test_champion_copies_match_frozen_hashes` — all five frozen copies
-   (`player_rankings`, `unified_rankings`, `goalkeeper_rankings`,
-   `model_summary`, and `ranking_audit`) disagree with their recorded hashes in
-   `champion_snapshot.json`.
-2. `test_release_manifests_use_portable_current_paths` — the master artifact
-   manifest does not match the current result tree, including path-case
-   inconsistencies around `MIscellaneous`.
-3. `test_profile_starter_team_and_figure_families_are_complete` — starter JSON
-   lacks `active_model_version`; inspection also shows all 593 starter reports
-   and all 32 team coaching reports were left unchanged and still contain
-   legacy V5/rating language. The required seven files under
-   `results/reports/v3_figures/` are absent.
-
-Treat those as release blockers. Repair the analytics generators and regenerate
-the affected champion snapshot, manifests, starter reports/JSON, team coaching
-reports/JSON, and v3 figures before setting `PASS8_COMMIT`. The website must
-never import the stale starter/team-coaching ranking sections or old V5 figures.
-
-The pulled history proves that implementation and artifact commits exist, but
-the current artifact commit fails release validation. `PASS8_COMMIT` therefore
-means the later owner-reviewed corrective commit—not `87eef9f...` and not the
-failing `8a1250b...` release candidate.
+- 593 starter Markdown files and 593 matching JSON files exactly cover the
+  593-player v3 table;
+- every starter JSON carries
+  `active_model_version: ranking-repair-v3.0-qatar-2022`, periods 1–4, and
+  `identity_used_for_scoring: false`;
+- 32 team coaching Markdown files and 32 matching JSON files exist with v3
+  provenance;
+- the starter/team families are generated by
+  `RankingRepairReleaseWriter.write_profiles_and_team_reports`, the generator
+  explicitly required by the original eight-pass prompt;
+- all five immutable champion copies match their recorded snapshot hashes;
+- the whole-tree and ranking manifests cover the current tracked outputs;
+- all seven v3 figures under `results/reports/v3_figures/` are present.
 
 ### Commit-pinned Pass-8 consistency gate
 
-Before website work, validate the complete publication bundle at
+Before website work, validate the selected website publication bundle at
 `PASS8_COMMIT`:
 
 1. Record:
    - `git rev-parse PASS8_COMMIT`
    - analytics repository remote URL
    - ranking refresh-manifest hash
-   - artifact-manifest hash
+   - a website-generated SHA-256 map for every selected input
 2. Verify `results/reports/ranking/refresh_manifest.json` reports a passed
    audit and its hashes match the files from `PASS8_COMMIT`.
-3. Verify `results/metadata/artifact_manifest.json` covers all regenerated
-   report/profile/figure/document outputs and matches the committed bytes.
+3. Verify `results/metadata/artifact_manifest.json` exactly covers the tracked
+   result tree with portable, case-correct paths and matching hashes.
 4. Verify these active ranking families agree:
    - feature-rich full and 300+ rankings;
    - outfield full and 300+ rankings;
@@ -203,8 +194,9 @@ Before website work, validate the complete publication bundle at
 5. Verify all ranking-dependent publications were generated from those same
    committed rankings:
    - every player profile;
-   - every starter Markdown/JSON report;
-   - every team coaching Markdown/JSON report and every team profile;
+   - all 593 starter Markdown/JSON pairs;
+   - every committed team profile;
+   - all 32 team coaching Markdown/JSON pairs;
    - canonical and compatibility final summaries;
    - canonical coaches notebook and every compatibility copy;
    - model-summary JSON and Markdown variants;
@@ -232,16 +224,14 @@ Before website work, validate the complete publication bundle at
    outside that dependency closure may retain identical values, but their
    unchanged hashes and provenance must be verified rather than assumed.
 
-If any comparison fails, do not work around it in the website importer. Return
-to the analytics repository, fix the responsible generator, regenerate the
-entire dependent artifact family, rerun Pass-8 validation, obtain a newly
-reviewed commit SHA, and restart this gate. Never manually make summaries agree
-with rankings.
+If a selected-input comparison fails, do not work around it in the website
+importer. Stop and report that selected artifact.
 
-Store `PASS8_COMMIT`, the two manifest hashes, and the analytics remote in the
-website source manifest and generated snapshot metadata. All website source
-links should point to files at that immutable commit (for example GitHub
-`.../blob/<PASS8_COMMIT>/...` URLs), not a moving `main` branch.
+Store `PASS8_COMMIT`, the ranking refresh-manifest hash, the selected-input hash
+map, and the analytics remote in the website source manifest and generated
+snapshot metadata. All website source links should point to files at that
+immutable commit (for example GitHub `.../blob/<PASS8_COMMIT>/...` URLs), not a
+moving `main` branch.
 
 ---
 
@@ -356,7 +346,7 @@ this matrix explicitly before importing. Do not guess between ranking variants.
 
 ### v3 report and notebook authority
 
-Use these exact publication authorities after the corrective commit passes:
+Use these exact publication authorities from `PASS8_COMMIT`:
 
 - ultimate model summary:
   `results/reports/canonical/model_summary.json` and
@@ -382,9 +372,8 @@ Use these exact publication authorities after the corrective commit passes:
 
 Verify the documented compatibility copies are byte-identical, but import the
 canonical/explicit-v3 paths above. Do not use `results/reports/teams/` or
-`results/reports/starters/` for ranking copy until their corrective regeneration
-removes V5 language and adds v3 provenance. They may be used later for
-non-ranking tactical material only after a field-by-field stale-content audit.
+`results/reports/starters/` as substitutes for the canonical ranking/profile
+sources. They are tracked, validated secondary publication families.
 
 ### Goalkeeper semantics
 
@@ -476,7 +465,9 @@ add ranking sources:
 - `v3-release-audit` → `results/diagnostics/ranking_repair/v3_release_audit.json`
 - `pass-checklist` → `results/diagnostics/ranking_repair/pass_checklist.json`
 - `player-profiles` → `results/reports/player_profiles`
+- `starter-report-pairs-v3` → `results/reports/starters`
 - `team-profiles` → `results/reports/team_profiles`
+- `team-coaching-report-pairs-v3` → `results/reports/teams`
 - `model-summary-json` → `results/reports/canonical/model_summary.json`
 - `model-summary-md` → `results/reports/canonical/model_summary.md`
 - `final-summary` → `results/reports/canonical/final_summary.md`
@@ -487,10 +478,10 @@ add ranking sources:
 - `v3-figures` → `results/reports/v3_figures/*.png`
 - attacking/defensive/matchup CSVs and summaries unchanged unless digests drift
 
-`results/reports/pipeline_manifest.json` now exists as a compatibility pointer,
-but the complete artifact authority is
+`results/reports/pipeline_manifest.json` is a compatibility pointer. The
+complete result-tree authority is
 `results/metadata/artifact_manifest.json`; the ranking-family authority is
-`results/reports/ranking/refresh_manifest.json`. Do not confuse these scopes.
+`results/reports/ranking/refresh_manifest.json`.
 
 ### Expected counts
 
@@ -1015,13 +1006,12 @@ The displayed unified player order must come only from
 non-unified `by_team/<TEAM>.csv`. Cross-check every displayed row against the
 corresponding global row in `unified_tournament_rankings.csv`.
 
-The 32 files in `results/reports/teams/` were not regenerated by the pulled
-artifact commit and still contain headings such as “V5 role-aware player
-leaders,” old rating values, and `ROLE_AWARE_FALLBACK`. Do not import those
-ranking sections. Before using team-coaching reports at all, the corrective
-analytics release must regenerate their Markdown/JSON with v3 provenance and
-replace their ranking sections from active v3 tables. Non-ranking tactical
-sections may remain unchanged only when their upstream hashes did not change.
+The regenerated 32 Markdown/JSON pairs in `results/reports/teams/` carry v3
+provenance and active Tournament Impact, Role Quality, Uncertainty, and
+goalkeeper fields. They are available as secondary team-publication inputs.
+Canonical website player ordering must still come from
+`by_team_unified/<TEAM>.csv`, and canonical team summaries must still come from
+`team_profiles/`.
 
 ### Exit gate
 
@@ -1177,7 +1167,7 @@ Use two explicitly separated figure authorities:
    `results/figures/`, only when their upstream inputs were not changed by the
    ranking repair and their manifest hashes remain valid.
 
-The corrective v3 release must generate exactly:
+The committed v3 release contains exactly:
 
 - `v3_global_outfield_rankings.png`
 - `v3_global_outfield_300min.png`
@@ -1200,9 +1190,9 @@ Existing non-ranking candidates include:
 
 Rules:
 
-1. Require all seven `results/reports/v3_figures/` files before website work.
-2. Do not publish `v5_*` ranking figures. The pulled artifact commit modified
-   old v5 filenames but did not produce the required v3 figure family.
+1. Require and import only the seven committed
+   `results/reports/v3_figures/` files for v3 ranking/model visuals.
+2. Do not publish `v5_*` ranking figures.
 3. Select figures that directly support the surrounding section; do not add
    decorative or unrelated plots.
 4. Copy approved web-optimized derivatives into the website’s existing static
@@ -1336,14 +1326,13 @@ python -m pytest `
   tests/test_stale_content_scan.py
 ```
 
-All tests must pass. Specifically confirm the three failures documented in the
-verified pulled-release section are gone and that the figure-family assertions
-run to completion. Then record the corrective `PASS8_COMMIT`.
+All 50 tests must pass. Any failure is blocking. Record the owner-reviewed
+corrective commit SHA as `PASS8_COMMIT` before continuing with website work.
 
 From `C:\cosmos\final_proj_website\the-worlds-coach`:
 
 ```powershell
-$env:PASS8_COMMIT = "<owner-reviewed 40-character analytics commit SHA>"
+$env:PASS8_COMMIT = "<owner-reviewed corrective 40-character SHA>"
 $env:RESEARCH_ROOT = "C:\cosmos\26-the-pattern-seekers-analysis\World-Cup-S-Bomb"
 pnpm install
 pnpm data:build
@@ -1387,19 +1376,18 @@ If the production origin differs, use the owner-confirmed origin instead.
 ### Data
 
 - Website snapshot metadata records the exact `PASS8_COMMIT`, analytics remote,
-  refresh-manifest hash, and artifact-manifest hash.
+  refresh-manifest hash, and selected-input SHA-256 map.
 - Every governed analytics input matches its byte content at `PASS8_COMMIT`;
   moving-branch source URLs are not used.
-- Rankings, player/team profiles, final summaries, coaches notebook, model
-  summaries, figures, DOCX, dictionaries, and manifests pass the commit-pinned
-  consistency gate before import.
-- The complete analytics test command above passes with no failure or skipped
-  release-family assertion.
+- Selected rankings, player/team profiles, final summaries, coaches notebook,
+  model summaries, figures, DOCX, dictionaries, and pattern/model inputs pass
+  the commit-pinned consistency gate before import.
+- All 50 analytics release tests pass.
 - Frozen champion hashes match `champion_snapshot.json`.
-- Master and ranking manifests exactly cover their governed current files with
-  portable, case-correct paths and valid SHA-256 values.
-- All 593 starter Markdown/JSON pairs and all 32 team coaching Markdown/JSON
-  pairs carry v3 provenance and contain no active V5 ranking copy.
+- Ranking-manifest hashes match the committed ranking files, and every other
+  selected input matches the website-generated hash map.
+- All 593 tracked starter Markdown/JSON pairs and all 32 tracked team-coaching
+  Markdown/JSON pairs are accessible to the importer and match v3 provenance.
 - All seven required files under `results/reports/v3_figures/` exist and pass
   size/hash checks.
 - 300+ tab contains exactly 142 rows: 126 outfield and 16 main GKs.

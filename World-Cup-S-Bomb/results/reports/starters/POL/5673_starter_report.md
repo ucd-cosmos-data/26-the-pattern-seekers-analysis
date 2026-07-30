@@ -1,0 +1,40 @@
+# Bartosz Bereszyński — Qatar 2022 Starter Report
+
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
+
+## Tournament Impact, Role Quality, and Uncertainty
+
+- Team: Poland
+- Position group: Fullback/Wingback
+- Functional role: Wide Creator
+- Minutes: 365.7
+- Global Rank v3: 293
+- Team Rank v3: 6
+- Position Rank v3: 79
+- Role Rank v3: 25
+- Tournament Impact: 0.3508
+- Role Quality: 0.1639
+- Impact interval: [-0.0446, 0.8751]
+- Rank band: 129.0–544.0
+- Uncertainty status: wide
+
+## Decisive outcomes
+
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
+|---|---|
+| Attack | 0.4514 |
+| Defense | -0.1006 |
+| Other | 0.0000 |
+
+## Compatibility
+
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.
