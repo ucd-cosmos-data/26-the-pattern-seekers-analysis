@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
 - Minutes: 290.9
-- Global Rank v3: 290
-- Team Rank v3: 16
-- Position Rank v3: 17
-- Role Rank v3: 14
-- Tournament Impact: 0.3553
-- Role Quality: 0.2258
-- Impact interval: [-0.0361, 0.8906]
-- Rank band: 121.0–535.0
+- Global Rank v3: 301
+- Team Rank v3: 17
+- Position Rank v3: 13
+- Role Rank v3: 11
+- Tournament Impact: 0.3310
+- Role Quality: 0.2272
+- Impact interval: [-0.0340, 0.8413]
+- Rank band: 132–536
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.3614 |
+| Attack | 0.3370 |
 | Defense | -0.0060 |
 | Other | 0.0000 |
 

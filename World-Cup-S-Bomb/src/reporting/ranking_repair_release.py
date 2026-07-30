@@ -403,15 +403,25 @@ class RankingRepairReleaseWriter:
             output.get("publication_team_rank_v3", output["team_rank_v3"]),
             errors="coerce",
         ).astype("Int64")
-        output["Tournament Performance Score"] = pd.to_numeric(
-            output.get(
-                "publication_score_v3",
+        # Publication scale contract: player ratings are published on a
+        # FIFA-style 55-99 scale with one decimal place. The transform is a
+        # monotone linear map of the model score (55 + 44 x score), so score
+        # gaps are preserved rather than flattened into rank percentiles.
+        # Raw model columns retain full precision underneath.
+        output["Tournament Performance Score"] = (
+            pd.to_numeric(
                 output.get(
-                    "tournament_impact_score_v3",
-                    output["tournament_impact_v3"],
+                    "publication_score_v3",
+                    output.get(
+                        "tournament_impact_score_v3",
+                        output["tournament_impact_v3"],
+                    ),
                 ),
-            ),
-            errors="coerce",
+                errors="coerce",
+            )
+            .mul(44.0)
+            .add(55.0)
+            .round(1)
         )
         output["active_model_version"] = ACTIVE_MODEL_VERSION
         event_scope = "qatar-2022-periods-1-4-v1"

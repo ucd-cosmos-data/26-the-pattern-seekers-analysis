@@ -6,27 +6,27 @@ Tournament Impact orders the team table. Role Quality and Uncertainty remain sep
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
 |---|---|---|---|---|---|---|---|---|
-| 1 | 3 | Jamal Musiala | Attacking Midfield/Wing | Hybrid Playmaker / Roaming Creator | 274.0667 | 4.1561 | 0.7486 | wide |
-| 2 | 21 | Serge Gnabry | Attacking Midfield/Wing | Progressive Winger | 273.3333 | 2.3362 | 0.5282 | wide |
-| 3 | 24 | Niclas Füllkrug | Forward | Target Forward / Penalty-Box Anchor | 92.5833 | 2.1753 | 0.9095 | wide |
-| 4 | 54 | Kai Havertz | Forward | Pressing Forward | 112.4167 | 1.6210 | 0.8259 | wide |
-| 5 | 61 | Thomas Müller | Forward | Pressing Forward | 201.7167 | 1.4673 | 0.7300 | wide |
-| 6 | 69 | Leroy Sané | Attacking Midfield/Wing | Progressive Winger | 126.8167 | 1.3424 | 0.4406 | wide |
-| 7 | 92 | David Raum | Fullback/Wingback | Attacking Wingback | 250.3000 | 1.1563 | 0.2541 | wide |
-| 8 | 106 | İlkay Gündoğan | Attacking Midfield/Wing | Linking Attacker | 190.0500 | 1.0698 | 0.2737 | wide |
-| 9 | 121 | Joshua Kimmich | Fullback/Wingback | Attacking Wingback | 294.0000 | 0.9697 | 0.2015 | wide |
-| 10 | 166 | Leon Goretzka | Defensive Midfield | Holding Anchor | 171.8833 | 0.7417 | 0.3608 | wide |
-| 11 | 167 | Antonio Rüdiger | Center Back | Ball-Playing Centre-Back | 294.0000 | 0.7401 | 0.1257 | wide |
+| 1 | 6 | Jamal Musiala | Attacking Midfield/Wing | Hybrid Playmaker / Roaming Creator | 274.0667 | 3.5486 | 0.7011 | wide |
+| 2 | 24 | Niclas Füllkrug | Forward | Target Forward / Penalty-Box Anchor | 92.5833 | 2.1774 | 0.9436 | wide |
+| 3 | 26 | Kai Havertz | Forward | Pressing Forward | 112.4167 | 2.1680 | 0.9180 | wide |
+| 4 | 30 | Serge Gnabry | Attacking Midfield/Wing | Progressive Winger | 273.3333 | 2.1185 | 0.5047 | wide |
+| 5 | 69 | Thomas Müller | Forward | Pressing Forward | 201.7167 | 1.4277 | 0.7558 | wide |
+| 6 | 81 | Leroy Sané | Attacking Midfield/Wing | Progressive Winger | 126.8167 | 1.2575 | 0.4385 | wide |
+| 7 | 122 | David Raum | Fullback/Wingback | Attacking Wingback | 250.3000 | 0.9691 | 0.2325 | wide |
+| 8 | 124 | İlkay Gündoğan | Attacking Midfield/Wing | Linking Attacker | 190.0500 | 0.9269 | 0.2628 | wide |
+| 9 | 144 | Antonio Rüdiger | Center Back | Ball-Playing Centre-Back | 294.0000 | 0.8205 | 0.1351 | wide |
+| 10 | 145 | Joshua Kimmich | Fullback/Wingback | Attacking Wingback | 294.0000 | 0.8155 | 0.1902 | wide |
+| 11 | 170 | Leon Goretzka | Defensive Midfield | Holding Anchor | 171.8833 | 0.7414 | 0.3675 | wide |
 | 12 | 320 | Manuel Neuer | Goalkeeper | Goalkeeper | 294.0000 | — | — | moderate |
-| 13 | 336 | Mario Götze | Central/Wide Midfield | Progressive Winger | 54.1000 | 0.3088 | 0.3806 | wide |
-| 14 | 424 | Niklas Süle | Fullback/Wingback | Attacking Wingback | 287.5833 | 0.1585 | 0.0993 | wide |
-| 15 | 471 | Thilo Kehrer | Fullback/Wingback | Two-Way Fullback | 69.3333 | 0.0965 | 0.1719 | wide |
-| 16 | 484 | Lukas Klostermann | Fullback/Wingback | Ball-Winner | 81.5167 | 0.0806 | 0.1153 | wide |
-| 17 | 517 | Nico Schlotterbeck | Center Back | Sweeper CB | 107.6833 | 0.0387 | 0.0696 | wide |
+| 13 | 353 | Mario Götze | Central/Wide Midfield | Progressive Winger | 54.1000 | 0.2780 | 0.3853 | wide |
+| 14 | 443 | Niklas Süle | Fullback/Wingback | Attacking Wingback | 287.5833 | 0.1355 | 0.0989 | wide |
+| 15 | 460 | Thilo Kehrer | Fullback/Wingback | Two-Way Fullback | 69.3333 | 0.1150 | 0.1785 | wide |
+| 16 | 529 | Nico Schlotterbeck | Center Back | Sweeper CB | 107.6833 | 0.0328 | 0.0670 | wide |
+| 17 | 536 | Lukas Klostermann | Fullback/Wingback | Ball-Winner | 81.5167 | 0.0224 | 0.1117 | wide |
 
 ## Outfield component totals
 
-- Attack component total: 18.1617
+- Attack component total: 17.2577
 - Defensive component total: 0.2973
 - Regulation/extra-time goals: 6
 - Shootout goals excluded from ordinary impact: 0

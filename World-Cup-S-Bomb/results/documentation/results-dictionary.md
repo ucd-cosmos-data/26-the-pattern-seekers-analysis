@@ -30,14 +30,14 @@ A compact directory of every result artifact family. Repeated player and team fi
 | Legacy summary alias | `results/Summary/*` | 1 | Compatibility alias of the active model summary. |
 | Audit tables | `results/audit/*` | 6 | Observed-versus-expected and out-of-fold audit tables. |
 | Model diagnostics | `results/diagnostics/*` | 20 | Validation metrics, calibration, importance, and cluster diagnostics. |
-| Ranking-repair diagnostics | `results/diagnostics/ranking_repair/**/*` | 25 | Immutable champion evidence, event-scope checks, component gates, bootstrap intervals, stale-content classifications, and the final v3 release audit. |
+| Ranking-repair diagnostics | `results/diagnostics/ranking_repair/**/*` | 30 | Immutable champion evidence, event-scope checks, component gates, bootstrap intervals, stale-content classifications, and the final v3 release audit. |
 | Publication figures | `results/figures/*` | 14 | Charts and the technical onboarding presentation. |
 | Run metadata | `results/metadata/*` | 6 | Configuration, provenance, and feature-definition records. |
 | Supporting/legacy outputs | `results/miscellaneous/*` | 49 | Exploratory summaries and noncanonical model leaderboards. |
 | Reports directory guide | `results/reports/README.md` | 21 | Short guide to the report tree. |
 | Canonical reports | `results/reports/canonical/*` | 5 | Current final summary, model summary, and coaches notebook. |
 | Final-summary compatibility alias | `results/reports/final/*` | 1 | Compatibility alias of the active tournament final summary. |
-| Tournament rankings | `results/reports/ranking/*` | 17 | Active Qatar 2022 v3 Tournament Impact, Role Quality, uncertainty, goalkeeper, audit, alias, and methodology artifacts. |
+| Tournament rankings | `results/reports/ranking/*` | 19 | Active Qatar 2022 v3 Tournament Impact, Role Quality, uncertainty, goalkeeper, audit, alias, and methodology artifacts. |
 | Per-team tournament rankings | `results/reports/ranking/by_team/<TEAM>.csv` | 32 | Complete feature-rich active v3 ranking table for each of the 32 national teams. |
 | Unified per-team tournament rankings | `results/reports/ranking/by_team_unified/<TEAM>.csv` | 32 | Exact six-field Tournament Impact v3 publication table for each of the 32 national teams. |
 | Archived legacy rankings | `results/reports/ranking/legacy/*` | 3 | Pre-v3 tables retained only for before/after reproducibility. |
@@ -52,7 +52,7 @@ A compact directory of every result artifact family. Repeated player and team fi
 | Player heatmaps | `results/reports/visuals/heatmaps/<player-slug>-<player-id>.svg` | 593 | One scalable spatial-event heatmap per player. |
 | Simulation outputs | `results/simulations/*` | 6 | Tactical-style, substitution, suppression, and out-of-fold simulations. |
 
-**Coverage:** 2,720 of 2,720 result artifacts.
+**Coverage:** 2,727 of 2,727 result artifacts.
 
 ## Which version wins?
 

@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Attacking Midfield/Wing
 - Functional role: Progressive Winger
 - Minutes: 205.6
-- Global Rank v3: 211
-- Team Rank v3: 10
-- Position Rank v3: 107
+- Global Rank v3: 209
+- Team Rank v3: 11
+- Position Rank v3: 105
 - Role Rank v3: 65
-- Tournament Impact: 0.5540
-- Role Quality: 0.2631
-- Impact interval: [0.1191, 1.2123]
-- Rank band: 87–369
+- Tournament Impact: 0.5694
+- Role Quality: 0.2651
+- Impact interval: [0.1148, 1.2671]
+- Rank band: 83–378
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.6034 |
+| Attack | 0.6188 |
 | Defense | -0.0494 |
 | Other | 0.0000 |
 

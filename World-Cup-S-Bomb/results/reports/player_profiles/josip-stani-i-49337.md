@@ -10,12 +10,12 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Minutes: 96.2
 - Global Rank v3: 429
 - Team Rank v3: 17
-- Position Rank v3: 72
-- Role Rank v3: 19
-- Tournament Impact: 0.1108
-- Role Quality: 0.1658
-- Impact interval: [0.0000, 0.3323]
-- Rank band: 256–485
+- Position Rank v3: 63
+- Role Rank v3: 18
+- Tournament Impact: 0.1193
+- Role Quality: 0.1710
+- Impact interval: [0.0000, 0.3578]
+- Rank band: 249–487
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.1050 |
+| Attack | 0.1135 |
 | Defense | 0.0058 |
 | Other | 0.0000 |
 

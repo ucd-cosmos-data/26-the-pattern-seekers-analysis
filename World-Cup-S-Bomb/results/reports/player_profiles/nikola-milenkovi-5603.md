@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Center Back
 - Functional role: Sweeper CB
 - Minutes: 293.7
-- Global Rank v3: 205
+- Global Rank v3: 213
 - Team Rank v3: 7
-- Position Rank v3: 7
-- Role Rank v3: 4
-- Tournament Impact: 0.5794
-- Role Quality: 0.1338
-- Impact interval: [0.0000, 1.2688]
-- Rank band: 84–466
+- Position Rank v3: 10
+- Role Rank v3: 6
+- Tournament Impact: 0.5638
+- Role Quality: 0.1346
+- Impact interval: [0.0000, 1.2603]
+- Rank band: 86–472
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.1767 |
+| Attack | 0.1611 |
 | Defense | 0.4027 |
 | Other | 0.0000 |
 

@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Central/Wide Midfield
 - Functional role: Wide Creator
 - Minutes: 254.5
-- Global Rank v3: 219
+- Global Rank v3: 272
 - Team Rank v3: 5
-- Position Rank v3: 61
+- Position Rank v3: 62
 - Role Rank v3: 5
-- Tournament Impact: 0.5139
-- Role Quality: 0.4268
-- Impact interval: [0.0133, 1.1544]
-- Rank band: 88.0–457.0
+- Tournament Impact: 0.4034
+- Role Quality: 0.4149
+- Impact interval: [0.0192, 0.8753]
+- Rank band: 127–461
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.5114 |
+| Attack | 0.4009 |
 | Defense | 0.0025 |
 | Other | 0.0000 |
 

@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
 - Minutes: 330.8
-- Global Rank v3: 280
+- Global Rank v3: 277
 - Team Rank v3: 12
 - Position Rank v3: 42
 - Role Rank v3: 8
-- Tournament Impact: 0.3786
-- Role Quality: 0.0913
-- Impact interval: [0.0635, 0.8242]
-- Rank band: 130.0–411.0
+- Tournament Impact: 0.3948
+- Role Quality: 0.0950
+- Impact interval: [0.0621, 0.8527]
+- Rank band: 129–410
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.3574 |
+| Attack | 0.3736 |
 | Defense | 0.0212 |
 | Other | 0.0000 |
 

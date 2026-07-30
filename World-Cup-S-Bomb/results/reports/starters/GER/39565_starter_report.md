@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Attacking Midfield/Wing
 - Functional role: Hybrid Playmaker / Roaming Creator
 - Minutes: 274.1
-- Global Rank v3: 3
+- Global Rank v3: 6
 - Team Rank v3: 1
-- Position Rank v3: 1
+- Position Rank v3: 2
 - Role Rank v3: 1
-- Tournament Impact: 4.1561
-- Role Quality: 0.7486
-- Impact interval: [0.9115, 8.2791]
-- Rank band: 1.0–119.0
+- Tournament Impact: 3.5486
+- Role Quality: 0.7011
+- Impact interval: [0.7720, 7.2490]
+- Rank band: 2–148
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 4.1153 |
+| Attack | 3.5078 |
 | Defense | 0.0408 |
 | Other | 0.0000 |
 

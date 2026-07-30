@@ -6,28 +6,28 @@ Tournament Impact orders the team table. Role Quality and Uncertainty remain sep
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
 |---|---|---|---|---|---|---|---|---|
-| 1.0000 | 20.0000 | Breel-Donald Embolo | Forward | Pressing Forward | 330.1500 | 2.5406 | 0.5788 | wide |
-| 2.0000 | 80.0000 | Xherdan Shaqiri | Central/Wide Midfield | Progressive Winger | 233.5833 | 1.2609 | 0.4487 | wide |
-| 3.0000 | 93.0000 | Ruben Vargas | Attacking Midfield/Wing | Progressive Winger | 286.9500 | 1.1329 | 0.4685 | wide |
-| 4.0000 | 98.0000 | Silvan Widmer | Fullback/Wingback | Attacking Wingback | 281.8500 | 1.1077 | 0.2268 | wide |
-| 5.0000 | 157.0000 | Manuel Obafemi Akanji | Center Back | Ball-Playing Centre-Back | 386.5833 | 0.7836 | 0.1226 | wide |
-| 6.0000 | 221.0000 | Remo Freuler | Defensive Midfield | Holding Anchor | 346.0500 | 0.5690 | 0.1900 | wide |
-| 7.0000 | 249.0000 | Ricardo Iván Rodríguez Araya | Fullback/Wingback | Attacking Wingback | 380.2333 | 0.4883 | 0.1700 | wide |
-| 8.0000 | 261.0000 | Djibril Sow | Attacking Midfield/Wing | Ball-Winner | 267.4333 | 0.4609 | 0.1561 | wide |
-| 9.0000 | 279.0000 | Granit Xhaka | Defensive Midfield | Holding Anchor | 386.5833 | 0.4173 | 0.1058 | wide |
-| 10.0000 | 302.0000 | Yann Sommer | Goalkeeper | Goalkeeper | 286.2833 | — | — | moderate |
-| 11.0000 | 323.0000 | Haris Seferović | Forward | Target Forward | 86.2333 | 0.3293 | 0.4954 | wide |
-| 12.0000 | 335.0000 | Edimilson Fernandes | Fullback/Wingback | Ball-Winner | 164.6333 | 0.3145 | 0.1756 | wide |
-| 13.0000 | 388.0000 | Fabian Rieder | Attacking Midfield/Wing | Deep Playmaker | 73.9667 | 0.2071 | 0.1834 | wide |
-| 14.0000 | 398.0000 | Noah Okafor | Central/Wide Midfield | Ball-Winner | 58.3833 | 0.1943 | 0.4740 | wide |
-| 15.0000 | 441.0000 | Fabian Lukas Schär | Center Back | Sweeper CB | 145.3000 | 0.1300 | 0.0891 | wide |
-| 16.0000 | 464.0000 | Nico Elvedi | Center Back | Sweeper CB | 192.1500 | 0.1039 | 0.0661 | wide |
-| 17.0000 | 506.0000 | Denis Lemi Zakaria Lako Lado | Defensive Midfield | Deep Playmaker | 72.5500 | 0.0558 | 0.3160 | wide |
-| 18.0000 | 552.0000 | Eray Ervin Cömert | Center Back | Ball-Playing Centre-Back | 55.4833 | -0.0052 | 0.1140 | wide |
+| 1 | 17 | Breel-Donald Embolo | Forward | Pressing Forward | 330.1500 | 2.7334 | 0.6060 | wide |
+| 2 | 77 | Xherdan Shaqiri | Central/Wide Midfield | Progressive Winger | 233.5833 | 1.2800 | 0.4450 | wide |
+| 3 | 103 | Ruben Vargas | Attacking Midfield/Wing | Progressive Winger | 286.9500 | 1.0664 | 0.4605 | wide |
+| 4 | 135 | Silvan Widmer | Fullback/Wingback | Attacking Wingback | 281.8500 | 0.8612 | 0.2038 | wide |
+| 5 | 176 | Manuel Obafemi Akanji | Center Back | Ball-Playing Centre-Back | 386.5833 | 0.7247 | 0.1192 | wide |
+| 6 | 206 | Remo Freuler | Defensive Midfield | Holding Anchor | 346.0500 | 0.6103 | 0.1967 | wide |
+| 7 | 233 | Ricardo Iván Rodríguez Araya | Fullback/Wingback | Attacking Wingback | 380.2333 | 0.5460 | 0.1704 | wide |
+| 8 | 280 | Djibril Sow | Attacking Midfield/Wing | Ball-Winner | 267.4333 | 0.4152 | 0.1541 | wide |
+| 9 | 298 | Granit Xhaka | Defensive Midfield | Holding Anchor | 386.5833 | 0.3819 | 0.1041 | wide |
+| 10 | 302 | Yann Sommer | Goalkeeper | Goalkeeper | 286.2833 | — | — | moderate |
+| 11 | 335 | Edimilson Fernandes | Fullback/Wingback | Ball-Winner | 164.6333 | 0.3046 | 0.1786 | wide |
+| 12 | 342 | Haris Seferović | Forward | Target Forward | 86.2333 | 0.3003 | 0.5049 | wide |
+| 13 | 387 | Noah Okafor | Central/Wide Midfield | Ball-Winner | 58.3833 | 0.2235 | 0.4764 | wide |
+| 14 | 397 | Fabian Rieder | Attacking Midfield/Wing | Deep Playmaker | 73.9667 | 0.2047 | 0.1877 | wide |
+| 15 | 433 | Fabian Lukas Schär | Center Back | Sweeper CB | 145.3000 | 0.1516 | 0.0928 | wide |
+| 16 | 487 | Nico Elvedi | Center Back | Sweeper CB | 192.1500 | 0.0826 | 0.0701 | wide |
+| 17 | 500 | Denis Lemi Zakaria Lako Lado | Defensive Midfield | Deep Playmaker | 72.5500 | 0.0611 | 0.3219 | wide |
+| 18 | 550 | Eray Ervin Cömert | Center Back | Ball-Playing Centre-Back | 55.4833 | -0.0048 | 0.1201 | wide |
 
 ## Outfield component totals
 
-- Attack component total: 10.1908
+- Attack component total: 10.0423
 - Defensive component total: -0.0998
 - Regulation/extra-time goals: 5
 - Shootout goals excluded from ordinary impact: 0

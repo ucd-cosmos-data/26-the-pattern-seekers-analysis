@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Center Back
 - Functional role: Deep Playmaker
 - Minutes: 273.6
-- Global Rank v3: 243
-- Team Rank v3: 4
+- Global Rank v3: 225
+- Team Rank v3: 3
 - Position Rank v3: 3
-- Role Rank v3: 16
-- Tournament Impact: 0.4642
-- Role Quality: 0.1703
-- Impact interval: [0.0787, 1.1299]
-- Rank band: 95.0–419.0
+- Role Rank v3: 15
+- Tournament Impact: 0.5282
+- Role Quality: 0.1737
+- Impact interval: [0.0832, 1.3133]
+- Rank band: 82–421
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.3985 |
+| Attack | 0.4625 |
 | Defense | 0.0657 |
 | Other | 0.0000 |
 

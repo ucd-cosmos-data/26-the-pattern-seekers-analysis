@@ -7,7 +7,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Team: Serbia
 - Position group: Goalkeeper
 - Functional role: Goalkeeper
-- Minutes: 293.6
+- Minutes: 293.7
 - Dedicated goalkeeper rank: 13.0
 - Dedicated goalkeeper score: 0.4739
 - Continuous goalkeeper score: 0.5265

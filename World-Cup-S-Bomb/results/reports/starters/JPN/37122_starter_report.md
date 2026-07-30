@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Central/Wide Midfield
 - Functional role: Target Forward
 - Minutes: 81.8
-- Global Rank v3: 350
-- Team Rank v3: 14
-- Position Rank v3: 28
-- Role Rank v3: 31
-- Tournament Impact: 0.2492
-- Role Quality: 0.4888
-- Impact interval: [0.0000, 0.7476]
-- Rank band: 143.0–494.0
+- Global Rank v3: 368
+- Team Rank v3: 15
+- Position Rank v3: 29
+- Role Rank v3: 32
+- Tournament Impact: 0.2161
+- Role Quality: 0.4829
+- Impact interval: [0.0000, 0.6483]
+- Rank band: 165–495
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.2431 |
+| Attack | 0.2100 |
 | Defense | 0.0061 |
 | Other | 0.0000 |
 

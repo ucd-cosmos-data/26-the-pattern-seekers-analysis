@@ -7,15 +7,15 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Team: Argentina
 - Position group: Center Back
 - Functional role: Sweeper CB
-- Minutes: 70.0
-- Global Rank v3: 526
-- Team Rank v3: 18
-- Position Rank v3: 73
-- Role Rank v3: 53
-- Tournament Impact: -0.0072
-- Role Quality: 0.0784
-- Impact interval: [-0.0479, 0.0251]
-- Rank band: 426.0–541.0
+- Minutes: 69.9
+- Global Rank v3: 533
+- Team Rank v3: 19
+- Position Rank v3: 71
+- Role Rank v3: 51
+- Tournament Impact: -0.0177
+- Role Quality: 0.0804
+- Impact interval: [-0.0627, 0.0096]
+- Rank band: 442–545
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.0282 |
+| Attack | 0.0178 |
 | Defense | -0.0354 |
 | Other | 0.0000 |
 

@@ -7,15 +7,15 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Team: Portugal
 - Position group: Fullback/Wingback
 - Functional role: Wide Creator
-- Minutes: 344.6
-- Global Rank v3: 167
+- Minutes: 344.5
+- Global Rank v3: 148
 - Team Rank v3: 9
 - Position Rank v3: 5
 - Role Rank v3: 6
-- Tournament Impact: 0.6983
-- Role Quality: 0.2844
-- Impact interval: [0.1351, 1.4679]
-- Rank band: 64.0–334.0
+- Tournament Impact: 0.7764
+- Role Quality: 0.2960
+- Impact interval: [0.1845, 1.5866]
+- Rank band: 57–319
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.7660 |
+| Attack | 0.8441 |
 | Defense | -0.0677 |
 | Other | 0.0000 |
 

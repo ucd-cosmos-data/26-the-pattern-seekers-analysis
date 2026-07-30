@@ -34,22 +34,6 @@
     {
       "classification": "compatibility-or-legacy",
       "classification_reason": "explicit compatibility, foundation, champion, or historical path",
-      "context": "\"outfield_reliability\": \"minutes / (minutes + 450)\",",
-      "line": 2667,
-      "path": "data/processed/player_evaluation_v5_provenance.json",
-      "pattern": "old-exposure-constants"
-    },
-    {
-      "classification": "compatibility-or-legacy",
-      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
-      "context": "\"goalkeeper_reliability\": \"feature_coverage * minutes / (minutes + 450)\",",
-      "line": 2668,
-      "path": "data/processed/player_evaluation_v5_provenance.json",
-      "pattern": "old-exposure-constants"
-    },
-    {
-      "classification": "compatibility-or-legacy",
-      "classification_reason": "explicit compatibility, foundation, champion, or historical path",
       "context": "- Do not use within-position z-scores as absolute global value.",
       "line": 434,
       "path": "docs/ranking-repair-eight-pass-prompt.md",
@@ -150,6 +134,22 @@
       "line": 168,
       "path": "docs/role_aware_pipeline.md",
       "pattern": "shootout-save-0.20"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "- old one-sided defensive lift is active if retired",
+      "line": 1058,
+      "path": "docs/website-post-eight-pass-update-prompt.md",
+      "pattern": "one-sided-defensive-lift"
+    },
+    {
+      "classification": "compatibility-or-legacy",
+      "classification_reason": "explicitly historical or retired description",
+      "context": "- old within-position z-score is absolute global value if retired",
+      "line": 1060,
+      "path": "docs/website-post-eight-pass-update-prompt.md",
+      "pattern": "within-position-absolute"
     },
     {
       "classification": "compatibility-or-legacy",
@@ -523,7 +523,7 @@
       "classification": "compatibility-or-legacy",
       "classification_reason": "explicit compatibility, foundation, champion, or historical path",
       "context": "\"normalization, a one-sided direct defensive-evidence \"",
-      "line": 667,
+      "line": 663,
       "path": "src/reporting/artifacts.py",
       "pattern": "one-sided-defensive-lift"
     },
@@ -531,7 +531,7 @@
       "classification": "compatibility-or-legacy",
       "classification_reason": "explicit compatibility, foundation, champion, or historical path",
       "context": "\"minutes/(minutes+450) position-prior shrinkage.\",",
-      "line": 1623,
+      "line": 1619,
       "path": "src/reporting/artifacts.py",
       "pattern": "old-exposure-constants"
     },
@@ -539,7 +539,7 @@
       "classification": "active-and-correct",
       "classification_reason": "active text explicitly negates retired method",
       "context": "\"No within-position z-score, player identity, role bonus, or \"",
-      "line": 600,
+      "line": 610,
       "path": "src/reporting/ranking_repair_release.py",
       "pattern": "within-position-absolute"
     },
@@ -547,7 +547,7 @@
       "classification": "compatibility-or-legacy",
       "classification_reason": "explicitly historical or retired description",
       "context": "\"prevention and signed errors. The old one-sided defensive \"",
-      "line": 951,
+      "line": 961,
       "path": "src/reporting/ranking_repair_release.py",
       "pattern": "one-sided-defensive-lift"
     },
@@ -555,7 +555,7 @@
       "classification": "compatibility-or-legacy",
       "classification_reason": "explicit retired-method inventory",
       "context": "\"within-position z-score as absolute global value\",",
-      "line": 1989,
+      "line": 1999,
       "path": "src/reporting/ranking_repair_release.py",
       "pattern": "within-position-absolute"
     },
@@ -563,7 +563,7 @@
       "classification": "compatibility-or-legacy",
       "classification_reason": "explicit retired-method inventory",
       "context": "\"one-sided direct-defensive publication lift\",",
-      "line": 1991,
+      "line": 2001,
       "path": "src/reporting/ranking_repair_release.py",
       "pattern": "one-sided-defensive-lift"
     },
@@ -571,7 +571,7 @@
       "classification": "compatibility-or-legacy",
       "classification_reason": "explicit retired-method inventory",
       "context": "\"0.20 additive points per goalkeeper shootout save\",",
-      "line": 1992,
+      "line": 2002,
       "path": "src/reporting/ranking_repair_release.py",
       "pattern": "shootout-save-0.20"
     },

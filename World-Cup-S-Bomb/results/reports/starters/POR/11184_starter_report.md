@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Central/Wide Midfield
 - Functional role: Deep Playmaker / Metronome
 - Minutes: 197.4
-- Global Rank v3: 196
-- Team Rank v3: 10
-- Position Rank v3: 28
+- Global Rank v3: 228
+- Team Rank v3: 12
+- Position Rank v3: 30
 - Role Rank v3: 4
-- Tournament Impact: 0.5956
-- Role Quality: 0.2408
-- Impact interval: [0.0000, 1.4824]
-- Rank band: 66.0–483.0
+- Tournament Impact: 0.5213
+- Role Quality: 0.2371
+- Impact interval: [0.0000, 1.2789]
+- Rank band: 83–488
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.6222 |
+| Attack | 0.5480 |
 | Defense | -0.0267 |
 | Other | 0.0000 |
 
