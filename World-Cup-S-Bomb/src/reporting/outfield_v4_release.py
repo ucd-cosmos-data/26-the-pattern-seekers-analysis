@@ -364,8 +364,6 @@ class OutfieldV4ReleaseWriter:
                 "OutfieldV4ReleaseWriter may write only explicit *_v4 "
                 f"ranking files or the v4 report tree: {path}"
             ) from error
-        if path.suffix.lower() == ".docx":
-            raise ValueError("The outfield-v4 release must not create DOCX")
 
     def _write_bytes(self, path: Path, content: bytes) -> None:
         self._assert_owned_path(path)
@@ -1765,8 +1763,6 @@ class OutfieldV4ReleaseWriter:
             self._assert_owned_path(path)
             if not path.is_file():
                 raise ValueError(f"Cannot manifest missing artifact: {path}")
-            if path.suffix.lower() == ".docx":
-                raise ValueError("DOCX is excluded from outfield-v4 release")
         entries = [
             {
                 "path": path.relative_to(self.project_root).as_posix(),
@@ -1849,4 +1845,3 @@ class OutfieldV4ReleaseWriter:
                 for path in paths
             ],
         }
-

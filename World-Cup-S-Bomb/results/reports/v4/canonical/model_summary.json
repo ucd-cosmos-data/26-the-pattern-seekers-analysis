@@ -1,0 +1,85 @@
+{
+  "active_fields": {
+    "display_score": "Tournament Performance Score",
+    "outfield_rank": "tournament_impact_rank_outfield_v4",
+    "outfield_score": "tournament_impact_score_outfield_v4",
+    "publication_global_rank": "publication_global_rank_outfield_v4",
+    "publication_score": "publication_score_outfield_v4",
+    "publication_team_rank": "publication_team_rank_outfield_v4"
+  },
+  "active_model_version": "outfield-tournament-impact-v4+goalkeeper-event-profile-v3",
+  "cohort": {
+    "goalkeepers": 40,
+    "main_goalkeepers": 32,
+    "outfield": 553,
+    "outfield_300plus": 126,
+    "players": 593,
+    "teams": 32,
+    "unified": 585,
+    "unified_300plus": 142
+  },
+  "defensive_pipeline_stages": [
+    "opposition_adjusted",
+    "prevention_augmented",
+    "reliability_shrunk",
+    "variance_rescaled",
+    "mixture_weighted"
+  ],
+  "limitations": [
+    "StatsBomb 360 is event-triggered rather than continuous optical tracking; player prevention attribution blends a validated team-shape signal with identity-free player shape.",
+    "Single-attribution sensitivity is evaluated at the player-match channel-contribution granularity available to the released defensive OOF model.",
+    "FIFA ordinal rank is a pre-tournament strength proxy, not a direct measure of the exact attacking lineup on the pitch.",
+    "The ranking measures Qatar 2022 accumulated contribution, not career ability or future performance."
+  ],
+  "publication_contract": {
+    "advancement_bonus": false,
+    "display_scale": "55--99 with one decimal",
+    "goalkeeper_bridge": "preserved v3 bridge",
+    "identity_features": false,
+    "outfield_model": "Tournament Impact v4 (outfield)",
+    "round_bonus": false
+  },
+  "release_status": "passed",
+  "schema_version": "outfield-v4-model-summary-4.0",
+  "selected_configuration": {
+    "attack_reliability_constant": 80.0,
+    "bootstrap_se_shrinkage_constant": 0.5,
+    "bootstrap_top50_jaccard_median": 0.4492753623188406,
+    "bootstrap_top50_jaccard_p10": 0.3333333333333333,
+    "config_id": 165,
+    "defense_reliability_constant": 300.0,
+    "defensive_variance_scale_factor": 6.791590615772471,
+    "eligible_for_release": true,
+    "leave_one_match_out_median_top50_jaccard": 0.9607843137254902,
+    "leave_one_match_out_p95_absolute_rank_shift": 11.339999999999979,
+    "mixture_bounds": [
+      0.25,
+      0.75
+    ],
+    "opposition_adjustment_variant": "fifa_log_rank",
+    "opposition_exposure_scale": 1.0,
+    "prevention_weight": 0.75,
+    "realized_defensive_variance_share": 0.34999999999999987,
+    "single_attribution_count": 3387,
+    "single_attribution_granularity": "player-match channel contribution",
+    "single_attribution_max_absolute_rank_shift": 262.0,
+    "single_attribution_p95_absolute_rank_shift": 113.69999999999982,
+    "variance_share_target": 0.35
+  },
+  "tournament": "2022 FIFA World Cup (Qatar)",
+  "validation": {
+    "face_validity_gates": null,
+    "sensitivity": null,
+    "stability": {
+      "bootstrap_top50_jaccard_median": 0.4492753623188406,
+      "bootstrap_top50_jaccard_p10": 0.3333333333333333,
+      "leave_one_match_out_median_top50_jaccard": 0.9607843137254902,
+      "leave_one_match_out_p95_absolute_rank_shift": 11.339999999999979,
+      "single_attribution_count": 3387,
+      "single_attribution_granularity": "player-match channel contribution",
+      "single_attribution_max_absolute_rank_shift": 262.0,
+      "single_attribution_p95_absolute_rank_shift": 113.69999999999982
+    },
+    "variance_share": null
+  }
+}

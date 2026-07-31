@@ -1,6 +1,6 @@
 {
-  "active_model_version": "ranking-repair-v3.0-qatar-2022",
-  "artifact_count": 85,
+  "active_model_version": "outfield-tournament-impact-v4+goalkeeper-event-profile-v3",
+  "artifact_count": 97,
   "artifacts": [
     {
       "bytes": 116223,
@@ -333,6 +333,26 @@
       "sha256": "fee20bacdea743a1f9b9cc5c77cfc80eddf0394c136f479a5ff7ebdf3a82d65a"
     },
     {
+      "bytes": 799863,
+      "path": "results/reports/ranking/global_rankings_outfield_300min_v4.csv",
+      "sha256": "6c7ba61c3e40359b0997572a446dfa40790280af40725925886e1b7e686c8f4e"
+    },
+    {
+      "bytes": 2944059,
+      "path": "results/reports/ranking/global_rankings_outfield_300min_v4.json",
+      "sha256": "8da7b30ddb2d55cc33d51283527170a79157ef41aadbe92a19b745d42869c8f3"
+    },
+    {
+      "bytes": 3402213,
+      "path": "results/reports/ranking/global_rankings_outfield_v4.csv",
+      "sha256": "49adb7e814db2b7712bbe39c9e13694a7e6b5f8a9f6716289bfe16ee2b70a47c"
+    },
+    {
+      "bytes": 12865312,
+      "path": "results/reports/ranking/global_rankings_outfield_v4.json",
+      "sha256": "90534abc0dbefd0d4272118e3d5b4ed906af13f9cef81a9f6579ee9dd2ec5197"
+    },
+    {
       "bytes": 120575,
       "path": "results/reports/ranking/goalkeeper_rankings.csv",
       "sha256": "1ff1d10ff5c58fb11a79ad902eb8f7077b22de20c062aa08a7232a7f662a51c1"
@@ -368,6 +388,16 @@
       "sha256": "ac3f948e74dc284b81b9f528b517f686b01d2235dbd2989e2ec566b3af2d6b8a"
     },
     {
+      "bytes": 3402213,
+      "path": "results/reports/ranking/outfield_rankings_v4.csv",
+      "sha256": "49adb7e814db2b7712bbe39c9e13694a7e6b5f8a9f6716289bfe16ee2b70a47c"
+    },
+    {
+      "bytes": 12865312,
+      "path": "results/reports/ranking/outfield_rankings_v4.json",
+      "sha256": "90534abc0dbefd0d4272118e3d5b4ed906af13f9cef81a9f6579ee9dd2ec5197"
+    },
+    {
       "bytes": 3079190,
       "path": "results/reports/ranking/player_rankings.csv",
       "sha256": "234f341e0fa34e121ae4c0813dabf4cf427400c619840aa7dbc1fb5f73117a49"
@@ -383,6 +413,16 @@
       "sha256": "3e53a1a63bbc916ee6b08685473361ba8ec77d02d10bbda26c0c14c995e4dc75"
     },
     {
+      "bytes": 857650,
+      "path": "results/reports/ranking/player_rankings_300plus_v4.csv",
+      "sha256": "471a0d58957cc1a36ec231867e4965aff0045a3fc92ec755c23e07fdf03796b1"
+    },
+    {
+      "bytes": 3281870,
+      "path": "results/reports/ranking/player_rankings_300plus_v4.json",
+      "sha256": "1016ce581e7ba855735a1f2a1c53ef3cd344a9f2bd245d06ee52ee63f909e47c"
+    },
+    {
       "bytes": 3079190,
       "path": "results/reports/ranking/player_rankings_v2.csv",
       "sha256": "234f341e0fa34e121ae4c0813dabf4cf427400c619840aa7dbc1fb5f73117a49"
@@ -396,6 +436,16 @@
       "bytes": 12866661,
       "path": "results/reports/ranking/player_rankings_v3.json",
       "sha256": "3df0971b5652c8a0229e00fbfb8a0251b1a612722f7b2972c01fce745c0ba898"
+    },
+    {
+      "bytes": 3540177,
+      "path": "results/reports/ranking/player_rankings_v4.csv",
+      "sha256": "c539b4b1a2d056ace832e6ca0bde4a282cc0713c8c7b2494a8bbb5770e3e82fa"
+    },
+    {
+      "bytes": 13705582,
+      "path": "results/reports/ranking/player_rankings_v4.json",
+      "sha256": "2720e175c276348384fae9875f021629b9e3e2591ba1b056c2134b76ba978e42"
     },
     {
       "bytes": 157840,
@@ -416,6 +466,16 @@
       "bytes": 32811,
       "path": "results/reports/ranking/unified_tournament_rankings.csv",
       "sha256": "60e49ae5e480ea71eaf0d01bb16485817a75b48fde5ee45c53bf47145aa36e66"
+    },
+    {
+      "bytes": 32787,
+      "path": "results/reports/ranking/unified_tournament_rankings_v4.csv",
+      "sha256": "c8d62ac263adb7c1061837ee8f5767c8d6cfba60f98db73e04b8502ee39f8444"
+    },
+    {
+      "bytes": 114732,
+      "path": "results/reports/ranking/unified_tournament_rankings_v4.json",
+      "sha256": "eae4258453675103090d5a7042b2bb30d42276f2ad108b1023c3377747cbdbb7"
     },
     {
       "bytes": 3079190,
