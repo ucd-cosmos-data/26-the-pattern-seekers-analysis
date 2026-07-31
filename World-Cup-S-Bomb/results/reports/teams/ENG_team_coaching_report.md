@@ -31,7 +31,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 22 | Jordan Pickford | 0.0492 | -0.0368 | 0.1472 | 0.0000 |
+| 20 | Jordan Pickford | 0.0659 | -0.0368 | 0.1472 | 0.0000 |
 
 ## Team evidence summary
 

@@ -28,7 +28,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 6 | Wojciech Szczęsny | 0.2536 | 0.1385 | 0.0318 | 0.0000 |
+| 6 | Wojciech Szczęsny | 0.2458 | 0.1385 | 0.0318 | 0.0000 |
 
 ## Team evidence summary
 

@@ -26,7 +26,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 25 | Wayne Hennessey | 0.0418 | -0.0470 | 0.0020 | 0.0000 |
+| 25 | Wayne Hennessey | 0.0332 | -0.0470 | 0.0020 | 0.0000 |
 
 ## Team evidence summary
 

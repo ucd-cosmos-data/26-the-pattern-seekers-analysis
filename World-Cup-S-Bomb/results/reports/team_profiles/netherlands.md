@@ -30,7 +30,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 2 | Andries Noppert | 0.3854 | 0.1736 | 0.2148 | 0.0000 |
+| 2 | Andries Noppert | 0.3785 | 0.1736 | 0.2148 | 0.0000 |
 
 ## Team evidence summary
 

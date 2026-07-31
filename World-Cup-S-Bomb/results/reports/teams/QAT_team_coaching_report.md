@@ -26,7 +26,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 23 | Meshaal Aissa Barsham | 0.0440 | -0.0467 | 0.0000 | 0.0000 |
+| 24 | Meshaal Aissa Barsham | 0.0356 | -0.0467 | 0.0000 | 0.0000 |
 
 ## Team evidence summary
 

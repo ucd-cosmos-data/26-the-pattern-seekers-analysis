@@ -33,7 +33,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 4 | Yassine Bounou | 0.2879 | 0.0534 | 0.1231 | 0.1242 |
+| 4 | Yassine Bounou | 0.2793 | 0.0534 | 0.1231 | 0.1242 |
 
 ## Team evidence summary
 

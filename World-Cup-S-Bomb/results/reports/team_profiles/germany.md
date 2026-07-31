@@ -29,7 +29,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 20 | Manuel Neuer | 0.0594 | -0.0084 | 0.0000 | 0.0000 |
+| 22 | Manuel Neuer | 0.0499 | -0.0084 | 0.0000 | 0.0000 |
 
 ## Team evidence summary
 

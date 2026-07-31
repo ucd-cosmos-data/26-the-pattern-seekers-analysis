@@ -30,7 +30,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 27 | Edouard Mendy | 0.0240 | -0.0962 | 0.1249 | 0.0000 |
+| 29 | Edouard Mendy | 0.0133 | -0.0962 | 0.1249 | 0.0000 |
 
 ## Team evidence summary
 

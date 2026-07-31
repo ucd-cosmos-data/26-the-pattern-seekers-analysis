@@ -29,7 +29,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 18 | Sergio Rochet Álvarez | 0.0810 | -0.0025 | 0.0083 | 0.0000 |
+| 19 | Sergio Rochet Álvarez | 0.0718 | -0.0025 | 0.0083 | 0.0000 |
 
 ## Team evidence summary
 

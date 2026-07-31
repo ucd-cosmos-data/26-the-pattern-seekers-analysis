@@ -30,7 +30,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 21 | Kasper Schmeichel | 0.0585 | -0.0125 | 0.0002 | 0.0000 |
+| 23 | Kasper Schmeichel | 0.0491 | -0.0125 | 0.0002 | 0.0000 |
 
 ## Team evidence summary
 

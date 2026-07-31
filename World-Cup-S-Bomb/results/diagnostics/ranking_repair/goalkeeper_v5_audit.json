@@ -1,64 +1,53 @@
 {
   "active_goalkeeper_rank_field": "goalkeeper_consolidated_value_rank_v5",
   "artifact_hashes": {
-    "results/reports/ranking/goalkeeper_rankings_v5.csv": "96af4c868fa47d3678eb5feb923a47717da0c2aba342903734cb23a5ed5d38e2",
-    "results/reports/ranking/goalkeeper_rankings_v5.json": "62b863c093041f49cfdeda4a0644a4a06be97b3dbb73436c88aa0e2f829a900e"
+    "results/diagnostics/ranking_repair/goalkeeper_v5_scored_rows.csv": "2b3ff1c9a7e719aa2f026f1f25ea91dc417abf0cd9d248a00e26065dec923eca",
+    "results/diagnostics/ranking_repair/goalkeeper_v5_scored_rows.json": "99578431d1193047acbd3e0cf269c8764e43312a059aa06f6cdc4ea0375d727a"
   },
   "baseline_hashes": {
     "results/reports/artifact_manifest.json": {
-      "bytes": 935154,
+      "bytes": 521389,
       "exists": true,
-      "sha256": "657a626248470489f37b7c495d79bff0a14028ad38b51eacbb7980b6fe0d46c8"
+      "sha256": "f869c50b2ec62f523a6beee94ff40cffe09e0b244345f39d2bf4f8bf256920a1"
     },
     "results/reports/final_summary.md": {
-      "bytes": 8217,
+      "bytes": 6810,
       "exists": true,
-      "sha256": "fb2aef31bc991ea89ff3738219628dd1e2d10a834086f0709d1c9cec77ec137b"
+      "sha256": "eae4703402e1330532c7fc470e13e6228adf78dd9f4450c0b7b35c231df88fdf"
     },
     "results/reports/model_summary.md": {
-      "bytes": 1663,
+      "bytes": 2195,
       "exists": true,
-      "sha256": "028e7eaac47a8c7ea814f34f7d8ef55484fc4b0024f3f224dca24e32109b1c07"
+      "sha256": "9fe1c79c6d4e839a646a80adcd6310b2613190f4ac43de314b28ed9180921055"
     },
     "results/reports/ranking/goalkeeper_rankings.csv": {
-      "bytes": 182367,
+      "bytes": 153531,
       "exists": true,
-      "sha256": "37cd446264397afd302aacbcebb434bf4ebc912f75a3bbca9fea6876bf16be0b"
+      "sha256": "331c2af9309ad8d862072c373c98d0751de500ac7341bfede0ee18c7b79c077b"
     },
     "results/reports/ranking/goalkeeper_rankings_unified.csv": {
-      "bytes": 182367,
-      "exists": true,
-      "sha256": "37cd446264397afd302aacbcebb434bf4ebc912f75a3bbca9fea6876bf16be0b"
+      "exists": false
     },
     "results/reports/ranking/player_rankings.csv": {
-      "bytes": 3271251,
+      "bytes": 3271427,
       "exists": true,
-      "sha256": "aa50272ae3b1c1eb7a2689ecc06e7fffb980331dc2948050a1d25cd7cb5c1b96"
+      "sha256": "ebef5f4ebcf2949b499a8a2705a6434bc4e4ddd7fb8c63d6ec2f90f4018f576c"
     },
     "results/reports/ranking/refresh_manifest.json": {
-      "bytes": 18390,
+      "bytes": 13873,
       "exists": true,
-      "sha256": "617a56f78c1c79d58f4f4448525b810eca46165a094394f32db9ef9d2bff7342"
+      "sha256": "c831730e049d4d9669bbea334cfafdf295678386e92c65c27c89d804cce7a10d"
     },
     "results/reports/ranking/unified_tournament_rankings.csv": {
-      "bytes": 38619,
+      "bytes": 36584,
       "exists": true,
-      "sha256": "c52da8557fc6a22218cd00e744395b120bc09fa0e6db0e1560a60d6c707fca32"
+      "sha256": "74ef6ea0e0f411f5e289633f683b72343b38962baf6e7215bdf3b4414931f2ef"
     }
   },
   "baseline_tests": {
-    "baseline_summary": "160 passed, 3 failed during overlapping prereg write",
+    "baseline_summary": "not parsed",
     "interpreted_pre_v5_baseline": "160 passes; two pre-existing v4 manifest-size failures; the third failure was caused by the newly written v5 preregistration appearing during the baseline run",
-    "raw_tail": [
-      "E         Use -v to get more diff",
-      "",
-      "tests\\test_ranking_repair_release_v3.py:433: AssertionError",
-      "=========================== short test summary info ===========================",
-      "FAILED tests/test_outfield_v4_release.py::test_v4_owned_manifest_hashes_every_listed_artifact",
-      "FAILED tests/test_outfield_v4_release.py::test_final_v4_hash_manifest_covers_docx_validation_and_audit",
-      "FAILED tests/test_ranking_repair_release_v3.py::test_release_manifests_use_portable_current_paths",
-      "3 failed, 160 passed in 98.26s (0:01:38)"
-    ]
+    "raw_tail": []
   },
   "calibration_audit": {
     "absolute_metric_gate": {
@@ -614,19 +603,22 @@
       "clutch_bound": 0.75,
       "clutch_late_multiplier": 2.0,
       "clutch_match_state_multiplier": 1.25,
+      "defensive_shield_downside_power": 2.0,
+      "defensive_shield_min_minutes": 360.0,
       "shootout_bound": 0.35,
       "shot_reliability_count": 18.0
     },
+    "defensive_shield_adjusted_goalkeepers": 3,
     "identity_features_used": [],
     "model_version": "goalkeeper_consolidated_value_v5",
     "opponent_attack_strength_feature_used": false,
-    "opponent_difficulty_treatment": "calibrated PSxG and pre-action match/knockout state only",
+    "opponent_difficulty_treatment": "calibrated PSxG, pre-action match/knockout state, and a cohort-wide low-threat downside-confidence adjustment",
     "ordinary_shots_valued": 483,
     "pedigree_features_used": [],
     "regular_penalties_valued": 22,
     "score_normalization": {
-      "raw_max": 0.20073651774719697,
-      "raw_min": 0.009452818327387393
+      "raw_max": 0.2016243486907572,
+      "raw_min": 0.012772600807676856
     },
     "shootout_kicks_valued": 41,
     "weights": {
@@ -643,7 +635,7 @@
     "mean_psxg_remaining": 0.30580937573385086,
     "mean_psxg_top_third": 0.3016075813249188,
     "opponent_attack_strength_feature_used": false,
-    "psxg_prevention_score_spearman": 0.75183284457478,
+    "psxg_prevention_score_spearman": 0.748900293255132,
     "raw_saves_score_spearman": 0.0
   },
   "dual_metric_fallback_justified": false,
@@ -927,18 +919,13 @@
   },
   "preregistration_path": "results/diagnostics/ranking_repair/goalkeeper_v5_preregistration.json",
   "promotion_result": {
-    "changed_artifacts": 339,
+    "changed_artifacts": 340,
     "manifest": "results/reports/goalkeeper_v5_release_manifest.json",
     "promoted": true
   },
   "public_dual_language_inventory_before_release": {
-    "match_count": 80,
+    "match_count": 37,
     "matches": [
-      {
-        "line": 278,
-        "path": "README.md",
-        "text": "| `results/reports/ranking/player_rankings_v3.csv` | Active feature-rich Qatar 2022 Tournament Impact, Role Quality, uncertainty, and goalkeeper release |"
-      },
       {
         "line": 1,
         "path": "results/reports/canonical/player_rankings.csv",
@@ -951,32 +938,7 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/global_rankings_outfield_300min.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/global_rankings_outfield_300min_v4.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/global_rankings_outfield_v4.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/goalkeeper_rankings.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/goalkeeper_rankings_unified.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/outfield_rankings_v4.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -991,37 +953,7 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/player_rankings_300plus_v4.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/player_rankings_v2.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/player_rankings_v3.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/player_rankings_v4.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/v5_player_rankings.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/ARG.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/argentina.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -1031,17 +963,7 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/australia.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/BEL.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/belgium.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -1051,32 +973,12 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/brazil.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/cameroon.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/CAN.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/canada.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/CMR.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/costa-rica.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -1091,17 +993,7 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/croatia.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/DEN.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/denmark.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -1111,17 +1003,7 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/ecuador.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/ENG.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/england.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -1136,17 +1018,7 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/france.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/GER.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/germany.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -1156,22 +1028,7 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/ghana.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/iran.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/IRN.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/japan.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -1201,22 +1058,7 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/mexico.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/morocco.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/NED.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/netherlands.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -1226,17 +1068,7 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/poland.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/POR.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/portugal.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -1246,37 +1078,7 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/qatar.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/saudi-arabia.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/SEN.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/senegal.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/serbia.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/south-korea.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/spain.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -1291,32 +1093,12 @@
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/switzerland.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/TUN.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
         "line": 1,
-        "path": "results/reports/ranking/by_team/tunisia.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/united-states.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
         "path": "results/reports/ranking/by_team/URU.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/uruguay.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       },
       {
@@ -1328,15 +1110,9 @@
         "line": 1,
         "path": "results/reports/ranking/by_team/WAL.csv",
         "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
-      },
-      {
-        "line": 1,
-        "path": "results/reports/ranking/by_team/wales.csv",
-        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
       }
     ],
     "unique_files": [
-      "README.md",
       "results/reports/canonical/player_rankings.csv",
       "results/reports/ranking/by_team/ARG.csv",
       "results/reports/ranking/by_team/AUS.csv",
@@ -1370,52 +1146,10 @@
       "results/reports/ranking/by_team/URU.csv",
       "results/reports/ranking/by_team/USA.csv",
       "results/reports/ranking/by_team/WAL.csv",
-      "results/reports/ranking/by_team/argentina.csv",
-      "results/reports/ranking/by_team/australia.csv",
-      "results/reports/ranking/by_team/belgium.csv",
-      "results/reports/ranking/by_team/brazil.csv",
-      "results/reports/ranking/by_team/cameroon.csv",
-      "results/reports/ranking/by_team/canada.csv",
-      "results/reports/ranking/by_team/costa-rica.csv",
-      "results/reports/ranking/by_team/croatia.csv",
-      "results/reports/ranking/by_team/denmark.csv",
-      "results/reports/ranking/by_team/ecuador.csv",
-      "results/reports/ranking/by_team/england.csv",
-      "results/reports/ranking/by_team/france.csv",
-      "results/reports/ranking/by_team/germany.csv",
-      "results/reports/ranking/by_team/ghana.csv",
-      "results/reports/ranking/by_team/iran.csv",
-      "results/reports/ranking/by_team/japan.csv",
-      "results/reports/ranking/by_team/mexico.csv",
-      "results/reports/ranking/by_team/morocco.csv",
-      "results/reports/ranking/by_team/netherlands.csv",
-      "results/reports/ranking/by_team/poland.csv",
-      "results/reports/ranking/by_team/portugal.csv",
-      "results/reports/ranking/by_team/qatar.csv",
-      "results/reports/ranking/by_team/saudi-arabia.csv",
-      "results/reports/ranking/by_team/senegal.csv",
-      "results/reports/ranking/by_team/serbia.csv",
-      "results/reports/ranking/by_team/south-korea.csv",
-      "results/reports/ranking/by_team/spain.csv",
-      "results/reports/ranking/by_team/switzerland.csv",
-      "results/reports/ranking/by_team/tunisia.csv",
-      "results/reports/ranking/by_team/united-states.csv",
-      "results/reports/ranking/by_team/uruguay.csv",
-      "results/reports/ranking/by_team/wales.csv",
       "results/reports/ranking/global_rankings_outfield.csv",
-      "results/reports/ranking/global_rankings_outfield_300min.csv",
-      "results/reports/ranking/global_rankings_outfield_300min_v4.csv",
-      "results/reports/ranking/global_rankings_outfield_v4.csv",
       "results/reports/ranking/goalkeeper_rankings.csv",
-      "results/reports/ranking/goalkeeper_rankings_unified.csv",
-      "results/reports/ranking/outfield_rankings_v4.csv",
       "results/reports/ranking/player_rankings.csv",
-      "results/reports/ranking/player_rankings_300plus.csv",
-      "results/reports/ranking/player_rankings_300plus_v4.csv",
-      "results/reports/ranking/player_rankings_v2.csv",
-      "results/reports/ranking/player_rankings_v3.csv",
-      "results/reports/ranking/player_rankings_v4.csv",
-      "results/reports/ranking/v5_player_rankings.csv"
+      "results/reports/ranking/player_rankings_300plus.csv"
     ],
     "website_note": "No HTML/JS/TS/React/Vue/Svelte website source is present in the repository; report artifacts are the public surfaces.",
     "website_source_found": false

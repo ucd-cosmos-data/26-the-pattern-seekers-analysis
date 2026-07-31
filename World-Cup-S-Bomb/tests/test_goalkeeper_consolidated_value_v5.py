@@ -335,3 +335,46 @@ def test_candidate_table_has_one_main_goalkeeper_per_team() -> None:
     assert sorted(
         table["goalkeeper_consolidated_value_rank_v5"].astype(int)
     ) == list(range(1, 33))
+
+
+def test_defensive_shield_adjustment_is_structural_and_limited() -> None:
+    table = pd.read_csv(RANKING / "goalkeeper_rankings.csv")
+    required = {
+        "expected_threat_faced_p90_v5",
+        "defensive_shield_downside_reliability_v5",
+        "defensive_shield_adjustment_v5",
+    }
+    assert required <= set(table.columns)
+
+    adjusted = table.loc[
+        table["defensive_shield_adjustment_v5"].gt(0.0)
+    ]
+    threat_median = table["expected_threat_faced_p90_v5"].median()
+    assert not adjusted.empty
+    assert adjusted["minutes"].ge(360.0).all()
+    assert adjusted["expected_threat_faced_p90_v5"].lt(
+        threat_median
+    ).all()
+
+    ordered = table.sort_values(
+        "goalkeeper_consolidated_value_rank_v5"
+    )
+    assert ordered.head(10)["player_name"].tolist() == [
+        "Dominik Livaković",
+        "Andries Noppert",
+        "Damián Emiliano Martínez",
+        "Yassine Bounou",
+        "Diogo Meireles Costa",
+        "Wojciech Szczęsny",
+        "Shūichi Gonda",
+        "Matthew Charles Turner",
+        "Hugo Lloris",
+        "Mathew Ryan",
+    ]
+    alisson_rank = int(
+        ordered.loc[
+            ordered["player_name"].eq("Alisson Ramsés Becker"),
+            "goalkeeper_consolidated_value_rank_v5",
+        ].iloc[0]
+    )
+    assert 10 <= alisson_rank <= 17

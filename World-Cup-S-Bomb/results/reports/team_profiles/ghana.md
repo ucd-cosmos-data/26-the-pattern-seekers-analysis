@@ -29,7 +29,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 17 | Lawrence Ati-Zigi | 0.0857 | -0.0376 | 0.1477 | 0.0000 |
+| 18 | Lawrence Ati-Zigi | 0.0766 | -0.0376 | 0.1477 | 0.0000 |
 
 ## Team evidence summary
 

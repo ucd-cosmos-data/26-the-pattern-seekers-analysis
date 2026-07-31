@@ -30,7 +30,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 12 | Aymen Dahmen | 0.1595 | 0.0309 | 0.1390 | 0.0000 |
+| 12 | Aymen Dahmen | 0.1514 | 0.0309 | 0.1390 | 0.0000 |
 
 ## Team evidence summary
 

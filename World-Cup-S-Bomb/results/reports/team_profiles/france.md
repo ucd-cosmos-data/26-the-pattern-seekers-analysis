@@ -33,7 +33,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 9 | Hugo Lloris | 0.2352 | 0.1174 | 0.1622 | 0.0000 |
+| 9 | Hugo Lloris | 0.2259 | 0.1174 | 0.1622 | 0.0000 |
 
 ## Team evidence summary
 

@@ -30,7 +30,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 8 | Matthew Charles Turner | 0.2477 | 0.0381 | 0.2445 | 0.0000 |
+| 8 | Matthew Charles Turner | 0.2399 | 0.0381 | 0.2445 | 0.0000 |
 
 ## Team evidence summary
 

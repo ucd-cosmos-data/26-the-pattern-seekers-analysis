@@ -29,7 +29,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 15 | Thibaut Courtois | 0.1002 | 0.0148 | 0.0438 | 0.0000 |
+| 17 | Thibaut Courtois | 0.0914 | 0.0148 | 0.0438 | 0.0000 |
 
 ## Team evidence summary
 

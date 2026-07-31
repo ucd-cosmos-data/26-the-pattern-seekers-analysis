@@ -29,7 +29,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 13 | Devis Rogers Epassy Mboka | 0.1488 | 0.0405 | 0.1018 | 0.0000 |
+| 13 | Devis Rogers Epassy Mboka | 0.1416 | 0.0405 | 0.1018 | 0.0000 |
 
 ## Team evidence summary
 

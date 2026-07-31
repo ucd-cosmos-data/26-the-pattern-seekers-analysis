@@ -20,6 +20,18 @@ adds only incremental late/high-consequence residual, preventing the base save
 from being counted twice. Penalties and shootouts use sample-reliability
 shrinkage; shootouts enter through bounded win-probability added.
 
+For keepers with at least 360 minutes, if expected threat faced per 90 is below
+the goalkeeper-cohort median and the ordinary-play component is below its
+cohort mean:
+
+`OrdinaryAdjusted = OrdinaryMean
++ min(1, ThreatFaced90/MedianThreatFaced90)^2
+* (Ordinary-OrdinaryMean)`
+
+This is a downside-confidence correction for sparse, defense-limited
+shot-stopping evidence. It never increases positive ordinary-play evidence and
+does not change penalties, shootouts, or support play.
+
 ## Inputs and exclusions
 
 The model uses event-derived shot location/height, body part, technique, shot

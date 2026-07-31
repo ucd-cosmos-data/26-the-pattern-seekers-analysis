@@ -33,7 +33,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 5 | Diogo Meireles Costa | 0.2856 | 0.1191 | 0.1396 | 0.0000 |
+| 5 | Diogo Meireles Costa | 0.2776 | 0.1191 | 0.1396 | 0.0000 |
 
 ## Team evidence summary
 

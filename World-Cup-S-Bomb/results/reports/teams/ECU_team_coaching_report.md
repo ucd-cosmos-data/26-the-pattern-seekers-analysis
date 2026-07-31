@@ -28,7 +28,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 24 | Hernán Ismael Galíndez | 0.0418 | -0.0156 | 0.0007 | 0.0000 |
+| 26 | Hernán Ismael Galíndez | 0.0322 | -0.0156 | 0.0007 | 0.0000 |
 
 ## Team evidence summary
 

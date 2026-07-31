@@ -31,7 +31,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 31 | Seung-Gyu Kim | 0.0109 | -0.0379 | 0.0139 | 0.0000 |
+| 32 | Seung-Gyu Kim | 0.0000 | -0.0379 | 0.0139 | 0.0000 |
 
 ## Team evidence summary
 

@@ -30,7 +30,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 26 | Francisco Guillermo Ochoa Magaña | 0.0391 | -0.0288 | 0.0151 | 0.0000 |
+| 27 | Francisco Guillermo Ochoa Magaña | 0.0294 | -0.0288 | 0.0151 | 0.0000 |
 
 ## Team evidence summary
 

@@ -28,7 +28,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 14 | Vanja Milinković Savić | 0.1053 | 0.0163 | 0.0516 | 0.0000 |
+| 15 | Vanja Milinković Savić | 0.0965 | 0.0163 | 0.0516 | 0.0000 |
 
 ## Team evidence summary
 

@@ -29,7 +29,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 10 | Mathew Ryan | 0.2181 | 0.0097 | 0.2506 | 0.0000 |
+| 10 | Mathew Ryan | 0.2099 | 0.0097 | 0.2506 | 0.0000 |
 
 ## Team evidence summary
 

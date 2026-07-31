@@ -14,7 +14,7 @@ Ordinary outfield evidence uses only Qatar 2022 periods 1–4. Period 5 is shoot
 
 | Ranking resource | Location | Use |
 |---|---|---|
-| Complete player master table | [`results/reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) | Feature/profile source for all eligible players; 593 data rows × 608 columns. It is not the cross-position leaderboard. |
+| Complete player master table | [`results/reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) | Feature/profile source for all eligible players; 593 data rows × 625 columns. It is not the cross-position leaderboard. |
 | Unified tournament ranking | [`results/reports/ranking/unified_tournament_rankings.csv`](../reports/ranking/unified_tournament_rankings.csv) | Exact six-field outfield-only publication view. |
 | Complete feature-rich team tables | [`results/reports/ranking/by_team/`](../reports/ranking/by_team/) | One active v3 table per team, ordered by `team_rank_v3`/publication `Team Rank`. |
 | Complete unified team tables | [`results/reports/ranking/by_team_unified/`](../reports/ranking/by_team_unified/) | One exact six-field v3 CSV per team, ordered by publication `Team Rank`. |

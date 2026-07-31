@@ -69,6 +69,8 @@ class GoalkeeperV5Config:
     shootout_reliability_count: float = 4.0
     support_reliability_count: float = 20.0
     minutes_reliability_constant: float = 450.0
+    defensive_shield_min_minutes: float = 360.0
+    defensive_shield_downside_power: float = 2.0
     easy_psxg_threshold: float = 0.20
     hard_psxg_threshold: float = 0.50
 
@@ -115,6 +117,8 @@ class GoalkeeperV5Config:
             "shootout_reliability_count",
             "support_reliability_count",
             "minutes_reliability_constant",
+            "defensive_shield_min_minutes",
+            "defensive_shield_downside_power",
         ):
             if getattr(self, name) <= 0:
                 raise ValueError(f"{name} must be positive")
@@ -646,6 +650,59 @@ def calculate_goalkeeper_consolidated_value_v5(
         * output["shootout_win_probability_added_v5"]
         + weights["support"] * output["support_value_centered_v5"]
     )
+
+    # A keeper protected by a consistently low-threat defense has less
+    # ordinary shot-stopping evidence from which to infer a downside.  After
+    # four matches of coverage, shrink only a below-prior ordinary-play
+    # component toward the cohort prior according to threat faced per 90.
+    # Positive evidence and the penalty, shootout, and support channels are
+    # unchanged.
+    ordinary_component = (
+        weights["psxg"]
+        * output["psxg_shot_stopping_value_v5"].fillna(0.0)
+        + weights["clutch"] * output["clutch_save_value_v5"]
+        + weights["state_leverage"]
+        * output["state_leverage_prevention_value_v5"]
+    )
+    ordinary_prior = float(ordinary_component.loc[main_mask].mean())
+    expected_threat_p90 = (
+        count
+        * output["psxg_mean_difficulty_faced_v5"].fillna(0.0)
+        * 90.0
+        / minutes.replace(0.0, np.nan)
+    ).fillna(0.0)
+    threat_reference = float(
+        expected_threat_p90.loc[main_mask].median()
+    ) or 1.0
+    downside_reliability = (
+        (expected_threat_p90 / threat_reference)
+        .clip(0.0, 1.0)
+        .pow(config.defensive_shield_downside_power)
+    )
+    protected_downside = (
+        main_mask
+        & minutes.ge(config.defensive_shield_min_minutes)
+        & expected_threat_p90.lt(threat_reference)
+        & ordinary_component.lt(ordinary_prior)
+    )
+    adjusted_ordinary = ordinary_component.copy()
+    adjusted_ordinary.loc[protected_downside] = (
+        ordinary_prior
+        + downside_reliability.loc[protected_downside]
+        * (
+            ordinary_component.loc[protected_downside]
+            - ordinary_prior
+        )
+    )
+    output["expected_threat_faced_p90_v5"] = expected_threat_p90
+    output["defensive_shield_downside_reliability_v5"] = (
+        downside_reliability
+    )
+    output["defensive_shield_adjustment_v5"] = (
+        adjusted_ordinary - ordinary_component
+    )
+    component_sum = component_sum - ordinary_component + adjusted_ordinary
+
     component_prior = float(component_sum.loc[main_mask].mean())
     # Reliability is shrinkage toward the cohort mean, not a team-progress
     # bonus and not shrinkage toward a favorable zero.
@@ -698,6 +755,12 @@ def calculate_goalkeeper_consolidated_value_v5(
                 config.clutch_match_state_multiplier
             ),
             "shot_reliability_count": config.shot_reliability_count,
+            "defensive_shield_min_minutes": (
+                config.defensive_shield_min_minutes
+            ),
+            "defensive_shield_downside_power": (
+                config.defensive_shield_downside_power
+            ),
         },
         "anti_double_count_rule": (
             "PSxG contains prevention once; clutch is multiplier-minus-one "
@@ -711,7 +774,11 @@ def calculate_goalkeeper_consolidated_value_v5(
         "pedigree_features_used": [],
         "opponent_attack_strength_feature_used": False,
         "opponent_difficulty_treatment": (
-            "calibrated PSxG and pre-action match/knockout state only"
+            "calibrated PSxG, pre-action match/knockout state, and a "
+            "cohort-wide low-threat downside-confidence adjustment"
+        ),
+        "defensive_shield_adjusted_goalkeepers": int(
+            protected_downside.sum()
         ),
         "score_normalization": {"raw_min": low, "raw_max": high},
     }

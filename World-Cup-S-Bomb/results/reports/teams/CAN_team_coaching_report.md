@@ -28,7 +28,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 30 | Milan Borjan | 0.0141 | -0.0637 | 0.0173 | 0.0000 |
+| 31 | Milan Borjan | 0.0042 | -0.0637 | 0.0173 | 0.0000 |
 
 ## Team evidence summary
 

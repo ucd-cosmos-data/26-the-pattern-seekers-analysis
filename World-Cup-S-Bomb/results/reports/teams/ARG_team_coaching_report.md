@@ -32,7 +32,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 3 | Damián Emiliano Martínez | 0.2899 | -0.1686 | 0.4374 | 0.3462 |
+| 3 | Damián Emiliano Martínez | 0.2807 | -0.1686 | 0.4374 | 0.3462 |
 
 ## Team evidence summary
 

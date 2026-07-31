@@ -32,7 +32,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 11 | Mohammed Khalil Al Owais | 0.2011 | 0.0581 | 0.1698 | 0.0000 |
+| 11 | Mohammed Khalil Al Owais | 0.1934 | 0.0581 | 0.1698 | 0.0000 |
 
 ## Team evidence summary
 

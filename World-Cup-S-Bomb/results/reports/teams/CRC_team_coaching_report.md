@@ -29,7 +29,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 28 | Keylor Navas Gamboa | 0.0239 | -0.1020 | 0.1320 | 0.0000 |
+| 28 | Keylor Navas Gamboa | 0.0140 | -0.1020 | 0.1320 | 0.0000 |
 
 ## Team evidence summary
 

@@ -31,7 +31,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 19 | Seyed Hossein Hosseini | 0.0667 | -0.0288 | 0.0175 | 0.0000 |
+| 21 | Seyed Hossein Hosseini | 0.0586 | -0.0288 | 0.0175 | 0.0000 |
 
 ## Team evidence summary
 

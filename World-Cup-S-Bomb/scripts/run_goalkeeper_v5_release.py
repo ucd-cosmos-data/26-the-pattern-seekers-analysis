@@ -35,6 +35,7 @@ from src.models.goalkeeper_valuation_v3 import (  # noqa: E402
     calibrate_post_shot_xg_v3,
 )
 from src.reporting.goalkeeper_v5_release import (  # noqa: E402
+    V5_PREFIXES,
     promote_goalkeeper_v5,
 )
 from src.reporting.ranking_repair_release import (  # noqa: E402
@@ -720,7 +721,14 @@ def _system_gates(
     gates["H10_single_metric_consolidation"] = True
     gates["H11_no_pedigree_feature"] = True
 
-    preserved_columns = list(base.columns)
+    # The canonical input may already contain a previous v5 publication.
+    # Baseline preservation applies to source/pre-v5 columns, not to the
+    # v5-owned columns this candidate is explicitly recalculating.
+    preserved_columns = [
+        column
+        for column in base.columns
+        if not str(column).startswith(V5_PREFIXES)
+    ]
     gates["H12_baseline_preservation"] = bool(
         rated[preserved_columns].equals(base[preserved_columns])
     )

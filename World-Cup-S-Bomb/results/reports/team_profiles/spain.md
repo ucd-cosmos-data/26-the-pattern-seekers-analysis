@@ -32,7 +32,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 16 | Unai Simón Mendibil | 0.0911 | -0.0209 | 0.0489 | 0.0497 |
+| 14 | Unai Simón Mendibil | 0.1364 | -0.0209 | 0.0489 | 0.0497 |
 
 ## Team evidence summary
 

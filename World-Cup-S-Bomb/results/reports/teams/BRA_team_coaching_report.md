@@ -33,7 +33,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 32 | Alisson Ramsés Becker | 0.0000 | -0.0427 | 0.0060 | 0.0000 |
+| 16 | Alisson Ramsés Becker | 0.0928 | -0.0427 | 0.0060 | 0.0000 |
 
 ## Team evidence summary
 

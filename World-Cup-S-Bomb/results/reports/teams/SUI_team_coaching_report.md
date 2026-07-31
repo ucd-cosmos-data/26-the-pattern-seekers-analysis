@@ -30,7 +30,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 29 | Yann Sommer | 0.0190 | -0.0669 | 0.0198 | 0.0000 |
+| 30 | Yann Sommer | 0.0091 | -0.0669 | 0.0198 | 0.0000 |
 
 ## Team evidence summary
 

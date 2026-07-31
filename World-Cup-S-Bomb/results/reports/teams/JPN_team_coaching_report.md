@@ -33,7 +33,7 @@ shown in their own section.
 
 | GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
 |---|---|---|---|---|---|
-| 7 | Shūichi Gonda | 0.2525 | 0.1104 | 0.1646 | 0.0000 |
+| 7 | Shūichi Gonda | 0.2445 | 0.1104 | 0.1646 | 0.0000 |
 
 ## Team evidence summary
 

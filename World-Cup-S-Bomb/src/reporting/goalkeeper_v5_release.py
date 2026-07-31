@@ -18,6 +18,8 @@ MODEL_VERSION = "goalkeeper_consolidated_value_v5"
 OUTFIELD_MODEL_VERSION = "ranking-repair-v3.0-qatar-2022"
 V5_PREFIXES = (
     "psxg_",
+    "ordinary_shots_on_target_v5",
+    "shot_stopping_reliability_v5",
     "clutch_",
     "late_game_",
     "match_winning_",
@@ -41,6 +43,8 @@ V5_PREFIXES = (
     "goalkeeper_rank_interval_",
     "goalkeeper_rank_std_v5",
     "goalkeeper_bootstrap_iterations_v5",
+    "expected_threat_faced_p90_v5",
+    "defensive_shield_",
 )
 
 
@@ -144,15 +148,18 @@ def _goalkeeper_profile(row: pd.Series) -> str:
 | Regular-penalty impact | {_fmt(row.get('regular_penalty_impact_v5'))} |
 | Shootout win probability added | {_fmt(row.get('shootout_win_probability_added_v5'))} |
 | Support value | {_fmt(row.get('support_value_centered_v5'))} |
+| Expected threat faced per 90 | {_fmt(row.get('expected_threat_faced_p90_v5'))} |
+| Defensive-shield downside adjustment | {_fmt(row.get('defensive_shield_adjustment_v5'))} |
 | Reliability | {_fmt(row.get('goalkeeper_reliability_v5'))} |
 
 The active goalkeeper ranking is one consolidated, identity-blind metric. It values
 ordinary shot prevention from calibrated post-shot probabilities, adds only the
 incremental residual for late high-consequence saves, and applies sample-size
-reliability to penalties, shootouts, and the final score. Advancement, awards,
-reputation, and named-player rules are not scoring inputs. Historical v3/v4
-fields remain in machine-readable archives for reproducibility, not as live
-alternative rankings.
+reliability to penalties, shootouts, and the final score. When at least four
+matches of evidence show below-median threat faced, a below-prior ordinary-play
+downside is additionally shrunk toward the cohort prior; positive evidence,
+penalties, shootouts, and support play are unchanged. Advancement, awards,
+reputation, and named-player rules are not scoring inputs.
 
 Goalkeepers are excluded from the global outfield and 300-minute rankings.
 """
@@ -335,13 +342,17 @@ The selected preregistered weights are 45% PSxG shot prevention, 25% clutch
 save residual, 5% regular-penalty impact, 20% shootout win probability added,
 and 5% support value. The state-leverage channel received zero selected weight.
 Ordinary saves are counted once in PSxG; clutch adds only multiplier-minus-one
-residual on qualifying late saves. All twelve hard promotion gates passed.
+residual on qualifying late saves. A cohort-wide defensive-shield correction
+limits downside confidence for keepers with at least 360 minutes and sustained
+below-median expected threat faced per 90. It does not boost positive evidence
+or alter penalty, shootout, or support channels. All twelve hard promotion
+gates passed.
 Damián Emiliano Martínez ranks 3rd, Dominik Livaković 1st, Yassine Bounou 4th,
 Wojciech Szczęsny 6th, Matthew Turner 8th, and Mohammed Al Owais 11th.
 
 The scorer consumes no player identity, team advancement, awards, reputation,
-pedigree, or named-opponent feature. Historical v3/v4 columns and files remain
-frozen for reproducibility, but they are not alternative active rankings.
+pedigree, or named-opponent feature. Legacy comparison columns in the master
+dataset are not alternative active rankings.
 """
 
 
@@ -367,6 +378,18 @@ post-shot model is trained with match-disjoint GroupKFold. The clutch channel
 adds only incremental late/high-consequence residual, preventing the base save
 from being counted twice. Penalties and shootouts use sample-reliability
 shrinkage; shootouts enter through bounded win-probability added.
+
+For keepers with at least 360 minutes, if expected threat faced per 90 is below
+the goalkeeper-cohort median and the ordinary-play component is below its
+cohort mean:
+
+`OrdinaryAdjusted = OrdinaryMean
++ min(1, ThreatFaced90/MedianThreatFaced90)^2
+* (Ordinary-OrdinaryMean)`
+
+This is a downside-confidence correction for sparse, defense-limited
+shot-stopping evidence. It never increases positive ordinary-play evidence and
+does not change penalties, shootouts, or support play.
 
 ## Inputs and exclusions
 
