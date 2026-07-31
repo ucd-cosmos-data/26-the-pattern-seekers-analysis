@@ -1,0 +1,24 @@
+{
+  "model_version": "goalkeeper_consolidated_value_v5",
+  "active_model_version": "ranking-repair-v3.0-qatar-2022",
+  "active_goalkeeper_model_version": "goalkeeper_consolidated_value_v5",
+  "player_id": 32975,
+  "player_name": "Diogo Meireles Costa",
+  "team": "Portugal",
+  "position_group": "Goalkeeper",
+  "is_main_goalkeeper": true,
+  "goalkeeper_consolidated_value_score_v5": 0.2775549467,
+  "goalkeeper_consolidated_value_rank_v5": 5.0,
+  "active_goalkeeper_rank_field": "goalkeeper_consolidated_value_rank_v5",
+  "ranking_status": "Ranked (team main goalkeeper)",
+  "identity_used_for_scoring": false,
+  "team_identity_used_for_scoring": false,
+  "advancement_used_for_scoring": false,
+  "awards_or_reputation_used_for_scoring": false,
+  "ordinary_event_periods": [
+    1,
+    2,
+    3,
+    4
+  ]
+}

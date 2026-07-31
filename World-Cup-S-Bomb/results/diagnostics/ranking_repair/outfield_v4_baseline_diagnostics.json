@@ -1,0 +1,92 @@
+{
+  "attack_component_v3": {
+    "max": 7.984468557,
+    "min": -0.05419140191,
+    "std_population": 0.7971302107934102
+  },
+  "correlation_with_impact": {
+    "attack": 0.9956150651491714,
+    "defense": 0.017090184975959512
+  },
+  "defensive_component_v3": {
+    "max": 0.509472929,
+    "min": -0.2491768369,
+    "std_population": 0.07457833114802397
+  },
+  "eligible_outfield": 553,
+  "fixtures": {
+    "amrabat": {
+      "attack_component_v3": 0.05345999043,
+      "defensive_component_v3": 0.01097210475,
+      "player_id": 5234,
+      "player_name": "Sofyan Amrabat",
+      "tournament_impact_v3": 0.06443209518,
+      "v3_outfield_rank": 470,
+      "v3_publication_rank": 497
+    },
+    "bellingham": {
+      "attack_component_v3": 1.76978797,
+      "defensive_component_v3": -0.05570275223,
+      "player_id": 30714,
+      "player_name": "Jude Bellingham",
+      "tournament_impact_v3": 1.714085218,
+      "v3_outfield_rank": 52,
+      "v3_publication_rank": 55
+    },
+    "hakimi": {
+      "attack_component_v3": 0.9327262844,
+      "defensive_component_v3": 0.3148839921,
+      "player_id": 5245,
+      "player_name": "Achraf Hakimi Mouh",
+      "tournament_impact_v3": 1.247610277,
+      "v3_outfield_rank": 79,
+      "v3_publication_rank": 84
+    },
+    "juranovic": {
+      "attack_component_v3": 0.882799183,
+      "defensive_component_v3": 0.3753271508,
+      "player_id": 29163,
+      "player_name": "Josip Juranović",
+      "tournament_impact_v3": 1.258126334,
+      "v3_outfield_rank": 76,
+      "v3_publication_rank": 80
+    },
+    "messi": {
+      "attack_component_v3": 7.984468557,
+      "defensive_component_v3": -0.01956789052,
+      "player_id": 5503,
+      "player_name": "Lionel Andrés Messi Cuccittini",
+      "tournament_impact_v3": 7.964900667,
+      "v3_outfield_rank": 1,
+      "v3_publication_rank": 1
+    },
+    "otamendi": {
+      "attack_component_v3": 0.3437489745,
+      "defensive_component_v3": -0.2491768369,
+      "player_id": 3090,
+      "player_name": "Nicolás Hernán Otamendi",
+      "tournament_impact_v3": 0.0945721376,
+      "v3_outfield_rank": 452,
+      "v3_publication_rank": 478
+    },
+    "romero": {
+      "attack_component_v3": 0.1259271464,
+      "defensive_component_v3": 0.261554897,
+      "player_id": 20572,
+      "player_name": "Cristian Gabriel Romero",
+      "tournament_impact_v3": 0.3874820434,
+      "v3_outfield_rank": 280,
+      "v3_publication_rank": 296
+    },
+    "van_dijk": {
+      "attack_component_v3": 0.2058248905,
+      "defensive_component_v3": 0.1996215161,
+      "player_id": 3669,
+      "player_name": "Virgil van Dijk",
+      "tournament_impact_v3": 0.4054464066,
+      "v3_outfield_rank": 271,
+      "v3_publication_rank": 287
+    }
+  },
+  "unscaled_defensive_variance_share": 0.008677244982535023
+}

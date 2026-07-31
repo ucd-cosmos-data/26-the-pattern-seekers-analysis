@@ -1,0 +1,64 @@
+{
+  "model_version": "goalkeeper_tournament_impact_v4",
+  "written_before_final_ranking": true,
+  "state_model": {
+    "engine": "symmetric Poisson goal arrivals, tournament-average intensity 172/64 goals per match",
+    "group_consequence": "expected points / 3",
+    "knockout_consequence": "survival probability; post-ET level = 0.5 shootout",
+    "team_strength_terms": "none (leakage-free by construction)"
+  },
+  "channels": {
+    "shot_stopping": "(oof_goal_probability - outcome) x pre-action leverage; single channel, base+excess decomposition published",
+    "regular_penalty": "(beta-shrunk conversion prior - outcome) x leverage; prior strength 8",
+    "shootout": "exact recursion WPA; conversion Beta-shrunk (prior 0.75, strength 8); credit only goalkeeper-credited saves; off-target/woodwork = 0 (0.25 partial rule reported in sensitivity only)",
+    "support": "v3 cross/claim, sweeping, distribution percentiles; availability renormalized; opportunity-shrunk toward 0.5"
+  },
+  "candidate_grid": {
+    "w_shot_stopping": [
+      0.45,
+      0.5,
+      0.55
+    ],
+    "w_regular_penalty": [
+      0.05,
+      0.1
+    ],
+    "w_shootout": [
+      0.2,
+      0.25,
+      0.3
+    ],
+    "w_support": "1 - sum(others), floor 0.05",
+    "shootout_bound": [
+      0.3,
+      0.45,
+      0.6
+    ],
+    "leverage_exponent": [
+      0.5,
+      1.0
+    ]
+  },
+  "selection_criteria_in_order": [
+    "underlying OOF shot calibration untouched (no refit against ranks)",
+    "bootstrap (match-resample, 500 reps) top-five stability maximized",
+    "shot-stopping + decisive channels together >= 60% weight",
+    "removing any single NON-decisive event moves no keeper more than 3 ranks",
+    "leave-one-match-out rank shifts reported"
+  ],
+  "acceptance_gates_evaluated_after_selection": [
+    "Martinez rank 1 (publication gate, never a selection criterion)",
+    ">=3 of {Martinez, Livakovic, Bounou, Szczesny} in top five",
+    "identity-shuffle invariance",
+    "event-removal monotonicity (Kolo Muani save, shootout events)",
+    "v3 fields byte-for-byte preserved"
+  ],
+  "prohibited_features": [
+    "identity",
+    "nationality",
+    "team name as score input",
+    "awards",
+    "advancement bonuses",
+    "target ranks"
+  ]
+}

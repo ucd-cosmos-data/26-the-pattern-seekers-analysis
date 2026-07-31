@@ -1,0 +1,9 @@
+{
+  "schema_version": "5.0-role-attention",
+  "cleanup_executed_after_v5_artifact_validation": true,
+  "deleted": [],
+  "allowlist": [
+    "results/Summary/v4_model_explanation_summary.md",
+    "results/**/v4_final_summary.md"
+  ]
+}

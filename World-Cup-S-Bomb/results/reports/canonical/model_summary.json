@@ -1,0 +1,18 @@
+{
+  "active_model_version": "ranking-repair-v3.0-qatar-2022",
+  "active_goalkeeper_model_version": "goalkeeper_consolidated_value_v5",
+  "outfield_model": "ranking-repair-v3.0-qatar-2022",
+  "goalkeeper_model": "goalkeeper_consolidated_value_v5",
+  "active_goalkeeper_rank_field": "goalkeeper_consolidated_value_rank_v5",
+  "single_active_goalkeeper_metric": true,
+  "goalkeepers_excluded_from_global_rankings": true,
+  "goalkeepers_excluded_from_300_minute_rankings": true,
+  "selected_weights": {
+    "psxg": 0.45,
+    "clutch": 0.25,
+    "regular_penalty": 0.05,
+    "shootout": 0.2,
+    "support": 0.05
+  },
+  "hard_gates_all_pass": true
+}

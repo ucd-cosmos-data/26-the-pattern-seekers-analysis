@@ -1,0 +1,22 @@
+{
+  "schema_version": "5.0-role-attention",
+  "decision": "PROMOTED_ROLE_AWARE_FALLBACK",
+  "production_promoted": true,
+  "selected_layer": "role_aware_fallback",
+  "attention_metric_gate_passed": false,
+  "rating_weights": {
+    "vaep_90": 0.4,
+    "vaep_per_touch": 0.15,
+    "xt_90": 0.15,
+    "role_adjusted_value": 0.15,
+    "completeness_score": 0.1,
+    "off_ball_score": 0.05
+  },
+  "spearman_rank_correlation": 0.6571668696566126,
+  "attention_metrics": {},
+  "benchmarks": {
+    "messi_global_rank": 1,
+    "mbappe_global_rank": 4
+  },
+  "comparison_csv": "results/reports/role_aware_rating_comparison.csv"
+}

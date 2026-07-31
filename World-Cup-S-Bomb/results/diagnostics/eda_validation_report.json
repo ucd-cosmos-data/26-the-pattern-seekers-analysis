@@ -1,0 +1,809 @@
+{
+  "schema_version": 4,
+  "status": "PASS",
+  "staging": false,
+  "gates": {
+    "zero_nans": true,
+    "complete_oof_team_coverage": true,
+    "all_64_matches_leakage_safe": true,
+    "minutes_cutoff": true,
+    "fullback_spatial_roles": true,
+    "mbappe_france_top_two": true,
+    "messi_argentina_first": true,
+    "unified_rating_formula": true,
+    "all_player_actions_cross_fitted": true,
+    "legacy_unshrunk_formula_removed": true,
+    "pre_action_feature_contract": true,
+    "legacy_base_formula_reconstructs_raw": true,
+    "event_value_schema": true,
+    "sb360_spatial_coverage": true,
+    "vaep_xt_provenance_explicit": true,
+    "vaep_metric_targets": true,
+    "vaep_artifact": true,
+    "compiled_reports_in_place": true,
+    "heatmaps_complete": true,
+    "summary_complete": true,
+    "counterfactual_safety": true,
+    "locked_classifier_preserved": true,
+    "prospective_harm_prevention": true,
+    "role_aware_challenger_rollback": true,
+    "continuous_role_refinement": true
+  },
+  "player_metrics": {
+    "players_before_cutoff": 680,
+    "eligible_players": 142,
+    "players_dropped": 538,
+    "minimum_minutes": 301.20000000000005,
+    "functional_roles": {
+      "Ball-Winner": 29,
+      "Sweeper CB": 19,
+      "Deep Playmaker": 18,
+      "Target Forward": 17,
+      "Goalkeeper": 16,
+      "Wide Creator": 13,
+      "Box-to-Box Runner": 13,
+      "Progressive Winger": 12,
+      "Attacking Wingback": 5
+    },
+    "attacking_wingbacks": 5,
+    "valuation_system": "360-Augmented VAEP and xT (applied concurrently)",
+    "mbappe_team_rank": 1,
+    "mbappe_final_player_rating": 0.3126841904685295,
+    "giroud_final_player_rating": 0.2376888115274914,
+    "hakimi_role": "Box-to-Box Runner",
+    "dest_role": "Box-to-Box Runner",
+    "france_top_three": [
+      {
+        "player": "Kylian Mbapp\u00e9 Lottin",
+        "team_rank": 1,
+        "final_player_rating": 0.3126841904685295
+      },
+      {
+        "player": "Olivier Giroud",
+        "team_rank": 2,
+        "final_player_rating": 0.2376888115274914
+      },
+      {
+        "player": "Ousmane Demb\u00e9l\u00e9",
+        "team_rank": 3,
+        "final_player_rating": 0.2019578807881487
+      }
+    ],
+    "argentina_top_three": [
+      {
+        "player": "Lionel Andr\u00e9s Messi Cuccittini",
+        "team_rank": 1,
+        "final_player_rating": 0.3297362539418146
+      },
+      {
+        "player": "Juli\u00e1n \u00c1lvarez",
+        "team_rank": 2,
+        "final_player_rating": 0.2904569708819181
+      },
+      {
+        "player": "\u00c1ngel Fabi\u00e1n Di Mar\u00eda Hern\u00e1ndez",
+        "team_rank": 3,
+        "final_player_rating": 0.2879459741767765
+      }
+    ]
+  },
+  "spatial_metrics": {
+    "sb360_matches": 64,
+    "successful_action_points": 54286,
+    "freeze_frame_actor_points": 93757,
+    "events_with_360_context": 203454,
+    "heatmaps": 142
+  },
+  "model_metrics": {
+    "legacy_transition": {
+      "rows": 9685,
+      "matches": 64,
+      "teams": 32,
+      "positives": 13,
+      "brier": 0.001339058576741854,
+      "pr_auc": 0.0059580383921070375,
+      "roc_auc": 0.6893411592543106,
+      "unique_probabilities": 8739
+    },
+    "vaep_selected": {
+      "model_name": "XGBoost 360-VAEP",
+      "algorithm_type": "XGBClassifier",
+      "brier_score": 0.0011229884375387,
+      "roc_auc": 0.9489939112180352,
+      "pr_auc": 0.0848267931127028,
+      "calibration_error": 0.0003364911402715,
+      "latency_sec": 0.3089459579932736,
+      "rank_brier": 1.0,
+      "rank_roc_auc": 1.0,
+      "rank_overall": 1.0,
+      "evaluation_scope": "development_match_oof",
+      "rows": 391942,
+      "selected": true
+    },
+    "prospective_possession_challenger": {
+      "schema_version": "prospective-validation-v1",
+      "overall_status": "PARTIAL_PASS_ROLLBACK",
+      "artifact_written": false,
+      "validation_scheme": "5-fold match-disjoint GroupKFold with nested calibration and paired match-bootstrap ROC comparison",
+      "targets": {
+        "box_entry": {
+          "status": "PASSED",
+          "official_baseline": {
+            "roc_auc": 0.6888,
+            "brier": 0.1847,
+            "ece": 0.0261706749
+          },
+          "matched_reference": {
+            "target": "box_entry",
+            "candidate": "recomputed_logistic_reference",
+            "layout": "stable_start_context",
+            "depth": null,
+            "calibration": "sigmoid",
+            "log_loss": 0.5356352092157832,
+            "brier": 0.1767050209481445,
+            "roc_auc": 0.7112844288731424,
+            "pr_auc": 0.5935358504868073,
+            "ece": 0.0376716370588288,
+            "roc_delta_vs_reference": 0.0,
+            "roc_delta_ci_low": 0.0,
+            "roc_delta_ci_high": 0.0,
+            "passes_gate": false,
+            "decision": "REFERENCE_ONLY",
+            "latency_sec": null
+          },
+          "best_challenger": {
+            "target": "box_entry",
+            "candidate": "CatBoost_depth_4_sigmoid",
+            "layout": "full_pre_possession",
+            "depth": 4.0,
+            "calibration": "sigmoid",
+            "log_loss": 0.5238435165069272,
+            "brier": 0.1722151439715535,
+            "roc_auc": 0.7267613647278355,
+            "pr_auc": 0.6130728781767449,
+            "ece": 0.030852084359785,
+            "roc_delta_vs_reference": 0.0154769358546931,
+            "roc_delta_ci_low": 0.010595605996758,
+            "roc_delta_ci_high": 0.0205143948308022,
+            "passes_gate": true,
+            "decision": "ACCEPTED",
+            "latency_sec": 12.734654100146145
+          }
+        },
+        "shot": {
+          "status": "REJECTED",
+          "official_baseline": {
+            "roc_auc": 0.6642,
+            "brier": 0.1031,
+            "ece": 0.0116224843
+          },
+          "matched_reference": {
+            "target": "shot",
+            "candidate": "recomputed_logistic_reference",
+            "layout": "stable_start_context",
+            "depth": null,
+            "calibration": "sigmoid",
+            "log_loss": 0.3364686211180248,
+            "brier": 0.096981068366143,
+            "roc_auc": 0.6803402247041186,
+            "pr_auc": 0.2374200735411597,
+            "ece": 0.0113744193341681,
+            "roc_delta_vs_reference": 0.0,
+            "roc_delta_ci_low": 0.0,
+            "roc_delta_ci_high": 0.0,
+            "passes_gate": false,
+            "decision": "REFERENCE_ONLY",
+            "latency_sec": null
+          },
+          "best_challenger": {
+            "target": "shot",
+            "candidate": "CatBoost_depth_3_sigmoid",
+            "layout": "full_pre_possession",
+            "depth": 3.0,
+            "calibration": "sigmoid",
+            "log_loss": 0.3338363895475074,
+            "brier": 0.0959890989689569,
+            "roc_auc": 0.6841179348838223,
+            "pr_auc": 0.2685909537414403,
+            "ece": 0.0118180403586993,
+            "roc_delta_vs_reference": 0.0037777101797037,
+            "roc_delta_ci_low": -0.0029512365404924,
+            "roc_delta_ci_high": 0.011992910717733,
+            "passes_gate": false,
+            "decision": "REJECTED: significant paired delta",
+            "latency_sec": 10.71873229998164
+          }
+        }
+      }
+    }
+  },
+  "report_metrics": {
+    "compiled_files": 64,
+    "team_reports": 32,
+    "player_packets": 32,
+    "nan_tokens": 0
+  },
+  "counterfactuals": {
+    "eligible_substitutions": 0,
+    "suppressed_substitutions": 3608
+  },
+  "artifact_regression": {
+    "legacy_transition": {
+      "missing_bundle_keys": [],
+      "schema_compatible": true,
+      "probability_bounds": true,
+      "replay_exact": true,
+      "match_splits_disjoint": true,
+      "partition_match_counts": {
+        "train": 35,
+        "calibration": 10,
+        "threshold": 10,
+        "test": 9
+      },
+      "passed": true
+    },
+    "vaep_xt": {
+      "schema_compatible": true,
+      "probability_bounds": true,
+      "xt_shape": true
+    }
+  },
+  "player_role_valuation_challenger": {
+    "schema_version": 1,
+    "policy": "Promote each challenger independently; retain incumbent outputs when any applicable gate fails.",
+    "incumbent_vaep_oof_metrics": {
+      "brier_score": 0.0011229884375387423,
+      "roc_auc": 0.9489939112180352,
+      "pr_auc": 0.08482679311270283,
+      "calibration_error": 0.0003364911402715651
+    },
+    "probabilistic_roles": {
+      "selected_k": 9,
+      "bic": 4507.060516169142,
+      "aic": 3761.118374640903,
+      "silhouette": 0.3158544201544966,
+      "davies_bouldin": 1.1788779456073863,
+      "calinski_harabasz": 46.97704066236058,
+      "bootstrap_iterations_requested": 500,
+      "bootstrap_iterations_completed": 500,
+      "bootstrap_ari_median": 0.6960573965340997,
+      "bootstrap_ari_p05": 0.5884558428450308,
+      "pca_components": 15,
+      "pca_explained_variance": 0.8812109537203737,
+      "feature_names": [
+        "aerial_dominance_index",
+        "pressing_intensity_index",
+        "speed_recovery_index",
+        "shots_p90",
+        "progressive_carries_p90",
+        "dribbles_p90",
+        "clearances_p90",
+        "progressive_passes_p90",
+        "key_passes_p90",
+        "crosses_p90",
+        "interceptions_p90",
+        "turnovers_p90",
+        "duel_win_rate",
+        "pass_completion",
+        "line_breaking_pass_rate",
+        "pressure_state_rate",
+        "distribution_under_pressure",
+        "pass_start_x",
+        "pass_start_y",
+        "pass_receipt_x",
+        "pass_receipt_y",
+        "spatial_mean_x",
+        "spatial_mean_y",
+        "spatial_std_x",
+        "spatial_std_y",
+        "convex_hull_area",
+        "occupied_pitch_entropy",
+        "half_space_share",
+        "zone14_share",
+        "wide_corridor_share",
+        "central_build_up_share",
+        "final_third_occupancy",
+        "mean_defenders_within_5",
+        "mean_nearest_defender_distance",
+        "mean_defensive_density",
+        "mean_defenders_behind_ball",
+        "network_pagerank",
+        "network_degree",
+        "network_pass_volume",
+        "kde_00",
+        "kde_01",
+        "kde_02",
+        "kde_03",
+        "kde_04",
+        "kde_05",
+        "kde_06",
+        "kde_07",
+        "kde_08",
+        "kde_09",
+        "kde_10",
+        "kde_11",
+        "kde_12",
+        "kde_13",
+        "kde_14",
+        "kde_15",
+        "kde_16",
+        "kde_17",
+        "kde_18",
+        "kde_19",
+        "kde_20",
+        "kde_21",
+        "kde_22",
+        "kde_23",
+        "kde_24",
+        "kde_25",
+        "kde_26",
+        "kde_27",
+        "kde_28",
+        "kde_29",
+        "kde_30",
+        "kde_31",
+        "kde_32",
+        "kde_33",
+        "kde_34",
+        "kde_35",
+        "kde_36",
+        "kde_37",
+        "kde_38",
+        "kde_39",
+        "kde_40",
+        "kde_41",
+        "kde_42",
+        "kde_43",
+        "kde_44",
+        "kde_45",
+        "kde_46",
+        "kde_47",
+        "kde_48",
+        "kde_49",
+        "kde_50",
+        "kde_51",
+        "kde_52",
+        "kde_53",
+        "kde_54",
+        "kde_55",
+        "kde_56",
+        "kde_57",
+        "kde_58",
+        "kde_59",
+        "kde_60",
+        "kde_61",
+        "kde_62",
+        "kde_63",
+        "kde_64",
+        "kde_65",
+        "kde_66",
+        "kde_67",
+        "kde_68",
+        "kde_69",
+        "kde_70",
+        "kde_71",
+        "kde_72",
+        "kde_73",
+        "kde_74",
+        "kde_75",
+        "kde_76",
+        "kde_77",
+        "kde_78",
+        "kde_79",
+        "kde_80",
+        "kde_81",
+        "kde_82",
+        "kde_83",
+        "kde_84",
+        "kde_85",
+        "kde_86",
+        "kde_87",
+        "kde_88",
+        "kde_89",
+        "kde_90",
+        "kde_91",
+        "kde_92",
+        "kde_93",
+        "kde_94",
+        "kde_95"
+      ],
+      "candidates": [
+        {
+          "k": 9,
+          "bic": 4507.060516169142,
+          "aic": 3761.118374640903,
+          "silhouette": 0.3158544201544966,
+          "davies_bouldin": 1.1788779456073863,
+          "calinski_harabasz": 46.97704066236058,
+          "minimum_cluster_size": 5
+        },
+        {
+          "k": 10,
+          "bic": 4487.957113472617,
+          "aic": 3696.6344614331542,
+          "silhouette": 0.2823960018611781,
+          "davies_bouldin": 1.1895021991558967,
+          "calinski_harabasz": 45.36276833394909,
+          "minimum_cluster_size": 6
+        },
+        {
+          "k": 11,
+          "bic": 4524.503345925418,
+          "aic": 3687.800183374732,
+          "silhouette": 0.285085959457218,
+          "davies_bouldin": 1.2137478992742996,
+          "calinski_harabasz": 44.738781175022716,
+          "minimum_cluster_size": 4
+        },
+        {
+          "k": 12,
+          "bic": 4547.895752252532,
+          "aic": 3665.8120791906217,
+          "silhouette": 0.27707116010747856,
+          "davies_bouldin": 1.1919976717216059,
+          "calinski_harabasz": 43.66131005929251,
+          "minimum_cluster_size": 4
+        },
+        {
+          "k": 13,
+          "bic": 4572.321650723717,
+          "aic": 3644.857467150583,
+          "silhouette": 0.28443731629462826,
+          "davies_bouldin": 1.1354870308307288,
+          "calinski_harabasz": 42.07464472013159,
+          "minimum_cluster_size": 2
+        },
+        {
+          "k": 14,
+          "bic": 4608.858283193482,
+          "aic": 3636.0135891091245,
+          "silhouette": 0.2643890451582575,
+          "davies_bouldin": 1.2620370293353242,
+          "calinski_harabasz": 39.15739387775275,
+          "minimum_cluster_size": 2
+        },
+        {
+          "k": 15,
+          "bic": 4662.853375668572,
+          "aic": 3644.628171072991,
+          "silhouette": 0.26254330108043095,
+          "davies_bouldin": 1.1716084485303895,
+          "calinski_harabasz": 38.494283618940905,
+          "minimum_cluster_size": 3
+        },
+        {
+          "k": 16,
+          "bic": 4708.460042389254,
+          "aic": 3644.8543272824504,
+          "silhouette": 0.25326900810061515,
+          "davies_bouldin": 1.3126441061340959,
+          "calinski_harabasz": 36.6414246391663,
+          "minimum_cluster_size": 3
+        }
+      ]
+    },
+    "learned_valuation": {
+      "target": "player-match xG plus xA per 90",
+      "grouping": "5-fold GroupKFold by match_id",
+      "baseline_spearman": 0.7095177047942056,
+      "challenger_spearman": 0.715048318918641,
+      "spearman_delta": 0.00553061412443534,
+      "delta_confidence_interval_95": [
+        -0.005341144580738519,
+        0.016497311999016797
+      ],
+      "baseline_rmse": 0.32532042651671755,
+      "challenger_rmse": 0.2830600635060454,
+      "selected_alpha": 100.0,
+      "feature_names": [
+        "vaep_total_p90",
+        "vaep_per_touch",
+        "xt_p90",
+        "nsxg_p90"
+      ],
+      "coefficients_standardized": [
+        0.18266096761932232,
+        0.006950956203044994,
+        0.06528597300091253,
+        0.0473068617873442
+      ],
+      "statistically_validated": false
+    },
+    "rank_checks": {
+      "incumbent_mbappe_rank": 1,
+      "challenger_mbappe_rank": 1,
+      "incumbent_messi_rank": 1,
+      "challenger_messi_rank": 1
+    },
+    "gates": {
+      "action_probability_metrics_unchanged": true,
+      "role_stability_ari_at_least_0_70": false,
+      "role_nonconstant": true,
+      "learned_valuation_statistically_better": false,
+      "mbappe_is_first": true,
+      "messi_is_first": true
+    },
+    "decisions": {
+      "probabilistic_roles": "REJECTED",
+      "learned_valuation": "REJECTED",
+      "incumbent_rankings_retained": true
+    }
+  },
+  "role_aware_valuation_challenger": {
+    "schema_version": "role-aware-valuation-v1",
+    "decision": "REJECTED_RETAIN_INCUMBENT",
+    "production_promoted": false,
+    "rating_weights": {
+      "vaep_90": 0.4,
+      "vaep_per_touch": 0.15,
+      "xt_90": 0.15,
+      "role_adjusted_value": 0.15,
+      "completeness_score": 0.1,
+      "off_ball_score": 0.05
+    },
+    "spearman_rank_correlation": 0.9854188364826664,
+    "gates": {
+      "foundational_artifacts_unchanged": true,
+      "foundational_metrics_unchanged": true,
+      "eligible_players_unchanged": true,
+      "legacy_schema_preserved": true,
+      "finite_new_ratings": true,
+      "spearman_between_0_75_and_0_90": false,
+      "messi_global_top_two": true,
+      "mbappe_global_top_two": true,
+      "messi_team_first": true,
+      "mbappe_team_first": true,
+      "griezmann_improves": true,
+      "griezmann_hybrid_vector": true,
+      "defensive_midfield_not_systematically_harmed": true
+    },
+    "incumbent_hashes": {
+      "player_evaluations": "320e8926481c0ebbc51afb0ce62746c3f9beb1eca4d00e99de8e83f2d07d1f15",
+      "vaep_model": "238b896bda106d4500c227d51c3b77f98f49d3f84c58b2dda9cce4b484f907dd",
+      "provenance": "d7db3ee84bf3aa53575f48052028df24352e04946dedcf8f8d6a5aea0025067a"
+    },
+    "incumbent_vaep_oof_metrics": {
+      "brier_score": 0.0011229884375387423,
+      "roc_auc": 0.9489939112180352,
+      "pr_auc": 0.08482679311270283,
+      "calibration_error": 0.0003364911402715651
+    },
+    "incumbent_vaep_test_metrics": {
+      "brier_score": 0.0014939932570411018,
+      "roc_auc": 0.9672434467867409,
+      "pr_auc": 0.14985714923238974,
+      "calibration_error": 0.0006291630592211712
+    },
+    "benchmarks": {
+      "messi": {
+        "old_global_rank": 1,
+        "new_global_rank": 1,
+        "new_team_rank": 1
+      },
+      "mbappe": {
+        "old_global_rank": 2,
+        "new_global_rank": 2,
+        "new_team_rank": 1
+      },
+      "griezmann": {
+        "old_global_rank": 21,
+        "new_global_rank": 6,
+        "rating_diff": 0.6017022759997701,
+        "creation_score": 0.7987089201877935,
+        "pressing_score": 0.7112676056338029,
+        "completeness_score": 0.8620275481176624
+      }
+    },
+    "largest_positive_shifts": [
+      {
+        "player": "Antoine Griezmann",
+        "team": "France",
+        "rating_diff": 0.6017022759997701,
+        "old_global_rank": 21,
+        "new_global_rank": 6
+      },
+      {
+        "player": "Sofiane Boufal",
+        "team": "Morocco",
+        "rating_diff": 0.5892273470870982,
+        "old_global_rank": 35,
+        "new_global_rank": 25
+      },
+      {
+        "player": "Cody Math\u00e8s Gakpo",
+        "team": "Netherlands",
+        "rating_diff": 0.5880452402088159,
+        "old_global_rank": 24,
+        "new_global_rank": 11
+      },
+      {
+        "player": "Bruno Miguel Borges Fernandes",
+        "team": "Portugal",
+        "rating_diff": 0.5862427518028988,
+        "old_global_rank": 27,
+        "new_global_rank": 18
+      },
+      {
+        "player": "Mateo Kova\u010di\u0107",
+        "team": "Croatia",
+        "rating_diff": 0.585709537841621,
+        "old_global_rank": 34,
+        "new_global_rank": 26
+      },
+      {
+        "player": "Ousmane Demb\u00e9l\u00e9",
+        "team": "France",
+        "rating_diff": 0.5843979750755476,
+        "old_global_rank": 20,
+        "new_global_rank": 9
+      },
+      {
+        "player": "Luka Modri\u0107",
+        "team": "Croatia",
+        "rating_diff": 0.5777791486517487,
+        "old_global_rank": 51,
+        "new_global_rank": 39
+      },
+      {
+        "player": "Isma\u00efla Sarr",
+        "team": "Senegal",
+        "rating_diff": 0.5765836853673347,
+        "old_global_rank": 14,
+        "new_global_rank": 7
+      },
+      {
+        "player": "Ivan Peri\u0161i\u0107",
+        "team": "Croatia",
+        "rating_diff": 0.5718784066441371,
+        "old_global_rank": 17,
+        "new_global_rank": 10
+      },
+      {
+        "player": "Theo Bernard Fran\u00e7ois Hern\u00e1ndez",
+        "team": "France",
+        "rating_diff": 0.5708428032496251,
+        "old_global_rank": 52,
+        "new_global_rank": 44
+      }
+    ],
+    "largest_negative_shifts": [
+      {
+        "player": "Seung-Gyu Kim",
+        "team": "South Korea",
+        "rating_diff": 0.23462178109029497,
+        "old_global_rank": 139,
+        "new_global_rank": 140
+      },
+      {
+        "player": "Mathew Ryan",
+        "team": "Australia",
+        "rating_diff": 0.23389132853406253,
+        "old_global_rank": 136,
+        "new_global_rank": 134
+      },
+      {
+        "player": "Dominik Livakovi\u0107",
+        "team": "Croatia",
+        "rating_diff": 0.23387259673772567,
+        "old_global_rank": 142,
+        "new_global_rank": 142
+      },
+      {
+        "player": "Wojciech Szcz\u0119sny",
+        "team": "Poland",
+        "rating_diff": 0.2338544960200547,
+        "old_global_rank": 141,
+        "new_global_rank": 141
+      },
+      {
+        "player": "Jordan Pickford",
+        "team": "England",
+        "rating_diff": 0.23300357591017307,
+        "old_global_rank": 132,
+        "new_global_rank": 132
+      },
+      {
+        "player": "Lawrence Ati-Zigi",
+        "team": "Ghana",
+        "rating_diff": 0.23291466948245962,
+        "old_global_rank": 133,
+        "new_global_rank": 133
+      },
+      {
+        "player": "Diogo Meireles Costa",
+        "team": "Portugal",
+        "rating_diff": 0.23174098706795748,
+        "old_global_rank": 129,
+        "new_global_rank": 131
+      },
+      {
+        "player": "Matthew Charles Turner",
+        "team": "United States",
+        "rating_diff": 0.22799350186659834,
+        "old_global_rank": 134,
+        "new_global_rank": 135
+      },
+      {
+        "player": "Unai Sim\u00f3n Mendibil",
+        "team": "Spain",
+        "rating_diff": 0.2241314321825173,
+        "old_global_rank": 135,
+        "new_global_rank": 137
+      },
+      {
+        "player": "Alisson Rams\u00e9s Becker",
+        "team": "Brazil",
+        "rating_diff": 0.21674350042521592,
+        "old_global_rank": 130,
+        "new_global_rank": 138
+      }
+    ],
+    "comparison_csv": "results\\reports\\role_aware_rating_comparison.csv",
+    "rollback_reason": "At least one mandatory ranking, benchmark, integrity, or metric-preservation gate failed."
+  },
+  "continuous_role_refinement": {
+    "schema_version": "continuous-role-refinement-v1",
+    "decision": "ACCEPTED",
+    "production_promoted": true,
+    "eligible_players": 142,
+    "changed_roles": 34,
+    "unchanged_roles": 108,
+    "change_rate": 0.23943661971830985,
+    "gates": {
+      "ratings_and_team_ranks_unchanged": true,
+      "change_rate_between_5_and_30_percent": true,
+      "at_least_70_percent_roles_retained": true,
+      "griezmann_hybrid_creator": true,
+      "tchouameni_controlling_midfielder": true,
+      "theo_attacking_wingback": true,
+      "hakimi_attacking_wingback": true,
+      "modric_deep_playmaker": true,
+      "giroud_penalty_box_anchor": true,
+      "bellingham_engine_midfielder": true,
+      "amrabat_engine_midfielder": true,
+      "goalkeepers_unchanged": true
+    },
+    "benchmarks": {
+      "griezmann": "Hybrid Playmaker / Roaming Creator",
+      "tchouameni": "Holding / Controlling Midfielder",
+      "theo_hernandez": "Attacking Wingback",
+      "giroud": "Target Forward / Penalty-Box Anchor",
+      "hakimi": "Attacking Wingback",
+      "modric": "Deep Playmaker / Metronome",
+      "bellingham": "Box-to-Box / Engine Midfielder",
+      "amrabat": "Box-to-Box / Engine Midfielder"
+    },
+    "france_changes": [
+      {
+        "player": "Olivier Giroud",
+        "kmeans_functional_role": "Target Forward",
+        "functional_role": "Target Forward / Penalty-Box Anchor",
+        "role_refinement_reason": "AERIAL_FINISHING_CENTRALITY"
+      },
+      {
+        "player": "Antoine Griezmann",
+        "kmeans_functional_role": "Ball-Winner",
+        "functional_role": "Hybrid Playmaker / Roaming Creator",
+        "role_refinement_reason": "HIGH_CREATION_PRESSING_COMPLETENESS"
+      },
+      {
+        "player": "Theo Bernard Fran\u00e7ois Hern\u00e1ndez",
+        "kmeans_functional_role": "Wide Creator",
+        "functional_role": "Attacking Wingback",
+        "role_refinement_reason": "FINAL_THIRD_OR_PROGRESSIVE_WIDE_CREATION"
+      },
+      {
+        "player": "Ibrahima Konat\u00e9",
+        "kmeans_functional_role": "Deep Playmaker",
+        "functional_role": "Ball-Playing Centre-Back",
+        "role_refinement_reason": "HIGH_PROGRESSION_AND_SECURITY"
+      },
+      {
+        "player": "Aur\u00e9lien Djani Tchouam\u00e9ni",
+        "kmeans_functional_role": "Ball-Winner",
+        "functional_role": "Holding / Controlling Midfielder",
+        "role_refinement_reason": "HIGH_SECURITY_PROGRESSION_BUILDUP"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "active_model_version": "ranking-repair-v3.0-qatar-2022",
+  "design_preset": "compact_reference_guide",
+  "docx_sha256": "50a354b6c7a1bc2800e67d62df6659849977bca276c1f993112857c0ab850f1f",
+  "global_leader": {
+    "player_name": "Lionel Andrés Messi Cuccittini",
+    "rank": 1,
+    "team": "Argentina"
+  },
+  "goalkeeper_leader": {
+    "player_name": "Wojciech Szczęsny",
+    "rank": 1,
+    "team": "Poland"
+  },
+  "paragraph_count": 80,
+  "required_sections": [
+    "Executive Summary",
+    "Scope and Event Boundary",
+    "Published Ranking Products",
+    "Active Methodology",
+    "Champion–Challenger Validation",
+    "Global Outfield Leaders",
+    "300+ Minute Outfield Leaders",
+    "Below-300-Minute High-Impact Players",
+    "Position Leaders by Role Quality",
+    "Role Leaders by Role Quality",
+    "Team Leaders",
+    "Dedicated Goalkeeper Leaders",
+    "Release Gate and Limitations"
+  ],
+  "required_sections_present": true,
+  "schema_version": "ranking-repair-docx-validation-3.0",
+  "status": "PASS",
+  "table_count": 9
+}

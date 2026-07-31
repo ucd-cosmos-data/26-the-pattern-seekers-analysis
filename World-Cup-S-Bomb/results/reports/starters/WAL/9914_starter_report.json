@@ -1,0 +1,24 @@
+{
+  "model_version": "goalkeeper_consolidated_value_v5",
+  "player_id": 9914,
+  "player_name": "Daniel Ward",
+  "team": "Wales",
+  "position_group": "Goalkeeper",
+  "is_main_goalkeeper": false,
+  "goalkeeper_consolidated_value_score_v5": null,
+  "goalkeeper_consolidated_value_rank_v5": null,
+  "active_goalkeeper_rank_field": "goalkeeper_consolidated_value_rank_v5",
+  "ranking_status": "Unranked (backup goalkeeper)",
+  "active_model_version": "ranking-repair-v3.0-qatar-2022",
+  "active_goalkeeper_model_version": "goalkeeper_consolidated_value_v5",
+  "identity_used_for_scoring": false,
+  "team_identity_used_for_scoring": false,
+  "advancement_used_for_scoring": false,
+  "awards_or_reputation_used_for_scoring": false,
+  "ordinary_event_periods": [
+    1,
+    2,
+    3,
+    4
+  ]
+}

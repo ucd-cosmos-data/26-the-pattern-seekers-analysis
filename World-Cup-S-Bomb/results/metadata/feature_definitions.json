@@ -1,0 +1,78 @@
+{
+  "active_model_version": "ranking-repair-v3.0-qatar-2022",
+  "component_selections": {
+    "attack": {
+      "challenger": "process_plus_shrunk_residual",
+      "champion": "process_only",
+      "decision": "retain_champion",
+      "selected": "process_only"
+    },
+    "cross_position_goalkeeper": {
+      "challenger": "percentile_equivalent_placement",
+      "champion": "Blom bridge described ambiguously",
+      "decision": "promote_explicit_fallback",
+      "selected": "percentile_equivalent_placement"
+    },
+    "defense": {
+      "challenger": "signed_ridge",
+      "champion": "positive_elastic_net",
+      "decision": "promote_challenger",
+      "selected": "signed_ridge"
+    },
+    "goalkeeper": {
+      "challenger": "goalkeeper_v3",
+      "champion": "goalkeeper_v2",
+      "decision": "promote_challenger",
+      "selected": "goalkeeper_v3"
+    },
+    "outfield_ranking": {
+      "challenger": "ranking_repair_v3",
+      "champion": "unified_v2_publication",
+      "decision": "promote_challenger",
+      "selected": "ranking_repair_v3"
+    }
+  },
+  "event_scope": {
+    "ordinary_periods": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "shootout_period": 5
+  },
+  "fields": {
+    "bootstrap_rank_best_v3": "Best endpoint of the match-bootstrap rank band.",
+    "bootstrap_rank_worst_v3": "Worst endpoint of the match-bootstrap rank band.",
+    "continuous_goalkeeper_rating_v3": "Once-reliability-adjusted continuous main-GK score; ordinary non-shootout evidence only.",
+    "dedicated_goalkeeper_score_v3": "90% continuous allocation plus the bounded separate shootout component.",
+    "percentile_equivalent_placement": "Explicit cross-position publication fallback; not measured absolute common-unit contribution.",
+    "role_quality_v3": "Single empirical-Bayes posterior contribution rate through the probabilistic role mixture.",
+    "shootout_component_v3": "Separate goalkeeper shootout contribution capped at 0.10.",
+    "tournament_impact_raw_v3": "Signed common-unit Qatar 2022 total contribution; active outfield global/team ordering field.",
+    "tournament_impact_score_v3": "Global monotonic 0–1 display transform used by the six-field compatibility publication; never normalized within position.",
+    "tournament_impact_v3": "Active signed common-unit Tournament Impact; identical ordering semantics to tournament_impact_raw_v3.",
+    "uncertainty_high_v3": "Upper match-bootstrap Tournament Impact interval endpoint.",
+    "uncertainty_low_v3": "Lower match-bootstrap Tournament Impact interval endpoint."
+  },
+  "goalkeeper_continuous_weights": {
+    "cross_claim_control": 0.12,
+    "distribution_under_pressure": 0.1,
+    "high_leverage_shot_stopping": 0.15,
+    "regular_penalty_performance": 0.13,
+    "shot_stopping": 0.4,
+    "sweeping": 0.1
+  },
+  "goalkeeper_score_allocations": {
+    "continuous": 0.9,
+    "shootout_maximum": 0.1
+  },
+  "retired_active_methods": [
+    "within-position z-score as absolute global value",
+    "450/180/90-minute repeated exposure cascade",
+    "one-sided direct-defensive publication lift",
+    "0.20 additive points per goalkeeper shootout save",
+    "Blom/percentile bridge described as absolute value"
+  ],
+  "schema_version": "ranking-repair-features-3.0"
+}

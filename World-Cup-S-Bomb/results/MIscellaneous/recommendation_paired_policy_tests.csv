@@ -1,0 +1,6 @@
+comparison,left_metric,right_metric,mean_difference,ci_low,ci_high,bootstrap_probability_above_zero
+Fallback-enabled policy vs always Patient Build-up,dr_value,dr_always__Patient Build-up,-6.759105208882134e-06,-0.00010562239998002923,7.422167001680104e-05,0.4635
+Model-only policy vs always Patient Build-up,dr_model_only,dr_always__Patient Build-up,0.0027411676586617025,0.0005662432648404615,0.004981343533053177,0.994
+Fallback-enabled policy vs historical fallback only,dr_value,dr_fallback_only,0.0003063876678792187,-4.314377541153499e-05,0.0008477036693962733,0.882
+Model-only policy vs fallback-enabled policy,dr_model_only,dr_value,0.0027479267638705848,0.0005550712465110754,0.004975711377289489,0.9935
+Fallback-enabled policy vs observed behavior,dr_value,realized_utility,0.009791374719805018,0.00723413712326274,0.012793393901126235,1.0

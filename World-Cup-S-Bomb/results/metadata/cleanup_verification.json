@@ -1,0 +1,161 @@
+{
+  "verification_schema_version": 1,
+  "generated_at_utc": "2026-07-29T16:50:47.365839+00:00",
+  "status": "pass",
+  "checks": {
+    "all_moves_verified": true,
+    "all_deletes_verified": true,
+    "canonical_integrity_verified": true,
+    "artifact_counts_verified": true,
+    "manifest_verified": true,
+    "readme_links_verified": true,
+    "no_unexpected_direct_files": true,
+    "legacy_directories_removed": true,
+    "target_directories_exist": true
+  },
+  "counts": {
+    "verified_moves": 615,
+    "verified_deletes": 1263,
+    "manifest_entries": 636,
+    "player_profiles_markdown": 593,
+    "player_profiles_json": 0,
+    "team_profiles_markdown": 32,
+    "team_profiles_json": 0,
+    "tactical_reports_markdown": 32,
+    "tactical_reports_json": 32,
+    "heatmaps_svg": 593,
+    "heatmap_subdirectories": 0
+  },
+  "canonical_integrity": [
+    {
+      "path": "reports/canonical/player_rankings.csv",
+      "exists": true,
+      "sha256_matches_prechange": true
+    },
+    {
+      "path": "reports/canonical/player_rankings.json",
+      "exists": true,
+      "sha256_matches_prechange": true
+    },
+    {
+      "path": "reports/canonical/final_summary.md",
+      "exists": true,
+      "sha256_matches_prechange": true
+    },
+    {
+      "path": "reports/canonical/model_summary.md",
+      "exists": true,
+      "sha256_matches_prechange": true
+    },
+    {
+      "path": "reports/canonical/model_summary.json",
+      "exists": true,
+      "sha256_matches_prechange": true
+    },
+    {
+      "path": "reports/canonical/coaches_notebook.md",
+      "exists": true,
+      "sha256_matches_prechange": true
+    },
+    {
+      "path": "reports/docs/final_summary.docx",
+      "exists": true,
+      "sha256_matches_prechange": true
+    }
+  ],
+  "root_direct_files": [],
+  "report_direct_files_excluding_readme": [],
+  "legacy_directories": {
+    "Summary": true,
+    "reports/starters": true,
+    "reports/compiled": true,
+    "reports/final": true,
+    "reports/heatmaps": true
+  },
+  "target_directories": {
+    "reports/canonical": true,
+    "reports/canonical/data": true,
+    "reports/player_profiles": true,
+    "reports/team_profiles": true,
+    "reports/teams": true,
+    "reports/visuals": true,
+    "reports/visuals/heatmaps": true,
+    "reports/docs": true,
+    "diagnostics": true,
+    "metadata": true
+  },
+  "readme_links": [
+    {
+      "link": "canonical/player_rankings.csv",
+      "exists": true
+    },
+    {
+      "link": "canonical/player_rankings.json",
+      "exists": true
+    },
+    {
+      "link": "canonical/final_summary.md",
+      "exists": true
+    },
+    {
+      "link": "canonical/model_summary.md",
+      "exists": true
+    },
+    {
+      "link": "canonical/model_summary.json",
+      "exists": true
+    },
+    {
+      "link": "canonical/coaches_notebook.md",
+      "exists": true
+    },
+    {
+      "link": "canonical/data/team_metrics_v2.csv",
+      "exists": true
+    },
+    {
+      "link": "canonical/data/defense_disruption.csv",
+      "exists": true
+    },
+    {
+      "link": "docs/final_summary.docx",
+      "exists": true
+    },
+    {
+      "link": "player_profiles/",
+      "exists": true
+    },
+    {
+      "link": "team_profiles/",
+      "exists": true
+    },
+    {
+      "link": "teams/",
+      "exists": true
+    },
+    {
+      "link": "visuals/heatmaps/",
+      "exists": true
+    },
+    {
+      "link": "v5_figures/",
+      "exists": true
+    },
+    {
+      "link": "../diagnostics/",
+      "exists": true
+    },
+    {
+      "link": "../metadata/artifact_manifest.json",
+      "exists": true
+    },
+    {
+      "link": "../metadata/pipeline_manifest.json",
+      "exists": true
+    },
+    {
+      "link": "../metadata/cleanup_audit_log.json",
+      "exists": true
+    }
+  ]
+}

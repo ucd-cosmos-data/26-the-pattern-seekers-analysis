@@ -1,0 +1,16 @@
+{
+  "model_version": "goalkeeper_consolidated_value_v5",
+  "consolidation_status": "promoted_single_metric",
+  "hard_gates_all_pass": true,
+  "selected_configurations_evaluated": 42768,
+  "hard_gate_survivors": 3537,
+  "exact_ranks": {
+    "Dominik Livaković": 1,
+    "Damián Emiliano Martínez": 3,
+    "Yassine Bounou": 4,
+    "Wojciech Szczęsny": 6,
+    "Matthew Charles Turner": 8,
+    "Mohammed Khalil Al Owais": 11
+  },
+  "dual_metric_fallback_justified": false
+}

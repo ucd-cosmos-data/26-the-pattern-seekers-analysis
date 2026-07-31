@@ -1,0 +1,129 @@
+{
+  "audit_schema_version": "1.0",
+  "pipeline_scope": "StatsBomb World Cup 2022 (competition_id=43, season_id=106)",
+  "audit_date": "2026-07-27",
+  "pre_upgrade_state": {
+    "active_transition_entrypoint": "scripts/run_team_simulation_reports.py",
+    "active_transition_source": "scripts/benchmark_coaching_models_v2.py",
+    "active_transition_artifact": "models/coaching_model_benchmark_v2.joblib",
+    "active_transition_model": {
+      "algorithm": "LogisticRegression",
+      "preprocessing": [
+        "median numeric imputation",
+        "numeric StandardScaler",
+        "most-frequent categorical imputation",
+        "categorical OneHotEncoder"
+      ],
+      "class_balance": "class_weight=balanced",
+      "calibration": "custom Platt calibration on a dedicated calibration partition",
+      "threshold": null,
+      "threshold_status": "abstained because no precision-valid threshold was found",
+      "target": "transition_conceded",
+      "feature_names": [
+        "play_pattern",
+        "competition_stage",
+        "score_state",
+        "attacking_style",
+        "team",
+        "opponent",
+        "period",
+        "start_minute",
+        "start_x",
+        "start_y",
+        "score_difference",
+        "team_prior_xg_per_possession",
+        "team_prior_transition_shot_conceded",
+        "opponent_prior_counter_shot",
+        "matchup_rest_defense_vs_counter",
+        "matchup_turnover_counter_pressure"
+      ],
+      "recorded_holdout_metrics": {
+        "rows": 1349,
+        "positives": 2,
+        "brier_score": 0.001477846004288718,
+        "roc_auc": 0.7420193021529324,
+        "pr_auc": 0.016655274550011392
+      }
+    },
+    "legacy_candidate_estimators": {
+      "scripts/benchmark_coaching_models.py": [
+        "LogisticRegression",
+        "RandomForestClassifier",
+        "GradientBoostingClassifier",
+        "HistGradientBoostingClassifier",
+        "XGBClassifier"
+      ],
+      "scripts/benchmark_coaching_models_v2.py": [
+        "LogisticRegression",
+        "RandomForestClassifier",
+        "GradientBoostingClassifier",
+        "HistGradientBoostingClassifier",
+        "XGBClassifier"
+      ],
+      "scripts/benchmark_transition_models.py": [
+        "LogisticRegression",
+        "RandomForestClassifier",
+        "GradientBoostingClassifier",
+        "HistGradientBoostingClassifier",
+        "XGBClassifier"
+      ],
+      "scripts/build_recommendation_simulator.py": [
+        "LogisticRegression",
+        "RandomForestClassifier",
+        "GradientBoostingClassifier",
+        "HistGradientBoostingClassifier",
+        "XGBClassifier"
+      ],
+      "catboost_previously_used": false
+    },
+    "legacy_player_value_architecture": {
+      "source": "src/simulation_engine.py",
+      "method": "open event pitch-value fallback plus hardcoded location turnover penalty",
+      "deprecated_outputs": [
+        "obv_per_90",
+        "raw_obv_per_90",
+        "standard_turnover_penalty",
+        "pass_progression_per_pass",
+        "carry_progression_per_carry",
+        "linear net_xg_contribution_p90 proxy"
+      ],
+      "ranking_issue": "player_evaluation_score was standardized within functional roles and then sorted across roles for team leaderboards"
+    },
+    "data_conversion_state": {
+      "socceraction_installed": true,
+      "spadl_conversion_present_before_upgrade": false,
+      "original_event_id_preserved_before_upgrade": false,
+      "local_event_cache": "notebooks/all_events.csv",
+      "local_360_cache": [
+        "data/interim/world_cup_360_frames.csv",
+        "data/interim/world_cup_360_frame_metrics.csv"
+      ]
+    },
+    "serialized_artifacts": {
+      "models/attacking_style_kmeans.joblib": "loadable KMeans bundle",
+      "models/defensive_style_kmeans.joblib": "loadable KMeans bundle",
+      "models/coaching_model_benchmark_v2.joblib": "loadable calibrated transition bundle",
+      "models/coaching_model_benchmark.joblib": "loadable legacy benchmark bundle",
+      "models/coaching_model_final.joblib": "loadable final selection bundle",
+      "models/recommendation_simulator.joblib": "loadable policy-metadata bundle (contains no fitted estimators; production refit deferred)"
+    },
+    "artifact_load_reverification": {
+      "date": "2026-07-29",
+      "environment": "project .venv: numpy 2.5.1, scikit-learn 1.9.0, pandas 3.0.5, scipy 1.18.0",
+      "result": "all seven models/*.joblib artifacts load without error; the NumPy BitGenerator and pandas dtype compatibility errors recorded on 2026-07-27 no longer reproduce"
+    }
+  },
+  "upgrade_target": {
+    "action_representation": "SPADL with original_event_id retained",
+    "spatial_value": "16x12 xT trained only on successful non-shot pass/carry progressions",
+    "action_value": "360-Augmented VAEP using separate scores and concedes classifiers over a three-action horizon",
+    "candidate_algorithms": [
+      "LogisticRegression",
+      "XGBClassifier",
+      "CatBoostClassifier"
+    ],
+    "calibration": "CalibratedClassifierCV with isotonic and sigmoid fallback on a dedicated validation split",
+    "ranking_formula": "0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90",
+    "validation_artifact": "results/reports/final_validation.csv"
+  }
+}

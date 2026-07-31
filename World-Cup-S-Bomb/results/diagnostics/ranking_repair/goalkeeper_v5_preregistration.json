@@ -1,0 +1,174 @@
+{
+  "model_version": "goalkeeper_consolidated_value_v5",
+  "written_before_any_v5_scoring_results": true,
+  "repository_head_before_v5": "6706360cbb2a7482b4e0d495b4793c342b93fb12",
+  "working_tree_before_v5": {
+    "clean": false,
+    "preexisting_untracked_files_preserved": [
+      "docs/goalkeeper-psxg-clutch-v5-update-prompt.md"
+    ],
+    "tracked_modifications": []
+  },
+  "consolidation_decision": {
+    "preferred_public_state": "one consolidated live goalkeeper ranking",
+    "candidate_estimand": "Qatar 2022 goalkeeper value from calibrated PSxG prevention, explicit late and match-preserving clutch, non-clutch state leverage, bounded regular penalties, bounded credited-save shootout WPA, and bounded support",
+    "historical_event_profile_v3_role": "frozen audit baseline only after promotion",
+    "historical_tournament_impact_v4_role": "frozen rejected experiment only",
+    "dual_metric_default_rejected": true,
+    "fail_closed_if_hard_gates_fail": true,
+    "pre_code_reasoning": [
+      "Event Profile v3 answers an ordinary process question but over-rewards short-sample rates and compresses decisive tournament actions.",
+      "Tournament Impact v4 adds consequence but lets summed ordinary prevention dominate and therefore leaves the decisive champion goalkeeper implausibly low.",
+      "A single public estimand is preferable because shot difficulty, timing, match state, shootouts, and support are channels of the same tournament-value question.",
+      "Calibrated post-shot goal probability must be the primary shot-stopping check-back so easy saves receive little credit and difficult saves receive more.",
+      "Clutch must enter the same score as a residual uplift over ordinary PSxG prevention, preventing the same save from being counted twice at full value.",
+      "Named goalkeeper expectations are release fixtures only and are not scorer inputs.",
+      "No FIFA rank, award, final placement, team reputation, or raw round-reached bonus will enter the model matrix.",
+      "Opponent difficulty will not be added as a separate v5 feature in the preregistered main path; calibrated PSxG and pre-action knockout/match state provide the measurable difficulty and leverage channels."
+    ]
+  },
+  "baseline_to_beat": {
+    "live_model": "goalkeeper_event_profile_v3",
+    "live_top_five": [
+      {
+        "rank": 1,
+        "player": "Wojciech Szczęsny",
+        "team": "Poland"
+      },
+      {
+        "rank": 2,
+        "player": "Mohammed Khalil Al Owais",
+        "team": "Saudi Arabia"
+      },
+      {
+        "rank": 3,
+        "player": "Matthew Charles Turner",
+        "team": "United States"
+      },
+      {
+        "rank": 4,
+        "player": "Yassine Bounou",
+        "team": "Morocco"
+      },
+      {
+        "rank": 5,
+        "player": "Dominik Livaković",
+        "team": "Croatia"
+      }
+    ],
+    "martinez_profile_rank_v3": 23,
+    "martinez_impact_rank_v4": 26,
+    "baseline_interpretation": "defective public ordering to improve, not a continuity constraint"
+  },
+  "face_validity_gates_preregistered": {
+    "hard": {
+      "H1_martinez_top_10": "rank(Damián Emiliano Martínez) <= 10",
+      "H2_al_owais_outside_top_10": "rank(Mohammed Khalil Al Owais) >= 11",
+      "H3_turner_outside_top_3": "rank(Matthew Charles Turner) >= 4",
+      "H4_elite_core_three_in_top_8": "at least three of Martínez, Livaković, Bounou, Szczęsny rank <= 8",
+      "H5_no_profile_mirage_podium": "neither Al Owais nor Turner rank <= 3",
+      "H6_identity_blind": "name and team label shuffle leaves row scores unchanged",
+      "H7_psxg_integrity": "ordinary shot-stopping uses calibrated post-shot probability minus goal outcome and raw saves are not the sort key",
+      "H8_clutch_monotonicity": "removing the Kolo Muani 120th-minute save lowers Martínez's score",
+      "H9_shootout_monotonicity": "removing credited shootout saves lowers the affected goalkeeper shootout channel",
+      "H10_single_metric_consolidation": "promotion sets one active goalkeeper rank field and no peer impact list",
+      "H11_no_pedigree_feature": "awards, reputation, nationality, and final placement are absent from the model matrix",
+      "H12_baseline_preservation": "all pre-existing v3 and v4 audit fields remain unchanged"
+    },
+    "soft": {
+      "S1_martinez_top_3": "rank(Damián Emiliano Martínez) <= 3",
+      "S2_turner_rank_8_to_12": "8 <= rank(Matthew Charles Turner) <= 12",
+      "S3_al_owais_rank_15_or_lower": "rank(Mohammed Khalil Al Owais) >= 15",
+      "S4_livakovic_top_6": "rank(Dominik Livaković) <= 6",
+      "S5_bounou_top_8": "rank(Yassine Bounou) <= 8",
+      "S6_szczesny_top_8": "rank(Wojciech Szczęsny) <= 8",
+      "S7_deep_run_median_improves": "median v5 rank of Lloris, Noppert, Costa, Pickford is better than their v3 median",
+      "S8_difficulty_gradient": "PSxG difficulty faced has a reported, non-mandatory association with the top third"
+    }
+  },
+  "channel_contract": {
+    "psxg": "ordinary non-penalty on-target shots in periods 1-4; prevention = calibrated post-shot goal probability - goal outcome",
+    "clutch": "positive PSxG-checked prevention multiplied by a late/extra-time and match-preserving uplift residual; negative prevention remains in the primary PSxG channel",
+    "state_leverage": "ordinary prevention multiplied by centered pre-action leverage only for the non-clutch residual",
+    "regular_penalty": "periods 1-4 only, Beta-regularized expectation, entered once",
+    "shootout": "period 5 credited goalkeeper saves only; off-target and woodwork receive zero goalkeeper credit; raw and bounded WPA both published",
+    "support": "availability-renormalized cross/claim, sweeping, and distribution channels; bounded and secondary",
+    "anti_double_count_rule": "primary PSxG always contains prevention once; clutch and state leverage contain only the residual above a unit multiplier and are mutually exclusive by late-clutch status"
+  },
+  "candidate_grid": {
+    "w_psxg": [
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6
+    ],
+    "w_clutch": [
+      0.15,
+      0.2,
+      0.25,
+      0.3
+    ],
+    "w_state_leverage": [
+      0.0,
+      0.05,
+      0.1
+    ],
+    "w_regular_penalty": [
+      0.0,
+      0.05,
+      0.1
+    ],
+    "w_shootout": [
+      0.1,
+      0.15,
+      0.2
+    ],
+    "support_weight_rule": "residual to one, constrained to [0.05, 0.25]",
+    "shootout_bound": [
+      0.25,
+      0.35,
+      0.45
+    ],
+    "clutch_late_multiplier": [
+      1.5,
+      2.0,
+      2.5
+    ],
+    "clutch_match_state_multiplier": [
+      1.25,
+      1.5,
+      2.0
+    ],
+    "shot_reliability_count": [
+      12.0,
+      18.0,
+      24.0
+    ],
+    "clutch_bound": [
+      0.5,
+      0.75
+    ]
+  },
+  "configuration_constraints": {
+    "w_psxg_is_largest_single_weight": true,
+    "w_psxg_plus_w_clutch_minimum": 0.55,
+    "w_shootout_maximum": 0.2,
+    "w_support_maximum": 0.25,
+    "w_regular_penalty_maximum": 0.1,
+    "weights_sum_to_one": true,
+    "identity_features_forbidden": true,
+    "awards_and_final_placement_forbidden": true
+  },
+  "selection_rule": [
+    "Filter to configurations passing every hard gate.",
+    "Among hard-gate survivors, maximize number of soft gates passed, preferring Martínez top three when integrity is comparable.",
+    "Then maximize PSxG concordance, clutch monotonicity margin, bootstrap top-eight stability, and resistance to a single easy-save perturbation.",
+    "Use deterministic config id as the final tie-break.",
+    "If no configuration passes every hard gate, write candidate-only artifacts and do not change live aliases."
+  ],
+  "baseline_test_run": {
+    "lightweight_environment": "collection failed before tests because python-docx and catboost were absent",
+    "full_repository_environment": "started before v5 implementation; result recorded by release audit"
+  }
+}

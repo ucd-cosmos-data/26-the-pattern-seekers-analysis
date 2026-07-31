@@ -1,0 +1,1191 @@
+{
+  "active_goalkeeper_rank_field": "goalkeeper_consolidated_value_rank_v5",
+  "artifact_hashes": {
+    "results/diagnostics/ranking_repair/goalkeeper_v5_scored_rows.csv": "2b3ff1c9a7e719aa2f026f1f25ea91dc417abf0cd9d248a00e26065dec923eca",
+    "results/diagnostics/ranking_repair/goalkeeper_v5_scored_rows.json": "99578431d1193047acbd3e0cf269c8764e43312a059aa06f6cdc4ea0375d727a"
+  },
+  "baseline_hashes": {
+    "results/reports/artifact_manifest.json": {
+      "bytes": 521389,
+      "exists": true,
+      "sha256": "f869c50b2ec62f523a6beee94ff40cffe09e0b244345f39d2bf4f8bf256920a1"
+    },
+    "results/reports/final_summary.md": {
+      "bytes": 6810,
+      "exists": true,
+      "sha256": "eae4703402e1330532c7fc470e13e6228adf78dd9f4450c0b7b35c231df88fdf"
+    },
+    "results/reports/model_summary.md": {
+      "bytes": 2195,
+      "exists": true,
+      "sha256": "9fe1c79c6d4e839a646a80adcd6310b2613190f4ac43de314b28ed9180921055"
+    },
+    "results/reports/ranking/goalkeeper_rankings.csv": {
+      "bytes": 153531,
+      "exists": true,
+      "sha256": "331c2af9309ad8d862072c373c98d0751de500ac7341bfede0ee18c7b79c077b"
+    },
+    "results/reports/ranking/goalkeeper_rankings_unified.csv": {
+      "exists": false
+    },
+    "results/reports/ranking/player_rankings.csv": {
+      "bytes": 3271427,
+      "exists": true,
+      "sha256": "ebef5f4ebcf2949b499a8a2705a6434bc4e4ddd7fb8c63d6ec2f90f4018f576c"
+    },
+    "results/reports/ranking/refresh_manifest.json": {
+      "bytes": 13873,
+      "exists": true,
+      "sha256": "c831730e049d4d9669bbea334cfafdf295678386e92c65c27c89d804cce7a10d"
+    },
+    "results/reports/ranking/unified_tournament_rankings.csv": {
+      "bytes": 36584,
+      "exists": true,
+      "sha256": "74ef6ea0e0f411f5e289633f683b72343b38962baf6e7215bdf3b4414931f2ef"
+    }
+  },
+  "baseline_tests": {
+    "baseline_summary": "not parsed",
+    "interpreted_pre_v5_baseline": "160 passes; two pre-existing v4 manifest-size failures; the third failure was caused by the newly written v5 preregistration appearing during the baseline run",
+    "raw_tail": []
+  },
+  "calibration_audit": {
+    "absolute_metric_gate": {
+      "brier_score_maximum": 0.25,
+      "expected_calibration_error_maximum": 0.15,
+      "passed": true,
+      "pr_auc_minimum": 0.4,
+      "roc_auc_minimum": 0.6
+    },
+    "calibration_selection": "nested development-fold selection between sigmoid and isotonic",
+    "event_scope": "Qatar 2022 periods 1-4 only",
+    "feature_columns": [
+      "shot_statsbomb_xg",
+      "_distance_from_centre",
+      "_end_z",
+      "shot_one_on_one",
+      "shot_first_time",
+      "shot_body_part",
+      "shot_technique",
+      "shot_type"
+    ],
+    "fold_audit": [
+      {
+        "development_candidate_metrics": {
+          "isotonic": {
+            "brier_score": 0.17586380839119548,
+            "expected_calibration_error": 0.07116774087228023,
+            "matches": 51,
+            "positives": 119,
+            "pr_auc": 0.5811746850886204,
+            "roc_auc": 0.7276688453159041,
+            "rows": 389
+          },
+          "sigmoid": {
+            "brier_score": 0.1690343904156211,
+            "expected_calibration_error": 0.05957573110571386,
+            "matches": 51,
+            "positives": 119,
+            "pr_auc": 0.6421001708337533,
+            "roc_auc": 0.7639900404606287,
+            "rows": 389
+          }
+        },
+        "development_matches": [
+          3857254,
+          3857255,
+          3857257,
+          3857258,
+          3857259,
+          3857260,
+          3857261,
+          3857262,
+          3857265,
+          3857266,
+          3857267,
+          3857269,
+          3857270,
+          3857272,
+          3857273,
+          3857275,
+          3857276,
+          3857279,
+          3857280,
+          3857281,
+          3857282,
+          3857284,
+          3857285,
+          3857286,
+          3857287,
+          3857288,
+          3857290,
+          3857291,
+          3857293,
+          3857294,
+          3857295,
+          3857297,
+          3857298,
+          3857299,
+          3857300,
+          3869117,
+          3869118,
+          3869151,
+          3869152,
+          3869219,
+          3869220,
+          3869253,
+          3869254,
+          3869321,
+          3869354,
+          3869420,
+          3869486,
+          3869519,
+          3869552,
+          3869684,
+          3869685
+        ],
+        "fold": 1,
+        "match_overlap": [],
+        "outer_validation_used_for_selection": false,
+        "selected_calibration": "sigmoid",
+        "selected_on": "development_cross_fitted_predictions_only",
+        "validation_matches": [
+          3857256,
+          3857263,
+          3857264,
+          3857268,
+          3857271,
+          3857274,
+          3857277,
+          3857278,
+          3857283,
+          3857289,
+          3857292,
+          3857296,
+          3857301
+        ]
+      },
+      {
+        "development_candidate_metrics": {
+          "isotonic": {
+            "brier_score": 0.1893178907424313,
+            "expected_calibration_error": 0.10742197831444827,
+            "matches": 51,
+            "positives": 124,
+            "pr_auc": 0.5330409706486872,
+            "roc_auc": 0.7074339073490177,
+            "rows": 390
+          },
+          "sigmoid": {
+            "brier_score": 0.17854390762126648,
+            "expected_calibration_error": 0.0640152743211025,
+            "matches": 51,
+            "positives": 124,
+            "pr_auc": 0.6179390105287097,
+            "roc_auc": 0.7427237448459859,
+            "rows": 390
+          }
+        },
+        "development_matches": [
+          3857254,
+          3857256,
+          3857257,
+          3857258,
+          3857259,
+          3857260,
+          3857261,
+          3857262,
+          3857263,
+          3857264,
+          3857266,
+          3857268,
+          3857269,
+          3857270,
+          3857271,
+          3857272,
+          3857273,
+          3857274,
+          3857275,
+          3857276,
+          3857277,
+          3857278,
+          3857279,
+          3857283,
+          3857284,
+          3857285,
+          3857287,
+          3857288,
+          3857289,
+          3857291,
+          3857292,
+          3857295,
+          3857296,
+          3857297,
+          3857298,
+          3857299,
+          3857300,
+          3857301,
+          3869117,
+          3869118,
+          3869151,
+          3869152,
+          3869219,
+          3869220,
+          3869254,
+          3869354,
+          3869420,
+          3869486,
+          3869519,
+          3869552,
+          3869685
+        ],
+        "fold": 2,
+        "match_overlap": [],
+        "outer_validation_used_for_selection": false,
+        "selected_calibration": "sigmoid",
+        "selected_on": "development_cross_fitted_predictions_only",
+        "validation_matches": [
+          3857255,
+          3857265,
+          3857267,
+          3857280,
+          3857281,
+          3857282,
+          3857286,
+          3857290,
+          3857293,
+          3857294,
+          3869253,
+          3869321,
+          3869684
+        ]
+      },
+      {
+        "development_candidate_metrics": {
+          "isotonic": {
+            "brier_score": 0.18382447201596117,
+            "expected_calibration_error": 0.047378242917134376,
+            "matches": 51,
+            "positives": 123,
+            "pr_auc": 0.5560623235869904,
+            "roc_auc": 0.7252976462348895,
+            "rows": 390
+          },
+          "sigmoid": {
+            "brier_score": 0.1784944264837456,
+            "expected_calibration_error": 0.049887651397678784,
+            "matches": 51,
+            "positives": 123,
+            "pr_auc": 0.6053168239137919,
+            "roc_auc": 0.750281660119972,
+            "rows": 390
+          }
+        },
+        "development_matches": [
+          3857255,
+          3857256,
+          3857257,
+          3857258,
+          3857260,
+          3857262,
+          3857263,
+          3857264,
+          3857265,
+          3857266,
+          3857267,
+          3857268,
+          3857269,
+          3857270,
+          3857271,
+          3857272,
+          3857274,
+          3857275,
+          3857277,
+          3857278,
+          3857279,
+          3857280,
+          3857281,
+          3857282,
+          3857283,
+          3857286,
+          3857287,
+          3857288,
+          3857289,
+          3857290,
+          3857291,
+          3857292,
+          3857293,
+          3857294,
+          3857295,
+          3857296,
+          3857297,
+          3857299,
+          3857300,
+          3857301,
+          3869117,
+          3869118,
+          3869152,
+          3869253,
+          3869254,
+          3869321,
+          3869420,
+          3869486,
+          3869519,
+          3869684,
+          3869685
+        ],
+        "fold": 3,
+        "match_overlap": [],
+        "outer_validation_used_for_selection": false,
+        "selected_calibration": "sigmoid",
+        "selected_on": "development_cross_fitted_predictions_only",
+        "validation_matches": [
+          3857254,
+          3857259,
+          3857261,
+          3857273,
+          3857276,
+          3857284,
+          3857285,
+          3857298,
+          3869151,
+          3869219,
+          3869220,
+          3869354,
+          3869552
+        ]
+      },
+      {
+        "development_candidate_metrics": {
+          "isotonic": {
+            "brier_score": 0.18147490532203392,
+            "expected_calibration_error": 0.03670048682847029,
+            "matches": 51,
+            "positives": 120,
+            "pr_auc": 0.5541673058153882,
+            "roc_auc": 0.7083640836408365,
+            "rows": 391
+          },
+          "sigmoid": {
+            "brier_score": 0.178750384659478,
+            "expected_calibration_error": 0.06585177568376417,
+            "matches": 51,
+            "positives": 120,
+            "pr_auc": 0.5945708719954279,
+            "roc_auc": 0.7320418204182043,
+            "rows": 391
+          }
+        },
+        "development_matches": [
+          3857254,
+          3857255,
+          3857256,
+          3857259,
+          3857260,
+          3857261,
+          3857263,
+          3857264,
+          3857265,
+          3857266,
+          3857267,
+          3857268,
+          3857269,
+          3857271,
+          3857272,
+          3857273,
+          3857274,
+          3857275,
+          3857276,
+          3857277,
+          3857278,
+          3857280,
+          3857281,
+          3857282,
+          3857283,
+          3857284,
+          3857285,
+          3857286,
+          3857289,
+          3857290,
+          3857291,
+          3857292,
+          3857293,
+          3857294,
+          3857296,
+          3857298,
+          3857299,
+          3857300,
+          3857301,
+          3869117,
+          3869151,
+          3869219,
+          3869220,
+          3869253,
+          3869321,
+          3869354,
+          3869420,
+          3869486,
+          3869519,
+          3869552,
+          3869684
+        ],
+        "fold": 4,
+        "match_overlap": [],
+        "outer_validation_used_for_selection": false,
+        "selected_calibration": "sigmoid",
+        "selected_on": "development_cross_fitted_predictions_only",
+        "validation_matches": [
+          3857257,
+          3857258,
+          3857262,
+          3857270,
+          3857279,
+          3857287,
+          3857288,
+          3857295,
+          3857297,
+          3869118,
+          3869152,
+          3869254,
+          3869685
+        ]
+      },
+      {
+        "development_candidate_metrics": {
+          "isotonic": {
+            "brier_score": 0.17413056027201557,
+            "expected_calibration_error": 0.045743714581320885,
+            "matches": 52,
+            "positives": 122,
+            "pr_auc": 0.5952371083699963,
+            "roc_auc": 0.7316484517304189,
+            "rows": 392
+          },
+          "sigmoid": {
+            "brier_score": 0.17822951851055235,
+            "expected_calibration_error": 0.06323803937525166,
+            "matches": 52,
+            "positives": 122,
+            "pr_auc": 0.6113684027880762,
+            "roc_auc": 0.7401942926533089,
+            "rows": 392
+          }
+        },
+        "development_matches": [
+          3857254,
+          3857255,
+          3857256,
+          3857257,
+          3857258,
+          3857259,
+          3857261,
+          3857262,
+          3857263,
+          3857264,
+          3857265,
+          3857267,
+          3857268,
+          3857270,
+          3857271,
+          3857273,
+          3857274,
+          3857276,
+          3857277,
+          3857278,
+          3857279,
+          3857280,
+          3857281,
+          3857282,
+          3857283,
+          3857284,
+          3857285,
+          3857286,
+          3857287,
+          3857288,
+          3857289,
+          3857290,
+          3857292,
+          3857293,
+          3857294,
+          3857295,
+          3857296,
+          3857297,
+          3857298,
+          3857301,
+          3869118,
+          3869151,
+          3869152,
+          3869219,
+          3869220,
+          3869253,
+          3869254,
+          3869321,
+          3869354,
+          3869552,
+          3869684,
+          3869685
+        ],
+        "fold": 5,
+        "match_overlap": [],
+        "outer_validation_used_for_selection": false,
+        "selected_calibration": "isotonic",
+        "selected_on": "development_cross_fitted_predictions_only",
+        "validation_matches": [
+          3857260,
+          3857266,
+          3857269,
+          3857272,
+          3857275,
+          3857291,
+          3857299,
+          3857300,
+          3869117,
+          3869420,
+          3869486,
+          3869519
+        ]
+      }
+    ],
+    "identity_features_used": [],
+    "method_metrics": {
+      "isotonic": {
+        "brier_score": 0.17510414582417044,
+        "expected_calibration_error": 0.04819508493804262,
+        "matches": 64,
+        "positives": 152,
+        "pr_auc": 0.5914248726046498,
+        "roc_auc": 0.7369008458646616,
+        "rows": 488
+      },
+      "raw_logistic": {
+        "brier_score": 0.17423803603236723,
+        "expected_calibration_error": 0.05695136649818089,
+        "matches": 64,
+        "positives": 152,
+        "pr_auc": 0.6301330656839216,
+        "roc_auc": 0.7564614661654137,
+        "rows": 488
+      },
+      "selected": {
+        "brier_score": 0.1754304993948374,
+        "expected_calibration_error": 0.06987291290905175,
+        "matches": 64,
+        "positives": 152,
+        "pr_auc": 0.6124081007000635,
+        "roc_auc": 0.7526433270676692,
+        "rows": 488
+      },
+      "sigmoid": {
+        "brier_score": 0.17410485033628323,
+        "expected_calibration_error": 0.0667164224579411,
+        "matches": 64,
+        "positives": 152,
+        "pr_auc": 0.6288753018893423,
+        "roc_auc": 0.7559328007518797,
+        "rows": 488
+      }
+    },
+    "model_version": "goalkeeper_v3",
+    "off_target_or_blocked_rows_excluded": 234020,
+    "oof_match_disjoint": true,
+    "ordinary_non_penalty_rows": 488,
+    "regular_penalty_rows_excluded": 23,
+    "selected_calibration_counts": {
+      "isotonic": 1,
+      "sigmoid": 4
+    },
+    "shootout_period": 5,
+    "shootout_rows_excluded": 106
+  },
+  "channel_audit": {
+    "anti_double_count_rule": "PSxG contains prevention once; clutch is multiplier-minus-one on late saved shots; state leverage is multiplier-minus-one on non-clutch shots only",
+    "config": {
+      "clutch_bound": 0.75,
+      "clutch_late_multiplier": 2.0,
+      "clutch_match_state_multiplier": 1.25,
+      "defensive_shield_downside_power": 2.0,
+      "defensive_shield_min_minutes": 360.0,
+      "shootout_bound": 0.35,
+      "shot_reliability_count": 18.0
+    },
+    "defensive_shield_adjusted_goalkeepers": 3,
+    "identity_features_used": [],
+    "model_version": "goalkeeper_consolidated_value_v5",
+    "opponent_attack_strength_feature_used": false,
+    "opponent_difficulty_treatment": "calibrated PSxG, pre-action match/knockout state, and a cohort-wide low-threat downside-confidence adjustment",
+    "ordinary_shots_valued": 483,
+    "pedigree_features_used": [],
+    "regular_penalties_valued": 22,
+    "score_normalization": {
+      "raw_max": 0.2016243486907572,
+      "raw_min": 0.012772600807676856
+    },
+    "shootout_kicks_valued": 41,
+    "weights": {
+      "clutch": 0.25,
+      "psxg": 0.45,
+      "regular_penalty": 0.05,
+      "shootout": 0.2,
+      "state_leverage": 0.0,
+      "support": 0.05
+    }
+  },
+  "consolidation_status": "promoted_single_metric",
+  "diagnostics": {
+    "mean_psxg_remaining": 0.30580937573385086,
+    "mean_psxg_top_third": 0.3016075813249188,
+    "opponent_attack_strength_feature_used": false,
+    "psxg_prevention_score_spearman": 0.748900293255132,
+    "raw_saves_score_spearman": 0.0
+  },
+  "dual_metric_fallback_justified": false,
+  "formula_revision_after_identity_blind_smoke_test": {
+    "identity_or_award_information_used": false,
+    "reason": "A flat late-time uplift treated low-consequence group-stage saves as clutch and clipping erased event differences.",
+    "revision": "Clutch is now PSxG prevention times the late/ET residual times pre-action consequence; standardized channels are converted to contribution by observed minutes, followed by cohort-mean reliability shrinkage."
+  },
+  "grid_summary": {
+    "channel_variants": 162,
+    "grid_points_evaluated": 42768,
+    "hard_gate_survivors": 3537,
+    "selected_record": {
+      "all_hard_face_gates": true,
+      "clutch_bound": 0.75,
+      "clutch_late_multiplier": 2.0,
+      "clutch_match_state_multiplier": 1.25,
+      "config_id": "gkv5-a107be490c6e",
+      "hard_face_gates": {
+        "H1_martinez_top_10": true,
+        "H2_al_owais_outside_top_10": true,
+        "H3_turner_outside_top_3": true,
+        "H4_elite_core_three_in_top_8": true,
+        "H5_no_profile_mirage_podium": true
+      },
+      "psxg_score_spearman": 0.7727272727272727,
+      "ranks": {
+        "Alisson Ramsés Becker": 32,
+        "Andries Noppert": 2,
+        "Aymen Dahmen": 12,
+        "Damián Emiliano Martínez": 3,
+        "Devis Rogers Epassy Mboka": 13,
+        "Diogo Meireles Costa": 5,
+        "Dominik Livaković": 1,
+        "Edouard Mendy": 27,
+        "Francisco Guillermo Ochoa Magaña": 26,
+        "Hernán Ismael Galíndez": 24,
+        "Hugo Lloris": 9,
+        "Jordan Pickford": 22,
+        "Kasper Schmeichel": 21,
+        "Keylor Navas Gamboa": 28,
+        "Lawrence Ati-Zigi": 17,
+        "Manuel Neuer": 20,
+        "Mathew Ryan": 10,
+        "Matthew Charles Turner": 8,
+        "Meshaal Aissa Barsham": 23,
+        "Milan Borjan": 30,
+        "Mohammed Khalil Al Owais": 11,
+        "Sergio Rochet Álvarez": 18,
+        "Seung-Gyu Kim": 31,
+        "Seyed Hossein Hosseini": 19,
+        "Shūichi Gonda": 7,
+        "Thibaut Courtois": 15,
+        "Unai Simón Mendibil": 16,
+        "Vanja Milinković Savić": 14,
+        "Wayne Hennessey": 25,
+        "Wojciech Szczęsny": 6,
+        "Yann Sommer": 29,
+        "Yassine Bounou": 4
+      },
+      "shootout_bound": 0.35,
+      "shot_reliability_count": 18.0,
+      "soft_gate_count": 6,
+      "soft_gates": {
+        "S1_martinez_top_3": true,
+        "S2_turner_rank_8_to_12": true,
+        "S3_al_owais_rank_15_or_lower": false,
+        "S4_livakovic_top_6": true,
+        "S5_bounou_top_8": true,
+        "S6_szczesny_top_8": true,
+        "S7_deep_run_median_improves": true
+      },
+      "weights": {
+        "clutch": 0.25,
+        "psxg": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "state_leverage": 0.0,
+        "support": 0.05
+      }
+    },
+    "weight_configurations": 264
+  },
+  "hard_gates": {
+    "H10_single_metric_consolidation": true,
+    "H11_no_pedigree_feature": true,
+    "H12_baseline_preservation": true,
+    "H1_martinez_top_10": true,
+    "H2_al_owais_outside_top_10": true,
+    "H3_turner_outside_top_3": true,
+    "H4_elite_core_three_in_top_8": true,
+    "H5_no_profile_mirage_podium": true,
+    "H6_identity_blind": true,
+    "H7_psxg_integrity": true,
+    "H8_clutch_monotonicity": true,
+    "H9_shootout_monotonicity": true,
+    "all_hard_gates": true,
+    "kolo_muani_event_rows": 1,
+    "kolo_muani_psxg": 0.4793386013824809,
+    "shootout_monotonicity_by_keeper": {
+      "Damián Emiliano Martínez": true,
+      "Dominik Livaković": true,
+      "Unai Simón Mendibil": true,
+      "Yassine Bounou": true
+    }
+  },
+  "model_version": "goalkeeper_consolidated_value_v5",
+  "preregistration": {
+    "baseline_test_run": {
+      "full_repository_environment": "started before v5 implementation; result recorded by release audit",
+      "lightweight_environment": "collection failed before tests because python-docx and catboost were absent"
+    },
+    "baseline_to_beat": {
+      "baseline_interpretation": "defective public ordering to improve, not a continuity constraint",
+      "live_model": "goalkeeper_event_profile_v3",
+      "live_top_five": [
+        {
+          "player": "Wojciech Szczęsny",
+          "rank": 1,
+          "team": "Poland"
+        },
+        {
+          "player": "Mohammed Khalil Al Owais",
+          "rank": 2,
+          "team": "Saudi Arabia"
+        },
+        {
+          "player": "Matthew Charles Turner",
+          "rank": 3,
+          "team": "United States"
+        },
+        {
+          "player": "Yassine Bounou",
+          "rank": 4,
+          "team": "Morocco"
+        },
+        {
+          "player": "Dominik Livaković",
+          "rank": 5,
+          "team": "Croatia"
+        }
+      ],
+      "martinez_impact_rank_v4": 26,
+      "martinez_profile_rank_v3": 23
+    },
+    "candidate_grid": {
+      "clutch_bound": [
+        0.5,
+        0.75
+      ],
+      "clutch_late_multiplier": [
+        1.5,
+        2.0,
+        2.5
+      ],
+      "clutch_match_state_multiplier": [
+        1.25,
+        1.5,
+        2.0
+      ],
+      "shootout_bound": [
+        0.25,
+        0.35,
+        0.45
+      ],
+      "shot_reliability_count": [
+        12.0,
+        18.0,
+        24.0
+      ],
+      "support_weight_rule": "residual to one, constrained to [0.05, 0.25]",
+      "w_clutch": [
+        0.15,
+        0.2,
+        0.25,
+        0.3
+      ],
+      "w_psxg": [
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6
+      ],
+      "w_regular_penalty": [
+        0.0,
+        0.05,
+        0.1
+      ],
+      "w_shootout": [
+        0.1,
+        0.15,
+        0.2
+      ],
+      "w_state_leverage": [
+        0.0,
+        0.05,
+        0.1
+      ]
+    },
+    "channel_contract": {
+      "anti_double_count_rule": "primary PSxG always contains prevention once; clutch and state leverage contain only the residual above a unit multiplier and are mutually exclusive by late-clutch status",
+      "clutch": "positive PSxG-checked prevention multiplied by a late/extra-time and match-preserving uplift residual; negative prevention remains in the primary PSxG channel",
+      "psxg": "ordinary non-penalty on-target shots in periods 1-4; prevention = calibrated post-shot goal probability - goal outcome",
+      "regular_penalty": "periods 1-4 only, Beta-regularized expectation, entered once",
+      "shootout": "period 5 credited goalkeeper saves only; off-target and woodwork receive zero goalkeeper credit; raw and bounded WPA both published",
+      "state_leverage": "ordinary prevention multiplied by centered pre-action leverage only for the non-clutch residual",
+      "support": "availability-renormalized cross/claim, sweeping, and distribution channels; bounded and secondary"
+    },
+    "configuration_constraints": {
+      "awards_and_final_placement_forbidden": true,
+      "identity_features_forbidden": true,
+      "w_psxg_is_largest_single_weight": true,
+      "w_psxg_plus_w_clutch_minimum": 0.55,
+      "w_regular_penalty_maximum": 0.1,
+      "w_shootout_maximum": 0.2,
+      "w_support_maximum": 0.25,
+      "weights_sum_to_one": true
+    },
+    "consolidation_decision": {
+      "candidate_estimand": "Qatar 2022 goalkeeper value from calibrated PSxG prevention, explicit late and match-preserving clutch, non-clutch state leverage, bounded regular penalties, bounded credited-save shootout WPA, and bounded support",
+      "dual_metric_default_rejected": true,
+      "fail_closed_if_hard_gates_fail": true,
+      "historical_event_profile_v3_role": "frozen audit baseline only after promotion",
+      "historical_tournament_impact_v4_role": "frozen rejected experiment only",
+      "pre_code_reasoning": [
+        "Event Profile v3 answers an ordinary process question but over-rewards short-sample rates and compresses decisive tournament actions.",
+        "Tournament Impact v4 adds consequence but lets summed ordinary prevention dominate and therefore leaves the decisive champion goalkeeper implausibly low.",
+        "A single public estimand is preferable because shot difficulty, timing, match state, shootouts, and support are channels of the same tournament-value question.",
+        "Calibrated post-shot goal probability must be the primary shot-stopping check-back so easy saves receive little credit and difficult saves receive more.",
+        "Clutch must enter the same score as a residual uplift over ordinary PSxG prevention, preventing the same save from being counted twice at full value.",
+        "Named goalkeeper expectations are release fixtures only and are not scorer inputs.",
+        "No FIFA rank, award, final placement, team reputation, or raw round-reached bonus will enter the model matrix.",
+        "Opponent difficulty will not be added as a separate v5 feature in the preregistered main path; calibrated PSxG and pre-action knockout/match state provide the measurable difficulty and leverage channels."
+      ],
+      "preferred_public_state": "one consolidated live goalkeeper ranking"
+    },
+    "face_validity_gates_preregistered": {
+      "hard": {
+        "H10_single_metric_consolidation": "promotion sets one active goalkeeper rank field and no peer impact list",
+        "H11_no_pedigree_feature": "awards, reputation, nationality, and final placement are absent from the model matrix",
+        "H12_baseline_preservation": "all pre-existing v3 and v4 audit fields remain unchanged",
+        "H1_martinez_top_10": "rank(Damián Emiliano Martínez) <= 10",
+        "H2_al_owais_outside_top_10": "rank(Mohammed Khalil Al Owais) >= 11",
+        "H3_turner_outside_top_3": "rank(Matthew Charles Turner) >= 4",
+        "H4_elite_core_three_in_top_8": "at least three of Martínez, Livaković, Bounou, Szczęsny rank <= 8",
+        "H5_no_profile_mirage_podium": "neither Al Owais nor Turner rank <= 3",
+        "H6_identity_blind": "name and team label shuffle leaves row scores unchanged",
+        "H7_psxg_integrity": "ordinary shot-stopping uses calibrated post-shot probability minus goal outcome and raw saves are not the sort key",
+        "H8_clutch_monotonicity": "removing the Kolo Muani 120th-minute save lowers Martínez's score",
+        "H9_shootout_monotonicity": "removing credited shootout saves lowers the affected goalkeeper shootout channel"
+      },
+      "soft": {
+        "S1_martinez_top_3": "rank(Damián Emiliano Martínez) <= 3",
+        "S2_turner_rank_8_to_12": "8 <= rank(Matthew Charles Turner) <= 12",
+        "S3_al_owais_rank_15_or_lower": "rank(Mohammed Khalil Al Owais) >= 15",
+        "S4_livakovic_top_6": "rank(Dominik Livaković) <= 6",
+        "S5_bounou_top_8": "rank(Yassine Bounou) <= 8",
+        "S6_szczesny_top_8": "rank(Wojciech Szczęsny) <= 8",
+        "S7_deep_run_median_improves": "median v5 rank of Lloris, Noppert, Costa, Pickford is better than their v3 median",
+        "S8_difficulty_gradient": "PSxG difficulty faced has a reported, non-mandatory association with the top third"
+      }
+    },
+    "model_version": "goalkeeper_consolidated_value_v5",
+    "repository_head_before_v5": "6706360cbb2a7482b4e0d495b4793c342b93fb12",
+    "selection_rule": [
+      "Filter to configurations passing every hard gate.",
+      "Among hard-gate survivors, maximize number of soft gates passed, preferring Martínez top three when integrity is comparable.",
+      "Then maximize PSxG concordance, clutch monotonicity margin, bootstrap top-eight stability, and resistance to a single easy-save perturbation.",
+      "Use deterministic config id as the final tie-break.",
+      "If no configuration passes every hard gate, write candidate-only artifacts and do not change live aliases."
+    ],
+    "working_tree_before_v5": {
+      "clean": false,
+      "preexisting_untracked_files_preserved": [
+        "docs/goalkeeper-psxg-clutch-v5-update-prompt.md"
+      ],
+      "tracked_modifications": []
+    },
+    "written_before_any_v5_scoring_results": true
+  },
+  "preregistration_path": "results/diagnostics/ranking_repair/goalkeeper_v5_preregistration.json",
+  "promotion_result": {
+    "changed_artifacts": 340,
+    "manifest": "results/reports/goalkeeper_v5_release_manifest.json",
+    "promoted": true
+  },
+  "public_dual_language_inventory_before_release": {
+    "match_count": 37,
+    "matches": [
+      {
+        "line": 1,
+        "path": "results/reports/canonical/player_rankings.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/global_rankings_outfield.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/goalkeeper_rankings.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/player_rankings.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/player_rankings_300plus.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/ARG.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/AUS.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/BEL.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/BRA.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/CAN.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/CMR.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/CRC.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/CRO.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/DEN.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/ECU.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/ENG.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/ESP.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/FRA.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/GER.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/GHA.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/IRN.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/JPN.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/KOR.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/KSA.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/MAR.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/MEX.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/NED.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/POL.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/POR.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/QAT.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/SEN.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/SRB.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/SUI.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/TUN.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/URU.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/USA.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      },
+      {
+        "line": 1,
+        "path": "results/reports/ranking/by_team/WAL.csv",
+        "text": "team,player_id,actions,aerial_events,aerial_wins,average_x,average_y,blocks,box_passes,carries,carry_progression_sum,clearances,completed_passes,counterpressures,crosses,dribbled_past,dribbles,duels,duels_won,final_third_passes,fouls,goals,interceptions,interceptions_won,key_passes,minutes,pass_progression_sum,passes,pressures,progressive_carries,progressive_passes,recoveries,shots,successful_dribbles,successful_under_pressure_actions,switches,through_balls,turnovers,under_pressure_actions,xg_su"
+      }
+    ],
+    "unique_files": [
+      "results/reports/canonical/player_rankings.csv",
+      "results/reports/ranking/by_team/ARG.csv",
+      "results/reports/ranking/by_team/AUS.csv",
+      "results/reports/ranking/by_team/BEL.csv",
+      "results/reports/ranking/by_team/BRA.csv",
+      "results/reports/ranking/by_team/CAN.csv",
+      "results/reports/ranking/by_team/CMR.csv",
+      "results/reports/ranking/by_team/CRC.csv",
+      "results/reports/ranking/by_team/CRO.csv",
+      "results/reports/ranking/by_team/DEN.csv",
+      "results/reports/ranking/by_team/ECU.csv",
+      "results/reports/ranking/by_team/ENG.csv",
+      "results/reports/ranking/by_team/ESP.csv",
+      "results/reports/ranking/by_team/FRA.csv",
+      "results/reports/ranking/by_team/GER.csv",
+      "results/reports/ranking/by_team/GHA.csv",
+      "results/reports/ranking/by_team/IRN.csv",
+      "results/reports/ranking/by_team/JPN.csv",
+      "results/reports/ranking/by_team/KOR.csv",
+      "results/reports/ranking/by_team/KSA.csv",
+      "results/reports/ranking/by_team/MAR.csv",
+      "results/reports/ranking/by_team/MEX.csv",
+      "results/reports/ranking/by_team/NED.csv",
+      "results/reports/ranking/by_team/POL.csv",
+      "results/reports/ranking/by_team/POR.csv",
+      "results/reports/ranking/by_team/QAT.csv",
+      "results/reports/ranking/by_team/SEN.csv",
+      "results/reports/ranking/by_team/SRB.csv",
+      "results/reports/ranking/by_team/SUI.csv",
+      "results/reports/ranking/by_team/TUN.csv",
+      "results/reports/ranking/by_team/URU.csv",
+      "results/reports/ranking/by_team/USA.csv",
+      "results/reports/ranking/by_team/WAL.csv",
+      "results/reports/ranking/global_rankings_outfield.csv",
+      "results/reports/ranking/goalkeeper_rankings.csv",
+      "results/reports/ranking/player_rankings.csv",
+      "results/reports/ranking/player_rankings_300plus.csv"
+    ],
+    "website_note": "No HTML/JS/TS/React/Vue/Svelte website source is present in the repository; report artifacts are the public surfaces.",
+    "website_source_found": false
+  },
+  "ranking_change_explanations": {
+    "al_owais": "Moved from v3 rank 2 to v5 rank 11 because easy and group-stage saves receive less credit than difficult or match-decisive prevention.",
+    "consolidation": "Profile and Impact concepts are explanatory channels in one score, so a second peer live ranking is unnecessary.",
+    "elite_core": "Livakovic, Bounou, and Szczesny remain high because their PSxG and high-consequence evidence remains strong.",
+    "martinez": "Moved from v3 rank 23 to v5 rank 3 because calibrated PSxG prevention, the late Kolo Muani save residual, and credited shootout saves now enter one reliability-bounded tournament value.",
+    "turner": "Moved from v3 rank 3 to v5 rank 8 after shot difficulty, exposure, and consequence replaced a profile-driven podium."
+  },
+  "rejected_configurations_path": "results/diagnostics/ranking_repair/goalkeeper_v5_sensitivity.json",
+  "selected_config": {
+    "clutch_bound": 0.75,
+    "clutch_late_multiplier": 2.0,
+    "clutch_match_state_multiplier": 1.25,
+    "config_id": "gkv5-a107be490c6e",
+    "shootout_bound": 0.35,
+    "shot_reliability_count": 18.0
+  },
+  "selected_weights": {
+    "clutch": 0.25,
+    "psxg": 0.45,
+    "regular_penalty": 0.05,
+    "shootout": 0.2,
+    "state_leverage": 0.0,
+    "support": 0.05
+  },
+  "soft_gates": {
+    "S1_martinez_top_3": true,
+    "S2_turner_rank_8_to_12": true,
+    "S3_al_owais_rank_15_or_lower": false,
+    "S4_livakovic_top_6": true,
+    "S5_bounou_top_8": true,
+    "S6_szczesny_top_8": true,
+    "S7_deep_run_median_improves": true,
+    "S8_difficulty_gradient": false
+  }
+}

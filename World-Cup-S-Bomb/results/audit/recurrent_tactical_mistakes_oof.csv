@@ -1,0 +1,466 @@
+team,defensive_style,actual_style,optimal_style,possessions,wasted_net_xg,mean_eva_gap
+Argentina,Wide Retreating Block,Short Under Pressure,Patient Build-up,80,0.9989519039627017,0.012486898799533772
+Argentina,Compact Pressure Block,Short Under Pressure,Patient Build-up,64,0.7842130700516888,0.012253329219557638
+Argentina,High-Intensity Press,Short Under Pressure,Patient Build-up,34,0.42724800094383536,0.012566117674818687
+Argentina,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,20,0.257415040102873,0.012870752005143652
+Argentina,Wide Retreating Block,Direct Long Play,Patient Build-up,18,0.23586215134129732,0.013103452852294296
+Argentina,Compact Pressure Block,Direct Long Play,Patient Build-up,11,0.14988875275638466,0.013626250250580424
+Argentina,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,5,0.06845388959957246,0.013690777919914493
+Argentina,High-Intensity Press,Direct Long Play,Patient Build-up,4,0.05856824681586823,0.014642061703967058
+Argentina,Compact Pressure Block,Patient Build-up,No meaningful change,72,0.0,0.0
+Argentina,High-Intensity Press,Patient Build-up,No meaningful change,3,0.0,0.0
+Argentina,Set-Piece Compact Shape,Patient Build-up,No meaningful change,6,0.0,0.0
+Argentina,Wide Retreating Block,Patient Build-up,No meaningful change,249,0.0,0.0
+Australia,Compact Pressure Block,Short Under Pressure,Patient Build-up,37,0.21828603318414874,0.005899622518490507
+Australia,Wide Retreating Block,Short Under Pressure,Patient Build-up,29,0.17073442654133353,0.005887394018666673
+Australia,High-Intensity Press,Short Under Pressure,Patient Build-up,20,0.11765335494999829,0.005882667747499915
+Australia,Wide Retreating Block,Direct Long Play,Patient Build-up,18,0.10539937554047434,0.005855520863359685
+Australia,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,15,0.08928597345699231,0.005952398230466154
+Australia,Compact Pressure Block,Direct Long Play,Patient Build-up,13,0.07637834051141079,0.005875256962416215
+Australia,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,12,0.07366883949478144,0.006139069957898453
+Australia,Compact Pressure Block,Patient Build-up,No meaningful change,32,0.0,0.0
+Australia,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Australia,Set-Piece Compact Shape,Patient Build-up,No meaningful change,3,0.0,0.0
+Australia,Wide Retreating Block,Patient Build-up,No meaningful change,87,0.0,0.0
+Belgium,Compact Pressure Block,Short Under Pressure,Patient Build-up,15,0.1954841365934835,0.013032275772898899
+Belgium,Wide Retreating Block,Direct Long Play,Patient Build-up,12,0.18962217250946273,0.015801847709121894
+Belgium,Wide Retreating Block,Short Under Pressure,Patient Build-up,12,0.14433371769611444,0.012027809808009536
+Belgium,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,9,0.12331727774542627,0.013701919749491807
+Belgium,High-Intensity Press,Short Under Pressure,Patient Build-up,9,0.11327261809653265,0.012585846455170295
+Belgium,Compact Pressure Block,Direct Long Play,Patient Build-up,3,0.042709711006018544,0.014236570335339515
+Belgium,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,1,0.014236570335339514,0.014236570335339514
+Belgium,Compact Pressure Block,Direct Long Play,No meaningful change,1,0.0,0.0
+Belgium,Compact Pressure Block,Patient Build-up,No meaningful change,15,0.0,0.0
+Belgium,Compact Pressure Block,Short Under Pressure,No meaningful change,8,0.0,0.0
+Belgium,High-Intensity Press,Short Under Pressure,No meaningful change,3,0.0,0.0
+Belgium,Set-Piece Compact Shape,Direct Long Play,No meaningful change,1,0.0,0.0
+Belgium,Set-Piece Compact Shape,Patient Build-up,No meaningful change,3,0.0,0.0
+Belgium,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,1,0.0,0.0
+Belgium,Wide Retreating Block,Direct Long Play,No meaningful change,2,0.0,0.0
+Belgium,Wide Retreating Block,Patient Build-up,No meaningful change,119,0.0,0.0
+Belgium,Wide Retreating Block,Short Under Pressure,No meaningful change,8,0.0,0.0
+Brazil,Compact Pressure Block,Short Under Pressure,Patient Build-up,43,0.47082338226193876,0.010949380982835785
+Brazil,Wide Retreating Block,Short Under Pressure,Patient Build-up,43,0.46542417066909864,0.010823817922537178
+Brazil,High-Intensity Press,Short Under Pressure,Patient Build-up,35,0.3857373204890754,0.011021066299687868
+Brazil,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,16,0.16587083477420486,0.010366927173387804
+Brazil,Wide Retreating Block,Direct Long Play,Patient Build-up,10,0.12067555316221527,0.012067555316221527
+Brazil,Compact Pressure Block,Direct Long Play,Patient Build-up,8,0.09725098278717809,0.01215637284839726
+Brazil,High-Intensity Press,Direct Long Play,Patient Build-up,2,0.023655071912419993,0.011827535956209997
+Brazil,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,1,0.01670159953306639,0.01670159953306639
+Brazil,Compact Pressure Block,Patient Build-up,No meaningful change,80,0.0,0.0
+Brazil,High-Intensity Press,Patient Build-up,No meaningful change,2,0.0,0.0
+Brazil,Set-Piece Compact Shape,Patient Build-up,No meaningful change,5,0.0,0.0
+Brazil,Wide Retreating Block,Patient Build-up,No meaningful change,174,0.0,0.0
+Cameroon,Compact Pressure Block,Direct Long Play,Patient Build-up,5,0.03641174246682177,0.007282348493364355
+Cameroon,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,2,0.01456469698672871,0.007282348493364355
+Cameroon,Compact Pressure Block,Direct Long Play,No meaningful change,3,0.0,0.0
+Cameroon,Compact Pressure Block,Patient Build-up,No meaningful change,45,0.0,0.0
+Cameroon,Compact Pressure Block,Short Under Pressure,No meaningful change,27,0.0,0.0
+Cameroon,High-Intensity Press,Direct Long Play,No meaningful change,1,0.0,0.0
+Cameroon,High-Intensity Press,Short Under Pressure,No meaningful change,18,0.0,0.0
+Cameroon,Set-Piece Compact Shape,Direct Long Play,No meaningful change,4,0.0,0.0
+Cameroon,Set-Piece Compact Shape,Patient Build-up,No meaningful change,3,0.0,0.0
+Cameroon,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,7,0.0,0.0
+Cameroon,Wide Retreating Block,Direct Long Play,No meaningful change,15,0.0,0.0
+Cameroon,Wide Retreating Block,Patient Build-up,No meaningful change,65,0.0,0.0
+Cameroon,Wide Retreating Block,Short Under Pressure,No meaningful change,22,0.0,0.0
+Canada,Compact Pressure Block,Short Under Pressure,Patient Build-up,10,0.08552843208071345,0.008552843208071346
+Canada,Wide Retreating Block,Short Under Pressure,Patient Build-up,7,0.059869902456499424,0.008552843208071346
+Canada,High-Intensity Press,Short Under Pressure,Patient Build-up,6,0.051317059248428075,0.008552843208071346
+Canada,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,4,0.037624327603297425,0.009406081900824356
+Canada,Compact Pressure Block,Direct Long Play,Patient Build-up,4,0.03707702381114118,0.009269255952785296
+Canada,Wide Retreating Block,Direct Long Play,Patient Build-up,3,0.02808141975443401,0.009360473251478004
+Canada,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,1,0.008552843208071346,0.008552843208071346
+Canada,Compact Pressure Block,Patient Build-up,No meaningful change,40,0.0,0.0
+Canada,Compact Pressure Block,Short Under Pressure,No meaningful change,18,0.0,0.0
+Canada,High-Intensity Press,Direct Long Play,No meaningful change,1,0.0,0.0
+Canada,High-Intensity Press,Short Under Pressure,No meaningful change,14,0.0,0.0
+Canada,Set-Piece Compact Shape,Patient Build-up,No meaningful change,3,0.0,0.0
+Canada,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,6,0.0,0.0
+Canada,Wide Retreating Block,Direct Long Play,No meaningful change,4,0.0,0.0
+Canada,Wide Retreating Block,Patient Build-up,No meaningful change,95,0.0,0.0
+Canada,Wide Retreating Block,Short Under Pressure,No meaningful change,24,0.0,0.0
+Costa Rica,Compact Pressure Block,Short Under Pressure,Patient Build-up,17,0.14921516554759212,0.008777362679270125
+Costa Rica,Wide Retreating Block,Short Under Pressure,Patient Build-up,16,0.14557034651437298,0.009098146657148311
+Costa Rica,High-Intensity Press,Short Under Pressure,Patient Build-up,14,0.12764006918173143,0.009117147798695102
+Costa Rica,Wide Retreating Block,Direct Long Play,Patient Build-up,7,0.05990429866979018,0.00855775695282717
+Costa Rica,Compact Pressure Block,Direct Long Play,Patient Build-up,7,0.05794982262773153,0.008278546089675933
+Costa Rica,High-Intensity Press,Direct Long Play,Patient Build-up,5,0.04488286623777011,0.008976573247554022
+Costa Rica,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,3,0.025952481721632743,0.008650827240544248
+Costa Rica,Compact Pressure Block,Direct Long Play,No meaningful change,5,0.0,0.0
+Costa Rica,Compact Pressure Block,Patient Build-up,No meaningful change,23,0.0,0.0
+Costa Rica,Compact Pressure Block,Short Under Pressure,No meaningful change,17,0.0,0.0
+Costa Rica,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Costa Rica,High-Intensity Press,Short Under Pressure,No meaningful change,7,0.0,0.0
+Costa Rica,Set-Piece Compact Shape,Direct Long Play,No meaningful change,3,0.0,0.0
+Costa Rica,Set-Piece Compact Shape,Patient Build-up,No meaningful change,1,0.0,0.0
+Costa Rica,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,1,0.0,0.0
+Costa Rica,Wide Retreating Block,Direct Long Play,No meaningful change,2,0.0,0.0
+Costa Rica,Wide Retreating Block,Patient Build-up,No meaningful change,58,0.0,0.0
+Costa Rica,Wide Retreating Block,Short Under Pressure,No meaningful change,7,0.0,0.0
+Croatia,Compact Pressure Block,Short Under Pressure,Patient Build-up,34,0.2061283168626758,0.006062597554784582
+Croatia,Wide Retreating Block,Short Under Pressure,Patient Build-up,34,0.20555810595328178,0.006045826645684758
+Croatia,High-Intensity Press,Short Under Pressure,Patient Build-up,25,0.14698809917417885,0.005879523966967154
+Croatia,Compact Pressure Block,Direct Long Play,Patient Build-up,16,0.11518099949963831,0.007198812468727394
+Croatia,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,13,0.09624465415926717,0.007403434935328244
+Croatia,Wide Retreating Block,Direct Long Play,Patient Build-up,12,0.08702375634780314,0.007251979695650262
+Croatia,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,14,0.08519312803306296,0.006085223430933069
+Croatia,High-Intensity Press,Direct Long Play,Patient Build-up,5,0.03334199436265401,0.006668398872530802
+Croatia,Compact Pressure Block,Direct Long Play,No meaningful change,2,0.0,0.0
+Croatia,Compact Pressure Block,Patient Build-up,No meaningful change,117,0.0,0.0
+Croatia,Compact Pressure Block,Short Under Pressure,No meaningful change,37,0.0,0.0
+Croatia,High-Intensity Press,Short Under Pressure,No meaningful change,22,0.0,0.0
+Croatia,Set-Piece Compact Shape,Direct Long Play,No meaningful change,4,0.0,0.0
+Croatia,Set-Piece Compact Shape,Patient Build-up,No meaningful change,6,0.0,0.0
+Croatia,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,14,0.0,0.0
+Croatia,Wide Retreating Block,Direct Long Play,No meaningful change,1,0.0,0.0
+Croatia,Wide Retreating Block,Patient Build-up,No meaningful change,229,0.0,0.0
+Croatia,Wide Retreating Block,Short Under Pressure,No meaningful change,38,0.0,0.0
+Denmark,Compact Pressure Block,Short Under Pressure,Patient Build-up,37,0.24721111824790387,0.006681381574267673
+Denmark,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,18,0.1202648683368181,0.006681381574267672
+Denmark,Wide Retreating Block,Short Under Pressure,Patient Build-up,17,0.11358348676255042,0.006681381574267672
+Denmark,Compact Pressure Block,Direct Long Play,Patient Build-up,9,0.0778124463976008,0.008645827377511201
+Denmark,High-Intensity Press,Short Under Pressure,Patient Build-up,8,0.05345105259414138,0.006681381574267673
+Denmark,Wide Retreating Block,Direct Long Play,Patient Build-up,6,0.05187496426506721,0.008645827377511201
+Denmark,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,3,0.025937482132533603,0.008645827377511201
+Denmark,Compact Pressure Block,Patient Build-up,No meaningful change,55,0.0,0.0
+Denmark,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Denmark,Set-Piece Compact Shape,Patient Build-up,No meaningful change,5,0.0,0.0
+Denmark,Wide Retreating Block,Patient Build-up,No meaningful change,85,0.0,0.0
+Ecuador,Compact Pressure Block,Patient Build-up,Short Under Pressure,22,0.15441611249993062,0.007018914204542301
+Ecuador,Compact Pressure Block,Direct Long Play,Short Under Pressure,14,0.135611027662719,0.009686501975908502
+Ecuador,Wide Retreating Block,Patient Build-up,Short Under Pressure,19,0.1333593698863037,0.0070189142045423
+Ecuador,Set-Piece Compact Shape,Direct Long Play,Short Under Pressure,10,0.07946992260350166,0.007946992260350167
+Ecuador,High-Intensity Press,Direct Long Play,Short Under Pressure,3,0.027674891553887825,0.009224963851295941
+Ecuador,Wide Retreating Block,Direct Long Play,Short Under Pressure,2,0.01957463385325248,0.00978731692662624
+Ecuador,Set-Piece Compact Shape,Patient Build-up,Short Under Pressure,1,0.007018914204542301,0.007018914204542301
+Ecuador,Compact Pressure Block,Patient Build-up,No meaningful change,27,0.0,0.0
+Ecuador,Compact Pressure Block,Short Under Pressure,No meaningful change,37,0.0,0.0
+Ecuador,High-Intensity Press,Short Under Pressure,No meaningful change,10,0.0,0.0
+Ecuador,Set-Piece Compact Shape,Patient Build-up,No meaningful change,3,0.0,0.0
+Ecuador,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,13,0.0,0.0
+Ecuador,Wide Retreating Block,Patient Build-up,No meaningful change,44,0.0,0.0
+Ecuador,Wide Retreating Block,Short Under Pressure,No meaningful change,14,0.0,0.0
+England,Wide Retreating Block,Short Under Pressure,Patient Build-up,36,0.29884799934753353,0.008301333315209264
+England,Compact Pressure Block,Short Under Pressure,Patient Build-up,36,0.28307720642288114,0.00786325573396892
+England,High-Intensity Press,Short Under Pressure,Patient Build-up,21,0.1793571685974504,0.008540817552259543
+England,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,21,0.16910424046429134,0.008052582879251969
+England,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,7,0.0501585716910415,0.007165510241577357
+England,Compact Pressure Block,Direct Long Play,Patient Build-up,6,0.03985611167322095,0.0066426852788701585
+England,Wide Retreating Block,Direct Long Play,Patient Build-up,2,0.013687994730481205,0.006843997365240603
+England,High-Intensity Press,Direct Long Play,Patient Build-up,1,0.0063500646049739345,0.0063500646049739345
+England,Compact Pressure Block,Direct Long Play,No meaningful change,3,0.0,0.0
+England,Compact Pressure Block,Patient Build-up,No meaningful change,80,0.0,0.0
+England,High-Intensity Press,Patient Build-up,No meaningful change,3,0.0,0.0
+England,Set-Piece Compact Shape,Direct Long Play,No meaningful change,2,0.0,0.0
+England,Set-Piece Compact Shape,Patient Build-up,No meaningful change,1,0.0,0.0
+England,Wide Retreating Block,Direct Long Play,No meaningful change,2,0.0,0.0
+England,Wide Retreating Block,Patient Build-up,No meaningful change,140,0.0,0.0
+France,Wide Retreating Block,Short Under Pressure,Patient Build-up,53,0.36249484119329484,0.006839525305533865
+France,Compact Pressure Block,Direct Long Play,Patient Build-up,26,0.30603622518460527,0.01177062404556174
+France,Compact Pressure Block,Short Under Pressure,Patient Build-up,41,0.28399348062864777,0.006926670259235311
+France,Wide Retreating Block,Direct Long Play,Patient Build-up,19,0.22777076413619451,0.011987934954536553
+France,High-Intensity Press,Short Under Pressure,Patient Build-up,28,0.19336778591441442,0.00690599235408623
+France,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,22,0.1495003330444714,0.006795469683839609
+France,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,8,0.09449715793311067,0.011812144741638834
+France,High-Intensity Press,Direct Long Play,Patient Build-up,3,0.029091205904582067,0.00969706863486069
+France,Compact Pressure Block,Patient Build-up,No meaningful change,72,0.0,0.0
+France,Compact Pressure Block,Short Under Pressure,No meaningful change,4,0.0,0.0
+France,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+France,High-Intensity Press,Short Under Pressure,No meaningful change,11,0.0,0.0
+France,Set-Piece Compact Shape,Patient Build-up,No meaningful change,6,0.0,0.0
+France,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,2,0.0,0.0
+France,Wide Retreating Block,Patient Build-up,No meaningful change,227,0.0,0.0
+France,Wide Retreating Block,Short Under Pressure,No meaningful change,7,0.0,0.0
+Germany,Compact Pressure Block,Short Under Pressure,Patient Build-up,32,0.4256399809664961,0.013301249405203002
+Germany,Wide Retreating Block,Short Under Pressure,Patient Build-up,19,0.2682976061488669,0.014120926639414047
+Germany,High-Intensity Press,Short Under Pressure,Patient Build-up,17,0.2538972010308063,0.014935129472400372
+Germany,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,15,0.2026680918102966,0.01351120612068644
+Germany,Wide Retreating Block,Direct Long Play,Patient Build-up,6,0.11125994032378574,0.01854332338729762
+Germany,Compact Pressure Block,Direct Long Play,Patient Build-up,4,0.0707587324523759,0.017689683113093976
+Germany,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,3,0.05884117253944671,0.019613724179815568
+Germany,High-Intensity Press,Direct Long Play,Patient Build-up,1,0.019772944118787904,0.019772944118787904
+Germany,Compact Pressure Block,Patient Build-up,No meaningful change,67,0.0,0.0
+Germany,Set-Piece Compact Shape,Patient Build-up,No meaningful change,2,0.0,0.0
+Germany,Wide Retreating Block,Patient Build-up,No meaningful change,80,0.0,0.0
+Ghana,Wide Retreating Block,Short Under Pressure,Patient Build-up,36,0.3479910121107946,0.009666417003077627
+Ghana,Compact Pressure Block,Short Under Pressure,Patient Build-up,30,0.30994401635082447,0.010331467211694149
+Ghana,High-Intensity Press,Short Under Pressure,Patient Build-up,19,0.1861819189259792,0.009799048364525222
+Ghana,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,14,0.14230750512628446,0.010164821794734604
+Ghana,Compact Pressure Block,Direct Long Play,Patient Build-up,10,0.08871815651134098,0.008871815651134098
+Ghana,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,8,0.07358773385882411,0.009198466732353014
+Ghana,Wide Retreating Block,Direct Long Play,Patient Build-up,8,0.06459495306554779,0.008074369133193473
+Ghana,Compact Pressure Block,Patient Build-up,No meaningful change,41,0.0,0.0
+Ghana,Set-Piece Compact Shape,Patient Build-up,No meaningful change,2,0.0,0.0
+Ghana,Wide Retreating Block,Patient Build-up,No meaningful change,58,0.0,0.0
+Iran,Compact Pressure Block,Short Under Pressure,Patient Build-up,20,0.17681072525083108,0.008840536262541554
+Iran,Compact Pressure Block,Direct Long Play,Patient Build-up,11,0.11040565759562954,0.010036877963239049
+Iran,Wide Retreating Block,Direct Long Play,Patient Build-up,11,0.1045641249996847,0.009505829545425882
+Iran,Wide Retreating Block,Short Under Pressure,Patient Build-up,11,0.09053241395839265,0.008230219450762967
+Iran,High-Intensity Press,Short Under Pressure,Patient Build-up,8,0.06736754763555021,0.008420943454443776
+Iran,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,8,0.06317161955457243,0.007896452444321553
+Iran,High-Intensity Press,Direct Long Play,Patient Build-up,4,0.04329036894873983,0.010822592237184958
+Iran,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,4,0.03662707173702455,0.009156767934256137
+Iran,Compact Pressure Block,Patient Build-up,No meaningful change,46,0.0,0.0
+Iran,Compact Pressure Block,Short Under Pressure,No meaningful change,11,0.0,0.0
+Iran,High-Intensity Press,Short Under Pressure,No meaningful change,1,0.0,0.0
+Iran,Set-Piece Compact Shape,Patient Build-up,No meaningful change,2,0.0,0.0
+Iran,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,2,0.0,0.0
+Iran,Wide Retreating Block,Patient Build-up,No meaningful change,48,0.0,0.0
+Iran,Wide Retreating Block,Short Under Pressure,No meaningful change,8,0.0,0.0
+Japan,Compact Pressure Block,Short Under Pressure,Patient Build-up,38,0.4231207175373485,0.011134755724667066
+Japan,Wide Retreating Block,Short Under Pressure,Patient Build-up,37,0.40560523781227403,0.010962303724656055
+Japan,High-Intensity Press,Short Under Pressure,Patient Build-up,17,0.1832122808437891,0.010777192990811124
+Japan,Wide Retreating Block,Direct Long Play,Patient Build-up,14,0.15963181655599432,0.01140227261114245
+Japan,Compact Pressure Block,Direct Long Play,Patient Build-up,13,0.15123330080492473,0.011633330831148056
+Japan,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,7,0.07531756811420515,0.010759652587743593
+Japan,High-Intensity Press,Direct Long Play,Patient Build-up,5,0.058924100798755305,0.011784820159751061
+Japan,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,4,0.04602867628090122,0.011507169070225306
+Japan,Compact Pressure Block,Patient Build-up,No meaningful change,40,0.0,0.0
+Japan,Compact Pressure Block,Short Under Pressure,No meaningful change,9,0.0,0.0
+Japan,High-Intensity Press,Short Under Pressure,No meaningful change,5,0.0,0.0
+Japan,Set-Piece Compact Shape,Patient Build-up,No meaningful change,4,0.0,0.0
+Japan,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,4,0.0,0.0
+Japan,Wide Retreating Block,Patient Build-up,No meaningful change,76,0.0,0.0
+Japan,Wide Retreating Block,Short Under Pressure,No meaningful change,3,0.0,0.0
+Mexico,Wide Retreating Block,Direct Long Play,Patient Build-up,6,0.052274484006746134,0.008712414001124356
+Mexico,High-Intensity Press,Short Under Pressure,Patient Build-up,7,0.04640518225878168,0.006629311751254525
+Mexico,Wide Retreating Block,Short Under Pressure,Patient Build-up,6,0.03977587050752716,0.006629311751254526
+Mexico,Compact Pressure Block,Direct Long Play,Patient Build-up,3,0.026137242003373067,0.008712414001124356
+Mexico,Compact Pressure Block,Short Under Pressure,Patient Build-up,3,0.01988793525376358,0.006629311751254526
+Mexico,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,2,0.01742482800224871,0.008712414001124356
+Mexico,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,1,0.006629311751254526,0.006629311751254526
+Mexico,Compact Pressure Block,Direct Long Play,No meaningful change,5,0.0,0.0
+Mexico,Compact Pressure Block,Patient Build-up,No meaningful change,27,0.0,0.0
+Mexico,Compact Pressure Block,Short Under Pressure,No meaningful change,24,0.0,0.0
+Mexico,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Mexico,High-Intensity Press,Short Under Pressure,No meaningful change,12,0.0,0.0
+Mexico,Set-Piece Compact Shape,Direct Long Play,No meaningful change,5,0.0,0.0
+Mexico,Set-Piece Compact Shape,Patient Build-up,No meaningful change,4,0.0,0.0
+Mexico,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,4,0.0,0.0
+Mexico,Wide Retreating Block,Direct Long Play,No meaningful change,9,0.0,0.0
+Mexico,Wide Retreating Block,Patient Build-up,No meaningful change,104,0.0,0.0
+Mexico,Wide Retreating Block,Short Under Pressure,No meaningful change,15,0.0,0.0
+Morocco,Wide Retreating Block,Short Under Pressure,Patient Build-up,55,0.3749721907568494,0.00681767619557908
+Morocco,Compact Pressure Block,Short Under Pressure,Patient Build-up,49,0.3231672713894396,0.006595250436519176
+Morocco,Wide Retreating Block,Direct Long Play,Patient Build-up,35,0.23572369779741564,0.006734962794211876
+Morocco,High-Intensity Press,Short Under Pressure,Patient Build-up,33,0.2171940019119767,0.006581636421575051
+Morocco,Compact Pressure Block,Direct Long Play,Patient Build-up,24,0.15477799465618128,0.00644908311067422
+Morocco,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,13,0.08714147343730934,0.0067031902644084105
+Morocco,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,8,0.05070770053446859,0.006338462566808574
+Morocco,High-Intensity Press,Direct Long Play,Patient Build-up,5,0.03770556107934117,0.007541112215868234
+Morocco,Compact Pressure Block,Patient Build-up,No meaningful change,76,0.0,0.0
+Morocco,Compact Pressure Block,Short Under Pressure,No meaningful change,5,0.0,0.0
+Morocco,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Morocco,High-Intensity Press,Short Under Pressure,No meaningful change,5,0.0,0.0
+Morocco,Set-Piece Compact Shape,Patient Build-up,No meaningful change,4,0.0,0.0
+Morocco,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,1,0.0,0.0
+Morocco,Wide Retreating Block,Patient Build-up,No meaningful change,156,0.0,0.0
+Morocco,Wide Retreating Block,Short Under Pressure,No meaningful change,6,0.0,0.0
+Netherlands,Compact Pressure Block,Short Under Pressure,Patient Build-up,29,0.22417245198816887,0.007730084551316168
+Netherlands,Wide Retreating Block,Short Under Pressure,Patient Build-up,19,0.15159301056427585,0.007978579503382939
+Netherlands,Compact Pressure Block,Direct Long Play,Patient Build-up,15,0.13683484838801507,0.009122323225867672
+Netherlands,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,10,0.10389218295290817,0.010389218295290817
+Netherlands,High-Intensity Press,Short Under Pressure,Patient Build-up,14,0.10375927626223694,0.007411376875874067
+Netherlands,Wide Retreating Block,Direct Long Play,Patient Build-up,10,0.09214602369722089,0.009214602369722089
+Netherlands,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,10,0.07394893982153204,0.007394893982153204
+Netherlands,High-Intensity Press,Direct Long Play,Patient Build-up,4,0.037549903699780486,0.009387475924945122
+Netherlands,Compact Pressure Block,Patient Build-up,No meaningful change,55,0.0,0.0
+Netherlands,Compact Pressure Block,Short Under Pressure,No meaningful change,12,0.0,0.0
+Netherlands,High-Intensity Press,Short Under Pressure,No meaningful change,7,0.0,0.0
+Netherlands,Set-Piece Compact Shape,Patient Build-up,No meaningful change,2,0.0,0.0
+Netherlands,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,4,0.0,0.0
+Netherlands,Wide Retreating Block,Patient Build-up,No meaningful change,165,0.0,0.0
+Netherlands,Wide Retreating Block,Short Under Pressure,No meaningful change,15,0.0,0.0
+Poland,Compact Pressure Block,Short Under Pressure,Patient Build-up,32,0.2162323441258215,0.006757260753931922
+Poland,Wide Retreating Block,Short Under Pressure,Patient Build-up,27,0.20528037387841758,0.007602976810311762
+Poland,High-Intensity Press,Short Under Pressure,Patient Build-up,25,0.18310473094837432,0.007324189237934973
+Poland,Wide Retreating Block,Direct Long Play,Patient Build-up,22,0.1797748839931631,0.008171585636052869
+Poland,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,20,0.12935190761614157,0.006467595380807078
+Poland,Compact Pressure Block,Direct Long Play,Patient Build-up,15,0.11945658195294212,0.007963772130196141
+Poland,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,13,0.094491783553624,0.0072685987348941545
+Poland,High-Intensity Press,Direct Long Play,Patient Build-up,4,0.02535381930949743,0.006338454827374358
+Poland,Compact Pressure Block,Patient Build-up,No meaningful change,27,0.0,0.0
+Poland,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Poland,Set-Piece Compact Shape,Patient Build-up,No meaningful change,3,0.0,0.0
+Poland,Wide Retreating Block,Patient Build-up,No meaningful change,90,0.0,0.0
+Portugal,Wide Retreating Block,Short Under Pressure,Patient Build-up,33,0.18230568520825122,0.00552441470328034
+Portugal,Compact Pressure Block,Short Under Pressure,Patient Build-up,32,0.1820583705826643,0.0056893240807082595
+Portugal,Wide Retreating Block,Direct Long Play,Patient Build-up,12,0.09954072930982188,0.008295060775818491
+Portugal,Compact Pressure Block,Direct Long Play,Patient Build-up,11,0.09127632944728278,0.008297848131571162
+Portugal,High-Intensity Press,Short Under Pressure,Patient Build-up,14,0.08280763045680162,0.005914830746914401
+Portugal,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,9,0.05096224574489082,0.005662471749432314
+Portugal,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,5,0.048397975076288534,0.009679595015257707
+Portugal,High-Intensity Press,Direct Long Play,Patient Build-up,2,0.01708656952310372,0.00854328476155186
+Portugal,Compact Pressure Block,Patient Build-up,No meaningful change,50,0.0,0.0
+Portugal,Compact Pressure Block,Short Under Pressure,No meaningful change,14,0.0,0.0
+Portugal,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Portugal,High-Intensity Press,Short Under Pressure,No meaningful change,13,0.0,0.0
+Portugal,Set-Piece Compact Shape,Direct Long Play,No meaningful change,1,0.0,0.0
+Portugal,Set-Piece Compact Shape,Patient Build-up,No meaningful change,2,0.0,0.0
+Portugal,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,6,0.0,0.0
+Portugal,Wide Retreating Block,Direct Long Play,No meaningful change,2,0.0,0.0
+Portugal,Wide Retreating Block,Patient Build-up,No meaningful change,184,0.0,0.0
+Portugal,Wide Retreating Block,Short Under Pressure,No meaningful change,17,0.0,0.0
+Qatar,Wide Retreating Block,Short Under Pressure,Patient Build-up,25,0.18226392359261565,0.007290556943704626
+Qatar,Compact Pressure Block,Short Under Pressure,Patient Build-up,14,0.10057718189221501,0.007184084420872501
+Qatar,High-Intensity Press,Short Under Pressure,Patient Build-up,13,0.09354967471080151,0.007196128823907809
+Qatar,Wide Retreating Block,Direct Long Play,Patient Build-up,7,0.049289987993522785,0.00704142685621754
+Qatar,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,4,0.029425277537109634,0.0073563193842774086
+Qatar,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,4,0.028026651897639462,0.007006662974409866
+Qatar,Compact Pressure Block,Direct Long Play,Patient Build-up,1,0.007006662974409866,0.007006662974409866
+Qatar,Compact Pressure Block,Direct Long Play,No meaningful change,1,0.0,0.0
+Qatar,Compact Pressure Block,Patient Build-up,No meaningful change,25,0.0,0.0
+Qatar,Compact Pressure Block,Short Under Pressure,No meaningful change,9,0.0,0.0
+Qatar,High-Intensity Press,Direct Long Play,No meaningful change,1,0.0,0.0
+Qatar,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Qatar,High-Intensity Press,Short Under Pressure,No meaningful change,3,0.0,0.0
+Qatar,Set-Piece Compact Shape,Direct Long Play,No meaningful change,1,0.0,0.0
+Qatar,Set-Piece Compact Shape,Patient Build-up,No meaningful change,2,0.0,0.0
+Qatar,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,1,0.0,0.0
+Qatar,Wide Retreating Block,Direct Long Play,No meaningful change,5,0.0,0.0
+Qatar,Wide Retreating Block,Patient Build-up,No meaningful change,100,0.0,0.0
+Qatar,Wide Retreating Block,Short Under Pressure,No meaningful change,14,0.0,0.0
+Saudi Arabia,Wide Retreating Block,Direct Long Play,Patient Build-up,18,0.11400415166545261,0.006333563981414034
+Saudi Arabia,Compact Pressure Block,Short Under Pressure,Patient Build-up,10,0.05578291505601628,0.005578291505601627
+Saudi Arabia,Compact Pressure Block,Direct Long Play,Patient Build-up,8,0.05004508168420825,0.006255635210526031
+Saudi Arabia,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,7,0.043560324085911505,0.006222903440844501
+Saudi Arabia,High-Intensity Press,Short Under Pressure,Patient Build-up,4,0.022313166022406516,0.005578291505601629
+Saudi Arabia,Wide Retreating Block,Short Under Pressure,Patient Build-up,3,0.01673487451680488,0.0055782915056016265
+Saudi Arabia,High-Intensity Press,Direct Long Play,Patient Build-up,2,0.012562186507223336,0.006281093253611668
+Saudi Arabia,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,1,0.005578291505601629,0.005578291505601629
+Saudi Arabia,Compact Pressure Block,Patient Build-up,No meaningful change,51,0.0,0.0
+Saudi Arabia,Compact Pressure Block,Short Under Pressure,No meaningful change,16,0.0,0.0
+Saudi Arabia,High-Intensity Press,Short Under Pressure,No meaningful change,13,0.0,0.0
+Saudi Arabia,Set-Piece Compact Shape,Patient Build-up,No meaningful change,4,0.0,0.0
+Saudi Arabia,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,5,0.0,0.0
+Saudi Arabia,Wide Retreating Block,Patient Build-up,No meaningful change,52,0.0,0.0
+Saudi Arabia,Wide Retreating Block,Short Under Pressure,No meaningful change,15,0.0,0.0
+Senegal,Compact Pressure Block,Short Under Pressure,Patient Build-up,35,0.3251424858798471,0.009289785310852774
+Senegal,Wide Retreating Block,Short Under Pressure,Patient Build-up,29,0.26717212246454153,0.009212831809122121
+Senegal,High-Intensity Press,Short Under Pressure,Patient Build-up,22,0.19308948675428383,0.008776794852467447
+Senegal,Wide Retreating Block,Direct Long Play,Patient Build-up,15,0.12641956127691217,0.008427970751794144
+Senegal,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,14,0.1231444672985104,0.008796033378465028
+Senegal,Compact Pressure Block,Direct Long Play,Patient Build-up,12,0.11211713047405489,0.009343094206171241
+Senegal,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,8,0.07235304316397657,0.009044130395497072
+Senegal,High-Intensity Press,Direct Long Play,Patient Build-up,2,0.015959350111074674,0.007979675055537337
+Senegal,Compact Pressure Block,Patient Build-up,No meaningful change,42,0.0,0.0
+Senegal,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Senegal,Set-Piece Compact Shape,Patient Build-up,No meaningful change,4,0.0,0.0
+Senegal,Wide Retreating Block,Patient Build-up,No meaningful change,104,0.0,0.0
+Serbia,Wide Retreating Block,Short Under Pressure,Patient Build-up,35,0.23556038849329328,0.0067302968140940935
+Serbia,Compact Pressure Block,Short Under Pressure,Patient Build-up,25,0.16857536941122409,0.006743014776448964
+Serbia,High-Intensity Press,Short Under Pressure,Patient Build-up,22,0.14818881800963613,0.006735855364074369
+Serbia,Wide Retreating Block,Direct Long Play,Patient Build-up,12,0.10252574937635422,0.00854381244802952
+Serbia,Compact Pressure Block,Direct Long Play,Patient Build-up,9,0.07693803271632925,0.008548670301814361
+Serbia,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,6,0.040430696124390986,0.006738449354065164
+Serbia,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,4,0.034408426773790496,0.008602106693447624
+Serbia,Compact Pressure Block,Patient Build-up,No meaningful change,25,0.0,0.0
+Serbia,Set-Piece Compact Shape,Patient Build-up,No meaningful change,2,0.0,0.0
+Serbia,Wide Retreating Block,Patient Build-up,No meaningful change,89,0.0,0.0
+South Korea,Compact Pressure Block,Short Under Pressure,Patient Build-up,14,0.10809356112794975,0.007720968651996411
+South Korea,Wide Retreating Block,Short Under Pressure,Patient Build-up,7,0.054046780563974876,0.007720968651996411
+South Korea,Compact Pressure Block,Direct Long Play,Patient Build-up,5,0.03558888293935855,0.007117776587871711
+South Korea,Set-Piece Compact Shape,Direct Long Play,Short Under Pressure,6,0.032509503801232534,0.005418250633538756
+South Korea,Wide Retreating Block,Direct Long Play,Short Under Pressure,5,0.02613973440207402,0.005227946880414804
+South Korea,Compact Pressure Block,Direct Long Play,Short Under Pressure,4,0.020911787521659217,0.005227946880414804
+South Korea,Wide Retreating Block,Direct Long Play,Patient Build-up,3,0.020033596932973893,0.006677865644324631
+South Korea,High-Intensity Press,Direct Long Play,Patient Build-up,2,0.015555286006384656,0.007777643003192328
+South Korea,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,2,0.015555286006384656,0.007777643003192328
+South Korea,High-Intensity Press,Short Under Pressure,Patient Build-up,2,0.015441937303992823,0.007720968651996412
+South Korea,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,2,0.015441937303992823,0.007720968651996412
+South Korea,Compact Pressure Block,Patient Build-up,No meaningful change,60,0.0,0.0
+South Korea,Compact Pressure Block,Short Under Pressure,No meaningful change,32,0.0,0.0
+South Korea,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+South Korea,High-Intensity Press,Short Under Pressure,No meaningful change,14,0.0,0.0
+South Korea,Set-Piece Compact Shape,Patient Build-up,No meaningful change,7,0.0,0.0
+South Korea,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,9,0.0,0.0
+South Korea,Wide Retreating Block,Patient Build-up,No meaningful change,75,0.0,0.0
+South Korea,Wide Retreating Block,Short Under Pressure,No meaningful change,18,0.0,0.0
+Spain,Wide Retreating Block,Short Under Pressure,Patient Build-up,36,0.3287706337859153,0.009132517605164314
+Spain,Compact Pressure Block,Short Under Pressure,Patient Build-up,20,0.19654976394558568,0.009827488197279284
+Spain,High-Intensity Press,Short Under Pressure,Patient Build-up,11,0.10347930492687255,0.009407209538806595
+Spain,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,8,0.08514658592157487,0.010643323240196859
+Spain,Wide Retreating Block,Direct Long Play,Patient Build-up,6,0.05691928908891741,0.009486548181486235
+Spain,Compact Pressure Block,Direct Long Play,Patient Build-up,3,0.03761389634778156,0.012537965449260521
+Spain,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,3,0.025408227276684424,0.00846940909222814
+Spain,High-Intensity Press,Direct Long Play,Patient Build-up,1,0.00846940909222814,0.00846940909222814
+Spain,Compact Pressure Block,Patient Build-up,No meaningful change,30,0.0,0.0
+Spain,Compact Pressure Block,Short Under Pressure,No meaningful change,1,0.0,0.0
+Spain,High-Intensity Press,Short Under Pressure,No meaningful change,1,0.0,0.0
+Spain,Set-Piece Compact Shape,Direct Long Play,No meaningful change,1,0.0,0.0
+Spain,Set-Piece Compact Shape,Patient Build-up,No meaningful change,3,0.0,0.0
+Spain,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,3,0.0,0.0
+Spain,Wide Retreating Block,Patient Build-up,No meaningful change,216,0.0,0.0
+Spain,Wide Retreating Block,Short Under Pressure,No meaningful change,7,0.0,0.0
+Switzerland,Compact Pressure Block,Direct Long Play,Short Under Pressure,8,0.04912558515231482,0.0061406981440393525
+Switzerland,Wide Retreating Block,Direct Long Play,Short Under Pressure,7,0.04083316166643898,0.005833308809491283
+Switzerland,High-Intensity Press,Direct Long Play,Short Under Pressure,2,0.011957606600077587,0.005978803300038794
+Switzerland,Set-Piece Compact Shape,Direct Long Play,Short Under Pressure,1,0.006018331488349064,0.006018331488349064
+Switzerland,Compact Pressure Block,Patient Build-up,No meaningful change,29,0.0,0.0
+Switzerland,Compact Pressure Block,Short Under Pressure,No meaningful change,37,0.0,0.0
+Switzerland,High-Intensity Press,Direct Long Play,No meaningful change,1,0.0,0.0
+Switzerland,High-Intensity Press,Short Under Pressure,No meaningful change,20,0.0,0.0
+Switzerland,Set-Piece Compact Shape,Patient Build-up,No meaningful change,2,0.0,0.0
+Switzerland,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,15,0.0,0.0
+Switzerland,Wide Retreating Block,Direct Long Play,No meaningful change,2,0.0,0.0
+Switzerland,Wide Retreating Block,Patient Build-up,No meaningful change,140,0.0,0.0
+Switzerland,Wide Retreating Block,Short Under Pressure,No meaningful change,36,0.0,0.0
+Tunisia,Wide Retreating Block,Direct Long Play,Patient Build-up,15,0.08912363115803995,0.005941575410535997
+Tunisia,Compact Pressure Block,Direct Long Play,Patient Build-up,8,0.04679600069602332,0.005849500087002915
+Tunisia,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,3,0.019289556078591546,0.006429852026197182
+Tunisia,Compact Pressure Block,Patient Build-up,No meaningful change,55,0.0,0.0
+Tunisia,Compact Pressure Block,Short Under Pressure,No meaningful change,65,0.0,0.0
+Tunisia,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Tunisia,High-Intensity Press,Short Under Pressure,No meaningful change,8,0.0,0.0
+Tunisia,Set-Piece Compact Shape,Patient Build-up,No meaningful change,3,0.0,0.0
+Tunisia,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,8,0.0,0.0
+Tunisia,Wide Retreating Block,Patient Build-up,No meaningful change,55,0.0,0.0
+Tunisia,Wide Retreating Block,Short Under Pressure,No meaningful change,27,0.0,0.0
+United States,Compact Pressure Block,Short Under Pressure,Patient Build-up,10,0.08361164837087787,0.008361164837087787
+United States,Compact Pressure Block,Direct Long Play,Patient Build-up,9,0.07154863988805904,0.007949848876451004
+United States,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,7,0.051439456827426865,0.007348493832489552
+United States,High-Intensity Press,Short Under Pressure,Patient Build-up,4,0.033444659348351155,0.008361164837087789
+United States,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,4,0.03344465934835115,0.008361164837087787
+United States,Wide Retreating Block,Direct Long Play,Patient Build-up,5,0.03171916703177434,0.006343833406354868
+United States,Wide Retreating Block,Short Under Pressure,Patient Build-up,2,0.016722329674175574,0.008361164837087787
+United States,High-Intensity Press,Direct Long Play,Patient Build-up,1,0.00851468830875877,0.00851468830875877
+United States,Compact Pressure Block,Patient Build-up,No meaningful change,83,0.0,0.0
+United States,Compact Pressure Block,Short Under Pressure,No meaningful change,26,0.0,0.0
+United States,High-Intensity Press,Short Under Pressure,No meaningful change,16,0.0,0.0
+United States,Set-Piece Compact Shape,Patient Build-up,No meaningful change,5,0.0,0.0
+United States,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,12,0.0,0.0
+United States,Wide Retreating Block,Patient Build-up,No meaningful change,104,0.0,0.0
+United States,Wide Retreating Block,Short Under Pressure,No meaningful change,12,0.0,0.0
+Uruguay,Compact Pressure Block,Short Under Pressure,Patient Build-up,38,0.4159179843261676,0.010945210113846516
+Uruguay,Wide Retreating Block,Short Under Pressure,Patient Build-up,22,0.22205332677760123,0.01009333303534551
+Uruguay,Compact Pressure Block,Direct Long Play,Patient Build-up,11,0.13528985235717342,0.012299077487015765
+Uruguay,Wide Retreating Block,Direct Long Play,Patient Build-up,9,0.1130921082500509,0.01256578980556121
+Uruguay,High-Intensity Press,Short Under Pressure,Patient Build-up,8,0.10541506214593765,0.013176882768242207
+Uruguay,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,9,0.10540945910682314,0.01171216212298035
+Uruguay,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,6,0.0801157399207924,0.013352623320132068
+Uruguay,High-Intensity Press,Direct Long Play,Patient Build-up,1,0.017022674912930413,0.017022674912930413
+Uruguay,Compact Pressure Block,Patient Build-up,No meaningful change,49,0.0,0.0
+Uruguay,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Uruguay,Set-Piece Compact Shape,Patient Build-up,No meaningful change,2,0.0,0.0
+Uruguay,Wide Retreating Block,Patient Build-up,No meaningful change,60,0.0,0.0
+Wales,Set-Piece Compact Shape,Short Under Pressure,Patient Build-up,11,0.08311046715098533,0.007555497013725939
+Wales,Compact Pressure Block,Short Under Pressure,Patient Build-up,9,0.06799947312353344,0.0075554970137259375
+Wales,Wide Retreating Block,Direct Long Play,Patient Build-up,10,0.06448862708003547,0.006448862708003547
+Wales,Wide Retreating Block,Short Under Pressure,Patient Build-up,8,0.06044397610980751,0.007555497013725938
+Wales,Compact Pressure Block,Direct Long Play,Patient Build-up,7,0.04897284767333507,0.006996121096190724
+Wales,High-Intensity Press,Short Under Pressure,Patient Build-up,6,0.04533298208235563,0.007555497013725938
+Wales,Set-Piece Compact Shape,Direct Long Play,Patient Build-up,6,0.03613930376981445,0.006023217294969075
+Wales,High-Intensity Press,Direct Long Play,Patient Build-up,2,0.012897725416007096,0.006448862708003548
+Wales,Compact Pressure Block,Direct Long Play,No meaningful change,2,0.0,0.0
+Wales,Compact Pressure Block,Patient Build-up,No meaningful change,23,0.0,0.0
+Wales,Compact Pressure Block,Short Under Pressure,No meaningful change,22,0.0,0.0
+Wales,High-Intensity Press,Direct Long Play,No meaningful change,1,0.0,0.0
+Wales,High-Intensity Press,Patient Build-up,No meaningful change,1,0.0,0.0
+Wales,High-Intensity Press,Short Under Pressure,No meaningful change,9,0.0,0.0
+Wales,Set-Piece Compact Shape,Direct Long Play,No meaningful change,1,0.0,0.0
+Wales,Set-Piece Compact Shape,Patient Build-up,No meaningful change,3,0.0,0.0
+Wales,Set-Piece Compact Shape,Short Under Pressure,No meaningful change,3,0.0,0.0
+Wales,Wide Retreating Block,Direct Long Play,No meaningful change,3,0.0,0.0
+Wales,Wide Retreating Block,Patient Build-up,No meaningful change,84,0.0,0.0
+Wales,Wide Retreating Block,Short Under Pressure,No meaningful change,18,0.0,0.0

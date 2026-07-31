@@ -1,0 +1,37 @@
+target,profile_type,feature,label,value,value_numeric,mean_predicted_probability,observed_rows
+box_entry,categorical substitution,attacking_style,Attacking style,Direct Long Play,,0.2743360475137851,999
+box_entry,categorical substitution,attacking_style,Attacking style,Patient Build-up,,0.3570431244451131,5342
+box_entry,categorical substitution,attacking_style,Attacking style,Short Under Pressure,,0.17739533587382797,3344
+box_entry,categorical substitution,defensive_style,Defensive style,Compact Pressure Block,,0.31876367010254875,3121
+box_entry,categorical substitution,defensive_style,Defensive style,High-Intensity Press,,0.2190607267427364,746
+box_entry,categorical substitution,defensive_style,Defensive style,Set-Piece Compact Shape,,0.31720154317373994,727
+box_entry,categorical substitution,defensive_style,Defensive style,Wide Retreating Block,,0.3172558790541297,5091
+box_entry,numeric partial response,avg_back_line_height,Back-line height,17.1051,17.105113936934575,0.5385516735295143,9685
+box_entry,numeric partial response,avg_back_line_height,Back-line height,25.9797,25.979706076939102,0.4458270742674371,9685
+box_entry,numeric partial response,avg_back_line_height,Back-line height,31.3896,31.389576143166675,0.3912284461558536,9685
+box_entry,numeric partial response,avg_back_line_height,Back-line height,36.6735,36.67354186755283,0.37262518437440567,9685
+box_entry,numeric partial response,avg_back_line_height,Back-line height,41.1537,41.153747981278705,0.29589391053903324,9685
+box_entry,numeric partial response,avg_back_line_height,Back-line height,45.6984,45.69843260734648,0.2618435213225575,9685
+box_entry,numeric partial response,avg_back_line_height,Back-line height,50.5192,50.51923540852383,0.21743859236272844,9685
+box_entry,numeric partial response,avg_back_line_height,Back-line height,55.7169,55.71689942312765,0.20501953189423525,9685
+box_entry,numeric partial response,avg_back_line_height,Back-line height,62.0595,62.059493252168565,0.15539399818179683,9685
+box_entry,numeric partial response,avg_back_line_height,Back-line height,69.5243,69.52431651159146,0.1385647032735129,9685
+box_entry,numeric partial response,avg_back_line_height,Back-line height,80.2454,80.24538409830824,0.07669808900206739,9685
+shot,categorical substitution,attacking_style,Attacking style,Direct Long Play,,0.09311433881521225,999
+shot,categorical substitution,attacking_style,Attacking style,Patient Build-up,,0.13962219655513763,5342
+shot,categorical substitution,attacking_style,Attacking style,Short Under Pressure,,0.08641622960567474,3344
+shot,categorical substitution,defensive_style,Defensive style,Compact Pressure Block,,0.12627486884593964,3121
+shot,categorical substitution,defensive_style,Defensive style,High-Intensity Press,,0.1168849915266037,746
+shot,categorical substitution,defensive_style,Defensive style,Set-Piece Compact Shape,,0.12324906885623932,727
+shot,categorical substitution,defensive_style,Defensive style,Wide Retreating Block,,0.12471266835927963,5091
+shot,numeric partial response,avg_back_line_height,Back-line height,17.1051,17.105113936934575,0.28241267800331116,9685
+shot,numeric partial response,avg_back_line_height,Back-line height,25.9797,25.979706076939102,0.198481947183609,9685
+shot,numeric partial response,avg_back_line_height,Back-line height,31.3896,31.389576143166675,0.17421625554561615,9685
+shot,numeric partial response,avg_back_line_height,Back-line height,36.6735,36.67354186755283,0.12809288501739502,9685
+shot,numeric partial response,avg_back_line_height,Back-line height,41.1537,41.153747981278705,0.0751429870724678,9685
+shot,numeric partial response,avg_back_line_height,Back-line height,45.6984,45.69843260734648,0.07858306169509888,9685
+shot,numeric partial response,avg_back_line_height,Back-line height,50.5192,50.51923540852383,0.06046954169869423,9685
+shot,numeric partial response,avg_back_line_height,Back-line height,55.7169,55.71689942312765,0.04651334509253502,9685
+shot,numeric partial response,avg_back_line_height,Back-line height,62.0595,62.059493252168565,0.03197760507464409,9685
+shot,numeric partial response,avg_back_line_height,Back-line height,69.5243,69.52431651159146,0.01633693091571331,9685
+shot,numeric partial response,avg_back_line_height,Back-line height,80.2454,80.24538409830824,0.014921856112778187,9685

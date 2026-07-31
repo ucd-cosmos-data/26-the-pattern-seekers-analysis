@@ -1,0 +1,3876 @@
+{
+  "ablations": {
+    "aerials": {
+      "metrics": {
+        "groups": 64,
+        "mae": 0.02553180980439552,
+        "rmse": 0.0449233551991733,
+        "rows": 1672,
+        "spearman": 0.5212874138082207
+      },
+      "removed_features": [
+        "aerial_contests_per100_opponent_possessions",
+        "aerial_success_rate",
+        "aerial_threat_per_eligible_contest"
+      ],
+      "rmse_change_ablated_minus_full": -6.561276947194411e-05,
+      "spearman_change_ablated_minus_full": -0.0013511214766204205
+    },
+    "clearances": {
+      "metrics": {
+        "groups": 64,
+        "mae": 0.02582140962769805,
+        "rmse": 0.04580801021973564,
+        "rows": 1672,
+        "spearman": 0.49128797407246955
+      },
+      "removed_features": [
+        "clearances_per100_opponent_possessions",
+        "clearance_retention_rate",
+        "clearance_threat_exposure_per100"
+      ],
+      "rmse_change_ablated_minus_full": 0.0008190422510903975,
+      "spearman_change_ablated_minus_full": -0.03135056121237162
+    },
+    "errors": {
+      "metrics": {
+        "groups": 64,
+        "mae": 0.025751319613595024,
+        "rmse": 0.045761155921403895,
+        "rows": 1672,
+        "spearman": 0.5073432858750999
+      },
+      "removed_features": [
+        "errors_penalties_per100_opponent_possessions",
+        "fouls_per100_opponent_possessions",
+        "failed_defensive_action_rate"
+      ],
+      "rmse_change_ablated_minus_full": 0.0007721879527586503,
+      "spearman_change_ablated_minus_full": -0.015295249409741252
+    },
+    "interceptions": {
+      "metrics": {
+        "groups": 64,
+        "mae": 0.02662077297260194,
+        "rmse": 0.0493297293127972,
+        "rows": 1672,
+        "spearman": 0.4909861429298697
+      },
+      "removed_features": [
+        "interceptions_blocks_per100_opponent_possessions",
+        "interception_block_retention_rate",
+        "interception_block_threat_exposure_per100"
+      ],
+      "rmse_change_ablated_minus_full": 0.0043407613441519555,
+      "spearman_change_ablated_minus_full": -0.03165239235497147
+    },
+    "positioning": {
+      "metrics": {
+        "groups": 64,
+        "mae": 0.026085435588918605,
+        "rmse": 0.04661360437287835,
+        "rows": 1672,
+        "spearman": 0.4810866494060689
+      },
+      "removed_features": [
+        "defensive_actions_per100_opponent_possessions",
+        "defensive_actions_per100_opponent_final_third_possessions",
+        "high_threat_action_share",
+        "mean_pre_action_threat",
+        "mean_defensive_start_x",
+        "central_danger_action_share",
+        "positioning_360_coverage",
+        "mean_defensive_density_360",
+        "mean_defenders_behind_ball_360"
+      ],
+      "rmse_change_ablated_minus_full": 0.001624636404233104,
+      "spearman_change_ablated_minus_full": -0.04155188587877229
+    },
+    "pressures": {
+      "metrics": {
+        "groups": 64,
+        "mae": 0.02681803662472735,
+        "rmse": 0.050282186947086714,
+        "rows": 1672,
+        "spearman": 0.49376026829018155
+      },
+      "removed_features": [
+        "pressures_per100_opponent_possessions",
+        "pressure_recovery_rate",
+        "pressure_threat_exposure_per100"
+      ],
+      "rmse_change_ablated_minus_full": 0.005293218978441469,
+      "spearman_change_ablated_minus_full": -0.028878266994659618
+    },
+    "progression": {
+      "metrics": {
+        "groups": 64,
+        "mae": 0.025413555619348143,
+        "rmse": 0.044882018711460685,
+        "rows": 1672,
+        "spearman": 0.5247568910922815
+      },
+      "removed_features": [
+        "defensive_progression_per100_opponent_possessions",
+        "progression_retention_rate"
+      ],
+      "rmse_change_ablated_minus_full": -0.00010694925718456039,
+      "spearman_change_ablated_minus_full": 0.002118355807440353
+    }
+  },
+  "bootstrap_comparison": {
+    "draws": 500,
+    "rmse_difference_challenger_minus_positive_champion": {
+      "ci_high": -0.0013961833720778558,
+      "ci_low": -0.0039220221442738965,
+      "estimate": -0.0026957565993273244
+    },
+    "spearman_difference_challenger_minus_positive_champion": {
+      "ci_high": 0.10680918751449787,
+      "ci_low": 0.04278789061507584,
+      "estimate": 0.07548366855392652
+    },
+    "unit": "match bootstrap"
+  },
+  "calibration_by_position_and_minutes": {
+    "minutes_band": {
+      "20-44": {
+        "groups": 64,
+        "mae": 0.013948135515636886,
+        "prediction_mean": 0.001408558450471977,
+        "rmse": 0.021131345884889352,
+        "rows": 305,
+        "spearman": 0.27841386844125304,
+        "target_mean": 0.0018919724030294894
+      },
+      "45-89": {
+        "groups": 64,
+        "mae": 0.01908824455299956,
+        "prediction_mean": -0.0015649678631617613,
+        "rmse": 0.03253926330875561,
+        "rows": 619,
+        "spearman": 0.4918057338930711,
+        "target_mean": 9.77386179966172e-05
+      },
+      "90+": {
+        "groups": 64,
+        "mae": 0.035727215951930465,
+        "prediction_mean": 0.0028142653892225472,
+        "rmse": 0.05887251518836894,
+        "rows": 748,
+        "spearman": 0.5657379922418302,
+        "target_mean": 0.00093528764843838
+      }
+    },
+    "position_group": {
+      "Attacking Midfield/Wing": {
+        "groups": 63,
+        "mae": 0.014451273143926368,
+        "prediction_mean": -0.00013299155077630342,
+        "rmse": 0.023576458955705076,
+        "rows": 318,
+        "spearman": 0.39371709587508724,
+        "target_mean": 0.0015673311625436436
+      },
+      "Center Back": {
+        "groups": 64,
+        "mae": 0.0463381218431839,
+        "prediction_mean": 0.009547738664881103,
+        "rmse": 0.07217185135767783,
+        "rows": 309,
+        "spearman": 0.5585021617906052,
+        "target_mean": 0.005648090329955099
+      },
+      "Central/Wide Midfield": {
+        "groups": 57,
+        "mae": 0.01801815779704171,
+        "prediction_mean": -0.001526018510465621,
+        "rmse": 0.028808148944284965,
+        "rows": 219,
+        "spearman": 0.40998440472983055,
+        "target_mean": -0.00020457057107740612
+      },
+      "Defensive Midfield": {
+        "groups": 64,
+        "mae": 0.02522960455680826,
+        "prediction_mean": -0.0014126231164847687,
+        "rmse": 0.040597147611568074,
+        "rows": 263,
+        "spearman": 0.5985345894095329,
+        "target_mean": 0.0025075353543784376
+      },
+      "Forward": {
+        "groups": 64,
+        "mae": 0.012734701784266224,
+        "prediction_mean": 0.0010468116305706893,
+        "rmse": 0.025884152282832366,
+        "rows": 251,
+        "spearman": 0.383492217533589,
+        "target_mean": -0.0008393902113330412
+      },
+      "Fullback/Wingback": {
+        "groups": 64,
+        "mae": 0.03237822124828213,
+        "prediction_mean": -0.002881493554204767,
+        "rmse": 0.0510935825891594,
+        "rows": 312,
+        "spearman": 0.523660075077644,
+        "target_mean": -0.004200378760385196
+      }
+    }
+  },
+  "candidates": {
+    "isotonic_hist_gradient_boosting": {
+      "best_parameters": {
+        "l2_regularization": 1.0,
+        "max_leaf_nodes": 7
+      },
+      "coefficient_stability": {
+        "aerial_contests_per100_opponent_possessions": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "aerial_success_rate": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "aerial_threat_per_eligible_contest": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "central_danger_action_share": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "clearance_retention_rate": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "clearance_threat_exposure_per100": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "clearances_per100_opponent_possessions": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "defensive_actions_per100_opponent_final_third_possessions": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "defensive_actions_per100_opponent_possessions": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "defensive_progression_per100_opponent_possessions": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "errors_penalties_per100_opponent_possessions": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "failed_defensive_action_rate": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "fouls_per100_opponent_possessions": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "high_threat_action_share": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "interception_block_retention_rate": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "interception_block_threat_exposure_per100": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "interceptions_blocks_per100_opponent_possessions": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "mean_defenders_behind_ball_360": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "mean_defensive_density_360": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "mean_defensive_start_x": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "mean_pre_action_threat": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "positioning_360_coverage": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "pressure_recovery_rate": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "pressure_threat_exposure_per100": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "pressures_per100_opponent_possessions": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        },
+        "progression_retention_rate": {
+          "mean": null,
+          "nonzero_share": null,
+          "sign_agreement": null,
+          "std": null
+        }
+      },
+      "fold_audit": [
+        {
+          "fold": 1,
+          "match_overlap": false,
+          "parameters": {
+            "l2_regularization": 1.0,
+            "max_leaf_nodes": 7
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857255,
+            3857256,
+            3857257,
+            3857258,
+            3857260,
+            3857261,
+            3857262,
+            3857263,
+            3857265,
+            3857266,
+            3857267,
+            3857268,
+            3857271,
+            3857272,
+            3857274,
+            3857275,
+            3857276,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857289,
+            3857290,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857296,
+            3857297,
+            3857298,
+            3857299,
+            3857300,
+            3857301,
+            3869118,
+            3869151,
+            3869253,
+            3869254,
+            3869321,
+            3869354,
+            3869420,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1355,
+          "validation_matches": [
+            3857254,
+            3857259,
+            3857264,
+            3857269,
+            3857270,
+            3857273,
+            3857288,
+            3857295,
+            3869117,
+            3869152,
+            3869219,
+            3869220
+          ],
+          "validation_rows": 317
+        },
+        {
+          "fold": 2,
+          "match_overlap": false,
+          "parameters": {
+            "l2_regularization": 1.0,
+            "max_leaf_nodes": 7
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857256,
+            3857257,
+            3857258,
+            3857259,
+            3857262,
+            3857263,
+            3857264,
+            3857265,
+            3857266,
+            3857268,
+            3857269,
+            3857270,
+            3857272,
+            3857273,
+            3857274,
+            3857275,
+            3857276,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857295,
+            3857296,
+            3857298,
+            3857299,
+            3869117,
+            3869118,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869254,
+            3869321,
+            3869420,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857255,
+            3857260,
+            3857261,
+            3857267,
+            3857271,
+            3857277,
+            3857285,
+            3857290,
+            3857297,
+            3857300,
+            3857301,
+            3869151,
+            3869354
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 3,
+          "match_overlap": false,
+          "parameters": {
+            "l2_regularization": 1.0,
+            "max_leaf_nodes": 7
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857258,
+            3857259,
+            3857260,
+            3857261,
+            3857262,
+            3857263,
+            3857264,
+            3857265,
+            3857267,
+            3857268,
+            3857269,
+            3857270,
+            3857271,
+            3857272,
+            3857273,
+            3857274,
+            3857276,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857283,
+            3857285,
+            3857288,
+            3857290,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857295,
+            3857296,
+            3857297,
+            3857299,
+            3857300,
+            3857301,
+            3869117,
+            3869118,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869321,
+            3869354,
+            3869420,
+            3869486,
+            3869552,
+            3869684
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857256,
+            3857257,
+            3857266,
+            3857275,
+            3857282,
+            3857284,
+            3857286,
+            3857287,
+            3857289,
+            3857298,
+            3869254,
+            3869519,
+            3869685
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 4,
+          "match_overlap": false,
+          "parameters": {
+            "l2_regularization": 1.0,
+            "max_leaf_nodes": 7
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857256,
+            3857257,
+            3857258,
+            3857259,
+            3857260,
+            3857261,
+            3857262,
+            3857264,
+            3857266,
+            3857267,
+            3857268,
+            3857269,
+            3857270,
+            3857271,
+            3857272,
+            3857273,
+            3857275,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857282,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857290,
+            3857291,
+            3857292,
+            3857295,
+            3857296,
+            3857297,
+            3857298,
+            3857300,
+            3857301,
+            3869117,
+            3869118,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869254,
+            3869321,
+            3869354,
+            3869420,
+            3869519,
+            3869685
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857263,
+            3857265,
+            3857274,
+            3857276,
+            3857281,
+            3857283,
+            3857293,
+            3857294,
+            3857299,
+            3869253,
+            3869486,
+            3869552,
+            3869684
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 5,
+          "match_overlap": false,
+          "parameters": {
+            "l2_regularization": 0.1,
+            "max_leaf_nodes": 7
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857256,
+            3857257,
+            3857259,
+            3857260,
+            3857261,
+            3857263,
+            3857264,
+            3857265,
+            3857266,
+            3857267,
+            3857269,
+            3857270,
+            3857271,
+            3857273,
+            3857274,
+            3857275,
+            3857276,
+            3857277,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857290,
+            3857293,
+            3857294,
+            3857295,
+            3857297,
+            3857298,
+            3857299,
+            3857300,
+            3857301,
+            3869117,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869254,
+            3869354,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1334,
+          "validation_matches": [
+            3857258,
+            3857262,
+            3857268,
+            3857272,
+            3857278,
+            3857279,
+            3857280,
+            3857291,
+            3857292,
+            3857296,
+            3869118,
+            3869321,
+            3869420
+          ],
+          "validation_rows": 338
+        }
+      ],
+      "metrics": {
+        "groups": 64,
+        "mae": 0.025842730362896266,
+        "rmse": 0.0493926098221205,
+        "rows": 1672,
+        "spearman": 0.4953585026663868
+      },
+      "model_family": "calibrated nonlinear",
+      "permutation_importance": {
+        "aerial_contests_per100_opponent_possessions": {
+          "rmse_increase_mean": -0.00038759844921377464,
+          "rmse_increase_std": 0.0006385710083205663
+        },
+        "aerial_success_rate": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "aerial_threat_per_eligible_contest": {
+          "rmse_increase_mean": 0.00045379240271756075,
+          "rmse_increase_std": 0.00032653554946355574
+        },
+        "central_danger_action_share": {
+          "rmse_increase_mean": -0.00020678093525176438,
+          "rmse_increase_std": 0.0009482173116351538
+        },
+        "clearance_retention_rate": {
+          "rmse_increase_mean": 7.551186597549859e-05,
+          "rmse_increase_std": 0.0001676034603461572
+        },
+        "clearance_threat_exposure_per100": {
+          "rmse_increase_mean": -5.7358972274045016e-05,
+          "rmse_increase_std": 0.0024767267754402284
+        },
+        "clearances_per100_opponent_possessions": {
+          "rmse_increase_mean": -0.0006540542523812518,
+          "rmse_increase_std": 0.0013567976510456567
+        },
+        "defensive_actions_per100_opponent_final_third_possessions": {
+          "rmse_increase_mean": -7.211092486320014e-05,
+          "rmse_increase_std": 0.00044069125713982695
+        },
+        "defensive_actions_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0002533802597861137,
+          "rmse_increase_std": 0.0006973046376731206
+        },
+        "defensive_progression_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0002586396237549693,
+          "rmse_increase_std": 0.0002994933893083456
+        },
+        "errors_penalties_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0004611741755266074,
+          "rmse_increase_std": 0.002284809785089917
+        },
+        "failed_defensive_action_rate": {
+          "rmse_increase_mean": -0.00040841156800060647,
+          "rmse_increase_std": 0.0007545786816537812
+        },
+        "fouls_per100_opponent_possessions": {
+          "rmse_increase_mean": -0.0002600586210524572,
+          "rmse_increase_std": 0.00046051378339322433
+        },
+        "high_threat_action_share": {
+          "rmse_increase_mean": -4.6720807203678993e-05,
+          "rmse_increase_std": 0.00036487102108659374
+        },
+        "interception_block_retention_rate": {
+          "rmse_increase_mean": 0.0007309997847523425,
+          "rmse_increase_std": 0.0011376346536543576
+        },
+        "interception_block_threat_exposure_per100": {
+          "rmse_increase_mean": 0.004927916424024475,
+          "rmse_increase_std": 0.002882053877896723
+        },
+        "interceptions_blocks_per100_opponent_possessions": {
+          "rmse_increase_mean": -0.0009072984920320548,
+          "rmse_increase_std": 0.0017027784619728077
+        },
+        "mean_defenders_behind_ball_360": {
+          "rmse_increase_mean": 0.00046078144355158614,
+          "rmse_increase_std": 0.0006283847674791545
+        },
+        "mean_defensive_density_360": {
+          "rmse_increase_mean": -3.515914589109631e-05,
+          "rmse_increase_std": 0.001400959576958937
+        },
+        "mean_defensive_start_x": {
+          "rmse_increase_mean": 0.00021960937664636666,
+          "rmse_increase_std": 0.0023578093900131027
+        },
+        "mean_pre_action_threat": {
+          "rmse_increase_mean": 0.007105637048830616,
+          "rmse_increase_std": 0.003136266320789796
+        },
+        "positioning_360_coverage": {
+          "rmse_increase_mean": 4.146382801415993e-05,
+          "rmse_increase_std": 6.159389626310939e-05
+        },
+        "pressure_recovery_rate": {
+          "rmse_increase_mean": 0.00012009900560525366,
+          "rmse_increase_std": 0.0003220915314502322
+        },
+        "pressure_threat_exposure_per100": {
+          "rmse_increase_mean": 0.013907508313025268,
+          "rmse_increase_std": 0.005984030605928814
+        },
+        "pressures_per100_opponent_possessions": {
+          "rmse_increase_mean": -0.00032502339090230566,
+          "rmse_increase_std": 0.0006883198559378632
+        },
+        "progression_retention_rate": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        }
+      },
+      "signed_coefficients": true
+    },
+    "positive_elastic_net": {
+      "best_parameters": {
+        "alpha": 0.001,
+        "l1_ratio": 0.2
+      },
+      "coefficient_stability": {
+        "aerial_contests_per100_opponent_possessions": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "aerial_success_rate": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "aerial_threat_per_eligible_contest": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "central_danger_action_share": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "clearance_retention_rate": {
+          "mean": 8.683185088181082e-06,
+          "nonzero_share": 0.2,
+          "sign_agreement": 1.0,
+          "std": 1.7366370176362165e-05
+        },
+        "clearance_threat_exposure_per100": {
+          "mean": 0.003286423496578689,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0011517320394642905
+        },
+        "clearances_per100_opponent_possessions": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "defensive_actions_per100_opponent_final_third_possessions": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "defensive_actions_per100_opponent_possessions": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "defensive_progression_per100_opponent_possessions": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "errors_penalties_per100_opponent_possessions": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "failed_defensive_action_rate": {
+          "mean": 0.002501844556424407,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0003748639341392992
+        },
+        "fouls_per100_opponent_possessions": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "high_threat_action_share": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "interception_block_retention_rate": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "interception_block_threat_exposure_per100": {
+          "mean": 0.020617781876260018,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0019879506288992886
+        },
+        "interceptions_blocks_per100_opponent_possessions": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "mean_defenders_behind_ball_360": {
+          "mean": 0.006049324791475147,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0003209232457498017
+        },
+        "mean_defensive_density_360": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "mean_defensive_start_x": {
+          "mean": 0.013444958368449653,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0008463594892129683
+        },
+        "mean_pre_action_threat": {
+          "mean": 0.009421923312900225,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.001144261563056119
+        },
+        "positioning_360_coverage": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "pressure_recovery_rate": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "pressure_threat_exposure_per100": {
+          "mean": 0.032594445521448266,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0023650092059730793
+        },
+        "pressures_per100_opponent_possessions": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "progression_retention_rate": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        }
+      },
+      "fold_audit": [
+        {
+          "fold": 1,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 0.001,
+            "l1_ratio": 0.2
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857255,
+            3857256,
+            3857257,
+            3857258,
+            3857260,
+            3857261,
+            3857262,
+            3857263,
+            3857265,
+            3857266,
+            3857267,
+            3857268,
+            3857271,
+            3857272,
+            3857274,
+            3857275,
+            3857276,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857289,
+            3857290,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857296,
+            3857297,
+            3857298,
+            3857299,
+            3857300,
+            3857301,
+            3869118,
+            3869151,
+            3869253,
+            3869254,
+            3869321,
+            3869354,
+            3869420,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1355,
+          "validation_matches": [
+            3857254,
+            3857259,
+            3857264,
+            3857269,
+            3857270,
+            3857273,
+            3857288,
+            3857295,
+            3869117,
+            3869152,
+            3869219,
+            3869220
+          ],
+          "validation_rows": 317
+        },
+        {
+          "fold": 2,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 0.001,
+            "l1_ratio": 0.2
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857256,
+            3857257,
+            3857258,
+            3857259,
+            3857262,
+            3857263,
+            3857264,
+            3857265,
+            3857266,
+            3857268,
+            3857269,
+            3857270,
+            3857272,
+            3857273,
+            3857274,
+            3857275,
+            3857276,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857295,
+            3857296,
+            3857298,
+            3857299,
+            3869117,
+            3869118,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869254,
+            3869321,
+            3869420,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857255,
+            3857260,
+            3857261,
+            3857267,
+            3857271,
+            3857277,
+            3857285,
+            3857290,
+            3857297,
+            3857300,
+            3857301,
+            3869151,
+            3869354
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 3,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 0.001,
+            "l1_ratio": 0.2
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857258,
+            3857259,
+            3857260,
+            3857261,
+            3857262,
+            3857263,
+            3857264,
+            3857265,
+            3857267,
+            3857268,
+            3857269,
+            3857270,
+            3857271,
+            3857272,
+            3857273,
+            3857274,
+            3857276,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857283,
+            3857285,
+            3857288,
+            3857290,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857295,
+            3857296,
+            3857297,
+            3857299,
+            3857300,
+            3857301,
+            3869117,
+            3869118,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869321,
+            3869354,
+            3869420,
+            3869486,
+            3869552,
+            3869684
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857256,
+            3857257,
+            3857266,
+            3857275,
+            3857282,
+            3857284,
+            3857286,
+            3857287,
+            3857289,
+            3857298,
+            3869254,
+            3869519,
+            3869685
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 4,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 0.001,
+            "l1_ratio": 0.2
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857256,
+            3857257,
+            3857258,
+            3857259,
+            3857260,
+            3857261,
+            3857262,
+            3857264,
+            3857266,
+            3857267,
+            3857268,
+            3857269,
+            3857270,
+            3857271,
+            3857272,
+            3857273,
+            3857275,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857282,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857290,
+            3857291,
+            3857292,
+            3857295,
+            3857296,
+            3857297,
+            3857298,
+            3857300,
+            3857301,
+            3869117,
+            3869118,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869254,
+            3869321,
+            3869354,
+            3869420,
+            3869519,
+            3869685
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857263,
+            3857265,
+            3857274,
+            3857276,
+            3857281,
+            3857283,
+            3857293,
+            3857294,
+            3857299,
+            3869253,
+            3869486,
+            3869552,
+            3869684
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 5,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 0.001,
+            "l1_ratio": 0.2
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857256,
+            3857257,
+            3857259,
+            3857260,
+            3857261,
+            3857263,
+            3857264,
+            3857265,
+            3857266,
+            3857267,
+            3857269,
+            3857270,
+            3857271,
+            3857273,
+            3857274,
+            3857275,
+            3857276,
+            3857277,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857290,
+            3857293,
+            3857294,
+            3857295,
+            3857297,
+            3857298,
+            3857299,
+            3857300,
+            3857301,
+            3869117,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869254,
+            3869354,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1334,
+          "validation_matches": [
+            3857258,
+            3857262,
+            3857268,
+            3857272,
+            3857278,
+            3857279,
+            3857280,
+            3857291,
+            3857292,
+            3857296,
+            3869118,
+            3869321,
+            3869420
+          ],
+          "validation_rows": 338
+        }
+      ],
+      "metrics": {
+        "groups": 64,
+        "mae": 0.027334551740119666,
+        "rmse": 0.04768472456797257,
+        "rows": 1672,
+        "spearman": 0.44715486673091465
+      },
+      "model_family": "regularized linear",
+      "permutation_importance": {
+        "aerial_contests_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "aerial_success_rate": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "aerial_threat_per_eligible_contest": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "central_danger_action_share": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "clearance_retention_rate": {
+          "rmse_increase_mean": -2.512249935526789e-07,
+          "rmse_increase_std": 5.024499871053578e-07
+        },
+        "clearance_threat_exposure_per100": {
+          "rmse_increase_mean": 0.00016562614793345364,
+          "rmse_increase_std": 0.00028128397164826614
+        },
+        "clearances_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "defensive_actions_per100_opponent_final_third_possessions": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "defensive_actions_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "defensive_progression_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "errors_penalties_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "failed_defensive_action_rate": {
+          "rmse_increase_mean": 0.00010157368026073865,
+          "rmse_increase_std": 0.00014711939708879354
+        },
+        "fouls_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "high_threat_action_share": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "interception_block_retention_rate": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "interception_block_threat_exposure_per100": {
+          "rmse_increase_mean": 0.00763447847153151,
+          "rmse_increase_std": 0.004486573219269377
+        },
+        "interceptions_blocks_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "mean_defenders_behind_ball_360": {
+          "rmse_increase_mean": 0.000784392618301119,
+          "rmse_increase_std": 0.000444414909827547
+        },
+        "mean_defensive_density_360": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "mean_defensive_start_x": {
+          "rmse_increase_mean": 0.0038964551604080146,
+          "rmse_increase_std": 0.00128625248376603
+        },
+        "mean_pre_action_threat": {
+          "rmse_increase_mean": 0.0023154927956756514,
+          "rmse_increase_std": 0.001524923827944024
+        },
+        "positioning_360_coverage": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "pressure_recovery_rate": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "pressure_threat_exposure_per100": {
+          "rmse_increase_mean": 0.017698146989935642,
+          "rmse_increase_std": 0.004571557173310908
+        },
+        "pressures_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "progression_retention_rate": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        }
+      },
+      "signed_coefficients": false
+    },
+    "signed_elastic_net": {
+      "best_parameters": {
+        "alpha": 0.001,
+        "l1_ratio": 0.2
+      },
+      "coefficient_stability": {
+        "aerial_contests_per100_opponent_possessions": {
+          "mean": 0.00022032781923637932,
+          "nonzero_share": 0.6,
+          "sign_agreement": 0.6666666666666666,
+          "std": 0.000463806608063824
+        },
+        "aerial_success_rate": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "aerial_threat_per_eligible_contest": {
+          "mean": -0.0012487550066355108,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0005864332399588885
+        },
+        "central_danger_action_share": {
+          "mean": -0.006692984765338236,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0007243723452084318
+        },
+        "clearance_retention_rate": {
+          "mean": 5.145843075788125e-05,
+          "nonzero_share": 0.4,
+          "sign_agreement": 1.0,
+          "std": 6.836473687179565e-05
+        },
+        "clearance_threat_exposure_per100": {
+          "mean": 0.01067569865413186,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0018712050775017298
+        },
+        "clearances_per100_opponent_possessions": {
+          "mean": -0.005550637002473933,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.001134105164828411
+        },
+        "defensive_actions_per100_opponent_final_third_possessions": {
+          "mean": 0.005177453813613406,
+          "nonzero_share": 0.8,
+          "sign_agreement": 1.0,
+          "std": 0.002612847524012881
+        },
+        "defensive_actions_per100_opponent_possessions": {
+          "mean": -0.00568757959532756,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0014972576390871527
+        },
+        "defensive_progression_per100_opponent_possessions": {
+          "mean": -7.638421101663086e-05,
+          "nonzero_share": 0.4,
+          "sign_agreement": 0.5,
+          "std": 0.0004909513835596798
+        },
+        "errors_penalties_per100_opponent_possessions": {
+          "mean": -0.008911365780081618,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0012671666968633952
+        },
+        "failed_defensive_action_rate": {
+          "mean": -4.284686004042736e-06,
+          "nonzero_share": 0.6,
+          "sign_agreement": 0.6666666666666666,
+          "std": 0.0001282546769230359
+        },
+        "fouls_per100_opponent_possessions": {
+          "mean": -0.0012715248692290195,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0004708357573454259
+        },
+        "high_threat_action_share": {
+          "mean": -0.010242092300622035,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0034634104504385047
+        },
+        "interception_block_retention_rate": {
+          "mean": -0.0007523468857129819,
+          "nonzero_share": 0.8,
+          "sign_agreement": 1.0,
+          "std": 0.00048667920553101826
+        },
+        "interception_block_threat_exposure_per100": {
+          "mean": 0.02317367854339493,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0008797929761664796
+        },
+        "interceptions_blocks_per100_opponent_possessions": {
+          "mean": -0.00554666519575503,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.001693744595982805
+        },
+        "mean_defenders_behind_ball_360": {
+          "mean": 0.004176051432515626,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.00033848643277609603
+        },
+        "mean_defensive_density_360": {
+          "mean": -0.00039789126603257,
+          "nonzero_share": 0.6,
+          "sign_agreement": 1.0,
+          "std": 0.00043421179868969386
+        },
+        "mean_defensive_start_x": {
+          "mean": 0.004424215001440877,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0010420378880604284
+        },
+        "mean_pre_action_threat": {
+          "mean": 0.012896605822904089,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.003410959891005113
+        },
+        "positioning_360_coverage": {
+          "mean": -1.809075746990575e-05,
+          "nonzero_share": 0.4,
+          "sign_agreement": 0.5,
+          "std": 9.509440622872127e-05
+        },
+        "pressure_recovery_rate": {
+          "mean": -0.003191610136128562,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0007363547982737091
+        },
+        "pressure_threat_exposure_per100": {
+          "mean": 0.035666974233083355,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0022779684571492013
+        },
+        "pressures_per100_opponent_possessions": {
+          "mean": -0.004457223159773824,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0014360789273765876
+        },
+        "progression_retention_rate": {
+          "mean": -0.0007449018682032665,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0003503390097967455
+        }
+      },
+      "fold_audit": [
+        {
+          "fold": 1,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 0.001,
+            "l1_ratio": 0.2
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857255,
+            3857256,
+            3857257,
+            3857258,
+            3857260,
+            3857261,
+            3857262,
+            3857263,
+            3857265,
+            3857266,
+            3857267,
+            3857268,
+            3857271,
+            3857272,
+            3857274,
+            3857275,
+            3857276,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857289,
+            3857290,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857296,
+            3857297,
+            3857298,
+            3857299,
+            3857300,
+            3857301,
+            3869118,
+            3869151,
+            3869253,
+            3869254,
+            3869321,
+            3869354,
+            3869420,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1355,
+          "validation_matches": [
+            3857254,
+            3857259,
+            3857264,
+            3857269,
+            3857270,
+            3857273,
+            3857288,
+            3857295,
+            3869117,
+            3869152,
+            3869219,
+            3869220
+          ],
+          "validation_rows": 317
+        },
+        {
+          "fold": 2,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 0.001,
+            "l1_ratio": 0.2
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857256,
+            3857257,
+            3857258,
+            3857259,
+            3857262,
+            3857263,
+            3857264,
+            3857265,
+            3857266,
+            3857268,
+            3857269,
+            3857270,
+            3857272,
+            3857273,
+            3857274,
+            3857275,
+            3857276,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857295,
+            3857296,
+            3857298,
+            3857299,
+            3869117,
+            3869118,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869254,
+            3869321,
+            3869420,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857255,
+            3857260,
+            3857261,
+            3857267,
+            3857271,
+            3857277,
+            3857285,
+            3857290,
+            3857297,
+            3857300,
+            3857301,
+            3869151,
+            3869354
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 3,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 0.001,
+            "l1_ratio": 0.2
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857258,
+            3857259,
+            3857260,
+            3857261,
+            3857262,
+            3857263,
+            3857264,
+            3857265,
+            3857267,
+            3857268,
+            3857269,
+            3857270,
+            3857271,
+            3857272,
+            3857273,
+            3857274,
+            3857276,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857283,
+            3857285,
+            3857288,
+            3857290,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857295,
+            3857296,
+            3857297,
+            3857299,
+            3857300,
+            3857301,
+            3869117,
+            3869118,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869321,
+            3869354,
+            3869420,
+            3869486,
+            3869552,
+            3869684
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857256,
+            3857257,
+            3857266,
+            3857275,
+            3857282,
+            3857284,
+            3857286,
+            3857287,
+            3857289,
+            3857298,
+            3869254,
+            3869519,
+            3869685
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 4,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 0.001,
+            "l1_ratio": 0.2
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857256,
+            3857257,
+            3857258,
+            3857259,
+            3857260,
+            3857261,
+            3857262,
+            3857264,
+            3857266,
+            3857267,
+            3857268,
+            3857269,
+            3857270,
+            3857271,
+            3857272,
+            3857273,
+            3857275,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857282,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857290,
+            3857291,
+            3857292,
+            3857295,
+            3857296,
+            3857297,
+            3857298,
+            3857300,
+            3857301,
+            3869117,
+            3869118,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869254,
+            3869321,
+            3869354,
+            3869420,
+            3869519,
+            3869685
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857263,
+            3857265,
+            3857274,
+            3857276,
+            3857281,
+            3857283,
+            3857293,
+            3857294,
+            3857299,
+            3869253,
+            3869486,
+            3869552,
+            3869684
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 5,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 0.001,
+            "l1_ratio": 0.8
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857256,
+            3857257,
+            3857259,
+            3857260,
+            3857261,
+            3857263,
+            3857264,
+            3857265,
+            3857266,
+            3857267,
+            3857269,
+            3857270,
+            3857271,
+            3857273,
+            3857274,
+            3857275,
+            3857276,
+            3857277,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857290,
+            3857293,
+            3857294,
+            3857295,
+            3857297,
+            3857298,
+            3857299,
+            3857300,
+            3857301,
+            3869117,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869254,
+            3869354,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1334,
+          "validation_matches": [
+            3857258,
+            3857262,
+            3857268,
+            3857272,
+            3857278,
+            3857279,
+            3857280,
+            3857291,
+            3857292,
+            3857296,
+            3869118,
+            3869321,
+            3869420
+          ],
+          "validation_rows": 338
+        }
+      ],
+      "metrics": {
+        "groups": 64,
+        "mae": 0.025539529444260776,
+        "rmse": 0.04508893335018751,
+        "rows": 1672,
+        "spearman": 0.5204923530770923
+      },
+      "model_family": "regularized linear",
+      "permutation_importance": {
+        "aerial_contests_per100_opponent_possessions": {
+          "rmse_increase_mean": -1.2764073175074165e-05,
+          "rmse_increase_std": 3.2850748270725044e-05
+        },
+        "aerial_success_rate": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "aerial_threat_per_eligible_contest": {
+          "rmse_increase_mean": 1.747277733444852e-05,
+          "rmse_increase_std": 0.0001006356390892574
+        },
+        "central_danger_action_share": {
+          "rmse_increase_mean": 0.000981174361964747,
+          "rmse_increase_std": 0.0008642434779048567
+        },
+        "clearance_retention_rate": {
+          "rmse_increase_mean": 9.215422899611081e-07,
+          "rmse_increase_std": 2.0626436022167396e-06
+        },
+        "clearance_threat_exposure_per100": {
+          "rmse_increase_mean": 0.002521306279037529,
+          "rmse_increase_std": 0.001707309708744333
+        },
+        "clearances_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0005810356490625653,
+          "rmse_increase_std": 0.000554575106519322
+        },
+        "defensive_actions_per100_opponent_final_third_possessions": {
+          "rmse_increase_mean": 0.0006942376916595619,
+          "rmse_increase_std": 0.0004498829416765394
+        },
+        "defensive_actions_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0005943236053996312,
+          "rmse_increase_std": 0.00030807454062026885
+        },
+        "defensive_progression_per100_opponent_possessions": {
+          "rmse_increase_mean": -2.933051199957293e-05,
+          "rmse_increase_std": 3.6540507886191734e-05
+        },
+        "errors_penalties_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.001628584690697911,
+          "rmse_increase_std": 0.0007305283298681747
+        },
+        "failed_defensive_action_rate": {
+          "rmse_increase_mean": -4.444666511142781e-06,
+          "rmse_increase_std": 8.753849444498183e-06
+        },
+        "fouls_per100_opponent_possessions": {
+          "rmse_increase_mean": 3.4287051513755276e-05,
+          "rmse_increase_std": 6.207973789181614e-05
+        },
+        "high_threat_action_share": {
+          "rmse_increase_mean": 0.0018336302717578453,
+          "rmse_increase_std": 0.001097910098164254
+        },
+        "interception_block_retention_rate": {
+          "rmse_increase_mean": 1.044302138841352e-05,
+          "rmse_increase_std": 6.00782876461945e-05
+        },
+        "interception_block_threat_exposure_per100": {
+          "rmse_increase_mean": 0.010510427373903373,
+          "rmse_increase_std": 0.00582581556156734
+        },
+        "interceptions_blocks_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0008783836760411334,
+          "rmse_increase_std": 0.00035068678935110066
+        },
+        "mean_defenders_behind_ball_360": {
+          "rmse_increase_mean": 0.00037150304125030674,
+          "rmse_increase_std": 0.00028754689740939746
+        },
+        "mean_defensive_density_360": {
+          "rmse_increase_mean": -5.645924883357356e-06,
+          "rmse_increase_std": 5.287994713840775e-05
+        },
+        "mean_defensive_start_x": {
+          "rmse_increase_mean": 0.0005776666437159586,
+          "rmse_increase_std": 0.0005753468836388028
+        },
+        "mean_pre_action_threat": {
+          "rmse_increase_mean": 0.004817098626830292,
+          "rmse_increase_std": 0.003632434543604386
+        },
+        "positioning_360_coverage": {
+          "rmse_increase_mean": -3.329184230543847e-06,
+          "rmse_increase_std": 5.80994564729397e-06
+        },
+        "pressure_recovery_rate": {
+          "rmse_increase_mean": 0.00019135898049342515,
+          "rmse_increase_std": 2.486231053083769e-05
+        },
+        "pressure_threat_exposure_per100": {
+          "rmse_increase_mean": 0.021494683964530754,
+          "rmse_increase_std": 0.003964231027726812
+        },
+        "pressures_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.000386534872169976,
+          "rmse_increase_std": 0.00024348611844921285
+        },
+        "progression_retention_rate": {
+          "rmse_increase_mean": 1.705616964976231e-05,
+          "rmse_increase_std": 2.60966986670909e-05
+        }
+      },
+      "signed_coefficients": true
+    },
+    "signed_ridge": {
+      "best_parameters": {
+        "alpha": 50.0
+      },
+      "coefficient_stability": {
+        "aerial_contests_per100_opponent_possessions": {
+          "mean": 0.00013430107915238332,
+          "nonzero_share": 1.0,
+          "sign_agreement": 0.6,
+          "std": 0.000721637915713896
+        },
+        "aerial_success_rate": {
+          "mean": 0.0,
+          "nonzero_share": 0.0,
+          "sign_agreement": null,
+          "std": 0.0
+        },
+        "aerial_threat_per_eligible_contest": {
+          "mean": -0.0015690762266323758,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0005353189233515051
+        },
+        "central_danger_action_share": {
+          "mean": -0.006590619358659869,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0004576248758474401
+        },
+        "clearance_retention_rate": {
+          "mean": 9.522147687524758e-05,
+          "nonzero_share": 1.0,
+          "sign_agreement": 0.6,
+          "std": 0.0002859800548970427
+        },
+        "clearance_threat_exposure_per100": {
+          "mean": 0.010588671838680595,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0011592916960661557
+        },
+        "clearances_per100_opponent_possessions": {
+          "mean": -0.005442281255579643,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0007547943358332179
+        },
+        "defensive_actions_per100_opponent_final_third_possessions": {
+          "mean": 0.005901544780353712,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0006443765073143413
+        },
+        "defensive_actions_per100_opponent_possessions": {
+          "mean": -0.006014346665159128,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0009826948347107752
+        },
+        "defensive_progression_per100_opponent_possessions": {
+          "mean": 0.00035184681888432206,
+          "nonzero_share": 1.0,
+          "sign_agreement": 0.6,
+          "std": 0.0011892380430929966
+        },
+        "errors_penalties_per100_opponent_possessions": {
+          "mean": -0.008947889665590467,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0011672491843738955
+        },
+        "failed_defensive_action_rate": {
+          "mean": -3.8040042620563635e-05,
+          "nonzero_share": 1.0,
+          "sign_agreement": 0.6,
+          "std": 0.0004086313822084006
+        },
+        "fouls_per100_opponent_possessions": {
+          "mean": -0.0015065204850808992,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.00038118661768717815
+        },
+        "high_threat_action_share": {
+          "mean": -0.010076745255151969,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0021309381502383766
+        },
+        "interception_block_retention_rate": {
+          "mean": -0.0009665233913999695,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0003968421293130281
+        },
+        "interception_block_threat_exposure_per100": {
+          "mean": 0.02239991807288754,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.001525352618421648
+        },
+        "interceptions_blocks_per100_opponent_possessions": {
+          "mean": -0.005520244465149159,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0012983337973564912
+        },
+        "mean_defenders_behind_ball_360": {
+          "mean": 0.004415294946523056,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.00042299288744249836
+        },
+        "mean_defensive_density_360": {
+          "mean": -0.0006450632182263569,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0005111938530497135
+        },
+        "mean_defensive_start_x": {
+          "mean": 0.004584828282680179,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0008444697370937651
+        },
+        "mean_pre_action_threat": {
+          "mean": 0.014486019479979451,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.002815215681222895
+        },
+        "positioning_360_coverage": {
+          "mean": -6.316174608646571e-05,
+          "nonzero_share": 1.0,
+          "sign_agreement": 0.6,
+          "std": 0.0002628109187972816
+        },
+        "pressure_recovery_rate": {
+          "mean": -0.003450844530812889,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0005371368478141188
+        },
+        "pressure_threat_exposure_per100": {
+          "mean": 0.03399689640919097,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0029252983026847564
+        },
+        "pressures_per100_opponent_possessions": {
+          "mean": -0.004589954974769779,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0007559263700664814
+        },
+        "progression_retention_rate": {
+          "mean": -0.0010627204234711092,
+          "nonzero_share": 1.0,
+          "sign_agreement": 1.0,
+          "std": 0.0004111304076508582
+        }
+      },
+      "fold_audit": [
+        {
+          "fold": 1,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 50.0
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857255,
+            3857256,
+            3857257,
+            3857258,
+            3857260,
+            3857261,
+            3857262,
+            3857263,
+            3857265,
+            3857266,
+            3857267,
+            3857268,
+            3857271,
+            3857272,
+            3857274,
+            3857275,
+            3857276,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857289,
+            3857290,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857296,
+            3857297,
+            3857298,
+            3857299,
+            3857300,
+            3857301,
+            3869118,
+            3869151,
+            3869253,
+            3869254,
+            3869321,
+            3869354,
+            3869420,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1355,
+          "validation_matches": [
+            3857254,
+            3857259,
+            3857264,
+            3857269,
+            3857270,
+            3857273,
+            3857288,
+            3857295,
+            3869117,
+            3869152,
+            3869219,
+            3869220
+          ],
+          "validation_rows": 317
+        },
+        {
+          "fold": 2,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 50.0
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857256,
+            3857257,
+            3857258,
+            3857259,
+            3857262,
+            3857263,
+            3857264,
+            3857265,
+            3857266,
+            3857268,
+            3857269,
+            3857270,
+            3857272,
+            3857273,
+            3857274,
+            3857275,
+            3857276,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857295,
+            3857296,
+            3857298,
+            3857299,
+            3869117,
+            3869118,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869254,
+            3869321,
+            3869420,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857255,
+            3857260,
+            3857261,
+            3857267,
+            3857271,
+            3857277,
+            3857285,
+            3857290,
+            3857297,
+            3857300,
+            3857301,
+            3869151,
+            3869354
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 3,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 50.0
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857258,
+            3857259,
+            3857260,
+            3857261,
+            3857262,
+            3857263,
+            3857264,
+            3857265,
+            3857267,
+            3857268,
+            3857269,
+            3857270,
+            3857271,
+            3857272,
+            3857273,
+            3857274,
+            3857276,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857281,
+            3857283,
+            3857285,
+            3857288,
+            3857290,
+            3857291,
+            3857292,
+            3857293,
+            3857294,
+            3857295,
+            3857296,
+            3857297,
+            3857299,
+            3857300,
+            3857301,
+            3869117,
+            3869118,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869321,
+            3869354,
+            3869420,
+            3869486,
+            3869552,
+            3869684
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857256,
+            3857257,
+            3857266,
+            3857275,
+            3857282,
+            3857284,
+            3857286,
+            3857287,
+            3857289,
+            3857298,
+            3869254,
+            3869519,
+            3869685
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 4,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 50.0
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857256,
+            3857257,
+            3857258,
+            3857259,
+            3857260,
+            3857261,
+            3857262,
+            3857264,
+            3857266,
+            3857267,
+            3857268,
+            3857269,
+            3857270,
+            3857271,
+            3857272,
+            3857273,
+            3857275,
+            3857277,
+            3857278,
+            3857279,
+            3857280,
+            3857282,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857290,
+            3857291,
+            3857292,
+            3857295,
+            3857296,
+            3857297,
+            3857298,
+            3857300,
+            3857301,
+            3869117,
+            3869118,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869254,
+            3869321,
+            3869354,
+            3869420,
+            3869519,
+            3869685
+          ],
+          "train_rows": 1333,
+          "validation_matches": [
+            3857263,
+            3857265,
+            3857274,
+            3857276,
+            3857281,
+            3857283,
+            3857293,
+            3857294,
+            3857299,
+            3869253,
+            3869486,
+            3869552,
+            3869684
+          ],
+          "validation_rows": 339
+        },
+        {
+          "fold": 5,
+          "match_overlap": false,
+          "parameters": {
+            "alpha": 10.0
+          },
+          "preprocessing_fit_scope": "outer-training-fold-only",
+          "train_matches": [
+            3857254,
+            3857255,
+            3857256,
+            3857257,
+            3857259,
+            3857260,
+            3857261,
+            3857263,
+            3857264,
+            3857265,
+            3857266,
+            3857267,
+            3857269,
+            3857270,
+            3857271,
+            3857273,
+            3857274,
+            3857275,
+            3857276,
+            3857277,
+            3857281,
+            3857282,
+            3857283,
+            3857284,
+            3857285,
+            3857286,
+            3857287,
+            3857288,
+            3857289,
+            3857290,
+            3857293,
+            3857294,
+            3857295,
+            3857297,
+            3857298,
+            3857299,
+            3857300,
+            3857301,
+            3869117,
+            3869151,
+            3869152,
+            3869219,
+            3869220,
+            3869253,
+            3869254,
+            3869354,
+            3869486,
+            3869519,
+            3869552,
+            3869684,
+            3869685
+          ],
+          "train_rows": 1334,
+          "validation_matches": [
+            3857258,
+            3857262,
+            3857268,
+            3857272,
+            3857278,
+            3857279,
+            3857280,
+            3857291,
+            3857292,
+            3857296,
+            3869118,
+            3869321,
+            3869420
+          ],
+          "validation_rows": 338
+        }
+      ],
+      "metrics": {
+        "groups": 64,
+        "mae": 0.025594355408265528,
+        "rmse": 0.044988967968645245,
+        "rows": 1672,
+        "spearman": 0.5226385352848412
+      },
+      "model_family": "regularized linear",
+      "permutation_importance": {
+        "aerial_contests_per100_opponent_possessions": {
+          "rmse_increase_mean": -1.776861666102636e-05,
+          "rmse_increase_std": 4.206827349704886e-05
+        },
+        "aerial_success_rate": {
+          "rmse_increase_mean": 0.0,
+          "rmse_increase_std": 0.0
+        },
+        "aerial_threat_per_eligible_contest": {
+          "rmse_increase_mean": 1.7877696228009444e-05,
+          "rmse_increase_std": 0.00013400032317629798
+        },
+        "central_danger_action_share": {
+          "rmse_increase_mean": 0.0009499613946254565,
+          "rmse_increase_std": 0.0009192235767106858
+        },
+        "clearance_retention_rate": {
+          "rmse_increase_mean": -3.7453983422058856e-06,
+          "rmse_increase_std": 1.4819434699319199e-05
+        },
+        "clearance_threat_exposure_per100": {
+          "rmse_increase_mean": 0.0024020810431254606,
+          "rmse_increase_std": 0.0013909764464869593
+        },
+        "clearances_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0005470377759491149,
+          "rmse_increase_std": 0.000515834663873589
+        },
+        "defensive_actions_per100_opponent_final_third_possessions": {
+          "rmse_increase_mean": 0.0006360371879618867,
+          "rmse_increase_std": 0.0003958203925106106
+        },
+        "defensive_actions_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0007369370084800278,
+          "rmse_increase_std": 0.0006884442562746158
+        },
+        "defensive_progression_per100_opponent_possessions": {
+          "rmse_increase_mean": -8.211038469800453e-05,
+          "rmse_increase_std": 0.00012456912052500287
+        },
+        "errors_penalties_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0016258163808905407,
+          "rmse_increase_std": 0.000734330603867784
+        },
+        "failed_defensive_action_rate": {
+          "rmse_increase_mean": -2.6743080156432786e-05,
+          "rmse_increase_std": 2.5208319017457097e-05
+        },
+        "fouls_per100_opponent_possessions": {
+          "rmse_increase_mean": 5.343167692620082e-05,
+          "rmse_increase_std": 8.1602344640762e-05
+        },
+        "high_threat_action_share": {
+          "rmse_increase_mean": 0.0018516949222361551,
+          "rmse_increase_std": 0.0011591719661597348
+        },
+        "interception_block_retention_rate": {
+          "rmse_increase_mean": 2.298013647022562e-05,
+          "rmse_increase_std": 7.131338175393914e-05
+        },
+        "interception_block_threat_exposure_per100": {
+          "rmse_increase_mean": 0.009865173042025919,
+          "rmse_increase_std": 0.005337857121407086
+        },
+        "interceptions_blocks_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.0008388571592666955,
+          "rmse_increase_std": 0.00032665986411799095
+        },
+        "mean_defenders_behind_ball_360": {
+          "rmse_increase_mean": 0.0003990402432008808,
+          "rmse_increase_std": 0.00029813634466204793
+        },
+        "mean_defensive_density_360": {
+          "rmse_increase_mean": 2.872207869400456e-06,
+          "rmse_increase_std": 7.969430063304828e-05
+        },
+        "mean_defensive_start_x": {
+          "rmse_increase_mean": 0.0005772018811619859,
+          "rmse_increase_std": 0.0005094494687358879
+        },
+        "mean_pre_action_threat": {
+          "rmse_increase_mean": 0.005666118762296659,
+          "rmse_increase_std": 0.003796755243729697
+        },
+        "positioning_360_coverage": {
+          "rmse_increase_mean": -8.304526313834825e-06,
+          "rmse_increase_std": 1.4689378902279026e-05
+        },
+        "pressure_recovery_rate": {
+          "rmse_increase_mean": 0.00020457141777333737,
+          "rmse_increase_std": 5.478628245442407e-05
+        },
+        "pressure_threat_exposure_per100": {
+          "rmse_increase_mean": 0.020161653413329747,
+          "rmse_increase_std": 0.0033488008090062538
+        },
+        "pressures_per100_opponent_possessions": {
+          "rmse_increase_mean": 0.000384026566404079,
+          "rmse_increase_std": 0.00020583091733473538
+        },
+        "progression_retention_rate": {
+          "rmse_increase_mean": 2.5544027465368434e-05,
+          "rmse_increase_std": 2.7157693837513374e-05
+        }
+      },
+      "signed_coefficients": true
+    }
+  },
+  "direct_threat_prevention_correlation": 0.5226385352848412,
+  "feature_contract": {
+    "attacking_spurious_feature_count": 0,
+    "features": [
+      "pressures_per100_opponent_possessions",
+      "pressure_recovery_rate",
+      "pressure_threat_exposure_per100",
+      "interceptions_blocks_per100_opponent_possessions",
+      "interception_block_retention_rate",
+      "interception_block_threat_exposure_per100",
+      "clearances_per100_opponent_possessions",
+      "clearance_retention_rate",
+      "clearance_threat_exposure_per100",
+      "aerial_contests_per100_opponent_possessions",
+      "aerial_success_rate",
+      "aerial_threat_per_eligible_contest",
+      "defensive_actions_per100_opponent_possessions",
+      "defensive_actions_per100_opponent_final_third_possessions",
+      "high_threat_action_share",
+      "mean_pre_action_threat",
+      "mean_defensive_start_x",
+      "central_danger_action_share",
+      "positioning_360_coverage",
+      "mean_defensive_density_360",
+      "mean_defenders_behind_ball_360",
+      "errors_penalties_per100_opponent_possessions",
+      "fouls_per100_opponent_possessions",
+      "failed_defensive_action_rate",
+      "defensive_progression_per100_opponent_possessions",
+      "progression_retention_rate"
+    ],
+    "groups": {
+      "aerials": [
+        "aerial_contests_per100_opponent_possessions",
+        "aerial_success_rate",
+        "aerial_threat_per_eligible_contest"
+      ],
+      "clearances": [
+        "clearances_per100_opponent_possessions",
+        "clearance_retention_rate",
+        "clearance_threat_exposure_per100"
+      ],
+      "errors": [
+        "errors_penalties_per100_opponent_possessions",
+        "fouls_per100_opponent_possessions",
+        "failed_defensive_action_rate"
+      ],
+      "interceptions": [
+        "interceptions_blocks_per100_opponent_possessions",
+        "interception_block_retention_rate",
+        "interception_block_threat_exposure_per100"
+      ],
+      "positioning": [
+        "defensive_actions_per100_opponent_possessions",
+        "defensive_actions_per100_opponent_final_third_possessions",
+        "high_threat_action_share",
+        "mean_pre_action_threat",
+        "mean_defensive_start_x",
+        "central_danger_action_share",
+        "positioning_360_coverage",
+        "mean_defensive_density_360",
+        "mean_defenders_behind_ball_360"
+      ],
+      "pressures": [
+        "pressures_per100_opponent_possessions",
+        "pressure_recovery_rate",
+        "pressure_threat_exposure_per100"
+      ],
+      "progression": [
+        "defensive_progression_per100_opponent_possessions",
+        "progression_retention_rate"
+      ]
+    },
+    "opportunity_adjusted": true,
+    "player_identity_feature_count": 0,
+    "preprocessing": "median imputation and linear scaling fitted inside folds",
+    "team_identity_feature_count": 0
+  },
+  "incumbent_reference": {
+    "correlation": 0.34708091345861314,
+    "note": "The incumbent target differs; RMSE non-inferiority is therefore evaluated against the positive-ElasticNet architecture on the new target.",
+    "source": "immutable pre-repair champion snapshot"
+  },
+  "leave_one_team_out": {
+    "positive_elastic_net": {
+      "coverage": 1.0,
+      "fold_audit": [
+        {
+          "held_out_matches": [
+            3857264,
+            3857289,
+            3857300,
+            3869151,
+            3869321,
+            3869519,
+            3869685
+          ],
+          "held_out_team": "Argentina",
+          "train_match_overlap": false,
+          "train_rows": 1479,
+          "validation_rows": 95
+        },
+        {
+          "held_out_matches": [
+            3857257,
+            3857279,
+            3857288,
+            3869151
+          ],
+          "held_out_team": "Australia",
+          "train_match_overlap": false,
+          "train_rows": 1565,
+          "validation_rows": 53
+        },
+        {
+          "held_out_matches": [
+            3857268,
+            3857283,
+            3857296
+          ],
+          "held_out_team": "Belgium",
+          "train_match_overlap": false,
+          "train_rows": 1592,
+          "validation_rows": 41
+        },
+        {
+          "held_out_matches": [
+            3857258,
+            3857269,
+            3857280,
+            3869253,
+            3869420
+          ],
+          "held_out_team": "Brazil",
+          "train_match_overlap": false,
+          "train_rows": 1540,
+          "validation_rows": 67
+        },
+        {
+          "held_out_matches": [
+            3857259,
+            3857280,
+            3857290
+          ],
+          "held_out_team": "Cameroon",
+          "train_match_overlap": false,
+          "train_rows": 1595,
+          "validation_rows": 38
+        },
+        {
+          "held_out_matches": [
+            3857268,
+            3857276,
+            3857281
+          ],
+          "held_out_team": "Canada",
+          "train_match_overlap": false,
+          "train_rows": 1593,
+          "validation_rows": 42
+        },
+        {
+          "held_out_matches": [
+            3857291,
+            3857292,
+            3857295
+          ],
+          "held_out_team": "Costa Rica",
+          "train_match_overlap": false,
+          "train_rows": 1590,
+          "validation_rows": 39
+        },
+        {
+          "held_out_matches": [
+            3857277,
+            3857281,
+            3857296,
+            3869219,
+            3869420,
+            3869519,
+            3869684
+          ],
+          "held_out_team": "Croatia",
+          "train_match_overlap": false,
+          "train_rows": 1487,
+          "validation_rows": 89
+        },
+        {
+          "held_out_matches": [
+            3857254,
+            3857257,
+            3857266
+          ],
+          "held_out_team": "Denmark",
+          "train_match_overlap": false,
+          "train_rows": 1595,
+          "validation_rows": 41
+        },
+        {
+          "held_out_matches": [
+            3857267,
+            3857274,
+            3857286
+          ],
+          "held_out_team": "Ecuador",
+          "train_match_overlap": false,
+          "train_rows": 1601,
+          "validation_rows": 35
+        },
+        {
+          "held_out_matches": [
+            3857261,
+            3857271,
+            3857272,
+            3869118,
+            3869354
+          ],
+          "held_out_team": "England",
+          "train_match_overlap": false,
+          "train_rows": 1544,
+          "validation_rows": 65
+        },
+        {
+          "held_out_matches": [
+            3857266,
+            3857275,
+            3857279,
+            3869152,
+            3869354,
+            3869552,
+            3869685
+          ],
+          "held_out_team": "France",
+          "train_match_overlap": false,
+          "train_rows": 1496,
+          "validation_rows": 86
+        },
+        {
+          "held_out_matches": [
+            3857263,
+            3857284,
+            3857292
+          ],
+          "held_out_team": "Germany",
+          "train_match_overlap": false,
+          "train_rows": 1593,
+          "validation_rows": 38
+        },
+        {
+          "held_out_matches": [
+            3857293,
+            3857298,
+            3857299
+          ],
+          "held_out_team": "Ghana",
+          "train_match_overlap": false,
+          "train_rows": 1592,
+          "validation_rows": 40
+        },
+        {
+          "held_out_matches": [
+            3857271,
+            3857273,
+            3857278
+          ],
+          "held_out_team": "Iran",
+          "train_match_overlap": false,
+          "train_rows": 1587,
+          "validation_rows": 44
+        },
+        {
+          "held_out_matches": [
+            3857255,
+            3857284,
+            3857295,
+            3869219
+          ],
+          "held_out_team": "Japan",
+          "train_match_overlap": false,
+          "train_rows": 1563,
+          "validation_rows": 57
+        },
+        {
+          "held_out_matches": [
+            3857260,
+            3857265,
+            3857289
+          ],
+          "held_out_team": "Mexico",
+          "train_match_overlap": false,
+          "train_rows": 1593,
+          "validation_rows": 39
+        },
+        {
+          "held_out_matches": [
+            3857276,
+            3857277,
+            3857283,
+            3869220,
+            3869486,
+            3869552,
+            3869684
+          ],
+          "held_out_team": "Morocco",
+          "train_match_overlap": false,
+          "train_rows": 1485,
+          "validation_rows": 95
+        },
+        {
+          "held_out_matches": [
+            3857274,
+            3857285,
+            3857294,
+            3869117,
+            3869321
+          ],
+          "held_out_team": "Netherlands",
+          "train_match_overlap": false,
+          "train_rows": 1543,
+          "validation_rows": 63
+        },
+        {
+          "held_out_matches": [
+            3857264,
+            3857265,
+            3857297,
+            3869152
+          ],
+          "held_out_team": "Poland",
+          "train_match_overlap": false,
+          "train_rows": 1573,
+          "validation_rows": 51
+        },
+        {
+          "held_out_matches": [
+            3857262,
+            3857270,
+            3857298,
+            3869254,
+            3869486
+          ],
+          "held_out_team": "Portugal",
+          "train_match_overlap": false,
+          "train_rows": 1545,
+          "validation_rows": 63
+        },
+        {
+          "held_out_matches": [
+            3857286,
+            3857294,
+            3857301
+          ],
+          "held_out_team": "Qatar",
+          "train_match_overlap": false,
+          "train_rows": 1599,
+          "validation_rows": 37
+        },
+        {
+          "held_out_matches": [
+            3857260,
+            3857297,
+            3857300
+          ],
+          "held_out_team": "Saudi Arabia",
+          "train_match_overlap": false,
+          "train_rows": 1596,
+          "validation_rows": 37
+        },
+        {
+          "held_out_matches": [
+            3857267,
+            3857285,
+            3857301,
+            3869118
+          ],
+          "held_out_team": "Senegal",
+          "train_match_overlap": false,
+          "train_rows": 1569,
+          "validation_rows": 53
+        },
+        {
+          "held_out_matches": [
+            3857256,
+            3857258,
+            3857259
+          ],
+          "held_out_team": "Serbia",
+          "train_match_overlap": false,
+          "train_rows": 1597,
+          "validation_rows": 38
+        },
+        {
+          "held_out_matches": [
+            3857262,
+            3857287,
+            3857299,
+            3869253
+          ],
+          "held_out_team": "South Korea",
+          "train_match_overlap": false,
+          "train_rows": 1571,
+          "validation_rows": 51
+        },
+        {
+          "held_out_matches": [
+            3857255,
+            3857263,
+            3857291,
+            3869220
+          ],
+          "held_out_team": "Spain",
+          "train_match_overlap": false,
+          "train_rows": 1560,
+          "validation_rows": 57
+        },
+        {
+          "held_out_matches": [
+            3857256,
+            3857269,
+            3857290,
+            3869254
+          ],
+          "held_out_team": "Switzerland",
+          "train_match_overlap": false,
+          "train_rows": 1565,
+          "validation_rows": 53
+        },
+        {
+          "held_out_matches": [
+            3857254,
+            3857275,
+            3857288
+          ],
+          "held_out_team": "Tunisia",
+          "train_match_overlap": false,
+          "train_rows": 1596,
+          "validation_rows": 37
+        },
+        {
+          "held_out_matches": [
+            3857272,
+            3857278,
+            3857282,
+            3869117
+          ],
+          "held_out_team": "United States",
+          "train_match_overlap": false,
+          "train_rows": 1570,
+          "validation_rows": 51
+        },
+        {
+          "held_out_matches": [
+            3857270,
+            3857287,
+            3857293
+          ],
+          "held_out_team": "Uruguay",
+          "train_match_overlap": false,
+          "train_rows": 1594,
+          "validation_rows": 39
+        },
+        {
+          "held_out_matches": [
+            3857261,
+            3857273,
+            3857282
+          ],
+          "held_out_team": "Wales",
+          "train_match_overlap": false,
+          "train_rows": 1592,
+          "validation_rows": 38
+        }
+      ],
+      "metrics": {
+        "groups": 64,
+        "mae": 0.027381498640531788,
+        "rmse": 0.047518875847322055,
+        "rows": 1672,
+        "spearman": 0.4446251584992617
+      },
+      "teams": 32
+    },
+    "signed_ridge": {
+      "coverage": 1.0,
+      "fold_audit": [
+        {
+          "held_out_matches": [
+            3857264,
+            3857289,
+            3857300,
+            3869151,
+            3869321,
+            3869519,
+            3869685
+          ],
+          "held_out_team": "Argentina",
+          "train_match_overlap": false,
+          "train_rows": 1479,
+          "validation_rows": 95
+        },
+        {
+          "held_out_matches": [
+            3857257,
+            3857279,
+            3857288,
+            3869151
+          ],
+          "held_out_team": "Australia",
+          "train_match_overlap": false,
+          "train_rows": 1565,
+          "validation_rows": 53
+        },
+        {
+          "held_out_matches": [
+            3857268,
+            3857283,
+            3857296
+          ],
+          "held_out_team": "Belgium",
+          "train_match_overlap": false,
+          "train_rows": 1592,
+          "validation_rows": 41
+        },
+        {
+          "held_out_matches": [
+            3857258,
+            3857269,
+            3857280,
+            3869253,
+            3869420
+          ],
+          "held_out_team": "Brazil",
+          "train_match_overlap": false,
+          "train_rows": 1540,
+          "validation_rows": 67
+        },
+        {
+          "held_out_matches": [
+            3857259,
+            3857280,
+            3857290
+          ],
+          "held_out_team": "Cameroon",
+          "train_match_overlap": false,
+          "train_rows": 1595,
+          "validation_rows": 38
+        },
+        {
+          "held_out_matches": [
+            3857268,
+            3857276,
+            3857281
+          ],
+          "held_out_team": "Canada",
+          "train_match_overlap": false,
+          "train_rows": 1593,
+          "validation_rows": 42
+        },
+        {
+          "held_out_matches": [
+            3857291,
+            3857292,
+            3857295
+          ],
+          "held_out_team": "Costa Rica",
+          "train_match_overlap": false,
+          "train_rows": 1590,
+          "validation_rows": 39
+        },
+        {
+          "held_out_matches": [
+            3857277,
+            3857281,
+            3857296,
+            3869219,
+            3869420,
+            3869519,
+            3869684
+          ],
+          "held_out_team": "Croatia",
+          "train_match_overlap": false,
+          "train_rows": 1487,
+          "validation_rows": 89
+        },
+        {
+          "held_out_matches": [
+            3857254,
+            3857257,
+            3857266
+          ],
+          "held_out_team": "Denmark",
+          "train_match_overlap": false,
+          "train_rows": 1595,
+          "validation_rows": 41
+        },
+        {
+          "held_out_matches": [
+            3857267,
+            3857274,
+            3857286
+          ],
+          "held_out_team": "Ecuador",
+          "train_match_overlap": false,
+          "train_rows": 1601,
+          "validation_rows": 35
+        },
+        {
+          "held_out_matches": [
+            3857261,
+            3857271,
+            3857272,
+            3869118,
+            3869354
+          ],
+          "held_out_team": "England",
+          "train_match_overlap": false,
+          "train_rows": 1544,
+          "validation_rows": 65
+        },
+        {
+          "held_out_matches": [
+            3857266,
+            3857275,
+            3857279,
+            3869152,
+            3869354,
+            3869552,
+            3869685
+          ],
+          "held_out_team": "France",
+          "train_match_overlap": false,
+          "train_rows": 1496,
+          "validation_rows": 86
+        },
+        {
+          "held_out_matches": [
+            3857263,
+            3857284,
+            3857292
+          ],
+          "held_out_team": "Germany",
+          "train_match_overlap": false,
+          "train_rows": 1593,
+          "validation_rows": 38
+        },
+        {
+          "held_out_matches": [
+            3857293,
+            3857298,
+            3857299
+          ],
+          "held_out_team": "Ghana",
+          "train_match_overlap": false,
+          "train_rows": 1592,
+          "validation_rows": 40
+        },
+        {
+          "held_out_matches": [
+            3857271,
+            3857273,
+            3857278
+          ],
+          "held_out_team": "Iran",
+          "train_match_overlap": false,
+          "train_rows": 1587,
+          "validation_rows": 44
+        },
+        {
+          "held_out_matches": [
+            3857255,
+            3857284,
+            3857295,
+            3869219
+          ],
+          "held_out_team": "Japan",
+          "train_match_overlap": false,
+          "train_rows": 1563,
+          "validation_rows": 57
+        },
+        {
+          "held_out_matches": [
+            3857260,
+            3857265,
+            3857289
+          ],
+          "held_out_team": "Mexico",
+          "train_match_overlap": false,
+          "train_rows": 1593,
+          "validation_rows": 39
+        },
+        {
+          "held_out_matches": [
+            3857276,
+            3857277,
+            3857283,
+            3869220,
+            3869486,
+            3869552,
+            3869684
+          ],
+          "held_out_team": "Morocco",
+          "train_match_overlap": false,
+          "train_rows": 1485,
+          "validation_rows": 95
+        },
+        {
+          "held_out_matches": [
+            3857274,
+            3857285,
+            3857294,
+            3869117,
+            3869321
+          ],
+          "held_out_team": "Netherlands",
+          "train_match_overlap": false,
+          "train_rows": 1543,
+          "validation_rows": 63
+        },
+        {
+          "held_out_matches": [
+            3857264,
+            3857265,
+            3857297,
+            3869152
+          ],
+          "held_out_team": "Poland",
+          "train_match_overlap": false,
+          "train_rows": 1573,
+          "validation_rows": 51
+        },
+        {
+          "held_out_matches": [
+            3857262,
+            3857270,
+            3857298,
+            3869254,
+            3869486
+          ],
+          "held_out_team": "Portugal",
+          "train_match_overlap": false,
+          "train_rows": 1545,
+          "validation_rows": 63
+        },
+        {
+          "held_out_matches": [
+            3857286,
+            3857294,
+            3857301
+          ],
+          "held_out_team": "Qatar",
+          "train_match_overlap": false,
+          "train_rows": 1599,
+          "validation_rows": 37
+        },
+        {
+          "held_out_matches": [
+            3857260,
+            3857297,
+            3857300
+          ],
+          "held_out_team": "Saudi Arabia",
+          "train_match_overlap": false,
+          "train_rows": 1596,
+          "validation_rows": 37
+        },
+        {
+          "held_out_matches": [
+            3857267,
+            3857285,
+            3857301,
+            3869118
+          ],
+          "held_out_team": "Senegal",
+          "train_match_overlap": false,
+          "train_rows": 1569,
+          "validation_rows": 53
+        },
+        {
+          "held_out_matches": [
+            3857256,
+            3857258,
+            3857259
+          ],
+          "held_out_team": "Serbia",
+          "train_match_overlap": false,
+          "train_rows": 1597,
+          "validation_rows": 38
+        },
+        {
+          "held_out_matches": [
+            3857262,
+            3857287,
+            3857299,
+            3869253
+          ],
+          "held_out_team": "South Korea",
+          "train_match_overlap": false,
+          "train_rows": 1571,
+          "validation_rows": 51
+        },
+        {
+          "held_out_matches": [
+            3857255,
+            3857263,
+            3857291,
+            3869220
+          ],
+          "held_out_team": "Spain",
+          "train_match_overlap": false,
+          "train_rows": 1560,
+          "validation_rows": 57
+        },
+        {
+          "held_out_matches": [
+            3857256,
+            3857269,
+            3857290,
+            3869254
+          ],
+          "held_out_team": "Switzerland",
+          "train_match_overlap": false,
+          "train_rows": 1565,
+          "validation_rows": 53
+        },
+        {
+          "held_out_matches": [
+            3857254,
+            3857275,
+            3857288
+          ],
+          "held_out_team": "Tunisia",
+          "train_match_overlap": false,
+          "train_rows": 1596,
+          "validation_rows": 37
+        },
+        {
+          "held_out_matches": [
+            3857272,
+            3857278,
+            3857282,
+            3869117
+          ],
+          "held_out_team": "United States",
+          "train_match_overlap": false,
+          "train_rows": 1570,
+          "validation_rows": 51
+        },
+        {
+          "held_out_matches": [
+            3857270,
+            3857287,
+            3857293
+          ],
+          "held_out_team": "Uruguay",
+          "train_match_overlap": false,
+          "train_rows": 1594,
+          "validation_rows": 39
+        },
+        {
+          "held_out_matches": [
+            3857261,
+            3857273,
+            3857282
+          ],
+          "held_out_team": "Wales",
+          "train_match_overlap": false,
+          "train_rows": 1592,
+          "validation_rows": 38
+        }
+      ],
+      "metrics": {
+        "groups": 64,
+        "mae": 0.02558927618704343,
+        "rmse": 0.04487982304551318,
+        "rows": 1672,
+        "spearman": 0.5155064685537446
+      },
+      "teams": 32
+    }
+  },
+  "prediction_distribution": {
+    "all_outfield": {
+      "largest_constant_share": 0.0005980861244019139,
+      "maximum": 0.6515120269213946,
+      "mean": 0.000936582375140722,
+      "minimum": -0.12018453000797047,
+      "rows": 1672,
+      "std": 0.050338631961576896,
+      "zero_share": 0.0
+    },
+    "center_back": {
+      "largest_constant_share": 0.003236245954692557,
+      "maximum": 0.6515120269213946,
+      "mean": 0.009547738664881103,
+      "minimum": -0.12018453000797047,
+      "rows": 309,
+      "std": 0.07920055643962644,
+      "zero_share": 0.0
+    },
+    "defensive_midfield": {
+      "largest_constant_share": 0.0038022813688212928,
+      "maximum": 0.3217349807495203,
+      "mean": -0.0014126231164847687,
+      "minimum": -0.07217154317445008,
+      "rows": 263,
+      "std": 0.04223910015398447,
+      "zero_share": 0.0
+    },
+    "fullback_wingback": {
+      "largest_constant_share": 0.003205128205128205,
+      "maximum": 0.353118560273442,
+      "mean": -0.002881493554204767,
+      "minimum": -0.1150654263679848,
+      "rows": 312,
+      "std": 0.05685002780966849,
+      "zero_share": 0.0
+    }
+  },
+  "promotion_gate": {
+    "active_component": "defensive_challenger:signed_ridge",
+    "checks": {
+      "attacking_spurious_predictors_absent": true,
+      "cb_fb_dm_predictions_noncollapsed": true,
+      "held_out_rmse_noninferior_by_match_bootstrap": true,
+      "leave_one_team_out_noninferior": true,
+      "material_correlation_vs_incumbent_reference": true
+    },
+    "failed_checks": [],
+    "passed": true,
+    "rule": "Retain the incumbent defensive head unless every predeclared predictive, noncollapse, spurious-feature, and leave-one-team-out check passes."
+  },
+  "random_seed": 42,
+  "schema_version": "defensive-challenger-v1",
+  "selected_challenger": "signed_ridge",
+  "target": {
+    "event_scope_version": "qatar-2022-periods-1-4-v1",
+    "event_type_used_to_define_target": false,
+    "formula": "100 * sum(pre_action_p_concedes - team_oriented_next_state_p_concedes) / opponent_possessions",
+    "matches": 64,
+    "name": "threat_prevention_target",
+    "ordinary_periods": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "rows": 1672,
+    "teams": 32
+  },
+  "validation": {
+    "bootstrap_unit": "match",
+    "inner": "match-disjoint GroupKFold parameter selection",
+    "leave_one_team_out": "held-out team rows; all matches involving that team removed from training",
+    "outer": "match-disjoint GroupKFold"
+  }
+}

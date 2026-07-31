@@ -34,6 +34,7 @@ venv/
 !**/CDC-data-analysis/data/raw/CDC-data.csv
 !**/CDC-data-analysis/data/raw/CA-living-cost-data.csv
 !**/CDC-data-analysis/data/processed/ca-obesity-living-cost.csv
+!**/World-Cup-S-Bomb/data/raw/matches.csv
 
 # Results
 **/results/figures/*
@@ -45,7 +46,19 @@ venv/
 !**/results/figures/boxplot_sleep_by_refreshed.png
 !**/results/figures/ca-living-wage-map.html
 !**/results/figures/correlation_heatmap.svg
+!**/results/figures/*.png
+!**/results/figures/*.pptx
 
 # Models
 **/models/*
+!**/models/*.joblib
 !**/models/.gitkeep
+!**/src/models/
+!**/src/models/*.py
+
+# Local World Cup refactor validation archives and execution logs
+/validation/
+/World-Cup-S-Bomb/refactor/
+/World-Cup-S-Bomb/logs/attention/
+# Markdown
+!**/data/raw/info.md

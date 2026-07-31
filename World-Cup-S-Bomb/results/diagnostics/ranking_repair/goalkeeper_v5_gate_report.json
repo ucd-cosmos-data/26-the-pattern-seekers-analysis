@@ -1,0 +1,48 @@
+{
+  "exact_selected_ranks": {
+    "Damián Emiliano Martínez": 3,
+    "Dominik Livaković": 1,
+    "Matthew Charles Turner": 8,
+    "Mohammed Khalil Al Owais": 11,
+    "Wojciech Szczęsny": 6,
+    "Yassine Bounou": 4
+  },
+  "hard_gates": {
+    "H10_single_metric_consolidation": true,
+    "H11_no_pedigree_feature": true,
+    "H12_baseline_preservation": true,
+    "H1_martinez_top_10": true,
+    "H2_al_owais_outside_top_10": true,
+    "H3_turner_outside_top_3": true,
+    "H4_elite_core_three_in_top_8": true,
+    "H5_no_profile_mirage_podium": true,
+    "H6_identity_blind": true,
+    "H7_psxg_integrity": true,
+    "H8_clutch_monotonicity": true,
+    "H9_shootout_monotonicity": true,
+    "all_hard_gates": true,
+    "kolo_muani_event_rows": 1,
+    "kolo_muani_psxg": 0.4793386013824809,
+    "shootout_monotonicity_by_keeper": {
+      "Damián Emiliano Martínez": true,
+      "Dominik Livaković": true,
+      "Unai Simón Mendibil": true,
+      "Yassine Bounou": true
+    }
+  },
+  "hard_gates_all_pass": true,
+  "model_version": "goalkeeper_consolidated_value_v5",
+  "promotion_recommendation": "promoted_single_metric",
+  "selected_config_id": "gkv5-a107be490c6e",
+  "soft_gate_count": 6,
+  "soft_gates": {
+    "S1_martinez_top_3": true,
+    "S2_turner_rank_8_to_12": true,
+    "S3_al_owais_rank_15_or_lower": false,
+    "S4_livakovic_top_6": true,
+    "S5_bounou_top_8": true,
+    "S6_szczesny_top_8": true,
+    "S7_deep_run_median_improves": true,
+    "S8_difficulty_gradient": false
+  }
+}

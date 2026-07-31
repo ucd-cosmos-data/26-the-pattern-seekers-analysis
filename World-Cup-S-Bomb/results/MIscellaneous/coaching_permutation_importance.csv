@@ -1,0 +1,47 @@
+target,model,layout,timing,level,feature_group,feature,label,delta_log_loss,ci_low,ci_high,permutation_repeats,bootstrap_replicates,permutation_scope
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_back_line_height,Back-line height,0.1798896835345863,0.16744994699606994,0.1926248501030469,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Shape,std_back_line_height,Back-line-height variation,0.10457517929443282,0.09762834548665107,0.11138966558685191,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Attacking Style,attacking_style,Attacking style,0.07786469126108043,0.07129831488829072,0.08500288432269174,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_central_defenders,Central defenders,0.04441241595688394,0.038890393857827645,0.05035173485824786,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defenders_behind_ball,Defenders behind ball,0.013271638549414409,0.010604929974272431,0.015931957908947945,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_mean_defender_distance,Mean defender distance,0.011840978222219101,0.009663125556662516,0.014127652055885285,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_nearest_defender_distance,Nearest-defender distance,0.011250268892773934,0.008659152317176044,0.013866111259449252,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Start Context,start_x,Starting x,0.010871760289780128,0.008441267468058957,0.013377386748701111,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defensive_hull_area,Defensive hull area,0.010626470856482452,0.008488710305547048,0.012904903528884794,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Style,defensive_style,Defensive style,0.005993923586304925,0.004986401557476816,0.0070631937335597335,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defensive_width,Defensive width,0.004720531374170117,0.003250028991722706,0.006167903860011631,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defenders_within_10,Defenders within 10m,0.004486144339580972,0.0031264845894811103,0.005819356148958509,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Start Context,first_play_pattern,Opening play pattern,0.004299725490790511,0.0031766013399884374,0.005421980844559353,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defensive_depth,Defensive depth,0.003164363617357232,0.0017548567036481779,0.0046901449984572095,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defenders_within_5,Defenders within 5m,0.0022052878936606067,0.0009104524278602414,0.0035618053219072235,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Start Context,start_y,Starting y,0.0012002290081092877,0.00017039956841524088,0.002239286330293711,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Start Context,start_minute,Start minute,7.736739713135808e-05,-0.0004914734120501181,0.0006545611145667102,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Start Context,competition_stage,Competition stage,0.0,0.0,0.0,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,feature,Start Context,period,Period,-7.556220302967384e-06,-5.524857286837678e-05,4.497030857119094e-05,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,group,Defensive Shape,,Defensive Shape,0.5076000134860875,0.48933224712991036,0.5260773821507914,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,group,Attacking Style,,Attacking Style,0.075510015186159,0.0691288243307066,0.0817212971805485,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,group,Start Context,,Start Context,0.023006638226285188,0.020169848521937785,0.02597800372102285,20,2000,within match
+box_entry,Histogram Gradient Boosting,Tactical + Shape,Retrospective,group,Defensive Style,,Defensive Style,0.005892481633157913,0.0048073280758222335,0.0070208576680306735,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_back_line_height,Back-line height,0.12929721102021463,0.11848531036751306,0.1401827446382459,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_mean_defender_distance,Mean defender distance,0.04587005166634673,0.040816992808206304,0.050779849801016026,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Shape,std_back_line_height,Back-line-height variation,0.03535206460712467,0.030398107739228287,0.04037287238597166,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_central_defenders,Central defenders,0.02005836280216723,0.0164289654054932,0.024011371695272895,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Attacking Style,attacking_style,Attacking style,0.013029206332635759,0.010713658303271815,0.0153624445388712,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defenders_within_10,Defenders within 10m,0.009661599257345947,0.007743384599194834,0.01183097049975519,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defenders_behind_ball,Defenders behind ball,0.004998109340915185,0.0036987306013877897,0.006332244266902654,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defensive_depth,Defensive depth,0.003550002199363566,0.002215556239062842,0.0048830735888062285,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defensive_hull_area,Defensive hull area,0.0027516231127116975,0.0014705810391836749,0.003993101559111852,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defenders_within_5,Defenders within 5m,0.0020858451602343,0.0010115492162897954,0.0031930565811052,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_nearest_defender_distance,Nearest-defender distance,0.0019101257087623506,0.001089107895992779,0.0027544569362053595,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Shape,avg_defensive_width,Defensive width,0.001660769401277213,0.0005643808933917532,0.002932453679663365,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Start Context,first_play_pattern,Opening play pattern,0.0015964890418247674,0.0007648754523199469,0.002486978761856544,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Start Context,start_x,Starting x,0.001204812698137056,0.0004757411510534092,0.0019259829188480653,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Start Context,start_minute,Start minute,0.000231678346549809,-0.0002476436257700227,0.0007056495960704096,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Defensive Style,defensive_style,Defensive style,0.00017234646714827707,-0.0001818103408135348,0.0005496365452132648,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Start Context,competition_stage,Competition stage,0.0,0.0,0.0,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Start Context,period,Period,-3.5885387580286834e-05,-6.694164559854903e-05,-5.888526387397443e-06,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,feature,Start Context,start_y,Starting y,-0.00019575725951454136,-0.0004864568776287514,0.00010885832481206457,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,group,Defensive Shape,,Defensive Shape,0.30630930178071436,0.28752399144374996,0.3251127640210923,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,group,Attacking Style,,Attacking Style,0.012195710580286402,0.00976042960326938,0.014694056489987868,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,group,Start Context,,Start Context,0.0024911048528392823,0.0012531828406188118,0.00371880909043102,20,2000,within match
+shot,XGBoost,Tactical + Shape,Retrospective,group,Defensive Style,,Defensive Style,0.00015282121531256038,-0.00019986667046710175,0.000503001108093762,20,2000,within match
