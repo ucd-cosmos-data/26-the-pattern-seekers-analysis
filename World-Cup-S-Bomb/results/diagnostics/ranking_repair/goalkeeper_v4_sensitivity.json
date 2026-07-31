@@ -1,0 +1,1323 @@
+{
+  "grid_points_evaluated": 108,
+  "grid_points_eligible": 108,
+  "selected": {
+    "weights": {
+      "shot_stopping": 0.45,
+      "regular_penalty": 0.05,
+      "shootout": 0.2,
+      "support": 0.3
+    },
+    "shootout_bound": 0.6,
+    "leverage_exponent": 1.0,
+    "bootstrap_top_five_stability": 0.6296
+  },
+  "martinez_rank_across_grid": [
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.3
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.3
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.3
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.3
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 27,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.3
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.3
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.25
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.25
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.25
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.25
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 25,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.25
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.25
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 25,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.2
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.2
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 27,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.2
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.2
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 25,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.2
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.2
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 25,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 27,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 27,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.45,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.25
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 27,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.2
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.15
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.5,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.2,
+        "support": 0.2
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.25,
+        "support": 0.15
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.05,
+        "shootout": 0.3,
+        "support": 0.1
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.15
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.15
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 31,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.15
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.15
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.15
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.2,
+        "support": 0.15
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 28,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.1
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.1
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.1
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.1
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 27,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.1
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.25,
+        "support": 0.1
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.05
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.05
+      },
+      "shootout_bound": 0.3,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.05
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 30,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.05
+      },
+      "shootout_bound": 0.45,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.05
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 0.5,
+      "martinez_rank": 29,
+      "passes_dominance": true
+    },
+    {
+      "weights": {
+        "shot_stopping": 0.55,
+        "regular_penalty": 0.1,
+        "shootout": 0.3,
+        "support": 0.05
+      },
+      "shootout_bound": 0.6,
+      "leverage_exponent": 1.0,
+      "martinez_rank": 26,
+      "passes_dominance": true
+    }
+  ],
+  "martinez_rank_distribution": {
+    "25": 4,
+    "26": 20,
+    "27": 6,
+    "28": 16,
+    "29": 15,
+    "30": 46,
+    "31": 1
+  },
+  "robustness_verdict": "not-uniform-across-grid"
+}

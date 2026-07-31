@@ -1,0 +1,554 @@
+player_id,player_name,team,global_rank_v3,tournament_impact_rank_outfield_v4,uncoupled_raw_rescaled_rank,released_minus_uncoupled_rank
+2941,Ismaïla Sarr,Senegal,17.0,35,25,10
+2954,Youri Tielemans,Belgium,475.0,521,415,106
+2972,Marcus Thuram,France,188.0,272,217,55
+2988,Memphis Depay,Netherlands,32.0,49,35,14
+2989,Alexander Djiku,Ghana,550.0,536,514,22
+2995,Ángel Fabián Di María Hernández,Argentina,13.0,30,17,13
+3009,Kylian Mbappé Lottin,France,2.0,2,2,0
+3026,Adrien Rabiot,France,36.0,27,75,-48
+3034,Kamil Glik,Poland,313.0,237,287,-50
+3043,Christian Dannemann Eriksen,Denmark,84.0,82,77,5
+3053,Leroy Sané,Germany,77.0,154,128,26
+3063,Danilo Luiz da Silva,Brazil,301.0,192,282,-90
+3077,Jan Vertonghen,Belgium,369.0,281,381,-100
+3083,Heung-Min Son,South Korea,39.0,63,80,-17
+3086,Ben Davies,Wales,340.0,369,520,-151
+3089,Kevin De Bruyne,Belgium,105.0,114,130,-16
+3090,Nicolás Hernán Otamendi,Argentina,452.0,74,553,-479
+3135,Chang-Hoon Kwon,South Korea,290.0,383,288,95
+3141,André-Frank Zambo Anguissa,Cameroon,354.0,227,515,-288
+3167,Antonio Rüdiger,Germany,136.0,95,203,-108
+3176,Thomas Meunier,Belgium,316.0,344,337,7
+3193,Bernardo Mota Veiga de Carvalho e Silva,Portugal,116.0,73,144,-71
+3196,Wahbi Khazri,Tunisia,127.0,270,178,92
+3202,Gabriel Fernando de Jesus,Brazil,167.0,298,193,105
+3205,Kyle Walker,England,428.0,302,414,-112
+3233,Raheem Sterling,England,184.0,287,254,33
+3244,John Stones,England,168.0,76,90,-14
+3247,Fábio Henrique Tavares,Brazil,425.0,405,325,80
+3264,Vincent Janssen,Netherlands,222.0,350,245,105
+3280,Richarlison de Andrade,Brazil,14.0,19,22,-3
+3281,Aaron Mooy,Australia,469.0,124,504,-380
+3289,Romelu Lukaku Menama,Belgium,54.0,206,140,66
+3295,Thiago Emiliano da Silva,Brazil,289.0,85,411,-326
+3300,Maya Yoshida,Japan,506.0,123,507,-384
+3306,Nathan Aké,Netherlands,485.0,150,417,-267
+3308,Kieran Trippier,England,243.0,288,265,23
+3311,Daley Blind,Netherlands,92.0,88,87,1
+3318,Marcus Rashford,England,55.0,105,76,29
+3336,Harry Maguire,England,103.0,53,124,-71
+3347,André Ayew Pelé,Ghana,124.0,322,244,78
+3377,Timothy Weah,United States,37.0,56,52,4
+3382,Luke Shaw,England,70.0,71,126,-55
+3404,Youssouf Sabaly,Senegal,153.0,188,367,-179
+3436,Idrissa Gana Gueye,Senegal,173.0,184,373,-189
+3441,Nikola Vlašić,Croatia,138.0,156,179,-23
+3450,Jordan Ayew,Ghana,341.0,503,348,155
+3457,Michy Batshuayi Tunga,Belgium,90.0,220,145,75
+3471,Dejan Lovren,Croatia,176.0,18,44,-26
+3477,Álvaro Borja Morata Martín,Spain,26.0,62,34,28
+3499,Jean-Eric Maxim Choupo-Moting,Cameroon,155.0,160,230,-70
+3500,Granit Xhaka,Switzerland,282.0,99,324,-225
+3517,Aaron Ramsey,Wales,125.0,167,188,-21
+3530,Hiroki Sakai,Japan,294.0,496,318,178
+3532,Jordan Brian Henderson,England,160.0,126,181,-55
+3533,Xherdan Shaqiri,Switzerland,73.0,108,67,41
+3551,Karl Brillant Toko Ekambi,Cameroon,260.0,353,293,60
+3557,Naïm Sliti,Tunisia,207.0,338,232,106
+3570,Pierre-Emile Højbjerg,Denmark,314.0,153,97,56
+3604,Olivier Giroud,France,3.0,8,7,1
+3616,Callum Wilson,England,178.0,335,237,98
+3621,Eden Hazard,Belgium,330.0,375,377,-2
+3625,Sofiane Boufal,Morocco,71.0,38,61,-23
+3634,Abdelhamid Sabiri,Morocco,254.0,301,269,32
+3637,Grzegorz Krychowiak,Poland,454.0,310,525,-215
+3658,DeAndre Yedlin,United States,463.0,534,421,113
+3669,Virgil van Dijk,Netherlands,271.0,67,62,5
+3684,Cheikhou Kouyaté,Senegal,411.0,412,223,189
+3709,Daniel Amartey,Ghana,318.0,155,31,124
+3767,Ellyes Joris Skhiri,Tunisia,416.0,239,517,-278
+3831,Dušan Tadić,Serbia,72.0,79,103,-24
+3853,Kieffer Roberto Francisco Moore,Wales,67.0,134,99,35
+3913,Edimilson Fernandes,Switzerland,317.0,391,408,-17
+3943,Declan Rice,England,279.0,61,215,-154
+3957,César Azpilicueta Tanco,Spain,312.0,327,354,-27
+3959,Andreas Christensen,Denmark,204.0,141,155,-14
+4269,Aleksandar Mitrović,Serbia,31.0,55,46,9
+4272,João Mário Naval da Costa Eduardo,Portugal,364.0,408,374,34
+4318,Davy Klaassen,Netherlands,142.0,222,211,11
+4319,Edinson Roberto Cavani Gómez,Uruguay,194.0,295,207,88
+4320,Neymar da Silva Santos Junior,Brazil,12.0,17,19,-2
+4324,Daniel Alves da Silva,Brazil,378.0,417,327,90
+4353,Aymeric Laporte,Spain,371.0,201,413,-212
+4354,Phil Foden,England,34.0,50,33,17
+4372,Marcos Aoás Corrêa,Brazil,250.0,83,482,-399
+4445,Jules Koundé,France,157.0,104,70,34
+4447,Martin Braithwaite Christensen,Denmark,217.0,342,242,100
+4506,Nampalys Mendy,Senegal,392.0,221,511,-290
+4614,Antonee Robinson,United States,100.0,91,134,-43
+4664,Sebastian Szymański,Poland,380.0,433,441,-8
+4706,Kalvin Phillips,England,501.0,458,409,49
+4734,Matty Cash,Poland,219.0,198,41,157
+4767,Chris Mepham,Wales,357.0,257,218,39
+4774,Connor Roberts,Wales,328.0,469,438,31
+4934,Ethan Ampadu,Wales,446.0,264,250,14
+4935,Bryan Mbeumo,Cameroon,231.0,273,278,-5
+5178,Salman Mohammed Al Faraj,Saudi Arabia,496.0,479,372,107
+5183,Yasir Gharsan Al Shahrani,Saudi Arabia,539.0,497,518,-21
+5187,Salem Mohammed Al Dawsari,Saudi Arabia,24.0,45,36,9
+5191,Mohammed Al Burayk,Saudi Arabia,259.0,381,350,31
+5199,Jorge Resurrección Merodio,Spain,412.0,443,301,142
+5203,Sergio Busquets i Burgos,Spain,248.0,84,196,-112
+5204,Bruno Miguel Borges Fernandes,Portugal,51.0,39,60,-21
+5206,Rúben Santos Gato Alves Dias,Portugal,498.0,207,536,-329
+5207,Cristiano Ronaldo dos Santos Aveiro,Portugal,10.0,25,23,2
+5209,Raphaël Adelino José Guerreiro,Portugal,99.0,132,152,-20
+5211,Jordi Alba Ramos,Spain,86.0,125,174,-49
+5214,William Silva de Carvalho,Portugal,505.0,366,541,-175
+5219,Romain Saïss,Morocco,174.0,64,253,-189
+5220,Morteza Pouraliganji,Iran,212.0,175,216,-41
+5222,Roozbeh Cheshmi,Iran,517.0,552,506,46
+5224,Sardar Azmoun,Iran,101.0,234,157,77
+5226,Mehdi Taremi,Iran,47.0,72,78,-6
+5228,Seyed Majid Hosseini,Iran,534.0,306,500,-194
+5230,Ehsan Hajsafi,Iran,327.0,323,479,-156
+5231,Karim Ansarifard,Iran,400.0,517,339,178
+5234,Sofyan Amrabat,Morocco,470.0,29,347,-318
+5235,Ramin Rezaeian,Iran,149.0,275,209,66
+5237,Hakim Ziyech,Morocco,66.0,26,82,-56
+5239,Alireza Jahanbakhsh,Iran,389.0,535,461,74
+5240,Saman Ghoddos,Iran,264.0,377,310,67
+5245,Achraf Hakimi Mouh,Morocco,79.0,21,13,8
+5246,Luis Alberto Suárez Díaz,Uruguay,64.0,228,112,116
+5248,José Martín Cáceres Silva,Uruguay,481.0,436,266,170
+5249,Diego Roberto Godín Leal,Uruguay,471.0,416,333,83
+5255,Matías Vecino Falero,Uruguay,402.0,404,494,-90
+5258,Giorgian Daniel De Arrascaeta Benedetti,Uruguay,87.0,247,151,96
+5259,José María Giménez de Vargas,Uruguay,304.0,361,537,-176
+5260,Rodrigo Bentancur Colmán,Uruguay,181.0,224,316,-92
+5264,Guillermo Varela Olivera,Uruguay,404.0,385,221,164
+5456,Mateo Kovačić,Croatia,29.0,4,45,-41
+5460,Andrej Kramarić,Croatia,20.0,13,27,-14
+5463,Luka Modrić,Croatia,56.0,7,56,-49
+5469,Marcelo Brozović,Croatia,98.0,15,43,-28
+5474,Ivan Perišić,Croatia,5.0,3,4,-1
+5476,Benjamin Pavard,France,508.0,442,426,16
+5477,Ousmane Dembélé,France,38.0,54,79,-25
+5479,Aziz Eraltay Behich,Australia,241.0,179,529,-350
+5481,Mathew Leckie,Australia,154.0,144,267,-123
+5485,Raphaël Varane,France,386.0,152,550,-398
+5487,Antoine Griezmann,France,9.0,5,18,-13
+5490,Jackson Irvine,Australia,229.0,87,104,-17
+5503,Lionel Andrés Messi Cuccittini,Argentina,1.0,1,1,0
+5507,Nicolás Alejandro Tagliafico,Argentina,75.0,92,261,-169
+5527,Thomas Delaney,Denmark,449.0,468,434,34
+5534,Simon Thorup Kjær,Denmark,532.0,500,483,17
+5537,Fabian Lukas Schär,Switzerland,409.0,355,176,179
+5538,Denis Lemi Zakaria Lako Lado,Switzerland,473.0,508,369,139
+5539,Carlos Henrique Casimiro,Brazil,132.0,42,91,-49
+5543,Haris Seferović,Switzerland,323.0,470,352,118
+5544,Ricardo Iván Rodríguez Araya,Switzerland,220.0,149,167,-18
+5545,Breel-Donald Embolo,Switzerland,16.0,31,20,11
+5549,Manuel Obafemi Akanji,Switzerland,166.0,109,273,-164
+5562,Thomas Müller,Germany,65.0,94,95,-1
+5567,Edson Omar Álvarez Velázquez,Mexico,466.0,409,516,-107
+5568,Raúl Alonso Jiménez Rodríguez,Mexico,276.0,434,281,153
+5571,Hirving Rodrigo Lozano Bahena,Mexico,88.0,137,123,14
+5573,Héctor Alfredo Moreno Herrera,Mexico,211.0,185,89,96
+5575,Héctor Miguel Herrera López,Mexico,399.0,345,396,-51
+5576,Jesús Daniel Gallardo Vasconcelos,Mexico,198.0,195,129,66
+5579,Joshua Kimmich,Germany,137.0,86,212,-126
+5581,Joel Nathaniel Campbell Samuels,Costa Rica,329.0,339,393,-54
+5582,Celso Borges Mora,Costa Rica,519.0,389,297,92
+5589,Sergej Milinković-Savić,Serbia,130.0,112,166,-54
+5591,Filip Kostić,Serbia,113.0,204,162,42
+5595,Johan Alberto Venegas Ulloa,Costa Rica,456.0,526,468,58
+5598,Óscar Esau Duarte Gaitán,Costa Rica,536.0,424,519,-95
+5600,Francisco Javier Calvo Quesada,Costa Rica,514.0,459,447,12
+5603,Nikola Milenković,Serbia,213.0,138,10,128
+5604,Young-Gwon Kim,South Korea,206.0,159,294,-135
+5618,Woo-Young Jung,South Korea,480.0,267,523,-256
+5620,Hee-Chan Hwang,South Korea,83.0,139,40,99
+5623,Jae-Sung Lee,South Korea,321.0,269,380,-111
+5630,Dries Mertens,Belgium,179.0,286,208,78
+5632,Thorgan Hazard,Belgium,197.0,311,220,91
+5633,Yannick Ferreira Carrasco,Belgium,187.0,321,175,146
+5642,Axel Witsel,Belgium,403.0,197,256,-59
+5647,Ali Maâloul,Tunisia,488.0,452,480,-28
+5650,Ferjani Sassi,Tunisia,511.0,504,455,49
+5651,Yassine Meriah,Tunisia,547.0,373,552,-179
+5655,Dylan Daniel Mahmoud Bronn,Tunisia,421.0,487,448,39
+5660,Piotr Zieliński,Poland,151.0,177,268,-91
+5665,Arkadiusz Milik,Poland,287.0,423,298,125
+5668,Robert Lewandowski,Poland,4.0,16,8,8
+5673,Bartosz Bereszyński,Poland,319.0,422,544,-122
+5675,Kalidou Koulibaly,Senegal,356.0,165,437,-272
+5690,Yuto Nagatomo,Japan,432.0,386,392,-6
+5713,Mohammed Kanoo,Saudi Arabia,180.0,122,135,-13
+5715,Ali Albulayhi,Saudi Arabia,552.0,343,497,-154
+5719,Marco Asensio Willemsen,Spain,22.0,37,28,9
+5720,Milad Mohammadi,Iran,549.0,543,543,0
+5721,Daniel Carvajal Ramos,Spain,410.0,406,286,120
+5722,Saeid Ezatolahi Afagh,Iran,413.0,285,422,-137
+5732,Andreas Evald Cornelius,Denmark,53.0,131,81,50
+5833,Nemanja Radonjić,Serbia,430.0,420,420,0
+5836,Bryan Oviedo,Costa Rica,465.0,502,289,213
+5839,Yeltsin Ignacio Tejeda Valverde,Costa Rica,245.0,233,177,56
+5986,Chul Hong,South Korea,477.0,494,470,24
+6297,Maximiliano Gómez González,Uruguay,350.0,445,343,102
+6300,Sebastián Coates Nión,Uruguay,424.0,448,524,-76
+6301,Youssef En-Nesyri,Morocco,48.0,24,49,-25
+6302,Kasper Dolberg,Denmark,107.0,229,147,82
+6318,Andrija Živković,Serbia,189.0,226,236,-10
+6319,Luka Jović,Serbia,311.0,398,335,63
+6321,Milos Veljkovic,Serbia,538.0,263,469,-206
+6322,Niklas Süle,Germany,419.0,176,322,-146
+6324,Leon Goretzka,Germany,161.0,171,38,133
+6328,Kendall Jamaal Waston Manley,Costa Rica,270.0,284,118,166
+6331,Leander Dendoncker,Belgium,381.0,372,331,41
+6383,Thomas Teye Partey,Ghana,355.0,256,355,-99
+6393,Iñaki Williams Arthuer,Ghana,251.0,392,334,58
+6399,Gareth Frank Bale,Wales,102.0,182,137,45
+6583,Carlos Soler Barragán,Spain,196.0,258,172,86
+6687,Saša Lukić,Serbia,438.0,169,257,-88
+6704,Theo Bernard François Hernández,France,80.0,97,305,-208
+6748,Ferrán Torres García,Spain,59.0,93,73,20
+6765,Rodrigo Hernández Cascante,Spain,223.0,80,113,-33
+6773,Federico Santiago Valverde Dipetta,Uruguay,247.0,238,379,-141
+6840,Marcos Llorente Moreno,Spain,406.0,396,398,-2
+6892,Pau Francisco Torres,Spain,503.0,394,418,-24
+6901,Nemanja Maksimović,Serbia,417.0,427,432,-5
+6945,Alex Sandro Lobo Silva,Brazil,351.0,300,490,-190
+6983,Remo Freuler,Switzerland,195.0,120,315,-195
+6989,Timothy Castagne,Belgium,436.0,351,501,-150
+6994,Marten de Roon,Netherlands,468.0,294,243,51
+7005,João Pedro Cavaco Cancelo,Portugal,148.0,161,276,-115
+7006,Alejandro Darío Gómez,Argentina,286.0,374,271,103
+7104,Mathías Olivera Miramontes,Uruguay,261.0,376,458,-82
+7153,Jordan Veretout,France,510.0,512,444,68
+7161,Germán Alejandro Pezzella,Argentina,533.0,531,510,21
+7345,Mattéo Guendouzi Olié,France,458.0,499,453,46
+7426,Jean-Charles Castelletto,Cameroon,147.0,243,186,57
+7439,Axel Disasi,France,367.0,411,168,243
+7459,Jawad El Yamiq,Morocco,483.0,209,311,-102
+7472,Nicolas Alexis Julio N'Koulou Ndoubena,Cameroon,216.0,225,47,178
+7551,Enzo Ebosse,Cameroon,384.0,317,68,249
+7693,Bruno Petković,Croatia,42.0,59,66,-7
+7745,Steven Berghuis,Netherlands,236.0,214,226,-12
+7796,Silvan Widmer,Switzerland,128.0,242,328,-86
+7797,Rodrigo Javier De Paul,Argentina,41.0,11,71,-60
+7829,Wout Weghorst,Netherlands,257.0,364,280,84
+7843,Mason Mount,England,214.0,276,264,12
+7891,Teun Koopmeiners,Netherlands,393.0,346,527,-181
+7979,Przemysław Frankowski,Poland,272.0,357,262,95
+7993,Filip Mladenović,Serbia,291.0,277,26,251
+8069,Matthijs de Ligt,Netherlands,451.0,440,391,49
+8118,Frenkie de Jong,Netherlands,91.0,40,122,-82
+8125,Denzel Dumfries,Netherlands,93.0,115,353,-238
+8217,Kingsley Coman,France,209.0,352,320,32
+8227,Mario Götze,Germany,334.0,410,338,72
+8246,Christian Pulisic,United States,18.0,23,24,-1
+8247,Joachim Andersen,Denmark,253.0,200,224,-24
+8259,Steven Bergwijn,Netherlands,106.0,168,117,51
+8346,Craig Goodwin,Australia,118.0,218,194,24
+8361,Ritsu Doan,Japan,163.0,196,229,-33
+8400,Serge Gnabry,Germany,28.0,43,42,1
+8507,Lukas Klostermann,Germany,507.0,528,466,62
+8511,Thilo Kehrer,Germany,435.0,363,131,232
+8519,Dayotchanculle Upamecano,France,530.0,172,508,-336
+8526,Weston McKennie,United States,114.0,111,133,-22
+8546,Niclas Füllkrug,Germany,23.0,113,72,41
+8553,Abdou Diallo,Senegal,453.0,248,403,-155
+8591,Samuel Yves Oum Gwet,Cameroon,535.0,456,493,-37
+8654,Ante Budimir,Croatia,308.0,476,319,157
+8776,Takumi Minamino,Japan,338.0,515,404,111
+8814,Nico Elvedi,Switzerland,460.0,399,522,-123
+8836,Karol Świderski,Poland,527.0,509,467,42
+8859,Ajdin Hrustic,Australia,459.0,513,394,119
+8949,Takuma Asano,Japan,94.0,189,141,48
+8966,Kai Havertz,Germany,25.0,90,63,27
+9236,Mohamed Dräger,Tunisia,267.0,488,462,26
+9411,Daichi Kamada,Japan,145.0,100,210,-110
+9540,Harry Wilson,Wales,326.0,395,385,10
+9638,Jack Grealish,England,109.0,252,161,91
+9904,Frederico Rodrigues Santos,Brazil,202.0,261,240,21
+9922,David Junior Hoilett,Canada,274.0,255,258,-3
+9927,Rúben Diogo Da Silva Neves,Portugal,208.0,151,192,-41
+9980,Jamie MacLaren,Australia,358.0,507,313,194
+10287,İlkay Gündoğan,Germany,117.0,119,156,-37
+10481,Aurélien Djani Tchouaméni,France,200.0,47,429,-382
+10595,Raphael Dias Belloli,Brazil,19.0,34,30,4
+10868,Ricardo Jorge Luz Horta,Portugal,135.0,289,182,107
+10931,Joe Allen,Wales,484.0,475,427,48
+10955,Harry Kane,England,11.0,14,16,-2
+10956,Eric Dier,England,543.0,483,503,-20
+11127,Borna Barišić,Croatia,479.0,524,496,28
+11135,Ibrahima Konaté,France,277.0,203,219,-16
+11174,Vincent Paté Aboubakar,Cameroon,111.0,211,201,10
+11183,Alex Nicolao Telles,Brazil,513.0,491,488,3
+11184,Otávio Edmilson da Silva Monteiro,Portugal,228.0,205,279,-74
+11187,Stephen Antunes Eustáquio,Canada,363.0,283,323,-40
+11250,Joe Rodon,Wales,442.0,240,160,80
+11252,Daniel James,Wales,433.0,495,359,136
+11388,Néstor Alejandro Araújo Razo,Mexico,524.0,444,491,-47
+11456,Lautaro Javier Martínez,Argentina,7.0,20,12,8
+11493,Gleison Bremer Silva Nascimento,Brazil,309.0,501,474,27
+11603,Mario Pašalić,Croatia,233.0,143,185,-42
+11737,Krystian Bielik,Poland,489.0,548,551,-3
+11846,Steven de Sousa Vitoria,Canada,440.0,129,121,8
+11990,Youssouf Fofana,France,373.0,314,477,-163
+12034,David Raum,Germany,115.0,133,171,-38
+12041,João Félix Sequeira,Portugal,43.0,46,50,-4
+12149,Nayef Aguerd,Morocco,300.0,127,173,-46
+12169,João Maria Lobo Alves Palhinha Gonçalves,Portugal,441.0,460,399,61
+12325,Abdul Rahman Baba,Ghana,379.0,462,542,-80
+12365,Alphonso Davies,Canada,58.0,57,96,-39
+12524,Walker Zimmerman,United States,362.0,210,74,136
+12583,Carlos Armando Gruezo Arboleda,Ecuador,525.0,514,446,68
+12623,Pierre Kunde Malong,Cameroon,374.0,358,342,16
+12625,Borna Sosa,Croatia,177.0,110,532,-422
+12751,Tyler Adams,United States,388.0,106,478,-372
+12770,Jonathan Osorio,Canada,372.0,367,356,11
+12803,Romario Andrés Ibarra Mina,Ecuador,359.0,402,366,36
+13035,Kellyn Kai Perry-Acosta,United States,494.0,540,452,88
+13314,Famara Diedhiou,Senegal,185.0,332,195,137
+13454,Nouhou Tolo,Cameroon,462.0,340,549,-209
+13620,Éder Gabriel Militão,Brazil,182.0,107,142,-35
+13621,Danilo Luís Hélio Pereira,Portugal,553.0,511,548,-37
+15452,Carlos Uriel Antuna Romero,Mexico,238.0,379,272,107
+15872,Érick Gabriel Gutiérrez Galaviz,Mexico,528.0,484,485,-1
+15890,Noussair Mazraoui,Morocco,401.0,251,545,-294
+15957,Miloš Degenek,Australia,361.0,279,54,225
+15970,Pape Abou Cissé,Senegal,397.0,467,489,-22
+15971,Cameron Carter-Vickers,United States,546.0,477,473,4
+16015,Nicolas Moumi Ngamaleu,Cameroon,394.0,403,428,-25
+16026,Djibril Sow,Switzerland,265.0,181,344,-163
+16028,José Diogo Dalot Teixeira,Portugal,283.0,326,430,-104
+16120,Richie Laryea,Canada,215.0,245,314,-69
+16190,Rasmus Nissen Kristensen,Denmark,255.0,293,349,-56
+16252,Mark Anthony Kaye,Canada,497.0,438,443,-5
+16308,Leandro Daniel Paredes,Argentina,370.0,230,307,-77
+16346,Ngoran Suiru Fai Collins,Cameroon,346.0,244,241,3
+16352,Issam Jebali,Tunisia,60.0,162,120,42
+16459,Cyle Larin,Canada,152.0,223,200,23
+16489,Nemanja Gudelj,Serbia,396.0,296,92,204
+16527,Mislav Oršić,Croatia,108.0,157,132,25
+16532,Daniel Olmo Carvajal,Spain,15.0,22,21,1
+16554,Joakim Mæhle,Denmark,131.0,163,93,70
+16559,Leandro Trossard,Belgium,315.0,356,233,123
+17033,Mohammed Kudus,Ghana,57.0,117,116,1
+17042,Andreas Skov Olsen,Denmark,104.0,216,150,66
+17043,Victor Nelsson,Denmark,418.0,365,114,251
+18015,Dušan Vlahović,Serbia,165.0,307,238,69
+18242,Tim Ream,United States,262.0,103,153,-50
+18360,Rafael Alexandre Conceição Leão,Portugal,133.0,265,159,106
+18395,Vinícius José Paixão de Oliveira Júnior,Brazil,33.0,48,37,11
+18722,Mathias Jensen,Denmark,191.0,291,165,126
+19597,Marcos Javier Acuña,Argentina,40.0,66,106,-40
+20005,Toby Alderweireld,Belgium,415.0,282,309,-27
+20016,Kléper Laveran Lima Ferreira,Portugal,210.0,140,198,-58
+20033,Luuk de Jong,Netherlands,420.0,435,360,75
+20572,Cristian Gabriel Romero,Argentina,280.0,44,32,12
+20611,Boulaye Dia,Senegal,81.0,102,94,8
+20750,Cody Mathès Gakpo,Netherlands,44.0,36,58,-22
+20758,Krépin Diatta,Senegal,256.0,320,357,-37
+21026,Pape Gueye,Senegal,258.0,325,376,-51
+21214,Ilias Chair,Morocco,455.0,449,383,66
+21736,Zakaria Aboukhlal,Morocco,193.0,380,285,95
+21809,Jurriën David Norman Timber,Netherlands,478.0,180,295,-115
+21881,Sergino Dest,United States,170.0,170,235,-65
+22008,Haji Wright,United States,110.0,250,170,80
+22041,Marko Livaja,Croatia,49.0,69,69,0
+22067,Woo-Yeong Jeong,South Korea,377.0,447,410,37
+22084,Bukayo Saka,England,50.0,65,59,6
+22097,Randal Kolo Muani,France,45.0,116,86,30
+22168,Joshua Sargent,United States,89.0,183,139,44
+22293,Harry Souttar,Australia,240.0,78,11,67
+22433,Jesus Ferreira,United States,422.0,429,378,51
+22600,Lucas Tolentino Coelho de Lima,Brazil,74.0,51,98,-47
+22740,Kang-In Lee,South Korea,285.0,341,363,-22
+23527,Junya Ito,Japan,162.0,148,125,23
+23538,Sadegh Moharrami,Iran,467.0,457,457,0
+23615,Gideon Mensah,Ghana,492.0,537,499,38
+23640,Jonathan David,Canada,35.0,60,64,-4
+23721,Wataru Endo,Japan,268.0,101,143,-42
+23730,Takehiro Tomiyasu,Japan,335.0,308,189,119
+23763,In-Beom Hwang,South Korea,199.0,130,252,-122
+23774,Selim Amallah,Morocco,307.0,89,540,-451
+23828,Kamal Miller,Canada,551.0,246,539,-293
+23830,Jhegson Sebastián Méndez Carabalí,Ecuador,447.0,259,246,13
+23874,Ali Gholizadeh,Iran,224.0,316,340,-24
+23910,Youssef Msakni,Tunisia,68.0,147,115,32
+24024,Tajon Buchanan,Canada,63.0,77,88,-11
+24085,Pervis Josué Estupiñán Tenorio,Ecuador,172.0,219,362,-143
+24118,Nico Schlotterbeck,Germany,500.0,407,407,0
+24243,Brenden Aaronson,United States,112.0,231,187,44
+24443,Mikkel Damsgaard,Denmark,246.0,241,105,136
+24547,Alexander Hartmann Bah,Denmark,391.0,480,459,21
+24778,Eduardo Camavinga,France,444.0,544,531,13
+25104,Rodrygo Silva de Goes,Brazil,46.0,68,53,15
+25142,Bruno Guimarães Rodriguez Moura,Brazil,169.0,271,206,65
+25154,Éverton Augusto de Barros Ribeiro,Brazil,339.0,387,332,55
+25305,Pedro Guilherme Abreu dos Santos,Brazil,164.0,319,214,105
+25363,Antony Matheus dos Santos,Brazil,123.0,199,190,9
+25582,Nader Ghandri,Tunisia,414.0,390,284,106
+26280,Orbelín Pineda Alvarado,Mexico,226.0,334,300,34
+26297,Carlos Alberto Rodríguez Gómez,Mexico,474.0,545,386,159
+26301,Ernesto Alexis Vega Rojas,Mexico,119.0,212,180,32
+26368,César Jasib Montes Castro,Mexico,349.0,324,535,-211
+26400,Henry Josué Martín Mex,Mexico,61.0,164,109,55
+26404,Guido Rodríguez,Argentina,529.0,466,475,-9
+26406,Jorge Eduardo Sánchez Ramos,Mexico,331.0,419,351,68
+27163,Juan Pablo Vargas Campos,Costa Rica,407.0,489,249,240
+27569,Jesper Lindstrøm,Denmark,120.0,187,102,85
+27719,Strahinja Pavlović,Serbia,324.0,217,424,-207
+27768,Lisandro Martínez,Argentina,347.0,280,463,-183
+27886,Alexis Mac Allister,Argentina,27.0,10,48,-38
+28263,Gonzalo Ariel Montiel,Argentina,387.0,542,538,4
+28268,Exequiel Alejandro Palacios,Argentina,448.0,539,406,133
+28370,Fran Karačić,Australia,296.0,305,57,248
+28453,Michał Skóraś,Poland,450.0,453,275,178
+28559,Enner Remberto Valencia Lastra,Ecuador,30.0,58,51,7
+28616,Daniel-Kofi Kyereh,Ghana,376.0,546,481,65
+28729,Diego Nicolás De La Cruz Arcosa,Uruguay,445.0,510,412,98
+28825,Luis Gerardo Chávez Magallón,Mexico,218.0,174,326,-152
+28914,Lovro Majer,Croatia,95.0,191,148,43
+28966,Gaël Ondoua,Cameroon,461.0,525,260,265
+29006,Noah Okafor,Switzerland,366.0,485,345,140
+29012,Eray Ervin Cömert,Switzerland,520.0,505,440,65
+29163,Josip Juranović,Croatia,76.0,28,9,19
+29201,Nahuel Molina Lucero,Argentina,78.0,52,149,-97
+29377,Brennan Johnson,Wales,252.0,426,283,143
+29560,Julián Álvarez,Argentina,8.0,6,14,-8
+29595,Ko Itakura,Japan,332.0,186,259,-73
+29758,Sam Adekugbe,Canada,385.0,428,302,126
+29966,Ui-Jo Hwang,South Korea,235.0,397,263,134
+29976,Gabriel Teodoro Martinelli Silva,Brazil,82.0,194,119,75
+30016,Martin Hongla Yma II,Cameroon,431.0,446,435,11
+30111,Felix Eduardo Torres Caicedo,Ecuador,336.0,193,389,-196
+30401,Ruben Vargas,Switzerland,97.0,135,136,-1
+30486,Pedro González López,Spain,122.0,81,164,-83
+30500,Kevin Nahin Álvarez Campos,Mexico,493.0,492,460,32
+30519,Mohamed Salisu,Ghana,263.0,331,528,-197
+30628,Daizen Maeda,Japan,186.0,330,384,-54
+30681,Ali Abdi,Tunisia,342.0,481,530,-49
+30714,Jude Bellingham,England,52.0,33,83,-50
+30756,Anssumane Fati,Spain,234.0,388,248,140
+31029,Salis Abdul Samed,Ghana,426.0,309,308,1
+31090,Takefusa Kubo,Japan,443.0,538,484,54
+31152,Gonzalo Jordy Plata Jiménez,Ecuador,144.0,145,202,-57
+31295,Yahia Attiyat allah,Morocco,156.0,178,436,-258
+31684,Atiba Hutchinson,Canada,434.0,274,492,-218
+31751,Pathé Ismaël Ciss,Senegal,526.0,493,521,-28
+31955,Jakub Kamiński,Poland,190.0,297,213,84
+32450,Montassar Omar Talbi,Tunisia,490.0,329,534,-205
+32478,Darwin Gabriel Núñez Ribeiro,Uruguay,126.0,236,183,53
+32915,Ismail Jakobs,Senegal,395.0,439,533,-94
+33018,Joško Gvardiol,Croatia,203.0,12,154,-142
+33477,Riley McGree,Australia,249.0,249,439,-190
+33488,Keanu Baccus,Australia,405.0,336,146,190
+33492,Mitchell Thomas Duke,Australia,141.0,202,234,-32
+33495,Kye Rowles,Australia,244.0,173,3,170
+33572,Nathaniel Atkinson,Australia,504.0,474,400,74
+33602,Tariq Lamptey,Ghana,423.0,551,312,239
+34339,Giovanni Reyna,United States,322.0,348,291,57
+34396,Michael Steveen Estrada Martínez,Ecuador,183.0,190,163,27
+34639,Vitor Machado Ferreira,Portugal,390.0,437,401,36
+34794,Neco Williams,Wales,298.0,425,387,38
+35592,Anis Ben Slimane,Tunisia,325.0,368,397,-29
+35658,Kamaldeen Sulemana,Ghana,269.0,441,317,124
+36148,José Adoni Cifuentes Charcopa,Ecuador,457.0,454,365,89
+36288,Facundo Pellistri Rebollo,Uruguay,230.0,401,274,127
+37122,Yuki Soma,Japan,368.0,378,330,48
+37148,Josip Šutalo,Croatia,545.0,478,416,62
+37208,Ao Tanaka,Japan,150.0,266,303,-37
+37209,Miki Yamane,Japan,486.0,473,419,54
+37211,Kaoru Mitoma,Japan,201.0,354,382,-28
+37215,Shogo Taniguchi,Japan,345.0,304,304,0
+37221,Hidemasa Morita,Japan,284.0,146,341,-195
+37726,Moisés Isaac Caicedo Corozo,Ecuador,192.0,136,329,-193
+37737,Angelo Smit Preciado Quiñónez,Ecuador,320.0,278,498,-220
+37945,Alan Steven Franco Palma,Ecuador,523.0,523,445,78
+38004,Piero Martín Hincapié Reyna,Ecuador,548.0,299,547,-248
+38285,Ayase Ueda,Japan,487.0,465,375,90
+38718,Enzo Fernandez,Argentina,140.0,41,169,-128
+38792,Yunus Dimoara Musah,United States,175.0,96,239,-143
+38803,Gonçalo Matias Ramos,Portugal,21.0,70,39,31
+39161,Alejandro Balde Martínez,Spain,143.0,232,84,148
+39565,Jamal Musiala,Germany,6.0,9,6,3
+40211,Jeremy Leonel Sarmiento Morante,Ecuador,333.0,400,277,123
+40538,Jin-Su Kim,South Korea,96.0,208,247,-39
+40542,Gue-Sung Cho,South Korea,62.0,118,108,10
+40558,Jun-Ho Son,South Korea,512.0,482,395,87
+40564,Kyung-Won Kwon,South Korea,516.0,486,423,63
+40672,Moon-Hwan Kim,South Korea,129.0,142,191,-49
+40784,Akram Hassan Afif,Qatar,237.0,260,199,61
+40874,Matheus Luiz Nunes,Portugal,297.0,370,361,9
+41711,Sang-Ho Na,South Korea,281.0,418,336,82
+43565,Min Jae Kim,South Korea,239.0,158,85,73
+44166,Jakub Piotr Kiwior,Poland,360.0,328,495,-167
+44225,Osman Bukari,Ghana,306.0,464,292,172
+44703,Alistair Johnston,Canada,85.0,75,107,-32
+44955,Aïssa Bilal Laïdouni,Tunisia,275.0,253,509,-256
+45047,Alidu Seidu,Ghana,515.0,520,476,44
+46258,Azzedine Ounahi,Morocco,121.0,32,270,-238
+48347,Amadou Onana,Belgium,352.0,382,346,36
+49337,Josip Stanišić,Croatia,429.0,431,358,73
+50436,Fabian Rieder,Switzerland,375.0,450,449,1
+50498,Pape Matar Sarr,Senegal,439.0,414,405,9
+50502,Nicola Zalewski,Poland,502.0,549,464,85
+51094,Abdulelah Al Amri,Saudi Arabia,365.0,312,158,154
+51096,Ali Al Hassan,Saudi Arabia,491.0,532,487,45
+51099,Firas Tariq Nasser Al Albirakan,Saudi Arabia,69.0,98,55,43
+51103,Abdullah Mohammed Madu,Saudi Arabia,531.0,547,471,76
+51469,Saleh Khalid Al Shehri,Saudi Arabia,146.0,215,204,11
+51470,Riyadh Sharahili,Saudi Arabia,521.0,533,486,47
+51546,Hassan Mohammed Al-Tambakti,Saudi Arabia,292.0,128,15,113
+51632,Sami Khalil Al Naji,Saudi Arabia,464.0,471,402,69
+51705,Abdulrahman Al-Obood,Saudi Arabia,337.0,451,368,83
+51710,Saud Abdullah Abdul Hamid,Saudi Arabia,278.0,262,454,-192
+51969,Jackson Gabriel Porozo Vernaza,Ecuador,305.0,318,100,218
+54144,Nawaf Shaker Al Abid,Saudi Arabia,205.0,333,228,105
+56755,Abdulelah Saad Hameed Al-Malki,Saudi Arabia,266.0,213,29,184
+57620,Sultan Abdullah Salim Al Ghannam,Saudi Arabia,221.0,413,299,114
+59493,Abderrazak Hamdallah,Morocco,158.0,313,197,116
+67700,Badr Banoun,Morocco,482.0,506,225,281
+68574,Nicholas Williams Arthuer,Spain,310.0,384,290,94
+74588,Christopher Wooh,Cameroon,348.0,337,110,227
+80484,Iliman Ndiaye,Senegal,227.0,360,255,105
+88123,Cheikh Ahmadou Bamba Mbacke Dieng,Senegal,232.0,359,251,108
+95272,Hiroki Ito,Japan,476.0,430,388,42
+102816,Mohamed Ali Ben Romdhane,Tunisia,408.0,421,390,31
+105944,Wajdi Kechrida,Tunisia,343.0,371,231,140
+108340,Brandon Aguilera Zamora,Costa Rica,544.0,553,513,40
+124161,Mehdi Torabi,Iran,295.0,472,371,101
+124167,Ahmad Nourollahi,Iran,495.0,347,512,-165
+124175,Mohammad Hossein Kanani Zadegan,Iran,540.0,518,456,62
+124488,Hassan Khalid Al Heidos,Qatar,273.0,268,101,167
+124492,Karim Boudiaf,Qatar,382.0,315,127,188
+124493,Boualem Khoukhi,Qatar,293.0,349,546,-197
+124494,Abdelkarim Hassan Al Haj Fadlalla,Qatar,299.0,290,227,63
+124495,Almoez Ali Zainalabiddin Abdulla,Qatar,159.0,292,222,70
+124500,Assim Omer Al Haj Madibo,Qatar,542.0,455,526,-71
+124503,Bassam Hisham Al Rawi,Qatar,522.0,530,465,65
+124506,Pedro Miguel Correia,Qatar,225.0,303,138,165
+124514,Abdulaziz Hatem Mohammed Abdullah,Qatar,472.0,490,451,39
+124899,Ismaeel Mohammad Mohammad,Qatar,139.0,235,65,170
+124900,Homam Alamin Ahmed,Qatar,302.0,415,321,94
+124901,Mohammed Muntari,Qatar,344.0,516,364,152
+125818,Ali Karimi,Iran,353.0,432,370,62
+130185,Keysher Fuller Spence,Costa Rica,134.0,166,5,161
+132271,Carlos Manuel Martínez Castro,Costa Rica,537.0,527,505,22
+132296,Anthony Daniel Contreras Enríquez,Costa Rica,427.0,529,425,104
+132497,Gerson Torres Barrantes,Costa Rica,518.0,519,442,77
+132728,Jewison Bennette,Costa Rica,437.0,550,450,100
+132756,Youstin Delfin Salas Gómez,Costa Rica,509.0,541,431,110
+133229,Ismael Koné,Canada,499.0,362,433,-71
+133353,Pablo Martín Páez Gavira,Spain,171.0,121,205,-84
+139016,Achraf Dari,Morocco,303.0,254,184,70
+143854,António João Pereira Albuquerque Tavares Silva,Portugal,541.0,498,502,-4
+149714,Abdessamad Ezzalzouli,Morocco,383.0,522,472,50
+156734,Bilal El Khannous,Morocco,398.0,393,111,282
+227697,Garang Kuol,Australia,288.0,461,306,155
+296254,Walid Cheddira,Morocco,242.0,463,296,167

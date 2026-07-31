@@ -38,14 +38,14 @@ DEFAULT_INPUT = (
     PROJECT_ROOT / "data" / "processed" / "world_cup_recommendation_features.csv"
 )
 DEFAULT_CLASSIFICATION = (
-    PROJECT_ROOT / "results" / "recommendation_model_leaderboard.csv"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_model_leaderboard.csv"
 )
-DEFAULT_FOLDS = PROJECT_ROOT / "results" / "recommendation_model_fold_metrics.csv"
-DEFAULT_XG = PROJECT_ROOT / "results" / "recommendation_xg_leaderboard.csv"
+DEFAULT_FOLDS = PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_model_fold_metrics.csv"
+DEFAULT_XG = PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_xg_leaderboard.csv"
 DEFAULT_PREDICTIONS = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_recommendation_oof_predictions.csv"
 )
-DEFAULT_REPORT = PROJECT_ROOT / "results" / "recommendation_model_benchmark.md"
+DEFAULT_REPORT = PROJECT_ROOT / "results" / "MIscellaneous" / "recommendation_model_benchmark.md"
 
 RANDOM_STATE = 42
 CATEGORICAL_FEATURES = [

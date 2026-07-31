@@ -403,15 +403,25 @@ class RankingRepairReleaseWriter:
             output.get("publication_team_rank_v3", output["team_rank_v3"]),
             errors="coerce",
         ).astype("Int64")
-        output["Tournament Performance Score"] = pd.to_numeric(
-            output.get(
-                "publication_score_v3",
+        # Publication scale contract: player ratings are published on a
+        # FIFA-style 55-99 scale with one decimal place. The transform is a
+        # monotone linear map of the model score (55 + 44 x score), so score
+        # gaps are preserved rather than flattened into rank percentiles.
+        # Raw model columns retain full precision underneath.
+        output["Tournament Performance Score"] = (
+            pd.to_numeric(
                 output.get(
-                    "tournament_impact_score_v3",
-                    output["tournament_impact_v3"],
+                    "publication_score_v3",
+                    output.get(
+                        "tournament_impact_score_v3",
+                        output["tournament_impact_v3"],
+                    ),
                 ),
-            ),
-            errors="coerce",
+                errors="coerce",
+            )
+            .mul(44.0)
+            .add(55.0)
+            .round(1)
         )
         output["active_model_version"] = ACTIVE_MODEL_VERSION
         event_scope = "qatar-2022-periods-1-4-v1"
@@ -2120,9 +2130,13 @@ class RankingRepairReleaseWriter:
         self,
         *,
         source_hashes: Mapping[str, Any] | None = None,
+        active_model_version: str | None = None,
     ) -> list[Path]:
         """Write portable, deterministic final-state release manifests."""
 
+        manifest_model_version = (
+            active_model_version or ACTIVE_MODEL_VERSION
+        )
         manifest_paths = {
             self.results_root / "metadata" / "artifact_manifest.json",
             self.reports_root / "artifact_manifest.json",
@@ -2152,7 +2166,7 @@ class RankingRepairReleaseWriter:
         ]
         master = {
             "schema_version": "ranking-repair-artifact-manifest-3.0",
-            "active_model_version": ACTIVE_MODEL_VERSION,
+            "active_model_version": manifest_model_version,
             "path_contract": (
                 "project-relative POSIX paths; no absolute or Windows paths"
             ),
@@ -2175,7 +2189,7 @@ class RankingRepairReleaseWriter:
         )
         refresh = {
             "schema_version": "ranking-repair-refresh-manifest-3.0",
-            "active_model_version": ACTIVE_MODEL_VERSION,
+            "active_model_version": manifest_model_version,
             "path_contract": "project-relative POSIX paths",
             "artifact_count": len(ranking_files),
             "artifacts": [
@@ -2209,7 +2223,7 @@ class RankingRepairReleaseWriter:
         _write_json(refresh_manifest, refresh)
         pipeline = {
             "schema_version": "ranking-repair-pipeline-3.0",
-            "active_model_version": ACTIVE_MODEL_VERSION,
+            "active_model_version": manifest_model_version,
             "status": "complete",
             "ranking_manifest": (
                 "results/reports/ranking/refresh_manifest.json"

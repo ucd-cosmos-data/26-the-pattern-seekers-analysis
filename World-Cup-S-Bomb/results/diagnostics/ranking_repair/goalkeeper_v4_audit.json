@@ -1,0 +1,126 @@
+{
+  "model_version": "goalkeeper_tournament_impact_v4",
+  "preregistration": {
+    "model_version": "goalkeeper_tournament_impact_v4",
+    "written_before_final_ranking": true,
+    "state_model": {
+      "engine": "symmetric Poisson goal arrivals, tournament-average intensity 172/64 goals per match",
+      "group_consequence": "expected points / 3",
+      "knockout_consequence": "survival probability; post-ET level = 0.5 shootout",
+      "team_strength_terms": "none (leakage-free by construction)"
+    },
+    "channels": {
+      "shot_stopping": "(oof_goal_probability - outcome) x pre-action leverage; single channel, base+excess decomposition published",
+      "regular_penalty": "(beta-shrunk conversion prior - outcome) x leverage; prior strength 8",
+      "shootout": "exact recursion WPA; conversion Beta-shrunk (prior 0.75, strength 8); credit only goalkeeper-credited saves; off-target/woodwork = 0 (0.25 partial rule reported in sensitivity only)",
+      "support": "v3 cross/claim, sweeping, distribution percentiles; availability renormalized; opportunity-shrunk toward 0.5"
+    },
+    "candidate_grid": {
+      "w_shot_stopping": [
+        0.45,
+        0.5,
+        0.55
+      ],
+      "w_regular_penalty": [
+        0.05,
+        0.1
+      ],
+      "w_shootout": [
+        0.2,
+        0.25,
+        0.3
+      ],
+      "w_support": "1 - sum(others), floor 0.05",
+      "shootout_bound": [
+        0.3,
+        0.45,
+        0.6
+      ],
+      "leverage_exponent": [
+        0.5,
+        1.0
+      ]
+    },
+    "selection_criteria_in_order": [
+      "underlying OOF shot calibration untouched (no refit against ranks)",
+      "bootstrap (match-resample, 500 reps) top-five stability maximized",
+      "shot-stopping + decisive channels together >= 60% weight",
+      "removing any single NON-decisive event moves no keeper more than 3 ranks",
+      "leave-one-match-out rank shifts reported"
+    ],
+    "acceptance_gates_evaluated_after_selection": [
+      "Martinez rank 1 (publication gate, never a selection criterion)",
+      ">=3 of {Martinez, Livakovic, Bounou, Szczesny} in top five",
+      "identity-shuffle invariance",
+      "event-removal monotonicity (Kolo Muani save, shootout events)",
+      "v3 fields byte-for-byte preserved"
+    ],
+    "prohibited_features": [
+      "identity",
+      "nationality",
+      "team name as score input",
+      "awards",
+      "advancement bonuses",
+      "target ranks"
+    ]
+  },
+  "calibration_audit_carried_from_v3": {
+    "ordinary_non_penalty_rows": 488,
+    "shootout_rows_excluded": 106,
+    "regular_penalty_rows_excluded": 23,
+    "gate_passed": null
+  },
+  "shootout_conversion_probability": 0.6530612244897959,
+  "channel_audit": {
+    "model_version": "goalkeeper_tournament_impact_v4",
+    "weights": {
+      "shot_stopping": 0.45,
+      "regular_penalty": 0.05,
+      "shootout": 0.2,
+      "support": 0.3
+    },
+    "shootout_bound": 0.6,
+    "leverage_exponent": 1.0,
+    "regular_penalty_conversion_prior": 0.7666666666666667,
+    "mean_ordinary_leverage": 0.23827810547825484,
+    "identity_features_used": [],
+    "ordinary_shots_valued": 483,
+    "regular_penalties_valued": 22,
+    "shootout_kicks_valued": 41,
+    "shootout_saves_credited": 10,
+    "score_normalization": {
+      "raw_min": -0.2498438742816307,
+      "raw_max": 0.7376656985636677
+    }
+  },
+  "selected_configuration": {
+    "weights": {
+      "shot_stopping": 0.45,
+      "regular_penalty": 0.05,
+      "shootout": 0.2,
+      "support": 0.3
+    },
+    "shootout_bound": 0.6,
+    "leverage_exponent": 1.0,
+    "bootstrap_top_five_stability": 0.6296
+  },
+  "gates": {
+    "martinez_rank": 26,
+    "martinez_first": false,
+    "consensus_in_top_five": [
+      "Dominik Livakovi\u0107",
+      "Wojciech Szcz\u0119sny"
+    ],
+    "consensus_gate": false,
+    "identity_shuffle_invariant": true,
+    "kolo_muani_event_rows": 1,
+    "kolo_muani_removal_lowers_score": true,
+    "shootout_removal_lowers_score": true,
+    "v3_columns_preserved": true,
+    "all_gates_pass": false
+  },
+  "artifact_hashes": {
+    "results/reports/ranking/goalkeeper_rankings_v4.csv": "dba5fc71bcd9958fc3b79728907b3173761831f7cecd1016c8220b888da55fa7",
+    "results/reports/ranking/goalkeeper_rankings_v4.json": "d4ad0e2321cadc0e578a98f16b91232a434601ebc44502788f966070a11b1c46"
+  }
+}

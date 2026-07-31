@@ -29,7 +29,7 @@ DEFAULT_MATCHES = PROJECT_ROOT / "data" / "raw" / "matches.csv"
 DEFAULT_CACHE_DIR = PROJECT_ROOT / "data" / "interim" / "frames360" / "raw"
 DEFAULT_ACTORS = PROJECT_ROOT / "data" / "interim" / "world_cup_360_frames.csv"
 DEFAULT_VISIBLE = PROJECT_ROOT / "data" / "interim" / "world_cup_360_visible_areas.csv"
-DEFAULT_REPORT = PROJECT_ROOT / "results" / "frames_360_validation.md"
+DEFAULT_REPORT = PROJECT_ROOT / "results" / "MIscellaneous" / "frames_360_validation.md"
 
 ACTOR_FIELDS = ["match_id", "event_uuid", "teammate", "actor", "keeper", "x", "y"]
 VISIBLE_FIELDS = ["match_id", "event_uuid", "visible_area"]

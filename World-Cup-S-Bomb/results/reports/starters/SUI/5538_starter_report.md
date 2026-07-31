@@ -7,15 +7,15 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Team: Switzerland
 - Position group: Defensive Midfield
 - Functional role: Deep Playmaker
-- Minutes: 72.5
-- Global Rank v3: 478
+- Minutes: 72.6
+- Global Rank v3: 473
 - Team Rank v3: 16
 - Position Rank v3: 8
 - Role Rank v3: 3
-- Tournament Impact: 0.0558
-- Role Quality: 0.3160
-- Impact interval: [-0.0398, 0.2072]
-- Rank band: 318.0–538.0
+- Tournament Impact: 0.0611
+- Role Quality: 0.3219
+- Impact interval: [-0.0094, 0.1925]
+- Rank band: 326–523
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.0466 |
+| Attack | 0.0518 |
 | Defense | 0.0092 |
 | Other | 0.0000 |
 

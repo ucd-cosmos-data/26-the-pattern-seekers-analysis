@@ -1,0 +1,30 @@
+{
+  "feature_family": "possession-adjusted-entry-denial-360-v1",
+  "features": [
+    "avg_defensive_centroid_x",
+    "avg_defensive_centroid_y",
+    "avg_back_line_height",
+    "avg_defensive_hull_area",
+    "avg_defensive_width",
+    "avg_defensive_depth",
+    "avg_defenders_behind_ball",
+    "avg_central_defenders",
+    "avg_defenders_within_5",
+    "avg_defenders_within_10",
+    "avg_nearest_defender_distance",
+    "avg_mean_defender_distance",
+    "avg_defensive_density"
+  ],
+  "folds": 5,
+  "gate_passed": true,
+  "individual_attribution": "team 360 prevention allocated continuously by minutes and identity-free player shape evidence",
+  "limitation": "public 360 frames do not identify every non-actor outfielder; the player allocation is modeled, not direct tracking attribution",
+  "match_disjoint": true,
+  "null_rmse": 8.851343537886319,
+  "oof_group": "match_id",
+  "oof_rmse": 6.229368237489637,
+  "oof_spearman": 0.6843708289051319,
+  "requires_recorded_player_defensive_events": false,
+  "ridge_alpha": 10.0,
+  "rows": 128
+}

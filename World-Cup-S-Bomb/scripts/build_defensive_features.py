@@ -34,7 +34,7 @@ DEFAULT_VISIBLE = PROJECT_ROOT / "data" / "interim" / "world_cup_360_visible_are
 DEFAULT_FRAME_METRICS = PROJECT_ROOT / "data" / "interim" / "world_cup_360_frame_metrics.csv"
 DEFAULT_DEFENSIVE_POSSESSIONS = PROJECT_ROOT / "data" / "processed" / "world_cup_defensive_features.csv"
 DEFAULT_PLAYERS = PROJECT_ROOT / "data" / "processed" / "world_cup_defensive_players.csv"
-DEFAULT_REPORT = PROJECT_ROOT / "results" / "defensive_feature_validation.md"
+DEFAULT_REPORT = PROJECT_ROOT / "results" / "MIscellaneous" / "defensive_feature_validation.md"
 
 PITCH_LENGTH = 120.0
 PITCH_WIDTH = 80.0

@@ -7,15 +7,15 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Team: Saudi Arabia
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Minutes: 298.6
-- Global Rank v3: 272
-- Team Rank v3: 8
+- Minutes: 298.5
+- Global Rank v3: 278
+- Team Rank v3: 9
 - Position Rank v3: 4
 - Role Rank v3: 4
-- Tournament Impact: 0.3965
-- Role Quality: 0.3445
-- Impact interval: [-0.0299, 0.9341]
-- Rank band: 122.0–530.0
+- Tournament Impact: 0.3903
+- Role Quality: 0.3376
+- Impact interval: [0.0587, 0.8393]
+- Rank band: 135–413
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.4634 |
+| Attack | 0.4572 |
 | Defense | -0.0669 |
 | Other | 0.0000 |
 

@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Defensive Midfield
 - Functional role: Ball-Winner
 - Minutes: 105.6
-- Global Rank v3: 479
+- Global Rank v3: 484
 - Team Rank v3: 13
-- Position Rank v3: 57
+- Position Rank v3: 55
 - Role Rank v3: 60
-- Tournament Impact: 0.0551
-- Role Quality: 0.1039
-- Impact interval: [-0.0156, 0.1731]
-- Rank band: 338–526
+- Tournament Impact: 0.0552
+- Role Quality: 0.1059
+- Impact interval: [-0.0192, 0.1752]
+- Rank band: 340–530
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.0640 |
+| Attack | 0.0641 |
 | Defense | -0.0089 |
 | Other | 0.0000 |
 

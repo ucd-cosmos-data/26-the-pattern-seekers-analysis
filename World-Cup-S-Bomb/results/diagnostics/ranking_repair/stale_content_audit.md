@@ -7,8 +7,6 @@
 | `README.md` | 48 | `within-position-absolute` | compatibility-or-legacy | not use within-position z-scores as absolute global value, the former repeated |
 | `README.md` | 49 | `one-sided-defensive-lift` | compatibility-or-legacy | exposure cascade, or the former one-sided defensive publication lift. |
 | `data/processed/player_evaluation_provenance.json` | 590 | `old-exposure-constants` | compatibility-or-legacy | "ranking_formula": "role-relative minutes shrinkage of (0.50*vaep_total_p90 + 0.30*vaep_per_touch + 0.20*xt_p90), reliability=minutes/(minutes+450)" |
-| `data/processed/player_evaluation_v5_provenance.json` | 2667 | `old-exposure-constants` | compatibility-or-legacy | "outfield_reliability": "minutes / (minutes + 450)", |
-| `data/processed/player_evaluation_v5_provenance.json` | 2668 | `old-exposure-constants` | compatibility-or-legacy | "goalkeeper_reliability": "feature_coverage * minutes / (minutes + 450)", |
 | `docs/ranking-repair-eight-pass-prompt.md` | 434 | `within-position-absolute` | compatibility-or-legacy | - Do not use within-position z-scores as absolute global value. |
 | `docs/ranking-repair-eight-pass-prompt.md` | 542 | `one-sided-defensive-lift` | compatibility-or-legacy | Replace the raw, equally averaged, one-sided direct-defensive lift with |
 | `docs/ranking-repair-eight-pass-prompt.md` | 633 | `one-sided-defensive-lift` | compatibility-or-legacy | The active one-sided defensive evidence lift should be retired when the |
@@ -22,6 +20,8 @@
 | `docs/role_aware_pipeline.md` | 166 | `old-exposure-constants` | compatibility-or-legacy | `minutes / (minutes + 450)` shrinkage, additional exposure adjustments, and a |
 | `docs/role_aware_pipeline.md` | 167 | `one-sided-defensive-lift` | compatibility-or-legacy | one-sided defensive evidence lift. The former goalkeeper publication added |
 | `docs/role_aware_pipeline.md` | 168 | `shootout-save-0.20` | compatibility-or-legacy | `0.20` per shootout save and described a Blom-derived bridge too broadly. |
+| `docs/website-post-eight-pass-update-prompt.md` | 1058 | `one-sided-defensive-lift` | compatibility-or-legacy | - old one-sided defensive lift is active if retired |
+| `docs/website-post-eight-pass-update-prompt.md` | 1060 | `within-position-absolute` | compatibility-or-legacy | - old within-position z-score is absolute global value if retired |
 | `results/Summary/model_summary.md` | 28 | `one-sided-defensive-lift` | compatibility-or-legacy | Defensive value is based on opportunity-adjusted threat prevention and signed errors. The old one-sided defensive publication lift is retired. |
 | `results/diagnostics/ranking_repair/champion/model_summary.json` | 2523 | `old-exposure-constants` | compatibility-or-legacy | "outfield_reliability": "minutes / (minutes + 450)", |
 | `results/diagnostics/ranking_repair/champion/model_summary.json` | 2524 | `old-exposure-constants` | compatibility-or-legacy | "goalkeeper_reliability": "feature_coverage * minutes / (minutes + 450)", |
@@ -68,13 +68,13 @@
 | `src/models/tournament_rankings.py` | 163 | `shootout-save-0.20` | compatibility-or-legacy | GOALKEEPER_TOURNAMENT_IMPACT_PER_SHOOTOUT_SAVE = 0.20 |
 | `src/models/tournament_rankings.py` | 1161 | `shootout-save-0.20` | compatibility-or-legacy | "period-five shootout penalty contributes 0.20, the goalkeeper's " |
 | `src/rating_uncertainty.py` | 7 | `old-exposure-constants` | compatibility-or-legacy | reliability = minutes / (minutes + 450) |
-| `src/reporting/artifacts.py` | 667 | `one-sided-defensive-lift` | compatibility-or-legacy | "normalization, a one-sided direct defensive-evidence " |
-| `src/reporting/artifacts.py` | 1623 | `old-exposure-constants` | compatibility-or-legacy | "minutes/(minutes+450) position-prior shrinkage.", |
-| `src/reporting/ranking_repair_release.py` | 600 | `within-position-absolute` | active-and-correct | "No within-position z-score, player identity, role bonus, or " |
-| `src/reporting/ranking_repair_release.py` | 951 | `one-sided-defensive-lift` | compatibility-or-legacy | "prevention and signed errors. The old one-sided defensive " |
-| `src/reporting/ranking_repair_release.py` | 1989 | `within-position-absolute` | compatibility-or-legacy | "within-position z-score as absolute global value", |
-| `src/reporting/ranking_repair_release.py` | 1991 | `one-sided-defensive-lift` | compatibility-or-legacy | "one-sided direct-defensive publication lift", |
-| `src/reporting/ranking_repair_release.py` | 1992 | `shootout-save-0.20` | compatibility-or-legacy | "0.20 additive points per goalkeeper shootout save", |
+| `src/reporting/artifacts.py` | 663 | `one-sided-defensive-lift` | compatibility-or-legacy | "normalization, a one-sided direct defensive-evidence " |
+| `src/reporting/artifacts.py` | 1619 | `old-exposure-constants` | compatibility-or-legacy | "minutes/(minutes+450) position-prior shrinkage.", |
+| `src/reporting/ranking_repair_release.py` | 610 | `within-position-absolute` | active-and-correct | "No within-position z-score, player identity, role bonus, or " |
+| `src/reporting/ranking_repair_release.py` | 961 | `one-sided-defensive-lift` | compatibility-or-legacy | "prevention and signed errors. The old one-sided defensive " |
+| `src/reporting/ranking_repair_release.py` | 1999 | `within-position-absolute` | compatibility-or-legacy | "within-position z-score as absolute global value", |
+| `src/reporting/ranking_repair_release.py` | 2001 | `one-sided-defensive-lift` | compatibility-or-legacy | "one-sided direct-defensive publication lift", |
+| `src/reporting/ranking_repair_release.py` | 2002 | `shootout-save-0.20` | compatibility-or-legacy | "0.20 additive points per goalkeeper shootout save", |
 | `src/simulation_engine.py` | 762 | `old-exposure-constants` | compatibility-or-legacy | output["rating_minutes_reliability"] = minutes / (minutes + 450.0) |
 | `src/simulation_engine.py` | 2094 | `old-exposure-constants` | compatibility-or-legacy | profiles["rating_minutes_reliability"] = minutes / (minutes + 450.0) |
 | `src/simulation_engine.py` | 2325 | `old-exposure-constants` | compatibility-or-legacy | "reliability=minutes/(minutes+450)" |

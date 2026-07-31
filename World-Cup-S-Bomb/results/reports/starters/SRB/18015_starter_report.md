@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Forward
 - Functional role: Target Forward / Penalty-Box Anchor
 - Minutes: 86.1
-- Global Rank v3: 168
+- Global Rank v3: 165
 - Team Rank v3: 5
-- Position Rank v3: 12
+- Position Rank v3: 11
 - Role Rank v3: 5
-- Tournament Impact: 0.6982
-- Role Quality: 0.7486
-- Impact interval: [0.0000, 2.0758]
-- Rank band: 38.0–496.0
+- Tournament Impact: 0.7259
+- Role Quality: 0.7856
+- Impact interval: [0.0000, 2.1616]
+- Rank band: 37–499
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.6950 |
+| Attack | 0.7227 |
 | Defense | 0.0032 |
 | Other | 0.0000 |
 

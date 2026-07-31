@@ -7,15 +7,15 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Team: Senegal
 - Position group: Attacking Midfield/Wing
 - Functional role: Ball-Winner
-- Minutes: 141.2
-- Global Rank v3: 210
-- Team Rank v3: 5
-- Position Rank v3: 64
-- Role Rank v3: 20
-- Tournament Impact: 0.5622
-- Role Quality: 0.4241
-- Impact interval: [0.0000, 1.4227]
-- Rank band: 66.0–478.0
+- Minutes: 141.1
+- Global Rank v3: 227
+- Team Rank v3: 6
+- Position Rank v3: 63
+- Role Rank v3: 21
+- Tournament Impact: 0.5234
+- Role Quality: 0.4140
+- Impact interval: [0.0000, 1.2600]
+- Rank band: 77–482
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.5641 |
+| Attack | 0.5253 |
 | Defense | -0.0019 |
 | Other | 0.0000 |
 

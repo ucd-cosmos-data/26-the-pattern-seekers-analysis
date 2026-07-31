@@ -7,15 +7,15 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Team: Japan
 - Position group: Attacking Midfield/Wing
 - Functional role: Target Forward
-- Minutes: 73.7
-- Global Rank v3: 335
-- Team Rank v3: 12
-- Position Rank v3: 24
-- Role Rank v3: 30
-- Tournament Impact: 0.2620
-- Role Quality: 0.4949
-- Impact interval: [0.0528, 0.5240]
-- Rank band: 200.0–428.0
+- Minutes: 73.6
+- Global Rank v3: 338
+- Team Rank v3: 13
+- Position Rank v3: 27
+- Role Rank v3: 31
+- Tournament Impact: 0.2719
+- Role Quality: 0.4939
+- Impact interval: [0.0393, 0.5790]
+- Rank band: 190–443
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.2872 |
+| Attack | 0.2971 |
 | Defense | -0.0252 |
 | Other | 0.0000 |
 

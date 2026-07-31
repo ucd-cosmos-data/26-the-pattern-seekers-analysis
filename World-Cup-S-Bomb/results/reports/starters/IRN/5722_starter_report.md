@@ -8,14 +8,14 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Position group: Defensive Midfield
 - Functional role: Holding Anchor
 - Minutes: 240.2
-- Global Rank v3: 406
+- Global Rank v3: 413
 - Team Rank v3: 12
 - Position Rank v3: 68
 - Role Rank v3: 47
-- Tournament Impact: 0.1485
-- Role Quality: 0.0970
-- Impact interval: [0.0134, 0.3153]
-- Rank band: 267.0–459.0
+- Tournament Impact: 0.1420
+- Role Quality: 0.0979
+- Impact interval: [0.0116, 0.3066]
+- Rank band: 274–467
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 0.1686 |
+| Attack | 0.1621 |
 | Defense | -0.0201 |
 | Other | 0.0000 |
 

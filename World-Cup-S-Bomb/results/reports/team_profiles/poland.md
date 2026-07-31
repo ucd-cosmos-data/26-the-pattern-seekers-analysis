@@ -6,26 +6,26 @@ Tournament Impact orders the team table. Role Quality and Uncertainty remain sep
 
 | Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
 |---|---|---|---|---|---|---|---|---|
-| 1 | 6 | Robert Lewandowski | Forward | Target Forward / Penalty-Box Anchor | 389.7500 | 3.3782 | 0.6082 | wide |
+| 1 | 4 | Robert Lewandowski | Forward | Target Forward / Penalty-Box Anchor | 389.7500 | 3.6367 | 0.6385 | wide |
 | 2 | 10 | Wojciech Szczęsny | Goalkeeper | Goalkeeper | 389.7500 | — | — | moderate |
-| 3 | 158 | Piotr Zieliński | Central/Wide Midfield | Holding Anchor | 344.4167 | 0.7819 | 0.1779 | wide |
-| 4 | 172 | Jakub Kamiński | Central/Wide Midfield | Progressive Winger | 253.6333 | 0.7033 | 0.3879 | wide |
-| 5 | 200 | Matty Cash | Fullback/Wingback | Deep Playmaker | 389.7500 | 0.6213 | 0.1647 | wide |
-| 6 | 232 | Przemysław Frankowski | Central/Wide Midfield | Wide Creator | 254.5333 | 0.5139 | 0.4268 | wide |
-| 7 | 310 | Bartosz Bereszyński | Fullback/Wingback | Wide Creator | 365.7333 | 0.3508 | 0.1639 | wide |
-| 8 | 313 | Kamil Glik | Center Back | Sweeper CB | 389.7500 | 0.3490 | 0.0874 | wide |
-| 9 | 340 | Arkadiusz Milik | Central/Wide Midfield | Ball-Winner | 116.4833 | 0.3030 | 0.4710 | wide |
-| 10 | 406 | Jakub Piotr Kiwior | Center Back | Sweeper CB | 376.7000 | 0.1819 | 0.0604 | wide |
-| 11 | 476 | Sebastian Szymański | Central/Wide Midfield | Wide Creator | 134.9500 | 0.0892 | 0.2391 | wide |
-| 12 | 480 | Michał Skóraś | Central/Wide Midfield | Ball-Winner | 51.0167 | 0.0855 | 0.2056 | wide |
-| 13 | 483 | Grzegorz Krychowiak | Defensive Midfield | Box-to-Box / Engine Midfielder | 347.8833 | 0.0821 | 0.0811 | wide |
-| 14 | 515 | Krystian Bielik | Defensive Midfield | Holding Anchor | 240.0167 | 0.0414 | 0.0871 | wide |
-| 15 | 540 | Nicola Zalewski | Central/Wide Midfield | Ball-Winner | 73.9833 | 0.0088 | 0.1850 | wide |
-| 16 | 560 | Karol Świderski | Forward | Pressing Forward | 45.0000 | -0.0106 | 0.3025 | wide |
+| 3 | 160 | Piotr Zieliński | Central/Wide Midfield | Holding Anchor | 344.4167 | 0.7646 | 0.1787 | wide |
+| 4 | 201 | Jakub Kamiński | Central/Wide Midfield | Progressive Winger | 253.6333 | 0.6331 | 0.3760 | wide |
+| 5 | 232 | Matty Cash | Fullback/Wingback | Deep Playmaker | 389.7500 | 0.5488 | 0.1621 | wide |
+| 6 | 288 | Przemysław Frankowski | Central/Wide Midfield | Wide Creator | 254.5333 | 0.4034 | 0.4149 | wide |
+| 7 | 304 | Arkadiusz Milik | Central/Wide Midfield | Ball-Winner | 116.4833 | 0.3645 | 0.4898 | wide |
+| 8 | 331 | Kamil Glik | Center Back | Sweeper CB | 389.7500 | 0.3107 | 0.0851 | wide |
+| 9 | 337 | Bartosz Bereszyński | Fullback/Wingback | Wide Creator | 365.7333 | 0.3031 | 0.1557 | wide |
+| 10 | 381 | Jakub Piotr Kiwior | Center Back | Sweeper CB | 376.7000 | 0.2296 | 0.0693 | wide |
+| 11 | 402 | Sebastian Szymański | Central/Wide Midfield | Wide Creator | 134.9500 | 0.1909 | 0.2541 | wide |
+| 12 | 476 | Michał Skóraś | Central/Wide Midfield | Ball-Winner | 51.0167 | 0.0972 | 0.2116 | wide |
+| 13 | 480 | Grzegorz Krychowiak | Defensive Midfield | Box-to-Box / Engine Midfielder | 347.8833 | 0.0890 | 0.0828 | wide |
+| 14 | 517 | Krystian Bielik | Defensive Midfield | Holding Anchor | 240.0167 | 0.0497 | 0.0893 | wide |
+| 15 | 531 | Nicola Zalewski | Central/Wide Midfield | Ball-Winner | 73.9833 | 0.0278 | 0.1822 | wide |
+| 16 | 557 | Karol Świderski | Forward | Pressing Forward | 45.0000 | -0.0109 | 0.3094 | wide |
 
 ## Outfield component totals
 
-- Attack component total: 7.6532
+- Attack component total: 7.8120
 - Defensive component total: -0.1735
 - Regulation/extra-time goals: 3
 - Shootout goals excluded from ordinary impact: 0

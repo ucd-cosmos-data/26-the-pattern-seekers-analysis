@@ -12,9 +12,9 @@
   },
   "leave_one_match_out_stability": {
     "matches": 64,
-    "rank_spearman_mean": 0.9942217506124761,
-    "rank_spearman_minimum": 0.9837459964062145,
-    "top20_jaccard_mean": 0.9533102766798419,
+    "rank_spearman_mean": 0.9942088050308704,
+    "rank_spearman_minimum": 0.9846308547625308,
+    "top20_jaccard_mean": 0.945987436476567,
     "top20_jaccard_minimum": 0.7391304347826086
   },
   "legacy_exposure_cascade_active": false,
@@ -23,47 +23,47 @@
   "passed": true,
   "position_composition": {
     "100": {
-      "AM": 43,
+      "AM": 42,
       "CM": 5,
-      "DM": 4,
+      "DM": 6,
       "FB": 14,
-      "FW": 34
+      "FW": 33
     },
     "20": {
       "AM": 11,
       "FW": 9
     },
     "50": {
-      "AM": 25,
+      "AM": 23,
       "CM": 2,
-      "DM": 1,
+      "DM": 2,
       "FB": 1,
-      "FW": 21
+      "FW": 22
     }
   },
   "score_goals_spearman": {
     "bootstrap_draws": 1000,
-    "ci_high": 0.588787209543112,
-    "ci_low": 0.47947584804612725,
-    "estimate": 0.5390574133204324
+    "ci_high": 0.5959311157149287,
+    "ci_low": 0.487854523520445,
+    "estimate": 0.5464737720189081
   },
   "score_minutes_spearman": {
     "bootstrap_draws": 1000,
-    "ci_high": 0.5272068442094947,
-    "ci_low": 0.390830701240411,
-    "estimate": 0.4598183884154808
+    "ci_high": 0.5370870822730553,
+    "ci_low": 0.40106804487127673,
+    "estimate": 0.4697533166896149
   },
   "score_xa_spearman": {
     "bootstrap_draws": 1000,
-    "ci_high": 0.6571140723830587,
-    "ci_low": 0.5432946728843248,
-    "estimate": 0.6018381018909079
+    "ci_high": 0.6492355872933311,
+    "ci_low": 0.5353268426482028,
+    "estimate": 0.5947426103637878
   },
   "score_xg_spearman": {
     "bootstrap_draws": 1000,
-    "ci_high": 0.8175926815669406,
-    "ci_low": 0.7482490748258295,
-    "estimate": 0.7859305419843499
+    "ci_high": 0.8251771197420303,
+    "ci_low": 0.7581203133431188,
+    "estimate": 0.7948028064010382
   },
   "uncertainty_field": "uncertainty_low_v3 / uncertainty_high_v3"
 }

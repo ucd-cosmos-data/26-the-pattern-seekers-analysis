@@ -1,0 +1,243 @@
+{
+  "model_version": "outfield_tournament_impact_v4",
+  "preregistration_schema_version": "1.0.0",
+  "BALANCE_BASE_COMMIT": "955168fdc7748531743ee9afc22220309e1d5a60",
+  "written_before_final_ranking": true,
+  "written_before_any_v4_results": true,
+  "configuration_selection_status": "not_started",
+  "contains_final_ranking_results": false,
+  "random_seed": 42,
+  "bootstrap_replicates": 500,
+  "bootstrap_confidence": 0.9,
+  "bootstrap_unit": "match_id",
+  "defensive_pipeline_stages": [
+    "opposition_adjusted",
+    "prevention_augmented",
+    "reliability_shrunk",
+    "variance_rescaled",
+    "mixture_weighted"
+  ],
+  "candidate_grid": {
+    "variance_share_target": [
+      0.35,
+      0.42,
+      0.5
+    ],
+    "mixture_bounds": [
+      [
+        0.25,
+        0.75
+      ],
+      [
+        0.3,
+        0.7
+      ]
+    ],
+    "attack_reliability_constant": [
+      40.0,
+      80.0
+    ],
+    "defense_reliability_constant": [
+      180.0,
+      300.0
+    ],
+    "bootstrap_se_shrinkage_constant": [
+      0.5,
+      1.0
+    ],
+    "opposition_adjustment_variant": [
+      "fifa_log_rank",
+      "fifa_inverse_sqrt",
+      "cumulative_pre_match_xg"
+    ],
+    "opposition_exposure_scale": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "prevention_weight": [
+      0.0,
+      0.5,
+      0.75
+    ]
+  },
+  "candidate_definitions": {
+    "variance_share_target": {
+      "definition": "Across the fixed 553-player eligible outfield cohort, Var(w_def * defensive_channel) / (Var(w_att * attacking_channel) + Var(w_def * defensive_channel)), measured after reliability shrinkage, variance rescaling, and role-mixture weighting.",
+      "hard_bounds": [
+        0.35,
+        0.5
+      ],
+      "covariance_treatment": "The numerator and denominator use the two separately attributed weighted channels; their covariance is reported but is not assigned to either channel.",
+      "parity_cap": 0.5
+    },
+    "mixture_bounds": {
+      "definition": "The lower and upper bounds applied to each continuous attacking weight; the defensive weight is exactly 1 - attacking weight.",
+      "orientation_inputs": "Existing continuous role vectors and identity-free attacking/defending action shares only.",
+      "continuity_contract": "Weights are continuous before clipping and may not be replaced by discrete role buckets, within-pool min-max scores, or percentile-saturated scores.",
+      "constant_sum_contract": "w_att + w_def = 1.0 for every eligible player."
+    },
+    "attack_reliability_constant": {
+      "evidence": "ordinary attacking action opportunities",
+      "formula": "attack_reliability = attack_evidence / (attack_evidence + attack_reliability_constant)"
+    },
+    "defense_reliability_constant": {
+      "evidence": "opponent possessions observed while the player is on the pitch",
+      "formula": "defense_reliability = defense_evidence / (defense_evidence + defense_reliability_constant)"
+    },
+    "bootstrap_se_shrinkage_constant": {
+      "target": "opposition-adjusted, prevention-augmented defensive value",
+      "formula": "shrunken = cohort_mean + reliability * (value - cohort_mean), where reliability = between_player_variance / (between_player_variance + bootstrap_se_shrinkage_constant * player_bootstrap_se^2)",
+      "ordering": "Applied after opposition adjustment and prevention augmentation and before variance rescaling."
+    },
+    "opposition_adjustment_variant": {
+      "common_adjustment": "Add expected concession burden to the signed raw prevention value before any variance scaling. For each player-match: raw prevention + opposition_exposure_scale * cohort-unit-scale * pre-match opponent strength * opponent possessions / 100 * on-pitch time share. The cohort-unit-scale is fixed as SD(raw player-match prevention) / SD(expected player-match exposure) and uses no identity, team, rank, or fixture outcome. Centering happens only after player aggregation and reliability shrinkage.",
+      "fifa_log_rank": {
+        "source": "FIFA/Coca-Cola Men's World Ranking snapshot dated 2022-10-06",
+        "formula": "-log(opponent ordinal FIFA rank), standardized over the 32 tournament teams, mapped around 1.0 and clipped to [0.40, 1.60]",
+        "availability": "Fixed before the tournament; identical for every match played by an opponent."
+      },
+      "fifa_inverse_sqrt": {
+        "source": "FIFA/Coca-Cola Men's World Ranking snapshot dated 2022-10-06",
+        "formula": "sqrt(median tournament-team FIFA rank / opponent ordinal FIFA rank), normalized to cohort mean 1.0",
+        "availability": "Fixed before the tournament; identical for every match played by an opponent."
+      },
+      "cumulative_pre_match_xg": {
+        "source": "Qatar 2022 non-shootout xG accumulated only from matches completed before the current kickoff",
+        "formula": "(1.0 fixed prior xG plus opponent cumulative earlier-match non-shootout xG) / (1.0 fixed prior match-equivalent plus opponent cumulative earlier-match minutes / 90), centered using only information available before that kickoff",
+        "first_match_rule": "Every team starts from the same fixed 1.0 xG-per-90 prior.",
+        "availability": "Current-match and future-match events, final tournament aggregates, and post-event revisions are forbidden."
+      },
+      "leakage_contract": "No opposition variant may consume the current match, a later match, a final tournament total, advancement stage, or opponent identity as a learned categorical effect."
+    },
+    "opposition_exposure_scale": {
+      "definition": "Preregistered multiplier on the expected-concession exposure after it is converted into the released raw-defense units.",
+      "selection_firewall": "Selected by stability and sensitivity criteria only; named fixtures and final ranks are unavailable during selection."
+    },
+    "prevention_weight": {
+      "feature_family": "360-frame positional prevention: match-grouped OOF penalty-area entry denial from team defensive shape, allocated continuously by on-pitch minutes and identity-free player shape evidence.",
+      "non_event_contract": "The feature is computed from 360 defensive-shape and visible-area evidence and does not require a recorded tackle, interception, block, pressure, or other defensive event by the player.",
+      "zero_weight_rule": "A zero-weight candidate is retained so the prevention family can be rejected honestly if it fails the preregistered OOF gate.",
+      "ordering": "Applied after opposition adjustment and before reliability shrinkage and variance rescaling."
+    }
+  },
+  "selection_criteria_in_order": [
+    "Reject any candidate that changes or refits the released base defensive OOF predictions or their calibration inputs; the base OOF prediction vector must be identical before downstream opposition/prevention transforms.",
+    "Require the prevention family to pass its match-grouped OOF gate against a mean-only entry-denial baseline: OOF Spearman must be positive and OOF RMSE must improve strictly. If it passes, prevention_weight = 0 is retained only as the reported ablation and is not release-eligible; if it fails, the release aborts because positional prevention is mandatory.",
+    "Among eligible candidates, maximize match-bootstrap top-50 stability over 500 fixed-seed replicates, first by median Jaccard overlap with the full-sample top 50 and then by the 10th-percentile overlap.",
+    "If bootstrap metrics tie within 0.001, minimize single-event sensitivity, first the 95th-percentile absolute global-rank shift and then the maximum absolute global-rank shift when each scored event attribution is zeroed independently.",
+    "If still tied within 0.001, maximize leave-one-match-out stability over all 64 matches, first median top-50 Jaccard overlap and then by minimizing the 95th-percentile absolute global-rank shift.",
+    "Apply the fixed conservative tie-breakers in their recorded order; do not inspect named-player movements, awards, consensus teams, nationality, team advancement, or any final rank before the configuration is locked."
+  ],
+  "selection_protocol": {
+    "cross_validation": {
+      "folds": 5,
+      "group": "match_id",
+      "deterministic_seed": 42,
+      "base_oof_calibration_unchanged": true,
+      "prevention_gate_metrics": [
+        "Spearman rank correlation",
+        "root mean squared error",
+        "foldwise sign consistency"
+      ]
+    },
+    "bootstrap_top_50_stability": {
+      "replicates": 500,
+      "resampling_unit": "match_id",
+      "with_replacement": true,
+      "seed": 42,
+      "primary_metric": "median top-50 Jaccard overlap with the full-sample ranking",
+      "secondary_metric": "10th-percentile top-50 Jaccard overlap"
+    },
+    "single_event_sensitivity": {
+      "intervention": "Zero one scored event attribution at a time, hold every configuration constant, and rerank.",
+      "primary_metric": "95th-percentile absolute global-rank shift",
+      "secondary_metric": "maximum absolute global-rank shift"
+    },
+    "leave_one_match_out": {
+      "matches": 64,
+      "intervention": "Remove one complete match at a time, hold every configuration constant, and rerank.",
+      "primary_metric": "median top-50 Jaccard overlap with the full-sample ranking",
+      "secondary_metric": "95th-percentile absolute global-rank shift",
+      "reporting": "Report every match result, not only the worst or best case."
+    },
+    "tie_tolerance": 0.001,
+    "conservative_tie_breakers_in_order": [
+      "lower variance_share_target",
+      "lower prevention_weight",
+      "larger bootstrap_se_shrinkage_constant",
+      "larger defense_reliability_constant",
+      "larger attack_reliability_constant",
+      "narrower mixture_bounds around 0.5",
+      "opposition_adjustment_variant in the preregistered grid order"
+    ],
+    "selection_output_contract": "The selected configuration and the complete accepted/rejected grid with every criterion value are written to the release audit only after selection. This preregistration file is not rewritten with results."
+  },
+  "prohibited_features": [
+    "player identity or player name",
+    "team identity or team name as a score or selection feature",
+    "nationality",
+    "award or analyst-consensus membership",
+    "player rank, target rank, desired movement, or final v4 rank",
+    "advancement stage, round reached, winner bonus, or team-advancement points",
+    "current-match or future-match opposition information",
+    "named-player fixture outcomes during configuration selection"
+  ],
+  "input_and_leakage_contract": {
+    "identity_join_keys": "Player and team identifiers may be used only to join source rows, calculate the opponent's pre-match context, and publish reporting labels; they may not be encoded as learned score features.",
+    "permitted_opposition_inputs": [
+      "FIFA points from the 2022-10-06 pre-tournament snapshot",
+      "FIFA ordinal rank from the 2022-10-06 pre-tournament snapshot",
+      "opponent xG from tournament matches completed before the current kickoff"
+    ],
+    "forbidden_opposition_inputs": [
+      "current-match xG or events",
+      "future-match xG or events",
+      "final tournament xG totals",
+      "knockout round or advancement stage",
+      "team-name fixed effects",
+      "post-tournament ratings"
+    ],
+    "tournament_totals_contract": "Minutes and contribution totals accumulate normally. There is no explicit durability multiplier, winner bonus, round bonus, or advancement bonus.",
+    "v3_preservation_contract": "Every existing *_v3 field and v3 artifact must remain byte-for-byte unchanged."
+  },
+  "cohort_counts": {
+    "published_unified": 585,
+    "eligible_outfield": 553,
+    "published_300plus_unified": 142,
+    "eligible_outfield_300plus": 126
+  },
+  "cohort_contracts": {
+    "minimum_minutes_for_300plus": 300,
+    "published_unified_definition": "The active unified publication cohort, including outfielders and eligible goalkeepers.",
+    "eligible_outfield_definition": "All non-goalkeeper rows carrying an eligible v3 outfield score.",
+    "ranking_scope": "Global outfield v4 ranks are computed on the fixed eligible_outfield cohort; unified publication rank is regenerated from the same release run.",
+    "abort_on_count_mismatch": true
+  },
+  "acceptance_gates_evaluated_after_selection": [
+    "The executed defensive_pipeline_stages exactly equal the preregistered order, with no missing or reordered stage.",
+    "The composite API rejects raw or merely unadjusted defensive values with ValueError; no public path variance-rescales raw defense.",
+    "The realized defensive variance share is within 0.35 to 0.50 inclusive and does not exceed parity.",
+    "Every attacking and defending mixture weight is continuous, sums to one with its counterpart, and remains within the selected bounds.",
+    "The hardest-schedule opposition fixture adjusts in the favorable direction and the easiest-schedule fixture does not receive the same lift.",
+    "The uncoupled raw-defense-rescaled test result is not reproduced by the released coupled pipeline.",
+    "Virgil van Dijk, Cristian Romero, and Nicolas Otamendi each improve by at least 100 global ranks from their frozen v3 fixtures, evaluated only after configuration lock.",
+    "Jude Bellingham enters the top 50 with a published two-channel decomposition, evaluated only after configuration lock.",
+    "Achraf Hakimi is Morocco's top-ranked outfielder, evaluated only after configuration lock.",
+    "Sofyan Amrabat improves materially from the frozen v3 fixture with movement attributable to the validated prevention term, evaluated only after configuration lock.",
+    "Lionel Messi remains number one and every attacker falling more than 15 ranks is reported and diagnosed.",
+    "Josip Juranovic's movement and channel attribution are reported; any further rise requires evidence-based opposition-context explanation.",
+    "Identity-shuffle invariance passes.",
+    "Every *_v3 column and artifact is byte-preserved.",
+    "Cohort counts are exactly 585, 553, 142, and 126 as defined in cohort_counts.",
+    "The full release suite passes without weakening an existing test."
+  ],
+  "selection_firewall": {
+    "named_validation_players_used_as_inputs": false,
+    "named_validation_players_used_for_grid_selection": false,
+    "publication_gates_run_only_after_configuration_lock": true,
+    "external_consensus_used_only_after_configuration_lock": true,
+    "final_rankings_used_for_grid_selection": false,
+    "post_hoc_tuning_permitted": false
+  }
+}

@@ -28,15 +28,15 @@ from src.coaching_selection import (  # noqa: E402
 DEFAULT_POSSESSIONS = (
     PROJECT_ROOT / "data" / "processed" / "world_cup_defensive_clusters.csv"
 )
-DEFAULT_LEADERBOARD = PROJECT_ROOT / "results" / "coaching_model_leaderboard.csv"
+DEFAULT_LEADERBOARD = PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_model_leaderboard.csv"
 DEFAULT_PREDICTIONS = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_coaching_model_oof_predictions.csv"
 )
 DEFAULT_BENCHMARK_MODEL = PROJECT_ROOT / "models" / "coaching_model_benchmark.joblib"
-DEFAULT_UNCERTAINTY = PROJECT_ROOT / "results" / "coaching_model_uncertainty.csv"
-DEFAULT_SELECTION = PROJECT_ROOT / "results" / "coaching_model_selection.md"
+DEFAULT_UNCERTAINTY = PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_model_uncertainty.csv"
+DEFAULT_SELECTION = PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_model_selection.md"
 DEFAULT_OPERATING_POINTS = (
-    PROJECT_ROOT / "results" / "coaching_model_operating_points.csv"
+    PROJECT_ROOT / "results" / "MIscellaneous" / "coaching_model_operating_points.csv"
 )
 DEFAULT_FINAL_MODEL = PROJECT_ROOT / "models" / "coaching_model_final.joblib"
 

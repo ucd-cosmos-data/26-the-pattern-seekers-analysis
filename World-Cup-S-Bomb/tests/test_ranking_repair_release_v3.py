@@ -23,6 +23,9 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 RESULTS_ROOT = PROJECT_ROOT / "results"
 REPORTS_ROOT = RESULTS_ROOT / "reports"
 RANKING_ROOT = REPORTS_ROOT / "ranking"
+CATALOG_ACTIVE_MODEL_VERSION = (
+    "outfield-tournament-impact-v4+goalkeeper-event-profile-v3"
+)
 
 
 @pytest.fixture(scope="module")
@@ -406,8 +409,8 @@ def test_release_manifests_use_portable_current_paths() -> None:
     assert refresh["schema_version"] == (
         "ranking-repair-refresh-manifest-3.0"
     )
-    assert master["active_model_version"] == ACTIVE_MODEL_VERSION
-    assert refresh["active_model_version"] == ACTIVE_MODEL_VERSION
+    assert master["active_model_version"] == CATALOG_ACTIVE_MODEL_VERSION
+    assert refresh["active_model_version"] == CATALOG_ACTIVE_MODEL_VERSION
     assert "POSIX" in master["path_contract"]
     assert "POSIX" in refresh["path_contract"]
 
@@ -463,7 +466,7 @@ def test_release_manifests_use_portable_current_paths() -> None:
         )
     )
     assert pipeline["status"] == "complete"
-    assert pipeline["active_model_version"] == ACTIVE_MODEL_VERSION
+    assert pipeline["active_model_version"] == CATALOG_ACTIVE_MODEL_VERSION
     assert pipeline["paths_are_project_relative_posix"] is True
     for field in ("ranking_manifest", "artifact_manifest"):
         _assert_portable_path(pipeline[field])

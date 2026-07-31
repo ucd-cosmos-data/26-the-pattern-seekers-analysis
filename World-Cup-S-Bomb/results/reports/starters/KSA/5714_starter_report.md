@@ -7,7 +7,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Team: Saudi Arabia
 - Position group: Goalkeeper
 - Functional role: Goalkeeper
-- Minutes: 298.6
+- Minutes: 298.5
 - Dedicated goalkeeper rank: 2.0
 - Dedicated goalkeeper score: 0.5912
 - Continuous goalkeeper score: 0.6569

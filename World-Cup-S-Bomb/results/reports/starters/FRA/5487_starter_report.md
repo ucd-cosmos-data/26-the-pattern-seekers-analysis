@@ -7,15 +7,15 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 - Team: France
 - Position group: Attacking Midfield/Wing
 - Functional role: Hybrid Playmaker / Roaming Creator
-- Minutes: 586.0
-- Global Rank v3: 10
+- Minutes: 586.1
+- Global Rank v3: 9
 - Team Rank v3: 3
-- Position Rank v3: 74
+- Position Rank v3: 68
 - Role Rank v3: 2
-- Tournament Impact: 2.8675
-- Role Quality: 0.3831
-- Impact interval: [0.8781, 5.5553]
-- Rank band: 4.0–121.0
+- Tournament Impact: 3.1716
+- Role Quality: 0.4083
+- Impact interval: [1.0488, 5.9739]
+- Rank band: 4–107
 - Uncertainty status: wide
 
 ## Decisive outcomes
@@ -31,7 +31,7 @@ This generated profile uses Qatar 2022 event evidence only. Player identity is d
 
 | Component | Value |
 |---|---|
-| Attack | 2.9248 |
+| Attack | 3.2290 |
 | Defense | -0.0574 |
 | Other | 0.0000 |
 
