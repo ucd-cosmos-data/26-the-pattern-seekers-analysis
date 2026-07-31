@@ -1,36 +1,33 @@
-# Daniel Ward — Qatar 2022 Player Profile
+# Daniel Ward — Qatar 2022 Goalkeeper Profile
 
-This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
-
-## Tournament Impact, Role Quality, and Uncertainty
+## Active tournament valuation
 
 - Team: Wales
-- Position group: Goalkeeper
-- Functional role: Goalkeeper
 - Minutes: 109.3
-- Dedicated goalkeeper rank: unranked
-- Dedicated goalkeeper score: unranked backup
-- Continuous goalkeeper score: unavailable
-- Separate shootout component: unavailable
-- Cross-position field: percentile-equivalent placement (publication fallback, not absolute common-unit value)
+- Status: Unranked (backup goalkeeper)
+- Goalkeeper rank: —
+- Consolidated Goalkeeper Value: —
+- Raw consolidated value: —
+- 95% score interval: — to —
+- Bootstrap rank interval: — to —
 
-## Decisive outcomes
+## Evidence channels
 
-- Non-penalty goals: 0
-- Regular penalty goals: 0
-- Actual assists: 0
-- Non-shootout xG: 0.0000
-- Non-shootout xA: 0.0000
-- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+| Channel | Value |
+|---|---:|
+| PSxG shot-stopping | — |
+| Clutch-save residual | — |
+| Regular-penalty impact | — |
+| Shootout win probability added | — |
+| Support value | — |
+| Reliability | — |
 
-## Active components
+The active goalkeeper ranking is one consolidated, identity-blind metric. It values
+ordinary shot prevention from calibrated post-shot probabilities, adds only the
+incremental residual for late high-consequence saves, and applies sample-size
+reliability to penalties, shootouts, and the final score. Advancement, awards,
+reputation, and named-player rules are not scoring inputs. Historical v3/v4
+fields remain in machine-readable archives for reproducibility, not as live
+alternative rankings.
 
-| Component | Value |
-|---|---|
-| Attack | — |
-| Defense | — |
-| Other | — |
-
-## Compatibility
-
-Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.
+Goalkeepers are excluded from the global outfield and 300-minute rankings.

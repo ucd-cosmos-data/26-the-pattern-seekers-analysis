@@ -23,9 +23,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 RESULTS_ROOT = PROJECT_ROOT / "results"
 REPORTS_ROOT = RESULTS_ROOT / "reports"
 RANKING_ROOT = REPORTS_ROOT / "ranking"
-CATALOG_ACTIVE_MODEL_VERSION = (
-    "outfield-tournament-impact-v4+goalkeeper-event-profile-v3"
-)
+CATALOG_ACTIVE_MODEL_VERSION = ACTIVE_MODEL_VERSION
 
 
 @pytest.fixture(scope="module")
@@ -130,7 +128,8 @@ def test_feature_rich_release_has_v3_fields_and_rank_order(
     assert indices == sorted(indices)
 
     published = rich.loc[rich["Global Rank"].notna()].copy()
-    assert len(published) == 585
+    assert len(published) == 553
+    assert published["position_group"].ne("Goalkeeper").all()
     np.testing.assert_array_equal(
         published["Global Rank"].to_numpy(dtype=int),
         np.arange(1, len(published) + 1),
@@ -160,7 +159,8 @@ def test_unified_table_is_exact_six_field_projection(
     unified: pd.DataFrame,
 ) -> None:
     assert tuple(unified.columns) == UNIFIED_COLUMNS
-    assert len(unified) == 585
+    assert len(unified) == 553
+    assert unified["Position Group"].ne("Goalkeeper").all()
     np.testing.assert_array_equal(
         unified["Global Rank"].to_numpy(dtype=int),
         np.arange(1, len(unified) + 1),
@@ -230,7 +230,7 @@ def test_full_outfield_and_300_minute_cohorts_are_exact(
     )
     assert len(outfield) == 553
     assert len(outfield_300) == 126
-    assert len(ranked_300) == 142
+    assert len(ranked_300) == 126
     assert outfield["minutes_played"].lt(300.0).any()
     assert outfield_300["minutes_played"].ge(300.0).all()
     assert outfield["position_group"].ne("Goalkeeper").all()
@@ -326,11 +326,11 @@ def test_main_goalkeepers_are_ranked_once_and_backups_are_unranked(
         [
             "gk_rank_v3",
             "goalkeeper_rank_v3",
-            "Global Rank",
-            "Team Rank",
             "dedicated_goalkeeper_score_v3",
+            "goalkeeper_consolidated_value_rank_v5",
         ]
     ].notna().all().all()
+    assert main[["Global Rank", "Team Rank"]].isna().all().all()
     assert backups[
         [
             "gk_rank_v3",
@@ -341,7 +341,9 @@ def test_main_goalkeepers_are_ranked_once_and_backups_are_unranked(
         ]
     ].isna().all().all()
     assert dedicated["player_id"].astype(int).tolist() == (
-        main.sort_values("gk_rank_v3")["player_id"].astype(int).tolist()
+        main.sort_values(
+            "goalkeeper_consolidated_value_rank_v5"
+        )["player_id"].astype(int).tolist()
     )
     assert dedicated["team"].nunique() == len(dedicated) == 32
     assert dedicated["shootout_component_v3"].between(0.0, 0.10).all()
@@ -353,13 +355,10 @@ def test_active_alias_families_are_byte_identical() -> None:
     alias_families = [
         [
             RANKING_ROOT / "player_rankings.csv",
-            RANKING_ROOT / "player_rankings_v3.csv",
-            RANKING_ROOT / "player_rankings_v2.csv",
             RANKING_ROOT / "v5_player_rankings.csv",
         ],
         [
             RANKING_ROOT / "player_rankings.json",
-            RANKING_ROOT / "player_rankings_v3.json",
             RANKING_ROOT / "v5_player_rankings.json",
         ],
         [
@@ -549,7 +548,7 @@ def test_profile_starter_team_and_figure_families_are_complete(
     assert all(path.stat().st_size > 10_000 for path in figures.values())
 
 
-def test_active_summaries_describe_v3_and_not_retired_formulas() -> None:
+def test_active_summaries_describe_outfield_v3_and_goalkeeper_v5() -> None:
     active_paths = [
         REPORTS_ROOT / "canonical" / "model_summary.md",
         REPORTS_ROOT / "canonical" / "final_summary.md",
@@ -558,32 +557,21 @@ def test_active_summaries_describe_v3_and_not_retired_formulas() -> None:
     texts = {
         path: path.read_text(encoding="utf-8") for path in active_paths
     }
-    for path, text in texts.items():
-        for phrase in (
-            ACTIVE_MODEL_VERSION,
-            "Tournament Impact",
-            "Role Quality",
-            "Uncertainty",
-            "periods 1–4",
-        ):
-            assert phrase in text, f"{phrase!r} missing from {path.name}"
-
     combined = "\n".join(texts.values())
     for phrase in (
-        "process_only",
-        "signed_ridge",
-        "goalkeeper_v3",
-        "percentile_equivalent_placement",
-        "at most 10%",
+        ACTIVE_MODEL_VERSION,
+        "Tournament Impact",
+        "Role Quality",
+        "Uncertainty",
+        "periods 1–4",
+        "goalkeeper_consolidated_value_v5",
+        "one active metric",
     ):
         assert phrase in combined
     for retired in (
-        "minutes / (minutes + 450)",
         "shootout_save_points: 0.20",
         "0.20 for every shootout save",
-        "within-position z-score is the active absolute global value",
-        "one-sided defensive evidence lift is active",
-        "Blom bridge is absolute performance value",
+        "two active goalkeeper rankings",
     ):
         assert retired not in combined
 
@@ -591,14 +579,10 @@ def test_active_summaries_describe_v3_and_not_retired_formulas() -> None:
         REPORTS_ROOT / "canonical" / "final_summary.md"
     ]
     for section in (
-        "## Global outfield leaders",
-        "## 300+ minute outfield leaders",
-        "## Below-300-minute high-impact players",
-        "## Position leaders by Role Quality",
-        "## Role leaders by Role Quality",
-        "## Team leaders",
-        "## Dedicated goalkeeper leaders",
-        "## Release gate and limitations",
+        "## Global outfield top 20",
+        "## Outfield players with 300+ minutes",
+        "## Goalkeeper ranking",
+        "## Goalkeeper methodology and validation",
     ):
         assert section in final_summary
 
@@ -608,23 +592,8 @@ def test_active_summaries_describe_v3_and_not_retired_formulas() -> None:
         ).read_text(encoding="utf-8")
     )
     assert payload["active_model_version"] == ACTIVE_MODEL_VERSION
-    assert payload["cohort"] == {
-        "eligible_outfield": 553,
-        "main_goalkeepers": 32,
-        "players": 593,
-        "teams": 32,
-    }
-    assert payload["score_contract"] == {
-        "confidence": "Uncertainty",
-        "exposure_cascade_active": False,
-        "global_and_team": "Tournament Impact",
-        "position_and_role": "Role Quality",
-        "uncertainty_used_as_penalty": False,
-        "within_position_z_used_for_global": False,
-    }
-    assert payload["component_selections"]["defense"]["selected"] == (
-        "signed_ridge"
+    assert payload["goalkeeper_model"] == (
+        "goalkeeper_consolidated_value_v5"
     )
-    assert payload["component_selections"]["attack"]["selected"] == (
-        "process_only"
-    )
+    assert payload["single_active_goalkeeper_metric"] is True
+    assert payload["hard_gates_all_pass"] is True

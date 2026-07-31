@@ -1,36 +1,33 @@
-# Francisco Guillermo Ochoa Magaña — Qatar 2022 Starter Report
+# Francisco Guillermo Ochoa Magaña — Qatar 2022 Goalkeeper Profile
 
-This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
-
-## Tournament Impact, Role Quality, and Uncertainty
+## Active tournament valuation
 
 - Team: Mexico
-- Position group: Goalkeeper
-- Functional role: Goalkeeper
 - Minutes: 291.5
-- Dedicated goalkeeper rank: 31.0
-- Dedicated goalkeeper score: 0.3322
-- Continuous goalkeeper score: 0.3691
-- Separate shootout component: 0.0000
-- Cross-position field: percentile-equivalent placement (publication fallback, not absolute common-unit value)
+- Status: Ranked (team main goalkeeper)
+- Goalkeeper rank: 26
+- Consolidated Goalkeeper Value: 0.0391
+- Raw consolidated value: 0.0169
+- 95% score interval: 0.0303 to 0.3002
+- Bootstrap rank interval: 14 to 30
 
-## Decisive outcomes
+## Evidence channels
 
-- Non-penalty goals: 0
-- Regular penalty goals: 0
-- Actual assists: 0
-- Non-shootout xG: 0.0000
-- Non-shootout xA: 0.0000
-- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+| Channel | Value |
+|---|---:|
+| PSxG shot-stopping | -0.0288 |
+| Clutch-save residual | 0.0151 |
+| Regular-penalty impact | 0.0745 |
+| Shootout win probability added | 0.0000 |
+| Support value | -0.1174 |
+| Reliability | 0.3931 |
 
-## Active components
+The active goalkeeper ranking is one consolidated, identity-blind metric. It values
+ordinary shot prevention from calibrated post-shot probabilities, adds only the
+incremental residual for late high-consequence saves, and applies sample-size
+reliability to penalties, shootouts, and the final score. Advancement, awards,
+reputation, and named-player rules are not scoring inputs. Historical v3/v4
+fields remain in machine-readable archives for reproducibility, not as live
+alternative rankings.
 
-| Component | Value |
-|---|---|
-| Attack | — |
-| Defense | — |
-| Other | — |
-
-## Compatibility
-
-Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.
+Goalkeepers are excluded from the global outfield and 300-minute rankings.

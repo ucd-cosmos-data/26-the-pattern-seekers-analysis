@@ -1,4 +1,4 @@
-"""Contract tests for the complete deterministic v3 final-summary DOCX."""
+"""Contract tests for the deterministic promoted goalkeeper v5 DOCX."""
 
 from __future__ import annotations
 
@@ -18,22 +18,14 @@ RANKING_PATH = PROJECT_ROOT / "results/reports/ranking/player_rankings.csv"
 GOALKEEPER_PATH = (
     PROJECT_ROOT / "results/reports/ranking/goalkeeper_rankings.csv"
 )
-GENERATOR = PROJECT_ROOT / "scripts/update_unified_final_summary_docx.py"
+GENERATOR = PROJECT_ROOT / "scripts/build_goalkeeper_v5_final_docx.py"
 ACTIVE_MODEL = "ranking-repair-v3.0-qatar-2022"
 REQUIRED_SECTIONS = (
-    "Executive Summary",
-    "Scope and Event Boundary",
-    "Published Ranking Products",
-    "Active Methodology",
-    "Champion–Challenger Validation",
-    "Global Outfield Leaders",
-    "300+ Minute Outfield Leaders",
-    "Below-300-Minute High-Impact Players",
-    "Position Leaders by Role Quality",
-    "Role Leaders by Role Quality",
-    "Team Leaders",
-    "Dedicated Goalkeeper Leaders",
-    "Release Gate and Limitations",
+    "Active model",
+    "Global outfield top 20",
+    "Outfield players with 300+ minutes",
+    "Goalkeeper ranking",
+    "Goalkeeper methodology and validation",
 )
 
 
@@ -61,38 +53,42 @@ def test_docx_is_complete_and_matches_active_rankings() -> None:
         "Uncertainty",
         "periods 1–4",
         "Period 5",
-        "40% shot stopping",
-        "10% cap",
-        "percentile_equivalent_placement",
+        "Consolidated Goalkeeper Value v5",
+        "one active metric",
+        "All twelve hard promotion gates passed",
     ):
         assert phrase in text
-    assert "Part IX: Unified tournament publication layer" not in text
-    assert len(document.tables) == 9
+    assert len(document.tables) == 3
 
     rankings = pd.read_csv(RANKING_PATH, low_memory=False)
     expected_global = (
-        rankings.loc[rankings["position_group"].ne("Goalkeeper")]
-        .sort_values(["global_rank_v3", "player_id"], kind="mergesort")
+        rankings.loc[rankings["publication_global_rank_v5"].notna()]
+        .sort_values(
+            ["publication_global_rank_v5", "player_id"],
+            kind="mergesort",
+        )
         .iloc[0]
     )
-    global_table = _table_by_header(document, "Rank")
+    global_table = _table_by_header(document, "Global Rank")
     assert global_table.cell(1, 0).text == str(
-        int(expected_global["global_rank_v3"])
+        int(expected_global["publication_global_rank_v5"])
     )
     assert global_table.cell(1, 1).text == expected_global["player_name"]
     assert global_table.cell(1, 2).text == expected_global["team"]
 
     goalkeepers = pd.read_csv(GOALKEEPER_PATH, low_memory=False).sort_values(
-        ["goalkeeper_rank_v3", "player_id"],
+        ["goalkeeper_consolidated_value_rank_v5", "player_id"],
         kind="mergesort",
     )
     assert len(goalkeepers) == 32
     expected_goalkeeper = goalkeepers.iloc[0]
-    goalkeeper_table = _table_by_header(document, "GK")
+    goalkeeper_table = _table_by_header(document, "GK Rank")
     assert goalkeeper_table.cell(1, 0).text == str(
-        int(expected_goalkeeper["goalkeeper_rank_v3"])
+        int(expected_goalkeeper["goalkeeper_consolidated_value_rank_v5"])
     )
-    assert goalkeeper_table.cell(1, 1).text == expected_goalkeeper["player_name"]
+    assert goalkeeper_table.cell(1, 1).text == expected_goalkeeper[
+        "player_name"
+    ]
     assert goalkeeper_table.cell(1, 2).text == expected_goalkeeper["team"]
 
 

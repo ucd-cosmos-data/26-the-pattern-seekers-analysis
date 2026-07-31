@@ -1,37 +1,40 @@
 # Qatar — Qatar 2022 Team Profile
 
-Tournament Impact orders the team table. Role Quality and Uncertainty remain separate products.
+The team-leader table contains outfield players only. Goalkeepers use a
+separate, position-specific Consolidated Goalkeeper Value v5 ranking and are
+shown in their own section.
 
 ## Team leaders
 
-| Team Rank | Global Rank | Player Name | Position Group | Functional Role | Minutes Played | Tournament Impact Raw V3 | Role Quality V3 | Uncertainty Status V3 |
-|---|---|---|---|---|---|---|---|---|
-| 1 | 147 | Ismaeel Mohammad Mohammad | Fullback/Wingback | Attacking Wingback | 180.6167 | 0.8079 | 0.2261 | wide |
-| 2 | 168 | Almoez Ali Zainalabiddin Abdulla | Forward | Pressing Forward | 231.4000 | 0.7440 | 0.4712 | wide |
-| 3 | 238 | Pedro Miguel Correia | Center Back | Deep Playmaker | 273.6000 | 0.5282 | 0.1737 | wide |
-| 4 | 251 | Akram Hassan Afif | Forward | Progressive Winger | 287.4000 | 0.4875 | 0.2366 | wide |
-| 5 | 289 | Hassan Khalid Al Heidos | Central/Wide Midfield | Ball-Winner | 209.0833 | 0.4031 | 0.1335 | wide |
-| 6 | 310 | Boualem Khoukhi | Center Back | Sweeper CB | 287.4000 | 0.3506 | 0.0983 | wide |
-| 7 | 316 | Abdelkarim Hassan Al Haj Fadlalla | Center Back | Ball-Playing Centre-Back | 287.4000 | 0.3380 | 0.0823 | wide |
-| 8 | 319 | Homam Alamin Ahmed | Fullback/Wingback | Wide Creator | 273.5000 | 0.3309 | 0.1693 | wide |
-| 9 | 364 | Mohammed Muntari | Forward | Target Forward / Penalty-Box Anchor | 77.7500 | 0.2631 | 0.5064 | wide |
-| 10 | 404 | Karim Boudiaf | Defensive Midfield | Holding Anchor | 195.8667 | 0.1849 | 0.1054 | wide |
-| 11 | 499 | Abdulaziz Hatem Mohammed Abdullah | Central/Wide Midfield | Ball-Winner | 207.5000 | 0.0622 | 0.1131 | wide |
-| 12 | 539 | Meshaal Aissa Barsham | Goalkeeper | Goalkeeper | 192.0833 | — | — | moderate |
-| 13 | 552 | Bassam Hisham Al Rawi | Center Back | Sweeper CB | 95.3167 | -0.0057 | 0.0817 | wide |
-| 14 | 573 | Assim Omer Al Haj Madibo | Defensive Midfield | Holding Anchor | 159.8500 | -0.0299 | 0.0910 | wide |
-
-## Outfield component totals
-
-- Attack component total: 4.2012
-- Defensive component total: 0.2635
-- Regulation/extra-time goals: 1
-- Shootout goals excluded from ordinary impact: 0
+| Team Rank | Global Rank | Player | Position Group | Functional Role | Minutes |
+|---|---|---|---|---|---|
+| 1 | 139 | Ismaeel Mohammad Mohammad | Fullback/Wingback | Attacking Wingback | 180.6167 |
+| 2 | 159 | Almoez Ali Zainalabiddin Abdulla | Forward | Pressing Forward | 231.4000 |
+| 3 | 225 | Pedro Miguel Correia | Center Back | Deep Playmaker | 273.6000 |
+| 4 | 237 | Akram Hassan Afif | Forward | Progressive Winger | 287.4000 |
+| 5 | 273 | Hassan Khalid Al Heidos | Central/Wide Midfield | Ball-Winner | 209.0833 |
+| 6 | 293 | Boualem Khoukhi | Center Back | Sweeper CB | 287.4000 |
+| 7 | 299 | Abdelkarim Hassan Al Haj Fadlalla | Center Back | Ball-Playing Centre-Back | 287.4000 |
+| 8 | 302 | Homam Alamin Ahmed | Fullback/Wingback | Wide Creator | 273.5000 |
+| 9 | 344 | Mohammed Muntari | Forward | Target Forward / Penalty-Box Anchor | 77.7500 |
+| 10 | 382 | Karim Boudiaf | Defensive Midfield | Holding Anchor | 195.8667 |
+| 11 | 472 | Abdulaziz Hatem Mohammed Abdullah | Central/Wide Midfield | Ball-Winner | 207.5000 |
+| 12 | 522 | Bassam Hisham Al Rawi | Center Back | Sweeper CB | 95.3167 |
+| 13 | 542 | Assim Omer Al Haj Madibo | Defensive Midfield | Holding Anchor | 159.8500 |
 
 ## Main goalkeeper
 
-| Goalkeeper Rank V3 | Player Name | Continuous Goalkeeper Rating V3 | Shootout Component V3 | Dedicated Goalkeeper Score V3 |
-|---|---|---|---|---|
-| 30.0000 | Meshaal Aissa Barsham | 0.4005 | 0.0000 | 0.3605 |
+| GK Rank | Goalkeeper | Consolidated GK Value | PSxG Value | Clutch Value | Shootout WPA |
+|---|---|---|---|---|---|
+| 23 | Meshaal Aissa Barsham | 0.0440 | -0.0467 | 0.0000 | 0.0000 |
 
-All rows use Qatar 2022 evidence only. Player/team identity, advancement, awards, reputation, and external rankings do not enter any score.
+## Team evidence summary
+
+- Eligible outfield players: 13
+- Mean creation score: 0.4849
+- Mean defensive score: 0.4605
+- Mean ball-security score: 0.5492
+- Mean defensive disruption xD90: 6.5679
+
+The goalkeeper v5 model is identity-blind and uses no team advancement,
+pedigree, awards, reputation, or opponent-name feature.

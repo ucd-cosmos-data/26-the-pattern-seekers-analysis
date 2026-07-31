@@ -1,491 +1,511 @@
 {
-  "active_model_version": "outfield-tournament-impact-v4+goalkeeper-event-profile-v3",
-  "artifact_count": 97,
+  "active_model_version": "ranking-repair-v3.0-qatar-2022",
+  "artifact_count": 101,
   "artifacts": [
     {
-      "bytes": 116223,
+      "bytes": 124477,
       "path": "results/reports/ranking/by_team/ARG.csv",
-      "sha256": "1a1190f9562e5c521f26026d1d24a42a29c1b9196e5b6130203a272382956bdb"
+      "sha256": "9cc8003039f5761ad44eba1b3145055eda06a08131868187becaa1dce2779175"
     },
     {
-      "bytes": 98347,
+      "bytes": 105886,
       "path": "results/reports/ranking/by_team/AUS.csv",
-      "sha256": "3292b879a1f53654c701bfca84b54df174bb7b73f967122fad165fb959b51ed3"
+      "sha256": "ea3228eb7c25b89c05378da7c3fb3fa94caa3281f367e230f1644bacee3da00a"
     },
     {
-      "bytes": 98520,
+      "bytes": 106011,
       "path": "results/reports/ranking/by_team/BEL.csv",
-      "sha256": "bb86d847f322aa9df0b0d0b14e2e56128906236b6daa082438d68c724f65d9dc"
+      "sha256": "f5074b65b8e8f8b940cf986c24b6bba160023aeedbad5ea821be9f754a58b09c"
     },
     {
-      "bytes": 139687,
+      "bytes": 149443,
       "path": "results/reports/ranking/by_team/BRA.csv",
-      "sha256": "b37caa9c45d15fe2fb6c19ccc596c0145b5a0eb1ca3fb53b1cf82ccb3fa87d5a"
+      "sha256": "afa6f16cab78ee02a06cc497773e3c731c3e6f8bf0038cc91325333c37dd2e08"
     },
     {
-      "bytes": 94441,
+      "bytes": 101456,
       "path": "results/reports/ranking/by_team/CAN.csv",
-      "sha256": "3aad2c679b3a49488a1ca4af326bebce1b6c642827393603760f8f3c0d2554ef"
+      "sha256": "dfa25f68f87c53e278ff41025343f2906f7169e6315f2a6438d096980469baff"
     },
     {
-      "bytes": 101003,
+      "bytes": 108991,
       "path": "results/reports/ranking/by_team/CMR.csv",
-      "sha256": "1334770dfe9fca9048b9440037085ee2c7933940ad0b66744a7b349e9571a969"
+      "sha256": "b9a12f3de320f219f2f8412ddd61a0e363fed75b2db0485a1986006f6bf5cbf0"
     },
     {
-      "bytes": 97554,
+      "bytes": 105346,
       "path": "results/reports/ranking/by_team/CRC.csv",
-      "sha256": "bef4bcf0b52cadfff397105420e2a18eb3cb0b8da0ef990998386a7a2cc4e6ac"
+      "sha256": "729344b061d7920cde502e7ebd4211316f7d432b83f8a04a8b51c2baa675a171"
     },
     {
-      "bytes": 115545,
+      "bytes": 123769,
       "path": "results/reports/ranking/by_team/CRO.csv",
-      "sha256": "d44234824d2ff5f7ad8bf5e8bfac7eea3353d764b357cd4c00a13e5cf46267fd"
+      "sha256": "26269fea3c21a1af54145614b77d64584341e99767c0e36e1a5afb8bded0d96e"
     },
     {
-      "bytes": 103772,
+      "bytes": 111566,
       "path": "results/reports/ranking/by_team/DEN.csv",
-      "sha256": "c7f8e19b36cc9ca3bc01ab30ccac64969c4ba3e3fbd06a53de30e71e6878af92"
+      "sha256": "3c7d628f3fec55b32249ef7f83a19badbe2b101a3457054f56ec8fde8dfd6212"
     },
     {
-      "bytes": 93033,
+      "bytes": 100448,
       "path": "results/reports/ranking/by_team/ECU.csv",
-      "sha256": "1fed0783bf3ed6f1ed1003290a5ea8506d7cec998992324ae7a469526d52114d"
+      "sha256": "ee605f8ab92a274826e05a2e6ab4b60a4f713b36eac3372958b837b69cc78ca3"
     },
     {
-      "bytes": 109994,
+      "bytes": 117829,
       "path": "results/reports/ranking/by_team/ENG.csv",
-      "sha256": "620320ee00107e16842f631268d570c8932bc126878bcf8bccffa94db1850558"
+      "sha256": "3a4b6a9767cb0d7e30d78ca0a1d040a032ff6e63c741dc164e2b0384dcd8cf28"
     },
     {
-      "bytes": 113425,
+      "bytes": 122026,
       "path": "results/reports/ranking/by_team/ESP.csv",
-      "sha256": "0385ee5d9c5e23481c5ee1294322cf03e377279e700f83df349e0994c3c068eb"
+      "sha256": "2339ab6f86c051705eb0491c6d248b7d2b44d7a1811c8863aa5a7f2d15ae5bd2"
     },
     {
-      "bytes": 123762,
+      "bytes": 132635,
       "path": "results/reports/ranking/by_team/FRA.csv",
-      "sha256": "56dfc7c18a9273eec551c09d519240fda4e69c7b5af97aee99a03ac4db5ae583"
+      "sha256": "8c8d2010d903913d834a52bc57ef723da04a7294d94d0408f200bbd7a386a012"
     },
     {
-      "bytes": 98206,
+      "bytes": 105666,
       "path": "results/reports/ranking/by_team/GER.csv",
-      "sha256": "e9101fc1bed97bc65274636c483ca6b721272dde3a813950b2d08cc822f2d97f"
+      "sha256": "1404162f7f8f2d54de6bdc602577dc74dc1ec8750bd227a36adfa2c57a439f8e"
     },
     {
-      "bytes": 97146,
+      "bytes": 104913,
       "path": "results/reports/ranking/by_team/GHA.csv",
-      "sha256": "da8256a2baa9f48d79fa93c0efb601cf67bab47d77dcedb45138ff7fea62f02b"
+      "sha256": "ac9c3b23468a8a6f13fe4df945f585206c9cf2c540eb5f431a1d54d82e2c93dd"
     },
     {
-      "bytes": 110407,
+      "bytes": 119081,
       "path": "results/reports/ranking/by_team/IRN.csv",
-      "sha256": "205f5fa594027247b6c9a1666589a52dea339a1c983c7f0caf121219c1107c60"
+      "sha256": "1d84d4c82b8b7f6a08ce5fc5c31086c40465fa4d4416f60fd7a531572af0e975"
     },
     {
-      "bytes": 124068,
+      "bytes": 133224,
       "path": "results/reports/ranking/by_team/JPN.csv",
-      "sha256": "5ae33d53a9492e942bb8f387a23def51664c2e40419a8cdca8dbf1546ba13a9a"
+      "sha256": "28358a7d46aeeef5e03c978ff91109573278ec0784fb00ef0b98635e8ab7d3de"
     },
     {
-      "bytes": 109216,
+      "bytes": 117307,
       "path": "results/reports/ranking/by_team/KOR.csv",
-      "sha256": "4b25fa04219462985e51be6af227370630f77bec395d01cf67aa753cfd0e175a"
+      "sha256": "024a18a0fc88f01283986330407dbc182355e08a441e833c7166f8fe2055c7c5"
     },
     {
-      "bytes": 112754,
+      "bytes": 121556,
       "path": "results/reports/ranking/by_team/KSA.csv",
-      "sha256": "041e6b29048fe096f80ea889abff26d65c0f98bc6fb2680d01bb6985976db742"
+      "sha256": "b488418ad891decf91c8f2beb518d4cddb6e5afb02bafe9bd78648643d6c6128"
     },
     {
-      "bytes": 128676,
+      "bytes": 137928,
       "path": "results/reports/ranking/by_team/MAR.csv",
-      "sha256": "3487bae7500727a6d7187305baf5e62b3f80e4314307a2f70af4fbf4d16db9b5"
+      "sha256": "037b03b981c51de9b8915e6a05206ed694a61373469efe6b4e9ee67cceed3f38"
     },
     {
-      "bytes": 104132,
+      "bytes": 112000,
       "path": "results/reports/ranking/by_team/MEX.csv",
-      "sha256": "e22a4b58944d0ea5b22bbb289b85f5eef9b9ff8565a4ca7ed1d27f4bf5faaf29"
+      "sha256": "3a45d2c975ff650b1e46088ecc9ed90905f01427a8dea54854618a2298f94068"
     },
     {
-      "bytes": 105090,
+      "bytes": 112710,
       "path": "results/reports/ranking/by_team/NED.csv",
-      "sha256": "57f29628ca1559fb3a40d0557d583cbc0b1b2aeee22ff232aae4927a7fbe4d9a"
+      "sha256": "fc1882ef19c426eead07ca1eab1d5994c10a9da817c06fc4e577f633f79c000d"
     },
     {
-      "bytes": 92877,
+      "bytes": 100202,
       "path": "results/reports/ranking/by_team/POL.csv",
-      "sha256": "ad0f6f490a28d0faaf584cb7506466e4cc6cafbca1ecaecb04078c9b83b82c69"
+      "sha256": "fe34dacb750d488633671f25f9cf2d509e1674f0745dd346a62103c14e80de6b"
     },
     {
-      "bytes": 126776,
+      "bytes": 135472,
       "path": "results/reports/ranking/by_team/POR.csv",
-      "sha256": "d55f5826dbe54ec841b7f89caeac2668c21af6b76e19a7762301f067988442ae"
+      "sha256": "b79d61ef2e1470bb6b981c3bb811d9df30d9e7f7744c01d1269a85bc8636a53e"
     },
     {
-      "bytes": 85528,
+      "bytes": 92596,
       "path": "results/reports/ranking/by_team/QAT.csv",
-      "sha256": "b52f1ff20867e686a8616a830e876c94f45f4577d60c41fe479c46657ee98d42"
+      "sha256": "30429caa1406215b3a610f626804c48f4a39c1543cdbe59e409af24e2d93e91d"
     },
     {
-      "bytes": 104956,
+      "bytes": 112538,
       "path": "results/reports/ranking/by_team/SEN.csv",
-      "sha256": "d102a5610ff1683ffe2503eb0477085fc56bf720571aecc9e332b7c338e88ed7"
+      "sha256": "2c2e22961d6ec566cc354d96cef054d252db7a1efd02494b404b89017d614f3c"
     },
     {
-      "bytes": 92559,
+      "bytes": 99922,
       "path": "results/reports/ranking/by_team/SRB.csv",
-      "sha256": "832db28ace792b3b65aa5f68dfdf10135df06a9137dd580cbdd252e6088fc9ba"
+      "sha256": "8fdb693e721a2362f9695ffc18221afec93c126dbf02363924a76e64947df15a"
     },
     {
-      "bytes": 107298,
+      "bytes": 115452,
       "path": "results/reports/ranking/by_team/SUI.csv",
-      "sha256": "c910d55ce46185edccd5bdf8bc9f90e7b7f96c52ccb97b173274c5666ff019b7"
+      "sha256": "8fab37b8626daad852be19dfd97222aac8e2157e02221051b3ee58557b4c6983"
     },
     {
-      "bytes": 103169,
+      "bytes": 111055,
       "path": "results/reports/ranking/by_team/TUN.csv",
-      "sha256": "c5156e8c8dcd8e62a842a4eccb1b6b5ef302466d438a58009e20174ed893588e"
+      "sha256": "c97cc8bf60903e80aa78ea6fc94f47ff0ea3ce8bb111ffef38e7770c38d7e2f9"
     },
     {
-      "bytes": 98721,
+      "bytes": 106236,
       "path": "results/reports/ranking/by_team/URU.csv",
-      "sha256": "ea2ba28c9c286da1f4d19c31b138aa20d61328d436d42c5471aa2907f87dd4ad"
+      "sha256": "e41618896938614561420bed7e69078912edba164ae75e89a195187a39996e26"
     },
     {
-      "bytes": 104063,
+      "bytes": 111858,
       "path": "results/reports/ranking/by_team/USA.csv",
-      "sha256": "b4922528adc14249595c3eeef1a5495c915eaf833c3f0c99ec1c1153c6d35ef2"
+      "sha256": "b6f5f8739252a099175f8cc1fbb30646e2b8765febb513198714a6e32e28ab09"
     },
     {
-      "bytes": 86643,
+      "bytes": 93468,
       "path": "results/reports/ranking/by_team/WAL.csv",
-      "sha256": "f3f43ba6d424c1d5e729306e872a979f719855e0278b422d93c13dcae4460f0c"
+      "sha256": "5e645124a89931409ffdb4f8addba35af0b4212acd247b9c80d02118d3eb9bde"
     },
     {
-      "bytes": 1303,
+      "bytes": 1420,
       "path": "results/reports/ranking/by_team_unified/ARG.csv",
-      "sha256": "327826a0daefe9ee36aa00769383e2a78cbb30fb0cf2bf096aff1caa52ab1aba"
+      "sha256": "bec18a87ca3fb7ce846958a67a57e208b629f676b77bf1933872a8bc0c547ccc"
     },
     {
-      "bytes": 940,
+      "bytes": 1055,
       "path": "results/reports/ranking/by_team_unified/AUS.csv",
-      "sha256": "239ca71ec62eac00d1f51c1d0b56003edce3c4c4ffe8e7ac239446c7c4190ea2"
+      "sha256": "b99cc190c28e7da029d68702fd496c1afb22208858fbca34889d097975d50a99"
     },
     {
-      "bytes": 974,
+      "bytes": 1085,
       "path": "results/reports/ranking/by_team_unified/BEL.csv",
-      "sha256": "9d980ffff8359d46544ef1de4a257f11a958218e0632b4ae1f8a7a173d711204"
+      "sha256": "a6e38241f39d1bd9f1608db6f63a7427dfad850483c7bd4b416d71350c029ceb"
     },
     {
-      "bytes": 1579,
+      "bytes": 1743,
       "path": "results/reports/ranking/by_team_unified/BRA.csv",
-      "sha256": "f20e61eba9392594aa82c1f6a929115e821467fd4b959e3bd6d6ccaf2eb3ed8f"
+      "sha256": "d3745f83138a432f619ac97c09655ea7744c3d7e6443fb89413b9051f0cf0693"
     },
     {
-      "bytes": 897,
+      "bytes": 1002,
       "path": "results/reports/ranking/by_team_unified/CAN.csv",
-      "sha256": "8e1bdea808a12c57c5d3bca39adc8bf6f66a6dbec3177c7c2c82f44eb1b5876e"
+      "sha256": "28bf565ecd729b281267d68e955faefeb19c27c66e0d252fb425ebc8505566ac"
     },
     {
-      "bytes": 1074,
+      "bytes": 1178,
       "path": "results/reports/ranking/by_team_unified/CMR.csv",
-      "sha256": "35399077b9c00e99e60f9e6d83e4f03882e4896fbb336c6de0175e87a72b7bd8"
+      "sha256": "b78131a87bcbc7cf87f4daf66b915b943db5d4b08d8b0b8110179ac4709d5268"
     },
     {
-      "bytes": 1162,
+      "bytes": 1270,
       "path": "results/reports/ranking/by_team_unified/CRC.csv",
-      "sha256": "689ad7bdf649fd6f61e828bb13f53a3de64cf92234ed2351b96dbb67ed780aa0"
+      "sha256": "520746cb70ea9cdf43de4b1650c194dda66f39ccc9c46f2d996ef8d723cb8f7a"
     },
     {
-      "bytes": 1111,
+      "bytes": 1242,
       "path": "results/reports/ranking/by_team_unified/CRO.csv",
-      "sha256": "f7f5897c1b3675f01bee7680c5d7f63ca47af68c191ae000f1d9319ab89405b9"
+      "sha256": "8ea3e5644d88d268f9cf1a0d4fbbcefe775e5ba00cf1ffa7f24e086cf1b82f3b"
     },
     {
-      "bytes": 1071,
+      "bytes": 1191,
       "path": "results/reports/ranking/by_team_unified/DEN.csv",
-      "sha256": "5eb3775d927f351e2c5913fa1c012d6d684568be5db21bf1b0b5dbebacc0d718"
+      "sha256": "55f82540deca85cbcd87f1c510384f443cf30922647386e235bf4a6346f2ac5b"
     },
     {
-      "bytes": 1153,
+      "bytes": 1249,
       "path": "results/reports/ranking/by_team_unified/ECU.csv",
-      "sha256": "ba6da31a7e5087340742d418724aa26e8aa8c5256496ef8ff1dd8c47b644a034"
+      "sha256": "809475f33fcdf98194aa6b7c99192b943d706b5182edcbf6b919fde505b38f23"
     },
     {
-      "bytes": 1044,
+      "bytes": 1169,
       "path": "results/reports/ranking/by_team_unified/ENG.csv",
-      "sha256": "3c17572eab0f5ad574ea410b899cad23e3fac126a48f3b054c7f78063e1c7b3e"
+      "sha256": "68bf2b24a5bee52ed5dfafc191a1fce002668ddbee914ae268cc3bb9518fc62d"
     },
     {
-      "bytes": 1236,
+      "bytes": 1371,
       "path": "results/reports/ranking/by_team_unified/ESP.csv",
-      "sha256": "dccff1765f428c3755bd28849379cf21aead26fd492017a87d240374c003d4a2"
+      "sha256": "5f997ec9f92ad5bed2301efa4c39b93f9e5e2f6f43adee984bf92e1ab7508ee2"
     },
     {
-      "bytes": 1196,
+      "bytes": 1349,
       "path": "results/reports/ranking/by_team_unified/FRA.csv",
-      "sha256": "34f308b18492605defa23c8d20c2569b3d6cfeacb1a3761287c2c401ea43299a"
+      "sha256": "b1c49d4d374ba7f71837cb51adaeb3827189769ab1e3bd3f4a645b937a3b6796"
     },
     {
-      "bytes": 933,
+      "bytes": 1040,
       "path": "results/reports/ranking/by_team_unified/GER.csv",
-      "sha256": "5b91e598ee57b5397d8de4c2761c37661abe437467e90c540018d524a86632dd"
+      "sha256": "58e62fa5e20c0f672e8434a00aa1103a44e3743e33206d604bce81b5ccc62023"
     },
     {
-      "bytes": 953,
+      "bytes": 1067,
       "path": "results/reports/ranking/by_team_unified/GHA.csv",
-      "sha256": "7e176dfc7110ac5bf67113e768c0d9fce0f1949283edaf2a0864a113d9805f13"
+      "sha256": "aa302e51a4ff82d30ccf414f3628c01957ed13f33443294ab7a0a546f0f5819d"
     },
     {
-      "bytes": 1038,
+      "bytes": 1168,
       "path": "results/reports/ranking/by_team_unified/IRN.csv",
-      "sha256": "469d0db06eaaa6fe0092dbc4aaa2183ec5859335043bcf244d01e4c9cab0d60e"
+      "sha256": "662a583e0095bf6bfaf442226cc4aea1b043189678af06fa3d09429e67ee4f87"
     },
     {
-      "bytes": 1108,
+      "bytes": 1270,
       "path": "results/reports/ranking/by_team_unified/JPN.csv",
-      "sha256": "0a80e21dd3090fa7ddca466c069c5cf2b344a77d58e5a9ab49bc5c4cdbcc3763"
+      "sha256": "dad79022f6d29b423efc63abe23717a200188cc338675ccdc80dbb849f85306a"
     },
     {
-      "bytes": 1113,
+      "bytes": 1237,
       "path": "results/reports/ranking/by_team_unified/KOR.csv",
-      "sha256": "28f27555ba17babc7a6a62d5cc7ef786d8d80e07c9142a0477058b2c645090ae"
+      "sha256": "b635e928a5d694ee0538da4a939910e5b0087eb8ec9c06b625ab86f10f1ee0ba"
     },
     {
-      "bytes": 1375,
+      "bytes": 1508,
       "path": "results/reports/ranking/by_team_unified/KSA.csv",
-      "sha256": "e0b2fcc7b210b91fbcb385f9b02b41120e4c16b971a223d6587937978558fb35"
+      "sha256": "bab7315dab21008418be2323cf8301e9aadea3401187e69c04d052e04f8f912c"
     },
     {
-      "bytes": 1209,
+      "bytes": 1371,
       "path": "results/reports/ranking/by_team_unified/MAR.csv",
-      "sha256": "40d6575ce1e543f14c989b6ee2098fd3d6e4a6413339ae36614a1db00f6b233b"
+      "sha256": "3e598bfebc31b9567dab9e17d0cd54867733b9c7a88e43f2182b5961af5dd4b6"
     },
     {
-      "bytes": 1256,
+      "bytes": 1362,
       "path": "results/reports/ranking/by_team_unified/MEX.csv",
-      "sha256": "a46b00c5d0c1ddbb6ef14f3876004e87e4b66f68e6c0f29aa3fa796fe43d148c"
+      "sha256": "e5d3a1e5d03ddacbf3c61d966f3cef94696b72e1ec742f288c82bbe3e06c5b49"
     },
     {
-      "bytes": 1041,
+      "bytes": 1152,
       "path": "results/reports/ranking/by_team_unified/NED.csv",
-      "sha256": "049c7398c248ee5757fea878851b37e6b58e214a86832e3f30ab4a67d87ea9a1"
+      "sha256": "1e3f3ea5e67648784fa0005a1de51e37547135f02f6ade781a025f425c372fac"
     },
     {
-      "bytes": 926,
+      "bytes": 1026,
       "path": "results/reports/ranking/by_team_unified/POL.csv",
-      "sha256": "3c0a369e0cdb468bd3d62673674f63e6c89aebb8fe56fa6a857ad1c3134c1e3a"
+      "sha256": "a6ef822a9a414b9ad6b26cd9989ce163aa731761a0a2a748a00c5cea425a1733"
     },
     {
-      "bytes": 1579,
+      "bytes": 1722,
       "path": "results/reports/ranking/by_team_unified/POR.csv",
-      "sha256": "95666bdcecaa47c05b92e7de88889ac0146dea3a0530ae9eaf7c858417600ef4"
+      "sha256": "b17930ad9e943c035db0cc989d302def414786451f58b9b91a9eaf6dd6b26611"
     },
     {
-      "bytes": 843,
+      "bytes": 922,
       "path": "results/reports/ranking/by_team_unified/QAT.csv",
-      "sha256": "7fbe33d5d8189c27f3e34d14eb32e5df5e44b4164760c55f4d0b66a78c6ec9be"
+      "sha256": "113e56fa9cdcf2a0b9b8a07762e1e4c8ad5b10187050625b41c9bdc9eac12b6c"
     },
     {
-      "bytes": 1042,
+      "bytes": 1164,
       "path": "results/reports/ranking/by_team_unified/SEN.csv",
-      "sha256": "97812d3525389972f81725823558802efff7daf9d57a6d5224ac613e403f7d25"
+      "sha256": "b6f1e68d39a7087a1e882261121020c803130cf0d7f9015e84bd0367e0bee581"
     },
     {
-      "bytes": 904,
+      "bytes": 993,
       "path": "results/reports/ranking/by_team_unified/SRB.csv",
-      "sha256": "16e3f248f53ee5fc58f45da3d4cf6884dd6a59cc7de0e603a64995b022173fc1"
+      "sha256": "b4e31adf3dd35cdf48946f887457c5bccfe3fd0fb11355f6ad8205a0347b2adb"
     },
     {
-      "bytes": 1108,
+      "bytes": 1225,
       "path": "results/reports/ranking/by_team_unified/SUI.csv",
-      "sha256": "57b63cef2a00aa702a375fd8d69155b2ccfa4853bf595c83357acf204ad0874a"
+      "sha256": "12ebbe16fccfb83a7f62118c557542bd797763bec7f6584ba8edb3fea304296f"
     },
     {
-      "bytes": 1018,
+      "bytes": 1144,
       "path": "results/reports/ranking/by_team_unified/TUN.csv",
-      "sha256": "1e32f7a9cbc62fe3b796928db1069cf9f16aabeb2ce28fe1a529b894acfab849"
+      "sha256": "78990d62362cd0f0aedfc8395c6e22312684c0fcc319466fd8ef1a6bd0d62389"
     },
     {
-      "bytes": 1163,
+      "bytes": 1268,
       "path": "results/reports/ranking/by_team_unified/URU.csv",
-      "sha256": "ee57e570f4550acd636ffcc3b5499710ee8a71d3e89f0be2e4a1cfedaf259120"
+      "sha256": "0dd99f1bede8002762053032a9d2928c709ec628dc4486933bfe1d6bcb425dae"
     },
     {
-      "bytes": 1126,
+      "bytes": 1233,
       "path": "results/reports/ranking/by_team_unified/USA.csv",
-      "sha256": "b3bffa61fd39387f7dd6f03076d879669728ce39fbba4fd9a3d92466d6b439c3"
+      "sha256": "f6dd1c1126e17669b027a863d0676fed6bcfa7453a89669c192b3e88919de7d0"
     },
     {
-      "bytes": 754,
+      "bytes": 837,
       "path": "results/reports/ranking/by_team_unified/WAL.csv",
-      "sha256": "7249464a8cf34c008eb778e13051ad33433fc4c4e839a85c01edec25d35a324c"
+      "sha256": "b133abdae22cfa1530a465b80fe94e89b65def42fcb28855f722af139256dbf6"
     },
     {
-      "bytes": 2946547,
+      "bytes": 3104469,
       "path": "results/reports/ranking/global_rankings_outfield.csv",
-      "sha256": "fc52c7e384730185c917ab21d558b1b5a5a84c3f8beac3fce62235442e2a0875"
+      "sha256": "0abe4f5fbe7fb685537121ff50d83ccb684c5b9e2107efbafc0099d80341e802"
     },
     {
-      "bytes": 696276,
+      "bytes": 731322,
       "path": "results/reports/ranking/global_rankings_outfield_300min.csv",
-      "sha256": "fee20bacdea743a1f9b9cc5c77cfc80eddf0394c136f479a5ff7ebdf3a82d65a"
+      "sha256": "2102411a019e19895e9614e92472dad75d6917e06c33b917a67483071f08885e"
     },
     {
-      "bytes": 799863,
+      "bytes": 799990,
       "path": "results/reports/ranking/global_rankings_outfield_300min_v4.csv",
-      "sha256": "6c7ba61c3e40359b0997572a446dfa40790280af40725925886e1b7e686c8f4e"
+      "sha256": "c2469b55cf42305170c8353364af0c01d0759108a177e0d42af055927cd0e51f"
     },
     {
-      "bytes": 2944059,
+      "bytes": 3018527,
       "path": "results/reports/ranking/global_rankings_outfield_300min_v4.json",
-      "sha256": "8da7b30ddb2d55cc33d51283527170a79157ef41aadbe92a19b745d42869c8f3"
+      "sha256": "98d89ad0c0d7ed1e4fafbf2463a92c8377d7f3b0dbfc04ec631ddad580de3dca"
     },
     {
-      "bytes": 3402213,
+      "bytes": 3402767,
       "path": "results/reports/ranking/global_rankings_outfield_v4.csv",
-      "sha256": "49adb7e814db2b7712bbe39c9e13694a7e6b5f8a9f6716289bfe16ee2b70a47c"
+      "sha256": "512cd5a05109e4e5658748c52d943837bf3bd3f40d04b0967cdd7fbafc7a6911"
     },
     {
-      "bytes": 12865312,
+      "bytes": 13192137,
       "path": "results/reports/ranking/global_rankings_outfield_v4.json",
-      "sha256": "90534abc0dbefd0d4272118e3d5b4ed906af13f9cef81a9f6579ee9dd2ec5197"
+      "sha256": "e2a833974d63be9475ba3006cdeb69a67822a2fae57187937d263d9b4e791a47"
     },
     {
-      "bytes": 120575,
+      "bytes": 153531,
       "path": "results/reports/ranking/goalkeeper_rankings.csv",
-      "sha256": "1ff1d10ff5c58fb11a79ad902eb8f7077b22de20c062aa08a7232a7f662a51c1"
+      "sha256": "331c2af9309ad8d862072c373c98d0751de500ac7341bfede0ee18c7b79c077b"
     },
     {
-      "bytes": 120575,
+      "bytes": 726871,
+      "path": "results/reports/ranking/goalkeeper_rankings.json",
+      "sha256": "5ceeaedd84c0a9d281c11eef46a431eedca3ad7f6aee769c1b1904325a341472"
+    },
+    {
+      "bytes": 153531,
       "path": "results/reports/ranking/goalkeeper_rankings_unified.csv",
-      "sha256": "1ff1d10ff5c58fb11a79ad902eb8f7077b22de20c062aa08a7232a7f662a51c1"
+      "sha256": "331c2af9309ad8d862072c373c98d0751de500ac7341bfede0ee18c7b79c077b"
     },
     {
-      "bytes": 144705,
+      "bytes": 144746,
       "path": "results/reports/ranking/goalkeeper_rankings_v4.csv",
-      "sha256": "dba5fc71bcd9958fc3b79728907b3173761831f7cecd1016c8220b888da55fa7"
+      "sha256": "5445ea9b911d18714deedbb000a2d4f738a2676e8699f797632b5d2d746acbe8"
     },
     {
-      "bytes": 641860,
+      "bytes": 660862,
       "path": "results/reports/ranking/goalkeeper_rankings_v4.json",
-      "sha256": "d4ad0e2321cadc0e578a98f16b91232a434601ebc44502788f966070a11b1c46"
+      "sha256": "689bcb7c8037efe841bfa4b2628aa586292982c81b87feb23cd71af587c03103"
     },
     {
-      "bytes": 3266381,
+      "bytes": 134757,
+      "path": "results/reports/ranking/goalkeeper_rankings_v5.csv",
+      "sha256": "96af4c868fa47d3678eb5feb923a47717da0c2aba342903734cb23a5ed5d38e2"
+    },
+    {
+      "bytes": 616624,
+      "path": "results/reports/ranking/goalkeeper_rankings_v5.json",
+      "sha256": "62b863c093041f49cfdeda4a0644a4a06be97b3dbb73436c88aa0e2f829a900e"
+    },
+    {
+      "bytes": 3266975,
       "path": "results/reports/ranking/legacy/player_rankings.csv",
-      "sha256": "3c745d8379920bf5f02e8f65e4d1a0b13d52073c805ed72c2b71cc968f5a1087"
+      "sha256": "ee540edeb3e69fbae63b0b718bcbd6ee9555d470b56c42e80d3ddbdc5a5ad798"
     },
     {
-      "bytes": 8800908,
+      "bytes": 9023285,
       "path": "results/reports/ranking/legacy/player_rankings.json",
-      "sha256": "9da8f1beb078eadb5bac1616cea1ec78dd3c2d308cc6ef7921332830c4f97406"
+      "sha256": "479d3a592acbc60a105f5eea591a97c1d81ad4409944c06fc7ccb7782b94e9ce"
     },
     {
-      "bytes": 768881,
+      "bytes": 769024,
       "path": "results/reports/ranking/legacy/player_rankings_300plus.csv",
-      "sha256": "ac3f948e74dc284b81b9f528b517f686b01d2235dbd2989e2ec566b3af2d6b8a"
+      "sha256": "a8bc4fd7a288b7820df993bd636ab0edfe5b28c35ad2758c9f5b39aff879b9a2"
     },
     {
-      "bytes": 3402213,
+      "bytes": 3402767,
       "path": "results/reports/ranking/outfield_rankings_v4.csv",
-      "sha256": "49adb7e814db2b7712bbe39c9e13694a7e6b5f8a9f6716289bfe16ee2b70a47c"
+      "sha256": "512cd5a05109e4e5658748c52d943837bf3bd3f40d04b0967cdd7fbafc7a6911"
     },
     {
-      "bytes": 12865312,
+      "bytes": 13192137,
       "path": "results/reports/ranking/outfield_rankings_v4.json",
-      "sha256": "90534abc0dbefd0d4272118e3d5b4ed906af13f9cef81a9f6579ee9dd2ec5197"
+      "sha256": "e2a833974d63be9475ba3006cdeb69a67822a2fae57187937d263d9b4e791a47"
     },
     {
-      "bytes": 3079190,
+      "bytes": 3271426,
       "path": "results/reports/ranking/player_rankings.csv",
-      "sha256": "234f341e0fa34e121ae4c0813dabf4cf427400c619840aa7dbc1fb5f73117a49"
+      "sha256": "4c1399365186e6aec24a5c43255b3041dd806200ce626f3edcad3be44a8415b9"
     },
     {
-      "bytes": 12866661,
+      "bytes": 14202141,
       "path": "results/reports/ranking/player_rankings.json",
-      "sha256": "3df0971b5652c8a0229e00fbfb8a0251b1a612722f7b2972c01fce745c0ba898"
+      "sha256": "41770e1c68408f38af0a76365a1fb236cd64fcd8b3fc012accd010ec8bb4b206"
     },
     {
-      "bytes": 751882,
+      "bytes": 731322,
       "path": "results/reports/ranking/player_rankings_300plus.csv",
-      "sha256": "3e53a1a63bbc916ee6b08685473361ba8ec77d02d10bbda26c0c14c995e4dc75"
+      "sha256": "2102411a019e19895e9614e92472dad75d6917e06c33b917a67483071f08885e"
     },
     {
-      "bytes": 857650,
+      "bytes": 3044344,
+      "path": "results/reports/ranking/player_rankings_300plus.json",
+      "sha256": "b766c6266c32d071cd53c172c7f3a3c03b308b48926e3891a31bc807b21cbbdc"
+    },
+    {
+      "bytes": 857793,
       "path": "results/reports/ranking/player_rankings_300plus_v4.csv",
-      "sha256": "471a0d58957cc1a36ec231867e4965aff0045a3fc92ec755c23e07fdf03796b1"
+      "sha256": "52f0932294a1d9d0f17e6fe75c1b469e9e8d5efb73b327d5d1b8179d8878e138"
     },
     {
-      "bytes": 3281870,
+      "bytes": 3365794,
       "path": "results/reports/ranking/player_rankings_300plus_v4.json",
-      "sha256": "1016ce581e7ba855735a1f2a1c53ef3cd344a9f2bd245d06ee52ee63f909e47c"
+      "sha256": "1687f7841227e55cf277737fc035ade2eac55258254ef93c5c22bea111af35f7"
     },
     {
-      "bytes": 3079190,
+      "bytes": 3079784,
       "path": "results/reports/ranking/player_rankings_v2.csv",
-      "sha256": "234f341e0fa34e121ae4c0813dabf4cf427400c619840aa7dbc1fb5f73117a49"
+      "sha256": "a54057a9a6108c41b4c5a7f359206aaf13e09b9ddf24ca897093eff1ba6e7bca"
     },
     {
-      "bytes": 3079190,
+      "bytes": 3079784,
       "path": "results/reports/ranking/player_rankings_v3.csv",
-      "sha256": "234f341e0fa34e121ae4c0813dabf4cf427400c619840aa7dbc1fb5f73117a49"
+      "sha256": "a54057a9a6108c41b4c5a7f359206aaf13e09b9ddf24ca897093eff1ba6e7bca"
     },
     {
-      "bytes": 12866661,
+      "bytes": 13187476,
       "path": "results/reports/ranking/player_rankings_v3.json",
-      "sha256": "3df0971b5652c8a0229e00fbfb8a0251b1a612722f7b2972c01fce745c0ba898"
+      "sha256": "d1c66a2863e308d1fa14ad388c10a5cab339547b2c32530ac18b715d00c08bf8"
     },
     {
-      "bytes": 3540177,
+      "bytes": 3540771,
       "path": "results/reports/ranking/player_rankings_v4.csv",
-      "sha256": "c539b4b1a2d056ace832e6ca0bde4a282cc0713c8c7b2494a8bbb5770e3e82fa"
+      "sha256": "2d4283a04376a07458c90470f3f7a35bcd2e07be21778d9f4c78147f056d2915"
     },
     {
-      "bytes": 13705582,
+      "bytes": 14056047,
       "path": "results/reports/ranking/player_rankings_v4.json",
-      "sha256": "2720e175c276348384fae9875f021629b9e3e2591ba1b056c2134b76ba978e42"
+      "sha256": "c299e9286e2c871709da96e632abe95bc20a971e97f33f56610a5eeb01d1e769"
     },
     {
-      "bytes": 157840,
+      "bytes": 487,
       "path": "results/reports/ranking/ranking_audit.json",
-      "sha256": "314c7ef53e98ff3b0e1686bb5e81615332be39f1fd2c6dbe2436ecae13cb2620"
+      "sha256": "067727bb094bb5c242ac549458bfa9d617411f4edeaeae02b7c59d11a135e7fb"
     },
     {
-      "bytes": 9378,
+      "bytes": 1302,
       "path": "results/reports/ranking/ranking_audit.md",
-      "sha256": "c524caaece6327028d5c8b9325ff70a78db9e98810ded7866636664371b2b4b3"
+      "sha256": "027e3a01d0031571875c5404b30300de4deed7c5032e569ead45240ae7070441"
     },
     {
-      "bytes": 3245,
+      "bytes": 2195,
       "path": "results/reports/ranking/ranking_methodology.md",
-      "sha256": "5d045c674f8d02c0bc84f2151e466557a213b212e08fd0f85a1246193e111bf0"
+      "sha256": "9fe1c79c6d4e839a646a80adcd6310b2613190f4ac43de314b28ed9180921055"
     },
     {
-      "bytes": 32811,
+      "bytes": 36584,
       "path": "results/reports/ranking/unified_tournament_rankings.csv",
-      "sha256": "60e49ae5e480ea71eaf0d01bb16485817a75b48fde5ee45c53bf47145aa36e66"
+      "sha256": "74ef6ea0e0f411f5e289633f683b72343b38962baf6e7215bdf3b4414931f2ef"
     },
     {
-      "bytes": 32787,
+      "bytes": 33373,
       "path": "results/reports/ranking/unified_tournament_rankings_v4.csv",
-      "sha256": "c8d62ac263adb7c1061837ee8f5767c8d6cfba60f98db73e04b8502ee39f8444"
+      "sha256": "d74f00b850680467f4fb396ec376c5fe9be58b8806770248aab04d8933ddc477"
     },
     {
-      "bytes": 114732,
+      "bytes": 119414,
       "path": "results/reports/ranking/unified_tournament_rankings_v4.json",
-      "sha256": "eae4258453675103090d5a7042b2bb30d42276f2ad108b1023c3377747cbdbb7"
+      "sha256": "8e8e36ec01a138f97101fc567d63ec283d1a349a21b6e08058e9d7a37477ca1f"
     },
     {
-      "bytes": 3079190,
+      "bytes": 3271426,
       "path": "results/reports/ranking/v5_player_rankings.csv",
-      "sha256": "234f341e0fa34e121ae4c0813dabf4cf427400c619840aa7dbc1fb5f73117a49"
+      "sha256": "4c1399365186e6aec24a5c43255b3041dd806200ce626f3edcad3be44a8415b9"
     },
     {
-      "bytes": 12866661,
+      "bytes": 14202141,
       "path": "results/reports/ranking/v5_player_rankings.json",
-      "sha256": "3df0971b5652c8a0229e00fbfb8a0251b1a612722f7b2972c01fce745c0ba898"
+      "sha256": "41770e1c68408f38af0a76365a1fb236cd64fcd8b3fc012accd010ec8bb4b206"
     }
   ],
   "path_contract": "project-relative POSIX paths",

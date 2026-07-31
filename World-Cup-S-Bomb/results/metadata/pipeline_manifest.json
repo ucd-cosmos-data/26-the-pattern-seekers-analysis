@@ -1,5 +1,5 @@
 {
-  "active_model_version": "outfield-tournament-impact-v4+goalkeeper-event-profile-v3",
+  "active_model_version": "ranking-repair-v3.0-qatar-2022",
   "artifact_manifest": "results/metadata/artifact_manifest.json",
   "paths_are_project_relative_posix": true,
   "ranking_manifest": "results/reports/ranking/refresh_manifest.json",
