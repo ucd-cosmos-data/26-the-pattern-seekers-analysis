@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -395,6 +396,53 @@ explain the frozen baseline, not as the active goalkeeper formula.
 """
 
 
+def _goalkeeper_ranking_markdown(goalkeepers: pd.DataFrame) -> str:
+    table = _markdown_table(
+        goalkeepers,
+        [
+            ("goalkeeper_consolidated_value_rank_v5", "Rank"),
+            ("player_name", "Goalkeeper"),
+            ("team", "Team"),
+            ("minutes_played", "Minutes"),
+            (
+                "goalkeeper_consolidated_value_score_v5",
+                "GK Value",
+            ),
+            ("psxg_shot_stopping_value_v5", "PSxG Value"),
+            ("clutch_save_value_v5", "Clutch Value"),
+            (
+                "shootout_win_probability_added_v5",
+                "Shootout WPA",
+            ),
+        ],
+        digits={
+            "minutes_played",
+            "goalkeeper_consolidated_value_score_v5",
+            "psxg_shot_stopping_value_v5",
+            "clutch_save_value_v5",
+            "shootout_win_probability_added_v5",
+        },
+    )
+    return f"""# Qatar 2022 Goalkeeper Rankings
+
+Goalkeepers are evaluated separately from outfield players. They do not appear
+in the global outfield ranking or the 300+ minute outfield ranking. This table
+contains exactly one team-main goalkeeper for each of the 32 teams, ordered by
+Consolidated Goalkeeper Value v5.
+
+{table}
+
+## Interpretation
+
+- **GK Value** is the normalized active goalkeeper score.
+- **PSxG Value** captures calibrated post-shot goal prevention.
+- **Clutch Value** is the incremental qualifying late-save residual.
+- **Shootout WPA** is bounded, sample-reliable win probability added.
+- Advancement, awards, reputation, pedigree, and named-player rules are not
+  scoring inputs.
+"""
+
+
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -402,6 +450,62 @@ def _sha256(path: Path) -> str:
 def promote_goalkeeper_v5(project_root: Path) -> dict[str, Any]:
     reports = project_root / "results" / "reports"
     ranking = reports / "ranking"
+    redundant_ranking_names = {
+        "global_rankings_outfield_300min.csv",
+        "global_rankings_outfield_300min_v4.csv",
+        "global_rankings_outfield_300min_v4.json",
+        "global_rankings_outfield_v4.csv",
+        "global_rankings_outfield_v4.json",
+        "goalkeeper_rankings_unified.csv",
+        "goalkeeper_rankings_v4.csv",
+        "goalkeeper_rankings_v4.json",
+        "goalkeeper_rankings_v5.csv",
+        "goalkeeper_rankings_v5.json",
+        "outfield_rankings_v4.csv",
+        "outfield_rankings_v4.json",
+        "player_rankings_v2.csv",
+        "player_rankings_v3.csv",
+        "player_rankings_v3.json",
+        "player_rankings_v4.csv",
+        "player_rankings_v4.json",
+        "player_rankings_300plus_v4.csv",
+        "player_rankings_300plus_v4.json",
+        "unified_tournament_rankings_v4.csv",
+        "unified_tournament_rankings_v4.json",
+        "v5_player_rankings.csv",
+        "v5_player_rankings.json",
+    }
+    for name in redundant_ranking_names:
+        redundant_path = ranking / name
+        if redundant_path.exists():
+            redundant_path.unlink()
+    obsolete_report_files = {
+        "player_evaluations_v5.csv",
+        "player_leaderboard.csv",
+        "player_role_challenger_validation.json",
+        "rating_validation_comparison.csv",
+        "role_aware_rating_comparison.csv",
+        "role_aware_valuation_validation.json",
+        "role_refinement_validation.json",
+        "team_player_leaderboards.csv",
+        "v5_rating_validation_comparison.csv",
+    }
+    for name in obsolete_report_files:
+        obsolete_path = reports / name
+        if obsolete_path.exists():
+            obsolete_path.unlink()
+    obsolete_v4_root = reports / "v4"
+    if obsolete_v4_root.exists():
+        shutil.rmtree(obsolete_v4_root)
+    for obsolete_figure in (
+        reports / "v3_figures" / "v3_goalkeeper_rankings.png",
+        reports / "v5_figures" / "v5_elasticnet_coefficients.png",
+        reports / "v5_figures" / "v5_france_team_rankings.png",
+        reports / "v5_figures" / "v5_global_outfield_rankings.png",
+        reports / "v5_figures" / "v5_goalkeeper_rankings.png",
+    ):
+        if obsolete_figure.exists():
+            obsolete_figure.unlink()
     diagnostics = (
         project_root
         / "results"
@@ -417,7 +521,9 @@ def promote_goalkeeper_v5(project_root: Path) -> dict[str, Any]:
         return {"promoted": False, "reason": "hard gates failed"}
 
     base = pd.read_csv(ranking / "player_rankings.csv")
-    v5 = pd.read_csv(ranking / "goalkeeper_rankings_v5.csv")
+    v5 = pd.read_csv(
+        diagnostics / "goalkeeper_v5_scored_rows.csv"
+    )
     v5_columns = [
         column
         for column in v5.columns
@@ -510,12 +616,14 @@ def promote_goalkeeper_v5(project_root: Path) -> dict[str, Any]:
     ).reset_index(drop=True)
 
     changed: list[Path] = []
-    for path in (
-        ranking / "player_rankings.csv",
-        ranking / "v5_player_rankings.csv",
-    ):
-        _write_frame(ordered, path)
-        changed.extend([path, path.with_suffix(".json")])
+    player_rankings_path = ranking / "player_rankings.csv"
+    _write_frame(ordered, player_rankings_path)
+    changed.extend(
+        [
+            player_rankings_path,
+            player_rankings_path.with_suffix(".json"),
+        ]
+    )
     canonical_rank = reports / "canonical" / "player_rankings.csv"
     canonical_rank.parent.mkdir(parents=True, exist_ok=True)
     ordered.to_csv(canonical_rank, index=False, encoding="utf-8")
@@ -534,17 +642,22 @@ def promote_goalkeeper_v5(project_root: Path) -> dict[str, Any]:
         na_position="last",
         kind="stable",
     )
-    for path in (
-        ranking / "goalkeeper_rankings.csv",
-        ranking / "goalkeeper_rankings_unified.csv",
-    ):
-        goalkeeper_rows.to_csv(path, index=False, encoding="utf-8")
-        changed.append(path)
+    goalkeeper_path = ranking / "goalkeeper_rankings.csv"
+    goalkeeper_rows.to_csv(
+        goalkeeper_path, index=False, encoding="utf-8"
+    )
+    changed.append(goalkeeper_path)
     (ranking / "goalkeeper_rankings.json").write_text(
         json.dumps(_records(goalkeeper_rows), ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
     changed.append(ranking / "goalkeeper_rankings.json")
+    goalkeeper_markdown = ranking / "goalkeeper_rankings.md"
+    goalkeeper_markdown.write_text(
+        _goalkeeper_ranking_markdown(goalkeeper_rows),
+        encoding="utf-8",
+    )
+    changed.append(goalkeeper_markdown)
 
     unified_columns = [
         "Global Rank",
@@ -579,24 +692,11 @@ def promote_goalkeeper_v5(project_root: Path) -> dict[str, Any]:
     outfield_active = ordered.loc[
         ~ordered["position_group"].eq("Goalkeeper")
     ].sort_values("global_rank_v3", kind="stable")
-    outfield_active_300 = outfield_active.loc[
-        pd.to_numeric(
-            outfield_active["minutes_played"], errors="coerce"
-        )
-        >= 300
-    ]
-    for frame, path in (
-        (
-            outfield_active,
-            ranking / "global_rankings_outfield.csv",
-        ),
-        (
-            outfield_active_300,
-            ranking / "global_rankings_outfield_300min.csv",
-        ),
-    ):
-        frame.to_csv(path, index=False, encoding="utf-8")
-        changed.append(path)
+    outfield_path = ranking / "global_rankings_outfield.csv"
+    outfield_active.to_csv(
+        outfield_path, index=False, encoding="utf-8"
+    )
+    changed.append(outfield_path)
 
     by_team = ranking / "by_team"
     by_team_unified = ranking / "by_team_unified"

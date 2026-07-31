@@ -108,17 +108,15 @@ not evidence that a goalkeeper and outfielder have equal common-unit value.
   outfield publication, and goalkeeper components.
 - External Qatar 2022 analyses and named-player checks are audit-only and
   cannot tune scoring weights.
-- Active artifacts, aliases, profiles, figures, manifests, Markdown, and DOCX
+- Active rankings, profiles, figures, manifests, Markdown, and DOCX
   are generated from source and checked for stale methodology.
 
-The active feature-rich tables are `player_rankings.csv` and the explicit
-`player_rankings_v3.csv`. `player_rankings_v2.csv`,
-`v5_player_rankings.csv`, and `v5_player_rankings.json` are byte-identical
-compatibility aliases after v3 promotion; those filenames do not activate the
-retired formulas. Original pre-v3 tables remain under
-`results/reports/ranking/legacy/`. The sole active ranking-figure family is
-`results/reports/v3_figures/`; existing V5 figures are historical comparison
-evidence.
+The active feature-rich master table is `player_rankings.csv`. Global and
+300+-minute leaderboards are outfield-only, while
+`goalkeeper_rankings.csv`/`.json`/`.md` publish the separate consolidated
+goalkeeper order. Current outfield figures live under
+`results/reports/v3_figures/`; the current goalkeeper figure is
+`results/reports/v5_figures/goalkeeper_rankings_v5.png`.
 
 ## Data limitations
 

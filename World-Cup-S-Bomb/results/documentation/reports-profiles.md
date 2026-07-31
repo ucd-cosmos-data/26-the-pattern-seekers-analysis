@@ -10,7 +10,7 @@ Dictionary for locating player profiles, starter reports, heatmaps, and team rep
 | Player heatmap | `results/reports/visuals/heatmaps/<player-slug>-<player-id>.svg` | 593 | SVG | Spatial density of the player’s recorded event locations. |
 | Starter report | `results/reports/starters/<TEAM>/<player-id>_starter_report.md` | 593 | Markdown | Human-readable v3 impact, role-quality, outcome, component, and uncertainty report organized by team. |
 | Starter data | `results/reports/starters/<TEAM>/<player-id>_starter_report.json` | 593 | JSON | Structured v3 version of the same starter report. |
-| Team profile | `results/reports/team_profiles/<team-name>.md` | 32 | Markdown | Team context plus active v3 player leaders, with regulation/extra-time outcomes separated from shootouts. |
+| Team profile | `results/reports/team_profiles/<team-name>.md` | 64 | Markdown | Team context plus active v3 player leaders, with regulation/extra-time outcomes separated from shootouts. |
 | Team coaching report | `results/reports/teams/<TEAM>_team_coaching_report.md` | 32 | Markdown | Full coach-facing tactical report with active Tournament Impact, Role Quality, and Uncertainty fields. |
 | Team coaching data | `results/reports/teams/<TEAM>_team_coaching_report.json` | 32 | JSON | Structured coaching-report content for downstream use. |
 | Tournament player/team summary | `results/reports/canonical/final_summary.md` | 1 | Markdown | General player summary, all-team overview, and each team’s top five players. |

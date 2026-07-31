@@ -185,9 +185,6 @@ def test_full_outfield_and_300_minute_cohorts_are_exact(
     outfield = pd.read_csv(
         RANKING_ROOT / "global_rankings_outfield.csv"
     )
-    outfield_300 = pd.read_csv(
-        RANKING_ROOT / "global_rankings_outfield_300min.csv"
-    )
     ranked_300 = pd.read_csv(
         RANKING_ROOT / "player_rankings_300plus.csv"
     )
@@ -205,11 +202,6 @@ def test_full_outfield_and_300_minute_cohorts_are_exact(
             expected_outfield["minutes_played"], errors="coerce"
         ).ge(300.0)
     ].reset_index(drop=True)
-    expected_ranked_300 = rich.loc[
-        pd.to_numeric(rich["minutes_played"], errors="coerce").ge(300.0)
-        & rich["Global Rank"].notna()
-    ].reset_index(drop=True)
-
     pd.testing.assert_frame_equal(
         outfield,
         expected_outfield,
@@ -217,24 +209,17 @@ def test_full_outfield_and_300_minute_cohorts_are_exact(
         check_exact=True,
     )
     pd.testing.assert_frame_equal(
-        outfield_300,
+        ranked_300,
         expected_outfield_300,
         check_dtype=False,
         check_exact=True,
     )
-    pd.testing.assert_frame_equal(
-        ranked_300,
-        expected_ranked_300,
-        check_dtype=False,
-        check_exact=True,
-    )
     assert len(outfield) == 553
-    assert len(outfield_300) == 126
     assert len(ranked_300) == 126
     assert outfield["minutes_played"].lt(300.0).any()
-    assert outfield_300["minutes_played"].ge(300.0).all()
+    assert ranked_300["minutes_played"].ge(300.0).all()
     assert outfield["position_group"].ne("Goalkeeper").all()
-    assert outfield_300["position_group"].ne("Goalkeeper").all()
+    assert ranked_300["position_group"].ne("Goalkeeper").all()
 
 
 def test_all_32_team_tables_match_the_active_sources(
@@ -311,7 +296,6 @@ def test_main_goalkeepers_are_ranked_once_and_backups_are_unranked(
     main = goalkeepers.loc[_main_goalkeeper_mask(goalkeepers)].copy()
     backups = goalkeepers.loc[~_main_goalkeeper_mask(goalkeepers)].copy()
     dedicated_path = RANKING_ROOT / "goalkeeper_rankings.csv"
-    unified_path = RANKING_ROOT / "goalkeeper_rankings_unified.csv"
     dedicated = pd.read_csv(dedicated_path)
 
     assert len(goalkeepers) == 40
@@ -348,19 +332,10 @@ def test_main_goalkeepers_are_ranked_once_and_backups_are_unranked(
     assert dedicated["team"].nunique() == len(dedicated) == 32
     assert dedicated["shootout_component_v3"].between(0.0, 0.10).all()
     assert dedicated["percentile_equivalent_placement"].notna().all()
-    _assert_byte_identical([dedicated_path, unified_path])
 
 
 def test_active_alias_families_are_byte_identical() -> None:
     alias_families = [
-        [
-            RANKING_ROOT / "player_rankings.csv",
-            RANKING_ROOT / "v5_player_rankings.csv",
-        ],
-        [
-            RANKING_ROOT / "player_rankings.json",
-            RANKING_ROOT / "v5_player_rankings.json",
-        ],
         [
             REPORTS_ROOT / "canonical" / "model_summary.json",
             REPORTS_ROOT / "model_summary.json",
@@ -534,7 +509,6 @@ def test_profile_starter_team_and_figure_families_are_complete(
     expected_figures = {
         "v3_global_outfield_rankings.png",
         "v3_global_outfield_300min.png",
-        "v3_goalkeeper_rankings.png",
         "v3_representative_team_rankings.png",
         "v3_defensive_feature_importance.png",
         "v3_champion_challenger_movement.png",

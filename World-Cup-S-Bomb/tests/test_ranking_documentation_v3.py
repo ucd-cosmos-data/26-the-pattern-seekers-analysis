@@ -48,27 +48,30 @@ def test_generated_rankings_dictionary_uses_active_v3_contract(
         "Role Quality v3",
         "Uncertainty",
         "periods 1–4",
-        "player_rankings_v3.csv",
+        "global_rankings_outfield.csv",
+        "player_rankings_300plus.csv",
+        "goalkeeper_rankings.md",
         "global_rank_v3",
         "uncertainty_status_v3",
-        "percentile_equivalent_placement",
-        "capped at 10%",
+        "goalkeeper_consolidated_value_rank_v5",
+        "PSxG-style",
         "reports/v3_figures/",
-        "byte-identical compatibility aliases",
+        "Canonical-file rule",
     )
     for phrase in required:
         assert phrase in text
 
     assert "ordered by `global_rank_v2`" not in text
     assert "Separate non-comparable rating" not in text
-    assert "historical/compatibility evidence" in text
+    assert "Versioned duplicates" in text
+    assert "Goalkeepers do not appear in either" in text
 
     results_dictionary = (
         tmp_path / "results-dictionary.md"
     ).read_text(encoding="utf-8")
     assert "Active Qatar 2022 v3 Tournament Impact" in results_dictionary
-    assert "Active v3 ranking figures" in results_dictionary
-    assert "Legacy V5 figures" in results_dictionary
+    assert "Current outfield ranking figures" in results_dictionary
+    assert "Current consolidated goalkeeper" in results_dictionary
     profiles_dictionary = (
         tmp_path / "reports-profiles.md"
     ).read_text(encoding="utf-8")
@@ -87,7 +90,7 @@ def test_role_pipeline_and_readme_separate_active_and_historical_methods() -> No
         assert "Role Quality" in text
         assert "Uncertainty" in text
         assert "periods 1–4" in text
-        assert "percentile_equivalent_placement" in text
+        assert "goalkeeper_rankings" in text
         assert "v3_figures" in text
 
     historical = role_pipeline.split("## Historical pre-v3 architecture", 1)

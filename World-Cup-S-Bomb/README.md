@@ -79,15 +79,18 @@ match-grouped ElasticNet fit. Failure prints the documented fallback message
 and continues with the role-aware layer. All attention is causal; future
 events are masked.
 
-One canonical execution writes the active v3 narrative under `results/reports/`
-and player-ranking artifacts under `results/reports/ranking/`:
+One canonical execution writes the active narrative under `results/reports/`
+and the current ranking artifacts under `results/reports/ranking/`:
 
-- `ranking/player_rankings.csv` and `ranking/player_rankings_v3.csv`
-- `ranking/player_rankings.json` and `ranking/player_rankings_v3.json`
-- `ranking/global_rankings_outfield.csv`
-- `ranking/global_rankings_outfield_300min.csv`
-- `ranking/goalkeeper_rankings.csv`
-- `ranking/unified_tournament_rankings.csv`
+- `ranking/player_rankings.csv` and `ranking/player_rankings.json` — complete
+  feature/profile master data for all eligible players
+- `ranking/global_rankings_outfield.csv` — global outfield leaderboard
+- `ranking/player_rankings_300plus.csv` and
+  `ranking/player_rankings_300plus.json` — 300+-minute outfield leaderboard
+- `ranking/goalkeeper_rankings.csv`, `ranking/goalkeeper_rankings.json`, and
+  `ranking/goalkeeper_rankings.md` — separate consolidated goalkeeper ranking
+- `ranking/unified_tournament_rankings.csv` — compact outfield-only publication
+  table
 - 32 complete tables under both `ranking/by_team/` and
   `ranking/by_team_unified/`
 - `ranking/ranking_methodology.md` and `ranking/ranking_audit.md`
@@ -96,31 +99,20 @@ and player-ranking artifacts under `results/reports/ranking/`:
 - `docs/final_summary.docx`
 - 32 reports under `team_profiles/`
 - coverage-qualified reports under `player_profiles/` and `starters/`
-- seven active ranking and validation figures under `v3_figures/`
+- six active outfield ranking/validation figures under `v3_figures/` and one
+  current goalkeeper figure under `v5_figures/`
 - portable manifests with relative paths and SHA-256 hashes
 
-After v3 promotion, `ranking/player_rankings_v2.csv`,
-`ranking/v5_player_rankings.csv`, and `ranking/v5_player_rankings.json` are
-byte-identical compatibility aliases of the corresponding active table. Their
-filenames do not activate the retired v2/V5 formulas.
-Original pre-v3 tables remain under `ranking/legacy/`, and existing
-`v5_figures/` are historical comparison evidence rather than active figures.
-
-The same execution refreshes the downstream compatibility tables in
-`data/processed/player_evaluations.csv`,
-`data/processed/player_leaderboard.csv`,
-`results/reports/player_leaderboard.csv`, and
-`results/reports/team_player_leaderboards.csv`. The V4 possession and
-transition-model packets and the V5 ranking foundation remain historical
-records; active publication occurs only after every independently selected v3
-component and artifact family passes its release gate.
+Versioned duplicate ranking exports and the superseded V4 report tree are not
+part of the published results. The release writer removes those stale artifacts
+before regenerating the canonical files above.
 
 The canonical run publishes the regenerated leaderboard, selected
 learned-or-fallback calibration weights, status counts, and before/after
 validation. See the
 [`results/reports` index](results/reports/README.md) for the canonical reports
-and the boundary between active v3 rankings, compatibility aliases, and
-historical tactical/ranking outputs.
+and the boundary between the full player master data, outfield leaderboards,
+and the separate goalkeeper ranking.
 
 StatsBomb 360 absences remain missing and are accompanied by evidence and
 coverage fields. Public freeze frames identify the event actor but do not
@@ -275,9 +267,9 @@ result tables, and figures are stored in `results/`.
 | `data/processed/player_evaluations.csv` | Role-relative values for the 45-minute outfield / 90-minute goalkeeper cohort, with reliability statuses |
 | `data/processed/player_event_value_audit.parquet` | Per-action targets, OOF/test probabilities, xT values, and scoring-partition provenance |
 | `data/processed/player_evaluation_provenance.json` | Feature contract, split assignments, metrics, and leakage controls |
-| `results/reports/ranking/player_rankings_v3.csv` | Active feature-rich Qatar 2022 Tournament Impact, Role Quality, uncertainty, and goalkeeper release |
+| `results/reports/ranking/player_rankings.csv` | Complete feature-rich Qatar 2022 player master data; use the dedicated outfield and goalkeeper files for leaderboard order |
 | `results/reports/ranking/unified_tournament_rankings.csv` | Six-field active publication view derived from v3 placement fields |
-| `results/reports/ranking/goalkeeper_rankings.csv` | Dedicated 32-main-goalkeeper v3 table with continuous, penalty, bounded-shootout, and uncertainty channels |
+| `results/reports/ranking/goalkeeper_rankings.csv` | Dedicated 32-goalkeeper consolidated v5 ranking with PSxG-style shot stopping, clutch/state leverage, penalties, shootouts, support play, reliability, and uncertainty |
 | `results/reports/final_validation.csv` | Side-by-side OOF metrics for all candidate architectures and the legacy baseline |
 | `results/reports/pipeline_manifest.json` | End-to-end runtime, artifact, count, and invariant checks |
 | `results/eda_validation_report.json` | Final acceptance and regression-test result |

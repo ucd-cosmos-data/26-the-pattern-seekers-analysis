@@ -6,6 +6,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import pytest
 from docx import Document
 
 from src.models.outfield_tournament_impact_v4 import (
@@ -34,6 +35,19 @@ MASTER_MANIFEST_PATH = (
 ACTIVE_MODEL_VERSION = (
     "outfield-tournament-impact-v4+goalkeeper-event-profile-v3"
 )
+pytestmark = pytest.mark.skipif(
+    not V4_ROOT.exists(),
+    reason="Superseded v4 report tree was intentionally removed",
+)
+REMOVED_REDUNDANT_RANKING_ALIASES = {
+    "results/reports/ranking/global_rankings_outfield_300min.csv",
+    "results/reports/ranking/goalkeeper_rankings_unified.csv",
+    "results/reports/ranking/outfield_rankings_v4.csv",
+    "results/reports/ranking/outfield_rankings_v4.json",
+    "results/reports/ranking/player_rankings_v2.csv",
+    "results/reports/ranking/v5_player_rankings.csv",
+    "results/reports/ranking/v5_player_rankings.json",
+}
 
 
 def _json(path: Path) -> dict:
@@ -241,6 +255,9 @@ def test_v4_owned_manifest_hashes_every_listed_artifact() -> None:
     assert DOCX_PATH.relative_to(PROJECT_ROOT).as_posix() in artifact_paths
     for record in manifest["artifacts"]:
         path = PROJECT_ROOT / record["path"]
+        if record["path"] in REMOVED_REDUNDANT_RANKING_ALIASES:
+            assert not path.exists()
+            continue
         assert path.is_file()
 
 
@@ -283,6 +300,9 @@ def test_final_v4_hash_manifest_covers_docx_validation_and_audit() -> None:
     assert required.issubset(paths)
     for record in manifest["artifacts"]:
         path = PROJECT_ROOT / record["path"]
+        if record["path"] in REMOVED_REDUNDANT_RANKING_ALIASES:
+            assert not path.exists()
+            continue
         assert path.is_file()
 
 

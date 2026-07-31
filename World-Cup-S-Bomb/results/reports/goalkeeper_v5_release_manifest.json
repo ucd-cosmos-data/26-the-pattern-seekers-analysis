@@ -29,8 +29,8 @@
       "sha256": "9fe1c79c6d4e839a646a80adcd6310b2613190f4ac43de314b28ed9180921055"
     },
     "results/reports/canonical/player_rankings.csv": {
-      "bytes": 3271426,
-      "sha256": "4c1399365186e6aec24a5c43255b3041dd806200ce626f3edcad3be44a8415b9"
+      "bytes": 3271427,
+      "sha256": "ebef5f4ebcf2949b499a8a2705a6434bc4e4ddd7fb8c63d6ec2f90f4018f576c"
     },
     "results/reports/coaches_notebook.md": {
       "bytes": 7020,
@@ -281,8 +281,8 @@
       "sha256": "1d84d4c82b8b7f6a08ce5fc5c31086c40465fa4d4416f60fd7a531572af0e975"
     },
     "results/reports/ranking/by_team/JPN.csv": {
-      "bytes": 133224,
-      "sha256": "28358a7d46aeeef5e03c978ff91109573278ec0784fb00ef0b98635e8ab7d3de"
+      "bytes": 133225,
+      "sha256": "9f993e4e380a953043e43893afcea92cc0321a0222fa86078301e3fc672ac280"
     },
     "results/reports/ranking/by_team/KOR.csv": {
       "bytes": 117307,
@@ -473,12 +473,8 @@
       "sha256": "b133abdae22cfa1530a465b80fe94e89b65def42fcb28855f722af139256dbf6"
     },
     "results/reports/ranking/global_rankings_outfield.csv": {
-      "bytes": 3104469,
-      "sha256": "0abe4f5fbe7fb685537121ff50d83ccb684c5b9e2107efbafc0099d80341e802"
-    },
-    "results/reports/ranking/global_rankings_outfield_300min.csv": {
-      "bytes": 731322,
-      "sha256": "2102411a019e19895e9614e92472dad75d6917e06c33b917a67483071f08885e"
+      "bytes": 3104470,
+      "sha256": "2793c62a6c8f2835de3a02a86f333f436f77594d60b2e226768deef07302802e"
     },
     "results/reports/ranking/goalkeeper_rankings.csv": {
       "bytes": 153531,
@@ -488,17 +484,17 @@
       "bytes": 726871,
       "sha256": "5ceeaedd84c0a9d281c11eef46a431eedca3ad7f6aee769c1b1904325a341472"
     },
-    "results/reports/ranking/goalkeeper_rankings_unified.csv": {
-      "bytes": 153531,
-      "sha256": "331c2af9309ad8d862072c373c98d0751de500ac7341bfede0ee18c7b79c077b"
+    "results/reports/ranking/goalkeeper_rankings.md": {
+      "bytes": 3602,
+      "sha256": "e26faf2d7c84fbcee219fa9ade4578d4757122b2d59e2600afd300ebd3ee0330"
     },
     "results/reports/ranking/player_rankings.csv": {
-      "bytes": 3271426,
-      "sha256": "4c1399365186e6aec24a5c43255b3041dd806200ce626f3edcad3be44a8415b9"
+      "bytes": 3271427,
+      "sha256": "ebef5f4ebcf2949b499a8a2705a6434bc4e4ddd7fb8c63d6ec2f90f4018f576c"
     },
     "results/reports/ranking/player_rankings.json": {
-      "bytes": 14202141,
-      "sha256": "41770e1c68408f38af0a76365a1fb236cd64fcd8b3fc012accd010ec8bb4b206"
+      "bytes": 14202142,
+      "sha256": "1c361736d8b8a248bc5af0e653f29bd4e7272306461909ca5686aa7bc935995b"
     },
     "results/reports/ranking/player_rankings_300plus.csv": {
       "bytes": 731322,
@@ -523,14 +519,6 @@
     "results/reports/ranking/unified_tournament_rankings.csv": {
       "bytes": 36584,
       "sha256": "74ef6ea0e0f411f5e289633f683b72343b38962baf6e7215bdf3b4414931f2ef"
-    },
-    "results/reports/ranking/v5_player_rankings.csv": {
-      "bytes": 3271426,
-      "sha256": "4c1399365186e6aec24a5c43255b3041dd806200ce626f3edcad3be44a8415b9"
-    },
-    "results/reports/ranking/v5_player_rankings.json": {
-      "bytes": 14202141,
-      "sha256": "41770e1c68408f38af0a76365a1fb236cd64fcd8b3fc012accd010ec8bb4b206"
     },
     "results/reports/starters/ARG/6909_starter_report.json": {
       "bytes": 836,
@@ -973,8 +961,8 @@
       "sha256": "c685d9ad867cf0334e3153615e3eb32dfd9ec20c8fde85ed9724bbff912caa43"
     },
     "results/reports/team_profiles/japan.json": {
-      "bytes": 553892,
-      "sha256": "4acf3737e5ea02500e65a2683a184057fc47b26ded1fb32b9650c7a74cf44276"
+      "bytes": 553893,
+      "sha256": "afc8ccbf5d32145077125296505c9bddfecc8b5b93d73fe067d93bf3f5e6b34f"
     },
     "results/reports/team_profiles/japan.md": {
       "bytes": 2438,
@@ -1237,8 +1225,8 @@
       "sha256": "c685d9ad867cf0334e3153615e3eb32dfd9ec20c8fde85ed9724bbff912caa43"
     },
     "results/reports/teams/JPN_team_coaching_report.json": {
-      "bytes": 553892,
-      "sha256": "4acf3737e5ea02500e65a2683a184057fc47b26ded1fb32b9650c7a74cf44276"
+      "bytes": 553893,
+      "sha256": "afc8ccbf5d32145077125296505c9bddfecc8b5b93d73fe067d93bf3f5e6b34f"
     },
     "results/reports/teams/JPN_team_coaching_report.md": {
       "bytes": 2438,

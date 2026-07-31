@@ -44,7 +44,7 @@ from src.reporting.ranking_repair_release import (  # noqa: E402
 EVENTS_PATH = PROJECT_ROOT / "notebooks" / "all_events.csv"
 MATCHES_PATH = PROJECT_ROOT / "data" / "raw" / "matches.csv"
 BASE_PATH = (
-    PROJECT_ROOT / "results/reports/ranking/goalkeeper_rankings_v4.csv"
+    PROJECT_ROOT / "results/reports/ranking/goalkeeper_rankings.csv"
 )
 RANKING_ROOT = PROJECT_ROOT / "results/reports/ranking"
 DIAG_ROOT = PROJECT_ROOT / "results/diagnostics/ranking_repair"
@@ -1112,8 +1112,8 @@ def main() -> None:
         "goalkeeper_consolidated_value_rank_v5",
         kind="mergesort",
     )
-    v5_csv = RANKING_ROOT / "goalkeeper_rankings_v5.csv"
-    v5_json = RANKING_ROOT / "goalkeeper_rankings_v5.json"
+    v5_csv = DIAG_ROOT / "goalkeeper_v5_scored_rows.csv"
+    v5_json = DIAG_ROOT / "goalkeeper_v5_scored_rows.json"
     ordered.to_csv(
         v5_csv, index=False, lineterminator="\n", float_format="%.10g"
     )

@@ -70,10 +70,6 @@ FOLDER_PURPOSES: dict[str, str] = {
     "reports/ranking/by_team_unified": (
         "Six-field active v3 publication tables for each national team."
     ),
-    "reports/ranking/legacy": (
-        "Archived pre-v3 ranking tables retained for reproducible comparison; "
-        "these files are not active leaderboards."
-    ),
     "reports/docs": (
         "Office-document editions of final reporting artifacts."
     ),
@@ -92,12 +88,11 @@ FOLDER_PURPOSES: dict[str, str] = {
         "and squad-rating summaries."
     ),
     "reports/v3_figures": (
-        "Active ranking-repair v3 figures covering leaders, goalkeeper order, "
-        "model evidence, movement, composition, and stability."
+        "Current outfield ranking-repair figures covering leaders, model "
+        "evidence, movement, composition, and stability."
     ),
     "reports/v5_figures": (
-        "Legacy V5 ranking and ElasticNet figures retained as historical "
-        "comparison evidence; these are not active release figures."
+        "Current consolidated goalkeeper ranking figure."
     ),
     "reports/visuals": (
         "Container for report-linked visual assets."
@@ -649,11 +644,9 @@ def _write_index(
             "artifact.",
             "- Out-of-fold (`oof`) artifacts are the appropriate source for "
             "leakage-safe validation comparisons.",
-            "- `player_rankings_v2.csv`, `v5_player_rankings.csv`, and "
-            "`v5_player_rankings.json` are active-table compatibility aliases "
-            "after v3 promotion, not the "
-            "retired v2/V5 methodology. Historical tables live under "
-            "`reports/ranking/legacy/`.",
+            "- `player_rankings.csv` is the complete feature/profile master "
+            "table. Use the outfield-only global/300+ files or the separate "
+            "goalkeeper file for leaderboard order.",
             "",
         ]
     )
@@ -787,7 +780,7 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
             "reports/ranking/*",
             _family_count(records, "reports/ranking"),
             "Active Qatar 2022 v3 Tournament Impact, Role Quality, uncertainty, "
-            "goalkeeper, audit, alias, and methodology artifacts.",
+            "separate consolidated goalkeeper, audit, and methodology artifacts.",
         ),
         (
             "Per-team tournament rankings",
@@ -802,12 +795,6 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
             _family_count(records, "reports/ranking/by_team_unified"),
             "Exact six-field Tournament Impact v3 publication table for each "
             "of the 32 national teams.",
-        ),
-        (
-            "Archived legacy rankings",
-            "reports/ranking/legacy/*",
-            _family_count(records, "reports/ranking/legacy"),
-            "Pre-v3 tables retained only for before/after reproducibility.",
         ),
         (
             "Canonical report data",
@@ -846,18 +833,17 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
             "Concise threat, defensive, resistance, and squad-rating profiles.",
         ),
         (
-            "Active v3 ranking figures",
+            "Current outfield ranking figures",
             "reports/v3_figures/*",
             _family_count(records, "reports/v3_figures"),
-            "Current ranking, goalkeeper, champion/challenger, position "
+            "Current outfield ranking, champion/challenger, position "
             "composition, model-evidence, and stability figures.",
         ),
         (
-            "Legacy V5 figures",
+            "Current consolidated goalkeeper figure",
             "reports/v5_figures/*",
             _family_count(records, "reports/v5_figures"),
-            "Historical V5 ranking and ElasticNet figures retained for "
-            "comparison; not active release figures.",
+            "Current consolidated v5 goalkeeper ranking figure.",
         ),
         (
             "Player heatmaps",
@@ -887,9 +873,10 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
         "",
         "| If you need… | Go to |",
         "|---|---|",
-        "| Active Tournament Impact v3 rankings | [`reports/ranking/player_rankings_v3.csv`](../reports/ranking/player_rankings_v3.csv) |",
-        "| Primary 300+-minute Tournament Impact view | [`reports/ranking/global_rankings_outfield_300min.csv`](../reports/ranking/global_rankings_outfield_300min.csv) |",
-        "| Full-cohort player table | [`reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) |",
+        "| Global outfield rankings | [`reports/ranking/global_rankings_outfield.csv`](../reports/ranking/global_rankings_outfield.csv) |",
+        "| Primary 300+-minute outfield view | [`reports/ranking/player_rankings_300plus.csv`](../reports/ranking/player_rankings_300plus.csv) |",
+        "| Separate goalkeeper rankings | [`reports/ranking/goalkeeper_rankings.md`](../reports/ranking/goalkeeper_rankings.md) |",
+        "| Full-cohort feature/profile master table | [`reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) |",
         "| Searchable JSON rankings | [`reports/ranking/player_rankings.json`](../reports/ranking/player_rankings.json) |",
         "| One player’s profile | [`reports/player_profiles/`](../reports/player_profiles/) |",
         "| One player’s heatmap | [`reports/visuals/heatmaps/`](../reports/visuals/heatmaps/) |",
@@ -919,15 +906,13 @@ def _write_results_dictionary(records: list[dict[str, Any]]) -> None:
             "",
             "## Which version wins?",
             "",
-            "Use `results/reports/ranking/player_rankings.csv` or its explicit "
-            "`player_rankings_v3.csv` version for active player rankings and "
-            "`results/reports/canonical/` for active narrative summaries. "
-            "`player_rankings_v2.csv`, `v5_player_rankings.csv`, and "
-            "`v5_player_rankings.json` are compatibility aliases of that "
-            "active v3 table. "
-            "`reports/ranking/legacy/`, `reports/v5_figures/`, and "
-            "`MIscellaneous/` may contain older or exploratory evidence and "
-            "must not override canonical rankings or validation conclusions.",
+            "Use `global_rankings_outfield.csv` or "
+            "`player_rankings_300plus.csv` for outfield order, "
+            "`goalkeeper_rankings.csv` for goalkeeper order, and "
+            "`player_rankings.csv` as the complete feature/profile master "
+            "table. Use `results/reports/canonical/` for active narrative "
+            "summaries. `MIscellaneous/` contains auxiliary model evidence "
+            "and must not override canonical rankings or validation conclusions.",
             "",
             "For a literal one-row-per-file lookup, filter `file_dictionary.csv` "
             "by `path`, `filename`, `folder`, or `information`. The JSON edition "
@@ -1043,15 +1028,14 @@ def _write_rankings_dictionary(records: list[dict[str, Any]]) -> None:
         "",
         "| Ranking resource | Location | Use |",
         "|---|---|---|",
-        f"| Complete ranking table | [`results/reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) | Spreadsheet/dataframe source; {ranking_csv['format_details']}. |",
-        "| Explicit v3 ranking table | [`results/reports/ranking/player_rankings_v3.csv`](../reports/ranking/player_rankings_v3.csv) | Versioned byte-identical source for the active table. |",
-        "| Unified tournament ranking | [`results/reports/ranking/unified_tournament_rankings.csv`](../reports/ranking/unified_tournament_rankings.csv) | Exact six-field v3 publication view. It includes all eligible outfield players and one team-main goalkeeper per team; backup goalkeepers remain unranked. |",
+        f"| Complete player master table | [`results/reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) | Feature/profile source for all eligible players; {ranking_csv['format_details']}. It is not the cross-position leaderboard. |",
+        "| Unified tournament ranking | [`results/reports/ranking/unified_tournament_rankings.csv`](../reports/ranking/unified_tournament_rankings.csv) | Exact six-field outfield-only publication view. |",
         "| Complete feature-rich team tables | [`results/reports/ranking/by_team/`](../reports/ranking/by_team/) | One active v3 table per team, ordered by `team_rank_v3`/publication `Team Rank`. |",
         "| Complete unified team tables | [`results/reports/ranking/by_team_unified/`](../reports/ranking/by_team_unified/) | One exact six-field v3 CSV per team, ordered by publication `Team Rank`. |",
         "| Global outfield ranking | [`results/reports/ranking/global_rankings_outfield.csv`](../reports/ranking/global_rankings_outfield.csv) | Every eligible outfield player ordered by `global_rank_v3`, including players below 300 minutes. |",
-        "| Primary 300+-minute ranking | [`results/reports/ranking/global_rankings_outfield_300min.csv`](../reports/ranking/global_rankings_outfield_300min.csv) | Filters exclusively on Qatar 2022 `minutes_played >= 300`. |",
-        "| Goalkeeper ranking | [`results/reports/ranking/goalkeeper_rankings.csv`](../reports/ranking/goalkeeper_rankings.csv) | Dedicated v3 rating for exactly one team-main goalkeeper per nation, with continuous play, regular penalties, bounded shootouts, and uncertainty separated. |",
-        "| Unified goalkeeper view | [`results/reports/ranking/goalkeeper_rankings_unified.csv`](../reports/ranking/goalkeeper_rankings_unified.csv) | The same 32-player dedicated GK order with publication placement fields appended. Any cross-position fallback is percentile-equivalent only. |",
+        "| Primary 300+-minute outfield ranking | [`results/reports/ranking/player_rankings_300plus.csv`](../reports/ranking/player_rankings_300plus.csv) | Outfield-only view filtered on Qatar 2022 `minutes_played >= 300`; JSON is also available. |",
+        "| Goalkeeper ranking | [`results/reports/ranking/goalkeeper_rankings.csv`](../reports/ranking/goalkeeper_rankings.csv) | Separate consolidated v5 order for all 32 eligible goalkeepers, with PSxG-style shot stopping, clutch/state leverage, penalties, shootouts, support play, exposure/reliability, and uncertainty. JSON and Markdown editions contain the same current order. |",
+        "| Human-readable goalkeeper ranking | [`results/reports/ranking/goalkeeper_rankings.md`](../reports/ranking/goalkeeper_rankings.md) | All 32 goalkeepers in the same dedicated order, formatted for direct reading. |",
         "| Complete ranking JSON | [`results/reports/ranking/player_rankings.json`](../reports/ranking/player_rankings.json) | Same records for applications and APIs. |",
         "| Ranking methodology | [`results/reports/ranking/ranking_methodology.md`](../reports/ranking/ranking_methodology.md) | Active v3 event scope, common-unit impact, single empirical-Bayes rate treatment, bootstrap uncertainty, attack/defense selection, and goalkeeper boundary. |",
         "| Ranking audit | [`results/reports/ranking/ranking_audit.md`](../reports/ranking/ranking_audit.md) | Champion/challenger gates, confidence intervals, stability, scorer/defender checks, and goalkeeper calibration/cap tests. |",
@@ -1075,41 +1059,29 @@ def _write_rankings_dictionary(records: list[dict[str, Any]]) -> None:
         "| `ordinary_event_periods_v3` | Provenance field fixed to periods `1-4` for ordinary outfield performance. |",
         "| `shootout_attempts` / `shootout_goals` | Separate period-five audit fields, excluded from ordinary outfield impact. |",
         "| `is_main_goalkeeper` | `true` only for the goalkeeper with the most Qatar 2022 minutes on that team. |",
-        "| `continuous_goalkeeper_rating_v3` | Dedicated periods 1–4 goalkeeper rating from continuous shot stopping, high-leverage stopping, cross/claim control, sweeping, distribution under pressure, and regular-penalty performance. |",
-        "| `shootout_component_v3` | Separate period-five contribution capped at 10% of the dedicated goalkeeper score; there is no per-save additive `0.20`. |",
-        "| `dedicated_goalkeeper_score_v3` / `goalkeeper_rank_v3` | Dedicated goalkeeper score and order for the 32 team-main keepers. |",
-        "| `percentile_equivalent_placement` | Explicit fallback publication bridge based on dedicated GK cohort rank. It is not measured absolute value and must not be interpreted as common-unit contribution. |",
+        "| `psxg_shot_stopping_value_v5` | Reliability-adjusted PSxG-style ordinary-play shot-stopping value. |",
+        "| `clutch_save_value_v5` / `state_leverage_prevention_value_v5` | High-leverage and match-state prevention channels in the consolidated goalkeeper score. |",
+        "| `regular_penalty_impact_v5` / `shootout_win_probability_added_v5` | Separately estimated and reliability-controlled regular-penalty and shootout contributions. |",
+        "| `support_composite_v5` | Cross/claim, sweeping, and pressured-distribution support component. |",
+        "| `goalkeeper_consolidated_value_score_v5` / `goalkeeper_consolidated_value_rank_v5` | Current goalkeeper score and dedicated rank for the 32-player eligible cohort. |",
+        "| `goalkeeper_score_interval_low_v5` / `goalkeeper_score_interval_high_v5` | Goalkeeper score uncertainty interval; uncertainty does not change the point estimate. |",
         "| `Global Rank` / `Team Rank` | Six-field publication aliases of the selected v3 ranking/placement fields. |",
         "| `Tournament Performance Score` | Six-field order-preserving v3 publication score. Consult the feature-rich table for common-unit impact, role quality, uncertainty, and goalkeeper boundaries. |",
         "| `global_rank_v2`, `team_rank_v2`, `position_rank_v2`, `role_rank_v2`, `final_player_rating_v2`, `gk_rating_v2` | Clearly labelled legacy comparison fields only; they are not active v3 scores or ranks. |",
         "",
-        "## Active v3 figures",
+        "## Current ranking figures",
         "",
-        "The sole active ranking-figure family is "
-        "[`results/reports/v3_figures/`](../reports/v3_figures/). It contains "
-        "global and 300+ outfield order, the dedicated goalkeeper order, a "
-        "representative team view, champion-versus-challenger movement, "
-        "position composition, model coefficients/importance, and rank "
-        "stability diagnostics. Existing files under `reports/v5_figures/` "
-        "are historical/compatibility evidence, not current figures.",
+        "[`results/reports/v3_figures/`](../reports/v3_figures/) contains the "
+        "six current outfield ranking/validation figures. "
+        "[`results/reports/v5_figures/goalkeeper_rankings_v5.png`](../reports/v5_figures/goalkeeper_rankings_v5.png) "
+        "is the current consolidated goalkeeper figure.",
         "",
-        "## Compatibility aliases and historical outputs",
+        "## Canonical-file rule",
         "",
-        "`player_rankings.csv` and `player_rankings_v3.csv` are the active "
-        "feature-rich table. After v3 promotion, `player_rankings_v2.csv`, "
-        "`v5_player_rankings.csv`, and `v5_player_rankings.json` are "
-        "byte-identical compatibility aliases of the corresponding active "
-        "table; their "
-        "filenames do not mean the retired v2/V5 formulas remain active. "
-        "Original pre-v3 tables are preserved under "
-        "`results/reports/ranking/legacy/`.",
-        "",
-        "Retired methodology may appear only in that explicitly historical "
-        "material. The active score does not use the old within-position "
-        "z-score as absolute global value, repeated 450/180/90-minute "
-        "exposure penalties, the one-sided defensive publication lift, an "
-        "unbounded `0.20` per shootout save, or a Blom bridge described as "
-        "measured absolute performance.",
+        "Only the unversioned files listed above are published ranking "
+        "artifacts. Versioned duplicates and obsolete ranking folders are "
+        "removed during regeneration. Goalkeepers do not appear in either "
+        "outfield leaderboard.",
         "",
         "## Other leaderboards",
         "",
@@ -1149,15 +1121,14 @@ def _write_compact_index(records: list[dict[str, Any]]) -> None:
         "",
         "## Canonical rule",
         "",
-        "Use `results/reports/ranking/player_rankings.csv` (or the explicit "
-        "`player_rankings_v3.csv` version) for active Tournament Impact v3 "
-        "ordering and "
-        "`results/reports/canonical/` for narrative summaries. A validation "
+        "Use `global_rankings_outfield.csv` or `player_rankings_300plus.csv` "
+        "for outfield order, `goalkeeper_rankings.csv` for goalkeeper order, "
+        "and `player_rankings.csv` as the complete feature/profile master "
+        "table. Use `results/reports/canonical/` for narrative summaries. A validation "
         "task may explicitly call for an out-of-fold artifact from `audit/` "
         "or `diagnostics/`. Role Quality v3 supplies position/role order, and "
         "match-bootstrap Uncertainty is descriptive rather than a scoring "
-        "penalty. V2/V5-named ranking files are compatibility aliases; "
-        "historical methodology belongs under `reports/ranking/legacy/`.",
+        "penalty.",
         "",
         "Rebuild after result changes with "
         "`python results/documentation/generate_documentation.py`.",

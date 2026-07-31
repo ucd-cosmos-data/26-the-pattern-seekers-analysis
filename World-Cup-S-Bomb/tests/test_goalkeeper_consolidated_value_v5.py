@@ -320,7 +320,13 @@ def test_release_artifacts_report_kolo_and_every_gate() -> None:
 
 
 def test_candidate_table_has_one_main_goalkeeper_per_team() -> None:
-    path = RANKING / "goalkeeper_rankings_v5.csv"
+    path = (
+        PROJECT_ROOT
+        / "results"
+        / "diagnostics"
+        / "ranking_repair"
+        / "goalkeeper_v5_scored_rows.csv"
+    )
     if not path.is_file():
         pytest.skip("v5 candidate table has not been generated")
     table = pd.read_csv(path)
@@ -329,4 +335,3 @@ def test_candidate_table_has_one_main_goalkeeper_per_team() -> None:
     assert sorted(
         table["goalkeeper_consolidated_value_rank_v5"].astype(int)
     ) == list(range(1, 33))
-

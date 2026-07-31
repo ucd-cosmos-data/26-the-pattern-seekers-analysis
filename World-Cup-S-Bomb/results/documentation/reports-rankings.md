@@ -14,15 +14,14 @@ Ordinary outfield evidence uses only Qatar 2022 periods 1–4. Period 5 is shoot
 
 | Ranking resource | Location | Use |
 |---|---|---|
-| Complete ranking table | [`results/reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) | Spreadsheet/dataframe source; 593 data rows × 539 columns. |
-| Explicit v3 ranking table | [`results/reports/ranking/player_rankings_v3.csv`](../reports/ranking/player_rankings_v3.csv) | Versioned byte-identical source for the active table. |
-| Unified tournament ranking | [`results/reports/ranking/unified_tournament_rankings.csv`](../reports/ranking/unified_tournament_rankings.csv) | Exact six-field v3 publication view. It includes all eligible outfield players and one team-main goalkeeper per team; backup goalkeepers remain unranked. |
+| Complete player master table | [`results/reports/ranking/player_rankings.csv`](../reports/ranking/player_rankings.csv) | Feature/profile source for all eligible players; 593 data rows × 608 columns. It is not the cross-position leaderboard. |
+| Unified tournament ranking | [`results/reports/ranking/unified_tournament_rankings.csv`](../reports/ranking/unified_tournament_rankings.csv) | Exact six-field outfield-only publication view. |
 | Complete feature-rich team tables | [`results/reports/ranking/by_team/`](../reports/ranking/by_team/) | One active v3 table per team, ordered by `team_rank_v3`/publication `Team Rank`. |
 | Complete unified team tables | [`results/reports/ranking/by_team_unified/`](../reports/ranking/by_team_unified/) | One exact six-field v3 CSV per team, ordered by publication `Team Rank`. |
 | Global outfield ranking | [`results/reports/ranking/global_rankings_outfield.csv`](../reports/ranking/global_rankings_outfield.csv) | Every eligible outfield player ordered by `global_rank_v3`, including players below 300 minutes. |
-| Primary 300+-minute ranking | [`results/reports/ranking/global_rankings_outfield_300min.csv`](../reports/ranking/global_rankings_outfield_300min.csv) | Filters exclusively on Qatar 2022 `minutes_played >= 300`. |
-| Goalkeeper ranking | [`results/reports/ranking/goalkeeper_rankings.csv`](../reports/ranking/goalkeeper_rankings.csv) | Dedicated v3 rating for exactly one team-main goalkeeper per nation, with continuous play, regular penalties, bounded shootouts, and uncertainty separated. |
-| Unified goalkeeper view | [`results/reports/ranking/goalkeeper_rankings_unified.csv`](../reports/ranking/goalkeeper_rankings_unified.csv) | The same 32-player dedicated GK order with publication placement fields appended. Any cross-position fallback is percentile-equivalent only. |
+| Primary 300+-minute outfield ranking | [`results/reports/ranking/player_rankings_300plus.csv`](../reports/ranking/player_rankings_300plus.csv) | Outfield-only view filtered on Qatar 2022 `minutes_played >= 300`; JSON is also available. |
+| Goalkeeper ranking | [`results/reports/ranking/goalkeeper_rankings.csv`](../reports/ranking/goalkeeper_rankings.csv) | Separate consolidated v5 order for all 32 eligible goalkeepers, with PSxG-style shot stopping, clutch/state leverage, penalties, shootouts, support play, exposure/reliability, and uncertainty. JSON and Markdown editions contain the same current order. |
+| Human-readable goalkeeper ranking | [`results/reports/ranking/goalkeeper_rankings.md`](../reports/ranking/goalkeeper_rankings.md) | All 32 goalkeepers in the same dedicated order, formatted for direct reading. |
 | Complete ranking JSON | [`results/reports/ranking/player_rankings.json`](../reports/ranking/player_rankings.json) | Same records for applications and APIs. |
 | Ranking methodology | [`results/reports/ranking/ranking_methodology.md`](../reports/ranking/ranking_methodology.md) | Active v3 event scope, common-unit impact, single empirical-Bayes rate treatment, bootstrap uncertainty, attack/defense selection, and goalkeeper boundary. |
 | Ranking audit | [`results/reports/ranking/ranking_audit.md`](../reports/ranking/ranking_audit.md) | Champion/challenger gates, confidence intervals, stability, scorer/defender checks, and goalkeeper calibration/cap tests. |
@@ -46,23 +45,23 @@ Ordinary outfield evidence uses only Qatar 2022 periods 1–4. Period 5 is shoot
 | `ordinary_event_periods_v3` | Provenance field fixed to periods `1-4` for ordinary outfield performance. |
 | `shootout_attempts` / `shootout_goals` | Separate period-five audit fields, excluded from ordinary outfield impact. |
 | `is_main_goalkeeper` | `true` only for the goalkeeper with the most Qatar 2022 minutes on that team. |
-| `continuous_goalkeeper_rating_v3` | Dedicated periods 1–4 goalkeeper rating from continuous shot stopping, high-leverage stopping, cross/claim control, sweeping, distribution under pressure, and regular-penalty performance. |
-| `shootout_component_v3` | Separate period-five contribution capped at 10% of the dedicated goalkeeper score; there is no per-save additive `0.20`. |
-| `dedicated_goalkeeper_score_v3` / `goalkeeper_rank_v3` | Dedicated goalkeeper score and order for the 32 team-main keepers. |
-| `percentile_equivalent_placement` | Explicit fallback publication bridge based on dedicated GK cohort rank. It is not measured absolute value and must not be interpreted as common-unit contribution. |
+| `psxg_shot_stopping_value_v5` | Reliability-adjusted PSxG-style ordinary-play shot-stopping value. |
+| `clutch_save_value_v5` / `state_leverage_prevention_value_v5` | High-leverage and match-state prevention channels in the consolidated goalkeeper score. |
+| `regular_penalty_impact_v5` / `shootout_win_probability_added_v5` | Separately estimated and reliability-controlled regular-penalty and shootout contributions. |
+| `support_composite_v5` | Cross/claim, sweeping, and pressured-distribution support component. |
+| `goalkeeper_consolidated_value_score_v5` / `goalkeeper_consolidated_value_rank_v5` | Current goalkeeper score and dedicated rank for the 32-player eligible cohort. |
+| `goalkeeper_score_interval_low_v5` / `goalkeeper_score_interval_high_v5` | Goalkeeper score uncertainty interval; uncertainty does not change the point estimate. |
 | `Global Rank` / `Team Rank` | Six-field publication aliases of the selected v3 ranking/placement fields. |
 | `Tournament Performance Score` | Six-field order-preserving v3 publication score. Consult the feature-rich table for common-unit impact, role quality, uncertainty, and goalkeeper boundaries. |
 | `global_rank_v2`, `team_rank_v2`, `position_rank_v2`, `role_rank_v2`, `final_player_rating_v2`, `gk_rating_v2` | Clearly labelled legacy comparison fields only; they are not active v3 scores or ranks. |
 
-## Active v3 figures
+## Current ranking figures
 
-The sole active ranking-figure family is [`results/reports/v3_figures/`](../reports/v3_figures/). It contains global and 300+ outfield order, the dedicated goalkeeper order, a representative team view, champion-versus-challenger movement, position composition, model coefficients/importance, and rank stability diagnostics. Existing files under `reports/v5_figures/` are historical/compatibility evidence, not current figures.
+[`results/reports/v3_figures/`](../reports/v3_figures/) contains the six current outfield ranking/validation figures. [`results/reports/v5_figures/goalkeeper_rankings_v5.png`](../reports/v5_figures/goalkeeper_rankings_v5.png) is the current consolidated goalkeeper figure.
 
-## Compatibility aliases and historical outputs
+## Canonical-file rule
 
-`player_rankings.csv` and `player_rankings_v3.csv` are the active feature-rich table. After v3 promotion, `player_rankings_v2.csv`, `v5_player_rankings.csv`, and `v5_player_rankings.json` are byte-identical compatibility aliases of the corresponding active table; their filenames do not mean the retired v2/V5 formulas remain active. Original pre-v3 tables are preserved under `results/reports/ranking/legacy/`.
-
-Retired methodology may appear only in that explicitly historical material. The active score does not use the old within-position z-score as absolute global value, repeated 450/180/90-minute exposure penalties, the one-sided defensive publication lift, an unbounded `0.20` per shootout save, or a Blom bridge described as measured absolute performance.
+Only the unversioned files listed above are published ranking artifacts. Versioned duplicates and obsolete ranking folders are removed during regeneration. Goalkeepers do not appear in either outfield leaderboard.
 
 ## Other leaderboards
 
