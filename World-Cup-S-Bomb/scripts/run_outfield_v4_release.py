@@ -2237,21 +2237,23 @@ def main() -> None:
                 errors="raise",
             ).le(50)
         ]
-        .merge(
-            released[
-                [
-                    "player_id",
-                    "publication_global_rank_outfield_v4",
-                    "Tournament Performance Score",
-                ]
-            ],
-            on="player_id",
-            how="left",
-            validate="one_to_one",
-        )
+        .copy()
         .sort_values(
             "tournament_impact_rank_outfield_v4", kind="mergesort"
         )
+    )
+    publication_lookup = released.set_index("player_id")
+    top50["publication_global_rank_outfield_v4"] = (
+        top50["player_id"]
+        .map(
+            publication_lookup[
+                "publication_global_rank_outfield_v4"
+            ]
+        )
+        .astype("Int64")
+    )
+    top50["Tournament Performance Score"] = top50["player_id"].map(
+        publication_lookup["Tournament Performance Score"]
     )
     top50_columns = [
         "tournament_impact_rank_outfield_v4",
