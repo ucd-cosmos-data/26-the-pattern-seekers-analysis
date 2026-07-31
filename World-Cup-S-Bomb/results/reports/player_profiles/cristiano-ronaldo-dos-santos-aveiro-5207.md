@@ -1,62 +1,40 @@
-# Cristiano Ronaldo dos Santos Aveiro Player Profile
+# Cristiano Ronaldo dos Santos Aveiro — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Portugal
 - Position group: Forward
 - Functional role: Target Forward
-- Probabilistic role: Finishing/Aerial Forward
-- Role entropy: 0.0002
-- Global rank: 22
-- Position rank: 9
-- Role rank: 8
-- Team rank: 3
-- Final player rating: 0.6545
-- Global ranking eligibility: eligible
 - Minutes: 302.8
-- Minutes reliability: 0.3354
+- Global Rank v3: 10
+- Team Rank v3: 1
+- Position Rank v3: 27
+- Role Rank v3: 10
+- Tournament Impact: 3.0153
+- Role Quality: 0.7082
+- Impact interval: [0.5401, 6.2055]
+- Rank band: 2–199
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 1
+- Actual assists: 0
+- Non-shootout xG: 1.9393
+- Non-shootout xA: 0.1115
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.8854 |
-| vaep_def_scaled | 0.8013 |
-| vaep_per_touch | 0.0070 |
-| open_play_xt_p90 | 0.0103 |
-| set_piece_xt_p90 | 0.0041 |
-| role_adjusted_value | 0.7451 |
-| completeness_score | 0.3514 |
-| off_ball_score | 0.4866 |
+| Attack | 3.0758 |
+| Defense | -0.0606 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.3043 |
-| creation_score | 0.4120 |
-| finishing_score | 0.9425 |
-| pressing_score | 0.3523 |
-| defensive_score | 0.2805 |
-| ball_security_score | 0.4345 |
-| aerial_score | 0.5857 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8787 |
-| mean_defenders_within_3m | 0.5307 |
-| mean_defenders_within_5m | 1.0890 |
-| mean_nearest_defender_m | 8.9166 |
-| mean_passing_lane_availability | 0.8900 |
-| packing_index_mean | 0.3988 |
-| mean_space_received | 0.4824 |
-| network_pagerank | 0.0416 |
-| network_betweenness | 0.0019 |
-| network_entropy | 0.9549 |
-| build_up_involvement_ratio | 0.6832 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

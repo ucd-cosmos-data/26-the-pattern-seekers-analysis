@@ -1,62 +1,40 @@
-# Luke Shaw Player Profile
+# Luke Shaw — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: England
 - Position group: Fullback/Wingback
 - Functional role: Attacking Wingback
-- Probabilistic role: Creative/Progressive Fullback
-- Role entropy: 0.0000
-- Global rank: 46
-- Position rank: 5
-- Role rank: 3
-- Team rank: 3
-- Final player rating: 0.5711
-- Global ranking eligibility: eligible
 - Minutes: 457.2
-- Minutes reliability: 0.4324
+- Global Rank v3: 70
+- Team Rank v3: 6
+- Position Rank v3: 17
+- Role Rank v3: 14
+- Tournament Impact: 1.3410
+- Role Quality: 0.2201
+- Impact interval: [0.3436, 2.5159]
+- Rank band: 26–262
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 0.0844
+- Non-shootout xA: 0.4880
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.6384 |
-| vaep_def_scaled | 0.8610 |
-| vaep_per_touch | 0.0013 |
-| open_play_xt_p90 | 0.0230 |
-| set_piece_xt_p90 | 0.0518 |
-| role_adjusted_value | 0.3873 |
-| completeness_score | 0.5012 |
-| off_ball_score | 0.4661 |
+| Attack | 1.4099 |
+| Defense | -0.0689 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.6977 |
-| creation_score | 0.7810 |
-| finishing_score | 0.3885 |
-| pressing_score | 0.4139 |
-| defensive_score | 0.3650 |
-| ball_security_score | 0.4486 |
-| aerial_score | 0.4918 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8901 |
-| mean_defenders_within_3m | 0.2500 |
-| mean_defenders_within_5m | 0.5161 |
-| mean_nearest_defender_m | 7.4875 |
-| mean_passing_lane_availability | 0.9209 |
-| packing_index_mean | 0.6988 |
-| mean_space_received | 0.7144 |
-| network_pagerank | 0.1051 |
-| network_betweenness | 0.2991 |
-| network_entropy | 0.8378 |
-| build_up_involvement_ratio | 0.6848 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

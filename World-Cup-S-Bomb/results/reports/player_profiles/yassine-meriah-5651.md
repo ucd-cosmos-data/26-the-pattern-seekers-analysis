@@ -1,0 +1,40 @@
+# Yassine Meriah — Qatar 2022 Player Profile
+
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
+
+## Tournament Impact, Role Quality, and Uncertainty
+
+- Team: Tunisia
+- Position group: Center Back
+- Functional role: Sweeper CB
+- Minutes: 296.6
+- Global Rank v3: 547
+- Team Rank v3: 17
+- Position Rank v3: 89
+- Role Rank v3: 64
+- Tournament Impact: -0.0491
+- Role Quality: 0.0672
+- Impact interval: [-0.1695, 0.0378]
+- Rank band: 431–553
+- Uncertainty status: wide
+
+## Decisive outcomes
+
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0461
+- Non-shootout xA: 0.0485
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
+|---|---|
+| Attack | 0.0670 |
+| Defense | -0.1161 |
+| Other | 0.0000 |
+
+## Compatibility
+
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

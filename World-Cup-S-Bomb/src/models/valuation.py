@@ -16,6 +16,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 from src.config import RATING_WEIGHTS, RatingConfig
+from src.features.role_vectors import derive_role_channel_weights
 
 
 COMPLETENESS_DIMENSIONS = (
@@ -91,6 +92,7 @@ def calculate_completeness_score(
     *,
     top_k: int = 3,
     epsilon: float = 1e-9,
+    alpha: float = 0.6,
 ) -> pd.Series:
     """Calculate quality-adjusted balance over a player's strongest dimensions.
 
@@ -105,6 +107,8 @@ def calculate_completeness_score(
         raise ValueError(f"Completeness dimensions missing: {sorted(missing)}")
     if not 2 <= top_k <= len(COMPLETENESS_DIMENSIONS):
         raise ValueError("top_k must be between 2 and the dimension count")
+    if not 0.0 <= alpha <= 1.0:
+        raise ValueError("Completeness alpha must be in [0, 1]")
     values = role_vectors[list(COMPLETENESS_DIMENSIONS)].apply(
         pd.to_numeric,
         errors="coerce",
@@ -122,6 +126,25 @@ def calculate_completeness_score(
     balance = (1.0 - variation.clip(upper=1.0)).clip(0.0, 1.0)
     score = (mean.clip(0.0, 1.0) * balance).clip(0.0, 1.0)
     score.loc[~sufficient] = np.nan
+    if "minutes" in role_vectors:
+        minutes = pd.to_numeric(
+            role_vectors["minutes"],
+            errors="coerce",
+        ).fillna(0.0)
+        minute_factor = pd.Series(
+            np.select(
+                [
+                    minutes.lt(90.0),
+                    minutes.lt(180.0),
+                    minutes.lt(300.0),
+                ],
+                [0.50, 0.75, 0.90],
+                default=1.00,
+            ),
+            index=role_vectors.index,
+            dtype=float,
+        )
+        score = alpha * score + (1.0 - alpha) * minute_factor
     return score.rename("completeness_score")
 
 
@@ -686,10 +709,6 @@ def calculate_final_player_rating(
         "role_adjusted_value",
         "completeness_score",
         "off_ball_score",
-        "progression_score",
-        "ball_security_score",
-        "defensive_score",
-        "pressing_score",
     }
     missing = required.difference(profiles.columns)
     if missing:
@@ -711,33 +730,49 @@ def calculate_final_player_rating(
         output["legacy_team_rank"] = output["team_rank"]
 
     if {"vaep_off_p90", "vaep_def_p90"} <= set(output):
-        # The scaled channels remain published for profile transparency, but
-        # they no longer feed the rating: within-position min-max scaling
-        # saturates at 1.0, so max(off, def) let one-dimensional specialists
-        # match two-way elites (e.g. the best offensive fullback scored the
-        # same vaep component as the tournament's best attacker).
+        stable_channels = output[
+            [
+                "position_group",
+                "vaep_off_p90",
+                "vaep_def_p90",
+            ]
+        ].copy()
+        channel_reliability = (
+            pd.to_numeric(output["minutes"], errors="coerce")
+            .fillna(0.0)
+            .clip(lower=0.0)
+        )
+        channel_reliability = channel_reliability / (
+            channel_reliability + 450.0
+        )
+        for channel in ("vaep_off_p90", "vaep_def_p90"):
+            values = pd.to_numeric(
+                stable_channels[channel],
+                errors="coerce",
+            )
+            position_prior = values.groupby(
+                stable_channels["position_group"]
+            ).transform("mean")
+            stable_channels[channel] = (
+                channel_reliability * values
+                + (1.0 - channel_reliability) * position_prior
+            )
         value_channels = IndependentValueScaler(
             minimum_group_size=12,
-        ).fit_transform(output)
+        ).fit_transform(stable_channels)
         output[value_channels.columns] = value_channels
-    # Rating component: global winsorized tournament percentile of total
-    # VAEP, comparable across positions; role fairness is the explicit job
-    # of role_adjusted_value, not of the value channel scaling.
-    vaep_value = _training_percentile(output["vaep_total_p90"])
+        channel_weights = derive_role_channel_weights(output)
+        output[channel_weights.columns] = channel_weights
+        vaep_value = (
+            channel_weights["role_off_weight"]
+            * value_channels["vaep_off_scaled"]
+            + channel_weights["role_def_weight"]
+            * value_channels["vaep_def_scaled"]
+        )
+        output["vaep_component"] = vaep_value
+    else:
+        vaep_value = _training_percentile(output["vaep_total_p90"])
 
-    # Build-up control leans on ball security (controllers' signature and a
-    # quality small-sample attackers rarely carry) over raw progression;
-    # defensive work averages the defending and pressing role-vector scores.
-    # Both are percentiled so the compressed 0-1 role scores can actually
-    # separate the players they describe.
-    build_up_raw = (
-        0.35 * pd.to_numeric(output["progression_score"], errors="coerce")
-        + 0.65 * pd.to_numeric(output["ball_security_score"], errors="coerce")
-    )
-    defensive_work_raw = (
-        0.5 * pd.to_numeric(output["defensive_score"], errors="coerce")
-        + 0.5 * pd.to_numeric(output["pressing_score"], errors="coerce")
-    )
     components = pd.DataFrame(
         {
             "vaep_90": vaep_value,
@@ -755,8 +790,6 @@ def calculate_final_player_rating(
                 output["off_ball_score"],
                 errors="coerce",
             ),
-            "build_up_score": _training_percentile(build_up_raw),
-            "defensive_work_score": _training_percentile(defensive_work_raw),
         },
         index=output.index,
     )
@@ -773,9 +806,6 @@ def calculate_final_player_rating(
         settings.weights[column] * components[column]
         for column in RATING_WEIGHTS
     )
-    # Persist the two new composite inputs for downstream transparency.
-    output["build_up_percentile"] = components["build_up_score"]
-    output["defensive_work_percentile"] = components["defensive_work_score"]
     minutes = pd.to_numeric(output["minutes"], errors="coerce").clip(lower=0.0)
     reliability = minutes / (minutes + settings.reliability_minutes)
     position_prior = output.groupby("position_group")[
@@ -808,4 +838,26 @@ def calculate_final_player_rating(
         "final_player_rating"
     ].rank(method="min", ascending=False).astype(int)
     output["player_evaluation_score"] = output["final_player_rating"]
+    output["RankingStatus"] = np.select(
+        [
+            minutes.ge(300.0),
+            minutes.ge(180.0),
+        ],
+        [
+            "Ranked (300+ min)",
+            "Ranked (180–299 min)",
+        ],
+        default="Coverage only (<180 min)",
+    )
+    output["primary_global_rank"] = pd.Series(
+        pd.NA,
+        index=output.index,
+        dtype="Int64",
+    )
+    primary = minutes.ge(300.0)
+    output.loc[primary, "primary_global_rank"] = (
+        output.loc[primary, "final_player_rating"]
+        .rank(method="min", ascending=False)
+        .astype(int)
+    )
     return output

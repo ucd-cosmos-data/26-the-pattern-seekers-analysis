@@ -1,7 +1,7 @@
 # Player Rating Uncertainty (match-cluster bootstrap)
 
 <!-- V5_CANONICAL_NOTICE -->
-> **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
+> **Historical V4 player-rating packet.** Player ratings, ranks, role-challenger decisions, and rating uncertainty below are superseded by `results/reports/ranking/player_rankings.csv`, `results/reports/player_profiles/`, and `results/reports/canonical/model_summary.md`. Possession, tactical, and match-bootstrap material remains a historical V4 result.
 
 
 - Replicates: 2,000 (whole matches resampled with replacement)

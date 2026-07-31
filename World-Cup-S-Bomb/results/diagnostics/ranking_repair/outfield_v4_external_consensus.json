@@ -1,0 +1,119 @@
+{
+  "collected_before_fixture_gate_review": true,
+  "comparison": [
+    {
+      "comparison": "directionally consistent",
+      "consensus_summary": "universal tournament-leading consensus",
+      "player_name": "Lionel Andrés Messi Cuccittini",
+      "team": "Argentina",
+      "v4_publication_rank": 1
+    },
+    {
+      "comparison": "directionally consistent",
+      "consensus_summary": "strong two-way midfielder consensus",
+      "player_name": "Jude Bellingham",
+      "team": "England",
+      "v4_publication_rank": 34
+    },
+    {
+      "comparison": "directionally consistent",
+      "consensus_summary": "strong Team-of-the-Tournament consensus",
+      "player_name": "Achraf Hakimi Mouh",
+      "team": "Morocco",
+      "v4_publication_rank": 22
+    },
+    {
+      "comparison": "directionally consistent",
+      "consensus_summary": "strong analyst/TSG recognition; weaker event-only XI presence",
+      "player_name": "Sofyan Amrabat",
+      "team": "Morocco",
+      "v4_publication_rank": 30
+    },
+    {
+      "comparison": "directionally consistent",
+      "consensus_summary": "positive but less universal consensus",
+      "player_name": "Nicolás Hernán Otamendi",
+      "team": "Argentina",
+      "v4_publication_rank": 77
+    },
+    {
+      "comparison": "directionally consistent",
+      "consensus_summary": "mixed external selection support",
+      "player_name": "Cristian Gabriel Romero",
+      "team": "Argentina",
+      "v4_publication_rank": 46
+    },
+    {
+      "comparison": "directionally consistent",
+      "consensus_summary": "mixed external selection support",
+      "player_name": "Virgil van Dijk",
+      "team": "Netherlands",
+      "v4_publication_rank": 70
+    },
+    {
+      "comparison": "directionally consistent",
+      "consensus_summary": "watch fixture; limited broad-XI consensus",
+      "player_name": "Josip Juranović",
+      "team": "Croatia",
+      "v4_publication_rank": 29
+    }
+  ],
+  "important_caveat": "FIFA did not publish an official tournament Best XI; its TSG material is treated as technical context, not a fabricated XI.",
+  "sources": [
+    {
+      "label": "Qatar 2022 Technical Study Group tournament summary",
+      "publisher": "FIFA",
+      "url": "https://publications.fifa.com/en/annual-report-2022/2022-at-a-glance/fifa-world-cup-qatar-2022-summary/",
+      "use": "official tournament technical context and award record"
+    },
+    {
+      "label": "TSG review of the semi-finalists and Morocco",
+      "publisher": "FIFA",
+      "url": "https://inside.fifa.com/talent-development/technical-study-group/news/tsg-runs-the-rule-over-the-semi-finalists-and-moroccos-magnificent-run",
+      "use": "technical context for Morocco and Amrabat"
+    },
+    {
+      "label": "World Cup 2022 best XI",
+      "publisher": "ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/37634927/world-cup-2022-best-xis-makes-our-team-tournament",
+      "use": "major-outlet Team of the Tournament"
+    },
+    {
+      "label": "World Cup 2022 team of the tournament",
+      "publisher": "The Guardian",
+      "url": "https://www.theguardian.com/football/2022/dec/19/world-cup-2022-team-of-the-tournament-martinez-mbappe",
+      "use": "major-outlet Team of the Tournament"
+    },
+    {
+      "label": "Statistical team of the World Cup",
+      "publisher": "BBC Sport / Opta",
+      "url": "https://www.bbc.co.uk/sport/football/64019356",
+      "use": "Opta statistical selection"
+    },
+    {
+      "label": "World Cup team of the tournament",
+      "publisher": "The Athletic",
+      "url": "https://theathletic.com/4008254/2022/12/18/world-cup-team-of-the-tournament/",
+      "use": "major-outlet Team of the Tournament"
+    },
+    {
+      "label": "WhoScored statistical XI (contemporary reproduction)",
+      "publisher": "WhoScored",
+      "url": "https://www.uol.com.br/esporte/futebol/colunas/rafael-reis/2022/12/20/messi-e-o-unico-argentino-em-selecao-da-copa-montada-por-robos-confira.htm",
+      "use": "statistical-table comparison"
+    },
+    {
+      "label": "World Cup tournament data registry",
+      "publisher": "SofaScore",
+      "url": "https://api.sofascore.com/api/v1/unique-tournament/16/seasons",
+      "use": "statistical-table source registry"
+    },
+    {
+      "label": "2022 World Cup standard statistics",
+      "publisher": "FBref",
+      "url": "https://fbref.com/en/comps/1/2022/stats/2022-World-Cup-Stats",
+      "use": "independent statistical tables"
+    }
+  ],
+  "use_in_scoring_or_selection": false
+}

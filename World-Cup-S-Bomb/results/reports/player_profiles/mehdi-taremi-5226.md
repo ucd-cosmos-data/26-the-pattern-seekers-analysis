@@ -1,62 +1,40 @@
-# Mehdi Taremi Player Profile
+# Mehdi Taremi — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Iran
 - Position group: Forward
 - Functional role: Target Forward
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.0163
-- Global rank: 9
-- Position rank: 4
-- Role rank: 3
-- Team rank: 1
-- Final player rating: 0.6946
-- Global ranking eligibility: eligible
 - Minutes: 305.1
-- Minutes reliability: 0.3371
+- Global Rank v3: 47
+- Team Rank v3: 1
+- Position Rank v3: 55
+- Role Rank v3: 24
+- Tournament Impact: 1.7831
+- Role Quality: 0.5237
+- Impact interval: [0.4891, 3.4800]
+- Rank band: 13–234
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 1
+- Actual assists: 1
+- Non-shootout xG: 1.3781
+- Non-shootout xA: 0.4522
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.5152 |
-| vaep_def_scaled | 0.5205 |
-| vaep_per_touch | 0.0047 |
-| open_play_xt_p90 | 0.0368 |
-| set_piece_xt_p90 | 0.0072 |
-| role_adjusted_value | 0.8194 |
-| completeness_score | 0.5513 |
-| off_ball_score | 0.5079 |
+| Attack | 1.8005 |
+| Defense | -0.0174 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5206 |
-| creation_score | 0.6120 |
-| finishing_score | 0.9096 |
-| pressing_score | 0.5675 |
-| defensive_score | 0.5786 |
-| ball_security_score | 0.5085 |
-| aerial_score | 0.6772 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9137 |
-| mean_defenders_within_3m | 0.6352 |
-| mean_defenders_within_5m | 1.0997 |
-| mean_nearest_defender_m | 8.3799 |
-| mean_passing_lane_availability | 0.8718 |
-| packing_index_mean | 0.4777 |
-| mean_space_received | 0.4870 |
-| network_pagerank | 0.1157 |
-| network_betweenness | 0.1315 |
-| network_entropy | 0.9583 |
-| build_up_involvement_ratio | 0.7946 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

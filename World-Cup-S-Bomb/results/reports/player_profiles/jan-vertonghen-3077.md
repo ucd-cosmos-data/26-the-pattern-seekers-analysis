@@ -1,0 +1,40 @@
+# Jan Vertonghen — Qatar 2022 Player Profile
+
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
+
+## Tournament Impact, Role Quality, and Uncertainty
+
+- Team: Belgium
+- Position group: Center Back
+- Functional role: Sweeper CB
+- Minutes: 284.3
+- Global Rank v3: 369
+- Team Rank v3: 11
+- Position Rank v3: 84
+- Role Rank v3: 60
+- Tournament Impact: 0.2146
+- Role Quality: 0.0699
+- Impact interval: [0.0391, 0.4327]
+- Rank band: 224–438
+- Uncertainty status: wide
+
+## Decisive outcomes
+
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.1077
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
+|---|---|
+| Attack | 0.2301 |
+| Defense | -0.0155 |
+| Other | 0.0000 |
+
+## Compatibility
+
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

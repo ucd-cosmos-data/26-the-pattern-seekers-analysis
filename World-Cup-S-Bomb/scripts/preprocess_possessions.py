@@ -13,6 +13,7 @@ import ast
 import csv
 import math
 import statistics
+import sys
 from collections import Counter
 from dataclasses import dataclass, field, fields
 from pathlib import Path
@@ -20,11 +21,26 @@ from typing import Any
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from src.features.event_scope import (  # noqa: E402
+    ORDINARY_MATCH_PERIODS,
+    SHOOTOUT_PERIOD,
+)
+
 DEFAULT_EVENTS = PROJECT_ROOT / "notebooks" / "all_events.csv"
 DEFAULT_MATCHES = PROJECT_ROOT / "data" / "raw" / "matches.csv"
 DEFAULT_OUTPUT = PROJECT_ROOT / "data" / "processed" / "world_cup_possessions.csv"
 DEFAULT_DICTIONARY = PROJECT_ROOT / "data" / "processed" / "possession_data_dictionary.md"
-DEFAULT_REPORT = PROJECT_ROOT / "results" / "MIscellaneous" / "possession_validation_report.md"
+DEFAULT_REPORT = (
+    PROJECT_ROOT
+    / "results"
+    / "diagnostics"
+    / "ranking_repair"
+    / "event_scope"
+    / "possession_validation_report.md"
+)
 
 PITCH_LENGTH = 120.0
 PITCH_WIDTH = 80.0
@@ -461,10 +477,14 @@ def preprocess(events_path: Path, matches_path: Path) -> tuple[list[dict[str, An
             match_id = as_int(row["match_id"], -1)
             period = as_int(row["period"], -1)
             possession = as_int(row["possession"], -1)
-            if period == 5:
+            if period == SHOOTOUT_PERIOD:
                 excluded_shootout_rows += 1
                 continue
-            if match_id not in matches or period not in {1, 2, 3, 4} or possession < 0:
+            if (
+                match_id not in matches
+                or period not in ORDINARY_MATCH_PERIODS
+                or possession < 0
+            ):
                 invalid_group_rows += 1
                 continue
 

@@ -673,7 +673,7 @@ def run_v4_validation(
             )
             and np.allclose(
                 profiles["rating_minutes_reliability"],
-                profiles["minutes"] / (profiles["minutes"] + 300.0),
+                profiles["minutes"] / (profiles["minutes"] + 450.0),
                 rtol=0,
                 atol=1e-12,
             )

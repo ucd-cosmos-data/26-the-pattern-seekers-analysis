@@ -12,21 +12,20 @@ PITCH_LENGTH_UNITS = 120.0
 PITCH_WIDTH_UNITS = 80.0
 PITCH_LENGTH_METRES = 105.0
 PITCH_WIDTH_METRES = 68.0
-MIN_PLAYER_MINUTES = 300.0
+MIN_PLAYER_MINUTES = 45.0
+MIN_GOALKEEPER_MINUTES = 90.0
+PRIMARY_RANKING_MINUTES = 300.0
+PRIMARY_GOALKEEPER_RANKING_MINUTES = 270.0
+OUTFIELD_RELIABILITY_MINUTES = 450.0
+GOALKEEPER_RELIABILITY_MINUTES = 450.0
 
-# Direct value (VAEP/xT) still leads, but build-up control and defensive
-# work now carry explicit weight: a composite with none let elite
-# controllers (high progression/security/pressing, low direct value)
-# fall to the bottom third of the global ranking.
 RATING_WEIGHTS: dict[str, float] = {
-    "vaep_90": 0.36,
-    "vaep_per_touch": 0.10,
-    "xt_90": 0.12,
+    "vaep_90": 0.40,
+    "vaep_per_touch": 0.15,
+    "xt_90": 0.15,
     "role_adjusted_value": 0.15,
-    "completeness_score": 0.07,
+    "completeness_score": 0.10,
     "off_ball_score": 0.05,
-    "build_up_score": 0.08,
-    "defensive_work_score": 0.07,
 }
 
 
@@ -98,10 +97,7 @@ class RatingConfig:
     weights: Mapping[str, float] = field(
         default_factory=lambda: dict(RATING_WEIGHTS)
     )
-    # Half-weight at 600 minutes (~6.7 matches). The previous 300 gave a
-    # 300-minute player half signal, which let three-match per-90 hot streaks
-    # crowd the top of the global ranking.
-    reliability_minutes: float = 600.0
+    reliability_minutes: float = OUTFIELD_RELIABILITY_MINUTES
     minimum_minutes: float = MIN_PLAYER_MINUTES
 
     def __post_init__(self) -> None:

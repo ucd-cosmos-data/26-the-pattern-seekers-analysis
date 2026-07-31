@@ -1,62 +1,40 @@
-# Cristian Gabriel Romero Player Profile
+# Cristian Gabriel Romero — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Argentina
 - Position group: Center Back
-- Functional role: Deep Playmaker
-- Probabilistic role: Aerial/Secure Centre-Back
-- Role entropy: 0.0007
-- Global rank: 125
-- Position rank: 36
-- Role rank: 11
-- Team rank: 13
-- Final player rating: 0.2320
-- Global ranking eligibility: eligible
+- Functional role: Ball-Playing Centre-Back
 - Minutes: 575.9
-- Minutes reliability: 0.4898
+- Global Rank v3: 280
+- Team Rank v3: 11
+- Position Rank v3: 69
+- Role Rank v3: 14
+- Tournament Impact: 0.3875
+- Role Quality: 0.0811
+- Impact interval: [-0.0002, 0.9793]
+- Rank band: 109–510
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.0000
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.4198 |
-| vaep_def_scaled | 0.4268 |
-| vaep_per_touch | -0.0007 |
-| open_play_xt_p90 | 0.0026 |
-| set_piece_xt_p90 | -0.0000 |
-| role_adjusted_value | 0.0360 |
-| completeness_score | 0.3783 |
-| off_ball_score | 0.4220 |
+| Attack | 0.1259 |
+| Defense | 0.2616 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4150 |
-| creation_score | 0.2246 |
-| finishing_score | 0.1749 |
-| pressing_score | 0.4214 |
-| defensive_score | 0.4043 |
-| ball_security_score | 0.7070 |
-| aerial_score | 0.7876 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8884 |
-| mean_defenders_within_3m | 0.2201 |
-| mean_defenders_within_5m | 0.3940 |
-| mean_nearest_defender_m | 8.8068 |
-| mean_passing_lane_availability | 0.9433 |
-| packing_index_mean | 0.6121 |
-| mean_space_received | 0.8880 |
-| network_pagerank | 0.0648 |
-| network_betweenness | 0.0319 |
-| network_entropy | 0.8719 |
-| build_up_involvement_ratio | 0.5890 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

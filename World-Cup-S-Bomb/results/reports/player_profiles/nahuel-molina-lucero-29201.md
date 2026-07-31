@@ -1,62 +1,40 @@
-# Nahuel Molina Lucero Player Profile
+# Nahuel Molina Lucero — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Argentina
 - Position group: Fullback/Wingback
-- Functional role: Box-to-Box Runner
-- Probabilistic role: Creative/Progressive/Pressing Fullback
-- Role entropy: 0.0000
-- Global rank: 66
-- Position rank: 20
-- Role rank: 4
-- Team rank: 9
-- Final player rating: 0.4944
-- Global ranking eligibility: eligible
+- Functional role: Deep Playmaker
 - Minutes: 594.0
-- Minutes reliability: 0.4975
+- Global Rank v3: 78
+- Team Rank v3: 9
+- Position Rank v3: 43
+- Role Rank v3: 13
+- Tournament Impact: 1.2502
+- Role Quality: 0.1849
+- Impact interval: [0.2295, 2.5438]
+- Rank band: 27–309
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 0
+- Actual assists: 1
+- Non-shootout xG: 0.4853
+- Non-shootout xA: 0.2721
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.3267 |
-| vaep_def_scaled | 0.5778 |
-| vaep_per_touch | 0.0008 |
-| open_play_xt_p90 | 0.0149 |
-| set_piece_xt_p90 | 0.0042 |
-| role_adjusted_value | 0.4162 |
-| completeness_score | 0.4489 |
-| off_ball_score | 0.5184 |
+| Attack | 1.3127 |
+| Defense | -0.0625 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4376 |
-| creation_score | 0.3937 |
-| finishing_score | 0.5411 |
-| pressing_score | 0.7422 |
-| defensive_score | 0.4401 |
-| ball_security_score | 0.3599 |
-| aerial_score | 0.1209 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8067 |
-| mean_defenders_within_3m | 0.2845 |
-| mean_defenders_within_5m | 0.5336 |
-| mean_nearest_defender_m | 7.4677 |
-| mean_passing_lane_availability | 0.9349 |
-| packing_index_mean | 0.6269 |
-| mean_space_received | 0.7084 |
-| network_pagerank | 0.0634 |
-| network_betweenness | 0.0220 |
-| network_entropy | 0.8332 |
-| build_up_involvement_ratio | 0.6443 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

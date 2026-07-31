@@ -1,62 +1,40 @@
-# João Félix Sequeira Player Profile
+# João Félix Sequeira — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Portugal
 - Position group: Attacking Midfield/Wing
-- Functional role: Target Forward
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.0022
-- Global rank: 15
-- Position rank: 9
-- Role rank: 5
-- Team rank: 2
-- Final player rating: 0.6783
-- Global ranking eligibility: eligible
+- Functional role: Ball-Winner
 - Minutes: 340.2
-- Minutes reliability: 0.3619
+- Global Rank v3: 43
+- Team Rank v3: 3
+- Position Rank v3: 45
+- Role Rank v3: 13
+- Tournament Impact: 1.8340
+- Role Quality: 0.4596
+- Impact interval: [0.3629, 3.5889]
+- Rank band: 12–260
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 1
+- Regular penalty goals: 0
+- Actual assists: 2
+- Non-shootout xG: 0.6692
+- Non-shootout xA: 0.5973
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.5552 |
-| vaep_def_scaled | 0.3680 |
-| vaep_per_touch | 0.0035 |
-| open_play_xt_p90 | 0.0310 |
-| set_piece_xt_p90 | 0.0137 |
-| role_adjusted_value | 0.6300 |
-| completeness_score | 0.5175 |
-| off_ball_score | 0.4915 |
+| Attack | 1.8332 |
+| Defense | 0.0008 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.4090 |
-| creation_score | 0.5218 |
-| finishing_score | 0.8697 |
-| pressing_score | 0.4033 |
-| defensive_score | 0.5000 |
-| ball_security_score | 0.6056 |
-| aerial_score | 0.3791 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9052 |
-| mean_defenders_within_3m | 0.5406 |
-| mean_defenders_within_5m | 1.0150 |
-| mean_nearest_defender_m | 6.3413 |
-| mean_passing_lane_availability | 0.8786 |
-| packing_index_mean | 0.5556 |
-| mean_space_received | 0.4940 |
-| network_pagerank | 0.0652 |
-| network_betweenness | 0.0208 |
-| network_entropy | 0.9304 |
-| build_up_involvement_ratio | 0.6364 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

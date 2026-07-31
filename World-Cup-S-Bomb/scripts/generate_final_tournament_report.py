@@ -489,10 +489,10 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             "recovery proxies. Positive values indicate a modeled lineup edge."
         ),
         (
-            "- **Final outfield rating:** 40% independently scaled offensive/defensive "
-            "VAEP evidence, 15% VAEP per touch, 15% xT per 90, 15% grouped-ElasticNet "
-            "role-adjusted value, 10% top-three quality-adjusted completeness, and 5% "
-            "coverage-qualified off-ball contribution."
+            "- **Final outfield rating:** a team-disjoint calibrated composite of "
+            "contextual, role-weighted VAEP, VAEP per touch, xT per 90, grouped-"
+            "ElasticNet role value, sample-adjusted completeness, and coverage-"
+            "qualified off-ball contribution, followed by 450-minute shrinkage."
         ),
         "",
         "## Tactical-foundation validation and V5 player metrics",
@@ -534,7 +534,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             ["Player/report validation metric", "Validated value"],
             [
                 ["Players before cutoff", provenance["players_before_cutoff"]],
-                ["Eligible players (300+ minutes)", provenance["players_after_cutoff"]],
+                ["Eligible players (45 outfield / 90 GK)", provenance["players_after_cutoff"]],
                 ["Players excluded", provenance["players_dropped"]],
                 ["Successful action endpoints", f"{provenance['successful_action_points']:,}"],
                 ["Linked SB360 actor snapshots", f"{provenance['freeze_frame_actor_points']:,}"],
@@ -549,7 +549,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
         "",
         (
             "All tactical-foundation acceptance gates passed, including missing-value-free output, complete OOF team "
-            "coverage, held-out-match exclusion, the 300-minute cutoff, fullback spatial-role "
+            "coverage, held-out-match exclusion, 45/90-minute eligibility, fullback spatial-role "
             "safeguards, exact pressure discounting, within-role normalization, SB360 coverage, "
             "counterfactual safety, compiled-report completeness, and locked-classifier replay."
         ),
@@ -846,20 +846,22 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
             "# Top tournament-role players by position",
             "",
             (
-                "These leaderboards contain only players with at least 300 tournament "
-                "minutes. Outfield players use the V5 continuous valuation formula; "
-                "goalkeepers use a separate evidence matrix and are not assigned a global "
-                "outfield rank. Position sections remain navigation aids."
+                "Ratings cover outfield players with at least 45 minutes and goalkeepers "
+                "with at least 90. Outfield players use the v2 continuous valuation formula; "
+                "goalkeepers use the separate tournament-v2 PSxG-GA, save-rate, "
+                "penalty, box-command, sweeping, pressure-distribution, and "
+                "shootout-impact matrix and are not assigned a global outfield "
+                "rank. Position sections remain navigation aids."
             ),
             "",
-            "## V5 rating construction",
+            "## V2 rating construction",
             "",
-            "- Independently scaled offensive/defensive VAEP evidence: 40%.",
-            "- VAEP per touch: 15%.",
-            "- Independent successful-pass/carry xT per 90: 15%.",
-            "- Match-grouped ElasticNet role-adjusted value: 15%.",
-            "- Top-three quality-adjusted completeness: 10%.",
-            "- Coverage-qualified off-ball contribution: 5%.",
+            "- Contextual VAEP uses score differential, match minute, opponent strength, and game phase.",
+            "- Offensive and defensive channels use role weights, never a hard maximum.",
+            "- Composite weights are calibrated by positive ElasticNet with team-disjoint folds.",
+            "- xD-style disruption adds a seventh defensive component.",
+            "- Outfield reliability is minutes/(minutes+450).",
+            "- RankingStatus preserves 300+ as the primary reliability label.",
             "- Successful event endpoints and SB360 actor snapshots use the StatsBomb 120x80 pitch.",
             "- Fullbacks above 35% combined final-third share are classified as Attacking Wingbacks.",
             "",
@@ -947,7 +949,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                 "artifact over the supplied tournament data. It is not a randomized or causal study."
             ),
             (
-                "- V5 preserves the schema-checked calibrated transition classifier and "
+                "- V2 preserves the schema-checked calibrated transition classifier and "
                 "64-match leave-one-match-out audit while replacing the player layer with "
                 "match-grouped ElasticNet valuation, independent offense/defense scaling, "
                 "goalkeeper bifurcation, and gated causal attention context. Threshold "
@@ -963,7 +965,7 @@ def generate_report(project_root: Path, output_path: Path) -> Path:
                 "tackle-related success, and recoveries approximate defensive recovery activity."
             ),
             (
-                f"- Player rankings cover {len(profiles)} eligible 300+ minute players from "
+                f"- Player rankings cover {len(profiles)} eligible 45/90-minute players from "
                 f"{provenance['players_before_cutoff']} observed players; they do not measure "
                 "performance outside this competition."
             ),

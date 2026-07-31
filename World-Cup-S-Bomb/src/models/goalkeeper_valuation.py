@@ -8,35 +8,15 @@ import numpy as np
 import pandas as pd
 
 
-GOALKEEPER_METRICS: dict[str, bool] = {
-    "goals_prevented_proxy_p90": True,
-    "save_rate": True,
-    "cross_stopping_rate": True,
-    "sweeper_actions_p90": True,
-    "distribution_under_pressure": True,
-    "penalty_save_rate_shrunk": True,
+GOALKEEPER_METRICS: dict[str, tuple[bool, float]] = {
+    "goals_prevented_proxy_p90": (True, 0.225),
+    "save_rate": (True, 0.135),
+    "cross_stopping_rate": (True, 0.135),
+    "sweeper_actions_p90": (True, 0.135),
+    "distribution_under_pressure": (True, 0.135),
+    "penalty_save_rate_shrunk": (True, 0.135),
+    "high_leverage_save_pct": (True, 0.100),
 }
-
-# Shot-stopping is the core of the role: an unweighted mean previously gave
-# ball-playing and claiming metrics two-thirds of the composite, which let
-# low-shot-volume distributors outrank high-volume shot-stoppers.
-GOALKEEPER_METRIC_WEIGHTS: dict[str, float] = {
-    "goals_prevented_proxy_p90": 0.30,
-    "save_rate": 0.20,
-    # The penalty channel includes shootout penalties, which decide
-    # tournaments; 0.20 lets shootout performances move the ranking
-    # while the per-keeper shrunk save rate keeps tiny samples honest.
-    "penalty_save_rate_shrunk": 0.20,
-    "distribution_under_pressure": 0.12,
-    "cross_stopping_rate": 0.09,
-    "sweeper_actions_p90": 0.09,
-}
-
-# A save percentage on a handful of shots is mostly noise: shot-stopping
-# percentiles are shrunk toward the cohort-neutral 0.5 with weight
-# SOT / (SOT + SHOT_EVIDENCE_SHRINKAGE).
-SHOT_STOPPING_METRICS = ("goals_prevented_proxy_p90", "save_rate")
-SHOT_EVIDENCE_SHRINKAGE = 15.0
 
 
 def _percentile(series: pd.Series, higher: bool) -> pd.Series:
@@ -48,58 +28,42 @@ def _percentile(series: pd.Series, higher: bool) -> pd.Series:
 def calculate_goalkeeper_ratings(
     goalkeeper_features: pd.DataFrame,
     *,
-    reliability_minutes: float = 600.0,
+    reliability_minutes: float = 450.0,
+    minimum_minutes: float = 90.0,
 ) -> pd.DataFrame:
     """Calculate a separate, reliability-shrunk goalkeeper leaderboard."""
 
-    if set(GOALKEEPER_METRIC_WEIGHTS) != set(GOALKEEPER_METRICS):
-        raise ValueError("Goalkeeper metric weights are out of sync")
-    if abs(sum(GOALKEEPER_METRIC_WEIGHTS.values()) - 1.0) > 1e-12:
-        raise ValueError("Goalkeeper metric weights must sum to one")
     missing = set(GOALKEEPER_METRICS).difference(
         goalkeeper_features.columns
     )
     if missing:
         raise ValueError(f"Goalkeeper metrics missing: {sorted(missing)}")
-    output = goalkeeper_features.copy()
+    output = goalkeeper_features.loc[
+        pd.to_numeric(
+            goalkeeper_features["minutes"],
+            errors="coerce",
+        ).ge(minimum_minutes)
+    ].copy()
+    if output.empty:
+        raise ValueError("No goalkeepers satisfy the 90-minute eligibility rule")
     components = pd.DataFrame(index=output.index)
     availability = pd.DataFrame(index=output.index)
-    if "shot_on_target_faced" not in output:
-        raise ValueError(
-            "Goalkeeper features must include shot_on_target_faced for "
-            "shot-evidence shrinkage"
-        )
-    shots_faced = pd.to_numeric(
-        output["shot_on_target_faced"],
-        errors="coerce",
-    )
-    shot_evidence = (
-        shots_faced / (shots_faced + SHOT_EVIDENCE_SHRINKAGE)
-    ).fillna(0.0)
-    for metric, higher in GOALKEEPER_METRICS.items():
-        percentile = _percentile(output[metric], higher)
-        if metric in SHOT_STOPPING_METRICS:
-            percentile = 0.5 + shot_evidence * (percentile - 0.5)
-        components[metric] = percentile
+    for metric, (higher, _) in GOALKEEPER_METRICS.items():
+        components[metric] = _percentile(output[metric], higher)
         availability[metric] = output[metric].notna()
     evidence = availability.sum(axis=1)
-    metric_weights = pd.DataFrame(
+    weights = pd.Series(
         {
-            metric: np.where(
-                availability[metric],
-                GOALKEEPER_METRIC_WEIGHTS[metric],
-                0.0,
-            )
-            for metric in GOALKEEPER_METRICS
-        },
-        index=output.index,
+            metric: weight
+            for metric, (_, weight) in GOALKEEPER_METRICS.items()
+        }
     )
-    weight_totals = metric_weights.sum(axis=1)
-    if (weight_totals <= 0).any():
-        raise ValueError("A goalkeeper has no available rating metrics")
-    score = (
-        components.fillna(0.0) * metric_weights
-    ).sum(axis=1) / weight_totals
+    weighted = components.mul(weights, axis=1)
+    available_weight = availability.mul(weights, axis=1).sum(axis=1)
+    score = weighted.sum(axis=1, skipna=True) / available_weight.replace(
+        0.0,
+        np.nan,
+    )
     cohort_prior = float(score.mean())
     feature_reliability = evidence / len(GOALKEEPER_METRICS)
     minutes = pd.to_numeric(
@@ -125,6 +89,28 @@ def calculate_goalkeeper_ratings(
         index=output.index,
         dtype="Int64",
     )
+    output["GKRankingStatus"] = np.select(
+        [
+            minutes.ge(270.0),
+            minutes.ge(180.0),
+        ],
+        [
+            "Ranked (270+ min)",
+            "Ranked (180–269 min)",
+        ],
+        default="Coverage only (<180 min)",
+    )
+    output["primary_goalkeeper_rank"] = pd.Series(
+        pd.NA,
+        index=output.index,
+        dtype="Int64",
+    )
+    primary = minutes.ge(270.0)
+    output.loc[primary, "primary_goalkeeper_rank"] = (
+        output.loc[primary, "final_player_rating"]
+        .rank(method="min", ascending=False)
+        .astype(int)
+    )
     return output
 
 
@@ -142,5 +128,15 @@ def goalkeeper_model_summary(
         ),
         "rating_reliability_mean": float(
             ratings["goalkeeper_rating_reliability"].mean()
+        ),
+        "eligibility_minutes": 90,
+        "primary_ranking_minutes": 270,
+        "reliability_minutes": 450,
+        "component_weights": {
+            metric: weight
+            for metric, (_, weight) in GOALKEEPER_METRICS.items()
+        },
+        "ranking_status_counts": (
+            ratings["GKRankingStatus"].value_counts().to_dict()
         ),
     }

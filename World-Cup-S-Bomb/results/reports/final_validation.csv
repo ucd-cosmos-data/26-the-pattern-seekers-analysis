@@ -1,5 +1,0 @@
-model_name,algorithm_type,brier_score,roc_auc,pr_auc,calibration_error,latency_sec,rank_brier,rank_roc_auc,rank_overall,evaluation_scope,rows,selected
-XGBoost 360-VAEP,XGBClassifier,0.0011229884375387423,0.9489939112180352,0.08482679311270283,0.0003364911402715651,0.3089459579932736,1.0,1.0,1.0,development_match_oof,391942,True
-CatBoost 360-VAEP,CatBoostClassifier,0.0011287083303633213,0.9444792284535055,0.09318609032175715,0.00038995609187057257,0.14210904100036714,2.0,2.0,2.0,development_match_oof,391942,False
-Baseline Logistic 360-VAEP,LogisticRegression,0.0011669844217381058,0.9310341109794467,0.020958977369301673,0.0003609306760126799,0.1226727920002304,3.0,3.0,3.0,development_match_oof,391942,False
-Legacy transition classifier,LegacyTransitionClassifier,0.001339058576741854,0.6893411592543106,0.0059580383921070375,,,,,,legacy_transition_tournament_oof,9685,False

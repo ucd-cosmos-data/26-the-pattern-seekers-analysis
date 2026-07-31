@@ -4,7 +4,7 @@ The production player rating is a point estimate:
 
     raw    = 0.50*VAEP/90 + 0.30*VAEP-per-touch + 0.20*xT/90
     final  = reliability*raw + (1 - reliability)*position_group_mean(raw)
-    reliability = minutes / (minutes + 300)
+    reliability = minutes / (minutes + 450)
 
 It carries no uncertainty, so there is no way to tell which ranking gaps are real
 and which are sampling noise — a gap the README lists as open ("player-ranking
@@ -44,7 +44,7 @@ def compute_ratings(
     sum_minutes: np.ndarray,
     group_id: np.ndarray,
     *,
-    min_minutes: float = 300.0,
+    min_minutes: float = 450.0,
     weights: tuple[float, float, float] = (0.50, 0.30, 0.20),
 ) -> tuple[np.ndarray, np.ndarray]:
     """The exact production rating, computed from summed per-match ingredients.
@@ -75,7 +75,7 @@ def bootstrap_ratings(
     minutes: np.ndarray,
     group_id: np.ndarray,
     *,
-    min_minutes: float = 300.0,
+    min_minutes: float = 450.0,
     weights: tuple[float, float, float] = (0.50, 0.30, 0.20),
     replicates: int = 2000,
     random_state: int = 42,

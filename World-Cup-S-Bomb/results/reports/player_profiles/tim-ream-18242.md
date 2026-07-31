@@ -1,62 +1,40 @@
-# Tim Ream Player Profile
+# Tim Ream — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: United States
 - Position group: Center Back
 - Functional role: Ball-Playing Centre-Back
-- Probabilistic role: Aerial/Progressive Centre-Back
-- Role entropy: 0.0000
-- Global rank: 107
-- Position rank: 18
-- Role rank: 7
-- Team rank: 8
-- Final player rating: 0.2930
-- Global ranking eligibility: eligible
 - Minutes: 391.2
-- Minutes reliability: 0.3947
+- Global Rank v3: 262
+- Team Rank v3: 10
+- Position Rank v3: 73
+- Role Rank v3: 16
+- Tournament Impact: 0.4174
+- Role Quality: 0.0799
+- Impact interval: [0.0508, 0.9458]
+- Rank band: 120–444
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 0
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 0.2582
+- Non-shootout xA: 0.0000
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.5892 |
-| vaep_def_scaled | 0.7351 |
-| vaep_per_touch | -0.0000 |
-| open_play_xt_p90 | 0.0022 |
-| set_piece_xt_p90 | -0.0054 |
-| role_adjusted_value | 0.1313 |
-| completeness_score | 0.4983 |
-| off_ball_score | 0.4206 |
+| Attack | 0.3516 |
+| Defense | 0.0657 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.5317 |
-| creation_score | 0.3866 |
-| finishing_score | 0.3615 |
-| pressing_score | 0.3153 |
-| defensive_score | 0.5100 |
-| ball_security_score | 0.6803 |
-| aerial_score | 0.6608 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.9163 |
-| mean_defenders_within_3m | 0.1583 |
-| mean_defenders_within_5m | 0.3111 |
-| mean_nearest_defender_m | 10.0688 |
-| mean_passing_lane_availability | 0.9479 |
-| packing_index_mean | 0.7108 |
-| mean_space_received | 0.9102 |
-| network_pagerank | 0.0956 |
-| network_betweenness | 0.2173 |
-| network_entropy | 0.8265 |
-| build_up_involvement_ratio | 0.5865 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

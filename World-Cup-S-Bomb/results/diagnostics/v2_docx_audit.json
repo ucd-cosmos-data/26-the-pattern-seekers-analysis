@@ -1,0 +1,16 @@
+{
+  "document": "C:\\cosmos\\26-the-pattern-seekers-analysis\\World-Cup-S-Bomb\\results\\Summary\\final_summary.docx",
+  "numbered_sections": 33,
+  "tables": 7,
+  "inline_shapes": 1,
+  "stale_phrases_found": [],
+  "rating_weights": {
+    "vaep_90": 0.4,
+    "vaep_per_touch": 0.15,
+    "xt_90": 0.15,
+    "role_adjusted_value": 0.15,
+    "completeness_score": 0.1,
+    "off_ball_score": 0.05
+  },
+  "calibration_fallback": true
+}

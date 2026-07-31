@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import ast
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -13,6 +14,16 @@ import pandas as pd
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from src.features.event_scope import (
+    aggregate_player_outcomes,
+    filter_ordinary_events,
+    tournament_goal_reconciliation,
+)
+
+
 DEFAULT_EVENTS = PROJECT_ROOT / "notebooks" / "all_events.csv"
 DEFAULT_POSSESSIONS = (
     PROJECT_ROOT / "data" / "processed" / "world_cup_defensive_clusters.csv"
@@ -26,7 +37,14 @@ DEFAULT_INTERVALS = (
 DEFAULT_LINEUPS = (
     PROJECT_ROOT / "data" / "interim" / "world_cup_possession_lineups.csv"
 )
-DEFAULT_VALIDATION = PROJECT_ROOT / "results" / "MIscellaneous" / "player_skill_input_validation.md"
+DEFAULT_VALIDATION = (
+    PROJECT_ROOT
+    / "results"
+    / "diagnostics"
+    / "ranking_repair"
+    / "event_scope"
+    / "player_skill_input_validation.md"
+)
 
 EVENT_COLUMNS = [
     "match_id",
@@ -61,6 +79,8 @@ EVENT_COLUMNS = [
     "ball_recovery_recovery_failure",
     "shot_statsbomb_xg",
     "shot_outcome",
+    "shot_type",
+    "pass_assisted_shot_id",
     "under_pressure",
     "counterpress",
     "ball_receipt_outcome",
@@ -170,7 +190,7 @@ def mode_or_unknown(series: pd.Series) -> str:
 
 
 def build_lineup_intervals(events: pd.DataFrame) -> pd.DataFrame:
-    playing_events = events[events["period"].fillna(0).between(1, 4)].copy()
+    playing_events = filter_ordinary_events(events)
     playing_events["elapsed"] = (
         playing_events["minute"].fillna(0) + playing_events["second"].fillna(0) / 60
     )
@@ -274,7 +294,13 @@ def build_lineup_intervals(events: pd.DataFrame) -> pd.DataFrame:
 def build_player_match_components(
     events: pd.DataFrame, intervals: pd.DataFrame
 ) -> pd.DataFrame:
-    actors = events.dropna(subset=["player_id", "team"]).copy()
+    outcomes = aggregate_player_outcomes(
+        events,
+        group_columns=("match_id", "team", "player_id"),
+    )
+    actors = filter_ordinary_events(events).dropna(
+        subset=["player_id", "team"]
+    ).copy()
     actors["player_id"] = actors["player_id"].astype(int)
     actors["x"] = coordinate(actors["location"], 0)
     actors["end_pass_x"] = coordinate(actors["pass_end_location"], 0)
@@ -405,6 +431,29 @@ def build_player_match_components(
     components = components.merge(identity, on=keys, how="left").merge(
         minutes, on=keys, how="left"
     )
+    components = components.merge(
+        outcomes,
+        on=keys,
+        how="left",
+        validate="one_to_one",
+    )
+    outcome_numeric = [
+        "open_play_goals",
+        "non_penalty_goals",
+        "regular_penalty_goals",
+        "regulation_extra_time_goals",
+        "assists",
+        "xg_non_shootout",
+        "xg_non_penalty",
+        "xa_non_shootout",
+        "shootout_attempts",
+        "shootout_goals",
+    ]
+    components[outcome_numeric] = components[outcome_numeric].fillna(0.0)
+    components["goals"] = components["regulation_extra_time_goals"].astype(
+        int
+    )
+    components["xg_sum"] = components["xg_non_shootout"]
     components["minutes"] = components["minutes"].fillna(0)
     components["position_group"] = components["position"].map(position_group)
     return components.sort_values(keys)
@@ -456,6 +505,7 @@ def write_validation(
     intervals: pd.DataFrame,
     lineups: pd.DataFrame,
 ) -> None:
+    goal_audit = tournament_goal_reconciliation(events)
     attack_sizes = lineups["attacking_player_ids"].map(lambda value: len(json.loads(value)))
     defense_sizes = lineups["defending_player_ids"].map(lambda value: len(json.loads(value)))
     checks = {
@@ -470,6 +520,17 @@ def write_validation(
         ].nunique()
         >= 650,
         "Player minutes are non-negative": components["minutes"].ge(0).all(),
+        "Official match goals reconcile to 172": (
+            goal_audit["official_match_goals_including_own_goals"] == 172
+        ),
+        "Shootout goals remain separate": (
+            goal_audit["shootout_goals_excluded"] == 26
+            and int(components["shootout_goals"].sum()) == 26
+        ),
+        "Ordinary player goals exclude shootouts": (
+            int(components["regulation_extra_time_goals"].sum()) == 169
+            and int(components["goals"].sum()) == 169
+        ),
     }
     lines = [
         "# Player Skill Input Validation",
@@ -482,6 +543,13 @@ def write_validation(
         f"- Possession lineups: {len(lineups):,}",
         f"- Possessions with 11 attackers: {(attack_sizes == 11).mean():.2%}",
         f"- Possessions with 11 defenders: {(defense_sizes == 11).mean():.2%}",
+        f"- Player-credited regulation/extra-time goals: "
+        f"{goal_audit['player_credited_match_goals']:,}",
+        f"- Own goals: {goal_audit['own_goals']:,}",
+        f"- Official match goals including own goals: "
+        f"{goal_audit['official_match_goals_including_own_goals']:,}",
+        f"- Shootout goals held in the separate channel: "
+        f"{goal_audit['shootout_goals_excluded']:,}",
         "",
         "## Checks",
         "",

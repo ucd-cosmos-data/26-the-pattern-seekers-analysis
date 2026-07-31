@@ -1,62 +1,40 @@
-# Julián Álvarez Player Profile
+# Julián Álvarez — Qatar 2022 Player Profile
 
-This report uses tournament events and coverage-qualified StatsBomb 360 context. It is not an optical-tracking report or a subjective scouting grade.
+This generated profile uses Qatar 2022 event evidence only. Player identity is displayed after scoring and is never a feature.
 
-## Ranking and role
+## Tournament Impact, Role Quality, and Uncertainty
 
 - Team: Argentina
 - Position group: Forward
-- Functional role: Target Forward
-- Probabilistic role: Finishing/Creative Attacker
-- Role entropy: 0.0024
-- Global rank: 4
-- Position rank: 2
-- Role rank: 1
-- Team rank: 2
-- Final player rating: 0.7024
-- Global ranking eligibility: eligible
+- Functional role: Pressing Forward
 - Minutes: 485.2
-- Minutes reliability: 0.4471
+- Global Rank v3: 8
+- Team Rank v3: 3
+- Position Rank v3: 38
+- Role Rank v3: 9
+- Tournament Impact: 3.4140
+- Role Quality: 0.5708
+- Impact interval: [1.0924, 6.1917]
+- Rank band: 3–99
+- Uncertainty status: wide
 
-## Rating components
+## Decisive outcomes
 
-| Metric | Value |
+- Non-penalty goals: 4
+- Regular penalty goals: 0
+- Actual assists: 0
+- Non-shootout xG: 1.9083
+- Non-shootout xA: 0.0584
+- Shootout conversions are displayed only in the separate shootout field and do not enter outfield impact.
+
+## Active components
+
+| Component | Value |
 |---|---|
-| vaep_off_scaled | 0.9707 |
-| vaep_def_scaled | 0.4215 |
-| vaep_per_touch | 0.0075 |
-| open_play_xt_p90 | 0.0351 |
-| set_piece_xt_p90 | 0.0056 |
-| role_adjusted_value | 0.8896 |
-| completeness_score | 0.5773 |
-| off_ball_score | 0.5467 |
+| Attack | 3.4570 |
+| Defense | -0.0430 |
+| Other | 0.0000 |
 
-## Continuous role vector
+## Compatibility
 
-| Metric | Value |
-|---|---|
-| progression_score | 0.2938 |
-| creation_score | 0.3092 |
-| finishing_score | 0.9190 |
-| pressing_score | 0.8110 |
-| defensive_score | 0.5147 |
-| ball_security_score | 0.3035 |
-| aerial_score | 0.4131 |
-
-## Spatial, 360 and passing-network context
-
-| Metric | Value |
-|---|---|
-| sb360_coverage | 0.8222 |
-| mean_defenders_within_3m | 0.6229 |
-| mean_defenders_within_5m | 1.1553 |
-| mean_nearest_defender_m | 7.6311 |
-| mean_passing_lane_availability | 0.8625 |
-| packing_index_mean | 0.2957 |
-| mean_space_received | 0.5012 |
-| network_pagerank | 0.0375 |
-| network_betweenness | 0.0000 |
-| network_entropy | 0.7941 |
-| build_up_involvement_ratio | 0.6442 |
-
-Missing values indicate unavailable evidence; they are not converted into zero contribution.
+Older v2/v5 columns are retained for provenance only. They are not the active ordering described above.

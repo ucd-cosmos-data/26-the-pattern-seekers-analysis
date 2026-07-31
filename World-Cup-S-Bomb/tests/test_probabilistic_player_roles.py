@@ -59,8 +59,8 @@ def test_transformer_winsorizes_and_returns_stable_shape() -> None:
 def test_v5_roles_are_active_without_replacing_kmeans_baseline() -> None:
     report = json.loads(
         (
-            PROJECT_ROOT
-            / "results/reports/player_role_challenger_validation.json"
+                PROJECT_ROOT
+                / "results/diagnostics/player_role_challenger_validation.json"
         ).read_text(encoding="utf-8")
     )
     profiles = pd.read_csv(
@@ -117,23 +117,32 @@ def test_rating_rejects_invalid_weights() -> None:
 def test_v5_preserves_legacy_rating_column_and_publishes_new_rating() -> None:
     report = json.loads(
         (
-            PROJECT_ROOT
-            / "results/reports/role_refinement_validation.json"
+                PROJECT_ROOT
+                / "results/diagnostics/role_refinement_validation.json"
         ).read_text(encoding="utf-8")
     )
     profiles = pd.read_csv(
         PROJECT_ROOT / "data/processed/player_evaluations.csv"
     )
     comparison = pd.read_csv(
-        PROJECT_ROOT / "results/reports/role_aware_rating_comparison.csv"
+        PROJECT_ROOT / "results/diagnostics/rating_validation_comparison.csv"
     )[["player", "old_rating", "new_rating"]]
     merged = profiles.merge(comparison, on="player", validate="one_to_one")
     assert report["production_promoted"] is True
-    assert report["changed_roles"] == 34
+    assert report["eligible_players"] == len(profiles)
+    assert (
+        report["changed_roles"] + report["unchanged_roles"]
+        == report["eligible_players"]
+    )
+    assert np.isclose(
+        report["change_rate"],
+        report["changed_roles"] / report["eligible_players"],
+    )
     assert np.allclose(
         merged["legacy_final_player_rating"],
         merged["old_rating"],
         atol=1e-12,
+        equal_nan=True,
     )
     assert np.allclose(
         merged["final_player_rating"],

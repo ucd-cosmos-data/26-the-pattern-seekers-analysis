@@ -1,0 +1,22 @@
+{
+  "active_model_version": "outfield-tournament-impact-v4+goalkeeper-event-profile-v3",
+  "bytes": 163004,
+  "fixture_rows": 8,
+  "inline_shapes": 1,
+  "paragraphs": 70,
+  "path": "results/reports/v4/docs/final_summary_v4.docx",
+  "render_validation_status": "passed",
+  "rendered_pages": 8,
+  "schema_version": "outfield-v4-docx-validation-1.0",
+  "sha256": "42977a8eebb992dc1010af40ebc8216406472593646b28b5df22e9c95079e79f",
+  "source_release_status": "passed",
+  "structural_validation_passed": true,
+  "tables": 12,
+  "top50_rows": 50,
+  "visual_inspection": {
+    "all_pages_inspected": true,
+    "clipping_or_overflow": false,
+    "layout_issues": [],
+    "render_format": "PNG pages plus PDF"
+  }
+}
