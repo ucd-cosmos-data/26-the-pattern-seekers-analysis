@@ -1679,8 +1679,13 @@ def _acceptance_gates(
     )
     variance_share = float(selected_outputs["variance_share"])
     gates["variance_share_contract"] = _gate_record(
-        0.35 <= variance_share <= 0.50,
-        {"realized": variance_share, "parity_cap": 0.50},
+        0.35 - 1e-12 <= variance_share <= 0.50 + 1e-12,
+        {
+            "realized": variance_share,
+            "target": float(selected_outputs["config"].variance_share_target),
+            "parity_cap": 0.50,
+            "numeric_tolerance": 1e-12,
+        },
     )
     w_att = selected_role["attacking_channel_weight_v4"].to_numpy(dtype=float)
     w_def = selected_role["defending_channel_weight_v4"].to_numpy(dtype=float)
